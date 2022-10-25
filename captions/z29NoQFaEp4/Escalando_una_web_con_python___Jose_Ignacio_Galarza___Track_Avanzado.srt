@@ -1,0 +1,1508 @@
+1
+00:00:00,000 --> 00:00:16,880
+Hola a todos. Muchas gracias por venir. Soy José Nació Galarza, Minike en Twitter,
+
+2
+00:00:16,880 --> 00:00:22,760
+Guiz Javi y demás es el que veis ahí abajo, y soy el seto de etiquetea y os vengo a contar
+
+3
+00:00:22,760 --> 00:00:29,280
+básicamente esto pero de una manera un poco extraña. Cuando presenté la charla al Golf
+
+4
+00:00:29,280 --> 00:00:34,400
+Paper se hacía unos meses pues al final quería hablar un poco sobre cómo escalar una página web
+
+5
+00:00:34,400 --> 00:00:38,640
+y cómo escalarla con Python. La cuestión es que desde que estoy preparando esta charla pues al
+
+6
+00:00:38,640 --> 00:00:43,840
+final me he visto con algo delicado, con algo difícil y es que bueno lo que he intentado plasmar es
+
+7
+00:00:43,840 --> 00:00:47,960
+un poco la experiencia que tengo yo, algo que he tenido yo a lo largo de las empresas a las que
+
+8
+00:00:47,960 --> 00:00:52,920
+he trabajado sobre todo en esta última etiquetea y la realidad es que como pone ahí, Python mola,
+
+9
+00:00:52,920 --> 00:00:57,080
+Python funciona muy bien, Python escala muy bien y la cuestión es que la mayor parte de las cosas
+
+10
+00:00:57,080 --> 00:01:01,800
+que hacemos nosotros por ejemplo para poder escalar una página web correctamente no tienen que ver
+
+11
+00:01:01,800 --> 00:01:08,440
+con Python exactamente sino con todo lo que hay alrededor. Entonces lo primero que quiero decir
+
+12
+00:01:08,440 --> 00:01:13,800
+es que en esto no hay balas de plata, cada problema es específico, es imposible, no busquéis una
+
+13
+00:01:13,800 --> 00:01:17,920
+receta para poder escalar mejor porque no existe sino que tenéis que entender el problema que
+
+14
+00:01:17,920 --> 00:01:24,440
+tenéis en vuestra empresa o en vuestra cosa particular para poder saber cómo escalar correctamente.
+
+15
+00:01:24,440 --> 00:01:29,760
+Entonces lo primero y la pregunta obligada es qué es escalabilidad, al final hay muchísimas
+
+16
+00:01:29,760 --> 00:01:35,400
+definiciones de esto y de hecho entre ellas se llama la contraria, entonces a mí la definición me
+
+17
+00:01:35,400 --> 00:01:40,640
+importa poco pero al final quiero pivotar esta charla sobre esta tabla de aquí, al final para
+
+18
+00:01:40,640 --> 00:01:46,080
+nosotros escalar va a ser intentar aceptar la máxima capacidad posible en nuestro seriedad,
+
+19
+00:01:46,080 --> 00:01:50,400
+en nuestra aplicación web, en nuestra página web, nuestra infraestructura, en lo que sea. Entonces
+
+20
+00:01:50,400 --> 00:01:56,040
+al final para aceptar más clientes podemos hacer dos cosas, por una parte podemos hacer más cosas
+
+21
+00:01:56,040 --> 00:02:01,280
+o podemos hacer las cosas que hacemos más rápida y después eso lo podemos hacer en dos
+
+22
+00:02:01,280 --> 00:02:05,240
+vertientes distinta que es mejorando digamos el hardware que tenemos o mejorando el software.
+
+23
+00:02:05,240 --> 00:02:11,440
+Entonces eso nos da cuatro fórmulas diferentes en cuanto al hardware pues tenemos que si queremos
+
+24
+00:02:11,440 --> 00:02:15,640
+hacer más cosas lo que tenemos que hacer es escalar horizontalmente y si queremos hacer más
+
+25
+00:02:15,640 --> 00:02:18,600
+rápido lo que ya hacemos al final es escalar verticalmente que ahora veremos que es cada una
+
+26
+00:02:18,600 --> 00:02:22,480
+de esas dos cosas y en cuanto al software si queremos hacer más cosas al final es de una manera
+
+27
+00:02:22,480 --> 00:02:26,840
+de otra intentar hacer las cosas de forma concurrente que ya vemos cómo podemos hacer esto y hacerlo
+
+28
+00:02:26,840 --> 00:02:31,440
+más rápido pues al final significa pues optimizar el código que usamos que cuando digo el código
+
+29
+00:02:31,440 --> 00:02:35,240
+no me refiero estrictamente al código de python, sino al final optimizar absolutamente todo el
+
+30
+00:02:35,240 --> 00:02:40,280
+stack que tenemos porque lo más importante a la hora de intentar optimizar vuestra plataforma web
+
+31
+00:02:40,280 --> 00:02:44,400
+lo primero de todo es medir, tenéis que medir qué valento tenéis que medir dónde está vuestro
+
+32
+00:02:44,400 --> 00:02:49,920
+cuello de botella porque al final podéis estar semanas mejorando un 2% una zona de código que
+
+33
+00:02:49,920 --> 00:02:53,400
+tenéis que si es un cuello de botella en otro sitio distinta al final no se van a notar absolutamente
+
+34
+00:02:53,400 --> 00:02:59,720
+nada. Entonces empecemos por el sencillo que es hardware scaling que al final es escalar verticalmente
+
+35
+00:02:59,720 --> 00:03:05,600
+¿qué es escalar verticalmente? Esto, escalar verticalmente no tiene demasiada complejidad más
+
+36
+00:03:05,600 --> 00:03:10,240
+allá de pues cogemos y tenemos un servidor de cuatro núcleos lo cogemos de 128 con muchísima RAM
+
+37
+00:03:10,240 --> 00:03:15,040
+levantamos otra vez todo lo que teníamos y listo. De esto no quiero hablar mucho porque aquí no está
+
+38
+00:03:15,040 --> 00:03:20,400
+la entringulis de la charla. Vamos a hablar del otro tipo de escalado que es el que es un poco más
+
+39
+00:03:20,400 --> 00:03:25,360
+complejo porque al final supone que tenéis que hacer cambios en vuestra base de código o al menos
+
+40
+00:03:25,360 --> 00:03:29,760
+cuando lo hayáis hecho que tenéis que haberlo hecho pensando en ello. Entonces antes de empezar
+
+41
+00:03:29,760 --> 00:03:34,120
+en esto un par de preguntas ¿cuántos de aquí tenéis? Imagino que en la gran mayoría pero ¿cuántas
+
+42
+00:03:34,120 --> 00:03:40,840
+tenéis en la página web en la que estáis midiendo el tráfico que tenéis? Perfecto ¿cuántos tenéis
+
+43
+00:03:40,840 --> 00:03:47,240
+de usuarios de forma constante entre uno y cien personas por ejemplo en la página web? Vale entre
+
+44
+00:03:47,240 --> 00:03:55,160
+cien y mil. Concurrente. Concurrente sí, al mismo tiempo. Y más de mil. Perfecto vale. Entonces
+
+45
+00:03:55,160 --> 00:04:01,280
+cuando presencié la charla a la conferencia había tres slots o te preguntaban si querías que fuese
+
+46
+00:04:01,280 --> 00:04:06,160
+básica, intermedia o avanzada. Al final lo planteé como algo intermedio porque no querían y que fuese
+
+47
+00:04:06,160 --> 00:04:09,640
+demasiado avanzada, sobre todo porque creo que para escalar las cosas de forma avanzada hay que
+
+48
+00:04:09,640 --> 00:04:14,000
+entender muy muy bien el problema que tenéis. Entonces para intentar dar una charla genérica al
+
+49
+00:04:14,000 --> 00:04:18,280
+final he tendido por hablar de una forma un poquitín más digamos más intermedia. Entonces creo que
+
+50
+00:04:18,280 --> 00:04:22,920
+tengo una charla un poco entre básica y avanzada. Ya veremos qué tal. Entonces escalado horizontal
+
+51
+00:04:22,920 --> 00:04:28,880
+empecemos muy muy fácilmente ¿vale? Al final escalado horizontal lo que significa es cuando
+
+52
+00:04:28,880 --> 00:04:33,080
+necesitamos aceptar más clientes en vez de coger máquinas más grandes lo que hacemos es poner
+
+53
+00:04:33,080 --> 00:04:37,280
+más máquinas alrededor y el tráfico lo dirigimos a todas las máquinas que tenemos. Entonces para
+
+54
+00:04:37,280 --> 00:04:40,920
+redigir ese tráfico una máquina u otra al final lo que hacemos es tenemos un balanceor de carga
+
+55
+00:04:40,920 --> 00:04:45,120
+que es lo que tenemos ahí en medio. Que hay muchos en el mercado los más famosos bueno el más famoso
+
+56
+00:04:45,120 --> 00:04:50,360
+con diferencia es HACHA Proxy y después tenemos muchos comerciales por ejemplo hay mucha gente
+
+57
+00:04:50,360 --> 00:04:56,280
+usando AWS de Amazon pues por ejemplo los elastic blood balancers de Amazon. Entonces sin entrar mucho
+
+58
+00:04:56,280 --> 00:05:00,520
+en qué es el escalado horizontal al final para poder escalar horizontalmente tenéis que tener
+
+59
+00:05:00,520 --> 00:05:05,800
+una cosa muy muy muy presente ahora desarrollar y es que no podéis guardar estado en vuestros
+
+60
+00:05:05,800 --> 00:05:11,000
+servidores ni estado ni sesiones porque al final para las páginas webs normalmente el estado
+
+61
+00:05:11,000 --> 00:05:16,240
+suele equivaler a las sesiones de usuario. Igualmente evidentemente si tenéis cualquier tipo de subida
+
+62
+00:05:16,240 --> 00:05:20,520
+de ficheros no puede en ningún momento la máquina porque al final en el escalado horizontal lo que hay
+
+63
+00:05:20,520 --> 00:05:25,040
+que pensar es que las máquinas son de tirar. Yo levanto una máquina que la puedo tirar dentro de
+
+64
+00:05:25,040 --> 00:05:30,920
+media hora y no debería de perder absolutamente nada. Entonces para no guardar las sesiones en los
+
+65
+00:05:30,920 --> 00:05:35,240
+servidores al final tenemos dos opciones o bueno tenemos más de dos de hecho pero las dos más
+
+66
+00:05:35,240 --> 00:05:40,560
+importantes las dos que más usan son estas dos. La primera es sacar las sesiones de las máquinas lo
+
+67
+00:05:40,560 --> 00:05:45,880
+tenemos en algo aparte. Ese algo aparte normalmente pues sobre todo una caché como puede ser reddits
+
+68
+00:05:45,880 --> 00:05:50,720
+o maincatch vale son las más usadas. Al final lo hacemos es que todos nuestros servidores acceden
+
+69
+00:05:50,720 --> 00:05:54,800
+esa caché que es donde se guardan las sesiones. Bueno las sesiones o cualquier tipo de estado que
+
+70
+00:05:54,800 --> 00:05:59,880
+nos adornamos en los servidores. La segunda opción es coger esas sesiones y hacer completamente lo
+
+71
+00:05:59,880 --> 00:06:04,120
+contrario y es llevarnos las al cliente. Al final recordad que estamos escalando una página web
+
+72
+00:06:04,120 --> 00:06:10,360
+tenemos un navegador web que tiene storage en forma de cookies por ejemplo. Entonces otra cosa que
+
+73
+00:06:10,360 --> 00:06:14,400
+se suele hacer muchísimo es llevar solo al cliente y las dos vertientes más famosas de llevar
+
+74
+00:06:14,400 --> 00:06:19,640
+solo al cliente son estas dos. Una parte es JWT que son JSON Web Tokens que es un protocolo bueno
+
+75
+00:06:19,640 --> 00:06:25,160
+esto es un RFC de hace un par de años y más lo recuerdo en el que los tokens o sea pensar de no
+
+76
+00:06:25,160 --> 00:06:29,200
+auz por ejemplo pues es la misma idea tenemos un token con la diferencia de que el token tiene
+
+77
+00:06:29,200 --> 00:06:33,320
+toda la información necesaria para autenticarse dentro de sí misma. Al final es una especie de
+
+78
+00:06:33,320 --> 00:06:37,440
+criptografía pública en la que el token va firmado y esa firma solo la conoce el servidor por lo
+
+79
+00:06:37,440 --> 00:06:42,520
+cual no guardas estado en el servidor sino que se la pases completamente al cliente eso sí evidentemente
+
+80
+00:06:42,520 --> 00:06:46,960
+que la tiene que mandar cada vez que haga algo por lo cual al final estás estando más tráfico de más
+
+81
+00:06:46,960 --> 00:06:55,000
+ancho de manda a cambio de no necesitar guardar absolutamente nada tu en el servidor. La segunda
+
+82
+00:06:55,000 --> 00:06:59,400
+vertiente son Signet cookies que al final es un poco la misma idea solo que esto es mucho más
+
+83
+00:06:59,400 --> 00:07:02,840
+mucho más libre y no es más que guardar información que necesitas en vuestras cookies y
+
+84
+00:07:02,840 --> 00:07:07,200
+evidentemente firmarlas porque al final todo lo que maneje el usuario hay que certificar que
+
+85
+00:07:07,200 --> 00:07:14,680
+efectivamente no ha sido alterado de ninguna manera. Siguiente cosa en cuanto al software al final
+
+86
+00:07:14,680 --> 00:07:19,440
+cuando software como he dicho podemos hacer dos cosas por una parte intentar en el caso de querer
+
+87
+00:07:19,440 --> 00:07:26,080
+hacer más cosas al final esto radica en intentar usar algún tipo de concurrencia a la hora de
+
+88
+00:07:26,080 --> 00:07:30,360
+hacer nuestras páginas webs. Entonces igual que antes vamos a empezar con una definición de qué es
+
+89
+00:07:30,360 --> 00:07:37,480
+concurrencia. La concurrencia al final no es más que y digo literalmente es la habilidad de poder
+
+90
+00:07:37,480 --> 00:07:42,880
+ejecutar o intentar o tener la sensación de que hay más de una cosa ejecutando al mismo tiempo y
+
+91
+00:07:42,880 --> 00:07:48,120
+la parte de tener la sensación es muy importante porque al final la concurrencia no tiene nada que
+
+92
+00:07:48,120 --> 00:07:52,480
+ver con el paralelismo. Un algoritmo puede ser concurrente y no ejecutarse de forma paralela y
+
+93
+00:07:52,480 --> 00:07:56,040
+esa distinción es muy importante. Para ejecutar algo de forma paralela necesitas más de un
+
+94
+00:07:56,040 --> 00:07:59,840
+procesador si no es imposible que haya más de una cosa ejecutando en ese mismo tiempo pero aunque
+
+95
+00:07:59,840 --> 00:08:04,200
+tengas un procesador puedes tener algoritmos concurrentes o es decir puedes tener la sensación de
+
+96
+00:08:04,200 --> 00:08:10,240
+que hay más de una cosa ejecutando en ese mismo tiempo. Entonces en Python tenemos tres formas
+
+97
+00:08:10,240 --> 00:08:15,040
+bueno en Python y en la informática en general tenemos tres maneras de hacer concurrencia.
+
+98
+00:08:15,040 --> 00:08:21,440
+Entonces muy muy rápidamente la parte más o la que se hacía antes o la que se usaba más y de hecho
+
+99
+00:08:21,440 --> 00:08:24,640
+la que se está usando mucho en Python por un problema que vamos a ver después son procesos
+
+100
+00:08:24,640 --> 00:08:28,920
+pesados. Los procesos pesados tienen esas ventajas y esas ventajas al final el schedule
+
+101
+00:08:28,920 --> 00:08:32,920
+il·lace el sistema operativo es decir al final si lanzamos 20.000 procesos es el propio sistema
+
+102
+00:08:32,920 --> 00:08:37,440
+operativo el que se encarga de ir y tirando entre ellos. El espacio de memoria es separado es decir
+
+103
+00:08:37,440 --> 00:08:41,360
+no puedes usar variables en distintos procesos de forma compartida no sé el que usas algún tipo
+
+104
+00:08:41,360 --> 00:08:46,160
+de comunicación entre ellos y por lo tanto no hay problemas con el deal que es algo que vamos
+
+105
+00:08:46,160 --> 00:08:50,320
+a ver después. Los problemas que tiene esto evidentemente lo primero es cómo carajo los
+
+106
+00:08:50,320 --> 00:08:55,160
+comunicamos al final si los tenemos completamente separados normalmente van a querer hacer trabajo
+
+107
+00:08:55,160 --> 00:08:58,600
+cooperativo como lo hacemos y los segundos que son bastante pesados no podemos lanzar
+
+108
+00:08:58,600 --> 00:09:03,920
+demasiado y recordar que aquí estamos hablando de escalabilidad. La segunda es levantar threads
+
+109
+00:09:03,920 --> 00:09:10,280
+o hilos siguen siendo el scheduler de los hilos sigue siendo el sistema operativo es decir el
+
+110
+00:09:10,280 --> 00:09:15,280
+sistema operativo conoce que existen esos hilos en Python aquí hay una cosa distinta y es que
+
+111
+00:09:15,280 --> 00:09:19,480
+el espacio de memoria es el mismo no es como los procesos que son distintos por lo cual puede digamos
+
+112
+00:09:19,480 --> 00:09:23,640
+que los hilos pueden acceder a los mismos espacios de memoria son mucho más ligeros que los procesos
+
+113
+00:09:23,640 --> 00:09:29,640
+pero tienen los problemas el primero es que el deal les afecta después vamos a ver por qué y
+
+114
+00:09:29,640 --> 00:09:32,960
+lo segundo que como tiene el mismo espacio de memoria tenemos que hablar muchísimo sobre
+
+115
+00:09:32,960 --> 00:09:36,840
+sincronización sobre condiciones de carrera al final qué pasa si dos y dos hilos hacen en el
+
+116
+00:09:36,840 --> 00:09:42,080
+mismo tiempo a la misma cosa y por último que es el el que más está el que más en boca está
+
+117
+00:09:42,080 --> 00:09:46,840
+ahora mismo y sobre todo por así cayó una librería de pason 3 de la librería estándar
+
+118
+00:09:46,840 --> 00:09:51,680
+quiere decir son los threads de usuario vale al final hay muchos tipos de threads de usuario
+
+119
+00:09:52,560 --> 00:09:56,800
+así cayó usa uno de ellos pero al final todos comparten más o menos las mismas propiedades
+
+120
+00:09:56,800 --> 00:10:01,480
+que son estas todos usan el mismo espacio de memoria son alternativas alternativas más
+
+121
+00:10:01,480 --> 00:10:05,880
+ligeras que tenemos hasta ahora no hay resconditions porque realmente son mono hilo y esto es una clave
+
+122
+00:10:05,880 --> 00:10:11,320
+que vamos a ver después y lo malo es que bueno lo que sufre es el guil no es realmente cierto
+
+123
+00:10:11,320 --> 00:10:18,680
+porque son mono hilos y después son muy malas con tareas normalmente que son muy de cpu vale
+
+124
+00:10:18,680 --> 00:10:24,680
+de usar cpu y después vamos a ver por qué entonces en las últimas transparencias he hablado de de un
+
+125
+00:10:24,680 --> 00:10:30,480
+personaje que es el guil vale el globan interpretor log imagino que todos o casi todos habréis oído
+
+126
+00:10:30,480 --> 00:10:34,240
+hablar de él no quiero hablar demasiado pero al final hay un guil buenísimo que se le hace un
+
+127
+00:10:34,240 --> 00:10:40,000
+par de semanas que explica perfectamente cuál es el problema del del guil no entonces
+
+128
+00:10:42,000 --> 00:10:44,040
+os dejo perdón calma
+
+129
+00:10:45,760 --> 00:10:50,320
+entonces el guil no es más que el intérprete de pason que está hecho en c para poder simplificarlo
+
+130
+00:10:50,320 --> 00:10:55,640
+y que fuese digamos programar en el intérprete en el intérprete de pason de c fuese mucho más sencillo
+
+131
+00:10:55,640 --> 00:11:04,280
+lo que se hizo fue añadir un componente que se llamaba justamente el guil el globan interpretor
+
+132
+00:11:04,280 --> 00:11:09,600
+log ese panterezo no es el ordenador es del gui entonces que básicamente lo que hace es que
+
+133
+00:11:09,600 --> 00:11:14,400
+cada vez que se accede algún objeto en pason para modificar pues el contador de referencias que
+
+134
+00:11:14,400 --> 00:11:20,360
+tiene por ejemplo bloquea todo acceso a digamos esa parte por lo cual al final o sea es que lo
+
+135
+00:11:20,360 --> 00:11:23,880
+dicho tampoco me quiero a untar demasiado pero la conclusión del guil es que no puede haber dos
+
+136
+00:11:23,880 --> 00:11:31,120
+procesos ejecutando ejecutando al mismo tiempo el intérprete de perdona el intérprete de pason
+
+137
+00:11:31,120 --> 00:11:37,800
+vale entonces los ceresos a que decir el guil no es tan malo como dicen de hecho gracias al guil el
+
+138
+00:11:37,800 --> 00:11:42,840
+intérprete de c existe si no si no estuviese seguramente sería mucho más complejo y no es el lenguaje
+
+139
+00:11:42,840 --> 00:11:48,520
+no estaría tan adelante como está actualmente pero la cuestión es que se dice que la concurrencia o
+
+140
+00:11:48,520 --> 00:11:51,920
+el paralelismo como podéis decir no la concurrencia el paralelismo de hecho en pason es muy difícil
+
+141
+00:11:51,920 --> 00:11:56,320
+por culpa del guil y la realidad es que no es tan malo como dicen aquí que distingir muchísimo
+
+142
+00:11:56,320 --> 00:12:00,200
+los tipos de tareas que tenemos al final puede a los en cualquier tipo de código que tengáis
+
+143
+00:12:00,200 --> 00:12:05,040
+puede ser de dos formas digamos puede estar muy orientado a ello o muy orientado a cpu vale
+
+144
+00:12:05,040 --> 00:12:09,200
+entonces es cierto que el guil es muy malo para todo lo que sea orientación a cpu porque al final
+
+145
+00:12:09,200 --> 00:12:13,160
+significa que sólo pueda haber un proceso ejecutando en el mismo momento pero la realidad es que en
+
+146
+00:12:13,160 --> 00:12:17,720
+las páginas webs normalmente el 90 o el 95 por ciento del tiempo no lo dedicamos a cpu sino que
+
+147
+00:12:17,720 --> 00:12:22,280
+vamos a ello lo dedicamos a esperar el usuario ya sea para recibir lo que nos está mandando como
+
+148
+00:12:22,280 --> 00:12:26,280
+para mandar lo que le queremos mandar esperar servicios externos esperar la base de datos esperar
+
+149
+00:12:26,280 --> 00:12:30,440
+a la caché al final la mayor parte del tiempo se va se va ni yo por lo cual el guil realmente no es
+
+150
+00:12:30,440 --> 00:12:35,800
+un gran problema y si me dís realmente no se va tanto tiempo en cualquier caso desde pason 3
+
+151
+00:12:37,320 --> 00:12:42,720
+existe digamos una implementación de i o asincrona en pason que es así que yo entonces
+
+152
+00:12:42,720 --> 00:12:48,840
+que es la programación asincrona al final programación sincron es algo muy muy simple que es
+
+153
+00:12:48,840 --> 00:12:54,560
+normalmente si habéis hecho programación de shock es normal y con interés en c al final cuando tú
+
+154
+00:12:54,560 --> 00:12:58,760
+quieres leer de un socket el socket bloquea hasta que tiene o sea digamos que estás bloqueando
+
+155
+00:12:58,760 --> 00:13:03,360
+esperando la lectura vale la programación asincrona que es lo que significa lectura sin ronar entonces
+
+156
+00:13:03,360 --> 00:13:07,680
+la programación la ira sin ronar lo único que haces cambiar eso y lo que dices es quiero leer
+
+157
+00:13:07,680 --> 00:13:11,600
+de este socket pero no quiero esperar a que haya algo para leer por lo cual le lo tú y cuando esté
+
+158
+00:13:11,600 --> 00:13:14,880
+me llamas a mí vale es decir lo haces de forma sin ronar para que puedas ejecutar otras cosas
+
+159
+00:13:14,880 --> 00:13:20,000
+mientras tanto entonces no quiero hablar de esto demasiado porque mañana las 10 de la mañana
+
+160
+00:13:20,000 --> 00:13:24,720
+tenemos una charla miguel y yo justamente sobre sobre el tema vale entonces a quien le interese que
+
+161
+00:13:24,720 --> 00:13:30,360
+se apunte que va a estar genial entonces y la última parte de la parte de escalabilidad vale que es
+
+162
+00:13:30,360 --> 00:13:36,880
+la de obtenciones de código aquí quiero de hecho es la parte más larga voy a hablar de un par de
+
+163
+00:13:36,880 --> 00:13:41,760
+cosas sorprendentemente va a haber muy poco país en este sentido por lo que os decía antes vale la
+
+164
+00:13:41,760 --> 00:13:45,960
+mayor parte de los cuyos de botella seguramente no estén en vuestro código en sí sino en toda la
+
+165
+00:13:45,960 --> 00:13:49,920
+infraestructura que tenéis alrededor y esa lo que le tenéis que prestar más atención pues la primera
+
+166
+00:13:49,920 --> 00:13:55,520
+cosa y más importante para poder escalar correctamente es cachear y al final cachear lo que
+
+167
+00:13:55,520 --> 00:13:59,760
+significa es esto que es un poco triste decirlo en una picon pero es intentar ejecutar cuanto menos
+
+168
+00:13:59,760 --> 00:14:04,880
+código país son mejor vale es decir al final si tienes un primer request y el segundo es igual
+
+169
+00:14:04,880 --> 00:14:08,720
+que el primero no vuelvas a ejecutar todo lo que nos ejecutar cachalo y devuelvo la respuesta al
+
+170
+00:14:08,720 --> 00:14:13,680
+primero vale entonces al final esto significa es cachia agresivamente todo el contenido que puedas
+
+171
+00:14:13,680 --> 00:14:18,320
+absolutamente todo lo que puedas porque eso va a marcar la diferencia aquí tengo un ejemplo disculpame
+
+172
+00:14:18,320 --> 00:14:26,160
+por no poner los los la escala justo gracias por no poner las escalas pero bueno da igual esto no
+
+173
+00:14:26,160 --> 00:14:32,200
+nos interesa demasiado nosotros tenemos en tiquete a muchísimos eventos muchos de ellos se repiten
+
+174
+00:14:32,200 --> 00:14:36,600
+año a año vale entonces este año no sé si visto bueno si alguno bueno nos habéis usado
+
+175
+00:14:36,600 --> 00:14:40,360
+de hecho para comprar la entrada aquí al menos entonces hemos hecho un cambio de imagen vale
+
+176
+00:14:40,360 --> 00:14:43,960
+pero el cambio de imagen tenía un cambio de infraestructura por detrás muchísimo más grande
+
+177
+00:14:43,960 --> 00:14:48,120
+de lo que de lo que digamos se ha hecho público no entonces esto es un evento en concreto que
+
+178
+00:14:48,120 --> 00:14:53,480
+tuvimos en 2014 supongo que se aprecia pero esas dos cosas de ahí son picos los picos de carga
+
+179
+00:14:53,480 --> 00:14:57,760
+de ese evento en concreto con respecto a la base que son el resto de los días es como podéis ver
+
+180
+00:14:57,760 --> 00:15:03,440
+pues es un pico de unas 80 100 veces más tráfico normal esto no supuso levantar 350 máquinas de
+
+181
+00:15:03,440 --> 00:15:08,480
+frontales entonces con la nueva web que ya os digo no fue simplemente un cambio de imagen ese mismo
+
+182
+00:15:08,480 --> 00:15:13,760
+evento esto es la pinta que tiene 350 bajamos a 20 y como viste el pico es tres cuatro veces más no
+
+183
+00:15:13,760 --> 00:15:22,360
+son 80 100 vale perdón no lo siento entonces hay muchas formas de cachear yo voy a mencionar un
+
+184
+00:15:22,360 --> 00:15:26,960
+par simplemente vale porque hay muchas de ellas al final todo lo sé yo creo que muchos de nosotros
+
+185
+00:15:26,960 --> 00:15:30,640
+pensamos para que hachear esto al final pues me tengo que montar un varnish o tengo al final
+
+186
+00:15:30,640 --> 00:15:33,960
+tengo que montar más piezas de infraestructura de las que ya estoy montando y la realidad es que
+
+187
+00:15:33,960 --> 00:15:38,480
+muchas veces usamos muchas herramientas por inercia y realmente no entendemos a o no conocemos
+
+188
+00:15:38,480 --> 00:15:42,160
+absolutamente las posibilidades que nos brindan está en concreto para mí es sangrante o sea
+
+189
+00:15:42,160 --> 00:15:46,960
+que decir en din x que seguramente todos lucemos aunque sea simplemente para servir estáticos o para
+
+190
+00:15:46,960 --> 00:15:52,200
+para poner por delante de wixi o búnico no lo que sea tiene una capa de caché que es impresionante o
+
+191
+00:15:52,200 --> 00:15:59,480
+sea que es un milagro de náhuatl es realmente buena entonces como se puede cachear por ejemplo pues el
+
+192
+00:15:59,480 --> 00:16:04,840
+index vale lo dejo simplemente como documentación no quiero explicar lo que hace cada cosa pero al
+
+193
+00:16:04,840 --> 00:16:09,240
+final lo que estamos consiguiendo con esto es decir que una vez llega el primer request lo que
+
+194
+00:16:09,240 --> 00:16:13,560
+hacheamos en quienes lo guarda y a partir de ahí todos los recués en este caso los próximos 15
+
+195
+00:16:13,560 --> 00:16:18,720
+minutos en los va los va a devolver sin necesidad de llegar a pyson tiene un montón de opciones por
+
+196
+00:16:18,720 --> 00:16:24,160
+ejemplo esa de proxy caché y usted es especialmente interesante para los despliegue fallidos vale
+
+197
+00:16:24,160 --> 00:16:28,440
+esta tiene una cosa muy chula y es que al final es que por ejemplo si si cuando va pyson imagino
+
+198
+00:16:28,440 --> 00:16:33,040
+es que la cacha está está expirada en ese momento si cuando hace una petición se ha
+
+199
+00:16:33,040 --> 00:16:37,480
+vivido de pyson se ha vivido de pyson devuelvo un 500 porque pues no sé ha levantado algo roto en
+
+200
+00:16:37,480 --> 00:16:40,680
+vez de devolver el 500 al usuario lo que hace el engine x es devuelve la última versión
+
+201
+00:16:40,680 --> 00:16:44,520
+cacheada por lo cual digamos que estáis escondiendo el pete que acabáis de tener en producción
+
+202
+00:16:44,520 --> 00:16:51,200
+entonces pero aquí una pregunta importante y es y es en gnex o sea que dice en la infraestructura
+
+203
+00:16:51,200 --> 00:16:54,320
+que hemos dicho antes en la que tenemos detrás de un balanceador de cargo un montón de máquinas
+
+204
+00:16:54,320 --> 00:16:59,120
+con nuestro código es en gnex donde está de final normalmente el engine es lo que se ha
+
+205
+00:16:59,120 --> 00:17:03,740
+tenido en todos los servidores porque pues lo dicho está detrás de un unicorn normalmente os
+
+206
+00:17:03,740 --> 00:17:07,380
+aquí les dice tenés un unicorn un wiss y o algo cualquier cosa de caso de un engine es por
+
+207
+00:17:07,380 --> 00:17:11,200
+lo cual en todas las máquinas tenéis ambas cosas montadas entonces aquí hay que tomar una
+
+208
+00:17:11,200 --> 00:17:17,280
+decisión importante y es que oponemos el engine x como una una digamos una parte superior a los
+
+209
+00:17:17,280 --> 00:17:21,600
+servidores y que se el engine es el que redige a todos los servos que hay debajo o al final
+
+210
+00:17:21,600 --> 00:17:25,600
+seguimos teniendo el engine x en cada uno de los servidores en cuyo caso y vuelvo a usar este gif
+
+211
+00:17:25,600 --> 00:17:30,280
+o sea este este meme al tenemos que hablar de consistencia eventual vale y esto es una cosa
+
+212
+00:17:30,280 --> 00:17:35,080
+muy muy muy importante también la hora de escalar tenéis que entender vuestro problema sobre todo
+
+213
+00:17:35,080 --> 00:17:40,720
+porque escalar de la mejor o digamos o conseguir o sea tenéis que ser muy conscientes de qué
+
+214
+00:17:40,720 --> 00:17:43,840
+objetivos tenéis a la hora de escalar en este caso por ejemplo hay una cosa que se llama
+
+215
+00:17:43,840 --> 00:17:48,440
+consistencia eventual que no significa más más que pues al final se van emitiendo digamos
+
+216
+00:17:48,440 --> 00:17:52,240
+actualizaciones a los sistemas y tarde o temprano sé que van a ser todos que todos van a estar
+
+217
+00:17:52,240 --> 00:17:57,600
+actualizados es mucho más sencillo por ejemplo tomar decisiones de diseño sabiendo que esto
+
+218
+00:17:57,600 --> 00:18:00,920
+lo puedes permitir que si no te lo puedes permitir entonces tenéis que conocer muy buenos
+
+219
+00:18:00,920 --> 00:18:05,880
+requisitos y por qué digo esto con respecto al engine x porque al final si tenemos la caché en
+
+220
+00:18:05,880 --> 00:18:10,080
+cada servidor de bacan el problema que tenemos esté dependiendo de cuando se haga hit en la
+
+221
+00:18:10,080 --> 00:18:14,280
+caché puede que la versión que de una máquina se distinta la que de otro entonces depende de vuestro
+
+222
+00:18:14,280 --> 00:18:19,000
+problema en concreto si eso es realmente un impedimento o no para hacerlo porque si no os lo
+
+223
+00:18:19,000 --> 00:18:22,800
+podéis permitir evidentemente lo que supone es que vais a tener que montar otra capa por encima y
+
+224
+00:18:22,800 --> 00:18:27,280
+otra capa por encima al final es más complejidad porque en esto de escalar os agresir y bueno y en
+
+225
+00:18:27,280 --> 00:18:32,080
+general en la informática mientras más simple sea más sencillos de depurar más sencillos de entender
+
+226
+00:18:32,080 --> 00:18:37,600
+y más sencillos de arreglar nosotros por ejemplo esta es la página de elemento que tenemos ahora
+
+227
+00:18:37,600 --> 00:18:43,200
+mismo vale es una página completamente estática que se sirve a todos los usuarios exactamente
+
+228
+00:18:43,200 --> 00:18:49,120
+igual a excepción de eso de ahí ahí pone mi nombre eso significa que ya nos puede servir
+
+229
+00:18:49,120 --> 00:18:53,360
+exactamente la misma versión a todos no es poder servir el mismo html a todos entonces al
+
+230
+00:18:53,360 --> 00:18:57,280
+finales para nosotros la consistencia eventual en este sentido es suficientemente buena pero
+
+231
+00:18:57,280 --> 00:19:01,400
+eso de ahí arriba a la derecha nos perjudica pues qué es lo que vamos a hacer pues otra cosa muy
+
+232
+00:19:01,400 --> 00:19:06,560
+típica que se hace acabamos la renderización en javascript al final lanzó el mismo html a todo
+
+233
+00:19:06,560 --> 00:19:11,440
+el mundo ese html no tiene en seibar y lo que hago es que cuando se carga pre-relleno las partes que
+
+234
+00:19:11,440 --> 00:19:15,560
+son dependientes del usuario de esa manera acabo de conseguir poder mandar el mismo html a todo
+
+235
+00:19:15,560 --> 00:19:20,080
+el mundo sin tener que por ejemplo pues complicarme bastante más la vida generando pues en vez de
+
+236
+00:19:20,080 --> 00:19:24,600
+el html entero generando pues esta parte está cachada pero esta se la tengo que pedir a una
+
+237
+00:19:24,600 --> 00:19:28,040
+vista de yang que en concreto me devuelve el html sólo de este pedacito para inyectarse a lo
+
+238
+00:19:28,040 --> 00:19:32,000
+usuario pero al finales eso es otra manera de hacerlo en caso de que no me lo pueda permitir pero
+
+239
+00:19:32,000 --> 00:19:38,240
+desde luego para nosotros es mucho mejor esto mucho más sencillo y nos sirve a condimitación
+
+240
+00:19:38,240 --> 00:19:45,200
+evidentemente versionar absolutamente todos los assets que tenéis y subidos a un cdn no o sea no que
+
+241
+00:19:45,200 --> 00:19:52,720
+bosconegines no sirve estáticos no tiene sentido al final es muy importante poner fechas de
+
+242
+00:19:52,720 --> 00:19:56,840
+inspiración muy muy muy grandes a todas de hecho algo que se hace muy típico y que yango por ejemplo
+
+243
+00:19:56,840 --> 00:20:01,880
+que se mueve los usuarios mucho nosotros usamos bastante desde luego tiene en el propio core que
+
+244
+00:20:01,880 --> 00:20:07,080
+es al final versionar los estáticos pues cada vez que generó un estático nuevo le pongo en el md5
+
+245
+00:20:07,080 --> 00:20:12,800
+del fichero y digo que ese estático me va a caducar en 2050 porque cuando cambia algo en eso lo que
+
+246
+00:20:12,800 --> 00:20:17,200
+va a cambiar el digamos el nombre en el fichero o el porisín del fichero es decir el al final
+
+247
+00:20:17,200 --> 00:20:20,600
+en la verdad se va a dar cuenta de que es un fichero distinto y va a hacer otra petición entonces
+
+248
+00:20:20,600 --> 00:20:24,600
+por supuesto mi dad todas las fechas de inspiración que tenéis en absolutamente todo algo que no
+
+249
+00:20:24,600 --> 00:20:29,760
+se impuesta nada en nada de atención en el en el enx por ejemplo es pues a los etax a los a los
+
+250
+00:20:29,760 --> 00:20:37,040
+tipos de al final pues hay cuatro taxe específicos en en en http para hacer cacho pues prestar
+
+251
+00:20:37,040 --> 00:20:40,440
+esa atención porque al final es muy importante y en la gráfica esta que habéis visto antes la
+
+252
+00:20:40,440 --> 00:20:45,920
+diferencia entre 100 veces más o tres veces más es en muchos casos la fecha de inspiración que le
+
+253
+00:20:45,920 --> 00:20:51,000
+pones a los elementos y por supuesto usar un cdn si hay que sea pues nosotros nosotros estamos en
+
+254
+00:20:51,000 --> 00:20:57,800
+obs usamos clodfront pero es que hay 100 mil cds siguiente tema del que hablar muy importante
+
+255
+00:20:57,800 --> 00:21:02,280
+también que son los background jobs al final hay que tener una cosa muy clara y es que la
+
+256
+00:21:02,280 --> 00:21:07,080
+mayor parte de las circunstancias no siempre cada vez que tus workers al final vosotros cuando
+
+257
+00:21:07,080 --> 00:21:10,160
+levantes un gúnico no un wishgill o lo que sea al final decís cuántos workers queréis tener
+
+258
+00:21:10,160 --> 00:21:14,720
+vale entonces esos workers cuando están ejecutando código vuestro no están pudiendo atender nuevos
+
+259
+00:21:14,720 --> 00:21:19,560
+clientes y si no pudieran atender nuevos clientes al final digamos que tenéis un un aparejo un
+
+260
+00:21:19,560 --> 00:21:23,000
+límite en el número de personas que podéis atender por servidor mientras más alto si es el
+
+261
+00:21:23,000 --> 00:21:26,960
+límite menos máquinas vais a tener que levantar para atender a la misma cantidad de gente entonces
+
+262
+00:21:26,960 --> 00:21:33,280
+una de las cosas más normales o típicas que suele hacer todo el mundo cuando coge cierto tamaño es
+
+263
+00:21:33,280 --> 00:21:40,160
+al final es llevarte absolutamente todo lo que puedas a workers a workers que estén en background
+
+264
+00:21:40,160 --> 00:21:44,520
+o sea que no estén atados al request del usuario y especialmente todo lo que ve que tenga que ver
+
+265
+00:21:44,520 --> 00:21:48,960
+con ello y esto es muy importante y lo vuelvo a repetir en las páginas en una página web el 90
+
+266
+00:21:48,960 --> 00:21:53,560
+por ciento del tiempo se pasa en ido no se pasa en cpu por lo cual absolutamente es algo muy inocente
+
+267
+00:21:53,560 --> 00:21:57,440
+o sea la función sin mail de yango parece muy inocente pero es que como el semiviro se mete
+
+268
+00:21:57,440 --> 00:22:02,740
+peste cargado esa pequeña diferencia así tenéis un pico de tráfico y provocáis vosotros
+
+269
+00:22:02,740 --> 00:22:06,880
+provocáis que vuestro smtp se caiga a que habéis de genera un cuello y botilla de la hostia en la
+
+270
+00:22:06,880 --> 00:22:10,120
+que todo el mundo se empieza a quedar bloqueado en esa llamada en la de mandar un email entonces al
+
+271
+00:22:10,120 --> 00:22:14,760
+final intentad mover absolutamente todo lo que tengáis a background jobs sobre todo si es de ello
+
+272
+00:22:14,760 --> 00:22:22,360
+todo lo que se haya ido intentad sacarlo del request del usuario y por último y no por ello menos
+
+273
+00:22:22,360 --> 00:22:28,760
+importante quiero hablar un poco de las bases de datos las bases de datos están muy en en auge
+
+274
+00:22:28,760 --> 00:22:33,880
+ahora mismo bueno en los últimos cinco años tampoco es ahora mismo entonces y esto es esto
+
+275
+00:22:33,880 --> 00:22:39,000
+evidentemente eso es mi personal es la imagen de mi opinión personal al final las bases de datos
+
+276
+00:22:39,000 --> 00:22:42,440
+relacionales no suelen ser el problema es decir últimamente yo escucho muchísimos como bueno
+
+277
+00:22:42,440 --> 00:22:47,200
+es que eso no lo puedes hacer con compagnes y que le tienes que irte a mongo entonces al final la base
+
+278
+00:22:47,200 --> 00:22:51,840
+de datos de una base de datos de base de datos relacionales se lleva usando 40 años solucionan
+
+279
+00:22:51,840 --> 00:22:56,640
+muchísimos problemas funcionan empresas gigantescas la base de datos relacional no suele ser el problema
+
+280
+00:22:56,640 --> 00:23:01,680
+si la base de datos es un cuello y botella para vosotros seguramente estáis haciendo algo mal o
+
+281
+00:23:01,680 --> 00:23:05,720
+podéis mejorar bastante y cómo estáis haciendo el uso y os lo digo por experiencia porque nos pasa
+
+282
+00:23:05,720 --> 00:23:10,880
+a nosotros entonces hay muchísimas o sea esto también es muy específico de vuestro problema pero
+
+283
+00:23:10,880 --> 00:23:15,440
+al final hay ciertos tips muy típicos tampoco es bien descubrir nada nuevo para poder mejorar el
+
+284
+00:23:15,440 --> 00:23:19,520
+rendimiento de esto lo primero evidentemente y es algo que hace muy poca gente curiosamente mirar el
+
+285
+00:23:19,520 --> 00:23:23,400
+slow log pero al final la base de datos es como cualquier otra cosa puedes tener a ciertas a
+
+286
+00:23:23,400 --> 00:23:27,640
+ciertos clientes haciendo ciertas queries si tenéis que tardan mucho evidentemente la base de datos
+
+287
+00:23:27,640 --> 00:23:31,800
+se ahoga entonces mirando el slow log lo primero que os voy a dar cuenta es de los índices que os
+
+288
+00:23:31,800 --> 00:23:35,680
+faltan que es algo otra cosa la que se le presta muy poca atención los que uséis yango o los que
+
+289
+00:23:35,680 --> 00:23:40,360
+no uséis uséis cualquier otro rm al final genera los modelos y el modelo por defecto lo que te
+
+290
+00:23:40,360 --> 00:23:45,760
+creas el primer aquí pero ya está y no realmente no nos fijamos en cómo estoy usando este modelo
+
+291
+00:23:45,760 --> 00:23:49,600
+como estoy usando esta base de datos relacionado con su cómo estoy usando esta tabla qué índices
+
+292
+00:23:49,600 --> 00:23:53,760
+necesito generar para que la búsqueda en esta tabla sea buena pero al final si tenéis mil mil
+
+293
+00:23:53,760 --> 00:23:57,040
+filas en la tabla pues no se va a pasar nada pero cuando tengáis 15 a 20 millones de filas en la
+
+294
+00:23:57,040 --> 00:24:01,640
+tabla a lo mejor empecé a tener un pequeño problema de rendimiento entonces optimizar
+
+295
+00:24:01,640 --> 00:24:05,640
+vuestras queries lentas y vuestras queries recurrentes aunque no sea lenta si naceis una
+
+296
+00:24:05,640 --> 00:24:10,320
+query 100 mil veces por segundo e intentado optimizarla aquí tengo un ejemplo que nos ha
+
+297
+00:24:10,320 --> 00:24:15,720
+pasado a nosotros en concreto y que creo que es muy típico en cualquier tipo de comers un contador
+
+298
+00:24:15,720 --> 00:24:19,920
+es que todos tenemos contadores incluso si no se insune como es al final lo típico de pues
+
+299
+00:24:19,920 --> 00:24:25,000
+en 16 comentarios en este en este post vale al final hay muchas formas de hacer un contador la que
+
+300
+00:24:25,000 --> 00:24:29,040
+primero se nos ocurre a todos supongo que es la más típica que es cual la que hacemos cuando somos
+
+301
+00:24:29,040 --> 00:24:34,480
+pequeños y esto no está mal se quiere decir y eso es algo importante cada problema tiene una solución
+
+302
+00:24:34,480 --> 00:24:39,000
+dependiendo de en qué momento está la empresa vale entonces la primera que se nos ocurre simplemente
+
+303
+00:24:39,000 --> 00:24:43,760
+pues hago un counter absolutamente todo pues si quiero contar en los comentarios a un caún de la
+
+304
+00:24:43,760 --> 00:24:47,960
+tabla donde el poste dice igual a 5 listo y sacó cuántos son vale esto rápidamente se nos queda
+
+305
+00:24:47,960 --> 00:24:53,880
+pequeño vídeo entemente la segunda digamos la segunda fase que seguramente atravesamos todos es
+
+306
+00:24:53,880 --> 00:24:58,840
+de nos desnormalizar esa parte de la base datos es decir es coger y no hacer un caún sino guardar
+
+307
+00:24:58,840 --> 00:25:05,800
+normalmente en el en la tabla padre en este caso sería la tabla de post por ejemplo guardar pues un
+
+308
+00:25:05,800 --> 00:25:09,520
+campo en el que guardo cuántos comentarios tiene el post o cuántos tomates he vendido por ejemplo
+
+309
+00:25:09,520 --> 00:25:15,280
+y lo único que hago es mirar ese campo y actualizar ese campo cuando se vende o se deja de vender uno
+
+310
+00:25:15,280 --> 00:25:22,760
+y llega este problema y es que llega un momento en el que realmente tenéis muchas peticiones
+
+311
+00:25:22,760 --> 00:25:28,480
+a esa esa esa row y empieza a pasar esto y es que si haces un software es listo en maize
+
+312
+00:25:28,480 --> 00:25:33,920
+cuéle por ejemplo de repente ves que hay pues tres mil cueris intentando coger ese campo en concreto
+
+313
+00:25:33,920 --> 00:25:37,960
+vale entonces cuál es el siguiente paso típico que se puede poder hacer por ejemplo pues al final
+
+314
+00:25:37,960 --> 00:25:43,800
+hacer sharding de ese campo pues en vez de tener un contador tengo siete contadores para que la batalla
+
+315
+00:25:43,800 --> 00:25:47,480
+digamos por acceder al contador no sea siempre sobre la misma sino poder distribuir entre los siete
+
+316
+00:25:47,480 --> 00:25:51,840
+entonces al para poder contar lo que hago simplemente una suma de todos los contadores y
+
+317
+00:25:51,840 --> 00:25:55,960
+para poder actualizarlo actualizó un contador normalmente pues y aquí ya depende de cómo queráis
+
+318
+00:25:55,960 --> 00:26:00,320
+y depende de vuestro problema o hago un shard random digamos en el que pues aleatoriamente
+
+319
+00:26:00,320 --> 00:26:03,840
+voy uno de los contadores o por ejemplo si tengo alguna manera de decir todo este grupo va a
+
+320
+00:26:03,840 --> 00:26:08,200
+este contador siempre todo este grupo siempre va a siempre este contador de tal manera evidentemente
+
+321
+00:26:08,200 --> 00:26:13,520
+que la carga se equilibrada porque si no no habéis resultado nada pues pues eso cualquiera de las
+
+322
+00:26:13,520 --> 00:26:18,880
+dos maneras o evidentemente otra solución típica que se puede hacer pues es pues efectivamente la
+
+323
+00:26:18,880 --> 00:26:23,960
+base de datos en este momento no me está dando la base de datos relacional tiene un motor complejísimo
+
+324
+00:26:23,960 --> 00:26:27,880
+transaccional que para esto no me sirve a lo mejor entonces simplemente me sirvo una cosa
+
+325
+00:26:27,880 --> 00:26:31,680
+muchísimo más simple como redis en este caso que tiene contadores que funcionan evidentemente
+
+326
+00:26:31,680 --> 00:26:35,480
+infinitamente más rápido y no porque redis sea mejor sino porque redis lo hicieron otro tipo
+
+327
+00:26:35,480 --> 00:26:41,200
+completamente distinto de problema que una base de datos relacional pero siempre con una cosa muy muy
+
+328
+00:26:41,200 --> 00:26:45,960
+muy importante y es que cuando vayáis a mover cualquier tipo de cuello de botella a cualquier otro
+
+329
+00:26:45,960 --> 00:26:50,560
+tipo de herramienta por ejemplo a redis en el caso anterior siempre tener un plan b al final nosotros
+
+330
+00:26:50,560 --> 00:26:54,480
+por ejemplo usamos redis en en catch pero siempre los usamos o bueno usamos como caché normalmente
+
+331
+00:26:54,480 --> 00:26:59,160
+también almacenamos datos en ellos pero siempre siendo conscientes de que cualquiera de esas dos
+
+332
+00:26:59,160 --> 00:27:03,320
+herramientas nos puede fallar en cualquier momento y nos puede fallar puede significar simplemente pues
+
+333
+00:27:03,320 --> 00:27:06,800
+eso que nos viene un evento grande por ejemplo y el men catch lo tiramos a la basura para levantar
+
+334
+00:27:06,800 --> 00:27:10,360
+unos siete veces más grande acabamos de perder todo en un catch entonces hay que ser siempre
+
+335
+00:27:10,360 --> 00:27:14,800
+conscientes de que hay que tener un plan b cuando algo sale mal cuando te sales en nuestro caso de la
+
+336
+00:27:14,800 --> 00:27:21,160
+base de datos transaccional que digamos es nuestro nuestra tabla roseta otra forma de escalar muy
+
+337
+00:27:21,160 --> 00:27:26,760
+sencilla es pues usar esclavos de lectura al final tenéis una base de datos transaccional podéis
+
+338
+00:27:26,760 --> 00:27:31,520
+levantar esclavos de lectura alrededor vale tanto más que le como posgue se cuelen los dos permiten
+
+339
+00:27:31,520 --> 00:27:35,520
+levantar de hecho incluso podéis montar clastros en caso de que queréis escribir más de uno nosotros
+
+340
+00:27:35,520 --> 00:27:42,760
+por ejemplo nos ha vaso nuestra base de datos nos ha base de datos principal es un más que tenemos
+
+341
+00:27:42,760 --> 00:27:48,960
+en rd se aquí que tener un cuidado con los esclavos de lectura y también depende de vuestro
+
+342
+00:27:48,960 --> 00:27:53,160
+problema resolver es que los esclavos de lectura en altas cargas pueden llegar a tener mucho
+
+343
+00:27:53,160 --> 00:27:56,680
+delay con respecto al principal vale eso es algo muy peligroso que os va a atacar justo en el peor
+
+344
+00:27:56,680 --> 00:28:01,480
+momento de todos porque al final es escribirse en el de escritura evidentemente y para leer un
+
+345
+00:28:01,480 --> 00:28:05,040
+segundo después te vas a cualquiera de los de lectura que hay y de repente ese ruto vean
+
+346
+00:28:05,040 --> 00:28:09,440
+existe eso en baja carga puede ser que no lo veáis porque todos están sincronizados pero
+
+347
+00:28:09,440 --> 00:28:13,160
+alta carga de repente os dais cuenta de que tiene un delay de unos 60 segundos con respecto al de
+
+348
+00:28:13,160 --> 00:28:18,520
+escritura entonces mucho cuidado con eso lo que la nota está contaba antes de nosotros por ejemplo
+
+349
+00:28:18,520 --> 00:28:25,040
+pues rd se sacaba hace poco un nuevo bueno hace poco ya hace meses una base de datos distinta que
+
+350
+00:28:25,040 --> 00:28:28,280
+se llama aurora que tiene una cosa muy curiosa al final es completamente compatible con más
+
+351
+00:28:28,280 --> 00:28:31,960
+que le y tiene una cosa muy curiosa y es que la replicación de lectura no la hace a través
+
+352
+00:28:31,960 --> 00:28:35,520
+del binary log que es lo que hace más que coge normalmente sino que hace a través de disco es
+
+353
+00:28:35,520 --> 00:28:40,360
+decir comparte el disco entre todos los esclavos y el principal por lo cual lo que hemos conseguido
+
+354
+00:28:40,360 --> 00:28:46,600
+con esto con cero esfuerzo digamos porque ha sido darle un botón y rezar porque salise bien ha sido
+
+355
+00:28:46,600 --> 00:28:50,960
+poder tener esclavos de lectura que no tienen ningún tipo de retardo con respecto al principal más
+
+356
+00:28:50,960 --> 00:28:56,320
+allá de ciertos milisegundos vale echad un ojo porque si estáis en clout seguramente os provean
+
+357
+00:28:56,320 --> 00:29:00,000
+de muchas herramientas y no sólo hablo de esto en específico pero es probablemente muchas herramientas
+
+358
+00:29:00,000 --> 00:29:04,640
+que os puedan ayudar mucho a resolver este problema nosotros somos de la filosofía normalmente por
+
+359
+00:29:04,640 --> 00:29:10,360
+ejemplo en que solemos atarnos a tecnologías pero no a servicios pero no a tecnologías y con esto
+
+360
+00:29:10,360 --> 00:29:14,600
+quiero decir al final aurora es un maiz se cuele con ciertas ventajas pero es un maiz se cuelen entonces
+
+361
+00:29:14,600 --> 00:29:19,840
+no pero por ejemplo pues tenemos otros servicios de amazon que son específicos amazon que no son libres
+
+362
+00:29:19,840 --> 00:29:25,080
+y que nos atarían a usar amazon esos servicios intentamos por lo normal no usarlos pero al final
+
+363
+00:29:25,080 --> 00:29:28,960
+sigue es cierto que tiene otros muchos que son públicos que gestionan ellos que incluso tienen
+
+364
+00:29:28,960 --> 00:29:34,240
+mejoras y que al final pues simplifican mucho nuestra vida y por último y esto es muy importante
+
+365
+00:29:34,240 --> 00:29:40,600
+también y es que usamos bases datos en gran medida sin entenderlas entender mucho el modo de transacciones
+
+366
+00:29:40,600 --> 00:29:46,120
+que tenéis y el nivel de isolación que tenéis en la base de datos al final lo más complejo que
+
+367
+00:29:46,120 --> 00:29:49,440
+tiene la base de datos en diferentes el motor transaccional y el motor transaccional tiene
+
+368
+00:29:49,440 --> 00:29:52,800
+una cosa que se llama modos de isolación que pueden ser unos u otros y con respecto a que
+
+369
+00:29:52,800 --> 00:29:57,400
+elijas uno u otro la carga de la base de datos puede ser puede usar la carga que puede soportar
+
+370
+00:29:57,400 --> 00:30:00,840
+la base de datos es infinitamente más grande infinitamente más pequeña dependiendo con que
+
+371
+00:30:00,840 --> 00:30:04,320
+modo de isolación cojáis y estoy seguro de que el 90 por ciento de la gente usa el deporte de
+
+372
+00:30:04,320 --> 00:30:08,760
+efecto entonces echado un ojo porque a lo mejor depende de vuestro problema y de vuestro problema
+
+373
+00:30:08,760 --> 00:30:12,040
+específico quiero decir para el final no tenéis que tener la base de datos en moda y isolación
+
+374
+00:30:12,040 --> 00:30:14,840
+sino la conexión que tenéis con la base de datos por lo cual dependiendo de que estéis haciendo
+
+375
+00:30:14,840 --> 00:30:19,200
+pues usan uno u otro pues podéis mejorar muchísimo y lo mismo con el modo de transacción o sea al
+
+376
+00:30:19,200 --> 00:30:23,600
+final si tenéis un auto comit o no lo tenéis o sea si levantáis tres transacciones por conexión o
+
+377
+00:30:23,600 --> 00:30:40,160
+solo una etcétera y eso es todo lo que os quiero contar muchas gracias
+
