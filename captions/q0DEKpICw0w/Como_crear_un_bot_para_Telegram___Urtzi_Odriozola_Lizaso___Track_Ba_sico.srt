@@ -1,0 +1,784 @@
+1
+00:00:00,000 --> 00:00:18,760
+Soy Guglio Derozola, soy web developer en Codex Intax y bueno, hoy voy a tratar de
+
+2
+00:00:18,760 --> 00:00:25,280
+explicaros cómo crear un bot para Telegram. Nosotros utilizamos para servicio de notificaciones,
+
+3
+00:00:25,280 --> 00:00:34,120
+se pueden hacer virgerías con los bots. Me he centrado un poco en cómo integrarlo en un
+
+4
+00:00:34,120 --> 00:00:41,800
+Django, porque nosotros trabajamos con Django, pero es un paquete Python, así que se podría aplicar
+
+5
+00:00:41,800 --> 00:00:55,840
+en diferentes ámbitos. Un poco sobre mí, estudié en la Universidad de Mondraón, nosotros aprendimos
+
+6
+00:00:55,840 --> 00:01:04,640
+en Java, decían que era lo más, luego entré en una empresa de OpenRp, tuve mi primer contacto con
+
+7
+00:01:04,640 --> 00:01:15,320
+Python, estudié ahí desarrollando modulos en Python y dando un poco de consultoría y desde hace
+
+8
+00:01:15,320 --> 00:01:22,080
+tres años estoy en Codex Intax trabajando con Python y Django, como desarrollador web.
+
+9
+00:01:24,240 --> 00:01:27,960
+¿Cuántos de vosotros te han instalado Telegram en los Smoyes?
+
+10
+00:01:27,960 --> 00:01:42,080
+Bueno, tengo una breve explicación aquí, pero para los que no sepáis no me pagan por esto,
+
+11
+00:01:42,080 --> 00:01:50,200
+pero bueno, Telegram es una aplicación gratis de mensajería, simple, es open source, parte.
+
+12
+00:01:50,200 --> 00:01:58,160
+Bueno, podéis utilizar en distintos dispositivos, como smartphones, tablets,
+
+13
+00:01:58,160 --> 00:02:09,160
+ordenadores, es multiplataforma, se puede arrancar en un browser y está bueno.
+
+14
+00:02:09,160 --> 00:02:14,960
+Para mí es una alternativa a WhatsApp, aunque todavía hay gente que no lo utiliza y tal,
+
+15
+00:02:14,960 --> 00:02:23,600
+espero que a futuro tenga más de esto. Bueno, es obvio, sirve para enviar mensajes, fotos,
+
+16
+00:02:23,600 --> 00:02:29,760
+vídeos, ficheros de todo tipo, incluso PDFs, documentos de Word, presentaciones,
+
+17
+00:02:32,200 --> 00:02:39,400
+se pueden crear grupos de hasta 200 personas, esto es una locura, no lo hagáis, estoy en un grupo de 50.
+
+18
+00:02:39,400 --> 00:02:46,040
+Se pueden buscar personas por su NIC, por su nombre de usuario, esto está muy bien,
+
+19
+00:02:46,040 --> 00:02:52,920
+lo utilizaremos luego porque al mencionar a una persona se crea un evento y aprovecharemos
+
+20
+00:02:52,920 --> 00:03:00,280
+ese evento para luego actuar en consecuencia. Bueno, y como resultado Telegram,
+
+21
+00:03:00,280 --> 00:03:11,080
+es una mezcla, una combinación de SMS y ME. Pero uno, ¿qué es un bot? Entonces, Telegram.
+
+22
+00:03:11,080 --> 00:03:19,240
+Al fin y al cabo es una cuenta de Telegram que se opera a base de software,
+
+23
+00:03:21,240 --> 00:03:26,360
+muchos de los bots tienen funcionalidades de inteligencia artificial, pueden hacer casi
+
+24
+00:03:26,360 --> 00:03:33,800
+de todo, te enseñan a jugar, buscar, remitir, por ejemplo, tenéis ahí un bot, es de Telegram,
+
+25
+00:03:35,160 --> 00:03:42,920
+te ponen stickers, lo puntuáis con estrellas, simplemente te va dando stickers y más puntuando,
+
+26
+00:03:42,920 --> 00:03:59,000
+súper sencillo, bueno, más ejemplos, hay juegos de Telegram, incluso hay bots que te dan imágenes
+
+27
+00:03:59,000 --> 00:04:08,920
+de Google, al azar, también puedes crear encuestas y crear y compartir con tus amigos,
+
+28
+00:04:08,920 --> 00:04:17,320
+luego que recibes los resultados, está muy bien. Pero ¿qué podemos hacer? Bueno, este es un caso
+
+29
+00:04:17,320 --> 00:04:27,320
+real que tuve yo, hace un poco más de un año, desarrollé un sitio web para gamers pascoparlantes,
+
+30
+00:04:27,320 --> 00:04:35,800
+al principio éramos tres, pero luego se añadió gente de otras ciudades y tal,
+
+31
+00:04:35,800 --> 00:04:42,520
+hay gente que no conozco, entonces desarrollamos a distintos tiempos y tal, y para gestionar
+
+32
+00:04:42,520 --> 00:04:51,560
+toda esta web necesitábamos algo, si nos ocurrió crear un grupo de Telegram y poner notificaciones
+
+33
+00:04:51,560 --> 00:04:59,720
+de bots de Telegram, en caso de que se subiera un artículo, un gameplay, alguien se registra,
+
+34
+00:04:59,720 --> 00:05:06,680
+tuviéramos una notificación y que alguien se encarga en cualquier momento de gestionar esa tarea,
+
+35
+00:05:06,680 --> 00:05:18,920
+ahí tenemos el grupo, el bot se encarga de lanzar un mensaje con una URL al backend de Django,
+
+36
+00:05:18,920 --> 00:05:31,080
+entras ahí desde el móvil y puedes hacer editar el artículo o lo que sea. ¿Qué más? También
+
+37
+00:05:31,080 --> 00:05:37,880
+montamos un servidor de Minecraft y los administradores de Minecraft no pueden estar todo el rato
+
+38
+00:05:37,880 --> 00:05:44,040
+en el servidor y no sé si sabéis pero en Minecraft se pueden poner comandos, aún no se le ocurrió
+
+39
+00:05:44,040 --> 00:05:52,280
+desarrollar un plugin en Java que se conecta a la web, entonces tu metes un comando, ayúdame,
+
+40
+00:05:52,280 --> 00:06:03,640
+se me han perdido todos los diamantes. El mensaje va directamente al móvil, según el rango del
+
+41
+00:06:03,640 --> 00:06:14,760
+usuario, si es b pues normal, se le atiende, eso ya depende del administrador. Luego tenemos otro
+
+42
+00:06:14,760 --> 00:06:21,080
+problema también, los que juegan en Minecraft tienen que estar registrados en la página web,
+
+43
+00:06:21,080 --> 00:06:31,720
+tenemos un wild list para tener un cierto control y claro al principio denegamos el acceso directamente
+
+44
+00:06:31,720 --> 00:06:39,320
+al servidor, o sea el usuario final, la sensación que tenía era cuando intentaba logrear el servidor
+
+45
+00:06:39,320 --> 00:06:46,840
+decía acceso de negado y esto generaba frustración y decía joder qué pasa, el servidor está caído,
+
+46
+00:06:46,840 --> 00:06:53,400
+esto es una mierda, entonces dijimos bueno y por qué no les dejamos entrar, por lo menos a una sala
+
+47
+00:06:53,400 --> 00:07:02,040
+vacía, nosotros le llamamos la cárcel y no hay nada y hay un cárcel, un cárcel que pone para jugar en este juego de tal,
+
+48
+00:07:02,040 --> 00:07:09,240
+tenés que registraros en el sitio web, por favor registraros y luego ya es ratuito y tal, pero la gente
+
+49
+00:07:09,240 --> 00:07:17,560
+entra directamente y no leé el cárcel, no sé por qué, nadie leé el cárcel, bueno también hay que ver que la gente
+
+50
+00:07:17,560 --> 00:07:28,600
+entra aquí son niños, son niños de 8 a 16 años, esto es no, tampoco controlado mucho, pues bueno se nos ocurre
+
+51
+00:07:28,600 --> 00:07:38,600
+poner un sistema de notificaciones que cuando entra un anónimo nos llega un mensaje, alguien ha entrado,
+
+52
+00:07:38,600 --> 00:07:44,680
+cuando entra de nuevo otra vez y a la tercera ya decimos este tiene un problema y vamos a ayudarle,
+
+53
+00:07:44,680 --> 00:07:55,400
+bueno aquí tengo un pequeño vídeo, no sé si se ve,
+
+54
+00:07:59,400 --> 00:08:07,080
+bueno, aquí lo demo, imaginaos que entra, ustra he perdido todo el alimentario,
+
+55
+00:08:07,080 --> 00:08:17,320
+entonces creamos un punto, un esto y pone, está en más, ayuda, he perdido todo,
+
+56
+00:08:17,320 --> 00:08:30,040
+no he escrito mal,
+
+57
+00:08:30,040 --> 00:08:45,160
+bueno y esto,
+
+58
+00:08:45,160 --> 00:09:01,360
+Un mensaje, he perdido todo.
+
+59
+00:09:01,360 --> 00:09:03,440
+Vale, ¿qué más?
+
+60
+00:09:03,440 --> 00:09:11,440
+Bueno, en nuestra empresa tenemos un montón de servicios, webs, flulando por ahí, y
+
+61
+00:09:11,440 --> 00:09:16,440
+tenemos sistemas de monitorización, CACTI, K-Bot, ¿vale?
+
+62
+00:09:16,440 --> 00:09:18,440
+Entonces, ¿qué es lo que pensamos?
+
+63
+00:09:18,440 --> 00:09:26,440
+Bueno, un compañero mío hizo un plugin para K-Bot y cuando salta una alerta, nos llega
+
+64
+00:09:26,440 --> 00:09:29,440
+mensaje a mover.
+
+65
+00:09:29,440 --> 00:09:36,440
+Entonces, tenemos distintos tipos de mensajes, de alertas, del servidor ha caído, ha vuelto
+
+66
+00:09:36,440 --> 00:09:40,440
+a re-relar, tal, ¿vale?
+
+67
+00:09:40,440 --> 00:09:45,440
+A veces es una locura, pero bueno, está bien también, tenerlo ahí.
+
+68
+00:09:45,440 --> 00:09:55,440
+Vale, aquí tenemos el K-Bot, si alguien le interesa, ahí está el link, pal plugin.
+
+69
+00:09:55,440 --> 00:10:02,440
+Vale, y haciendo esta presentación se me ocurrió, ¿en qué se puede utilizar, o sea,
+
+70
+00:10:02,440 --> 00:10:06,440
+en qué más se puede utilizar Telegram, ¿no?
+
+71
+00:10:06,440 --> 00:10:15,440
+Bueno, yo he sido muy fan de la modelación 3D, animación 3D y para eso he utilizado
+
+72
+00:10:15,440 --> 00:10:23,440
+Blender, no sé si conocéis, está hecho en Python, y se me ocurrió, a veces hacer
+
+73
+00:10:23,440 --> 00:10:29,440
+un render de una imagen, según qué modelos, qué tipo de texturas o luces tienes, igual
+
+74
+00:10:29,440 --> 00:10:37,440
+tarda dos días, te puede tardar dos días en una escena, te dije, al final del proceso
+
+75
+00:10:37,440 --> 00:10:42,440
+pones un sistema, bueno, una notificación y lo tienes en el móvil, ¿no?
+
+76
+00:10:42,440 --> 00:10:46,440
+Tu render ya ha finalizado, por ejemplo.
+
+77
+00:10:46,440 --> 00:10:47,440
+¿O qué más?
+
+78
+00:10:47,440 --> 00:10:55,440
+Tienes una red neuronal, yo que se tengo un amigo en Estados Unidos que es bioinformático,
+
+79
+00:10:55,440 --> 00:11:03,440
+está trabajando con matrices y proteínas, está cotejando datos en una alta centra enorme,
+
+80
+00:11:03,440 --> 00:11:11,440
+son cálculos matemáticos enormes, entonces imaginaos que al final del cálculo te hayan
+
+81
+00:11:11,440 --> 00:11:16,440
+un mensaje de, bueno, el resultado es tal con...
+
+82
+00:11:16,440 --> 00:11:19,440
+Sí, son ideas, ¿no?
+
+83
+00:11:19,440 --> 00:11:21,440
+¿Qué se pueden hacer?
+
+84
+00:11:21,440 --> 00:11:26,440
+Bueno, pero para eso tenemos que crear un bot, ¿vale?
+
+85
+00:11:26,440 --> 00:11:31,440
+Es súper sencillo, si tenéis instalado Telegram, simplemente tenéis que buscar al bot
+
+86
+00:11:31,440 --> 00:11:35,440
+padre, que es el padre de todos los bots, ¿vale?
+
+87
+00:11:35,440 --> 00:11:42,440
+Abrís una conversación con él, bueno, le doy un stack, es un comando,
+
+88
+00:11:42,440 --> 00:11:49,440
+y bueno, os enseñará todas las opciones que tenéis para crear un bot, tunearlo y todo
+
+89
+00:11:49,440 --> 00:11:52,440
+y le decís un new bot, ¿vale?
+
+90
+00:11:52,440 --> 00:11:56,440
+Os preguntará, ¿qué nombre le quieres poner a tu bot?
+
+91
+00:11:56,440 --> 00:11:58,440
+Le decís, pues yo que sé.
+
+92
+00:11:58,440 --> 00:12:06,440
+Un nombre, luego os preguntará por un mic, un nombre de usuario, y ya está, al final
+
+93
+00:12:06,440 --> 00:12:12,440
+os dará un churro, una vez toquen, lo guardáis, van luego, y eso es todo, ¿vale?
+
+94
+00:12:12,440 --> 00:12:18,440
+Tenéis un bot que no hace nada, es un new bot, pero tenéis un bot, ¿vale?
+
+95
+00:12:18,440 --> 00:12:29,440
+En ese link de documentación le podéis poner una imagen de perfil, descripción,
+
+96
+00:12:29,440 --> 00:12:33,440
+bueno, en una serie de opciones, están guais.
+
+97
+00:12:33,440 --> 00:12:41,440
+El siguiente paso será añadir al grupo de admins el bot, ¿vale?
+
+98
+00:12:41,440 --> 00:12:46,440
+Esto genera un evento, que lo tenemos que capturar luego,
+
+99
+00:12:46,440 --> 00:12:55,440
+vamos a capturar poniendo esta, bueno, está llamada a pie en un browser,
+
+100
+00:12:55,440 --> 00:13:02,440
+con el token ahí, nos va a devolver, el bot nos va a devolver un JSON, ¿vale?
+
+101
+00:13:02,440 --> 00:13:09,440
+y si os fijáis ahí en el medio, nos devuelve la idea de chat, ¿vale?
+
+102
+00:13:09,440 --> 00:13:19,440
+También lo guardamos, y bueno, lo siguiente, ¿qué más necesitamos?
+
+103
+00:13:19,440 --> 00:13:24,440
+Necesitamos el paquete Python para comunicarnos con el bot, ¿vale?
+
+104
+00:13:24,440 --> 00:13:28,440
+La librería Python se llama PyTelegramBotApply, ¿vale?
+
+105
+00:13:28,440 --> 00:13:33,440
+Y luego todo es opcional, me lo he utilizado yo,
+
+106
+00:13:33,440 --> 00:13:39,440
+una librería que comierte los comandos de gestión de Django en demonios, ¿vale?
+
+107
+00:13:39,440 --> 00:13:49,440
+Esto lo he utilizado para interactuar, bueno, para leer los mensajes en el chat, ¿vale?
+
+108
+00:13:54,440 --> 00:13:59,440
+Bueno, aquí tenemos un ejemplo sencillo en Django,
+
+109
+00:13:59,440 --> 00:14:05,440
+doy por hecho que en los settings están el telebot token y el editor,
+
+110
+00:14:05,440 --> 00:14:11,440
+o el chat ahí de ya asignados, entonces importamos los settings,
+
+111
+00:14:11,440 --> 00:14:17,440
+la señal posafe, el modelo del artículo, ¿vale?
+
+112
+00:14:17,440 --> 00:14:23,440
+Y cada vez que se crea un artículo, se ejecuta la señal posafe, ¿vale?
+
+113
+00:14:23,440 --> 00:14:29,440
+Lo primero comprueba si es la primera vez que se ha guardado el artículo,
+
+114
+00:14:29,440 --> 00:14:33,440
+crea un cliente telebot, ¿vale?
+
+115
+00:14:33,440 --> 00:14:40,440
+Se genera el mensaje y simplemente se envía algo con el TVSEN, ¿vale?
+
+116
+00:14:40,440 --> 00:14:42,440
+Muy sencillo.
+
+117
+00:14:42,440 --> 00:14:56,440
+Ejemplo del demonio, bueno, este ejemplo igual no es el mejor ejemplo,
+
+118
+00:14:56,440 --> 00:15:02,440
+porque aquí no estoy utilizando modelos de Django,
+
+119
+00:15:02,440 --> 00:15:04,440
+pero bueno, para que veáis, ¿no?
+
+120
+00:15:04,440 --> 00:15:08,440
+Utilizando el demoncomal, se crea un demonio,
+
+121
+00:15:08,440 --> 00:15:14,440
+está ejecutando un listener, un handler que está escuchando el comando Hello
+
+122
+00:15:14,440 --> 00:15:19,440
+y cada vez que alguien escribe Hello, el bot le va a responder con Hello
+
+123
+00:15:19,440 --> 00:15:22,440
+y su nombre de usuario, ¿vale?
+
+124
+00:15:22,440 --> 00:15:24,440
+Es una aplicación muy tonta, pero...
+
+125
+00:15:24,440 --> 00:15:26,440
+para que veáis.
+
+126
+00:15:26,440 --> 00:15:35,440
+Para ejecutar el demonio, simplemente hay que escribir Vin Django
+
+127
+00:15:35,440 --> 00:15:41,440
+en nombre del script o del comando Django y luego el parámetro
+
+128
+00:15:41,440 --> 00:15:44,440
+Start, restart, reload...
+
+129
+00:15:44,440 --> 00:15:55,440
+Bueno, aquí lo estoy ejecutando con Vin Django porque estoy en una virtualen, ¿vale?
+
+130
+00:15:55,440 --> 00:16:01,440
+Bueno, aquí tenemos un bot más complejo que lo hice en su día.
+
+131
+00:16:01,440 --> 00:16:09,440
+Tenía otra problemática y es que en el chat del admin
+
+132
+00:16:09,440 --> 00:16:13,440
+la gente escribía cosas de juegos, o sea,
+
+133
+00:16:13,440 --> 00:16:15,440
+que encontró una promoción de este juego.
+
+134
+00:16:15,440 --> 00:16:18,440
+El nuevo juego de Batman es una mierda y otro le subió.
+
+135
+00:16:18,440 --> 00:16:20,440
+Bueno, sí, no sé qué, tal.
+
+136
+00:16:20,440 --> 00:16:25,440
+Claro, esa información podría haber posteado en el foro, ¿no?
+
+137
+00:16:25,440 --> 00:16:28,440
+Y digo, se está perdiendo la información
+
+138
+00:16:28,440 --> 00:16:32,440
+que el usuario final podría leer y disfrutar, ¿no?
+
+139
+00:16:32,440 --> 00:16:34,440
+Y dije, bueno, pues ¿cómo hago esto?
+
+140
+00:16:34,440 --> 00:16:38,440
+¿Cómo hago para que la información que estamos poniendo en Telegram
+
+141
+00:16:38,440 --> 00:16:40,440
+vaya al foro directamente, ¿no?
+
+142
+00:16:40,440 --> 00:16:43,440
+Y dije, bueno, pues igual le aprovecho el bot,
+
+143
+00:16:43,440 --> 00:16:48,440
+le pongo, como se pueden poner hashtags, hago un traqueo de hashtags
+
+144
+00:16:48,440 --> 00:16:53,440
+y cada vez que haya un mensaje tenga un hashtag, la mención del bot,
+
+145
+00:16:53,440 --> 00:16:56,440
+que poste directamente en el foro.
+
+146
+00:16:56,440 --> 00:16:58,440
+Pues eso hice.
+
+147
+00:16:58,440 --> 00:17:02,440
+Luego le puse un buscador porque los hashtags son numéricos,
+
+148
+00:17:02,440 --> 00:17:06,440
+bueno, tienen gay número, pero ¿qué es lo que pasa?
+
+149
+00:17:06,440 --> 00:17:11,440
+Que es demasiado, que la gente no tiene tiempo para buscar
+
+150
+00:17:11,440 --> 00:17:15,440
+y andar poniendo hashtags, haciendo mención y tal.
+
+151
+00:17:15,440 --> 00:17:19,440
+Bueno, fue un fracaso, pero bueno, por lo menos se aprendió
+
+152
+00:17:19,440 --> 00:17:23,440
+como programar un bot y bueno, lo tengo ahí, ¿vale?
+
+153
+00:17:27,440 --> 00:17:31,440
+No sé si conocéis también el Payoke, ¿es?
+
+154
+00:17:31,440 --> 00:17:36,440
+Bueno, es un repositorio de chistes de Python, ¿vale?
+
+155
+00:17:36,440 --> 00:17:41,440
+Entonces, mis compañeros y yo decimos un bot, ¿vale?
+
+156
+00:17:41,440 --> 00:17:48,440
+Aprovechando este repositorio, podéis buscar el bot en Telegram,
+
+157
+00:17:48,440 --> 00:17:51,440
+se llama PyConS15, ¿vale?
+
+158
+00:17:51,440 --> 00:17:55,440
+Y tiene un sé de comandos, no sé si...
+
+159
+00:17:55,440 --> 00:18:01,440
+¿Qué vamos aquí?
+
+160
+00:18:25,440 --> 00:18:30,440
+¿Qué pasa?
+
+161
+00:18:30,440 --> 00:18:35,440
+¿Qué pasa?
+
+162
+00:18:35,440 --> 00:18:40,440
+¿Qué pasa?
+
+163
+00:18:40,440 --> 00:18:45,440
+¿Qué pasa?
+
+164
+00:18:45,440 --> 00:18:50,440
+¿Qué pasa?
+
+165
+00:18:50,440 --> 00:18:55,440
+Este es el bot, ¿vale?
+
+166
+00:19:04,440 --> 00:19:09,440
+Bueno, necesitamos importar el paquete Telebot,
+
+167
+00:19:09,440 --> 00:19:13,440
+PyJokes, son los chistes, ¿vale?
+
+168
+00:19:13,440 --> 00:19:17,440
+Y luego también hemos puesto el Tipee, ¿vale?
+
+169
+00:19:17,440 --> 00:19:21,440
+Traquea...
+
+170
+00:19:21,440 --> 00:19:28,440
+Traquea en Twitter el hashtag PyConS15, ¿vale?
+
+171
+00:19:28,440 --> 00:19:33,440
+Y nos da los últimos 10 tweets, ¿vale?
+
+172
+00:19:33,440 --> 00:19:35,440
+En mensajes.
+
+173
+00:19:35,440 --> 00:19:40,440
+Luego tiene también, bueno, chistes de nivel Joke,
+
+174
+00:19:40,440 --> 00:19:48,440
+hace una adiastamn, al objeto mensaje de Telebot,
+
+175
+00:19:48,440 --> 00:19:52,440
+simple Hello World, ¿vale?
+
+176
+00:19:52,440 --> 00:19:57,440
+A ver...
+
+177
+00:19:57,440 --> 00:20:11,440
+No sé si lo puedo poner aquí.
+
+178
+00:20:11,440 --> 00:20:21,440
+No puedo pasar el... la ventana.
+
+179
+00:20:21,440 --> 00:20:24,440
+Ah, está aquí, ya está, ¿vale?
+
+180
+00:20:24,440 --> 00:20:29,440
+No tenemos aquí, ¿vale?
+
+181
+00:20:29,440 --> 00:20:32,440
+Aquí están los comandos, pero...
+
+182
+00:20:32,440 --> 00:20:36,440
+Aquí me ha dado el... ¿vale?
+
+183
+00:20:36,440 --> 00:20:42,440
+Aquí nos da los chistes,
+
+184
+00:20:42,440 --> 00:20:44,440
+los últimos tweets,
+
+185
+00:20:44,440 --> 00:20:51,440
+eso tarda un poco, ¿vale?
+
+186
+00:20:51,440 --> 00:20:54,440
+Y... ¿qué más?
+
+187
+00:20:54,440 --> 00:20:56,440
+Choc, choc, choc.
+
+188
+00:20:56,440 --> 00:20:58,440
+De...
+
+189
+00:20:58,440 --> 00:21:03,440
+¿Cómo me ha chocado?
+
+190
+00:21:03,440 --> 00:21:05,440
+Yo chocó, chocó.
+
+191
+00:21:05,440 --> 00:21:08,440
+¿O qué?
+
+192
+00:21:08,440 --> 00:21:14,440
+Chocó, chocó.
+
+193
+00:21:14,440 --> 00:21:18,440
+Vale, vamos a hacer... ¿vale?
+
+194
+00:21:18,440 --> 00:21:23,440
+Bueno, y...
+
+195
+00:21:23,440 --> 00:21:38,440
+volvimos a una presentación.
+
+196
+00:21:38,440 --> 00:21:48,440
+Y eso es todo, ¿no sé?
+

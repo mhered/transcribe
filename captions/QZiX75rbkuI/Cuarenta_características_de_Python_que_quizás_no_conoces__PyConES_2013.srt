@@ -1,0 +1,3816 @@
+1
+00:00:00,000 --> 00:00:14,320
+La parte que más me ha costado de la presentación ha sido la portada, porque esto es Bimmer,
+
+2
+00:00:14,320 --> 00:00:17,400
+yo siempre he hecho cositas en Bimmer, esta ha sido el proyecto más grande, tenemos como
+
+3
+00:00:17,400 --> 00:00:22,440
+160 transparencias y esto es la culpa de la organización. Yo dije, son 40 puntos y
+
+4
+00:00:22,440 --> 00:00:26,840
+dijeron adelante, tendrían que haber sido quizá 15, 10, pero bueno, posiblemente tengamos
+
+5
+00:00:26,840 --> 00:00:30,120
+que ir muy rápido, a veces que vosotros ya sabéis un montón de cosas, tengo tendencia
+
+6
+00:00:30,120 --> 00:00:35,160
+a hablar muy rápido, como de hecho fue una infancia un poco difícil para mis padres
+
+7
+00:00:35,160 --> 00:00:38,320
+porque no me entendían, así que si veis que me paso ya he dicho allí que por favor me
+
+8
+00:00:38,320 --> 00:00:43,200
+digan que baje el ritmo. El título era muy largo, pero tuve que cambiarlo porque como
+
+9
+00:00:43,200 --> 00:00:46,280
+también aparece quien pequeñito, posiblemente me cabían 6 palabras, entonces lo he llamado
+
+10
+00:00:46,280 --> 00:00:51,680
+Python por 40, que esto ya lo sabéis, y multiplicamos una lista por un escalar, nos va a concatenar
+
+11
+00:00:51,680 --> 00:00:56,800
+tantas veces esa lista, pero eso es un ejemplo. He empezado con una cita de Donald Ransfeld
+
+12
+00:00:56,800 --> 00:01:00,640
+y no creo que dentro de 10 años nadie lo recuerde, pero la cita, aunque no tenía sentido
+
+13
+00:01:00,640 --> 00:01:05,520
+en el momento en el que la dijo, me parecía muy ilustrativa. Y de hecho yo me sentí igual,
+
+14
+00:01:05,520 --> 00:01:12,080
+tengo un ejemplo de el comando T de la línea de comando y me acuerdo el día que yo quería
+
+15
+00:01:12,080 --> 00:01:16,080
+hacer algo y no sabía ni siquiera cómo buscarlo en Google porque ni siquiera sabía cómo escribirlo
+
+16
+00:01:16,080 --> 00:01:20,000
+y fui a Free Note al canal de Ubuntu, que hay siempre como mil personas, 10 y noche
+
+17
+00:01:20,000 --> 00:01:23,680
+y pregunté allí y en cuestión de segundo alguien me dijo, el comando que quieres este
+
+18
+00:01:23,680 --> 00:01:29,600
+que lo que sabéis, que hace que coge la salida, no solamente es TV Out, no solamente la guarda
+
+19
+00:01:29,600 --> 00:01:34,680
+un fichero sino que también lo sigue mostrando por pantalla. Y para mí fue una cosa reveladora
+
+20
+00:01:34,680 --> 00:01:38,640
+porque anda, hay un montón de comandos en la terminal que ni siquiera sabía que existían,
+
+21
+00:01:38,640 --> 00:01:42,960
+hay cosas que ni siquiera sé que no sé, así que el objetivo de esto es ninguna de las
+
+22
+00:01:42,960 --> 00:01:45,600
+cosas que vamos a ver aquí es una maravilla, de hecho muchas serían causas de despido
+
+23
+00:01:45,600 --> 00:01:50,080
+procedente por haber estado haciendo esto en el red de trabajo, pero con suerte habrá
+
+24
+00:01:50,080 --> 00:01:55,960
+algo que alguno de vosotros no sepa y yo entonces habrá justificado venir hasta aquí.
+
+25
+00:01:55,960 --> 00:02:02,680
+Si dimos 40 puntos entre 50 minutos salía a 1.15 creo, posiblemente nos vayamos a seguirlo.
+
+26
+00:02:02,680 --> 00:02:06,440
+Otra cosa, no suele ser divertido escuchar a casi nadie hablar durante una hora y es
+
+27
+00:02:06,440 --> 00:02:12,280
+posible que haya barbaridades en mis transparencias porque la acabé allá en el coche. No conducía
+
+28
+00:02:12,280 --> 00:02:19,160
+yo. Esto es improvisado ¿qué coste? Así que ahí está el de hecho, la transparencia
+
+29
+00:02:19,160 --> 00:02:23,320
+que estoy usando ahora mismo he hecho un push antes y las tenéis en GitHub, los chulos,
+
+30
+00:02:23,320 --> 00:02:28,080
+los sitios de esto así megapro, sería que alguien haría un pull request antes de que
+
+31
+00:02:28,080 --> 00:02:31,960
+termináramos, pero no creo que el punto de acceso os deje, así que, pero de verdad me
+
+32
+00:02:31,960 --> 00:02:35,960
+hay mucha ilusión, yo creo de verdad, yo creo que una cita que vi por ahí, el open
+
+33
+00:02:35,960 --> 00:02:41,280
+source decía uno aunque yo prefiero otro término, dijo no es un verbo y me gustó un montón
+
+34
+00:02:41,280 --> 00:02:44,560
+de la cita, tenía un montón de trasfondo, creo un montón en casi todos los procesos
+
+35
+00:02:44,560 --> 00:02:48,360
+iterativos, creo que es mucho mejor si esto se realimenta y que no sea que aquí yo cuente
+
+36
+00:02:48,360 --> 00:02:53,000
+lo mucho que sé, sino que me ayudaría a corregirlo un poquito. Así que listo, porque son muchísimos
+
+37
+00:02:53,000 --> 00:02:56,880
+puntos. El primero, ya lo he dicho a alguien esta mañana, sabemos que intercambiar variables,
+
+38
+00:02:56,880 --> 00:03:01,280
+para mí esto fue una cosa que me enamoró, A B igual, A B, y sabemos que eso lo que hace
+
+39
+00:03:01,280 --> 00:03:06,280
+in place en el lugar nos cambia las dos variables de la vez y para mucha gente esto es magia,
+
+40
+00:03:06,280 --> 00:03:08,880
+es decir, es muy bonito, por ejemplo en C que tendríamos que hacer, tendríamos que
+
+41
+00:03:08,880 --> 00:03:13,920
+utilizar una variable temporal porque uno de los dos valores lo vamos a sobrecribir,
+
+42
+00:03:13,920 --> 00:03:17,920
+pero en país no sabemos que podemos hacerlo sobre la marcha. De nuestro punto de vista
+
+43
+00:03:17,920 --> 00:03:21,000
+esto está ocurriendo simultáneamente y esto es una curiosidad, aquí tenemos que saber
+
+44
+00:03:21,000 --> 00:03:25,720
+que lo que hay involucrada es una tupla, de hecho aquí en lazo está cover flow donde
+
+45
+00:03:25,720 --> 00:03:28,760
+lo explican muy bien y básicamente cuando hacemos A como A, lo que estamos escribiendo
+
+46
+00:03:28,760 --> 00:03:33,520
+es una tupla de memoria que tiene dos elementos, el primero referencia a A y el segundo referencia
+
+47
+00:03:33,520 --> 00:03:37,240
+a B, en el momento en el cual la asignamos a B,A, ya estamos perdiendo los números
+
+48
+00:03:37,240 --> 00:03:40,200
+de variables si queremos llamarlo así, pero realmente ahí se nos tiene parables, tiene
+
+49
+00:03:40,200 --> 00:03:43,880
+identificadores, pero lo que estamos haciendo es que la primera variable, la variable que
+
+50
+00:03:43,880 --> 00:03:48,240
+se presenta era B, ahora apunta A y la que apunta B, ahora apunta a B, quizás estoy
+
+51
+00:03:48,240 --> 00:03:52,700
+yendo demasiado rápido. Una cosa, ¿cómo se declara una tupla de un solo elemento?
+
+52
+00:03:52,700 --> 00:03:56,920
+Esto se hace uno coma y esto ya lo ha dicho alguien antes hace apenas una hora porque
+
+53
+00:03:56,920 --> 00:04:01,840
+realmente el constructor de la tupla no es la com... no son los parantes, es la coma,
+
+54
+00:04:01,840 --> 00:04:05,440
+pasa que normalmente lo ponemos así para que sea por claridad, de hecho si dijéramos
+
+55
+00:04:05,440 --> 00:04:09,720
+esto que hay... yo es que en mi trabajo a veces damos unos pequeños tallares a gente
+
+56
+00:04:09,720 --> 00:04:12,920
+que está aprendiendo, si intentas hacer eso realmente lo que está país en evaluando
+
+57
+00:04:12,920 --> 00:04:16,520
+es que sería lo que utilizaría para la precedencia de operadores, lo que está sumando es 2
+
+58
+00:04:16,520 --> 00:04:21,320
+a 1, pues el resultado es 3, sin embargo eso ya está intentando sumar una tupla, que
+
+59
+00:04:21,320 --> 00:04:25,040
+hemos aprendido que el constructor de la tupla es la coma. Lo segundo del encadenamiento
+
+60
+00:04:25,040 --> 00:04:28,980
+de operadores es lógico, nosotros sabemos que en otra lenguaje de programación pues
+
+61
+00:04:28,980 --> 00:04:34,800
+comprobaríamos las dos condiciones a la B, es decir podríamos decir que es x y es y
+
+62
+00:04:34,800 --> 00:04:38,880
+menor igual que z, en país o en chilenbargo lo que podemos evaluarlo, hay quien podría
+
+63
+00:04:38,880 --> 00:04:44,360
+creer que cuando estamos haciendo esto el resultado de esto sería un trué y luego
+
+64
+00:04:44,360 --> 00:04:49,280
+por ejemplo y luego diríamos es verdadero o falso menor que z, pero no porque tienen
+
+65
+00:04:49,280 --> 00:04:52,760
+un... ese es el binding que no me acuerdo del término y realmente se van a valorar
+
+66
+00:04:52,760 --> 00:04:57,160
+ante los operadores lógicos. Tercera, esto es la documentación de Python que está
+
+67
+00:04:57,160 --> 00:05:02,560
+muy bien explicado, porque 0,1 más 0,2 es igual a 0,3 y nos dice que false, esto nos
+
+68
+00:05:02,560 --> 00:05:06,120
+dice que no es verdad y de hecho lo podéis probar en línea de comando y es cierto, pues
+
+69
+00:05:06,120 --> 00:05:08,960
+la clave es aunque esto no tiene nada que ver con Python sino con cualquier lenguaje
+
+70
+00:05:08,960 --> 00:05:13,720
+de programación, ya estamos representando números en una arquitectura finita. Python
+
+71
+00:05:13,720 --> 00:05:17,080
+realmente lo único que puede trabajar es con valores aproximados, entonces si de hecho
+
+72
+00:05:17,080 --> 00:05:22,000
+le forzáis, luego veremos si no conocéis la notación de printf, si forzáis que lo
+
+73
+00:05:22,000 --> 00:05:28,600
+enseñen muchos decimales podréis ver que realmente no son los valores exactos. Un ejemplo
+
+74
+00:05:28,600 --> 00:05:32,560
+muy muy bueno es que en base 10, porque esta es la arquitectura binaria, estos son ordenadores
+
+75
+00:05:32,560 --> 00:05:37,000
+1 y 0, pero en base 10 también tenemos el mismo problema, 1 dividido entre 3 por más
+
+76
+00:05:37,000 --> 00:05:43,520
+de decimales que usemos, nunca podemos representarlo del todo, siempre va a ser una aproximación.
+
+77
+00:05:43,520 --> 00:05:46,520
+Normalmente no somos cociantes porque para eso lo que hace es que nos lo aproxima, como
+
+78
+00:05:46,520 --> 00:05:50,440
+sabe que posiblemente esto sea irrelevante para nuestros propósitos, pues nos dice simplemente
+
+79
+00:05:50,440 --> 00:05:56,760
+bueno eso es 0,3, pero no deja de ser una aproximación. Conclusión, y esto desde hace
+
+80
+00:05:56,760 --> 00:06:01,560
+como 70 años, desde los años 70 están muy muy claro, no debería utilizar nunca, no
+
+81
+00:06:01,560 --> 00:06:07,160
+debería hacer nunca comparación de números reales directamente. Una opción suele ser
+
+82
+00:06:07,160 --> 00:06:12,400
+utilizar un epsilon para ver si son lo suficientemente iguales, están dentro de un margen, el problema
+
+83
+00:06:12,400 --> 00:06:16,840
+es que eso obliga a que se va en la unidad, porque un error de 1, cuando trabajamos con
+
+84
+00:06:16,840 --> 00:06:22,480
+miles de millones es muy poco, pero si nuestro rango es de 1 a 10, 1 es un 10% de error,
+
+85
+00:06:22,480 --> 00:06:26,320
+por tanto algo más sofisticado es que lo hagamos en términos relativos, entonces son
+
+86
+00:06:26,320 --> 00:06:33,560
+iguales al 99,8 decimales. Esa es una lectura muy muy interesante, de todas formas en Python
+
+87
+00:06:33,560 --> 00:06:38,080
+tenemos el módulo decimal y básicamente nos permite operar con números reales como
+
+88
+00:06:38,080 --> 00:06:43,760
+nosotros esperaríamos. ¿Ha identificado a alguien alguna barbaridad en este tiempo?
+
+89
+00:06:43,760 --> 00:06:49,000
+Bueno, eso lo llamamos dos minutos. Vale, esto salió ayer cuando estábamos tomándonos
+
+90
+00:06:49,000 --> 00:06:54,520
+algo, el valor número de verdadero es 1 y el de falso es 0, de hecho podías hacer
+
+91
+00:06:54,520 --> 00:07:00,800
+cosas como convertirlos a 1, pero incluso 37 más verdadero es igual a 38. Y funciona,
+
+92
+00:07:00,800 --> 00:07:05,520
+y si dividiría entre falso como dividiría entre 0 os va a dar una excepción. Esto
+
+93
+00:07:05,520 --> 00:07:09,760
+en cuatro años solamente ha encontrado un uso legítimo y era... Yo tampoco te había
+
+94
+00:07:09,760 --> 00:07:17,280
+sentido. Pero creo que está bien que lo sepáis, de hecho la clase Bool era edad de la clase
+
+95
+00:07:17,280 --> 00:07:21,760
+entero y si comprobáis, si hay alguna de sus clases va a decir que sí, si hay una instancia
+
+96
+00:07:21,760 --> 00:07:25,920
+de entero va a decir que sí y de hecho el orden de resolución de métodos también
+
+97
+00:07:25,920 --> 00:07:30,320
+nos dice que Bool luego tenemos int y luego era de objecto, como todas las clases. El
+
+98
+00:07:30,320 --> 00:07:34,640
+same de Python, esto se ha dicho en todas las charlas cuatro veces, pero vamos a ir un
+
+99
+00:07:34,640 --> 00:07:39,560
+poquito más allá. Son los principios filosóficos y básicamente el mantra que día y noche
+
+100
+00:07:39,560 --> 00:07:43,440
+repetimos delante del espejo cuando nos vamos a ir a dormir. Lo sabemos. Lo que menos gente
+
+101
+00:07:43,440 --> 00:07:47,280
+sabe es que si vais al código fuente del módulo disk, porque cuando decéis importe
+
+102
+00:07:47,280 --> 00:07:53,360
+un disk, estáis importando un módulo que se llama disk.pi. Si miráis el código fuente
+
+103
+00:07:53,360 --> 00:07:56,920
+podéis ver que está cifrado con algoritmo ROT13, que básicamente es que de cada letra
+
+104
+00:07:56,920 --> 00:08:00,320
+coge en la que está pues trece posiciones por delante en el alfabeto. De hecho el código
+
+105
+00:08:00,320 --> 00:08:08,120
+fuente es esto, sin las primeras líneas. Hay una lectura muy chula que cuenta en la historia
+
+106
+00:08:08,120 --> 00:08:11,680
+de cómo eso acabó el código fuente y menciona que bueno durante una de las Python hace
+
+107
+00:08:11,680 --> 00:08:17,440
+unos años surgió y casi quedan escondidas y hicieron el módulo desestivaron durante
+
+108
+00:08:17,440 --> 00:08:22,240
+un momento la notificación de comits, lo subieron y la volvieron a activar. De hecho
+
+109
+00:08:22,240 --> 00:08:25,360
+tardaron bastante en que alguien se diera cuenta, porque eso no forma con un grep de
+
+110
+00:08:25,360 --> 00:08:29,860
+que la encuentre, de que habían añadido el Easter egg, este que lo llamo. El módulo
+
+111
+00:08:29,860 --> 00:08:32,400
+ante gravedad, es que es que se ha dado otra constante, todo el mundo ha puesto alguna
+
+112
+00:08:32,400 --> 00:08:40,560
+imagen de Randall que es un dibujante fantástico y hay una viñeta en la cual bueno, aquí
+
+113
+00:08:40,560 --> 00:08:44,440
+la tenéis entera, pero básicamente es el protagonista que descubre Python y en otras
+
+114
+00:08:44,440 --> 00:08:48,960
+cosas le permite volar porque le dice he hecho import anti gravity. Esto no sé cuánta gente
+
+115
+00:08:48,960 --> 00:08:56,440
+lo conoce, pero si vosotros lo hacéis de hecho va a pasar algo en vuestro ordenador.
+
+116
+00:08:56,440 --> 00:09:01,200
+Hay una diferencia porque en Python 3000 también incluye una función que es el algoritmo
+
+117
+00:09:01,200 --> 00:09:05,560
+GeoHash, que es una cosa que se inventaron en la web. Aquí lo tenéis explicado. Otra
+
+118
+00:09:05,560 --> 00:09:08,880
+broma oculta que está en Python, pero de hecho garantizo que si hacéis import anti
+
+119
+00:09:08,880 --> 00:09:12,320
+gravity ocurre algo. Aquí tenéis el código fuente y de hecho lo que podréis ver es que
+
+120
+00:09:12,320 --> 00:09:17,680
+va a abrir un navegador y os va a llevar a la viñeta. Otra cosa, hay mucha gente cuando
+
+121
+00:09:17,680 --> 00:09:21,680
+empieza en Python que dice yo querría utilizar las llaves, las llaves son mucho mejores en
+
+122
+00:09:21,680 --> 00:09:28,160
+todos los aspectos. Aquí hay una discusión súper acalorada, pero de verdad no llegaron
+
+123
+00:09:28,160 --> 00:09:33,520
+a las manos porque tenía un teclado. Y hay gente que lo odia con una pasión, casi
+
+124
+00:09:33,520 --> 00:09:39,120
+tanta pasión como Linus Torvalz odia SVN, subversión. De hecho hay una búsqueda sobre
+
+125
+00:09:39,120 --> 00:09:43,680
+lo que opina increíble. Y de hecho una charla dijo, si hay alguien que utilice subversión
+
+126
+00:09:43,680 --> 00:09:50,560
+quizá quiera irse de esta sala. Y bueno, yo me siento casi que igual. La cosa es que
+
+127
+00:09:50,560 --> 00:09:54,840
+utilizando el módulo futuro en el cual sabéis que se implementan cosas que todavía no son
+
+128
+00:09:54,840 --> 00:09:59,040
+obligatorias, pero que en algún momento en una versión futura lo serán. Como por ejemplo
+
+129
+00:09:59,040 --> 00:10:03,600
+un Futura Import With Statement cuando estábamos en el Python, no sé a partir de cuál, 2.5
+
+130
+00:10:03,600 --> 00:10:08,080
+quizá o el Import Division cuando queremos que la división se comporte como ya se comporta
+
+131
+00:10:08,080 --> 00:10:12,040
+en Python 3000, que realmente entero entre enteros no está un real. Pues si hacéis
+
+132
+00:10:12,040 --> 00:10:20,720
+from future import braces importáis las llaves o ocurrirá algo. Y de hecho es el mejor mensaje
+
+133
+00:10:20,720 --> 00:10:28,160
+de decepción que ha habido nunca porque os va a decir... Ni de coña. Somos muy mal hablados
+
+134
+00:10:28,160 --> 00:10:34,400
+en español. Decimos una cantidad de palabras super impensables en otro idioma. Pero sin
+
+135
+00:10:34,400 --> 00:10:38,520
+embargo, es decir, yo creo que decimos el equivalente en otro sitio y no la ponen en
+
+136
+00:10:38,520 --> 00:10:42,600
+internet la charla. Pero si de verdad quieres, hay una forma, de hecho en Stack Overflow
+
+137
+00:10:42,600 --> 00:10:46,280
+había que ir una discusión, como podéis ver el 60% de mi jornada laboral está en
+
+138
+00:10:46,280 --> 00:10:53,600
+Stack Overflow. Leyendo, nunca... Yo ya renuncie a aprender todo lo que había para ir un consejo
+
+139
+00:10:53,600 --> 00:10:57,440
+para jóvenes programadores y decía no intentas compararte con la gente de Stack Overflow,
+
+140
+00:10:57,440 --> 00:11:01,320
+es cierto. De hecho, ahorré a todos que intentéis responder una pregunta. Ya ni siquiera digo
+
+141
+00:11:01,320 --> 00:11:12,840
+que la respondáis bien, digo que llegáis a tiempo. Pues no digamos ya llegar y responder
+
+142
+00:11:12,840 --> 00:11:16,800
+como Alex Martelli, que es uno de mis dioses, y Alex Martelli responde unos párrafos que
+
+143
+00:11:16,800 --> 00:11:22,000
+tiene que tener copiado en algún sitio para poder pegar. Pues si de verdad queréis usarlo
+
+144
+00:11:22,000 --> 00:11:25,720
+y esto había un sitio que lo explicaban a un más largo, podéis hacerlo. De hecho,
+
+145
+00:11:25,720 --> 00:11:30,360
+podéis utilizar las llaves y lo hacéis así. Obviamente lo que estáis declarándolas como
+
+146
+00:11:30,360 --> 00:11:39,120
+comentarios, pero esto no lo sabíais seguro. De hecho, lo mejor fue que una de las personas
+
+147
+00:11:39,120 --> 00:11:43,160
+aquí que preguntó le dijeron ¿puedo? y le dijo uno, claro que sí, 100 karma para arriba.
+
+148
+00:11:43,160 --> 00:11:50,680
+Y el otro... ¡Ostras que chulo que puedo! Y le tuvieron que explicar que era broma. Pero
+
+149
+00:11:50,680 --> 00:11:58,320
+si entras ahí, además todos los enlaces son clicables, podéis seguirlo. Conquentación
+
+150
+00:11:58,320 --> 00:12:03,320
+eficiente de cadenas. Si tenemos muchas cadenas de texto y las queremos unir, podríamos estar
+
+151
+00:12:03,320 --> 00:12:07,920
+tentados pensando en nuestros paradigmas antiguos, pues lo típico, declaramos una lista vacía
+
+152
+00:12:07,920 --> 00:12:10,720
+y lo que vamos haciendo literario, porque cada una de ellas las concatenamos. Y finalmente
+
+153
+00:12:10,720 --> 00:12:15,800
+tenemos la cadena. El problema es que en Python los strings son inmutables, con lo cual cada
+
+154
+00:12:15,800 --> 00:12:19,080
+vez que estamos haciendo una asignación lo que estamos realmente descartando la cadena
+
+155
+00:12:19,080 --> 00:12:24,680
+que teníamos antes. Aquí, por lo tanto, en cada paso estamos haciendo vacía luego
+
+156
+00:12:24,680 --> 00:12:28,720
+uno, luego uno dos y luego uno dos tres. Y eso es terriblemente lento por todo el trabajo
+
+157
+00:12:28,720 --> 00:12:32,680
+que tiene interno. Y si tuviéramos una cadena de un billón de elementos, pues no terminaría
+
+158
+00:12:32,680 --> 00:12:36,240
+nunca. Por lo tanto, lo que se recomienda siempre y esto es que si toda la guía está
+
+159
+00:12:36,240 --> 00:12:42,120
+de lo primero es que utilicemos el método join de la clase string. Aquí básicamente
+
+160
+00:12:42,120 --> 00:12:45,400
+lo que vamos a hacer es unir. Vamos a recorrer de eso ya no es solamente una lista, es cualquier
+
+161
+00:12:45,400 --> 00:12:49,680
+cosa sobre la que podamos iterar. Y vamos a unirlos utilizando como separador, en este
+
+162
+00:12:49,680 --> 00:12:53,800
+caso una cadena vacía, con lo cual lo que estamos haciendo es pegándolas. Por ejemplo,
+
+163
+00:12:53,800 --> 00:12:58,280
+aquí si tuviéramos esto a una tubla, porque aunque no tenga paréntesis tiene come, y
+
+164
+00:12:58,280 --> 00:13:02,080
+le decimos que con un guión a un join pues no puede volver uno dos tres. Y además lo
+
+165
+00:13:02,080 --> 00:13:10,560
+hace de una única pasada y es súper rápido. Print F, yo una cosa que en su momento hecho
+
+166
+00:13:10,560 --> 00:13:13,440
+es muy en falta. Sabemos que en todas las lenguajes de programación ante diluviano,
+
+167
+00:13:13,440 --> 00:13:19,240
+desde el comienzo de los tiempos existe Print F y la sintasi siempre es la misma. Pues tenemos
+
+168
+00:13:19,240 --> 00:13:22,880
+el operador tanto por ciento. Y con lo que lo tanto por ciento, Paizón nos permite
+
+169
+00:13:22,880 --> 00:13:28,600
+con los objetos tanto string como unicode que les pasemos, le especificamos exactamente
+
+170
+00:13:28,600 --> 00:13:33,200
+la sintasi que queremos utilizar, el formato. Por tanto, si aquí tenemos del módulo math
+
+171
+00:13:33,200 --> 00:13:38,920
+que tendríamos que importarlo, lo hacemos un print pues nos muestra una cantidad para
+
+172
+00:13:38,920 --> 00:13:43,880
+nosotros a arbitrar ya Paizón ha elegido por nosotros cuántos decimales. Pues si le decimos
+
+173
+00:13:43,880 --> 00:13:47,720
+muy bien punto 2f, pues no, y operador. Es decir, es que no sé hasta qué punto, no
+
+174
+00:13:47,720 --> 00:13:50,440
+tampoco tiene sentido entrar en la sintasi de Print F, era por poner algunos ejemplos.
+
+175
+00:13:50,440 --> 00:13:54,080
+Aquí lo que estamos diciéndoles es que básicamente eso de tanto por ciento punto
+
+176
+00:13:54,080 --> 00:13:58,280
+2fe voy a mostrar un número real con dos decimales. Y cuando se lo pasamos utilizando
+
+177
+00:13:58,280 --> 00:14:02,240
+el operador tanto por ciento, pues entonces nos dice tres punto catorce. Pero podemos
+
+178
+00:14:02,240 --> 00:14:06,000
+ir hasta el infinito y casi un poquito más allá, porque por ejemplo aquí le decimos
+
+179
+00:14:06,000 --> 00:14:11,320
+va a mostrar cinco posiciones, es la mejor forma que yo tengo de explicarlo. Cinco posiciones,
+
+180
+00:14:11,320 --> 00:14:15,080
+dos de las cuales son decimales y si hace falta va a meter cero por la izquierda para
+
+181
+00:14:15,080 --> 00:14:20,480
+que tenga cinco. Por tanto, cero punto cero tres, punto catorce. Y una muy chula cuando
+
+182
+00:14:20,480 --> 00:14:24,480
+haces cosas científicas ya es utilizar g, que g sea un número pequeño, nos lo muestra
+
+183
+00:14:24,480 --> 00:14:31,040
+como siempre y si es un número muy grande nos lo muestra en notación científica. Y
+
+184
+00:14:31,040 --> 00:14:35,720
+bueno, también podemos mostrar cadenas con la s entero con la d, también tiene otro
+
+185
+00:14:35,720 --> 00:14:40,600
+que es el i, pero bueno, infinito. La Wikipedia está de hecho súper bien explicado. Aun
+
+186
+00:14:40,600 --> 00:14:45,480
+así desde paisan dos punto seis que se introdujo STR format, en todos lados te dicen te habrías
+
+187
+00:14:45,480 --> 00:14:50,160
+usado format porque es mucho más versátil, más poderoso, más sofisticado, o sea, toda
+
+188
+00:14:50,160 --> 00:14:55,360
+la gente de, toda la gente respetable utiliza format. El PEP en el que lo introdujeron está
+
+189
+00:14:55,360 --> 00:15:01,520
+ahí, estos que si tu incluyes un enlace al PEP siempre parecen mucho más formal. Como
+
+190
+00:15:01,520 --> 00:15:05,400
+vos has leído la especificación, te vas a ver un tío que sabe de lo que hablo. Así que
+
+191
+00:15:05,400 --> 00:15:09,840
+si quieres mirarlo lo podéis ver ahí. Así que format, muy bien pues format para la idea
+
+192
+00:15:09,840 --> 00:15:16,240
+es que reemplacemos al operador tanto por ciento. Tiene una cosa muy chula y es que
+
+193
+00:15:16,240 --> 00:15:21,840
+podemos, hace conversiones por ejemplo si nosotros lo decimos automáticamente a STR
+
+194
+00:15:21,840 --> 00:15:26,000
+o a Rapper y puede hacer atributos de los elementos, eso está muy chulo. El uso más
+
+195
+00:15:26,000 --> 00:15:29,480
+básico cero uno cero lo estamos diciendo que va a poner primero el primer argumento
+
+196
+00:15:29,480 --> 00:15:33,400
+que le pasemos al format después el segundo y después otra vez el primero. Entonces pues
+
+197
+00:15:33,400 --> 00:15:39,280
+formamos abracadabra. Podemos decirle que accede a atributos, es decir, entre las llaves
+
+198
+00:15:39,280 --> 00:15:44,320
+0.real y entonces del primer atributo que le estamos pasando que es un número complejo
+
+199
+00:15:44,320 --> 00:15:49,880
+accede a atributos de la parte real y nos muestra pues solamente 2.0. Podemos acceder
+
+200
+00:15:49,880 --> 00:15:53,880
+los argumentos por nombre que eso también, bueno podríamos hacerlo también sin el format
+
+201
+00:15:53,880 --> 00:15:58,720
+pero lo suyo es que ya utilicemos esto. Le pasamos a un diccionario que es un realmente
+
+202
+00:15:58,720 --> 00:16:01,680
+argumento nombrado, eso lo vemos en un momento y lo estamos diciendo muy bien el nombre
+
+203
+00:16:01,680 --> 00:16:05,120
+Pedro, el apellido es Medina y entonces pues si le decimos entre las llaves ponemos el
+
+204
+00:16:05,120 --> 00:16:11,320
+nombre a través de enteros que delimiten su posición pues nos lo imprime y también
+
+205
+00:16:11,320 --> 00:16:15,240
+podemos acceder pues por nombre, número punto y más. Entonces se va al argumento que se
+
+206
+00:16:15,240 --> 00:16:20,040
+llama número que en este caso es uno de real y cinco de compleja y nos lo muestra.
+
+207
+00:16:20,040 --> 00:16:24,640
+Aquí tenemos la especificación del mini lenguaje que adena multilíneas cuando nosotros queremos
+
+208
+00:16:24,640 --> 00:16:29,920
+tener varias cosas en nuestro fuente que abarca varias líneas. Una cosa que quizás
+
+209
+00:16:29,920 --> 00:16:33,560
+a lo que más se vea cuando empezamos es que utilizamos barra invertida entonces porque
+
+210
+00:16:33,560 --> 00:16:37,880
+cuando llega la barra invertida dice que se acaba la línea tengo que saltar al siguiente
+
+211
+00:16:37,880 --> 00:16:41,920
+entonces pues sabe que la cadena continúa por allí entonces estamos encadenando varias
+
+212
+00:16:41,920 --> 00:16:46,040
+cadenas y podemos ver que funciona de hecho si mostramos por ejemplo los 24 primeros caracteres
+
+213
+00:16:46,040 --> 00:16:51,360
+o los últimos 17 pues nos lo hace pero esto tiene un fallo y es que porque todos programamos
+
+214
+00:16:51,360 --> 00:16:55,640
+en Emax lo sé que cuando queramos hacer cosas como que no lo autoformate y no lo ponga
+
+215
+00:16:55,640 --> 00:17:01,360
+todo bonito si ya estamos haciendo esto no lo está reconociendo como un parrafo de texto.
+
+216
+00:17:01,360 --> 00:17:05,600
+También se ve mucho, es que las comillas triples por ejemplo para los talk strings nos permiten
+
+217
+00:17:05,600 --> 00:17:09,760
+bueno todo lo que apagamos dentro de las triples comillas se respeta de forma literal incluyendo
+
+218
+00:17:09,760 --> 00:17:15,840
+saltos de línea incluyendo espacios. Es una representación exacta de lo que apagamos ahí.
+
+219
+00:17:15,840 --> 00:17:19,200
+Declaramos parrafo cuando luego imprimimos parrafo podemos ver que todo lo que de nosotros
+
+220
+00:17:19,200 --> 00:17:24,040
+pusimos entre medias se respeta y una cosa que yo he visto mucho menos es que realmente
+
+221
+00:17:24,040 --> 00:17:27,720
+a mí me parece mucho más elegante esto si simplemente utilizamos paréntesis y lo que
+
+222
+00:17:27,720 --> 00:17:32,320
+le estamos poniendo es un montón de subcadenas una por líneas países en lo que hace automáticamente
+
+223
+00:17:32,320 --> 00:17:36,840
+por nosotros de hecho a encadenarnos como esto hubo un pep y estuvieron a punto de quitarlo
+
+224
+00:17:36,840 --> 00:17:41,000
+pero al final se dio todo porque no. Un ejemplo más sencillo para visualizarlo es que si ponemos
+
+225
+00:17:41,000 --> 00:17:45,480
+uno en el intérprete y sin nada entre ellos simplemente un espacio y otra cadena de texto
+
+226
+00:17:45,480 --> 00:17:48,520
+países automáticamente no las encadenan como tanto en otras lenguajes de programación
+
+227
+00:17:48,520 --> 00:17:53,360
+entonces aprovechando eso que nos va a encadenar automáticamente si la rodeamos entre paréntesis
+
+228
+00:17:53,360 --> 00:17:57,520
+y entre diferentes líneas como no tenemos que poner comas cuando hemos definido por ejemplo una tupla
+
+229
+00:17:57,520 --> 00:18:03,320
+podemos hacerlo así. Muy bien listas por comprensión que eso es otra cosa que al principio la gente
+
+230
+00:18:03,320 --> 00:18:08,240
+la asusta un poco y son súper poderosas es como lo que decía el capitán planeta el poder es vuestro
+
+231
+00:18:10,760 --> 00:18:15,520
+son realmente increíbles porque suponen que automáticamente no necesita utilizar filter
+
+232
+00:18:15,520 --> 00:18:21,160
+salvo en cosas muy muy puntuales no necesita ni filter ni map ni reduce ni lambda puede hacerlo
+
+233
+00:18:21,160 --> 00:18:25,280
+todo con una expresión que lenguaje natural no sé hasta qué punto las conocéis todos los que
+
+234
+00:18:25,280 --> 00:18:29,800
+estáis aquí pero lo que estamos diciéndole es como que si nosotros hablaríamos el ea-mea al
+
+235
+00:18:29,800 --> 00:18:35,920
+cuadrado cada x en el intervalo de 0 en un range 10 luego 9 y nos devuelve una lista con todos los
+
+236
+00:18:35,920 --> 00:18:40,640
+cuadrados eso es equivalente a lo que haríamos de primera y que se ve todavía un montón que es
+
+237
+00:18:40,640 --> 00:18:44,960
+que bueno pues yo tengo una variable x y una lista vacía y voy haciendo un montón de apents conforme
+
+238
+00:18:44,960 --> 00:18:51,360
+los voy generando el problema es que la lista por comprensión devuelven pues una lista entonces si
+
+239
+00:18:51,360 --> 00:18:56,320
+tenemos un montón de valores lo vamos a almacenar todo en memoria podés probar hacer eso yo he
+
+240
+00:18:56,320 --> 00:19:00,280
+renunciado a intentarlo porque a veces el ordenador se me cuelga completamente en el sitio de que no
+
+241
+00:19:00,280 --> 00:19:04,920
+tiene memoria creo que empieza a hacerlo todo en swap y otras veces dice memoria error para mí esto
+
+242
+00:19:04,920 --> 00:19:08,320
+ha sido una cosa muy peligrosa siempre es decir y en cualquier caso aunque el ordenador no muriera o
+
+243
+00:19:08,320 --> 00:19:13,880
+tuviera infinitas gigas si son necesitas los números de 1 en 1 almacenar un millón de entero en
+
+244
+00:19:13,880 --> 00:19:19,880
+memoria tampoco tiene sentido entonces tenemos las expresiones generadoras que son una cosa del pep 2
+
+245
+00:19:19,880 --> 00:19:24,840
+8 9 y que creo que la introdujo raimón heitinger que a otro de los core developers que me encantan
+
+246
+00:19:25,960 --> 00:19:33,000
+son exactamente iguales que las listas por las listas por comprensión sólo que utilizamos paréntesis
+
+247
+00:19:33,000 --> 00:19:39,720
+en vez de corchetes y entonces lo que no está devuelviendo es un generador que los generadores
+
+248
+00:19:39,720 --> 00:19:45,360
+básicamente no van devuelviendo los elementos 1 a 1 por ver un ejemplo si le decimos exactamente lo
+
+249
+00:19:45,360 --> 00:19:50,040
+mismo que antes al cuadrado pero vamos a hacerlo de 1 a 10 y le decimos que es cuadrado nos dice
+
+250
+00:19:50,040 --> 00:19:55,000
+es un objeto generador y tenemos que utilizar el next para que no vaya devuelviendo los elementos 1
+
+251
+00:19:55,000 --> 00:20:01,160
+a 1 está mucho más chulo siempre que sepamos que vamos a utilizar los valores 1 a 1 y de hecho
+
+252
+00:20:01,160 --> 00:20:04,880
+solamente una vez cada uno porque cuando tú ya ha hecho un next pasa al siguiente no tiene forma
+
+253
+00:20:04,880 --> 00:20:11,640
+de volver atrás esto sería equivalente pues al que aquí borde y entonces pues le diríamos para
+
+254
+00:20:11,640 --> 00:20:16,640
+cada uno de los valores en la secuencia pues devuélveme lo no sé si es que ya no ha sentís como
+
+255
+00:20:16,640 --> 00:20:22,320
+ha sentís hace 10 minutos a quién ha trabajado con generadores con el yield alguien ha utilizado
+
+256
+00:20:22,320 --> 00:20:28,040
+gildas y vale entonces de hecho son una tontería para que todos siempre está explicado muy difícil
+
+257
+00:20:28,040 --> 00:20:33,320
+gil cuando tú utilices gil en una función lo que está haciendo es que cada vez que se ejecute
+
+258
+00:20:33,320 --> 00:20:40,680
+el yield es como un ritú un returno pero se congele la función en ese punto la siguiente vez que la
+
+259
+00:20:40,680 --> 00:20:45,760
+función se ejecute el siguiente yield es como otro returno entonces lo que está haciendo una función
+
+260
+00:20:45,760 --> 00:20:49,240
+que se va devuelvando por partes cada vez que la está llamando por supuesto tiene mucho más que eso
+
+261
+00:20:49,240 --> 00:20:54,040
+pero a nosotros lo que nos importa es que no va devuelviendo los valores 1 a 1 y bueno por lo
+
+262
+00:20:54,040 --> 00:20:58,760
+que hemos visto si le decimos cuadrados pues next y entonces no parando 1 4 luego notaría 9
+
+263
+00:20:58,760 --> 00:21:06,240
+las cosas que también en desde paisan 2.7 y en por supuesto en paisan 3.000 podemos crear
+
+264
+00:21:06,240 --> 00:21:11,520
+no solamente listas sino también conjunto de escenarios por comprensión si en vez de utilizar
+
+265
+00:21:11,520 --> 00:21:18,280
+los corchetes que son para las listas o las llaves que son para los paréntesis que son para los
+
+266
+00:21:18,280 --> 00:21:25,120
+generadores podemos utilizar las llaves y lo que estamos creando es un conjunto y perdón y aquí
+
+267
+00:21:25,120 --> 00:21:30,440
+tenemos bueno otra forma que tendríamos de hacerlo que es que podemos llamar a la clase al método
+
+268
+00:21:30,440 --> 00:21:34,960
+init de realmente no de set y le pasamos como único argumento una expresión generadora y básicamente
+
+269
+00:21:34,960 --> 00:21:38,440
+y set lo que va a hacer es recorrer la expresión generadora y utilizar esos valores y meternos
+
+270
+00:21:38,440 --> 00:21:44,800
+en un conjunto y con un diccionario es igual solo que ponemos las llaves simplemente o otra forma de
+
+271
+00:21:44,800 --> 00:21:50,680
+hacerlo llamando al inicializador del diccionario eso estaba bien explicado en este pep que tiene un
+
+272
+00:21:50,680 --> 00:21:56,960
+montón de ejemplos esto también se ha dicho antes hace de hecho esta tarde podemos evitar
+
+273
+00:21:56,960 --> 00:22:02,880
+repeticiones necesarias en los ifs compuestos si quisiéramos comprobar si x es igual a 3 a 5 a 7
+
+274
+00:22:02,880 --> 00:22:07,520
+podríamos hacer eso que se haría en otros lenguajes de pronunciación es mucho más sencillo si
+
+275
+00:22:07,520 --> 00:22:14,560
+definimos una tupla y comprobamos con el operador y si estamos realmente si x es 1 de 3 5 7
+
+276
+00:22:14,560 --> 00:22:23,120
+esto está relacionado con tanto con n y como con o no n recibe una secuencia y nos devuelve
+
+277
+00:22:23,120 --> 00:22:29,000
+verdaderos y al menos uno de los elementos es verdadero y también si está falso no devuelve
+
+278
+00:22:29,000 --> 00:22:33,720
+no devuelve falso es decir si aquí le decimos n y de ver falso verdadero falso pues nos va a decir
+
+279
+00:22:33,720 --> 00:22:37,080
+verdadero porque hay uno si los dos son falsos no dice falso y como no hay ninguna lista vacía
+
+280
+00:22:37,080 --> 00:22:41,880
+también dice que falso es decir hay al menos uno tiene alguna utilidad como por ejemplo hay algún
+
+281
+00:22:41,880 --> 00:22:47,320
+número par en la lista números pues tenemos que decir n y pasarle esto pero una cosa aún más
+
+282
+00:22:47,320 --> 00:22:51,160
+chula podemos utilizar un generador porque sólo tenemos que con necesitamos los valores una vez
+
+283
+00:22:51,160 --> 00:22:57,200
+pues si omitimos los corchetes simplemente ponemos los paréntesis estamos generando solamente los
+
+284
+00:22:57,200 --> 00:23:01,920
+valores es decir es un generador la ventaja son si no lo había usado algún día llegaré ese muro
+
+285
+00:23:01,920 --> 00:23:07,520
+entonces acordaré de la transparencia 45 y me mandaréis correos de porfa explícamela de nuevo
+
+286
+00:23:07,520 --> 00:23:14,360
+pero si hicieramos un si quisieramos comprobar si hay un número para los primeros mil millones
+
+287
+00:23:14,360 --> 00:23:18,320
+de elementos que de hecho sabemos ya que si si ejecutaramos eso posiblemente no podríamos
+
+288
+00:23:18,320 --> 00:23:21,560
+porque tendríamos que generar primero a lista utilizamos las llaves que es muy importante y
+
+289
+00:23:21,560 --> 00:23:27,760
+en un generador y ol lo que hace bueno pues hoy nos dice nos da un verdadero si todos los valores
+
+290
+00:23:27,760 --> 00:23:35,360
+evaluan a verdadero en la documentación en algún sitio de documentación de paison pone es mejor
+
+291
+00:23:35,360 --> 00:23:40,000
+pecar en lo sucinto de enloguada mucha información y ponerlo como no trata con contecendencia a los
+
+292
+00:23:40,000 --> 00:23:44,080
+programadores no lo hace como si fueran tontos así que tampoco tiene sentido que entramos en mucho
+
+293
+00:23:44,080 --> 00:23:49,440
+más detalle en esto son para todos los números pues le decimos son para todos los números porque
+
+294
+00:23:49,440 --> 00:23:58,480
+estamos negando eso a mi gusto montó podríamos decir el resto de dividir x entre 2 igual a 1
+
+295
+00:23:58,480 --> 00:24:03,600
+perdón igual a 0 eso es lo mismo que negar el resto porque cuando el resto sea 0 estamos negando
+
+296
+00:24:03,600 --> 00:24:08,040
+0 y el valor rológico es 1 eso también lo vaya a un montón y es lo de que te recomienda la
+
+297
+00:24:08,040 --> 00:24:13,280
+documentación de que utilicemos siempre que pagamos el valor implícito de todos los objetos
+
+298
+00:24:13,280 --> 00:24:21,240
+booleanos si tenemos y f lén de lista igual a 0 eso es lo mismo que decir y si no lista
+
+299
+00:24:22,520 --> 00:24:29,920
+eso de hecho son muy elegantes y y lo vaya a entonces por eso el comprobar que si es para
+
+300
+00:24:29,920 --> 00:24:35,160
+lo mismo que negar el resto de dividir entre 2 y yo veo esto mucho mucho mejor que la alternativa
+
+301
+00:24:35,160 --> 00:24:39,440
+si hubiéramos que hacer a mano de utilizar pues una variable que diría son pares y entonces
+
+302
+00:24:39,440 --> 00:24:43,320
+pues sin algún momento encontraramos uno que no fuera par pues la pondríamos a falso y saldríamos
+
+303
+00:24:43,320 --> 00:24:50,440
+del bucle esto es lo que más bajo nivel tendríamos que hacer la función la función potencia normalmente
+
+304
+00:24:50,440 --> 00:24:56,880
+utilizamos con x e y la base y el exponente y nos devuelve pues aquí elevado ahí mucho más
+
+305
+00:24:56,880 --> 00:25:00,400
+oculto aunque esta la documentación nadie lo miró nunca es que admite un tercer argumento
+
+306
+00:25:00,400 --> 00:25:08,080
+opcional que es z si especificamos z el resultado que nos devuelve está en ese en ese z es decir
+
+307
+00:25:08,080 --> 00:25:14,240
+no devuelve el resto dividir el la potencia que hemos calculado entre ese número 2 elevado a 3
+
+308
+00:25:14,240 --> 00:25:20,440
+es 8 2 elevado a 3 en z 6 no está devuelviendo 8 dividido entre 6 nos da un resto de 2 y nos
+
+309
+00:25:20,440 --> 00:25:28,400
+devuelve 2 y 2 elevado a 5 32 que dividen entre 17 el resto es 15 no solamente no ahorra un paso
+
+310
+00:25:28,400 --> 00:25:32,200
+sino que es mucho más rápido si nosotros intentamos puede hacer las dos operaciones uno después de
+
+311
+00:25:32,200 --> 00:25:43,560
+otra el parámetro y cuando ordenamos una lista sabe que tenemos short y shorted short es un método
+
+312
+00:25:43,560 --> 00:25:49,760
+de la clase lista y shorted es una función que viene con python y nos ordena cualquier cosa que
+
+313
+00:25:49,760 --> 00:25:55,800
+reciba pues cuando queremos hacer una vez cuando queremos hacer ordenación en cuando queremos ordenar
+
+314
+00:25:55,800 --> 00:26:02,440
+por funciones si podemos eso es podemos hacer una ordenación no trivial porque si nosotros
+
+315
+00:26:02,440 --> 00:26:07,560
+pues shorted por defecto nos ordena pues de menor a mayor tenemos el reverse y no los ordenar
+
+316
+00:26:07,560 --> 00:26:11,960
+pues de arriba abajo podemos ordenar por cualquier criterio que nosotros queramos como por ejemplo
+
+317
+00:26:11,960 --> 00:26:16,280
+una distancia a un origen de coordenada y eso lo hacemos utilizando aquí y lo que hace es recibir
+
+318
+00:26:16,280 --> 00:26:20,680
+una función que se va a evaluar una vez por cada uno de los elementos y en base a esos resultados
+
+319
+00:26:20,680 --> 00:26:25,280
+es realmente con lo que se ordena la lista. Además, solo se evalúa la función una vez por cada uno de los elementos.
+
+320
+00:26:25,280 --> 00:26:32,680
+Por ejemplo, si hacemos aquí la función valor absoluto, lo que va a hacer es que nos va a ordenar los elementos
+
+321
+00:26:32,680 --> 00:26:38,880
+por el resultado de calcular su valor absoluto y lexicográficamente, pues simplemente tenemos que decirle...
+
+322
+00:26:40,880 --> 00:26:44,080
+Sí, lexicográficamente, vale, por defecto no lo ordenado, lexicográficamente.
+
+323
+00:26:44,080 --> 00:26:48,680
+Ahora queremos ordenarla por su longitud, pues si aquí es la función len,
+
+324
+00:26:48,680 --> 00:26:52,280
+se va a calcular la longitud de cada cadena por cada uno de los elementos y nos lo va a ordenar
+
+325
+00:26:52,280 --> 00:26:55,480
+dos caracteres, tres caracteres, tres y cuatro.
+
+326
+00:26:55,480 --> 00:27:02,080
+Una cosa chula, desde el 2.2, estos fundamentas de la ciencia de la computación, las ordenaciones son estables.
+
+327
+00:27:02,080 --> 00:27:05,480
+Una ordenación estable quiere decir que cuando dos elementos comparan igual,
+
+328
+00:27:05,480 --> 00:27:09,880
+no hay ninguno que tenga presidencia respecto al otro, se respeta el valor original.
+
+329
+00:27:09,880 --> 00:27:14,080
+Esto es muy chulo cuando queremos ordenar por dos claves, por ejemplo por apellidos,
+
+330
+00:27:14,080 --> 00:27:16,080
+cuando se muestran los apellidos y luego los nombres.
+
+331
+00:27:16,080 --> 00:27:19,480
+Los apellidos están ordenados alfabéticamente, pero dentro de cada apellido si hay alguno igual,
+
+332
+00:27:19,480 --> 00:27:22,680
+también están ordenados a su vez por ordenos alfabéticos.
+
+333
+00:27:22,680 --> 00:27:24,680
+Entonces, Ana va antes que Víctor.
+
+334
+00:27:24,680 --> 00:27:28,280
+Eso se puede hacer gracias a que el algoritmo sea estable, podemos...
+
+335
+00:27:28,280 --> 00:27:31,680
+Muy bien, primero ordenamos por los apellidos y luego ordenamos por los nombres.
+
+336
+00:27:31,680 --> 00:27:39,880
+De forma que así hemos hecho en dos pasos la ordenación por dos críteros diferentes.
+
+337
+00:27:39,880 --> 00:27:42,280
+Pero podemos ordenar utilizando nuestras propias funciones.
+
+338
+00:27:42,280 --> 00:27:45,280
+Por ejemplo, para ordenar por el número de vocales podríamos hacer una función
+
+339
+00:27:45,280 --> 00:27:50,480
+que lo quisiera fue recorrer la cadena de texto, contar el número de vocales que tiene
+
+340
+00:27:50,480 --> 00:27:53,880
+y no devolviera ese entero.
+
+341
+00:27:53,880 --> 00:27:57,880
+Entonces, si dijéramos muy bien, la clave es nuestra función llamada n vocales,
+
+342
+00:27:57,880 --> 00:28:04,080
+devuelve, ordename la lista, pues entonces aquí no hay ninguna vocal, 0, 1, 2, 2 y más de 2.
+
+343
+00:28:04,080 --> 00:28:10,080
+O usando funciones anónimas, que son las funciones lambda, que eso ahora vamos a quererla
+
+344
+00:28:10,080 --> 00:28:13,080
+y luego dejaremos de quererla.
+
+345
+00:28:13,080 --> 00:28:17,080
+Las funciones lambda lo que hacen es definir sobre la marcha al vuelo, no definen una función
+
+346
+00:28:17,080 --> 00:28:20,080
+que no tiene nombre, que solo no importa una vez, no debería haber llegado a asistir,
+
+347
+00:28:20,080 --> 00:28:23,080
+pero apareció en este mundo, hay que vivir con ella.
+
+348
+00:28:23,080 --> 00:28:31,080
+Aquí, lambda, x, x, es decir, estamos diciendo que como clave, como función,
+
+349
+00:28:31,080 --> 00:28:37,080
+como sí, aquí para ordenar nuestra secuencia es una función que recibe un único argumento
+
+350
+00:28:37,080 --> 00:28:41,080
+que ha hecho sabemos cuál es el elemento que estamos ordenando y que nos va a devolver.
+
+351
+00:28:41,080 --> 00:28:45,080
+Dos puntos, eso es lo que nos va a devolver, nos devuelve el atributo y más, es decir,
+
+352
+00:28:45,080 --> 00:28:52,080
+la parte imaginaria de ese, el resultado, es decir, el atributo y más de ese objeto,
+
+353
+00:28:52,080 --> 00:28:55,080
+pero aquí estamos pasándoles numerosos complejos, lo que sabemos que es la parte imaginaria.
+
+354
+00:28:55,080 --> 00:28:59,080
+Cuando lo ordenemos, ¿qué estamos haciendo? Estamos ordenándolos por la parte imaginaria,
+
+355
+00:28:59,080 --> 00:29:03,080
+menos 5, 2 y 9, o podríamos ordenar por el segundo elemento de la tupla.
+
+356
+00:29:03,080 --> 00:29:09,080
+Si le decimos, qui lambda x, x entre corchetes 1, empezamos por el índice 0,
+
+357
+00:29:09,080 --> 00:29:13,080
+luego el 1 es el segundo elemento, estamos ordenándolos por el segundo elemento,
+
+358
+00:29:13,080 --> 00:29:18,080
+1, 2, 3 y 4. Utilizándolos el qui podemos ordenar como queramos.
+
+359
+00:29:18,080 --> 00:29:22,080
+Esto si vaya a esta cover flow, el que hizo esa pregunta es yo.
+
+360
+00:29:22,080 --> 00:29:27,080
+Lo que pasa es que tengo una avatar que es un ninja y no se me reconoce.
+
+361
+00:29:27,080 --> 00:29:32,080
+¿Por qué cosas como que Python es mayor que 130, 129?
+
+362
+00:29:32,080 --> 00:29:38,080
+De hecho, esta es una pregunta que surgió una vez y no la encontramos documentada en ningún sitio.
+
+363
+00:29:38,080 --> 00:29:41,080
+Empezamos por lo básico.
+
+364
+00:29:41,080 --> 00:29:46,080
+Para que las listas y tuplas se puedan ordenar les psicográficamente.
+
+365
+00:29:46,080 --> 00:29:49,080
+Para que sean iguales tienen que tener el mismo tipo, la misma longitud,
+
+366
+00:29:49,080 --> 00:29:53,080
+y los elementos 1 a 1 comparados, primero con primero, segundo con segundo, tienen que ser iguales.
+
+367
+00:29:53,080 --> 00:29:58,080
+Por ejemplo, 1 a 2 es igual a 1 a 2, si. 1 a 2 no es igual a 3, 4,
+
+368
+00:29:58,080 --> 00:30:01,080
+porque los elementos no son iguales aunque tengan el mismo tipo y la misma longitud,
+
+369
+00:30:01,080 --> 00:30:04,080
+y aquí aunque los elementos son los mismos, tienen diferente tipo.
+
+370
+00:30:04,080 --> 00:30:06,080
+Una tupla no es lo mismo que una lista.
+
+371
+00:30:06,080 --> 00:30:10,080
+Si no tienen el mismo número de elementos, la comparación de las dos secuencias
+
+372
+00:30:10,080 --> 00:30:13,080
+se determina por el primer elemento en el que difieren.
+
+373
+00:30:13,080 --> 00:30:18,080
+Aquí el primer elemento en el que difieren es el primero y 4 es mayor que 1 es verdadero.
+
+374
+00:30:18,080 --> 00:30:23,080
+Aquí el primer elemento es igual al primero, el segundo no es menor al segundo,
+
+375
+00:30:23,080 --> 00:30:27,080
+de hecho, es tres menos que cuatro, por eso esta comparación nos da falso.
+
+376
+00:30:29,080 --> 00:30:36,080
+Si comparamos cada una, si el elemento en el que ya no somos iguales no existe, pues va antes.
+
+377
+00:30:37,080 --> 00:30:41,080
+La respuesta corta de esto es completamente arbitrario.
+
+378
+00:30:41,080 --> 00:30:47,080
+En Python, por ejemplo, el criterio que se utiliza para hacer esta clase de ofuscadas comparaciones
+
+379
+00:30:47,080 --> 00:30:50,080
+se ordenan por el nombre de sus tipos.
+
+380
+00:30:50,080 --> 00:30:55,080
+Entonces, por ejemplo, como Python es una cadena, es una STR y empieza por S,
+
+381
+00:30:55,080 --> 00:31:00,080
+y eso es una lista y empieza por L, pues una S es mayor que una L, luego se ordena antes.
+
+382
+00:31:02,080 --> 00:31:06,080
+Pero un tipo de dato numérico siempre va antes que uno que no sea numérico.
+
+383
+00:31:06,080 --> 00:31:10,080
+Entonces, comparéis lo que comparemos con, por ejemplo, 23, por eso 23 es menor que Python.
+
+384
+00:31:10,080 --> 00:31:14,080
+La cosa es que, de hecho, posiblemente esta la transparencia más inútil de todas.
+
+385
+00:31:14,080 --> 00:31:16,080
+Esto es un detalle de implementación.
+
+386
+00:31:16,080 --> 00:31:22,080
+Es decir, Python lo va a ordenar de forma arbitrar consistente, pero podría cambiar mañana,
+
+387
+00:31:22,080 --> 00:31:23,080
+no hay ninguna garantía.
+
+388
+00:31:23,080 --> 00:31:25,080
+Así que, y de todas formas, ¿por qué querría ya hacer esto?
+
+389
+00:31:25,080 --> 00:31:31,080
+No recuerdo en qué contexto surgió, pero nos llevó un montón de horas de trabajo
+
+390
+00:31:31,080 --> 00:31:32,080
+que encontrará respuesta.
+
+391
+00:31:32,080 --> 00:31:36,080
+En Python, 3.000, que por supuesto todos deberíamos estar usándolos ya, pero no lo hacemos,
+
+392
+00:31:36,080 --> 00:31:40,080
+el comportamiento es el que esperaríamos y es que si incomparamos una cosa que no tiene sentido,
+
+393
+00:31:40,080 --> 00:31:44,080
+es decir, si no podemos sumar una cadena de texto, ¿por qué si podemos compararla?
+
+394
+00:31:44,080 --> 00:31:46,080
+Así que, Python 3 nos dice que eso no se puede hacer.
+
+395
+00:31:47,080 --> 00:31:49,080
+¿Cómo aplanar una lista con Zoom?
+
+396
+00:31:49,080 --> 00:31:53,080
+Esto está muy chulo, yo nunca he tenido que aplanar una lista, pero queda muy bien.
+
+397
+00:31:55,080 --> 00:32:01,080
+Porque lo importante es que nos permita aprender que la función Zoom acepta un segundo parámetro opcional,
+
+398
+00:32:01,080 --> 00:32:03,080
+que es el valor a partir del cual se comienza.
+
+399
+00:32:03,080 --> 00:32:08,080
+Si decimos que Sume 1, 2, 3, por lo que hace recorrer los elementos de la lista y nos los suma,
+
+400
+00:32:08,080 --> 00:32:11,080
+pero si decimos que como segundo argumento le damos un 10,
+
+401
+00:32:11,080 --> 00:32:15,080
+lo que hace es sumarnos los, pero empezando por 10, luego 16.
+
+402
+00:32:16,080 --> 00:32:19,080
+Por supuesto, sabemos que la esperamos pasar, por ejemplo, otra lista, nos suma 45,
+
+403
+00:32:19,080 --> 00:32:24,080
+y podemos decirle muy bien, suma 100, suma los elementos de una lista que solo tiene un elemento,
+
+404
+00:32:24,080 --> 00:32:27,080
+que es 100, resultados 100, pero empieza por menos uno, pues 99.
+
+405
+00:32:27,080 --> 00:32:29,080
+Un montón de código inútil.
+
+406
+00:32:29,080 --> 00:32:36,080
+La cosa es que podemos utilizar como, la posición inicial como Start, podemos utilizar una lista vacía.
+
+407
+00:32:36,080 --> 00:32:40,080
+Si hacemos eso, lo que va a hacer la función Zoom es, bueno, pues internamente está llamando el operador Zoom,
+
+408
+00:32:40,080 --> 00:32:42,080
+lo que nos está haciendo es concatenarla.
+
+409
+00:32:43,080 --> 00:32:47,080
+Así que una subcadena que es 1, 2, otra que es 3, una que es 4, 5 y 6, 7, 8,
+
+410
+00:32:47,080 --> 00:32:51,080
+si el argumento inicial es una cadena, pues lo que está haciendo es encadenarlas.
+
+411
+00:32:52,080 --> 00:32:54,080
+Si algún día tenéis que hacer esto, escríbeme.
+
+412
+00:32:54,080 --> 00:33:00,080
+Es importante, por supuesto, que el comienzo sea una lista vacía, porque si lo que hacemos es llamar simplemente,
+
+413
+00:33:00,080 --> 00:33:05,080
+pasando una lista de listas a la función Zoom, pues lo que va a hacer es, cuál es el barro inicial por defecto,
+
+414
+00:33:05,080 --> 00:33:11,080
+0, va a intentar sumar 0 a 4, 5 y va a decirnos que no puede, de hecho, es un type error.
+
+415
+00:33:12,080 --> 00:33:14,080
+Aquí está la pregunta donde se discutía.
+
+416
+00:33:15,080 --> 00:33:19,080
+El operador Ternario que se ve en otro lenguaje de programación, y que a mí me gustaba un montón en C.
+
+417
+00:33:19,080 --> 00:33:25,080
+Lo que nos permite es que entre dos expresiones, escogamos una de ellas, una de las dos en función de una tercera.
+
+418
+00:33:26,080 --> 00:33:28,080
+Por ejemplo, en C lo que diríamos es muy bien.
+
+419
+00:33:28,080 --> 00:33:31,080
+El resultado, ¿qué vamos a asignarle a número de segundos?
+
+420
+00:33:31,080 --> 00:33:37,080
+Pues si el contador, que es otra variable, es mayor que 5, le vamos a asignar 5 y si no, 0.
+
+421
+00:33:37,080 --> 00:33:42,080
+Esto es muy poderoso, nos permite en muy poco código, es pesar un montón de cosas.
+
+422
+00:33:42,080 --> 00:33:47,080
+En Python tienen otro nombre y se llaman expresiones condicionales, y existen desde Python 2.5.
+
+423
+00:33:47,080 --> 00:33:50,080
+Esta sintasi, podéis ver las discusiones que hubo el respecto.
+
+424
+00:33:52,080 --> 00:33:54,080
+Si hubiera sido a la media, se hubieran matado a espada todos.
+
+425
+00:33:56,080 --> 00:33:59,080
+Pero bueno, tenían que... y se llegó a esta especie de...
+
+426
+00:33:59,080 --> 00:34:02,080
+Bueno, ahí está. La cosa es que funciona.
+
+427
+00:34:02,080 --> 00:34:04,080
+Hay esto que también hay gente que la odia.
+
+428
+00:34:04,080 --> 00:34:07,080
+Pero básicamente, lo que estamos diciendo es muy bien.
+
+429
+00:34:07,080 --> 00:34:13,080
+Muestrame por pantalla expresión 1 si x es igual a 1 y si no, otra cosa.
+
+430
+00:34:13,080 --> 00:34:16,080
+Como x es igual a 1, es decir, lo que confundo un montón es que esto se evaluó antes.
+
+431
+00:34:16,080 --> 00:34:20,080
+Si x es igual a 1, pues el resultado de estas expresiones es 1 y si no, es otra cosa.
+
+432
+00:34:20,080 --> 00:34:22,080
+Como x es 2, pues nos imprime otra cosa.
+
+433
+00:34:22,080 --> 00:34:28,080
+Otro ejemplo es que en una única línea, esto realmente es muy, muy, muy no pitónico,
+
+434
+00:34:28,080 --> 00:34:32,080
+dijéramos muy bien, pues imprime es la o son las, dependiendo de la hora.
+
+435
+00:34:32,080 --> 00:34:34,080
+Y eso podríamos hacerlo así.
+
+436
+00:34:34,080 --> 00:34:39,080
+O por ejemplo, operando con números, podríamos hacer el eval cuadrado, si el número es impar,
+
+437
+00:34:39,080 --> 00:34:41,080
+y si no, divide entre dos.
+
+438
+00:34:41,080 --> 00:34:44,080
+Es decir, primero, evaluamos la condición, si el resultado de eso es 1.
+
+439
+00:34:44,080 --> 00:34:47,080
+Es decir, es verdadero, es porque no es 0, con lo cual el número es impar.
+
+440
+00:34:47,080 --> 00:34:53,080
+Entonces me calcula el cuadrado y si no, me devuelves, me asignas ahí el resultado de dividir entre dos.
+
+441
+00:34:53,080 --> 00:34:55,080
+Y nos da 169 porque era impar.
+
+442
+00:34:55,080 --> 00:34:58,080
+Están explicadas en el PEP 308.
+
+443
+00:34:58,080 --> 00:35:02,080
+Y el incremento, se ve un montón en los operadores, slides, el rodaja, los corchetes.
+
+444
+00:35:02,080 --> 00:35:06,080
+Y se suelen ver para hacer cosas como los tres primeros elementos, pues 2.3.
+
+445
+00:35:06,080 --> 00:35:10,080
+O para decir los cuatro últimos, menos 4.2, hasta el final, los 4 últimos.
+
+446
+00:35:10,080 --> 00:35:13,080
+Porque si ponemos un indicio negativo, empezamos a contar por el final.
+
+447
+00:35:13,080 --> 00:35:16,080
+O del segundo al quinto, pues 1.2.5.
+
+448
+00:35:16,080 --> 00:35:19,080
+Esto se ve un montón, uno trabaja al principio para apénderselo, para desenvolverse muy bien.
+
+449
+00:35:19,080 --> 00:35:24,080
+Y es fundamental, la cosa es que si ponemos otros dos puntos, podemos especificar el paso.
+
+450
+00:35:24,080 --> 00:35:28,080
+Por defecto es 1, pero si la decimos 2, pues vamos avanzando de 1 en 1.
+
+451
+00:35:28,080 --> 00:35:30,080
+Perdón, de 2 en 2.
+
+452
+00:35:30,080 --> 00:35:34,080
+Si le ponemos, y por ejemplo, para coger los elementos impares, poloremos.
+
+453
+00:35:34,080 --> 00:35:37,080
+Sí, empezamos desde el segundo elemento, porque nuestro range empezaba por cero
+
+454
+00:35:37,080 --> 00:35:40,080
+y podríamos coger las posiciones impares.
+
+455
+00:35:40,080 --> 00:35:45,080
+Si queremos recorrer los primeros nueve elementos de 3 en 3, pues no ponemos nada al comienzo,
+
+456
+00:35:45,080 --> 00:35:48,080
+porque podríamos poner cero, pero hay implícitos.
+
+457
+00:35:48,080 --> 00:35:50,080
+2.9 y decimos, pues v de 3 en 3.
+
+458
+00:35:50,080 --> 00:35:54,080
+Tenemos que verlo como que hacia delante empezamos a contar en cero y terminamos en n en n-1.
+
+459
+00:35:54,080 --> 00:35:56,080
+Y si le ponemos el paso negativo, estamos yendo hacia atrás.
+
+460
+00:35:56,080 --> 00:35:59,080
+Por eso un idiom que se ve un montón en todas las documentaciones.
+
+461
+00:35:59,080 --> 00:36:00,080
+¿Cómo invierte una lista?
+
+462
+00:36:00,080 --> 00:36:01,080
+Reverse.
+
+463
+00:36:01,080 --> 00:36:04,080
+Sí, pero también podemos hacer 2 puntos a 2 puntos menos 1.
+
+464
+00:36:04,080 --> 00:36:08,080
+Eso es lo que hace ir desde el final hasta el comienzo de 1 en 1.
+
+465
+00:36:08,080 --> 00:36:11,080
+Porque la cosa es que cuando utilizamos un par, cuando vamos hacia atrás,
+
+466
+00:36:11,080 --> 00:36:14,080
+tenemos que ver como que estamos empezando a contar en n-1, que es el final,
+
+467
+00:36:14,080 --> 00:36:16,080
+y vamos hasta menos len, que es el comienzo.
+
+468
+00:36:16,080 --> 00:36:18,080
+Y ahora un segundo.
+
+469
+00:36:20,080 --> 00:36:26,080
+Donde vuelve, por eso, por ejemplo, aquí tras por 4 es 12, guión bajo más 1 es 13.
+
+470
+00:36:26,080 --> 00:36:28,080
+Es decir, está almacenando el valor de la última.
+
+471
+00:36:28,080 --> 00:36:31,080
+En modo no interactivo es una variable más cualquiera.
+
+472
+00:36:31,080 --> 00:36:36,080
+Pero por convención, no por nada más, se suele utilizar como una variable desechable.
+
+473
+00:36:36,080 --> 00:36:41,080
+Esto, y por ejemplo, ayuda a que PyLint no se queje y nos diga esa variable
+
+474
+00:36:41,080 --> 00:36:43,080
+no está usando, pero está declarando.
+
+475
+00:36:43,080 --> 00:36:44,080
+Porque tengo que declararla.
+
+476
+00:36:44,080 --> 00:36:48,080
+Por ejemplo, si yo quiero imprimir 10 veces, hola mundo.
+
+477
+00:36:48,080 --> 00:36:51,080
+Pero no necesito la variable index, no necesito nada realmente.
+
+478
+00:36:51,080 --> 00:36:54,080
+Utilizo el range para hacer el bucle 10 veces limpiamente.
+
+479
+00:36:54,080 --> 00:36:57,080
+Pues si ponemos un guión bajo, lo que estamos diciéndole tanto a PyLint
+
+480
+00:36:57,080 --> 00:37:00,080
+como a otra gente que viene en nuestro código, no necesito esta variable realmente.
+
+481
+00:37:00,080 --> 00:37:01,080
+Pero tengo que usar algo.
+
+482
+00:37:01,080 --> 00:37:06,080
+O si quisiéramos solamente el segundo elemento de lo que devuelve splitX,
+
+483
+00:37:06,080 --> 00:37:10,080
+que lo que hace es cortarnos nombre y extensión, pues podríamos hacerlo así.
+
+484
+00:37:10,080 --> 00:37:14,080
+Y de forma clara, a mí me gusta mucho, nos diría, no nos hace falta lo primero que nos devuelve.
+
+485
+00:37:14,080 --> 00:37:16,080
+No, solamente queremos lo segundo.
+
+486
+00:37:16,080 --> 00:37:19,080
+La función en lambda, la función en lambda, y me da cuenta que antes no me he expresado bien,
+
+487
+00:37:19,080 --> 00:37:21,080
+la función en lambda están muy chulas.
+
+488
+00:37:21,080 --> 00:37:26,080
+No, no, de hecho, se puede robinar eso y se puede ver.
+
+489
+00:37:26,080 --> 00:37:30,080
+Es decir, lo que mucha gente discuta es que tuvieran lugar en Python,
+
+490
+00:37:30,080 --> 00:37:31,080
+que es diferente.
+
+491
+00:37:31,080 --> 00:37:33,080
+En otros sitios, en la programación funcional es muy bonita.
+
+492
+00:37:33,080 --> 00:37:35,080
+Pero es una cosa que la gente es como lo de…
+
+493
+00:37:35,080 --> 00:37:38,080
+Antes me han preguntado, ¿qué es lo que menos te gusta de Python?
+
+494
+00:37:38,080 --> 00:37:40,080
+Yo que lo ha respondido, no me han preguntado a nadie a mí.
+
+495
+00:37:40,080 --> 00:37:45,080
+El if guión bajo guión bajo, name guión bajo guión bajo, igual guión bajo, main main.
+
+496
+00:37:45,080 --> 00:37:48,080
+Eso, porque además tú llegas ya al curso y dices,
+
+497
+00:37:48,080 --> 00:37:50,080
+¡ah, ese paisaje no es muy sencillo, es muy intuitivo, es muy claro!
+
+498
+00:37:50,080 --> 00:37:52,080
+Y luego tienes eso.
+
+499
+00:37:52,080 --> 00:37:54,080
+Y tienes que explicarles por qué.
+
+500
+00:37:54,080 --> 00:37:57,080
+Y de hecho, entonces, la función en lambda está muy bien.
+
+501
+00:37:57,080 --> 00:38:02,080
+El problema es que solamente son… se hicieron para que pudiéramos definir funciones anónimas.
+
+502
+00:38:02,080 --> 00:38:08,080
+Pero tienen ese problema y es que tienen un problema grave
+
+503
+00:38:08,080 --> 00:38:12,080
+y es que no se comportan exactamente como la gente que viene en el mundo de la programación funcional esperaría.
+
+504
+00:38:12,080 --> 00:38:15,080
+Por lo tanto, hay una cosa, hay un compromiso de que están,
+
+505
+00:38:15,080 --> 00:38:18,080
+pero no deberían, no deberían, aquí de Marcos no les gustaron,
+
+506
+00:38:18,080 --> 00:38:20,080
+estoy a uno punto de quitarlas.
+
+507
+00:38:20,080 --> 00:38:23,080
+Y yo, últimamente, por donde miras, te dice, no, no utiliza las funciones en lambda,
+
+508
+00:38:23,080 --> 00:38:25,080
+puede utilizar otras cosas.
+
+509
+00:38:25,080 --> 00:38:28,080
+Por cierto, si os leí este artículo, este es del blog de Github en Rosun,
+
+510
+00:38:28,080 --> 00:38:33,080
+explica que en los tiempos del principio de Python la gente hacía como que comits como,
+
+511
+00:38:33,080 --> 00:38:35,080
+y no se discutía casi nada.
+
+512
+00:38:35,080 --> 00:38:38,080
+Entonces, llegó alguien del mundo de lisp y dijo, parche,
+
+513
+00:38:38,080 --> 00:38:41,080
+y entonces aparecieron map, filter, reduce.
+
+514
+00:38:41,080 --> 00:38:43,080
+La comunidad iba a otro ritmo antes.
+
+515
+00:38:43,080 --> 00:38:46,080
+Pero bueno, lambda sigue existiendo.
+
+516
+00:38:46,080 --> 00:38:51,080
+Aun así, lo chulo está… se recomienda un montón, porque es muy legible utilizar el módulo operator,
+
+517
+00:38:51,080 --> 00:38:55,080
+porque básicamente son todas las funciones, pero en funciones, todos los operadores, pero en funciones.
+
+518
+00:38:55,080 --> 00:38:59,080
+Por ejemplo, si como aquí lo que le decimos es del módulo operator,
+
+519
+00:38:59,080 --> 00:39:02,080
+dame el atributo y más, pues lo que va a hacer es,
+
+520
+00:39:02,080 --> 00:39:05,080
+estamos expresando lo mismo que lo que hacemos con lambda, pero con una función.
+
+521
+00:39:05,080 --> 00:39:08,080
+O también, por ejemplo, para acceder al segundo elemento, con item getter.
+
+522
+00:39:08,080 --> 00:39:11,080
+Los parámetros por defecto.
+
+523
+00:39:11,080 --> 00:39:14,080
+Sabemos que podemos definir parámetros que tienen un valor por defecto,
+
+524
+00:39:14,080 --> 00:39:17,080
+y si no nos declaramos que va a llamar la función, pues tienen el que dijimos.
+
+525
+00:39:17,080 --> 00:39:19,080
+Aquí, por ejemplo, una cadena vacía.
+
+526
+00:39:19,080 --> 00:39:23,080
+Una función que recibe una lista, aunque por defecto va a ser una lista vacía,
+
+527
+00:39:23,080 --> 00:39:25,080
+le añade un 1 y nos devuelve la lista.
+
+528
+00:39:25,080 --> 00:39:28,080
+Por lo tanto, nosotros le decimos muy bien, pues inserta 1 en range 3,
+
+529
+00:39:28,080 --> 00:39:32,080
+pues recibe 0, 1, 2 y le inserta un 1 y nos devuelve eso.
+
+530
+00:39:32,080 --> 00:39:35,080
+La cosa es que si decimos muy bien, ahora vamos a llamar la función sin ningún argumento,
+
+531
+00:39:35,080 --> 00:39:37,080
+pues crea una lista vacía y nos devuelve un 1.
+
+532
+00:39:37,080 --> 00:39:41,080
+Ahora la llamamos otra vez, pero pues nos crea una lista vacía y nos devuelve un 1.
+
+533
+00:39:41,080 --> 00:39:45,080
+Pero sin embargo, no ocurre eso, nos devuelve uno 1, y luego nos devuelve uno 1, uno 1.
+
+534
+00:39:45,080 --> 00:39:50,080
+De hecho, aquí si no fuera Beamer, tendría mi animación de un tío que le explota la cabeza.
+
+535
+00:39:50,080 --> 00:39:56,080
+Pero no sé hacer todavía... era mucho tiempo para poner GIFs en Beamer.
+
+536
+00:39:56,080 --> 00:40:01,080
+El motivo es que las funciones en Python son objetos de primera clase,
+
+537
+00:40:01,080 --> 00:40:03,080
+es decir, se volvieron cuando son definidas.
+
+538
+00:40:03,080 --> 00:40:07,080
+Por lo tanto, lo que está pasando aquí es que hemos creado una lista.
+
+539
+00:40:07,080 --> 00:40:09,080
+Esto está relacionado con los parámetros,
+
+540
+00:40:09,080 --> 00:40:11,080
+con que en Python lo que tenemos son identificadores.
+
+541
+00:40:11,080 --> 00:40:17,080
+Y lo que hemos creado realmente es una única lista y nuestro parámetro por defecto lo que está haciendo es referenciarla.
+
+542
+00:40:17,080 --> 00:40:19,080
+¿Por qué funciona si lo que utilizamos es un entero?
+
+543
+00:40:19,080 --> 00:40:22,080
+Pues funciona porque los enteros son inmutables.
+
+544
+00:40:22,080 --> 00:40:27,080
+Lo que se nos recomienda, de hecho, es por referencias, por valor, es una cosa llamada por objeto.
+
+545
+00:40:27,080 --> 00:40:33,080
+Lo que se recomienda es que utilicemos una variable que lo tenemos aquí, que sea una bandera,
+
+546
+00:40:33,080 --> 00:40:35,080
+porque no es, sí que no va a cambiar.
+
+547
+00:40:35,080 --> 00:40:39,080
+Podemos utilizar un número variable de argumentos en nuestras funciones.
+
+548
+00:40:39,080 --> 00:40:42,080
+Porque nosotros tenemos el problema que queremos imprimir un punto en dos dimensiones,
+
+549
+00:40:42,080 --> 00:40:46,080
+X y Z, y bueno, pues lo utilizamos.
+
+550
+00:40:46,080 --> 00:40:48,080
+Y cómo lo generalizamos a cualquier número de dimensiones?
+
+551
+00:40:48,080 --> 00:40:50,080
+Podríamos hacer que las coordenadas se pasaran en una lista,
+
+552
+00:40:50,080 --> 00:40:54,080
+pero eso nos obliga a que cuando lo llamemos encasulemos las coordenadas en una lista.
+
+553
+00:40:54,080 --> 00:40:57,080
+Pues añadiendo un asterisco, y esto ya se ha dicho antes,
+
+554
+00:40:57,080 --> 00:40:59,080
+así que podemos ir un poquito más rápido,
+
+555
+00:40:59,080 --> 00:41:02,080
+lo que hacen es que se nos encapsulan automáticamente en una lista.
+
+556
+00:41:02,080 --> 00:41:04,080
+Por ejemplo, al hacer ahora dos, cuatro,
+
+557
+00:41:04,080 --> 00:41:07,080
+lo que recibimos en coordenadas es una lista con todos los elementos.
+
+558
+00:41:07,080 --> 00:41:14,080
+Por supuesto, los parámetros que sí tienen nombre tienen que ir ante los de la asterisco.
+
+559
+00:41:14,080 --> 00:41:18,080
+A la inversa podemos utilizar el asterisco para desempaquetar una secuencia.
+
+560
+00:41:18,080 --> 00:41:22,080
+Si nosotros tenemos una función que recibe dos argumentos y las coordenadas estaban en una lista,
+
+561
+00:41:22,080 --> 00:41:26,080
+si lo que les decimos es que imprima esa lista con esas coordenadas,
+
+562
+00:41:26,080 --> 00:41:28,080
+para decir no, porque yo no recibo dos argumentos,
+
+563
+00:41:28,080 --> 00:41:30,080
+tú solo me te has pasado uno.
+
+564
+00:41:30,080 --> 00:41:33,080
+Si utilizamos el asterisco, pues lo que hace es desempaquetar paisos,
+
+565
+00:41:33,080 --> 00:41:36,080
+y entonces primero el elemento de la lista, como primer argumento, segundo, como segunda.
+
+566
+00:41:36,080 --> 00:41:39,080
+Lo mismo podemos hacer utilizando el doble asterisco con los argumentos nombrados,
+
+567
+00:41:39,080 --> 00:41:42,080
+es decir, con los keywords, y es idéntico,
+
+568
+00:41:42,080 --> 00:41:49,080
+solo que lo que recibimos, todas las tuplas, nombre, valor, la recibimos como un diccionario.
+
+569
+00:41:49,080 --> 00:41:52,080
+Y si tenemos un diccionario con los keywords argumentos,
+
+570
+00:41:52,080 --> 00:41:56,080
+podemos utilizar al llamar a la función el doble asterisco para desempaquetarlo,
+
+571
+00:41:56,080 --> 00:41:58,080
+y nosotros lo recibimos normalmente.
+
+572
+00:41:58,080 --> 00:42:02,080
+Va a encontrar un montón, ARKS y KWARKS,
+
+573
+00:42:02,080 --> 00:42:05,080
+como nombre de estos variables de argumentos variables.
+
+574
+00:42:05,080 --> 00:42:09,080
+De hecho, busqué en GitHub, por ejemplo, y había 710.000 líneas,
+
+575
+00:42:09,080 --> 00:42:11,080
+en caso de los cuales lo encontré.
+
+576
+00:42:11,080 --> 00:42:14,080
+ForElse, el bucle For admite la cláusula ELSE,
+
+577
+00:42:14,080 --> 00:42:16,080
+esto es una de esas cosas muy desconocidas,
+
+578
+00:42:16,080 --> 00:42:20,080
+y esto se ejecuta, vamos a mirar la obra, y 8.
+
+579
+00:42:20,080 --> 00:42:26,080
+La cláusula ELSE se ejecuta solo si no me ha llamado un break, ya está.
+
+580
+00:42:26,080 --> 00:42:32,080
+Es decir, si el bucle he terminado normalmente, como en este caso,
+
+581
+00:42:32,080 --> 00:42:38,080
+si 1, 2, 3, 0, 1, 2, y entonces el bucle termina y sale.
+
+582
+00:42:38,080 --> 00:42:41,080
+¿Hemos llamado el break? No, entonces ELSE se ejecuta.
+
+583
+00:42:41,080 --> 00:42:45,080
+Y si utilizamos un break, si hemos terminado antes de tiempo,
+
+584
+00:42:45,080 --> 00:42:48,080
+entonces la cláusula ELSE no se ejecuta.
+
+585
+00:42:48,080 --> 00:42:50,080
+Esto, por ejemplo, si estamos comprobando que,
+
+586
+00:42:50,080 --> 00:42:54,080
+por ejemplo, si tuviéramos esta función en la cual queremos lancer una excepción,
+
+587
+00:42:54,080 --> 00:42:56,080
+si no hay un valor, hay una secuencia,
+
+588
+00:42:56,080 --> 00:42:59,080
+esto si de otra forma tendríamos que hacerlo,
+
+589
+00:42:59,080 --> 00:43:03,080
+comparando, utilizando una variable, lo que se llama una variable de bandera,
+
+590
+00:43:03,080 --> 00:43:06,080
+tendríamos el típico valor de encontrado,
+
+591
+00:43:06,080 --> 00:43:09,080
+y entonces si en algún momento vemos que lo hemos encontrado,
+
+592
+00:43:09,080 --> 00:43:12,080
+lo ponemos a verdadero, y luego en función de esa variable, bla, bla, bla, bla,
+
+593
+00:43:12,080 --> 00:43:14,080
+lanzamos la excepción.
+
+594
+00:43:14,080 --> 00:43:17,080
+Es tan sencillo como decir muy bien, si en algún momento lo encuentras, para.
+
+595
+00:43:17,080 --> 00:43:20,080
+Y si el ELSE se tiene que ejecutar, es decir,
+
+596
+00:43:20,080 --> 00:43:22,080
+si en ningún momento paraste, lo cual quiere decir,
+
+597
+00:43:22,080 --> 00:43:24,080
+que no lo encontraste, lanzame la excepción.
+
+598
+00:43:24,080 --> 00:43:28,080
+Aún más desconocido, los bucles GUILE también tienen la cláusula ELSE,
+
+599
+00:43:28,080 --> 00:43:30,080
+y en lo mismo, si no hay break, se ejecuta.
+
+600
+00:43:30,080 --> 00:43:33,080
+El nombre hay a quien no le convence, hay mucha discusión.
+
+601
+00:43:33,080 --> 00:43:37,080
+Aquí se hablaba y explicaban por qué.
+
+602
+00:43:37,080 --> 00:43:42,080
+La función básicamente parece que la razón es por cómo funcionaban los compiladores hace 20 años,
+
+603
+00:43:42,080 --> 00:43:47,080
+porque internamente eran unos jump y demás y tenían sus ELSEs.
+
+604
+00:43:47,080 --> 00:43:51,080
+También tenemos los ELSEs, que parece que son los grandes desconocidos,
+
+605
+00:43:51,080 --> 00:43:56,080
+cuando capturamos excepciones, y es exactamente igual.
+
+606
+00:43:56,080 --> 00:44:00,080
+Si no se ha lanzado ninguna excepción en el TRIE, el ELSE se ejecuta.
+
+607
+00:44:00,080 --> 00:44:03,080
+Por ejemplo, aquí este código está funcionando, y es muy largo.
+
+608
+00:44:03,080 --> 00:44:06,080
+Lo que hace es bajarse las transparencias de la presentación y la descomprime.
+
+609
+00:44:06,080 --> 00:44:09,080
+Pues hay dos funciones en las cuales se podría lanzar IOERRO,
+
+610
+00:44:09,080 --> 00:44:13,080
+podría lanzarse al descomprimirlo o al actualizar un fichirito del ojo.
+
+611
+00:44:13,080 --> 00:44:15,080
+La cosa es que entonces tú llegas al EXCEPT y dices,
+
+612
+00:44:15,080 --> 00:44:17,080
+¿y cuál de los dos IOERRO se ha lanzado?
+
+613
+00:44:17,080 --> 00:44:18,080
+No tienes ni idea.
+
+614
+00:44:18,080 --> 00:44:23,080
+Por supuesto podríamos encadenar los TRIES y poner así un nivel infinito de encadenamiento,
+
+615
+00:44:23,080 --> 00:44:28,080
+para actuar de forma diferente en función de cada IOERRO.
+
+616
+00:44:28,080 --> 00:44:31,080
+Pero lo que podemos hacer es simplemente utilizar ELSEs,
+
+617
+00:44:31,080 --> 00:44:36,080
+y sabemos que este código va a ejecutarse solo si no se lanzó la excepción de arriba.
+
+618
+00:44:36,080 --> 00:44:43,080
+Hay algunos casos, no puedo cuantificar cuántos, en los cuales simplifica un montón el código.
+
+619
+00:44:43,080 --> 00:44:45,080
+¿Cómo relanzamos excepciones?
+
+620
+00:44:45,080 --> 00:44:51,080
+Pongamos que tenemos una excepción, la capturamos y queremos hacer algo en función de lo que vemos que hay en el EXCEPT.
+
+621
+00:44:51,080 --> 00:44:55,080
+Por ejemplo, aquí dividimos dos números y si no se ha podido dividir,
+
+622
+00:44:55,080 --> 00:44:59,080
+aparte de lanzar la excepción, decimos por pantalla no se ha podido.
+
+623
+00:44:59,080 --> 00:45:02,080
+Podemos ver que la excepción se lanza, pero antes hemos hecho el PRIN.
+
+624
+00:45:02,080 --> 00:45:09,080
+Eso es simplemente utilizar raíces a secas, no ponemos nada y la última excepción se nos lanza.
+
+625
+00:45:09,080 --> 00:45:14,080
+Pero claro, ¿qué pasaría si dentro del EXCEPT se lanzara otra excepción?
+
+626
+00:45:14,080 --> 00:45:18,080
+Pues que la vamos a perder cuando hagamos el reso, que hagamos la última.
+
+627
+00:45:18,080 --> 00:45:23,080
+Lo que podemos hacer, esa afirmación se podría discutir porque depende,
+
+628
+00:45:23,080 --> 00:45:27,080
+pero una forma de asegurarnos de que no la perdemos es guardarla.
+
+629
+00:45:27,080 --> 00:45:32,080
+Si hacemos captura a tal excepción, as, nombre de la excepción, por ejemplo, e,
+
+630
+00:45:32,080 --> 00:45:36,080
+entonces cuando luego le digamos relánsame, lo que estamos haciendo es relanzarla.
+
+631
+00:45:36,080 --> 00:45:39,080
+Podemos ver que nos dice que no se pudo y nos informa.
+
+632
+00:45:39,080 --> 00:45:46,080
+En Python 2 también podríamos utilizar con comas, pero de 2.6 está el as, que es mucho menos ambiguo.
+
+633
+00:45:46,080 --> 00:45:49,080
+Dos discusiones interesantes, especialmente la primera, está Cobra Flow.
+
+634
+00:45:49,080 --> 00:45:55,080
+STR y Rapper, las diferencias que nunca están claras, del todo.
+
+635
+00:45:55,080 --> 00:46:00,080
+Y la comentación nunca ayuda, porque siempre dice eso de la representación oficial de la clave del objeto
+
+636
+00:46:00,080 --> 00:46:03,080
+y la no oficial del objeto.
+
+637
+00:46:03,080 --> 00:46:07,080
+Esto es la razón de ser que Rapper devuelve algo que debe ser único,
+
+638
+00:46:07,080 --> 00:46:12,080
+o sea, una representación unívoca, que si estuviéramos depurando código nos permitirá saber qué fue mal.
+
+639
+00:46:12,080 --> 00:46:16,080
+Y Rapper y STR, perdón, es para humanos.
+
+640
+00:46:16,080 --> 00:46:19,080
+Y es lo que hemos tramado por pantalla ya el usuario para que sepa lo que está ocurriendo.
+
+641
+00:46:19,080 --> 00:46:24,080
+Por ejemplo, con Date Time, si decimos STR de hoy, que es lo que nos devuelve Date Time,
+
+642
+00:46:24,080 --> 00:46:29,080
+nos dice, pues esto es hoy, demasiado decimal, es los segundos, pero bueno.
+
+643
+00:46:29,080 --> 00:46:34,080
+Y si decimos con Rapper lo que nos está devolviendo es exactamente toda la información que necesitaríamos saber para depurar.
+
+644
+00:46:34,080 --> 00:46:39,080
+Idealmente la cadena que nos devuelve Rapper debería ser tal que si se la pasamos a Eval,
+
+645
+00:46:39,080 --> 00:46:44,080
+nos devolvería el mismo objeto, porque al final de cabo si Eval puede reconstruir objetos,
+
+646
+00:46:44,080 --> 00:46:47,080
+porque ya está toda la información en el Rapper.
+
+647
+00:46:47,080 --> 00:46:52,080
+Por cierto, utilizar eso de Eval, Rapper, objeto para se realizar algo,
+
+648
+00:46:52,080 --> 00:46:56,080
+no es buena idea, se desaconseja un montón, es peligrosísimo e ineficiente,
+
+649
+00:46:56,080 --> 00:46:58,080
+pero bueno, era solo un ejemplo.
+
+650
+00:46:58,080 --> 00:47:01,080
+Aunque a veces se ve, por ejemplo, los TAs de unidad para comprobar que el Rapper funciona,
+
+651
+00:47:01,080 --> 00:47:03,080
+pues se llama Eval.
+
+652
+00:47:03,080 --> 00:47:08,080
+Aquí se explica por qué no deberías utilizar Eval, básicamente en resúmenes que moriráis todos y lo intentáis.
+
+653
+00:47:08,080 --> 00:47:13,080
+Y bueno, esto que me gustó mucho el resumen,
+
+654
+00:47:13,080 --> 00:47:16,080
+Rapper es lo que le importa a la gente que programa y que desarrolla código,
+
+655
+00:47:16,080 --> 00:47:21,080
+y el STR es para los usuarios, el que lo tenga, porque hay muchos programadores que son el único usuario.
+
+656
+00:47:21,080 --> 00:47:29,080
+Aun así, si no definimos Rapper, cuando llamemos a STR también no va a devolver Rapper,
+
+657
+00:47:29,080 --> 00:47:31,080
+así que ni siquiera tenemos que definir los dos.
+
+658
+00:47:31,080 --> 00:47:34,080
+El método Has, implementado en nuestras clases,
+
+659
+00:47:34,080 --> 00:47:38,080
+el método Has tiene que devolver un entero que no lo representa, un entero único,
+
+660
+00:47:38,080 --> 00:47:40,080
+es decir, cuando nosotros metemos un diccionario algo,
+
+661
+00:47:40,080 --> 00:47:42,080
+¿cómo encontramos un diccionario de forma eficiente?
+
+662
+00:47:42,080 --> 00:47:44,080
+Eso a nivel interno es un etable Has, ¿no?
+
+663
+00:47:44,080 --> 00:47:49,080
+Lo que se hace Has, lo que devolver es un entero que representa el valor.
+
+664
+00:47:49,080 --> 00:47:53,080
+Esto es que se podría hablar un montón y siento que se nos va el tiempo.
+
+665
+00:47:53,080 --> 00:47:58,080
+El único requisito que hay realmente de la documentación es que dos objetos que compran iguales tengan el mismo Has,
+
+666
+00:47:58,080 --> 00:48:00,080
+y las colisiones se pueden manejar, eso es una cosa muy chula,
+
+667
+00:48:00,080 --> 00:48:04,080
+es decir, que lo vamos a ver ahora.
+
+668
+00:48:04,080 --> 00:48:08,080
+Si no hemos definido el Has, nuestras funciones devuelven en el idea de qué es su posición y memoria.
+
+669
+00:48:08,080 --> 00:48:11,080
+Entonces nosotros aquí hemos definido una clase que es punto, que recibe dado atributos,
+
+670
+00:48:11,080 --> 00:48:14,080
+y definimos dos puntos que las podéis ver que es el doy y el tres, que son iguales.
+
+671
+00:48:14,080 --> 00:48:18,080
+Pero como no hemos definido el método mágico, porque tienen los guiones bajitos al comienzo y al final,
+
+672
+00:48:18,080 --> 00:48:24,080
+de Has no lo hemos definido, la función Has es lo que hace devolvernos diferentes Hases para el punto 2 y 3,
+
+673
+00:48:24,080 --> 00:48:26,080
+aunque realmente son el mismo.
+
+674
+00:48:26,080 --> 00:48:28,080
+¿Cómo puede funcionar esto en un diccionario?
+
+675
+00:48:28,080 --> 00:48:30,080
+No comparan también que los valores son realmente iguales.
+
+676
+00:48:30,080 --> 00:48:35,080
+Si los Hases son el mismo pero el objeto no comparan igual, es una colisión.
+
+677
+00:48:35,080 --> 00:48:38,080
+A mí me gusta y lo encontré una vez y me parece súper fácil,
+
+678
+00:48:38,080 --> 00:48:42,080
+y esto es una de esas cosas que a lo mejor es una barbaridad y alguien debería corregirme,
+
+679
+00:48:42,080 --> 00:48:44,080
+pero de momento no he visto nada raro.
+
+680
+00:48:44,080 --> 00:48:46,080
+Si simplemente metemos todos los atributos de nuestra clase,
+
+681
+00:48:46,080 --> 00:48:49,080
+por supuesto son clases sencillas, los metemos los atributos en una tupla,
+
+682
+00:48:49,080 --> 00:48:55,080
+calculamos el Has de esa tupla y estamos haciendo en una única línea la función Has del objeto.
+
+683
+00:48:55,080 --> 00:48:59,080
+Hay gente en esta discusión que hace unas cosas mega raras de exponenciación e índices negativos.
+
+684
+00:48:59,080 --> 00:49:03,080
+De verdad, me gustaría un momento en que les encontré un fallo.
+
+685
+00:49:03,080 --> 00:49:07,080
+Y por supuesto lo que hemos dicho antes de las colisiones, da igual si hay colisiones,
+
+686
+00:49:07,080 --> 00:49:11,080
+de hecho podríamos hacer que todas nuestras clases devolvieran menos 1 y como Has,
+
+687
+00:49:11,080 --> 00:49:16,080
+y lo único que pasaría es que sería muy lento trabajar con diccionarios a conjunto con nuestros objetos.
+
+688
+00:49:16,080 --> 00:49:19,080
+Habitualmente los diccionarios se construyen utilizando esta notación,
+
+689
+00:49:19,080 --> 00:49:25,080
+que ponemos dos puntos y ponemos el clave, clave, clave, valor.
+
+690
+00:49:25,080 --> 00:49:27,080
+También podemos hacerlo llamando al método init de diccionarios
+
+691
+00:49:27,080 --> 00:49:30,080
+y pasárselos como argumentos nombrados, 1 y igual 2, tal.
+
+692
+00:49:30,080 --> 00:49:33,080
+A mí me gusta porque hace que no sea necesario ponerlo entre comillas,
+
+693
+00:49:33,080 --> 00:49:36,080
+el 1 no tiene que ir entre comillas porque de hecho hará un argumento nombrado.
+
+694
+00:49:36,080 --> 00:49:39,080
+Una limitación es que solamente podemos utilizar como si cuando utilizamos esto,
+
+695
+00:49:39,080 --> 00:49:43,080
+solamente podemos utilizar identificadores de nombre de variables válidos
+
+696
+00:49:43,080 --> 00:49:46,080
+como claves del diccionario.
+
+697
+00:49:46,080 --> 00:49:50,080
+En esencia de una cuestión de estilo, aquí hay un estudio bastante serio
+
+698
+00:49:50,080 --> 00:49:53,080
+porque fueron bastante profundos y se cuantificó que a seis veces más lento
+
+699
+00:49:53,080 --> 00:49:56,080
+utilizar el dic que las llaves.
+
+700
+00:49:56,080 --> 00:49:59,080
+Para mí eso optimiza siempre matura, pero bueno,
+
+701
+00:49:59,080 --> 00:50:01,080
+si algún día voy a trabajar con muchísimos diccionarios,
+
+702
+00:50:01,080 --> 00:50:03,080
+quizás lo que hayan tenés presente.
+
+703
+00:50:03,080 --> 00:50:06,080
+Y esto a mí me pasa siempre con todas las cosas que aprendo,
+
+704
+00:50:06,080 --> 00:50:12,080
+es como ¡Wa! Ahora puedo crear decoradores en todos sitios
+
+705
+00:50:12,080 --> 00:50:17,080
+y ahora había que hacer que todas mis funciones reciban un número variable de argumentos
+
+706
+00:50:17,080 --> 00:50:20,080
+y que lanzen excepciones, tampoco es eso.
+
+707
+00:50:20,080 --> 00:50:23,080
+Pero aquí voy a poner que me odraré el entusiasmo,
+
+708
+00:50:23,080 --> 00:50:25,080
+no creo que haya que me odraré el entusiasmo,
+
+709
+00:50:25,080 --> 00:50:29,080
+pero realmente utilizarlo todos,
+
+710
+00:50:29,080 --> 00:50:32,080
+pero queda muy chulo, pero no tiene sentido muchas veces.
+
+711
+00:50:32,080 --> 00:50:36,080
+Las clases, ya entramos en el resto final, son los últimos 10.
+
+712
+00:50:36,080 --> 00:50:39,080
+Y quedan 14 minutos.
+
+713
+00:50:39,080 --> 00:50:45,080
+Lo que es que heredan de diccionarios pueden implementar el método mágico missing,
+
+714
+00:50:45,080 --> 00:50:49,080
+una vez más es un método mágico porque tiene octvio en el bajo al comienzo y al final.
+
+715
+00:50:49,080 --> 00:50:52,080
+Y esta función básicamente lo que hace es evaluarse
+
+716
+00:50:52,080 --> 00:50:55,080
+cuando un objeto no está en el diccionario, muy fácil.
+
+717
+00:50:55,080 --> 00:50:58,080
+No puede ser una variable, tiene que ser un método que se va a llamar
+
+718
+00:50:58,080 --> 00:51:02,080
+y de hecho recibe como único argumento el elemento que nos hemos encontrado.
+
+719
+00:51:02,080 --> 00:51:04,080
+La cosa es que tenemos default dick,
+
+720
+00:51:04,080 --> 00:51:07,080
+hay una charla creo que es mañana del módulo collections
+
+721
+00:51:07,080 --> 00:51:11,080
+y va a estar muy chula porque es uno de los mejores módulos, en mi opinión.
+
+722
+00:51:11,080 --> 00:51:15,080
+Default dick es un diccionario que se comporta como un diccionario
+
+723
+00:51:15,080 --> 00:51:18,080
+solamente que cuando lo hemos creado le hemos dicho el elemento
+
+724
+00:51:18,080 --> 00:51:21,080
+que tiene que devolver cuando una clave no esté.
+
+725
+00:51:21,080 --> 00:51:24,080
+Es decir, en vez de hacer un contador,
+
+726
+00:51:24,080 --> 00:51:27,080
+en vez de tener que ir comprobando si elemento está o no está,
+
+727
+00:51:27,080 --> 00:51:29,080
+si no está lo ponemos a uno, si está lo incrementamos,
+
+728
+00:51:29,080 --> 00:51:31,080
+o incluso esto, que sería capturar la excepción,
+
+729
+00:51:31,080 --> 00:51:34,080
+por lo que podemos hacer es simplemente crear un diccionario
+
+730
+00:51:34,080 --> 00:51:37,080
+que por defecto recibe un entero, ¿qué entero? Un cero.
+
+731
+00:51:37,080 --> 00:51:41,080
+Por supuesto, tenemos ya hecha por, a hombros de gigantes,
+
+732
+00:51:41,080 --> 00:51:45,080
+no hace falta que implementemos contadores porque el mismo módulo está counter.
+
+733
+00:51:45,080 --> 00:51:49,080
+Esto es un diccionario, un default dick, un diccionario
+
+734
+00:51:49,080 --> 00:51:52,080
+que por defecto todos los elementos que no tengan valor a los que accedamos
+
+735
+00:51:52,080 --> 00:51:57,080
+es una lista vacía, esto es un conjunto vacío y esto es otro diccionario.
+
+736
+00:51:57,080 --> 00:52:02,080
+Y si queremos valor diferente, pues por ejemplo, utilizando lambda,
+
+737
+00:52:02,080 --> 00:52:06,080
+podríamos hacer que esto, ¿qué pasa cuando el elemento no esté?
+
+738
+00:52:06,080 --> 00:52:08,080
+Que se va a ejecutar esa función.
+
+739
+00:52:08,080 --> 00:52:11,080
+¿Qué hace lambda una función anónima que recibe cero argumento
+
+740
+00:52:11,080 --> 00:52:15,080
+en el devuelvo de 1 a 7? O nos devuelve una lista de 1 a 7.
+
+741
+00:52:15,080 --> 00:52:19,080
+O nos devuelve incluso otro diccionario por defecto,
+
+742
+00:52:19,080 --> 00:52:22,080
+que era su vez de devuelvo tradicional.
+
+743
+00:52:22,080 --> 00:52:27,080
+Tuple, estos son unas tuplas que también nos permiten acceso por atributos.
+
+744
+00:52:27,080 --> 00:52:29,080
+Cuando tienen algunas clases sencillas como punto,
+
+745
+00:52:29,080 --> 00:52:32,080
+que parece que tengo una obsesión con ellas, es súper sencillo.
+
+746
+00:52:32,080 --> 00:52:35,080
+Lo que estamos definiendo es nuestra propia clase básicamente,
+
+747
+00:52:35,080 --> 00:52:39,080
+en la cual tenemos 3 atributos x y z.
+
+748
+00:52:39,080 --> 00:52:43,080
+Podemos ver que hemos heredado de tupla y se utilizan súper guay,
+
+749
+00:52:43,080 --> 00:52:46,080
+porque lo que podemos acceder tanto por atributos x que es 1
+
+750
+00:52:46,080 --> 00:52:49,080
+o podemos acceder por posición. Son una tupla, más atributos.
+
+751
+00:52:49,080 --> 00:52:55,080
+Chain en el módulo, iter tools, otra de esas cosas muy poderosas, el módulo entero.
+
+752
+00:52:55,080 --> 00:53:01,080
+Chain lo que hace es encadenarnos una serie de secuencias que recibe.
+
+753
+00:53:01,080 --> 00:53:04,080
+Es decir, le pasamos como argumento x y, que son por ejemplo en este caso,
+
+754
+00:53:04,080 --> 00:53:07,080
+dos listas y lo que va haciendo es devolver listas de elementos de 1,
+
+755
+00:53:07,080 --> 00:53:10,080
+y luego nos va devolviendo elementos de la segunda y luego de la tercera,
+
+756
+00:53:10,080 --> 00:53:12,080
+hasta que se acabe en todas.
+
+757
+00:53:12,080 --> 00:53:15,080
+Por ejemplo, para planar una lista de listas, como hicimos antes,
+
+758
+00:53:15,080 --> 00:53:19,080
+pues si simplemente le pasamos las listas, vemos que, ah, nos devuelve un iterador,
+
+759
+00:53:19,080 --> 00:53:23,080
+pero si lo convertimos a lista, pues vemos que nos ha ido cogiendo elementos
+
+760
+00:53:23,080 --> 00:53:25,080
+secuencialmente de cada una de ellas.
+
+761
+00:53:25,080 --> 00:53:29,080
+O si tuviéramos la sublista en una lista, podríamos pasar esas chains
+
+762
+00:53:29,080 --> 00:53:33,080
+como podríamos desempaquetarla con una parada de estrellas para pasárselo como argumento.
+
+763
+00:53:33,080 --> 00:53:36,080
+De todas formas, chain acepta muchas más cosas.
+
+764
+00:53:36,080 --> 00:53:38,080
+Básicamente, es cualquier cosa sobre la que podamos iterar.
+
+765
+00:53:38,080 --> 00:53:41,080
+¿Y qué es un iterador? ¡Fuf!
+
+766
+00:53:41,080 --> 00:53:43,080
+Cualquier cosa, de hecho, no sé si puestes el enlace.
+
+767
+00:53:43,080 --> 00:53:47,080
+Cualquier cosa de la que podamos ir cogiendo elementos de 1 a 1, es algo iterable.
+
+768
+00:53:47,080 --> 00:53:50,080
+Podemos pasar dos conjuntos, un diccionario,
+
+769
+00:53:50,080 --> 00:53:53,080
+en los diccionarios se itera por las claves.
+
+770
+00:53:53,080 --> 00:53:56,080
+Partial del módulo FuncTools de programación funcional.
+
+771
+00:53:56,080 --> 00:54:00,080
+Esto lo que hace es fijar, congelar una función,
+
+772
+00:54:00,080 --> 00:54:02,080
+de forma que podamos llamarla con menos argumentos.
+
+773
+00:54:02,080 --> 00:54:06,080
+Por ejemplo, elevado 2, FuncTools partial, Pou y 2.
+
+774
+00:54:06,080 --> 00:54:10,080
+Esto lo que estamos haciendo es congelar la función Pou con el primer argumento a 2.
+
+775
+00:54:10,080 --> 00:54:12,080
+Cuando hacemos 3, nos elevamos 2 a 3, 8.
+
+776
+00:54:12,080 --> 00:54:16,080
+Cuando hacemos 10, pues lo que estamos haciendo es Pou 2, 10.
+
+777
+00:54:16,080 --> 00:54:18,080
+Lo que estamos elevando, 2 a 10.
+
+778
+00:54:18,080 --> 00:54:22,080
+Es importante que los argumentos que le estamos pasando se añaden después.
+
+779
+00:54:22,080 --> 00:54:27,080
+Si quisiéramos hacer lo que es nuestra función congelada, partial.
+
+780
+00:54:27,080 --> 00:54:29,080
+Partial, eh, partial.
+
+781
+00:54:29,080 --> 00:54:33,080
+Se añadirán antes, eso hay que hacer un pequeñito malabar,
+
+782
+00:54:33,080 --> 00:54:36,080
+pero aquí se habló, en el segundo enlace, se habló.
+
+783
+00:54:36,080 --> 00:54:43,080
+Iter es una función que normal es utilizarla para crear un iterador,
+
+784
+00:54:43,080 --> 00:54:45,080
+pero recibe un segundo argumento opcional.
+
+785
+00:54:45,080 --> 00:54:48,080
+Y ese segundo argumento, cuando utilizamos la notación,
+
+786
+00:54:48,080 --> 00:54:52,080
+cuando argumento la primera, que ha cambiado su significado completamente,
+
+787
+00:54:52,080 --> 00:54:53,080
+es una función.
+
+788
+00:54:53,080 --> 00:54:56,080
+Básicamente, iter función centinela, lo que va a hacer es llamar a la función
+
+789
+00:54:56,080 --> 00:55:00,080
+hasta que la función, perdón, devuelva el valor de centinela.
+
+790
+00:55:00,080 --> 00:55:02,080
+Por ejemplo, aquí lo que vamos a hacer es ir recorriendo.
+
+791
+00:55:02,080 --> 00:55:04,080
+Y vamos a ir llamando una y otra vez a la función ReadLine,
+
+792
+00:55:04,080 --> 00:55:06,080
+que nos va a dar los vientos líneos de un fichero,
+
+793
+00:55:06,080 --> 00:55:09,080
+y cuando nos devuelva una lista vacía, que solo tiene un salto de líneas, paramos.
+
+794
+00:55:09,080 --> 00:55:12,080
+O, por ejemplo, podríamos generar números laboratorios hasta llegar a cero,
+
+795
+00:55:12,080 --> 00:55:16,080
+en el momento en el cual se genere cero, paramos. Ni siquiera lo devolvemos.
+
+796
+00:55:16,080 --> 00:55:18,080
+Ahora, autocompletado.
+
+797
+00:55:18,080 --> 00:55:21,080
+Y Python y otros editores son superpoderosos, pero hay situaciones
+
+798
+00:55:21,080 --> 00:55:24,080
+en las cuales no queremos o no podemos trabajar con ellos.
+
+799
+00:55:24,080 --> 00:55:25,080
+Tenemos el intérprete básico.
+
+800
+00:55:25,080 --> 00:55:27,080
+Pues el fichero Python Rc, que es el de...
+
+801
+00:55:27,080 --> 00:55:28,080
+Bueno, lo pedimos como queráis, ¿no?
+
+802
+00:55:28,080 --> 00:55:30,080
+Pero el fichero de configuración de Python,
+
+803
+00:55:30,080 --> 00:55:32,080
+hay unos cuantos truquitos que yo he ido copiando de otros,
+
+804
+00:55:32,080 --> 00:55:34,080
+es todo mi talento ese,
+
+805
+00:55:34,080 --> 00:55:40,080
+podemos utilizarlo para habilitar unas cosas que para mí son básicas,
+
+806
+00:55:40,080 --> 00:55:42,080
+hay que ver para cualquiera. Si hacéis que vuestra variable
+
+807
+00:55:42,080 --> 00:55:47,080
+Python Startup, por ejemplo, en base Rc,
+
+808
+00:55:47,080 --> 00:55:50,080
+apunte a este fichero y en este fichero definimos esto,
+
+809
+00:55:50,080 --> 00:55:52,080
+lo que estamos habilitando es el autocompletado.
+
+810
+00:55:52,080 --> 00:55:55,080
+Cualquier cosa le damos al tabulador, como la línea de comando,
+
+811
+00:55:55,080 --> 00:55:57,080
+cualquier línea de comando, y se nos va a autocompletar.
+
+812
+00:55:57,080 --> 00:55:59,080
+También podemos habilitar la historia de comando,
+
+813
+00:55:59,080 --> 00:56:01,080
+y es que los comandos que vamos introduciendo,
+
+814
+00:56:01,080 --> 00:56:03,080
+se van a encontrar en un fichero cuando terminemos utilizando el Attaxit,
+
+815
+00:56:03,080 --> 00:56:06,080
+y podemos tirar para arriba para ver los comandos que hemos utilizado,
+
+816
+00:56:06,080 --> 00:56:08,080
+no solamente en esta sección, sino en las secciones anteriores.
+
+817
+00:56:08,080 --> 00:56:10,080
+También podemos habilitar el límite de memoria,
+
+818
+00:56:10,080 --> 00:56:13,080
+esto es una cosa que no había muchas páginas en las que se discutiera,
+
+819
+00:56:13,080 --> 00:56:16,080
+pero básicamente podemos definir un límite de memoria RAM,
+
+820
+00:56:16,080 --> 00:56:18,080
+yo lo tengo en mi ordenadora, tres cuartas del total,
+
+821
+00:56:18,080 --> 00:56:20,080
+y si en algún momento necesitamos más memoria de eso,
+
+822
+00:56:20,080 --> 00:56:22,080
+automáticamente se aborta la ejecución.
+
+823
+00:56:22,080 --> 00:56:24,080
+De hecho, el caso de antes, que hace que nuestro ordenado se rompiera,
+
+824
+00:56:24,080 --> 00:56:27,080
+si intentamos crear una lista con 10 elevados a 12 elementos,
+
+825
+00:56:27,080 --> 00:56:30,080
+pues lo he probado hace un rato y nos dice memoria error.
+
+826
+00:56:30,080 --> 00:56:32,080
+Si alguien le puede ser de alguna utilidad,
+
+827
+00:56:32,080 --> 00:56:34,080
+ahí está mi fichero de configuración,
+
+828
+00:56:34,080 --> 00:56:36,080
+que básicamente tiene estas tres cosas,
+
+829
+00:56:36,080 --> 00:56:38,080
+este detalle precioso de Python 3000,
+
+830
+00:56:38,080 --> 00:56:41,080
+de hecho tiene muchas ventajas, pero a mí esto me enamoró completamente,
+
+831
+00:56:41,080 --> 00:56:46,080
+y es que podemos, nosotros si hacemos,
+
+832
+00:56:46,080 --> 00:56:49,080
+si desempaquetamos una lista o una tupla, lo que sea,
+
+833
+00:56:49,080 --> 00:56:51,080
+y queremos sacar, y tiene trae elementos,
+
+834
+00:56:51,080 --> 00:56:53,080
+tenemos que asignarlo a trae elementos, estamos acostumbrados a eso,
+
+835
+00:56:53,080 --> 00:56:55,080
+sin embargo, si lo que le decimos es,
+
+836
+00:56:55,080 --> 00:56:58,080
+utilizamos el operador estrella y primero,
+
+837
+00:56:58,080 --> 00:57:01,080
+estrella resto, lo que hace es meter la primera en primero,
+
+838
+00:57:01,080 --> 00:57:04,080
+y el resto, es decir, todo lo que hay a partir del primero,
+
+839
+00:57:04,080 --> 00:57:08,080
+lo mete en la otra variable, y podemos ponerlo en medio también,
+
+840
+00:57:08,080 --> 00:57:10,080
+o incluso al principio, y lo que haríamos sería que a la primera
+
+841
+00:57:10,080 --> 00:57:13,080
+se la asignaría el primero, a la última se la asignaría el último,
+
+842
+00:57:13,080 --> 00:57:16,080
+pero el resto, el relleno, o sea, la variable resto
+
+843
+00:57:16,080 --> 00:57:19,080
+la rellenaría con todos los demás elementos,
+
+844
+00:57:19,080 --> 00:57:23,080
+que en este caso sería pues del uno al ocho.
+
+845
+00:57:23,080 --> 00:57:25,080
+Y hemos terminado.
+
+846
+00:57:25,080 --> 00:57:37,080
+De hecho, algo un día llegaremos a este nivel,
+
+847
+00:57:37,080 --> 00:57:40,080
+el equivalente en programación, mi favorito es por supuesto este,
+
+848
+00:57:40,080 --> 00:57:45,080
+y no sé si alguien tiene alguna pregunta o, sobre todo, a gestiones.
+
+849
+00:57:45,080 --> 00:57:47,080
+Empieza.
+
+850
+00:57:47,080 --> 00:57:51,080
+No quiero más, el próximo año con dos horas.
+
+851
+00:57:51,080 --> 00:57:56,080
+Yo prometí que no iba a faltar tiempo.
+
+852
+00:58:09,080 --> 00:58:11,080
+¿Cuál era lo primero? ¿Te acuerdas?
+
+853
+00:58:11,080 --> 00:58:20,080
+Soy una persona muy pasional, tengo todo mi odio focalizado en esa característica.
+
+854
+00:58:23,080 --> 00:58:26,080
+Creo que la única cosa, además que hay gente que me la ha objetado,
+
+855
+00:58:27,080 --> 00:58:30,080
+en estas cosas que hacíamos de pequeños tallercitos de programación,
+
+856
+00:58:30,080 --> 00:58:34,080
+y decían que eso no tiene sentido, porque me pasaba yo 20 transparencias hablando de pitónico,
+
+857
+00:58:34,080 --> 00:58:37,080
+no pitónico, elegante o intuitivo, y ya que eso.
+
+858
+00:58:37,080 --> 00:58:40,080
+No sé, siempre hemos visto.
+
+859
+00:58:40,080 --> 00:58:42,080
+Creo que hay cosas que son como...
+
+860
+00:58:42,080 --> 00:58:47,080
+Hay gente, yo no tengo ese reproche, pero hay gente que me dice que hay contradicciones cuando cuento algunas cosas.
+
+861
+00:58:47,080 --> 00:58:51,080
+Por ejemplo, explícito es mejor que implícito.
+
+862
+00:58:51,080 --> 00:58:54,080
+Hubo un alumno que me lo dijo y tenía toda la razón del mundo.
+
+863
+00:58:54,080 --> 00:58:59,080
+Eso se contradice con, if not, el resto de dividir entre dos.
+
+864
+00:58:59,080 --> 00:59:01,080
+Es decir, ¿cómo es eso explícito?
+
+865
+00:59:01,080 --> 00:59:02,080
+Tuche.
+
+866
+00:59:02,080 --> 00:59:08,080
+Así que, no sé, pero de todas formas, sí, sí, sí, de hecho, y a eso fue un no computa,
+
+867
+00:59:08,080 --> 00:59:11,080
+como decía la ordenadora en la 80, y explotamos.
+
+868
+00:59:11,080 --> 00:59:15,080
+Pero tengo que pensarlo, no tengo segunda cosa menos favorita.
+
+869
+00:59:17,080 --> 00:59:19,080
+¿Y lo que más te gusta?
+
+870
+00:59:19,080 --> 00:59:20,080
+A mí lo que...
+
+871
+00:59:21,080 --> 00:59:25,080
+Ya hay programas mucho en Java, que de hecho aún más que Subversion, odio Java.
+
+872
+00:59:25,080 --> 00:59:30,080
+Y recuerdo que el día que me empezó a leer el tutorial de Python,
+
+873
+00:59:30,080 --> 00:59:34,080
+y vi lo del... se lo cuento todo el mundo, ifElementoNotInLista.
+
+874
+00:59:35,080 --> 00:59:36,080
+Y fue como...
+
+875
+00:59:39,080 --> 00:59:40,080
+Totalmente.
+
+876
+00:59:40,080 --> 00:59:42,080
+Y de hecho fue en plana, vamos a llevar bien, y ya está.
+
+877
+00:59:42,080 --> 00:59:44,080
+Pero cuando me preguntan qué te gusta, yo siempre digo,
+
+878
+00:59:44,080 --> 00:59:45,080
+ifNotElementoInLista.
+
+879
+00:59:45,080 --> 00:59:49,080
+Así que me parece muy chulo ese alto nivel, esa atracción.
+
+880
+00:59:49,080 --> 00:59:53,080
+Pero... y las funciones al anda me gustan, que gusten.
+
+881
+00:59:53,080 --> 00:59:58,080
+Bueno, que no hay que preguntar nada a fuerza, ¿eh?
+
+882
+01:00:01,080 --> 01:00:03,080
+A ver si alguien me corregirá algún error y me lo mandará,
+
+883
+01:00:03,080 --> 01:00:04,080
+me haría un montón de ilusión.
+
+884
+01:00:05,080 --> 01:00:07,080
+De hecho, me acuerdo cuando recibí mi primer parche,
+
+885
+01:00:07,080 --> 01:00:08,080
+que me envió alguien y yo.
+
+886
+01:00:08,080 --> 01:00:09,080
+Sí.
+
+887
+01:00:09,080 --> 01:00:11,080
+Tengo una pregunta, has hablado del parche, ¿no?
+
+888
+01:00:11,080 --> 01:00:12,080
+Sí.
+
+889
+01:00:12,080 --> 01:00:15,080
+Se puede fijar, uno de los parámetros,
+
+890
+01:00:15,080 --> 01:00:17,080
+si nosotros vamos a pasar los parámetros,
+
+891
+01:00:17,080 --> 01:00:19,080
+le fijamos tú, ya pasamos el otro.
+
+892
+01:00:19,080 --> 01:00:20,080
+Sí.
+
+893
+01:00:20,080 --> 01:00:23,080
+¿Qué es el sentido de esa en la función?
+
+894
+01:00:23,080 --> 01:00:26,080
+Si yo voy a fijar uno de los parámetros,
+
+895
+01:00:26,080 --> 01:00:28,080
+¿por qué no lo incluyo dentro de la función?
+
+896
+01:00:28,080 --> 01:00:32,080
+¿Por qué no hago que esa función,
+
+897
+01:00:32,080 --> 01:00:33,080
+si siempre lo voy a utilizar,
+
+898
+01:00:33,080 --> 01:00:36,080
+lo voy a usar en un solo parámetro prescindio de él?
+
+899
+01:00:38,080 --> 01:00:39,080
+Yo creo que cuando va a llamar...
+
+900
+01:00:39,080 --> 01:00:40,080
+O sea, en mi caso ha sido cuando...
+
+901
+01:00:40,080 --> 01:00:41,080
+casos muy puntuales,
+
+902
+01:00:41,080 --> 01:00:43,080
+pero va a llamar muchas veces la misma función,
+
+903
+01:00:43,080 --> 01:00:45,080
+pero solamente varía el último elemento.
+
+904
+01:00:45,080 --> 01:00:47,080
+Por ejemplo, tenemos un listado de imágenes,
+
+905
+01:00:47,080 --> 01:00:51,080
+y la imagen tiene el base name,
+
+906
+01:00:51,080 --> 01:00:53,080
+pero sabe que están todas en el mismo directorio.
+
+907
+01:00:53,080 --> 01:00:57,080
+Entonces, para mí era un parcial del OSPATH JOIN.
+
+908
+01:00:57,080 --> 01:00:59,080
+Y como primer argumento, era el directorio de la imagen.
+
+909
+01:00:59,080 --> 01:01:01,080
+Entonces, yo tenía una función muy corta,
+
+910
+01:01:01,080 --> 01:01:02,080
+que era simplemente getPath.
+
+911
+01:01:02,080 --> 01:01:03,080
+GetPath.
+
+912
+01:01:03,080 --> 01:01:05,080
+Y entonces, eso me iba dando la ruta absoluta.
+
+913
+01:01:05,080 --> 01:01:07,080
+De hecho, lo podía encadenar con otro,
+
+914
+01:01:07,080 --> 01:01:09,080
+con el OSPATH, ¿no?
+
+915
+01:01:09,080 --> 01:01:11,080
+Y yo lo utilizaba, por ejemplo,
+
+916
+01:01:11,080 --> 01:01:13,080
+pero creo que es la única vez,
+
+917
+01:01:13,080 --> 01:01:14,080
+hice un grep de hecho haciendo la transparencia,
+
+918
+01:01:14,080 --> 01:01:15,080
+a ver si lo había utilizado otra vez.
+
+919
+01:01:15,080 --> 01:01:17,080
+Y de momento, sí o eso.
+
+920
+01:01:17,080 --> 01:01:19,080
+Pero podrías, por supuesto, hacerlo definiendo tu propia función.
+
+921
+01:01:19,080 --> 01:01:22,080
+En vez de hacerlo con parcial,
+
+922
+01:01:22,080 --> 01:01:24,080
+podría definir un def, mi propia función,
+
+923
+01:01:24,080 --> 01:01:25,080
+que me devuelve lo que necesito.
+
+924
+01:01:25,080 --> 01:01:27,080
+Pero bueno, es una cosa muy cómoda,
+
+925
+01:01:27,080 --> 01:01:29,080
+que en una calinia podemos fijar el argumento.
+
+926
+01:01:29,080 --> 01:01:31,080
+¿Para qué me parece que te ahorra un nivel
+
+927
+01:01:31,080 --> 01:01:33,080
+en el stack trace o algo así?
+
+928
+01:01:33,080 --> 01:01:36,080
+Uy, eso, este es el básico.
+
+929
+01:01:36,080 --> 01:01:38,080
+Está bueno.
+
+930
+01:01:38,080 --> 01:01:41,080
+Vete allí donde los otros, allí enfrente.
+
+931
+01:01:41,080 --> 01:01:44,080
+O sea, aquí el stack trace no existe.
+
+932
+01:01:44,080 --> 01:01:47,080
+No, no, eso no tiene ni idea de hecho.
+
+933
+01:01:47,080 --> 01:01:50,080
+Pero bueno, ahora me lo cuenta.
+
+934
+01:01:50,080 --> 01:01:53,080
+No, no, no, ni idea, ni idea absolutamente.
+
+935
+01:01:53,080 --> 01:01:58,080
+El piso bajo en el core tiene alguna ventaja sobre el core,
+
+936
+01:01:58,080 --> 01:02:00,080
+que no es una ventaja de más de los linteros.
+
+937
+01:02:00,080 --> 01:02:02,080
+Pero el, perdón, no te entendí.
+
+938
+01:02:02,080 --> 01:02:04,080
+El piso bajo, como variable,
+
+939
+01:02:04,080 --> 01:02:07,080
+que no es una ventaja de más de los linteros.
+
+940
+01:02:07,080 --> 01:02:09,080
+Sí, sí, sí, sí, no, que por convención,
+
+941
+01:02:09,080 --> 01:02:11,080
+es decir, por convención está indicando ya
+
+942
+01:02:11,080 --> 01:02:13,080
+cualquiera que se cruce con tu código,
+
+943
+01:02:13,080 --> 01:02:15,080
+que era una variable que no se utilizaba.
+
+944
+01:02:15,080 --> 01:02:17,080
+Pero en terfócas, es lo mismo.
+
+945
+01:02:17,080 --> 01:02:19,080
+Sí, bueno, a donde yo sé, sí.
+
+946
+01:02:19,080 --> 01:02:24,080
+Bien, bien, todo bien.
+
+947
+01:02:24,080 --> 01:02:29,080
+Pero así Pilín no se queja,
+
+948
+01:02:29,080 --> 01:02:32,080
+porque siempre si no te dice, paré, paré, paré.
+
+949
+01:02:32,080 --> 01:02:36,080
+Y no ha dado tiempo, ¿eh? No ha dado tiempo.
+
+950
+01:02:36,080 --> 01:02:38,080
+Pero es que sí, no.
+
+951
+01:02:38,080 --> 01:02:44,080
+Y yo creo que las charlas estas cortas van a estar muy chulas.
+
+952
+01:02:44,080 --> 01:02:47,080
+Así que ahora os quiero a todos yendo para allá.
+
+953
+01:02:47,080 --> 01:02:50,080
+Y bueno, ¿sí?
+
+954
+01:02:50,080 --> 01:03:09,080
+Muchas gracias.
+
