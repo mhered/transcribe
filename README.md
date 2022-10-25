@@ -1,8 +1,10 @@
-# Crear subtítulos para los videos de un canal
+# `transcribe`: crear subtítulos para los videos de un canal YouTube
 
 ## Créditos
 
-Inspirado en este [gist](https://gist.github.com/midudev/2bc13e6ef38ccc4716fba8b7258f1403) de Miguel Angel Durán y en este [video tutorial](https://www.youtube.com/watch?v=F30yC2jl5nA) de la herramienta `yt-whisper` de Miguel Piedrafita
+Inspirado en este [gist](https://gist.github.com/midudev/2bc13e6ef38ccc4716fba8b7258f1403) de Miguel Angel Durán y en este [video tutorial](https://www.youtube.com/watch?v=F30yC2jl5nA) de la herramienta `yt-whisper` de Miguel Piedrafita.
+
+Desarrollado para añadir subtítulos a los vídeos del canal youtube de Python España a sugerencia de @astrojuanlu durante #Hacktoberfest22.
 
 ## Requisitos
 
@@ -32,7 +34,7 @@ $ sudo apt update && sudo apt install ffmpeg
 $ pip install git+https://github.com/m1guelpf/yt-whisper.git
 ```
 
-## `scan_channel.py`: Escanear un canal YouTube
+## `scan_channel.py`: escanear un canal YouTube
 
 Herramienta de linea de comandos que recibe la URL de un canal de YouTube, lo escanea y genera un archivo JSON con detalles de todos los vídeos que contiene.
 
@@ -49,7 +51,7 @@ optional arguments:
   --channel CHANNEL  URL of the YouTube channel to scan
   --file FILE        Name of the output file (Optional, default is channel.json)
 
-$ python3 scan_channel.py --channel https://www.youtube.com/channel/UCPnRCRhb-6gaPZuQWS7RVag --file tmp.json
+$ python3 scan_channel.py --channel https://www.youtube.com/channel/UCPnRCRhb-6gaPZuQWS7RVag --file my_channel.json
 2022-10-25 21:18:41,325 [INFO] Scanning YouTube channel...
 2022-10-25 21:18:42,574 [INFO] 6 videos found in the channel.
 2022-10-25 21:18:42,575 [INFO] Building data structure...
@@ -115,9 +117,9 @@ La herramienta escanea el canal y genera un fichero JSON con detalles de los vid
 
 Herramienta de linea de comandos que lee un archivo JSON con el formato generado por `scan_channel.py` y genera subtítulos para cada uno de los vídeos.
 
-El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo en un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida.
+El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo usando un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida (el progreso parcial del video que se está analizando se pierde pero no empieza a escanear el canal desde el principio).
 
-La herramienta lee el JSON y busca el video de mayor numero de visitas que tiene vacío el campo`transcript`(es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato srt en el directorio `./captions/[video_id]/`, actualiza el campo `trasncript` en el JSON y lo salva, y continua con el siguiente vídeo por numero de visitas.
+La herramienta lee el JSON y busca el video de mayor numero de visitas que tiene vacío el campo`transcript `(es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato SRT en el directorio `./captions/[video_id]/`, actualiza el campo `transcript` en el JSON y lo salva, y continua con el siguiente vídeo por numero de visitas.
 
 Uso de la línea de comandos:   
 
@@ -131,6 +133,10 @@ optional arguments:
   -h, --help   show this help message and exit
   --file FILE  Name of the input file (Optional, default is channel.json)
 
-$ python3 process_channel.py --file tmp.json
+$ python3 process_channel.py --file my_channel.json
 
 ```
+
+## Issues conocidos
+
+A veces si se interrumpe `yt_whisper` la herramienta marca erróneamente como procesados videos que no lo están.
