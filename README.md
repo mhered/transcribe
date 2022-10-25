@@ -1,4 +1,4 @@
-# 
+# Crear subtítulos para los videos de un canal
 
 ## Créditos
 
@@ -6,7 +6,7 @@ Inspirado en este [gist](https://gist.github.com/midudev/2bc13e6ef38ccc4716fba8b
 
 ## Requisitos
 
-* Python 3.9 
+* Python 3.9
 
 * [PyTube](https://pytube.io/en/latest/):
 
@@ -115,9 +115,9 @@ La herramienta escanea el canal y genera un fichero JSON con detalles de los vid
 
 Herramienta de linea de comandos que lee un archivo JSON con el formato generado por `scan_channel.py` y genera subtítulos para cada uno de los vídeos.
 
-El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo en un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida. 
+El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo en un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida.
 
-La herramienta lee el JSON y busca el video de mayor numero de visitas que tiene vacío el campo`transcript`(es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato srt en el directorio `./captions/[video_id]/`, actualiza el campo `trasncript` en el JSON y lo salva, y continua con el siguiente vídeo por numero de visitas. 
+La herramienta lee el JSON y busca el video de mayor numero de visitas que tiene vacío el campo`transcript`(es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato srt en el directorio `./captions/[video_id]/`, actualiza el campo `trasncript` en el JSON y lo salva, y continua con el siguiente vídeo por numero de visitas.
 
 Uso de la línea de comandos:   
 
@@ -131,9 +131,6 @@ optional arguments:
   -h, --help   show this help message and exit
   --file FILE  Name of the input file (Optional, default is channel.json)
 
-$ python3 process_channel.py --file tmp.json 
+$ python3 process_channel.py --file tmp.json
 
 ```
-
-
-
