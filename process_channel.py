@@ -83,6 +83,6 @@ if __name__ == "__main__":
         default="popular")
     args = parser.parse_args()
 
-    process_channel(args.file)
+    process_channel(args.file, args.priority)
 
     # https://www.youtube.com/c/PythonEspa%C3%B1aOficial/videos
