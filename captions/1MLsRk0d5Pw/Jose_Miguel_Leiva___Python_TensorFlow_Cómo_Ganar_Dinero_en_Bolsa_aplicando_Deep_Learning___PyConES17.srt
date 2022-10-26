@@ -1,0 +1,1200 @@
+1
+00:00:00,000 --> 00:00:11,400
+No, actually, it looks there's some issues.
+
+2
+00:00:11,400 --> 00:00:12,400
+Okay.
+
+3
+00:00:12,400 --> 00:00:13,400
+I think so.
+
+4
+00:00:13,400 --> 00:00:14,400
+Okay.
+
+5
+00:00:14,400 --> 00:00:15,400
+So, again, sorry for the delay.
+
+6
+00:00:15,400 --> 00:00:16,400
+We are going to try to stay to schedule five minutes or less.
+
+7
+00:00:16,400 --> 00:00:17,400
+So, this is San Miguel.
+
+8
+00:00:17,400 --> 00:00:35,800
+Leiva is going to talk about 500,000 flow, so cool lines of testing topics.
+
+9
+00:00:35,800 --> 00:00:37,800
+And, yeah, I'm going to give him the floor.
+
+10
+00:00:37,800 --> 00:00:39,800
+Give him a big applause, please.
+
+11
+00:00:39,800 --> 00:00:40,800
+Okay.
+
+12
+00:00:40,800 --> 00:00:41,800
+Hello.
+
+13
+00:00:41,800 --> 00:00:44,800
+Thank you very much for coming.
+
+14
+00:00:44,800 --> 00:00:46,800
+I'm José Leiva.
+
+15
+00:00:46,800 --> 00:01:00,800
+I work for ETS, a financial advisory firm that applies quantitative methods to its products.
+
+16
+00:01:00,800 --> 00:01:08,000
+And they've been doing it for since the early 80s, which is quite remarkable, I think.
+
+17
+00:01:08,000 --> 00:01:16,160
+I know the title is very appealing, but I hope not all of you came here looking for
+
+18
+00:01:16,160 --> 00:01:21,440
+fast and easy money, but to learn new stuff and have some fun.
+
+19
+00:01:21,440 --> 00:01:27,680
+We are going to have fun because we are going to talk about very exciting topics.
+
+20
+00:01:27,680 --> 00:01:28,680
+Machine learning.
+
+21
+00:01:28,680 --> 00:01:31,240
+Everybody is talking about machine learning.
+
+22
+00:01:31,240 --> 00:01:32,240
+Deep learning.
+
+23
+00:01:32,240 --> 00:01:36,000
+Everybody is talking about deep learning.
+
+24
+00:01:36,000 --> 00:01:38,080
+Quantitative finance.
+
+25
+00:01:38,080 --> 00:01:42,400
+Many people are talking about quantitative finance as well.
+
+26
+00:01:42,400 --> 00:01:45,440
+So, let's start with machine learning.
+
+27
+00:01:45,440 --> 00:01:54,000
+There have been some talks in the Python about machine learning and workshops yesterday with
+
+28
+00:01:54,000 --> 00:01:57,600
+several definitions about machine learning.
+
+29
+00:01:57,600 --> 00:02:00,880
+I'll give you the right one.
+
+30
+00:02:00,880 --> 00:02:07,360
+So imagine you want to build automatic digital recognition.
+
+31
+00:02:07,360 --> 00:02:14,320
+Machine learning deals with learning from examples.
+
+32
+00:02:14,320 --> 00:02:21,160
+To simplify the problem, imagine we only have two kinds of digits.
+
+33
+00:02:21,160 --> 00:02:26,320
+We only have to distinguish the ones from the eights.
+
+34
+00:02:26,320 --> 00:02:34,240
+So the first step in our automatic system would be to transform that information into
+
+35
+00:02:34,240 --> 00:02:36,680
+numerical information.
+
+36
+00:02:36,680 --> 00:02:47,640
+So remember that a digital image is nothing but metrics of numbers.
+
+37
+00:02:47,640 --> 00:02:53,600
+So each pixel in the image is just a number.
+
+38
+00:02:53,600 --> 00:02:59,800
+I love that it illustrates very well what a digital image is.
+
+39
+00:02:59,800 --> 00:03:04,720
+So from now on, we have two alternatives.
+
+40
+00:03:04,720 --> 00:03:09,920
+We could try to solve this problem in the original representation space.
+
+41
+00:03:09,920 --> 00:03:14,840
+So there are almost 800 pixels in that image.
+
+42
+00:03:14,840 --> 00:03:19,040
+So we have almost 800 dimensions.
+
+43
+00:03:19,040 --> 00:03:24,840
+Or we could try to extract discriminative features from the images.
+
+44
+00:03:24,840 --> 00:03:34,560
+In this case, we could try to extract the eight and the width of the image.
+
+45
+00:03:34,560 --> 00:03:39,840
+There's been some issue changing the resolution of the screen, but this would be the height
+
+46
+00:03:39,840 --> 00:03:41,160
+of the letter.
+
+47
+00:03:41,160 --> 00:03:43,440
+This would be the width.
+
+48
+00:03:43,440 --> 00:03:50,240
+And we hope that the width, for example, is discriminative and will help us distinguish
+
+49
+00:03:50,240 --> 00:03:52,920
+between the ones and the eights.
+
+50
+00:03:52,920 --> 00:04:02,080
+So if I plot these two variables for our different examples, I would expect to be able to draw
+
+51
+00:04:02,080 --> 00:04:07,880
+a boundary between them to discriminate between the two classes.
+
+52
+00:04:07,880 --> 00:04:14,440
+So performing a linear classification boils down to performing the linear, the scalar
+
+53
+00:04:14,440 --> 00:04:23,080
+product between the vector that characterizes this hyperplane and each of the vectors.
+
+54
+00:04:23,080 --> 00:04:24,880
+Good.
+
+55
+00:04:24,880 --> 00:04:33,880
+So very often, we are interested in obtaining probabilistic estimation, or in other words,
+
+56
+00:04:33,880 --> 00:04:38,200
+degree of the confidence about our prediction.
+
+57
+00:04:38,200 --> 00:04:47,600
+For example, answers of the kind, I'm 80% sure that this is a one.
+
+58
+00:04:47,600 --> 00:04:53,880
+What we need now is numerical transformation between the previous scalar product into a
+
+59
+00:04:53,880 --> 00:04:55,880
+number between zero and one.
+
+60
+00:04:55,880 --> 00:04:59,200
+So we can use the sigmoid.
+
+61
+00:04:59,200 --> 00:05:04,200
+The sigmoid, you can forget about the equation if you don't feel comfortable with the equation
+
+62
+00:05:04,200 --> 00:05:07,920
+and focus on the shape of the sigmoid.
+
+63
+00:05:07,920 --> 00:05:13,880
+It maps any number between minus infinite to plus infinite into a number between zero
+
+64
+00:05:13,880 --> 00:05:16,360
+and one.
+
+65
+00:05:16,360 --> 00:05:21,040
+Great.
+
+66
+00:05:21,040 --> 00:05:27,240
+The fundamental problem in machine learning is to obtain the optimal separating hyperplane
+
+67
+00:05:27,240 --> 00:05:32,320
+or the optimal boundary between the classes.
+
+68
+00:05:32,320 --> 00:05:44,160
+So the way to do that consists of measuring the cost of the error and minimize that measurement.
+
+69
+00:05:44,160 --> 00:05:51,400
+So a first approach would be just to count the errors.
+
+70
+00:05:51,400 --> 00:05:52,400
+Counting the errors.
+
+71
+00:05:52,400 --> 00:05:57,880
+So many errors means a bad separating hyperplane.
+
+72
+00:05:57,880 --> 00:06:02,520
+Few errors means a good separating hyperplane.
+
+73
+00:06:02,520 --> 00:06:08,640
+Would that be a good idea to try to optimize that number?
+
+74
+00:06:08,640 --> 00:06:10,560
+It looks like a good idea.
+
+75
+00:06:10,560 --> 00:06:17,440
+But if you think carefully, if you move the boundary a little bit, nothing happens, but
+
+76
+00:06:17,440 --> 00:06:23,360
+then you move it a little bit more and some of the samples jump to the other side.
+
+77
+00:06:23,360 --> 00:06:29,840
+So the function is stepwise and numerical methods for optimization don't like that kind
+
+78
+00:06:29,840 --> 00:06:33,200
+of functions.
+
+79
+00:06:33,200 --> 00:06:42,440
+They like smooth functions so that they can find their way to the lowest value possible.
+
+80
+00:06:42,440 --> 00:06:47,360
+So another alternative, which is the one we are going to focus on, is the log loss, also
+
+81
+00:06:47,360 --> 00:06:54,160
+called the entropy loss, which is the one usually employed in neural networks.
+
+82
+00:06:54,160 --> 00:06:55,560
+There are other alternatives.
+
+83
+00:06:55,560 --> 00:07:01,520
+I'd like to show you the maximum margin criterion, which is very easy to understand.
+
+84
+00:07:01,520 --> 00:07:07,360
+The maximum margin criterion tells you that you should put the hyperplane so that the
+
+85
+00:07:07,360 --> 00:07:13,520
+margin to the closest samples is as large as possible.
+
+86
+00:07:13,520 --> 00:07:18,720
+But as I told you, we are going to use the log loss.
+
+87
+00:07:18,720 --> 00:07:22,320
+The log loss is like this.
+
+88
+00:07:22,320 --> 00:07:27,800
+Again, I wouldn't like to focus too much on the equations.
+
+89
+00:07:27,800 --> 00:07:35,560
+But if you think about this, if you predict correctly a given example, this is a number
+
+90
+00:07:35,560 --> 00:07:38,880
+close to one and the logarithm of one is zero.
+
+91
+00:07:38,880 --> 00:07:41,440
+So that cost is zero.
+
+92
+00:07:41,440 --> 00:07:45,120
+No error means no cost.
+
+93
+00:07:45,120 --> 00:07:53,080
+But if you are predicting a low probability for a correct example or a correct class,
+
+94
+00:07:53,080 --> 00:08:04,520
+in that case, you have a positive cost, which means that that error is costing you something.
+
+95
+00:08:04,520 --> 00:08:08,360
+Great.
+
+96
+00:08:08,360 --> 00:08:14,160
+So how can we perform machine learning with Python?
+
+97
+00:08:14,160 --> 00:08:18,960
+Psychic learn is the best way to approach machine learning in Python.
+
+98
+00:08:18,960 --> 00:08:24,880
+So I guess many of you already know it.
+
+99
+00:08:24,880 --> 00:08:30,120
+Psychic learn has a lot of positive features.
+
+100
+00:08:30,120 --> 00:08:35,160
+One of them is object oriented, so it's very comfortable to work with.
+
+101
+00:08:35,160 --> 00:08:41,120
+So I'll give you a couple of snippets.
+
+102
+00:08:41,120 --> 00:08:47,680
+The classifier that we have seen before is called the logistic regression.
+
+103
+00:08:47,680 --> 00:08:53,840
+The logistic regression uses a reasonable loss function.
+
+104
+00:08:53,840 --> 00:08:59,960
+It has a magical property because when the log loss that we have mentioned is combined
+
+105
+00:08:59,960 --> 00:09:07,640
+with the sigmoid, so it's the superposition of two functions, and that superposition is
+
+106
+00:09:07,640 --> 00:09:09,920
+a convex function.
+
+107
+00:09:09,920 --> 00:09:16,400
+So convex functions are easy to optimize because they have a unique lowest point.
+
+108
+00:09:16,400 --> 00:09:18,720
+You can think of them as a bowl.
+
+109
+00:09:18,720 --> 00:09:26,560
+A bowl has a unique lowest point, so the numerical algorithm just looks for the steepest direction
+
+110
+00:09:26,560 --> 00:09:28,840
+downwards.
+
+111
+00:09:28,840 --> 00:09:36,960
+So if we want to apply a logistic regression, we just import the logistic regression from
+
+112
+00:09:36,960 --> 00:09:39,560
+SK Learn.
+
+113
+00:09:39,560 --> 00:09:42,000
+We create a model.
+
+114
+00:09:42,000 --> 00:09:49,920
+We feed the model to some training examples, and then we can apply the model to new examples,
+
+115
+00:09:49,920 --> 00:10:00,520
+either to obtain the class, 0 or 1, or 1 versus 8, or to predict the probability, the probability
+
+116
+00:10:00,520 --> 00:10:04,400
+estimated for the prediction.
+
+117
+00:10:04,400 --> 00:10:11,760
+And if you want to evaluate the accuracy of the prediction, we can import also the accuracy
+
+118
+00:10:11,760 --> 00:10:19,680
+score, but anyway, the score is also a method of the model, so you can use it to obtain
+
+119
+00:10:19,680 --> 00:10:24,600
+the accuracy of your prediction.
+
+120
+00:10:24,600 --> 00:10:31,640
+So of course machine learning is far more than this, but I have tried to give you some
+
+121
+00:10:31,640 --> 00:10:37,040
+of the main points.
+
+122
+00:10:37,040 --> 00:10:47,360
+The importance of feature extraction, the importance of probability estimation, and
+
+123
+00:10:47,360 --> 00:10:54,720
+the need of an appropriate loss function, something that penalizes the errors in a reasonable
+
+124
+00:10:54,720 --> 00:11:00,800
+way, and at the same time is smooth and convex.
+
+125
+00:11:00,800 --> 00:11:09,600
+So now we are ready to jump from machine learning to deep learning.
+
+126
+00:11:09,600 --> 00:11:15,640
+You can think of deep learning in terms of the simple classifier that we have seen, the
+
+127
+00:11:15,640 --> 00:11:17,400
+logistic regressor.
+
+128
+00:11:17,400 --> 00:11:22,520
+Imagine that you use it as the building block of something bigger.
+
+129
+00:11:22,520 --> 00:11:28,720
+Imagine that instead of just taking the output of the logistic regression as your prediction,
+
+130
+00:11:28,720 --> 00:11:37,320
+you use it as the input of several other logistic regressions in another layer, and those outputs
+
+131
+00:11:37,320 --> 00:11:41,760
+at the same time are applied to a new layer and so on.
+
+132
+00:11:41,760 --> 00:11:52,260
+And it can be, if you do it with many layers, that's called deep learning.
+
+133
+00:11:52,260 --> 00:12:00,520
+This particular kind of networks, this particular kind are called fully connected networks,
+
+134
+00:12:00,520 --> 00:12:05,600
+or dense networks.
+
+135
+00:12:05,600 --> 00:12:13,560
+The good thing about this is that each of those units has a nonlinear activation function.
+
+136
+00:12:13,560 --> 00:12:20,960
+If you think of the sigmoid, each of those units has a sigmoid at the output.
+
+137
+00:12:20,960 --> 00:12:32,400
+So that nonlinear transformation makes these kind of models far more powerful because now
+
+138
+00:12:32,400 --> 00:12:39,400
+we can draw nonlinear separating boundaries between the classes.
+
+139
+00:12:39,400 --> 00:12:42,480
+So that's the nice thing about this.
+
+140
+00:12:42,480 --> 00:12:48,720
+And you can also think about the analogy with a biological neuron.
+
+141
+00:12:48,720 --> 00:12:55,960
+A biological neuron receives inputs from many other neurons, typically thousands of other
+
+142
+00:12:55,960 --> 00:13:06,760
+neurons, and it activates only when the incoming signals are above a certain threshold.
+
+143
+00:13:06,760 --> 00:13:08,560
+So that's a nonlinear behavior.
+
+144
+00:13:08,560 --> 00:13:15,240
+It's a binary behavior.
+
+145
+00:13:15,240 --> 00:13:20,960
+I told you about the sigmoid, but the activation function, that nonlinear activation function
+
+146
+00:13:20,960 --> 00:13:29,880
+that is much popular in the state of the art models, is the rectified linear unit which
+
+147
+00:13:29,880 --> 00:13:33,560
+has this shape.
+
+148
+00:13:33,560 --> 00:13:39,440
+So that's the one usually employed in deep architecture.
+
+149
+00:13:39,440 --> 00:13:48,720
+In fully connected models, we have other architecture, for example, the convolutional neural networks.
+
+150
+00:13:48,720 --> 00:13:56,600
+The CNNs are used in image classification with great success, and it's based on performing
+
+151
+00:13:56,600 --> 00:14:03,560
+a different kind of arithmetic based on convolutions.
+
+152
+00:14:03,560 --> 00:14:10,760
+You can think of a convolution as a set of filters that increase the depth of the image.
+
+153
+00:14:10,760 --> 00:14:18,080
+The original depth of the image is given by the number of colors, and as you go deep into
+
+154
+00:14:18,080 --> 00:14:23,400
+the network, the size of the image is lower, but the depth is higher.
+
+155
+00:14:23,400 --> 00:14:31,320
+And it is on those pseudo colors where we are capturing the discriminative information.
+
+156
+00:14:31,320 --> 00:14:40,840
+And the neuroscientists know that this corresponds, this imitates very well how the neurons are
+
+157
+00:14:40,840 --> 00:14:43,320
+organized in the visual cortex.
+
+158
+00:14:43,320 --> 00:14:48,400
+There are neurons that are specialized in the first layers.
+
+159
+00:14:48,400 --> 00:14:56,000
+They are specialized in detecting low level patterns, such as horizontal lines, vertical
+
+160
+00:14:56,000 --> 00:14:57,840
+lines and so on.
+
+161
+00:14:57,840 --> 00:15:08,440
+And the neurons in the last layers, in the more advanced layers, are able to capture
+
+162
+00:15:08,440 --> 00:15:18,280
+higher level information, like recognizing the face of our friends and so on.
+
+163
+00:15:18,280 --> 00:15:23,360
+Apart from convolutional neural networks, we also have the recurrent neural network,
+
+164
+00:15:23,360 --> 00:15:29,440
+which is a conversional neural network with a feedback mechanism.
+
+165
+00:15:29,440 --> 00:15:38,920
+So when you try to represent the neural network a long time, the output for a given input
+
+166
+00:15:38,920 --> 00:15:46,640
+at a given instant depends on that input, but also on the previous history.
+
+167
+00:15:46,640 --> 00:15:54,920
+So that's why recurrent neural networks are so powerful when working with sequences in
+
+168
+00:15:54,920 --> 00:16:05,160
+applications such as machine translation or speech recognition.
+
+169
+00:16:05,160 --> 00:16:10,680
+The truth is that some of those architectures are often combined.
+
+170
+00:16:10,680 --> 00:16:19,560
+For example, a typical image recognition system uses several layers of convolutions and then
+
+171
+00:16:19,560 --> 00:16:24,880
+a fully connected layer in the end, because it is the fully connected architecture which
+
+172
+00:16:24,880 --> 00:16:37,760
+is able to draw that discriminative function, those flexible discriminative functions.
+
+173
+00:16:37,760 --> 00:16:45,760
+And when we try to recognize different classes, more than two classes, we need to generalize
+
+174
+00:16:45,760 --> 00:16:49,120
+the concept of sigmoid that we had before.
+
+175
+00:16:49,120 --> 00:16:55,920
+So we had something called the softmax function.
+
+176
+00:16:55,920 --> 00:17:05,520
+We have this equation, again, forget the equation, just consider that this transformation
+
+177
+00:17:05,520 --> 00:17:14,080
+makes that all the outputs, all the values at the output up to one.
+
+178
+00:17:14,080 --> 00:17:22,280
+So if we are trying to recognize between 10, 100 and digits, so the probability that we
+
+179
+00:17:22,280 --> 00:17:28,600
+assign to each of them must be equal, the summation of those values must be equal to
+
+180
+00:17:28,600 --> 00:17:33,400
+one.
+
+181
+00:17:33,400 --> 00:17:42,000
+So how can we perform deep learning with TensorFlow, deep learning with Python?
+
+182
+00:17:42,000 --> 00:17:45,080
+Well we can use several frameworks.
+
+183
+00:17:45,080 --> 00:17:47,800
+One of them is TensorFlow.
+
+184
+00:17:47,800 --> 00:17:55,400
+Yesterday there was an interesting workshop on TensorFlow.
+
+185
+00:17:55,400 --> 00:18:05,080
+In TensorFlow, it has many positive features, one of them is that it allows you to define
+
+186
+00:18:05,080 --> 00:18:15,760
+a graph of operations, but that step is separated to the step of executing those operations.
+
+187
+00:18:15,760 --> 00:18:24,880
+So if we want to perform something as simple as this equation, we first define the graph
+
+188
+00:18:24,880 --> 00:18:32,000
+with two variables and the result of the computation, and then we perform the execution
+
+189
+00:18:32,000 --> 00:18:43,400
+by creating a session, initializing the variables, and then running the computation.
+
+190
+00:18:43,400 --> 00:18:52,040
+And it can be done more compactly with this syntax.
+
+191
+00:18:52,040 --> 00:18:58,840
+The logistic regression that we have seen before can be defined very easily with those
+
+192
+00:18:58,840 --> 00:18:59,840
+steps.
+
+193
+00:18:59,840 --> 00:19:09,120
+We use a placeholder which is like the recipient that we create to put the training examples.
+
+194
+00:19:09,120 --> 00:19:18,000
+So we iterate and we are putting different examples on those placeholders.
+
+195
+00:19:18,000 --> 00:19:29,760
+Here we apply the softmax function and we evaluate the cost with the cross entropy loss
+
+196
+00:19:29,760 --> 00:19:31,440
+function.
+
+197
+00:19:31,440 --> 00:19:39,560
+So we have some snippet here for the execution and the optimization of the model, which is
+
+198
+00:19:39,560 --> 00:19:41,640
+the important thing about this.
+
+199
+00:19:41,640 --> 00:19:53,200
+To be able to optimize the variables of the model so that best fit into our training data.
+
+200
+00:19:53,200 --> 00:20:00,600
+So that's all it takes to do some machine learning or to work with neural networks in
+
+201
+00:20:00,600 --> 00:20:04,960
+Python with TensorFlow.
+
+202
+00:20:04,960 --> 00:20:10,480
+Can we apply these kind of models to financial problems?
+
+203
+00:20:10,480 --> 00:20:17,040
+Well, that's the next section of the talk.
+
+204
+00:20:17,040 --> 00:20:23,200
+In asset management or in portfolio management, we are interested or the problem is defined
+
+205
+00:20:23,200 --> 00:20:31,240
+as to distribute our wealth in several assets, our disposal.
+
+206
+00:20:31,240 --> 00:20:37,560
+There are several assets we can invest on them.
+
+207
+00:20:37,560 --> 00:20:49,200
+And we have to decide the fraction, the question should be in another place.
+
+208
+00:20:49,200 --> 00:20:56,520
+We have to obtain the weight which are the fraction of the wealth that we put in each
+
+209
+00:20:56,520 --> 00:20:57,800
+of the assets.
+
+210
+00:20:57,800 --> 00:21:03,120
+Those weights must adapt to one, obviously.
+
+211
+00:21:03,120 --> 00:21:10,000
+We consider the case in which all of them are positive and all of them are lower than
+
+212
+00:21:10,000 --> 00:21:16,640
+one, which means that you don't borrow more money for your investment.
+
+213
+00:21:16,640 --> 00:21:17,960
+Okay?
+
+214
+00:21:17,960 --> 00:21:25,800
+It's not working.
+
+215
+00:21:25,800 --> 00:21:50,000
+I'm having an issue.
+
+216
+00:21:50,000 --> 00:22:09,800
+I'm sorry I'm having an issue.
+
+217
+00:22:09,800 --> 00:22:19,120
+I'll try to anticipate the content just in case we are not able to load this.
+
+218
+00:22:19,120 --> 00:22:34,120
+I don't know what's going on.
+
+219
+00:22:34,120 --> 00:22:40,480
+Okay I think I have to do it with the role.
+
+220
+00:22:40,480 --> 00:22:41,480
+I don't know.
+
+221
+00:22:41,480 --> 00:22:45,360
+The presentation mode doesn't work.
+
+222
+00:22:45,360 --> 00:22:46,360
+Okay?
+
+223
+00:22:46,360 --> 00:22:47,360
+Okay.
+
+224
+00:22:47,360 --> 00:22:48,360
+Okay.
+
+225
+00:22:48,360 --> 00:22:49,360
+Okay, okay.
+
+226
+00:22:49,360 --> 00:22:57,080
+So, in order to apply this kind of architecture to the problem of asset management, we can
+
+227
+00:22:57,080 --> 00:23:04,000
+use a conventional architecture because a multi-classification neural network gives you
+
+228
+00:23:04,000 --> 00:23:10,800
+a set of numbers that add up to one, but we must modify the cost function because now
+
+229
+00:23:10,800 --> 00:23:18,280
+what we would like to maximize is the profit of our investment of our strategy.
+
+230
+00:23:18,280 --> 00:23:22,440
+So this will be the TensorFlow model we use.
+
+231
+00:23:22,440 --> 00:23:28,080
+I cannot stop as long as I would like here,
+
+232
+00:23:28,080 --> 00:23:29,880
+because all the time is used.
+
+233
+00:23:29,880 --> 00:23:33,120
+So I'll skip to the results.
+
+234
+00:23:33,120 --> 00:23:35,220
+We are going to perform some experiments
+
+235
+00:23:35,220 --> 00:23:41,240
+in which we train a different neural network each year,
+
+236
+00:23:41,240 --> 00:23:45,880
+using data from the six previous years.
+
+237
+00:23:45,880 --> 00:23:48,480
+And we are going to use this portfolio.
+
+238
+00:23:48,480 --> 00:23:51,760
+We have five assets in our portfolio.
+
+239
+00:23:51,760 --> 00:23:57,560
+Four of them are equities, and one of them is just cash.
+
+240
+00:23:57,560 --> 00:24:03,400
+You might wonder why the price of the cash is not constant.
+
+241
+00:24:03,400 --> 00:24:05,200
+It's because of the interest rates.
+
+242
+00:24:08,120 --> 00:24:12,800
+We use daily price movements and weekly price movements
+
+243
+00:24:12,800 --> 00:24:14,840
+as the inputs of the network.
+
+244
+00:24:14,840 --> 00:24:17,880
+And these are our results.
+
+245
+00:24:20,720 --> 00:24:24,440
+The neural network performs reasonably well.
+
+246
+00:24:24,440 --> 00:24:27,600
+We compare it with some benchmarks.
+
+247
+00:24:27,600 --> 00:24:29,640
+One of the benchmarks is a portfolio
+
+248
+00:24:29,640 --> 00:24:32,680
+with equal weights for all of the assets.
+
+249
+00:24:32,680 --> 00:24:39,000
+And another benchmark would be a global index,
+
+250
+00:24:39,000 --> 00:24:43,160
+because our portfolio is made of global assets
+
+251
+00:24:43,160 --> 00:24:46,400
+from all over the world.
+
+252
+00:24:46,400 --> 00:24:50,560
+And we can also analyze the composition of our portfolio
+
+253
+00:24:50,560 --> 00:24:51,240
+a long time.
+
+254
+00:24:54,760 --> 00:24:58,480
+The different colors show you the proportion
+
+255
+00:24:58,480 --> 00:25:04,000
+at each instant during that period of three years and a half.
+
+256
+00:25:07,160 --> 00:25:11,080
+I'd like to point out a couple of things here.
+
+257
+00:25:11,080 --> 00:25:14,880
+One of them is that this strategy is too aggressive.
+
+258
+00:25:14,880 --> 00:25:19,000
+It wouldn't be accepted by most managers.
+
+259
+00:25:19,000 --> 00:25:23,600
+Actually, my colleagues from ETS here
+
+260
+00:25:23,600 --> 00:25:27,480
+must be flipping out to see this graph.
+
+261
+00:25:27,480 --> 00:25:29,560
+And there are another interesting issue,
+
+262
+00:25:29,560 --> 00:25:38,320
+which is that we only have cash in 2014.
+
+263
+00:25:38,320 --> 00:25:41,000
+I said before that we are training the network
+
+264
+00:25:41,000 --> 00:25:44,560
+with the six last years.
+
+265
+00:25:44,560 --> 00:25:50,920
+That means that for 2014, we are training since 2008.
+
+266
+00:25:50,920 --> 00:25:54,080
+There was a crash in 2008.
+
+267
+00:25:54,080 --> 00:26:00,880
+So the network, in that case, has learned what a crash is.
+
+268
+00:26:00,880 --> 00:26:06,080
+So that's why the network has learned that keeping some cash
+
+269
+00:26:06,080 --> 00:26:10,240
+could be a good idea as a safety board.
+
+270
+00:26:10,240 --> 00:26:13,400
+But for the following years, the network
+
+271
+00:26:13,400 --> 00:26:17,840
+has been trained only with bullish markets, which
+
+272
+00:26:17,840 --> 00:26:22,640
+means that the prices have been consistently going up.
+
+273
+00:26:22,640 --> 00:26:27,280
+And that's the reason why it considers that cash doesn't work.
+
+274
+00:26:31,200 --> 00:26:36,200
+OK, so I'd like to finish with a reflection.
+
+275
+00:26:36,200 --> 00:26:39,240
+There's a controversial question about whether it's
+
+276
+00:26:39,240 --> 00:26:43,400
+possible to consistently beat the market.
+
+277
+00:26:43,400 --> 00:26:48,760
+I found a brilliant sentence by Nate Silver in this book,
+
+278
+00:26:48,760 --> 00:26:50,400
+The Signal and the Noise.
+
+279
+00:26:50,400 --> 00:26:52,520
+Highly recommended.
+
+280
+00:26:52,520 --> 00:26:53,720
+It's a delicious reading.
+
+281
+00:26:56,600 --> 00:26:58,760
+I'll make no comments about that.
+
+282
+00:26:58,760 --> 00:27:03,920
+But I think it describes very well how difficult this is.
+
+283
+00:27:03,920 --> 00:27:05,920
+And that would be all.
+
+284
+00:27:05,920 --> 00:27:09,320
+I'll give you our coordinates in social media.
+
+285
+00:27:09,320 --> 00:27:13,960
+And I strongly recommend you to take a look to our blog
+
+286
+00:27:13,960 --> 00:27:19,000
+with interesting discussions about Python, machine learning,
+
+287
+00:27:19,000 --> 00:27:21,320
+asset management, and so on.
+
+288
+00:27:21,320 --> 00:27:22,320
+So thank you.
+
+289
+00:27:22,320 --> 00:27:34,320
+Thank you.
+
+290
+00:27:34,320 --> 00:27:38,320
+So sadly, we don't have time for Kirsten.
+
+291
+00:27:38,320 --> 00:27:43,320
+Sorry, but maybe you can find these bigger files.
+
+292
+00:27:43,320 --> 00:27:45,320
+Thank you very much.
+
+293
+00:27:45,320 --> 00:27:56,320
+OK, thank you.
+
+294
+00:27:56,320 --> 00:27:58,320
+I thought it would be more flexible with time,
+
+295
+00:27:58,320 --> 00:28:00,320
+because of the technical details.
+
+296
+00:28:00,320 --> 00:28:02,320
+But I've given you five minutes more.
+
+297
+00:28:02,320 --> 00:28:06,320
+If we don't have all the time,
+
+298
+00:28:06,320 --> 00:28:08,320
+because we're going to have to do it again,
+
+299
+00:28:08,320 --> 00:28:12,320
+but I haven't given you the time to do anything.
+
+300
+00:28:12,320 --> 00:28:15,320
+I've given you the time you don't know.
+

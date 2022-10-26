@@ -1,0 +1,3008 @@
+1
+00:00:00,000 --> 00:00:13,480
+Yeah, e vou ia contar un pouco sobre.
+
+2
+00:00:13,480 --> 00:00:19,480
+sobre o desarrollo en escritorio usando Python 3 e GTK.
+
+3
+00:00:20,480 --> 00:00:22,480
+Bueno, me presento primero.
+
+4
+00:00:22,480 --> 00:00:27,480
+Min nombre es Daniel García, minique es Danny Gm.
+
+5
+00:00:27,480 --> 00:00:30,480
+Por éso, por éso ni me podíais encontrar por internet,
+
+6
+00:00:30,480 --> 00:00:34,480
+en Twitter e en G-Hub e por aí, en esos sitios.
+
+7
+00:00:34,480 --> 00:00:37,480
+E bueno, trabajo en...
+
+8
+00:00:37,480 --> 00:00:38,480
+dedas unos quantos anos en Guadubó,
+
+9
+00:00:38,480 --> 00:00:40,480
+trabajando sobre todo en Tecnología Python,
+
+10
+00:00:40,480 --> 00:00:43,480
+sempre que nos dejan.
+
+11
+00:00:43,480 --> 00:00:44,480
+E aí está mi correo,
+
+12
+00:00:44,480 --> 00:00:47,480
+donde se tenia alguna duda o queréis comentar algo o que cosas
+
+13
+00:00:47,480 --> 00:00:49,480
+me podíis mandar un correo.
+
+14
+00:00:49,480 --> 00:00:51,480
+E também é subido todo o apresentación,
+
+15
+00:00:51,480 --> 00:00:53,480
+o código de ejemplo e tal que vou ensenhar,
+
+16
+00:00:53,480 --> 00:00:55,480
+pois está todo en G-Hub.
+
+17
+00:00:55,480 --> 00:00:57,480
+Por se queréis cacharrear o verlo,
+
+18
+00:00:57,480 --> 00:00:59,480
+por aí está o código.
+
+19
+00:01:03,480 --> 00:01:07,480
+Vale, primero, queria comentar un pouco que é GTK.
+
+20
+00:01:07,480 --> 00:01:12,480
+GTK son las siglas de Jim Toolkit.
+
+21
+00:01:12,480 --> 00:01:15,480
+É un Toolkit gráfico
+
+22
+00:01:15,480 --> 00:01:19,480
+con bastantes años de desarrollo,
+
+23
+00:01:19,480 --> 00:01:23,480
+é libre e é a base do escritorio lino,
+
+24
+00:01:23,480 --> 00:01:27,480
+que viene por defecto en la medida de distribuciones que é genome.
+
+25
+00:01:29,480 --> 00:01:33,480
+Bueno, GTK, al final, é una librería gráfica
+
+26
+00:01:33,480 --> 00:01:35,480
+que te da una serie de componentes de widget gráfico,
+
+27
+00:01:35,480 --> 00:01:37,480
+como pantrada de texto, botones,
+
+28
+00:01:37,480 --> 00:01:41,480
+barritas de progreso, ventanitas e é esse tipo de cosas.
+
+29
+00:01:41,480 --> 00:01:44,480
+Pasen interfaces de escritorio.
+
+30
+00:01:48,480 --> 00:01:51,480
+E bueno, vamos empezar viendo un pouco de código.
+
+31
+00:01:51,480 --> 00:01:55,480
+A ideia é ver unha aplicación básica de ejemplo
+
+32
+00:01:55,480 --> 00:01:58,480
+com Python 3 e GTK.
+
+33
+00:01:58,480 --> 00:02:00,480
+Estamos usando Python 3 directamente
+
+34
+00:02:00,480 --> 00:02:04,480
+porque Python 2 deberíamos empezar a abandonar-lo
+
+35
+00:02:04,480 --> 00:02:06,480
+poco a poco.
+
+36
+00:02:08,480 --> 00:02:10,480
+E, bueno, tamén estamos usando GTK 3
+
+37
+00:02:10,480 --> 00:02:12,480
+porque GTK 2 está tamén obsoleto.
+
+38
+00:02:14,480 --> 00:02:17,480
+Bueno, pues aquí é un ejemplo de código
+
+39
+00:02:17,480 --> 00:02:19,480
+e o resultado, que seria.
+
+40
+00:02:19,480 --> 00:02:23,480
+Como veis, é bastante simple crear una ventana.
+
+41
+00:02:25,480 --> 00:02:26,480
+La ventanita no tiene nada,
+
+42
+00:02:26,480 --> 00:02:29,480
+pero bueno, é, se pinta diretamente,
+
+43
+00:02:29,480 --> 00:02:33,480
+pues, básicamente creando una clase,
+
+44
+00:02:33,480 --> 00:02:36,480
+un GTK window, pues, tiene una ventana.
+
+45
+00:02:40,480 --> 00:02:41,480
+Se os fijen o código,
+
+46
+00:02:41,480 --> 00:02:44,480
+pues, bueno, tiene unha serie de líneas por aí
+
+47
+00:02:44,480 --> 00:02:47,480
+e a maioria, para pintar la ventana,
+
+48
+00:02:47,480 --> 00:02:49,480
+no todo é necesario é esse con esto en evento
+
+49
+00:02:49,480 --> 00:02:51,480
+para cerrar la ventana,
+
+50
+00:02:51,480 --> 00:02:53,480
+ahora contaré o tema de ventos
+
+51
+00:02:53,480 --> 00:02:55,480
+e se añade unha etiqueta, que é o label,
+
+52
+00:02:55,480 --> 00:02:57,480
+con un texto.
+
+53
+00:02:57,480 --> 00:03:00,480
+E se poden definir uns parámetros,
+
+54
+00:03:00,480 --> 00:03:03,480
+o tamanho e tal.
+
+55
+00:03:06,480 --> 00:03:08,480
+E, bueno,
+
+56
+00:03:08,480 --> 00:03:13,480
+o GTK tiene un gestión a los eventos,
+
+57
+00:03:13,480 --> 00:03:15,480
+a entrada e a salida,
+
+58
+00:03:15,480 --> 00:03:17,480
+e o repintado de las aplicaciones
+
+59
+00:03:17,480 --> 00:03:19,480
+o gestiona el propio GTK.
+
+60
+00:03:19,480 --> 00:03:21,480
+Tiene un evento principal
+
+61
+00:03:21,480 --> 00:03:22,480
+onde está recibiendo
+
+62
+00:03:22,480 --> 00:03:23,480
+o evento de entrada,
+
+63
+00:03:23,480 --> 00:03:24,480
+os clits de ratón,
+
+64
+00:03:24,480 --> 00:03:27,480
+o teclado, todos os eventos,
+
+65
+00:03:27,480 --> 00:03:30,480
+llama a tu código nativo
+
+66
+00:03:30,480 --> 00:03:32,480
+e pinta a pantalla cada vez que se modifica algo
+
+67
+00:03:32,480 --> 00:03:35,480
+e tal, no tienes que gestionar ningún tipo de evento.
+
+68
+00:03:35,480 --> 00:03:36,480
+O único que tens que hacer
+
+69
+00:03:36,480 --> 00:03:37,480
+é enganchar esos eventos
+
+70
+00:03:37,480 --> 00:03:39,480
+con el código que tu queres que se ejecute
+
+71
+00:03:39,480 --> 00:03:41,480
+quando se produce o evento.
+
+72
+00:03:44,480 --> 00:03:46,480
+E esto funciona, pues,
+
+73
+00:03:46,480 --> 00:03:48,480
+como en otro tipo de toolkit gráfico
+
+74
+00:03:48,480 --> 00:03:50,480
+que é a través de señales e callback.
+
+75
+00:03:50,480 --> 00:03:52,480
+Hay unha serie de señales que os widgets definen
+
+76
+00:03:52,480 --> 00:03:54,480
+e tu defines un callback
+
+77
+00:03:54,480 --> 00:03:56,480
+que, cuando ocurra ese señal,
+
+78
+00:03:56,480 --> 00:03:57,480
+se llaman a tu callback.
+
+79
+00:03:57,480 --> 00:03:59,480
+Un callback non é máx que unha función
+
+80
+00:03:59,480 --> 00:04:01,480
+que se llama cada vez que se emite ese señal.
+
+81
+00:04:04,480 --> 00:04:05,480
+Aqui, en el ejemplo de código anterior,
+
+82
+00:04:05,480 --> 00:04:07,480
+he añadido un botón.
+
+83
+00:04:07,480 --> 00:04:09,480
+Un botón emite o señal
+
+84
+00:04:09,480 --> 00:04:10,480
+cuando se pulsa
+
+85
+00:04:10,480 --> 00:04:12,480
+o widget botón, por defecto,
+
+86
+00:04:12,480 --> 00:04:15,480
+emite o señal de pulsado
+
+87
+00:04:15,480 --> 00:04:17,480
+e, en ese momento,
+
+88
+00:04:17,480 --> 00:04:19,480
+podes ejecutar tu código.
+
+89
+00:04:21,480 --> 00:04:23,480
+O código lo ejecuta, como he comentado antes,
+
+90
+00:04:23,480 --> 00:04:25,480
+o Mail Loop,
+
+91
+00:04:25,480 --> 00:04:26,480
+por lo tanto,
+
+92
+00:04:26,480 --> 00:04:28,480
+tu non contrara el flujo de la aplicación,
+
+93
+00:04:28,480 --> 00:04:29,480
+sino que, quando se pulse,
+
+94
+00:04:29,480 --> 00:04:31,480
+o GTK llamará a tu código.
+
+95
+00:04:34,480 --> 00:04:35,480
+E, aqui, en el ejemplo,
+
+96
+00:04:35,480 --> 00:04:37,480
+se ve como se distancia un botón
+
+97
+00:04:38,480 --> 00:04:39,480
+e se conecta
+
+98
+00:04:39,480 --> 00:04:41,480
+o evento,
+
+99
+00:04:41,480 --> 00:04:42,480
+o conec,
+
+100
+00:04:42,480 --> 00:04:43,480
+se conecta o evento.
+
+101
+00:04:44,480 --> 00:04:45,480
+Click it
+
+102
+00:04:45,480 --> 00:04:47,480
+con el método button click it.
+
+103
+00:04:48,480 --> 00:04:49,480
+E, bueno,
+
+104
+00:04:49,480 --> 00:04:50,480
+en el button click it
+
+105
+00:04:50,480 --> 00:04:52,480
+se está cambiando el texto del botón.
+
+106
+00:04:52,480 --> 00:04:54,480
+Se veis aquí las capturas,
+
+107
+00:04:54,480 --> 00:04:55,480
+se veis como,
+
+108
+00:04:55,480 --> 00:04:56,480
+cuando se pulsa en la ventana,
+
+109
+00:04:56,480 --> 00:04:58,480
+aparece pulsado 1.
+
+110
+00:04:58,480 --> 00:04:59,480
+Se pulsado a outra vez,
+
+111
+00:04:59,480 --> 00:05:01,480
+pulsado 2 e tal.
+
+112
+00:05:03,480 --> 00:05:04,480
+De esta forma,
+
+113
+00:05:04,480 --> 00:05:05,480
+por la gestión de evento,
+
+114
+00:05:05,480 --> 00:05:06,480
+es muy sencilla.
+
+115
+00:05:08,480 --> 00:05:10,480
+E todo el Mail Loop
+
+116
+00:05:10,480 --> 00:05:11,480
+de GTK,
+
+117
+00:05:11,480 --> 00:05:12,480
+el que se encarga de todo eso,
+
+118
+00:05:12,480 --> 00:05:14,480
+tú no te tenes que preocupar,
+
+119
+00:05:14,480 --> 00:05:16,480
+de que desia un apante de atáxtil,
+
+120
+00:05:16,480 --> 00:05:19,480
+desia un ratón,
+
+121
+00:05:19,480 --> 00:05:21,480
+desia un USB,
+
+122
+00:05:21,480 --> 00:05:23,480
+simplemente te llega
+
+123
+00:05:23,480 --> 00:05:25,480
+un evento de click it
+
+124
+00:05:25,480 --> 00:05:27,480
+e,
+
+125
+00:05:27,480 --> 00:05:29,480
+e eso le enganchas con tus señales.
+
+126
+00:05:32,480 --> 00:05:34,480
+Luego, unha cosa mo importante
+
+127
+00:05:34,480 --> 00:05:35,480
+e que suele dar
+
+128
+00:05:35,480 --> 00:05:37,480
+mucho dolor de cabeza al principio
+
+129
+00:05:37,480 --> 00:05:40,480
+ao empezar con este tipo de aplicaciones,
+
+130
+00:05:40,480 --> 00:05:42,480
+es que GTK tiene un nilo principal
+
+131
+00:05:42,480 --> 00:05:44,480
+e un nilo único.
+
+132
+00:05:45,480 --> 00:05:47,480
+Pero normalmente,
+
+133
+00:05:47,480 --> 00:05:49,480
+las aplicaciones de escritorio
+
+134
+00:05:49,480 --> 00:05:51,480
+tienen procesos que son de larga duración.
+
+135
+00:05:51,480 --> 00:05:53,480
+Então, se tú te estás descargando un fichero,
+
+136
+00:05:53,480 --> 00:05:55,480
+no puedes bloquear la interface
+
+137
+00:05:55,480 --> 00:05:56,480
+e que no se actualice
+
+138
+00:05:56,480 --> 00:05:57,480
+hasta que termine.
+
+139
+00:05:57,480 --> 00:05:58,480
+Tendrás que poner un barro de progreso
+
+140
+00:05:58,480 --> 00:05:59,480
+o algo así
+
+141
+00:05:59,480 --> 00:06:01,480
+e ejecutarlo tú en segundo plano.
+
+142
+00:06:03,480 --> 00:06:06,480
+Como GTK gestiona un nilo principal,
+
+143
+00:06:06,480 --> 00:06:09,480
+aquí en el ejemplo este de código,
+
+144
+00:06:09,480 --> 00:06:11,480
+tú te puedes crear un nilo en Python
+
+145
+00:06:11,480 --> 00:06:13,480
+también, con el threading.
+
+146
+00:06:13,480 --> 00:06:15,480
+Se tú te creas un nilo en Python
+
+147
+00:06:15,480 --> 00:06:18,480
+e modificas el código GTK,
+
+148
+00:06:18,480 --> 00:06:21,480
+puede ocasionar problemas.
+
+149
+00:06:21,480 --> 00:06:23,480
+Se tú en tú nilo
+
+150
+00:06:23,480 --> 00:06:25,480
+tocas os quiches de GTK,
+
+151
+00:06:25,480 --> 00:06:27,480
+os cambias,
+
+152
+00:06:27,480 --> 00:06:29,480
+podes causar problemas
+
+153
+00:06:29,480 --> 00:06:30,480
+porque, a lo mejor,
+
+154
+00:06:30,480 --> 00:06:32,480
+o nilo principal de GTK
+
+155
+00:06:32,480 --> 00:06:34,480
+está haciendo outra cosa con ese quiche
+
+156
+00:06:34,480 --> 00:06:36,480
+e cambia el estado e da problema.
+
+157
+00:06:36,480 --> 00:06:39,480
+Então, a recomendación
+
+158
+00:06:39,480 --> 00:06:41,480
+es que,
+
+159
+00:06:41,480 --> 00:06:44,480
+quando se toque algo de interfaz
+
+160
+00:06:44,480 --> 00:06:46,480
+en un nilo externo de GTK,
+
+161
+00:06:46,480 --> 00:06:49,480
+no se modifique directamente
+
+162
+00:06:49,480 --> 00:06:51,480
+nada de interfaz,
+
+163
+00:06:51,480 --> 00:06:53,480
+sino que, con el método
+
+164
+00:06:53,480 --> 00:06:56,480
+idlyad,
+
+165
+00:06:56,480 --> 00:06:59,480
+añade una llamada
+
+166
+00:06:59,480 --> 00:07:02,480
+a la cola de llamada de GTK
+
+167
+00:07:02,480 --> 00:07:04,480
+e GTK lo llamará
+
+168
+00:07:04,480 --> 00:07:06,480
+ese método en el nilo principal
+
+169
+00:07:06,480 --> 00:07:08,480
+quando le toque.
+
+170
+00:07:09,480 --> 00:07:10,480
+De esa forma, consigue
+
+171
+00:07:10,480 --> 00:07:12,480
+que todos os cambios de interfaz
+
+172
+00:07:12,480 --> 00:07:14,480
+ejecuten en el nilo principal de GTK.
+
+173
+00:07:14,480 --> 00:07:16,480
+E, no, tienes varios iros tocando
+
+174
+00:07:16,480 --> 00:07:18,480
+a interfaz que pueda ser
+
+175
+00:07:18,480 --> 00:07:19,480
+que te llegue un evento
+
+176
+00:07:19,480 --> 00:07:21,480
+mientras modifique o quiche
+
+177
+00:07:21,480 --> 00:07:23,480
+e un pete.
+
+178
+00:07:25,480 --> 00:07:26,480
+Então, é una cosa
+
+179
+00:07:26,480 --> 00:07:28,480
+moi importante recordar
+
+180
+00:07:28,480 --> 00:07:29,480
+quando sean aplicaciones
+
+181
+00:07:29,480 --> 00:07:31,480
+de escritorio con GTK
+
+182
+00:07:31,480 --> 00:07:33,480
+que, se temos varios iros,
+
+183
+00:07:33,480 --> 00:07:36,480
+no tocar ningún quiche
+
+184
+00:07:36,480 --> 00:07:37,480
+en un nilo,
+
+185
+00:07:37,480 --> 00:07:38,480
+en una instancia de un nilo
+
+186
+00:07:38,480 --> 00:07:40,480
+que no sea el main de GTK.
+
+187
+00:07:40,480 --> 00:07:42,480
+Hácelo todo con el idlyad
+
+188
+00:07:42,480 --> 00:07:44,480
+o con funciones de Time Out
+
+189
+00:07:44,480 --> 00:07:45,480
+tan ben de gelit
+
+190
+00:07:45,480 --> 00:07:47,480
+que lo ejecutan todos
+
+191
+00:07:47,480 --> 00:07:49,480
+en el nilo principal.
+
+192
+00:07:50,480 --> 00:07:51,480
+E, bueno,
+
+193
+00:07:51,480 --> 00:07:52,480
+hemos visto aplicaciones
+
+194
+00:07:52,480 --> 00:07:53,480
+moi sencillitas
+
+195
+00:07:53,480 --> 00:07:54,480
+con un botón, con un etiqueta,
+
+196
+00:07:54,480 --> 00:07:55,480
+pero, normalmente,
+
+197
+00:07:55,480 --> 00:07:56,480
+a aplicación de escritorio
+
+198
+00:07:56,480 --> 00:07:57,480
+tiene en varios widgets
+
+199
+00:07:57,480 --> 00:07:58,480
+que os distribuye
+
+200
+00:07:58,480 --> 00:08:00,480
+en la ventana
+
+201
+00:08:00,480 --> 00:08:02,480
+con diferentes
+
+202
+00:08:03,480 --> 00:08:04,480
+composiciones.
+
+203
+00:08:04,480 --> 00:08:06,480
+Se quere poner arriba, abajo,
+
+204
+00:08:06,480 --> 00:08:07,480
+y quiera a derecha e tal.
+
+205
+00:08:07,480 --> 00:08:09,480
+Pareces estar los contenedores,
+
+206
+00:08:09,480 --> 00:08:11,480
+que é un widget básico
+
+207
+00:08:11,480 --> 00:08:12,480
+de GTK,
+
+208
+00:08:13,480 --> 00:08:14,480
+a los que le pode añadir
+
+209
+00:08:14,480 --> 00:08:15,480
+unha serie de widgets
+
+210
+00:08:15,480 --> 00:08:16,480
+los que quiera
+
+211
+00:08:16,480 --> 00:08:17,480
+e o ordena
+
+212
+00:08:17,480 --> 00:08:19,480
+de una forma determinada,
+
+213
+00:08:19,480 --> 00:08:20,480
+según el contenedor.
+
+214
+00:08:21,480 --> 00:08:22,480
+Los má sencillos
+
+215
+00:08:22,480 --> 00:08:24,480
+son las cajas box
+
+216
+00:08:26,480 --> 00:08:27,480
+e, bueno, aquí,
+
+217
+00:08:27,480 --> 00:08:28,480
+en el ejemplo,
+
+218
+00:08:28,480 --> 00:08:29,480
+se define
+
+219
+00:08:29,480 --> 00:08:30,480
+en un par de cajas
+
+220
+00:08:31,480 --> 00:08:32,480
+unha caja vertical
+
+221
+00:08:32,480 --> 00:08:33,480
+e unha horizontal
+
+222
+00:08:34,480 --> 00:08:35,480
+e se añada una serie de widgets
+
+223
+00:08:35,480 --> 00:08:36,480
+en la caja horizontal
+
+224
+00:08:36,480 --> 00:08:37,480
+e luego en la caja horizontal
+
+225
+00:08:37,480 --> 00:08:38,480
+se mete en la caja vertical
+
+226
+00:08:38,480 --> 00:08:40,480
+e se mete en má widget.
+
+227
+00:08:40,480 --> 00:08:41,480
+Con caja,
+
+228
+00:08:41,480 --> 00:08:42,480
+lo único que define
+
+229
+00:08:42,480 --> 00:08:43,480
+unha orientación
+
+230
+00:08:43,480 --> 00:08:44,480
+define como quiera
+
+231
+00:08:44,480 --> 00:08:45,480
+que esos widgets
+
+232
+00:08:45,480 --> 00:08:46,480
+se desplieguen
+
+233
+00:08:46,480 --> 00:08:47,480
+en esa caja
+
+234
+00:08:47,480 --> 00:08:48,480
+se quiera que se homogéneo
+
+235
+00:08:48,480 --> 00:08:50,480
+se quiera que haya un espacio
+
+236
+00:08:51,480 --> 00:08:52,480
+e empieza a añadir
+
+237
+00:08:52,480 --> 00:08:53,480
+widgets de esa caja.
+
+238
+00:08:53,480 --> 00:08:55,480
+Se a caja es horizontal,
+
+239
+00:08:55,480 --> 00:08:56,480
+irán añaendo
+
+240
+00:08:56,480 --> 00:08:57,480
+se izquierda a derecha
+
+241
+00:08:57,480 --> 00:08:58,480
+se es vertical,
+
+242
+00:08:58,480 --> 00:08:59,480
+irán de arriba a abajo.
+
+243
+00:09:01,480 --> 00:09:02,480
+De esta forma
+
+244
+00:09:02,480 --> 00:09:04,480
+de forma bastante sencilla
+
+245
+00:09:04,480 --> 00:09:05,480
+pode definir unha interfaz
+
+246
+00:09:05,480 --> 00:09:08,480
+que se quiera
+
+247
+00:09:11,480 --> 00:09:12,480
+esto é o má sencilla
+
+248
+00:09:12,480 --> 00:09:13,480
+porque tú vas incluyendo
+
+249
+00:09:13,480 --> 00:09:14,480
+e se vas incluyendo
+
+250
+00:09:14,480 --> 00:09:15,480
+de arriba a abajo e de izquierda a derecha.
+
+251
+00:09:16,480 --> 00:09:17,480
+E como podes meter
+
+252
+00:09:17,480 --> 00:09:18,480
+un contenedor
+
+253
+00:09:18,480 --> 00:09:19,480
+dentro de outro contenedor
+
+254
+00:09:19,480 --> 00:09:20,480
+pues podes llegar a unha
+
+255
+00:09:20,480 --> 00:09:21,480
+a unha interfaz
+
+256
+00:09:21,480 --> 00:09:22,480
+o compleja que quiera.
+
+257
+00:09:27,480 --> 00:09:28,480
+Luego,
+
+258
+00:09:28,480 --> 00:09:29,480
+hay outro ejemplo de contenedor
+
+259
+00:09:29,480 --> 00:09:30,480
+por ejemplo,
+
+260
+00:09:30,480 --> 00:09:31,480
+é o grid
+
+261
+00:09:31,480 --> 00:09:32,480
+que non é má que unha tabla
+
+262
+00:09:32,480 --> 00:09:34,480
+donde tú é o tabla
+
+263
+00:09:34,480 --> 00:09:35,480
+defines
+
+264
+00:09:35,480 --> 00:09:36,480
+a posición
+
+265
+00:09:37,480 --> 00:09:38,480
+a posición 00
+
+266
+00:09:38,480 --> 00:09:40,480
+quero que vaya este widget
+
+267
+00:09:40,480 --> 00:09:41,480
+e que tenga un
+
+268
+00:09:41,480 --> 00:09:42,480
+un ancho
+
+269
+00:09:42,480 --> 00:09:43,480
+na tabla de 3 celdas
+
+270
+00:09:43,480 --> 00:09:45,480
+en la posición 10
+
+271
+00:09:45,480 --> 00:09:47,480
+quero que vaya este widget
+
+272
+00:09:47,480 --> 00:09:48,480
+e assim te define
+
+273
+00:09:48,480 --> 00:09:50,480
+tú un grid
+
+274
+00:09:50,480 --> 00:09:51,480
+vamos, unha tabla
+
+275
+00:09:51,480 --> 00:09:52,480
+unha rejilla
+
+276
+00:09:53,480 --> 00:09:54,480
+e podes colocar
+
+277
+00:09:54,480 --> 00:09:55,480
+os widgets
+
+278
+00:09:55,480 --> 00:09:56,480
+con má precisión
+
+279
+00:09:56,480 --> 00:09:57,480
+que ao mejo é o caja
+
+280
+00:09:57,480 --> 00:09:58,480
+porque quiera que uno
+
+281
+00:09:58,480 --> 00:09:59,480
+sea doble que o outro
+
+282
+00:09:59,480 --> 00:10:00,480
+quiera que
+
+283
+00:10:00,480 --> 00:10:01,480
+un ocupe má de vertical
+
+284
+00:10:01,480 --> 00:10:03,480
+pero menos de horizontal
+
+285
+00:10:03,480 --> 00:10:04,480
+então tú define
+
+286
+00:10:04,480 --> 00:10:06,480
+o ancho e o alto de cada widget
+
+287
+00:10:08,480 --> 00:10:09,480
+e bueno
+
+288
+00:10:09,480 --> 00:10:10,480
+igual que está
+
+289
+00:10:10,480 --> 00:10:11,480
+a caja que está o grid
+
+290
+00:10:11,480 --> 00:10:12,480
+pues também
+
+291
+00:10:12,480 --> 00:10:13,480
+en outras sérries de contenedores
+
+292
+00:10:13,480 --> 00:10:14,480
+como
+
+293
+00:10:14,480 --> 00:10:15,480
+bueno, pestaña
+
+294
+00:10:15,480 --> 00:10:16,480
+hay contenedores
+
+295
+00:10:16,480 --> 00:10:17,480
+que se expanden
+
+296
+00:10:17,480 --> 00:10:18,480
+que se esconden
+
+297
+00:10:18,480 --> 00:10:19,480
+hay un montón de contenedores
+
+298
+00:10:19,480 --> 00:10:20,480
+en jetecan
+
+299
+00:10:20,480 --> 00:10:21,480
+el código básico
+
+300
+00:10:21,480 --> 00:10:23,480
+e bueno
+
+301
+00:10:23,480 --> 00:10:24,480
+e se tiene una necesidad especial
+
+302
+00:10:24,480 --> 00:10:25,480
+sempre te pode implementar
+
+303
+00:10:25,480 --> 00:10:26,480
+tú, tú propio contenedor
+
+304
+00:10:27,480 --> 00:10:28,480
+que poda tener contenedores
+
+305
+00:10:28,480 --> 00:10:29,480
+dentro o fuera
+
+306
+00:10:29,480 --> 00:10:30,480
+o que te implementes
+
+307
+00:10:30,480 --> 00:10:31,480
+tú, tú código de
+
+308
+00:10:31,480 --> 00:10:32,480
+que pintar os widgets
+
+309
+00:10:32,480 --> 00:10:33,480
+dentro de
+
+310
+00:10:34,480 --> 00:10:35,480
+dentro del contenedor
+
+311
+00:10:43,480 --> 00:10:44,480
+bueno, aquí no se o texto
+
+312
+00:10:44,480 --> 00:10:45,480
+pero
+
+313
+00:10:46,480 --> 00:10:47,480
+e
+
+314
+00:10:47,480 --> 00:10:48,480
+pero bueno
+
+315
+00:10:48,480 --> 00:10:49,480
+o que quiera contar
+
+316
+00:10:49,480 --> 00:10:50,480
+é que a parte de todo
+
+317
+00:10:50,480 --> 00:10:51,480
+é isso
+
+318
+00:10:51,480 --> 00:10:52,480
+de escribir a interfaz
+
+319
+00:10:52,480 --> 00:10:53,480
+con
+
+320
+00:10:53,480 --> 00:10:54,480
+a parte de poder
+
+321
+00:10:54,480 --> 00:10:55,480
+escribir a interfaz
+
+322
+00:10:55,480 --> 00:10:56,480
+en el código
+
+323
+00:10:56,480 --> 00:10:57,480
+onde tú define
+
+324
+00:10:57,480 --> 00:10:58,480
+unha ventana
+
+325
+00:10:58,480 --> 00:10:59,480
+le añade un
+
+326
+00:10:59,480 --> 00:11:00,480
+le añade un
+
+327
+00:11:00,480 --> 00:11:01,480
+le añade unha imagen
+
+328
+00:11:01,480 --> 00:11:02,480
+le pone un botón
+
+329
+00:11:02,480 --> 00:11:03,480
+e tal
+
+330
+00:11:03,480 --> 00:11:04,480
+pues hay unha herramienta gráfica
+
+331
+00:11:05,480 --> 00:11:06,480
+que é o Glate
+
+332
+00:11:07,480 --> 00:11:08,480
+donde tú
+
+333
+00:11:08,480 --> 00:11:09,480
+gráficamente
+
+334
+00:11:09,480 --> 00:11:10,480
+pues pode añadir unha ventana
+
+335
+00:11:10,480 --> 00:11:11,480
+aquí a esquerda
+
+336
+00:11:11,480 --> 00:11:12,480
+se ve
+
+337
+00:11:12,480 --> 00:11:13,480
+os diferentes widgets
+
+338
+00:11:14,480 --> 00:11:15,480
+a la derecha
+
+339
+00:11:15,480 --> 00:11:16,480
+las propiedades e las señales
+
+340
+00:11:16,480 --> 00:11:17,480
+e bueno
+
+341
+00:11:17,480 --> 00:11:18,480
+tú te puedes
+
+342
+00:11:18,480 --> 00:11:19,480
+a partir de aquí
+
+343
+00:11:20,480 --> 00:11:21,480
+te puedes diseñar gráficamente
+
+344
+00:11:21,480 --> 00:11:22,480
+con el ratón
+
+345
+00:11:22,480 --> 00:11:23,480
+unha
+
+346
+00:11:23,480 --> 00:11:24,480
+una interfaz
+
+347
+00:11:25,480 --> 00:11:27,480
+con os widgets que quiera
+
+348
+00:11:27,480 --> 00:11:28,480
+e
+
+349
+00:11:28,480 --> 00:11:29,480
+cambiando
+
+350
+00:11:29,480 --> 00:11:30,480
+las propiedades
+
+351
+00:11:30,480 --> 00:11:31,480
+tamaño
+
+352
+00:11:31,480 --> 00:11:32,480
+e
+
+353
+00:11:32,480 --> 00:11:33,480
+e todo o que
+
+354
+00:11:33,480 --> 00:11:34,480
+te interese
+
+355
+00:11:34,480 --> 00:11:35,480
+viendo gráficamente
+
+356
+00:11:35,480 --> 00:11:36,480
+como
+
+357
+00:11:36,480 --> 00:11:37,480
+como se vería
+
+358
+00:11:38,480 --> 00:11:39,480
+e luego
+
+359
+00:11:39,480 --> 00:11:40,480
+con las señales
+
+360
+00:11:40,480 --> 00:11:41,480
+puedes definir
+
+361
+00:11:41,480 --> 00:11:42,480
+bueno
+
+362
+00:11:42,480 --> 00:11:43,480
+te salen
+
+363
+00:11:43,480 --> 00:11:44,480
+todas las señales
+
+364
+00:11:44,480 --> 00:11:45,480
+de todos os
+
+365
+00:11:45,480 --> 00:11:46,480
+de todos os widgets
+
+366
+00:11:47,480 --> 00:11:48,480
+e
+
+367
+00:11:48,480 --> 00:11:49,480
+puedes
+
+368
+00:11:49,480 --> 00:11:50,480
+pôner el nombre de funciones
+
+369
+00:11:50,480 --> 00:11:51,480
+que se llamarán
+
+370
+00:11:51,480 --> 00:11:52,480
+quando
+
+371
+00:11:52,480 --> 00:11:53,480
+ocurre ese evento
+
+372
+00:11:53,480 --> 00:11:54,480
+então
+
+373
+00:11:54,480 --> 00:11:55,480
+ya directamente
+
+374
+00:11:55,480 --> 00:11:56,480
+no código
+
+375
+00:11:56,480 --> 00:11:57,480
+e enganchar la interfaz
+
+376
+00:11:57,480 --> 00:11:58,480
+a eso
+
+377
+00:11:59,480 --> 00:12:00,480
+aqui por ejemplo
+
+378
+00:12:00,480 --> 00:12:02,480
+en el botón
+
+379
+00:12:03,480 --> 00:12:04,480
+e definido en el evento
+
+380
+00:12:04,480 --> 00:12:05,480
+click it
+
+381
+00:12:05,480 --> 00:12:06,480
+pues he puesto un manipulador
+
+382
+00:12:06,480 --> 00:12:07,480
+que se llama
+
+383
+00:12:07,480 --> 00:12:08,480
+un button click it
+
+384
+00:12:12,480 --> 00:12:13,480
+e aquí está
+
+385
+00:12:13,480 --> 00:12:14,480
+el código
+
+386
+00:12:15,480 --> 00:12:16,480
+que como veis
+
+387
+00:12:16,480 --> 00:12:17,480
+e aquí
+
+388
+00:12:17,480 --> 00:12:18,480
+e la diferencia
+
+389
+00:12:18,480 --> 00:12:19,480
+de este código
+
+390
+00:12:19,480 --> 00:12:20,480
+a lo anterior
+
+391
+00:12:20,480 --> 00:12:21,480
+e donde se define la interfaz
+
+392
+00:12:21,480 --> 00:12:22,480
+pues
+
+393
+00:12:22,480 --> 00:12:23,480
+aquí no heredo de
+
+394
+00:12:23,480 --> 00:12:24,480
+gtk window
+
+395
+00:12:24,480 --> 00:12:25,480
+ni defino un objeto
+
+396
+00:12:25,480 --> 00:12:26,480
+window
+
+397
+00:12:26,480 --> 00:12:27,480
+ni a eso
+
+398
+00:12:27,480 --> 00:12:28,480
+sino que
+
+399
+00:12:28,480 --> 00:12:29,480
+que creo unha classe
+
+400
+00:12:29,480 --> 00:12:30,480
+que no hereda
+
+401
+00:12:30,480 --> 00:12:31,480
+de ninguno de gtk
+
+402
+00:12:31,480 --> 00:12:32,480
+que es un controlador
+
+403
+00:12:32,480 --> 00:12:33,480
+e aqui solo defino
+
+404
+00:12:33,480 --> 00:12:35,480
+los métodos básicos
+
+405
+00:12:35,480 --> 00:12:36,480
+de
+
+406
+00:12:36,480 --> 00:12:37,480
+de las señales
+
+407
+00:12:37,480 --> 00:12:38,480
+que quero
+
+408
+00:12:38,480 --> 00:12:39,480
+sea la lógica de negocio al final
+
+409
+00:12:40,480 --> 00:12:41,480
+no hay ninguna lógica
+
+410
+00:12:41,480 --> 00:12:43,480
+de interfaz
+
+411
+00:12:46,480 --> 00:12:47,480
+entonces aqui
+
+412
+00:12:47,480 --> 00:12:48,480
+en el controlador este
+
+413
+00:12:48,480 --> 00:12:49,480
+se define el método
+
+414
+00:12:49,480 --> 00:12:50,480
+el button click it
+
+415
+00:12:51,480 --> 00:12:52,480
+que el que se va
+
+416
+00:12:52,480 --> 00:12:53,480
+enlazar dinámicamente
+
+417
+00:12:53,480 --> 00:12:55,480
+a la interfaz
+
+418
+00:12:57,480 --> 00:12:58,480
+e bueno
+
+419
+00:12:58,480 --> 00:12:59,480
+mába abajo
+
+420
+00:12:59,480 --> 00:13:00,480
+se ve como a partir
+
+421
+00:13:00,480 --> 00:13:02,480
+del fichero.glade
+
+422
+00:13:03,480 --> 00:13:04,480
+se genera un
+
+423
+00:13:04,480 --> 00:13:06,480
+se genera unha ventana
+
+424
+00:13:06,480 --> 00:13:07,480
+e se muestra
+
+425
+00:13:07,480 --> 00:13:08,480
+en gtk
+
+426
+00:13:08,480 --> 00:13:09,480
+e se engancha con
+
+427
+00:13:09,480 --> 00:13:10,480
+el
+
+428
+00:13:11,480 --> 00:13:12,480
+con el controlador
+
+429
+00:13:12,480 --> 00:13:13,480
+entonces
+
+430
+00:13:13,480 --> 00:13:14,480
+de esta forma
+
+431
+00:13:14,480 --> 00:13:15,480
+podemos definir
+
+432
+00:13:15,480 --> 00:13:16,480
+la interfaz
+
+433
+00:13:16,480 --> 00:13:17,480
+la pode definir un equipo de desarrollo
+
+434
+00:13:17,480 --> 00:13:18,480
+o
+
+435
+00:13:18,480 --> 00:13:19,480
+o la persona
+
+436
+00:13:19,480 --> 00:13:20,480
+de diseño
+
+437
+00:13:20,480 --> 00:13:21,480
+o la persona que se encargue
+
+438
+00:13:21,480 --> 00:13:22,480
+de definir la interfaz
+
+439
+00:13:22,480 --> 00:13:23,480
+o clade
+
+440
+00:13:23,480 --> 00:13:24,480
+e a ti te da
+
+441
+00:13:24,480 --> 00:13:25,480
+un fichero
+
+442
+00:13:25,480 --> 00:13:26,480
+al desarrollador le da
+
+443
+00:13:26,480 --> 00:13:28,480
+un fichero.glade
+
+444
+00:13:28,480 --> 00:13:29,480
+que un xml
+
+445
+00:13:30,480 --> 00:13:31,480
+e ya
+
+446
+00:13:31,480 --> 00:13:32,480
+el
+
+447
+00:13:32,480 --> 00:13:33,480
+el desarrollador de backend
+
+448
+00:13:33,480 --> 00:13:34,480
+pues solo implementa
+
+449
+00:13:34,480 --> 00:13:35,480
+la lógica de la aplicación
+
+450
+00:13:35,480 --> 00:13:36,480
+o sea
+
+451
+00:13:36,480 --> 00:13:37,480
+e unha forma de
+
+452
+00:13:37,480 --> 00:13:38,480
+poder separar
+
+453
+00:13:38,480 --> 00:13:39,480
+el
+
+454
+00:13:39,480 --> 00:13:40,480
+la interfaz
+
+455
+00:13:40,480 --> 00:13:41,480
+el diseño
+
+456
+00:13:41,480 --> 00:13:42,480
+de la
+
+457
+00:13:42,480 --> 00:13:43,480
+de la programación
+
+458
+00:13:43,480 --> 00:13:44,480
+e que se pode
+
+459
+00:13:44,480 --> 00:13:45,480
+hacer con una herramienta gráfica
+
+460
+00:13:45,480 --> 00:13:46,480
+por lo tanto
+
+461
+00:13:46,480 --> 00:13:47,480
+no necesita que sea un programador
+
+462
+00:13:47,480 --> 00:13:48,480
+el que
+
+463
+00:13:48,480 --> 00:13:49,480
+que escriba
+
+464
+00:13:49,480 --> 00:13:50,480
+el que desarrolle
+
+465
+00:13:50,480 --> 00:13:51,480
+la interfaz
+
+466
+00:13:51,480 --> 00:13:52,480
+o que se pode hacer
+
+467
+00:13:52,480 --> 00:13:53,480
+un diseñador
+
+468
+00:13:53,480 --> 00:13:54,480
+o pode ser una persona
+
+469
+00:13:54,480 --> 00:13:55,480
+que
+
+470
+00:13:55,480 --> 00:13:56,480
+que se encargue
+
+471
+00:13:56,480 --> 00:13:57,480
+de la usabilidad
+
+472
+00:13:57,480 --> 00:13:58,480
+o algo
+
+473
+00:13:59,480 --> 00:14:00,480
+o algo que no necesariamente
+
+474
+00:14:00,480 --> 00:14:01,480
+requiera que se
+
+475
+00:14:01,480 --> 00:14:02,480
+pas programada
+
+476
+00:14:06,480 --> 00:14:07,480
+e bueno
+
+477
+00:14:07,480 --> 00:14:08,480
+a parte de todo esto
+
+478
+00:14:08,480 --> 00:14:09,480
+de la forma de
+
+479
+00:14:11,480 --> 00:14:12,480
+bueno, del ejemplo de código
+
+480
+00:14:12,480 --> 00:14:13,480
+de como crear una ventana
+
+481
+00:14:13,480 --> 00:14:14,480
+de lo que pode hacer
+
+482
+00:14:14,480 --> 00:14:15,480
+de los contenedores
+
+483
+00:14:15,480 --> 00:14:16,480
+botón e tal
+
+484
+00:14:16,480 --> 00:14:17,480
+e lo bonito
+
+485
+00:14:17,480 --> 00:14:18,480
+de gtk
+
+486
+00:14:18,480 --> 00:14:19,480
+junto con python
+
+487
+00:14:19,480 --> 00:14:20,480
+e o que
+
+488
+00:14:20,480 --> 00:14:21,480
+en el cambio
+
+489
+00:14:21,480 --> 00:14:22,480
+de agenometre
+
+490
+00:14:22,480 --> 00:14:23,480
+se implementó
+
+491
+00:14:23,480 --> 00:14:24,480
+se empezó a usar
+
+492
+00:14:24,480 --> 00:14:25,480
+la tecnología
+
+493
+00:14:25,480 --> 00:14:27,480
+de geogeistrospextion
+
+494
+00:14:28,480 --> 00:14:29,480
+que básicamente
+
+495
+00:14:29,480 --> 00:14:30,480
+o que hace
+
+496
+00:14:30,480 --> 00:14:31,480
+e que te genera unos
+
+497
+00:14:31,480 --> 00:14:32,480
+binding automáticos
+
+498
+00:14:32,480 --> 00:14:33,480
+para el lenguaje
+
+499
+00:14:33,480 --> 00:14:34,480
+a partir del código C
+
+500
+00:14:34,480 --> 00:14:35,480
+gtk está escrito en C
+
+501
+00:14:36,480 --> 00:14:37,480
+e bueno
+
+502
+00:14:38,480 --> 00:14:39,480
+hasta gtk2
+
+503
+00:14:40,480 --> 00:14:41,480
+pues
+
+504
+00:14:41,480 --> 00:14:42,480
+los binding a outros lenguajes
+
+505
+00:14:42,480 --> 00:14:43,480
+eran bindings
+
+506
+00:14:43,480 --> 00:14:44,480
+que había que
+
+507
+00:14:44,480 --> 00:14:45,480
+que había que hacer
+
+508
+00:14:45,480 --> 00:14:46,480
+el paix gtk
+
+509
+00:14:46,480 --> 00:14:47,480
+no
+
+510
+00:14:47,480 --> 00:14:48,480
+el paix gtk
+
+511
+00:14:48,480 --> 00:14:49,480
+el binding que había antes
+
+512
+00:14:50,480 --> 00:14:51,480
+e un binding
+
+513
+00:14:51,480 --> 00:14:52,480
+que hacía unas sere
+
+514
+00:14:52,480 --> 00:14:53,480
+desarrolladores
+
+515
+00:14:53,480 --> 00:14:54,480
+e que tenia que mantener
+
+516
+00:14:54,480 --> 00:14:55,480
+se salía unha versión de gtk
+
+517
+00:14:55,480 --> 00:14:56,480
+pues a gente de paix gtk
+
+518
+00:14:56,480 --> 00:14:57,480
+tenia que ver
+
+519
+00:14:58,480 --> 00:14:59,480
+o que havia cambiado
+
+520
+00:14:59,480 --> 00:15:00,480
+implementar os métodos
+
+521
+00:15:00,480 --> 00:15:01,480
+os wrappers
+
+522
+00:15:02,480 --> 00:15:03,480
+e a ser que todo funcionara
+
+523
+00:15:03,480 --> 00:15:04,480
+por lo tanto
+
+524
+00:15:04,480 --> 00:15:05,480
+desde que salía unha versión
+
+525
+00:15:05,480 --> 00:15:06,480
+de gtk nova
+
+526
+00:15:06,480 --> 00:15:07,480
+hasta que estava
+
+527
+00:15:07,480 --> 00:15:08,480
+los binding en python
+
+528
+00:15:08,480 --> 00:15:09,480
+pues
+
+529
+00:15:09,480 --> 00:15:10,480
+podia pasar un tiempo
+
+530
+00:15:10,480 --> 00:15:11,480
+meses
+
+531
+00:15:11,480 --> 00:15:12,480
+o depende de
+
+532
+00:15:12,480 --> 00:15:13,480
+la gente que mantenga
+
+533
+00:15:13,480 --> 00:15:14,480
+eso
+
+534
+00:15:14,480 --> 00:15:15,480
+e bueno
+
+535
+00:15:15,480 --> 00:15:16,480
+lo mismo para
+
+536
+00:15:16,480 --> 00:15:17,480
+todos os binding
+
+537
+00:15:17,480 --> 00:15:18,480
+de todo el lenguaje
+
+538
+00:15:18,480 --> 00:15:19,480
+con el tema de geogate
+
+539
+00:15:19,480 --> 00:15:20,480
+o JTROPEXTION
+
+540
+00:15:20,480 --> 00:15:21,480
+se genera unha tecnología
+
+541
+00:15:21,480 --> 00:15:22,480
+que a partir
+
+542
+00:15:22,480 --> 00:15:23,480
+de la documentación
+
+543
+00:15:23,480 --> 00:15:24,480
+del código en C
+
+544
+00:15:24,480 --> 00:15:25,480
+de unha sere de comentario
+
+545
+00:15:25,480 --> 00:15:26,480
+unha anotación
+
+546
+00:15:26,480 --> 00:15:27,480
+se genera
+
+547
+00:15:27,480 --> 00:15:28,480
+los binding
+
+548
+00:15:28,480 --> 00:15:29,480
+de forma automática
+
+549
+00:15:29,480 --> 00:15:30,480
+por lo tanto
+
+550
+00:15:30,480 --> 00:15:31,480
+a día de hoy
+
+551
+00:15:31,480 --> 00:15:32,480
+toda librería
+
+552
+00:15:32,480 --> 00:15:33,480
+bueno
+
+553
+00:15:33,480 --> 00:15:34,480
+gtk
+
+554
+00:15:34,480 --> 00:15:35,480
+cada vez que sale
+
+555
+00:15:35,480 --> 00:15:36,480
+unha versión nueva
+
+556
+00:15:36,480 --> 00:15:37,480
+tiene los binding automático
+
+557
+00:15:37,480 --> 00:15:38,480
+en python
+
+558
+00:15:38,480 --> 00:15:39,480
+dirextamente
+
+559
+00:15:39,480 --> 00:15:40,480
+e al igual que los tiene en python
+
+560
+00:15:40,480 --> 00:15:41,480
+los tiene en javascript
+
+561
+00:15:41,480 --> 00:15:42,480
+los tiene
+
+562
+00:15:42,480 --> 00:15:43,480
+en un montón de
+
+563
+00:15:43,480 --> 00:15:44,480
+automáticamente
+
+564
+00:15:44,480 --> 00:15:45,480
+sin tener que
+
+565
+00:15:45,480 --> 00:15:46,480
+descargar
+
+566
+00:15:46,480 --> 00:15:48,480
+un binding nuevo
+
+567
+00:15:48,480 --> 00:15:49,480
+ni nada
+
+568
+00:15:49,480 --> 00:15:50,480
+dirextamente con
+
+569
+00:15:50,480 --> 00:15:51,480
+cuando te instala
+
+570
+00:15:51,480 --> 00:15:52,480
+el gtk
+
+571
+00:15:52,480 --> 00:15:53,480
+ya tiene
+
+572
+00:15:53,480 --> 00:15:54,480
+el binding de paix gtk
+
+573
+00:15:56,480 --> 00:15:57,480
+e luego
+
+574
+00:15:57,480 --> 00:15:59,480
+ademas del core básico
+
+575
+00:15:59,480 --> 00:16:00,480
+pues si cualquiera
+
+576
+00:16:00,480 --> 00:16:01,480
+desarrolla
+
+577
+00:16:01,480 --> 00:16:02,480
+unha librería
+
+578
+00:16:02,480 --> 00:16:03,480
+con geogate
+
+579
+00:16:03,480 --> 00:16:04,480
+e mete
+
+580
+00:16:04,480 --> 00:16:05,480
+las anotaciones
+
+581
+00:16:05,480 --> 00:16:06,480
+pues en cuanto instalas
+
+582
+00:16:06,480 --> 00:16:07,480
+dirextamente
+
+583
+00:16:07,480 --> 00:16:08,480
+tiene asesos os binding
+
+584
+00:16:08,480 --> 00:16:10,480
+en el código
+
+585
+00:16:10,480 --> 00:16:11,480
+de ejemplo
+
+586
+00:16:11,480 --> 00:16:12,480
+que subía
+
+587
+00:16:12,480 --> 00:16:13,480
+javascript
+
+588
+00:16:13,480 --> 00:16:14,480
+hay unha pequeña librería
+
+589
+00:16:14,480 --> 00:16:15,480
+en c
+
+590
+00:16:15,480 --> 00:16:16,480
+usando gtk
+
+591
+00:16:16,480 --> 00:16:17,480
+donde
+
+592
+00:16:17,480 --> 00:16:18,480
+uso las anotaciones
+
+593
+00:16:18,480 --> 00:16:19,480
+e bueno
+
+594
+00:16:19,480 --> 00:16:20,480
+está explicado
+
+595
+00:16:20,480 --> 00:16:21,480
+como se instala
+
+596
+00:16:21,480 --> 00:16:22,480
+se
+
+597
+00:16:22,480 --> 00:16:23,480
+te o instala
+
+598
+00:16:23,480 --> 00:16:24,480
+pues
+
+599
+00:16:24,480 --> 00:16:25,480
+puede
+
+600
+00:16:25,480 --> 00:16:26,480
+usar ese
+
+601
+00:16:26,480 --> 00:16:27,480
+widget dirextamente
+
+602
+00:16:27,480 --> 00:16:28,480
+sin tener que
+
+603
+00:16:28,480 --> 00:16:29,480
+instalar ningún bind
+
+604
+00:16:29,480 --> 00:16:30,480
+e aqui he puesto
+
+605
+00:16:30,480 --> 00:16:31,480
+un ejemplo
+
+606
+00:16:31,480 --> 00:16:32,480
+de código
+
+607
+00:16:32,480 --> 00:16:33,480
+de las anotaciones
+
+608
+00:16:33,480 --> 00:16:34,480
+como son
+
+609
+00:16:35,480 --> 00:16:36,480
+non sei
+
+610
+00:16:36,480 --> 00:16:37,480
+se ve
+
+611
+00:16:37,480 --> 00:16:38,480
+pero bueno
+
+612
+00:16:38,480 --> 00:16:39,480
+aí se ve que
+
+613
+00:16:39,480 --> 00:16:40,480
+hay un comentario
+
+614
+00:16:40,480 --> 00:16:41,480
+con una serie
+
+615
+00:16:41,480 --> 00:16:42,480
+de
+
+616
+00:16:42,480 --> 00:16:43,480
+etiqueta
+
+617
+00:16:43,480 --> 00:16:44,480
+arroba
+
+618
+00:16:44,480 --> 00:16:45,480
+modilla
+
+619
+00:16:46,480 --> 00:16:47,480
+el retunz
+
+620
+00:16:47,480 --> 00:16:48,480
+palabras claves
+
+621
+00:16:48,480 --> 00:16:49,480
+que sirven pa definir
+
+622
+00:16:49,480 --> 00:16:50,480
+el
+
+623
+00:16:50,480 --> 00:16:52,480
+tipo de los palámetros
+
+624
+00:16:52,480 --> 00:16:54,480
+el tipo de las respuestas
+
+625
+00:16:54,480 --> 00:16:55,480
+si la respuesta
+
+626
+00:16:55,480 --> 00:16:57,480
+si la memoria la tienes que liberar
+
+627
+00:16:57,480 --> 00:16:58,480
+o la gestiona
+
+628
+00:16:58,480 --> 00:16:59,480
+o se gestiona dentro
+
+629
+00:16:59,480 --> 00:17:00,480
+o se no
+
+630
+00:17:00,480 --> 00:17:01,480
+o se
+
+631
+00:17:01,480 --> 00:17:02,480
+toda la información
+
+632
+00:17:02,480 --> 00:17:03,480
+que necesita el binding
+
+633
+00:17:03,480 --> 00:17:04,480
+para o luego
+
+634
+00:17:04,480 --> 00:17:07,480
+e basicamente desde Python
+
+635
+00:17:07,480 --> 00:17:08,480
+pues
+
+636
+00:17:08,480 --> 00:17:09,480
+como se crea un objeto nuevo
+
+637
+00:17:09,480 --> 00:17:10,480
+pues
+
+638
+00:17:10,480 --> 00:17:11,480
+en Python
+
+639
+00:17:11,480 --> 00:17:12,480
+no tienes que gestionar
+
+640
+00:17:12,480 --> 00:17:13,480
+la memoria
+
+641
+00:17:13,480 --> 00:17:14,480
+pues el propio binding
+
+642
+00:17:14,480 --> 00:17:15,480
+el que
+
+643
+00:17:15,480 --> 00:17:16,480
+se encarga de llamar
+
+644
+00:17:16,480 --> 00:17:17,480
+los métodos de construcción
+
+645
+00:17:17,480 --> 00:17:18,480
+de construcción
+
+646
+00:17:18,480 --> 00:17:19,480
+cuando tenga que
+
+647
+00:17:19,480 --> 00:17:20,480
+destruir o objeto
+
+648
+00:17:23,480 --> 00:17:24,480
+e bueno nada má
+
+649
+00:17:24,480 --> 00:17:25,480
+eso é
+
+650
+00:17:25,480 --> 00:17:26,480
+o que queria contar
+
+651
+00:17:26,480 --> 00:17:27,480
+aí mucha información
+
+652
+00:17:27,480 --> 00:17:29,480
+e documentación
+
+653
+00:17:29,480 --> 00:17:34,480
+e por aqui en internet
+
+654
+00:17:34,480 --> 00:17:35,480
+e aqui e puesto unha serie de enlaces
+
+655
+00:17:35,480 --> 00:17:36,480
+que tamén están puestas
+
+656
+00:17:36,480 --> 00:17:37,480
+no g-hub
+
+657
+00:17:37,480 --> 00:17:39,480
+e un tutorial
+
+658
+00:17:39,480 --> 00:17:40,480
+moi bueno que é
+
+659
+00:17:40,480 --> 00:17:42,480
+o Python gtk3 tutorial
+
+660
+00:17:42,480 --> 00:17:44,480
+e luego bueno
+
+661
+00:17:44,480 --> 00:17:45,480
+la documentación de genome
+
+662
+00:17:45,480 --> 00:17:47,480
+que tamén está bastante bien
+
+663
+00:17:51,480 --> 00:17:53,480
+e eso é todo o que quería contar
+
+664
+00:17:53,480 --> 00:17:54,480
+e ya
+
+665
+00:17:54,480 --> 00:17:55,480
+se tenia alguna duda
+
+666
+00:17:55,480 --> 00:17:56,480
+alguna pregunta
+
+667
+00:17:56,480 --> 00:17:59,480
+algun comentario
+
+668
+00:17:59,480 --> 00:18:00,480
+si
+
+669
+00:18:00,480 --> 00:18:03,480
+porque gtk3
+
+670
+00:18:03,480 --> 00:18:08,480
+porque eu uso
+
+671
+00:18:08,480 --> 00:18:10,480
+xe eu uso normalmente
+
+672
+00:18:10,480 --> 00:18:12,480
+de genome e
+
+673
+00:18:12,480 --> 00:18:13,480
+e programo
+
+674
+00:18:13,480 --> 00:18:14,480
+con la tecnología gtk3
+
+675
+00:18:14,480 --> 00:18:15,480
+entãox
+
+676
+00:18:15,480 --> 00:18:17,480
+e por eso
+
+677
+00:18:17,480 --> 00:18:18,480
+comentar
+
+678
+00:18:18,480 --> 00:18:19,480
+a introducción de gtk3
+
+679
+00:18:19,480 --> 00:18:20,480
+tamén queria comentar
+
+680
+00:18:20,480 --> 00:18:21,480
+las
+
+681
+00:18:21,480 --> 00:18:23,480
+el o bueno de la tecnologia
+
+682
+00:18:23,480 --> 00:18:24,480
+esta de geogestroxpextion
+
+683
+00:18:24,480 --> 00:18:27,600
+Xtrospeción, se te vá a QT, en QT para Python,
+
+684
+00:18:27,600 --> 00:18:30,320
+tiene un par de binding diferentes, creo,
+
+685
+00:18:30,320 --> 00:18:33,800
+o Pyshade, e o uno, non sé se...
+
+686
+00:18:33,800 --> 00:18:36,240
+que non estou moi puesta con o tema de QT.
+
+687
+00:18:36,240 --> 00:18:39,880
+Hay un par de binding, pero non están en las últimas versiones de QT,
+
+688
+00:18:39,880 --> 00:18:43,440
+o serenón de versión no tiene en la última librería,
+
+689
+00:18:43,440 --> 00:18:46,360
+con el tema de GTK,
+
+690
+00:18:46,360 --> 00:18:50,600
+con esta tecnología sí lo tiene automáticamente.
+
+691
+00:18:50,600 --> 00:18:55,480
+E, bueno, pues porque QT, porque GTK e non QT,
+
+692
+00:18:55,480 --> 00:18:59,720
+pues bueno, cada uno le gusta má una librería que outra,
+
+693
+00:18:59,720 --> 00:19:02,000
+yo he programado mo xo con QT,
+
+694
+00:19:02,000 --> 00:19:04,480
+tamén he programado mo xo con GTK,
+
+695
+00:19:04,480 --> 00:19:08,400
+e cada uno te sirve pa un...
+
+696
+00:19:08,400 --> 00:19:10,840
+depende a ond de lo oriente,
+
+697
+00:19:10,840 --> 00:19:15,440
+te interesa má a utilizar una cosa o outro.
+
+698
+00:19:15,440 --> 00:19:21,400
+El tema es que, por ejemplo, para GTK está el...
+
+699
+00:19:21,400 --> 00:19:25,040
+parece que es algo má complejo, porque está escrito en C,
+
+700
+00:19:25,040 --> 00:19:29,400
+QT está en C má má, tiene todo su ida e tal,
+
+701
+00:19:29,400 --> 00:19:34,360
+e bueno, en genome desde a sella mo xo tiempo,
+
+702
+00:19:34,360 --> 00:19:36,480
+mo xísimas de las aplicaciones GTK,
+
+703
+00:19:36,480 --> 00:19:38,040
+de las aplicaciones de escritorios genomes,
+
+704
+00:19:38,040 --> 00:19:40,000
+están escritas en lenguaje de alto nivel,
+
+705
+00:19:40,000 --> 00:19:42,760
+están escritas en Javecree, están escritas en Python,
+
+706
+00:19:42,760 --> 00:19:45,800
+o están escritas en algún lenguaje que no es C nativo,
+
+707
+00:19:45,800 --> 00:19:48,320
+el C nativo se usa para a Wichia bajo nivel
+
+708
+00:19:48,320 --> 00:19:50,520
+e cosas de crisita en alto rendimiento,
+
+709
+00:19:50,520 --> 00:19:52,840
+compatibilidad, mucha compatibilidad,
+
+710
+00:19:52,840 --> 00:19:57,080
+pero luego las aplicaciones están hechas con estas tecnologías.
+
+711
+00:19:57,080 --> 00:20:13,080
+Alguna pregunta máx?
+
+712
+00:20:13,080 --> 00:20:16,840
+Eu nunca he compilado unha aplicación GTK en Windows,
+
+713
+00:20:16,840 --> 00:20:19,480
+pero se puede, o sea, GTK funciona en Windows.
+
+714
+00:20:19,480 --> 00:20:24,840
+Lo que pasa es que, bueno, tendrás que saber compilar
+
+715
+00:20:24,840 --> 00:20:27,600
+eso en Windows, eu nunca lo hecho.
+
+716
+00:20:27,600 --> 00:20:31,920
+Hay aplicaciones GTK que se distribuyen en Windows,
+
+717
+00:20:31,920 --> 00:20:34,880
+e hay aplicaciones comerciales GTK
+
+718
+00:20:34,880 --> 00:20:37,000
+que se están distribuyendo en entornos Windows,
+
+719
+00:20:37,000 --> 00:20:41,160
+pero, la verdad, es que el entorno de desarrollo
+
+720
+00:20:41,160 --> 00:20:42,400
+puede ser un infierno,
+
+721
+00:20:42,400 --> 00:20:46,280
+el compilar en Windows con una librería de este tipo,
+
+722
+00:20:46,280 --> 00:20:49,200
+pero sí, en teoría, es compatible.
+
+723
+00:20:49,200 --> 00:21:05,840
+Depende del contenedor que use.
+
+724
+00:21:05,840 --> 00:21:08,520
+Se usa contenedores dinámicos,
+
+725
+00:21:08,520 --> 00:21:11,160
+las cajas e tal, eso se ajusta automáticamente.
+
+726
+00:21:11,160 --> 00:21:21,480
+Se usa contenedores dinámicos, se te va ver de una forma,
+
+727
+00:21:21,480 --> 00:21:23,160
+porque tem o tamanho de ventana e tal.
+
+728
+00:21:23,160 --> 00:21:26,040
+Xe o que execute, se pone o menos,
+
+729
+00:21:26,040 --> 00:21:27,360
+porque o pantería é o maior,
+
+730
+00:21:27,360 --> 00:21:31,120
+o pantería completa, o máximiza ou minimiza.
+
+731
+00:21:31,120 --> 00:21:35,720
+Se quer un control máx,
+
+732
+00:21:35,720 --> 00:21:38,920
+não usa contenedores de tipo caja, que é excluído,
+
+733
+00:21:38,920 --> 00:21:41,360
+sino que usa un contenedor donde tu controla
+
+734
+00:21:41,360 --> 00:21:46,160
+o tamanho dos widgets e tens máx control,
+
+735
+00:21:46,160 --> 00:21:50,880
+pero é normalmente, não é responsivo,
+
+736
+00:21:50,880 --> 00:21:52,760
+não te vale para diferentes resoluciones.
+
+737
+00:21:52,760 --> 00:21:56,480
+O normal é que as coisas se expandan
+
+738
+00:21:56,480 --> 00:22:00,560
+e ocupen, según tu quiera usar a pantalla,
+
+739
+00:22:00,560 --> 00:22:02,480
+te ocupen má o menos.
+
+740
+00:22:02,480 --> 00:22:04,400
+Por isso, os contenedores de tipo caja
+
+741
+00:22:04,400 --> 00:22:06,000
+que se expanden automáticamente,
+
+742
+00:22:06,000 --> 00:22:10,120
+são bastante adequados para crear
+
+743
+00:22:10,120 --> 00:22:12,720
+quase qualque tipo de aplicación, de interfaz.
+
+744
+00:22:12,720 --> 00:22:15,920
+Já pode jugar com os contenedores.
+
+745
+00:22:15,920 --> 00:22:21,200
+Tens contenedores onde tu defines o tamanho
+
+746
+00:22:21,200 --> 00:22:25,000
+e a posição dos widgets,
+
+747
+00:22:25,000 --> 00:22:27,040
+pero é máx o difícil de controlar
+
+748
+00:22:27,040 --> 00:22:27,840
+esse tipo de interfaz.
+
+749
+00:22:27,840 --> 00:22:33,280
+Algo máx.
+
+750
+00:22:33,280 --> 00:22:40,720
+Estou por aqui para o que queres comentar.
+
+751
+00:22:40,720 --> 00:23:06,080
+Amarrá cylinder,
+
+752
+00:23:06,080 --> 00:23:08,520
+determine개를 por masa longa.
+
