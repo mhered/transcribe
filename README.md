@@ -139,4 +139,4 @@ $ python3 process_channel.py --file my_channel.json
 
 ## Issues conocidos
 
-A veces si se interrumpe `yt_whisper` la herramienta marca erróneamente como procesados videos que no lo están.
+* Para interrumpir la ejecución hay que pulsar CTRL+C repetidas veces (#2)

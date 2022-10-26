@@ -37,6 +37,7 @@ def process_channel(json_file: str = "channel.json"):
     """
 
     logging.info(f"Found {len(pending)} videos pending processing")
+
     for video in pending:
         video_id = get_id_from_url(video['url'])
         out_dir = f"./captions/{video_id}/"
@@ -44,17 +45,22 @@ def process_channel(json_file: str = "channel.json"):
 
         os.system(f"yt_whisper {video['url']} --format srt --output_dir {out_dir}")
         time.sleep(.3)
-        channel_dict[video_id]['transcript'] = out_dir
 
-        logging.info("Writing JSON...")
-        # Serialize json
-        channel_json = json.dumps(
-            channel_dict,
-            indent=4,
-            ensure_ascii=False)
-        # Write to file
-        with open(json_file, "w") as outfile:
-            outfile.write(channel_json)
+        # check SRT file was saved in directory
+        if os.path.exists(out_dir) and os.path.isdir(out_dir):
+            if os.listdir(out_dir):
+                channel_dict[video_id]['transcript'] = out_dir
+                logging.info("Writing JSON...")
+                # Serialize json
+                channel_json = json.dumps(
+                    channel_dict,
+                    indent=4,
+                    ensure_ascii=False)
+                # Write to file
+                with open(json_file, "w") as outfile:
+                    outfile.write(channel_json)
+            else:
+                logging.info(f"yt_whisper failed, {out_dir} is empty")
 
 
 if __name__ == "__main__":
