@@ -10,25 +10,75 @@ Desarrollado para añadir subtítulos a los vídeos del canal youtube de Python 
 
 * Python 3.9
 
-* [PyTube](https://pytube.io/en/latest/):
+Se usa `pyenv` para poder tener varias versiones de python en paralelo ([How to install and run multiple pythons with virtualenv and vscode](https://k0nze.dev/posts/install-pyenv-venv-vscode/)):
 
 ```bash
-$ pip install git+https://github.com/openai/whisper.git
+$ # prerequisites
+$ sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl \
+git
+$ # pyenv
+$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+$ # environment
+$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+$ echo 'eval "$(pyenv init --path)"' >> ~/.bashrc
+$ # activar
+$ source ~/.bashrc
 ```
 
-* [Whisper](https://openai.com/blog/whisper/):
+Descarga Python 3.9 con pyenv:
+
+```bash
+$ pyenv install 3.9.15
+```
+
+Descarga el repo:
+
+```bash
+$ git clone https://github.com/mhered/transcribe.git
+```
+
+Instala localmente Python 3.9 con pyenv, que gestionará también los paquetes que instales luego con pip:
+
+```bash
+$ cd transcribe
+$ pyenv local 3.9.15
+$ pyenv version
+3.9.15 (set by ~/transcribe/.python-version)
+$ # note pyenv "channels" pip so youll need to install packages for each python version
+$ which pip
+/home/mhered/.pyenv/shims/pip
+```
+
+Crea y activa el entorno virtual en el directorio:
+
+```bash
+$ python -m venv .venv
+$ source .venv/bin/activate
+(.venv)$
+```
+
+* Instala [PyTube](https://pytube.io/en/latest/):
 
 ```bash
 $ pip install pytube
 ```
 
-* `ffmpeg`:
+* Instala [Whisper](https://openai.com/blog/whisper/):
+
+```bash
+$ pip install git+https://github.com/openai/whisper.git
+```
+
+* Instala `ffmpeg`:
 
 ```bash
 $ sudo apt update && sudo apt install ffmpeg
 ```
 
-* `yt-whisper`:
+* Instala `yt-whisper`:
 
 ```bash
 $ pip install git+https://github.com/m1guelpf/yt-whisper.git

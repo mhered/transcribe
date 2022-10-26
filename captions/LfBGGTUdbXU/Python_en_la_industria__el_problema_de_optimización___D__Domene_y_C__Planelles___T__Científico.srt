@@ -1,0 +1,832 @@
+1
+00:00:00,000 --> 00:00:14,580
+Otra���only, para poder entenderlo, y noorgeous seguridad.
+
+2
+00:00:14,580 --> 00:00:28,540
+¿Dónde viran las cosas, que tienen Estados Unidos amidiendo estas parte del país, que
+
+3
+00:00:28,540 --> 00:00:33,720
+porque tampoco tenemos un nivel muy avanzado, pero bueno, ya veréis que con poco que se
+
+4
+00:00:33,720 --> 00:00:36,180
+sepa se pueden hacer cosas muy interesantes.
+
+5
+00:00:36,180 --> 00:00:44,820
+En una visión un poco general, ¿qué vamos a tratar? Bueno, hablaremos un poco de conceptos
+
+6
+00:00:44,820 --> 00:00:50,940
+de programación matemática, algunos lenguajes de modelaje algebraico, la optimización en
+
+7
+00:00:50,940 --> 00:00:56,820
+Python, porque hay homo, ¿vale? Y luego Carlos pasará a comentar algunos ejemplos que hemos
+
+8
+00:00:56,820 --> 00:01:00,820
+realizado centrándonos ya en problemas de la industria.
+
+9
+00:01:00,820 --> 00:01:08,220
+Bueno, programación matemática, ¿por qué es importante la programación matemática?
+
+10
+00:01:08,220 --> 00:01:13,860
+Pues bien, nos ayuda a mejorar la calidad de nuestros productos en la industria, nos
+
+11
+00:01:13,860 --> 00:01:19,060
+ayuda haciendo este tipo de problemas, aumentar los beneficios, se puede con la optimización
+
+12
+00:01:19,060 --> 00:01:24,580
+matemática ver el tema de reducción de riesgos ambientales, reducir costes de producción
+
+13
+00:01:24,580 --> 00:01:29,620
+y luego, como nosotros somos ingenieros químicos, centrándonos más en nuestra área, pues
+
+14
+00:01:29,620 --> 00:01:35,300
+ya podemos incluso la selección de equipos, la selección de rutas de procesos, ¿vale?
+
+15
+00:01:35,300 --> 00:01:40,780
+La gestión logística, mercancías, sector, horarios, de todo un poco.
+
+16
+00:01:40,780 --> 00:01:45,820
+Bueno, la programación matemática lo que busca es de funciones dadas, pues buscar los
+
+17
+00:01:45,820 --> 00:01:50,740
+máximos y mínimos de esas funciones, pues será máxima, por lo que no puedo hacer,
+
+18
+00:01:50,740 --> 00:01:57,460
+porque máximo beneficio puedo tener siempre en un rango, digamos, restringido, no todas
+
+19
+00:01:57,460 --> 00:02:03,220
+las soluciones valen, pues aquí esta solución valía, pero tengo una restricción, pues
+
+20
+00:02:03,220 --> 00:02:06,100
+bueno, llegó a lo que se decía.
+
+21
+00:02:06,100 --> 00:02:07,100
+¿Vale?
+
+22
+00:02:07,100 --> 00:02:11,500
+En cuatro problemas de optimización, bueno, pues se pueden asumir en cuatro problemas,
+
+23
+00:02:11,500 --> 00:02:16,900
+los problemas lineales, lineales enteros mistos, no lineales, sí, no lineales enteros
+
+24
+00:02:16,900 --> 00:02:18,900
+mistos.
+
+25
+00:02:18,900 --> 00:02:24,580
+Aquí se muestra pues un ejemplo general de lo que sería un problema de optimización,
+
+26
+00:02:24,580 --> 00:02:30,700
+basinizar, unibilizar, una función sujeta a diferentes restricciones que pueden ser
+
+27
+00:02:30,700 --> 00:02:36,420
+restricciones de igualdad o restricciones de desigualdad, no vamos a entrar en últimas
+
+28
+00:02:36,420 --> 00:02:37,420
+horas.
+
+29
+00:02:37,420 --> 00:02:41,660
+En cuanto a programación lineal, que se puede comentar, bueno, las funciones o los objetivos
+
+30
+00:02:41,660 --> 00:02:47,340
+que tenemos se representan siempre por funciones lineales, tanto las funciones objetivos como
+
+31
+00:02:47,340 --> 00:02:51,620
+las restricciones, uno de los algoritmos que se utiliza para este tipo de problemas,
+
+32
+00:02:51,620 --> 00:02:57,500
+es el algoritmo del simple, que bueno, tampoco vamos a entrar mucho en comentarios, y un
+
+33
+00:02:57,500 --> 00:03:02,300
+problema muy típico de programación lineal es el llamado problema del transporte, bueno,
+
+34
+00:03:02,300 --> 00:03:07,780
+yo tengo plantas de producción, tengo diferentes mercados, que ganti la mando de cada planta,
+
+35
+00:03:07,780 --> 00:03:11,980
+cada mercado, para que ese coste de transporte sea mínimo, bueno, por un problema típico
+
+36
+00:03:11,980 --> 00:03:15,100
+de programación lineal.
+
+37
+00:03:15,100 --> 00:03:21,180
+En cuanto a la programación lineal, mixta entera, aquí ya es muy interesante, porque
+
+38
+00:03:21,180 --> 00:03:28,460
+aunque seguimos tratando funciones, digamos, sí, objetivos y restricciones lineales, vamos
+
+39
+00:03:28,460 --> 00:03:32,860
+a incorporar variantes binarias, lo que nos va a permitir hacer que tomemos decisión.
+
+40
+00:03:32,860 --> 00:03:40,900
+Seleccionar, es un problema que dice selección de la mejor ruta de producción, podemos seleccionar,
+
+41
+00:03:40,900 --> 00:03:47,060
+vale, ve por aquí, ve por allí, coge este reaktor, coge este equipo, se puede hacer
+
+42
+00:03:47,060 --> 00:03:54,220
+como honorario, incluso, y bueno, voy a poner aquí un poco la filosofía matemática, que
+
+43
+00:03:54,220 --> 00:04:03,580
+se utiliza el método, es un tema de discusiones, que se conoce, como son variantes binarias,
+
+44
+00:04:03,580 --> 00:04:08,580
+pues pueden adquirir el valor de 1, 0, 1 selecciona, 0 no selecciona, y entonces nosotros
+
+45
+00:04:08,580 --> 00:04:14,460
+cuando decimos que seleccione, pues tendremos nuestra función, el encercocte, por lo que
+
+46
+00:04:14,460 --> 00:04:20,460
+sea, las districciones, que tendrán unos ciertos valores y demás, y si no lo seleccionas,
+
+47
+00:04:20,460 --> 00:04:26,580
+porque también van a entrar programas, pues decimos que todo eso, pues sea 0, vale, no
+
+48
+00:04:26,580 --> 00:04:33,100
+supone las ecuaciones de los próximos, uno de los algoritmos que se utilizan para resolver
+
+49
+00:04:33,100 --> 00:04:38,500
+este tipo de problemas, se conoce como ramificación y acotamiento, y lo que hace es dar diferente
+
+50
+00:04:38,500 --> 00:04:43,820
+valores de 0 y 1 a todas las variantes binarias que tenemos para formular una cantidad de
+
+51
+00:04:43,820 --> 00:04:47,740
+problemas lineales, lo que queda simplificado el problema, lo resuelve todo de una manera
+
+52
+00:04:47,740 --> 00:04:53,100
+lineal como antes, y luego los compara entre sí para dar al final, este es lo último,
+
+53
+00:04:53,100 --> 00:05:00,780
+de acuerdo, como ejemplo, pues la selección de la mejor ruta de producción, pues, en cuanto
+
+54
+00:05:00,780 --> 00:05:05,860
+programación no lineal, bueno, pues ya del nombre se deduce, en este caso la función
+
+55
+00:05:05,860 --> 00:05:12,860
+objetivo y o las restricciones lineales y no lineales, de acuerdo, podemos tener 40
+
+56
+00:05:12,860 --> 00:05:17,500
+restricciones lineales, pero si la función objetivo es no lineales, pues ya estamos entrando
+
+57
+00:05:17,500 --> 00:05:22,580
+en este tipo de problemas, los algoritmos que se utilizan, pues uno de ellos es que
+
+58
+00:05:22,580 --> 00:05:26,380
+las variables que cumplen con los óptimos, cumplan las condiciones de optimalidad de
+
+59
+00:05:26,380 --> 00:05:30,380
+caruz con táquets, que tampoco vamos a entrar en ellas para más información, después
+
+60
+00:05:30,380 --> 00:05:37,380
+podemos hablar de ellas, como ejemplo, pues ya acentrándonos un poco más en la ingeniería
+
+61
+00:05:38,180 --> 00:05:42,940
+química, es que es donde suelen aparecer más este tipo de problemas de otimización,
+
+62
+00:05:42,940 --> 00:05:49,260
+pues el diseño de un reactor continuo de tanque agitado, ¿vale? Y bueno, la programación
+
+63
+00:05:49,260 --> 00:05:55,100
+no lineal me está entera, estas son los problemas más difíciles de otimización, ahora ya
+
+64
+00:05:55,100 --> 00:06:02,100
+aquí tenemos de todo función objetivo y o restricciones no lineales y aquí también
+
+65
+00:06:02,380 --> 00:06:07,900
+incorporamos esas variables minarias que nombrábamos antes para que tome también esas decisiones,
+
+66
+00:06:07,900 --> 00:06:13,060
+escoges este, no lo escogas, que pasa así, ¿vale? Bueno, uno de los algoritmos que se
+
+67
+00:06:13,060 --> 00:06:16,860
+utilizan son el de las aproximaciones exteriores, que va haciendo pues esas aproximaciones a
+
+68
+00:06:16,860 --> 00:06:22,540
+la función y se va rimando hasta llegar a unos valores, pues bueno, más o menos óptimos.
+
+69
+00:06:22,540 --> 00:06:27,660
+Y en este caso, igual que anteriormente, la selección de la mejor ruta de producción
+
+70
+00:06:27,660 --> 00:06:33,660
+puede ser, por ejemplo, típico. En cuanto a lenguajes de modelador hebraico,
+
+71
+00:06:33,660 --> 00:06:40,660
+bueno, pues tenemos AMPL, sencillo, utilizar, un poco complicado de interactuar con él,
+
+72
+00:06:40,660 --> 00:06:47,500
+es una, tiene solvers libre, o sea que lo hace interesante, GAMS, que nosotros lo utilizamos
+
+73
+00:06:47,500 --> 00:06:54,500
+bastante en ingeniería química, problemas que te pagan para dar, ¿vale? Y luego IMS,
+
+74
+00:06:54,500 --> 00:06:58,140
+que bueno, está diseñado para resolver problemas de otimización a gran escala, programación
+
+75
+00:06:58,140 --> 00:07:03,740
+de actividades, este es muy bueno para la elaboración de horarios y, por ejemplo, estás en una
+
+76
+00:07:03,740 --> 00:07:08,380
+empresa, no eres ingeniero, estás en el departamento de finanzas o estás en otro departamento
+
+77
+00:07:08,380 --> 00:07:12,620
+y quieres elaborar digamos los horarios de producción, los turnos, los que vienen de
+
+78
+00:07:12,620 --> 00:07:18,140
+ahí, bueno, este es bueno y también son problemas típicos de otimización que se pueden utilizar.
+
+79
+00:07:18,140 --> 00:07:23,620
+Bueno, ¿autimización en país o por qué país? Bueno, pues en país incluye varios
+
+80
+00:07:23,620 --> 00:07:29,180
+paquetes de otimización, que son los que se muestran aquí. El primer de todo utiliza
+
+81
+00:07:29,180 --> 00:07:34,820
+notación matricial, otimización conversa, PUL, que también trabaja, el país tiene
+
+82
+00:07:34,820 --> 00:07:39,820
+muy buenos resultados, esto sí que hay que remarcarlo para LPE y MLP, que hemos dicho
+
+83
+00:07:39,820 --> 00:07:46,820
+que era que introducía las variables binarias, pero no resuelve lo en lo genial, por lo tanto
+
+84
+00:07:46,820 --> 00:07:50,980
+en nosotros tenemos que avanzar un poco más ahí. OpenOt, que cuenta con más de 30
+
+85
+00:07:50,980 --> 00:07:57,780
+sobre, está muy bien y Payomo, desarrollado por Sandia Nacional Laboratories en Estados
+
+86
+00:07:57,780 --> 00:08:04,780
+Unidos, que permite la formulación de modelos argebricos en país, es una pasada y estos
+
+87
+00:08:04,780 --> 00:08:11,180
+chicos de aquí, que no son tan chicos, que ya son gente, como se dice, de donde soy granada,
+
+88
+00:08:11,180 --> 00:08:18,180
+están emitiendo mucho dinero en el desarrollo de estos paquetes. ¿Por qué Payomo? Bueno,
+
+89
+00:08:18,180 --> 00:08:24,860
+pues se comunica directamente con los principales solvers de IMPL, de GAM, con GLPK, con Hipot,
+
+90
+00:08:24,860 --> 00:08:30,460
+o sea, en eso no hay problema. La programación es muy similar a la que se utiliza con los
+
+91
+00:08:30,460 --> 00:08:37,460
+otros lenguajes argebricos, es muy, muy, muy parecido a GAM, no sé si GAM lo conocéis,
+
+92
+00:08:37,460 --> 00:08:45,460
+la pregunta es ¿alguien conocerá? Pues la programación es prácticamente muy similar,
+
+93
+00:08:45,460 --> 00:08:51,220
+de hecho también se trabaja con SECH y ese tipo de cosas. Importante, bueno, compatible
+
+94
+00:08:51,220 --> 00:09:00,220
+con Payson 2 y Payson 3, gratuito, aquí nos tiene que salir la sonrisilla, traviesa,
+
+95
+00:09:00,220 --> 00:09:05,220
+porque no todas las empresas se pueden permitir. GAM tiene una versión gratuita, si es cierto,
+
+96
+00:09:05,220 --> 00:09:11,980
+pero claro, lo que nos interesa hay que pagarlo y este, como Payomo, se puede utilizar de
+
+97
+00:09:11,980 --> 00:09:17,540
+manera más distinta. Maduro, muy bien documentado, una instalación fácil, mediante PIV y Star
+
+98
+00:09:17,540 --> 00:09:22,940
+Payomo, lo que sí que lo sobre se instalarán a parte, te descangan los ejecutables de
+
+99
+00:09:22,940 --> 00:09:29,340
+las páginas donde estén y los incorporas al par. Bueno, aquí pongo adaptabilidad modelada
+
+100
+00:09:29,340 --> 00:09:35,020
+y todo, pues, de la mayoría de los problemas, sogan lo que es una maravilla. Bueno, y sin
+
+101
+00:09:35,020 --> 00:09:40,740
+más, yo ya me callo y vamos a lo interesante que os va a enseñar Carlos, pues los ejemplos
+
+102
+00:09:40,740 --> 00:09:42,340
+que hemos preparado.
+
+103
+00:09:42,340 --> 00:09:51,340
+Bueno, la de la cadena por la introducción, ya más algunos ejemplos. El primero de ellos,
+
+104
+00:09:51,340 --> 00:09:58,460
+como comentaba, es el de transporte, que consiste en, como explicó a Daniel, en llevar a marca
+
+105
+00:09:58,460 --> 00:10:03,180
+los mercados, nos producen las plantas, que nos cueste lo menos posible que nos cuesta
+
+106
+00:10:03,180 --> 00:10:12,420
+y eso se produce por la distancia. Aquí hemos un ejemplo y vemos como hay dos de tres mercados
+
+107
+00:10:12,420 --> 00:10:19,780
+y dos plantas y esos otros no se les hace posible que lo tenemos. Para ello, pues tenemos
+
+108
+00:10:19,780 --> 00:10:26,940
+hasta la solución óptima, la mejor que hay, para satisfaciendo la demanda de cada planta,
+
+109
+00:10:26,940 --> 00:10:32,460
+pero la producción de cada mercado no la sobrepasa, porque hay una producción máxima.
+
+110
+00:10:32,460 --> 00:10:38,580
+Y en payomo, pues, traduce así, si lo recordamos, payomo y ahí en payomo se pueden los modelos,
+
+111
+00:10:38,580 --> 00:10:44,100
+se pueden de dos formas, o abstractos o concretos. Y eso vamos a resolver de forma abstracta,
+
+112
+00:10:44,100 --> 00:10:48,820
+que consiste en lo que lo ponemos en forma matemática y luego de, a partir de un archivo
+
+113
+00:10:48,820 --> 00:10:50,940
+de texto en los últimos ratos.
+
+114
+00:10:50,940 --> 00:10:57,140
+En primer lugar decimos que en sets las plantas son marcadas, que hay, y después, pues claro,
+
+115
+00:10:57,140 --> 00:11:07,820
+tenemos la demanda mínima de cada planta y la producción máxima de cada mercado. Después
+
+116
+00:11:07,820 --> 00:11:12,540
+hay la distancia que hay entre plantas y mercados y un parámetro que nos relaciona
+
+117
+00:11:12,540 --> 00:11:21,940
+el coste con la distancia. Y estos son nuestras variables, que son la cantidad de productos
+
+118
+00:11:21,940 --> 00:11:29,220
+que nos lleva de planta a mercado y deben ser no negativas, porque no tiene sentido que
+
+119
+00:11:29,220 --> 00:11:35,340
+sea negativo. Y esta es nuestra producción objetivo, que
+
+120
+00:11:35,340 --> 00:11:41,340
+queremos minijar, que son los costes totales. Por lo tanto, en payomo, como hicimos esto,
+
+121
+00:11:41,340 --> 00:11:45,660
+decimos nuestra función objetivo, que es la misma, y a payoma decimos que esta es nuestra
+
+122
+00:11:45,660 --> 00:11:51,940
+función objetivo mientras esto. Decimos que funciona con el nombre y por defecto viene
+
+123
+00:11:51,940 --> 00:12:00,060
+a minizar, pero en este caso lo puesta para remarcarlo, que queremos minizar los costes.
+
+124
+00:12:00,060 --> 00:12:05,660
+Estas son las restricciones que hemos comentado anteriormente, que es que la demanda no sea
+
+125
+00:12:05,660 --> 00:12:12,900
+la que se ha satisfazado, pero no sobrepase la producción máxima. Y introducimos mientras
+
+126
+00:12:12,900 --> 00:12:20,380
+constreemos las restricciones. Decimos que funciona y, como está diciendo, aquí lo
+
+127
+00:12:20,380 --> 00:12:28,860
+siento mucho. Si te estás interesado, os voy a preguntar luego. Y eso es el activo que
+
+128
+00:12:28,860 --> 00:12:35,980
+ha comentado anteriormente, que introducimos por datos. Aquí tenemos cuatro mercados y
+
+129
+00:12:35,980 --> 00:12:40,860
+tres plantas. Introducimos la demanda mínima máxima de cada uno, la distancia que entre
+
+130
+00:12:40,860 --> 00:12:46,860
+ellos y el coste distancia, pues lo que nos relaciona el coste de distancia. Mientras
+
+131
+00:12:46,860 --> 00:12:54,860
+la terminal le decimos que resuelva el programa de transporte, introduciendo desde los datos,
+
+132
+00:12:54,860 --> 00:13:01,860
+lo hacemos el activo de los cuales, y usando el sol en el Gelepec, que resuelve problemas
+
+133
+00:13:01,860 --> 00:13:10,300
+de líneas, tanto mistos como muy sincesos interés. Esta resolución nos produce un
+
+134
+00:13:10,300 --> 00:13:16,260
+archivo de resultados, nos indica el valor de la función objetivo, que es el coste total,
+
+135
+00:13:16,260 --> 00:13:22,660
+que nos costaría la cortar este producto, y la cantidad de producto que nos lleva de
+
+136
+00:13:22,660 --> 00:13:28,460
+plantas en mercados. Esas son las que valen cero, las que valen cero no las ponen, no
+
+137
+00:13:28,460 --> 00:13:34,980
+las indica. Y además hay otro problema, típico en la industria química, pero este
+
+138
+00:13:34,980 --> 00:13:42,060
+caso es de linear, para simplificar las cosas. Lo que tenemos son tres reactores y nos interesa
+
+139
+00:13:42,060 --> 00:13:51,060
+producirse, pero podemos comprar A y producir B, o después producir dos reactores C o D,
+
+140
+00:13:51,060 --> 00:13:58,060
+o vamos a decir que es un reactor químico, no? No, no lo sé, no puedo confirmar. Y B,
+
+141
+00:13:58,060 --> 00:14:08,660
+o un lado posterior, que es más caro que comprar, compraras, pues, uno o dos, no se puede decir
+
+142
+00:14:08,660 --> 00:14:13,860
+los dos, tenemos que ir uno u otro, es importante, porque no puedes tener los reactores funcionando
+
+143
+00:14:13,860 --> 00:14:18,780
+sin autonomía. Y quiero ver cuál es, cuantos los caminos se hacen más efectivos, y para
+
+144
+00:14:18,780 --> 00:14:25,780
+que no se usan los binarios. Y vamos a usar el sobre el gelépega. Este caso vamos a usar
+
+145
+00:14:25,780 --> 00:14:32,780
+el modelo concreto, decimos que incluye directamente los flamendros, entre los archivos, y definimos
+
+146
+00:14:32,780 --> 00:14:38,780
+la variabilidad de binarias. Cada uno indica si el reactor existe o no existe, si es uno
+
+147
+00:14:38,780 --> 00:14:47,780
+existirá, si es cero no existirá. La condición definimos las variables que salen de balance
+
+148
+00:14:47,780 --> 00:14:52,780
+de materia, de carga reactórica, que tenemos el problema. Este caso tenemos 3 reactores
+
+149
+00:14:52,780 --> 00:14:59,180
+y 2 nodos, por tanto no saben muchas variables. Pero, y tienen que ser no reales, porque
+
+150
+00:14:59,180 --> 00:15:02,780
+indica la concentración que tenemos de cada producto, y que ya la concentración puede
+
+151
+00:15:02,780 --> 00:15:09,780
+ser negativa, no podemos tener menos B, por ejemplo. Pero el coste sí que puede ser negativo,
+
+152
+00:15:09,780 --> 00:15:18,780
+por lo tanto no indicamos nada. Ahora metemos las restricciones, que lo que ha comentado
+
+153
+00:15:18,780 --> 00:15:26,780
+Daniel anteriormente, por supuesto, tenemos que indicar mientras binarias, si existe no
+
+154
+00:15:26,780 --> 00:15:34,780
+existe el reactor. Para ello usamos estas diluciones, que se introduce para agarrar el reactor, el
+
+155
+00:15:34,780 --> 00:15:44,780
+reactor 3 y los 2 nodos. Aquí no indico la función, que es porque, incluso, en esta
+
+156
+00:15:44,780 --> 00:15:50,780
+expresión, cuál es la función, que es la que indique cuál es la función, porque esta
+
+157
+00:15:50,780 --> 00:16:00,780
+forma es más rápida. Esta es muy importante que indica que nos obligamos a decidir entre
+
+158
+00:16:00,780 --> 00:16:07,780
+uno u otro reactor. No puede decir los dos, por tanto, sumamos el 2 y el 3, lo obligamos
+
+159
+00:16:07,780 --> 00:16:11,780
+a que sea igual a 1, es decir, que uno o dos no existe, que sea igual a cero, pero el
+
+160
+00:16:11,780 --> 00:16:17,780
+otro sí. De esta forma, pues, se lo obligamos a decidir. Indicándole el máximo de C que
+
+161
+00:16:17,780 --> 00:16:22,780
+tenemos que producir, porque hay un máximo, el mercado no demanda tanto a C, por tanto
+
+162
+00:16:22,780 --> 00:16:29,780
+hay un máximo de 10, y el máximo de A va a ser 16. En este caso indicamos que maximiza
+
+163
+00:16:29,780 --> 00:16:35,780
+esta función, objetivo extra extra, indicando el beneficio de producirse y le restamos todos
+
+164
+00:16:35,780 --> 00:16:42,780
+los costes anteriores, de comprar A, comprar B y los costes de cada reactor. Y maximizamos
+
+165
+00:16:42,780 --> 00:16:49,780
+esta función, cada vez más en un edificio, y este es el tipo que nos produce. Este es
+
+166
+00:16:49,780 --> 00:16:58,780
+el beneficio máximo que vamos a obtener, y aquí nos indicará si existe o no existe
+
+167
+00:16:58,780 --> 00:17:03,780
+el reactor. El reactor 1 no existe y no se compra B, o sea, B en exterior no se compra,
+
+168
+00:17:03,780 --> 00:17:09,780
+se compra solo A, pero existe el reactor 1 y existe el reactor 2, el 3 no existe. Por
+
+169
+00:17:09,780 --> 00:17:12,780
+tanto, lo discusaremos el 2.
+
+170
+00:17:12,780 --> 00:17:20,780
+Pero permíteme que añada como es un problema de linea de misos del tero, y estamos añadiendo
+
+171
+00:17:20,780 --> 00:17:27,780
+disyunciones, que habíamos dicho que descomponía el problema en varios LPs, y luego lo comparaba,
+
+172
+00:17:27,780 --> 00:17:33,780
+también te dice el número de sus problemas que ha calculado. También esa información
+
+173
+00:17:33,780 --> 00:17:38,780
+también te la daba en el artículo de solución.
+
+174
+00:17:38,780 --> 00:17:47,780
+Bueno, antes la solución, la cantidad de 10 de T, se puede decir que es 10, que es lo
+
+175
+00:17:47,780 --> 00:17:54,780
+máximo que hemos producido. Y esta es la solución final. La anterior era la superestructura,
+
+176
+00:17:54,780 --> 00:17:57,780
+la superestructura, no sé qué transunciones, posibles, y esta solución final la más
+
+177
+00:17:57,780 --> 00:18:02,780
+óptima, donde lo compramos A, de A pasamos a B, no se compra B exterior y usamos el
+
+178
+00:18:02,780 --> 00:18:05,780
+reactor 2 en lugar del 3.
+
+179
+00:18:05,780 --> 00:18:11,780
+Este es un problema donde en lugar de ser 10, la cantidad máxima de C es mayor, pero el
+
+180
+00:18:11,780 --> 00:18:19,780
+exceso de que B de C nos obtenemos menos beneficio. Por lo tanto, si en este caso si compramos B
+
+181
+00:18:19,780 --> 00:18:27,780
+exterior, pero usamos el reactor 3 en lugar del 2. Y vemos cómo podemos ir jugando con
+
+182
+00:18:27,780 --> 00:18:31,780
+esto para ver qué opción es la más idónea de nuestro caso.
+
+183
+00:18:31,780 --> 00:18:38,780
+Y es un problema muy típico en la tecnología química, es un reactor tan agitado, donde
+
+184
+00:18:38,780 --> 00:18:45,780
+usaremos un sol verno lineal, porque aparece en ecuaciones no lineales. Y en este caso
+
+185
+00:18:45,780 --> 00:18:49,780
+nosotros vemos el IFO, que es diseño de protección química, lo que nos interesa tanto
+
+186
+00:18:49,780 --> 00:18:56,780
+el teórico. Y aparece aquí reacciones químicas, y este ejemplo lo veo en este libro, que lo
+
+187
+00:18:56,780 --> 00:19:03,780
+hace interesante si veis verlo, hay de todo tipo, de no solo protección química sino
+
+188
+00:19:03,780 --> 00:19:10,780
+más campos. Y aquí lo que queremos es maximizar el P, lo que nos interesa es el producto,
+
+189
+00:19:10,780 --> 00:19:15,780
+lo que nos interesa en medio. Por lo tanto, tenemos que ver las condiciones.
+
+190
+00:19:15,780 --> 00:19:21,780
+Aquí vemos las concretas comentariamente, y indicamos la velocidad de reacción de
+
+191
+00:19:21,780 --> 00:19:27,780
+cada reacción y la continuación inicial de A. Para la continuación inicial de A,
+
+192
+00:19:27,780 --> 00:19:31,780
+en esta cosa tenemos que inicializarlas, porque para un non lineal es importante
+
+193
+00:19:31,780 --> 00:19:36,780
+inicial, porque depende de dónde empiezas, o sea, no llevará un sitio, hacer un non lineal,
+
+194
+00:19:36,780 --> 00:19:41,780
+por eso es importante, para llegar a una solución óptima. Eso más o menos teorienta.
+
+195
+00:19:41,780 --> 00:19:47,780
+Teorienta no es, tienes que poner un lugar bueno, bueno, o sale un poquito sobro.
+
+196
+00:19:47,780 --> 00:19:52,780
+Y tiene que ser todas positivas, no vale negativas porque no tiene un 60 o un 100.
+
+197
+00:19:52,780 --> 00:20:03,780
+Y aquí vemos la danza de materia en el tractor para cada componente, y ya obtener las
+
+198
+00:20:03,780 --> 00:20:09,780
+restricciones. Aquí lo que nos interesa también es que tengo residencias, que para que no
+
+199
+00:20:09,780 --> 00:20:13,780
+sepa es el tiempo que pasa el producto dentro del rector, desde que entra hasta que sale,
+
+200
+00:20:13,780 --> 00:20:20,780
+y eso nos influye cómo avanza la reacción. Y por tanto, es una variabilidad muy importante,
+
+201
+00:20:20,780 --> 00:20:28,780
+el proceso de tiempo. Y, vale, esto es 2, S, C, la vía de C, o sea, hay otras componentes,
+
+202
+00:20:28,780 --> 00:20:34,780
+A, B, C, y D, en el pataí. Pero tanto se acende igual la valencia de materia para que haga
+
+203
+00:20:34,780 --> 00:20:44,780
+un componente. Y el resultado que obtenemos es maximizando C, obtenemos que el valor de
+
+204
+00:20:44,780 --> 00:20:48,780
+la función adictiva es esta, que coincide con la garantía de C, porque es lo que estamos
+
+205
+00:20:48,780 --> 00:20:59,780
+definiendo. Por lo tanto, las condiciones son, se van a poner aquí, la cantidad de A, el
+
+206
+00:20:59,780 --> 00:21:09,780
+volumen de rectos, y la cantidad de D. Bueno, esta es la biografía usada, como es consultado,
+
+207
+00:21:09,780 --> 00:21:15,780
+y alicimientos a los que nos ayudan nuestros profesores, y a Francisco Navarro, que nos
+
+208
+00:21:15,780 --> 00:21:19,780
+va a venir, están en el estado de UU, y nos agradezca.
+

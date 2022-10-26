@@ -1,0 +1,556 @@
+1
+00:00:00,000 --> 00:00:12,560
+Hola, me llamo Andrew Fenollosa y os traigo una charla de programación funcional donde
+
+2
+00:00:12,560 --> 00:00:18,280
+hablaré sobre qué es sus ventajas y la forma de meter la patita sin perderla con la ayuda
+
+3
+00:00:18,280 --> 00:00:25,520
+de Python. Tranquilos, no es necesario ningún conocimiento previo, solo una pizca de interés.
+
+4
+00:00:25,520 --> 00:00:32,160
+Comenzamos. Uno de mis objetivos con esta charla es que dejéis de ver la programación
+
+5
+00:00:32,160 --> 00:00:40,240
+funcional como algo raro que no va con vosotros y que dentro de ese surtido de herramientas
+
+6
+00:00:40,240 --> 00:00:47,200
+que dispone encontréis alguna o sea muy útil. Descuriréis que están todas totalmente
+
+7
+00:00:47,200 --> 00:00:54,000
+afiladas y preparadas para que las utilicéis con casi cualquier lenguaje. Si una cosa de
+
+8
+00:00:54,000 --> 00:00:57,080
+todo lo que voy a decir se os queda para mí habrá sido un éxito.
+
+9
+00:00:57,080 --> 00:01:05,040
+Bueno, vayamos. ¿Qué significa que Python es multi-paradigma? Según Wikipedia, Python
+
+10
+00:01:05,040 --> 00:01:10,440
+es un lenguaje de programación interpretado cuya filosofía hace hincapié en la elegibilidad
+
+11
+00:01:10,440 --> 00:01:16,040
+de su código. Se trata de un lenguaje de programación multi-paradigma ya que se oporta
+
+12
+00:01:16,040 --> 00:01:22,880
+orientación a objetos, programación imperativa y en menor medida programación funcional.
+
+13
+00:01:22,880 --> 00:01:27,880
+Puede decir que acepta diversas formas de trabajar con el lenguaje. Básicamente existen
+
+14
+00:01:27,880 --> 00:01:33,760
+tres paradigmas predominantes o, dicho otra manera, tres formatos globales de organizar
+
+15
+00:01:33,760 --> 00:01:36,600
+un código.
+
+16
+00:01:36,600 --> 00:01:42,160
+La programación imperativa o estructurada. El código será ejecutado desde el principio
+
+17
+00:01:42,160 --> 00:01:48,640
+del fichero al final sin seguir ningún tipo de desviación. Su mayor ventaja radica en
+
+18
+00:01:48,640 --> 00:01:55,640
+su simplicidad y poco peso. Su peligrosidad es el código spaghetti. Archivos concentrares
+
+19
+00:01:55,640 --> 00:02:03,760
+o miles de líneas donde solo unos pocos seres humanos son capaces de modificar y salir victoriosos.
+
+20
+00:02:03,760 --> 00:02:09,360
+Programación orientada a objetos. Donde se entrapsuran las variables y funciones en pequeños
+
+21
+00:02:09,360 --> 00:02:15,960
+módulos capaces de clonarse y modificarse. Su punto fuerte es la capacidad de reutilización
+
+22
+00:02:15,960 --> 00:02:21,960
+y aislamiento para evitar problemas con otras funcionalidades. La parte negativa recae en
+
+23
+00:02:21,960 --> 00:02:27,040
+la complejidad de crear buenos objetos y la depuración.
+
+24
+00:02:27,040 --> 00:02:31,960
+Programación funcional. Objetivo de esta charla. Donde el código se reparte en sencillas
+
+25
+00:02:31,960 --> 00:02:38,000
+funciones capaces de ser invocadas con variables u otras funciones. Su facilidad de uso por
+
+26
+00:02:38,000 --> 00:02:45,120
+atomicidad logra un mantenimiento sólido y compatible con casi cualquier lenguaje. Además,
+
+27
+00:02:45,120 --> 00:02:50,040
+su inmutabilidad de variables evita gran parte de los problemas que sí sufre la programación
+
+28
+00:02:50,040 --> 00:02:56,760
+orientada a objetos. Si queréis profundizar en alguno de esos aspectos disponéis del
+
+29
+00:02:56,760 --> 00:03:04,560
+libro Arquitectura Limpia de Robert C. Martin, que también lo conocéis como Tio Sam.
+
+30
+00:03:04,560 --> 00:03:10,120
+Hablemos de los principios de la programación funcional. Por un lado, disponemos del uso
+
+31
+00:03:10,120 --> 00:03:16,560
+de funciones, como su propio nombre indica. Todo se construye por medio de funciones.
+
+32
+00:03:16,560 --> 00:03:22,760
+Esta forma de trabajar no solo es sencilla, ordenada, clara, fácil de testear, sino que
+
+33
+00:03:22,760 --> 00:03:28,080
+además es una práctica que han utilizado grandes figuras militares como Julio César
+
+34
+00:03:28,080 --> 00:03:33,340
+o Napoleón. No usaron Python o al menos no hay constancia de ello, pero aplicaron el
+
+35
+00:03:33,340 --> 00:03:40,080
+concepto de divide y vencerás. La programación funcional usa esta estrategia para prácticamente
+
+36
+00:03:40,080 --> 00:03:48,800
+todo. Funciones de primera clase. Las funciones son tratadas como una variable más. Incluso
+
+37
+00:03:48,800 --> 00:03:58,120
+pueden ser devueltas. Funciones puras. Totalmente predictivo. Los mismos datos de entrada producirán
+
+38
+00:03:58,120 --> 00:04:04,520
+los mismos datos de salida. Puedes sustituir el parámetro de entrada sin que ello altere
+
+39
+00:04:04,520 --> 00:04:12,320
+el flujo del programa. Recursividad. Las funciones se pueden llamar a sí mismas, simplificando
+
+40
+00:04:12,320 --> 00:04:20,440
+tareas como recorrer árboles de datos o la gestión de bucles controlados. Immutabilidad.
+
+41
+00:04:20,440 --> 00:04:27,960
+No hay variables. Solo constantes. Personalmente, comprender su potencial y llevarlo a práctica
+
+42
+00:04:27,960 --> 00:04:34,060
+fue como darle al reset a mi cerebro. Tuve que reaprender a usar las variables. Anecdota
+
+43
+00:04:34,060 --> 00:04:40,500
+parte, ¿dónde suele fallar el software? En gran mayoría de las ocasiones viene por
+
+44
+00:04:40,500 --> 00:04:46,880
+una variable que ha sido modificada. Esto provoca que un bloque de código se ejecute
+
+45
+00:04:46,880 --> 00:04:53,380
+con unas condiciones no previstas por nadie en el mundo mundial. Tocan revisar cada variable
+
+46
+00:04:53,380 --> 00:05:00,680
+en diferentes valores hasta que encontremos al culpable. Os hago una reflexión. Y si
+
+47
+00:05:00,680 --> 00:05:09,560
+usas variables que no puedas modificar o siendo más prácticos. Y si creamos una nueva constante
+
+48
+00:05:09,560 --> 00:05:18,280
+de cada modificación. Y si os digo que a nivel de rendimiento esto es más eficiente.
+
+49
+00:05:18,280 --> 00:05:27,120
+Es un concepto muy interesante de aplicar. Evaluación prezosa o no estricta. En la programación
+
+50
+00:05:27,120 --> 00:05:31,800
+funcional podemos trabajar con expresiones que no han sido evaluadas. O dicho de otra
+
+51
+00:05:31,800 --> 00:05:39,880
+manera podemos disponer de variables con operaciones cuyo resultado aún no se conocen. A esto
+
+52
+00:05:39,880 --> 00:05:46,680
+se le domina evaluación no estricta. Un efecto secundario es el aumento de rendimiento.
+
+53
+00:05:46,680 --> 00:05:52,960
+Y la otra es que podemos realizar locuras como hacer cálculos con operaciones muy complejas
+
+54
+00:05:52,960 --> 00:06:00,000
+o listas infinitas sin realizar cálculos. ¿Cómo es esto posible? Porque se trabaja con expresiones
+
+55
+00:06:00,000 --> 00:06:06,440
+matemáticas. Solo se calcula el valor cuando lo necesitas. Como por ejemplo al realizar
+
+56
+00:06:06,440 --> 00:06:17,800
+un print. ¿Qué te aporta esto como programador? Te estarás diciendo a ti mismo. ¿Ya se programar?
+
+57
+00:06:17,800 --> 00:06:23,480
+¿Programación orientado a objetos? ¿Qué gano aprendiendo estas técnicas? Bueno, por
+
+58
+00:06:23,480 --> 00:06:30,240
+un lado simplificas la creación de concurrencias. Una de sus grandes ventajas y por la cual
+
+59
+00:06:30,240 --> 00:06:36,080
+se hizo tan popular Lips que es un lenguaje funcional para crear redes neuronales es
+
+60
+00:06:36,080 --> 00:06:43,080
+poder trabajar simultáneamente con diversas funciones sin efectos secundarios.
+
+61
+00:06:43,080 --> 00:06:48,800
+¿Qué son de problemas? Las variables son constantes como ya hemos dicho, son inmutables.
+
+62
+00:06:48,800 --> 00:06:55,440
+En consecuencia no hay errores de programación derivados del llamado estado global mutable.
+
+63
+00:06:55,440 --> 00:07:00,840
+Estados modificables por todo el código. ¿Cómo puede ser el caso de los proyectos orientado
+
+64
+00:07:00,840 --> 00:07:07,480
+a objetos? Rápido de testear. Sabemos que parámetros podemos dar una función y qué
+
+65
+00:07:07,480 --> 00:07:14,240
+resultados esperamos. Fácil de combinar con la programación imperativa y orientado a
+
+66
+00:07:14,240 --> 00:07:22,200
+objetos. En este caso, país son adoptas herramientas nativas desde la versión 3.0. Código tócil
+
+67
+00:07:22,200 --> 00:07:28,640
+de asimilar y leer. Entender una función. Es mucho más sencillo que ver la estructura
+
+68
+00:07:28,640 --> 00:07:33,520
+de un objeto. Por supuesto, hablo desde el punto de vista de una persona que acaba de
+
+69
+00:07:33,520 --> 00:07:38,840
+llegar a un proyecto o está aprendiendo a programar.
+
+70
+00:07:38,840 --> 00:07:45,760
+Pero paremos ya de teoría. Quiero ver algo. Bueno, os quiero adelantar que sólo voy
+
+71
+00:07:45,760 --> 00:07:52,040
+a enseñar unos ejemplos básicos para iniciarse. La punta de unicever. Quedan para los curiosos
+
+72
+00:07:52,040 --> 00:07:57,880
+todo un océano de soluciones y herramientas propias del lenguaje funcional que Python aún
+
+73
+00:07:57,880 --> 00:08:04,840
+no conoce o debe ser extendido por librerías. Vamos a tratar las funciones de orden superior.
+
+74
+00:08:04,840 --> 00:08:13,880
+Lambda, Filter, Map y también veremos los Clusor. Empecemos por el Lambda. Los lenguajes
+
+75
+00:08:13,880 --> 00:08:19,160
+funcionales tienen su origen en la lógica matemática y el cálculo Lambda. Mientras
+
+76
+00:08:19,160 --> 00:08:23,600
+que en los lenguajes de programación imperativos abracen el modelo de cálculo basado en el
+
+77
+00:08:23,600 --> 00:08:30,080
+modo inventado por Alan Turing. ¿Qué son los lambas en Python? En bocas palabras, pequeñas
+
+78
+00:08:30,080 --> 00:08:38,880
+funciones anónimas, restrictivas y concisas. Si quisiéramos hacer una función tradicional
+
+79
+00:08:38,880 --> 00:08:45,680
+que se incrementa el valor con el parámetro que se le da, pues tendríamos esto. Como
+
+80
+00:08:45,680 --> 00:08:52,760
+podéis observar, incrementa un número y para hacerlo con un Lambda lo haríamos de esta
+
+81
+00:08:52,760 --> 00:09:00,000
+forma. Únicamente es una expresión, no la podemos utilizar, pero hay dos formas de sacarle
+
+82
+00:09:00,000 --> 00:09:13,000
+partido. Comparéntesis o guardándolo en una variable. Closur, recordad el concepto
+
+83
+00:09:13,000 --> 00:09:19,240
+de funciones de primera clase. Podemos usar funciones dentro de otras funciones y además
+
+84
+00:09:19,240 --> 00:09:26,480
+funciones que devuelven otras. En este ejemplo podéis ver cómo hemos declarado una función
+
+85
+00:09:26,480 --> 00:09:32,840
+dentro de una función, pero que además la devuelve. Con esto podemos hacer cosas tan
+
+86
+00:09:32,840 --> 00:09:39,000
+interesantes como guardar la expresión de la función dentro de una variable, en este
+
+87
+00:09:39,000 --> 00:09:45,240
+caso múltiples de 2, múltiples de 7, dándole el valor que nosotros deseamos y a partir de
+
+88
+00:09:45,240 --> 00:09:55,640
+ahí ya podemos utilizarlo. Para los siguientes ejemplos, usaré un superdicionario con cuatro
+
+89
+00:09:55,640 --> 00:10:12,720
+elementos. Empecemos con Filter. Su objetivo es convertir un elemento iterable como una
+
+90
+00:10:12,720 --> 00:10:19,240
+tupla o lista en otra pero de igual o inferior tamaño, filtrando por lo que necesites. Su
+
+91
+00:10:19,240 --> 00:10:27,400
+estructura costa de dos argumentos, la expresión y el elemento que deseamos recorrer. Como
+
+92
+00:10:27,400 --> 00:10:33,440
+veis es una función que yo le otorgo otra función. Busquemos todos los superhéroes
+
+93
+00:10:33,440 --> 00:10:41,200
+de DC. Declaro Filter, le doy un Lambda aunque también podría haber sido una función y
+
+94
+00:10:41,200 --> 00:10:48,040
+le doy para terminar la iteración. Si quiero imprimirlo antes debo convertirlo en una tupla
+
+95
+00:10:48,040 --> 00:11:00,120
+o una lista. Como resultado final. MAP. Su estructura costa de dos argumentos, la expresión
+
+96
+00:11:00,120 --> 00:11:06,080
+y el elemento que deseamos recorrer. En este caso se utiliza para modificar el valor de
+
+97
+00:11:06,080 --> 00:11:14,600
+un iterable siguiendo una regla. En el siguiente ejemplo voy a añadir a cada superhéroe su
+
+98
+00:11:14,600 --> 00:11:22,160
+poder. Como no quiero entrar en ninguna batalla de quién es más fuerte o quién es más débil,
+
+99
+00:11:22,160 --> 00:11:28,560
+le voy a dar un valor aleatorio entre 0 y 99. No es recomendable usar un Lambda si vas
+
+100
+00:11:28,560 --> 00:11:36,280
+a usar más de una línea en una función. Importo orando, creo mi función de añadir
+
+101
+00:11:36,280 --> 00:11:44,080
+poder. Le digo que quiero modificar la llave poder, que en este caso se la voy a añadir
+
+102
+00:11:44,080 --> 00:11:51,520
+con un valor entre 0 y 99 y lo voy a devolver. Declaro mi MAP. Le doy mi función. Por otro
+
+103
+00:11:51,520 --> 00:12:03,960
+lado la iteración. Lo imprimo con print y el resultado final sería el siguiente. Reduce.
+
+104
+00:12:03,960 --> 00:12:08,800
+Se utiliza para hacer cálculos a partir de una iteración. Su estructura costa de tres
+
+105
+00:12:08,800 --> 00:12:16,680
+argumentos. La expresión, el elemento que deseamos recorrer y la variable de inicio. La podemos
+
+106
+00:12:16,680 --> 00:12:24,840
+encontrar dentro de la librería functools. Suponcamos que necesitamos contar el número
+
+107
+00:12:24,840 --> 00:12:34,520
+de superhéroes que contienen en su nombre el texto man, m, a, n. Preparo mi función
+
+108
+00:12:34,520 --> 00:12:43,880
+donde yo hago la comparación. Si existe man dentro de su nombre yo aumento uno el resultado,
+
+109
+00:12:43,880 --> 00:12:50,360
+en caso contrario devuelvo el resultado. Cuando declaro reduce le doy mi función, le doy
+
+110
+00:12:50,360 --> 00:12:58,560
+la iteración y el valor inicial que va a ser 0. El resultado final sería un 3. En este
+
+111
+00:12:58,560 --> 00:13:05,560
+caso únicamente es hool que el que no tiene este elemento. Tal vez te preguntes por qué
+
+112
+00:13:05,560 --> 00:13:13,120
+retur está tan escondido. Estas funciones, MAP, filter, las podemos encontrar desde el
+
+113
+00:13:13,120 --> 00:13:21,080
+principio del 1994. Pero durante el desarrollo de Python 3000, entre 2006 y 2009, Guildo van
+
+114
+00:13:21,080 --> 00:13:27,280
+Roosom, creador de Python, pidió la eliminación de estas características por un tema de elegibilidad
+
+115
+00:13:27,280 --> 00:13:33,320
+y por existir herramientas que en conjunto realizaban las mismas tareas. Sin embargo,
+
+116
+00:13:33,320 --> 00:13:38,240
+más tarde cambió de opinión y solo reduce fue eliminado, a pesar de que sigue accesible
+
+117
+00:13:38,240 --> 00:13:47,360
+a través del módulo funtools. No solo de Python vive el hombre. Para
+
+118
+00:13:47,360 --> 00:13:51,680
+exprimir las posibilidades que hemos mencionado, puedes dar el salto a otros lenguajes propios
+
+119
+00:13:51,680 --> 00:13:58,600
+del paradigma. LIS dispone de diversas variantes, pero la más popular es como LIS, que lleva
+
+120
+00:13:58,600 --> 00:14:07,320
+dando guerra desde 1984. Closur, una modernización de LIPS que ha vuelto a revitalizar el lenguaje,
+
+121
+00:14:07,320 --> 00:14:14,000
+utiliza la máquina virtual de Java para ejecutarse y dispone de una hiteroperabilidad fantástica
+
+122
+00:14:14,000 --> 00:14:20,960
+con las librerías de Java, ideal para realizar servicios web o software con gran rendimiento.
+
+123
+00:14:20,960 --> 00:14:28,600
+Aprovecho para comentar que dispongo de un frango web llamado TADAM, ideal para iniciarse.
+
+124
+00:14:28,600 --> 00:14:33,560
+Haskell, pionero en diversas características, maravilloso para el aprendizaje y muy utilizado
+
+125
+00:14:33,560 --> 00:14:42,560
+en la industria. El lenguaje de frontend altamente influenciado por Haskell.
+
+126
+00:14:42,560 --> 00:14:47,400
+Las compañías que utilizan la programación funcional es muy grande, por lo que he realizado
+
+127
+00:14:47,400 --> 00:14:53,400
+un filter con algunas compañías que usan LIPS o Closur, como podéis ver es bastante
+
+128
+00:14:53,400 --> 00:15:03,160
+variada. Si quieres continuar aumentando tus conocimientos o extender lo que ya has aprendido
+
+129
+00:15:03,160 --> 00:15:08,680
+de programación funcional dentro de Python, dispones de algunas librerías, como por ejemplo
+
+130
+00:15:08,680 --> 00:15:15,600
+P funcional, la cual te aporta temas tan importantes como la concurrencia u operaciones
+
+131
+00:15:15,600 --> 00:15:22,160
+concadenadas. También puedes usar otras librerías como Fronsdick que implementan diccionarios
+
+132
+00:15:22,160 --> 00:15:28,600
+invutables. Espero que la programación funcional deje de asustarte porque no es el lado oscuro,
+
+133
+00:15:28,600 --> 00:15:34,760
+tiene una herramienta increíblemente potente que te ha estado esperando.
+
+134
+00:15:34,760 --> 00:15:39,840
+Gracias por asistir a mi charla. Como he comentado al principio me llamo Andross Fennoyosa,
+
+135
+00:15:39,840 --> 00:15:43,960
+podéis encontrarme en Twitter con la roba Andross Fennoyosa. También podéis leer mis
+
+136
+00:15:43,960 --> 00:15:49,280
+artículos donde hablo de Python, programación funcional y muchos otros temas en programador
+
+137
+00:15:49,280 --> 00:15:55,200
+web Valencia. Si queréis escucharme estoy en el podcast república web con Javier Acheni
+
+138
+00:15:55,200 --> 00:16:00,200
+y David Baquero y si queréis hablar de temas de docencia o aprender nuevas técnicas en
+
+139
+00:16:00,200 --> 00:16:25,920
+la escuela y de crea. Muchas gracias.
+
