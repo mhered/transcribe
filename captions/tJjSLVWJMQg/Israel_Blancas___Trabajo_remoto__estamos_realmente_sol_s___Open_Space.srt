@@ -1,0 +1,3092 @@
+1
+00:00:00,000 --> 00:00:23,000
+Bueno, para empezar un poquito de debajo de ti y tal, me acosta un poquito mi experiencia con el tema del... ¿se me escucha ahí?
+
+2
+00:00:23,000 --> 00:00:31,000
+Sí, un poquito mi experiencia con el tema del trabajo remoto, la cosa es que yo tenía varios amigos que estaban trabajando en remoto,
+
+3
+00:00:31,000 --> 00:00:40,000
+yo trabajaba desde un oficina aquí en Granados y bueno, aunque había veces no, porque uno trabajaba desde la casa y tal, pero no era un trabajo remoto como tal.
+
+4
+00:00:40,000 --> 00:00:51,000
+Y bueno, hubo varias veces que recibí ofertas de trabajo remoto, pero me daba asusto meterme a trabajar en remoto por experiencias que habíamos tenido compañeros míos,
+
+5
+00:00:51,000 --> 00:01:01,000
+por ejemplo, tuve un compañero que se mudó, bueno, estaba trabajando para un banco en Madrid y se vino a trabajar desde Granada para otro empresa,
+
+6
+00:01:01,000 --> 00:01:12,000
+y decía tío, es que pasó muchas horas y solo en mi casa, es que yo estaba acostumbrado allá de oficina, me estaba tomando mis cazalillas allí con la gente,
+
+7
+00:01:12,000 --> 00:01:20,000
+hablaba con unos con otros, tenía mis compañeros de piso, ahora se había venido aquí a Granada y estaba viviendo solo y como que se les estaba viniendo el mundo encima.
+
+8
+00:01:20,000 --> 00:01:31,000
+Pero claro que pasó, pandemia, todo estaba trabajando en remoto, de pronto empresas que no se le habían ni planteado remoto porque hay que seguir haciendo dinero,
+
+9
+00:01:31,000 --> 00:01:43,000
+me era tanto el caso de la mía que como digo, nos dejaban bastante libertad para allá, trabajar un poco desde casa y tal, pero bueno, nos vimos así todo de golpe.
+
+10
+00:01:43,000 --> 00:01:50,000
+Y la verdad no sé si de la gente que está aquí, estáis trabajando en remoto, estáis pensando en mover a una empresa de remota,
+
+11
+00:01:50,000 --> 00:02:02,000
+estáis trabajando en una empresa que estáis trabajando en físico, pero permítan remoto, yo la estoy pensando, pero en mi caso lo que pasó fue que descubrí un poco el susto que me contaba este chaval,
+
+12
+00:02:02,000 --> 00:02:14,000
+de, uuh, pasó mucho ahora solo y tal, pero también descubrí que podía aprovechar mucho mejor el día, que la media ahorita de paseo a los oficinos la podía dar en irme a donde me diera la gana,
+
+13
+00:02:14,000 --> 00:02:23,000
+que no tenía por qué aguantar a compañeros que no lo peticía aguantar, que cuando quería ver a mis compañeros que eran realmente mis amigos, iba,
+
+14
+00:02:23,000 --> 00:02:33,000
+y echaba un ratito con ellos y que bueno, podía por ejemplo cortar a mediodía y al gimnasio a la hora que no podía ir nadie, que estaba a la ciudad, o entero para mí, igual que el mercado uno,
+
+15
+00:02:33,000 --> 00:02:40,000
+y claro, comprar mucho más rápido, hacer las cosas de una forma mucho más eficiente y poder aprovechar mejor el día, ¿no?
+
+16
+00:02:40,000 --> 00:02:52,000
+Entonces, ¿qué pasa? Llegó, se presentó la oportunidad y antes de que, bueno, digan, oye, por ver a los oficinos, la empresa trabaja 100% en remoto, ¿vale?
+
+17
+00:02:52,000 --> 00:02:57,000
+Entonces, me gustaría que fuese comentando, ¿vale?, las cositas que...
+
+18
+00:02:57,000 --> 00:03:07,000
+las impresiones que a vosotros tuvieses cuando pasas y ya trabajas en remoto, si empezaste y ya trabajas en una empresa en remoto directamente, que es también el caso de mucha gente,
+
+19
+00:03:07,000 --> 00:03:13,000
+si habéis trabajado en remoto, yo voy a ir a un oficina, ¿por qué? ese tipo de cosas, ¿vale?
+
+20
+00:03:13,000 --> 00:03:18,000
+Que no creo... vamos, yo no conozco todavía el caso de ninguno, pero bueno,
+
+21
+00:03:18,000 --> 00:03:24,000
+aquí por ejemplo, Drazo, está bastante más acostumbrado a trabajar que yo en remoto, de hecho, ¿ya lleva trabajando con tu tiempo?
+
+22
+00:03:24,000 --> 00:03:26,000
+4 años ya.
+
+23
+00:03:26,000 --> 00:03:33,000
+4 años... se ve que se apocó un plago de un otro, maldicario de ti.
+
+24
+00:03:33,000 --> 00:03:36,000
+¿Ya va trabajando 4 años para una empresa israelí? ¿no?
+
+25
+00:03:36,000 --> 00:03:41,000
+O sea que, fijaos, no tiene muchos amigos cercanos de ahora de oficina.
+
+26
+00:03:41,000 --> 00:03:49,000
+Sí, bueno, si queréis también por un poco el lleno que hizo yo también contando mi experiencia.
+
+27
+00:03:49,000 --> 00:03:56,000
+Buenos días, Manuel, trabajo de ingeniero de Entrejete Artificial en Blink, que es una empresa israelí,
+
+28
+00:03:56,000 --> 00:04:02,000
+y bueno, yo empecé a trabajar en remoto antes de que todo el mundo empeza a trabajar en remoto, era como algo raro, ¿no?
+
+29
+00:04:02,000 --> 00:04:06,000
+Y eso mucha gente me preguntaba antes, pero no te aburre en casa, ¿no?
+
+30
+00:04:06,000 --> 00:04:13,000
+Y me preguntaba, ¿ya está todo el día solo, ¿viste? Y bueno, para mí, la verdad que fue también un cambio bastante grande, ¿no?
+
+31
+00:04:13,000 --> 00:04:19,000
+Porque yo estaba acostumbrado a ir a oficina también, ha hecho a mí 8 horas de trabajo, a ver la casa, a tener muchos compañeros, ¿viste?
+
+32
+00:04:19,000 --> 00:04:29,000
+Y fue un cambio bastante grande, estar en casa, vivía por aquel entonces en Inglaterra, en un piso bastante pequeño,
+
+33
+00:04:29,000 --> 00:04:36,000
+estaba en el salón, comí en el salón, ferraman el salón, estaba todo el día allí y hiciera la verdad un poquito a gobiante.
+
+34
+00:04:36,000 --> 00:04:45,000
+Pero decidimos volver a Granada y aquí ya vivo en una casa que tengo una habitación que es oficina, ¿no?
+
+35
+00:04:45,000 --> 00:04:49,000
+Entonces yo de mí no me dijo nada laboral, quiero la puerta y ya está, se...
+
+36
+00:04:49,000 --> 00:04:54,000
+Se me olvidó, yo creo que eso es muy importante, tener espacio separado, ¿no?, de trabajar y vivir, ¿no?
+
+37
+00:04:54,000 --> 00:05:03,000
+Para cambiar de entorno. Y nada de eso, pues sí, es verdad que como comente Israel, todos mis compañeros están en Israel.
+
+38
+00:05:03,000 --> 00:05:09,000
+Y eso a veces pues es verdad que te pierdas muchas cosas, ¿no?
+
+39
+00:05:09,000 --> 00:05:14,000
+Sobre todo, todas las conversaciones offline que pasan allí, todo el tema de team building, ¿no?
+
+40
+00:05:14,000 --> 00:05:18,000
+También que se forma allí, pues sí, es verdad que te sientes más respirado, ¿no?
+
+41
+00:05:18,000 --> 00:05:22,000
+Porque no todo el mundo trabaja en remoto, soy único trabajado en remoto ahora mismo en la empresa.
+
+42
+00:05:22,000 --> 00:05:30,000
+Y por esa parte sí, la verdad que se ha echado un poco de menos tener más contacto físico con compañeros.
+
+43
+00:05:30,000 --> 00:05:34,000
+Pero también es verdad que ya he ido allí varias veces de viaje, así que los conozco personalmente.
+
+44
+00:05:34,000 --> 00:05:39,000
+Y es muy importante, yo te di mi experiencia, que si voy a trabajar en remoto,
+
+45
+00:05:39,000 --> 00:05:44,000
+que al menos conozcais el equipo con el que voy a trabajar cada cara, ¿no?
+
+46
+00:05:44,000 --> 00:05:48,000
+Para tener mejor una relación personal también con esa gente.
+
+47
+00:05:48,000 --> 00:05:53,000
+Quiere alguien compartir algo, que en cualquier momento levante la mano.
+
+48
+00:05:59,000 --> 00:06:06,000
+Hola, pues yo también hace casi tres años que trabajo en remoto,
+
+49
+00:06:06,000 --> 00:06:12,000
+para una empresa que somos 100%... bueno, hay oficinas físicas, pero casi todo el mundo trabaja desde casa.
+
+50
+00:06:12,000 --> 00:06:20,000
+Y el mayor reto para nosotros creo que ha sido un poco... primero, las diferencias horarias,
+
+51
+00:06:20,000 --> 00:06:27,000
+porque tenemos gente desde laos hasta Estados Unidos, con 12-13 horas de diferencia entre ellos.
+
+52
+00:06:27,000 --> 00:06:33,000
+Y por otra parte la comunicación asincrona, que esto no sé cómo...
+
+53
+00:06:33,000 --> 00:06:38,000
+Creo que para mí ha sido particularmente lo más difícil de asumir en el sentido de que preguntas algo
+
+54
+00:06:38,000 --> 00:06:45,000
+y no tienes una respuesta hasta horas o no, pero de los casos hasta días después.
+
+55
+00:06:45,000 --> 00:06:49,000
+Entonces, para mí este es el gran reto de trabajar en remoto.
+
+56
+00:06:49,000 --> 00:06:58,000
+Aparte también de que es difícil verse persona, nosotros hicimos un evento de team building en Barcelona hace un par de meses.
+
+57
+00:06:58,000 --> 00:07:03,000
+Nos juntamos 150 personas allí, va desvirtualizando la gente.
+
+58
+00:07:03,000 --> 00:07:12,000
+Y fue muy importante también porque la empresa también tomó un poco de pulso de los problemas en el sentido que de pasaba.
+
+59
+00:07:12,000 --> 00:07:19,000
+Y casi todo el mundo tenía el mismo problema. La gente se está muy aislada, difícil de desconectar,
+
+60
+00:07:19,000 --> 00:07:24,000
+y bueno, difícil de concentrarse, todo esto.
+
+61
+00:07:24,000 --> 00:07:27,000
+Entonces, creo que estos son un poco los retos.
+
+62
+00:07:27,000 --> 00:07:33,000
+Y es importante trabajar para una empresa que sea sensible a los problemas de la gente.
+
+63
+00:07:33,000 --> 00:07:42,000
+Por ejemplo, en mi caso yo he trabajado casi dos años en casa y me he pasado lo mismo que al resto, que es difícil desconectar,
+
+64
+00:07:42,000 --> 00:07:48,000
+y al final la empresa propuso a la gente de pagar co-workings para la gente que quiera.
+
+65
+00:07:48,000 --> 00:07:54,000
+Y hace un par de meses que estoy en un co-working, voy a la oficina a trabajar con gente que no tiene nada que ver conmigo.
+
+66
+00:07:54,000 --> 00:08:02,000
+Pero al menos, tienes eso, que te da una oportunidad de si quieres intentar aliviar los problemas de la gente.
+
+67
+00:08:02,000 --> 00:08:05,000
+Creo que es importante que la empresa sea consciente de esto.
+
+68
+00:08:05,000 --> 00:08:07,000
+Esto es un poco mi experiencia.
+
+69
+00:08:07,000 --> 00:08:13,000
+Sí, de hecho, yo creo que eso que comenté último en el tema de los co-working y ese tipo de cosas.
+
+70
+00:08:13,000 --> 00:08:19,000
+Yo trabajo desde mi casa. Yo no voy a ningún...
+
+71
+00:08:19,000 --> 00:08:25,000
+Vale, vale. Sin algún momento de escucharse, porque yo aquí escucho otras cosas.
+
+72
+00:08:25,000 --> 00:08:29,000
+Entonces no se ve cómo va a reloj por allí.
+
+73
+00:08:29,000 --> 00:08:32,000
+El tema de los co-working, yo, por ejemplo, trabajo desde casa.
+
+74
+00:08:32,000 --> 00:08:34,000
+Pero a mí una cosa, por ejemplo, que me ayuda muchísimo.
+
+75
+00:08:34,000 --> 00:08:37,000
+Yo aquí organizo muchos eventos, de charlas, de cosas de estas.
+
+76
+00:08:37,000 --> 00:08:42,000
+No un Congreso de 800 personas, aunque he estado ahí también un poquito empujando con este.
+
+77
+00:08:42,000 --> 00:08:44,000
+Pero bueno, una cosa que también ayuda mucho.
+
+78
+00:08:44,000 --> 00:08:50,000
+Al final, aunque hiciera una cosa que se haga en tiempo libre,
+
+79
+00:08:50,000 --> 00:08:56,000
+tampoco digo que haga un evento de la ardía ni os vaya absolutamente todo los eventos que haya todos los días,
+
+80
+00:08:56,000 --> 00:08:59,000
+porque hay que descansar, hay que desconectar, hay que refrescarse.
+
+81
+00:08:59,000 --> 00:09:03,000
+Pero a mí una cosa que me ayuda mucho ha sido el estar en contacto con la comunidad local.
+
+82
+00:09:03,000 --> 00:09:07,000
+Aunque sea gente que a lo mejor yo trabajo con Go,
+
+83
+00:09:07,000 --> 00:09:11,000
+antes estaba trabajando mucho con Python, Kubernetes, este tipo de historias.
+
+84
+00:09:11,000 --> 00:09:16,000
+Y a lo mejor ahora me pongo a juntarme a yo que sé con gente que lo que trabaja es con C.
+
+85
+00:09:16,000 --> 00:09:20,000
+Pero bueno, que tiene al final el mismo tipo de programas que yo,
+
+86
+00:09:20,000 --> 00:09:22,000
+en el sentido de que están trabajando desde casa,
+
+87
+00:09:22,000 --> 00:09:26,000
+le apetece hablar de algo un poco de tecnología, un poco de trabajo,
+
+88
+00:09:26,000 --> 00:09:28,000
+sin ser estar con una cosa tan dura como trabajo,
+
+89
+00:09:28,000 --> 00:09:30,000
+le apetece salir tomarse una cerveza.
+
+90
+00:09:30,000 --> 00:09:34,000
+Porque realmente lo importante, a ver,
+
+91
+00:09:34,000 --> 00:09:37,000
+yo no he visto todavía ni una charla de este Congreso,
+
+92
+00:09:37,000 --> 00:09:40,000
+pero me ha estado a hablar con gente de tomarme un café,
+
+93
+00:09:40,000 --> 00:09:44,000
+de no sé qué, también es verdad que me comenzaré por haber estado corriendo por distintas charlas y cosas,
+
+94
+00:09:44,000 --> 00:09:48,000
+arreglando tropicios de los maravillosos proyectores.
+
+95
+00:09:48,000 --> 00:09:53,000
+Pero a mí lo que me gusta al final de todo esto es la gente.
+
+96
+00:09:53,000 --> 00:09:55,000
+Y al final es lo que mula.
+
+97
+00:09:55,000 --> 00:09:57,000
+Tanto desde antes de la pandemia como después.
+
+98
+00:09:57,000 --> 00:10:01,000
+Lo que pasa es que claro, después de la pandemia esto se ha potenciado.
+
+99
+00:10:01,000 --> 00:10:03,000
+Entonces no sé de dónde soy,
+
+100
+00:10:03,000 --> 00:10:06,000
+pero una cosa que tenéis,
+
+101
+00:10:06,000 --> 00:10:10,000
+que yo os aconsejo mucho que curtis veas y a vuestras comunidades locales.
+
+102
+00:10:10,000 --> 00:10:13,000
+Sean de Python, si hay algo que esté trabajando mucho mejor,
+
+103
+00:10:13,000 --> 00:10:17,000
+pero de Python, de los GDG, que por ejemplo lo que yo organizo,
+
+104
+00:10:17,000 --> 00:10:21,000
+club.net, que no sé si eso sigue existiendo.
+
+105
+00:10:21,000 --> 00:10:23,000
+Entonces, este tipo de cosas.
+
+106
+00:10:23,000 --> 00:10:30,000
+Hola, ¿se me oye bien?
+
+107
+00:10:30,000 --> 00:10:32,000
+Sí, sí.
+
+108
+00:10:32,000 --> 00:10:35,000
+Bueno, yo soy Arnau.
+
+109
+00:10:35,000 --> 00:10:40,000
+En mi caso he estado trabajando en remoto desde 2019 en una empresa alemana que se llama Trastiu.
+
+110
+00:10:40,000 --> 00:10:44,000
+Y estoy ahí como ingeniería de datos, principalmente temas relacionados con web scraping.
+
+111
+00:10:44,000 --> 00:10:47,000
+Y me ha gustado mucho el tema que se ha hecho,
+
+112
+00:10:47,000 --> 00:10:53,000
+co-working, que ha empezado a hablar tú.
+
+113
+00:10:53,000 --> 00:10:56,000
+Y después has continuado tu comentando que realmente que no vas,
+
+114
+00:10:56,000 --> 00:11:00,000
+pero que en cierto modo que cubres tus necesidades sociales
+
+115
+00:11:00,000 --> 00:11:02,000
+desde otros puntos de vista, no?
+
+116
+00:11:02,000 --> 00:11:05,000
+A ver, también tengo amigo.
+
+117
+00:11:05,000 --> 00:11:08,000
+O sea, tampoco.
+
+118
+00:11:08,000 --> 00:11:11,000
+Una cosa que quería puntualizar aquí,
+
+119
+00:11:11,000 --> 00:11:14,000
+de las gente, las energías que me han hecho,
+
+120
+00:11:14,000 --> 00:11:17,000
+un mundo de trabajo y tal.
+
+121
+00:11:17,000 --> 00:11:24,000
+En mi caso empecé a ir al co-working hace como un par de dos años o así por el estilo.
+
+122
+00:11:24,000 --> 00:11:26,000
+Y así que es verdad que lo primero que ves es,
+
+123
+00:11:26,000 --> 00:11:28,000
+entras en contacto con otros desarrolladores,
+
+124
+00:11:28,000 --> 00:11:30,000
+es algo que es muy interesante compartir ideas.
+
+125
+00:11:30,000 --> 00:11:32,000
+Por lo que más me ha enriquecido no ha sido esto.
+
+126
+00:11:32,000 --> 00:11:35,000
+Lo que más me ha enriquecido ha sido hablar con gente
+
+127
+00:11:35,000 --> 00:11:38,000
+que no tiene nada que ver con un programación.
+
+128
+00:11:38,000 --> 00:11:40,000
+Por ejemplo, temas relacionados con web scraping,
+
+129
+00:11:40,000 --> 00:11:43,000
+de alguna forma u otra, es muy interesante.
+
+130
+00:11:43,000 --> 00:11:46,000
+Hablar con gente que tiene perspectiva de marketing digital,
+
+131
+00:11:46,000 --> 00:11:48,000
+temas de deseo.
+
+132
+00:11:48,000 --> 00:11:51,000
+Y de ahí salen iniciativas muy interesantes de explorar,
+
+133
+00:11:51,000 --> 00:11:54,000
+que no habrías pensado desde un punto de vista desarrollador.
+
+134
+00:11:54,000 --> 00:11:57,000
+Y esto realmente enriquece un montón.
+
+135
+00:11:57,000 --> 00:12:00,000
+Y bueno, básicamente esto.
+
+136
+00:12:00,000 --> 00:12:06,000
+Sí, de hecho, una cosa que hay un tipo de evento que se organiza,
+
+137
+00:12:06,000 --> 00:12:09,000
+hace años que no veo que se organiza ese evento.
+
+138
+00:12:09,000 --> 00:12:13,000
+No sé si alguno lo conoce, las startup weekends.
+
+139
+00:12:13,000 --> 00:12:15,000
+Más arriba alguien lo conoce, ¿no?
+
+140
+00:12:15,000 --> 00:12:17,000
+Sí, vale.
+
+141
+00:12:17,000 --> 00:12:21,000
+La startup weekends son meterte dos o tres días, vale,
+
+142
+00:12:21,000 --> 00:12:25,000
+en un sitio con más gente, se hacen equipo,
+
+143
+00:12:25,000 --> 00:12:28,000
+y le dejan hacer una startup en el fin de semana.
+
+144
+00:12:28,000 --> 00:12:31,000
+Entonces allí se unen gente de negocio, de marketing,
+
+145
+00:12:31,000 --> 00:12:33,000
+de desarrolladoras, de diseñadores.
+
+146
+00:12:33,000 --> 00:12:35,000
+Y salen cosas bastante guay.
+
+147
+00:12:35,000 --> 00:12:40,000
+Ahí ahora, eso ya hace tiempo, digo, que no veo que se organize.
+
+148
+00:12:40,000 --> 00:12:43,000
+Y eran actividades bastante enriquecedoras por lo que tú dices,
+
+149
+00:12:43,000 --> 00:12:45,000
+no, al final acaban apareciendo sinergias,
+
+150
+00:12:45,000 --> 00:12:48,000
+que son bastante enriquecedoras,
+
+151
+00:12:48,000 --> 00:12:51,000
+y en el futuro no se hagan nunca no lo que puede pasar,
+
+152
+00:12:51,000 --> 00:12:53,000
+y por donde ponen los tiros.
+
+153
+00:12:53,000 --> 00:12:57,000
+Y de hecho, aquí en Granada, bueno, también en Málaga se hace,
+
+154
+00:12:57,000 --> 00:13:00,000
+hay una comunidad de gente que hace videojuegos,
+
+155
+00:13:00,000 --> 00:13:03,000
+que se juntan y hacen las jams,
+
+156
+00:13:03,000 --> 00:13:06,000
+y lo que hacen es que se pecan un fin de semana entero haciendo juegos.
+
+157
+00:13:06,000 --> 00:13:10,000
+Y bueno, yo lo sigo por el grupillo de Telegram que tienen,
+
+158
+00:13:10,000 --> 00:13:12,000
+y está muy bueno porque, bueno,
+
+159
+00:13:12,000 --> 00:13:14,000
+ve gente de diseño, de marketing, de tal,
+
+160
+00:13:14,000 --> 00:13:17,000
+que se juntan en equipo, hacen su juegacillo,
+
+161
+00:13:17,000 --> 00:13:19,000
+y algunos, de hecho, después no,
+
+162
+00:13:19,000 --> 00:13:21,000
+pues lo acaban hasta comercializando y tal,
+
+163
+00:13:21,000 --> 00:13:23,000
+entonces es como...
+
+164
+00:13:23,000 --> 00:13:25,000
+Entonces, sí, sí, lo que comentan,
+
+165
+00:13:25,000 --> 00:13:33,000
+muchas veces nos encerramos demasiado en el mundillo este.
+
+166
+00:13:33,000 --> 00:13:35,000
+Buenas, se me escucha, ¿verdad?
+
+167
+00:13:35,000 --> 00:13:37,000
+Lo primero, gracias por la...
+
+168
+00:13:37,000 --> 00:13:39,000
+bueno, charla coloquio,
+
+169
+00:13:39,000 --> 00:13:42,000
+que creo que se puede ayudar a mucha gente que están con la duda y tal.
+
+170
+00:13:42,000 --> 00:13:44,000
+Yo primero quiero contar mi experiencia,
+
+171
+00:13:44,000 --> 00:13:46,000
+y después te quiero lanzar una pregunta,
+
+172
+00:13:46,000 --> 00:13:48,000
+a ver si alguien tiene alguna idea.
+
+173
+00:13:48,000 --> 00:13:50,000
+Lo primero, yo trabajaba en Londres,
+
+174
+00:13:50,000 --> 00:13:52,000
+bueno, soy Chema, que no me he presentado,
+
+175
+00:13:52,000 --> 00:13:54,000
+trabajaba en Londres, me ve que 3 años allí,
+
+176
+00:13:54,000 --> 00:13:57,000
+y mi empresa negocié con ella para trabajar desde casa.
+
+177
+00:13:57,000 --> 00:13:59,000
+Soy de Huelva y quería venirme a Huelva.
+
+178
+00:13:59,000 --> 00:14:00,000
+Normal.
+
+179
+00:14:00,000 --> 00:14:02,000
+Lógico.
+
+180
+00:14:02,000 --> 00:14:04,000
+Me pequé dos semanas de viaje en la transición,
+
+181
+00:14:04,000 --> 00:14:07,000
+estaba trabajando y a la semana de empezar a trabajar desde Huelva,
+
+182
+00:14:07,000 --> 00:14:09,000
+cerró la empresa.
+
+183
+00:14:09,000 --> 00:14:11,000
+Se ha imaginarse la hostia.
+
+184
+00:14:11,000 --> 00:14:14,000
+Me puse a buscar por España todo lo que había en la Madrid-Barcelona,
+
+185
+00:14:14,000 --> 00:14:17,000
+me fui a Madrid, empecé a una empresa súper chula,
+
+186
+00:14:17,000 --> 00:14:19,000
+Style Sage,
+
+187
+00:14:19,000 --> 00:14:23,000
+le agradezco públicamente a la confianza en aquel año 2017,
+
+188
+00:14:23,000 --> 00:14:27,000
+y bueno, después de unos años,
+
+189
+00:14:27,000 --> 00:14:29,000
+y sobre todo con la pandemia,
+
+190
+00:14:29,000 --> 00:14:32,000
+decidí trabajar desde casa, la empresa que estaba en aquel entonces
+
+191
+00:14:32,000 --> 00:14:35,000
+no me lo ofrecía, y me cambié.
+
+192
+00:14:35,000 --> 00:14:37,000
+A día de hoy trabajo desde casa, en Huelva,
+
+193
+00:14:37,000 --> 00:14:39,000
+la conciliación es brutal.
+
+194
+00:14:39,000 --> 00:14:41,000
+Hay gente que tiene, yo no tengo hijos,
+
+195
+00:14:41,000 --> 00:14:43,000
+pero hay gente que tiene hijos, pues lleva el alcohol,
+
+196
+00:14:43,000 --> 00:14:45,000
+empiezan más tarde,
+
+197
+00:14:45,000 --> 00:14:47,000
+hay gente que le gusta trabajar por la noche.
+
+198
+00:14:47,000 --> 00:14:49,000
+Yo me levanto de salud y me pongo con mi huerto,
+
+199
+00:14:49,000 --> 00:14:52,000
+le he hecho un ratito, sea es maravilloso.
+
+200
+00:14:52,000 --> 00:14:55,000
+Y bueno, un problema que tengo,
+
+201
+00:14:55,000 --> 00:14:57,000
+de aquí voy a enlazar con la pregunta que quería lanzarte,
+
+202
+00:14:57,000 --> 00:15:00,000
+de hecho esta semana estuvimos con la empresa actual
+
+203
+00:15:00,000 --> 00:15:05,000
+en un Team Building,
+
+204
+00:15:05,000 --> 00:15:07,000
+en un pueblecito en Segovia,
+
+205
+00:15:07,000 --> 00:15:09,000
+y salió un problema.
+
+206
+00:15:09,000 --> 00:15:11,000
+Nosotros tenemos una Dailey,
+
+207
+00:15:11,000 --> 00:15:13,000
+pero la Dailey la hacemos por escrito,
+
+208
+00:15:13,000 --> 00:15:15,000
+por el hecho de conseguir,
+
+209
+00:15:15,000 --> 00:15:17,000
+que no terminamos de estar a las 10 de la mañana
+
+210
+00:15:17,000 --> 00:15:19,000
+todo el mundo con Estado, viéndonos las caras.
+
+211
+00:15:19,000 --> 00:15:21,000
+Entonces queremos esa libertad, pero queremos esa Dailey,
+
+212
+00:15:21,000 --> 00:15:25,000
+y entonces, ¿cómo consigues que sea asíncrono?
+
+213
+00:15:25,000 --> 00:15:29,000
+Porque es la única necesidad que tenemos de sincronía a día de hoy.
+
+214
+00:15:29,000 --> 00:15:31,000
+¿Cómo consigues que sea asíncrono?
+
+215
+00:15:31,000 --> 00:15:33,000
+Sin tener que obligar a todo el mundo
+
+216
+00:15:33,000 --> 00:15:35,000
+a estar a las 10 con Estado en un ordenador.
+
+217
+00:15:35,000 --> 00:15:37,000
+Copy mine.
+
+218
+00:15:45,000 --> 00:15:47,000
+Te voy a responder.
+
+219
+00:15:47,000 --> 00:15:49,000
+Bueno, yo me llamo Sergio,
+
+220
+00:15:49,000 --> 00:15:51,000
+trabajo también en remoto,
+
+221
+00:15:51,000 --> 00:15:54,000
+y como dices tú, la conciliación es brutal,
+
+222
+00:15:54,000 --> 00:15:56,000
+si tengo hijos y perritos y de todo.
+
+223
+00:15:56,000 --> 00:15:59,000
+Yo empecé trabajando en remoto,
+
+224
+00:15:59,000 --> 00:16:02,000
+en una empresa que ya era full remote desde su inicio,
+
+225
+00:16:02,000 --> 00:16:05,000
+entonces lo tenían todo muy bien estructurado.
+
+226
+00:16:05,000 --> 00:16:07,000
+Y una cosa que hacíamos allí,
+
+227
+00:16:07,000 --> 00:16:09,000
+que resuelve lo que tu comentas,
+
+228
+00:16:09,000 --> 00:16:12,000
+es que todo el mundo cuando no está adelante,
+
+229
+00:16:12,000 --> 00:16:15,000
+se pone la etiqueta de away from keyboard,
+
+230
+00:16:15,000 --> 00:16:17,000
+para saber que no estás allí,
+
+231
+00:16:17,000 --> 00:16:20,000
+y por la mañana, para no hacer lo sincrono,
+
+232
+00:16:20,000 --> 00:16:22,000
+para no tener que estar allí todo el mundo,
+
+233
+00:16:22,000 --> 00:16:24,000
+lo que hace cada cual es que cuando empieza,
+
+234
+00:16:24,000 --> 00:16:27,000
+va al canal del grupo, da los buenos días,
+
+235
+00:16:27,000 --> 00:16:30,000
+y entonces hace lo que haría en una daily.
+
+236
+00:16:30,000 --> 00:16:33,000
+O sea, cuenta con que está, si tiene algún problema,
+
+237
+00:16:33,000 --> 00:16:37,000
+menciona a alguien si quiere referirse a esa persona,
+
+238
+00:16:37,000 --> 00:16:40,000
+o digamos que hace lo que haría en una daily,
+
+239
+00:16:40,000 --> 00:16:42,000
+pero por escrito, ¿vale?
+
+240
+00:16:42,000 --> 00:16:44,000
+Y no hay una franja horaria,
+
+241
+00:16:44,000 --> 00:16:46,000
+digamos que es lo primero que haces
+
+242
+00:16:46,000 --> 00:16:48,000
+en la 9, a la 10 o cuando sea.
+
+243
+00:16:48,000 --> 00:16:51,000
+Y generalmente da buen resultado,
+
+244
+00:16:51,000 --> 00:16:53,000
+quiero decir, se gasta mucho menos tiempo,
+
+245
+00:16:53,000 --> 00:16:55,000
+el tiempo de la daily te lo ahorras,
+
+246
+00:16:55,000 --> 00:16:58,000
+no obligas a nadie a estar allí a la hora,
+
+247
+00:16:58,000 --> 00:17:00,000
+y lo acabas haciendo por escrito,
+
+248
+00:17:00,000 --> 00:17:02,000
+y el resultado es igual de bueno.
+
+249
+00:17:02,000 --> 00:17:04,000
+O sea, que...
+
+250
+00:17:04,000 --> 00:17:08,000
+No, no, no, en tu canal de tu equipo,
+
+251
+00:17:08,000 --> 00:17:10,000
+con el que harías la daily,
+
+252
+00:17:10,000 --> 00:17:12,000
+tú tienes un canal,
+
+253
+00:17:12,000 --> 00:17:14,000
+por ejemplo, no vas a estar en el equipo,
+
+254
+00:17:14,000 --> 00:17:16,000
+en la Weepphone Reboard, y todo el mundo sabe
+
+255
+00:17:16,000 --> 00:17:18,000
+que tú en ese momento no estás.
+
+256
+00:17:18,000 --> 00:17:20,000
+Que llegas por la mañana atrás,
+
+257
+00:17:20,000 --> 00:17:22,000
+lo puedes ver si hacer lo que harías en la daily.
+
+258
+00:17:22,000 --> 00:17:24,000
+Que te vas por la tarde, pues, hasta mañana.
+
+259
+00:17:24,000 --> 00:17:26,000
+¿Sabes lo que te quiero decir?
+
+260
+00:17:26,000 --> 00:17:28,000
+Es lo que harías en estando en la oficina,
+
+261
+00:17:28,000 --> 00:17:30,000
+si te vieses en las caras, lo haces en ese canal.
+
+262
+00:17:30,000 --> 00:17:32,000
+Y la daily, que es un ritual mal,
+
+263
+00:17:32,000 --> 00:17:34,000
+lo primero que haces por la mañana,
+
+264
+00:17:34,000 --> 00:17:36,000
+lo haces pero en asíncrono, total.
+
+265
+00:17:36,000 --> 00:17:38,000
+Y eso funciona muy bien.
+
+266
+00:17:38,000 --> 00:17:44,000
+¿Y hay algo que tenemos que hacer?
+
+267
+00:17:44,000 --> 00:17:46,000
+No, no, no.
+
+268
+00:17:46,000 --> 00:17:48,000
+Nosotros lo hacíamos en el canal
+
+269
+00:17:48,000 --> 00:17:50,000
+del equipo de trabajo,
+
+270
+00:17:50,000 --> 00:17:52,000
+y era el ritual, era tú cuando llegas por la mañana,
+
+271
+00:17:52,000 --> 00:17:54,000
+lo primero que haces,
+
+272
+00:17:54,000 --> 00:17:56,000
+los buenos días a todo el mundo,
+
+273
+00:17:56,000 --> 00:17:58,000
+cuentas lo que contarías en la daily,
+
+274
+00:17:58,000 --> 00:18:00,000
+y ya estáis y compartes con los demás.
+
+275
+00:18:00,000 --> 00:18:02,000
+Y vas leyendo, conforme va llegando tus compañeros,
+
+276
+00:18:02,000 --> 00:18:04,000
+vas leyendo.
+
+277
+00:18:04,000 --> 00:18:06,000
+Si algo te toca o crees que puedes echar una mano,
+
+278
+00:18:06,000 --> 00:18:08,000
+te va a llevar al asíncrono.
+
+279
+00:18:08,000 --> 00:18:10,000
+Y va bien, funciona.
+
+280
+00:18:10,000 --> 00:18:12,000
+¿Y hay algo que es más igual con este hito?
+
+281
+00:18:12,000 --> 00:18:14,000
+¿Todo lo que es que te despedes?
+
+282
+00:18:14,000 --> 00:18:16,000
+No, no, no.
+
+283
+00:18:16,000 --> 00:18:18,000
+Hay que separar.
+
+284
+00:18:18,000 --> 00:18:20,000
+De hecho hay muchos equipos que hacen lo que tú dices,
+
+285
+00:18:20,000 --> 00:18:22,000
+pero además, por ejemplo,
+
+286
+00:18:22,000 --> 00:18:24,000
+en el caso de Slack,
+
+287
+00:18:24,000 --> 00:18:26,000
+creo que en el Slack,
+
+288
+00:18:26,000 --> 00:18:28,000
+puede grabar vídeos directamente,
+
+289
+00:18:28,000 --> 00:18:30,000
+lo que hace es que se graban
+
+290
+00:18:30,000 --> 00:18:36,000
+y se graban y se graban.
+
+291
+00:18:36,000 --> 00:18:38,000
+Bueno,
+
+292
+00:18:38,000 --> 00:18:40,000
+nosotros para el tema de
+
+293
+00:18:40,000 --> 00:18:42,000
+esto, de estar presente o no,
+
+294
+00:18:42,000 --> 00:18:44,000
+y la comunicación,
+
+295
+00:18:44,000 --> 00:18:46,000
+usamos una herramienta que se llama
+
+296
+00:18:46,000 --> 00:18:48,000
+Gader, no sé si la conocéis,
+
+297
+00:18:48,000 --> 00:18:50,000
+que es como una especie
+
+298
+00:18:50,000 --> 00:18:52,000
+de, bueno, entras
+
+299
+00:18:52,000 --> 00:18:54,000
+y puedes crear un espacio
+
+300
+00:18:54,000 --> 00:18:56,000
+como,
+
+301
+00:18:56,000 --> 00:18:58,000
+es como un mapa
+
+302
+00:18:58,000 --> 00:19:00,000
+que tú tienes diferentes zonas
+
+303
+00:19:00,000 --> 00:19:02,000
+y tú, cuando te conectas,
+
+304
+00:19:02,000 --> 00:19:04,000
+pues tú estás, se ve tu avatar allí
+
+305
+00:19:04,000 --> 00:19:06,000
+y si alguien quiere hablar contigo,
+
+306
+00:19:06,000 --> 00:19:08,000
+se acerca y se enciende la webcam
+
+307
+00:19:08,000 --> 00:19:10,000
+solo en ese momento
+
+308
+00:19:10,000 --> 00:19:12,000
+y empiezas a hablar.
+
+309
+00:19:12,000 --> 00:19:14,000
+Y es un poco, un poco de intentar replicar
+
+310
+00:19:14,000 --> 00:19:16,000
+el mundo real. Por ejemplo, si yo quiero hablar
+
+311
+00:19:16,000 --> 00:19:18,000
+con la persona que está al final de la sala, pues me acerco
+
+312
+00:19:18,000 --> 00:19:20,000
+y hablo con él, no estoy gritando de aquí.
+
+313
+00:19:20,000 --> 00:19:22,000
+Entonces, esto nos va bien porque
+
+314
+00:19:22,000 --> 00:19:24,000
+ahora ya cada equipo tiene como su zona,
+
+315
+00:19:24,000 --> 00:19:26,000
+allí
+
+316
+00:19:26,000 --> 00:19:28,000
+si no quieres hablar con ellos, no hablas,
+
+317
+00:19:28,000 --> 00:19:30,000
+pero sabes que estar
+
+318
+00:19:30,000 --> 00:19:32,000
+y si tienes alguna duda o lo que sea,
+
+319
+00:19:32,000 --> 00:19:34,000
+pues simplemente vas
+
+320
+00:19:34,000 --> 00:19:36,000
+y te acercas. Y aquello ya
+
+321
+00:19:36,000 --> 00:19:38,000
+la otra persona ve
+
+322
+00:19:38,000 --> 00:19:40,000
+que habían se acercado, les sabe como un aviso
+
+323
+00:19:40,000 --> 00:19:42,000
+y puede responderte o no.
+
+324
+00:19:42,000 --> 00:19:44,000
+Y bueno,
+
+325
+00:19:44,000 --> 00:19:46,000
+y creo que esto
+
+326
+00:19:46,000 --> 00:19:48,000
+cumple un poco,
+
+327
+00:19:48,000 --> 00:19:50,000
+una cosa que para mí es muy importante,
+
+328
+00:19:50,000 --> 00:19:52,000
+que cuando trabajas en remoto es la sobrecomunicación,
+
+329
+00:19:52,000 --> 00:19:54,000
+tienes que sobrecomunicar,
+
+330
+00:19:54,000 --> 00:19:56,000
+porque si alguien está,
+
+331
+00:19:56,000 --> 00:19:58,000
+mi compañero que vive en Taiwán
+
+332
+00:19:58,000 --> 00:20:00,000
+quiere saber si en ese momento estoy o no,
+
+333
+00:20:00,000 --> 00:20:02,000
+simplemente
+
+334
+00:20:02,000 --> 00:20:04,000
+se conecta allí,
+
+335
+00:20:04,000 --> 00:20:06,000
+si me ve en la lista de usuarios, me ve conectado,
+
+336
+00:20:06,000 --> 00:20:08,000
+pues ya sabe que estoy
+
+337
+00:20:08,000 --> 00:20:10,000
+y si estoy allí es porque estoy disponible
+
+338
+00:20:10,000 --> 00:20:12,000
+a que la gente pueda hablar conmigo.
+
+339
+00:20:12,000 --> 00:20:14,000
+O sea, creo que
+
+340
+00:20:14,000 --> 00:20:16,000
+en este sentido
+
+341
+00:20:16,000 --> 00:20:18,000
+esta gente que ha hecho esta herramienta
+
+342
+00:20:18,000 --> 00:20:20,000
+ha conseguido un poco,
+
+343
+00:20:20,000 --> 00:20:22,000
+replicar un poco
+
+344
+00:20:22,000 --> 00:20:24,000
+lo que es un mundo real, un mundo virtual.
+
+345
+00:20:24,000 --> 00:20:26,000
+Simplemente esto.
+
+346
+00:20:28,000 --> 00:20:30,000
+¿Tener algún otro ejemplo de herramienta?
+
+347
+00:20:30,000 --> 00:20:32,000
+o algo así que...
+
+348
+00:20:32,000 --> 00:20:34,000
+Perdón, perdón.
+
+349
+00:20:36,000 --> 00:20:38,000
+Vale, yo por contar mi experiencia,
+
+350
+00:20:38,000 --> 00:20:40,000
+yo empecé a trabajar en remoto
+
+351
+00:20:40,000 --> 00:20:42,000
+en 2006 aproximadamente,
+
+352
+00:20:42,000 --> 00:20:44,000
+estuve como 4 años trabajando en remoto,
+
+353
+00:20:44,000 --> 00:20:46,000
+alguna vez iba a la oficina
+
+354
+00:20:46,000 --> 00:20:48,000
+además porque yo estaba en elmería,
+
+355
+00:20:48,000 --> 00:20:50,000
+pero la empresa la tenía engranada, todo lo que entiendo pues estaba allí.
+
+356
+00:20:50,000 --> 00:20:52,000
+Echaban mil horas más de la cuenta
+
+357
+00:20:52,000 --> 00:20:54,000
+porque se te va el orden del tiempo,
+
+358
+00:20:54,000 --> 00:20:56,000
+todo esto que ha pasado en pandemia, ya lo viví yo en aquel momento.
+
+359
+00:20:56,000 --> 00:20:58,000
+Y a los 4 años,
+
+360
+00:20:58,000 --> 00:21:00,000
+me mudé a granada y empecé a ir a la oficina,
+
+361
+00:21:00,000 --> 00:21:02,000
+pero siempre tenía mis días de estar en casa,
+
+362
+00:21:02,000 --> 00:21:04,000
+mis días de ir a la oficina,
+
+363
+00:21:04,000 --> 00:21:06,000
+porque es verdad que cuando estás en casa
+
+364
+00:21:06,000 --> 00:21:08,000
+es como que eres más productivo, te acentras más
+
+365
+00:21:08,000 --> 00:21:10,000
+y ganas más tiempo para otras cosas,
+
+366
+00:21:10,000 --> 00:21:12,000
+pero también es verdad que el
+
+367
+00:21:12,000 --> 00:21:14,000
+trato personal que consigues en esa conversación
+
+368
+00:21:14,000 --> 00:21:16,000
+de pasillo, en esas conversaciones random,
+
+369
+00:21:16,000 --> 00:21:18,000
+que no tengo ninguna duda,
+
+370
+00:21:18,000 --> 00:21:20,000
+hace que también conozca las personas con las que trabajas,
+
+371
+00:21:20,000 --> 00:21:22,000
+y eso también ayuda mucho en el día a día laboral,
+
+372
+00:21:22,000 --> 00:21:24,000
+porque al final cuando estás en una reunión
+
+373
+00:21:24,000 --> 00:21:26,000
+de trabajo hablando con alguien del equipo,
+
+374
+00:21:26,000 --> 00:21:28,000
+sabe hasta qué punto a esa persona,
+
+375
+00:21:28,000 --> 00:21:30,000
+cuando dice algo, con qué sentido lo dice,
+
+376
+00:21:30,000 --> 00:21:32,000
+lo vas pillando antes, hace que todo fluya más
+
+377
+00:21:32,000 --> 00:21:34,000
+y te sientan más parte de ese equipo
+
+378
+00:21:34,000 --> 00:21:36,000
+en el día a día,
+
+379
+00:21:36,000 --> 00:21:38,000
+y aunque estés en remoto,
+
+380
+00:21:38,000 --> 00:21:40,000
+estás hablando de trabajo,
+
+381
+00:21:40,000 --> 00:21:42,000
+pero hay guiños por decirlo de alguna forma.
+
+382
+00:21:42,000 --> 00:21:44,000
+Entonces, yo a día de hoy,
+
+383
+00:21:44,000 --> 00:21:46,000
+después de pandemia y todo eso,
+
+384
+00:21:46,000 --> 00:21:48,000
+otra vez estoy volviendo a decir,
+
+385
+00:21:48,000 --> 00:21:50,000
+hoy un día o dos a la oficina,
+
+386
+00:21:50,000 --> 00:21:52,000
+de gente después, una especie de mí,
+
+387
+00:21:52,000 --> 00:21:54,000
+y con eso a mí personalmente me va bien.
+
+388
+00:21:54,000 --> 00:21:56,000
+Yo he dicho, desde donde he trabajado antes,
+
+389
+00:21:56,000 --> 00:21:58,000
+lo que me ha hecho de menos era el fútbolín.
+
+390
+00:21:58,000 --> 00:22:00,000
+Y no en sí por el fútbolín,
+
+391
+00:22:00,000 --> 00:22:02,000
+sino por el hecho de
+
+392
+00:22:02,000 --> 00:22:04,000
+el rato que echábamos en el fútbolín.
+
+393
+00:22:04,000 --> 00:22:06,000
+He hecho que
+
+394
+00:22:06,000 --> 00:22:08,000
+yo llegaba hasta del orden de 11
+
+395
+00:22:08,000 --> 00:22:10,000
+ahora a la oficina,
+
+396
+00:22:10,000 --> 00:22:12,000
+pero que a la mejor 4 o 5 eran fútbolín.
+
+397
+00:22:12,000 --> 00:22:14,000
+Fútbolín, cafeterías,
+
+398
+00:22:14,000 --> 00:22:16,000
+no, y eso se echa mucho de menos,
+
+399
+00:22:16,000 --> 00:22:18,000
+la verdad también.
+
+400
+00:22:18,000 --> 00:22:20,000
+Es verdad que ahora lo que hago
+
+401
+00:22:20,000 --> 00:22:22,000
+es que por ejemplo,
+
+402
+00:22:22,000 --> 00:22:24,000
+llego y digo,
+
+403
+00:22:24,000 --> 00:22:26,000
+vamos a vernos mañana para desayunar.
+
+404
+00:22:26,000 --> 00:22:28,000
+Echamos un ratillo de desayunar,
+
+405
+00:22:28,000 --> 00:22:30,000
+y después pues,
+
+406
+00:22:30,000 --> 00:22:32,000
+con la gente que tengo cercano
+
+407
+00:22:32,000 --> 00:22:34,000
+de con los que trabajaba,
+
+408
+00:22:34,000 --> 00:22:36,000
+y alguno que se ha venido conmigo
+
+409
+00:22:36,000 --> 00:22:38,000
+a la empresa nueva.
+
+410
+00:22:38,000 --> 00:22:40,000
+Bueno, pero sí, es verdad que
+
+411
+00:22:40,000 --> 00:22:42,000
+a mí me pasó
+
+412
+00:22:42,000 --> 00:22:44,000
+una empresa donde yo trabajo,
+
+413
+00:22:44,000 --> 00:22:46,000
+en San Ibeil, en California,
+
+414
+00:22:46,000 --> 00:22:48,000
+y claro, yo era un pozo,
+
+415
+00:22:48,000 --> 00:22:50,000
+yo era un poco como
+
+416
+00:22:50,000 --> 00:22:52,000
+banda e-mail y tal, y es como tirar banda
+
+417
+00:22:52,000 --> 00:22:54,000
+de dar pozo de los deseos, ¿sabes?
+
+418
+00:22:54,000 --> 00:22:56,000
+No saben muy bien, ¿sabes qué? Personas,
+
+419
+00:22:56,000 --> 00:22:58,000
+de atrás, pero tú no las ves,
+
+420
+00:22:58,000 --> 00:23:00,000
+entonces a la mejor no son personas de veridad.
+
+421
+00:23:00,000 --> 00:23:02,000
+A mí me pasó,
+
+422
+00:23:02,000 --> 00:23:04,000
+tenían muchos clientes en Israel,
+
+423
+00:23:04,000 --> 00:23:06,000
+y cuando hicieron Israel
+
+424
+00:23:06,000 --> 00:23:08,000
+a roba, nombre de la empresa.com,
+
+425
+00:23:08,000 --> 00:23:10,000
+pues la peña sé que pensaba que yo era un alias
+
+426
+00:23:10,000 --> 00:23:12,000
+de Israel, y entonces a mí me llegaban
+
+427
+00:23:12,000 --> 00:23:14,000
+pues contratos, historias, y decía,
+
+428
+00:23:14,000 --> 00:23:16,000
+pero esto para qué es, tú quién eres,
+
+429
+00:23:16,000 --> 00:23:18,000
+no, historiasin.
+
+430
+00:23:18,000 --> 00:23:20,000
+Cuando fui allí, estuve
+
+431
+00:23:20,000 --> 00:23:22,000
+con ellos, fue como un cambio de mentalidad
+
+432
+00:23:22,000 --> 00:23:24,000
+brutal, en la forma de trabajar con ellos, ¿sabes?
+
+433
+00:23:24,000 --> 00:23:26,000
+Sí, sí.
+
+434
+00:23:26,000 --> 00:23:28,000
+Hola, buenas, mi nombre es Mónica,
+
+435
+00:23:28,000 --> 00:23:30,000
+y bueno, y mal,
+
+436
+00:23:30,000 --> 00:23:32,000
+desde la pandemia trabajo
+
+437
+00:23:32,000 --> 00:23:34,000
+en remoto,
+
+438
+00:23:34,000 --> 00:23:36,000
+trabajo para una empresa de Tarragona,
+
+439
+00:23:36,000 --> 00:23:38,000
+me he mudado aquí a Granada,
+
+440
+00:23:38,000 --> 00:23:40,000
+y bueno, mi experiencia con el teletrabajo
+
+441
+00:23:40,000 --> 00:23:42,000
+es que es un poco duro
+
+442
+00:23:42,000 --> 00:23:44,000
+estar en casa todo el rato, he hecho esto
+
+443
+00:23:44,000 --> 00:23:46,000
+de separar una habitación, para trabajar
+
+444
+00:23:46,000 --> 00:23:48,000
+aparte, y tener mi espacio,
+
+445
+00:23:48,000 --> 00:23:50,000
+pero con todo eso, yo creo que
+
+446
+00:23:50,000 --> 00:23:52,000
+la parte social,
+
+447
+00:23:52,000 --> 00:23:54,000
+es la que falta un poco cuando estás
+
+448
+00:23:54,000 --> 00:23:56,000
+total en casa. Luego,
+
+449
+00:23:56,000 --> 00:23:58,000
+también tengo añadido
+
+450
+00:23:58,000 --> 00:24:00,000
+de que al no ser de aquí, no tengo
+
+451
+00:24:00,000 --> 00:24:02,000
+muchos amigos, que no es como te pasa el caso tuyo
+
+452
+00:24:02,000 --> 00:24:04,000
+que tú dices, pues acabo, llamo a mis amigos,
+
+453
+00:24:04,000 --> 00:24:06,000
+y vamos a tomarnos una cerveza,
+
+454
+00:24:06,000 --> 00:24:08,000
+y vamos a ir a algún sitio.
+
+455
+00:24:08,000 --> 00:24:10,000
+Entonces, por esta parte también, me he planteado
+
+456
+00:24:10,000 --> 00:24:12,000
+lo del co-working, por eso,
+
+457
+00:24:12,000 --> 00:24:14,000
+intentar conocer otras personas, que
+
+458
+00:24:14,000 --> 00:24:16,000
+también estén en la misma situación,
+
+459
+00:24:16,000 --> 00:24:18,000
+que, bueno, diariamente
+
+460
+00:24:18,000 --> 00:24:20,000
+estén yendo allí, y puedas como relacionarte
+
+461
+00:24:20,000 --> 00:24:22,000
+un poco más. Y bueno,
+
+462
+00:24:22,000 --> 00:24:24,000
+esta es mi experiencia un poco personal,
+
+463
+00:24:24,000 --> 00:24:26,000
+el trabajo
+
+464
+00:24:26,000 --> 00:24:28,000
+remoto total se me hace un poco duro,
+
+465
+00:24:28,000 --> 00:24:30,000
+pero mi pregunta
+
+466
+00:24:30,000 --> 00:24:32,000
+era, en otro sentido,
+
+467
+00:24:32,000 --> 00:24:34,000
+esta es mi experiencia personal, pero me pregunté en otro sentido,
+
+468
+00:24:34,000 --> 00:24:36,000
+y es,
+
+469
+00:24:36,000 --> 00:24:38,000
+las personas que,
+
+470
+00:24:38,000 --> 00:24:40,000
+muchos que trabajan en remoto,
+
+471
+00:24:40,000 --> 00:24:42,000
+su primera experiencia fue que estuvieron físicamente
+
+472
+00:24:42,000 --> 00:24:44,000
+en el sitio,
+
+473
+00:24:44,000 --> 00:24:46,000
+y luego pasaron a remoto.
+
+474
+00:24:46,000 --> 00:24:48,000
+Entonces, ya estar físicamente, ya conociste
+
+475
+00:24:48,000 --> 00:24:50,000
+las personas, ya te relacionaste, ya les pusiste
+
+476
+00:24:50,000 --> 00:24:52,000
+cara, y luego te fuiste a remoto.
+
+477
+00:24:52,000 --> 00:24:54,000
+Entonces, ya conoces un poco,
+
+478
+00:24:54,000 --> 00:24:56,000
+por ejemplo, el business, el empresa,
+
+479
+00:24:56,000 --> 00:24:58,000
+y todo, y ya te resulta fácil
+
+480
+00:24:58,000 --> 00:25:00,000
+irte a remoto, porque ya llevas a lo mejor
+
+481
+00:25:00,000 --> 00:25:02,000
+un año trabajando en eso, y ya conoces como va.
+
+482
+00:25:02,000 --> 00:25:04,000
+Si alguien tiene experiencia
+
+483
+00:25:04,000 --> 00:25:06,000
+de empezar directamente en remoto,
+
+484
+00:25:06,000 --> 00:25:08,000
+sin conocer a las personas
+
+485
+00:25:08,000 --> 00:25:10,000
+y sin tener,
+
+486
+00:25:10,000 --> 00:25:12,000
+es decir, cómo funciona la curva
+
+487
+00:25:12,000 --> 00:25:14,000
+de aprendizaje cuando entras en una empresa
+
+488
+00:25:14,000 --> 00:25:16,000
+directamente en remoto.
+
+489
+00:25:16,000 --> 00:25:18,000
+Porque en mi caso,
+
+490
+00:25:18,000 --> 00:25:20,000
+yo entré, ya conocí a todo el mundo, y luego me fui a remoto,
+
+491
+00:25:20,000 --> 00:25:22,000
+y creo que más o menos la mayoría de la gente les pasa esto.
+
+492
+00:25:22,000 --> 00:25:24,000
+Que es después, me mudo a mi ciudad,
+
+493
+00:25:24,000 --> 00:25:26,000
+con mi familia a mejorar,
+
+494
+00:25:26,000 --> 00:25:28,000
+y ya como que tienes esa curva de aprendizaje,
+
+495
+00:25:28,000 --> 00:25:30,000
+y cuando entras directo a remoto,
+
+496
+00:25:30,000 --> 00:25:32,000
+no la tienes, cómo funciona.
+
+497
+00:25:32,000 --> 00:25:34,000
+No sé qué seas un experto
+
+498
+00:25:34,000 --> 00:25:36,000
+en la tecnología en que vas a trabajar,
+
+499
+00:25:36,000 --> 00:25:38,000
+y digas, pues, soy un
+
+500
+00:25:38,000 --> 00:25:40,000
+coco en esto, y no tengo problema,
+
+501
+00:25:40,000 --> 00:25:42,000
+me adapto muy rápido,
+
+502
+00:25:42,000 --> 00:25:44,000
+y si no lo es, cómo las empresas
+
+503
+00:25:44,000 --> 00:25:46,000
+se plantean esta curva.
+
+504
+00:25:46,000 --> 00:25:48,000
+Si alguien tiene experiencia en esto.
+
+505
+00:25:56,000 --> 00:25:58,000
+Hola, hablo un poco sobre mi experiencia.
+
+506
+00:25:58,000 --> 00:26:00,000
+Yo también comencé
+
+507
+00:26:00,000 --> 00:26:02,000
+híbrido, trabajando
+
+508
+00:26:02,000 --> 00:26:04,000
+desde el 2016,
+
+509
+00:26:04,000 --> 00:26:06,000
+podí ir a la empresa, justamente había conocido
+
+510
+00:26:06,000 --> 00:26:08,000
+a todas las personas de la empresa,
+
+511
+00:26:08,000 --> 00:26:10,000
+y después a partir de 2019, pasé al 100%
+
+512
+00:26:10,000 --> 00:26:12,000
+remoto.
+
+513
+00:26:12,000 --> 00:26:14,000
+Y yo creo que eso fue
+
+514
+00:26:14,000 --> 00:26:16,000
+lo más duro para mí,
+
+515
+00:26:16,000 --> 00:26:18,000
+haber conocido a toda la empresa, compartir con
+
+516
+00:26:18,000 --> 00:26:20,000
+toda la empresa, teníamos
+
+517
+00:26:20,000 --> 00:26:22,000
+un ritual de PlayStation
+
+518
+00:26:22,000 --> 00:26:24,000
+que se parecía mucho al del fútbolín.
+
+519
+00:26:24,000 --> 00:26:26,000
+Y lo más difícil
+
+520
+00:26:26,000 --> 00:26:28,000
+fue pasar a ser, sentir
+
+521
+00:26:28,000 --> 00:26:30,000
+que eres como ciudadano de segunda clase
+
+522
+00:26:30,000 --> 00:26:32,000
+dentro de la empresa.
+
+523
+00:26:32,000 --> 00:26:34,000
+Porque eres la única persona que está remota,
+
+524
+00:26:34,000 --> 00:26:36,000
+te tienes que,
+
+525
+00:26:36,000 --> 00:26:38,000
+no sé, en una reunión, tienes el ruido
+
+526
+00:26:38,000 --> 00:26:40,000
+de la mesa, tienes el ruido de las personas
+
+527
+00:26:40,000 --> 00:26:42,000
+tomando café, interactuando
+
+528
+00:26:42,000 --> 00:26:44,000
+los cinco minutos previos a la reunión,
+
+529
+00:26:44,000 --> 00:26:46,000
+y tú estás conectado con los audífonos
+
+530
+00:26:46,000 --> 00:26:48,000
+ahí esperando, sin poder
+
+531
+00:26:48,000 --> 00:26:50,000
+disfrutar de toda esa interacción
+
+532
+00:26:50,000 --> 00:26:52,000
+que está sucediendo dentro de la empresa.
+
+533
+00:26:52,000 --> 00:26:54,000
+Después de la pandemia,
+
+534
+00:26:54,000 --> 00:26:56,000
+pasó algo bastante interesante, porque
+
+535
+00:26:56,000 --> 00:26:58,000
+todo el mundo empezó a estar remoto,
+
+536
+00:26:58,000 --> 00:27:00,000
+donde
+
+537
+00:27:00,000 --> 00:27:02,000
+todo el mundo tuvo que vivir esa experiencia.
+
+538
+00:27:02,000 --> 00:27:04,000
+Esa experiencia de, oye, me siento solo,
+
+539
+00:27:04,000 --> 00:27:06,000
+no tengo con quién compartir, y se empezaron a crear
+
+540
+00:27:06,000 --> 00:27:08,000
+actividades
+
+541
+00:27:08,000 --> 00:27:10,000
+para poder conciliar
+
+542
+00:27:10,000 --> 00:27:12,000
+justamente y ese
+
+543
+00:27:12,000 --> 00:27:14,000
+tipo de actividades, de
+
+544
+00:27:14,000 --> 00:27:16,000
+necesidades de interacción.
+
+545
+00:27:16,000 --> 00:27:18,000
+Una cosa que nosotros nos ayudo, porque éramos un equipo
+
+546
+00:27:18,000 --> 00:27:20,000
+de físico que podíamos estar híbridos
+
+547
+00:27:20,000 --> 00:27:22,000
+y íbamos y veníamos de la empresa,
+
+548
+00:27:22,000 --> 00:27:24,000
+fue utilizar otro tipo de aplicaciones que simulacen
+
+549
+00:27:24,000 --> 00:27:26,000
+un poco las conversaciones
+
+550
+00:27:26,000 --> 00:27:28,000
+de pasillo. A nosotros, en este caso,
+
+551
+00:27:28,000 --> 00:27:30,000
+nos estamos hablando de herramientas, a nosotros nos ayudó muchísimo
+
+552
+00:27:30,000 --> 00:27:32,000
+el Discord, porque
+
+553
+00:27:32,000 --> 00:27:34,000
+simula conversaciones
+
+554
+00:27:34,000 --> 00:27:36,000
+de pasillo, la gente podía estar mutiada dentro
+
+555
+00:27:36,000 --> 00:27:38,000
+del canal, podríamos escuchar música
+
+556
+00:27:38,000 --> 00:27:40,000
+en conjunto, mientras que estábamos dentro del canal,
+
+557
+00:27:40,000 --> 00:27:42,000
+y la persona
+
+558
+00:27:42,000 --> 00:27:44,000
+se desmuteaba y decía, yo tengo un problema aquí
+
+559
+00:27:44,000 --> 00:27:46,000
+con esta función, tengo un problema con el servidor,
+
+560
+00:27:46,000 --> 00:27:48,000
+tengo un problema con tal cosa,
+
+561
+00:27:48,000 --> 00:27:50,000
+la otra persona se desmuteaba, compartía la pantalla,
+
+562
+00:27:50,000 --> 00:27:52,000
+era muy parecido estar en la empresa,
+
+563
+00:27:52,000 --> 00:27:54,000
+eso
+
+564
+00:27:54,000 --> 00:27:56,000
+hizo un cambio total al trabajo del día a día,
+
+565
+00:27:56,000 --> 00:27:58,000
+después de hace dos años me tocó
+
+566
+00:27:58,000 --> 00:28:00,000
+un rol de liderazgo y crear el equipo
+
+567
+00:28:00,000 --> 00:28:02,000
+con el que estaba trabajando, con el que estoy trabajando
+
+568
+00:28:02,000 --> 00:28:04,000
+hoy en día, y empezaron
+
+569
+00:28:04,000 --> 00:28:06,000
+a surgir otro problema
+
+570
+00:28:06,000 --> 00:28:08,000
+dentro de la remoticidad,
+
+571
+00:28:08,000 --> 00:28:10,000
+que es que aunque
+
+572
+00:28:10,000 --> 00:28:12,000
+un buen trabajo con sonoraria
+
+573
+00:28:12,000 --> 00:28:14,000
+bastante grande, porque la mayor parte del equipo
+
+574
+00:28:14,000 --> 00:28:16,000
+está en América, entonces
+
+575
+00:28:16,000 --> 00:28:18,000
+los uno a uno también
+
+576
+00:28:18,000 --> 00:28:20,000
+tuvimos que empezarlos a pasar a síncronos,
+
+577
+00:28:20,000 --> 00:28:22,000
+y nosotros utilizamos
+
+578
+00:28:22,000 --> 00:28:24,000
+otra herramienta, como puede ser el notion,
+
+579
+00:28:24,000 --> 00:28:26,000
+y cada quien tenía que ir
+
+580
+00:28:26,000 --> 00:28:28,000
+siendo su uno a uno, y
+
+581
+00:28:28,000 --> 00:28:30,000
+un uno a uno bastante asíncrono
+
+582
+00:28:30,000 --> 00:28:32,000
+a nivel escrito, para después
+
+583
+00:28:32,000 --> 00:28:34,000
+hacer la reunión
+
+584
+00:28:34,000 --> 00:28:36,000
+lo más corta posible, de 20, 15, 30 minutos,
+
+585
+00:28:36,000 --> 00:28:38,000
+simplemente para
+
+586
+00:28:38,000 --> 00:28:40,000
+eso en este caso nosotros nos ayudó
+
+587
+00:28:40,000 --> 00:28:42,000
+bastante,
+
+588
+00:28:42,000 --> 00:28:44,000
+efectivamente
+
+589
+00:28:44,000 --> 00:28:46,000
+todo lo que comentaron de tener una habitación
+
+590
+00:28:46,000 --> 00:28:48,000
+aparte, para trabajar
+
+591
+00:28:48,000 --> 00:28:50,000
+a mí me generó
+
+592
+00:28:50,000 --> 00:28:52,000
+bastante cambio
+
+593
+00:28:52,000 --> 00:28:54,000
+a la hora de la remoticidad
+
+594
+00:28:56,000 --> 00:28:58,000
+Muchas gracias, tenemos 5 minutillos
+
+595
+00:28:58,000 --> 00:29:00,000
+para terminar, ¿vale?
+
+596
+00:29:00,000 --> 00:29:02,000
+¿Por qué había otro muchacho?
+
+597
+00:29:02,000 --> 00:29:04,000
+Bueno, yo iba a contar mi experiencia
+
+598
+00:29:04,000 --> 00:29:06,000
+yo llevo más de 4 años trabajando el remoto
+
+599
+00:29:06,000 --> 00:29:08,000
+y bueno, he vivido tanto el caso
+
+600
+00:29:08,000 --> 00:29:10,000
+de empezar
+
+601
+00:29:10,000 --> 00:29:12,000
+siendo 100% remoto,
+
+602
+00:29:12,000 --> 00:29:14,000
+como el caso de haber estado
+
+603
+00:29:14,000 --> 00:29:16,000
+presencial y pasar a la remoto
+
+604
+00:29:16,000 --> 00:29:18,000
+En el primer caso
+
+605
+00:29:18,000 --> 00:29:20,000
+te encuentra
+
+606
+00:29:20,000 --> 00:29:22,000
+exactamente lo que ha dicho él
+
+607
+00:29:22,000 --> 00:29:24,000
+que pasa a sentirte un poco solo
+
+608
+00:29:24,000 --> 00:29:26,000
+un poco, tenía ya un grupo de amigos
+
+609
+00:29:26,000 --> 00:29:28,000
+un grupo de tal
+
+610
+00:29:28,000 --> 00:29:30,000
+y se da un caso
+
+611
+00:29:30,000 --> 00:29:32,000
+que bueno, ahora comentaré
+
+612
+00:29:32,000 --> 00:29:34,000
+que puede ser
+
+613
+00:29:34,000 --> 00:29:36,000
+bastante prejudicial y tóxico
+
+614
+00:29:36,000 --> 00:29:38,000
+Por otra parte
+
+615
+00:29:38,000 --> 00:29:40,000
+cuando empiezas 100% el remoto
+
+616
+00:29:40,000 --> 00:29:42,000
+tiene un beneficio, que aunque suene
+
+617
+00:29:42,000 --> 00:29:44,000
+paradójico
+
+618
+00:29:44,000 --> 00:29:46,000
+no tener tanta
+
+619
+00:29:46,000 --> 00:29:48,000
+sobre información sobre tema
+
+620
+00:29:48,000 --> 00:29:50,000
+que no son técnicos
+
+621
+00:29:50,000 --> 00:29:52,000
+te puede ayudar a
+
+622
+00:29:52,000 --> 00:29:54,000
+leer requisito
+
+623
+00:29:54,000 --> 00:29:56,000
+de forma mucho más
+
+624
+00:29:56,000 --> 00:29:58,000
+objetiva
+
+625
+00:29:58,000 --> 00:30:00,000
+sin dejarte llevar por cosas que has leído
+
+626
+00:30:00,000 --> 00:30:02,000
+por cosas que se comente en un café
+
+627
+00:30:02,000 --> 00:30:04,000
+por cosas que, entonces, al final eso
+
+628
+00:30:04,000 --> 00:30:06,000
+aunque suene raro
+
+629
+00:30:06,000 --> 00:30:08,000
+tener menos información puede llegar a ser positivo
+
+630
+00:30:08,000 --> 00:30:10,000
+Lo que quería decir es que
+
+631
+00:30:10,000 --> 00:30:12,000
+hay una diferencia clara entre
+
+632
+00:30:12,000 --> 00:30:14,000
+empresas
+
+633
+00:30:14,000 --> 00:30:16,000
+que son presenciales
+
+634
+00:30:16,000 --> 00:30:18,000
+y tiene una persona en remoto
+
+635
+00:30:18,000 --> 00:30:20,000
+por ejemplo, en tu caso
+
+636
+00:30:20,000 --> 00:30:22,000
+equipos
+
+637
+00:30:22,000 --> 00:30:24,000
+que son 100% el remoto
+
+638
+00:30:24,000 --> 00:30:26,000
+porque como os he dicho antes
+
+639
+00:30:26,000 --> 00:30:28,000
+la sobre información es necesaria
+
+640
+00:30:28,000 --> 00:30:30,000
+pero cuando está en un equipo 100% el remoto
+
+641
+00:30:30,000 --> 00:30:32,000
+de todo el mundo está en remoto
+
+642
+00:30:32,000 --> 00:30:34,000
+o la mayoría está en remoto
+
+643
+00:30:34,000 --> 00:30:36,000
+eso se hace un proceso natural
+
+644
+00:30:36,000 --> 00:30:38,000
+cuando es una única persona
+
+645
+00:30:38,000 --> 00:30:40,000
+o son un par de personas
+
+646
+00:30:40,000 --> 00:30:42,000
+dentro de un grupo más grande
+
+647
+00:30:42,000 --> 00:30:44,000
+se produce lo que decía es esa toxicidad
+
+648
+00:30:44,000 --> 00:30:46,000
+en el sentido de que
+
+649
+00:30:46,000 --> 00:30:48,000
+suele pasar
+
+650
+00:30:48,000 --> 00:30:50,000
+que en conversaciones de pasillos se dice
+
+651
+00:30:50,000 --> 00:30:52,000
+oye, tú deberías hacer esto
+
+652
+00:30:52,000 --> 00:30:54,000
+y puede incluso llegar a saltarse
+
+653
+00:30:54,000 --> 00:30:56,000
+ciertas cadenas
+
+654
+00:30:56,000 --> 00:30:58,000
+y seguramente a muchos no habrá pasado de
+
+655
+00:30:58,000 --> 00:31:00,000
+ah, es que yo implementé esto
+
+656
+00:31:00,000 --> 00:31:02,000
+pero vale que esto no había que hacerlo
+
+657
+00:31:02,000 --> 00:31:04,000
+pero me lo dijo no sé quién en el café
+
+658
+00:31:04,000 --> 00:31:06,000
+se sabe lo que te quiere decir
+
+659
+00:31:06,000 --> 00:31:08,000
+porque son detallitos como está
+
+660
+00:31:08,000 --> 00:31:10,000
+que se pueden saltar
+
+661
+00:31:10,000 --> 00:31:12,000
+y puede haber un poco de cabo en ese sentido
+
+662
+00:31:12,000 --> 00:31:14,000
+entonces hay que decirle muy bien
+
+663
+00:31:14,000 --> 00:31:16,000
+cuando hablamos de equipos remoto
+
+664
+00:31:16,000 --> 00:31:18,000
+cuando hablamos de gente remota
+
+665
+00:31:18,000 --> 00:31:20,000
+dentro de un equipo
+
+666
+00:31:20,000 --> 00:31:22,000
+de hecho hay muchas empresas
+
+667
+00:31:22,000 --> 00:31:24,000
+que por ejemplo en la MiAM
+
+668
+00:31:24,000 --> 00:31:26,000
+hay equipos que son totalmente remoto
+
+669
+00:31:26,000 --> 00:31:28,000
+el mío por ejemplo
+
+670
+00:31:28,000 --> 00:31:30,000
+y otros equipos que son solo físicos
+
+671
+00:31:30,000 --> 00:31:32,000
+dentro de la misma empresa
+
+672
+00:31:32,000 --> 00:31:34,000
+solo equipos remoto
+
+673
+00:31:34,000 --> 00:31:36,000
+o solo equipos físicos
+
+674
+00:31:36,000 --> 00:31:38,000
+no hay ningún caso
+
+675
+00:31:38,000 --> 00:31:40,000
+de tener una persona externa
+
+676
+00:31:40,000 --> 00:31:42,000
+para que no pase ese tipo de situaciones
+
+677
+00:31:42,000 --> 00:31:44,000
+entonces los manajeros no se está
+
+678
+00:31:44,000 --> 00:31:46,000
+enteciendo cuando van a empezar el equipo
+
+679
+00:31:46,000 --> 00:31:48,000
+tienen como una decisión de vamos a estar en físico
+
+680
+00:31:48,000 --> 00:31:50,000
+o vamos a estar en remoto
+
+681
+00:31:50,000 --> 00:31:52,000
+y para antes, yo usé equipos que estaban en físico
+
+682
+00:31:52,000 --> 00:31:54,000
+y se han pasado remoto
+
+683
+00:31:54,000 --> 00:31:56,000
+porque les interesaba un equipo por ejemplo de un colega mío
+
+684
+00:31:56,000 --> 00:31:58,000
+que estaba en la República Checa
+
+685
+00:31:58,000 --> 00:32:00,000
+todo en físico, lo contrataron
+
+686
+00:32:00,000 --> 00:32:02,000
+y van a la oficina, estarán conduos
+
+687
+00:32:02,000 --> 00:32:04,000
+pero en plan, por tanto, es un sitio
+
+688
+00:32:04,000 --> 00:32:06,000
+donde trabaja tipo co-working
+
+689
+00:32:06,000 --> 00:32:08,000
+como si fuese un co-working pero que tienen allí
+
+690
+00:32:08,000 --> 00:32:10,000
+para estos calentes, pero ya ninguno tiene más
+
+691
+00:32:10,000 --> 00:32:12,000
+puesto físico de ese suyo en la oficina
+
+692
+00:32:12,000 --> 00:32:14,000
+el problema que comentaba
+
+693
+00:32:14,000 --> 00:32:16,000
+también de las charlas
+
+694
+00:32:16,000 --> 00:32:18,000
+de café y las cadenas de mando y demás
+
+695
+00:32:18,000 --> 00:32:20,000
+también pasa si está 100% remoto
+
+696
+00:32:20,000 --> 00:32:22,000
+me ha pasado por ejemplo
+
+697
+00:32:22,000 --> 00:32:24,000
+con otro manager
+
+698
+00:32:24,000 --> 00:32:26,000
+que me he dado una información que es el otro mani en el contradictorio
+
+699
+00:32:26,000 --> 00:32:28,000
+ya que tenés también cuidado como manejar
+
+700
+00:32:28,000 --> 00:32:30,000
+ese tipo de cosas
+
+701
+00:32:30,000 --> 00:32:32,000
+esta compañera había pedido el turno de palabra
+
+702
+00:32:32,000 --> 00:32:34,000
+y con ella ya terminamos, ¿vale?
+
+703
+00:32:36,000 --> 00:32:38,000
+Bueno, ya era un poco por contar mi experiencia
+
+704
+00:32:38,000 --> 00:32:40,000
+a la compañera que decía cómo era
+
+705
+00:32:40,000 --> 00:32:42,000
+iniciarse en el remoto
+
+706
+00:32:42,000 --> 00:32:44,000
+yo de hecho me inicié tanto
+
+707
+00:32:44,000 --> 00:32:46,000
+tanto tanto que me hice programadora
+
+708
+00:32:46,000 --> 00:32:48,000
+en remoto directamente
+
+709
+00:32:48,000 --> 00:32:50,000
+hice uno de estos famosos bootcamps
+
+710
+00:32:50,000 --> 00:32:52,000
+hace dos años
+
+711
+00:32:52,000 --> 00:32:54,000
+gracias a la pandemia
+
+712
+00:32:54,000 --> 00:32:56,000
+se hizo online
+
+713
+00:32:56,000 --> 00:32:58,000
+esa edición
+
+714
+00:32:58,000 --> 00:33:00,000
+era la primera edición online
+
+715
+00:33:00,000 --> 00:33:02,000
+y yo viviendo en Ibiza
+
+716
+00:33:02,000 --> 00:33:04,000
+donde no hay nada
+
+717
+00:33:04,000 --> 00:33:06,000
+casi casi y menos en invierno
+
+718
+00:33:06,000 --> 00:33:08,000
+pues tuve la oportunidad de hacer
+
+719
+00:33:08,000 --> 00:33:10,000
+ese bootcamp y de cambiar
+
+720
+00:33:10,000 --> 00:33:12,000
+mi profesión
+
+721
+00:33:12,000 --> 00:33:14,000
+de la que estoy súper agradecida
+
+722
+00:33:14,000 --> 00:33:16,000
+entonces bueno ya el bootcamp
+
+723
+00:33:16,000 --> 00:33:18,000
+era online
+
+724
+00:33:18,000 --> 00:33:20,000
+y fue muy bonito
+
+725
+00:33:20,000 --> 00:33:22,000
+realmente la tecnología ahora mismo
+
+726
+00:33:22,000 --> 00:33:24,000
+ayuda mucho a que
+
+727
+00:33:24,000 --> 00:33:26,000
+te puedas sentir como en clase
+
+728
+00:33:26,000 --> 00:33:28,000
+y nosotros pues hicimos
+
+729
+00:33:28,000 --> 00:33:30,000
+una comunidad, hicimos amistad
+
+730
+00:33:30,000 --> 00:33:32,000
+y casi casi familia
+
+731
+00:33:32,000 --> 00:33:34,000
+también por la intensidad de
+
+732
+00:33:34,000 --> 00:33:36,000
+los bootcamps y después ya fui a
+
+733
+00:33:36,000 --> 00:33:38,000
+trabajar directamente en remoto
+
+734
+00:33:38,000 --> 00:33:40,000
+primero una empresa de Barcelona
+
+735
+00:33:40,000 --> 00:33:42,000
+después una empresa de Mallorca
+
+736
+00:33:42,000 --> 00:33:44,000
+que está por ahí el logo
+
+737
+00:33:44,000 --> 00:33:46,000
+APSL
+
+738
+00:33:46,000 --> 00:33:48,000
+y yo creo que es la clave es que la empresa
+
+739
+00:33:48,000 --> 00:33:50,000
+ayude
+
+740
+00:33:50,000 --> 00:33:52,000
+para este tipo de
+
+741
+00:33:52,000 --> 00:33:54,000
+cosas no ellos por ejemplo tienen muy claro
+
+742
+00:33:54,000 --> 00:33:56,000
+que el dinero que se pueden
+
+743
+00:33:56,000 --> 00:33:58,000
+ahorrar en oficinas
+
+744
+00:33:58,000 --> 00:34:00,000
+es para nosotros
+
+745
+00:34:00,000 --> 00:34:02,000
+es para hacer team building
+
+746
+00:34:02,000 --> 00:34:04,000
+es para que nos conozcamos
+
+747
+00:34:04,000 --> 00:34:06,000
+y bueno pues siempre que se puede
+
+748
+00:34:06,000 --> 00:34:08,000
+por departamentos por equipos
+
+749
+00:34:08,000 --> 00:34:10,000
+dos veces al año toda la empresa
+
+750
+00:34:10,000 --> 00:34:12,000
+nos juntamos y
+
+751
+00:34:12,000 --> 00:34:14,000
+y creo que es bastante clave
+
+752
+00:34:14,000 --> 00:34:16,000
+eso y bueno
+
+753
+00:34:16,000 --> 00:34:18,000
+luego ya a nivel personal
+
+754
+00:34:18,000 --> 00:34:20,000
+si queréis
+
+755
+00:34:20,000 --> 00:34:22,000
+el remoto me ha permitido
+
+756
+00:34:22,000 --> 00:34:24,000
+ser madre de dos niños
+
+757
+00:34:24,000 --> 00:34:26,000
+quedarme en Ibiza
+
+758
+00:34:26,000 --> 00:34:28,000
+no hubiera podido ser de otra manera
+
+759
+00:34:28,000 --> 00:34:30,000
+no hubiera podido tener niños
+
+760
+00:34:30,000 --> 00:34:32,000
+divorciarme
+
+761
+00:34:32,000 --> 00:34:34,000
+seguir con mi vida con ellos
+
+762
+00:34:34,000 --> 00:34:36,000
+y menos mal
+
+763
+00:34:36,000 --> 00:34:38,000
+y a que no está en tu casa
+
+764
+00:34:38,000 --> 00:34:40,000
+exactamente tienes sus cosas malas
+
+765
+00:34:40,000 --> 00:34:42,000
+muchas veces me siento sola
+
+766
+00:34:42,000 --> 00:34:44,000
+es cierto pero bueno también no tengo tiempo
+
+767
+00:34:44,000 --> 00:34:46,000
+o sea que
+
+768
+00:34:46,000 --> 00:34:48,000
+de otra manera no hubiera podido
+
+769
+00:34:48,000 --> 00:34:50,000
+no hubiera podido ser la verdad
+
+770
+00:34:52,000 --> 00:34:54,000
+muchas gracias pues
+
+771
+00:34:54,000 --> 00:34:56,000
+ya con esto terminamos la sesión
+
+772
+00:34:56,000 --> 00:34:58,000
+y
+
+773
+00:34:58,000 --> 00:35:20,000
+un aplauso para Israel y para todos que habéis participado
+
