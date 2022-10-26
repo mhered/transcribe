@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import json
 from utils import get_id_from_url
 import logging
@@ -7,8 +7,8 @@ import os
 import time
 
 
-def process_channel(json_file: str = "channel.json"):
-    """ reads JSON file and resumes processing videos from file JSON"""
+def process_channel(json_file: str = "channel.json", sort_by: str = "popular"):
+    """ resumes processing videos from a JSON file and creating SRT caption files"""
 
     logging.basicConfig(
         level=logging.INFO,
@@ -22,19 +22,22 @@ def process_channel(json_file: str = "channel.json"):
     with open(json_file, "r") as f:
         channel_dict = json.loads(f.read())
 
-    # prioritize videos with most views not yet processed
-    pending = sorted((video for video in channel_dict.values()
-                     if not video['transcript']),
-                     key=lambda d: d['views'],
-                     reverse=True)
+    if sort_by == "recent":
+        # prioritize most recent videos not yet processed
+        pending = sorted((video for video in channel_dict.values()
+                         if not video['transcript']),
+                         key=lambda d: datetime.strptime(d['published'], "%d/%m/%y"),
+                         reverse=True)
+    else:
+        # prioritize videos with most views not yet processed
+        pending = sorted((video for video in channel_dict.values()
+                         if not video['transcript']),
+                         key=lambda d: d['views'],
+                         reverse=True)
 
-    """
-    # prioritize latest videos not yet processed
-    pending = sorted((video for video in channel_dict.values()
-                     if not video['transcript']),
-                     key=lambda d: strptime("%d/%m/%y",d['views']),
-                     reverse=True)
-    """
+    logging.info(f"Top 10 videos pending processing sorted by {sort_by}")
+    logging.info("\n".join(
+        [f"{video['published']} - {video['views']} views - {video['title']}" for video in pending[0:10]]))
 
     logging.info(f"Found {len(pending)} videos pending processing")
 
@@ -71,8 +74,13 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--file",
-        help="Name of the input file (Optional, default is channel.json)",
+        help="Name of the input file (Optional, default is 'channel.json')",
         default="channel.json")
+    parser.add_argument(
+        "--priority",
+        choices=('popular', 'recent'),
+        help="Criteria to prioritize queue of videos pending processing (Optional, default is 'popular')",
+        default="popular")
     args = parser.parse_args()
 
     process_channel(args.file)

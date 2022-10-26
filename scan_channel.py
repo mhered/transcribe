@@ -65,10 +65,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Scan a YouTube channel and create a JSON file with contents')
 
-    parser.add_argument("--channel", help="URL of the YouTube channel to scan")
+    required_name = parser.add_argument_group('required named arguments')
+    required_name.add_argument(
+        "--channel",
+        required=True,
+        help="(Required) URL of the YouTube channel to scan")
+
     parser.add_argument(
         "--file",
-        help="Name of the input file (Optional, default is channel.json)",
+        help="Name of the input file (Optional, default is 'channel.json')",
         default="channel.json")
     args = parser.parse_args()
 
