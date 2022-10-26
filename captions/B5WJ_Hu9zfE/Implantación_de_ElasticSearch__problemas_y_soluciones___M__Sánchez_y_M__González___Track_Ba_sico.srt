@@ -1,0 +1,1504 @@
+1
+00:00:00,000 --> 00:00:12,760
+Muy buenas, venimos a esta charla de Django y el Astix Edge. Bueno, es interesante porque
+
+2
+00:00:12,760 --> 00:00:18,280
+es un buscador que está bastante, digamos, de moda, hay mucha gente interesada en usarlo,
+
+3
+00:00:18,280 --> 00:00:21,600
+tampoco está todavía lo suficientemente standardizado como para que sea trivial
+
+4
+00:00:21,600 --> 00:00:25,200
+instalarlo, así que simplemente vamos a encontrar un poco más de nuestra experiencia en este año
+
+5
+00:00:25,200 --> 00:00:29,400
+que llevamos usando el Astix Edge, cómo lo hemos integrado en nuestra aplicación de Django,
+
+6
+00:00:29,400 --> 00:00:33,880
+qué problema nos ha dado y cómo a veces lo hemos solucionado, a veces lo hemos paliado
+
+7
+00:00:33,880 --> 00:00:39,840
+en cierto modo, ¿vale? Entonces os cuento un poquito. Nosotros somos el en Miguel González,
+
+8
+00:00:39,840 --> 00:00:44,560
+yo soy Miguel Sánchez, trabajamos los dos en acceso, bueno, esencialmente hacemos lo mismo,
+
+9
+00:00:44,560 --> 00:00:52,960
+pero en fin. Vale, hacemos un acceso a una empresa que se lleva a 28 años y se empezó
+
+10
+00:00:52,960 --> 00:00:57,680
+como una empresa de clipings de prensa. Esto quiere decir, recordaban noticias en periódicos y
+
+11
+00:00:57,680 --> 00:01:01,640
+en general en dos series, lo venían al cliente, ¿vale? Esto era algo totalmente arcaico,
+
+12
+00:01:01,640 --> 00:01:08,080
+pero a día de hoy, digamos que ha evolucionado bastante. Ahora, obtenemos un montón de noticias
+
+13
+00:01:08,080 --> 00:01:13,560
+en general de algún modo u otra, por ejemplo, tanto noticias como tweets o cortes de radio,
+
+14
+00:01:13,560 --> 00:01:19,600
+cortes de televisión, PDF de periódicos de toda España, no sé si de todo el mundo,
+
+15
+00:01:19,600 --> 00:01:25,240
+y en general para cada cliente le decimos de qué se habla o qué tiene que hacer, se le hace un
+
+16
+00:01:25,240 --> 00:01:29,240
+análisis, se le hace simplemente un seguimiento, en fin, en mundillos más o menos del seguimiento y
+
+17
+00:01:29,240 --> 00:01:32,560
+análisis de medios, ¿vale? Concretamente, nosotros trabajamos una aplicación de acceso a
+
+18
+00:01:32,560 --> 00:01:38,320
+un acceso a un aplicación de Django con un frontal en Bob-Bong, usamos Jenkins para integración
+
+19
+00:01:38,320 --> 00:01:44,560
+continua un poco de aquella manera y tenemos un Celery con RaviMQ que se comunica con otras
+
+20
+00:01:44,560 --> 00:01:51,320
+aplicaciones de la empresa, por ejemplo, aquel Hadoop que vemos abajo es un Vdata que tenemos con
+
+21
+00:01:51,320 --> 00:01:57,680
+más de mil millones de elementos, que entre ellos son noticias, tweets, lo que dice, y también otras
+
+22
+00:01:57,680 --> 00:02:03,000
+cosas. Entonces, ese es Hadoop, a través de una cola del Ravi, llega a nuestro Poker y nos dice qué
+
+23
+00:02:03,000 --> 00:02:09,080
+pasa con esas noticias. ¿Qué pasa? Quiero decir, algunos metadatos. Nosotros no queremos guardar el
+
+24
+00:02:09,080 --> 00:02:13,800
+cuerpo de noticias, ¿vale? Si, por ejemplo, en un estudio de un cliente en concreto tiene 15 millones
+
+25
+00:02:13,800 --> 00:02:17,480
+de noticias, no queremos tener el Poker de 15 millones de elementos con datos muy grandes como
+
+26
+00:02:17,480 --> 00:02:24,600
+cuerpo de una noticia, un periódico. ¿Qué pasa? Que en un momento dado nos iba a hacer falta
+
+27
+00:02:24,600 --> 00:02:29,560
+buscar por ese texto, pero no queremos guardarlo en Poker. Por otro lado, nuestro Hadoop tampoco tiene
+
+28
+00:02:29,560 --> 00:02:34,840
+conocimiento suficiente de cómo estar estructurando nuestro proyecto. En definitiva, necesitábamos
+
+29
+00:02:34,840 --> 00:02:39,760
+una solución intermedia y ahí tenemos este last-t-ser que tenemos en medio. Por tanto,
+
+30
+00:02:39,760 --> 00:02:43,960
+esta charla se plantea desde este punto, cuando todavía no teníamos el last-t-ser. ¿Qué
+
+31
+00:02:43,960 --> 00:02:51,320
+problemas teníamos y cómo queríamos solucionarlo? ¿De acuerdo? ¿Qué necesitábamos? Como decía,
+
+32
+00:02:51,320 --> 00:02:54,520
+necesitábamos un busque de la full-test. Nuestra aplicación que nosotros hacemos concretamente
+
+33
+00:02:54,520 --> 00:02:59,400
+es para análisis. Para análisis, quiero decir que, para un seguimiento dado, nuestra aplicación
+
+34
+00:02:59,400 --> 00:03:06,280
+se puebla de noticias o de tweets o de comentarios, de lo que sea, y los analistas de nuestra empresa
+
+35
+00:03:06,280 --> 00:03:12,080
+tienen que dedicarse a decir, aquí se habla de este cliente bien o aquí el tema de la noticia es
+
+36
+00:03:12,080 --> 00:03:17,640
+automoción o, no sé, este es mencionado de una manera secundaria, independientemente de que esté
+
+37
+00:03:17,640 --> 00:03:22,200
+bien o mal. Entonces, digamos que un proceso en parte automatizable con lo que tenemos en Hadoop,
+
+38
+00:03:22,200 --> 00:03:26,000
+pero que también requiere una intervención manual de nuestro analista. Entonces, a veces,
+
+39
+00:03:26,000 --> 00:03:29,840
+quieren buscar por noticias, en plan quiero que se hagan todas las de Apaicon, porque voy a decir
+
+40
+00:03:29,840 --> 00:03:34,720
+que están todas bien de golpe, porque quiero hacer un estudio en vez de cualitativo, bueno,
+
+41
+00:03:34,720 --> 00:03:37,920
+lo que sea. El caso es que necesitamos un busque de full-test y, como decían Pogre,
+
+42
+00:03:37,920 --> 00:03:44,720
+no teníamos los datos guardados. Ahora mismo tenemos unos 60 millones de noticias en nuestra
+
+43
+00:03:44,720 --> 00:03:52,520
+aplicación, ¿vale? Entonces, no queremos guardar todo, o sea, 50 mil, perdón, no, 60 millones,
+
+44
+00:03:52,520 --> 00:03:55,640
+no queremos guardar todo, solo queremos guardar metodatos, solo queremos guardar, por ejemplo,
+
+45
+00:03:55,640 --> 00:04:01,560
+la audiencia del medio, el número de páginas o, no sé, el autor como mucho, pero desde luego no es
+
+46
+00:04:01,560 --> 00:04:07,680
+ni el titular ni el contenido. También queríamos un busque de More Like This. Muchas veces en el mundo
+
+47
+00:04:07,680 --> 00:04:14,920
+de la prensa uno escribe una noticia y 50 publican tal cual en su medio, lo que viene siendo una nota de
+
+48
+00:04:14,920 --> 00:04:19,360
+prensa, vamos. Entonces, si un analista hace una notación de decir, aquí se habla de mengano,
+
+49
+00:04:19,360 --> 00:04:24,120
+de una manera positiva y de fulano, de una manera negativa, no tiene sentido que lo haga una vez
+
+50
+00:04:24,120 --> 00:04:27,560
+porque da noticia en cada medio, pero es cierto, son elementos distintos, porque cada medio tiene un
+
+51
+00:04:27,560 --> 00:04:32,160
+impacto, ¿no? Pues tiene una audiencia distinta o tiene una región o lo que sea. Entonces, queremos
+
+52
+00:04:32,160 --> 00:04:36,960
+poder hacer una búsqueda More Like This para buscar elementos parecidos y propagar, digamos,
+
+53
+00:04:36,960 --> 00:04:43,880
+estas notaciones. Vale, notación, asignación inversa, índice sobre búsqueda. Esto es una cosa
+
+54
+00:04:43,880 --> 00:04:49,080
+un poco enrevesada, pero que está bien, que también nos servía, que es lo que el acti-ser
+
+55
+00:04:49,080 --> 00:04:53,840
+llama percolator. Básicamente, el flujo normal es que cuando tú tienes, por ejemplo, una serie de
+
+56
+00:04:53,840 --> 00:04:58,280
+reglas, en este caso, en nuestro caso era cuando desde Celer y venía, desde Rave y venía una noticia,
+
+57
+00:05:00,360 --> 00:05:06,560
+queríamos hacerle unos cuantos tres, ejemplo, vale, pues, por ejemplo, sale esta entidad nombrada,
+
+58
+00:05:06,560 --> 00:05:12,920
+sí, pues así no se la pasa. O pásale un programita de estos de SVM, de vectorización,
+
+59
+00:05:12,920 --> 00:05:19,360
+para determinar el programista del texto, ¿no? En fin, una serie de cosas. Entonces, lo normal sería
+
+60
+00:05:19,360 --> 00:05:24,760
+coger cada búsqueda, irte a base de datos y ver si encaja. Pero no, el percolator básicamente lo que
+
+61
+00:05:24,760 --> 00:05:27,920
+dice es, vale, simplemente indesa búsqueda. Por ejemplo, indesa una búsqueda que es de true,
+
+62
+00:05:27,920 --> 00:05:32,240
+cada vez que la noticia contenga la palabra Python. Entonces, digamos que por cada noticia de
+
+63
+00:05:32,240 --> 00:05:37,960
+me entrando, se pasa por este percolator y cada búsqueda que tenga indesada, pues te dice,
+
+64
+00:05:37,960 --> 00:05:44,000
+vale, aplica o no aplica. Esto no era exactamente lo que queríamos hacer, pero era útil para nuestro
+
+65
+00:05:44,000 --> 00:05:50,280
+caso de uso y el importado concretamente. Entre interrogaciones, porque no lo tenemos todavía,
+
+66
+00:05:50,280 --> 00:05:54,160
+pero es interesante, el acti-ser te da un montón de estadísticas, te da datos agregados, que luego
+
+67
+00:05:54,160 --> 00:05:58,120
+puedes sacar el partido, puedes hacer visualizaciones, puedes hacer lo que te dé la gana, ¿no? Nosotros
+
+68
+00:05:58,120 --> 00:06:04,080
+no hacemos nada, pero veríamos, ¿vale? Ahora, ¿por qué el acti-ser? Necesitamos eso que he dicho,
+
+69
+00:06:04,080 --> 00:06:07,600
+pero puede que haya otros puntos, ¿no? O sea, yo desconozco un poco el tema de este
+
+70
+00:06:07,600 --> 00:06:15,280
+muntillo, pero posiblemente hubiese otras candidatos. Pues bueno, perdón. ¿Qué alternativas teníamos?
+
+71
+00:06:15,280 --> 00:06:20,280
+Como decíamos nosotros, tenemos un bitdata en Hadoop que es un club de estocho que tiene
+
+72
+00:06:20,280 --> 00:06:26,600
+mil millones de elementos y he traversado la empresa. Entonces, yo no puedo coger y decirle al
+
+73
+00:06:26,600 --> 00:06:30,400
+departamento del core que vamos a llamar este bitdata, me voy a llamar este bitdata, me voy a
+
+74
+00:06:30,400 --> 00:06:35,000
+decir, oye, guárdame la jerarquía de mi proyecto, porque yo quiero que mi cliente pueda tener filtros
+
+75
+00:06:35,000 --> 00:06:39,400
+por sus proyectos o quiero que mi cliente tenga filtros por lo que él ya ha notado. No,
+
+76
+00:06:39,400 --> 00:06:43,440
+él le da igual, él tiene datos en bruto y no puede guardar información de mi proyecto.
+
+77
+00:06:43,440 --> 00:06:48,320
+Entonces, no podemos simplemente usar la información que tenemos en Hadoop.
+
+78
+00:06:48,320 --> 00:06:53,320
+Pongre, como decía esto, a veces tenemos estudios cualitativos, perdón, cuantitativos,
+
+79
+00:06:53,320 --> 00:06:57,120
+que guardan millones y millones de noticias y no queremos que guarden millones de noticias
+
+80
+00:06:57,120 --> 00:07:01,160
+con textos considerablemente largos que no vamos a aprovechar. Entonces, mejor guardarlo
+
+81
+00:07:01,160 --> 00:07:06,000
+en otro sitio que no nos carga base de datos y no afecte a la performance del usuario.
+
+82
+00:07:06,000 --> 00:07:09,320
+Además, la búsqueda de la ID, supongo que se podría hacer algo estémico o lo que sea,
+
+83
+00:07:09,320 --> 00:07:13,280
+pero no está implementada directamente y en el acti-set la verdad es que funciona bastante
+
+84
+00:07:13,280 --> 00:07:19,600
+bien, así que me parece que era un punto de tener en cuenta para cambiarse. Por otra parte,
+
+85
+00:07:19,600 --> 00:07:23,840
+Pongre, a priori puede que nos escale. Puede que aquí hay integristas de Pongre que me está
+
+86
+00:07:23,840 --> 00:07:28,480
+diciendo, tú eres tonto porque no tienes ni idea y Pongre va muy bien y tira de bitdata o de un
+
+87
+00:07:28,480 --> 00:07:33,520
+el acti-set porque está de moda y, bueno, pues la verdad es que yo no soy un especialista en Pongre,
+
+88
+00:07:33,520 --> 00:07:42,160
+pero a priori no queríamos meterle demasiadas chichas, ¿vale?, de acuerdo. Y, en fin, que el acti-set
+
+89
+00:07:42,160 --> 00:07:49,560
+parecía una solución apropiada. Solar. Solar, nosotros usábamos antes solar. Yo no tengo mucha
+
+90
+00:07:49,560 --> 00:07:55,000
+experiencia en solar, la verdad, pero un compañero mío que sabía y sabe mucho más que yo, bueno,
+
+91
+00:07:55,000 --> 00:07:58,880
+ya no trabajé con nosotros, pero sí había trabajado mucho con solar, por proyectos personales y
+
+92
+00:07:58,880 --> 00:08:04,280
+por proyectos de empresas. Y él estaba muy alto. Y ya que la documentación era muy buena y en
+
+93
+00:08:04,280 --> 00:08:10,400
+general no me gustaba. Además, no permite jerarquía. El acti-set permite jerarquía. Nosotros queremos
+
+94
+00:08:10,400 --> 00:08:15,240
+poder filtrar, por ejemplo, un caso de uso habitual, es decir, quiero todas las noticias que tengan al
+
+95
+00:08:15,240 --> 00:08:23,720
+menos una notación, que caigan en este proyecto y que coinciden con el texto Manolo. Oye, si sólo
+
+96
+00:08:23,720 --> 00:08:29,600
+tiene un documento sin jerarquía, es difícil esto, porque, al fin y al cabo, notaciones, noticias,
+
+97
+00:08:29,600 --> 00:08:34,120
+tal, son documentos distintos. Entonces, aquí solar no parece que no es la mejor alternativa.
+
+98
+00:08:34,120 --> 00:08:38,840
+¿Búsquedas poco expresivas? Bueno, el acti-set tiene una cosa muy guay, que es que las buscan,
+
+99
+00:08:38,840 --> 00:08:43,320
+le puede pasar un Jason, que a veces es tan complejo como el propio documento, que pueden meter ahí
+
+100
+00:08:43,320 --> 00:08:49,320
+por un montón de lógicas, en fin, unas cosas bastante curradas. Entonces, como digo, yo no soy
+
+101
+00:08:49,320 --> 00:08:53,920
+un espectro solar, pero al parecer, las buscan en el acti-set eran bastante más expresivas,
+
+102
+00:08:53,920 --> 00:08:59,800
+lo cual está bien. En general, el acti-set mejora solar. Ahora, yo sé que solar ha mejorado,
+
+103
+00:08:59,800 --> 00:09:05,920
+¿vale? Sé que en estos últimos años se han puesto bastante a pila y que solar está muy bien.
+
+104
+00:09:05,920 --> 00:09:09,880
+Es cierto que sigue sin jerarquía, pero, por lo que me han dicho varios compañeros, ha cambiado
+
+105
+00:09:09,880 --> 00:09:15,920
+bastante las cosas. Así que, bueno, no sé, hablo de lo que teníamos hace un año y no sé si seguir
+
+106
+00:09:15,920 --> 00:09:19,720
+haciendo válido, pero bueno, en general, el acti-set era una solución que se adaptaba bastante a nuestras
+
+107
+00:09:19,720 --> 00:09:26,600
+necesidades. No solo por la búsqueda, sino, además, como decíamos, por el more like this o por el percolado
+
+108
+00:09:26,600 --> 00:09:32,440
+que os comentaba, asignar las queries, la índice, etcétera. Mucha de las cosas que queríamos hacer,
+
+109
+00:09:32,440 --> 00:09:37,320
+se pueden hacer con solar, pero digamos que en el acti-set ya lo venían hechas. No teníamos
+
+110
+00:09:37,320 --> 00:09:41,920
+que hacer búsquedas complejas, que eso en solar muchas veces había que entre con ellas,
+
+111
+00:09:41,920 --> 00:09:46,760
+pero más a bueno en Java y no queríamos. Entonces, todo eso en el acti-set ya no venía hecho
+
+112
+00:09:46,760 --> 00:09:52,160
+para el meta, otros de box. Sí, ahora lo vamos a ver aquí. Entonces, ¿cuáles son los winning points,
+
+113
+00:09:52,160 --> 00:09:59,200
+digamos, winning points? Bueno, ventajas, ¿no?, del acti-set. Vale, todo es configurable y api. Esto es
+
+114
+00:09:59,200 --> 00:10:04,400
+la hostia. Tú puedes conectarte de una shell, hacer un get de un recurso o hacer un get del
+
+115
+00:10:04,400 --> 00:10:10,280
+cluster para ver la salud que tiene o puedes hacerlo un put para añadirle un nuevo elemento,
+
+116
+00:10:10,280 --> 00:10:15,200
+o puedes hacer lo que sea simplemente con el cur. Esto está muy guay. Te vuelvo un JSON. Bueno,
+
+117
+00:10:15,200 --> 00:10:19,920
+nosotros usamos Python. Python se envuelve bastante bien con el JSON, así que esto era un tema
+
+118
+00:10:19,920 --> 00:10:27,760
+también interesante. Posiblemente, o sea, si devolviese XML sería un poco más problemático.
+
+119
+00:10:27,760 --> 00:10:32,880
+Esquema dinámico. Yo puedo tener, tiene una noticia de la guardada, de repente un día digo,
+
+120
+00:10:32,880 --> 00:10:37,240
+¡estía mierda!, que se me olvidaba, guarda el autor. Vale, cambio el esquema y punto, no pasa nada.
+
+121
+00:10:37,240 --> 00:10:41,560
+No tengo que reindesar la antigua, sino me hace falta el autor en ella y tan tranquilamente sobre la
+
+122
+00:10:41,560 --> 00:10:47,040
+marcha. Altamente configurable de shell. No solo por lo que decía que la api sea accesible
+
+123
+00:10:47,040 --> 00:10:51,120
+siempre desde la shell y tal, sino es que además, yo qué sé, añadirle un plugin, simplemente decir
+
+124
+00:10:51,120 --> 00:10:55,920
+plugin install y el nombre del plugin se lo baja en un repositor y punto. También puedes
+
+125
+00:10:56,960 --> 00:11:02,960
+actualizar la versión, por ejemplo, en caliente, parando un nodo, pasando la carga a otro automáticamente
+
+126
+00:11:02,960 --> 00:11:08,440
+y actualizando uno a uno cada nodo. En fin, está muy bien. Posidades que me aconseguen,
+
+127
+00:11:08,440 --> 00:11:12,080
+bueno, decíamos, nosotros queremos hacer filtros complejos y para esto necesitamos que haya una
+
+128
+00:11:12,080 --> 00:11:17,560
+redacción padre-hijo. Todo se ha dicho. El artiset esencialmente plano y la jerarquía
+
+129
+00:11:17,560 --> 00:11:22,360
+es uno de los aspectos más conflictivos, pero bueno. More like the impercolator out of the box,
+
+130
+00:11:22,360 --> 00:11:27,080
+lo he comentado antes, ¿no? No necesitamos implementar una búsqueda de similaridad y tampoco
+
+131
+00:11:27,080 --> 00:11:33,600
+necesitamos implementar esta búsqueda inversa sobre las queries. Fácilmente extensible,
+
+132
+00:11:33,600 --> 00:11:37,360
+plugin, analizadores. Bueno, en nuestro caso nosotros lo usamos un plugin, creo, que es
+
+133
+00:11:37,360 --> 00:11:41,880
+el típico IQ analysis, que básicamente quita tilde y hace cosas para que luego pueda buscar
+
+134
+00:11:41,880 --> 00:11:46,320
+en castellano y esté bien, pero me imagino otros plugins se instalan igual. Te va a dar la carpetita,
+
+135
+00:11:46,320 --> 00:11:53,240
+le das install y muy fácil. Vale, libertadía completa para Python. Vale, el artiset está
+
+136
+00:11:53,240 --> 00:11:57,920
+escrito en Java, pero sorprendentemente un amigo, un compañero de trabajo que trabaja en
+
+137
+00:11:57,920 --> 00:12:02,960
+Java me dijo que no le gustaba mucho la libertad, que no se ha apañado bien. Sin embargo, la
+
+138
+00:12:02,960 --> 00:12:07,400
+libertad de Python nosotros lo usamos a diario y es bastante completa. De hecho, nosotros hemos
+
+139
+00:12:07,400 --> 00:12:11,800
+hecho algún helper, alguna funcioncita para hacer cosas, más adaptadas a nuestro proyecto,
+
+140
+00:12:11,800 --> 00:12:16,600
+pero en general tiene funcioncillas para buscar, para hacer un escal secuencial, para actualizar,
+
+141
+00:12:16,600 --> 00:12:21,600
+está bastante bien. Ahí está, que pongo entre parantes y admiraciones. Ahí está, que es una
+
+142
+00:12:21,600 --> 00:12:26,000
+librería que hace a gente de TastyPy, que yo no he probado, pero sirve para hacer un mapeo rápido
+
+143
+00:12:26,000 --> 00:12:31,000
+de lo que tengan en Django, de Django, ¿no? Sí, ¿no? Es un mapeo rápido de los tus modelos de Django,
+
+144
+00:12:31,000 --> 00:12:36,000
+te lo manda el artis, a priori sin mucha complejidad, pero bueno, puede estar bien para proyectos
+
+145
+00:12:36,000 --> 00:12:42,280
+simples, no lo ha usado. Herramienta de moda, bueno, esto es indudable, ¿no? Comunidad ponente también,
+
+146
+00:12:42,280 --> 00:12:47,680
+si hay mucha gente usándolo. Herramienta de moda, a veces un poco conflictivo, todos lo sabemos que
+
+147
+00:12:47,680 --> 00:12:52,000
+uno puede decir, ostia, me gusta mucho Angular, voy a usar Angular, y luego llega la gente y dice,
+
+148
+00:12:52,000 --> 00:12:55,360
+oye, pues Angular 2 no va a ser compartible hacia atrás, ostia, me cago en la leche,
+
+149
+00:12:55,360 --> 00:12:59,280
+que hago ahora. Bueno, el artisan, cuando nosotros empezamos ya llevaba como un año funcionando,
+
+150
+00:12:59,280 --> 00:13:03,520
+dos años, no lo sé, más o menos bien, así que parecía que ya era un más o menos un estando
+
+151
+00:13:03,520 --> 00:13:09,120
+de refacto y de hecho se ha consolidado, lo cual está muy bien. Y bueno, esta es la historia,
+
+152
+00:13:09,120 --> 00:13:12,440
+hasta que nosotros llegamos a un punto en el que dijimos, bueno, hemos convencido a nuestro jefe,
+
+153
+00:13:12,440 --> 00:13:16,080
+en parte, pues el colega que os digo que sabe mucho más que yo, que mandó un mail bastante
+
+154
+00:13:16,080 --> 00:13:22,520
+constructivo, y lo convencimos y bueno, vamos a implantarlo. Y ahora esto, una vaca,
+
+155
+00:13:22,520 --> 00:13:27,760
+está aquí, Miguel, un poco, pues, como fue el proceso de implantar dicho buscado ya con problemas
+
+156
+00:13:27,760 --> 00:13:31,680
+concretos de nuestra aplicación Django, que creo que puede ser de utilidad para obrugir en una
+
+157
+00:13:31,680 --> 00:13:37,480
+aplicación similar. Bueno, entonces, nos tuvimos el problema, cuando implantamos el ASTIC certes,
+
+158
+00:13:37,480 --> 00:13:43,800
+¿cómo pasamos de nuestro esquema relacional de base de datos a un modelo que básicamente es plano?
+
+159
+00:13:43,800 --> 00:13:48,360
+Porque el ASTIC certes ya hemos dicho que soporta efectas jerarquía, pero por debajo del ASTIC certes
+
+160
+00:13:48,360 --> 00:13:55,320
+estabas al solar y solar es técnicamente plano. Sí, porque básicamente solar y el ASTIC certes
+
+161
+00:13:55,320 --> 00:14:00,680
+se basan en el lusín, que por debajo son totalmente planos y no soportan ningún tipo de jerarquía.
+
+162
+00:14:00,680 --> 00:14:07,200
+El ASTIC certes sí que te provee cierto tipo de jerarquía y es lo que vamos a usar. Entonces,
+
+163
+00:14:07,200 --> 00:14:14,080
+¿cómo he indexado nuestros documentos? Para ello, básicamente, tenemos que definir o definimos un
+
+164
+00:14:14,080 --> 00:14:18,000
+JSON bastante entre comillas sencillo con los datos que queremos guardar en el ASTIC certes.
+
+165
+00:14:19,000 --> 00:14:23,120
+Este JSON se lo pasamos a el ASTIC certes, a partir de ese momento ya podemos empezar a indexar
+
+166
+00:14:23,120 --> 00:14:28,640
+los datos que le hemos pasado. Si indexamos un dato de más, por ejemplo, ahí el ASTIC certes
+
+167
+00:14:28,640 --> 00:14:33,080
+permite no definirle un esquema estático, sino empezar a indexarle documentos y el otro va
+
+168
+00:14:33,080 --> 00:14:39,280
+indexando. ¿Qué pasa? Si no definen un esquema estático, de repente puede ser que llegues un día
+
+169
+00:14:39,280 --> 00:14:43,560
+y metas un documento por error, que no querías y te empiecen a indexar cosas que no querías.
+
+170
+00:14:43,560 --> 00:14:47,760
+Y eso puede ser problemático porque si realmente empiezas a indexar un campo de texto bastante
+
+171
+00:14:47,760 --> 00:14:56,280
+largo, te fueras problemas. Lo que decía el ASTIC certes, más bien el lusín es esencialmente plano,
+
+172
+00:14:56,280 --> 00:15:01,200
+pero el ASTIC certes nos proporciona cierta jerarquía que podemos usar. Hay cuatro tipos de
+
+173
+00:15:01,200 --> 00:15:06,360
+jerarquía, en general, in-it-objects, básicamente meter el objeto dentro de otro. El problema es que
+
+174
+00:15:06,360 --> 00:15:13,680
+no soporta bien las queries. En este document es cuando tú quieres tener en el JSON un elemento
+
+175
+00:15:13,680 --> 00:15:18,640
+hijo. El problema es que el ASTIC certes tiene que conocer todos los elementos padres cada vez
+
+176
+00:15:18,640 --> 00:15:23,640
+que quieres indexar un documento hijo. Eso obviamente cuando haces un update es demasiado
+
+177
+00:15:23,640 --> 00:15:27,800
+problemático porque si tienes que conocer todo el documento, todos los hijos y el padre para indexar
+
+178
+00:15:27,800 --> 00:15:32,280
+cada documento te puedes morir. En nuestro caso, por ejemplo, si es una noticia que tú
+
+179
+00:15:32,280 --> 00:15:36,960
+dices mil proyectos y solo queremos actualizar en un proyecto, tendríamos que actualizar las mil
+
+180
+00:15:36,960 --> 00:15:40,880
+instancias porque al fin y a la final actualiza el momento de noticia. Si tú tienes una noticia que
+
+181
+00:15:40,880 --> 00:15:46,080
+depende de mil proyectos y quieres actualizar un proyecto, tienes que enviarlo mil proyectos y
+
+182
+00:15:46,080 --> 00:15:51,120
+la noticia. Obviamente cuando haces un update es demasiado. Y lo que usamos nosotros es parentchild,
+
+183
+00:15:51,120 --> 00:15:56,960
+que es lo mismo que en este documento. O sea, tienes documentos padres y documentos hijos,
+
+184
+00:15:56,960 --> 00:16:02,840
+pero no tienes que enviárselo toda la vez. ¿Por qué? Porque él ya mantiene esta relación de
+
+185
+00:16:02,840 --> 00:16:07,280
+quién es el padre y que quieres elegir en cada documento. Pero el problema obviamente es que
+
+186
+00:16:07,280 --> 00:16:13,040
+es un overhead que va a hacer que vaya más lento. En nuestro caso era algo necesario.
+
+187
+00:16:15,680 --> 00:16:22,360
+ASTIC certes no llega del todo a recomendar la estructura de padres e hijos porque sí que
+
+188
+00:16:22,360 --> 00:16:27,560
+dicen que es bastante lenta porque hay demasiado overhead y puede ser un problema. En nuestro caso,
+
+189
+00:16:27,560 --> 00:16:34,040
+como he dicho, la opción recomendada entre comillas que es la de documentos anidados era demasiado
+
+190
+00:16:34,040 --> 00:16:42,080
+costosa para nuestro caso. Entonces nos tiramos a padres e hijos. Entonces ya tenemos definido
+
+191
+00:16:42,080 --> 00:16:46,520
+qué esquema queremos usar en las TIC certes y hay que al problema de cómo lo ponemos en producción,
+
+192
+00:16:46,520 --> 00:16:53,840
+cómo vamos a ponerlo. Entonces como he dicho ya vemos claro el esquema, ¿cómo lo ponemos? En
+
+193
+00:16:53,840 --> 00:16:58,960
+este caso el esquema es básicamente un JSON que tú le enchufas a la TIC cert. Lo guay de esto es
+
+194
+00:16:58,960 --> 00:17:04,520
+que es un JSON, tú enchufas con un PUD y punto. El TIC cert ya tiene el esquema, no hay que hacer más.
+
+195
+00:17:05,520 --> 00:17:10,360
+A priori el TIC cert te creó una configuración por defecto con un nodo y cinco charts y demás.
+
+196
+00:17:10,360 --> 00:17:18,160
+Para la mayoría de los casos, casos entre comillas sencillos esto puede valer. Para nuestro caso
+
+197
+00:17:18,160 --> 00:17:23,000
+vamos un poco más allá y le ponemos un par de nodos para tener actualizaciones en caliente,
+
+198
+00:17:23,000 --> 00:17:27,880
+es decir podemos parar un nodo, traje la carga al otro, actualizarlo mientras está el otro nodo
+
+199
+00:17:27,880 --> 00:17:31,600
+sirviendo y después hacemos la inversa de forma que tenemos los dos nodos actualizados sin tener
+
+200
+00:17:31,600 --> 00:17:36,080
+que parar el servidor en producción y nadie se da cuenta de que hemos hecho nada en el servidor.
+
+201
+00:17:36,080 --> 00:17:40,920
+También claro que tenemos dos nodos, uno se cae, estamos 3 días que con un nodo cae y aquí
+
+202
+00:17:40,920 --> 00:17:49,960
+nadie se ha dado cuenta de que falta un nodo. Obviamente nosotros sí, pero en general los
+
+203
+00:17:49,960 --> 00:17:54,240
+usuarios no perciben que hay una degradabilidad de servicio. Ellos son igual, entro de un poco más
+
+204
+00:17:54,240 --> 00:17:58,440
+en buscar pero ellos prácticamente no se quejan. Eso es lo que hicimos hoy, que esto está fallando,
+
+205
+00:17:58,440 --> 00:18:04,760
+pero para ellos no ha pasado nada, lo que obviamente mola. El TIC cert para mitigar
+
+206
+00:18:04,760 --> 00:18:10,920
+split brains recomienda 3 nodos y ponerle una configuración para que no se levante un nodo
+
+207
+00:18:10,920 --> 00:18:16,400
+a maestros sino que si no ve exfrientes hijos. En nuestro caso no tenemos infraestructura para
+
+208
+00:18:16,400 --> 00:18:22,040
+montar tres, tenemos solo dos. Digamos los split brains en el sentido de que la comunicación entre
+
+209
+00:18:22,040 --> 00:18:26,480
+ellos es directa, básicamente hay un cable cruzado entre ellos dos y muy fiquen que eso se rompa y
+
+210
+00:18:26,480 --> 00:18:30,720
+que pierda comunicación entre sí. Si están diferentes clústeres, servidores y demás pues
+
+211
+00:18:30,720 --> 00:18:35,240
+no es un problema. El charging por defecto de las TIC cert en general lo dejamos así.
+
+212
+00:18:35,240 --> 00:18:43,160
+¿Cómo nos viene por defecto? ¿Cómo nos conectamos a nuestro cluster de las TIC cert?
+
+213
+00:18:43,160 --> 00:18:47,760
+Ya tenemos un cluster montado de las TIC cert con los esquemas montados, ¿cómo nos conectamos?
+
+214
+00:18:47,760 --> 00:18:55,200
+En las TIC cert te provee una API en JavaScript. Nuestra aplicación de frontal es bastante
+
+215
+00:18:55,200 --> 00:18:59,040
+pendiente de JavaScript, tiene muchísimo JavaScript por encima. Decimos, joder, pues si tenemos una
+
+216
+00:18:59,040 --> 00:19:04,000
+API de JavaScript, coño vamos a usarla ¿no? ¿Qué pasa? Que obviamente es poco seguro porque el
+
+217
+00:19:04,000 --> 00:19:08,720
+cliente se conecte directamente al cluster de producción de las TIC certs y bueno no es una
+
+218
+00:19:08,720 --> 00:19:14,720
+muy buena idea. Obviamente si estás detrás de un proxy, el cliente está trabajando detrás de un
+
+219
+00:19:14,720 --> 00:19:20,840
+proxy, está en una empresa, te va de problemas porque tienes que acceder, el cross domain va a
+
+220
+00:19:20,840 --> 00:19:25,680
+ir a dar problemas. En general va a requerir bastante de engineering en frontend que no es
+
+221
+00:19:25,680 --> 00:19:30,240
+necesaria afrontarlo porque como hemos dicho, la librería de Python está bastante bien de las TIC
+
+222
+00:19:30,240 --> 00:19:37,640
+certs. Total, vamos a meter todo lo que tiene que ver con las TIC certs en el vaquen de Django. Usamos
+
+223
+00:19:37,640 --> 00:19:43,280
+JavaScript solo para la prestación del cliente. Ventajas, obviamente la utilización es compartida
+
+224
+00:19:43,280 --> 00:19:47,840
+entre nuestro cluster de las TIC certs y nuestra aplicación Django. La librería de papel es muy
+
+225
+00:19:47,840 --> 00:19:53,040
+completa y nos permitimos cierta domiciliar los modelos porque obviamente si falla una
+
+226
+00:19:53,040 --> 00:19:57,240
+situación en un modelo de Django podemos revertir el cambio que mostró en las TIC certs y podemos
+
+227
+00:19:57,240 --> 00:20:04,720
+hacer un rol en la transacción sin llegar a inéssalo en el TIC. Joder, si no pasa lo mismo.
+
+228
+00:20:06,480 --> 00:20:12,120
+Vale, entonces tenemos unos de las TIC certs desplegados, está funcionando, podemos buscar noticias,
+
+229
+00:20:12,120 --> 00:20:17,600
+tenemos los días inéssagas. Recordemos quién se mulló. Recordemos quién se mulló. Primero el problema.
+
+230
+00:20:17,600 --> 00:20:23,960
+Como he dicho, tener los documentos hijos en las TIC certs ellos mismos dicen que es muy lento y no
+
+231
+00:20:23,960 --> 00:20:29,480
+recomendable. Qué pasa, en nuestro caso es lo que hay. Hay que usarlo. Obviamente va muy lento.
+
+232
+00:20:29,480 --> 00:20:34,960
+El TIC cert va demasiado lento. No es viable, al final es como buscar en pobre. Muy lento.
+
+233
+00:20:34,960 --> 00:20:40,520
+Qué pasa, en nuestro caso tenemos noticias. Las noticias son más o menos 1s por mes,
+
+234
+00:20:40,520 --> 00:20:49,440
+es decir, una noticia se publica en enero y está publica en enero. Puedemos dividir las noticias por meses
+
+235
+00:20:49,440 --> 00:20:54,440
+aprovechando que los índices son transparentes, es decir, tú a las TIC certs puedes crear 15 índices,
+
+236
+00:20:54,440 --> 00:21:00,400
+buscarle. Y decirle, buscame en los 15 índices y tú desde el punto de vista del programador,
+
+237
+00:21:00,400 --> 00:21:05,360
+el TIC cert se encarga de hacerte después la unión de todos los resultados de esos índices
+
+238
+00:21:05,360 --> 00:21:10,600
+y unírtelos como si hubiesen sido solo uno. Con lo que tú puedes buscar en 15 índices,
+
+239
+00:21:10,600 --> 00:21:16,240
+indicándole all o acceso a ningún satérisco y el ya encuentra los índices relevantes.
+
+240
+00:21:16,240 --> 00:21:19,400
+Claro, porque no habíamos comentado que al principio metíamos todas las noticias a capón en el
+
+241
+00:21:19,400 --> 00:21:22,920
+mismo índice. Claro, al principio nosotros decimos, bueno, vamos a meter para los índices a capón en
+
+242
+00:21:22,920 --> 00:21:30,400
+el mismo índice, porque hay comprobado palía. Qué pasa, que obviamente luego no basta. Entonces,
+
+243
+00:21:30,400 --> 00:21:34,560
+también tiene una ventaja de TIC cert que puedes crear los índices que contemples. Tú no tienes que
+
+244
+00:21:34,560 --> 00:21:39,320
+decirle manualmente, quiero crear un índice nuevo. Tú le dices, quiero meter este documento en este
+
+245
+00:21:39,320 --> 00:21:43,680
+índice. Si no está el índice, me lo creas. Basándote en un template que previamente le hemos
+
+246
+00:21:43,680 --> 00:21:49,320
+metido igual. Con un JSON, él ya sabe qué índice tiene que crear y cuando lo necesite, lo creas solo.
+
+247
+00:21:49,320 --> 00:21:55,080
+Tú te preocupas totalmente de crear índices de 630 índices o uno. A ti te da igual, porque
+
+248
+00:21:55,080 --> 00:22:00,640
+la TIC cert todo esto te lo oculta. Como si damos tiempo con un JSON de creación. Sí. Total,
+
+249
+00:22:00,640 --> 00:22:05,280
+como tenemos noticias más o menos homogéneas, vamos a crear un índice por cada mes. Qué tipo
+
+250
+00:22:05,280 --> 00:22:09,880
+documento. Es decir, las noticias de enero van a ir a un índice de enero. ¿No lo dices de agosto?
+
+251
+00:22:09,880 --> 00:22:14,600
+¿O no dices de agosto? Total, las buscas van muchísimo más rápido. Solamente si tú buscas en
+
+252
+00:22:14,600 --> 00:22:19,880
+noticias de agosto, solo buscas en un solo índice que puede tener 3 millones de noticias, 5, pero no
+
+253
+00:22:19,880 --> 00:22:26,040
+tiene 50. Eso obviamente va muchísimo más rápido. Pues, y lo que he comentado, pues buscar en varios
+
+254
+00:22:26,040 --> 00:22:31,560
+índices sin tener que preocuparte, porque para ti eso es totalmente transparente. Y bueno,
+
+255
+00:22:31,560 --> 00:22:36,800
+confluencia en la técnica de Scharx. El Asterix tiene una limitación que cuando ya has creado
+
+256
+00:22:36,800 --> 00:22:41,840
+un índice, hay ciertos campos de ese índice que no puedes tocar en directo sin tener que
+
+257
+00:22:41,840 --> 00:22:46,800
+reindexar. ¿Qué pasa? Que como vamos a crear un índice cada mes, si de repente un mes hay más
+
+258
+00:22:46,800 --> 00:22:52,200
+noticias, el índice de ese mes en concreto lo podemos escalar. Podemos modificarle cosas sobre
+
+259
+00:22:52,200 --> 00:23:00,400
+el template para que no, sin tener que reindexar nada nuevo. Con esto obviamente la Asterix va
+
+260
+00:23:00,400 --> 00:23:05,080
+muchísimo más rápido, de hecho va bastante como un tiro. Bueno, aquí es un tipo obligatorio.
+
+261
+00:23:06,840 --> 00:23:15,160
+¿Qué pasa? Pues que tener diferentes problemas, tener diferentes índices, con las noticias puede
+
+262
+00:23:15,160 --> 00:23:19,160
+ser un problema, porque las noticias pueden cambiar de fecha. Una noticia que publicaba en agosto,
+
+263
+00:23:19,160 --> 00:23:22,480
+de repente alguien se ha equivocado y directamente está publicando en septiembre, esa noticia
+
+264
+00:23:22,480 --> 00:23:28,760
+hay que mover la índice y aparecen documentos duplicados. Es decir, hay una noticia que está
+
+265
+00:23:28,760 --> 00:23:33,720
+en dos índices diferentes, obviamente con datos distintos. En una tenía un texto y en la otra tenía
+
+266
+00:23:33,720 --> 00:23:38,600
+otro texto. Pero ¿qué pasa? Que tiene el mismo idea. Es decir, nosotros respetamos los ideas
+
+267
+00:23:38,600 --> 00:23:44,920
+entre posores y las tixers. De forma que una noticia con idea de 34 es el idea de 34 en las tixers. Es
+
+268
+00:23:44,920 --> 00:23:49,280
+muy fácil de buscarla, porque ya sabes, X y de tiene. Pero ¿qué pasa? Que pues tiene ideas
+
+269
+00:23:49,280 --> 00:23:53,480
+repetidos. En las tixers en teoría no permite ideas repetidos. Entonces ¿cómo es esto posible?
+
+270
+00:23:53,480 --> 00:23:58,520
+El problema es que en las tixers no permite ideas repetidos, el idea es único, pero entre índices.
+
+271
+00:23:58,520 --> 00:24:04,440
+Si la noticia cambia de índice, lo sí que se pueden repetir, porque si están diferentes índices
+
+272
+00:24:04,440 --> 00:24:10,200
+en las tixers no comprueba que el índice se repita en todos los temas índices. Uy, me leao.
+
+273
+00:24:10,200 --> 00:24:16,160
+¿Qué pasa? Que obviamente tenemos que tener en cuenta este caso concreto nuestro de cuando la
+
+274
+00:24:16,160 --> 00:24:24,880
+noticia o cuando el documento cambia de índice por todos definir un protocolo para que documento va
+
+275
+00:24:24,880 --> 00:24:32,120
+en cada índice. Cuando ese protocolo cambia, tienes que manualmente tener en cuenta este caso
+
+276
+00:24:32,120 --> 00:24:40,160
+y desindexar la noticia vieja e indexar la nueva. No creo que sea un problema habitual en un eláctico
+
+277
+00:24:40,160 --> 00:24:42,600
+pero bueno, nosotros actualizamos muchos documentos.
+
+278
+00:24:46,280 --> 00:24:54,120
+En esencia estamos funcionando en producción y no tenemos el todo de una monetización de datos.
+
+279
+00:24:54,120 --> 00:24:59,040
+Confiamos que todo está funcionando correctamente, obviamente nuestros users nos demuestran que no.
+
+280
+00:24:59,040 --> 00:25:03,520
+Hay noticias repetidas y no hay noticias que no aparecen en el cluster y demás. Entonces ¿cómo
+
+281
+00:25:03,520 --> 00:25:10,720
+podemos garantizar la integridad de datos entre uno y las tixers que no pertenecer una base de datos
+
+282
+00:25:10,720 --> 00:25:17,920
+ni su aporta ácido y no es transaccional? De hecho, menos de 100. Entonces ¿cómo entendemos,
+
+283
+00:25:17,920 --> 00:25:22,080
+cómo mantenemos la integridad entre una base de datos transaccional y el áxtico?
+
+284
+00:25:23,840 --> 00:25:28,000
+Básicamente necesitamos un cinco instador, es decir, apreciándonos de que los índices,
+
+285
+00:25:28,000 --> 00:25:33,840
+de que los ídices son los mismos en elasticsearch y en pocres, podemos comprobar los índices,
+
+286
+00:25:33,840 --> 00:25:37,640
+podemos comprobar que el documento está indexado. Necesitamos un sincronizador que nos sincronice
+
+287
+00:25:37,640 --> 00:25:41,600
+posgres con elasticsearch para evitar todo tipo de problemas de integridad.
+
+288
+00:25:43,160 --> 00:25:48,480
+Obviamente el sincronizador puede parecer complejo pero beneficiándonos de la hecho clave de que
+
+289
+00:25:48,480 --> 00:25:56,640
+los ídices son idénticas, puedes buscar por ID y comprobar que si un ID está o no está el endesa
+
+290
+00:25:56,640 --> 00:26:04,200
+o la quitas. Vale, creamos un sincronizador que se escuta en la periódica, esto lo hacemos con un
+
+291
+00:26:04,200 --> 00:26:09,800
+traccelery, podría ser un cronta o lo que fuese. Básicamente comproba el control de documentos,
+
+292
+00:26:09,800 --> 00:26:18,280
+comproba que coincide, si no coincide empieza a revisar las ides y indexa o borra la que falta.
+
+293
+00:26:18,280 --> 00:26:27,480
+Esto puede parecer lento pero en realidad comprobamos que va bastante rápido,
+
+294
+00:26:27,480 --> 00:26:32,680
+un escáneo por id es en general va bastante bien y no te supone un problema. Ponemos
+
+295
+00:26:32,680 --> 00:26:36,760
+esto en producción y va genial, se resuelven bastantes problemas. ¿Está todo solucionado?
+
+296
+00:26:36,760 --> 00:26:43,480
+Obviamente no, obviamente hay más problemas. Obviamente que el ID sea el mismo no te garantiza
+
+297
+00:26:43,480 --> 00:26:49,240
+que el documento sea el mismo, en general podría parecer que sí pero no lo es. Entonces hay que
+
+298
+00:26:49,240 --> 00:26:53,360
+añadirle una opción al sincronizador para que los ídices pueden ser iguales pero igual el campo
+
+299
+00:26:53,360 --> 00:26:59,480
+texto, el campo título de la noticia no es el mismo, esto hay que comprobarlo. Entonces le añadimos
+
+300
+00:26:59,480 --> 00:27:03,120
+una opción al sincronizador para que comprobe ciertos campos en ciertos momentos que pueden
+
+301
+00:27:03,120 --> 00:27:08,960
+cambiar. Sabemos que hay ciertas condiciones en nuestra base de datos, o sea en nuestra aplicación
+
+302
+00:27:08,960 --> 00:27:14,320
+que cambia el titular. Ahí vamos a comprobar exactamente el titular o vamos a pasar un
+
+303
+00:27:14,320 --> 00:27:19,080
+chequeo periódico cada día, cada hora para comprobar que el título sea igual de las últimas
+
+304
+00:27:19,080 --> 00:27:27,360
+noticias indexadas. Esto para nuestra sorpresa esta vez sí más va bastante rápido, pesamos
+
+305
+00:27:27,360 --> 00:27:31,280
+que esto iba a ser insostenible pero la verdad es que funciona bastante bien. Esto es porque el
+
+306
+00:27:31,280 --> 00:27:35,680
+ASTISER implementa probablemente un escado en profundidad sin apenas penalización, cosa que
+
+307
+00:27:35,680 --> 00:27:39,160
+no hemos puesto en los Winning Points pero algo está bastante rápido. Esto es algo que de base solar
+
+308
+00:27:39,160 --> 00:27:45,320
+no implementa. Tú en el ASTISER puedes hacer una búsqueda profunda, puedes buscar la tercera
+
+309
+00:27:45,320 --> 00:27:49,920
+página de los resultados, la quinta página y no vas a tener un problema de rendimiento. Esto en
+
+310
+00:27:49,920 --> 00:27:54,440
+solar si tú empiezas a buscar noticias en 15 millones a la quinta página que busques te va a ir
+
+311
+00:27:54,440 --> 00:27:59,880
+más lento. En ASTISER en principio esto es una de las cosas que soporta y la verdad que lo hace bastante bien.
+
+312
+00:27:59,880 --> 00:28:07,800
+Vale, más problemas. Esto es un regalo de problemas. En estos bastos tenemos muchas
+
+313
+00:28:07,800 --> 00:28:12,640
+escrituras, pero muchos usuarios, concurrentes actualizan muchas veces el mismo documento y
+
+314
+00:28:12,640 --> 00:28:16,800
+muchas veces a la vez. Esto obviamente es un problema en el ASTISER. Tuve que lo poste
+
+315
+00:28:16,800 --> 00:28:24,360
+solucionado pero en ASTISER pueden no llegar a la vez, es un costar diferente y hay retardos de
+
+316
+00:28:24,360 --> 00:28:30,340
+red. Entonces, ASTISER tiene un sistema de versiones que funciona bastante bien, pero para
+
+317
+00:28:30,340 --> 00:28:34,400
+nuestra ocasión concreto demuestra que no lo hace bien. Hay ciertos casos que no funciona bien,
+
+318
+00:28:34,400 --> 00:28:39,920
+en general con la alta concurrencia. Entonces, ASTISER te provee de un mecanismo de versiones
+
+319
+00:28:39,920 --> 00:28:46,480
+externo de forma que dice vale, si no quieres mi sistema de versiones y comprobar y que yo te
+
+320
+00:28:46,480 --> 00:28:51,640
+compro versiones anterior o posterior, eso puedes hacer tú a mano. Total lo hacemos a mano. Ponemos
+
+321
+00:28:51,640 --> 00:28:58,720
+un timestamp y le metemos el timestamp de la noticia de cuando la actualizamos. De forma que
+
+322
+00:28:58,720 --> 00:29:04,640
+podemos saber qué noticia va antes y qué noticia va después. Esto en general es algo que no debería
+
+323
+00:29:04,640 --> 00:29:09,360
+pasar, pero en nuestro caso lo resolvemos con versiones externas. En general, la versión es
+
+324
+00:29:09,360 --> 00:29:13,600
+por defecto, funciona bastante bien. Esto es algo que en fin nos dio bastante el cabello de cabeza.
+
+325
+00:29:13,600 --> 00:29:23,920
+Y con esto ya, en principio, ASTICSERTS está funcionando correctamente, no hay problemas en
+
+326
+00:29:23,920 --> 00:29:28,640
+producción y todo está sincronizado. De momento parece que es así. Veremos si los superiores
+
+327
+00:29:28,640 --> 00:29:35,880
+no pueden demostrar que no. Obviamente esto nos hace de tranquilidad, pero carecemos de una
+
+328
+00:29:35,880 --> 00:29:43,720
+moderación formal. ¿Qué posibilidad es ahí? A ASTICSERTS tiene productos aparte, algunos son
+
+329
+00:29:43,720 --> 00:29:48,880
+los que son los otros no, pagamos esto para este clasper. En general, por ejemplo, Marvel ahora
+
+330
+00:29:48,880 --> 00:29:53,880
+con la versión 2 que salió hace un par de semanas, ahora ya es ratuito. De hecho ahora lo tenemos en
+
+331
+00:29:53,880 --> 00:29:58,240
+producción y funciona muy bien. Te da estadísticas de todo tipo, cuento te harás en index, el tiempo
+
+332
+00:29:58,240 --> 00:30:08,000
+medio de indexación, tiempo medio de búsquedas. Hay más cosas, tipo WATCHER, Kibana, LOXTAX.
+
+333
+00:30:08,000 --> 00:30:16,680
+Kibana está muy bien. Kibana te permite buscar en ASTICSERTS y visualizar esos datos. Te permite
+
+334
+00:30:16,680 --> 00:30:21,240
+generar todo tipo de estadísticas sobre los documentos que ya tienes indexados. Esto la
+
+335
+00:30:21,240 --> 00:30:26,080
+gente usa mucho para LOX. Con LOXTAX es una dela de LOX. Tú puedes pillar LOX de apache de lo que sea
+
+336
+00:30:26,080 --> 00:30:32,680
+e indexárselos y pasárselos a ONELASTICSERTS y después con Kibana los visualizas y los buscas.
+
+337
+00:30:32,680 --> 00:30:38,080
+Problema que va bastante bien. De hecho, es el uso que genera mucha gente de la edad de ASTICSERTS,
+
+338
+00:30:38,080 --> 00:30:44,840
+que es un ETL de LOX. Vamos a intentar hacer una pequeña... A ver si no funciona la demo.
+
+339
+00:30:44,840 --> 00:30:51,560
+A ver, el Wi-Fi en esta sala un poco mal, me da sensación, así que igual no podemos.
+
+340
+00:30:51,560 --> 00:31:13,360
+Sí, vamos a intentar hacer una... A ver si no, a ver si no está conectando. Bueno,
+
+341
+00:31:13,360 --> 00:31:22,040
+podemos ver si no le esquema, ¿no? Sí, si no, mientras podemos ver si no le esquema.
+
+342
+00:31:22,040 --> 00:31:48,800
+Esto es un esquema de lo que tenemos en producción, de nuestras noticias y qué campos inexamos.
+
+343
+00:31:48,800 --> 00:31:53,600
+Vamos proyecto cliente, el scope, que es el ámbito de la noticia, un remote code que
+
+344
+00:31:53,600 --> 00:32:00,320
+es nuestro código del core, bueno, una serie de campos. Vemos ahí título, esto y bueno,
+
+345
+00:32:00,320 --> 00:32:07,760
+una serie de campos. Sí, dice si va... Permite búsqueda, no, permite búsqueda, no.
+
+346
+00:32:07,760 --> 00:32:10,960
+En cada campo le puedes especificar si lo quieres guardar, si lo vas a analizar, con
+
+347
+00:32:10,960 --> 00:32:14,440
+qué tipo de analizador lo vas a hacer, porque hay unos sitios antes que teníamos un plugin
+
+348
+00:32:14,440 --> 00:32:19,300
+para hacer IQ analysis sobre los textos, que es básicamente quitarle eñes, quitarle
+
+349
+00:32:19,300 --> 00:32:23,400
+comas, quitarle comillas para que os busques y no te importes, y buscas en mayúscula,
+
+350
+00:32:23,400 --> 00:32:27,800
+en minúscula, con comas, en coma, con acento, sin acento. Eso en inglés, por ejemplo, es
+
+351
+00:32:27,800 --> 00:32:32,600
+algo que bien resuelto porque no hay acentos, pero en castellano te puede dar problemas.
+
+352
+00:32:32,600 --> 00:32:38,760
+¿Y la fecha? No, la fecha no está, nadie ha llegado a lo de los templates. Eso es lo
+
+353
+00:32:38,760 --> 00:32:42,840
+que tiene que hacer, con la fecha. Con la fecha. Aquí, por ejemplo, veis, template
+
+354
+00:32:42,840 --> 00:32:48,840
+accesos asterisco. Esto quiere decir que este mapping va al template accesos asterisco,
+
+355
+00:32:48,840 --> 00:32:55,160
+de forma que tú indexas esta noticia y todos los templates que empiecen por acceso, esto
+
+356
+00:32:55,160 --> 00:32:59,000
+va a aplicar. Esto quiere decir que si tú metes un documento que cumple este esquema
+
+357
+00:32:59,000 --> 00:33:03,360
+a un índice que empiece por acceso, le va a crear él automáticamente un índice, si
+
+358
+00:33:03,360 --> 00:33:10,360
+no existe, con el template que hemos definido de índices. No sé, tengo por aquí. ¿Lo
+
+359
+00:33:10,360 --> 00:33:17,360
+tienes por ahí? No lo sé, mire. ¿Ya funciona la producción? No, no conecta a un WPN.
+
+360
+00:33:17,360 --> 00:33:26,360
+Index template. No, esto es...
+
+361
+00:33:26,360 --> 00:33:35,960
+No, está sobre el canal. Bueno, en el caso de ese que es sencillo, ya son bastante
+
+362
+00:33:35,960 --> 00:33:41,560
+simples para cada documento. Esto no enchupa. No, no conecta a un WPN. Bueno. Y a su vez,
+
+363
+00:33:41,560 --> 00:33:47,320
+pues, estáis viendo... Tenemos la noticia, luego tenemos, por otro lado, las notaciones,
+
+364
+00:33:47,320 --> 00:33:50,440
+los propios autores que queremos hacer búsqueda a veces. En fin, son una serie de documentos
+
+365
+00:33:50,440 --> 00:33:55,200
+como si fuese una base de datos con jerarquía, bueno, a su vez define un padre cada uno,
+
+366
+00:33:55,200 --> 00:33:59,920
+pero es súper sencillo configurar. ¿Cómo vuelvo a la presentación? Está en esta
+
+367
+00:33:59,920 --> 00:34:02,840
+pantalla. Ah, pero está en pantalla con la pantalla, ¿no?
+
+368
+00:34:02,840 --> 00:34:09,840
+Sí, está. Dale la clínica aquí. F11. Es que aquí da la función este.
+
+369
+00:34:09,840 --> 00:34:20,840
+Ay, señor. Esto. Bueno, no hemos podido conectar a WPN, pero vamos muy rápido, ¿vale?
+
+370
+00:34:20,840 --> 00:34:27,240
+Ya está. Mira, está es una esquema de lo que devuelve...
+
+371
+00:34:27,240 --> 00:34:34,240
+Bueno, eso son tiempos reales. Ahí tarda 5 milisegundos porque está cacheadado.
+
+372
+00:34:34,240 --> 00:34:40,720
+Claro. Y son 22.659 noticias. Otra de las ventajas de las tixers es que
+
+373
+00:34:40,720 --> 00:34:45,040
+de base te provee un cachín bastante bueno. O sea, tú puedes buscar Motril en Kirchner
+
+374
+00:34:45,040 --> 00:34:52,360
+Noticias, te tarda 2.5, el WPN te tarda 5 milisegundos. Esto es una ventaja que trae
+
+375
+00:34:52,360 --> 00:34:57,360
+de base. No hay que hacer prácticamente nada. No es que no tenga última cosa.
+
+376
+00:34:57,360 --> 00:35:23,360
+Si querás, una pregunta.
+

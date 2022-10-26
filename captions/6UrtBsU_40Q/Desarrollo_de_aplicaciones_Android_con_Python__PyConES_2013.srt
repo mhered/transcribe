@@ -1,0 +1,868 @@
+1
+00:00:00,000 --> 00:00:17,000
+E este é o Amontes, primeiro que nada, para non... Tengo 17 anos e vou hablar sobre desarrollo de aplicaciones Android con Python.
+
+2
+00:00:17,000 --> 00:00:29,000
+O tema é interesante, non sou experto tampoco, não miter o desarrollo de aplicaciones, pero sí que tienes un mundo de posibilidades bastante ampli.
+
+3
+00:00:29,000 --> 00:00:43,000
+O índice que vamos seguir, explicar un pouco sobre Android, por si alguien aqui vive enterrado.
+
+4
+00:00:43,000 --> 00:01:06,000
+E luego vamos hablar sobre a escrita e o Android, que nos permite como funciona, vamos dar un vistazo a la API reference e hacemos un pouco un shell directo, escribimos un pouco un shell e luego já vamos explicar como desarrollar un entorno cómodo, para un desarrollo,
+
+5
+00:01:06,000 --> 00:01:25,000
+e já não tener que escribir todo desde o Android, pasar-lo do PC ao Android e bueno, e logo o máis interesante que seria generar o APK, con Eclipse e a generación de barcode para distribución de código entre unha comunidade de desarrolladores.
+
+6
+00:01:25,000 --> 00:01:46,000
+Bueno, Android, basado en geniulínus, é o máis distribuido entre terminales móbiles, está escrito, o núcleo está escrito ao estar basado en geniul en C, C++, e o que viene siendo a nivel da aplicación,
+
+7
+00:01:46,000 --> 00:01:57,000
+e é uma mezcla de XML para a interface gráfica e Java, para a lógica, e logo ya están as características principales que seria o almacenamiento de SQL Lite,
+
+8
+00:01:57,000 --> 00:02:18,000
+a renderización 3D en OpenGL e webkit, en navegador e demás, desarrollar aplicaciones en Python, sí, no é tan fácil como parece porque no podemos dedicarnos máis a un entorno profesional,
+
+9
+00:02:18,000 --> 00:02:29,000
+seria máis para a automatización de procesos e salir del paso, sobre todo, se non eres desarrollador, ya va que, pues, non te sones idúl e o maxeado.
+
+10
+00:02:29,000 --> 00:02:48,000
+Então, se hizo un proyecto que se llama Scripting Layer for Android, en el que tú puedes modificar, ejecutar scripts de distintos lenguajes porque tiene varios soportados e interactuar también con a shell.
+
+11
+00:02:48,000 --> 00:03:00,000
+Eso podemos acceder a a maioria da PIS do sistema operativo por non decir casi todas ou todas e, por o momento, soporta Python, Binsel, Yerubi, Lua, Perl e Rino.
+
+12
+00:03:00,000 --> 00:03:24,000
+Seis de buye, bajo licencia 2.0 da Apache e éso, pensou-se. Bueno, aí dejou os barcos de posea o bien. Antes de nada, voy a conectar el teléfono e vamos a hacer un directo de la PIS reference.
+
+13
+00:03:24,000 --> 00:03:35,000
+Está, hombre, puedes hacer todo o que quieras prácticamente porque accedes a todas as PIS do sistema operativo, pero no vas a tener el nivel que tienes con Java.
+
+14
+00:03:35,000 --> 00:03:48,000
+Con Java tienes que darte cuenta que desarrollas ya ao nivel da aplicación directamente e ésto é o que haces, empaquetar todo un interprete para que corre o script e, entonces, se la peca, a parte de pesado,
+
+15
+00:03:48,000 --> 00:03:56,000
+tamén é lento, não, porque ao ejecutar sem interprete é de manera rápida, pero, sí, quando...
+
+16
+00:03:56,000 --> 00:04:12,000
+ea, no te dedicas a construir aplicaciones máis estándar, máis básicas, quanto máis incrementes da aplicación, pues, entonces, máis difícil le va a ser en el paquetamiento.
+
+17
+00:04:12,000 --> 00:04:18,000
+Por aquí acaba de quedar ésto.
+
+18
+00:04:18,000 --> 00:04:42,000
+Para a sin interactiva, vamos abrir un terminal do teléfono para que se vea en pantalla.
+
+19
+00:04:42,000 --> 00:04:50,000
+Não sei se, con o tema do monitor, se verá.
+
+20
+00:05:12,000 --> 00:05:26,000
+Agora, se se debería ver e aí está.
+
+21
+00:05:26,000 --> 00:05:28,000
+Vale.
+
+22
+00:05:28,000 --> 00:05:44,000
+Veis bien o teléfono, sí, no?
+
+23
+00:05:44,000 --> 00:05:54,000
+Vamos abrir o interprete e a trabajar un pouco con o sistema.
+
+24
+00:05:54,000 --> 00:06:06,000
+Se ve o lo hacer con poco máis.
+
+25
+00:06:06,000 --> 00:06:26,000
+Deixar que a plataforma, que a arquitectura, que máis suele correr, é a R&M que suele entrar todos os dispositivos Android.
+
+26
+00:06:26,000 --> 00:06:34,000
+E o interprete, creo que hay versiones máis recientes con QPyton e outros modificadores do interprete.
+
+27
+00:06:34,000 --> 00:06:44,000
+Mas o máis comum é o 2.6, o que tema a limitación que no 2.7, mas o 2.6, sí.
+
+28
+00:06:44,000 --> 00:06:51,000
+Xis lo mismo.
+
+29
+00:06:51,000 --> 00:06:52,000
+E está.
+
+30
+00:06:52,000 --> 00:07:08,000
+E agora importamos o módulo de Android.
+
+31
+00:07:08,000 --> 00:07:16,000
+E hacemos o llamado.
+
+32
+00:07:16,000 --> 00:07:42,000
+O que vem do tabs que xis.
+
+33
+00:07:42,000 --> 00:07:51,200
+O sábado de interface de usuario, en un principio, é a básica. Interactuar o que vienen siendo os alers, os dialogues,
+
+34
+00:07:51,200 --> 00:07:56,160
+acceder ao Wi-Fi, ao Bluetooth e outras características do teléfono.
+
+35
+00:07:56,160 --> 00:08:03,000
+E, luego, a parte, também podemos desarrollar a aplicação com interface gráfica, com HTML.
+
+36
+00:08:03,000 --> 00:08:11,200
+Lo podemos implementar o Java Street e chamamos ao API e, luego, lo podemos compaginar com a lógica en Python.
+
+37
+00:08:11,200 --> 00:08:15,800
+Não se carga o HTML.
+
+38
+00:08:24,800 --> 00:08:28,400
+Vale, ahora sí. Bueno, aquí un paco por encima.
+
+39
+00:08:28,400 --> 00:08:35,400
+O que máis nos suele llamar a tensión é o tema de, bueno, ver os paquetes que están corriendo,
+
+40
+00:08:35,400 --> 00:08:39,400
+pero para crear aplicaciones que un usuario normal puda crear,
+
+41
+00:08:39,400 --> 00:08:47,000
+o tema dos dialogues acceder a capacidades como o Bluetooth, o Wi-Fi para hacer un escaneo e sacar as coisas,
+
+42
+00:08:47,000 --> 00:08:52,400
+pois as tenemos todas aquí, incluso sacar fotos, grabar e coisas,
+
+43
+00:08:52,400 --> 00:08:57,800
+que, pero ya estando a un nivel do API por encima e requiere permisos do usuario.
+
+44
+00:08:57,800 --> 00:09:11,800
+Vamos, por exemplo, a crear un alert e ya empezamos a ver un poco os scripts de manera interna.
+
+45
+00:09:27,800 --> 00:09:37,800
+Vamos a poner aquí.
+
+46
+00:09:47,800 --> 00:09:52,800
+Resultado que nos devolve, nos se ve, perdón.
+
+47
+00:09:52,800 --> 00:09:58,800
+Nos lo da en JSON, con lo cual nos va a ser mucho máis fácil,
+
+48
+00:09:58,800 --> 00:10:02,800
+luego desde a aplicación, desde o código Python, acceder aos datos.
+
+49
+00:10:02,800 --> 00:10:06,800
+E, bueno, estaría a ideia que seria o identificador.
+
+50
+00:10:06,800 --> 00:10:11,800
+Resulta onde se nos almacenaria, en caso de ser un variable de input,
+
+51
+00:10:11,800 --> 00:10:17,800
+o resultado e demas cosas e, luego, o error que nos indicaría se produjo nono.
+
+52
+00:10:17,800 --> 00:10:25,800
+Ora, voy a quitar esto ya e voy a enseñar os scripts.
+
+53
+00:10:31,800 --> 00:10:37,800
+Aqui hay uno de Git test, se ve o código, bien o mal.
+
+54
+00:10:37,800 --> 00:10:47,800
+Se usa o API, función WebViewShow, que significa mostrar un HTML o una página.
+
+55
+00:10:47,800 --> 00:10:52,800
+E, a través de, bueno, luego, voy a mostrar o primeiro,
+
+56
+00:10:52,800 --> 00:10:57,800
+melhor, o HTML para que vea esa función de JavaScript e como se implementa com Python.
+
+57
+00:11:00,800 --> 00:11:05,800
+Aqui estamos llamando a API de Android, con o BarNewAndroid.
+
+58
+00:11:05,800 --> 00:11:12,800
+E, llamamos a unha función que nos aceta un parámetro.
+
+59
+00:11:12,800 --> 00:11:15,800
+Subir un pouco la fuente, que agora quise, que nos da oi.
+
+60
+00:11:15,800 --> 00:11:16,800
+Espera.
+
+61
+00:11:19,800 --> 00:11:21,800
+Se ve, máis, no?
+
+62
+00:11:25,800 --> 00:11:26,800
+Suba, espera.
+
+63
+00:11:26,800 --> 00:11:30,800
+A oi, no?
+
+64
+00:11:30,800 --> 00:11:37,800
+Aceta un parámetro input, en el que nosotros introduciremos,
+
+65
+00:11:37,800 --> 00:11:43,800
+bueno, en este caso, una frase, una palabra e que, luego, mostraremos con un alert.
+
+66
+00:11:43,800 --> 00:11:57,800
+En el propio HTML que, vamos a correr a aplicación.
+
+67
+00:11:57,800 --> 00:12:07,800
+Bueno, se nos carga la página HTML con nuestro input, escribimos cualquier frase.
+
+68
+00:12:07,800 --> 00:12:14,800
+E, cuando pulsemos intro, porque lo puse así no JavaScript,
+
+69
+00:12:14,800 --> 00:12:16,800
+llamará a la función Python.
+
+70
+00:12:16,800 --> 00:12:19,800
+E aqui, se nos sale ya, el, lo que viene siendo o alert.
+
+71
+00:12:19,800 --> 00:12:24,800
+Esto parece pouco porque, claro, es un alert,
+
+72
+00:12:24,800 --> 00:12:28,800
+pero es que con a API podemos acceder a cualquier parte del sistema.
+
+73
+00:12:28,800 --> 00:12:32,800
+O sea, es darle unha ojeada e darse cuenta del potencial.
+
+74
+00:12:32,800 --> 00:12:39,800
+Una vez con esto, vamos a pasar ya, lo que viene siendo,
+
+75
+00:12:39,800 --> 00:12:44,800
+la creación del entorno de desarrollo, porque no es cómodo desarrollar desde el teléfono,
+
+76
+00:12:44,800 --> 00:12:46,800
+e vamos utilizar bien dos maneras.
+
+77
+00:12:52,800 --> 00:12:56,800
+O ADB, que es unha herramienta de SDK para controlar el ordenador,
+
+78
+00:12:56,800 --> 00:13:02,800
+la máquina e el emulador Android, que, bueno, simula un entorno Android
+
+79
+00:13:02,800 --> 00:13:04,800
+e puedes desarrollar desde el.
+
+80
+00:13:17,800 --> 00:13:24,800
+Para ejecutar el ADB, es importante que nuestro teléfono tengamos depurado el USB.
+
+81
+00:13:24,800 --> 00:13:27,800
+Si no tenemos activada la depuración por USB,
+
+82
+00:13:27,800 --> 00:13:32,800
+entonces, no nos mostrará el servicio del teléfono dentro del ADB,
+
+83
+00:13:32,800 --> 00:13:34,800
+no podemos conectar.
+
+84
+00:13:49,800 --> 00:13:51,800
+Bueno, ahí lo vemos.
+
+85
+00:13:51,800 --> 00:13:56,800
+Los tres comandos que vamos utilizar para ADB, porque no es que necesitemos más
+
+86
+00:13:56,800 --> 00:14:01,800
+para un desarrollo cómodo, van a ser push para enviar archivos
+
+87
+00:14:01,800 --> 00:14:05,800
+desde tu ordenador hacia el Android, pull, que seria para coger archivos
+
+88
+00:14:05,800 --> 00:14:09,800
+desde el Android al ordenador e así ya poder editar los scripts,
+
+89
+00:14:09,800 --> 00:14:12,800
+e luego unas en interactiva para poder movernos por el teléfono,
+
+90
+00:14:12,800 --> 00:14:25,800
+saber directorios e ya poder trabajar.
+
+91
+00:14:25,800 --> 00:14:29,800
+Aquí vemos que tenemos el directorio del CL4
+
+92
+00:14:29,800 --> 00:14:31,800
+e tenemos todos os scripts ahí.
+
+93
+00:14:31,800 --> 00:14:37,800
+Bueno, ahí están os logs e aquí los scripts.
+
+94
+00:14:37,800 --> 00:14:42,800
+Vale, vamos a coger el Hello World, por exemplo.
+
+95
+00:14:42,800 --> 00:15:06,800
+Y lo arrastramos al escritorio.
+
+96
+00:15:12,800 --> 00:15:17,800
+Vale, ya se transfirió, lo abrimos con el editor que tengáis,
+
+97
+00:15:17,800 --> 00:15:19,800
+en mi caso, Ginny.
+
+98
+00:15:19,800 --> 00:15:32,800
+No se ve.
+
+99
+00:15:37,800 --> 00:15:40,800
+Espera que hubo un error e no se...
+
+100
+00:15:40,800 --> 00:15:49,800
+Sí, por el dotamos el escritorio.
+
+101
+00:16:11,800 --> 00:16:17,800
+A la raíz esta vez nuestra.
+
+102
+00:16:21,800 --> 00:16:24,800
+Vale, ahora sí.
+
+103
+00:16:25,800 --> 00:16:29,800
+Vale, aquí tenemos ya el script.
+
+104
+00:16:29,800 --> 00:16:32,800
+Este caso é simple, é un input.
+
+105
+00:16:32,800 --> 00:16:35,800
+Nosotros aquí pondríamos el título de l'alerta que saldría para el input
+
+106
+00:16:35,800 --> 00:16:38,800
+e aquí los datos que vamos a recibir.
+
+107
+00:16:38,800 --> 00:16:41,800
+Para mostrarlo, tenemos que ponerle el punto result,
+
+108
+00:16:41,800 --> 00:16:45,800
+porque xinó solo nos devolverá al JSON e non podremos acceder al.
+
+109
+00:16:45,800 --> 00:16:49,800
+Desde el punto result ya accedemos al JSON.
+
+110
+00:16:49,800 --> 00:16:52,800
+E bueno, logo aquí estamos imprimiendo,
+
+111
+00:16:52,800 --> 00:17:09,800
+pero ahora lo que vamos a hacer va a ser mostrar un alert.
+
+112
+00:17:09,800 --> 00:17:13,800
+Para que se muestre el alerta, tenemos que mostrar,
+
+113
+00:17:13,800 --> 00:17:33,800
+tenemos que poner dialog show, xinó nos dará nada.
+
+114
+00:17:43,800 --> 00:17:58,800
+Estou guardando archivo como rule.
+
+115
+00:18:13,800 --> 00:18:29,800
+Vale, e ahora ya lo vamos a transferir al teléfono.
+
+116
+00:18:43,800 --> 00:19:07,800
+Compusho.
+
+117
+00:19:07,800 --> 00:19:27,800
+Este seria uno dos métodos.
+
+118
+00:19:27,800 --> 00:19:29,800
+Logo, também estaría el emulador de Android,
+
+119
+00:19:29,800 --> 00:19:32,800
+aunque aí sí, también é muy incómodo trabajar.
+
+120
+00:19:32,800 --> 00:19:36,800
+Entre outros porque é lento, muy lento,
+
+121
+00:19:36,800 --> 00:19:53,800
+no como é o de FirefoxOS que va a triunfar bastante máis.
+
+122
+00:19:53,800 --> 00:20:10,800
+Insertamos los datos e nos os mostraría, é muy simples.
+
+123
+00:20:10,800 --> 00:20:13,800
+Para distribuir nossas aplicaciones ao público,
+
+124
+00:20:13,800 --> 00:20:19,800
+que é, yo creo que o máis importante de toda a charla,
+
+125
+00:20:19,800 --> 00:20:22,800
+podremos distinguir dos tipos de público.
+
+126
+00:20:22,800 --> 00:20:26,800
+Un público desarrollador en el que tú quieras o debas
+
+127
+00:20:26,800 --> 00:20:29,800
+compartir el código, por lo que seria máis fácil
+
+128
+00:20:29,800 --> 00:20:32,800
+utilizar un generador de QR, tú pones tú código en generador
+
+129
+00:20:32,800 --> 00:20:36,800
+e te suelta un código QR que tú lo pasas a quien quieras.
+
+130
+00:20:36,800 --> 00:20:52,800
+Logo, desde o S4A, desde o scripting line for Android,
+
+131
+00:20:52,800 --> 00:20:54,800
+te permite escanear ese barcode e automáticamente
+
+132
+00:20:54,800 --> 00:20:57,800
+te añade o que viene siendo, este é o generador online
+
+133
+00:20:57,800 --> 00:21:01,800
+e te añade o script a tu lista.
+
+134
+00:21:01,800 --> 00:21:04,800
+E luego estaría o empaquetado con eclipse.
+
+135
+00:21:04,800 --> 00:21:08,800
+O que é fácil, se sabe como, que va a venir bien a todos.
+
+136
+00:21:08,800 --> 00:21:14,800
+Pero, todavía é tan fase experimental e java da muchos problemas.
+
+137
+00:21:14,800 --> 00:21:18,800
+Sobre todo, o autor, o autor de scripting line for Android
+
+138
+00:21:18,800 --> 00:21:21,800
+publicó un template de lo que viene siendo
+
+139
+00:21:21,800 --> 00:21:25,800
+un aplicación Python para Android, con o manifesto e demás.
+
+140
+00:21:25,800 --> 00:21:29,800
+Pero tira muchos errores o tema de que no genera unha carpeta,
+
+141
+00:21:29,800 --> 00:21:31,800
+un diretorio que se llama Gen,
+
+142
+00:21:31,800 --> 00:21:34,800
+donde se encuentra unha serie de clases e, bueno,
+
+143
+00:21:34,800 --> 00:21:38,800
+que, al final, sempre acaba dapiendo errores.
+
+144
+00:21:38,800 --> 00:21:42,800
+Aqui, nados, preparer unas imagenes para que veáis un pouco
+
+145
+00:21:42,800 --> 00:21:47,800
+como se generaria por si lo voyis a hacer por vuesta cuenta.
+
+146
+00:21:47,800 --> 00:21:51,800
+Bueno, abriríamos, primero, las preferencias e,
+
+147
+00:21:51,800 --> 00:21:56,800
+bueno, añadiríamos o pad del SDK al eclipse,
+
+148
+00:21:56,800 --> 00:22:00,800
+porque, xinó, non podria exportar logo a la PK.
+
+149
+00:22:00,800 --> 00:22:03,800
+Elegiríamos el proyecto e seleccionaríamos el archivo,
+
+150
+00:22:03,800 --> 00:22:08,800
+en este caso, el template en.zip, que o autor nos proporciona,
+
+151
+00:22:08,800 --> 00:22:11,800
+e, luego, le daríamos a exportar,
+
+152
+00:22:11,800 --> 00:22:16,800
+es sencillo, pero da bastantes errores.
+
+153
+00:22:16,800 --> 00:22:19,800
+E, tamímos, queria comentar sobre Qibbi,
+
+154
+00:22:19,800 --> 00:22:21,800
+non sé xe lo conocéis,
+
+155
+00:22:21,800 --> 00:22:24,800
+es unha especie de framework toolkit,
+
+156
+00:22:24,800 --> 00:22:27,800
+porque tamíen sirve para el desarrollo de interfaces
+
+157
+00:22:27,800 --> 00:22:30,800
+e, no nivel de usuario, como pode ser QT,
+
+158
+00:22:30,800 --> 00:22:34,800
+e que nos permite desarrollar aplicaciones multi-touch
+
+159
+00:22:34,800 --> 00:22:35,800
+en diversos sistemas.
+
+160
+00:22:35,800 --> 00:22:39,800
+iOS, Android, Windows, está bien,
+
+161
+00:22:39,800 --> 00:22:44,800
+aunque esto ya es máis para aplicaciones mo interactivas,
+
+162
+00:22:44,800 --> 00:22:46,800
+tipo juegos utilizando Pygame,
+
+163
+00:22:46,800 --> 00:22:48,800
+por, de hecho, es uno dos requisitos
+
+164
+00:22:48,800 --> 00:22:51,800
+de la instalación de Qibbi.
+
+165
+00:22:51,800 --> 00:22:53,800
+Está completamente hecho en Python,
+
+166
+00:22:53,800 --> 00:22:57,800
+e, lo bueno que tienes que el proceso de empaquetamiento
+
+167
+00:22:57,800 --> 00:22:59,800
+en APK, es máis sencillo.
+
+168
+00:22:59,800 --> 00:23:02,800
+Qibbi ya te proporciona un builder online,
+
+169
+00:23:02,800 --> 00:23:05,800
+luego te proporciona unha aplicación que se llama
+
+170
+00:23:05,800 --> 00:23:07,800
+Build Dozer, que tamíen,
+
+171
+00:23:07,800 --> 00:23:10,800
+puede automatizar el proceso de exportación,
+
+172
+00:23:10,800 --> 00:23:12,800
+e, bueno, la manual,
+
+173
+00:23:12,800 --> 00:23:17,800
+que seria modificando un archivo e demás.
+
+174
+00:23:17,800 --> 00:23:21,800
+Non os podria hablar demás, porque no da para tanto,
+
+175
+00:23:21,800 --> 00:23:24,800
+pero os dejaré aquí las referencias,
+
+176
+00:23:24,800 --> 00:23:26,800
+se alguien las quiere,
+
+177
+00:23:26,800 --> 00:23:30,800
+porque está mucho más bien explicado nos PDFs,
+
+178
+00:23:30,800 --> 00:23:32,800
+que eu claro que...
+
+179
+00:23:35,800 --> 00:23:37,800
+E, bueno, pues, eso, no,
+
+180
+00:23:37,800 --> 00:23:39,800
+no, hay mucho más, tampoco.
+
+181
+00:23:39,800 --> 00:23:51,800
+Acerrar aquí.
+
+182
+00:24:02,800 --> 00:24:05,800
+Tenéis alguna duda o algo a respecto de...
+
+183
+00:24:05,800 --> 00:24:09,800
+Posible, en un tal...
+
+184
+00:24:09,800 --> 00:24:11,800
+un tal, a máis como un tás, no?
+
+185
+00:24:11,800 --> 00:24:12,800
+Que genera o xinocorná?
+
+186
+00:24:12,800 --> 00:24:14,800
+Creo que sí, de hecho, lo he estado leyendo,
+
+187
+00:24:14,800 --> 00:24:16,800
+e como a arquitectura CRM,
+
+188
+00:24:16,800 --> 00:24:18,800
+e tamíen está basada en Geneulinus,
+
+189
+00:24:18,800 --> 00:24:21,800
+podremos llegar a crear un demonio
+
+190
+00:24:21,800 --> 00:24:24,800
+que se estuviese corriendo a arrancar el sistema.
+
+191
+00:24:24,800 --> 00:24:27,800
+Pero habría que ya, entonces, mirar un poco máis,
+
+192
+00:24:27,800 --> 00:24:29,800
+lo que seria la librería OOS,
+
+193
+00:24:29,800 --> 00:24:32,800
+con a librería OOS ya podemos mirar un poco máis
+
+194
+00:24:32,800 --> 00:24:35,800
+en el bajo nivel de Android e hacerlo, pero sí es posible.
+
+195
+00:24:35,800 --> 00:24:38,800
+Con Python 3, creo que todavía que no.
+
+196
+00:24:38,800 --> 00:24:40,800
+Pero con Python 2.7, sí.
+
+197
+00:24:53,800 --> 00:24:56,800
+Sí, bueno, estados, tú lo que podes comprobar
+
+198
+00:24:56,800 --> 00:24:58,800
+es ver los paquetes que se están corriendo,
+
+199
+00:24:58,800 --> 00:25:01,800
+e creo que esus versiones tamíen.
+
+200
+00:25:01,800 --> 00:25:05,800
+De hecho, creo que las aplicaciones que corren con Java
+
+201
+00:25:05,800 --> 00:25:08,800
+tamíen podrias incluso ver las clases que lleva.
+
+202
+00:25:22,800 --> 00:25:27,800
+Hombre, hombre, con Arduino igual,
+
+203
+00:25:27,800 --> 00:25:31,800
+con Python para Android.
+
+204
+00:25:35,800 --> 00:25:38,800
+CRM, a ver, por soque, tú podrias enviar un señal,
+
+205
+00:25:38,800 --> 00:25:41,800
+pero lo que viene siendo saber el estado,
+
+206
+00:25:41,800 --> 00:25:45,800
+ejecución o no, es simple,
+
+207
+00:25:45,800 --> 00:25:48,800
+no podes saber máis acerca da aplicación porque tampoco,
+
+208
+00:25:48,800 --> 00:25:51,800
+no sé, ni si se pode hacer con Java como dices tú,
+
+209
+00:25:51,800 --> 00:25:56,800
+e creo que no, pero comprobar si se está ejecutando,
+
+210
+00:25:56,800 --> 00:25:59,800
+pues sí. De hecho, lo que podrias hacer es
+
+211
+00:25:59,800 --> 00:26:02,800
+un demonio escuchando con una condición,
+
+212
+00:26:02,800 --> 00:26:05,800
+siempre que se este ejecutando, no pasa nada.
+
+213
+00:26:05,800 --> 00:26:08,800
+En el momento en el que se deje de ejecutar,
+
+214
+00:26:08,800 --> 00:26:37,800
+te enviar un señal de la cafetera e te lanciende.
+
+215
+00:26:37,800 --> 00:26:40,800
+Alguna máis?
+
+216
+00:26:40,800 --> 00:27:01,800
+No.
+
+217
+00:27:10,800 --> 00:27:17,800
+No, no, no, no, no, no, no, no, no.
+

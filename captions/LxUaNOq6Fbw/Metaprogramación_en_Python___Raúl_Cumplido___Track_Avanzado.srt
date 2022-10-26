@@ -1,0 +1,1140 @@
+1
+00:00:00,000 --> 00:00:19,320
+Bueno, me llamo Raúl Cumplido, vengo desde Londres, aunque bueno, soy de Barcelona, trabajo
+
+2
+00:00:19,320 --> 00:00:23,120
+una empresa que se llama Tequila, una pequeña empresa de consultoría. Si tenéis alguna
+
+3
+00:00:23,120 --> 00:00:27,240
+duda o queréis trabajo en Londres, me avisáis que siempre como todo el mundo está buscando
+
+4
+00:00:27,240 --> 00:00:33,600
+gente, no sé por qué. Y bueno, os voy a hablar un poco de metaprogramación en Python. Voy a
+
+5
+00:00:33,600 --> 00:00:38,720
+empezar con algunos básicos, aunque es el traca avanzado, pero luego iremos complicando un poco
+
+6
+00:00:38,720 --> 00:00:43,200
+la cosa. Si hay bastante código, sobre todo al final, si hay cosas que no se le envíen,
+
+7
+00:00:43,200 --> 00:00:46,720
+sobre todo para allá al final, me levantáis la mano, intento hacer zoom o lo que sea.
+
+8
+00:00:48,720 --> 00:00:53,600
+Pues bueno, lo primero, lo que os voy a explicar es sobre todo para Python 3, 4. Ha habido bastantes
+
+9
+00:00:53,600 --> 00:00:59,760
+cambios y podéis probar algunas de las cosas con versiones anteriores, pero hay cosas que
+
+10
+00:00:59,760 --> 00:01:06,680
+no van a funcionar. Iré algunas cosas que han cambiado, por ejemplo, hay algún cambio para
+
+11
+00:01:06,680 --> 00:01:12,040
+Python 3, 4 específicos que lo iré diciendo, pero hay cosas que no estoy seguro para que
+
+12
+00:01:12,040 --> 00:01:18,400
+versión empezaron a funcionar o no, aunque intentaré. Lo primero un poco es que es la
+
+13
+00:01:18,400 --> 00:01:23,400
+metaprogramación. A mí un poco, la primera vez que lo escuché, yo no soy informático y la
+
+14
+00:01:23,400 --> 00:01:28,480
+primera vez que lo escuché me sonaba un poco raro. A mí esto es lo que es. Y básicamente es código
+
+15
+00:01:28,480 --> 00:01:33,080
+que manipula código, ¿vale? ¿Cómo generar con tu código o cómo manipular partes de tu código?
+
+16
+00:01:33,080 --> 00:01:37,440
+Y en Python tenemos muchísimos ejemplos, pues vendrían a ser, pues, decoradores, metaclases,
+
+17
+00:01:37,440 --> 00:01:45,760
+descriptos, abstract syntax tree, exec, compile, inspect, ¿vale? Muchísimas posibilidades para
+
+18
+00:01:45,760 --> 00:01:55,400
+poder modificar cómo nuestro código funciona con el propio código. ¿Vale? ¿Por qué metaprogramación
+
+19
+00:01:55,400 --> 00:02:01,240
+o por qué deberíamos saber cómo funciona? Bueno, si usáis framework tipo Django o muchísimas
+
+20
+00:02:01,240 --> 00:02:06,960
+otras cosas, al realizar el framework, se usa muchísima metaprogramación, metaclases y demás,
+
+21
+00:02:06,960 --> 00:02:12,760
+que luego veremos cómo funcionan y cómo puedes crear tus propias metaclases. Creo que nos ayuda a
+
+22
+00:02:12,760 --> 00:02:17,800
+conocer cómo funciona Python internamente, que por lo menos a mí me parece muy interesante,
+
+23
+00:02:17,800 --> 00:02:22,840
+porque me gusta saber, a mí la magia no me gusta y me gusta saber cómo funciona las cosas,
+
+24
+00:02:22,840 --> 00:02:27,480
+entonces creo que es bueno saber qué es lo que hace. Y yo creo que es divertido, ¿vale? Yo me lo
+
+25
+00:02:27,480 --> 00:02:32,200
+paso bien haciendo estas cosas, puedes hacer muchos hacks que a los jefes no les gustan, pero bueno,
+
+26
+00:02:32,200 --> 00:02:36,680
+para poder seguir con tu trabajo pues es bastante bueno, ¿no? Porque nadie entiende lo que estás
+
+27
+00:02:36,680 --> 00:02:44,360
+haciendo. Luego creo que te ayuda a eliminar tener muchísimo código repetido, el código
+
+28
+00:02:44,360 --> 00:02:49,080
+repetido a mí por lo menos no me gusta, es muy difícil de mantener y luego pues de leer,
+
+29
+00:02:49,080 --> 00:02:53,160
+de escribir y demás, ¿no? A veces cuando les un código es porque has hecho esto 20 veces,
+
+30
+00:02:53,160 --> 00:03:00,880
+o sea, no tiene ningún sentido. Entonces, vale, voy a empezar con algunos básicos muy básicos,
+
+31
+00:03:00,880 --> 00:03:06,880
+que es, bueno, en Python todo es un objeto, eso probablemente lo sabemos, tenemos módulos,
+
+32
+00:03:06,880 --> 00:03:11,840
+clases, funciones, tipos básicos y demás, todo esto se puede asignar a variables,
+
+33
+00:03:11,840 --> 00:03:17,020
+podemos manipularlo, podemos modificar cómo funciona, ¿vale? Y hay una serie de métodos
+
+34
+00:03:17,020 --> 00:03:22,000
+mágicos con los doble underscore, pues, cual name, new y demás, que se asignan a veces pues a
+
+35
+00:03:22,000 --> 00:03:27,480
+nuestras clases, a nuestras funciones y demás y que nos ayudan pues a acceder a muchas cosas,
+
+36
+00:03:27,480 --> 00:03:32,040
+por ejemplo, un cual name, pues, si lo tengo en una clase en una función, pues puedo ver que este
+
+37
+00:03:32,040 --> 00:03:39,400
+método es de esta clase y tiene este nombre y demás, ¿vale? Ejemplos tontos, puedo crear,
+
+38
+00:03:39,400 --> 00:03:45,600
+puedo asignar int a una variable, puedo crear números, podría crear un int que genera números
+
+39
+00:03:45,600 --> 00:03:51,880
+con base 2 y a partir de ahí puedo generar números binarios o muchas otras cosas, ¿vale?
+
+40
+00:03:51,880 --> 00:03:58,560
+Igual, puedo asignar funciones a variables, esto probablemente lo sabemos, puedes ejecutarlas y
+
+41
+00:03:58,560 --> 00:04:04,680
+demás. Luego podemos crear closures, ¿qué es una closure? Una closure básicamente es una función
+
+42
+00:04:04,680 --> 00:04:09,080
+que devuelve otra función y esa función interna puede acceder al scope de la función anterior,
+
+43
+00:04:09,080 --> 00:04:15,440
+es decir, si veis aquí estoy creando una función a la que le paso un par de variables y luego dentro
+
+44
+00:04:15,440 --> 00:04:20,960
+de la función interior cuando las esté ejecutando, puedo acceder a esas variables, ¿vale? Si veis en
+
+45
+00:04:20,960 --> 00:04:26,400
+el ejemplo, creo dos funciones, una que usará 1 y 2, otra 10 y 20, cuando ejecuto la primera me
+
+46
+00:04:26,400 --> 00:04:33,400
+está usando 1 y 2 y la otra me está usando 10 y 20, ¿vale? Puedo acceder, aunque no le he pasado
+
+47
+00:04:33,400 --> 00:04:41,320
+esas variables, puedo acceder al scope anterior, ¿sí? Supongo que, si hay dudas me podéis preguntar y
+
+48
+00:04:41,320 --> 00:04:46,760
+demás, ¿eh? Que a mí las cosas interactivas me parecen interesantes, ¿vale? Decoradores, ¿qué es
+
+49
+00:04:46,760 --> 00:04:51,520
+un decorador? Voy a poner el típico ejemplo que nos enseñan a todos decoradores, que es, tengo
+
+50
+00:04:51,520 --> 00:04:57,200
+una serie de funciones, tengo un montón de códigos repetidos, no nos gusta, es muy feo,
+
+51
+00:04:59,200 --> 00:05:03,480
+si lo quiero cambiar porque quiero dejar de imprimir por dónde estoy pasando, pues tengo
+
+52
+00:05:03,480 --> 00:05:09,880
+que cambiar todas mis funciones, ¿no? ¿Qué tenemos? Bueno, pues puedo crear una función que me devuelve
+
+53
+00:05:09,880 --> 00:05:17,920
+otra función, es decir, un closure, ¿vale? A la que le puedo pasar la función y luego,
+
+54
+00:05:17,920 --> 00:05:22,880
+cuando la ejecute, pues con los diferentes argumentos y puedo acceder, ¿vale? Yo creo que
+
+55
+00:05:22,880 --> 00:05:31,120
+esto en el traca avanzado más o menos lo deberíamos saber casi todos. ¿Vale? Es lo mismo que hacer
+
+56
+00:05:31,120 --> 00:05:36,760
+esto, ¿vale? Puedo utilizar el syntactic sugar de Python para poner el decorador, pero el decorador
+
+57
+00:05:36,760 --> 00:05:44,380
+lo que hace es, me va a ejecutar mi función, que le va a poner un envoltorio y luego, cuando lo
+
+58
+00:05:44,380 --> 00:05:50,280
+genero con mi envoltorio, pues accedo a la función interna, ¿vale? Como he puesto antes un print, me
+
+59
+00:05:50,280 --> 00:05:55,240
+está diciendo que estoy pasando por suma y luego me está ejecutando la función, ¿vale?
+
+60
+00:05:57,000 --> 00:06:03,040
+¿Vale? Eso básicamente, un decorador es una función que genera un envoltorio para otra función
+
+61
+00:06:03,040 --> 00:06:08,680
+y luego la función envoltorio es la que se va a ejecutar al llamar la función y ahí puedo
+
+62
+00:06:08,680 --> 00:06:14,480
+llamar la función o no, puedo decidir, por ejemplo, un cache, que lo tengo cacheado y no tengo que
+
+63
+00:06:14,480 --> 00:06:21,880
+llamar al ORM para buscar los datos o lo que sea, ¿vale? Casos de uso, seguro que conocéis. ¿Vale?
+
+64
+00:06:21,880 --> 00:06:26,160
+No sé si os lo hayáis fijado, he estado poniendo docker strings en casi todos lados y tengo un
+
+65
+00:06:26,160 --> 00:06:33,360
+problema porque mi función suma tenía un docker string que decía suma, ¿vale? Bueno, decía que
+
+66
+00:06:33,360 --> 00:06:37,160
+estoy en mi función suma y el nombre de la función es suma y ahora mismo me está diciendo que estoy
+
+67
+00:06:37,160 --> 00:06:42,080
+en la función envoltorio porque realmente es la que estoy devolviendo y es la que tienes asignada, ¿vale?
+
+68
+00:06:42,080 --> 00:06:49,600
+¿Cómo soluciono eso? Bueno, pues existe en functools el decorador wraps que puedes utilizar
+
+69
+00:06:49,600 --> 00:06:55,520
+para decorar tu función envoltorio y es la que te va a permitir permitir que esos metadatos se copien
+
+70
+00:06:55,520 --> 00:07:02,120
+en la función, ¿vale? Al utilizarla ahora cuando imprimo el nombre veo que estoy diciendo el docker
+
+71
+00:07:02,120 --> 00:07:08,760
+string que quiero utilizar que es el de la función original, ¿vale? Y luego pues como puedo acceder el
+
+72
+00:07:08,760 --> 00:07:16,760
+nombre de la función es el que toca y demás, ¿vale? ¿Cómo funciona para diferentes envoltorios
+
+73
+00:07:16,760 --> 00:07:26,520
+uno... bueno, decoradores uno sobre otro y vamos, vemos que imprime envoltorio 1, envoltorio 2 y veo
+
+74
+00:07:26,520 --> 00:07:32,320
+que wraps sigue funcionando, ¿vale? No pasa nada cuántos tenga mientras en todos esté poniendo
+
+75
+00:07:32,320 --> 00:07:42,280
+el wraps de la función y luego esto se hizo un cambio en Python 3.4 y es que el wraps aparte me
+
+76
+00:07:42,280 --> 00:07:48,920
+incluye en mi función la función original que estoy llamando, ¿vale? Puedo coger si os fijáis en el
+
+77
+00:07:48,920 --> 00:07:53,320
+primer ejemplo antes de llamar al wrap cuando estaba llamando a suma lo que aparecía era envoltorio 1
+
+78
+00:07:53,320 --> 00:07:59,240
+envoltorio 2. Lo puedo hacer es saltarme un envoltorio con wrap directamente y acceder a la función que le
+
+79
+00:07:59,240 --> 00:08:05,320
+había pasado, ¿vale? Y luego puedo hacer punto doblandescorwrap, punto doblandescorwrap y acceder
+
+80
+00:08:05,320 --> 00:08:11,560
+a la función original, ¿vale? Esto antes de Python 3.4 existía pero iba directamente a la función
+
+81
+00:08:11,560 --> 00:08:17,600
+original, no podía ir saltando envoltorio envoltorio, ¿vale? Así que puedo puedo ir accediendo a todas
+
+82
+00:08:17,600 --> 00:08:23,000
+las funciones, ¿vale? Entonces vamos a intentar hacer un caso de uso, esta charla la di en la
+
+83
+00:08:23,000 --> 00:08:30,040
+autopython y fue un poco me preguntaron ¿por qué haces esto? O sea esto es un caso de uso ¿por qué
+
+84
+00:08:30,040 --> 00:08:36,120
+quieres hacer type checking en Python? O sea no estamos haciendo Java ni nada de eso, entonces es un
+
+85
+00:08:36,120 --> 00:08:40,480
+ejemplo, ¿vale? Que nadie crea que quiero hacer esto ni quiero implementarlo aunque luego veremos
+
+86
+00:08:40,480 --> 00:08:47,160
+que ha habido algún PEP que se acerca a intentar un PEP un Python enhancement proposal que es el
+
+87
+00:08:47,160 --> 00:08:53,480
+mecanismo que se utiliza en Python para proponer mejoras en el lenguaje para poder hacer un tipo
+
+88
+00:08:53,480 --> 00:08:59,240
+de type checking, ¿vale? Para poder hacer análisis estetático del código, pero bueno,
+
+89
+00:08:59,240 --> 00:09:04,840
+¿vale? Ejemplo muy básico, tengo tres funciones, una que quiere sumar int, una que quiere sumar
+
+90
+00:09:04,840 --> 00:09:11,200
+strings, pero bueno el string no hace una concatenación sino que me está buscando el valor
+
+91
+00:09:11,200 --> 00:09:17,400
+único de y lo está sumando ¿vale? Yo que sé si le pasa una pues el 120 pico me parece que es o
+
+92
+00:09:17,400 --> 00:09:26,080
+¿vale? Ir asumando todos los valores y el add custom que lo que le paso es un valor y una función
+
+93
+00:09:26,080 --> 00:09:31,720
+y me hará la suma de ese valor ¿vale? ¿Qué pasa? Cuando le paso dos in charlatint funciona como
+
+94
+00:09:31,720 --> 00:09:38,480
+quiere, como queremos, cuando le paso dos strings funciona pero no hace lo que queremos porque
+
+95
+00:09:38,480 --> 00:09:47,400
+queríamos sumar int solo, ¿vale? Cuando al ADSTR le paso tomate en este caso pues funciona,
+
+96
+00:09:47,400 --> 00:09:52,960
+si le paso una única también, si le paso una lista bueno yo quería pasarle solo strings o sea que
+
+97
+00:09:52,960 --> 00:10:00,400
+podemos dejarlo, si le paso números ya esto es un festival, luego al add custom si le pasa una
+
+98
+00:10:00,400 --> 00:10:05,920
+función pues funciona y me la ejecuta pero si le paso otras cosas pues igual ¿no? me dice esto no
+
+99
+00:10:05,920 --> 00:10:14,200
+lo puedo llamar que me estás contando y demás ¿vale? ¿cuál es el primer paso que podemos dar?
+
+100
+00:10:14,200 --> 00:10:22,040
+Bueno, pues empezar a poner is instance en todos lados, muy paitónico esto, comprobando donde
+
+101
+00:10:22,040 --> 00:10:27,520
+que es cada cosa y si no pues fallar ¿vale? En el primero pues si sonin, en el segundo si es string
+
+102
+00:10:27,520 --> 00:10:34,720
+y en el segundo utilizo types lambda type que si le paso si es cala vol al final me va a dejar me va
+
+103
+00:10:34,720 --> 00:10:41,520
+a comprobar si es cala vol ¿vale? tanto sea una lambda o si es una función ¿vale? Con esto pues se
+
+104
+00:10:41,520 --> 00:10:49,320
+comporta como queremos ¿vale? te dice que debe ser otra cosa y demás pero esto vamos no sé
+
+105
+00:10:49,320 --> 00:10:54,200
+qué os parece a vosotros pero a mí no me gusta, pues imaginaos que estoy yo con mi amigo Fran ahí
+
+106
+00:10:54,200 --> 00:10:59,160
+haciendo, haciendo código en el trabajo ¿no? y tenemos que hacer algo así y decimos esto vamos
+
+107
+00:10:59,160 --> 00:11:06,200
+a cambiarlo ¿no? vale pues voy a cambiar un poco el topic porque luego lo, luego volveremos
+
+108
+00:11:06,200 --> 00:11:13,200
+quedaros con eso ¿vale? con lo que estábamos intentando hacer ¿vale? ¿quién ha visto o sabe
+
+109
+00:11:13,200 --> 00:11:26,000
+lo que son las function annotations? vale un 10% más o menos ¿vale? creo que fue en python 3.3
+
+110
+00:11:26,000 --> 00:11:32,400
+aunque no estoy del todo seguro creo que fue en python 3.3 en python se, se añadieron este tipo
+
+111
+00:11:32,400 --> 00:11:38,040
+de anotaciones ¿vale? yo puedo coger y a la firma de mi función que la firma sería todo esto le
+
+112
+00:11:38,040 --> 00:11:47,520
+puedo añadir y decir vale mi variable es tiene una anotación que es tomate la segunda le chuga y
+
+113
+00:11:47,520 --> 00:11:52,440
+mi returna notation va a ser ensalada pero como veis cuando la estoy ejecutando no hace nada o
+
+114
+00:11:52,440 --> 00:11:58,760
+sea eso de por sí no tiene ningún valor a no ser que yo haga algo con ello ¿vale? puedo simplemente
+
+115
+00:11:58,760 --> 00:12:09,040
+anotar ¿vale? vale entonces valor por defecto
+
+116
+00:12:10,720 --> 00:12:18,720
+a lo pones igual antes después a qué te refieres un keyword argument con un valor por defecto
+
+117
+00:12:18,720 --> 00:12:32,440
+vale entonces puedo, puedo añadir las anotaciones si pondrías b igual non 2.0 entonces lo que
+
+118
+00:12:32,440 --> 00:12:37,920
+puedo hacer es con el módulo inspect como veis puedo coger esa firma ¿vale? y veo que tengo
+
+119
+00:12:37,920 --> 00:12:45,920
+una firma que tiene tanto los valores que estoy pasando como el que voy a devolver la puedo imprimir
+
+120
+00:12:45,920 --> 00:12:52,880
+para que se vea un poco más bonito ¿vale? puedo llegar a ver cuál es la anotación que le he
+
+121
+00:12:52,880 --> 00:12:58,800
+puesto al retorn por ejemplo puedo ver los diferentes parámetros de aquí en los diferentes
+
+122
+00:12:58,800 --> 00:13:03,840
+parámetros lo que veo es que tengo un mapping proxy con un diccionario con los diferentes
+
+123
+00:13:03,840 --> 00:13:08,320
+parámetros ¿vale? el mapping proxy es básicamente como una vista de lectura de los diccionarios
+
+124
+00:13:08,320 --> 00:13:13,720
+counters y demás ¿vale? entonces puedo puedo acceder a ver a ver esos parámetros y luego pues
+
+125
+00:13:13,720 --> 00:13:19,160
+puedo ver las diferentes anotaciones veo que mi parámetro b tiene una anotación int y mi
+
+126
+00:13:19,160 --> 00:13:24,600
+parámetro b es del tipo positional keyword sabemos probablemente que tenemos keyword only arguments
+
+127
+00:13:24,600 --> 00:13:28,880
+luego tengo un ejemplo o sea que igual lo explicó luego pero bueno tenemos keyword only arguments
+
+128
+00:13:28,880 --> 00:13:34,440
+entonces me diría que es un keyword only por ejemplo ¿vale? vale lo que puedo hacer también a esa
+
+129
+00:13:34,440 --> 00:13:42,680
+firma le puedo hacer un binding de valores y puedo coger y si a esta firma le paso estos valores
+
+130
+00:13:42,680 --> 00:13:48,120
+como queda y eso es cuando ya le estás pasando los valores ¿vale? y como vemos tengo puedo acceder
+
+131
+00:13:48,120 --> 00:13:57,720
+a los argumentos y ver que tengo mi a que tiene el valor 1 y b que tiene el valor 2 ¿vale? vale
+
+132
+00:13:57,720 --> 00:14:04,600
+entonces intentando unir lo que estaba explicando antes con el ad int, ad string y ad custom y las
+
+133
+00:14:04,600 --> 00:14:14,600
+anotaciones pues intentar ver si podía hacer algo que funcionara y aquí lo que he hecho es he intentado
+
+134
+00:14:14,600 --> 00:14:19,400
+bueno he creado un decorador ¿vale? que lo que dejo es la firma de la función y luego cuando
+
+135
+00:14:19,400 --> 00:14:24,200
+lo estoy llamando compruéba hace el binding con esa firma y compruéba que todos los parámetros
+
+136
+00:14:24,200 --> 00:14:31,000
+son de la anotación que tocaba ¿vale? y luego si no es pues en primer un mensaje de error ¿vale?
+
+137
+00:14:31,000 --> 00:14:36,000
+y primero el mensaje de error diciendo este argumento debería ser un int y me estás pasando un
+
+138
+00:14:36,000 --> 00:14:43,440
+string o algo más o algo así ¿vale? entonces puedo hacer algo así ¿vale? type check, ad int con
+
+139
+00:14:43,440 --> 00:14:49,560
+los diferentes valores y si pasa unos ints pues funciona bien y si le pongo unos strings me está
+
+140
+00:14:49,560 --> 00:14:57,200
+diciendo que que no son del tipo que toca ¿vale? vale entonces vamos a intentar complicar un poco
+
+141
+00:14:57,200 --> 00:15:02,760
+más el ejemplo porque nos mola complicar las cosas de por sí ¿no? en vez de keep it simple pues vamos
+
+142
+00:15:02,760 --> 00:15:09,440
+a hacerlo complicado y ¿qué pasa cuando le queremos pasar un argumento al decorador? supongo que
+
+143
+00:15:09,440 --> 00:15:14,360
+más de uno ha visto que a muchos decoradores pues puede pasar algún una serie de argumentos ¿no? y
+
+144
+00:15:14,360 --> 00:15:19,360
+vamos a intentar hacer ¿qué pasa? si quiero que se lance una excepción en vez de que se imprima
+
+145
+00:15:19,360 --> 00:15:23,760
+el mensaje de error que se lance una excepción cuando esto falla ¿vale? entonces lo que puedo hacer
+
+146
+00:15:23,760 --> 00:15:30,920
+es este código es exactamente bueno ahora hay solo un cambio pero bueno esto es prácticamente
+
+147
+00:15:30,920 --> 00:15:37,880
+exactamente lo mismo y lo único que he hecho es envolver la función inicial el decorador
+
+148
+00:15:37,880 --> 00:15:43,640
+inicial con este con esta otra función entonces esto que va a pasar la primera que se llame
+
+149
+00:15:43,640 --> 00:15:49,080
+por ejemplo que pondré el race exception igual astru ¿no? entonces la primera que se va a llamar se
+
+150
+00:15:49,080 --> 00:15:53,400
+va a llamar con el race exception devolveré la función decorador luego cuando se llama se le pasa
+
+151
+00:15:53,400 --> 00:15:58,320
+la función y se ejecuta exactamente igual que antes ¿vale? y ahora lo que puedo hacer es acceder
+
+152
+00:15:58,320 --> 00:16:02,560
+aquí al race exception y si hay un mensaje de error y hay un race exception lo único que hago es
+
+153
+00:16:02,560 --> 00:16:11,560
+lanza una excepción ¿sí? ¿me seguís más o menos? vale y entonces esto es lo que os he explicado
+
+154
+00:16:11,560 --> 00:16:17,640
+sin poner el syntactic sugar básicamente lo que haces es type check, race exception true,
+
+155
+00:16:17,640 --> 00:16:28,520
+luego se le pasa la función y luego la ejecución ¿vale? vale este porque no ha fallado este ha
+
+156
+00:16:28,520 --> 00:16:33,920
+fallado porque le estoy pasando un string y cuando le estoy pasando el race exception true y el
+
+157
+00:16:33,920 --> 00:16:43,080
+string pues me lanza la excepción ¿vale? vale si os fijáis ahora si lo quiero llamar con el valor
+
+158
+00:16:43,080 --> 00:16:50,280
+por defecto tengo que poner estos paréntesis ¿vale? y la primera vez no lo tenía que hacer y si ahora
+
+159
+00:16:50,280 --> 00:16:56,120
+lo intento hacer como lo hacía la primera vez falla ¿vale? porque está esperando que la primera
+
+160
+00:16:56,120 --> 00:17:00,480
+vez que lo llamas lo llamas con el race exception la segunda vez con la función y la tercera claro
+
+161
+00:17:00,480 --> 00:17:04,120
+como lo estoy llamando la primera vez con la función directamente cuando intenta acceder luego
+
+162
+00:17:04,120 --> 00:17:08,760
+cuando lo ejecutas pues me dice que los parámetros que le estás pasando no son los que toca que buscaba
+
+163
+00:17:08,760 --> 00:17:15,680
+uno pero le has pasado dos ¿vale? ¿cómo lo podemos arreglar? bueno pues podemos utilizar functools
+
+164
+00:17:15,680 --> 00:17:23,760
+partial ¿vale? y lo que podemos hacer es que la primera vez que lo llames imaginemos que le estoy
+
+165
+00:17:23,760 --> 00:17:29,000
+pasando el race exception ¿vale? si le paso el race exception la primera vez que lo llames funct
+
+166
+00:17:29,000 --> 00:17:36,400
+vasernon entonces voy a devolver un partial que es la función con este valor o sea que la próxima
+
+167
+00:17:36,400 --> 00:17:41,800
+vez que se llame se va a llamar con ese valor puesto ¿vale? no es como explicarlo muy bien pero bueno
+
+168
+00:17:43,800 --> 00:17:49,280
+la segunda vez que se llame se le va a pasar la función y entonces ejecutará el resto ¿vale?
+
+169
+00:17:49,280 --> 00:17:59,480
+sí ¿vale? entonces ahora puedo llamarlo así y funciona ¿vale? me he evitado en los paréntesis
+
+170
+00:17:59,480 --> 00:18:08,160
+esos feos que quedaban ahí ¿vale? y lo puedo llamar también con el race exception y sigue
+
+171
+00:18:08,160 --> 00:18:14,440
+funcionando ¿vale? ¿vale? aquí sólo recordar que el raps por mucho que estemos tocando por ahí
+
+172
+00:18:14,440 --> 00:18:18,800
+sigue funcionando y puedo seguir en los metadatos de lo que viene siendo la función pues siguen
+
+173
+00:18:18,800 --> 00:18:25,280
+estando ahí ¿vale? que no que no nos lo estamos cargando ¿vale? y ahora ahora vamos a darle otra
+
+174
+00:18:25,280 --> 00:18:32,600
+vuelta y es imaginaros que yo quiero por ejemplo definirlo por defecto que no se le pase bueno que
+
+175
+00:18:32,600 --> 00:18:39,800
+no vaya a avanzar una sección sino que sólo me pinte el mensaje de error y que luego después no
+
+176
+00:18:39,800 --> 00:18:44,440
+en el momento de definición sino cuando estoy ejecutando que pueda cambiar ese comportamiento
+
+177
+00:18:44,440 --> 00:18:49,480
+¿vale? por defecto es decir que cuando lo tengo ejecutado puede hacer ser race exception por
+
+178
+00:18:49,480 --> 00:18:55,520
+ejemplo y cambiarlo ¿vale? y aquí pues ya cuando se empieza a complicar ¿no? pues cuando metemos un
+
+179
+00:18:55,520 --> 00:19:04,000
+decorador dentro del decorador que siempre siempre mola entonces esto es exactamente igual todo ¿vale?
+
+180
+00:19:04,000 --> 00:19:12,200
+y nos vamos a a quedar aquí ¿vale? lo que hago es estoy definiendo un un método set race exception
+
+181
+00:19:12,200 --> 00:19:17,720
+¿vale? que va a coger el race exception no el local sino el del scope global o sea que podrá
+
+182
+00:19:17,720 --> 00:19:24,320
+cambiar este race exception ¿vale? y le puedo cambiar el valor ¿vale? y este decorador que he
+
+183
+00:19:24,320 --> 00:19:30,360
+creado aquí lo que está haciendo es está cogiendo esta función wrapper que se va a pasar en objeto
+
+184
+00:19:30,360 --> 00:19:42,960
+la primera vez que lo llamas ¿vale? y va a añadir a funks non eso va a devolver el partial de la
+
+185
+00:19:42,960 --> 00:19:47,680
+junta wrapper de la función con el objeto y luego la segunda vez que se llama pasa el set race
+
+186
+00:19:47,680 --> 00:19:56,440
+exception ¿vale? la segunda vez que se llama el objeto es objeto que es el wrapper ¿vale? y luego
+
+187
+00:19:56,440 --> 00:20:03,200
+la función que lo que voy a hacer en la función es añadirle al objeto es decir estoy añadiendo
+
+188
+00:20:03,200 --> 00:20:10,640
+a la función wrapper esa función o sea ahora mismo mi objeto wrapper voy a poder hacer punto set
+
+189
+00:20:10,640 --> 00:20:21,000
+race exception y voy a poder acceder ¿sí? más o menos ¿vale? vamos a comprobarlo oops bien
+
+190
+00:20:22,360 --> 00:20:27,840
+¿vale? pues tengo esto que era lo que queríamos al principio veo que tengo un método set race
+
+191
+00:20:27,840 --> 00:20:35,240
+exception ahora en mi función ¿vale? y como que si lo cambio pues ahora me lanzó una excepción
+
+192
+00:20:35,240 --> 00:20:41,920
+¿vale? entonces vale pues volvemos al código acordaros de lo que empezamos estábamos mi amigo
+
+193
+00:20:41,920 --> 00:20:49,600
+fran y yo ahí en el trabajo bueno mi amigo mi compañero lo de amigos es entonces estamos
+
+194
+00:20:49,600 --> 00:20:58,520
+estamos ahí haciendo atinta de set r at casto mi demás y empezamos con ese caso y hemos acabado
+
+195
+00:20:58,520 --> 00:21:04,480
+pues con un decorador que tiene otro decorador que tiene un par de partials por ahí con signatures
+
+196
+00:21:04,480 --> 00:21:11,040
+binding parámetros anotaciones y entonces pues llega el momento del correvió ¿no? se lo damos a
+
+197
+00:21:11,040 --> 00:21:17,200
+nuestro amigo dábide y bueno pues la reacción que tendríamos cualquiera ¿no? es como pero pero
+
+198
+00:21:17,200 --> 00:21:22,160
+que me estás contando o sea que tenías que hacer tres funciones una que sumara int una que sumara
+
+199
+00:21:22,160 --> 00:21:27,520
+string sí entonces yo lo quería lo que quería decir aquí es que hay que ir con cuidado ¿vale? porque
+
+200
+00:21:27,520 --> 00:21:34,120
+porque es fácil que cuando intenta cuando intentamos utilizar estas cosas es fácil que se nos vaya
+
+201
+00:21:34,120 --> 00:21:39,400
+de las manos ¿vale? a veces creo que creo que hacemos un poco de overengie y antes cuando
+
+202
+00:21:39,400 --> 00:21:44,720
+he dicho nos gusta complicar las cosas no nos gusta que por favor luego tenemos que mantener ese código
+
+203
+00:21:44,720 --> 00:21:49,840
+tenemos que saber lo que hace y cuando hay que deducar es un poco más complicado ¿vale? y vamos
+
+204
+00:21:49,840 --> 00:21:59,120
+a pasar a metaclases ¿vale? yo creo que con decoradores con decoradores estamos estamos bien ¿vale? dime
+
+205
+00:21:59,120 --> 00:22:05,440
+si no tú que se podría escondemplar en una escultura de datos por ejemplo una túplia o una rey
+
+206
+00:22:06,640 --> 00:22:13,520
+si cada uno de los óperes así son entonces por ejemplo enteros o sea si son no sé además de que
+
+207
+00:22:13,520 --> 00:22:17,920
+sea una rey si además de que los datos que contienen la rey son enteros son un número de enteros por
+
+208
+00:22:17,920 --> 00:22:22,440
+ejemplo a la verdad así la notación pues no tengo claro yo sé que podrías decirle que eso es una
+
+209
+00:22:22,440 --> 00:22:29,000
+tupla o que eso es una rey pero luego para acceder supongo que lo tendrías que hacer interno ¿sabes?
+
+210
+00:22:29,000 --> 00:22:33,800
+y haciendo más y con anotaciones no sé luego podría hacer
+
+211
+00:22:33,800 --> 00:22:40,280
+y luego este tipo tomate después de que te pueda hacer la rela que quieras
+
+212
+00:22:40,280 --> 00:22:49,960
+claro claro pero sí pero así haciéndolo así con los parámetros y los tipos y el is instants y demás
+
+213
+00:22:49,960 --> 00:22:54,840
+dentro de una lista yo creo que no creo que no se puede
+
+214
+00:22:54,840 --> 00:23:11,840
+y a poner tu tipo
+
+215
+00:23:11,840 --> 00:23:22,760
+si que es tu tipo y tú sabes que eso bueno pones un list ind no bueno vale no lo que ha dicho él
+
+216
+00:23:22,760 --> 00:23:25,400
+al final le pones tipo tomate y tú haces tu tomate
+
+217
+00:23:25,400 --> 00:23:29,600
+vale
+
+218
+00:23:29,600 --> 00:23:43,240
+sí sí vale vale un poco vamos a entrar en metaclases que son y alguna cosa que podemos
+
+219
+00:23:43,240 --> 00:23:51,080
+hacer y cómo funcionan bueno básicos como antes me creo una clase una instancia
+
+220
+00:23:51,080 --> 00:23:59,320
+mira el tipo de la instancia es de el tipo de la clase miro el tipo de la clase y me dice que es de tipo type
+
+221
+00:23:59,320 --> 00:24:08,280
+entonces bueno con type podemos crear clases no sé si lo sabíais pero básicamente type
+
+222
+00:24:08,280 --> 00:24:14,360
+se puede es es la metaclase madre podríamos decir y nos sirve para crear clases y aquí por ejemplo
+
+223
+00:24:14,360 --> 00:24:22,680
+vemos un ejemplo que estoy con type pues pasando el nombre de tu clase las bases si hereda de algunas o no
+
+224
+00:24:22,680 --> 00:24:29,400
+y el contenido de la clase en un diccionario puede pues comprometo se crea una clase que es de tipo type como vemos ahí
+
+225
+00:24:29,400 --> 00:24:36,640
+y luego puedo crear instancias y veo que es de la instancia de la clase que he definido vale
+
+226
+00:24:36,640 --> 00:24:42,840
+vale y type es de tipo type porque no hay herencia de metaclases vale
+
+227
+00:24:42,840 --> 00:24:50,520
+aquí algo parecido pero usando el diccionario lo que estoy haciendo es creo un código ahí en un
+
+228
+00:24:50,520 --> 00:24:56,400
+string estoy añadiendo una variable un método ejecuto ese código en un diccionario y luego cuando
+
+229
+00:24:56,400 --> 00:25:02,120
+creo esa clase le paso ese diccionario que hemos dicho y luego cuando estoy creando instancias puedo
+
+230
+00:25:02,120 --> 00:25:11,600
+acceder a ese diccionario a los métodos vale vale entonces un poco para recapitular bueno las
+
+231
+00:25:11,600 --> 00:25:19,960
+metaclases son las clases de las clases vale heredan de type controlan cómo se prepara una clase cómo
+
+232
+00:25:19,960 --> 00:25:26,480
+se crea y cómo se llama luego veremos lo de lo de cómo se prepara una metaclase vendía siendo
+
+233
+00:25:26,480 --> 00:25:32,400
+una clase lo que una clase una instancia vale igual estoy súper simplificando aquí pero un poco para
+
+234
+00:25:32,400 --> 00:25:39,000
+que tengamos la idea más luego el tipo de la instancia es la clase el tipo de la clase eso bien su
+
+235
+00:25:39,000 --> 00:25:44,520
+metaclase o type que es el de por defecto y el tipo de la metaclase siempre type que es lo que quería
+
+236
+00:25:44,520 --> 00:25:51,080
+decir antes que no no hay herencia de metaclases vale entonces cómo define una metaclase bueno
+
+237
+00:25:51,080 --> 00:25:56,360
+pues es una clase que hereda de type y luego podría acceder a los métodos mágicos que me proporciona
+
+238
+00:25:56,360 --> 00:26:02,360
+en cuanto a la creación de clases y lo defino cuando creo mi clase pues añadiendo la metaclase vale
+
+239
+00:26:02,360 --> 00:26:10,040
+entonces bueno crea una instancia es del tipo de la clase comprobo el tipo de la metaclase y es el
+
+240
+00:26:10,040 --> 00:26:15,920
+tipo es mi metaclase y el tipo de mi meta pues estáis lo que he comentado antes vale entonces
+
+241
+00:26:15,920 --> 00:26:20,800
+cómo funciona bueno estos diagramas los conseguí aquí que están muy bien si os queréis leer el
+
+242
+00:26:20,800 --> 00:26:32,440
+blog luego luego me decís y os paso os paso en el enlace básicamente cuando crea una instancia vale es
+
+243
+00:26:32,440 --> 00:26:43,160
+decir cuando estoy haciendo esto se ve atrás bueno cuando crea una instancia es básico vale lo primero
+
+244
+00:26:43,160 --> 00:26:48,960
+que se hace se llama el método doble and discord call de la metaclase vale y ahí pues puedo hacer
+
+245
+00:26:48,960 --> 00:26:55,120
+por lo que quiera luego llamo al método doble and discord niu de la clase y luego al método
+
+246
+00:26:55,120 --> 00:26:59,040
+doble and discord y ni diferencias entre método and discord niu y and discord niu pues es que el
+
+247
+00:26:59,040 --> 00:27:05,560
+método doble and discord niu la instancia no está creada todavía vale no tengo self vale no puedo
+
+248
+00:27:05,560 --> 00:27:14,480
+acceder a la instancia todavía pero puedo cambiar cómo se crea vale vale y luego una metaclase que es
+
+249
+00:27:14,480 --> 00:27:19,600
+lo que pasa es bastante parecido pero bueno hay algunas pequeñas diferencias vale lo primero que
+
+250
+00:27:19,600 --> 00:27:25,680
+se hace es se llama al método doble and discord prepare de mi metaclase vale lo que se ha dicho
+
+251
+00:27:25,680 --> 00:27:31,200
+antes de que se prepara este método lo único que hace es ese diccionario donde estaba generando
+
+252
+00:27:31,200 --> 00:27:38,480
+donde estaba ejecutando mi código es ese diccionario vale está creando ese diccionario luego se llama el
+
+253
+00:27:38,480 --> 00:27:46,800
+método doble and discord call de type vale porque meta meta clase no hay herencia pues luego método
+
+254
+00:27:46,800 --> 00:27:52,680
+doble and discord niu de mi metaclase que también la clase no está creada todavía y luego el método
+
+255
+00:27:52,680 --> 00:27:58,720
+doble and discord init de mi metaclase que ahí es cuando la clase ya está creada vale puedo acceder
+
+256
+00:27:58,720 --> 00:28:04,320
+a los atributos puedo acceder a cómo se crea y demás vale es decir cuando ejecutamos el clas
+
+257
+00:28:04,320 --> 00:28:10,920
+lo de abajo lo pasa atrás no se se ve pero clas a pas justo cuando le doy ahí al intro en el
+
+258
+00:28:10,920 --> 00:28:16,480
+intérprete pues lo que pasa en ese momento cuando se está creando la clase vale vale
+
+259
+00:28:16,480 --> 00:28:23,000
+pues vamos a poner un ejemplo de metaclase y aquí voy a intentar cargarme python otra vez como como
+
+260
+00:28:23,000 --> 00:28:29,640
+con los tipos bueno aunque no lo comentaba antes pero uno de los peps que se ha hecho para python 3
+
+261
+00:28:29,640 --> 00:28:34,640
+5 y se ha implementado es el type hint que es para poder hacer análisis estático de código y poder
+
+262
+00:28:34,640 --> 00:28:40,480
+mediante porque cuando se definieron las anotaciones se dejaron libres para poder usarlas para lo que
+
+263
+00:28:40,480 --> 00:28:44,120
+quieras todavía las puedes utilizar para lo que quieras no es que te obliguen a utilizarlas pero si
+
+264
+00:28:44,120 --> 00:28:48,200
+quieres utilizarla para para comprobar tipos y poder hacer análisis estático pues te dan unas
+
+265
+00:28:48,200 --> 00:28:52,360
+guías de cómo deberías anotar y que deberías utilizar vale para que haya un poco un framework
+
+266
+00:28:52,360 --> 00:29:03,400
+para que todo el mundo utilice lo mismo vale entonces yo soy muy maniático tengo un poco de me gusta
+
+267
+00:29:03,400 --> 00:29:09,920
+al orden y entonces pues quiero crear unas clases que son que voy a dejar crearlas que van a tener
+
+268
+00:29:09,920 --> 00:29:15,160
+los atributos al principio y los métodos después si me intentas crear una clase que los mezcla o que
+
+269
+00:29:15,160 --> 00:29:19,640
+tiene los métodos antes que los atributos te voy a decir que no la puedes crear vale porque no
+
+270
+00:29:19,640 --> 00:29:28,480
+vale para qué sirve esto para nada pero para ver un poco para ver un poco cómo funciona vale aquí
+
+271
+00:29:28,480 --> 00:29:32,240
+lo único que he hecho es me he creado una meta clase que lo único que va a hacer aquí no hay nada de
+
+272
+00:29:32,240 --> 00:29:41,560
+código lo único que haces imprime los atributos creo mi clase buena con mi meta clase y cuando se
+
+273
+00:29:41,560 --> 00:29:50,360
+crea me dice que tengo los atributos pues los mágicos a y función vale qué pasa creo la mala y me
+
+274
+00:29:50,360 --> 00:29:57,800
+dice que tengo los mismos pero están en orden diferente entonces yo lo que quiero es comprobar el
+
+275
+00:29:57,800 --> 00:30:03,760
+orden vale entonces supongo que sabréis en python los diccionarios no mantienen el orden vale para
+
+276
+00:30:03,760 --> 00:30:09,600
+eso tenemos orden edict entonces cómo podemos hacerlo bueno como os he dicho antes existe el
+
+277
+00:30:09,600 --> 00:30:16,120
+método doble andes core prepare en el que creo ese diccionario que se va a utilizar para crear mi
+
+278
+00:30:16,120 --> 00:30:22,760
+clase entonces si utilizo un orden edict lo que veo es que aquí para esta clase el atributo
+
+279
+00:30:22,760 --> 00:30:29,240
+y la función están en este orden y para mí la mala la función está antes que el atributo vale
+
+280
+00:30:29,240 --> 00:30:36,640
+entonces con un poco de código aquí probablemente no está optimizado pero bueno funciona miro si el
+
+281
+00:30:36,640 --> 00:30:42,880
+calibro está antes si es la primera función si no y si puede funcionar y lo que pasa es que cuando
+
+282
+00:30:42,880 --> 00:30:47,920
+creo mi clase buena pues no me dice nada y cuando creo mi clase mala me dice que las funciones
+
+283
+00:30:47,920 --> 00:30:56,440
+tienen que seguir a los atributos de la clase vale en la definición vale eso puedes hacer en
+
+284
+00:30:56,440 --> 00:31:02,080
+producción ahí con tus colegas y que se queden un poco que se queden un poco esto pensaba python no
+
+285
+00:31:02,080 --> 00:31:09,320
+funcionaba así pero bueno y ya está ya con eso
+
