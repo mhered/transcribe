@@ -1,0 +1,1956 @@
+1
+00:00:00,000 --> 00:00:12,380
+Bueno, muchas gracias a todos por venir. Esta es la primera charla del Track BTV, del
+
+2
+00:00:12,380 --> 00:00:20,320
+Track Científico. Voy a hacer una introducción así, tampoco voy a contar cosas muy novedosas,
+
+3
+00:00:20,320 --> 00:00:28,480
+voy a sentar un poco el tema que vamos a hablar, voy a hacer un repaso histórico de cómo
+
+4
+00:00:28,480 --> 00:00:33,200
+ha evolucionado el ecosistema científico en Python, en qué momento estamos ahora,
+
+5
+00:00:33,200 --> 00:00:39,720
+analizar un poco también las desventajas que tiene y pensar un poco cómo puede evolucionar
+
+6
+00:00:39,720 --> 00:00:47,320
+en el futuro. Bueno, lo primero para quienes no me conozcáis, voy a dedicar tres minutos
+
+7
+00:00:47,320 --> 00:00:52,440
+a presentarme y a deciros un poco cómo he llegado hasta aquí. Yo me llamo Juan Luis
+
+8
+00:00:52,440 --> 00:00:58,200
+Cano, estoy estudiando ingeniería aeronáutica en la Universidad Politécnica de Madrid y
+
+9
+00:00:58,200 --> 00:01:04,120
+eso me convierte en un programador penoso ya de entrada. De hecho, en la universidad
+
+10
+00:01:04,120 --> 00:01:10,680
+tenemos una asignatura optativa de FORTRAN 90, aunque en otras acabamos usando FORTRAN
+
+11
+00:01:10,680 --> 00:01:17,040
+77 y como no deja de ser una cosa un poco engorrosa, pues al final la gente acaba haciendo
+
+12
+00:01:17,040 --> 00:01:25,720
+cálculos con Excel, lo cual es un poco incómodo, digamos lo de alguna manera. Por otro lado,
+
+13
+00:01:25,720 --> 00:01:33,120
+para desarrollar algunas de las actividades que hacemos en las asignaturas utilizamos
+
+14
+00:01:33,120 --> 00:01:37,520
+herramientas privativas hasta aquí ningún problema, pero como las universidades están
+
+15
+00:01:37,520 --> 00:01:46,840
+como están y no hay dinero, pues no hay tampoco licencias para estudiantes y se nos aconseja
+
+16
+00:01:46,840 --> 00:01:56,960
+a los estudiantes que consigamos esas herramientas por métodos un poco ilegítimos. Entonces,
+
+17
+00:01:56,960 --> 00:02:01,800
+a mí esto me crea una gran frustración porque yo decía caramba, yo no quiero estar en
+
+18
+00:02:01,800 --> 00:02:07,480
+la universidad y tener que andar pirateando programas o pendiente de la licencia, con
+
+19
+00:02:07,480 --> 00:02:12,920
+lo cual empecé a investigar un poco y me di cuenta por un lado de que el software libre
+
+20
+00:02:12,920 --> 00:02:18,840
+respondía a la mayoría de las cuestiones que a mí se me planteaban y también sin
+
+21
+00:02:18,840 --> 00:02:24,720
+tener ningún tipo de preocupación por temas de licencias y concretamente Python era una
+
+22
+00:02:24,720 --> 00:02:32,680
+herramienta perfecta para hacer un poco computaciones un poco más exploratoria, análisis así
+
+23
+00:02:32,680 --> 00:02:37,640
+más dinámicos sin tener que pasar por el ciclo de compilación, depuración, ejecución
+
+24
+00:02:37,640 --> 00:02:46,360
+y demás que tendríamos con Fortran por ejemplo. Entonces como digo aprendí Python por cuenta
+
+25
+00:02:46,360 --> 00:02:54,840
+propia en la universidad y en invierno de 2011 conocí a un grupo que se llama Python
+
+26
+00:02:54,840 --> 00:03:00,600
+Madrid, no sé si alguno lo conoceréis, que se reunían una vez al mes para hablar un
+
+27
+00:03:00,600 --> 00:03:07,400
+poco sobre lenguaje, temas generales, no necesariamente científicos y bueno, discutir
+
+28
+00:03:07,400 --> 00:03:13,240
+un poco sobre algún proyecto que tuviese la gente y luego pues tomar unas cervezas.
+
+29
+00:03:13,240 --> 00:03:20,480
+Y en esas reuniones al principio conocí a Kiko y a David que teníamos los tres la misma
+
+30
+00:03:20,480 --> 00:03:26,080
+inquietud y es que nos interesaba mucho la aplicación Python para temas científicos
+
+31
+00:03:26,080 --> 00:03:31,040
+e ingenieriles pero veíamos que había muy poca documentación en español sobre el tema
+
+32
+00:03:31,040 --> 00:03:35,520
+por no decir casi nada. Así que empezamos un blog que se llama
+
+33
+00:03:35,520 --> 00:03:41,160
+Paimonachi, supongo que algunos los conoceréis porque en los últimos meses hemos crecido
+
+34
+00:03:41,160 --> 00:03:49,000
+bastante y digamos que ya estoy consiguiendo un poco introducir Python científico también
+
+35
+00:03:49,000 --> 00:03:55,200
+en la gente de mi entorno. Y bueno, como no todo va a ser programación en esta vida,
+
+36
+00:03:55,200 --> 00:03:59,040
+pues también he querido rendir un homenaje al rock británico de los 70 en esta presentación.
+
+37
+00:03:59,040 --> 00:04:08,120
+Vale, todos sabemos un poco cómo va que bibliotecas se utilizan más o tenemos una
+
+38
+00:04:08,120 --> 00:04:16,960
+idea bastante clara. Sabemos también que Python se liberó la primera versión en 1991
+
+39
+00:04:16,960 --> 00:04:22,640
+por Guido van Rosum pero cómo surgió este interés por utilizar Python en el ecosistema
+
+40
+00:04:22,640 --> 00:04:27,000
+científico, cómo se ha ido evolucionando. Bueno, pues la clave está en esa frase,
+
+41
+00:04:27,000 --> 00:04:31,960
+Dividing and Merging, esta frase está cogida de un libro que escribió Travis Olyphant
+
+42
+00:04:31,960 --> 00:04:39,800
+que se llama La guía a non-py y ahora enseguida vais a entender por qué.
+
+43
+00:04:39,800 --> 00:04:46,400
+Bueno como digo, Python se liberó en 1991 pero en 1995, ya muy temprano, enseguida se
+
+44
+00:04:46,400 --> 00:04:53,000
+vio que este lenguaje tenía bastante potencial para aplicaciones científicas con lo cual
+
+45
+00:04:53,000 --> 00:04:59,240
+Jim Hooning que trabajaba en el MIT y otra gente también empezaron a experimentar y
+
+46
+00:04:59,240 --> 00:05:06,120
+crearon un objeto a RAI muy básico para empezar a manejar bloques de datos con Python y lo
+
+47
+00:05:06,120 --> 00:05:11,640
+llamaron Numeric. Vale, esto fue un poco los inicios de la computación científica en
+
+48
+00:05:11,640 --> 00:05:17,360
+Python y ya empezó a ver que Python bien podía valer como una herramienta para el
+
+49
+00:05:17,360 --> 00:05:22,880
+cálculo científico muy adecuada y que podía competir con otras alternativas que existían
+
+50
+00:05:22,880 --> 00:05:31,120
+en ese momento. De acuerdo, en 1997 este hombre que es Travis Olyphant y es una de las personas
+
+51
+00:05:31,120 --> 00:05:39,200
+más importantes dentro de este mundo y el que ha innovado posiblemente el que más estaba
+
+52
+00:05:39,200 --> 00:05:48,120
+trabajando en una clínica en Minnesota haciendo cosas de imagen médica, de acuerdo y en ese
+
+53
+00:05:48,120 --> 00:05:56,000
+momento él era un usuario de Matlab bastante experto pero se encontraba con las típicas
+
+54
+00:05:56,000 --> 00:06:02,720
+frustraciones que nos encontramos todos, que Matlab es carísimo, que el lenguaje tenía
+
+55
+00:06:02,720 --> 00:06:09,480
+inconsistencias, que a veces era difícil mantener la compatibilidad entre versiones y este hombre
+
+56
+00:06:09,480 --> 00:06:17,040
+se encontró con Python que por este año iba más o menos por la versión 1.4 y se enamoró
+
+57
+00:06:17,040 --> 00:06:22,800
+completamente con lo cual empezó a utilizando Numerik que había aparecido muy pocos años
+
+58
+00:06:22,800 --> 00:06:31,440
+antes, empezó un poco a desarrollar su actividad y empezó a crear una serie de paquetes, un
+
+59
+00:06:31,440 --> 00:06:40,120
+poco los bloques que luego se convertirían en SciPy ya en el año 2001. Y en este año
+
+60
+00:06:40,120 --> 00:06:46,160
+2001 pasaron bastantes cosas también, Travis Olyphant, Peter Peterson y Eric Jones liberaron
+
+61
+00:06:46,160 --> 00:06:51,240
+SciPy con una serie de paquetes básicos que tenían digamos un poco independientes entre
+
+62
+00:06:51,240 --> 00:06:58,000
+sí pues procesamiento de señales, procesamiento de imágenes, cosas de ese estilo, lo reunieron
+
+63
+00:06:58,000 --> 00:07:06,280
+y liberaron SciPy 1.0 y además Fernando Pérez que es un programador colombiano estaba también
+
+64
+00:07:06,280 --> 00:07:11,440
+un poco decepcionado con el intérprete por defecto de Python y él utilizaba mucho matemática
+
+65
+00:07:11,440 --> 00:07:16,280
+por ejemplo no sé si alguno lo conoceréis pues le gustaba bastante la interfaz y decía
+
+66
+00:07:16,280 --> 00:07:23,360
+por qué no podemos tener algo parecido en Python y entonces creo iPython que inició
+
+67
+00:07:23,360 --> 00:07:30,240
+como simplemente una interfaz mejorada digamos del Python por defecto y John Hunter que nos
+
+68
+00:07:30,240 --> 00:07:34,640
+dejó el año pasado y era muy amigo de Fernando también un poco relacionado con el proyecto
+
+69
+00:07:34,640 --> 00:07:39,080
+iPython, creo Matplotlib que como veremos ahora mismo es el estándar de facto para
+
+70
+00:07:39,080 --> 00:07:46,360
+hacer visualizaciones en Python. Lo que pasa es que todo esto de momento estaba basado
+
+71
+00:07:46,360 --> 00:07:53,440
+en Numeric y Numeric estaba empezando a ver algunos problemas digamos que había gente
+
+72
+00:07:53,440 --> 00:07:57,600
+que tenía unas necesidades que no estaban cubiertas por este paquete con lo cual Eric
+
+73
+00:07:57,600 --> 00:08:07,560
+Jones, Perry Greenfield y otros crearon una Marri que era una mezcla entre Python y C
+
+74
+00:08:07,560 --> 00:08:13,640
+un poco para cubrir estas necesidades que ellos tenían. Lo que pasa es que en su paquete
+
+75
+00:08:13,640 --> 00:08:17,520
+era más lento por ejemplo que Numeric mucho más lento e introducía otra serie de defectos
+
+76
+00:08:17,520 --> 00:08:23,880
+con lo cual ahí se creó un momento un poco de tensión porque claro alguien que llegaba
+
+77
+00:08:23,880 --> 00:08:30,000
+al ecosistema no sabía muy bien si empezar con Numeric o con Numarri no había un vencedor
+
+78
+00:08:30,000 --> 00:08:38,800
+claro. Y esta situación la arregló Travis Olyfan en 2006 diciendo bueno no puede ser
+
+79
+00:08:38,800 --> 00:08:44,600
+que la comunidad esté dividida en este punto así que se puso a trabajar, cogió lo mejor
+
+80
+00:08:44,600 --> 00:08:51,820
+de los dos mundos y creó NumPy que ahora mismo es el bloque fundamental que se fundamenta
+
+81
+00:08:51,820 --> 00:08:56,840
+todo el ecosistema científico. De aquí es de donde viene la frase Dividing and Merging,
+
+82
+00:08:56,840 --> 00:09:04,960
+el viene de la biología con lo cual también la metáfora está tomada de ahí. Vale, esto
+
+83
+00:09:04,960 --> 00:09:14,000
+fue un poco como se fue desarrollando y ahora en qué momento nos encontramos. Pues por
+
+84
+00:09:14,000 --> 00:09:20,520
+un lado tenemos NumPy, NumPy proporciona dos objetos básicamente, uno son los arrays
+
+85
+00:09:20,520 --> 00:09:25,240
+multidimensionales que son los que nos permiten operar con los datos en bloque y otra serie
+
+86
+00:09:25,240 --> 00:09:30,520
+de ventajas y por otro lado funciones que estaban destinadas a operar directamente sobre
+
+87
+00:09:30,520 --> 00:09:37,040
+sus arrays y que eran mucho más eficientes que lo que ya existían en ese momento. Aparte
+
+88
+00:09:37,040 --> 00:09:43,160
+en NumPy incluyeron otra serie de paquetes como pueden ser rutinas de álgebra lineal
+
+89
+00:09:43,160 --> 00:09:48,360
+que era fundamental, transformadas rápidas de furier, números aleatorios, funciones financieras,
+
+90
+00:09:48,360 --> 00:09:54,320
+en definitiva algo que pudiese valer a cualquier persona para utilizar Python como si fuese
+
+91
+00:09:54,320 --> 00:10:02,240
+una calculadora científica básica. Los arrays son muy sencillos de manejar, siempre se
+
+92
+00:10:02,240 --> 00:10:08,080
+importa NumPy con esa convención y la forma básica de crear un array es con una lista
+
+93
+00:10:08,080 --> 00:10:12,560
+de listas, en este caso sería una array de dos dimensiones sin más, no tiene ningún
+
+94
+00:10:12,560 --> 00:10:20,560
+misterio y lo bueno que tienen los arrays es que las funciones que trae NumPy están diseñadas
+
+95
+00:10:20,560 --> 00:10:25,960
+para operar con todos los elementos de la matriz en bloque, con lo cual podemos acelerar
+
+96
+00:10:25,960 --> 00:10:34,200
+el código de manera significativa. Esa figura está sacada también del libro de Travis
+
+97
+00:10:34,200 --> 00:10:40,640
+Olyphant, esa es la estructura de datos que es este array y las ventajas fundamentales
+
+98
+00:10:40,640 --> 00:10:47,080
+es que los datos son homogéneos, todos tienen el mismo tipo y las dimensiones son fijas
+
+99
+00:10:47,080 --> 00:10:52,560
+con lo cual el almacenamiento en memoria es mucho más eficiente. Y por otro lado como
+
+100
+00:10:52,560 --> 00:10:56,560
+los bucles en Python al ser un lenguaje dinámico son muy lentos porque en caracterización
+
+101
+00:10:56,560 --> 00:11:01,800
+del bucle el intérprete tiene que hacer una serie de comprobaciones sobre los tipos, pues
+
+102
+00:11:01,800 --> 00:11:06,480
+si nos ahorramos los bucles utilizando a raíz de NumPy, que se llama vectorizar las operaciones
+
+103
+00:11:06,480 --> 00:11:13,520
+es cuando encontramos estos aumentos de rendimiento. Y también, esa es una característica un poco
+
+104
+00:11:13,520 --> 00:11:21,200
+más avanzada, las operaciones sobre los datos, sobre los arrays, a veces se pueden expandir,
+
+105
+00:11:21,200 --> 00:11:25,280
+jugando un poco con las dimensiones de estos arrays, con lo cual también se consigue un
+
+106
+00:11:25,280 --> 00:11:31,320
+código mucho más expresivo. Por otro lado tenemos matplotlib, matplotlib ahora mismo
+
+107
+00:11:31,320 --> 00:11:37,360
+es el estándar de facto para hacer visualización en dos dimensiones en Python, hay gente que
+
+108
+00:11:37,360 --> 00:11:42,080
+le gusta más, gente que le gusta menos como ya veremos y está basado a propósito en
+
+109
+00:11:42,080 --> 00:11:47,060
+la API de MatLac, lo que se pensó desde el principio es que sería mucho más fácil
+
+110
+00:11:47,060 --> 00:11:52,320
+atraer usuarios de MatLac, que ya estuvieran familiarizados con la forma de trabajar allí,
+
+111
+00:11:52,320 --> 00:11:57,400
+si se conseguía una API similar y de hecho algunas funciones son exactamente iguales.
+
+112
+00:11:57,400 --> 00:12:02,840
+Y lo bueno es que se producen gráficas de gran calidad, que ya están preparadas para
+
+113
+00:12:02,840 --> 00:12:07,640
+introducirlas directamente en papers o lo que sea. Fundamentalmente para dos dimensiones,
+
+114
+00:12:07,640 --> 00:12:17,600
+que también tiene tres dimensiones, y visualizar una función con matplotlib es así de sencillo,
+
+115
+00:12:17,600 --> 00:12:23,760
+siempre se importa con esa convención, con esta función que viene de matlab también,
+
+116
+00:12:23,760 --> 00:12:28,840
+se crea un vector entre 0 y 10 y ahí en ese caso lo que estaríamos aplicando sería la
+
+117
+00:12:28,840 --> 00:12:33,280
+función seno por bloques y se visualiza eso, con lo cual después de aplicar la función
+
+118
+00:12:33,280 --> 00:12:39,720
+show tenemos esto, así de simple. Una de las particulares es que no se visualizan
+
+119
+00:12:39,720 --> 00:12:43,600
+funciones como hemos visto, en realidad lo que se visualiza es un vector de datos.
+
+120
+00:12:43,600 --> 00:12:51,120
+¿Por qué matplotlib o por qué no? Para los usuarios de MatLac es muy familiar pero
+
+121
+00:12:51,120 --> 00:12:58,440
+para los usuarios de R por ejemplo es horrible y de hecho recientemente ha habido una empresa
+
+122
+00:12:58,440 --> 00:13:05,720
+que ha liberado un port para Python de la biblioteca más utilizada en R para visualizar
+
+123
+00:13:05,720 --> 00:13:13,440
+gráficos y ha habido gran rebocijo con eso. Matplotlib es muy potente, se puede personalizar
+
+124
+00:13:13,440 --> 00:13:19,160
+casi todo pero a veces cuesta un poco hacerse con la manera de trabajar porque hay muchas
+
+125
+00:13:19,160 --> 00:13:25,960
+capas, la relación entre los objetos es compleja y requiere un poco de aprendizaje. Para el
+
+126
+00:13:25,960 --> 00:13:32,400
+95% de los casos funcione, para el resto están apareciendo muchas alternativas, Maya
+
+127
+00:13:32,400 --> 00:13:38,320
+V lleva ya unos años y es para visualizaciones en 3D más serias, boke es un producto de
+
+128
+00:13:38,320 --> 00:13:44,680
+Continuum que va un poco enfocado a visualizaciones interactivas, ggplot es lo que os decía antes
+
+129
+00:13:44,680 --> 00:13:52,520
+de los gráficos en R, etc. Y por otro lado tenemos SciPy que es un poco como decía antes
+
+130
+00:13:52,520 --> 00:13:57,240
+una serie de bloques básicos que se necesitan pues por ejemplo para integrar ecuaciones
+
+131
+00:13:57,240 --> 00:14:03,240
+diferenciales, procesamiento de señales, funciones especiales, optimización, interpolación
+
+132
+00:14:03,240 --> 00:14:08,920
+y muchas cosas más en realidad. Por ejemplo también trae bibliotecas de algebras lineal
+
+133
+00:14:08,920 --> 00:14:18,280
+como NumPy pero esta vez en vez de Nc que están en NumPy implementadas en Fortran. Y esto
+
+134
+00:14:18,280 --> 00:14:22,480
+realmente con esto ya se puede hacer bastantes cosas, estos son todo imágenes que he sacado
+
+135
+00:14:22,480 --> 00:14:27,200
+de artículos que hemos ido escribiendo en el blog y esto es simplemente un ejemplo
+
+136
+00:14:27,200 --> 00:14:34,600
+que hice de procesamiento de señales para sacar el espectro en frecuencia de una señal,
+
+137
+00:14:34,600 --> 00:14:40,800
+esto de aquí es el espectro grama de una señal de audio donde se ven todas las bandas, todas
+
+138
+00:14:40,800 --> 00:14:49,680
+las frecuencias. Esto de aquí es simplemente un ajuste paramétrico y esto es una figura
+
+139
+00:14:49,680 --> 00:14:55,800
+que sacó un compañero mío para analizar las líneas de corriente alrededor de un perfil
+
+140
+00:14:55,800 --> 00:15:03,280
+aerodinámico. De acuerdo vale para muchas tareas diferentes, tareas básicas y no tan
+
+141
+00:15:03,280 --> 00:15:15,120
+básicas, tengo un vídeo aquí que os voy a enseñar si me deja... Bueno esto realmente
+
+142
+00:15:15,120 --> 00:15:35,280
+para muchos de vosotros era una tontería seguramente. Bueno esto es simplemente la
+
+143
+00:15:35,280 --> 00:15:41,320
+resolución de la ecuación del calor con unas condiciones de frontera y demás para un trabajo
+
+144
+00:15:41,320 --> 00:15:46,520
+que hicimos en clase muy elemental en realidad y bueno ya para ocurrernos un poco más hicimos
+
+145
+00:15:46,520 --> 00:15:59,960
+una animación que nos quedó muy bien. Esto es de otro proyecto que he tenido este año
+
+146
+00:15:59,960 --> 00:16:04,840
+parecido aquí con datos reales de la misión Mars Science Laboratory que fue la que llevo
+
+147
+00:16:04,840 --> 00:16:13,800
+al rover Discovery, Curiosity perdón, estuve analizando un poco las órbitas de la transferencia
+
+148
+00:16:13,800 --> 00:16:22,560
+entre la Tierra y Marte con un paquete que escribí específicamente para ello pero realmente
+
+149
+00:16:22,560 --> 00:16:28,000
+SciPy no termina aquí, esto es solo el principio porque hay montones y montones de paquetes utilizados
+
+150
+00:16:28,000 --> 00:16:35,320
+para un montón de propósitos, hemos visto ya Matlodelib, NumPy, SciPy, tenemos por ejemplo
+
+151
+00:16:35,320 --> 00:16:41,240
+Sage que es digamos una especie de sistema de algebra computacional que integra muchos
+
+152
+00:16:41,240 --> 00:16:47,920
+paquetes de código abierto, tenemos SciCane there aquí que es ahora mismo la mejor herramienta
+
+153
+00:16:47,920 --> 00:16:53,720
+disponible en el mercado seguramente para hacer aprendizaje automático, tenemos SciTables
+
+154
+00:16:53,720 --> 00:17:03,840
+que es para almacenar archivos grandes en memoria, un montón de herramientas y más que no aparecen aquí
+
+155
+00:17:03,840 --> 00:17:09,360
+y me gustaría también mencionar SciPy que es un programa que a lo mejor no lo conoce mucha gente
+
+156
+00:17:09,360 --> 00:17:14,360
+pero a mí resulta muy interesante, es un programa de cálculo simbólico, eso que quiere decir
+
+157
+00:17:14,360 --> 00:17:20,960
+cálculo numérico es simplemente lo que los ordenadores hacen bien y los humanos hacemos mal
+
+158
+00:17:20,960 --> 00:17:27,120
+que es hacer operaciones matemáticas sin más y en cambio el cálculo simbólico es el revés, es lo que en principio
+
+159
+00:17:27,120 --> 00:17:34,080
+algunos humanos hacemos medianamente bien y los ordenadores no tienen por qué saber, aquí vemos la raíz de 8
+
+160
+00:17:34,080 --> 00:17:43,720
+pues dos veces la raíz de 2, esto es una alternativa a sistemas de algebra computacional muy extendidos
+
+161
+00:17:43,720 --> 00:17:48,880
+como pueden ser Maple, matemática, máxima, está escrito nada más en Python
+
+162
+00:17:48,880 --> 00:17:54,280
+también surgió como una especie de experimento para ver hasta donde llegaban las posibilidades del lenguaje
+
+163
+00:17:54,280 --> 00:18:00,680
+tiene un intérprete online que luego podéis echar un vistazo si queréis que funciona bastante bien
+
+164
+00:18:00,680 --> 00:18:05,760
+y bueno, tiene muchas características pero por ejemplo tiene soporte para la tech también
+
+165
+00:18:05,760 --> 00:18:11,520
+integrado con el notebook de Python que luego lo veremos y es una alternativa muy interesante
+
+166
+00:18:11,520 --> 00:18:18,720
+la verdad, pues eso, el sistema de algebra computacional muy extendidos pero que este no tiene nada que envidiarles
+
+167
+00:18:18,720 --> 00:18:28,160
+y ahora voy a hablar un momento de Python que sobre todo en los últimos dos o tres años ha sido prácticamente como una revolución
+
+168
+00:18:28,160 --> 00:18:34,880
+como pongo aquí, como decía antes, Python empezó simplemente como un intérprete de Python mejorado, de acuerdo
+
+169
+00:18:34,880 --> 00:18:39,560
+por Fernando Pérez en el 2001 inspirado a la interfaz de matemática
+
+170
+00:18:39,560 --> 00:18:45,880
+pero este proceso ha ido creciendo muchísimo y ha ido incorporando desarrollos y características nuevas
+
+171
+00:18:45,880 --> 00:18:55,480
+y en diciembre de 2011 se liberó IPython 0.11 con una interfaz de notebook
+
+172
+00:18:55,480 --> 00:18:58,320
+que por si alguno no la conoce la voy a enseñar ahora
+
+173
+00:19:04,320 --> 00:19:06,320
+se inicia simplemente así
+
+174
+00:19:06,320 --> 00:19:26,240
+y lo bueno que tiene esta interfaz es que funciona a través del navegador con lo cual tenemos aquí por ejemplo
+
+175
+00:19:26,240 --> 00:19:33,160
+me metí en una carpeta donde tengo ya algunos notebooks que se llama de acuerdo por ejemplo si abro por aquí
+
+176
+00:19:33,160 --> 00:19:39,080
+cualquiera de estos, de acuerdo tengo esta interfaz de notebook
+
+177
+00:19:39,080 --> 00:19:43,280
+donde tengo aquí una serie de celdas de acuerdo
+
+178
+00:19:43,280 --> 00:19:51,560
+donde puedo definir celdas que son de tipo texto, celdas que tienen código, etcétera
+
+179
+00:19:51,560 --> 00:19:57,240
+las gráficas por ejemplo están ahí incluidas y esto es una ventaja también
+
+180
+00:19:57,240 --> 00:20:03,360
+y lo bueno que tiene esta interfaz es que yo en un momento dado tengo uno de estos notebooks donde yo
+
+181
+00:20:03,360 --> 00:20:08,000
+desarrollo una serie de cálculos o unas visualizaciones y demás
+
+182
+00:20:08,000 --> 00:20:13,960
+y yo esto lo puedo exportar a un montón de formatos, me da igual PDF, HTML
+
+183
+00:20:13,960 --> 00:20:18,880
+y es muy fácil trasladar todos esos resultados, todos esos cálculos que yo estaba haciendo
+
+184
+00:20:18,880 --> 00:20:24,160
+a cualquier otra persona para que los pueda ver y no sólo que los pueda ver sino que también
+
+185
+00:20:24,160 --> 00:20:29,520
+puede incluso decir oye ¿qué pasa? yo tengo esta gráfica aquí pero quiero cambiar un parámetro
+
+186
+00:20:29,520 --> 00:20:33,600
+ver cómo funciona pues eso es directo porque ya está todo el código hecho
+
+187
+00:20:33,600 --> 00:20:39,560
+y es simplemente añadir un poco tu colaboración
+
+188
+00:20:44,360 --> 00:20:49,600
+y esta notebook de ipython impresionó bastante a la gente, fue una cosa muy novedosa
+
+189
+00:20:49,600 --> 00:20:54,560
+y de hecho en diciembre de 2012 recibieron nada menos que un millón más de un millón de dólares
+
+190
+00:20:54,560 --> 00:21:01,480
+de la fundación Alfre Pesloan para financiar el desarrollo de ipython en 2013 y en 2014
+
+191
+00:21:01,480 --> 00:21:07,800
+esto fue una cosa bastante impresionante para un proyecto de código abierto como era ipython
+
+192
+00:21:07,800 --> 00:21:15,960
+que no se da mucho y cuando recibieron esa beca coincidió además con una keynote que dio el propio Fernando Pérez
+
+193
+00:21:15,960 --> 00:21:23,960
+en la Picon Canada de ese año donde la gente aplaudía cada dos por tres de las cosas que estaban viendo
+
+194
+00:21:23,960 --> 00:21:32,280
+y se expandió significativamente el desarrollo del notebook, incorporaron gente que estaba trabajando a tiempo completo
+
+195
+00:21:32,280 --> 00:21:39,360
+para desarrollar esa interfaz y bueno en agosto de 2013, por fin después de 12 años de desarrollo
+
+196
+00:21:39,360 --> 00:21:47,400
+liberaron ipython 1.0 y recibieron 100 mil dólares de microsoft para sostener también el desarrollo
+
+197
+00:21:47,400 --> 00:21:50,360
+con lo cual yo creo que es un éxito rotundo
+
+198
+00:21:51,640 --> 00:21:56,040
+lo bueno que tiene el notebook de ipython es que no solo no están utilizando programadores
+
+199
+00:21:56,040 --> 00:22:05,360
+lo están utilizando por ejemplo periodistas de datos para hacer análisis de sucesos que merezca la pena
+
+200
+00:22:05,360 --> 00:22:09,120
+incluir alguna serie de datos o algún tipo de estadísticas
+
+201
+00:22:09,120 --> 00:22:12,880
+y lo están utilizando simplemente para comunicar esas ideas a través del código
+
+202
+00:22:12,880 --> 00:22:23,280
+por ejemplo no sé si Vistace que hace unos meses se detectó que había unos dos economistas de Harvard creo
+
+203
+00:22:23,280 --> 00:22:31,320
+escribieron un paper diciendo que a partir de cierto punto la deuda de un país es la economía colapsaba
+
+204
+00:22:31,320 --> 00:22:34,920
+y eso se tomó como cierto durante muchísimos años
+
+205
+00:22:34,920 --> 00:22:42,920
+y de hecho hay declaraciones de dirigentes de la Unión Europea diciendo por qué este paper dice que no podemos subir la deuda a partir de aquí
+
+206
+00:22:42,920 --> 00:22:48,680
+y de repente una persona se dio cuenta de que no tenía manera de reproducir esa hipótesis
+
+207
+00:22:48,680 --> 00:22:52,640
+les pidió los datos y se vio que había un error en la hoja de cálculo
+
+208
+00:22:54,200 --> 00:23:00,320
+con lo cual una de las hipótesis que ha estado sosteniendo las políticas económicas de la Unión Europea los últimos años
+
+209
+00:23:00,320 --> 00:23:03,000
+pues estaba completamente mal por culpa de Excel
+
+210
+00:23:03,000 --> 00:23:09,320
+y esta persona desarrolló todos esos datos y dijo no, los errores están aquí y aquí
+
+211
+00:23:09,320 --> 00:23:14,800
+con un notebook de Ipython y fue totalmente colaborativo en el sentido que mucha gente
+
+212
+00:23:14,800 --> 00:23:18,560
+también añadió sus aportaciones y demás
+
+213
+00:23:18,560 --> 00:23:24,760
+es un componente como vemos importantísimo en la ciencia abierta que ahora se está moviendo bastante
+
+214
+00:23:24,760 --> 00:23:30,320
+la reproducibilidad de los resultados, el acceso a la ciencia del público
+
+215
+00:23:30,320 --> 00:23:33,920
+en definitiva y también un entorno ideal para el aprendizaje
+
+216
+00:23:33,920 --> 00:23:41,280
+y hablando de aprendizaje vamos a hablar un poco de alternativas que llevamos utilizando mucho tiempo
+
+217
+00:23:43,280 --> 00:23:46,080
+¿Esa es una lucha de David Contragolia en realidad?
+
+218
+00:23:46,080 --> 00:23:47,440
+Pues un poco sí
+
+219
+00:23:48,960 --> 00:23:50,000
+¿Por qué?
+
+220
+00:23:50,000 --> 00:23:57,760
+Porque el peor enemigo de una solución mejor es una solución existente que es lo bastante buena
+
+221
+00:23:57,760 --> 00:24:05,760
+En este caso yo creo que la solución mejor es Python y la solución existente es Matlab
+
+222
+00:24:08,480 --> 00:24:11,120
+En la industria y el mundo académico hay muchas inercias
+
+223
+00:24:11,120 --> 00:24:19,520
+Obviamente los cambios requieren un coste y ese coste a veces no merece la pena o no se quiere asumir por las razones que sean
+
+224
+00:24:19,520 --> 00:24:24,560
+pero y por otro lado yo tengo una pregunta también que es desde dónde tiene que empezar el cambio
+
+225
+00:24:24,560 --> 00:24:29,200
+En el mundo académico se enseña Matlab por ejemplo porque es lo que piden en la industria
+
+226
+00:24:29,200 --> 00:24:34,320
+y en la industria se utiliza Matlab porque es lo que la gente sabe que ha estudiado en el mundo académico
+
+227
+00:24:34,320 --> 00:24:36,400
+Entonces por dónde hay que empezar a cambiar?
+
+228
+00:24:36,400 --> 00:24:40,320
+Hay que empezar a enseñar Python por ejemplo en la universidad
+
+229
+00:24:40,320 --> 00:24:45,280
+y decir a la gente lo que os van a pedir ahora es Matlab pero ya veréis cómo esto va a subir
+
+230
+00:24:45,280 --> 00:24:51,360
+o al revés empezar a utilizarlo en la empresa y decir la gente no sabe Python pero ya irán sabiendo
+
+231
+00:24:51,360 --> 00:24:55,120
+No sé, es una duda que yo tengo ahí que no sé muy bien cómo resolverla tampoco
+
+232
+00:24:57,600 --> 00:25:04,960
+y aparte como digo ahí también hay muchas veces código legado y eso simplemente no se puede suprimir o migrar en cuestión de unos días
+
+233
+00:25:05,760 --> 00:25:08,960
+Pero Python es mejor aunque haya estas inercias
+
+234
+00:25:08,960 --> 00:25:12,480
+aunque sólo sea filosóficamente para empezar
+
+235
+00:25:12,480 --> 00:25:18,560
+el coste de la licencia es cero cero en todas las monedas del mundo
+
+236
+00:25:18,560 --> 00:25:24,960
+con lo cual eso es una diferencia fundamental con otras alternativas que vemos que cuestan un poco más de cero
+
+237
+00:25:24,960 --> 00:25:30,400
+y además es software libre con lo cual yo puedo estudiar en todo momento cómo funciona
+
+238
+00:25:30,400 --> 00:25:35,760
+y lo bueno que tiene Python en particular frente a otras herramientas de software libre
+
+239
+00:25:35,760 --> 00:25:40,640
+es que no tiene una licencia a copilé fuerte como puede ser la GPL por ejemplo
+
+240
+00:25:40,640 --> 00:25:46,080
+Si yo quiero hacer un desarrollo y quiero guardarme el código o quiero venderlo sin librar el código
+
+241
+00:25:46,080 --> 00:25:50,800
+lo puedo hacer, eso está permitido, es un poco toda la filosofía
+
+242
+00:25:50,800 --> 00:25:53,520
+pero también es técnicamente mejor
+
+243
+00:25:53,520 --> 00:26:01,680
+al ser software libre los fallos que hay son públicos, está la lista de los 500 fallos abiertos que tienes Ipyat ahora mismo
+
+244
+00:26:01,680 --> 00:26:04,160
+cualquiera se puede poner a trabajar en ellos
+
+245
+00:26:04,160 --> 00:26:09,680
+y el lenguaje en sí, Python está un poco mejor pensado que Matlab, aquí he puesto un ejemplo muy tontorrón
+
+246
+00:26:09,680 --> 00:26:16,240
+por ejemplo en Octave, he usado Octave porque yo no tengo licencia de Matlab
+
+247
+00:26:16,240 --> 00:26:20,160
+y aquí puedo definir por ejemplo una RAI de un elemento
+
+248
+00:26:20,160 --> 00:26:27,280
+y puedo decir, cógeme el primer elemento y cógeme de la primera fila, la primera columna, el primer no sé qué
+
+249
+00:26:27,280 --> 00:26:31,920
+y esto siempre me devuelve el mismo valor, a nadie le resulta esto un poco extraño
+
+250
+00:26:31,920 --> 00:26:36,560
+que yo pueda y vamos si quiero añadir aquí 10 unos, pues también lo podría hacer
+
+251
+00:26:36,560 --> 00:26:42,000
+y en cambio en Python, que está allí, yo defino una RAI que tiene un elemento nada más
+
+252
+00:26:42,000 --> 00:26:46,880
+si quiero coger el primer elemento me lo devuelve, pero si quiero coger el primer elemento del primero
+
+253
+00:26:46,880 --> 00:26:54,800
+me dice no, aquí te sobran índices, esto es un claro caso de que Matlab tiene cosas un poco raras
+
+254
+00:26:58,800 --> 00:27:02,800
+y Python de hecho está creciendo muchísimo, he visto en los foros de Matlab
+
+255
+00:27:02,800 --> 00:27:09,200
+que la gente está pidiendo, oye no hay algo de tipo la interfaz de Python para Matlab
+
+256
+00:27:09,200 --> 00:27:16,000
+esto es impresionante y realmente el desarrollo del ecosistema de Python es vertiginoso
+
+257
+00:27:16,000 --> 00:27:20,800
+porque hay tantísima gente implicada y ahora mismo está por delante de hecho
+
+258
+00:27:20,800 --> 00:27:29,120
+en cosas como análisis de datos y demás, Python está ahora mismo por delante seguro
+
+259
+00:27:29,120 --> 00:27:36,240
+es todo tan bonito realmente, Python es todo tan maravilloso y tan perfecto
+
+260
+00:27:36,240 --> 00:27:40,400
+pues no, Python tiene puntos débiles también
+
+261
+00:27:40,400 --> 00:27:45,680
+y yo creo que merece la pena para ese momento a reflexionar porque cuando uno se enamora
+
+262
+00:27:45,680 --> 00:27:50,640
+lo que tiene es a idealizar al objeto del enamoramiento y ocultar sus defectos
+
+263
+00:27:50,640 --> 00:27:53,200
+hablando siempre lenguajes de programación, ojo
+
+264
+00:27:53,200 --> 00:28:00,800
+entonces vamos a hablar un poco de las desventajas de Python
+
+265
+00:28:00,800 --> 00:28:04,240
+también para verlo con un poco de crítica y de perspectiva, para empezar
+
+266
+00:28:04,240 --> 00:28:08,240
+el cambio de la versión 2 a la versión 3 ha sido dramático
+
+267
+00:28:08,240 --> 00:28:14,800
+de hecho Python 3 se liberó en diciembre de 2008 y en el 2013 miran donde estamos ahora
+
+268
+00:28:14,800 --> 00:28:17,840
+estos son estadísticas del mes pasado, me parece
+
+269
+00:28:17,840 --> 00:28:22,720
+esto es penoso realmente, ahora mismo vamos por la versión 3.3
+
+270
+00:28:22,720 --> 00:28:28,320
+y el problema de esto ha sido que el mensaje de los desarrolladores ha sido desde el principio
+
+271
+00:28:28,320 --> 00:28:31,440
+estos son dos lenguajes completamente distintos
+
+272
+00:28:31,440 --> 00:28:37,920
+así que tenéis que dividiros en vuestra vida y migrarlos todos a la 3.0 que es mejor
+
+273
+00:28:37,920 --> 00:28:43,440
+bueno pues ya sabemos que el tema de las migraciones no siempre se hace con tanta aceleridad como se debería
+
+274
+00:28:43,440 --> 00:28:48,720
+y lo que ha pasado es que mucha gente se ha atascado aquí en la 2.7 y de hecho
+
+275
+00:28:48,720 --> 00:28:53,200
+primero se liberó de la 2.6 en plan venga ya está es la última de la rama 2
+
+276
+00:28:53,200 --> 00:28:58,000
+así que ya iros pasando a la 3 y se requiere imposible que tuve que salir a 2.7
+
+277
+00:28:58,000 --> 00:29:03,760
+añadiendo más características compatibles con la 3 porque si no y aún así
+
+278
+00:29:03,760 --> 00:29:09,680
+entonces la solución a la que han llevado muchos desarrolladores pero en cuestión de los últimos meses se han dado cuenta
+
+279
+00:29:09,680 --> 00:29:14,880
+de que esto de dividirse no es la solución en realidad que la solución es
+
+280
+00:29:14,880 --> 00:29:20,960
+trabajar con un código que funcione desde la 2.6 o la 2.7 hasta la 3.3
+
+281
+00:29:20,960 --> 00:29:25,120
+y esa es la única forma primero tú como desarrollador de utilizar la versión 3
+
+282
+00:29:25,120 --> 00:29:28,800
+y de empezar a extenderla
+
+283
+00:29:28,800 --> 00:29:31,280
+lo que decía aquí
+
+284
+00:29:31,280 --> 00:29:37,760
+estos errores que se cometieron en la difusión o el mensaje se están empezando a solucionar muy recientemente en realidad
+
+285
+00:29:37,760 --> 00:29:46,640
+pero yo por ejemplo utilizo Python 3 todos los días y no me encontré con ninguna biblioteca que no esté portada todavía
+
+286
+00:29:46,640 --> 00:29:52,240
+con lo cual yo desde aquí también os animo a que deis el salto porque no es tan dramático
+
+287
+00:29:52,240 --> 00:29:58,000
+y otra desventaja que yo le veo a Python que para es una ventaja en cierto sentido
+
+288
+00:29:58,000 --> 00:30:03,840
+porque el lenguaje es más explícito pero algunos también le supone un obstáculo
+
+289
+00:30:03,840 --> 00:30:08,960
+yo cuando estoy en Matlab yo hablo en Interprete y ya tengo una serie de funciones a mi disposición
+
+290
+00:30:08,960 --> 00:30:14,400
+cuando estoy en Python las primeras 10 líneas del programa tienen esta pinta más o menos
+
+291
+00:30:14,400 --> 00:30:19,440
+y cada vez que me pongo a escribir un programa en Python tengo que andar impornos y qué impornos y cuántos
+
+292
+00:30:19,440 --> 00:30:25,280
+y cuando estoy haciendo sesiones interactivas pues hay gente que esto le resulta muy aburrido
+
+293
+00:30:25,280 --> 00:30:29,040
+y dice que yo lo que quiero es ponerme a trabajar ya enseguida
+
+294
+00:30:29,040 --> 00:30:39,200
+y de hecho el problema que tiene esto es que la comunidad Python ese sentido es un poco conservadora
+
+295
+00:30:39,200 --> 00:30:45,280
+y solución es como decir bueno pues imporn un py importame todo con asterisco
+
+296
+00:30:45,280 --> 00:30:52,720
+pues eso está muy mal visto en general y entonces hay que hacer ahí un trabajo de decir no pues es que tú en Matlab hacias esto
+
+297
+00:30:52,720 --> 00:31:00,720
+pero aquí tienes que importar esto, esto, esto y esto y yo eso lo veo también como una pequeña desventaja
+
+298
+00:31:00,720 --> 00:31:06,880
+y bueno otras que hay que son desventajas pero realmente están empezando ya a tener alguna solución
+
+299
+00:31:06,880 --> 00:31:14,320
+una de ellas la más importante es que un unpy por el modo en que está Python diseñado y construido
+
+300
+00:31:14,320 --> 00:31:22,080
+para hacer esa operación por ejemplo necesita 3 arrays intermedios más o menos del mismo tamaño que hay ve en este caso
+
+301
+00:31:22,080 --> 00:31:29,840
+con lo cual si tengo un giga de memoria y ya mide 400 megas y ve 400 no voy a poder hacer esta operación
+
+302
+00:31:29,840 --> 00:31:36,800
+si lo hiciese con bucles elemento elemento no me quedaría sin memoria pero como los bucles en Python son lentos
+
+303
+00:31:36,800 --> 00:31:41,920
+perdería todas las ventajas que tengo usando unpy eso es un problema también
+
+304
+00:31:41,920 --> 00:31:46,400
+y hay diversas soluciones que están surgiendo ahora mismo
+
+305
+00:31:46,400 --> 00:31:53,600
+NumExper, Numva, esto si queréis me podéis preguntar o seguro de Numva por ejemplo va a haber una charla creo que el domingo
+
+306
+00:31:53,600 --> 00:32:00,960
+y bueno pero ya digamos que uno se tiene que salir de lo que son los cauces normales de programar con Python
+
+307
+00:32:00,960 --> 00:32:08,400
+otra es la dificultad de instalación por ejemplo en Windows es un dolor de cabeza inmenso
+
+308
+00:32:08,400 --> 00:32:16,560
+que ahora sí que se está empezando a solucionar con distribuciones monolíticas que incluyen todos los paquetes necesarios
+
+309
+00:32:16,560 --> 00:32:20,480
+como puede ser canopy o anaconda de contínuos también
+
+310
+00:32:20,480 --> 00:32:25,120
+y la falta de interfaces gráficas para aplicaciones ingenierales
+
+311
+00:32:25,120 --> 00:32:29,840
+si le preguntas a un programador lo que te va a decir es si con código lo puedes hacer todo
+
+312
+00:32:29,840 --> 00:32:38,160
+pero Simulink ¿Qué pasa con eso? pues efectivamente de eso todavía no hay
+
+313
+00:32:38,160 --> 00:32:42,560
+y digo todavía porque es cuestión de que alguien se ponga hacerlo
+
+314
+00:32:42,560 --> 00:32:50,320
+en realidad las herramientas están ahí y solo hace falta un voluntario o varios si puede ser
+
+315
+00:32:50,320 --> 00:32:57,360
+y la última cosa que quería comentar de esto es que Python tiene un problema
+
+316
+00:32:57,360 --> 00:33:02,640
+y bueno tiene una ventaja que es código abierto pero tiene un problema que es código abierto
+
+317
+00:33:02,640 --> 00:33:07,360
+el ecosistema Python lo mantiene muy pocas personas esta gráfica lo que quiere decir
+
+318
+00:33:07,360 --> 00:33:14,080
+he cogido estadísticas de los últimos comits a los proyectos más relevantes del ecosistema
+
+319
+00:33:14,080 --> 00:33:17,680
+y esta bolita significa la persona que hace más comits
+
+320
+00:33:17,680 --> 00:33:21,440
+esta la segunda y esta la tercera los he ordenado de mayor a menor
+
+321
+00:33:21,440 --> 00:33:25,840
+y he marcado aquí una línea de 0,2 por poner algún nivel
+
+322
+00:33:25,840 --> 00:33:31,200
+y lo que sucede por ejemplo con SciPy es que esta es la persona que hace más comits
+
+323
+00:33:31,200 --> 00:33:34,240
+y esta es la segunda persona que hace más comits
+
+324
+00:33:34,240 --> 00:33:39,600
+SciPy lo mantiene básicamente una persona
+
+325
+00:33:39,600 --> 00:33:44,880
+no puede ser que una herramienta que estemos utilizando tantísima gente gratis además
+
+326
+00:33:44,880 --> 00:33:47,600
+lo mantenga una persona o dos
+
+327
+00:33:47,600 --> 00:33:51,040
+NumPy por ejemplo está exactamente en la misma situación
+
+328
+00:33:51,040 --> 00:33:56,880
+y los proyectos que están un poco más sanos SciPy claramente ha puesto desde el principio
+
+329
+00:33:56,880 --> 00:34:02,000
+por un código sencillo fácil de leer todo en Python con lo cual ha traído muchos más desarrolladores
+
+330
+00:34:02,000 --> 00:34:10,400
+y eso se nota y iPython también porque también ha tenido la ayuda de estas dos becas
+
+331
+00:34:10,400 --> 00:34:15,120
+que hemos visto últimamente con lo cual han podido invertir también en
+
+332
+00:34:15,120 --> 00:34:17,200
+tener gente que trabaje solo en esto
+
+333
+00:34:17,200 --> 00:34:22,800
+pero es un problema bastante importante sobre el que habría que reflexionar en sentido de si estamos pagando
+
+334
+00:34:22,800 --> 00:34:26,080
+miles por MATLAB por ejemplo
+
+335
+00:34:26,080 --> 00:34:30,560
+si tenemos herramientas que en algunos sentidos son técnicamente superiores
+
+336
+00:34:30,560 --> 00:34:34,160
+por qué tienen que estar mantenidas por una sola persona que se le puede morir un padre
+
+337
+00:34:34,160 --> 00:34:38,160
+o se puede morir él como pasó con Matlodly por ejemplo
+
+338
+00:34:38,160 --> 00:34:43,040
+y nosotros quedarnos sin nada es una reflexión
+
+339
+00:34:43,040 --> 00:34:47,680
+y bueno ya voy a dejar de hablar de desventajas que yo he venido también a vender la moto
+
+340
+00:34:47,680 --> 00:34:53,280
+¿cuál es el futuro de Python? ¿dominación mundial? pues yo creo que sí
+
+341
+00:34:53,280 --> 00:34:55,120
+o eso me gustaría a mí
+
+342
+00:34:55,120 --> 00:34:58,800
+han salido unos par de artículos en las últimas semanas
+
+343
+00:34:58,800 --> 00:35:07,200
+uno se titula la homogénicización de la computación científica o cómo Python se está poco a poco comiendo la merienda de otros lenguajes
+
+344
+00:35:07,200 --> 00:35:09,840
+y he seleccionado un par de frases
+
+345
+00:35:09,840 --> 00:35:16,720
+la primera es que ahora mismo casi todos los aspectos de la computación científica están disponibles en Python
+
+346
+00:35:16,720 --> 00:35:19,680
+esto es impresionante en realidad
+
+347
+00:35:19,680 --> 00:35:24,720
+y la segunda es que un número sorprendentemente alto de herramientas de Python
+
+348
+00:35:24,720 --> 00:35:29,680
+son los primeros, son las herramientas más adecuadas
+
+349
+00:35:29,680 --> 00:35:36,000
+para el área en el que están diseñadas como lo que he hablado antes de aprendizaje automático por ejemplo
+
+350
+00:35:36,000 --> 00:35:40,080
+y este artículo bueno es muy interesante si lo queréis leer
+
+351
+00:35:40,080 --> 00:35:43,760
+porque habló un poco de que realmente esta situación hace cinco años por ejemplo no era así
+
+352
+00:35:43,760 --> 00:35:47,200
+antes la persona que escribió esto
+
+353
+00:35:47,200 --> 00:35:51,920
+pues usaba una serie de herramientas, usaba Matlab para unas cosas, Ruby para otras, en fin tenía ahí
+
+354
+00:35:51,920 --> 00:35:55,200
+y ahora lo que ha conseguido es que todo lo hace con Python
+
+355
+00:35:55,200 --> 00:35:58,560
+y ahí se gana muchísimo en productividad
+
+356
+00:35:58,560 --> 00:36:01,600
+porque estás utilizando un lenguaje solo frente a 3 o 4
+
+357
+00:36:01,600 --> 00:36:06,240
+y este de otro artículo se escribió tres días después del anterior
+
+358
+00:36:06,240 --> 00:36:12,880
+como Python se ha convertido en el lenguaje de referencia para análisis de datos
+
+359
+00:36:12,880 --> 00:36:16,080
+esto no es una cosa trivial
+
+360
+00:36:16,080 --> 00:36:22,080
+mientras que hace años la situación no era tan favorable
+
+361
+00:36:22,080 --> 00:36:27,520
+ahora mismo para análisis de datos Python es el lenguaje de
+
+362
+00:36:27,520 --> 00:36:35,360
+que se elige en la mayoría de los casos para tamaños de datos pequeños y medianos
+
+363
+00:36:35,360 --> 00:36:39,120
+y bueno de hecho para Big Data también
+
+364
+00:36:39,120 --> 00:36:44,720
+en nuestros patores de datos por ejemplo enseguida la siguiente charla os encontrarán un poco como lo hacen ellos
+
+365
+00:36:44,720 --> 00:36:49,440
+o sea que yo creo que el futuro es brillante
+
+366
+00:36:49,440 --> 00:36:56,080
+SciPy por ejemplo ha planteado ya una serie de cosas que quieren cambiar para la versión 1.0
+
+367
+00:36:56,080 --> 00:37:00,560
+que está muy interesante también porque da una perspectiva de cómo colaborar
+
+368
+00:37:00,560 --> 00:37:05,520
+con el proyecto que ideas tienen para el paquete
+
+369
+00:37:05,520 --> 00:37:09,680
+y Python es increíble lo que están haciendo, no he podido traer ninguna demo
+
+370
+00:37:09,680 --> 00:37:12,240
+pero están haciendo ya widgets interactivos
+
+371
+00:37:12,240 --> 00:37:15,920
+con lo cual nos podemos olvidar de los aplés de Java ya
+
+372
+00:37:15,920 --> 00:37:22,000
+y una serie de standard también para hacer soporte a varios usuarios
+
+373
+00:37:22,000 --> 00:37:25,920
+con lo cual va a ser perfecto por ejemplo para ponerlo en un instituto o en una clase
+
+374
+00:37:25,920 --> 00:37:29,520
+y que varias personas puedan trabajar en el mismo notebook
+
+375
+00:37:29,520 --> 00:37:35,440
+los CisCids que hay que es un poco lo que hemos visto al principio para aprendizaje automático para análisis de datos
+
+376
+00:37:35,440 --> 00:37:41,120
+están emergiendo nuevos y los que hay crecen a una velocidad increíble
+
+377
+00:37:41,120 --> 00:37:45,520
+y en la bueno aquí he sido lo mejor demasiado optimista no lo sé
+
+378
+00:37:45,520 --> 00:37:51,040
+pero digamos que hay gente que lo está empezando a pensar o a considerar
+
+379
+00:37:51,040 --> 00:37:54,640
+veamos en la mía si alguien me hace caso
+
+380
+00:37:54,640 --> 00:37:59,280
+y bueno esto ya un poco de autobombo que quería hacer también
+
+381
+00:37:59,280 --> 00:38:02,400
+estos son las visitas que tuvimos en el blog cuando lo abrimos
+
+382
+00:38:02,400 --> 00:38:05,120
+y esas son las visitas que tuvimos el mes pasado
+
+383
+00:38:05,120 --> 00:38:13,840
+y bueno se ve que realmente el interés o por lo menos nuestro desempeño está creciendo bastante
+
+384
+00:38:15,840 --> 00:38:17,360
+conclusiones
+
+385
+00:38:17,360 --> 00:38:25,280
+el camino ha sido arduo se ha necesitado unos años para llegar a esta situación
+
+386
+00:38:25,280 --> 00:38:29,120
+pero ahora mismo el ecosistema está maduro realmente
+
+387
+00:38:29,120 --> 00:38:31,440
+Python se está expandiendo muchísimo
+
+388
+00:38:31,440 --> 00:38:36,560
+hay inercias difíciles de vencer por supuesto eso siempre va a existir
+
+389
+00:38:36,560 --> 00:38:41,440
+pero si ponemos los medios adecuados y sobre todo
+
+390
+00:38:41,440 --> 00:38:48,480
+si tenemos cuidado con no dejar que estos proyectos dependan de tan poquísima gente
+
+391
+00:38:48,480 --> 00:38:52,640
+y que migremos a Python 3 que es uno de los obstáculos que hay que salvar también
+
+392
+00:38:52,640 --> 00:38:55,040
+podemos dominar el mundo si queremos
+
+393
+00:38:57,040 --> 00:39:00,160
+alguien quiere hacer alguna pregunta?
+
+394
+00:39:00,160 --> 00:39:14,560
+has machiado una cosita que ha pasado muy por alto que era al lado de R entonces los obstáculos de R tienen las mismas...
+
+395
+00:39:14,560 --> 00:39:15,840
+perdón por el mar
+
+396
+00:39:15,840 --> 00:39:17,840
+y si ya
+
+397
+00:39:17,840 --> 00:39:18,880
+perdón
+
+398
+00:39:18,880 --> 00:39:20,880
+yo no voy hacia final
+
+399
+00:39:20,880 --> 00:39:21,760
+eh...
+
+400
+00:39:21,760 --> 00:39:23,040
+de la mojadimpación
+
+401
+00:39:23,040 --> 00:39:23,840
+si
+
+402
+00:39:23,840 --> 00:39:24,640
+vale
+
+403
+00:39:24,640 --> 00:39:25,840
+mmmm
+
+404
+00:39:25,840 --> 00:39:27,680
+perdón
+
+405
+00:39:27,680 --> 00:39:28,640
+esta aquí
+
+406
+00:39:28,640 --> 00:39:30,640
+y se ha echado
+
+407
+00:39:30,640 --> 00:39:31,440
+si
+
+408
+00:39:31,440 --> 00:39:32,640
+yo pregunto ¿no?
+
+409
+00:39:32,640 --> 00:39:41,440
+R también intentando dominar la computación de los grandes datos etcétera
+
+410
+00:39:41,440 --> 00:39:42,640
+como lo vesis
+
+411
+00:39:42,640 --> 00:39:48,640
+yo lo que veo lo que está pasando es que bueno R es un lenguaje excelente para hacer estadísticas y análisis de datos
+
+412
+00:39:48,640 --> 00:39:49,840
+eso no lo duda nadie
+
+413
+00:39:49,840 --> 00:39:54,240
+el problema que tiene es que no deja de ser un lenguaje de dominio específico
+
+414
+00:39:54,240 --> 00:39:59,120
+y la gente está viendo muchas ventajas en utilizar Python para todo como decía
+
+415
+00:39:59,120 --> 00:40:00,960
+y ahora que Ggplot
+
+416
+00:40:00,960 --> 00:40:03,840
+que es la biblioteca de visualización en R
+
+417
+00:40:03,840 --> 00:40:05,360
+está portada a Python
+
+418
+00:40:05,360 --> 00:40:09,200
+pues ahí está viendo mucho trasvase de gente que se pasa del uno a otro
+
+419
+00:40:09,200 --> 00:40:11,120
+y que no vuelven al otro lado
+
+420
+00:40:11,120 --> 00:40:16,400
+es un poco lo que detecto yo en los comentarios de las redes por las que yo me muevo y demás
+
+421
+00:40:16,400 --> 00:40:19,600
+no sé cómo será el futuro de R porque yo lo he utilizado...
+
+422
+00:40:19,600 --> 00:40:21,120
+no lo he utilizado nunca
+
+423
+00:40:21,120 --> 00:40:23,120
+pero...
+
+424
+00:40:23,120 --> 00:40:25,120
+en principio...
+
+425
+00:40:25,120 --> 00:40:30,400
+para mí todo lo que sea movimiento hacia delante del software libre y demás a mí me parece estupendo
+
+426
+00:40:30,400 --> 00:40:33,840
+con lo cual y si pueda haber también cooperación de hecho
+
+427
+00:40:33,840 --> 00:40:36,400
+R se puede utilizar desde el notebook de A Python
+
+428
+00:40:36,400 --> 00:40:38,160
+no lo he comentado pero
+
+429
+00:40:38,160 --> 00:40:42,720
+el notebook realmente están trabajando para que no sea algo específico de Python
+
+430
+00:40:42,720 --> 00:40:45,680
+y desde esa interfaz que hemos visto antes se puede trabajar con R
+
+431
+00:40:45,680 --> 00:40:48,720
+con Matlab con un lenguaje nuevo que se llama Julia
+
+432
+00:40:48,720 --> 00:40:54,880
+y bueno se puede combinar todo eso para aprovechar lo mejor de los dos mundos en realidad
+
+433
+00:41:08,960 --> 00:41:13,040
+si ahora se creo que se está enseñando un poco más de Matlab
+
+434
+00:41:13,040 --> 00:41:19,360
+pero básicamente creo que ha sido fortuna en la tradición
+
+435
+00:41:43,040 --> 00:41:47,520
+este país esto no va a ser tanto porque yo también hablo con un colega mío del Matlab
+
+436
+00:41:47,520 --> 00:41:51,200
+usar Matlab para CalProM2
+
+437
+00:41:51,200 --> 00:42:01,520
+y el otro que realmente está en el site
+
+438
+00:42:01,520 --> 00:42:05,360
+hombre ahí entraría un poco cuestionarnos si
+
+439
+00:42:05,360 --> 00:42:09,280
+si está bien eso de piratear software así en masa o no
+
+440
+00:42:09,280 --> 00:42:38,800
+también yo creo que es una cosa a tener en cuenta efectivamente es muy fácil
+
+441
+00:42:38,800 --> 00:43:08,320
+una opción frente a la otra con más criterio
+
+442
+00:43:09,520 --> 00:43:38,320
+que lo cambia
+
+443
+00:43:38,320 --> 00:43:42,320
+¿Qué hace un experimento aquí?
+
+444
+00:43:42,320 --> 00:43:46,320
+Estabas comentando defectos de Python.
+
+445
+00:43:46,320 --> 00:43:50,320
+Comentabas que era mi amigo Rico, que cuando estaban trabajando en Jalisco
+
+446
+00:43:50,320 --> 00:43:55,320
+hay muchos inputs. Yo como programador, lo que veo es que
+
+447
+00:43:55,320 --> 00:44:00,320
+Python parece que está mirando por científicos, pero somos casi los programadores
+
+448
+00:44:00,320 --> 00:44:06,320
+que usamos mucho. Entonces un lenguaje no puede dar cabida a los dos.
+
+449
+00:44:06,320 --> 00:44:11,320
+Entonces, claro, que yo como programador veo muy correcto que los inputs sean específicos,
+
+450
+00:44:11,320 --> 00:44:15,320
+sino que me empiezas a importar todo el que te acabas de creer.
+
+451
+00:44:15,320 --> 00:44:21,320
+Así como científico, por supuesto que a mí como programador, me molesta que así disminuesen Python
+
+452
+00:44:21,320 --> 00:44:26,320
+la saga siempre asumiendo que es lo tanto.
+
+453
+00:44:26,320 --> 00:44:31,320
+Entonces, yo como programador lo utilizo para que yo con la cosa un 5,
+
+454
+00:44:31,320 --> 00:44:37,320
+o un 5 entero, o un 2 entero, y una inicial. Pues esto es un flotante 2,5.
+
+455
+00:44:37,320 --> 00:44:43,320
+Un genio informático digo, esto para científicos está muy bien, pero yo por favor...
+
+456
+00:44:43,320 --> 00:44:49,320
+No sé si nosotros estábamos en 5,5.
+
+457
+00:44:49,320 --> 00:44:53,320
+Yo entiendo, sí, pero ya, por flotante de un número real es...
+
+458
+00:44:53,320 --> 00:44:54,320
+Sí.
+
+459
+00:44:54,320 --> 00:44:57,320
+¿Ves? Creo que Python una vez se está peleando un poco entre estos dos números.
+
+460
+00:44:57,320 --> 00:45:04,320
+Puede ser. Yo creo que si me diera alguien dinero y de cierto mate un año sabático,
+
+461
+00:45:04,320 --> 00:45:09,320
+yo lo que... un poco lo que haría sería en vez de tratar de seguir con la filosofía de Python,
+
+462
+00:45:09,320 --> 00:45:15,320
+sería decir, vale, pues vamos a usar Python, pero vamos a construir una serie de cosas de azúcar sintáctico,
+
+463
+00:45:15,320 --> 00:45:18,320
+digamos, para hacer esto un poco más adecuado a científicos,
+
+464
+00:45:18,320 --> 00:45:23,320
+y no intentar, digamos, retorcer la filosofía de Python para que pase un poco como lo que dices tú,
+
+465
+00:45:23,320 --> 00:45:27,320
+pero efectivamente lo que no se puede hacer es conseguir las dos cosas a la vez.
+
+466
+00:45:27,320 --> 00:45:34,320
+O sea, la expresividad de los impos es genial en realidad, es un poco pesada cuando no la quieres, pero es muy útil.
+
+467
+00:45:34,320 --> 00:45:39,320
+No, pero en general eso, yo creo que en concreto en estos casos, tanto en un núcleo de Python
+
+468
+00:45:39,320 --> 00:45:43,320
+tu puedes personalizar los impos que puedes hacer por defecto,
+
+469
+00:45:43,320 --> 00:45:46,320
+como cualquiera tiene que hacer una vez ya sea acabado,
+
+470
+00:45:46,320 --> 00:45:52,320
+y en concreto para la división, primero que eso es en la 3, y además hay un operador de división...
+
+471
+00:45:52,320 --> 00:45:55,320
+Sí, eso es verdad.
+
+472
+00:45:55,320 --> 00:45:57,320
+Bueno, me refiero, ¿tenes todas las cosas?
+
+473
+00:45:57,320 --> 00:46:00,320
+No, creo que no están...
+
+474
+00:46:01,320 --> 00:46:03,320
+Bueno, una pregunta más.
+
+475
+00:46:03,320 --> 00:46:07,320
+Sí, perdón, quería comentar lo que habéis dicho antes de que en este país todo se piratea,
+
+476
+00:46:07,320 --> 00:46:11,320
+y ponerlo en relación con lo que has dicho tú acerca de que es un círculo vicioso,
+
+477
+00:46:11,320 --> 00:46:15,320
+la gente utiliza cosas que ha aprendido en la academia, en la industria,
+
+478
+00:46:15,320 --> 00:46:20,320
+y el pirateo finalmente es una manera de crear adictos a tu producto,
+
+479
+00:46:20,320 --> 00:46:22,320
+y por eso lo es lo que hace.
+
+480
+00:46:22,320 --> 00:46:24,320
+Obviamente.
+
+481
+00:46:26,320 --> 00:46:29,320
+Pues es un poco lo que hay que romper, creo yo.
+
+482
+00:46:31,320 --> 00:46:33,320
+Bueno, pues nada más.
+
+483
+00:46:33,320 --> 00:46:36,320
+Muchísimas gracias, espero que os haya gustado,
+
+484
+00:46:36,320 --> 00:46:39,320
+me podéis seguir en las redes sociales todo lo que queráis,
+
+485
+00:46:39,320 --> 00:46:42,320
+y si me veis por aquí, queréis charlar de lo que sea.
+
+486
+00:46:42,320 --> 00:46:44,320
+Yo, un experto, no soy, o sea, por mucho que esté aquí,
+
+487
+00:46:44,320 --> 00:46:48,320
+yo estoy aprendiendo igual que todo el mundo, he aprendido por mi cuenta a base de palos,
+
+488
+00:46:48,320 --> 00:46:52,320
+y tengo muchas ganas también de seguir aprendiendo, así que muchas gracias.
+
+489
+00:47:18,320 --> 00:47:20,320
+Gracias.
+

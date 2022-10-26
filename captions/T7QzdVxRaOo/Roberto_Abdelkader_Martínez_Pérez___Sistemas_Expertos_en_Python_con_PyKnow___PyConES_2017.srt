@@ -1,0 +1,1844 @@
+1
+00:00:00,000 --> 00:00:02,000
+You
+
+2
+00:01:00,000 --> 00:01:05,000
+My name is Roberto Martínez and I'm going to talk about expert systems in Python with Pino.
+
+3
+00:01:05,000 --> 00:01:10,000
+The first thing we're going to do is define briefly what an expert system is.
+
+4
+00:01:10,000 --> 00:01:17,000
+An expert system is a program that contains knowledge in a specific area of an expert.
+
+5
+00:01:17,000 --> 00:01:21,000
+It is designed to solve complex problems,
+
+6
+00:01:21,000 --> 00:01:26,000
+reasoning information through rules, instead of doing procedures.
+
+7
+00:01:26,000 --> 00:01:30,000
+Therefore, it is a different form of programming.
+
+8
+00:01:30,000 --> 00:01:33,000
+A brief story to give you a context.
+
+9
+00:01:33,000 --> 00:01:44,000
+In the 1960s, scientists wanted to develop programs that could be developed in some way
+
+10
+00:01:44,000 --> 00:01:49,000
+and they started developing what is known as GPS or General Problem Solvers,
+
+11
+00:01:49,000 --> 00:01:53,000
+which are programs that try to solve problems in a generic way.
+
+12
+00:01:53,000 --> 00:01:57,000
+This approach did not give much results,
+
+13
+00:01:57,000 --> 00:02:06,000
+so little by little they realized that what they needed was to focus more on specific areas of knowledge
+
+14
+00:02:06,000 --> 00:02:10,000
+and not try to address generic problems.
+
+15
+00:02:10,000 --> 00:02:19,000
+In the 1970s, they started developing the first expert systems that focus more on specific problems
+
+16
+00:02:19,000 --> 00:02:23,000
+and in the 1980s they became very popular.
+
+17
+00:02:23,000 --> 00:02:27,000
+There were very successful projects that some still use today,
+
+18
+00:02:27,000 --> 00:02:31,000
+such as Dendral, Mycine and Mistral, which are expert systems,
+
+19
+00:02:31,000 --> 00:02:33,000
+and technology was very promising.
+
+20
+00:02:33,000 --> 00:02:38,000
+So, well, the entire industry wanted to get into the car of artificial intelligence,
+
+21
+00:02:38,000 --> 00:02:41,000
+and that almost never worked out well.
+
+22
+00:02:41,000 --> 00:02:48,000
+In the early 90s, these very promising systems appeared in the very beginning of the 90s,
+
+23
+00:02:48,000 --> 00:02:52,000
+and they became very difficult to maintain,
+
+24
+00:02:52,000 --> 00:02:57,000
+and the investors began to stop investing in artificial intelligence.
+
+25
+00:02:57,000 --> 00:03:01,000
+That led us to what is known as the winter of artificial intelligence,
+
+26
+00:03:01,000 --> 00:03:07,000
+where, well, let's say, it stopped betting on this type of system.
+
+27
+00:03:07,000 --> 00:03:15,000
+Expert systems are still being used today, but only in much more specific problems.
+
+28
+00:03:15,000 --> 00:03:23,000
+Well, let's take a look at the panorama we have in Paizo as a matter of expert systems,
+
+29
+00:03:23,000 --> 00:03:27,000
+which is, to be honest, a bit disappointing.
+
+30
+00:03:27,000 --> 00:03:31,000
+We have two more or less well-known libraries, PyClips,
+
+31
+00:03:31,000 --> 00:03:35,000
+which is a wrapper to use clips directly in Python,
+
+32
+00:03:35,000 --> 00:03:38,000
+clips for those of you who don't know them,
+
+33
+00:03:38,000 --> 00:03:41,000
+which is a language for the creation of expert systems,
+
+34
+00:03:41,000 --> 00:03:45,000
+and this wrapper, PyClips, has been used since 2008,
+
+35
+00:03:45,000 --> 00:03:49,000
+and, well, it is compatible with recent versions,
+
+36
+00:03:49,000 --> 00:03:52,000
+only for Python 2.4, Python 2.5.
+
+37
+00:03:52,000 --> 00:03:55,000
+The other package known to you is called Pyke.
+
+38
+00:03:55,000 --> 00:03:58,000
+It is pure Python, but it is inspired by Prolog.
+
+39
+00:03:58,000 --> 00:04:03,000
+It is not exactly...
+
+40
+00:04:03,000 --> 00:04:07,000
+It is not exactly designed to make expert systems,
+
+41
+00:04:07,000 --> 00:04:13,000
+and the last one is in 2010, so it is not particularly maintained.
+
+42
+00:04:13,000 --> 00:04:19,000
+So, because of this panorama and, among other things,
+
+43
+00:04:19,000 --> 00:04:22,000
+it was created by PyNo.
+
+44
+00:04:22,000 --> 00:04:27,000
+APPLAUSE
+
+45
+00:04:27,000 --> 00:04:29,000
+How wonderful you are!
+
+46
+00:04:29,000 --> 00:04:30,000
+Well, what is PyNo?
+
+47
+00:04:30,000 --> 00:04:36,000
+PyNo is a library to write expert systems in Python, inspired by clips.
+
+48
+00:04:36,000 --> 00:04:39,000
+What are clips and what is PyNo?
+
+49
+00:04:39,000 --> 00:04:42,000
+Clips, as I said before, are a proper programming language,
+
+50
+00:04:42,000 --> 00:04:45,000
+not Python, it is a language for expert systems.
+
+51
+00:04:45,000 --> 00:04:50,000
+It has a long journey, born in 1985 in NASA,
+
+52
+00:04:50,000 --> 00:04:53,000
+and it continues to develop today,
+
+53
+00:04:53,000 --> 00:04:55,000
+so it is a very, very mature software.
+
+54
+00:04:55,000 --> 00:04:59,000
+It has, obviously, a fairly large base of users,
+
+55
+00:04:59,000 --> 00:05:03,000
+and it is even used as reference implementation
+
+56
+00:05:03,000 --> 00:05:06,000
+for other expert systems.
+
+57
+00:05:06,000 --> 00:05:07,000
+What is PyNo?
+
+58
+00:05:07,000 --> 00:05:11,000
+PyNo is a library or library for the creation of expert systems in Python.
+
+59
+00:05:11,000 --> 00:05:15,000
+It was developed in 2015, inspired by clips.
+
+60
+00:05:15,000 --> 00:05:19,000
+It is a pure Python, and that gives us certain benefits,
+
+61
+00:05:19,000 --> 00:05:24,000
+like it is an object and we can use the power of Python
+
+62
+00:05:24,000 --> 00:05:28,000
+in the different stages of the expert system,
+
+63
+00:05:28,000 --> 00:05:33,000
+and obviously it has much more limited inferences than clips.
+
+64
+00:05:38,000 --> 00:05:42,000
+We are going to give a super-accelerated course to PyNo,
+
+65
+00:05:42,000 --> 00:05:47,000
+because PyNo is quite intense and we have only 20 minutes.
+
+66
+00:05:47,000 --> 00:05:58,000
+I don't know if you can see the architecture there, I don't know if you can see it.
+
+67
+00:06:08,000 --> 00:06:11,000
+Projector is... No.
+
+68
+00:06:11,000 --> 00:06:12,000
+There it is.
+
+69
+00:06:12,000 --> 00:06:13,000
+There? It is visible?
+
+70
+00:06:13,000 --> 00:06:14,000
+Yes.
+
+71
+00:06:14,000 --> 00:06:18,000
+Well, the architecture of PyNo is divided into three fundamental parts.
+
+72
+00:06:18,000 --> 00:06:24,000
+The first is the work memory, which contains the current state of the system's inferences,
+
+73
+00:06:24,000 --> 00:06:28,000
+based on the facts that have been declared, the rule base,
+
+74
+00:06:28,000 --> 00:06:31,000
+which contains the knowledge of the system,
+
+75
+00:06:31,000 --> 00:06:34,000
+and it is a set of rules that are programmed,
+
+76
+00:06:34,000 --> 00:06:37,000
+they have been programmed, and the interpreter,
+
+77
+00:06:37,000 --> 00:06:39,000
+which is what provides the library,
+
+78
+00:06:39,000 --> 00:06:41,000
+and what makes the execution of the program run,
+
+79
+00:06:41,000 --> 00:06:45,000
+is that the rules that are satisfied by the facts that have been declared,
+
+80
+00:06:45,000 --> 00:06:46,000
+and the work memory.
+
+81
+00:06:46,000 --> 00:06:50,000
+It is important to differentiate the knowledge,
+
+82
+00:06:50,000 --> 00:06:52,000
+what is defined by the knowledge,
+
+83
+00:06:52,000 --> 00:06:55,000
+and what is defined by the information here.
+
+84
+00:06:55,000 --> 00:06:57,000
+The knowledge is the rules,
+
+85
+00:06:57,000 --> 00:07:02,000
+it is a set of rules,
+
+86
+00:07:02,000 --> 00:07:05,000
+if this happens, then I do that,
+
+87
+00:07:05,000 --> 00:07:08,000
+and the work memory is simply that information,
+
+88
+00:07:08,000 --> 00:07:11,000
+the bread costs 1 euro, or whatever.
+
+89
+00:07:16,000 --> 00:07:18,000
+The knowledge motor.
+
+90
+00:07:18,000 --> 00:07:19,000
+Can you see it?
+
+91
+00:07:19,000 --> 00:07:20,000
+Yes.
+
+92
+00:07:20,000 --> 00:07:21,000
+The knowledge motor.
+
+93
+00:07:21,000 --> 00:07:23,000
+Well, the knowledge motor provides the interface
+
+94
+00:07:23,000 --> 00:07:26,000
+to interact with the expert system.
+
+95
+00:07:26,000 --> 00:07:29,000
+It has references to the rest of the elements of the system.
+
+96
+00:07:29,000 --> 00:07:32,000
+In the example you can see a knowledge motor being executed,
+
+97
+00:07:32,000 --> 00:07:35,000
+but it has no rules, so obviously it does nothing.
+
+98
+00:07:35,000 --> 00:07:38,000
+It is simply a class created by Noble Chenjain.
+
+99
+00:07:41,000 --> 00:07:43,000
+The facts, what are the facts?
+
+100
+00:07:43,000 --> 00:07:46,000
+As I said before, the information unit that handles the system
+
+101
+00:07:46,000 --> 00:07:50,000
+is represented by the class Fact,
+
+102
+00:07:50,000 --> 00:07:52,000
+and Fact is a dictionary,
+
+103
+00:07:52,000 --> 00:07:56,000
+that is, a dict, and it is a dictionary a little special.
+
+104
+00:07:56,000 --> 00:07:59,000
+In addition to accepting keys and values as a normal dictionary,
+
+105
+00:07:59,000 --> 00:08:01,000
+it can also be passed values without a key,
+
+106
+00:08:01,000 --> 00:08:04,000
+and then it behaves like a kind of list.
+
+107
+00:08:04,000 --> 00:08:08,000
+These two behaviors can be given at the same time.
+
+108
+00:08:08,000 --> 00:08:10,000
+Therefore, if you look at the example...
+
+109
+00:08:12,000 --> 00:08:14,000
+I don't know if you can see here...
+
+110
+00:08:14,000 --> 00:08:15,000
+No...
+
+111
+00:08:20,000 --> 00:08:21,000
+If you can see here,
+
+112
+00:08:21,000 --> 00:08:24,000
+that three values are passed to the fact that
+
+113
+00:08:24,000 --> 00:08:26,000
+X, Y, and Z are passed without keys,
+
+114
+00:08:26,000 --> 00:08:28,000
+and then two values with a key.
+
+115
+00:08:28,000 --> 00:08:29,000
+There you go.
+
+116
+00:08:29,000 --> 00:08:32,000
+And then they recover, in the case of the first values,
+
+117
+00:08:32,000 --> 00:08:35,000
+the first is a list, and the second is a dictionary.
+
+118
+00:08:36,000 --> 00:08:38,000
+It is also recommended...
+
+119
+00:08:47,000 --> 00:08:49,000
+It is recommended to make de-fact subclasses
+
+120
+00:08:49,000 --> 00:08:50,000
+to...
+
+121
+00:08:55,000 --> 00:08:58,000
+to be able to represent different types of information.
+
+122
+00:08:58,000 --> 00:09:00,000
+Here in the second example you can see
+
+123
+00:09:00,000 --> 00:09:02,000
+that there is a class of fact called alert,
+
+124
+00:09:02,000 --> 00:09:04,000
+and then we are using it to define alerts.
+
+125
+00:09:04,000 --> 00:09:06,000
+Well, red type alerts,
+
+126
+00:09:06,000 --> 00:09:08,000
+or there we have another fact,
+
+127
+00:09:08,000 --> 00:09:11,000
+which is state, which is a kind of criticism.
+
+128
+00:09:14,000 --> 00:09:15,000
+The rules.
+
+129
+00:09:15,000 --> 00:09:18,000
+The rules are the most important element that Pino has,
+
+130
+00:09:18,000 --> 00:09:22,000
+since what represents us is knowledge.
+
+131
+00:09:23,000 --> 00:09:26,000
+The rule consists of actions that will be carried out
+
+132
+00:09:26,000 --> 00:09:28,000
+if necessary conditions are given.
+
+133
+00:09:28,000 --> 00:09:30,000
+All the rules have basically two parts.
+
+134
+00:09:30,000 --> 00:09:34,000
+The antecedent, which is also called left-hand side,
+
+135
+00:09:34,000 --> 00:09:36,000
+and the consequence, or right-hand side.
+
+136
+00:09:36,000 --> 00:09:39,000
+The antecedent consists of a set of conditions,
+
+137
+00:09:39,000 --> 00:09:42,000
+and the consequence is a series of actions.
+
+138
+00:09:42,000 --> 00:09:45,000
+In Pino, a rule is declared by decorating a method
+
+139
+00:09:45,000 --> 00:09:46,000
+with the rule decorator.
+
+140
+00:09:46,000 --> 00:09:50,000
+Or rule, if you know how to pronounce it.
+
+141
+00:09:50,000 --> 00:09:54,000
+Here, for example, we are generating a rule,
+
+142
+00:09:54,000 --> 00:09:56,000
+which, as a condition in the left-hand side,
+
+143
+00:09:56,000 --> 00:09:58,000
+has an alert,
+
+144
+00:09:58,000 --> 00:10:00,000
+and in the consequence,
+
+145
+00:10:00,000 --> 00:10:03,000
+we have simply a method that will be executed.
+
+146
+00:10:03,000 --> 00:10:05,000
+And when the alert comes out,
+
+147
+00:10:05,000 --> 00:10:07,000
+it will print this.
+
+148
+00:10:14,000 --> 00:10:17,000
+Ok, rules, the comparison of patterns.
+
+149
+00:10:17,000 --> 00:10:19,000
+As I said before, in the antecedent
+
+150
+00:10:19,000 --> 00:10:22,000
+we can express conditions to execute the rule.
+
+151
+00:10:22,000 --> 00:10:25,000
+These conditions can define
+
+152
+00:10:25,000 --> 00:10:28,000
+the different states of the memory of work.
+
+153
+00:10:30,000 --> 00:10:33,000
+What can be defined within an antecedent?
+
+154
+00:10:33,000 --> 00:10:36,000
+The facts that must be in the memory,
+
+155
+00:10:36,000 --> 00:10:39,000
+and the values that must have those facts
+
+156
+00:10:39,000 --> 00:10:41,000
+to be fulfilled.
+
+157
+00:10:41,000 --> 00:10:44,000
+The keys that must have, the values within the keys,
+
+158
+00:10:44,000 --> 00:10:48,000
+and we can even say that different facts
+
+159
+00:10:48,000 --> 00:10:51,000
+have to share the same value,
+
+160
+00:10:51,000 --> 00:10:54,000
+regardless of the value that is.
+
+161
+00:10:54,000 --> 00:10:57,000
+PINO provides the tools to express
+
+162
+00:10:57,000 --> 00:10:59,000
+any type of restriction.
+
+163
+00:10:59,000 --> 00:11:02,000
+Logical operators, like ANT or NOT,
+
+164
+00:11:02,000 --> 00:11:04,000
+restrictions for fields,
+
+165
+00:11:04,000 --> 00:11:07,000
+for example, like DINES, which matches any value,
+
+166
+00:11:07,000 --> 00:11:10,000
+literal values, it has to be exactly this value,
+
+167
+00:11:10,000 --> 00:11:12,000
+or filtered functions.
+
+168
+00:11:12,000 --> 00:11:14,000
+And there you need to set a function,
+
+169
+00:11:14,000 --> 00:11:16,000
+and if that function returns true,
+
+170
+00:11:16,000 --> 00:11:18,000
+it will fulfill the condition.
+
+171
+00:11:18,000 --> 00:11:20,000
+In addition, these logical operations
+
+172
+00:11:20,000 --> 00:11:22,000
+about the restrictions of fields
+
+173
+00:11:22,000 --> 00:11:26,000
+can be mixed with logical operations.
+
+174
+00:11:26,000 --> 00:11:29,000
+We can say that this function has to be filtered,
+
+175
+00:11:29,000 --> 00:11:32,000
+or it has to be this exact value.
+
+176
+00:11:32,000 --> 00:11:34,000
+For example,
+
+177
+00:11:35,000 --> 00:11:37,000
+if I manage to see it,
+
+178
+00:11:37,000 --> 00:11:40,000
+we have that this rule, the first,
+
+179
+00:11:40,000 --> 00:11:43,000
+what it asks is that in the memory of work
+
+180
+00:11:43,000 --> 00:11:45,000
+there are two facts.
+
+181
+00:11:45,000 --> 00:11:47,000
+One is called shirt,
+
+182
+00:11:47,000 --> 00:11:49,000
+with a color key,
+
+183
+00:11:49,000 --> 00:11:52,000
+and I don't know if you can read this.
+
+184
+00:11:56,000 --> 00:11:58,000
+With the color key,
+
+185
+00:11:58,000 --> 00:12:01,000
+we are giving it an internal name, which is C,
+
+186
+00:12:01,000 --> 00:12:03,000
+I don't know if you can see it there,
+
+187
+00:12:03,000 --> 00:12:05,000
+which says match.C.
+
+188
+00:12:05,000 --> 00:12:09,000
+And also, that value has to be one of these two literals.
+
+189
+00:12:09,000 --> 00:12:11,000
+The L means literal,
+
+190
+00:12:11,000 --> 00:12:14,000
+and it says blue, or here we have the operator,
+
+191
+00:12:14,000 --> 00:12:16,000
+or gray, okay?
+
+192
+00:12:16,000 --> 00:12:19,000
+This will match in the memory of work,
+
+193
+00:12:19,000 --> 00:12:22,000
+whenever there is a shirt type with the color,
+
+194
+00:12:22,000 --> 00:12:24,000
+blue or gray.
+
+195
+00:12:24,000 --> 00:12:27,000
+And it also has to happen that in the same memory of work,
+
+196
+00:12:27,000 --> 00:12:29,000
+we have a pattern type,
+
+197
+00:12:29,000 --> 00:12:31,000
+with the color key,
+
+198
+00:12:31,000 --> 00:12:33,000
+and exactly with the same value
+
+199
+00:12:33,000 --> 00:12:35,000
+that we have on the other side,
+
+200
+00:12:35,000 --> 00:12:38,000
+because we are matching and assigning to the variable of C.
+
+201
+00:12:38,000 --> 00:12:41,000
+If this happens, this rule will be launched,
+
+202
+00:12:41,000 --> 00:12:43,000
+and that C that we have captured
+
+203
+00:12:43,000 --> 00:12:45,000
+will be passed as an argument.
+
+204
+00:12:45,000 --> 00:12:47,000
+And that is the color column of color C.
+
+205
+00:12:47,000 --> 00:12:49,000
+In the second rule,
+
+206
+00:12:49,000 --> 00:12:53,000
+we need a shirt type,
+
+207
+00:12:53,000 --> 00:12:55,000
+with a price key,
+
+208
+00:12:55,000 --> 00:12:59,000
+and that price must meet this expression,
+
+209
+00:12:59,000 --> 00:13:01,000
+okay?
+
+210
+00:13:01,000 --> 00:13:04,000
+It is a lambda and simply that the P is between 10 and 25.
+
+211
+00:13:04,000 --> 00:13:07,000
+We are looking for a shirt
+
+212
+00:13:07,000 --> 00:13:09,000
+with that price range,
+
+213
+00:13:09,000 --> 00:13:11,000
+and if we find it, we always do.
+
+214
+00:13:11,000 --> 00:13:15,000
+And the last one,
+
+215
+00:13:15,000 --> 00:13:17,000
+well, I can't see it.
+
+216
+00:13:20,000 --> 00:13:21,000
+The last one,
+
+217
+00:13:21,000 --> 00:13:23,000
+we are looking for a shirt
+
+218
+00:13:23,000 --> 00:13:26,000
+with a price that we are going to call P,
+
+219
+00:13:26,000 --> 00:13:29,000
+we are going to filter it with another filtered function,
+
+220
+00:13:29,000 --> 00:13:31,000
+in this case, which is less than 30 euros,
+
+221
+00:13:31,000 --> 00:13:34,000
+and we also need a budget type fact,
+
+222
+00:13:34,000 --> 00:13:36,000
+we are going to capture the value
+
+223
+00:13:36,000 --> 00:13:38,000
+that has that fact and budget,
+
+224
+00:13:38,000 --> 00:13:40,000
+we are going to call it P,
+
+225
+00:13:40,000 --> 00:13:42,000
+we are going to do an additional check
+
+226
+00:13:42,000 --> 00:13:45,000
+with the variable P and the variable T,
+
+227
+00:13:45,000 --> 00:13:47,000
+and whenever P is less than T,
+
+228
+00:13:47,000 --> 00:13:50,000
+that is, the price of the shirt is within our budget,
+
+229
+00:13:50,000 --> 00:13:52,000
+then this is going to happen.
+
+230
+00:13:52,000 --> 00:13:55,000
+And this function is going to be called,
+
+231
+00:13:55,000 --> 00:13:57,000
+let's see,
+
+232
+00:13:57,000 --> 00:13:59,000
+it is going to be called the function
+
+233
+00:13:59,000 --> 00:14:02,000
+that simply imprisons it.
+
+234
+00:14:02,000 --> 00:14:04,000
+Okay, the execution cycle.
+
+235
+00:14:04,000 --> 00:14:06,000
+Do you see it all?
+
+236
+00:14:06,000 --> 00:14:07,000
+Yes?
+
+237
+00:14:07,000 --> 00:14:10,000
+And this is going to start with the main program,
+
+238
+00:14:10,000 --> 00:14:12,000
+which is the program that we write,
+
+239
+00:14:12,000 --> 00:14:15,000
+the first thing it does is to instantiate the knowledge engine
+
+240
+00:14:15,000 --> 00:14:17,000
+that we are going to create,
+
+241
+00:14:17,000 --> 00:14:19,000
+this Noble Chen-Cheng that we talked about before.
+
+242
+00:14:19,000 --> 00:14:22,000
+Then, that main program is going to call the Routine Reset,
+
+243
+00:14:22,000 --> 00:14:24,000
+which will reinitiate the working memory
+
+244
+00:14:24,000 --> 00:14:26,000
+so that everything is clean, for the following execution,
+
+245
+00:14:26,000 --> 00:14:28,000
+and if we have any initial fact,
+
+246
+00:14:28,000 --> 00:14:30,000
+any fact that we want to declare at the beginning,
+
+247
+00:14:30,000 --> 00:14:32,000
+it will also be declared.
+
+248
+00:14:32,000 --> 00:14:34,000
+The last thing it has to do,
+
+249
+00:14:34,000 --> 00:14:37,000
+is that it has this cycle,
+
+250
+00:14:37,000 --> 00:14:39,000
+which basically what it does is
+
+251
+00:14:39,000 --> 00:14:41,000
+to look for the rules of our engine
+
+252
+00:14:41,000 --> 00:14:43,000
+that are matching with the working memory,
+
+253
+00:14:43,000 --> 00:14:46,000
+and put them in a list that is called Agenda.
+
+254
+00:14:46,000 --> 00:14:49,000
+That agenda is simply the list of rules that you have to launch.
+
+255
+00:14:49,000 --> 00:14:53,000
+Then it orders it with an internal algorithm
+
+256
+00:14:53,000 --> 00:14:55,000
+that is called conflict resolution,
+
+257
+00:14:55,000 --> 00:14:59,000
+and simply, look if that list is empty.
+
+258
+00:14:59,000 --> 00:15:01,000
+If it is empty, we have finished,
+
+259
+00:15:01,000 --> 00:15:03,000
+and we return to the main program.
+
+260
+00:15:03,000 --> 00:15:05,000
+If it is not empty,
+
+261
+00:15:08,000 --> 00:15:11,000
+if it is not empty, we execute the first rule,
+
+262
+00:15:11,000 --> 00:15:13,000
+and that rule, as we have written,
+
+263
+00:15:13,000 --> 00:15:15,000
+probably modifies the working memory in some way,
+
+264
+00:15:15,000 --> 00:15:17,000
+then everything has to be recalculated.
+
+265
+00:15:17,000 --> 00:15:19,000
+If you look like this,
+
+266
+00:15:19,000 --> 00:15:21,000
+there are new rules to execute,
+
+267
+00:15:21,000 --> 00:15:25,000
+and the first one is executed again.
+
+268
+00:15:25,000 --> 00:15:33,000
+This cycle continues until there is nothing left to execute.
+
+269
+00:15:33,000 --> 00:15:36,000
+Let's see a practical example.
+
+270
+00:15:36,000 --> 00:15:41,000
+This is a program that we are going to do with PINOW,
+
+271
+00:15:41,000 --> 00:15:44,000
+and whose goal is to generate discount coupons
+
+272
+00:15:44,000 --> 00:15:47,000
+for a store.
+
+273
+00:15:49,000 --> 00:15:53,000
+The system has three objectives.
+
+274
+00:15:53,000 --> 00:15:56,000
+The first objective is to encourage new customers' purchases
+
+275
+00:15:56,000 --> 00:15:58,000
+in the establishment.
+
+276
+00:15:58,000 --> 00:16:01,000
+The second objective is to increase the consumption of other products
+
+277
+00:16:01,000 --> 00:16:03,000
+that they have not bought,
+
+278
+00:16:03,000 --> 00:16:05,000
+and the third objective is to increase the consumption of products
+
+279
+00:16:05,000 --> 00:16:07,000
+with more profit margin.
+
+280
+00:16:08,000 --> 00:16:11,000
+The interface we have is very simple.
+
+281
+00:16:11,000 --> 00:16:14,000
+The program's input will be a list of the products
+
+282
+00:16:14,000 --> 00:16:16,000
+that the customer has bought,
+
+283
+00:16:16,000 --> 00:16:19,000
+and the output, the list of coupons that we want to print
+
+284
+00:16:19,000 --> 00:16:23,000
+so that in their next purchase they can use them.
+
+285
+00:16:23,000 --> 00:16:27,000
+Let's see the code.
+
+286
+00:16:40,000 --> 00:16:42,000
+Can it read well?
+
+287
+00:16:42,000 --> 00:16:44,000
+Yes.
+
+288
+00:16:44,000 --> 00:16:46,000
+Yes?
+
+289
+00:16:46,000 --> 00:16:48,000
+Yes, it goes down there.
+
+290
+00:16:48,000 --> 00:16:50,000
+Oh, no, no.
+
+291
+00:16:53,000 --> 00:16:56,000
+Here we have a small summary of the program we want to do,
+
+292
+00:16:56,000 --> 00:16:58,000
+the objectives and the outputs.
+
+293
+00:16:58,000 --> 00:17:02,000
+The first thing we are going to do is import PINOW,
+
+294
+00:17:02,000 --> 00:17:05,000
+and we are going to declare the facts we are going to handle
+
+295
+00:17:05,000 --> 00:17:07,000
+during this program.
+
+296
+00:17:07,000 --> 00:17:10,000
+In this case, the first thing we need is something
+
+297
+00:17:10,000 --> 00:17:12,000
+to manage the input and output,
+
+298
+00:17:12,000 --> 00:17:14,000
+the products, which is the input,
+
+299
+00:17:14,000 --> 00:17:16,000
+and the coupons, which are the output.
+
+300
+00:17:16,000 --> 00:17:19,000
+We simply make a subclass of facts,
+
+301
+00:17:19,000 --> 00:17:23,000
+and with this we will represent the information.
+
+302
+00:17:23,000 --> 00:17:27,000
+We also need two additional facts,
+
+303
+00:17:27,000 --> 00:17:30,000
+which are the promotions that are obvious in the store,
+
+304
+00:17:30,000 --> 00:17:33,000
+and another where we are going to have the information
+
+305
+00:17:33,000 --> 00:17:36,000
+of the benefit we get from each product.
+
+306
+00:17:36,000 --> 00:17:39,000
+In this way we can calculate, if we are more interested,
+
+307
+00:17:39,000 --> 00:17:41,000
+increase the sale of another.
+
+308
+00:17:41,000 --> 00:17:43,000
+They are already declared.
+
+309
+00:17:43,000 --> 00:17:46,000
+We are going to try to make an expert system for the first objective.
+
+310
+00:17:46,000 --> 00:17:48,000
+The first objective was to encourage new purchases
+
+311
+00:17:48,000 --> 00:17:50,000
+of the customer in the establishment.
+
+312
+00:17:50,000 --> 00:17:52,000
+What we are going to do for this is generate coupons
+
+313
+00:17:52,000 --> 00:17:54,000
+of type 2x1, 3x2, etc.
+
+314
+00:17:54,000 --> 00:18:21,000
+Is there the code?
+
+315
+00:18:21,000 --> 00:18:24,000
+Is there the code?
+
+316
+00:18:24,000 --> 00:18:26,000
+Yes?
+
+317
+00:18:26,000 --> 00:18:28,000
+As I said, we are doing a class
+
+318
+00:18:28,000 --> 00:18:30,000
+that inherits Nauldets and Jain
+
+319
+00:18:30,000 --> 00:18:32,000
+to make a motor of knowledge.
+
+320
+00:18:32,000 --> 00:18:34,000
+Besides, I have not told you
+
+321
+00:18:34,000 --> 00:18:38,000
+any method that we decorate with the fact decorator
+
+322
+00:18:38,000 --> 00:18:42,000
+will be called at the beginning when we make a reserve,
+
+323
+00:18:42,000 --> 00:18:46,000
+and what we will do is to produce the initial facts
+
+324
+00:18:46,000 --> 00:18:48,000
+that we want to put into the work memory.
+
+325
+00:18:48,000 --> 00:18:51,000
+In our case, as we want to generate promotions of type 2x1,
+
+326
+00:18:51,000 --> 00:18:53,000
+what we are going to put into the work memory
+
+327
+00:18:53,000 --> 00:18:55,000
+are the promotions that are there.
+
+328
+00:18:55,000 --> 00:18:58,000
+In this case, we have promotion of type 2x1
+
+329
+00:18:58,000 --> 00:19:01,000
+for the product, 2x1 for despalcual,
+
+330
+00:19:01,000 --> 00:19:04,000
+3x2 for triple-pills.
+
+331
+00:19:04,000 --> 00:19:07,000
+This will go to the work memory
+
+332
+00:19:07,000 --> 00:19:10,000
+and this other method,
+
+333
+00:19:10,000 --> 00:19:13,000
+which is decorated with the rule decorator,
+
+334
+00:19:13,000 --> 00:19:16,000
+allows us to make a rule.
+
+335
+00:19:16,000 --> 00:19:18,000
+In this case, what are we doing?
+
+336
+00:19:18,000 --> 00:19:20,000
+We are looking for a work memory
+
+337
+00:19:20,000 --> 00:19:22,000
+of promotion type,
+
+338
+00:19:22,000 --> 00:19:26,000
+which has a key called type
+
+339
+00:19:26,000 --> 00:19:30,000
+and we are going to assign it the name of variable t.
+
+340
+00:19:30,000 --> 00:19:33,000
+In addition, this type has to fulfill
+
+341
+00:19:33,000 --> 00:19:37,000
+this predicated, this London function.
+
+342
+00:19:37,000 --> 00:19:39,000
+This is something else that we are looking for
+
+343
+00:19:39,000 --> 00:19:41,000
+with a return.
+
+344
+00:19:41,000 --> 00:19:45,000
+We are looking for the type to be number x, number.
+
+345
+00:19:45,000 --> 00:19:49,000
+In addition, this promotion type
+
+346
+00:19:49,000 --> 00:19:51,000
+has to have a product key
+
+347
+00:19:51,000 --> 00:19:55,000
+with a value and we are going to call that value p.
+
+348
+00:19:55,000 --> 00:19:57,000
+The second thing we are looking for in the work memory
+
+349
+00:19:57,000 --> 00:20:01,000
+is that there is a product that has the same name,
+
+350
+00:20:01,000 --> 00:20:05,000
+sorry, that has the key name with that same value p.
+
+351
+00:20:05,000 --> 00:20:09,000
+For this to work, this p and this p have to be the same.
+
+352
+00:20:09,000 --> 00:20:12,000
+If I have in the work memory a promotion object
+
+353
+00:20:12,000 --> 00:20:15,000
+and a product object that has a certain name
+
+354
+00:20:15,000 --> 00:20:17,000
+and they are different, it will not match.
+
+355
+00:20:17,000 --> 00:20:20,000
+They have to be the same. That is the restriction.
+
+356
+00:20:20,000 --> 00:20:24,000
+In the case that this two elements are in the work memory
+
+357
+00:20:24,000 --> 00:20:27,000
+that we are looking for, this function is going to be called
+
+358
+00:20:27,000 --> 00:20:31,000
+and the p and the p that we are capturing will be passed.
+
+359
+00:20:31,000 --> 00:20:37,000
+In this case, what we do is simply declare a new work memory,
+
+360
+00:20:37,000 --> 00:20:42,000
+that a type T coupon is generated with product p.
+
+361
+00:20:42,000 --> 00:20:44,000
+We are going to execute it.
+
+362
+00:20:44,000 --> 00:20:48,000
+We are going to use the function watch to see what is happening below.
+
+363
+00:20:48,000 --> 00:20:52,000
+It will simply log in and out of the engine.
+
+364
+00:20:52,000 --> 00:20:55,000
+We install the engine,
+
+365
+00:20:55,000 --> 00:20:58,000
+we restart the work memory
+
+366
+00:20:58,000 --> 00:21:02,000
+and here we see that certain facts are put into the memory,
+
+367
+00:21:02,000 --> 00:21:04,000
+which we have defined in our default.
+
+368
+00:21:04,000 --> 00:21:07,000
+We are going to declare a couple of products that the client has bought.
+
+369
+00:21:07,000 --> 00:21:12,000
+Some do docks, mineral water and batteries.
+
+370
+00:21:12,000 --> 00:21:15,000
+Now we are going to execute the engine.
+
+371
+00:21:15,000 --> 00:21:18,000
+What is seen here is that the rules are being executed,
+
+372
+00:21:18,000 --> 00:21:21,000
+the rule of type FERTA-NM,
+
+373
+00:21:21,000 --> 00:21:24,000
+and coupons are generating us.
+
+374
+00:21:24,000 --> 00:21:26,000
+If we want to see what the work memory is,
+
+375
+00:21:26,000 --> 00:21:29,000
+we can use the attribute of facts.
+
+376
+00:21:29,000 --> 00:21:32,000
+This will print the memory list.
+
+377
+00:21:32,000 --> 00:21:35,000
+Here you see that two coupons have been generated.
+
+378
+00:21:35,000 --> 00:21:37,000
+The objective 1 seems to be completed.
+
+379
+00:21:37,000 --> 00:21:41,000
+The objective number 2 is the consumption of other products.
+
+380
+00:21:41,000 --> 00:21:44,000
+For this, what we are going to do is generate discount packs.
+
+381
+00:21:44,000 --> 00:21:47,000
+If the user has bought, for example,
+
+382
+00:21:47,000 --> 00:21:50,000
+a fray and we have a pack that is fray plus mopa,
+
+383
+00:21:50,000 --> 00:21:52,000
+with 25% discount,
+
+384
+00:21:52,000 --> 00:21:54,000
+in the case that he has bought one of the two products,
+
+385
+00:21:54,000 --> 00:21:56,000
+but not the two,
+
+386
+00:21:56,000 --> 00:22:03,000
+we are going to generate that discount for the next purchase.
+
+387
+00:22:03,000 --> 00:22:07,000
+We generate the vigent promotions,
+
+388
+00:22:07,000 --> 00:22:10,000
+in this case, two packs,
+
+389
+00:22:10,000 --> 00:22:14,000
+and the rule that we have here is that if there is a promotion of a pack,
+
+390
+00:22:14,000 --> 00:22:17,000
+for a product P1 and P2, with a certain discount,
+
+391
+00:22:17,000 --> 00:22:19,000
+that is seen here,
+
+392
+00:22:19,000 --> 00:22:23,000
+and one of these two conditions happens,
+
+393
+00:22:23,000 --> 00:22:26,000
+that is, that the product has not been bought 1,
+
+394
+00:22:26,000 --> 00:22:28,000
+but the product has been bought 2,
+
+395
+00:22:28,000 --> 00:22:31,000
+or the product has been bought 1, but not 2,
+
+396
+00:22:31,000 --> 00:22:33,000
+because it is a XOR of all life,
+
+397
+00:22:33,000 --> 00:22:35,000
+then this function is going to be called,
+
+398
+00:22:35,000 --> 00:22:37,000
+and the function generates a new coupon.
+
+399
+00:22:37,000 --> 00:22:40,000
+We instantiate, restart,
+
+400
+00:22:40,000 --> 00:22:43,000
+here we see all the facts,
+
+401
+00:22:43,000 --> 00:22:46,000
+and generate the two products that the user has bought.
+
+402
+00:22:46,000 --> 00:22:49,000
+We run the engine,
+
+403
+00:22:49,000 --> 00:22:51,000
+and the rules skip,
+
+404
+00:22:51,000 --> 00:22:54,000
+we generate the coupons,
+
+405
+00:22:54,000 --> 00:22:57,000
+and we are done.
+
+406
+00:22:57,000 --> 00:22:59,000
+We are going to check another case,
+
+407
+00:22:59,000 --> 00:23:01,000
+and if we buy the two products, we do not generate the coupon,
+
+408
+00:23:01,000 --> 00:23:03,000
+because we would be losing money,
+
+409
+00:23:03,000 --> 00:23:05,000
+we are not incentivizing anything.
+
+410
+00:23:05,000 --> 00:23:08,000
+The products of the same pack, we run,
+
+411
+00:23:08,000 --> 00:23:10,000
+nothing happens.
+
+412
+00:23:10,000 --> 00:23:13,000
+The goal number 3 is the consumption of products
+
+413
+00:23:13,000 --> 00:23:15,000
+with more profit margin.
+
+414
+00:23:15,000 --> 00:23:18,000
+To accomplish this, what we do is that we have a list
+
+415
+00:23:18,000 --> 00:23:21,000
+of the benefits we have for the product,
+
+416
+00:23:21,000 --> 00:23:24,000
+and if a product has been bought of a typology,
+
+417
+00:23:24,000 --> 00:23:27,000
+for example, beer, that leaves us less margin
+
+418
+00:23:27,000 --> 00:23:29,000
+than another type of beer we have,
+
+419
+00:23:29,000 --> 00:23:31,000
+we are going to give a coupon discount
+
+420
+00:23:31,000 --> 00:23:34,000
+for that beer with more margin.
+
+421
+00:23:34,000 --> 00:23:38,000
+Here, for example, we declare that for the MAU beer
+
+422
+00:23:38,000 --> 00:23:41,000
+we have a benefit of 0.5,
+
+423
+00:23:41,000 --> 00:23:44,000
+and for the accented beer, a benefit of 0.9.
+
+424
+00:23:44,000 --> 00:23:47,000
+Obviously, if the client buys MAU,
+
+425
+00:23:47,000 --> 00:23:50,000
+we want him to buy accented beer.
+
+426
+00:23:50,000 --> 00:23:53,000
+The rule, what it tells us is that if the product has been bought of a P1,
+
+427
+00:23:53,000 --> 00:23:56,000
+and we have a benefit for P1,
+
+428
+00:23:56,000 --> 00:23:59,000
+that we are going to call it G1,
+
+429
+00:23:59,000 --> 00:24:02,000
+and then it turns out that another benefit for a product P2,
+
+430
+00:24:02,000 --> 00:24:05,000
+and they are of the same type.
+
+431
+00:24:07,000 --> 00:24:10,000
+And we see that the profits of the first,
+
+432
+00:24:10,000 --> 00:24:13,000
+sorry, of the second, are greater than the profits of the first,
+
+433
+00:24:13,000 --> 00:24:16,000
+we want this rule to be released.
+
+434
+00:24:16,000 --> 00:24:18,000
+In that case, when the rule is released,
+
+435
+00:24:18,000 --> 00:24:20,000
+what we are going to do is,
+
+436
+00:24:20,000 --> 00:24:23,000
+we are going to take the difference from the profits,
+
+437
+00:24:23,000 --> 00:24:26,000
+and we are going to generate a discount coupon for half.
+
+438
+00:24:26,000 --> 00:24:29,000
+We continue to earn, although it is half.
+
+439
+00:24:31,000 --> 00:24:34,000
+We instantiate, restart the work memory,
+
+440
+00:24:34,000 --> 00:24:36,000
+introduce the facts,
+
+441
+00:24:36,000 --> 00:24:39,000
+and declare that the user has bought MAU beer.
+
+442
+00:24:39,000 --> 00:24:41,000
+To execute.
+
+443
+00:24:41,000 --> 00:24:43,000
+No time?
+
+444
+00:24:43,000 --> 00:24:46,000
+No.
+
+445
+00:24:46,000 --> 00:24:49,000
+Well, basically that's all.
+
+446
+00:24:49,000 --> 00:24:51,000
+What I wanted to tell you,
+
+447
+00:24:51,000 --> 00:24:54,000
+and finally, that you can put the three engines together in one engine,
+
+448
+00:24:54,000 --> 00:24:57,000
+and give it a more friendly interface.
+
+449
+00:24:57,000 --> 00:24:59,000
+What we are doing here is a function,
+
+450
+00:24:59,000 --> 00:25:01,000
+because this is still Python,
+
+451
+00:25:01,000 --> 00:25:03,000
+where we put all the product names,
+
+452
+00:25:03,000 --> 00:25:06,000
+and it will generate all the coupons.
+
+453
+00:25:06,000 --> 00:25:09,000
+Here we are using it,
+
+454
+00:25:09,000 --> 00:25:13,000
+and finally it generates these coupons.
+
+455
+00:25:13,000 --> 00:25:16,000
+And that's it, no more time.
+
+456
+00:25:16,000 --> 00:25:25,000
+Thank you very much, Roberto.
+
+457
+00:25:25,000 --> 00:25:27,000
+There is no time for questions,
+
+458
+00:25:27,000 --> 00:25:31,000
+but if you want, you can go down to the white board,
+
+459
+00:25:31,000 --> 00:25:35,000
+and we will have someone to ask me if I can do it.
+
+460
+00:25:35,000 --> 00:25:38,000
+Thank you very much.
+
+461
+00:25:38,000 --> 00:25:40,000
+Thank you.
+

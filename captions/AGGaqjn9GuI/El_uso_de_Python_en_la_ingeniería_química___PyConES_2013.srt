@@ -1,0 +1,2696 @@
+1
+00:00:00,000 --> 00:00:12,000
+Vamos a empezar.
+
+2
+00:00:12,000 --> 00:00:15,000
+Buenos días a todos.
+
+3
+00:00:15,000 --> 00:00:17,000
+Agradeceros por esta asistencia.
+
+4
+00:00:17,000 --> 00:00:19,000
+En este lugar yo tan comprometido.
+
+5
+00:00:19,000 --> 00:00:26,000
+Vamos a hacer la charla en esta conferencia de Python.
+
+6
+00:00:26,000 --> 00:00:30,000
+Agradecer a los organizadores del esfuerzo.
+
+7
+00:00:30,000 --> 00:00:33,000
+La verdad es que nos está abusando mucho.
+
+8
+00:00:33,000 --> 00:00:37,000
+Y creo que es algo general que piensa todos los existentes.
+
+9
+00:00:37,000 --> 00:00:43,000
+Nuestra charla la hemos orientado al uso de Python en la ingeniería química.
+
+10
+00:00:43,000 --> 00:00:45,000
+Si bien podíamos hacer...
+
+11
+00:00:45,000 --> 00:00:47,000
+Si bien hemos puesto ingeniería química,
+
+12
+00:00:47,000 --> 00:00:51,000
+vamos a ver que los problemas que vamos a resolver están presentes en todas las ingenierías.
+
+13
+00:00:51,000 --> 00:00:52,000
+¿De acuerdo?
+
+14
+00:00:52,000 --> 00:00:57,000
+Pero queríamos destacar de alguna forma que en ingeniería química también se puede usar.
+
+15
+00:00:57,000 --> 00:01:03,000
+Bien, la esquema va a ser una presentación de lo que es KHM.
+
+16
+00:01:03,000 --> 00:01:08,000
+Después pasaré muy por encima de por qué Python, porque lo que estamos aquí lo sabemos,
+
+17
+00:01:08,000 --> 00:01:13,000
+pero quiero que quede claro en las diapositivas para que las vea por qué Python es una buena alternativa.
+
+18
+00:01:13,000 --> 00:01:17,000
+Después mi parte será la resolución de cocienas enderivadas parciales,
+
+19
+00:01:17,000 --> 00:01:19,000
+cómo resolverlas.
+
+20
+00:01:19,000 --> 00:01:27,000
+Después la parte de Jorge será la resolución de problemas de optimización, de programación matemática.
+
+21
+00:01:27,000 --> 00:01:30,000
+Y por último, Isaías hará el diseño de reactores químicos,
+
+22
+00:01:30,000 --> 00:01:35,000
+su modelado, su simulación y sus resultados.
+
+23
+00:01:35,000 --> 00:01:37,000
+Bien, ¿qué es KHM?
+
+24
+00:01:37,000 --> 00:01:40,000
+Venimos aquí todos uniformados, venimos aquí.
+
+25
+00:01:40,000 --> 00:01:47,000
+Bien, pues KHM no es más que una asociación que estamos creando de ingeniería química
+
+26
+00:01:47,000 --> 00:01:52,000
+en la que hay profesionales, hay docentes, hay estudiantes
+
+27
+00:01:52,000 --> 00:01:55,000
+y lo que queremos es potenciar el uso de las herramientas.
+
+28
+00:01:55,000 --> 00:02:01,000
+Luego veremos por qué, pero es muy importante ser conscientes de la capacidad que tenemos a la misma de cálculo
+
+29
+00:02:01,000 --> 00:02:05,000
+con los ordenadores y la potencia que tenemos disponible.
+
+30
+00:02:05,000 --> 00:02:08,000
+Y entonces nosotros queremos promover esas ventajas.
+
+31
+00:02:08,000 --> 00:02:16,000
+Además, estamos, digamos, un poco especializados en el área de simulación y optimización de procesos.
+
+32
+00:02:16,000 --> 00:02:19,000
+Porque nos gusta más que nada.
+
+33
+00:02:19,000 --> 00:02:24,000
+Bueno, aquí tenemos una, un poco, quienes somos, en la fila de arriba,
+
+34
+00:02:24,000 --> 00:02:29,000
+están parte de nuestros profesores, con lo que también contamos con su tiempo,
+
+35
+00:02:29,000 --> 00:02:34,000
+su reducido tiempo, pero están trabajando también con nosotros.
+
+36
+00:02:34,000 --> 00:02:37,000
+Los que vamos a dar a charla estamos aquí, nuestros tres.
+
+37
+00:02:37,000 --> 00:02:41,000
+Y además, hay estudiantes, este es un amigo nuestro de ingeniería industrial
+
+38
+00:02:41,000 --> 00:02:46,000
+y un venezolano que contactó con nosotros viendo el proyecto por lo que podemos decir, orgullosos,
+
+39
+00:02:46,000 --> 00:02:48,000
+que es una asociación internacional.
+
+40
+00:02:48,000 --> 00:02:52,000
+Y nada, ese círculo vacío quiere decir que es una asociación abierta
+
+41
+00:02:52,000 --> 00:03:00,000
+y que cualquiera puede unirse a nosotros y trabajar con nosotros.
+
+42
+00:03:00,000 --> 00:03:04,000
+Bien, nuestras actividades es formación, es muy importante la formación
+
+43
+00:03:04,000 --> 00:03:07,000
+y debido a que lo tenemos muy sencillo porque son herramientas informáticas
+
+44
+00:03:07,000 --> 00:03:11,000
+o necesitamos un ordenador para enseñar un poco cómo lo podemos hacer.
+
+45
+00:03:11,000 --> 00:03:17,000
+Entonces hacemos también webinas, tutoriales online que publicamos en YouTube.
+
+46
+00:03:17,000 --> 00:03:23,000
+También estamos preparando un curso ahora para alumnos de la universidad
+
+47
+00:03:23,000 --> 00:03:25,000
+que les ha interesado nuestro proyecto.
+
+48
+00:03:25,000 --> 00:03:29,000
+Y también empezaremos, cuanto sea posible, con el tiempo que tenemos
+
+49
+00:03:29,000 --> 00:03:32,000
+a empezar a desarrollar algunas ideas propias que tenemos.
+
+50
+00:03:32,000 --> 00:03:39,000
+Por cierto, tenemos un podcast en el que hemos entrevistado ya a dos personas muy importantes.
+
+51
+00:03:39,000 --> 00:03:44,000
+Por un lado, a Pibonacci que nos dio su tiempo para preguntarle un poco qué es esto de Python,
+
+52
+00:03:44,000 --> 00:03:46,000
+nos recomendamos que lo escuchéis.
+
+53
+00:03:46,000 --> 00:03:51,000
+Y por otro lado, también entrevistamos a Israel, que es un desarrollador
+
+54
+00:03:51,000 --> 00:03:56,000
+de una de las alternativas más interesantes a Matlab, que es OctaEUPM.
+
+55
+00:03:56,000 --> 00:04:01,000
+Los dos podcasts se pueden escuchar y os invito a que lo hagáis, si no lo habéis hecho aún.
+
+56
+00:04:01,000 --> 00:04:06,000
+Luego, esto es lo que comentaba que Python es una alternativa muy interesante
+
+57
+00:04:06,000 --> 00:04:09,000
+y bueno, supongo que los que estamos aquí sabemos por qué,
+
+58
+00:04:09,000 --> 00:04:14,000
+sino no creo que lo hubiéramos llegado aquí ahora mismo, hasta las horas.
+
+59
+00:04:14,000 --> 00:04:21,000
+Entonces, vamos a ver, ¿quién de vosotros trabaja con Python de forma habitual en su día a día?
+
+60
+00:04:21,000 --> 00:04:24,000
+Muy bien. ¿Y quién de vosotros trabaja con Matlab?
+
+61
+00:04:24,000 --> 00:04:26,000
+No, de vez en cuando.
+
+62
+00:04:26,000 --> 00:04:31,000
+Bueno, de vez en cuando. Vale, entonces, la verdad es que la audiencia es espectacular
+
+63
+00:04:31,000 --> 00:04:35,000
+porque yo no pensaba tantas manos levantadas, entonces voy a pasar muy rápido.
+
+64
+00:04:35,000 --> 00:04:41,000
+De hecho, creo que solamente decir que Python, conjunto con sus librerías,
+
+65
+00:04:41,000 --> 00:04:43,000
+es una herramienta muy, muy potente.
+
+66
+00:04:43,000 --> 00:04:50,000
+Por eso nosotros hemos hecho una búsqueda de librerías o bibliotecas interesantes
+
+67
+00:04:50,000 --> 00:04:57,000
+para resolver problemas de forma más rápida a nivel de desarrollo y programación de código.
+
+68
+00:04:57,000 --> 00:05:04,000
+Y bueno, por eso software libre, gratuito en la mayoría de los casos,
+
+69
+00:05:04,000 --> 00:05:10,000
+es increíble todo lo que se puede hacer con Python y de hecho, por eso lo estamos aquí hablando de ello.
+
+70
+00:05:10,000 --> 00:05:12,000
+Entonces, empezamos ya con mi parte directamente.
+
+71
+00:05:12,000 --> 00:05:16,000
+Mi nombre es Franavarro, soy ingeniero químico por la Universidad Alicante,
+
+72
+00:05:16,000 --> 00:05:19,000
+ahí tenéis mi email, por si queréis contactar conmigo directamente.
+
+73
+00:05:19,000 --> 00:05:26,000
+Y quiero empezar con una frase que leí en un blog recientemente en el que decía que como ingeniero de simulaciones,
+
+74
+00:05:26,000 --> 00:05:30,000
+él se refería a las simulaciones con ordenador, fluido dinámica, etcétera,
+
+75
+00:05:30,000 --> 00:05:32,000
+estamos realmente sobre hombres de gigantes.
+
+76
+00:05:32,000 --> 00:05:36,000
+Quiere decir que nunca ha habido ingenieros con unas herramientas tan potentes como las hay ahora
+
+77
+00:05:36,000 --> 00:05:38,000
+y tenemos que hacerlas valer.
+
+78
+00:05:38,000 --> 00:05:42,000
+Entonces, vamos a hacer una, voy a explicar muy brevemente
+
+79
+00:05:42,000 --> 00:05:47,000
+por qué Python es una herramienta tan interesante para resolver este tipo de problemas.
+
+80
+00:05:47,000 --> 00:05:52,000
+Bien, la resolución de ecuaciones en medidas parciales
+
+81
+00:05:52,000 --> 00:05:59,000
+se encuentra de forma omnipresente en todos los moderados físicos
+
+82
+00:05:59,000 --> 00:06:02,000
+cuando queremos hacer cualquier tipo de simulación,
+
+83
+00:06:02,000 --> 00:06:06,000
+con propagación de sonido, de electrostática, retro dinámica, dinámica, fluidos, etcétera,
+
+84
+00:06:06,000 --> 00:06:08,000
+aparecen todos en cualquier lado.
+
+85
+00:06:08,000 --> 00:06:14,000
+Hay muchos paquetes, demasiado quizás, según qué necesidades,
+
+86
+00:06:14,000 --> 00:06:18,000
+no hay paquetes más especiales, más genéricos, están los comerciales
+
+87
+00:06:18,000 --> 00:06:24,000
+y los hay también libres y gratuitos, como puede ser OpenPhone, FreeFam, Plus Plus,
+
+88
+00:06:24,000 --> 00:06:27,000
+Elmer, que es algo reciente que también está muy bien,
+
+89
+00:06:27,000 --> 00:06:32,000
+y el que vamos a hablar ahora a continuación es FIPEI,
+
+90
+00:06:32,000 --> 00:06:37,000
+que es digamos un paquete especializado en la resolución de este tipo de problemas con Python.
+
+91
+00:06:37,000 --> 00:06:41,000
+Aquí tenemos un ejemplo de ese paquete particular
+
+92
+00:06:41,000 --> 00:06:44,000
+en el que se ve cómo el paquete es capaz de mallar
+
+93
+00:06:44,000 --> 00:06:49,000
+y de resolver una ecuación bastante trivial de difusión
+
+94
+00:06:49,000 --> 00:06:51,000
+con apenas 40 líneas de código.
+
+95
+00:06:51,000 --> 00:06:54,000
+¿Quién cree que eso es una buena idea?
+
+96
+00:06:54,000 --> 00:06:57,000
+Poder hacerlo con tan pocas líneas de código.
+
+97
+00:06:57,000 --> 00:06:59,000
+Es una buena idea, ¿no?
+
+98
+00:06:59,000 --> 00:07:03,000
+Bien, pero antes de llegar hasta ese nivel de extracción,
+
+99
+00:07:03,000 --> 00:07:08,000
+hasta ese nivel de facilidad, yo trabajo con software de simulación
+
+100
+00:07:08,000 --> 00:07:11,000
+y resulta que existe un mismo software que puede hacer este problema
+
+101
+00:07:11,000 --> 00:07:14,000
+sin ni una sola ni una del código, ni una sola,
+
+102
+00:07:14,000 --> 00:07:17,000
+simplemente con interfaz gráfica y un ratón.
+
+103
+00:07:17,000 --> 00:07:21,000
+Entonces, antes de llegar a ese punto,
+
+104
+00:07:21,000 --> 00:07:25,000
+desde que haché, me quisimos promocionar un trabajo espectacular
+
+105
+00:07:25,000 --> 00:07:30,000
+de Lorena Barba, que es una profesora de la Universidad de Boston, en Estados Unidos,
+
+106
+00:07:30,000 --> 00:07:35,000
+que su trayectoria es bastante ejemplar,
+
+107
+00:07:35,000 --> 00:07:39,000
+porque todas las clases que ella da o ha dado las pone disponibles
+
+108
+00:07:39,000 --> 00:07:44,000
+tanto en YouTube como en iTunes totalmente de forma gratuita.
+
+109
+00:07:44,000 --> 00:07:48,000
+Y bien, preparo este curso con Python, especialmente para intentar
+
+110
+00:07:48,000 --> 00:07:52,000
+que la gente que está acostumbrada a otro tipo de sobrero de propietario
+
+111
+00:07:52,000 --> 00:07:58,000
+empezara a jugar con este lenguaje y a ver lo potente que era.
+
+112
+00:07:58,000 --> 00:08:03,000
+Bien, le gustó mucho que tradujéramos su trabajo.
+
+113
+00:08:03,000 --> 00:08:08,000
+La verdad es que yo lo tradujé personalmente, disfruté mucho haciéndolo.
+
+114
+00:08:08,000 --> 00:08:14,000
+Y bueno, habla de tantas cosas.
+
+115
+00:08:14,000 --> 00:08:17,000
+Vamos a ver un esquema. Yo voy a centrarme solamente en un ejemplo.
+
+116
+00:08:17,000 --> 00:08:21,000
+Habla, empieza con una dimensión que es más fácil de entender,
+
+117
+00:08:21,000 --> 00:08:23,000
+empieza con ecuaciones de convicción lineal,
+
+118
+00:08:23,000 --> 00:08:26,000
+pasa enseguida la convicción lineal, difusión y la cuestión de burgers,
+
+119
+00:08:26,000 --> 00:08:28,000
+o de viscosidad de burgers.
+
+120
+00:08:28,000 --> 00:08:33,000
+Seguidamente pasa dos dimensiones y resuelve el mismo tipo de ejemplos,
+
+121
+00:08:33,000 --> 00:08:36,000
+pero con esta dimensión añadida.
+
+122
+00:08:36,000 --> 00:08:41,000
+Y empieza a hablar de ecuaciones que ya aparecen en todos lados.
+
+123
+00:08:41,000 --> 00:08:45,000
+Por último acaba resolviendo estos dos ejemplos que se ven aquí,
+
+124
+00:08:45,000 --> 00:08:48,000
+que es el flujo en una cavidad y en un canal.
+
+125
+00:08:48,000 --> 00:08:55,000
+Y bien, durante este curso modular que digamos que son unos 12, 16 notebooks
+
+126
+00:08:55,000 --> 00:09:01,000
+de Python, habla, te introduce en Python, en un Python, en SimPy,
+
+127
+00:09:01,000 --> 00:09:04,000
+con un poquito también de Mac Pro Lib y NumBal.
+
+128
+00:09:04,000 --> 00:09:08,000
+O sea, es muy intenso y empieza con conocimientos básicos.
+
+129
+00:09:08,000 --> 00:09:11,000
+No necesitas realmente saber Python, no necesitas,
+
+130
+00:09:11,000 --> 00:09:14,000
+con que se pase un poquito lo básico de programación, ya te puedes poner hacerlo.
+
+131
+00:09:14,000 --> 00:09:18,000
+Por eso me pareció increíble y dije, eso tiene que estar,
+
+132
+00:09:18,000 --> 00:09:21,000
+para que el que se pone excusas a la primera de u, es que esta en inglés,
+
+133
+00:09:21,000 --> 00:09:23,000
+es que no lo entiendo, vale, esa excusa ya no les vale.
+
+134
+00:09:23,000 --> 00:09:26,000
+Entonces os recomiendo a todos que de verdad le echéis un vistazo
+
+135
+00:09:26,000 --> 00:09:30,000
+y lo uséis, porque el material es totalmente libre, lo podéis usar en vuestras clases
+
+136
+00:09:30,000 --> 00:09:35,000
+y podéis compartir vuestras experiencias, incluso mejorarlo.
+
+137
+00:09:35,000 --> 00:09:42,000
+Bien, vamos a pasar muy brevemente esta locación de difusión en dos dimensiones
+
+138
+00:09:42,000 --> 00:09:47,000
+y si bien utiliza un método de diferentes finitas,
+
+139
+00:09:47,000 --> 00:09:50,000
+porque se le digamos el más clásico y el más sencillo para empezar,
+
+140
+00:09:50,000 --> 00:09:56,000
+a alguien que nunca ha hecho esto con programación, empezará a temblarle todo el cuerpo.
+
+141
+00:09:56,000 --> 00:10:01,000
+Es decir, ¿cómo hago esto? Que apenas se entiendo en programación, ¿cómo lo hago eso?
+
+142
+00:10:01,000 --> 00:10:05,000
+Ante eso, yo digo, ¡cállate, calma!
+
+143
+00:10:05,000 --> 00:10:08,000
+Vamos a creer en la facilidad que nos da Python
+
+144
+00:10:08,000 --> 00:10:11,000
+y vamos a creer, porque vamos a ver cómo ese problema,
+
+145
+00:10:11,000 --> 00:10:16,000
+que parecía tan complicado de programar, es bastante sencillo.
+
+146
+00:10:16,000 --> 00:10:21,000
+Bien, aquí está el ejemplo resuelto, voy a pasar muy por encima,
+
+147
+00:10:21,000 --> 00:10:27,000
+siempre intentamos documentar muy bien el código para que quede claro la primera vista,
+
+148
+00:10:27,000 --> 00:10:32,000
+para que sea muy nuevo con Python, la primera parte es simplemente importar las librerías
+
+149
+00:10:32,000 --> 00:10:36,000
+que se van a requerir, después se hace un especie,
+
+150
+00:10:36,000 --> 00:10:42,000
+dice ese número de puntos que quieres en tu mallado y también dimensionas el tiempo, el número de pasos.
+
+151
+00:10:42,000 --> 00:10:48,000
+Aquí hay un parámetro que habla para asegurar la convergencia de la resolución,
+
+152
+00:10:48,000 --> 00:10:51,000
+que se explica en un paso anterior, en una dimensión,
+
+153
+00:10:51,000 --> 00:10:55,000
+y de hecho ella promueve siempre que juegues con el código e intentes romperlo,
+
+154
+00:10:55,000 --> 00:10:57,000
+intentes que la solución no te dé.
+
+155
+00:10:57,000 --> 00:11:02,000
+Entonces, es muy, claro, ahora mismo esto y junto con el Python,
+
+156
+00:11:02,000 --> 00:11:07,000
+el notebook es superpotente, porque tú puedes jugar con un parámetro y enseguida ver el resultado.
+
+157
+00:11:07,000 --> 00:11:14,000
+De esta forma didáctica es muy bueno. Bueno, se genera la malla y una condición inicial,
+
+158
+00:11:14,000 --> 00:11:19,000
+que es la condición inicial típica de sombrero, le ha añadido así como una animación,
+
+159
+00:11:19,000 --> 00:11:24,000
+porque pese a que es muy sencilla la ecuación es simplemente aquí arriba,
+
+160
+00:11:24,000 --> 00:11:30,000
+pones una constante y aquí está con uno y esta es como digamos un sombrero cuadrado.
+
+161
+00:11:30,000 --> 00:11:37,000
+Simplemente esta función de sombrero la representamos
+
+162
+00:11:37,000 --> 00:11:42,000
+y pasamos ya a la parte complicada entre comillas, porque digo entre comillas,
+
+163
+00:11:42,000 --> 00:11:47,000
+porque como se puede ver, si lo veis luego con más calma todas las diapositivas,
+
+164
+00:11:47,000 --> 00:11:51,000
+las vamos a subir de forma directa para que podáis ver esto con más calma,
+
+165
+00:11:51,000 --> 00:11:56,000
+pero he marcado con colorines qué sería cada parte de la ecuación,
+
+166
+00:11:56,000 --> 00:12:03,000
+como si haciendo la resolución de la ecuación vemos que la única incógnita que tenemos aquí
+
+167
+00:12:03,000 --> 00:12:10,000
+es lo que va a pasar después, entonces eso se mantiene aquí y se va dividiendo los términos uno a uno
+
+168
+00:12:10,000 --> 00:12:14,000
+y si peseis a comprobar, veis que es bastante de forma directa,
+
+169
+00:12:14,000 --> 00:12:19,000
+quizás al que nunca ha trabajado de compacción le lié un poquito estos índices de aquí.
+
+170
+00:12:19,000 --> 00:12:25,000
+Si estamos acostumbrados a trabajar en Mada, una cosa importante que es lo primero que te dice
+
+171
+00:12:25,000 --> 00:12:33,000
+este tutorial es que en Maldav en NumPy las indexaciones empiezan desde cero,
+
+172
+00:12:33,000 --> 00:12:38,000
+entonces eso cambia un poquito y es lo primero que te tienes que acostumbrar,
+
+173
+00:12:38,000 --> 00:12:41,000
+pero de forma directa es bastante inmediata.
+
+174
+00:12:41,000 --> 00:12:48,000
+Bien, vamos a pasar algo quizás más interesante para los que estén aquí,
+
+175
+00:12:48,000 --> 00:12:53,000
+ya me habéis dicho que tenéis experiencia con Python y esta librería,
+
+176
+00:12:53,000 --> 00:12:58,000
+también es espectacular porque resuelve ecuaciones derivadas parciales,
+
+177
+00:12:58,000 --> 00:13:04,000
+usa para ello el método de volumen esfinidos y como es una librería de Python,
+
+178
+00:13:04,000 --> 00:13:10,000
+es una programación también orientada a objetos que se puede ampliar según necesidades particulares de cada uno
+
+179
+00:13:10,000 --> 00:13:15,000
+y da un mayor grado de extracción, es decir, no tenemos que programar todas las ecuaciones
+
+180
+00:13:15,000 --> 00:13:21,000
+tal y como hemos visto antes, o incluso más complicado porque el método de resolución es un poco más complejo,
+
+181
+00:13:21,000 --> 00:13:25,000
+entonces es bastante directa, es un framework muy maduro,
+
+182
+00:13:25,000 --> 00:13:31,000
+lleva varios años de desarrollo y está muy bien documentado, lo que es más importante aún.
+
+183
+00:13:31,000 --> 00:13:37,000
+Además es 100% gratuito de dominio público porque sus desarrolladores forman parte del gobierno de Estados Unidos,
+
+184
+00:13:37,000 --> 00:13:39,000
+sea totalmente libre y se puede usar.
+
+185
+00:13:39,000 --> 00:13:46,000
+Y de hecho se usa en investigación y en la academia, especialmente es en acción como algo orientado a la ciencia de materiales,
+
+186
+00:13:46,000 --> 00:13:51,000
+pero se puede utilizar para resolver cualquier tipo de problema, bueno cualquier tipo de problema,
+
+187
+00:13:51,000 --> 00:13:57,000
+digamos problemas que tengan esta forma, una forma canónica de ecuaciones derivadas parciales
+
+188
+00:13:57,000 --> 00:14:04,000
+en el que tengamos un término transitorio, el término de convicción y la fuente, o source,
+
+189
+00:14:04,000 --> 00:14:09,000
+siendo esto los coeficientes, entonces si tenemos, esto no me voy a meter mucho,
+
+190
+00:14:09,000 --> 00:14:16,000
+pero con esta forma podemos representar gran mayoría de ecuaciones derivadas parciales,
+
+191
+00:14:16,000 --> 00:14:21,000
+simplemente habría que anular los coeficientes en caso de los que fueran necesarios,
+
+192
+00:14:21,000 --> 00:14:27,000
+y es una forma que de hecho esta forma de resolución es bastante potente
+
+193
+00:14:27,000 --> 00:14:32,000
+porque permite resolver gran parte de los problemas simplemente cambiando esos términos,
+
+194
+00:14:32,000 --> 00:14:38,000
+entonces además permite acoplar fenómenos multifísicos, tal y como hacen otros programas comerciales.
+
+195
+00:14:38,000 --> 00:14:44,000
+Todo dentro del país. Entonces un ejemplo que incluye el mallado, que es el primero que he enseñado,
+
+196
+00:14:44,000 --> 00:14:50,000
+también voy a pasar bastante por encima, es también un ejemplo de fusión para no alejarnos mucho
+
+197
+00:14:50,000 --> 00:14:58,000
+de lo que hemos explicado antes. Entonces aquí podemos ver que quizás la parte que más he dicho
+
+198
+00:14:58,000 --> 00:15:03,000
+antes que eran menos de 40 líneas, pero si nos fijamos la mayor parte de las líneas son el mallado.
+
+199
+00:15:03,000 --> 00:15:11,000
+El mallado en simulación a veces es casi lo más importante, si tienes un buen mallado te tendrás una solución,
+
+200
+00:15:11,000 --> 00:15:15,000
+porque como sabemos los métodos numéricos son resoluciones aproximadas,
+
+201
+00:15:15,000 --> 00:15:22,000
+mejor sea nuestro mallado, mejor será nuestra solución. Aquí he puesto un poco para el que vea esto por primera vez,
+
+202
+00:15:22,000 --> 00:15:30,000
+que simplemente se van definiendo los puntos y luego los sectores de cada uno de los sectores del círculo
+
+203
+00:15:30,000 --> 00:15:37,000
+que vamos a... se ha cogido un círculo para que se vea que este tipo de problema con el método de diferentes finitas
+
+204
+00:15:37,000 --> 00:15:45,000
+ya supone un reto, pero con el método de volúmenes finitos es mucho más sencillo y directo.
+
+205
+00:15:45,000 --> 00:15:55,000
+Y bien, se fija el tamaño, lo largo de la malla, el radio del círculo, se genera la malla,
+
+206
+00:15:55,000 --> 00:16:03,000
+aquí se representa, aunque la imagen estaba en el otro lado, simplemente como he dicho antes los coeficientes que aparecen
+
+207
+00:16:03,000 --> 00:16:11,000
+en esta ecuación canónica se establece ese coeficiente, se dice que ese es el valor de esta variable, se dice que es ese coeficiente
+
+208
+00:16:11,000 --> 00:16:20,000
+y bueno, se genera la malla, se dice que es tipo centrada en las caras, el mallado,
+
+209
+00:16:20,000 --> 00:16:28,000
+y se fija una condición de contorno que en este caso va a ser igual a esta córdana, es decir, aquí tendríamos 1, aquí tendríamos 0,5,
+
+210
+00:16:28,000 --> 00:16:36,000
+perdón, aquí 0,5, así es como se fija la condición de contorno, es un ejemplo muy trivial, pero para que veáis lo potente que puede llegar a ser.
+
+211
+00:16:36,000 --> 00:16:46,000
+Bien, con eso voy a llamar a mi compañero Siga hablando de algo totalmente diferente que ya nos introducirá el.
+
+212
+00:16:46,000 --> 00:16:52,000
+Bueno, mientras cambia la animación me voy a presentar, yo soy Jorge Bernabéz,
+
+213
+00:16:52,000 --> 00:16:59,000
+un ingeniero químico también por la Universidad Delicante y os voy a hablar acerca de la programación matemática, concretamente de la optimización
+
+214
+00:16:59,000 --> 00:17:07,000
+con Python aplicada a la ingeniería química. Entonces, en primer lugar, por qué es importante la optimización?
+
+215
+00:17:07,000 --> 00:17:14,000
+Bueno, la optimización en el mundo empresarial, en el mundo científico, en el mundo técnico, es muy importante por los motivos que se muestran ahí,
+
+216
+00:17:14,000 --> 00:17:22,000
+para mejorar la calidad de los productos, para aumentar los beneficios, para reducir los costes de producción y últimamente también para reducir los riesgos medioambientales.
+
+217
+00:17:22,000 --> 00:17:29,000
+Todo ello tiene un gran interés empresarial y hace que de un tiempo a esta parte se haya venido desarrollando mucho lo que es la optimización.
+
+218
+00:17:29,000 --> 00:17:37,000
+Además, en ingeniería química la optimización nos interesa para seleccionar equipos y recursos, como puede ser elegir un tractor u otro
+
+219
+00:17:37,000 --> 00:17:47,000
+en función de cómo sea el reactivo que entre, y luego también nos interesa por la gestión logística, como se distribuyen los elementos dentro de una planta,
+
+220
+00:17:47,000 --> 00:17:54,000
+de tal manera que ahorremos en conducciones, que ahorremos en gasto energético, en válvulas, en codos, etc.
+
+221
+00:17:54,000 --> 00:18:05,000
+¿Qué es la optimización matemática? ¿En qué está basado todo esto? Bueno, la optimización consiste, la programación matemática consiste en minimizar o maximizar
+
+222
+00:18:05,000 --> 00:18:11,000
+una función objetivo que está sujeta a una serie de restricciones de igualdad y desigualdad, en función de cómo sean las ecuaciones
+
+223
+00:18:11,000 --> 00:18:17,000
+y de cómo sean las variables de las ecuaciones, si bien continuas o discretas nos encontramos con problemas de programación lineal,
+
+224
+00:18:17,000 --> 00:18:21,000
+programación orignal, programación lineal misto o programación no lineal misto.
+
+225
+00:18:21,000 --> 00:18:31,000
+A modo de ejemplo tenemos la imagen que a vuestro lado es la derecha, donde vemos que hay un poliedro en el cual los lados del poliedro son una serie de restricciones.
+
+226
+00:18:31,000 --> 00:18:43,000
+La zona colorida de gris es la región factible del problema, es decir, cualquier punto en el interior de esa región es un punto que cumple las restricciones del problema.
+
+227
+00:18:43,000 --> 00:18:55,000
+Si supongamos que tenemos una función objetivo que aumenta en esta dirección, las dos líneas azules son dos líneas que cumplen las restricciones del problema,
+
+228
+00:18:55,000 --> 00:19:04,000
+pero no son el punto óptimo. En cambio, la línea roja, si es el punto óptimo, porque en el sentido de la función objetivo, nos da el mejor valor posible.
+
+229
+00:19:04,000 --> 00:19:13,000
+Por tanto, ese sería el punto óptimo y eso es lo que buscamos cuando hacemos optimización y ingeniería química, aunque con otras ecuaciones no tan sencillas como los que se muestran ahí.
+
+230
+00:19:13,000 --> 00:19:32,000
+¿Cómo se realiza esto? Hay que emplear los AML o lenguajes de modelado hebraico. Los AML se emplean porque tienen la sintaxis de estos problemas, es muy similar a la notación matemática de los propios problemas.
+
+231
+00:19:32,000 --> 00:19:46,000
+Entonces, los viene muy bien porque nosotros escribimos las ecuaciones y luego algunos programas lo llevan incorporado en una serie de solvers para poder resolver los problemas.
+
+232
+00:19:46,000 --> 00:19:58,000
+Entonces, vamos a enumerar unos cuantos, como son el AMPL, por ejemplo, que tiene un lenguaje muy sencillo, pero que tiene la dificultad de que no se puede implementar fácilmente,
+
+233
+00:19:58,000 --> 00:20:06,000
+o sea, tiene que complicar interactuar con otro tipo de lenguajes. Tiene otra pega, que es de pago, aunque tiene una versión trial que es gratuita y que se puede probar,
+
+234
+00:20:06,000 --> 00:20:14,000
+y luego tiene una alternativa de que es el GLPK, pero que solo resuelve programación lineal y programación lineal mixta.
+
+235
+00:20:14,000 --> 00:20:27,000
+Luego tendríamos GAMS, que es parecido a AMPL, pero que tiene también el mismo problema, que es de pago, aunque tiene una versión bastante potente con algunas restricciones en cuanto a variables, número de filas, número de columnas,
+
+236
+00:20:27,000 --> 00:20:39,000
+y que GAMS nos permite incluso resolver programación no lineal mixta. Y finalmente tenemos IMS, que está diseñado para resolver problemas de optimización y programación de actividades.
+
+237
+00:20:39,000 --> 00:20:46,000
+IMS tiene una versión trial de 30 días, pero también es de pago, entonces como podéis ver todos son de pago y eso quizás no sea muy útil.
+
+238
+00:20:46,000 --> 00:20:59,000
+Y ahí es donde entra Python. Python nos permite optimizar a partir de una serie de librerías que son gratuitas y de código abierto.
+
+239
+00:20:59,000 --> 00:21:14,000
+Entre ellas hay más, por supuesto, pero aquí hemos enumerado estas cuatro. En primer lugar tendríamos CIVXOP, que la diseñaron Anderson, Dali y Bandenberg, sirve para resolver optimización conversa,
+
+240
+00:21:14,000 --> 00:21:28,000
+y para ello es un programa que trabaja con notación material. Está escrito en el lenguaje de Python y es por tanto bastante sencillo, pero esa sencillez hace que no puede resolver problemas más complejos como puedan ser de programación no lineal.
+
+241
+00:21:28,000 --> 00:21:43,000
+Con PULP o PULP ocurre exactamente lo mismo, que trabaja con lenguaje de Python. Es muy bueno para resolver programación lineal mixta, da muy buenos resultados, pero tiene el mismo inconveniente que no resuelve programación no lineal.
+
+242
+00:21:43,000 --> 00:21:53,000
+Luego tendríamos OpenOps, que este es un caso muy curioso, porque es capaz de comunicarse con más de 30 solvers, tanto de pago como gratuitos para solucionar el modelado, incluyendo no lineal.
+
+243
+00:21:53,000 --> 00:22:08,000
+Pero OpenOps, hasta el año 2007 o 2008, sus desarrolladores lo tenían escrito en el lenguaje de Matlab, y llegó ese año se ve que se cansaron y lo reescribieron para Python, como ocurrió en muchas universidades por aquella época en Estados Unidos.
+
+244
+00:22:08,000 --> 00:22:22,000
+Y luego tendríamos Piumo, que está dentro del paquete Cooper, que lo desarrolla San Día, que es una compañía del gobierno de Estados Unidos, y que permite la formulación de modelos algebraicos en el lenguaje de Python.
+
+245
+00:22:22,000 --> 00:22:31,000
+Es muy completo porque permite resolver programación no lineal, ya que se comunica con solvers no lineales.
+
+246
+00:22:31,000 --> 00:22:39,000
+Nosotros, en optimización, hemos empleado Piumo, y os preguntáis por qué Piumo.
+
+247
+00:22:39,000 --> 00:22:42,000
+Los motivos son esto.
+
+248
+00:22:42,000 --> 00:22:53,000
+Bueno, como os he dicho, Piumo se comunica con los principales solvers, que tienen de Ampel, GLPK, Guro, BCE, PLE, CBC y PICO, algunos son de pago, otros no.
+
+249
+00:22:53,000 --> 00:23:08,000
+Está programado para trabajar en Python, pero su lenguaje se parece a Ampel y GAMPS, entonces si has trabajado con Ampel y GAMPS anteriormente y a la vez has trabajado con Python, lo que se te junta ahí, es muy útil, se entiende muy rápido,
+
+250
+00:23:08,000 --> 00:23:11,000
+y vas a tener tantas las ventajas de un lenguaje como de otro.
+
+251
+00:23:11,000 --> 00:23:24,000
+Es código abierto, por supuesto, es gratuito, está muy bien documentado, y la instalación es muy sencilla, escribiendo el comando PIP INSTALL COOPER, hoy empleando ISIN INSTALL,
+
+252
+00:23:24,000 --> 00:23:31,000
+y luego sobre todo, para mí el motivo principal es este, es que es su adaptabilidad al modelado de problemas en ingeniería química.
+
+253
+00:23:31,000 --> 00:23:37,000
+¿Por qué? Porque en ingeniería química tenemos bastantes ecuaciones no lineales, por fortuna, por desgracia, claro.
+
+254
+00:23:37,000 --> 00:23:46,000
+Y entonces, tener un programa que te pueda resolver ese tipo de ecuaciones, pues es realmente beneficioso.
+
+255
+00:23:46,000 --> 00:23:57,000
+Bueno, entonces como os he dicho, vamos a hacer dos ejemplos para ver cómo se trabaja con PIOMO, el primero es de logística empresarial, es un problema bastante típico en optimización,
+
+256
+00:23:57,000 --> 00:24:06,000
+es un problema de transporte que quizá alguno haya hecho anteriormente, es un problema lineal con lo cual se puede haber resuelto con cualquiera de los herramientas que hemos visto anteriormente de optimización,
+
+257
+00:24:06,000 --> 00:24:11,000
+y es muy importante el mundo empresarial porque sirve para minimizar el coste en transporte.
+
+258
+00:24:11,000 --> 00:24:21,000
+El problema consiste en que supongamos que un empresario tiene una serie de plantas que están distribuidas por distintos puntos, en este caso de España, ¿no?
+
+259
+00:24:21,000 --> 00:24:33,000
+Entonces, tiene un producto, crea un producto que se distribuye en esa serie de mercados, y este empresario no sabe de optimización,
+
+260
+00:24:33,000 --> 00:24:38,000
+entonces empieza a enviar su producto conforme van saliendo a los diferentes mercados.
+
+261
+00:24:38,000 --> 00:24:44,000
+¿Qué pasa? Que el coste en transporte que tiene este empresario es muy elevado porque como se pueden ver hay muchas rutas que cubrir,
+
+262
+00:24:44,000 --> 00:24:50,000
+y como no lo hace de una manera eficiente, el empresario está perdiendo mucho dinero.
+
+263
+00:24:50,000 --> 00:24:55,000
+Entonces, si emplease algo de optimización... ¿Le has dado tú?
+
+264
+00:24:55,000 --> 00:24:56,000
+No.
+
+265
+00:24:56,000 --> 00:24:59,000
+Ah, no, vale, vale. No, no, si le has tenido que dar.
+
+266
+00:24:59,000 --> 00:25:12,000
+Bueno, aquí había otro día positiva. Bueno, bien, esto ya es la programación con el PIOMO, claro.
+
+267
+00:25:12,000 --> 00:25:20,000
+Bueno, bien, en la anterior día positiva explicaba más cosas del problema, que hay una demanda mínima,
+
+268
+00:25:20,000 --> 00:25:26,000
+es decir, cada uno de los mercados que hemos visto requiere una mínima cantidad de producto,
+
+269
+00:25:26,000 --> 00:25:36,000
+y cada una de las plantas tiene una máxima producción de producto, y luego había una tablita muy chula con el coste de enviar cada producto de una planta al mercado.
+
+270
+00:25:36,000 --> 00:25:43,000
+Y bueno, luego había otra diapositiva, de hecho, faltan dos, donde se empezaba a explicar cómo se escribe en PIOMO.
+
+271
+00:25:43,000 --> 00:25:46,000
+Entonces, en PIOMO en sí nos escribe.
+
+272
+00:25:46,000 --> 00:26:01,000
+Podemos emplear el IPitone de NOOTBOOK, o sea, el IPitone NOOTBOOK, y de Anaconda, y ahí en primer lugar aparecía sentencias una para importar el modelo
+
+273
+00:26:01,000 --> 00:26:03,000
+y otra donde había que definir el modelo.
+
+274
+00:26:03,000 --> 00:26:06,000
+Los modelos se pueden definir como abstractos o concretos.
+
+275
+00:26:06,000 --> 00:26:14,000
+Si el modelo es concreto, indica que los datos del problema van a ir en el mismo archivo, en el mismo archivo.
+
+276
+00:26:14,000 --> 00:26:24,000
+Si el problema es abstracto, en este archivo vamos a tener las ecuaciones y las variables, mientras que en otro archivo aparte van a venir los datos.
+
+277
+00:26:24,000 --> 00:26:35,000
+Y eso es una gran ventaja, porque este problema, la construcción de las ecuaciones, tuya la tiene guardada y este problema lo puedes trasladar a otro ejercicio,
+
+278
+00:26:35,000 --> 00:26:41,000
+cambiando únicamente los datos, pero los datos al estar en un archivo aparte solamente tienes que modificar uno y no el otro.
+
+279
+00:26:41,000 --> 00:26:44,000
+Entonces ya vendría este de positivo.
+
+280
+00:26:44,000 --> 00:26:51,000
+El modelo se había definido con la palabra model y, por tanto, en todas las ecuaciones, tanto de 6 parámetros y variables,
+
+281
+00:26:51,000 --> 00:26:56,000
+va en primer lugar model, seguido de punto, y luego la palabra que quedamos, por ejemplo, plantas.
+
+282
+00:26:56,000 --> 00:27:02,000
+Luego lo definiríamos con los sets, en este caso vacíos, porque lo que le corresponde a cada set iría en el archivo de los datos,
+
+283
+00:27:02,000 --> 00:27:04,000
+que se guarda como punto-dat.
+
+284
+00:27:04,000 --> 00:27:12,000
+Los parámetros se ponen entre paréntesis de qué dependen, en este caso, bueno, en el primer caso, la producción depende de las plantas
+
+285
+00:27:12,000 --> 00:27:18,000
+y el valor numérico de la producción máxima para cada una de las plantas también iría en el archivo punto-dat,
+
+286
+00:27:18,000 --> 00:27:24,000
+con la demanda y ocurre lo mismo, y los costes, bueno, dependen de plantas y mercados.
+
+287
+00:27:24,000 --> 00:27:35,000
+Luego las unidades, como son las variables, es lo que queremos calcular y entre paréntesis pondríamos de qué dependen de plantas y mercados
+
+288
+00:27:35,000 --> 00:27:37,000
+y vendría aquí una última sentencia que es Wissing non-negative real.
+
+289
+00:27:37,000 --> 00:27:40,000
+Entonces le estamos diciendo cómo queremos que sea esa variable.
+
+290
+00:27:40,000 --> 00:27:47,000
+Mira, esta es la que tendría que haber aparecido anteriormente.
+
+291
+00:27:47,000 --> 00:27:52,000
+Bueno, no, perdón, me he equivocado. Esta ya es la de las ecuaciones, me he ido perdona.
+
+292
+00:27:52,000 --> 00:27:57,000
+Bueno, entonces, como ya no hay más variables ni sets ni parámetros, hay que definir,
+
+293
+00:27:57,000 --> 00:27:59,000
+entonces pasaníamos a definir las ecuaciones.
+
+294
+00:27:59,000 --> 00:28:02,000
+El esquema para definir las ecuaciones es el que se muestra aquí.
+
+295
+00:28:02,000 --> 00:28:08,000
+En primer lugar, iría la palabra def, luego iría el nombre de la ecuación, coste total, cuando uno le ponga el nombre de lo que quiera,
+
+296
+00:28:08,000 --> 00:28:14,000
+entre paréntesis hay que poner que depende del modelo y como veremos más adelante, si no me ha quitado la diapositiva,
+
+297
+00:28:14,000 --> 00:28:16,000
+me dependerá de algo más.
+
+298
+00:28:16,000 --> 00:28:22,000
+Luego escribiríamos retard, la ecuación correspondiente, en este caso el coste por las unidades,
+
+299
+00:28:22,000 --> 00:28:28,000
+y al final aparece esta línea en la cual le indicamos que es la función objetivo
+
+300
+00:28:28,000 --> 00:28:32,000
+y que esta función objetivo está referenciada a la ecuación coste total,
+
+301
+00:28:32,000 --> 00:28:34,000
+que es como la habíamos definido anteriormente.
+
+302
+00:28:34,000 --> 00:28:39,000
+La palabra coste final aquí lo que quiere decir es que cuando ejecutamos el programa,
+
+303
+00:28:39,000 --> 00:28:43,000
+el valor numérico de esta ecuación va a venir referenciado a la palabra coste final,
+
+304
+00:28:43,000 --> 00:28:46,000
+esto es simplemente una forma de nombrarlo.
+
+305
+00:28:46,000 --> 00:28:53,000
+Este problema solo tiene dos ecuaciones más, una para la mínima demanda y otra para la máxima producción,
+
+306
+00:28:53,000 --> 00:29:01,000
+y estas ecuaciones, la primera de la mínima demanda lo que nos dice es que a cada mercado lo que le llegue de todas las otras plantas,
+
+307
+00:29:01,000 --> 00:29:06,000
+o sea lo que le llegue de todas las plantas es el mercado, tiene que ser mayor o igual a la mínima demanda del mercado,
+
+308
+00:29:06,000 --> 00:29:11,000
+mientras que la máxima producción lo que nos indica es que lo que una planta es capaz de emitir
+
+309
+00:29:11,000 --> 00:29:15,000
+tiene que ser menor o igual a lo máximo que esa planta es capaz de producir.
+
+310
+00:29:15,000 --> 00:29:19,000
+Y aquí como podemos ver hemos definido la ecuación entre paréntesis,
+
+311
+00:29:19,000 --> 00:29:24,000
+hemos dicho que depende del model y de algo más, en este caso he puesto que depende de mercado,
+
+312
+00:29:24,000 --> 00:29:29,000
+aunque he puesto mercado podría haber puesto mere, mereca o lo que me miraba la gana,
+
+313
+00:29:29,000 --> 00:29:33,000
+porque lo único que tener en cuenta es que aquí abajo, bueno no he dicho,
+
+314
+00:29:33,000 --> 00:29:37,000
+antes era objectif aquí y esto para definir que es una restricción hay que poner constane.
+
+315
+00:29:37,000 --> 00:29:43,000
+Bueno volviendo a la anteriormente, donde he puesto mercado o lo que hubiera querido,
+
+316
+00:29:43,000 --> 00:29:50,000
+si luego le indico entre el paréntesis que aquí pongo que es model mercado,
+
+317
+00:29:50,000 --> 00:29:55,000
+si estoy indicando que la palabra que pongo aquí, que es la que yo quiera,
+
+318
+00:29:55,000 --> 00:29:59,000
+cada vez que aparezca en la ecuación se está refiriendo al set de model mercado.
+
+319
+00:29:59,000 --> 00:30:07,000
+Bueno, entonces el archivo anterior lo guardaríamos como punto p, y, p,
+
+320
+00:30:07,000 --> 00:30:13,000
+porque ya no hay más ecuaciones que escribir, y entonces en otro archivo escribiríamos los datos,
+
+321
+00:30:13,000 --> 00:30:18,000
+entonces esto es lenguaje es parecido a GAMS y entonces tendríamos el set,
+
+322
+00:30:18,000 --> 00:30:22,000
+escribiríamos plantas o mercados, pondríamos dos puntos igual,
+
+323
+00:30:22,000 --> 00:30:26,000
+pondríamos la serie de datos que exigenamos poner y lo cerraríamos con punto y coma
+
+324
+00:30:26,000 --> 00:30:31,000
+mercados igual, respecto a la producción escribiríamos puntos igual,
+
+325
+00:30:31,000 --> 00:30:37,000
+la serie de sets de la que depende y luego el valor numérico asociado al set, punto y coma,
+
+326
+00:30:37,000 --> 00:30:40,000
+luego la demanda y finalmente los costes, los costes se escriben en forma matriz,
+
+327
+00:30:40,000 --> 00:30:44,000
+porque dependen de dos sets y lo que hay que tener en cuenta es que cada valor numérico
+
+328
+00:30:44,000 --> 00:30:47,000
+aparezca justo debajo de la columna, ya que si no nos puede dar error
+
+329
+00:30:47,000 --> 00:30:50,000
+porque se puede cuadrar la matriz.
+
+330
+00:30:50,000 --> 00:30:55,000
+Entonces, el guardaríamos el archivo punto dat y en un comand prompt
+
+331
+00:30:55,000 --> 00:31:01,000
+escribimos la sentencia piomo, el nombre del archivo punto pi, los datos como lo hayamos guardado
+
+332
+00:31:01,000 --> 00:31:07,000
+y lo ejecutamos, entonces nos dice que es factible, evidentemente, nos da un valor
+
+333
+00:31:07,000 --> 00:31:14,000
+y nos aparece aquí un archivo nuevo, resalt-cml, que lo podemos abrir en un
+
+334
+00:31:14,000 --> 00:31:19,000
+Notepad Plus Plus o Sublime Text o donde queramos y entonces nos da los resultados numéricos
+
+335
+00:31:19,000 --> 00:31:23,000
+que de Barcelona vitoría van tanto, de Barcelona Castellón, eso lo analizaríamos
+
+336
+00:31:23,000 --> 00:31:32,000
+pero para verlo de una manera más clara, de todas las rutas que había al principio
+
+337
+00:31:32,000 --> 00:31:38,000
+pasamos tan solo a estas, el ahorro como se puede observar en cuanto a rutas es muy significativo.
+
+338
+00:31:38,000 --> 00:31:43,000
+Y luego el segundo problema es un problema de selección de equipos y bueno,
+
+339
+00:31:43,000 --> 00:31:50,000
+supongamos que una planta tiene esa reacción, entra en la planta en la materia prima
+
+340
+00:31:50,000 --> 00:31:56,000
+y quieren obtener el producto V pero desafortunadamente los reactores V se descomponen y da C,
+
+341
+00:31:56,000 --> 00:32:06,000
+entonces la planta tiene esta superestructura y tienen que seleccionar si quieren elegir
+
+342
+00:32:06,000 --> 00:32:11,000
+el rector 1, el rector 2 o el bypass 1, bypass 2, rector 3, rector 4, etc.
+
+343
+00:32:11,000 --> 00:32:21,000
+Entonces el objetivo de este ejercicio, que también me las quitao, bueno, el ojo V,
+
+344
+00:32:21,000 --> 00:32:27,000
+bueno, vamos a ponerlo anterior, V es el producto que genera beneficio,
+
+345
+00:32:27,000 --> 00:32:33,000
+mientras que hay C lo que hacen es disminuir el beneficio y luego cada rector tiene un coste asociado,
+
+346
+00:32:33,000 --> 00:32:37,000
+depende de la zona en la que se encuentra el rector, o sea,
+
+347
+00:32:37,000 --> 00:32:43,000
+depende de cuánta cantidad entre a cada uno de los reactores, hay diferentes zonas de coste
+
+348
+00:32:43,000 --> 00:32:48,000
+y lo que pretendemos hallar es la distribución óptima de reactores y bypass
+
+349
+00:32:48,000 --> 00:32:56,000
+que nos hace aumentar la producción de V ya que es lo que nos da más beneficio para aumentar los beneficios.
+
+350
+00:32:56,000 --> 00:33:03,000
+Entonces bueno, había varias ecuaciones para explicar que este problema se resuelve
+
+351
+00:33:03,000 --> 00:33:07,000
+con envolvente convexa, este es un problema de programación lineal mixta,
+
+352
+00:33:07,000 --> 00:33:14,000
+bueno, había ecuaciones en las que dependían del tiempo de residencia en el rector,
+
+353
+00:33:14,000 --> 00:33:21,000
+que es el tiempo que una molécula pasa, o sea, el tiempo que tarda una molécula en el interior de un rector
+
+354
+00:33:21,000 --> 00:33:27,000
+y bueno, este problema pues era, es como es similar, se define como abstracto,
+
+355
+00:33:27,000 --> 00:33:35,000
+bueno, los tenemos aquí sets y parámetros que se definen como en el ejercicio anterior,
+
+356
+00:33:35,000 --> 00:33:41,000
+luego tendríamos las variables que las tenemos como no negativas y como binarias,
+
+357
+00:33:41,000 --> 00:33:45,000
+ya que como hay que seleccionar entre un rector u otro, al tener el lenguaje binario,
+
+358
+00:33:45,000 --> 00:33:50,000
+si le decimos que por ejemplo en el primer caso no se recordáis que había que elegir rector 1, rector 2 o bypass 1,
+
+359
+00:33:50,000 --> 00:33:58,000
+si les ponemos que son variables binarias y la hacemos que se iguala 1, obligamos aquí 1, valga 1
+
+360
+00:33:58,000 --> 00:34:02,000
+y por tanto exista y que los otros 2 sean 0 y por tanto no existan.
+
+361
+00:34:02,000 --> 00:34:13,000
+Bueno, aquí ya no hay que incorporar ningún tipo de variable ni parámetro ni set más
+
+362
+00:34:13,000 --> 00:34:19,000
+y lo que tiene de especial es la función objetiva de este problema es decir que por defecto pio-mo
+
+363
+00:34:19,000 --> 00:34:22,000
+minimiza, para como hay en este caso como queremos maximizar,
+
+364
+00:34:22,000 --> 00:34:29,000
+incluimos en el paréntesis las sentencias s s igual maximais y el problema ya entiende que lo que queremos es maximizar.
+
+365
+00:34:29,000 --> 00:34:33,000
+Bueno, estos son más ecuaciones, el problema tiene un total de 21 ecuaciones
+
+366
+00:34:33,000 --> 00:34:38,000
+y esto es para atrás, bueno, bien más ecuaciones,
+
+367
+00:34:38,000 --> 00:34:44,000
+estas señalan los datos, aquí nada se incluyen como en el problema anterior
+
+368
+00:34:44,000 --> 00:34:50,000
+y finalmente ejecutamos el problema, el problema nos da óptimo, se abrimos las results,
+
+369
+00:34:50,000 --> 00:34:56,000
+pues eso nos va dando los valores que hay de A, de C y de B a la salida,
+
+370
+00:34:56,000 --> 00:35:03,000
+pero lo interesante es ver que varias variables binarias valen 1, que es lo que se ha convertido el problema.
+
+371
+00:35:03,000 --> 00:35:07,000
+Entonces hemos pasado de la superestructura esta que teníamos aquí original,
+
+372
+00:35:07,000 --> 00:35:12,000
+a esta donde suele que es el rector 2, el rector 4, el rector 6 y el bypass 4
+
+373
+00:35:12,000 --> 00:35:17,000
+y para hablaros de rectores, os dejo con mi compañero Isaias, que los contará más.
+
+374
+00:35:17,000 --> 00:35:21,000
+Yo soy Isaias Cuentas, también soy ingeniero químico por la Universidad de Alicante
+
+375
+00:35:21,000 --> 00:35:26,000
+y bueno, voy a hablar un poquito del modelado de rectores,
+
+376
+00:35:26,000 --> 00:35:32,000
+sobre todo he traído dos problemas que podrían utilizarse sobre todo a nivel educativo,
+
+377
+00:35:32,000 --> 00:35:38,000
+el primero de ellos es un rector de flujo-piston para el craqueo térmico del etano
+
+378
+00:35:38,000 --> 00:35:43,000
+y bueno, un rector de flujo-piston simplemente es un tubo horizontal,
+
+379
+00:35:43,000 --> 00:35:48,000
+en este caso que pasa por el interior de un horno de llama con quemadores ambos lados.
+
+380
+00:35:48,000 --> 00:35:55,000
+Lo interesante de este problema es que también se va a considerar la variación de la presión a lo largo del rector
+
+381
+00:35:55,000 --> 00:36:01,000
+y para el modelado es un sistema de ecuaciones diferenciales ordinarias,
+
+382
+00:36:01,000 --> 00:36:10,000
+con un total de 10 ecuaciones, donde 8 van a ser para ver el perfil de concentración
+
+383
+00:36:10,000 --> 00:36:16,000
+de los compuestos en todo el rector, una para la temperatura y otra para la presión.
+
+384
+00:36:16,000 --> 00:36:25,000
+Ahí podéis ver todas las reacciones, son un total de 7 y 8 compuestos
+
+385
+00:36:25,000 --> 00:36:31,000
+y como solemos hacer casi siempre en genia química hacemos balances,
+
+386
+00:36:31,000 --> 00:36:38,000
+en primer lugar, un balance cogemos un diferencial de volumen y decimos que lo que entra menos lo que sale
+
+387
+00:36:38,000 --> 00:36:42,000
+más lo que se genera por las reacciones es igual a lo que acumula,
+
+388
+00:36:42,000 --> 00:36:48,000
+en este caso no hay acumulación porque un rato de flujo-piston todo lo que entra sale
+
+389
+00:36:48,000 --> 00:36:52,000
+y bueno, estas serían las ecuaciones del balance de materia,
+
+390
+00:36:52,000 --> 00:36:57,000
+si nos fijamos vamos a utilizar todas porque son los parámetros,
+
+391
+00:36:57,000 --> 00:37:03,000
+pero la última nos da en sí el balance de materia
+
+392
+00:37:03,000 --> 00:37:10,000
+y van a ser un total de 8 ecuaciones iguales, una para cada compuesto.
+
+393
+00:37:14,000 --> 00:37:17,000
+También hemos tenido que realizar el vagance de energía
+
+394
+00:37:17,000 --> 00:37:22,000
+para conocer la variación de temperatura a lo largo de todo el rector
+
+395
+00:37:22,000 --> 00:37:28,000
+y el balance de energía mecánica que nos daría el perfil de presiones
+
+396
+00:37:28,000 --> 00:37:35,000
+también en cada uno de los puntos del rector que es un tubo largo
+
+397
+00:37:35,000 --> 00:37:39,000
+y bueno, no me voy a parar en las ecuaciones.
+
+398
+00:37:39,000 --> 00:37:47,000
+Para realizar este problema simplemente hemos utilizado la función ODEIN
+
+399
+00:37:47,000 --> 00:37:51,000
+de la librería de Zipay, de Python
+
+400
+00:37:51,000 --> 00:37:55,000
+y lo que nos pide es la llamada a la función
+
+401
+00:37:55,000 --> 00:38:00,000
+donde van a estar representadas todas las ecuaciones diferenciales de este sistema
+
+402
+00:38:00,000 --> 00:38:03,000
+las condiciones iniciales del problema, las condiciones iniciales
+
+403
+00:38:03,000 --> 00:38:08,000
+son los flujos molares iniciales de cada uno de los compuestos
+
+404
+00:38:08,000 --> 00:38:11,000
+la temperatura inicial y la presión inicial
+
+405
+00:38:11,000 --> 00:38:16,000
+y también el intervalo de integración, que en este caso es la longitud del rector
+
+406
+00:38:16,000 --> 00:38:22,000
+dividido en un total de 1000 intervalos, podríamos haber utilizado 10.000, 100, pero bueno
+
+407
+00:38:22,000 --> 00:38:29,000
+en 1000 intervalos se representa bastante bien y como a nivel de educación está bien.
+
+408
+00:38:29,000 --> 00:38:35,000
+Los resultados que hemos obtenido, pues son la evolución de la temperatura a lo largo del rector
+
+409
+00:38:35,000 --> 00:38:39,000
+que como vemos aumenta, aumenta porque son reacciones exotérmicas
+
+410
+00:38:39,000 --> 00:38:42,000
+y que desprende bastante calor
+
+411
+00:38:42,000 --> 00:38:47,000
+y la evolución de la presión a lo largo del rector vemos que la presión va disminuyendo, no mucho
+
+412
+00:38:47,000 --> 00:38:55,000
+pero disminuye, producida entre otras cosas por la fricción de los gases en las paredes del tubo
+
+413
+00:38:55,000 --> 00:39:04,000
+los otros resultados que queríamos ver serían los perfiles de concentración
+
+414
+00:39:04,000 --> 00:39:08,000
+de cada uno de los 8 compuestos a lo largo del rector
+
+415
+00:39:08,000 --> 00:39:16,000
+como veis el etano, que es el compuesto que estamos rompiendo para formar moléculas más pequeñas
+
+416
+00:39:16,000 --> 00:39:22,000
+se consume mientras que el resto va aumentando
+
+417
+00:39:22,000 --> 00:39:32,000
+como hay varias reacciones, otras paralelas, en cierto punto otros compuestos empiezan a disminuir su concentración
+
+418
+00:39:32,000 --> 00:39:36,000
+y bueno el grado avance sería otra forma de expresar lo mismo en realidad
+
+419
+00:39:39,000 --> 00:39:44,000
+el siguiente problema es un rector continuo del tanque agitado
+
+420
+00:39:44,000 --> 00:39:51,000
+que en este caso nos parece interesante incluirlo aquí porque funciona en estado no estacionario
+
+421
+00:39:51,000 --> 00:39:59,000
+es decir que las condiciones van cambiando con el tiempo
+
+422
+00:39:59,000 --> 00:40:03,000
+porque hemos estudiado lo que sería el arranque del rector
+
+423
+00:40:03,000 --> 00:40:07,000
+no cuando ya funciona en forma continua
+
+424
+00:40:07,000 --> 00:40:12,000
+es un rector industrial para la producción de propylene glycol
+
+425
+00:40:12,000 --> 00:40:17,000
+que es un compuesto como podéis ver aquí, orgánico, inodoro, incoloro, insípido
+
+426
+00:40:17,000 --> 00:40:23,000
+que sirve para muchísimas cosas, alimentos, piensos, conméticos
+
+427
+00:40:23,000 --> 00:40:30,000
+en mi caso que trabajo con los conméticos lo utilizamos como un mectante para las frases grasas de las cremas
+
+428
+00:40:34,000 --> 00:40:39,000
+aquí veis el esquema industrial de lo que sería la producción de propylene glycol
+
+429
+00:40:39,000 --> 00:40:45,000
+no solo hace falta el rector sino también evaporadores con luna de distillación
+
+430
+00:40:45,000 --> 00:40:49,000
+porque los reactores casi nunca se obtienen el producto puro
+
+431
+00:40:49,000 --> 00:40:53,000
+y lo que queremos al final es llegar a una corriente de producto puro
+
+432
+00:40:56,000 --> 00:41:03,000
+y ya centrando en el rector, aquí tenéis las condiciones de entrada, los flojos molares de entrada
+
+433
+00:41:03,000 --> 00:41:09,000
+y es una reacción de óxido propileno en una fase acuosa
+
+434
+00:41:09,000 --> 00:41:14,000
+catalizado con una pequeña cantidad de ácido sulfúrico y metanol
+
+435
+00:41:14,000 --> 00:41:19,000
+para dar una disolución acuosa de propylene glycol, metanol que no se consume
+
+436
+00:41:19,000 --> 00:41:23,000
+y unos restos de óxido propileno
+
+437
+00:41:27,000 --> 00:41:31,000
+como hemos hecho antes, tenemos los balances de materia y los balances de energía
+
+438
+00:41:31,000 --> 00:41:35,000
+en este caso en estado anuestacionario como veis dependen del tiempo
+
+439
+00:41:35,000 --> 00:41:40,000
+no de la longitud del rector porque este rector es simplemente un baño
+
+440
+00:41:40,000 --> 00:41:46,000
+y también el balance de energía lo tenemos en estado anuestacionario
+
+441
+00:41:46,000 --> 00:41:51,000
+cuando las condiciones estén estables y para el arranque del rector
+
+442
+00:41:58,000 --> 00:42:04,000
+las figuras de ahí podéis ver cómo varía la concentración de propylene glycol
+
+443
+00:42:04,000 --> 00:42:07,000
+y cómo varía la temperatura de la salida
+
+444
+00:42:07,000 --> 00:42:11,000
+pero sobre todo esta figura es la más interesante
+
+445
+00:42:11,000 --> 00:42:19,000
+y lo que hemos hecho es jugar un poquito con las condiciones de entrada al rector
+
+446
+00:42:19,000 --> 00:42:25,000
+si por ejemplo empezamos con una temperatura de 23,8 grados centígrados
+
+447
+00:42:25,000 --> 00:42:33,000
+y una concentración de propylene glycol empezaremos por la curva azul
+
+448
+00:42:33,000 --> 00:42:39,000
+y a lo largo del tiempo nos iríamos acercando al punto central que es el estado estacionario
+
+449
+00:42:39,000 --> 00:42:45,000
+donde ya no varía nada y las concentraciones, temperatura de salida siempre la misma
+
+450
+00:42:45,000 --> 00:42:53,000
+en cambio si empezamos a 65,5 grados centígrados y 1,4 kilomoles de propylene glycol
+
+451
+00:42:53,000 --> 00:42:57,000
+tendríamos esta curva hasta llegar al estado estacionario
+
+452
+00:42:57,000 --> 00:43:03,000
+y aquí el problema que ocurre es que en un momento dado superamos los 80 grados centígrados
+
+453
+00:43:03,000 --> 00:43:11,000
+en ese punto el rector empezaría a tener inestabilidades, a producirse reacciones secundarias
+
+454
+00:43:11,000 --> 00:43:18,000
+entonces es muy importante poder jugar con estas condiciones de entrada y ver lo que sucede en estos reactores
+
+455
+00:43:18,000 --> 00:43:27,000
+y ya para terminar queríamos contaros un poquito que hacen unos ingenieros químicos aquí
+
+456
+00:43:27,000 --> 00:43:31,000
+aparte porque nos dijeron que los congresos se ligaban
+
+457
+00:43:31,000 --> 00:43:40,000
+bueno el caso es que los procesos químicos necesitan ser simulados
+
+458
+00:43:40,000 --> 00:43:44,000
+necesitan ser controlados, optimizados como hemos visto anteriormente
+
+459
+00:43:44,000 --> 00:43:48,000
+y todo esto se puede hacer con Python utilizando Python
+
+460
+00:43:48,000 --> 00:43:57,000
+y bueno la industria química en España tiene un volumen de negocio bastante importante
+
+461
+00:43:57,000 --> 00:44:05,000
+representa el 13% del PIB industrial, además somos los quintos de Europa y los octavos a nivel mundial
+
+462
+00:44:05,000 --> 00:44:10,000
+cosa que podemos estar orgullosos de esto y además el volumen de exportación representa
+
+463
+00:44:10,000 --> 00:44:15,000
+somos el sector que más exporta después de la automoción
+
+464
+00:44:15,000 --> 00:44:22,000
+y algo que nos interesa bastante hoy en día sería el empleo
+
+465
+00:44:22,000 --> 00:44:28,000
+la industria química proporciona a día de hoy 279.000 puestos de empleo directo
+
+466
+00:44:28,000 --> 00:44:33,000
+se superaría el medio millón si contamos los indirectos
+
+467
+00:44:33,000 --> 00:44:41,000
+y además siempre se buscan perfiles profesionales muy especializados y muy cualificados sobre todo
+
+468
+00:44:41,000 --> 00:44:46,000
+uno de ellos es el técnico en química computacional
+
+469
+00:44:46,000 --> 00:44:53,000
+por lo que vengo a decir que la ingeniería química en la industria química es una oportunidad de negocio
+
+470
+00:44:53,000 --> 00:45:00,000
+para todos vosotros que sabéis de Python muchísimo más que nosotros por supuesto
+
+471
+00:45:00,000 --> 00:45:05,000
+y ahora ya terminamos. Muy rápidamente vamos a repasar las conclusiones
+
+472
+00:45:05,000 --> 00:45:10,000
+hemos querido demostrar, no sé si lo hemos conseguido en todo
+
+473
+00:45:10,000 --> 00:45:14,000
+debido a problemas del director ¿verdad Jorge?
+
+474
+00:45:14,000 --> 00:45:20,000
+pero bien, la parte teórica no era tan importante si bien la intro que queríamos era demostrar como Python
+
+475
+00:45:20,000 --> 00:45:27,000
+puede, gracias a sus librerías, resolver estos problemas tan comunes en ingeniería química o en cualquier ingeniería
+
+476
+00:45:27,000 --> 00:45:34,000
+además siendo las características de Python te permiten explorar más allá de estos problemas
+
+477
+00:45:34,000 --> 00:45:38,000
+por lo que si algún día quieres hacer alguna cosa más no te encontrarás con muros
+
+478
+00:45:38,000 --> 00:45:42,000
+tal y como pasa con otros tipos de lenguajes que son más específicos
+
+479
+00:45:42,000 --> 00:45:47,000
+y aquí es algo importante remarcar, si tienes una herramienta que resuelve perfectamente tu problema
+
+480
+00:45:47,000 --> 00:45:52,000
+pues diga, hombre es que es muy buena ¿verdad? pero como leí recientemente
+
+481
+00:45:52,000 --> 00:45:58,000
+es interesante utilizar un lenguaje genérico especial que se puede adaptar a algo específico
+
+482
+00:45:58,000 --> 00:46:02,000
+que quizás utilizar un específico para hacerlo todo
+
+483
+00:46:02,000 --> 00:46:05,000
+que es el caso que te puedes encontrar o que yo me he encontrado personalmente
+
+484
+00:46:05,000 --> 00:46:09,000
+y cuando quería hacer con otro tipo de software cosas un poquito más complejas
+
+485
+00:46:09,000 --> 00:46:14,000
+además es multiplataforma libre y gratuito por lo que no hay excusa para que las universidades
+
+486
+00:46:14,000 --> 00:46:20,000
+no tengan, o sea, no esperen a implementarlo
+
+487
+00:46:20,000 --> 00:46:26,000
+y una cosa que queremos destacar es que como he dicho si quieres algo específico
+
+488
+00:46:26,000 --> 00:46:31,000
+como por ejemplo Maldap hay otras alternativas como por ejemplo Octe UPM
+
+489
+00:46:31,000 --> 00:46:36,000
+que se desarrolla en esta universidad que también es algo que es muchísimo más compatible
+
+490
+00:46:36,000 --> 00:46:41,000
+y el que quiera usar lo mismo puede también optar por aquí
+
+491
+00:46:41,000 --> 00:46:46,000
+pero no contaría con las ventajas que hemos presentado en nuestra presentación
+
+492
+00:46:46,000 --> 00:46:51,000
+que podemos hacer un poco más de todo y mantenernos todo en el mismo lenguaje que es muy interesante
+
+493
+00:46:51,000 --> 00:46:57,000
+así que sin más agradeceros de verdad que hayáis estado aquí y nada
+
+494
+00:46:57,000 --> 00:47:00,000
+si tenéis alguna pregunta intentaremos resolverla
+
+495
+00:47:00,000 --> 00:47:10,000
+son un comentario y una pregunta
+
+496
+00:47:10,000 --> 00:47:15,000
+el comentario es que, bueno, si me ha gustado la química, pero ahora me gusta más
+
+497
+00:47:15,000 --> 00:47:21,000
+y la pregunta, bueno, hay otro comentario
+
+498
+00:47:21,000 --> 00:47:25,000
+que curiosamente los métodos de estas práciales
+
+499
+00:47:25,000 --> 00:47:28,000
+con condiciones de contorno y especiales
+
+500
+00:47:28,000 --> 00:47:31,000
+y eso también en procesado de imagen
+
+501
+00:47:31,000 --> 00:47:36,000
+con lo cual me encanta ver que puede ser el problema con plejos
+
+502
+00:47:36,000 --> 00:47:40,000
+que quizá apretados o adaptados por procesado de imagen
+
+503
+00:47:40,000 --> 00:47:42,000
+pues tendrían bien, ¿no?
+
+504
+00:47:42,000 --> 00:47:45,000
+y bueno la pregunta que eres para todos
+
+505
+00:47:45,000 --> 00:47:48,000
+lo has indicado poco al final
+
+506
+00:47:48,000 --> 00:47:50,000
+como os he enseñado en la química
+
+507
+00:47:50,000 --> 00:47:53,000
+a mí no me lo he enseñado de esta manera, ¿no?
+
+508
+00:47:53,000 --> 00:47:58,000
+bueno, nosotros, como he dicho al principio, desde que a Chema intentamos
+
+509
+00:47:58,000 --> 00:48:01,000
+promocionar este tipo de química, digamos, nosotros
+
+510
+00:48:01,000 --> 00:48:05,000
+se nos puede definir como ingeniería de procesos químicos
+
+511
+00:48:05,000 --> 00:48:10,000
+la parte de química siempre tiene la pensar en que nos dedicamos a la química
+
+512
+00:48:10,000 --> 00:48:13,000
+los expertos en química son los químicos
+
+513
+00:48:13,000 --> 00:48:16,000
+como es bastante obvio
+
+514
+00:48:16,000 --> 00:48:21,000
+pero nosotros hemos tenido la suerte en nuestra formación de contar con docentes
+
+515
+00:48:21,000 --> 00:48:23,000
+que de verdad son apasionados en este tema
+
+516
+00:48:23,000 --> 00:48:28,000
+y nos han introducido este tipo de técnicas computacionales
+
+517
+00:48:28,000 --> 00:48:31,000
+y de verdad, también quiero decir una frase que me gustó mucho
+
+518
+00:48:31,000 --> 00:48:33,000
+que es que los que estamos haciendo este tipo de cosas
+
+519
+00:48:33,000 --> 00:48:35,000
+pareceremos en un futuro como magos
+
+520
+00:48:35,000 --> 00:48:37,000
+porque resolvemos problemas muy complejos
+
+521
+00:48:37,000 --> 00:48:40,000
+de forma muy sencilla y con unas herramientas
+
+522
+00:48:40,000 --> 00:48:42,000
+tenemos el software, tenemos el hardware
+
+523
+00:48:42,000 --> 00:48:45,000
+o sea, es que de verdad es una opción muy interesante
+
+524
+00:48:45,000 --> 00:48:48,000
+y por eso que a Chema intenta promocionar este lado, digamos
+
+525
+00:48:48,000 --> 00:48:53,000
+de los procesos químicos este lado del proceso de ingeniería
+
+526
+00:48:55,000 --> 00:48:57,000
+Es más bien un comentario y más una pregunta
+
+527
+00:48:57,000 --> 00:49:00,000
+bueno, lo primero, muchas gracias por mencionar ahí
+
+528
+00:49:00,000 --> 00:49:02,000
+en vuestra presentación de los Estados de M
+
+529
+00:49:02,000 --> 00:49:05,000
+como algunas ya sabéis, yo doy clase aquí en la escuela de caminos
+
+530
+00:49:05,000 --> 00:49:08,000
+en esta universidad y enseñamos introducción de la programación
+
+531
+00:49:08,000 --> 00:49:10,000
+métodos numéricos, opciones diferenciales
+
+532
+00:49:10,000 --> 00:49:12,000
+pues son muy parecidas a las que veis vosotros aquí
+
+533
+00:49:12,000 --> 00:49:14,000
+aunque también tengo que decir que estoy muy sorprendido
+
+534
+00:49:14,000 --> 00:49:18,000
+porque yo diría que con bastante menos nivel te estoy mostrando aquí alguno
+
+535
+00:49:18,000 --> 00:49:20,000
+la verdad que estoy muy sorprendido y gruesa
+
+536
+00:49:20,000 --> 00:49:23,000
+se daba casualidad que además yo soy ingeniero industrial
+
+537
+00:49:23,000 --> 00:49:25,000
+y estudié mucho ingeniería química, en la vida química
+
+538
+00:49:25,000 --> 00:49:28,000
+yo he hecho una época de mi vida, pues en la vida pasada
+
+539
+00:49:28,000 --> 00:49:30,000
+yo medicaba la ingeniería química
+
+540
+00:49:30,000 --> 00:49:32,000
+entonces me agradezco mucho el recuerdo
+
+541
+00:49:32,000 --> 00:49:35,000
+y lo que quería decir el comentario es que
+
+542
+00:49:35,000 --> 00:49:37,000
+en mi formación como ingeniero químico
+
+543
+00:49:37,000 --> 00:49:39,000
+lo que estoy viendo aquí es que realmente
+
+544
+00:49:39,000 --> 00:49:42,000
+fue mucho más deficiente de la reforma del ingeniero de vosotros
+
+545
+00:49:42,000 --> 00:49:46,000
+y la parte se vivió no solo a que no supe ya lo que era un rastorno
+
+546
+00:49:46,000 --> 00:49:49,000
+como se puede enseñar un rastorno, lo que es el perfil, etc.
+
+547
+00:49:49,000 --> 00:49:52,000
+sino que todo esto lo hicimos con software
+
+548
+00:49:52,000 --> 00:49:54,000
+que en el que tú ponés un rastorno
+
+549
+00:49:54,000 --> 00:49:56,000
+con la disidencia de la salida le dabas un botón
+
+550
+00:49:56,000 --> 00:49:58,000
+y te tiraste el perfil y realmente
+
+551
+00:49:58,000 --> 00:50:00,000
+pocos entendían lo que había detrás
+
+552
+00:50:00,000 --> 00:50:03,000
+entonces pues no sé, aspect plus y todas estas herramientas
+
+553
+00:50:03,000 --> 00:50:06,000
+que había que eran maravillosas
+
+554
+00:50:06,000 --> 00:50:09,000
+pero realmente esa es la ingeniería química como habéis
+
+555
+00:50:09,000 --> 00:50:13,000
+pues se mostraba aquí, la sinceridad que habéis
+
+556
+00:50:13,000 --> 00:50:16,000
+yo creo que los ingenieros químicos están mejor formados
+
+557
+00:50:16,000 --> 00:50:18,000
+que la formación que recibí yo
+
+558
+00:50:18,000 --> 00:50:21,000
+solo porque un poco ya salió lo que hay por debajo
+
+559
+00:50:21,000 --> 00:50:23,000
+lo que está contenido en las cifras
+
+560
+00:50:23,000 --> 00:50:26,000
+además que lo que es un sistema de coacentrenciales
+
+561
+00:50:26,000 --> 00:50:29,000
+y no simplemente metas en la salida y desabotón y salva
+
+562
+00:50:29,000 --> 00:50:31,000
+pues en fin, quería felicitaros
+
+563
+00:50:31,000 --> 00:50:35,000
+porque realmente creo que desde el punto de vista educativo
+
+564
+00:50:35,000 --> 00:50:37,000
+en la ingeniería química es una valga
+
+565
+00:50:37,000 --> 00:50:39,000
+y los químicos que hayan creado en esto
+
+566
+00:50:39,000 --> 00:50:41,000
+son mejores que los que no han decidido con esto
+
+567
+00:50:41,000 --> 00:50:43,000
+y en mi opinión no lo sé
+
+568
+00:50:43,000 --> 00:50:45,000
+Muchas gracias
+
+569
+00:50:45,000 --> 00:50:47,000
+No lo esperáis
+
+570
+00:50:47,000 --> 00:50:49,000
+Antes un segundo solo
+
+571
+00:50:49,000 --> 00:50:51,000
+eso que está comentando es muy real
+
+572
+00:50:51,000 --> 00:50:54,000
+porque hay programas que te llegan a tal nivel de extracción
+
+573
+00:50:54,000 --> 00:50:56,000
+que se tratan como cajas negras
+
+574
+00:50:56,000 --> 00:50:59,000
+o va o no va y si no va pues probo otras cosas
+
+575
+00:50:59,000 --> 00:51:01,000
+pero entonces hay que saber
+
+576
+00:51:01,000 --> 00:51:03,000
+No puedes que os haya regalado
+
+577
+00:51:03,000 --> 00:51:05,000
+No, que os haya regalado
+
+578
+00:51:05,000 --> 00:51:07,000
+las mías son preguntas super rapidas
+
+579
+00:51:07,000 --> 00:51:09,000
+uno en la optimización
+
+580
+00:51:09,000 --> 00:51:11,000
+yo soy congradante profano
+
+581
+00:51:11,000 --> 00:51:13,000
+me gusta el tema de la actinidad
+
+582
+00:51:13,000 --> 00:51:17,000
+pero yo tenía entendido que como que es el software de diferencia
+
+583
+00:51:17,000 --> 00:51:19,000
+de la Arizona este
+
+584
+00:51:19,000 --> 00:51:21,000
+que además van proponiendo los de la Enfo
+
+585
+00:51:21,000 --> 00:51:23,000
+y por eso estamos en la cultura
+
+586
+00:51:23,000 --> 00:51:28,000
+No, nosotros no formaron con GAMS
+
+587
+00:51:28,000 --> 00:51:31,000
+entonces buscamos un lenguaje parecido a GAMS dentro de Python
+
+588
+00:51:31,000 --> 00:51:33,000
+y encontramos Piomo
+
+589
+00:51:33,000 --> 00:51:36,000
+y a partir de Piomo vimos que se puede hacer muy parecido
+
+590
+00:51:36,000 --> 00:51:39,000
+y como está integrado en Python pues nos venía magnífico
+
+591
+00:51:39,000 --> 00:51:43,000
+Y pregunta tonta, ¿por qué catch me?
+
+592
+00:51:43,000 --> 00:51:45,000
+Ah, computer ID
+
+593
+00:51:45,000 --> 00:51:46,000
+¿Cómo?
+
+594
+00:51:46,000 --> 00:51:48,000
+¿Cómo es hacer con todo el inglés?
+
+595
+00:51:48,000 --> 00:51:51,000
+Computer ID, chemical engineering
+
+596
+00:51:51,000 --> 00:51:53,000
+Ahora, ahora
+
+597
+00:51:53,000 --> 00:51:57,000
+Y la última, supongo que en España habrá más armas
+
+598
+00:51:57,000 --> 00:51:59,000
+más arcofísimas como la vuestra
+
+599
+00:51:59,000 --> 00:52:01,000
+pero yo tenía que ver cómo
+
+600
+00:52:01,000 --> 00:52:04,000
+¿Tenemos alguna referencia?
+
+601
+00:52:04,000 --> 00:52:08,000
+Sí, la más famosa es que son las americanas
+
+602
+00:52:08,000 --> 00:52:10,000
+y esa es muy fuerte
+
+603
+00:52:10,000 --> 00:52:12,000
+y bueno, pues...
+
+604
+00:52:12,000 --> 00:52:15,000
+¿Y nuestra referencia a España sería macín?
+
+605
+00:52:15,000 --> 00:52:17,000
+Pero es de matemáticos, pero vamos
+
+606
+00:52:17,000 --> 00:52:22,000
+Hay una asociación de matemático e industria
+
+607
+00:52:22,000 --> 00:52:26,000
+que también es bastante interesante
+
+608
+00:52:26,000 --> 00:52:29,000
+pero de exida ingeniería de procesos y genérea química
+
+609
+00:52:29,000 --> 00:52:32,000
+por eso estamos en el, porque no existe
+
+610
+00:52:32,000 --> 00:52:34,000
+y estamos empezando
+
+611
+00:52:34,000 --> 00:52:37,000
+Y nada, muchas gracias
+
+612
+00:52:37,000 --> 00:52:40,000
+Más que la pregunta, una curiosidad
+
+613
+00:52:40,000 --> 00:52:42,000
+hemos visto un ejemplo que habéis puesto
+
+614
+00:52:42,000 --> 00:52:47,000
+que habéis escrito en Python 3 de 21 ecuaciones
+
+615
+00:52:47,000 --> 00:52:49,000
+a mí me sufre una duda
+
+616
+00:52:49,000 --> 00:52:51,000
+si en alguna de esas ecuaciones por ejemplo tenéis un error
+
+617
+00:52:51,000 --> 00:52:53,000
+y lo equivocas en un símbolo o algo
+
+618
+00:52:53,000 --> 00:52:55,000
+y eso lo que uno funciona
+
+619
+00:52:55,000 --> 00:52:57,000
+¿Cómo encontrar el error?
+
+620
+00:52:57,000 --> 00:52:59,000
+¿Tenéis un error y eso funciona y hemos resultado
+
+621
+00:52:59,000 --> 00:53:02,000
+en vosotros, como experiencia
+
+622
+00:53:02,000 --> 00:53:04,000
+y vamos aplicando esto en proyectos?
+
+623
+00:53:04,000 --> 00:53:06,000
+¿Os habéis planteado esto?
+
+624
+00:53:06,000 --> 00:53:08,000
+Habéis visto la manera de cómo saber
+
+625
+00:53:08,000 --> 00:53:10,000
+que el código corresponde
+
+626
+00:53:10,000 --> 00:53:12,000
+con las ecuaciones que tiene el código corresponde?
+
+627
+00:53:12,000 --> 00:53:15,000
+Bueno, creo que te refieres a la parte de la otimización
+
+628
+00:53:15,000 --> 00:53:17,000
+Pero bueno, si no...
+
+629
+00:53:17,000 --> 00:53:19,000
+Vamos, al menos me lo ha puesto el ejemplo
+
+630
+00:53:19,000 --> 00:53:21,000
+que me ha ameza y está bien
+
+631
+00:53:21,000 --> 00:53:23,000
+Sí, responde esto
+
+632
+00:53:23,000 --> 00:53:25,000
+Bueno, yo en mi caso para hacer eso
+
+633
+00:53:25,000 --> 00:53:28,000
+es verdad que siempre a veces tiene un error
+
+634
+00:53:28,000 --> 00:53:30,000
+y el programa no te dice exactamente
+
+635
+00:53:30,000 --> 00:53:32,000
+donde tienes el error
+
+636
+00:53:32,000 --> 00:53:34,000
+Yo que estaba trabajando con Arrhydes
+
+637
+00:53:34,000 --> 00:53:38,000
+muchas veces el ODEIN te mete en un bucle
+
+638
+00:53:38,000 --> 00:53:40,000
+donde quizás en el segundo bucle te dice
+
+639
+00:53:40,000 --> 00:53:42,000
+que las dimensiones son otras
+
+640
+00:53:42,000 --> 00:53:44,000
+y te has equivocado en una ecuación
+
+641
+00:53:44,000 --> 00:53:46,000
+pero no sabes cuál, no te está diciendo cuál
+
+642
+00:53:46,000 --> 00:53:49,000
+porque el error te lo da en lo que es la función
+
+643
+00:53:49,000 --> 00:53:52,000
+Entonces, lo que hago es
+
+644
+00:53:52,000 --> 00:53:55,000
+coger el problema poquito a poco, llevarme lo a otro sitio
+
+645
+00:53:55,000 --> 00:53:58,000
+donde no tengo la indexación
+
+646
+00:53:58,000 --> 00:54:00,000
+le quito toda la indexación y muy poquito a poco
+
+647
+00:54:00,000 --> 00:54:03,000
+comprobando si esas dimensiones
+
+648
+00:54:03,000 --> 00:54:06,000
+son las adecuadas, lo voy ejecutando poquito a poco
+
+649
+00:54:06,000 --> 00:54:09,000
+pero es verdad que quizás el programa
+
+650
+00:54:09,000 --> 00:54:12,000
+lo que es hacer el programa primera vez
+
+651
+00:54:12,000 --> 00:54:15,000
+me lleva tres horas, cuatro horas
+
+652
+00:54:15,000 --> 00:54:18,000
+y la depuración de errores me puede llevar días
+
+653
+00:54:18,000 --> 00:54:22,000
+eso también pide la teoría, hay herramientas de encontrar
+
+654
+00:54:22,000 --> 00:54:26,000
+hay bastantes interesantes, en el que tenemos que profundizar más
+
+655
+00:54:26,000 --> 00:54:29,000
+pero además siempre al final tiene que haber el criterio humano
+
+656
+00:54:29,000 --> 00:54:31,000
+decir esto tiene sentido o esto no tiene sentido
+
+657
+00:54:31,000 --> 00:54:33,000
+eso se en cualquiera
+
+658
+00:54:33,000 --> 00:54:35,000
+Así que...
+
+659
+00:54:35,000 --> 00:54:37,000
+Como pequeña una solución
+
+660
+00:54:37,000 --> 00:54:39,000
+yo creo que puede resultar interesante
+
+661
+00:54:39,000 --> 00:54:42,000
+a un mes de preparación por el proyecto de la solución interesante
+
+662
+00:54:42,000 --> 00:54:45,000
+a ver si relacionar con, por alguna manera
+
+663
+00:54:45,000 --> 00:54:48,000
+a la manera de hacer el más puro que se dedica a la solución
+
+664
+00:54:48,000 --> 00:54:51,000
+pues probablemente podrán dar signo y decir
+
+665
+00:54:51,000 --> 00:54:53,000
+eso es lo mejor que podríamos hacer
+
+666
+00:54:53,000 --> 00:54:55,000
+y ahora ya estamos ahí
+
+667
+00:54:55,000 --> 00:54:57,000
+bueno, a eso me hacía...
+
+668
+00:54:57,000 --> 00:54:59,000
+Yo personalmente creo que soy más rápido
+
+669
+00:54:59,000 --> 00:55:01,000
+buscar y decirle que preguntarle
+
+670
+00:55:01,000 --> 00:55:03,000
+y me investigue a lo mejor por ti ni ni ni nada
+
+671
+00:55:03,000 --> 00:55:05,000
+Sí, sí, tiene un aspecto a lo largo
+
+672
+00:55:05,000 --> 00:55:07,000
+Bueno, pues no hay ninguna pregunta más
+
+673
+00:55:07,000 --> 00:55:09,000
+dejamos paso al siguiente por gente
+
+674
+00:55:09,000 --> 00:55:15,000
+Gracias
+

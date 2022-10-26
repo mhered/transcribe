@@ -1,0 +1,744 @@
+1
+00:00:00,000 --> 00:00:13,840
+Hello, I am Davide Fioco and I will be talking about serving machine learning models with
+
+2
+00:00:13,840 --> 00:00:21,240
+web applications developed using two cool Python libraries, Streamlit and FastAPI.
+
+3
+00:00:21,240 --> 00:00:24,280
+If you want to write me afterwards, this is my Twitter handle.
+
+4
+00:00:24,280 --> 00:00:27,680
+It sounds a bit funny in Spanish, I know.
+
+5
+00:00:27,680 --> 00:00:30,040
+I didn't know back then when I chose it.
+
+6
+00:00:30,040 --> 00:00:34,520
+In a way, I think it's easy to remember, so maybe that's useful.
+
+7
+00:00:34,520 --> 00:00:40,240
+About me, I started using Python now more than 10 years ago.
+
+8
+00:00:40,240 --> 00:00:46,240
+I was using it to analyze data coming from computer simulations or physical systems.
+
+9
+00:00:46,240 --> 00:00:53,480
+My background is indeed physics and currently I'm a senior data scientist at Frontiers.
+
+10
+00:00:53,480 --> 00:00:57,040
+I will spend some time talking about Frontiers.
+
+11
+00:00:57,040 --> 00:01:00,760
+Frontiers is an open access scientific publisher.
+
+12
+00:01:00,760 --> 00:01:11,560
+So we have this website www.frontiers.org and scientists can send their work in the form
+
+13
+00:01:11,560 --> 00:01:16,280
+of scientific articles to our website.
+
+14
+00:01:16,280 --> 00:01:23,160
+And afterwards, the articles are reviewed by other experts in the same field.
+
+15
+00:01:23,160 --> 00:01:28,840
+And if they pass the peer review, they are eventually published online.
+
+16
+00:01:28,840 --> 00:01:37,400
+Currently, we have 92 journals online that are open for submissions and Frontiers has
+
+17
+00:01:37,400 --> 00:01:43,080
+published so far 171,000 articles.
+
+18
+00:01:43,080 --> 00:01:51,200
+I was looking into this yesterday and if you look for Python, well, programming, just to
+
+19
+00:01:51,200 --> 00:01:54,080
+distinguish it from snakes.
+
+20
+00:01:54,080 --> 00:02:02,920
+We have indeed scientific articles that are dealing with the usage of Python in science.
+
+21
+00:02:02,920 --> 00:02:13,040
+So applications in biology or libraries that are used in a scientific domain.
+
+22
+00:02:13,040 --> 00:02:16,160
+So if you're interested, check it out.
+
+23
+00:02:16,160 --> 00:02:22,560
+Something else about us, we are over 500 employees in different offices in the world.
+
+24
+00:02:22,560 --> 00:02:30,080
+There's one engineering office in Madrid and the company currently processes over 60,000
+
+25
+00:02:30,080 --> 00:02:32,680
+scientific articles per year.
+
+26
+00:02:32,680 --> 00:02:34,920
+This is pretty labor intensive.
+
+27
+00:02:34,920 --> 00:02:39,040
+And therefore we have a technology stock that also uses Python.
+
+28
+00:02:39,040 --> 00:02:46,320
+We use Python mainly in our big data pipelines and to power our machine learning components
+
+29
+00:02:46,320 --> 00:02:48,920
+in the platform.
+
+30
+00:02:48,920 --> 00:02:53,160
+So yeah, we'll be talking about machine learning.
+
+31
+00:02:53,160 --> 00:02:57,880
+And as you know already, it's a very powerful technology.
+
+32
+00:02:57,880 --> 00:03:05,760
+At work, we use natural language processing to machine learning to process text data.
+
+33
+00:03:05,760 --> 00:03:09,840
+For instance, to classify scientific articles based on their content.
+
+34
+00:03:09,840 --> 00:03:14,080
+In this slide, you find an example, which is sentiment analysis.
+
+35
+00:03:14,080 --> 00:03:18,200
+Here we want to classify sentences based on their mood.
+
+36
+00:03:18,200 --> 00:03:20,800
+Granada is really beautiful.
+
+37
+00:03:20,800 --> 00:03:21,800
+It's a happy sentence.
+
+38
+00:03:21,800 --> 00:03:26,680
+So we'll have an algorithm which is able to recognize this.
+
+39
+00:03:26,680 --> 00:03:31,400
+Actually if you visit this repository by Hug & Face, there's even algorithms that are able
+
+40
+00:03:31,400 --> 00:03:39,720
+to read sentences and assign to them an emoji, which is correct to describe their tone.
+
+41
+00:03:39,720 --> 00:03:44,320
+But machine learning is also applied to image and videos.
+
+42
+00:03:44,320 --> 00:03:47,680
+In those cases, we talk about computer vision.
+
+43
+00:03:47,680 --> 00:03:51,680
+An example of a computer vision application is image segmentation.
+
+44
+00:03:51,680 --> 00:03:56,880
+And that's what we'll play with a bit in the rest of the talk.
+
+45
+00:03:56,880 --> 00:04:02,200
+So in this case, we have an input image and we want to assign to different regions of
+
+46
+00:04:02,200 --> 00:04:06,080
+it different classes, depending on the content.
+
+47
+00:04:06,080 --> 00:04:09,120
+So here we have all this area, which is the background.
+
+48
+00:04:09,120 --> 00:04:11,080
+So we assign it the color black.
+
+49
+00:04:11,080 --> 00:04:12,440
+Here we have the vehicle.
+
+50
+00:04:12,440 --> 00:04:15,440
+So we color the motorcycle in a different way.
+
+51
+00:04:15,440 --> 00:04:22,200
+And we color the motorcyclist in a different way still.
+
+52
+00:04:22,200 --> 00:04:29,720
+What's nice nowadays is that it has become easier to at least apply machine learning
+
+53
+00:04:29,720 --> 00:04:37,760
+models if we program Python, because there are frameworks like PyTorch or TensorFlow
+
+54
+00:04:37,760 --> 00:04:43,520
+or scikit-learn that allow to run machine learning models easily.
+
+55
+00:04:43,520 --> 00:04:50,320
+So for instance, if we wanted to solve the image segmentation task that we just have
+
+56
+00:04:50,320 --> 00:04:53,720
+seen using PyTorch, we could do the following.
+
+57
+00:04:53,720 --> 00:04:56,440
+We could load a pre-trained model.
+
+58
+00:04:56,440 --> 00:05:03,880
+Here we trust the model provider to have trained correctly the model so it's both fair and
+
+59
+00:05:03,880 --> 00:05:06,200
+accurate.
+
+60
+00:05:06,200 --> 00:05:13,080
+And then we can essentially use this model a bit like a Python function on some input
+
+61
+00:05:13,080 --> 00:05:25,680
+image and get in output some model prediction, which is essentially this colored mask here.
+
+62
+00:05:25,680 --> 00:05:26,840
+This is very nice.
+
+63
+00:05:26,840 --> 00:05:35,880
+However, if we want to make the models useful for other users or make the models usable
+
+64
+00:05:35,880 --> 00:05:41,040
+for other computer applications, we need some other elements that are not provided by, for
+
+65
+00:05:41,040 --> 00:05:44,400
+instance, PyTorch or TensorFlow.
+
+66
+00:05:44,400 --> 00:05:50,600
+We need often to construct a front-end, so some kind of interface so that people can,
+
+67
+00:05:50,600 --> 00:05:57,840
+for instance, upload an image and then invoke the model by pressing a button and getting
+
+68
+00:05:57,840 --> 00:06:03,200
+results like in this example here.
+
+69
+00:06:03,200 --> 00:06:12,440
+For, well, not only front-end, we also need a back-end so that another application can
+
+70
+00:06:12,440 --> 00:06:19,680
+call the back-end and by sending an image and then getting a result.
+
+71
+00:06:19,680 --> 00:06:26,440
+This typically would be done, for instance, with a CUR URL call like this that references
+
+72
+00:06:26,440 --> 00:06:30,120
+the back-end endpoint.
+
+73
+00:06:30,120 --> 00:06:39,480
+So having a front-end and a back-end is really useful to make machine learning working in
+
+74
+00:06:39,480 --> 00:06:43,160
+a way for users and applications.
+
+75
+00:06:43,160 --> 00:06:48,160
+The problem is that you may need to master several technologies in order to build both.
+
+76
+00:06:48,160 --> 00:06:53,720
+And so wouldn't it be nice to build both the front-end and the back-end using pure Python
+
+77
+00:06:53,720 --> 00:06:57,720
+and hopefully without writing a lot of code?
+
+78
+00:06:57,720 --> 00:07:01,680
+So this can be done.
+
+79
+00:07:01,680 --> 00:07:03,560
+So I will propose a simple solution.
+
+80
+00:07:03,560 --> 00:07:06,880
+I will show it here that uses Python and Docker.
+
+81
+00:07:06,880 --> 00:07:15,280
+So Python is used here to build the front-end by employing the Streamlit library and instead
+
+82
+00:07:15,280 --> 00:07:20,320
+the back-end can be built using the FastAPI library.
+
+83
+00:07:20,320 --> 00:07:26,760
+Docker and in particular Docker Compose is used to make the front-end and back-end work
+
+84
+00:07:26,760 --> 00:07:31,920
+together and also can facilitate the deployment.
+
+85
+00:07:31,920 --> 00:07:37,080
+Let's talk a bit about the libraries that constitute the building blocks for the solution.
+
+86
+00:07:37,080 --> 00:07:41,960
+So one, as I said, is Streamlit and this is their website.
+
+87
+00:07:41,960 --> 00:07:47,080
+As they say here, they want to make it easy to build beautiful web applications, use the
+
+88
+00:07:47,080 --> 00:07:49,640
+machine learning and data science.
+
+89
+00:07:49,640 --> 00:07:55,560
+And I agree that this library can be very helpful to build simple UIs without writing
+
+90
+00:07:55,560 --> 00:07:57,280
+a lot of code.
+
+91
+00:07:57,280 --> 00:07:59,280
+You don't need to be an expert at JavaScript.
+
+92
+00:07:59,280 --> 00:08:05,800
+You don't need to know HTML to build these user interfaces.
+
+93
+00:08:05,800 --> 00:08:10,480
+The libraries, the Streamlit is pretty intuitive to use.
+
+94
+00:08:10,480 --> 00:08:17,600
+You essentially just write one line of code and this can translate into, this is translated
+
+95
+00:08:17,600 --> 00:08:21,760
+by the library into a widget in your user interface.
+
+96
+00:08:21,760 --> 00:08:25,400
+The project has become pretty popular.
+
+97
+00:08:25,400 --> 00:08:32,200
+It has 10,000 stars on GitHub and if you want to compare it with other frameworks like Dash
+
+98
+00:08:32,200 --> 00:08:43,040
+or Shiny, which is popular among our users, you can check this webpage on plotly.com.
+
+99
+00:08:43,040 --> 00:08:45,840
+Also let's talk about FastAPI.
+
+100
+00:08:45,840 --> 00:08:51,000
+They want to be high performance, easy to learn, fast to code and ready for production.
+
+101
+00:08:51,000 --> 00:08:57,320
+And indeed I found FastAPI to be capable of building APIs with documentation without writing
+
+102
+00:08:57,320 --> 00:08:59,080
+a lot of code.
+
+103
+00:08:59,080 --> 00:09:04,360
+FastAPI is especially easy to use if you know already Flask.
+
+104
+00:09:04,360 --> 00:09:08,240
+So anyway, I would agree that it's quite easy to learn.
+
+105
+00:09:08,240 --> 00:09:13,840
+Also because it has an extensive documentation and the lead developer, Sebastian Ramirez,
+
+106
+00:09:13,840 --> 00:09:19,120
+has recorded a lot of videos about how to use the library.
+
+107
+00:09:19,120 --> 00:09:20,960
+The project has become pretty popular.
+
+108
+00:09:20,960 --> 00:09:27,800
+It has 20,000 stars on GitHub and you can compare it with other popular frameworks like
+
+109
+00:09:27,800 --> 00:09:35,280
+Flask or Django by visiting this webpage.
+
+110
+00:09:35,280 --> 00:09:41,080
+So let's look more in detail inside our solution.
+
+111
+00:09:41,080 --> 00:09:43,240
+This is on GitHub.
+
+112
+00:09:43,240 --> 00:09:50,440
+Very happy to respond to issues if there are any and the code may have bugs.
+
+113
+00:09:50,440 --> 00:09:53,240
+So this is also open for pull requests.
+
+114
+00:09:53,240 --> 00:10:00,200
+The project is described on this blog post.
+
+115
+00:10:00,200 --> 00:10:06,080
+The architecture of the project is represented here.
+
+116
+00:10:06,080 --> 00:10:07,640
+We have two containers.
+
+117
+00:10:07,640 --> 00:10:15,000
+One takes responsibility for running the front end and that's powered by the Streamweek library.
+
+118
+00:10:15,000 --> 00:10:22,760
+This serves a user interface to users with descriptions and buttons and so on.
+
+119
+00:10:22,760 --> 00:10:28,480
+The front end also is capable of firing a request to the back end using the request
+
+120
+00:10:28,480 --> 00:10:30,560
+library.
+
+121
+00:10:30,560 --> 00:10:36,640
+And the back end runs using FastAPI and the core machine learning task, as we just said,
+
+122
+00:10:36,640 --> 00:10:41,480
+is done by PyTorch code.
+
+123
+00:10:41,480 --> 00:10:50,680
+So let's have a little walkthrough really quickly of the code.
+
+124
+00:10:50,680 --> 00:10:53,960
+The code as it is on GitHub is here.
+
+125
+00:10:53,960 --> 00:11:04,640
+So you have a Rigny file that explains a bit how to run the web application and also how
+
+126
+00:11:04,640 --> 00:11:10,160
+to deploy on Heroku and how to debug it.
+
+127
+00:11:10,160 --> 00:11:16,640
+The architecture is formalized in code in this Docker compose.yaml file.
+
+128
+00:11:16,640 --> 00:11:25,360
+As I said, we have two services, one for the back end, which is in the same Docker network
+
+129
+00:11:25,360 --> 00:11:31,160
+as the front end, the Streamweek container.
+
+130
+00:11:31,160 --> 00:11:37,880
+We also expose ports so that both the front end and the back end are reachable from the
+
+131
+00:11:37,880 --> 00:11:39,560
+outside.
+
+132
+00:11:39,560 --> 00:11:44,360
+So we can peek into the Python code of the back end.
+
+133
+00:11:44,360 --> 00:11:52,280
+So as we said, there is PyTorch code to run the machine learning model on a given image
+
+134
+00:11:52,280 --> 00:11:59,120
+and give an output result, the colored map.
+
+135
+00:11:59,120 --> 00:12:03,920
+So I won't go too much into detail because this is really taken from the PyTorch Hub
+
+136
+00:12:03,920 --> 00:12:05,480
+guide.
+
+137
+00:12:05,480 --> 00:12:14,320
+We essentially take the pre-trained model from the PyTorch Hub and then we have a function
+
+138
+00:12:14,320 --> 00:12:20,880
+which takes this model and runs it over a binary image.
+
+139
+00:12:20,880 --> 00:12:23,960
+There's also some pre-processing involved.
+
+140
+00:12:23,960 --> 00:12:26,920
+This is where we invoke the model.
+
+141
+00:12:26,920 --> 00:12:33,760
+We call the model to get the output predictions that are also given in output in the end by
+
+142
+00:12:33,760 --> 00:12:35,320
+the function.
+
+143
+00:12:35,320 --> 00:12:41,080
+So this PyTorch code is used inside the back end, as we said.
+
+144
+00:12:41,080 --> 00:12:44,600
+So here we have a fast API.
+
+145
+00:12:44,600 --> 00:12:54,320
+We indeed create a fast API object with a title for this is used in the app documentation
+
+146
+00:12:54,320 --> 00:12:58,800
+and also the same is true for the description.
+
+147
+00:12:58,800 --> 00:13:03,480
+And then the main part is this, where we declare an endpoint that the front end or another
+
+148
+00:13:03,480 --> 00:13:10,280
+application can call by passing an input and image.
+
+149
+00:13:10,280 --> 00:13:20,800
+This piece of code runs the model here and then returns to the client the machine learning
+
+150
+00:13:20,800 --> 00:13:23,320
+model result.
+
+151
+00:13:23,320 --> 00:13:26,360
+Let's have a look at the front end.
+
+152
+00:13:26,360 --> 00:13:35,080
+So the front end code is here and it uses Streamlit and the request library.
+
+153
+00:13:35,080 --> 00:13:45,280
+Requests are used to send the input given by the user to the fast API back end in this
+
+154
+00:13:45,280 --> 00:13:47,480
+processing function here.
+
+155
+00:13:47,480 --> 00:13:51,840
+And instead the construction of the UI layout is very simply done by Streamlit here.
+
+156
+00:13:51,840 --> 00:13:56,560
+So with this instruction we create a title for our web application, we will see this
+
+157
+00:13:56,560 --> 00:13:58,240
+in a second.
+
+158
+00:13:58,240 --> 00:14:04,400
+We write to the web page some description and also we create widgets so that users
+
+159
+00:14:04,400 --> 00:14:08,760
+can upload an image which will be stored in this variable.
+
+160
+00:14:08,760 --> 00:14:18,960
+This input image will be then kind of passed to the back end by invoking the process function
+
+161
+00:14:18,960 --> 00:14:22,840
+that we have seen above here.
+
+162
+00:14:22,840 --> 00:14:28,000
+And yeah, the call to the back end is triggered by the pressing of this button here.
+
+163
+00:14:28,000 --> 00:14:36,440
+Finally, the output result is shown to the user with this final Streamlit call.
+
+164
+00:14:36,440 --> 00:14:40,200
+So that's pretty much it.
+
+165
+00:14:40,200 --> 00:14:45,440
+If we want to run the application, we would just need to use Docker compose.
+
+166
+00:14:45,440 --> 00:14:49,360
+So let's do our Docker compose up.
+
+167
+00:14:49,360 --> 00:14:58,120
+This activates the fast API back end and the Streamlit front end containers.
+
+168
+00:14:58,120 --> 00:15:00,920
+And yeah, so let's have a look.
+
+169
+00:15:00,920 --> 00:15:10,680
+We can visit the front end at this address here and we can check that everything works.
+
+170
+00:15:10,680 --> 00:15:15,720
+Indeed, you can see the title here, the description of the application, different widgets that
+
+171
+00:15:15,720 --> 00:15:17,800
+we have created using Streamlit.
+
+172
+00:15:17,800 --> 00:15:21,560
+Okay, yeah, this is made with Streamlit indeed.
+
+173
+00:15:21,560 --> 00:15:25,520
+We have to wait a bit for the back end to process the image, but in the end we get the
+
+174
+00:15:25,520 --> 00:15:27,020
+result.
+
+175
+00:15:27,020 --> 00:15:31,440
+The back end documentation is now visible at this address.
+
+176
+00:15:31,440 --> 00:15:35,280
+So yeah, everything seems to be working.
+
+177
+00:15:35,280 --> 00:15:39,760
+In case we want to deploy the application on the web, we can use a tool like Heroku.
+
+178
+00:15:39,760 --> 00:15:44,400
+As far as I know, we need an add-on doc hero to run the application.
+
+179
+00:15:44,400 --> 00:15:51,000
+It takes about 10 minutes to deploy using the instruction that you find on the GitHub
+
+180
+00:15:51,000 --> 00:15:52,800
+repository.
+
+181
+00:15:52,800 --> 00:15:57,680
+And at the end of the process, you have a web application which is public on the web
+
+182
+00:15:57,680 --> 00:16:02,680
+and is accessible at this address for the front end.
+
+183
+00:16:02,680 --> 00:16:06,400
+And here we can visit the back end.
+
+184
+00:16:06,400 --> 00:16:09,920
+So that's pretty much it for the code walkthrough.
+
+185
+00:16:09,920 --> 00:16:12,800
+I hope that was enjoyable.
+
+186
+00:16:12,800 --> 00:16:40,360
+Thanks very much for attending the talk and I'm happy to take questions.
+
