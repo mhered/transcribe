@@ -1,0 +1,4200 @@
+1
+00:00:00,000 --> 00:00:12,000
+Bueno, mi nombre es José Bizarro Cospita, perdona por el retraso, hemos tenido problemas técnicos.
+
+2
+00:00:12,000 --> 00:00:21,000
+Creo que no os hay conocido en vuestros círculos, más que nada porque no soy de vuestros círculos.
+
+3
+00:00:21,000 --> 00:00:29,000
+Concretamente, bueno, un poco el online de lo que voy a contar, como cuando me dieron la presentación
+
+4
+00:00:29,000 --> 00:00:35,000
+yo estaba muy contento por algo que vení después, pero luego claro pensé, estoy en círculo avanzado
+
+5
+00:00:35,000 --> 00:00:43,000
+y allá me empecé a poner nervioso. Y entonces claro, yo empecé a pensar y empecé a hacer cosas con Blender
+
+6
+00:00:43,000 --> 00:00:50,000
+y realmente en Blender uno puede hacer cosas complicadas, puede hacerlo, pero una vez ya tienes todo lo que es tu setup
+
+7
+00:00:50,000 --> 00:00:56,000
+y ya tienes un poco de dónde vas a trabajar, lo cierto es que luego hacer cada cosa es ridículamente sencillo.
+
+8
+00:00:56,000 --> 00:01:02,000
+Y entonces claro, cuando dice empecé a hacer la presentación digo es que van a haber unos códigos que se van a acachar de ahora de mí
+
+9
+00:01:02,000 --> 00:01:08,000
+entonces lo que hice fue decir bueno, pues se lo voy a compensar y entonces invertí bastante tiempo en comparar lo que había sido el desarrollo
+
+10
+00:01:08,000 --> 00:01:16,000
+de este juego cuando lo hacía con C++ y Ogre con lo que es ahora hacerlo con Blender y Python, sobre todo en una cuestión de esfuerzo.
+
+11
+00:01:16,000 --> 00:01:22,000
+Y luego ya pasaremos una demostración en la que yo tengo preparado o implementado una bollita que es algo muy sencillito
+
+12
+00:01:22,000 --> 00:01:29,000
+y podemos interactuar un poco lo que vosotros queráis, ¿vale? y si queréis no me tengamos más en el API, vemos cómo se hace un plano de agua,
+
+13
+00:01:29,000 --> 00:01:35,000
+lo que es de la gana, ¿vale? Entonces pues empezamos por lo primero ¿no? ¿Quién demonio soy yo?
+
+14
+00:01:35,000 --> 00:01:42,000
+¿Y por qué estoy aquí arriba? Bueno pues para gente yo no debería estar aquí arriba, pero bueno, yo soy ingeniero naval, ¿vale?
+
+15
+00:01:42,000 --> 00:01:49,000
+No soy ingeniero informático, soy ingeniero naval, así que si queríais Python avanzado estáis en la conferencia equivocada.
+
+16
+00:01:49,000 --> 00:01:54,000
+Concretamente estoy haciendo el doctor Andan en el programa de ingeniería aero espacial.
+
+17
+00:01:54,000 --> 00:02:01,000
+Si vas juntando palabras, pues el título que va a quedar al final cuando consiga tener todo esto pues va a ser muy largo, claro.
+
+18
+00:02:01,000 --> 00:02:08,000
+Soy investigado en cada ensayo de Asin, si alguno fue a la presentación de Alicia pues básicamente es ese grupo, ¿vale?
+
+19
+00:02:08,000 --> 00:02:11,000
+Y básicamente estoy especializando en mecánica de fluidos computacionales.
+
+20
+00:02:11,000 --> 00:02:18,000
+Y a título personal pues soy desarrollador de varios sub-wastelibres, en algunos coperos y en otros soy líder, ¿no?
+
+21
+00:02:18,000 --> 00:02:21,000
+Concretamente en FreeCAD Copero, yo hago el mudurito de barcos.
+
+22
+00:02:21,000 --> 00:02:26,000
+Es mucho decir que copero porque la verdad es que lo tengo un poco abandonados, pero es la idea.
+
+23
+00:02:26,000 --> 00:02:30,000
+Soy líder de Oakland, que es un periodo muy interesante, preguntarme a la salida.
+
+24
+00:02:30,000 --> 00:02:37,000
+Y soy líder de Sunsilency y por aquí para las que fue la presentación de Alicia pues debería aparecer a Kuaipi o Sp8,
+
+25
+00:02:37,000 --> 00:02:43,000
+pero como soy ingeniero pues todo lo hago tarde rápido y mal y entonces pues estaría no deliberado,
+
+26
+00:02:43,000 --> 00:02:46,000
+pero es libre y cualquiera que lo quiera pedir se lo doy.
+
+27
+00:02:46,000 --> 00:02:49,000
+Y un día tendré una web.
+
+28
+00:02:49,000 --> 00:02:52,000
+¿Y qué es Sunsilency?
+
+29
+00:02:52,000 --> 00:02:58,000
+Bueno pues la razón por la que yo decidí que sí iba a dar esta conferencia es por la segunda línea, es la más importante.
+
+30
+00:02:58,000 --> 00:03:00,000
+Este es un juego que está dedicado a mi novia.
+
+31
+00:03:00,000 --> 00:03:02,000
+¿Sensable que te quiero?
+
+32
+00:03:02,000 --> 00:03:04,000
+Me he puesto chaqueta.
+
+33
+00:03:04,000 --> 00:03:07,000
+Eso es amor, es amor verdadero.
+
+34
+00:03:07,000 --> 00:03:10,000
+Pero también me he puesto la camiseta de paicon.
+
+35
+00:03:10,000 --> 00:03:12,000
+También nos quiero a vosotros.
+
+36
+00:03:12,000 --> 00:03:17,000
+Entonces básicamente es un juego de simulación navar que por cierto se ve fatal.
+
+37
+00:03:17,000 --> 00:03:19,000
+¿Podemos apagar la luz?
+
+38
+00:03:19,000 --> 00:03:22,000
+Pro.
+
+39
+00:03:22,000 --> 00:03:25,000
+Bueno, algo mejor se ve ¿no?
+
+40
+00:03:25,000 --> 00:03:28,000
+No hemos arpecannado mucho, pero bueno.
+
+41
+00:03:28,000 --> 00:03:30,000
+Vale ¿no?
+
+42
+00:03:30,000 --> 00:03:32,000
+¿Es software libre?
+
+43
+00:03:32,000 --> 00:03:37,000
+Bueno software libre es raro decir que es software libre porque si todos son modelos 3D y estas cosas,
+
+44
+00:03:37,000 --> 00:03:44,000
+pero yo la verdad es que los modelos a mí lo licenció con GPL. Hay gente que me dice que eso es una animalada.
+
+45
+00:03:44,000 --> 00:03:50,000
+La gracia de esto es que cuando empecé a hacer este juego para dedicarse a mi novia, que es de ya 3 años,
+
+46
+00:03:50,000 --> 00:03:53,000
+lo empecé a hacer con CMOS MASS y obra ¿vale?
+
+47
+00:03:53,000 --> 00:03:59,000
+Y ahora no, ahora he decidido que eso era un desastre que no iba a ninguna parte y me cambiaba Blender con Python.
+
+48
+00:03:59,000 --> 00:04:03,000
+Yo amo CMOS MASS, o sea yo soy más programador de CMOS MASS que de Python ¿vale?
+
+49
+00:04:03,000 --> 00:04:09,000
+Pero creo que en esta presentación voy a hacer un poco de caballo de troya y voy a defender a Python.
+
+50
+00:04:09,000 --> 00:04:12,000
+¿Qué pretendo contar en esta primera parte en realidad?
+
+51
+00:04:12,000 --> 00:04:16,000
+Pues pretendo contar, o sea yo lo que pretende es no centrarme CMOS MASS contra Python.
+
+52
+00:04:16,000 --> 00:04:20,000
+Pero claro está mezclado con ogre contra Blender ¿vale?
+
+53
+00:04:20,000 --> 00:04:27,000
+Entonces voy a intentar de alguna forma ver si consigo limpiar todo lo que no es comparable a nivel del lenguaje de programación ¿vale?
+
+54
+00:04:27,000 --> 00:04:32,000
+Eso dicho de otra forma un poco más concreta pues claro tienes un montón de esfuerzos,
+
+55
+00:04:32,000 --> 00:04:36,000
+tipos de esfuerzos, algunos de tiempo, algunos de tiempo de código que hay que ir limpiando ¿no?
+
+56
+00:04:36,000 --> 00:04:40,000
+El primero es simplemente por la familia que tienes ¿no? Yo era muy familiar con CMOS MASS
+
+57
+00:04:40,000 --> 00:04:43,000
+pero al mismo tiempo era mucho más familiar con Blender.
+
+58
+00:04:43,000 --> 00:04:47,000
+Pero como eso va con tiempo y al final nosotros el tiempo lo vamos a hacer un poco de lado pues no importa demasiado.
+
+59
+00:04:47,000 --> 00:04:49,000
+Differencias de vidas a una mejor integración.
+
+60
+00:04:49,000 --> 00:04:51,000
+Claramente en Blender ¿sabes?
+
+61
+00:04:51,000 --> 00:04:58,000
+El menos hecho de tener que exportar un modelo de Blender a ogre ya era un poco infernal.
+
+62
+00:04:58,000 --> 00:05:03,000
+Differencias de vidas a tener un framework, no hay trabajas directamente, no tienes que salirte nunca del.
+
+63
+00:05:03,000 --> 00:05:06,000
+Differencias de vidas a los estándares que usaba cada uno.
+
+64
+00:05:06,000 --> 00:05:12,000
+Ogre además a mí era una cosa que me cabreaba especialmente porque te cambiaban de la versión 1.6 a 1.7
+
+65
+00:05:12,000 --> 00:05:16,000
+y te quitaban todos los estándares que estaban usando ¿por qué me dices eso?
+
+66
+00:05:16,000 --> 00:05:21,000
+Y luego ya las diferencias de los lenguajes que es lo que yo me quiero concentrar, así lo conseguimos.
+
+67
+00:05:21,000 --> 00:05:28,000
+Claro, es difícil de medir porque hay muchas formas de que las podías tratar de medir ¿no? en el tiempo que te ha llevado,
+
+68
+00:05:28,000 --> 00:05:31,000
+en el esfuerzo, en la cantidad de información que lleva detrás.
+
+69
+00:05:31,000 --> 00:05:35,000
+Yo digo aquí 3 años en C++ y 2 meses que llevo con ello en Python.
+
+70
+00:05:35,000 --> 00:05:40,000
+Pero y lo cierto es que voy mucho más avanzado ahora con Python en 2 meses que en 3 años con C++
+
+71
+00:05:40,000 --> 00:05:45,000
+pero claro también es verdad que sabes yo no dedico 8 horas al día a hacer esto,
+
+72
+00:05:45,000 --> 00:05:51,000
+entonces ese número no vale mucho, así que voy a cambiar y me voy a ir a líneas de código.
+
+73
+00:05:51,000 --> 00:05:53,000
+Me encantan las líneas de código.
+
+74
+00:05:53,000 --> 00:05:56,000
+Y entonces para empezar pues lo que he dicho es bueno me voy a ir a internet,
+
+75
+00:05:56,000 --> 00:06:00,000
+me voy a buscar unos cuantos algos en la modernación y voy a ver cuántas líneas de código acá a uno.
+
+76
+00:06:00,000 --> 00:06:06,000
+No me he esforzado mucho, o sea yo iba a internet el primero que me daba un código, catapult, lo cogía y pa derro.
+
+77
+00:06:06,000 --> 00:06:11,000
+Y entonces así comparando un poco pues bueno se ven ahí algunos son bastante raros ¿no?
+
+78
+00:06:11,000 --> 00:06:18,000
+Porque durante el bitónico pues te salen aquí 131 líneas, no debería, código sencillo.
+
+79
+00:06:18,000 --> 00:06:23,000
+Pero vamos recoges toda esa información y lo que te sal va básicamente es un 2,7 más o menos 1,6.
+
+80
+00:06:23,000 --> 00:06:28,000
+O sea quiere decir que por cada cosa que haces en Python pues requieres casi tres líneas más,
+
+81
+00:06:28,000 --> 00:06:31,000
+o sea tienes que multiplicar por tres el número de líneas para hacerlo 11 más más.
+
+82
+00:06:31,000 --> 00:06:35,000
+Bueno es un número de referencia, yo lo he tomado así un poco al bestia.
+
+83
+00:06:35,000 --> 00:06:37,000
+También es verdad que cuando uno te presenta un código de estos,
+
+84
+00:06:37,000 --> 00:06:41,000
+estos códigos no suelen venir a una clase con una cabecera,
+
+85
+00:06:41,000 --> 00:06:46,000
+que toda la información está duplicada entre la cabecera, la clase, los códigos, los comentarios.
+
+86
+00:06:46,000 --> 00:06:52,000
+Entonces está un poco, hay un biasid ahí ¿vale? pero yo creo que podemos seguir con eso.
+
+87
+00:06:52,000 --> 00:06:56,000
+Entonces nos creamos que es un número de referencia y vamos a ver cómo es mi código.
+
+88
+00:06:56,000 --> 00:06:58,000
+Mi código a la ventaja es que era una aplicación muy compleja.
+
+89
+00:06:58,000 --> 00:07:00,000
+Cuando uno es ingeniero tienes que siempre hacer esto ¿no?
+
+90
+00:07:00,000 --> 00:07:04,000
+Y es vete a mediendo más grande que puedas porque tu error va a ser más pequeño.
+
+91
+00:07:04,000 --> 00:07:10,000
+Entonces bueno un poco las características de cada uno para que...
+
+92
+00:07:10,000 --> 00:07:12,000
+O sea esto es muy importante porque una de las conclusiones va a ser que en realidad
+
+93
+00:07:12,000 --> 00:07:15,000
+el número que me sale tampoco es muy representativo ¿sabes?
+
+94
+00:07:15,000 --> 00:07:18,000
+Porque en realidad los programas de finales se parecen tanto ¿sabes?
+
+95
+00:07:18,000 --> 00:07:22,000
+Pero bueno básicamente para que os hagáis una idea con Blender y Python
+
+96
+00:07:22,000 --> 00:07:25,000
+que uno esperaría que sea mucho más lento, que sea más más,
+
+97
+00:07:25,000 --> 00:07:29,000
+pues básicamente en el portafilipo os ir como a 20 fps, depende lo que le ventas,
+
+98
+00:07:29,000 --> 00:07:33,000
+mientras que en ogre era inmanejable, o sea yo en este portafilipo me metía lo de ogre y vamos.
+
+99
+00:07:33,000 --> 00:07:36,000
+Aquello de podías ir a medio frame por cada 30 segundos.
+
+100
+00:07:36,000 --> 00:07:39,000
+Aquí la cámara la llama isométrica, por llamar alguna forma,
+
+101
+00:07:39,000 --> 00:07:42,000
+básicamente lo que dices es que tu picado es constante, la mueves y tal,
+
+102
+00:07:42,000 --> 00:07:46,000
+pero tu picado es constante pues a terzo, pero nunca ha cambiado la inclinación.
+
+103
+00:07:46,000 --> 00:07:48,000
+Aquí en cambio la cámara era como libre ¿vale?
+
+104
+00:07:48,000 --> 00:07:51,000
+Luego lo quité pero en principio era libre.
+
+105
+00:07:51,000 --> 00:07:54,000
+Aquí solo quieres ver cosas de fuera del agua, no me metí en eso,
+
+106
+00:07:54,000 --> 00:07:58,000
+mientras que ahí sí que te metías si querías debajo del agua y tal, no pasa nada.
+
+107
+00:07:58,000 --> 00:08:00,000
+La geometría aquí está simplificada por un plano,
+
+108
+00:08:00,000 --> 00:08:03,000
+pero no pasa mayor causa de que este vaya mucho más rápido en realidad,
+
+109
+00:08:03,000 --> 00:08:07,000
+mientras que allí no, allí era una compra isométrica que se va modificando y tal,
+
+110
+00:08:07,000 --> 00:08:10,000
+eso no era cosa mía, pero que claro.
+
+111
+00:08:10,000 --> 00:08:15,000
+La física aquí es más realista, más que nada porque está integrada directamente en blender,
+
+112
+00:08:15,000 --> 00:08:18,000
+y tu única vez es que añade ciertas fuerzas que te convengan,
+
+113
+00:08:18,000 --> 00:08:21,000
+y en cambio la física era bastante pobre,
+
+114
+00:08:21,000 --> 00:08:23,000
+y aquí no tengo ninguna necesidad,
+
+115
+00:08:23,000 --> 00:08:25,000
+pero cuébame por lo que es el entorno atmosférico,
+
+116
+00:08:25,000 --> 00:08:28,000
+mientras que ahí claro como podías girar la cámara primera para arriba,
+
+117
+00:08:28,000 --> 00:08:30,000
+y que te haces de implementar algo allí.
+
+118
+00:08:30,000 --> 00:08:33,000
+Entonces vamos a ir, ¿cómo voy a funcionar yo?
+
+119
+00:08:33,000 --> 00:08:36,000
+Pues lo que voy a hacer es voy a plantear las líneas de código, y en cada uno,
+
+120
+00:08:36,000 --> 00:08:38,000
+y luego lo voy a ir quitando cosas, muy irteos glosando,
+
+121
+00:08:38,000 --> 00:08:41,000
+cosas que no sean comparables, me las cepillo.
+
+122
+00:08:41,000 --> 00:08:43,000
+Así que empezamos con la estructura general,
+
+123
+00:08:43,000 --> 00:08:45,000
+la estructura general de todos estos programas, van a ser parecidas, no?
+
+124
+00:08:45,000 --> 00:08:47,000
+Tienes un main que lo único que haces es que arranca,
+
+125
+00:08:47,000 --> 00:08:49,000
+tu entorno gráfico por decirlo de alguna forma,
+
+126
+00:08:49,000 --> 00:08:51,000
+y luego eso es tener un frame listener,
+
+127
+00:08:51,000 --> 00:08:54,000
+es alguien que está a cada frame revisando la información,
+
+128
+00:08:54,000 --> 00:08:57,000
+y entonces es el que manda a todas estas señales a todos los demás.
+
+129
+00:08:57,000 --> 00:08:59,000
+Como esto está en Blender ya directamente metido,
+
+130
+00:08:59,000 --> 00:09:04,000
+pues eso se lo quito ahora, no hay muchas líneas, pero yo se lo quito.
+
+131
+00:09:04,000 --> 00:09:10,000
+Fijaos de dónde partimos, aquí tienes unas 8000 y tienes unas 40000, ¿vale?
+
+132
+00:09:10,000 --> 00:09:15,000
+Venga, y era un juego ridículo, o sea mi juego no tiene nada,
+
+133
+00:09:15,000 --> 00:09:19,000
+ya lo venís luego, no tiene nada, y ya te disparas a 40000 líneas.
+
+134
+00:09:19,000 --> 00:09:24,000
+Bueno, cosas que hay que quitar,
+
+135
+00:09:24,000 --> 00:09:26,000
+bueno pues en ogre todo lo que es analizar,
+
+136
+00:09:26,000 --> 00:09:32,000
+entradas por teclado, funcionamiento del linkado entre eventos y todas estas cosas,
+
+137
+00:09:32,000 --> 00:09:35,000
+lo tenías que programar, tenías ayudas pero tenías que programar.
+
+138
+00:09:35,000 --> 00:09:38,000
+Aquí hay un comparador lógico, tienes ahí vas insertando eventos,
+
+139
+00:09:38,000 --> 00:09:44,000
+vas insertando relaciones entre ellos, y todo funciona a pedir de bocabas.
+
+140
+00:09:44,000 --> 00:09:46,000
+Luego el input manager va a ser lo mismo,
+
+141
+00:09:46,000 --> 00:09:49,000
+así que lo único que ocurre es que como yo en Blender he implementado cosas
+
+142
+00:09:49,000 --> 00:09:55,000
+para poder manejar la cámara y en general el único elemento que tengo que se maneja
+
+143
+00:09:55,000 --> 00:10:00,000
+con un teclado, que es el submarino, pues se lo quito porque no creo que eso no está.
+
+144
+00:10:00,000 --> 00:10:02,000
+Así que se lo quito a Blender.
+
+145
+00:10:02,000 --> 00:10:07,000
+Bueno, esto repuesto, esto no pinta mucho, pero es que siempre me lo preguntan,
+
+146
+00:10:07,000 --> 00:10:08,000
+¿por qué os traen de cabeza las sombras?
+
+147
+00:10:08,000 --> 00:10:10,000
+Pues el problema de las sombras es que no pengele,
+
+148
+00:10:10,000 --> 00:10:15,000
+y yo diría que en mayoría de las implementaciones 3D, el debuffer,
+
+149
+00:10:15,000 --> 00:10:17,000
+o sea cómo de lejos están las cosas de la cámara,
+
+150
+00:10:17,000 --> 00:10:21,000
+cuando usas una cámara en perspectiva resulta que van con uno sobre Z.
+
+151
+00:10:21,000 --> 00:10:26,000
+Lo que está muy bien, porque cuando la cámara está muy cerca tienes mucha resolución,
+
+152
+00:10:26,000 --> 00:10:31,000
+fenomenal, pero claro está muy mal porque cuando están lejos todo está a la misma distancia.
+
+153
+00:10:31,000 --> 00:10:33,000
+Y entonces claro, cuando uno quiere hacer una sombra,
+
+154
+00:10:33,000 --> 00:10:35,000
+realmente lo que hace es que haces una foto donde está la luz,
+
+155
+00:10:35,000 --> 00:10:39,000
+luego haces la foto donde quieres hacer la cámara y comparas las distancias.
+
+156
+00:10:39,000 --> 00:10:43,000
+Entonces claro, si el punto se sale más atrás del primer punto que vio la luz,
+
+157
+00:10:43,000 --> 00:10:46,000
+es que estás en sombra, ¿sabes?
+
+158
+00:10:46,000 --> 00:10:50,000
+Pero claro, si todos los puntos que ve la luz y la cámara son el mismo,
+
+159
+00:10:50,000 --> 00:10:53,000
+porque no tienes resolución allí, pues te va a dar igual.
+
+160
+00:10:53,000 --> 00:10:55,000
+Entonces para eso hay que implementar una cosa que tenéis ahí arriba,
+
+161
+00:10:55,000 --> 00:10:59,000
+para despliegar los maps, que al final lleva algún código en Obre,
+
+162
+00:10:59,000 --> 00:11:02,000
+que en Blender no, porque ya está tan bien implementado.
+
+163
+00:11:02,000 --> 00:11:04,000
+Así que lo quito.
+
+164
+00:11:04,000 --> 00:11:06,000
+Luego la atmósfera, rescuarto de lo mismo, ¿no?
+
+165
+00:11:06,000 --> 00:11:10,000
+Como luego no tenía atmósfera en Blender, pues cada vez es un puñado de líneas,
+
+166
+00:11:10,000 --> 00:11:13,000
+el SkySystem era una buena línea.
+
+167
+00:11:13,000 --> 00:11:16,000
+El Océano, pues básicamente viene a ocurrir lo mismo,
+
+168
+00:11:16,000 --> 00:11:19,000
+lo que pasa es que en este caso es más complicado, porque yo sí lo tengo,
+
+169
+00:11:19,000 --> 00:11:21,000
+vamos a decir que lo tengo muy simplificado.
+
+170
+00:11:21,000 --> 00:11:27,000
+Y entonces pues bueno, otra vez mismo, desglose de líneas y se lo quito.
+
+171
+00:11:27,000 --> 00:11:30,000
+La GUI, bueno la GUI he tenido que meterme un poco yo,
+
+172
+00:11:30,000 --> 00:11:33,000
+porque hay Mughili, que es uno de los desarrolladores de Blender,
+
+173
+00:11:33,000 --> 00:11:39,000
+yo no trabajo para Blender, hizo una GUI, pero la GUI a mí me da problemas,
+
+174
+00:11:39,000 --> 00:11:42,000
+tenía que desarrollar cosas nuevas, porque no te permite rotar elementos de la GUI,
+
+175
+00:11:42,000 --> 00:11:47,000
+así que de alguna forma le quité ciertas comparativas,
+
+176
+00:11:47,000 --> 00:11:50,000
+y luego lo que sí he puesto aquí abajo, que esto sí que sirve para comparar,
+
+177
+00:11:50,000 --> 00:11:53,000
+es cuántos códigos de líneas para manejar las ventanitas en Blender,
+
+178
+00:11:53,000 --> 00:11:56,000
+frente a cuántos líneas en C++.
+
+179
+00:11:56,000 --> 00:12:00,000
+Y entre ellas tenemos un número aquí también, que es 300 interviolíneas contra 1900,
+
+180
+00:12:00,000 --> 00:12:03,000
+que viene a ser seis veces más, ¿no?
+
+181
+00:12:03,000 --> 00:12:06,000
+Unas seis, bueno.
+
+182
+00:12:06,000 --> 00:12:08,000
+Más sonidos, por lo mismo, ¿no?
+
+183
+00:12:08,000 --> 00:12:12,000
+Bueno, uno hay que implementar el gesto de los sonidos y el streamer, y el otro ya deviene.
+
+184
+00:12:12,000 --> 00:12:14,000
+Bueno, fenomenas, lo quito.
+
+185
+00:12:14,000 --> 00:12:16,000
+Partículas, pues una otra cosa parecida,
+
+186
+00:12:16,000 --> 00:12:19,000
+que en uno he tenido que implementar ciertas cosas y en otro otras, pues,
+
+187
+00:12:19,000 --> 00:12:22,000
+¡ah, la! balanceamos y quitamos.
+
+188
+00:12:22,000 --> 00:12:24,000
+Y entonces llegamos al resultado del experimento,
+
+189
+00:12:24,000 --> 00:12:26,000
+que es lo que a mí me interesaba,
+
+190
+00:12:26,000 --> 00:12:29,000
+es lo que prendería a compensaros por lo ridículamente simple que va a ser lo siguiente, ¿no?
+
+191
+00:12:29,000 --> 00:12:34,000
+Y es, bueno, después de quitar todo lo que nos interesaba y demás,
+
+192
+00:12:34,000 --> 00:12:40,000
+al final me quedó con 2750 líneas en Python frente a 15.000 en C++.
+
+193
+00:12:40,000 --> 00:12:44,000
+Solución de todo esto, pues, resulta que me salen 5 con 5 veces más,
+
+194
+00:12:44,000 --> 00:12:50,000
+que está muy por encima de los 2.7 que teníamos antes.
+
+195
+00:12:50,000 --> 00:12:54,000
+Ahora hay que sacar unas conclusiones, y mis conclusiones, como yo soy bastante pesimista siempre,
+
+196
+00:12:54,000 --> 00:12:58,000
+pues, bueno, lo que sí que quería, que esto es muy importante y quería dejar claro,
+
+197
+00:12:58,000 --> 00:13:02,000
+existe una gran cantidad de información muchísimo acerca de cómo corre un código en Python
+
+198
+00:13:02,000 --> 00:13:07,000
+frente a cómo corre en C++. Suelen ser mucho más rápidos en C++, pero luego tienes Python y tal,
+
+199
+00:13:07,000 --> 00:13:10,000
+y bueno, la cosa es no subir muy mal.
+
+200
+00:13:10,000 --> 00:13:16,000
+Existen estimaciones de cómo cuantos errores cometes si trabajas en C++ frente a si trabajas en Python,
+
+201
+00:13:16,000 --> 00:13:18,000
+que también parece un dato muy interesante.
+
+202
+00:13:18,000 --> 00:13:23,000
+Pero en cambio, lo que yo he hecho ahora, pues, no existe gran información.
+
+203
+00:13:23,000 --> 00:13:27,000
+No parece que haya un estudio serio de nadie que se haya molestado en decir,
+
+204
+00:13:27,000 --> 00:13:32,000
+cogemos una aplicación compleja de verdad y vamos a ver cómo cuento cuesta además.
+
+205
+00:13:32,000 --> 00:13:35,000
+Se lo voy a ver por ahí que 10 veces más.
+
+206
+00:13:35,000 --> 00:13:39,000
+Te lo dicen, no, yo es que con mi experiencia 10 veces más.
+
+207
+00:13:39,000 --> 00:13:44,000
+Y entonces claro, es muy, sabes, dar este dato sin dar cuántas líneas de más que hacen falta
+
+208
+00:13:44,000 --> 00:13:49,000
+es un poco inútil, porque claro, aquí tienes que meter ese factor, sabes.
+
+209
+00:13:49,000 --> 00:13:53,000
+Entonces yo quería llamar un poco la polémica de que estaría bien que alguien hiciera esto de una forma seria.
+
+210
+00:13:53,000 --> 00:13:57,000
+Por supuesto no me ha sido yo, sabes.
+
+211
+00:13:57,000 --> 00:14:03,000
+Mis aplicaciones eran demasiado diferentes, que es lo que digo en justo la siguiente línea, ¿no?
+
+212
+00:14:03,000 --> 00:14:10,000
+Al final, sabes, a más aplicaciones habría estado bien que se pareciera más, pero no había suerte.
+
+213
+00:14:10,000 --> 00:14:16,000
+Bueno, lo que podíamos esperar es que el C++ sea más fastidiado, claro.
+
+214
+00:14:16,000 --> 00:14:24,000
+Y no he abordado en ningún momento ningún tipo de dependencia con realmente el ámbito de aplicación, ¿no?
+
+215
+00:14:24,000 --> 00:14:28,000
+Y entonces, bueno, si tenéis alguna preguntilla sobre este pedacito, solamente.
+
+216
+00:14:28,000 --> 00:14:32,000
+Ahora vamos a pasar una demostración así llamas en vivo y interactuamos con lo que queráis.
+
+217
+00:14:32,000 --> 00:14:37,000
+Pero bueno, si tenéis alguna preguntilla de este pedacito en concreto, muy tonto.
+
+218
+00:14:37,000 --> 00:14:39,000
+Dime.
+
+219
+00:14:39,000 --> 00:14:41,000
+¿Se supone que los juegos son iguales y hacen lo mismo?
+
+220
+00:14:41,000 --> 00:14:44,000
+No, claro, eso es lo que decía al principio en las características.
+
+221
+00:14:44,000 --> 00:14:47,000
+No hay ningún problema, que es que en realidad al final, cuando a mí me producí en la charla,
+
+222
+00:14:47,000 --> 00:14:50,000
+yo ya había avanzado mucho más con Python, que de lo que pudo avanzar con semas más.
+
+223
+00:14:50,000 --> 00:14:53,000
+Entonces al final te das cuenta de que las características sean demasiado diferentes,
+
+224
+00:14:53,000 --> 00:14:57,000
+como para decir que realmente esta comparación vale, ¿sabes?
+
+225
+00:14:57,000 --> 00:15:04,000
+Sí, sí, es un renuncio, claramente, es un renuncio del libro.
+
+226
+00:15:04,000 --> 00:15:06,000
+Nada, nos podemos ajorn...
+
+227
+00:15:06,000 --> 00:15:08,000
+¿Qué versión de la leyenda?
+
+228
+00:15:08,000 --> 00:15:13,000
+Pues la última porque la 269B, ¿no?
+
+229
+00:15:13,000 --> 00:15:17,000
+Sí, porque ahora tiene una cosa que me gusta mucho, muy interesante,
+
+230
+00:15:17,000 --> 00:15:23,000
+y es que puede registrar Calvax Functions, de tal forma que cuando te impactas contra algo,
+
+231
+00:15:23,000 --> 00:15:26,000
+no tienes que tener el detector en los dos sitios, sino que por ejemplo,
+
+232
+00:15:26,000 --> 00:15:31,000
+es la bala que detecta, que ha impactado con algo, y es la que le informa al otro que le has hecho polvo.
+
+233
+00:15:31,000 --> 00:15:32,000
+¿Sabes?
+
+234
+00:15:32,000 --> 00:15:36,000
+Entonces creo que es muy interesante y facilita muchísimo el código.
+
+235
+00:15:36,000 --> 00:15:40,000
+Yo hago mucho código de buena voluntad, de estos juegos los voy a llamar de buena voluntad,
+
+236
+00:15:40,000 --> 00:15:43,000
+y es como alguien venga a fastidiarte haciendo trampas, te fastida siempre,
+
+237
+00:15:43,000 --> 00:15:48,000
+porque todos lo has basado en que no te lo van a hacer, ¿sabes?
+
+238
+00:15:48,000 --> 00:15:51,000
+¿Alguien? ¿Alguien? ¿Alguna más?
+
+239
+00:15:51,000 --> 00:15:53,000
+¿Pasamos a jugar un poco?
+
+240
+00:15:53,000 --> 00:15:54,000
+Venga.
+
+241
+00:15:54,000 --> 00:15:57,000
+Bueno, yo he preparado esa boya, ¿vale?
+
+242
+00:15:57,000 --> 00:15:59,000
+Es una boya muy bonita.
+
+243
+00:15:59,000 --> 00:16:03,000
+Entonces mi idea es, vamos a ver si consigamos implementar esa boya,
+
+244
+00:16:03,000 --> 00:16:08,000
+y entonces para yo tengo básicamente pues un modelito, ¿no?
+
+245
+00:16:08,000 --> 00:16:10,000
+Qué viejos soy.
+
+246
+00:16:10,000 --> 00:16:12,000
+A ver, vamos a quitar esto.
+
+247
+00:16:12,000 --> 00:16:16,000
+Y entonces vamos a trabajar aquí en paralelo.
+
+248
+00:16:16,000 --> 00:16:17,000
+Son silencio.
+
+249
+00:16:17,000 --> 00:16:19,000
+Revisarse.
+
+250
+00:16:19,000 --> 00:16:22,000
+Bueno, veis que tengo el terminado, ¿no?
+
+251
+00:16:22,000 --> 00:16:24,000
+El muy punto blend y tengo el que...
+
+252
+00:16:24,000 --> 00:16:25,000
+No, el que hay que...
+
+253
+00:16:25,000 --> 00:16:26,000
+¿vale?
+
+254
+00:16:26,000 --> 00:16:29,000
+Entonces vamos a trabajar sobre este, y así como tengo la chuleta del otro,
+
+255
+00:16:29,000 --> 00:16:31,000
+pues si hago mal rápidamente.
+
+256
+00:16:31,000 --> 00:16:32,000
+¿vale?
+
+257
+00:16:32,000 --> 00:16:34,000
+Entonces voy a abrir un blender ahí.
+
+258
+00:16:34,000 --> 00:16:37,000
+Blender.
+
+259
+00:16:37,000 --> 00:16:39,000
+¿Qué pasa?
+
+260
+00:16:39,000 --> 00:16:41,000
+Que estoy escribiendo mal.
+
+261
+00:16:41,000 --> 00:16:44,000
+¿vale?
+
+262
+00:16:50,000 --> 00:16:53,000
+Tú no más se me está dando que no cabe eso.
+
+263
+00:16:55,000 --> 00:16:57,000
+¿Lo veis bien?
+
+264
+00:16:57,000 --> 00:17:01,000
+Soy yo o no me había dado tal vez lo que le pedí.
+
+265
+00:17:01,000 --> 00:17:06,000
+Bueno, a ver, ¿qué tengo en este archivo?
+
+266
+00:17:06,000 --> 00:17:08,000
+No, he abierto el terminado.
+
+267
+00:17:08,000 --> 00:17:09,000
+Aquí.
+
+268
+00:17:09,000 --> 00:17:11,000
+Qué tengo en este archivo?
+
+269
+00:17:11,000 --> 00:17:13,000
+Bueno, pues en este archivo tengo tres capas.
+
+270
+00:17:13,000 --> 00:17:15,000
+Bueno, esto es blender para que no conganca.
+
+271
+00:17:15,000 --> 00:17:17,000
+Blender, audiencia, audiencia, blender.
+
+272
+00:17:17,000 --> 00:17:19,000
+Para que os digáis una idea tenéis una vista 3D,
+
+273
+00:17:19,000 --> 00:17:20,000
+como todos estos programas,
+
+274
+00:17:20,000 --> 00:17:22,000
+sin vista 3D esto no es bonito, no funciona.
+
+275
+00:17:22,000 --> 00:17:25,000
+Y entonces básicamente para aquí tienes como operadores sobre tus objetos,
+
+276
+00:17:25,000 --> 00:17:26,000
+y entonces,
+
+277
+00:17:26,000 --> 00:17:31,000
+aquí básicamente tienes dimensiones, visualización.
+
+278
+00:17:31,000 --> 00:17:34,000
+Aquí abajo yo tengo puesto el operador lógico, ¿vale?
+
+279
+00:17:34,000 --> 00:17:36,000
+Y aquí a la derecha tengo puesto propiedades.
+
+280
+00:17:36,000 --> 00:17:39,000
+Ahora veréis que cada uno de ellos los puede ir cambiando,
+
+281
+00:17:39,000 --> 00:17:41,000
+según te congan conmiendo.
+
+282
+00:17:41,000 --> 00:17:44,000
+Entonces, respecto a los objetos que hay dentro,
+
+283
+00:17:44,000 --> 00:17:46,000
+pues tenemos una boya, hecha polvo ella, ¿no?
+
+284
+00:17:46,000 --> 00:17:48,000
+Mirad, está bien oscidad donde se tiene que oscilar,
+
+285
+00:17:48,000 --> 00:17:49,000
+y tal.
+
+286
+00:17:49,000 --> 00:17:51,000
+Y aquí abajo tengo el operador lógico, ¿vale?
+
+287
+00:17:51,000 --> 00:17:53,000
+Y aquí a la derecha tengo puesto propiedades.
+
+288
+00:17:53,000 --> 00:17:56,000
+Mirad, está bien oscidad donde se tiene que oscilar, y tal.
+
+289
+00:17:56,000 --> 00:17:59,000
+Y entonces básicamente lo que tengo son tres capas.
+
+290
+00:17:59,000 --> 00:18:01,000
+Una primera capa en la que están los objetos 3D,
+
+291
+00:18:01,000 --> 00:18:03,000
+los que se deberían ver, ¿vale?
+
+292
+00:18:03,000 --> 00:18:07,000
+Una segunda capa, voy a tener esta activada porque se ve bien,
+
+293
+00:18:07,000 --> 00:18:11,000
+una segunda capa en la que tengo ese objeto,
+
+294
+00:18:11,000 --> 00:18:13,000
+que es la boya, pero muy simplificada.
+
+295
+00:18:13,000 --> 00:18:17,000
+Entonces nuestro objetivo es que la física la maneje este,
+
+296
+00:18:17,000 --> 00:18:20,000
+pero lo que se vea sea lo otro, ¿vale?
+
+297
+00:18:20,000 --> 00:18:23,000
+Esto es sencillísimo.
+
+298
+00:18:23,000 --> 00:18:26,000
+Cogemos nuestra boya final, nos vamos a física,
+
+299
+00:18:26,000 --> 00:18:29,000
+y en vez de estático le damos un dynamic.
+
+300
+00:18:29,000 --> 00:18:30,000
+¡Op!
+
+301
+00:18:30,000 --> 00:18:31,000
+¿Vale?
+
+302
+00:18:31,000 --> 00:18:34,000
+En la presentación tengo por ahí escrito los datos que hay que ponerle.
+
+303
+00:18:34,000 --> 00:18:36,000
+Masa 4,6 toneladas.
+
+304
+00:18:36,000 --> 00:18:40,000
+Esto es una limitación de blender, a mí me parece dramática.
+
+305
+00:18:40,000 --> 00:18:44,000
+Y es que cuando llegas a la masa,
+
+306
+00:18:44,000 --> 00:18:47,000
+pues resulta que ellos no te dejan poner el valor que tú quieras.
+
+307
+00:18:47,000 --> 00:18:50,000
+Yo he puesto 4,6, pero esos son kilos.
+
+308
+00:18:50,000 --> 00:18:53,000
+Si intentaba poner 4,600, ¿cuánto peso un barco?
+
+309
+00:18:53,000 --> 00:18:56,000
+¿Hay alguien que tiene más o menos una idea de cuánto peso un barco?
+
+310
+00:18:56,000 --> 00:18:58,000
+Muchísimo, muchísimo.
+
+311
+00:18:58,000 --> 00:19:02,000
+Y ahí creo que el límite son 70.000 kilos.
+
+312
+00:19:02,000 --> 00:19:05,000
+¿Pero cómo voy a hacer yo un barco con 70.000 kilos?
+
+313
+00:19:05,000 --> 00:19:07,000
+Entonces, mi solución ha sido dividido todo por mil,
+
+314
+00:19:07,000 --> 00:19:10,000
+y entonces, claro, la física ya está toda mal.
+
+315
+00:19:10,000 --> 00:19:12,000
+Pero como está toda igual de mal,
+
+316
+00:19:12,000 --> 00:19:15,000
+pues es visualmente afectable.
+
+317
+00:19:15,000 --> 00:19:17,000
+¿Sabes?
+
+318
+00:19:17,000 --> 00:19:19,000
+Bueno, este es el radio de inercia, ¿vale?
+
+319
+00:19:19,000 --> 00:19:21,000
+Y ese es el factor de forma que yo no sé esférico,
+
+320
+00:19:21,000 --> 00:19:25,000
+pues básicamente que me pones una lixe.
+
+321
+00:19:25,000 --> 00:19:27,000
+Con eso damos las propiedades físicas.
+
+322
+00:19:27,000 --> 00:19:31,000
+Y entonces, este va a ser nuestro cuerpo el que va a manejar la física.
+
+323
+00:19:31,000 --> 00:19:33,000
+Respecto al otro, a nuestros visuales,
+
+324
+00:19:33,000 --> 00:19:35,000
+esto siempre se va a olvidar a todo el mundo,
+
+325
+00:19:35,000 --> 00:19:37,000
+y claro, cuando empiezan a arrancar la simulación resulta que tu boya
+
+326
+00:19:37,000 --> 00:19:39,000
+empieza a mover ser rara.
+
+327
+00:19:39,000 --> 00:19:41,000
+Y es porque está reaccionando con consigo misma.
+
+328
+00:19:41,000 --> 00:19:44,000
+Hay que tener cuidado, lo seleccionas, y nada.
+
+329
+00:19:44,000 --> 00:19:46,000
+Mi caso.
+
+330
+00:19:46,000 --> 00:19:48,000
+Y nada, mi caso.
+
+331
+00:19:48,000 --> 00:19:50,000
+Entonces, muevo ambos dos,
+
+332
+00:19:50,000 --> 00:19:52,000
+me los llevo a la segunda capa,
+
+333
+00:19:52,000 --> 00:19:54,000
+a donde estaba mi objeto, ¿vale?
+
+334
+00:19:54,000 --> 00:19:56,000
+Entonces, ahora vamos a abrir estos dos, ¿sí?
+
+335
+00:19:56,000 --> 00:19:58,000
+Y entonces, llevo a coger estos dos,
+
+336
+00:19:58,000 --> 00:20:00,000
+y los voy a coger.
+
+337
+00:20:00,000 --> 00:20:02,000
+Bueno, voy a decir uno mejor.
+
+338
+00:20:02,000 --> 00:20:04,000
+Es un poco tonto, pero bueno.
+
+339
+00:20:04,000 --> 00:20:06,000
+Vale, y entonces, le voy a...
+
+340
+00:20:06,000 --> 00:20:08,000
+creo que va con un trope.
+
+341
+00:20:08,000 --> 00:20:10,000
+Oye,
+
+342
+00:20:10,000 --> 00:20:14,000
+paren, paren, paren, paren, paren, constrain.
+
+343
+00:20:14,000 --> 00:20:16,000
+No.
+
+344
+00:20:16,000 --> 00:20:18,000
+Oye, paren, paren, paren, paren, paren, paren, paren.
+
+345
+00:20:18,000 --> 00:20:20,000
+Vale, de tal forma que ahora
+
+346
+00:20:20,000 --> 00:20:22,000
+el objeto que tenías seleccionado
+
+347
+00:20:22,000 --> 00:20:24,000
+se mueve exactamente igual que mi objeto simplificado.
+
+348
+00:20:24,000 --> 00:20:26,000
+De tal forma que si yo muevo un objeto simplificado,
+
+349
+00:20:26,000 --> 00:20:28,000
+pues ahí se va detrás, ¿vale?
+
+350
+00:20:28,000 --> 00:20:30,000
+Lo mismo puedo hacer con mi otro objeto.
+
+351
+00:20:30,000 --> 00:20:32,000
+Y, yep, para objeto.
+
+352
+00:20:32,000 --> 00:20:34,000
+Y, ¿sí?
+
+353
+00:20:34,000 --> 00:20:36,000
+Y, ¿sí?
+
+354
+00:20:36,000 --> 00:20:40,000
+Un otro objeto.
+
+355
+00:20:40,000 --> 00:20:42,000
+Y, yep, para objeto.
+
+356
+00:20:42,000 --> 00:20:44,000
+Paren, paren, paren, paren.
+
+357
+00:20:44,000 --> 00:20:46,000
+Vale, y ya los dos
+
+358
+00:20:46,000 --> 00:20:48,000
+responden solo
+
+359
+00:20:48,000 --> 00:20:50,000
+al movimiento de mi objeto simplificado.
+
+360
+00:20:50,000 --> 00:20:52,000
+Y, entiendo, a mi objeto simplificado
+
+361
+00:20:52,000 --> 00:20:54,000
+lo único que tengo que decir es que es invisible.
+
+362
+00:20:54,000 --> 00:20:56,000
+Y se acabo.
+
+363
+00:20:56,000 --> 00:20:58,000
+Entonces, si ahora yo cojo mi viseo 3D,
+
+364
+00:20:58,000 --> 00:21:00,000
+os lo amplío, quito
+
+365
+00:21:00,000 --> 00:21:02,000
+todas las cosas que no aquí van a...
+
+366
+00:21:02,000 --> 00:21:04,000
+¡Y animamos!
+
+367
+00:21:04,000 --> 00:21:06,000
+Pues lo que vamos a ver, básicamente.
+
+368
+00:21:06,000 --> 00:21:08,000
+Quítan, suelta.
+
+369
+00:21:08,000 --> 00:21:10,000
+Es la boya que se cae.
+
+370
+00:21:10,000 --> 00:21:12,000
+Vale.
+
+371
+00:21:12,000 --> 00:21:14,000
+Podemos, si queréis, le podemos poner un plano
+
+372
+00:21:14,000 --> 00:21:16,000
+para que, por lo menos, se caiga hasta el infinito.
+
+373
+00:21:16,000 --> 00:21:18,000
+¡Me ha!
+
+374
+00:21:18,000 --> 00:21:20,000
+¡Tchut, tchut, tchut, tchut, tchut, tchum!
+
+375
+00:21:20,000 --> 00:21:22,000
+Vamos a bajar, vamos a darle aje...
+
+376
+00:21:22,000 --> 00:21:24,000
+Y la bajamos un poco, lo hacemos grande...
+
+377
+00:21:24,000 --> 00:21:26,000
+y le damos a pie.
+
+378
+00:21:26,000 --> 00:21:28,000
+Ponco.
+
+379
+00:21:28,000 --> 00:21:30,000
+Vale.
+
+380
+00:21:30,000 --> 00:21:32,000
+Ehh...
+
+381
+00:21:32,000 --> 00:21:34,000
+No importa mucho que ahora mismo la física no sea buena,
+
+382
+00:21:34,000 --> 00:21:36,000
+porque nosotros vamos a implementar ahora todo una física detrás.
+
+383
+00:21:36,000 --> 00:21:38,000
+Vale.
+
+384
+00:21:38,000 --> 00:21:40,000
+Realmente, una de las cosas por acá la física no es buena,
+
+385
+00:21:40,000 --> 00:21:42,000
+que no he dicho,
+
+386
+00:21:42,000 --> 00:21:44,000
+es que...
+
+387
+00:21:44,000 --> 00:21:46,000
+entre otras cosas no las puesta un colisión, vamos.
+
+388
+00:21:46,000 --> 00:21:48,000
+¡Yup!
+
+389
+00:21:48,000 --> 00:21:50,000
+Que debería ser el propio objeto.
+
+390
+00:21:50,000 --> 00:21:52,000
+Revénmoles.
+
+391
+00:21:52,000 --> 00:21:54,000
+Vale. Entonces, ya se convierte en un objeto complicado
+
+392
+00:21:54,000 --> 00:21:56,000
+que te esperarías. Pero da igual.
+
+393
+00:21:56,000 --> 00:21:58,000
+Vale. Entonces, ahora ya, básicamente,
+
+394
+00:21:58,000 --> 00:22:00,000
+lo que tocaría sería crear una lógica
+
+395
+00:22:00,000 --> 00:22:02,000
+para que ese objeto responda a lo que nosotros le pidamos.
+
+396
+00:22:02,000 --> 00:22:04,000
+Entonces...
+
+397
+00:22:04,000 --> 00:22:06,000
+Para ello, lo primero que vamos a hacer es crear un script.
+
+398
+00:22:06,000 --> 00:22:08,000
+Vale.
+
+399
+00:22:08,000 --> 00:22:10,000
+Entonces, voy a cambiar mis propiedades, me voy a quitar de medio
+
+400
+00:22:10,000 --> 00:22:12,000
+y voy a crear un campo de texto.
+
+401
+00:22:12,000 --> 00:22:14,000
+Puh!
+
+402
+00:22:14,000 --> 00:22:16,000
+Ahí estamos con nuestro texto.
+
+403
+00:22:16,000 --> 00:22:18,000
+Vamos a empezar a crear cosas.
+
+404
+00:22:18,000 --> 00:22:20,000
+Lo podemos llamar como queréis.
+
+405
+00:22:20,000 --> 00:22:22,000
+Por ejemplo, obvio emulsión.
+
+406
+00:22:22,000 --> 00:22:24,000
+¿No?
+
+407
+00:22:24,000 --> 00:22:26,000
+¡Pum!
+
+408
+00:22:26,000 --> 00:22:28,000
+Vale.
+
+409
+00:22:28,000 --> 00:22:30,000
+Si queréis, vamos a aumentar un poco la fuente.
+
+410
+00:22:30,000 --> 00:22:32,000
+¿Qué das hoy?
+
+411
+00:22:32,000 --> 00:22:34,000
+Venga.
+
+412
+00:22:34,000 --> 00:22:36,000
+Entonces...
+
+413
+00:22:36,000 --> 00:22:38,000
+¿Cómo funciona esto de hacer
+
+414
+00:22:38,000 --> 00:22:40,000
+un objeto aquí empezamos con la parte avanzada?
+
+415
+00:22:40,000 --> 00:22:42,000
+Es hidroinámica.
+
+416
+00:22:42,000 --> 00:22:44,000
+¿Cómo funciona hacer esto?
+
+417
+00:22:44,000 --> 00:22:46,000
+Bueno, básicamente tienes una lídra obstáctica.
+
+418
+00:22:46,000 --> 00:22:48,000
+Lo primero que intentas es que tu bollo no se caiga.
+
+419
+00:22:48,000 --> 00:22:50,000
+Entonces, la lídra está llegada, lo que te marca es...
+
+420
+00:22:50,000 --> 00:22:52,000
+principio alquímedes, el desplazamiento tiene que ser
+
+421
+00:22:52,000 --> 00:22:54,000
+la densidad por el volumen desplazado.
+
+422
+00:22:54,000 --> 00:22:56,000
+Vale.
+
+423
+00:22:56,000 --> 00:22:58,000
+Cuando consigas eso, tu objeto estará en equilibrio.
+
+424
+00:22:58,000 --> 00:23:00,000
+Eso se consigue de una forma tan tonta
+
+425
+00:23:00,000 --> 00:23:02,000
+como voy a hacer los trampas
+
+426
+00:23:02,000 --> 00:23:04,000
+y voy a copiar la chuleta.
+
+427
+00:23:04,000 --> 00:23:06,000
+Lo primero de todo, le pasamos
+
+428
+00:23:06,000 --> 00:23:08,000
+la gravedad
+
+429
+00:23:08,000 --> 00:23:10,000
+a nuestro objeto.
+
+430
+00:23:10,000 --> 00:23:12,000
+¡Pum!
+
+431
+00:23:12,000 --> 00:23:14,000
+¡Ay, qué feo que da esto!
+
+432
+00:23:14,000 --> 00:23:16,000
+Venga.
+
+433
+00:23:16,000 --> 00:23:18,000
+Más bonito.
+
+434
+00:23:18,000 --> 00:23:20,000
+Le pasamos la gravedad, le pasamos la gravedad,
+
+435
+00:23:20,000 --> 00:23:22,000
+y le pasamos la gravedad,
+
+436
+00:23:22,000 --> 00:23:24,000
+y le pasamos la gravedad,
+
+437
+00:23:24,000 --> 00:23:26,000
+le pasamos la gravedad,
+
+438
+00:23:26,000 --> 00:23:28,000
+le pasamos un operador de volumen.
+
+439
+00:23:28,000 --> 00:23:30,000
+Vale.
+
+440
+00:23:32,000 --> 00:23:34,000
+Eso es lo que hace es darte el volumen
+
+441
+00:23:34,000 --> 00:23:36,000
+que tienes sumergido.
+
+442
+00:23:36,000 --> 00:23:38,000
+No es tampoco...
+
+443
+00:23:38,000 --> 00:23:40,000
+Y...
+
+444
+00:23:40,000 --> 00:23:42,000
+Por último, le pasamos algunos datos
+
+445
+00:23:42,000 --> 00:23:44,000
+de lo que es nuestra bolla.
+
+446
+00:23:44,000 --> 00:23:46,000
+Vale.
+
+447
+00:23:46,000 --> 00:23:48,000
+Tú, ¿qué pasa?
+
+448
+00:23:48,000 --> 00:23:50,000
+¡Pum!
+
+449
+00:23:50,000 --> 00:23:52,000
+Vale.
+
+450
+00:23:52,000 --> 00:23:54,000
+Y si es el desplazamiento, serían ser torneradas,
+
+451
+00:23:54,000 --> 00:23:56,000
+el roo es la densidad del agua del mar,
+
+452
+00:23:56,000 --> 00:23:58,000
+y el fribol básicamente es como...
+
+453
+00:23:58,000 --> 00:24:00,000
+¿A cuánta distancia quieres que se quede
+
+454
+00:24:00,000 --> 00:24:02,000
+de la superficie final de tu bolla?
+
+455
+00:24:02,000 --> 00:24:04,000
+Vale.
+
+456
+00:24:04,000 --> 00:24:06,000
+Lo que llamamos es Franco Bordo,
+
+457
+00:24:06,000 --> 00:24:08,000
+nosotros nos vamos a ver, es que ya sabéis que nos gusta
+
+458
+00:24:08,000 --> 00:24:10,000
+cambiarle el nombre a todo.
+
+459
+00:24:10,000 --> 00:24:12,000
+¿Cómo se maneja un objeto en...
+
+460
+00:24:12,000 --> 00:24:14,000
+Bueno, ya siempre hago esto,
+
+461
+00:24:14,000 --> 00:24:16,000
+ahora explico por qué, pero...
+
+462
+00:24:16,000 --> 00:24:18,000
+simplemente hacerme caso.
+
+463
+00:24:18,000 --> 00:24:20,000
+Acto de fe.
+
+464
+00:24:20,000 --> 00:24:22,000
+¿Cómo se maneja un objeto en Python?
+
+465
+00:24:22,000 --> 00:24:24,000
+Con...
+
+466
+00:24:24,000 --> 00:24:26,000
+Pues básicamente, yo lo que hago nuevamente
+
+467
+00:24:26,000 --> 00:24:28,000
+es llamar a dos métodos.
+
+468
+00:24:28,000 --> 00:24:30,000
+Uno primero que se llama load...
+
+469
+00:24:30,000 --> 00:24:32,000
+Ya lo he liado.
+
+470
+00:24:32,000 --> 00:24:34,000
+Uno primero que se llama load...
+
+471
+00:24:34,000 --> 00:24:36,000
+Que eso básicamente se va a encargar
+
+472
+00:24:36,000 --> 00:24:38,000
+de que si yo por algún error no he metido
+
+473
+00:24:38,000 --> 00:24:40,000
+las propiedades que debía en mi objeto,
+
+474
+00:24:40,000 --> 00:24:42,000
+todo el objeto en la lógica le puedes poner
+
+475
+00:24:42,000 --> 00:24:44,000
+propiedades así un poco las que te te da la gana.
+
+476
+00:24:44,000 --> 00:24:46,000
+Si no lo he hecho, pues llámela a crear.
+
+477
+00:24:46,000 --> 00:24:48,000
+Vale.
+
+478
+00:24:48,000 --> 00:24:50,000
+Y ahora lo que vamos a hacer es quitarle todo.
+
+479
+00:24:50,000 --> 00:24:52,000
+Y ya veremos después cómo trabajamos con ello.
+
+480
+00:24:52,000 --> 00:24:54,000
+¿Vale?
+
+481
+00:24:54,000 --> 00:24:56,000
+Entonces, ¿cómo funciona esto?
+
+482
+00:24:56,000 --> 00:24:58,000
+Pues básicamente es tan tonto como que le dices
+
+483
+00:24:58,000 --> 00:25:00,000
+mi controlador
+
+484
+00:25:00,000 --> 00:25:02,000
+es
+
+485
+00:25:02,000 --> 00:25:04,000
+mi módulo de blender,
+
+486
+00:25:04,000 --> 00:25:06,000
+que lo hace importar arriba.
+
+487
+00:25:06,000 --> 00:25:08,000
+¿Vale?
+
+488
+00:25:08,000 --> 00:25:10,000
+Y mi objeto es el que lo hace
+
+489
+00:25:10,000 --> 00:25:12,000
+y lo hace el que lo hace el que lo hace
+
+490
+00:25:12,000 --> 00:25:14,000
+y lo hace el que lo hace el que lo hace
+
+491
+00:25:14,000 --> 00:25:16,000
+y lo hace el que lo hace
+
+492
+00:25:16,000 --> 00:25:18,000
+y mi objeto es el que lo tiene.
+
+493
+00:25:18,000 --> 00:25:20,000
+Y así ya tienes el objeto.
+
+494
+00:25:20,000 --> 00:25:22,000
+La API es sencillísima.
+
+495
+00:25:22,000 --> 00:25:24,000
+Entonces aquí básicamente haces lo mismo
+
+496
+00:25:24,000 --> 00:25:26,000
+y ahora le vamos a pedir que calcula unas fuerzas.
+
+497
+00:25:26,000 --> 00:25:28,000
+Vamos a pedir de fuerzas
+
+498
+00:25:28,000 --> 00:25:30,000
+y vamos a pedirles que las aplique.
+
+499
+00:25:30,000 --> 00:25:32,000
+Entonces, el foro es para que lo haga
+
+500
+00:25:32,000 --> 00:25:34,000
+en modo global.
+
+501
+00:25:34,000 --> 00:25:36,000
+A mí esto siempre me duele explicarlo.
+
+502
+00:25:36,000 --> 00:25:38,000
+En los juegos se suele trabajar todo el tiempo
+
+503
+00:25:38,000 --> 00:25:40,000
+que cambias de modelo local
+
+504
+00:25:40,000 --> 00:25:42,000
+al modelo global.
+
+505
+00:25:42,000 --> 00:25:44,000
+El modelo global no es más que tus coordenadas
+
+506
+00:25:44,000 --> 00:25:46,000
+que ahora siempre son z hacia arriba
+
+507
+00:25:46,000 --> 00:25:48,000
+x hacia la derecha y para adelante.
+
+508
+00:25:48,000 --> 00:25:50,000
+Mientras que tu modelo local
+
+509
+00:25:50,000 --> 00:25:52,000
+es dependiendo si has rotado tu objeto
+
+510
+00:25:52,000 --> 00:25:54,000
+tus coordenadas van siguiendolo.
+
+511
+00:25:54,000 --> 00:25:56,000
+Entonces,
+
+512
+00:25:56,000 --> 00:25:58,000
+hay mucha gente que te dice que no hay que trabajar
+
+513
+00:25:58,000 --> 00:26:00,000
+siempre en local.
+
+514
+00:26:00,000 --> 00:26:02,000
+A mí me gusta trabajar en global.
+
+515
+00:26:02,000 --> 00:26:04,000
+¿Cómo se calcula la fuerza?
+
+516
+00:26:04,000 --> 00:26:06,000
+La fuerza...
+
+517
+00:26:06,000 --> 00:26:08,000
+A ver, aquí no os voy a copiar.
+
+518
+00:26:08,000 --> 00:26:10,000
+Lo compito y lo borro.
+
+519
+00:26:10,000 --> 00:26:12,000
+¡Opa!
+
+520
+00:26:12,000 --> 00:26:14,000
+Bueno, ya veis que el país que yo uso es...
+
+521
+00:26:14,000 --> 00:26:16,000
+No puede ser más tonto.
+
+522
+00:26:16,000 --> 00:26:18,000
+Bueno,
+
+523
+00:26:18,000 --> 00:26:20,000
+este método que yo implemento,
+
+524
+00:26:20,000 --> 00:26:22,000
+lo que hace es que recibe un objeto,
+
+525
+00:26:22,000 --> 00:26:24,000
+saca de la velocidad
+
+526
+00:26:24,000 --> 00:26:26,000
+que me lo da blender,
+
+527
+00:26:26,000 --> 00:26:28,000
+saco su posición
+
+528
+00:26:28,000 --> 00:26:30,000
+que también me lo da blender
+
+529
+00:26:30,000 --> 00:26:32,000
+y con eso calculo
+
+530
+00:26:32,000 --> 00:26:34,000
+la fuerza de lift.
+
+531
+00:26:34,000 --> 00:26:36,000
+Como he borrado fx, fx y z,
+
+532
+00:26:36,000 --> 00:26:38,000
+voy a poner aquí fx,
+
+533
+00:26:38,000 --> 00:26:40,000
+igual 0.0
+
+534
+00:26:40,000 --> 00:26:42,000
+fx
+
+535
+00:26:42,000 --> 00:26:44,000
+igual 0.0
+
+536
+00:26:44,000 --> 00:26:46,000
+fx
+
+537
+00:26:46,000 --> 00:26:48,000
+igual 0.0
+
+538
+00:26:48,000 --> 00:26:50,000
+¿Vale?
+
+539
+00:26:50,000 --> 00:26:52,000
+¿Y entonces, cómo le digo a mi objeto que use
+
+540
+00:26:52,000 --> 00:26:54,000
+mi nuevo SuperPython
+
+541
+00:26:54,000 --> 00:26:56,000
+complicadísimo?
+
+542
+00:26:56,000 --> 00:26:58,000
+Pues básicamente
+
+543
+00:26:58,000 --> 00:27:00,000
+vamos a hablar del operador lógico.
+
+544
+00:27:00,000 --> 00:27:02,000
+Os lo hago un poco más grande, ¿no?
+
+545
+00:27:02,000 --> 00:27:04,000
+Se añade un sensor.
+
+546
+00:27:04,000 --> 00:27:06,000
+¿Cuál es el de siempre?
+
+547
+00:27:06,000 --> 00:27:08,000
+Siempre hace esto.
+
+548
+00:27:08,000 --> 00:27:10,000
+Si tú llamas al operador siempre,
+
+549
+00:27:10,000 --> 00:27:12,000
+así tal cual, sólo va a llamar una vez
+
+550
+00:27:12,000 --> 00:27:14,000
+al principio de la simulación.
+
+551
+00:27:14,000 --> 00:27:16,000
+Eso no os interesa para llamar a load.
+
+552
+00:27:16,000 --> 00:27:18,000
+Y luego tan simple como añadir un control de Python.
+
+553
+00:27:18,000 --> 00:27:20,000
+Donde ponemos que es un módulo.
+
+554
+00:27:20,000 --> 00:27:22,000
+¿Cómo lo hemos llamado? ¿Sacuertos?
+
+555
+00:27:24,000 --> 00:27:26,000
+Por ahí lo teníamos.
+
+556
+00:27:26,000 --> 00:27:28,000
+A ver, pregunto tú.
+
+557
+00:27:28,000 --> 00:27:30,000
+Suelta.
+
+558
+00:27:30,000 --> 00:27:32,000
+Ah, ah, ah, ah.
+
+559
+00:27:32,000 --> 00:27:34,000
+Así, ¿no?
+
+560
+00:27:34,000 --> 00:27:36,000
+Puesto mal, además, voy a...
+
+561
+00:27:46,000 --> 00:27:48,000
+Punto load.
+
+562
+00:27:48,000 --> 00:27:50,000
+Yo creo que no voy a poner más paréntesis.
+
+563
+00:27:50,000 --> 00:27:52,000
+¿Vale? Y luego simplemente lo unimos.
+
+564
+00:27:54,000 --> 00:27:56,000
+Eso voy a llamar a load ya.
+
+565
+00:27:56,000 --> 00:27:58,000
+Y luego si queremos otro
+
+566
+00:27:58,000 --> 00:28:00,000
+que llame a cada frame
+
+567
+00:28:00,000 --> 00:28:04,000
+lo único que hay que apretar es este botón.
+
+568
+00:28:04,000 --> 00:28:06,000
+Este botón básicamente lo que hace
+
+569
+00:28:06,000 --> 00:28:08,000
+es que invierte la secuencia.
+
+570
+00:28:08,000 --> 00:28:10,000
+O sea, si antes era false,
+
+571
+00:28:10,000 --> 00:28:12,000
+se lo cambió dentro. Es como un note.
+
+572
+00:28:12,000 --> 00:28:14,000
+¿Sabes?
+
+573
+00:28:14,000 --> 00:28:16,000
+Y entonces lo unimos y básicamente
+
+574
+00:28:16,000 --> 00:28:18,000
+pues ahora es subdat.
+
+575
+00:28:18,000 --> 00:28:20,000
+¡Yup!
+
+576
+00:28:20,000 --> 00:28:22,000
+A ver, cuando va a fallar, por supuesto.
+
+577
+00:28:22,000 --> 00:28:24,000
+Eso no cabe en la menor duda.
+
+578
+00:28:26,000 --> 00:28:28,000
+Porque si me deja bien, pues eso no mola.
+
+579
+00:28:28,000 --> 00:28:30,000
+Y entonces lo arrancamos de aquí.
+
+580
+00:28:30,000 --> 00:28:32,000
+Vamos a acercarnos.
+
+581
+00:28:34,000 --> 00:28:36,000
+¿Ves? Ah, ahí estamos fallando.
+
+582
+00:28:36,000 --> 00:28:38,000
+¿De qué te quejas, majo?
+
+583
+00:28:38,000 --> 00:28:40,000
+Que fz... vale, vale, vale.
+
+584
+00:28:42,000 --> 00:28:44,000
+Pero vosotros no se los has espertados en país,
+
+585
+00:28:44,000 --> 00:28:46,000
+no me hiciste nada.
+
+586
+00:28:46,000 --> 00:28:48,000
+¿Cómo voy a sumar a fz nada si fz todavía no existía?
+
+587
+00:28:52,000 --> 00:28:54,000
+Yo sé de los que opina...
+
+588
+00:28:54,000 --> 00:28:56,000
+O sea, yo programo mucho.
+
+589
+00:28:56,000 --> 00:28:58,000
+Y sé de los que opina que programar así bien
+
+590
+00:28:58,000 --> 00:29:00,000
+no es hacer los sin errores.
+
+591
+00:29:00,000 --> 00:29:02,000
+O sea, los suyo es programar,
+
+592
+00:29:02,000 --> 00:29:04,000
+meter cientos de errores y luego irlos correciendo.
+
+593
+00:29:08,000 --> 00:29:10,000
+Cualquiera que lo haga mejor que yo es bienvenido.
+
+594
+00:29:10,000 --> 00:29:12,000
+Ya ahí la tenemos, ¿no?
+
+595
+00:29:12,000 --> 00:29:14,000
+¡Eh! Lo hemos conseguido.
+
+596
+00:29:14,000 --> 00:29:16,000
+¿Vale?
+
+597
+00:29:16,000 --> 00:29:18,000
+Esto que hemos conseguido con cuatro líneas de código
+
+598
+00:29:18,000 --> 00:29:20,000
+más montadas,
+
+599
+00:29:20,000 --> 00:29:22,000
+básicamente es un...
+
+600
+00:29:22,000 --> 00:29:24,000
+es un...
+
+601
+00:29:24,000 --> 00:29:26,000
+malo.
+
+602
+00:29:26,000 --> 00:29:28,000
+Es un operador almónico.
+
+603
+00:29:28,000 --> 00:29:30,000
+¿Vale?
+
+604
+00:29:30,000 --> 00:29:32,000
+Eso que hemos montado,
+
+605
+00:29:32,000 --> 00:29:34,000
+va a ser antes como un muelle.
+
+606
+00:29:34,000 --> 00:29:36,000
+Entonces, claro, está muy bien lo que hemos hecho,
+
+607
+00:29:36,000 --> 00:29:38,000
+pero a que yo no va a parar,
+
+608
+00:29:38,000 --> 00:29:40,000
+nunca jamás.
+
+609
+00:29:40,000 --> 00:29:42,000
+Entonces, lo que vamos a añadir
+
+610
+00:29:42,000 --> 00:29:44,000
+es un término...
+
+611
+00:29:44,000 --> 00:29:46,000
+difusivo.
+
+612
+00:29:46,000 --> 00:29:48,000
+¿Alicia, de dónde se terminó?
+
+613
+00:29:48,000 --> 00:29:50,000
+Eso se llama la forma de la mirada.
+
+614
+00:29:50,000 --> 00:29:52,000
+¿Vale? Yo no uso los términos que tiene...
+
+615
+00:29:52,000 --> 00:29:54,000
+o sea,
+
+616
+00:29:54,000 --> 00:29:56,000
+Blender trae de por sí unos términos
+
+617
+00:29:56,000 --> 00:29:58,000
+que te permiten ir disipando, energía.
+
+618
+00:29:58,000 --> 00:30:00,000
+Pero esos términos son lineales, con mucho cuadráticos.
+
+619
+00:30:00,000 --> 00:30:02,000
+Y en ingeniería naval,
+
+620
+00:30:02,000 --> 00:30:04,000
+o cuando uno maneja el agua, se empieza a encontrar
+
+621
+00:30:04,000 --> 00:30:06,000
+exponentes narrados como esos, ¿no?
+
+622
+00:30:06,000 --> 00:30:08,000
+Que entienden cuerdas cosas cúbicas por un lado,
+
+623
+00:30:08,000 --> 00:30:10,000
+dos tercios por el otro.
+
+624
+00:30:10,000 --> 00:30:12,000
+Entonces, yo lo que suelo hacer es que quito todos los lamping
+
+625
+00:30:12,000 --> 00:30:14,000
+de Blender y le pongo yo uno.
+
+626
+00:30:14,000 --> 00:30:16,000
+¿Sabes?
+
+627
+00:30:16,000 --> 00:30:20,000
+Pues, esta tontería.
+
+628
+00:30:20,000 --> 00:30:22,000
+¡Yup!
+
+629
+00:30:22,000 --> 00:30:24,000
+Joder, cómo digo que me agaso.
+
+630
+00:30:24,000 --> 00:30:26,000
+¡Pop!
+
+631
+00:30:26,000 --> 00:30:28,000
+An...
+
+632
+00:30:28,000 --> 00:30:30,000
+Tutututu...
+
+633
+00:30:30,000 --> 00:30:32,000
+Tutututu...
+
+634
+00:30:36,000 --> 00:30:38,000
+Y entonces, pues aquí habría que decirle
+
+635
+00:30:40,000 --> 00:30:42,000
+menos drag, ¿no?
+
+636
+00:30:42,000 --> 00:30:44,000
+Menos drag de...
+
+637
+00:30:44,000 --> 00:30:46,000
+de...
+
+638
+00:30:46,000 --> 00:30:48,000
+Speed.x, ¿no?
+
+639
+00:30:48,000 --> 00:30:50,000
+Todo puedo copiar.
+
+640
+00:30:50,000 --> 00:30:52,000
+Menos drag de Speed.y,
+
+641
+00:30:52,000 --> 00:30:54,000
+Menos drag de Speed.z, ¿vale?
+
+642
+00:30:54,000 --> 00:30:56,000
+Y ya está.
+
+643
+00:30:56,000 --> 00:30:58,000
+Eh...
+
+644
+00:30:58,000 --> 00:31:00,000
+Pero...
+
+645
+00:31:00,000 --> 00:31:02,000
+Y ahora veis que en un par de ocasiones ya la cosa
+
+646
+00:31:02,000 --> 00:31:04,000
+se calma.
+
+647
+00:31:04,000 --> 00:31:06,000
+Este rollo sigue así.
+
+648
+00:31:06,000 --> 00:31:08,000
+Yo creo que tampoco es muy interesante
+
+649
+00:31:08,000 --> 00:31:10,000
+seguir con este rollo, más que meternos en la pi.
+
+650
+00:31:10,000 --> 00:31:12,000
+Pero básicamente sigue.
+
+651
+00:31:12,000 --> 00:31:14,000
+Os cuento lo que es la estabilidad
+
+652
+00:31:14,000 --> 00:31:16,000
+para que sepáis un poco en qué
+
+653
+00:31:16,000 --> 00:31:18,000
+en el mundo nos movimos los navales.
+
+654
+00:31:18,000 --> 00:31:20,000
+Pero básicamente cuando uno quiere ver
+
+655
+00:31:20,000 --> 00:31:22,000
+si un barco es estable o no, los barcos no se hunden
+
+656
+00:31:22,000 --> 00:31:24,000
+y la gente empieza a decir que lo peor
+
+657
+00:31:24,000 --> 00:31:26,000
+es que se hundan, pero lo peor no es que se hundan,
+
+658
+00:31:26,000 --> 00:31:28,000
+es que te hayan la vuelta.
+
+659
+00:31:28,000 --> 00:31:30,000
+Entonces...
+
+660
+00:31:30,000 --> 00:31:32,000
+Y eso ocurre mucho más de lo que nos gustaría.
+
+661
+00:31:32,000 --> 00:31:34,000
+¿Por qué ocurre? Pues porque cuando tienes un barco en el agua,
+
+662
+00:31:34,000 --> 00:31:36,000
+lo que tienes siempre es el... este no lo puedes controlar.
+
+663
+00:31:36,000 --> 00:31:38,000
+¿Vale?
+
+664
+00:31:38,000 --> 00:31:40,000
+Ese es donde empieza, donde el agua te está empujando
+
+665
+00:31:40,000 --> 00:31:42,000
+y entonces tú el que puedes controlar es el centro de gravedad
+
+666
+00:31:42,000 --> 00:31:44,000
+de tu cuerpo.
+
+667
+00:31:44,000 --> 00:31:46,000
+En este caso está genial porque
+
+668
+00:31:46,000 --> 00:31:48,000
+tu centro de gravedad está bastante más abajo
+
+669
+00:31:48,000 --> 00:31:50,000
+que tu centro de flotación.
+
+670
+00:31:50,000 --> 00:31:52,000
+Y entonces básicamente cuando giras tu cuerpo
+
+671
+00:31:52,000 --> 00:31:54,000
+que es lo mismo que giras tu superficie libre
+
+672
+00:31:54,000 --> 00:31:56,000
+lo que te das cuenta es que tu centro de gravedad hayan aquí
+
+673
+00:31:56,000 --> 00:31:58,000
+y entonces básicamente tu boya si viene allá
+
+674
+00:31:58,000 --> 00:32:00,000
+y entonces tienes este momento
+
+675
+00:32:00,000 --> 00:32:02,000
+que es positivo y que te ayuda
+
+676
+00:32:02,000 --> 00:32:04,000
+que tu cuerpo vuelva donde te tiene que estar.
+
+677
+00:32:04,000 --> 00:32:06,000
+Pero ¿qué pasa si tu centro de gravedad empieza a subir
+
+678
+00:32:06,000 --> 00:32:08,000
+y se va por encima del...
+
+679
+00:32:08,000 --> 00:32:10,000
+centro de flotación? Pues que resulta que en cuanto
+
+680
+00:32:10,000 --> 00:32:12,000
+tu cuerpo gira, pues lo que hace de fuerza es que te dice
+
+681
+00:32:12,000 --> 00:32:14,000
+¡ah! pues sigue girando, que no vamos por el otro lado.
+
+682
+00:32:14,000 --> 00:32:16,000
+Entonces básicamente
+
+683
+00:32:16,000 --> 00:32:18,000
+de esto lo importante es que este parámetro aquí
+
+684
+00:32:18,000 --> 00:32:20,000
+G es el que te dice
+
+685
+00:32:20,000 --> 00:32:22,000
+cómo establece tu barco.
+
+686
+00:32:22,000 --> 00:32:24,000
+Así que yo lo que he hecho ha sido básicamente
+
+687
+00:32:24,000 --> 00:32:26,000
+meter ese parámetro.
+
+688
+00:32:28,000 --> 00:32:30,000
+¡Yepi!
+
+689
+00:32:30,000 --> 00:32:32,000
+Entonces eso lo copiamos
+
+690
+00:32:32,000 --> 00:32:34,000
+y ya está.
+
+691
+00:32:34,000 --> 00:32:36,000
+Ya no me voy a meter
+
+692
+00:32:36,000 --> 00:32:38,000
+porque esto no termina nunca
+
+693
+00:32:38,000 --> 00:32:40,000
+y no es divertido.
+
+694
+00:32:40,000 --> 00:32:42,000
+Así que lo voy a copiar todo
+
+695
+00:32:42,000 --> 00:32:44,000
+y lo vamos a meter aquí.
+
+696
+00:32:54,000 --> 00:32:56,000
+Y ya está, ¿no?
+
+697
+00:33:00,000 --> 00:33:02,000
+No gira mucho, ¿no?
+
+698
+00:33:02,000 --> 00:33:06,000
+¡Puocachicha!
+
+699
+00:33:06,000 --> 00:33:08,000
+Esa es que ha fallado, pero...
+
+700
+00:33:08,000 --> 00:33:10,000
+A ver, ¿dónde hemos liado esta vez?
+
+701
+00:33:12,000 --> 00:33:14,000
+Momentis not defined.
+
+702
+00:33:14,000 --> 00:33:16,000
+¿Dónde no está definido?
+
+703
+00:33:16,000 --> 00:33:18,000
+Estos dos directos siempre son problema.
+
+704
+00:33:18,000 --> 00:33:20,000
+Momentis not defined. ¿No lo he copiado?
+
+705
+00:33:20,000 --> 00:33:22,000
+No, no lo he copiado.
+
+706
+00:33:26,000 --> 00:33:28,000
+¡Ay, Dios mío!
+
+707
+00:33:28,000 --> 00:33:30,000
+¿Veis? Por esto es bueno ser buen programador.
+
+708
+00:33:30,000 --> 00:33:32,000
+Y no como yo.
+
+709
+00:33:34,000 --> 00:33:36,000
+¡Venga!
+
+710
+00:33:36,000 --> 00:33:38,000
+Entonces ya sí...
+
+711
+00:33:38,000 --> 00:33:40,000
+¿Qué pasa?
+
+712
+00:33:40,000 --> 00:33:42,000
+Ahora, ¿qué no te gusta?
+
+713
+00:33:42,000 --> 00:33:44,000
+¡Gmt!
+
+714
+00:33:44,000 --> 00:33:46,000
+Ah, sí, sí, sí, vale.
+
+715
+00:33:46,000 --> 00:33:48,000
+Si hay datos que no he copiado, por aquello que no me venía.
+
+716
+00:33:50,000 --> 00:33:52,000
+Lo siento, muchachos.
+
+717
+00:33:52,000 --> 00:33:54,000
+Me lo tenía que preparar mejor.
+
+718
+00:33:54,000 --> 00:33:56,000
+¡Opa!
+
+719
+00:34:04,000 --> 00:34:06,000
+Ya empieza a girar.
+
+720
+00:34:06,000 --> 00:34:08,000
+No mucho, me voy a dar más caña, ¿vale?
+
+721
+00:34:12,000 --> 00:34:14,000
+¿Dónde está el sí?
+
+722
+00:34:14,000 --> 00:34:16,000
+Sí, sí, sí, sí, sí, sí, sí.
+
+723
+00:34:16,000 --> 00:34:22,000
+El doble.
+
+724
+00:34:24,000 --> 00:34:26,000
+Ahora, a ver, tú cómo usamos.
+
+725
+00:34:28,000 --> 00:34:30,000
+Bueno, pues ahí lo tenéis, ¿no?
+
+726
+00:34:30,000 --> 00:34:34,000
+Nuestro objeto ya con sus giros y sus maravillas.
+
+727
+00:34:34,000 --> 00:34:36,000
+¿Vale?
+
+728
+00:34:44,000 --> 00:34:46,000
+Bueno, y entonces ahora ya lo único que hay que hacer,
+
+729
+00:34:46,000 --> 00:34:50,000
+que es una tontería, es cargarlo en la escena principal, ¿no?
+
+730
+00:34:50,000 --> 00:34:54,000
+Yo ya lo tengo hecho, así que no nos vaya mucho tiempo.
+
+731
+00:34:58,000 --> 00:35:00,000
+Blender...
+
+732
+00:35:00,000 --> 00:35:02,000
+¿Qué ha pasado?
+
+733
+00:35:02,000 --> 00:35:04,000
+¿Qué ha pasado?
+
+734
+00:35:04,000 --> 00:35:06,000
+¿Tú fuera?
+
+735
+00:35:06,000 --> 00:35:08,000
+Presentación mala.
+
+736
+00:35:08,000 --> 00:35:12,000
+Como siempre ya nos ha roleado con la dimensión.
+
+737
+00:35:12,000 --> 00:35:14,000
+¿Qué tal se ve? ¿Se ve bien?
+
+738
+00:35:16,000 --> 00:35:18,000
+Bueno, pues esto ya es el juevesito, ¿vale?
+
+739
+00:35:18,000 --> 00:35:20,000
+Tal y como queda.
+
+740
+00:35:20,000 --> 00:35:22,000
+Ahí ya tenemos la boya por ahí dando vueltas, ¿vale?
+
+741
+00:35:22,000 --> 00:35:28,000
+Entonces, ahora se explico cómo funciona lo de las misiones,
+
+742
+00:35:28,000 --> 00:35:30,000
+porque es bastante interesante,
+
+743
+00:35:30,000 --> 00:35:32,000
+pero la idea un poco es que empezamos,
+
+744
+00:35:32,000 --> 00:35:36,000
+tenemos por ahí nuestro barquito, que esto va a ir lento, por cierto, chicos.
+
+745
+00:35:36,000 --> 00:35:39,000
+Lo voy a quitar en dos compositores, ¿vale?
+
+746
+00:35:39,000 --> 00:35:42,000
+Ese es un marino, es un marino básicamente como la boya,
+
+747
+00:35:42,000 --> 00:35:44,000
+no se diferencia mucho, pero lo único que pasa es que lo puedes controlar,
+
+748
+00:35:44,000 --> 00:35:48,000
+porque básicamente le puedes dar un poco de cera, ¿no?
+
+749
+00:35:48,000 --> 00:35:50,000
+Y entonces, buena correr, ¿vale?
+
+750
+00:35:50,000 --> 00:35:55,000
+Y el objetivo de esta pantallita sería ir a por este oro de acá.
+
+751
+00:35:57,000 --> 00:35:59,000
+Está lejos, ¿eh?
+
+752
+00:35:59,000 --> 00:36:04,000
+Ahí anda, a por este barquito a terminar con él, ¿vale?
+
+753
+00:36:04,000 --> 00:36:09,000
+Y entonces, la boya nuestra, la tenemos ahora, pobre, aquí, pequeñita, ahí, adorable.
+
+754
+00:36:11,000 --> 00:36:15,000
+Ahí la tenéis, el fruto de nuestro esfuerzo, ¿vale?
+
+755
+00:36:17,000 --> 00:36:19,000
+Bueno, entonces, pues yo había pensado que, vamos,
+
+756
+00:36:19,000 --> 00:36:22,000
+usaba un poco igual, esto funcionaba y ya se ha salido el grao,
+
+757
+00:36:22,000 --> 00:36:26,000
+y yo pensaba que a lo mejor se interesaba saber algo de cómo son las tripas de todo esto,
+
+758
+00:36:26,000 --> 00:36:28,000
+lo que me hacía llamar la atención.
+
+759
+00:36:28,000 --> 00:36:32,000
+Es interesante cómo se hace agua, es interesante cómo manejas la guía,
+
+760
+00:36:32,000 --> 00:36:37,000
+hay cosas interesantes, cómo maneja la cámara, no sé, lo que se apetezca un poco, la verdad.
+
+761
+00:36:37,000 --> 00:36:41,000
+Esto es como una turna de preguntas en el fondo, aunque no lo creáis.
+
+762
+00:36:41,000 --> 00:36:43,000
+Dime.
+
+763
+00:36:43,000 --> 00:36:46,000
+Entonces, obviamente la boya no está reaccionando a las solitas que le van dando.
+
+764
+00:36:46,000 --> 00:36:50,000
+Es que las solitas se han asumido tú, claro, es que yo me lo paso, ya sabes, por el forro.
+
+765
+00:36:50,000 --> 00:36:54,000
+Si, no, pero, si intentáramos que se hiciera que la boya se moviera exactamente cuando la dan,
+
+766
+00:36:54,000 --> 00:36:56,000
+eso sería computacionalmente una...
+
+767
+00:36:56,000 --> 00:37:00,000
+No, no sería muy caro, hay mucha gente que lo hace, lo que sería caro sería hacer la gola.
+
+768
+00:37:00,000 --> 00:37:02,000
+Todo el mar, todo el mar, todo el mar.
+
+769
+00:37:02,000 --> 00:37:06,000
+O sea, lo que es que la boya reacciona, eso se hace súper fácil, pero lo que es hacer,
+
+770
+00:37:06,000 --> 00:37:10,000
+la gola requiere una geometría mallada, y no es que sea caro de hacer,
+
+771
+00:37:10,000 --> 00:37:13,000
+porque todos estos son modelos muy simplificados, es que el hecho de que haya sido una malla,
+
+772
+00:37:13,000 --> 00:37:17,000
+ya implica que me des un plano en el que iteras una vez, tienes que iterar...
+
+773
+00:37:17,000 --> 00:37:20,000
+Sí, no, me refiere a caro a señal del CP1, que...
+
+774
+00:37:20,000 --> 00:37:24,000
+Claro, claro, es caro, pero ya te digo, es un poco raro, porque lo caro no es ni la boya,
+
+775
+00:37:24,000 --> 00:37:27,000
+ni lo caro es la malla que tienes que hacer para que haya una gola, ¿sabes?
+
+776
+00:37:27,000 --> 00:37:29,000
+Y eso no es muy...
+
+777
+00:37:29,000 --> 00:37:32,000
+Hay mucha gente que lo que hace es que hace como un evaluador, ¿sabes?
+
+778
+00:37:32,000 --> 00:37:34,000
+Básicamente al final acabas llegando al mismo que yo, ¿eh?
+
+779
+00:37:34,000 --> 00:37:37,000
+O sea, que me parece que no es muy necesario.
+
+780
+00:37:38,000 --> 00:37:39,000
+¿Vas a hacer el misil?
+
+781
+00:37:39,000 --> 00:37:43,000
+Sí, sí, se puede, se puede, sí, sí, claro, hombre...
+
+782
+00:37:43,000 --> 00:37:45,000
+¿Cómo no darás gusto con eso?
+
+783
+00:37:47,000 --> 00:37:49,000
+A ver, venga, vamos para allá.
+
+784
+00:37:51,000 --> 00:37:53,000
+Pero no te hago torpedos, ¿eh? Por ahora es sobre el cañón.
+
+785
+00:37:53,000 --> 00:37:59,000
+Básicamente le das clic y el otro empieza a apuntar, apunta muy lento, un poco tonto.
+
+786
+00:38:00,000 --> 00:38:03,000
+Voy a quitar el compositor este que va un poco lento.
+
+787
+00:38:03,000 --> 00:38:08,000
+Si intentamos darle al barco a esta distancia, no lo vamos a dar en nuestra vida.
+
+788
+00:38:09,000 --> 00:38:11,000
+Eso es bastante real también.
+
+789
+00:38:11,000 --> 00:38:16,000
+Uno de los problemas de los barcos, por lo que no se pueden acercar a algún sitio donde hubiera
+
+790
+00:38:16,000 --> 00:38:19,000
+un cañón de esos de costa mágico, de esos que saben siempre las películas están grandes,
+
+791
+00:38:19,000 --> 00:38:22,000
+es que básicamente aunque tú seas capaz para mucho de los ojos, nunca le vas a dar,
+
+792
+00:38:22,000 --> 00:38:26,000
+porque tu barco está haciendo así y entonces apuntar con un cañón cuando el barco está ahí
+
+793
+00:38:26,000 --> 00:38:28,000
+y dale que te pego, pues es bastante difícil.
+
+794
+00:38:28,000 --> 00:38:33,000
+Concretamente, y para hacer la experiencia profesional, pues vamos a esperar que esto apunte.
+
+795
+00:38:35,000 --> 00:38:37,000
+Cuando se oiga un pum, es que ha disparado.
+
+796
+00:38:38,000 --> 00:38:41,000
+Venga, tú apunta, algo ha disparado, a ver si llega a algún sitio.
+
+797
+00:38:43,000 --> 00:38:44,000
+La volante a lo llegar, ¿eh?
+
+798
+00:38:46,000 --> 00:38:48,000
+¡Uy!
+
+799
+00:38:48,000 --> 00:38:51,000
+Ha faltado poco, ¿eh? De otras formas.
+
+800
+00:38:52,000 --> 00:38:53,000
+Podemos entrar nuevo.
+
+801
+00:38:54,000 --> 00:38:56,000
+Segunda intenta. A ver si le damos.
+
+802
+00:39:02,000 --> 00:39:03,000
+Muy difícil, ¿vale?
+
+803
+00:39:03,000 --> 00:39:07,000
+Pero bueno, si queréis, le vamos a andar a acercarse y vamos discutiendo otra cosa si queréis.
+
+804
+00:39:08,000 --> 00:39:10,000
+¿Qué más explica de la curiosidad esto?
+
+805
+00:39:10,000 --> 00:39:17,000
+Dime. Lo que es la documentación para el uso de todo esto.
+
+806
+00:39:18,000 --> 00:39:23,000
+Sí, sí, tú buscas Blender, yo solo buscas Blender y la versión en concreto, porque la pi la cambia muy rápido.
+
+807
+00:39:23,000 --> 00:39:28,000
+Una de las conclusiones que tengo al final es que este es un motor muy joven y eso tiene inconvenientes.
+
+808
+00:39:29,000 --> 00:39:30,000
+Tiene algunos inconvenientes, sabes.
+
+809
+00:39:30,000 --> 00:39:34,000
+Uno de los inconvenientes que a mí más me fastidia es el hecho de que en realidad, aunque lo tienes integrado con Blender
+
+810
+00:39:34,000 --> 00:39:38,000
+y ya veis que es muy sencillo, montas la malla y le vas a correr y la tienes ahí, no hay que hacer mucho más.
+
+811
+00:39:38,000 --> 00:39:43,000
+Una cosa que es un poco rara es que no puedes editar cosas de la malla dentro del motor gráfico.
+
+812
+00:39:44,000 --> 00:39:46,000
+O sea, hacer mallas dinámicas con este motor gráfico es fastidio.
+
+813
+00:39:47,000 --> 00:39:49,000
+Que la verdad es que no dice pero ¿y por qué?
+
+814
+00:39:50,000 --> 00:39:53,000
+Si yo puedo editar las mallas en Blender ¿por qué no puedo meterme todo el gráfico de editar lo mismo?
+
+815
+00:39:54,000 --> 00:39:55,000
+Pues no se puede.
+
+816
+00:39:55,000 --> 00:39:58,000
+Pero de estas formas tiene planeado que se pueda en la 2.8, creo.
+
+817
+00:39:59,000 --> 00:40:00,000
+Eso es otra. Dime.
+
+818
+00:40:00,000 --> 00:40:11,000
+No tanto ¿eh?
+
+819
+00:40:12,000 --> 00:40:15,000
+Ah bueno, mira, gracias.
+
+820
+00:40:16,000 --> 00:40:27,000
+No, no, no, no, no, luego os sacas un estanalón.
+
+821
+00:40:27,000 --> 00:40:30,000
+Eso me lo ha preguntado antes, ¿quién me lo ha preguntado?
+
+822
+00:40:31,000 --> 00:40:32,000
+Ah, sí, sí, sí.
+
+823
+00:40:33,000 --> 00:40:36,000
+Al principio del todo tú sabes que hay un juego que se llama Yo Franky ¿no?
+
+824
+00:40:37,000 --> 00:40:39,000
+Pues ese juego había que compilarlo ¿sabes?
+
+825
+00:40:40,000 --> 00:40:42,000
+Porque básicamente yo lo hice en el comprender pero en aquella época,
+
+826
+00:40:43,000 --> 00:40:45,000
+cuando quería sacar lo que yo llamó el estanalón,
+
+827
+00:40:46,000 --> 00:40:48,000
+básicamente se acaba en el motor de Crystal Space, no se se acaba en este.
+
+828
+00:40:49,000 --> 00:40:51,000
+Lo que era un poco asurdo ¿no? A mí eso siempre me pareció.
+
+829
+00:40:51,000 --> 00:40:56,000
+De hecho ellos también lo pensaron porque al final dijeron que eso era una gana nada y lo cambiaron, claro.
+
+830
+00:40:57,000 --> 00:41:04,000
+No, básicamente ahora lo que haces es que dices guardar como y le pones un formato binario y ya te guarda todo el juego.
+
+831
+00:41:05,000 --> 00:41:08,000
+No las risaces, o sea lo que cargas como risaces y tal, no.
+
+832
+00:41:09,000 --> 00:41:11,000
+Y te llevaste supongo el motor de Blender.
+
+833
+00:41:12,000 --> 00:41:14,000
+Claro, claro, te llevas por debajo el motor de Blender, pero no te llevas el Blender, que es la gracia.
+
+834
+00:41:15,000 --> 00:41:17,000
+Es que el motor de Blender no es, sabes que es que por ahora son muy diferentes,
+
+835
+00:41:17,000 --> 00:41:22,000
+el motor de Blender es un pedazo pequeñísimo que han metido ahí pues como para hacer estas cosas, sabes.
+
+836
+00:41:23,000 --> 00:41:25,000
+Hay dos aplicaciones ¿el Blender y el Blender Player?
+
+837
+00:41:26,000 --> 00:41:28,000
+Sí, el Blender Gaming Game que le llaman, el VGE.
+
+838
+00:41:29,000 --> 00:41:34,000
+¿El Blender y el Blender Player? ¿Tú ves de la pantalla con el Blender y el Blender Player?
+
+839
+00:41:35,000 --> 00:41:36,000
+Claro.
+
+840
+00:41:37,000 --> 00:41:38,000
+¿Y luego cuando haces el binario? ¿Y luego si el Blender Player?
+
+841
+00:41:38,000 --> 00:41:46,000
+Esperamos, eso es una ventaja, el hecho de que no te lleves todo el Blender de RAS es muy bueno, claro.
+
+842
+00:41:47,000 --> 00:41:49,000
+¿Y convenientes que el Blender Player es un binario?
+
+843
+00:41:50,000 --> 00:41:55,000
+Pues eso no sabía, no sabía que te había enfastidad de esa forma.
+
+844
+00:41:56,000 --> 00:41:59,000
+Se puede tongar eso, porque ten en cuenta que cuando haces por ejemplo como hago yo,
+
+845
+00:42:00,000 --> 00:42:02,000
+que en realidad el submarino está en un archivo, el otro está en un archivo,
+
+846
+00:42:03,000 --> 00:42:06,000
+estás haciendo lo que llama en ellos el cargado dinámico, que en realidad es como un lincado, ¿sabes?
+
+847
+00:42:06,000 --> 00:42:09,000
+No sé ya hasta qué punto ahí puedes intentar colarla.
+
+848
+00:42:10,000 --> 00:42:11,000
+Claro.
+
+849
+00:42:12,000 --> 00:42:18,000
+Sí, pero no sé yo si después cuando cargas archivos a lo mejor sí que puedes tongar un poco el...
+
+850
+00:42:19,000 --> 00:42:20,000
+Claro.
+
+851
+00:42:21,000 --> 00:42:25,000
+Es verdad que... ¿Pero es GPL o LGPL?
+
+852
+00:42:26,000 --> 00:42:27,000
+Pues entonces no, tampoco, estás fastidiado.
+
+853
+00:42:27,000 --> 00:42:38,000
+Gracias por fastidiar.
+
+854
+00:42:39,000 --> 00:42:40,000
+Oya checo, ¿dónde hemos ido?
+
+855
+00:42:41,000 --> 00:42:46,000
+Claro, esa es la idea.
+
+856
+00:42:46,000 --> 00:42:57,000
+No, no, no, por ahí otro...
+
+857
+00:42:58,000 --> 00:43:01,000
+Ahí no sé en un beso es mi que está...
+
+858
+00:43:05,000 --> 00:43:10,000
+¿Veis? Por eso he dicho que no sé qué hago yo aquí arriba, así que ¿quién debería estar? Son ellos, hombre.
+
+859
+00:43:10,000 --> 00:43:16,000
+Yo estoy aquí arriba porque esto es un juego dedicado a mi novia y ellos no se han dedicado a sus novias así que no pueden salir aquí,
+
+860
+00:43:17,000 --> 00:43:21,000
+pero claramente para el próximo año pues que se suban ellos y lo cuenten que seguro que...
+
+861
+00:43:22,000 --> 00:43:27,000
+Yo tenía esa gracia interesante de lo que podías comparar con el antiguo implementación, que era una basura.
+
+862
+00:43:28,000 --> 00:43:29,000
+Pero bueno.
+
+863
+00:43:30,000 --> 00:43:33,000
+¿Entonces tendrían el mar es funcional y todos esos reflejos o...?
+
+864
+00:43:33,000 --> 00:43:39,000
+Sí, bueno, venga, vamos a pegarle un tiro al barco, ¿vale? Y luego os enseño...
+
+865
+00:43:40,000 --> 00:43:43,000
+Luego os enseño un poco lo que hay en el agua. El agua al final lo que hace es que juegas con un shader.
+
+866
+00:43:44,000 --> 00:43:49,000
+¿Sabes? Y ese shader es un poco estúpido lo que hace es reír, porque lo que hace es que haces una foto desde arriba
+
+867
+00:43:50,000 --> 00:43:53,000
+y entonces eso es lo que vas a reflejar, o sea eso es lo que se va a transparentar en el agua.
+
+868
+00:43:54,000 --> 00:43:58,000
+Hace una foto desde arriba, quita esto lo que está encima del agua, hace una foto desde arriba y eso es lo que se va a transparentar.
+
+869
+00:43:58,000 --> 00:44:02,000
+Y luego hace una foto desde abajo, justo con simetría, te da la vuelta y eso es lo que se va a reflejar.
+
+870
+00:44:03,000 --> 00:44:07,000
+¿Sabes? Y luego lo que hace es que lo modificas así con unas solas que le metas tú.
+
+871
+00:44:08,000 --> 00:44:10,000
+Es una poco enteriada, ¿lo ves?
+
+872
+00:44:11,000 --> 00:44:15,000
+Claro, bueno, mira, ¿sai ido a freír puñetas la bala?
+
+873
+00:44:19,000 --> 00:44:22,000
+Venga, dale, dale. ¡Pumba! ¿Vale? Todavía no tengo explosión.
+
+874
+00:44:22,000 --> 00:44:26,000
+¿Te esperaba ir ya a que saldara por los aires? Pues no.
+
+875
+00:44:27,000 --> 00:44:32,000
+Bueno, mira, el agua es bastante interesante, a mí la verdad es que me parece las cosas más curiosas cuando uno hace estas cosas,
+
+876
+00:44:33,000 --> 00:44:35,000
+como hace reflejos y dos seditas y tal, es bastante curioso.
+
+877
+00:44:36,000 --> 00:44:39,000
+El agua es este plano, ¿vale? Que te va a ir siguiendo, no voy a meterme en cómo te sigue.
+
+878
+00:44:40,000 --> 00:44:43,000
+Básicamente tienes que tener cuidado de que cuando te alejas pues el agua se haga grande, claro, porque si no.
+
+879
+00:44:44,000 --> 00:44:47,000
+Y entonces ese agua tan maravillosa tiene aquí un script.
+
+880
+00:44:47,000 --> 00:44:51,000
+Text, text, text, text, text editor.
+
+881
+00:44:52,000 --> 00:44:53,000
+¡Woppa!
+
+882
+00:44:58,000 --> 00:45:01,000
+Tiene este script, ¿vale? Este script es un shader, ¿vale?
+
+883
+00:45:02,000 --> 00:45:05,000
+Los shaders son un lenguaje que a mí personalmente me saca de quicio, ¿sabes?
+
+884
+00:45:06,000 --> 00:45:09,000
+Porque es un C que le han metido un montón de cosas que no tenían que estar allí.
+
+885
+00:45:10,000 --> 00:45:12,000
+Y entonces al final... Pero bueno, para que te hagas una idea,
+
+886
+00:45:12,000 --> 00:45:17,000
+lo que vienes a hacer es que le metes un montón de parámetros, ¿sabes?
+
+887
+00:45:18,000 --> 00:45:21,000
+Y uno de ellos es uno que le metes desde Blender, que es el timer, ¿vale?
+
+888
+00:45:22,000 --> 00:45:23,000
+De esta forma que tienes el tiempo.
+
+889
+00:45:24,000 --> 00:45:25,000
+Y ahora lo único que tienes que hacer es un seno y un coseno.
+
+890
+00:45:26,000 --> 00:45:27,000
+Entonces recibes por aquí...
+
+891
+00:45:28,000 --> 00:45:30,000
+¿Dónde estás? ¿Dónde estás? ¿Dónde estás?
+
+892
+00:45:31,000 --> 00:45:33,000
+Que me pierdo. Light disk, no, bueno.
+
+893
+00:45:34,000 --> 00:45:36,000
+Aquí, aquí básicamente lo que estás calculando es...
+
+894
+00:45:36,000 --> 00:45:41,000
+Fusos tus normales. Tienes una función de ruido, ¿sabes?
+
+895
+00:45:42,000 --> 00:45:44,000
+Y entonces lo que haces es que metes todos esos senos y esos cosenos
+
+896
+00:45:45,000 --> 00:45:46,000
+para sacar datos de ese ruido, ¿sabes?
+
+897
+00:45:47,000 --> 00:45:48,000
+Que es lo que tú ya estás viendo.
+
+898
+00:45:49,000 --> 00:45:51,000
+Si en vez de... Si estas coordenadas de ruido las pintáramos,
+
+899
+00:45:52,000 --> 00:45:53,000
+lo que verías sería un montón de colorines,
+
+900
+00:45:54,000 --> 00:45:55,000
+para el ruido y para abajo, ¿sabes?
+
+901
+00:45:56,000 --> 00:45:58,000
+Luego básicamente lo que haces es que sacas...
+
+902
+00:45:59,000 --> 00:46:01,000
+¿Dónde estás? ¿Dónde estás?
+
+903
+00:46:01,000 --> 00:46:05,000
+Sacas la refracción y sacas la reflexión,
+
+904
+00:46:06,000 --> 00:46:08,000
+que son esas dos fotos que has hecho y las mueves, ¿sabes?
+
+905
+00:46:09,000 --> 00:46:10,000
+O sea, en vez de sacar la coordenada que te tocaría,
+
+906
+00:46:11,000 --> 00:46:14,000
+sacar la coordenada editada con los ruidos que las metíe, ¿sabes?
+
+907
+00:46:15,000 --> 00:46:16,000
+Y por eso haces efecto tan raro, ¿vale?
+
+908
+00:46:18,000 --> 00:46:20,000
+Para que veas una refracción que eso nos lo ha enseñado,
+
+909
+00:46:21,000 --> 00:46:22,000
+pues tienes aspecto.
+
+910
+00:46:24,000 --> 00:46:25,000
+Pi.
+
+911
+00:46:25,000 --> 00:46:27,000
+Pi.
+
+912
+00:46:29,000 --> 00:46:30,000
+Vamos a ver un poco de caña y no metemos bajo el agua.
+
+913
+00:46:33,000 --> 00:46:34,000
+Joder, otra vez el...
+
+914
+00:46:38,000 --> 00:46:39,000
+Lo vamos a hundir.
+
+915
+00:46:41,000 --> 00:46:42,000
+Vale, entonces esa foto que estás viendo ahí,
+
+916
+00:46:43,000 --> 00:46:45,000
+realmente esto lo único que has hecho ha sido de quitar el plano de agua, ¿sabes?
+
+917
+00:46:46,000 --> 00:46:48,000
+He hecho unas fotos de arriba y luego se la meto...
+
+918
+00:46:49,000 --> 00:46:52,000
+Se la meto editada con los colorcitos un poco cambiadas para que estén muy las que está bajo el agua, tal...
+
+919
+00:46:52,000 --> 00:46:55,000
+En realidad, si lo piensas, no tiene mucho misterio, ¿sabes?
+
+920
+00:46:56,000 --> 00:46:57,000
+Es todo...
+
+921
+00:46:58,000 --> 00:46:59,000
+Pues ya sabes cómo se hacen los juegos, si es que hacerlo todo rápido y sencillo.
+
+922
+00:47:00,000 --> 00:47:03,000
+¿Y por qué no hay un mundo en el que se puede usar una malla para la vía de los hundir?
+
+923
+00:47:04,000 --> 00:47:05,000
+O sea, ¿cuánto de las montañas?
+
+924
+00:47:06,000 --> 00:47:08,000
+¿Pero que quizás está transversal para suelo?
+
+925
+00:47:09,000 --> 00:47:11,000
+Sí, mucha gente tiene paginadores y tal.
+
+926
+00:47:12,000 --> 00:47:13,000
+Cuando trabajas con geometrías muy grandes en plan montañas y tal,
+
+927
+00:47:14,000 --> 00:47:15,000
+lo que es lo que llaman un paginador, ¿sabes?
+
+928
+00:47:16,000 --> 00:47:19,000
+Que básicamente lo que haces es que te carga muy bien lo que tienes cerca
+
+929
+00:47:19,000 --> 00:47:21,000
+y el resto hace así como un moderito poco curre, ¿sabes?
+
+930
+00:47:22,000 --> 00:47:25,000
+Sí, y hay paginas de los automáticos aquí metidos y tal.
+
+931
+00:47:27,000 --> 00:47:29,000
+Pero, claro, yo soy naval, así que...
+
+932
+00:47:33,000 --> 00:47:36,000
+Había pensado en montar un faro y que se desmontara el faro,
+
+933
+00:47:37,000 --> 00:47:38,000
+que era así como bonito, pero...
+
+934
+00:47:39,000 --> 00:47:41,000
+La agua ya era más sencilla.
+
+935
+00:47:43,000 --> 00:47:44,000
+¿Hago una cosilla más?
+
+936
+00:47:45,000 --> 00:47:46,000
+¿Sabe algo que os apetezca ver? Dime.
+
+937
+00:47:46,000 --> 00:47:50,000
+¿Cómo es la comunidad de blender? ¿Han hecho soporte y tal?
+
+938
+00:47:51,000 --> 00:47:52,000
+Pues no, por ahora no. O sea, en blender sí.
+
+939
+00:47:53,000 --> 00:47:55,000
+Lo que es blender, como diseñado el gráfico, ahí...
+
+940
+00:47:56,000 --> 00:47:57,000
+¿Cómo para, por ejemplo...?
+
+941
+00:47:58,000 --> 00:47:59,000
+No demasiado por ahora, ¿eh?
+
+942
+00:48:00,000 --> 00:48:01,000
+O sea, la gente que hay es muy, muy cooperativa.
+
+943
+00:48:02,000 --> 00:48:03,000
+Yo, a mí, personalmente, lo aprecio mucho, ¿sabes?
+
+944
+00:48:04,000 --> 00:48:05,000
+Pero no es muy grande.
+
+945
+00:48:06,000 --> 00:48:07,000
+Es que no es muy famoso el motor.
+
+946
+00:48:08,000 --> 00:48:09,000
+Yo es que creo que lo llevará antes de tiempo.
+
+947
+00:48:10,000 --> 00:48:14,000
+Y mucho me temo que ahora cuando deciden integrarlo mejor con el blender en general,
+
+948
+00:48:14,000 --> 00:48:16,000
+nos van a fastidiar a todos los que tenemos cosas hechas,
+
+949
+00:48:17,000 --> 00:48:19,000
+porque nos van a cambiar todo el ápito y nos van a hacer por otro.
+
+950
+00:48:23,000 --> 00:48:24,000
+Dime.
+
+951
+00:48:25,000 --> 00:48:26,000
+Mira, antes hablaste el problema que tenía de eso,
+
+952
+00:48:27,000 --> 00:48:29,000
+soportaba la emulación de objetos de, no sé cuántos,
+
+953
+00:48:30,000 --> 00:48:31,000
+y lo soportaba con el ápito,
+
+954
+00:48:32,000 --> 00:48:33,000
+para el principio de todo.
+
+955
+00:48:34,000 --> 00:48:35,000
+Claro.
+
+956
+00:48:36,000 --> 00:48:37,000
+La... la...
+
+957
+00:48:38,000 --> 00:48:39,000
+la emulación que podía hacer el...
+
+958
+00:48:39,000 --> 00:48:43,000
+el... el... el...
+
+959
+00:48:44,000 --> 00:48:45,000
+No se podría aplicar en... en caso real.
+
+960
+00:48:46,000 --> 00:48:47,000
+Tú, por ejemplo, como...
+
+961
+00:48:48,000 --> 00:48:49,000
+ehh...
+
+962
+00:48:50,000 --> 00:48:51,000
+ingeniero naval,
+
+963
+00:48:52,000 --> 00:48:53,000
+si pones una...
+
+964
+00:48:54,000 --> 00:48:55,000
+chalupa,
+
+965
+00:48:56,000 --> 00:48:57,000
+ehh...
+
+966
+00:48:58,000 --> 00:48:59,000
+que la... la hundes,
+
+967
+00:49:00,000 --> 00:49:02,000
+el... el efecto que haría el tiempo que tardó y todo eso,
+
+968
+00:49:03,000 --> 00:49:04,000
+me podías utilizar para calcular,
+
+969
+00:49:05,000 --> 00:49:06,000
+o está más pensado para...
+
+970
+00:49:06,000 --> 00:49:09,000
+una cosa esa, no es tan rival, o sea, tú fijate el modito que he puesto ya aquí,
+
+971
+00:49:10,000 --> 00:49:11,000
+era un equilibrí de los estáticos, sabes.
+
+972
+00:49:12,000 --> 00:49:12,000
+Cuando una hace una cosa esa,
+
+973
+00:49:13,000 --> 00:49:14,000
+enseguida empieza a tener muchos problemas dinámicos.
+
+974
+00:49:15,000 --> 00:49:16,000
+Los fluidos son muy fastidios.
+
+975
+00:49:17,000 --> 00:49:18,000
+Los lo puedo decir por experiencia,
+
+976
+00:49:19,000 --> 00:49:20,000
+entonces, en cuanto intentas hacer una cosa,
+
+977
+00:49:21,000 --> 00:49:22,000
+es que además es un objeto muy grande,
+
+978
+00:49:23,000 --> 00:49:24,000
+enseguida tienes mucho de lo que llama más añadida.
+
+979
+00:49:25,000 --> 00:49:26,000
+Basicamente es como si tu objeto llevara un montón de agua alrededor
+
+980
+00:49:27,000 --> 00:49:28,000
+y se la llevara para abajo, sabes.
+
+981
+00:49:29,000 --> 00:49:30,000
+Entonces pesa mucho más, es mucho más grande,
+
+982
+00:49:31,000 --> 00:49:32,000
+y esto, por supuesto, es un oro, ¿verdad?
+
+983
+00:49:33,000 --> 00:49:34,000
+¿Sabes?
+
+984
+00:49:34,000 --> 00:49:35,000
+¿El respuesto acuerda? No.
+
+985
+00:49:36,000 --> 00:49:38,000
+La larga puedes hacerlo, pero te va a costar.
+
+986
+00:49:39,000 --> 00:49:40,000
+Dime.
+
+987
+00:49:40,000 --> 00:50:06,000
+Yo quería añadir a lo que ha dicho que realmente ya he visto motores de pueblos internamente físicanos,
+
+988
+00:50:06,000 --> 00:50:14,000
+y lo que significa que la rotación angular actúa como si fuese la velocidad lineal,
+
+989
+00:50:15,000 --> 00:50:16,000
+y eso no es cierto, es decir,
+
+990
+00:50:17,000 --> 00:50:19,000
+sucutando en una cosa que puede darme el espacio,
+
+991
+00:50:20,000 --> 00:50:24,000
+por eso hace una especie de huevo que está cambiando el inclinación,
+
+992
+00:50:25,000 --> 00:50:26,000
+la función del momento de inercia que tiene.
+
+993
+00:50:27,000 --> 00:50:30,000
+Eso no es un oro de azúcar, porque está descansado.
+
+994
+00:50:31,000 --> 00:50:32,000
+Evidentemente no vas a tener volar un avión,
+
+995
+00:50:33,000 --> 00:50:34,000
+vas a tener unos calculos así.
+
+996
+00:50:34,000 --> 00:50:41,000
+Pero, a ver qué, de hecho, uno de los factores que se viene en cuenta al eliminar ese factor,
+
+997
+00:50:42,000 --> 00:50:45,000
+hace claro que la fundación es mucho más sensable,
+
+998
+00:50:46,000 --> 00:50:49,000
+en general normalmente se utiliza la pretensión simple para conseguir más salas,
+
+999
+00:50:50,000 --> 00:50:52,000
+y aparte a la gente le parece más real.
+
+1000
+00:50:53,000 --> 00:50:54,000
+Quitando los físicos,
+
+1001
+00:50:55,000 --> 00:50:56,000
+¿tú sabes que cortarlo? Sí.
+
+1002
+00:50:57,000 --> 00:50:59,000
+Pero bueno, tenía cinco minutos más.
+
+1003
+00:50:59,000 --> 00:51:04,000
+Es la simulación que hace.
+
+1004
+00:51:05,000 --> 00:51:07,000
+Pero la full es la misma.
+
+1005
+00:51:08,000 --> 00:51:12,000
+Sí, sí, cuando uno trabaja en simulación así ya más científica,
+
+1006
+00:51:13,000 --> 00:51:14,000
+todo esto se te queda muy chico.
+
+1007
+00:51:15,000 --> 00:51:17,000
+De hecho es más, yo suelo tener problemas de que no hago las implementaciones
+
+1008
+00:51:18,000 --> 00:51:19,000
+y las suelo hacer demasiado buenas,
+
+1009
+00:51:20,000 --> 00:51:21,000
+entonces me va muy lento, mal,
+
+1010
+00:51:22,000 --> 00:51:23,000
+entonces claro, en sí ya empiezas a quitarle cosas.
+
+1011
+00:51:24,000 --> 00:51:25,000
+Bueno, ahora me voy a dejar de flipar un poco,
+
+1012
+00:51:25,000 --> 00:51:29,000
+y voy a... ¿Alguna preguntita corta o cerramos?
+
+1013
+00:51:30,000 --> 00:51:31,000
+Que tenemos hambre, ¿no?
+
+1014
+00:51:33,000 --> 00:51:34,000
+Me tenéis aquí arriba encima de pie.
+
+1015
+00:51:35,000 --> 00:51:36,000
+Venga, dime.
+
+1016
+00:51:37,000 --> 00:51:39,000
+Hemos visto Valium Seder, que me ha hecho con OpenGL.
+
+1017
+00:51:40,000 --> 00:51:42,000
+¿Has tenido que comprar OpenGL por ejemplo para los menus
+
+1018
+00:51:43,000 --> 00:51:45,000
+o para los marcadores en la velocidad?
+
+1019
+00:51:46,000 --> 00:51:47,000
+Respuesta corta, no.
+
+1020
+00:51:48,000 --> 00:51:51,000
+Respuesta larga, sí, porque yo he editado cosas para que esto pudiera rotar.
+
+1021
+00:51:51,000 --> 00:51:54,000
+Realmente como se hace la guía es bastante original,
+
+1022
+00:51:55,000 --> 00:51:57,000
+eso hay que felicitar a MoGiddy, que es un desarrollador muy bueno.
+
+1023
+00:51:58,000 --> 00:51:59,000
+Básicamente lo que hace es que congela la imagen tal y como está.
+
+1024
+00:52:00,000 --> 00:52:01,000
+¿Sabes cómo funciona OpenGL?
+
+1025
+00:52:02,000 --> 00:52:03,000
+Bueno, pues OpenGL para los demás que...
+
+1026
+00:52:04,000 --> 00:52:07,000
+Es como una máquina de estados, lo que es súper desgastante,
+
+1027
+00:52:08,000 --> 00:52:09,000
+o sea, la forma de trabajar de OpenGL es un desastre,
+
+1028
+00:52:10,000 --> 00:52:11,000
+pero justo para estas cosas está genial.
+
+1029
+00:52:12,000 --> 00:52:14,000
+Entonces lo que hace es que congelas el estado de OpenGL,
+
+1030
+00:52:15,000 --> 00:52:18,000
+borras todo y entonces montas un sistema OpenGL nuevo,
+
+1031
+00:52:18,000 --> 00:52:21,000
+en el que básicamente lo que hace es que creas cuadraditos con textura.
+
+1032
+00:52:22,000 --> 00:52:24,000
+Y luego recuperas todo lo que ya habías dejado.
+
+1033
+00:52:25,000 --> 00:52:27,000
+¿Todo esto es que tenía que ver con Python?
+
+1034
+00:52:28,000 --> 00:52:32,000
+Eso se hacía en Python, pero es que Blender te da también la opción de acceder a OpenGL.
+
+1035
+00:52:33,000 --> 00:52:34,000
+Con Python, ¿sabes?
+
+1036
+00:52:35,000 --> 00:52:37,000
+Sí, pero bueno, por no más general no te hace falta porque este ya está implementado.
+
+1037
+00:52:38,000 --> 00:52:39,000
+Yo es que tuve que implementar que rotaran.
+
+1038
+00:52:40,000 --> 00:52:42,000
+Y luego se lo pase a este chico que yo creo que todavía no lo ha liberado.
+
+1039
+00:52:43,000 --> 00:52:44,000
+No lo ha hecho yo.
+
+1040
+00:52:44,000 --> 00:52:47,000
+Un té rápido, no romperás con el respecto, ¿vale?
+
+1041
+00:52:48,000 --> 00:52:50,000
+Cuanto código no Python, tú hubiste que echar para el juego.
+
+1042
+00:52:51,000 --> 00:52:52,000
+O sea, cuando código en C o OpenGL.
+
+1043
+00:52:53,000 --> 00:52:54,000
+En OpenGL es lo que habéis visto.
+
+1044
+00:52:55,000 --> 00:52:56,000
+Ya está, yo no...
+
+1045
+00:52:57,000 --> 00:52:58,000
+Sí, hombre, no comienes, sabes.
+
+1046
+00:52:59,000 --> 00:53:01,000
+Un error que cometí con C++ será complicado demasiado.
+
+1047
+00:53:02,000 --> 00:53:03,000
+Aquí no.
+
+1048
+00:53:04,000 --> 00:53:05,000
+O sea, si puedo evitar usarlo, lo evitaré a toda costa.
+
+1049
+00:53:09,000 --> 00:53:10,000
+¿Sacabó?
+
+1050
+00:53:10,000 --> 00:53:13,000
+balanced.io
+
