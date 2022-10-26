@@ -190,3 +190,7 @@ $ python3 process_channel.py --file my_channel.json
 ## Issues conocidos
 
 * Para interrumpir la ejecución hay que pulsar CTRL+C repetidas veces (#2)
+
+## To do
+
+* Explorar la API de youtube para subir subtitulos automáticamente:  https://github.com/youtube/api-samples/blob/master/python/captions.py y https://developers.google.com/youtube/v3/docs
