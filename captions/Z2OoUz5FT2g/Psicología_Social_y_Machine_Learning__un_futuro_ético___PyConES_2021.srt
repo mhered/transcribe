@@ -1,0 +1,1264 @@
+1
+00:00:00,000 --> 00:00:12,000
+Hola, hola, estamos de vuelta. Ya, pausas pequeñitas, para que nadie se aburra ni se vaya.
+
+2
+00:00:12,000 --> 00:00:17,000
+Bueno, ¿de qué vamos a hablar ahora, Jimmina?
+
+3
+00:00:17,000 --> 00:00:23,360
+Vale, bien, acharla súper chula, porque nos va a hablar de los sesgos, lo que es la inteligencia de
+
+4
+00:00:23,360 --> 00:00:30,680
+artificial y todos los programas de datos y demás, al final, detrás de lo que programamos hay personas y
+
+5
+00:00:30,680 --> 00:00:36,720
+las personas tienen sesgos. Entonces, me parece un tema súper interesante cómo luchar contra esto y
+
+6
+00:00:36,720 --> 00:00:43,000
+cómo conseguir que el software sea de más neutro por sí el ENO. Ya conocimos muchos casos de
+
+7
+00:00:43,000 --> 00:00:51,120
+software que es machista o racista o capacitista o un montón de cosas así. Por eso me parece
+
+8
+00:00:51,120 --> 00:00:57,480
+que vamos a hablar súper guay, que nos vengan a contar cómo se podría mitigar este problema
+
+9
+00:00:57,480 --> 00:01:07,520
+y todo lo relacionado en torno a este tema. Vaya. Sergio, ¿nos cuentas un poquito quiénes
+
+10
+00:01:07,520 --> 00:01:13,920
+nos van a hablar de esto? Pues, mira, nos van a hablar de esto. Paula Santa María Villabelle y
+
+11
+00:01:13,920 --> 00:01:20,040
+Rubén Rodríguez Fernández. Ella es psicóloga social y científica de datos y tiene una mezcla
+
+12
+00:01:20,040 --> 00:01:26,760
+súper guay con su compañero porque él es doctorando en aprendizaje máquina, con lo cual yo
+
+13
+00:01:26,760 --> 00:01:31,880
+creo que de esa fusión ahí puede salir seguro que cualquier cosa que sale va a ser buena. Entonces,
+
+14
+00:01:31,880 --> 00:01:39,120
+nada, una charla, yo creo que interesante y sobre todo diferente. Me apetece bastante escucharla y
+
+15
+00:01:39,120 --> 00:01:46,880
+nada, les damos la bienvenida. Mira, te he contado una cosa. Rubén está doctorándose en el aprendizaje
+
+16
+00:01:46,880 --> 00:01:53,600
+de máquina explicable. Yo necesito que luego me explique que es la máquina explicable. Venga,
+
+17
+00:01:53,600 --> 00:02:03,120
+les damos paso y ya los conocimos. Hola, hola. Hola. Hola. Hola, ¿qué tal? Buenos días. Bien,
+
+18
+00:02:03,120 --> 00:02:10,240
+nada, les escuchamos bien, les vemos bien, así que ningún problema. Y bueno, no se gimen alguna
+
+19
+00:02:10,240 --> 00:02:17,240
+cosita más. Nada, todo listo. Con muchas ganas de escuchar vuestra charla. De verdad que hacéis un
+
+20
+00:02:17,240 --> 00:02:23,520
+dúo muy interesante. Me encanta para la gente de manidades que se mete en tecnología porque nos
+
+21
+00:02:23,520 --> 00:02:32,720
+hace mucha falta, así que genial. Sí, en la diversidad está justo. Nada, un placer y todo
+
+22
+00:02:32,720 --> 00:02:40,840
+nuestro. Vale, pues comparto la pantalla. Venga, les dejamos. Chao, te voy bien. Gracias.
+
+23
+00:02:40,840 --> 00:02:46,880
+Muchas gracias. Vale, entonces si estáis viendo mi pantalla ahora mismo, sí. Yo lo veo, sí.
+
+24
+00:02:46,880 --> 00:02:54,040
+Vale. Bueno, ya nos han presentado, somos Paola y Rubén y vamos a estar hablando de
+
+25
+00:02:54,040 --> 00:03:00,600
+Machine Learning, su impacto en las personas. Todo es una perspectiva psicosocial. Así que vamos,
+
+26
+00:03:00,600 --> 00:03:09,120
+vamos a empezar. Vale. En siglo XVII, con el descubrimiento del nuevo mundo,
+
+27
+00:03:09,120 --> 00:03:14,080
+60 millones de personas son secuestradas de África y llevadas para ser esclavizadas.
+
+28
+00:03:17,080 --> 00:03:22,320
+En 1791, Olinda Gouache escribela Declaración de los Derechos de la Mujer a Ciudad,
+
+29
+00:03:22,320 --> 00:03:32,280
+y dos años después es Guillotineada. En 1955, Montgomery a la Bama, Rosa Parks es detenida
+
+30
+00:03:32,280 --> 00:03:39,600
+por no ser su asiento en un autobús a un hombre blanco. 2016, ya en España, las personas con
+
+31
+00:03:39,600 --> 00:03:44,560
+discapacidad auditiva presentan una tasa de desempleo de más del 50%.
+
+32
+00:03:44,560 --> 00:03:53,320
+2020, Mar Mediterráneo, más de 1.070 personas pierden la vida en las rutas migratorias.
+
+33
+00:03:55,560 --> 00:04:01,560
+Y 2021, prácticamente en el planeta Tierra, los actos sexuales entre personas de un sexo
+
+34
+00:04:01,560 --> 00:04:06,760
+son criminalizados en casi 70 países y creo que no hace de ellos están ahompedados con la muerte.
+
+35
+00:04:09,040 --> 00:04:14,160
+Parece ser que digamos que hay algo como nuestro adene social en el que siempre
+
+36
+00:04:14,160 --> 00:04:20,720
+nos visto muy presente la discriminación y lo que venimos a plantear es esta discriminación
+
+37
+00:04:20,720 --> 00:04:27,720
+también puede tener cabida en el escenario tecnológico, de ser así qué características tiene este
+
+38
+00:04:27,720 --> 00:04:34,840
+escenario que le haga particular y desde dónde podemos digamos generar medias de afrontamiento.
+
+39
+00:04:34,840 --> 00:04:40,160
+Todo ello lo vamos a mirar de una perspectiva psicosocial, así que vamos a ver primero que es la
+
+40
+00:04:40,160 --> 00:04:48,160
+psicología social porque no, supongo que no todo el mundo lo sabrá. Bueno hay muchas deficiencias
+
+41
+00:04:48,160 --> 00:04:53,200
+de psicología social, mucho más técnicas pero a mí sin duda la que más me gusta es que cuando
+
+42
+00:04:53,200 --> 00:05:01,040
+las personas se juntan pasan cosas. Es verdad cuando nos sentimos parte, pertenecientes de un grupo,
+
+43
+00:05:01,040 --> 00:05:06,640
+tendemos a actuar de una manera diferente a como lo haríamos cuando nos percibimos a
+
+44
+00:05:06,640 --> 00:05:11,960
+nosotros o a nosotros como de manera más individual. Entonces bueno no hay tiempo para hablar de todos
+
+45
+00:05:11,960 --> 00:05:19,520
+los procesos pero es verdad que sin duda el sentir una identidad perteneciente a un grupo hace que
+
+46
+00:05:19,520 --> 00:05:26,080
+tomamos actuaciones a veces más extremas, más en defensa del grupo, más en contra de los grupos
+
+47
+00:05:26,080 --> 00:05:34,400
+contrarios y entonces la psicología social va a venir a intentar entender y explicar estos procesos
+
+48
+00:05:34,400 --> 00:05:44,040
+de influencia de persona individual al grupo y de eso. Pero para qué lo va a hacer? Como una
+
+49
+00:05:44,040 --> 00:05:49,880
+rama en la psicología siempre tengo como objetivo en mejorar la vida y la calidad de vida de las
+
+50
+00:05:49,880 --> 00:05:57,280
+personas. Entonces todos estos estudios van a mirar el mundo de una manera para actuar desde el
+
+51
+00:05:57,280 --> 00:06:02,280
+grupo y para el grupo. Para ver cómo mira la psicología, los problemas y por lo tanto como
+
+52
+00:06:02,280 --> 00:06:07,640
+hemos mirado los problemas de Machine Learning tenemos a Martín Baró y a Tafel estos dos señores
+
+53
+00:06:07,640 --> 00:06:13,600
+de hacia abajo. Martín Baró es un psicólogo social español que vive toda la vida en El Salvador,
+
+54
+00:06:13,600 --> 00:06:19,960
+allí crea su teoría de liberación y va a decir una cosa muy importante. Va a decir que cuando
+
+55
+00:06:19,960 --> 00:06:25,680
+te acercas a una realidad hay que entenderla desde la narrativa de las personas, es decir cuando de
+
+56
+00:06:25,680 --> 00:06:31,440
+repente llegó Maslow y hizo su pirámide de las necesidades, si tú luego vas a hacer una intervención
+
+57
+00:06:31,440 --> 00:06:37,320
+en El Salvador no te sirves a pirámide de necesidades, tienes que entender que la realidad es
+
+58
+00:06:37,320 --> 00:06:43,840
+histórica y está contextualizada siempre. Y luego además llegará a Tafel, que es el hombre, el otro
+
+59
+00:06:43,840 --> 00:06:50,080
+señor, y dirá no sólo hay que partir de la realidad concreta las personas por las que intervenimos,
+
+60
+00:06:50,080 --> 00:06:57,200
+sino que además una psicología social neutra es prácticamente imposible. Esto en ese momento ambas
+
+61
+00:06:57,200 --> 00:07:03,960
+realidades, tanto una crítica epistemológica como una crítica a la neutralidad, no les favorecía
+
+62
+00:07:03,960 --> 00:07:10,720
+mucho porque siempre se quiere poner la psicología social como una ciencia experimental con experimentos
+
+63
+00:07:10,720 --> 00:07:16,320
+en el vacío y demás. Pero es verdad que la psicología social siempre se va a poner del lado
+
+64
+00:07:16,320 --> 00:07:23,240
+del grupo desfavorecido. Tafel también ha sido una cosa muy interesante y dirá la discriminación,
+
+65
+00:07:23,240 --> 00:07:30,680
+como hemos visto antes, no viene de procesos raros o diferentes, no viene de personas especiales,
+
+66
+00:07:30,680 --> 00:07:37,040
+la discriminación viene de procesos naturales, ordinarios, como es la categorización. Nos gustaba
+
+67
+00:07:37,040 --> 00:07:42,360
+dejar un pequeño paréntesis, ya que hablamos de psicología, para explicar que son los sesgos. A
+
+68
+00:07:42,360 --> 00:07:51,200
+veces se malentienen un poco, dándole un sentido peyorativo a la palabra sesgo. Cuando nacemos,
+
+69
+00:07:51,200 --> 00:07:59,120
+si puedes pasar a la siguiente positiva, por favor. Genial, gracias. Cuando nacemos en los primeros
+
+70
+00:07:59,120 --> 00:08:05,600
+años de vida y se generan unos cambios a nivel cerebral muy importante a los que llamamos categorización,
+
+71
+00:08:05,600 --> 00:08:12,280
+es decir, cogemos cajitas y metemos el mundo en esas cajitas. Esto es verdaderamente adaptativo,
+
+72
+00:08:12,280 --> 00:08:17,400
+¿no? ¿Por qué? Porque nos hacen enfrentarnos al día a día, de la manera rápida, buscando
+
+73
+00:08:17,400 --> 00:08:24,320
+atajos cognitivos y nos hacen enfrentarnos sin usar muchos recursos fisiológicos, ¿no? De manera
+
+74
+00:08:24,320 --> 00:08:29,520
+que si yo veo un coche, me da igual si es blanco, si es rojo, si es lara, si es pequeño, sé que si
+
+75
+00:08:29,520 --> 00:08:34,800
+pasa y el coche viene rápido y cerca me pilla. Y eso es lo que viene siendo un sesgo, ¿no? Meter la
+
+76
+00:08:34,800 --> 00:08:40,040
+realidad en cajitas. ¿Dónde están las zonas de peligro? Cuando esas cajitas no se construyen por
+
+77
+00:08:40,040 --> 00:08:45,320
+cosas visuales, sino que se construyen también de manera social, ¿no? Lo que llamamos costuctos
+
+78
+00:08:45,320 --> 00:08:50,960
+sociales. Y entonces heredamos por nuestros grupos de pertenencia y pues nuestra cultura, pues que
+
+79
+00:08:50,960 --> 00:08:58,040
+ser mujer, que ser hombre, que ser migrante, que significa estar en situación de calle. Y esto
+
+80
+00:08:58,040 --> 00:09:03,600
+también hacemos grupitos. ¿Cuál es el siguiente paso en la fase de o el zona de peligro que vamos
+
+81
+00:09:03,600 --> 00:09:11,120
+por la vida estando sesgados y sesgadas cada minuto, ¿vale? Por una cosa adaptativa, pero sin ser
+
+82
+00:09:11,120 --> 00:09:17,240
+conscientes de esos sesgos que acarreamos, ¿no? Que un poco será parecida lo que comentará Rubén en
+
+83
+00:09:17,240 --> 00:09:26,120
+los modelos de Masi Lerni. ¿Qué pasa cuando yo pienso que las mujeres, bueno, pues se meten menos
+
+84
+00:09:26,120 --> 00:09:34,560
+en el tema de matemáticas, de programación, no son tan aptas, no son adaptadas al mundo empresarial y
+
+85
+00:09:34,560 --> 00:09:40,120
+todo eso que bueno, nadie dirá que lo piensa, pero la realidad es que en España, en el área de
+
+86
+00:09:40,120 --> 00:09:45,200
+ciencia de datos, son unitarita por ciento de las mujeres. Es decir, cuando el sesgo social se hace
+
+87
+00:09:45,200 --> 00:09:51,360
+real en sus consecuencias, estamos hablando de discriminación y ya es como zona de peligro superembarcada.
+
+88
+00:09:53,280 --> 00:09:58,720
+Ante esto, bueno, ¿qué podemos hacer? Rubén al final contará técnicas con retras de Masi Lerni.
+
+89
+00:09:58,720 --> 00:10:06,200
+¿Qué podemos hacer desde también de la psicología social, cuál es la propuesta? Hablaremos de lo
+
+90
+00:10:06,200 --> 00:10:13,120
+que es acción colectiva. Bueno, ahora hago cuando pueda pasar a la siguiente diapositiva y podemos
+
+91
+00:10:13,120 --> 00:10:20,360
+ver a las personas. La acción colectiva es un grupo de personas que tienen una misma, comparten
+
+92
+00:10:20,360 --> 00:10:24,680
+una realidad, ¿no? Ven la vida de una manera parecida, de una manera que la perciben como un
+
+93
+00:10:24,680 --> 00:10:30,880
+fusta y se creen capaces de cambiar esa sección. Aquí, por ejemplo, tenemos a Silke Carlo, ella es
+
+94
+00:10:30,880 --> 00:10:40,880
+directora de Big Brother Watch, que es una sección por los derechos civiles de temas de privacidad
+
+95
+00:10:40,880 --> 00:10:46,040
+de datos, de no sabalpas, de valer de paticia, un canal de YouTube que intenta acercar a las
+
+96
+00:10:46,040 --> 00:10:52,200
+niñas a temas de programación, de física, de matemáticas para que tengan referente de su
+
+97
+00:10:52,200 --> 00:10:57,280
+misma edad. Y luego a Tzalziswe, ¿no? Ella es una persona muy referente en el mundo de Masi Lerni,
+
+98
+00:10:57,280 --> 00:11:01,360
+de la Indirección artificial. Y lo que viene hablando es de poner a las personas en el centro,
+
+99
+00:11:01,360 --> 00:11:06,440
+¿no? De entender que cuando proponemos una solución, un automatismo, un moderno machine learning,
+
+100
+00:11:06,440 --> 00:11:11,760
+no solo va a afectar a aquello que queremos solucionar, sino que afectará a muchas más personas que
+
+101
+00:11:11,760 --> 00:11:18,280
+debemos tener en cuenta. Y si es tenderme más, le doy la palabra a mi compi Rubén para que nos
+
+102
+00:11:18,280 --> 00:11:25,320
+aterrice todo esto en el escenario tecnológico. Vale, entonces en esta parte vamos a hacer una
+
+103
+00:11:25,320 --> 00:11:29,760
+pequeña discusión de cómo estos sistemas de aprendizaje de máquina tienen un impacto en la
+
+104
+00:11:29,760 --> 00:11:35,200
+sociedad y las posibles áreas de mejora, tanto en invés socioeconómico, en las redes sociales,
+
+105
+00:11:35,200 --> 00:11:39,600
+como a nivel técnico, que en este caso, pues, seríamos nosotros como Data Scientist. Vale,
+
+106
+00:11:39,600 --> 00:11:43,920
+el primer área es la diversidad de los equipos de Data Science, que tiene como principal beneficio
+
+107
+00:11:43,920 --> 00:11:47,960
+que los sesgos presentes en el equipo sean lo más heterogéneos posibles. Por ejemplo,
+
+108
+00:11:47,960 --> 00:11:52,200
+si estamos desarrollando un sistema que valúan personas, estas personas seguramente lo probarán
+
+109
+00:11:52,200 --> 00:11:55,680
+con personas similares a ellas. Entonces lo que estaríamos consiguiendo es una prueba más
+
+110
+00:11:55,680 --> 00:12:03,000
+representativa y un sistema más justo. El segundo área, que también es muy importante,
+
+111
+00:12:03,000 --> 00:12:07,200
+es el acceso a los recursos y se centran en la diferencia de recursos que hay entre los diferentes
+
+112
+00:12:07,200 --> 00:12:12,040
+actores en el campo del más inlerno. Por ejemplo, es muy difícil que una persona como yo sea capaz
+
+113
+00:12:12,040 --> 00:12:16,800
+de desarrollar un modelo como GPT-3, ya que costó varios millones de euros en ese entrenamiento.
+
+114
+00:12:16,800 --> 00:12:21,880
+Otro de los problemas es que estos sistemas son escalables y esto nos pone en una desventaja
+
+115
+00:12:21,880 --> 00:12:26,760
+competitiva contra ellos, vale, como humanos. Esto de escalables quiere decir que una vez que
+
+116
+00:12:26,760 --> 00:12:30,920
+tengamos, por ejemplo, un sistema de conducción autónoma, lo podremos desplegar en muchos vehículos
+
+117
+00:12:30,920 --> 00:12:35,200
+sin ningún coste. El software ya está ahí, el modelo ya está ahí. Simplemente necesitaríamos
+
+118
+00:12:35,200 --> 00:12:39,600
+los recursos y materiales que sean los vehículos. Sin embargo, nosotros como humanos no somos escalables,
+
+119
+00:12:39,600 --> 00:12:45,480
+no podemos clonarlos, perdón, y nuestro coste de entrenamiento no se reduce, pero necesitamos
+
+120
+00:12:45,480 --> 00:12:52,960
+formarnos como persona y en este caso, pues, aprender a conducir. El tercer área de trato sobre
+
+121
+00:12:52,960 --> 00:12:58,040
+la relación de poder, que está muy relacionado con el anterior, y básicamente la diferencia de
+
+122
+00:12:58,040 --> 00:13:04,680
+poder se basa en la diferencia de recursos que hay entre los diferentes actores, vale. Entonces,
+
+123
+00:13:04,680 --> 00:13:08,080
+por ejemplo, una persona que tiene muy pocos recursos, vamos a usar un actor con pocos recursos,
+
+124
+00:13:08,080 --> 00:13:13,760
+difícilmente puede rebatir a otro sobre determinados aspectos, por contestualizarlo un poco. Por
+
+125
+00:13:13,760 --> 00:13:18,160
+ejemplo, una persona con papel y boli, pues, difícilmente podría rebatirme a mí que el número
+
+126
+00:13:18,160 --> 00:13:24,920
+primo, número doce en mil, es 104.729, vale, porque sería muy costoso o tardaría muchísimo tiempo.
+
+127
+00:13:24,920 --> 00:13:30,280
+Vale, ya por último, tenemos la vioquidad, que básicamente esto se refiere a que actualmente
+
+128
+00:13:30,280 --> 00:13:36,120
+los sistemas tecnológicos, los aparatos electrónicos, forman parte de nuestra día a día y cada vez
+
+129
+00:13:36,120 --> 00:13:40,320
+pues estos dispositivos están más integrados y recolectan más y más datos sobre nosotros.
+
+130
+00:13:40,320 --> 00:13:46,920
+Ignorando los problemas de privacidad que esto plantea, esto pone una ventaja competitiva a
+
+131
+00:13:46,920 --> 00:13:51,240
+las empresas, vale, que administran estos datos, sobre los pequeños actores, como pueden ser
+
+132
+00:13:51,240 --> 00:13:56,320
+personas individuales, son empresas más pequeñas, y esto en cierta manera también limita la
+
+133
+00:13:57,520 --> 00:14:04,040
+innovación de estas empresas. Centrando en un poco ahora más en la parte técnica,
+
+134
+00:14:04,040 --> 00:14:09,040
+una vez hemos visto estos aspectos socioeconómicos, los esgos en Machine Learning,
+
+135
+00:14:09,040 --> 00:14:13,680
+vale, igual que en las personas, no son malos, de hecho en este caso son indispensables,
+
+136
+00:14:15,680 --> 00:14:20,680
+ya que por ejemplo, un sistema de Machine Learning necesita los esgos inductivos para aprender,
+
+137
+00:14:20,680 --> 00:14:25,960
+vale, o por ejemplo cuando elegimos una regresión lineal, pues estamos asumiendo que la relación
+
+138
+00:14:25,960 --> 00:14:30,720
+entre las variables de entrada y la variable de salida es una relación lineal, vale, pues es un sesgo,
+
+139
+00:14:30,720 --> 00:14:36,480
+vale, entonces el problema no son los esgos, vale, el problema es cuando estos esgos son perjudiciales
+
+140
+00:14:36,480 --> 00:14:41,680
+y afectan pues a un grupo covalacional, vale, estos esgos no tienen por qué es algo que estén en
+
+141
+00:14:41,680 --> 00:14:46,080
+los datos, vale, se pueden estar en los datos porque es un reflejo de un aspecto de la sociedad,
+
+142
+00:14:46,080 --> 00:14:50,240
+pero también los podemos introducir nosotros como data scientist y generalmente esto es por
+
+143
+00:14:50,240 --> 00:14:54,320
+desconocimiento, vale, pues entonces en el resto de la presentación nos vamos a centrar en
+
+144
+00:14:54,320 --> 00:14:59,960
+diferentes métricas que nos permiten diagnosticar estos esgos y cómo podemos tratar de mitigarlos,
+
+145
+00:14:59,960 --> 00:15:04,880
+vale, para desarrollar sistemas que son más justos, vale, como caso práctico,
+
+146
+00:15:04,880 --> 00:15:10,800
+vamos a trabajar con el dataset adult, vale, que es un dataset de datos demográficos de 1994,
+
+147
+00:15:10,800 --> 00:15:15,520
+en el que tiene como objetivo pues tratar de predecir si una persona gana más de 50.000 euros,
+
+148
+00:15:15,520 --> 00:15:20,600
+vale, que considera en mi clase positiva o menos, vale, entonces en este caso pues bueno hemos utilizado
+
+149
+00:15:20,600 --> 00:15:24,480
+seleccionado un modelo de random force, vale, por ejemplo esto es un sesgo mío,
+
+150
+00:15:24,480 --> 00:15:29,240
+también me gustan mucho los modelos basados en árboles y hace que en mi caso se me ha probable
+
+151
+00:15:29,240 --> 00:15:33,280
+elegir un modelo basado en árboles que un modelo como otro cualquiera como puede ser una máquina
+
+152
+00:15:33,280 --> 00:15:37,840
+vector soporte una reversión logística, vale, en este caso pues bueno vamos a considerar como
+
+153
+00:15:37,840 --> 00:15:43,920
+como atributo protegido al género, vale, y vamos a estudiar cómo el sistema funciona de manera
+
+154
+00:15:43,920 --> 00:15:49,560
+diferente para hombres y para mujeres, vale, aquí tenéis un resumen de las métricas de tanto
+
+155
+00:15:49,560 --> 00:15:55,720
+nivel global como desagregado más en género para hombres y mujeres, vale, y la métrica más importante
+
+156
+00:15:55,720 --> 00:15:59,760
+en este caso es el recall, vale, que podemos ver que hay una diferencia bastante significativa
+
+157
+00:15:59,760 --> 00:16:07,440
+entre hombres y mujeres, vale, en este caso en los hombres es un 0,8 y en las mujeres es un 0,5,
+
+158
+00:16:07,440 --> 00:16:11,640
+vale, al final el recall lo que está miriéndose la habilidad que tenemos de clasificar algo como
+
+159
+00:16:11,640 --> 00:16:15,920
+positivo cuando es positivo, vale, entonces este sistema está perju... está tratando de forma
+
+160
+00:16:15,920 --> 00:16:19,720
+injusta a las mujeres y esto es algo que hemos introducido en nosotros de forma artificial,
+
+161
+00:16:19,720 --> 00:16:23,920
+vale, por nuestros propios sesgos, entonces si este sistema se utilizase por ejemplo para
+
+162
+00:16:23,920 --> 00:16:29,080
+calcular un apunto de acción crediticia pues estaría perjudicando, es injustamente a las mujeres
+
+163
+00:16:29,080 --> 00:16:32,800
+y esto no sería algo que se tiene de los datos, vale, que pueden tener otro tipo de sesgos,
+
+164
+00:16:32,800 --> 00:16:38,040
+esto es algo que hemos introducido en nosotros, por eso es muy importante que seamos conscientes de
+
+165
+00:16:38,040 --> 00:16:42,120
+las asunciones, vale, de los peligros entre comedias que pueden tener las diferentes técnicas de
+
+166
+00:16:42,120 --> 00:16:48,520
+machine learning, vale, entonces bueno, una vez vista la problemática lo que vamos a hacer es definir
+
+167
+00:16:48,520 --> 00:16:53,720
+el campo de fitness de machine learning que básicamente es una área de aprendizaje de
+
+168
+00:16:53,720 --> 00:16:58,120
+máquina automático que trata de hacer que los sistemas de machine learning sean más justos,
+
+169
+00:16:58,120 --> 00:17:03,400
+vale, el objetivo es que estos sistemas se basen únicamente en las actitudes o características
+
+170
+00:17:03,400 --> 00:17:07,840
+relevantes y no se vean influenciados por otros atributos que son juntas de sesgos o de juicios,
+
+171
+00:17:07,840 --> 00:17:16,520
+pueden ser el género o la raza, vale, además como consecuencia también estamos tratando de evitar
+
+172
+00:17:16,520 --> 00:17:21,040
+los feedback loops que es básicamente, o sea esto ocurre básicamente cuando la salida de nuestro
+
+173
+00:17:21,040 --> 00:17:26,960
+modelo afecta la futura recogida de datos, vale, y esto al final tiene como como consecuencia que
+
+174
+00:17:26,960 --> 00:17:30,920
+estos sergos se van perpetuando o incluso pueden llegar a acentuarse, vale, por el simple hecho
+
+175
+00:17:30,920 --> 00:17:36,600
+de utilizar ese modelo de machine learning, vale, entonces ya hemos contextualizado el problema y
+
+176
+00:17:36,600 --> 00:17:40,360
+ahora nos vamos a centrar en una serie de métricas, en este caso vamos a ver tres, pero hay un montón
+
+177
+00:17:40,360 --> 00:17:47,000
+que nos permite de alguna forma, vale, dependiendo del caso pues tratar de cuantificar si nuestro
+
+178
+00:17:47,000 --> 00:17:51,360
+sistema está selgado o no, vale, he cogido tres que son muy sencillas, vale, para no perdernos,
+
+179
+00:17:51,360 --> 00:17:56,400
+la primera es la diferencia estadística de la paridad, vale, que básicamente lo que mides,
+
+180
+00:17:56,400 --> 00:18:01,560
+la diferencia de probabilidad, vale, de ser clasificado como instancia positiva que es al
+
+181
+00:18:01,560 --> 00:18:07,320
+final generalmente en este caso, es la clasificación deseable entre el grupo no prevorengiado y el
+
+182
+00:18:07,320 --> 00:18:10,480
+grupo prevorengiado, entonces lo que queríamos es que esa es probabilidad de ser al menos más
+
+183
+00:18:10,480 --> 00:18:14,760
+cercanas a cero posible porque querría decir pues que nuestro sistema pues no está utilizando
+
+184
+00:18:14,760 --> 00:18:20,880
+ese atributo para sesgar entre la clasificación positiva o la negativa, la segunda que es la
+
+185
+00:18:20,880 --> 00:18:26,880
+diferencia de oportunidades, bueno, va a empezar para la tercera que están de revés, es la diferencia
+
+186
+00:18:26,880 --> 00:18:34,280
+entre los otros, vale, y esto básicamente lo que trate de conseguir o premiar es que la cura
+
+187
+00:18:34,280 --> 00:18:38,440
+si sea igual de alto para todos los grupos poblacionales, vale, este caso pues para los hombres y
+
+188
+00:18:38,440 --> 00:18:43,040
+para las mujeres, vale, en concreto lo que están midiendo es la diferencia entre el true positive
+
+189
+00:18:43,040 --> 00:18:47,120
+rate y el ford positive rate para los distintos grupos, lo que está haciendo es que sean lo
+
+190
+00:18:47,120 --> 00:18:51,800
+más parecidos posibles entre el grupo, vale, en este caso pues sería la media, tenemos dos pues
+
+191
+00:18:51,800 --> 00:18:56,000
+la diferencia si tenemos más de dos pues sería la media de todos estos, de estas diferencias,
+
+192
+00:18:56,000 --> 00:18:59,960
+vale, y después tenemos el de cuál es la oportunidad de diferencia que es básicamente una
+
+193
+00:18:59,960 --> 00:19:04,720
+relajación de la breach odds en el cual solo se considera el true positive rate, vale, en este
+
+194
+00:19:04,720 --> 00:19:10,160
+caso estamos ignorando el ford positive rate, en este caso se eligen estas dos métricas en
+
+195
+00:19:10,160 --> 00:19:14,880
+la breach odds porque es la probabilidad o bueno están midiendo el número de instancias que se
+
+196
+00:19:14,880 --> 00:19:20,360
+clasifican como positivas en el true positive, en el average odds son tanto instantes que no
+
+197
+00:19:20,360 --> 00:19:24,040
+negativas que les ponemos como positivas como positivas que son positivas y en el igual
+
+198
+00:19:24,040 --> 00:19:28,200
+oportunito estamos relajando que solo son las positivas que se clasifican como positivas,
+
+199
+00:19:28,200 --> 00:19:32,720
+vale, esta última además es más fácil de implementar en los sistemas de machine learning,
+
+200
+00:19:34,280 --> 00:19:40,200
+vale, entonces nos hemos concienciado de problemas que tenemos, sabemos cómo medirlo
+
+201
+00:19:40,200 --> 00:19:47,000
+con esta serie de métricas, vale, entonces ahora como podemos actuar, vale, pues podemos dividir
+
+202
+00:19:47,000 --> 00:19:53,040
+todas las técnicas de fairness, machine learning entre grandes grupos que se van a delimitar
+
+203
+00:19:53,040 --> 00:19:57,600
+pues donde los situemos en el ciclo de vida de nuestro proyecto, entonces tenemos las métricas
+
+204
+00:19:57,600 --> 00:20:03,200
+de preprocessing que se centran en todo lo que podemos hacer antes de meter nuestros datos
+
+205
+00:20:03,200 --> 00:20:10,080
+al modelo en in-processing en el cual modificamos el entrenamiento o el modelo pero es simplemente
+
+206
+00:20:10,080 --> 00:20:15,160
+pues involucre el proceso de entrenamiento y por último tenemos el procesado que es todo lo que
+
+207
+00:20:15,160 --> 00:20:21,360
+podemos hacer entre que sacamos algo de modelos, que tenemos la serie de modelo y tomamos una
+
+208
+00:20:21,360 --> 00:20:28,200
+decisión, vale, ahora vamos a ver en detalle estos tres áreas y algún ejemplo de cada uno de ellos,
+
+209
+00:20:29,680 --> 00:20:35,280
+vale, entonces en las técnicas de preprocessing como comenté pues modificamos o el data set original
+
+210
+00:20:35,280 --> 00:20:40,240
+o calculamos nueva información en base al data set, vale, el objetivo es que tenemos es reducir la
+
+211
+00:20:40,240 --> 00:20:43,600
+diferencia probabilística entre las etiquetas para los diferentes grupos poblacionales,
+
+212
+00:20:43,600 --> 00:20:50,080
+vale, como ejemplo pues tenemos aquí una técnica que modifica los pesos de, o en este caso los
+
+213
+00:20:50,080 --> 00:20:55,040
+costes de clasificación, vale, hay un montón de ellas, esta es una de las más sencillas, vale,
+
+214
+00:20:55,040 --> 00:20:59,360
+y esto es similar a lo que se hace cuando tenemos datos desequilibrados, vale, modificamos los
+
+215
+00:20:59,360 --> 00:21:03,800
+costes de clasificación para que sean diferentes en este caso para cada uno de los grupos,
+
+216
+00:21:03,800 --> 00:21:10,160
+vale, y de esta forma podemos hacer entre comillas pues el modelo preste más atención aquellas
+
+217
+00:21:10,160 --> 00:21:16,560
+instancias positivas de los grupos que están, de los grupos no privilegiados, vale, además esto
+
+218
+00:21:16,560 --> 00:21:21,600
+como podéis ver es bastante fácil de implementar, sobre todo en Python con Scikit-learn que únicamente
+
+219
+00:21:21,600 --> 00:21:27,960
+tenemos que utilizar el parámetro sample weight de todos los, del método fit, vale, que implementan
+
+220
+00:21:27,960 --> 00:21:35,160
+todos los estimadores de Scikit-learn, vale, después tenemos las técnicas de in-processing que
+
+221
+00:21:35,160 --> 00:21:39,120
+estas son más flexibles en el sentido de que podamos añadir más restricciones o más complejas
+
+222
+00:21:39,120 --> 00:21:44,160
+pues como definimos el entrenamiento, pero como decremento pues tiene que generalmente
+
+223
+00:21:44,160 --> 00:21:49,920
+estas técnicas se implementan para un modelo en particular o familia de modelos, vale, entonces
+
+224
+00:21:49,920 --> 00:21:53,440
+si por ejemplo nos dicen tenéis que utilizar este modelo tenéis que utilizar esta plataforma pues
+
+225
+00:21:53,440 --> 00:21:59,120
+que no las utilizan, o sea que no podamos utilizarlas, vale, como ejemplo concreto tenemos aquí el
+
+226
+00:21:59,120 --> 00:22:04,240
+adversarial de BASIM que básicamente es una forma de modificar el entrenamiento, vale, en el cual
+
+227
+00:22:04,240 --> 00:22:09,320
+estamos buscando un modelo con una buena cura, así decir, al final como hacemos todo el modelo,
+
+228
+00:22:09,320 --> 00:22:13,560
+maximizamos la métrica de rendimiento, en este caso como acúrese, y ver podría ser otra, pero
+
+229
+00:22:13,560 --> 00:22:18,600
+añadimos un nuevo término a la función de pérdida en la que tratamos de minimizar la posibilidad
+
+230
+00:22:18,600 --> 00:22:24,000
+de que un segundo modelo, que se entrena después posteriormente, sea capaz de predecir si es una
+
+231
+00:22:24,000 --> 00:22:29,840
+población, un grupo población al discriminado, o sea que está protegido o no, en bases de
+
+232
+00:22:29,840 --> 00:22:34,320
+información de salida, es decir, que queremos que la salida del modelo, esta probabilidad en este
+
+233
+00:22:34,320 --> 00:22:41,160
+caso pues tenga la menor información posible sobre el atributo protegido, y por último las
+
+234
+00:22:41,160 --> 00:22:46,080
+técnicas vas a hacer en post procesado que simplemente una capa adicional que ponemos sobre el
+
+235
+00:22:46,080 --> 00:22:52,080
+modelo, vale, esto es el más sencillo de implementar, porque lo podemos utilizar sobre un modelo que ya
+
+236
+00:22:52,080 --> 00:22:56,680
+esté entrenado, o un modelo que ya esté desplegado, simplemente tenemos que añadir esta capa adicional,
+
+237
+00:22:56,680 --> 00:23:02,240
+vale, que va a modificar la función de decisión de nuestro modelo para tratar de que sea más
+
+238
+00:23:02,240 --> 00:23:08,880
+justo, vale, entonces en este caso os ponemos la, este, esta técnica que se llama Riget Option
+
+239
+00:23:08,880 --> 00:23:15,280
+Classification, que es muy sencilla conceptualmente, y lo que hace es modificar en la frontera de
+
+240
+00:23:15,280 --> 00:23:18,900
+decisión, que es al final donde cambiaría pues hay una predicción negativa, una positiva o de
+
+241
+00:23:18,900 --> 00:23:24,000
+revés, vale, que generalmente es 0,5 porque es una probabilidad de 0 a 1, son sucesos
+
+242
+00:23:24,000 --> 00:23:30,080
+excluyentes, vale, asumiendo que es 0,5 pues lo que haría es seleccionar un intervalo alrededor
+
+243
+00:23:30,080 --> 00:23:36,480
+de este 0,5, vale, que llamaría una zona de riesgo, vale, en esta zona de riesgo es más probable que
+
+244
+00:23:36,480 --> 00:23:40,320
+se produzcan los sesgos, vale, porque el modelo en esta área pues el modelo no está tan seguro entre
+
+245
+00:23:40,320 --> 00:23:43,960
+comillas, vale, no es una probabilidad de 0 que estaría muy seguro, o de 1 que también estaría muy
+
+246
+00:23:43,960 --> 00:23:49,600
+seguro, vale, entonces dentro de este área lo que hace el modelo es al grupo al poblacional,
+
+247
+00:23:49,600 --> 00:23:54,080
+el no privilegiados, le otorga el beneficio de la duda, es decir, lo es clasifica siempre como
+
+248
+00:23:54,080 --> 00:23:58,240
+positivo, ya al grupo al privilegiado es lo que hace es clasificarlos como negativos, es decir,
+
+249
+00:23:58,240 --> 00:24:05,040
+que es más conservador, y de esta forma pues se pueden reducir en cierto modo los riesgos de que
+
+250
+00:24:05,040 --> 00:24:09,640
+puede tener nuestro modelo, vale, lo mismo, aquí tenéis el ejemplo de cómo se puede implementar
+
+251
+00:24:09,640 --> 00:24:17,960
+esta técnica que es muy sencilla, vale, y ya por último al modo de resultado al principio de
+
+252
+00:24:17,960 --> 00:24:25,320
+esta presentación os enseñó unas matrices de confusión, vale, en las cuales veíamos,
+
+253
+00:24:25,320 --> 00:24:28,680
+bueno, unas métricas, en las cuales veíamos que había una diferencia de rendimiento significativa
+
+254
+00:24:28,680 --> 00:24:34,960
+entre los hombres y las mujeres, vale, y aquí después tenemos estas métricas originales,
+
+255
+00:24:34,960 --> 00:24:39,280
+vale, como un control, y después tenemos que hemos obtenido, en este caso hemos seleccionado
+
+256
+00:24:39,280 --> 00:24:43,320
+el mejor modelo de feirnes, vale, que fue el de reject option, vale, pero podría ser cualquiera
+
+257
+00:24:43,320 --> 00:24:48,000
+de ellos, entonces fijaos, todas las métricas que os comenté anteriormente que miden los
+
+258
+00:24:48,000 --> 00:24:53,320
+sesgos han pasado a tener valores no cercanos a cero, es decir, valores que son grandes,
+
+259
+00:24:53,320 --> 00:24:59,640
+que quieren indicar que hay un sesgo a sus valores cercanos a cero, vale, en las tres técnicas,
+
+260
+00:24:59,640 --> 00:25:03,520
+pues los valores son muy cercanos a cero, vale, después aquí en las métricas de rendimiento
+
+261
+00:25:03,520 --> 00:25:08,720
+podemos ver que el rendimiento es más o menos similar, es decir, que no ha habido, que el modelo
+
+262
+00:25:08,720 --> 00:25:13,120
+nos ha degradado excesivamente, es decir, que más o menos conseguimos un rendimiento similar,
+
+263
+00:25:13,120 --> 00:25:19,200
+y lo más interesante, aquí una vez visto que estas métricas de sesgo son más o menos parecidas,
+
+264
+00:25:19,200 --> 00:25:25,680
+al que miden los sesgos son más o menos, son buenas, podemos ver que el recall, vale,
+
+265
+00:25:25,680 --> 00:25:30,480
+estos pseudo matrices de confusión que al final son proporciones, vale, podemos ver que, por ejemplo,
+
+266
+00:25:30,480 --> 00:25:38,560
+en el grupo masculino, en este caso se ha degradado a 67, vale,
+
+267
+00:25:38,560 --> 00:25:42,920
+en el caso de las mujeres este recall que era 50, se incrementó a 73, es decir,
+
+268
+00:25:42,920 --> 00:25:49,120
+hemos conseguido que el recall, una diferencia que había de 30 en de 30 unidades, pues pasa a ser
+
+269
+00:25:49,120 --> 00:25:52,520
+una diferencia de sus unidades, vale, entonces lo que hemos conseguido es reducir el sesgo,
+
+270
+00:25:53,400 --> 00:25:58,680
+un sistema más justo, pero lo hemos conseguido sin perder un rendimiento, es decir, sin degradar
+
+271
+00:25:58,680 --> 00:26:06,280
+mucho el modelo, vale, y bueno, esto, esto sería todo, espero que os haya gustado,
+
+272
+00:26:06,280 --> 00:26:10,960
+que os hayáis concienciado este problema y que os hayáis consciente de que es algo que en lo que
+
+273
+00:26:10,960 --> 00:26:15,120
+podemos trabajar como data scientist, hay un montón de técnicas que podemos utilizar dependiendo,
+
+274
+00:26:15,120 --> 00:26:21,960
+dependiendo de nuestro problema, vale, y no es una excusa el decir, pues es muy engurroso,
+
+275
+00:26:21,960 --> 00:26:27,360
+porque ya habéis visto que es bastante sencillo, una verdad os conocéis, entonces quedamos a
+
+276
+00:26:27,360 --> 00:26:32,360
+vuestra disposición por si tenéis alguna pregunta sobre sobre esta presentación o curiosidades.
+
+277
+00:26:32,360 --> 00:26:40,440
+Muchísimas gracias a los dos, te he verdad que ha estado muy muy guay, siempre he visto chaclas
+
+278
+00:26:40,440 --> 00:26:46,200
+sobre temáticas de estas sesgos, pero nunca había visto a nadie que dijera, oye, que sí que se han
+
+279
+00:26:46,200 --> 00:26:53,600
+ideado soluciones o cosas para pulirlos un poco y demás, y está genial ver que hay gente trabajando
+
+280
+00:26:53,600 --> 00:26:58,320
+en ello. Además podéis ver que es, o sea, que el código, una vez entiende las técnicas,
+
+281
+00:26:58,320 --> 00:27:02,320
+es muy sencillo, tampoco es algo que sea muy complejo, obviamente hay que entender las técnicas,
+
+282
+00:27:02,320 --> 00:27:06,720
+y cada una pues vale para una situación en particular, pero tampoco es que sea muy engurroso,
+
+283
+00:27:06,720 --> 00:27:10,560
+tengo que programar muchísimo, tengo que hacer mucho, no son cosas sencillas.
+
+284
+00:27:10,560 --> 00:27:16,680
+Sí, sí, sí, sí, vamos, este código que has enseñado, eran sencillitos de leer y parecía un
+
+285
+00:27:16,680 --> 00:27:23,320
+poquito, y de verdad he estado a ver que va viendo solución, sobre todo ahora que cada vez más
+
+286
+00:27:23,320 --> 00:27:28,160
+empresas pues quieren automatizar cosas, además por ejemplo, lo de delegar la contratación o la
+
+287
+00:27:28,160 --> 00:27:34,480
+primera fase en que una ida decida si los currículos son actos o no, que me parece pues hay
+
+288
+00:27:34,480 --> 00:27:41,040
+el de la realidad, pues cosas así que al menos si algunos aventuran a hacerlo, saber que hay un
+
+289
+00:27:41,040 --> 00:27:48,320
+software que evita sus sesgos, pues genial, de verdad. Sí, no era buena, no era buena para la
+
+290
+00:27:48,320 --> 00:27:54,080
+charla, y sobre todo lo que comentaba Jimena y lo que comentaba Rubén al final, creo que sobre,
+
+291
+00:27:54,080 --> 00:28:02,960
+especialmente el ser conscientes de que esto existe y que tenemos que utilizar mecanismos para
+
+292
+00:28:02,960 --> 00:28:07,800
+corregirlo, creo que es lo importante al final de la charla, pues bueno, las cuestiones técnicas
+
+293
+00:28:07,800 --> 00:28:12,120
+pues hay tiempo para mirarlas, pero sobre todo el mensaje que se están viendo es muy potente,
+
+294
+00:28:12,120 --> 00:28:17,160
+o sea que no era buena por eso y la verdad que me ha gustado mucho la presentación de la introducción
+
+295
+00:28:17,160 --> 00:28:24,960
+de Paula, muy potente, como empezaste ahí la charla te queda enganchado a la pantalla,
+
+296
+00:28:24,960 --> 00:28:32,360
+si bien. Sí, la verdad es que bueno, es una técnica muy utilitaria en psicología, el enganche inicial
+
+297
+00:28:32,360 --> 00:28:38,160
+muy emocional, pero al final es eso, poner un poco el foco atención en los problemas que al final
+
+298
+00:28:38,160 --> 00:28:44,720
+a veces pues no te afectan directamente, pero sí le afectan a alguien, entonces, yo creo que lo que
+
+299
+00:28:44,720 --> 00:28:50,280
+dice Rubén al final y los modelos que pasan la vida, los sesgos, hay que ser poco consciente de que
+
+300
+00:28:50,280 --> 00:28:55,360
+somos personas asagadas todo el rato y todo el rato es todo el rato, o sea, entras en una tienda y
+
+301
+00:28:55,360 --> 00:28:59,480
+yo por ejemplo, atiendo ahí me siempre hablas cosas rices porque es mi color favorito y a lo mejor
+
+302
+00:28:59,480 --> 00:29:04,400
+nunca veo pues si el verde me queda bien o me queda mal, pero somos asagados todo el rato,
+
+303
+00:29:04,400 --> 00:29:10,000
+entonces esos sesgos pues pueden acarrear problemáticas importantes y sobre todo en el mundo
+
+304
+00:29:10,000 --> 00:29:16,800
+machine learning donde al final el objetivo es el automatismo para reducir costes, en poder aplicarlo
+
+305
+00:29:16,800 --> 00:29:23,320
+de una manera un poco como a diez presi ni extra, es algo que como humanos no podemos hacer, no podemos
+
+306
+00:29:23,320 --> 00:29:29,280
+replicar nuestros sesgos a tanta velocidad y en tantas áreas diferentes, pero como en la parte
+
+307
+00:29:29,280 --> 00:29:34,720
+ciencia de datos sí lo podemos, entonces hay que tener como el warning puesto ahí son.
+
+308
+00:29:34,720 --> 00:29:44,960
+Pues muchísimas gracias. Cualquier cosita tenéis el grupo Discord ahora para la
+
+309
+00:29:44,960 --> 00:29:49,360
+sota del tema, sí que hay alguien que nos sigue por aquí muy interesante, conocí a las conceptas
+
+310
+00:29:49,360 --> 00:29:53,880
+pero no había visto pues tan práctica y nada, y que muchos aplausos.
+
+311
+00:29:53,880 --> 00:30:03,320
+Compartiremos, creo que por Discord un documento con el antes interés, pues también hay como
+
+312
+00:30:03,320 --> 00:30:08,240
+feliz vídeos así como un poco menos para considerar un poco más lo que hemos venido a hablar así que
+
+313
+00:30:08,240 --> 00:30:13,520
+genial si la gente luego nos quiere contactar, al final está a charro yo creo que es para abrir un
+
+314
+00:30:13,520 --> 00:30:18,880
+poco la verdad de la reflexión y estar en desacuerdo, me acuerdo lo que sea y hablar mucho del tema.
+
+315
+00:30:18,880 --> 00:30:24,000
+Sí, muchísimas gracias, súper guay lo de los recursos, gracias.
+
+316
+00:30:24,000 --> 00:30:35,520
+Muy bien, chau chau.
+

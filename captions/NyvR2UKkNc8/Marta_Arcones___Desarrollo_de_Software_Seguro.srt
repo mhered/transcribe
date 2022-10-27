@@ -1,0 +1,1480 @@
+1
+00:00:00,000 --> 00:00:20,600
+Vamos a empezar con la siguiente chatroom, desarrollo de software seguro con Marta Arcones.
+
+2
+00:00:20,600 --> 00:00:26,720
+En este caso, importante, no habrá tiempo de preguntas porque la chatroom ocupa casi
+
+3
+00:00:26,720 --> 00:00:31,760
+en los 35 minutos, pero las podéis poner por Discord donde se irán respondiendo, incluso
+
+4
+00:00:31,760 --> 00:00:34,320
+luego la salida, pues volveis con ella. Vale, gracias.
+
+5
+00:00:34,320 --> 00:00:38,840
+Bueno, pues nada, empezamos, no sé si me veis bien.
+
+6
+00:00:38,840 --> 00:00:45,120
+Hola, ¿se ha pagado o... Ah, vale, es que antes oía como un eco.
+
+7
+00:00:45,120 --> 00:00:53,960
+Hola, Marta. Bueno, pues gracias por venir a la charla, sobre todo con la contraprogramación
+
+8
+00:00:53,960 --> 00:00:58,440
+tan buena que hay, y gracias a la Picon por haber elegido mi charla.
+
+9
+00:00:58,440 --> 00:01:04,680
+Me presento, me llamo Marta Arcones, trabajo en una empresa que os sonará si tenéis gato,
+
+10
+00:01:04,680 --> 00:01:08,360
+perro, a lo mejor que StopLews. Hay aquí más gente de StopLews.
+
+11
+00:01:08,360 --> 00:01:14,120
+Mira ahí, haces la ola. Y bueno, trabajo de Ingeniera DevOps, estoy ahora mismo de TechLeed
+
+12
+00:01:14,120 --> 00:01:17,200
+en un equipo y tal, y bueno, pues la verdad que me lo paso muy bien.
+
+13
+00:01:17,200 --> 00:01:22,520
+Entonces, lo que os voy a contar en esta charla es de una certificación que hice este verano
+
+14
+00:01:22,520 --> 00:01:26,720
+o no, el verano pasado de la Linux Foundation, que me pareció muy interesante, os voy a
+
+15
+00:01:26,720 --> 00:01:31,320
+contar la parte que creo que tiene más aplicación al día a día.
+
+16
+00:01:31,320 --> 00:01:36,280
+Y bueno, estos materiales están abiertos en internet, creo que ha cambiado de nombre
+
+17
+00:01:36,280 --> 00:01:40,360
+este tipo de certificación, pero es gratuito. Luego, y así te quieres certificar, tienes
+
+18
+00:01:40,360 --> 00:01:44,000
+que pagar, pero los materiales están abiertos, yo los he consultado para hacer la charla
+
+19
+00:01:44,000 --> 00:01:48,920
+y es muy accesible. Entonces, primero vamos a hablar de los principios básicos de la
+
+20
+00:01:48,920 --> 00:01:54,640
+seguridad y bueno, lo primero que tenemos que hacer cuando pensamos en la seguridad
+
+21
+00:01:54,640 --> 00:02:01,040
+es pensar qué es la seguridad. Y la seguridad, yo creo que en tecnologías de la información,
+
+22
+00:02:01,040 --> 00:02:05,680
+como en el campo que estamos nosotros, pues se puede dividir en tres grandes grupos.
+
+23
+00:02:05,680 --> 00:02:10,360
+El primer grupo es la confidencialidad, pues nuestros datos solo deben de poder ser leídos,
+
+24
+00:02:10,360 --> 00:02:15,880
+estaban mirando si tenía los coordones de sataos, a ver si me va a pegar aquí un leñazo.
+
+25
+00:02:15,880 --> 00:02:20,160
+Los datos que almacen a nuestros sistemas tienen que ser leídos solo por gente que tiene derecho
+
+26
+00:02:20,160 --> 00:02:25,360
+a hacerlo. Si pensamos, por ejemplo, en datos personales, pues esto es súper importante.
+
+27
+00:02:25,360 --> 00:02:30,840
+Y tenemos que hacernos también una pregunta que es, ¿puede mi sistema funcionar sin tener
+
+28
+00:02:30,840 --> 00:02:35,440
+esos datos? Porque si tu sistema puede funcionar sin tener esos datos, ¿para qué los vas
+
+29
+00:02:35,440 --> 00:02:39,480
+a tener? Así no corres el riesgo de perderlos, que es cuando tienes un marrón bastante
+
+30
+00:02:39,480 --> 00:02:47,440
+gordo. Segundo requisito de la seguridad, la integridad, los usuarios y las usuarias
+
+31
+00:02:47,440 --> 00:02:51,720
+solo deberían de poder hacer modificaciones en los datos en los que tienen potestad para
+
+32
+00:02:51,720 --> 00:02:55,640
+hacer esas modificaciones. Y por supuesto modificaciones incluyen inserciones, incluyen
+
+33
+00:02:55,640 --> 00:02:59,720
+borrados. Y el último requisito, que es un poco la madre del cordero aquí sobre todo
+
+34
+00:02:59,720 --> 00:03:04,440
+en sistemas que están disponibles por internet, es la disponibilidad. Y la disponibilidad
+
+35
+00:03:04,440 --> 00:03:08,600
+la definen que a mí cuando vi la definición me resultó y dije, joder, es una definición
+
+36
+00:03:08,600 --> 00:03:16,200
+como ambiciosa. Nuestro sistema debe de poder seguir funcionando ante un ataque. Entonces,
+
+37
+00:03:16,200 --> 00:03:20,680
+la disponibilidad, cuando pensamos en sistemas, pues nunca es un absoluto. La disponibilidad
+
+38
+00:03:20,680 --> 00:03:24,440
+normalmente se da con número de nueves. Si tienes cinco nueves de disponibilidad es
+
+39
+00:03:24,440 --> 00:03:29,560
+que tienes pues el 99,99 de disponibilidad. Y es que nunca es un absoluto porque, por
+
+40
+00:03:29,560 --> 00:03:33,760
+ejemplo, si estás en un medio hostil como internet, pues te pueden hacer un ataque de
+
+41
+00:03:33,760 --> 00:03:38,840
+negación de servicio de estos que ponen a una red de máquinas, a lo mejor cámaras,
+
+42
+00:03:38,840 --> 00:03:44,200
+por ejemplo, que hackean y las ponen a hacer de peticiones a tu sitio web y eventualmente
+
+43
+00:03:44,200 --> 00:03:48,840
+pueden tirar tu sitio web. Y esto es grave, pues bueno, en una tienda de comida para perros
+
+44
+00:03:48,840 --> 00:03:52,080
+como la que trabajo yo, pues sí es grave, perdemos dinero, pero tampoco se muere nadie.
+
+45
+00:03:52,080 --> 00:03:56,640
+Pero hay sistemas que como sabéis, pues son muy críticos para muchas cosas y pueden crear
+
+46
+00:03:56,640 --> 00:04:02,360
+problemas gordos. Entonces, aunque la disponibilidad no sea un absoluto, tenemos que aspirar a lo
+
+47
+00:04:02,360 --> 00:04:07,520
+máximo posible y podemos hacer varias cosas en nuestro software para que la disponibilidad
+
+48
+00:04:07,520 --> 00:04:12,920
+sea mayor. Lo primero, podemos hacer que nuestro software pues no sea saturable con peticiones
+
+49
+00:04:12,920 --> 00:04:17,080
+simples. Podemos, por ejemplo, implementar un sistema de cuotas para ciertas peticiones
+
+50
+00:04:17,080 --> 00:04:20,800
+que vienen del mismo sitio, que tienen la misma sesión, para que no nos saturen el
+
+51
+00:04:20,800 --> 00:04:25,440
+sistema. Podemos usar un WAF que se llama, que es un web application firewall, para que
+
+52
+00:04:25,440 --> 00:04:29,280
+si hay ciertas peticiones muy en masa, en cierto lapso de tiempo, pues automáticamente
+
+53
+00:04:29,280 --> 00:04:36,160
+se bloqueen esas IPs. ¿Qué más podemos hacer? Podemos hacer utilizar recursos para escalar
+
+54
+00:04:36,160 --> 00:04:40,800
+nuestro sistema si la carga sube, para que no se quede tupi, pues en momentos normales,
+
+55
+00:04:40,800 --> 00:04:45,000
+como por ejemplo en los e-commerce, un Black Friday, no tiene por qué ser un ataque cuando
+
+56
+00:04:45,000 --> 00:04:49,720
+hay un problema. Entonces, podemos utilizar un grupo de autoescalado para que se provisione
+
+57
+00:04:49,720 --> 00:04:55,040
+en nuevas máquinas automáticamente, según hay más carga. ¿Y qué más podemos hacer?
+
+58
+00:04:55,040 --> 00:04:59,600
+Podemos hacer los típicos backups, por ejemplo, las copias de respaldo. Y sobre todo, no es
+
+59
+00:04:59,600 --> 00:05:04,840
+solo hacer backups, es también entrenarnos, a recuperarnos usando los backups, porque
+
+60
+00:05:04,840 --> 00:05:09,680
+una cosa muy típica que he oído millones de veces es que cuando fueron a usar el backup
+
+61
+00:05:09,680 --> 00:05:13,400
+pues el backup no funcionaba, el backup no se estaba haciendo correctamente, entonces
+
+62
+00:05:13,400 --> 00:05:18,800
+hay que hacer una cosa que se llama Disaster Recovery Plan, que son jornadas de simulacros
+
+63
+00:05:18,800 --> 00:05:22,880
+en las que simulamos que se nos ha caído el sistema y que lo vamos a recuperar. Se
+
+64
+00:05:22,880 --> 00:05:29,840
+me está quedando la boca seca, pero bueno, soy boca seca, guaman aquí. Estos tres requisitos,
+
+65
+00:05:29,840 --> 00:05:33,600
+bueno, los ponen así, esto lo pongo así porque es como una regla hemotécnica de estas,
+
+66
+00:05:33,600 --> 00:05:37,240
+nos llaman la triadacía. A mí esto me recuerda a embrujadas, que no sé que era la que estaba
+
+67
+00:05:37,240 --> 00:05:43,400
+muy enganchada. Entonces, bueno, lo llaman la triadacía. Y bueno, hay algunos autores
+
+68
+00:05:43,400 --> 00:05:47,680
+que unen a estos tres requisitos, voy a beber, un requisito que me gusta muy mucho que es
+
+69
+00:05:47,680 --> 00:05:54,880
+el no repudio, que esto lo llaman en inglés, accountability. Entonces el no repudio es
+
+70
+00:05:54,880 --> 00:05:59,520
+poder probar, que nuestro sistema pueda probar, que alguien hizo algo, incluso si se alguien
+
+71
+00:05:59,520 --> 00:06:04,760
+lo niega. Esto, el ejemplo más típico es un sistema operativo Linux, si tu dudo tienes
+
+72
+00:06:04,760 --> 00:06:09,040
+logado como root todo el rato, pues ¿quién lo ha hecho? Pues lo ha hecho root, ¿quién
+
+73
+00:06:09,040 --> 00:06:13,880
+es root? No lo sabes, pero sin embargo, si utilizas un sistema de usuarios y los usuarios
+
+74
+00:06:13,880 --> 00:06:19,440
+tienen que hacer sudo para obtener ese privilegio, pues puedes trazar lo mejor, ¿vale? Entonces
+
+75
+00:06:19,440 --> 00:06:27,320
+el no repudio, pues evidentemente esto es crucial para saber que hizo algo y poder reaccionar,
+
+76
+00:06:27,320 --> 00:06:32,600
+bloquear a alguien, etcétera. ¿Cómo se implementa la seguridad? Bueno, tenemos un poco que es
+
+77
+00:06:32,600 --> 00:06:37,800
+la seguridad por ahí y la vamos a implementar en tecnologías de la información, por supuesto,
+
+78
+00:06:37,800 --> 00:06:42,960
+con tres grandes grupos también. El primero, la identidad y la autorización y la autenticación.
+
+79
+00:06:42,960 --> 00:06:47,440
+Bueno, os voy a decir después que no os confundáis como yo acabo de hacer ahora. Y la autenticación,
+
+80
+00:06:47,440 --> 00:06:53,600
+la identidad es que los usuarios y las usuarias me digan quiénes son, que me muestran su identificación
+
+81
+00:06:53,600 --> 00:06:58,720
+y la autenticación es que yo compruebo que esa identificación es correcta, no es fake.
+
+82
+00:06:58,720 --> 00:07:03,200
+Entonces, mucha gente pregunta y yo me preguntaba antes, vale, pero ¿y cómo lo hago? Pues
+
+83
+00:07:03,200 --> 00:07:08,800
+es que hoy en día la identidad se ha modelado con algo, por ejemplo, con mi cuenta de correo
+
+84
+00:07:08,800 --> 00:07:13,120
+electrónico, he modelado la identidad. ¿Por qué? Porque con mi cuenta de correo electrónico
+
+85
+00:07:13,120 --> 00:07:17,960
+la gente se autentica en mi página, yo compruebo que tienen esa cuenta de correo, mandándoles
+
+86
+00:07:17,960 --> 00:07:23,160
+un código o por ejemplo con un smartphone, le mando un código y me aseguro de que ese
+
+87
+00:07:23,160 --> 00:07:26,960
+smartphone pertenece a esa persona, que lo tiene en la mano en ese momento. Entonces,
+
+88
+00:07:26,960 --> 00:07:33,680
+bueno, ese proceso lo tenemos que tener siempre en cuenta y hacerlo. Siguiente punto, la autorización,
+
+89
+00:07:33,680 --> 00:07:38,760
+no las confundáis son parecidos, pero autenticación, autorización, pero las confundáis, la autorización
+
+90
+00:07:38,760 --> 00:07:44,920
+es saber qué puede hacer mi usuario en el sistema. Cuando hablo de usuarios y usuarias,
+
+91
+00:07:44,920 --> 00:07:51,720
+estoy hablando de gente como nosotros, de otros sistemas que están hablando con mi sistema,
+
+92
+00:07:51,720 --> 00:07:55,440
+otros softwares y estoy hablando, por ejemplo, si estoy programando un comedero automático
+
+93
+00:07:55,440 --> 00:08:00,920
+para gatos, pues de un gato, ¿vale? O sea, pensamos en un usuario como alobestia, ¿no?
+
+94
+00:08:00,920 --> 00:08:05,840
+Bueno, pues la autorización, normalmente mi sistema tendrá una lista donde pone lo
+
+95
+00:08:05,840 --> 00:08:11,000
+que puede hacer cada usuaria o lo que puede hacer cada rol, cada grupo de usuarios. Entonces,
+
+96
+00:08:11,000 --> 00:08:14,760
+después de la autenticación, esto tiene que pasar siempre después en otra fase, lo
+
+97
+00:08:14,760 --> 00:08:19,720
+que tengo que hacer es consultar esa lista. Entonces, yo puedo tener a una usuaria identificada
+
+98
+00:08:19,720 --> 00:08:24,960
+y autenticada y puedo no saber qué está autorizada a hacer, porque a lo mejor no tengo acceso
+
+99
+00:08:24,960 --> 00:08:29,640
+a la base de datos donde está la lista de permisos, ¿vale? Entonces, son fases muy distintas.
+
+100
+00:08:29,640 --> 00:08:35,080
+Y la tercera es la auditoría. Esto también, pues lo llaman el login en las fuentes así
+
+101
+00:08:35,080 --> 00:08:40,640
+en inglés, lo llaman el login. La auditoría es crucial, es crucial que lo vemos, bueno,
+
+102
+00:08:40,640 --> 00:08:45,440
+yo os diría que lo vemos, pues todo, ¿no? Y que, por favor, información estructurada
+
+103
+00:08:45,440 --> 00:08:50,560
+que podamos meter en un elastic set, por ejemplo, y luego explotarla bien. Pero sobre todo tenemos
+
+104
+00:08:50,560 --> 00:08:56,680
+que logar, pues, los accesos, el login, el logout, la escalación de privilegios, todo
+
+105
+00:08:56,680 --> 00:09:02,160
+eso hay que logarlo. Y esto es fundamental, porque hay mogollón, esto, bueno, yo soy
+
+106
+00:09:02,160 --> 00:09:06,640
+un tío que es como un pop de seguridad en Estados Unidos que se llama Jonathan Weisman,
+
+107
+00:09:06,640 --> 00:09:11,440
+que dice que hay mogollón de veces que cuando encuentra un ataque los atacantes estuvieron
+
+108
+00:09:11,440 --> 00:09:16,960
+indetectados metidos en el sistema recopilando información durante un montón de tiempo.
+
+109
+00:09:16,960 --> 00:09:21,600
+Entonces, para detectar esas cosas hay que logar adecuadamente. Y después, para recuperarnos
+
+110
+00:09:21,600 --> 00:09:26,480
+de un ataque y hacer un posmorte y ver qué ha pasado, por supuesto que también. Entonces,
+
+111
+00:09:26,480 --> 00:09:30,520
+estas, pues, también tienen una regla de la tecnica que es lo de las pilas alcaninas,
+
+112
+00:09:30,520 --> 00:09:34,680
+autorización, autenticación y auditoría, ahí lo tenéis. Y nada, ahora vamos a hablar
+
+113
+00:09:34,680 --> 00:09:39,880
+un poquito de los atacantes, que no de los hackers, porque según la Linux Foundation,
+
+114
+00:09:39,880 --> 00:09:43,720
+que seguro que hay fuentes que ya dicen que es lo contrario, pero de igual, porque yo
+
+115
+00:09:43,720 --> 00:09:51,240
+soy de Linux total, hacker es una persona que le gusta obtener un conocimiento profundo
+
+116
+00:09:51,240 --> 00:09:56,520
+de un sistema o de una red informática. Entonces, por esta regla de tres, no todos los atacantes
+
+117
+00:09:56,520 --> 00:10:01,320
+son hackers y no todos los hackers son atacantes, ¿vale? Porque los atacantes, pues puede ser
+
+118
+00:10:01,320 --> 00:10:06,480
+una persona que coja, se vaya a la darknet, compre una base de datos de usuarios y contraseñas
+
+119
+00:10:06,480 --> 00:10:11,040
+y se dedique a hacer cosas malas a mano con esos datos, pero no tiene por qué tener un
+
+120
+00:10:11,040 --> 00:10:17,520
+conocimiento profundo. Entonces, cuando ya tenemos en la cabeza lo que son los atacantes,
+
+121
+00:10:17,520 --> 00:10:20,720
+tenemos que pensar qué recursos tienen. Y esto a mí me gusta mucho, cuando pienso en
+
+122
+00:10:20,720 --> 00:10:23,880
+esto pienso en una cosa de los Simpson que dicen, están así todos y dice, uno, algo
+
+123
+00:10:23,880 --> 00:10:29,280
+de la pasta. Bueno, pues esto es lo mismo, algo de la pasta, porque no es lo mismo una
+
+124
+00:10:29,280 --> 00:10:34,520
+persona como yo, que no es que lo haga, pero me puedo poner en mi casa a tocar las pelotillas
+
+125
+00:10:34,520 --> 00:10:40,960
+a alguien, a intentar hackearle algo modo atacante o una organización de cibermafia,
+
+126
+00:10:40,960 --> 00:10:46,000
+que las hay y que tú, si tienes pasta y eres un poco caproncete, las puedes contratar para
+
+127
+00:10:46,000 --> 00:10:52,560
+que hagan algo, no es lo mismo. Y lo segundo que me tengo que preguntar es la directividad.
+
+128
+00:10:52,560 --> 00:10:56,920
+¿Y a dónde va ese ataque? No es lo mismo, un ataque que vaya a todos los servidores
+
+129
+00:10:56,920 --> 00:11:01,480
+Apache corriendo en internet en cierta versión, que es un ataque muy amplio, que un ataque
+
+130
+00:11:01,480 --> 00:11:05,360
+que vaya, por ejemplo, un spearfishing, que es como fishing, que sabéis lo que es, que
+
+131
+00:11:05,360 --> 00:11:10,960
+te mandan un mail del banco y no son del banco, o novedad. Pero un spearfishing es pues que
+
+132
+00:11:10,960 --> 00:11:15,600
+te mandan un mail que parece tu madre que te está mandando un mail y te lo comes, te
+
+133
+00:11:15,600 --> 00:11:21,760
+lo comes con patatas. Entonces, la dificultad de prevención de un ataque, pues evidentemente,
+
+134
+00:11:21,760 --> 00:11:27,080
+como os habréis imaginado, cuantos más recursos tienen el atacante y más hacia ti es el ataque,
+
+135
+00:11:27,080 --> 00:11:34,160
+pues peor. ¿Qué es lo bueno? Que normalmente estamos aquí, ¿vale? O sea, es lo bueno y
+
+136
+00:11:34,160 --> 00:11:39,560
+lo malo, si empezamos a subir y no tenemos unos conocimientos. Entonces, bueno, normalmente
+
+137
+00:11:39,560 --> 00:11:45,720
+los sitios comerciales típicos son objeto de ataques, así muy vastos, muy poco direccionados
+
+138
+00:11:45,720 --> 00:11:50,400
+y con pocos recursos, en principio, que bueno, todo el mundo está cambiando y ya sabemos
+
+139
+00:11:50,400 --> 00:11:54,160
+a qué velocidad. Entonces, vamos a hablar ahora, pues, de desarrollo software. Cuando
+
+140
+00:11:54,160 --> 00:11:58,600
+ya tenemos esto en cuenta, el desarrollo software, ¿qué hacemos cada vez que desarrollamos
+
+141
+00:11:58,600 --> 00:12:04,960
+software? Pues estamos diseñando la solución a un problema. Y hay soluciones que son mejores
+
+142
+00:12:04,960 --> 00:12:08,080
+en términos de velocidad de ejecución, pues la peña de que programa de videojuegos,
+
+143
+00:12:08,080 --> 00:12:13,240
+eso le interesa muchísimo, porque tiene que influir a la cosa. Diseños que son mejores
+
+144
+00:12:13,240 --> 00:12:19,520
+en términos de mantenibilidad, porque el código se entiende, se lee, que parece prosa.
+
+145
+00:12:19,520 --> 00:12:24,640
+Pero nosotros nos vamos a centrar en esta charla en diseños que son mejores en seguridad.
+
+146
+00:12:24,640 --> 00:12:29,720
+Esto es una guía, es decir, los principios de desarrollo software seguro son una cosa
+
+147
+00:12:29,720 --> 00:12:33,960
+que siempre tenemos que evaluar contrastándolo con nuestro contexto. Entonces hay que pensar.
+
+148
+00:12:33,960 --> 00:12:38,240
+Pero bueno, en general, suelen ser bastante aplicables y bueno, suelen tener bastante
+
+149
+00:12:38,240 --> 00:12:42,720
+buenos resultados. Lo primero que tenemos que pensar cuando empezamos a diseñar software,
+
+150
+00:12:42,720 --> 00:12:48,240
+a diseñar, no a programar, es en quién puedo confiar y en quién no puedo confiar. Y es
+
+151
+00:12:48,240 --> 00:12:53,760
+que normalmente, por ejemplo, si estamos programando una aplicación web, pues a lo mejor, digo
+
+152
+00:12:53,760 --> 00:12:59,280
+yo, vamos, si no, apaga y vámonos, que podremos confiar en el servidor donde corre esa aplicación
+
+153
+00:12:59,280 --> 00:13:04,160
+web, en el runtime de contenedores que tenemos, en el sistema operativo, podemos confiar en
+
+154
+00:13:04,160 --> 00:13:08,280
+esa parte. Sin embargo, en el entorno del cliente de este señor de aquí, que podría ser un
+
+155
+00:13:08,280 --> 00:13:16,200
+pacante, aunque no lleve su daerá como capucha, este señor de aquí que está utilizando
+
+156
+00:13:16,200 --> 00:13:20,120
+una máquina cliente, pues es el entorno inseguro, no tenemos control sobre ese entorno. Entonces,
+
+157
+00:13:20,120 --> 00:13:24,400
+tenemos que tener muy en cuenta dónde están esos dos sitios. Y la frontera, la línea
+
+158
+00:13:24,400 --> 00:13:29,760
+de esta verde que hay vertical aquí, es la superficie de ataque. Entonces, si estoy programando
+
+159
+00:13:29,760 --> 00:13:36,640
+una aplicación móvil, en quién puedo confiar, pues, en mi aplicación, a lo mejor, en un
+
+160
+00:13:36,640 --> 00:13:40,560
+servidor backend que esté sirviendo cosas para mi aplicación, que también es mío,
+
+161
+00:13:40,560 --> 00:13:43,800
+pero no puedo confiar en el resto de aplicaciones del teléfono. Incluso tengo que ser un poco
+
+162
+00:13:43,800 --> 00:13:48,760
+desconfiadilla también, con las movidas que me propia el teléfono, que es la cámara,
+
+163
+00:13:48,760 --> 00:13:52,840
+que es y tal. Tengo que ser un poco desconfiada, ¿por qué? Porque está fuera de mi entorno
+
+164
+00:13:52,840 --> 00:13:59,640
+de confianza, está en un sistema sobre el que no tengo ningún control. Entonces, bueno,
+
+165
+00:13:59,640 --> 00:14:04,160
+vamos a los principios, os los voy a contar en tres grandes grupos. Os van a sonar seguros,
+
+166
+00:14:04,160 --> 00:14:06,880
+es que todo esto es como de sentido común, pero de vez en cuando, aunque sean cosas de
+
+167
+00:14:06,880 --> 00:14:12,400
+sentido común, voy a venir a tener una listita. Entonces, primer grupo, gestión de privilegios.
+
+168
+00:14:12,400 --> 00:14:17,720
+Esto suena seguro, vamos a hablar un poquito de ello. Segundo grupo, validación de entrada.
+
+169
+00:14:17,720 --> 00:14:22,200
+Este ya es un poco más que la gente empieza a hablar de ello y tal, pero no es como lo
+
+170
+00:14:22,200 --> 00:14:26,440
+de los privilegios que llevamos hablando de privilegios un tiempo. Validación de entradas,
+
+171
+00:14:26,440 --> 00:14:32,960
+todo lo que me venga de fuera de mi entorno de confianza, pues lo tengo que validar. Y
+
+172
+00:14:32,960 --> 00:14:37,640
+la última es la simplicidad. Esto, bueno, es súper simple, como os podéis imaginar,
+
+173
+00:14:37,640 --> 00:14:42,560
+creo conviene tenerlo en cuenta. Gestión de privilegios. Pues, bueno, seguro que habéis
+
+174
+00:14:42,560 --> 00:14:50,760
+oído hablar del principio de mínimo privilegio, seguro. Mi usuaria tiene que operar el sistema
+
+175
+00:14:50,760 --> 00:14:55,240
+con los mínimos privilegios posibles. ¿Qué son los mínimos privilegios posibles? Bueno,
+
+176
+00:14:55,240 --> 00:15:00,640
+pues depende, porque tenemos que mantener un balance entre mínimos privilegios y usabilidad,
+
+177
+00:15:00,640 --> 00:15:06,240
+o sea, y también mantenibilidad. No es lo mismo que una usuaria pueda escribir los
+
+178
+00:15:06,240 --> 00:15:12,200
+días de luna llena en cierta tabla, en cierta columna de la base de datos, en cierto tipo,
+
+179
+00:15:12,200 --> 00:15:19,560
+que una usuaria pueda escribir en la base de datos. Así, a lo gordo. Entonces, tenemos
+
+180
+00:15:19,560 --> 00:15:24,720
+que encontrar como un balance. Los de UIUX, si se lo ponemos muy difícil a la usuaria
+
+181
+00:15:24,720 --> 00:15:28,560
+y se siente frustrada, nos van a asesinar directamente. Entonces, tenemos que encontrar
+
+182
+00:15:28,560 --> 00:15:36,640
+un balance. Y, perdón, el mínimo privilegio, porque en caso de un incidente, que no tiene
+
+183
+00:15:36,640 --> 00:15:43,200
+porque ser un ataque, puede ser que tu usuaria la haya cagado. En caso de un ataque se minimiza
+
+184
+00:15:43,200 --> 00:15:47,840
+el daño. Y esto me gusta mucho en inglés, que usan un término muy guay, que es blast
+
+185
+00:15:47,840 --> 00:15:53,800
+radius. Porque, mola un montón, blast radius, suena a Big Bang o algo así. El blast radius
+
+186
+00:15:53,800 --> 00:15:59,200
+es más pequeño. Otra cosa que podemos hacer, podemos aspirar los privilegios, es pasar
+
+187
+00:15:59,200 --> 00:16:05,200
+un tiempo. Esto es típico de los bancos, típico de plataformas de computación en la nube.
+
+188
+00:16:05,200 --> 00:16:09,640
+Y, bueno, esto es interesante, porque si esas claves caen en manos malas y tensionadas,
+
+189
+00:16:09,640 --> 00:16:12,600
+pues bueno, por lo menos van a expirar y tiene poquito tiempo para aliártela.
+
+190
+00:16:12,600 --> 00:16:18,080
+Que es también muy interesante. El diseño de sospecha mutua, que eso lo estáis implementando
+
+191
+00:16:18,080 --> 00:16:22,240
+ya aunque no lo sepáis. Tiene este nombre tan guay. Y es, mi aplicación tiene que estar
+
+192
+00:16:22,240 --> 00:16:27,080
+modularizada. Normalmente, cuando tú ves un servicio en internet, una página web, normalmente
+
+193
+00:16:27,080 --> 00:16:32,440
+son varios servicios trabajando en conjunto. Entonces, las aplicaciones que sean más críticas,
+
+194
+00:16:32,440 --> 00:16:37,120
+como la que escriben la base datos, tienen que estar lo más aisladas posibles y no tienen
+
+195
+00:16:37,120 --> 00:16:41,660
+que confiar así per se en el resto de módulos de la aplicación. Tienen que establecer unos
+
+196
+00:16:41,660 --> 00:16:46,520
+protocolos de autenticación, de identificación y de autorización. Y todos los módulos se
+
+197
+00:16:46,520 --> 00:16:53,120
+tienen que comunicar bajo sus protocolos. Después, separación de privilegio. Esto es el chufacto
+
+198
+00:16:53,120 --> 00:16:58,240
+de autenticación de toda la vida. Voy a separar, voy a hacer que mis usuarias para obtener
+
+199
+00:16:58,240 --> 00:17:03,760
+ese privilegio tengan que darme dos condiciones. Por ejemplo, dos sistemas autenticándose
+
+200
+00:17:03,760 --> 00:17:08,440
+entre ellos. Puedo pedirle un token al sistema que está pidiendo el acceso y hacer que
+
+201
+00:17:08,440 --> 00:17:11,360
+tenga que correr en ciertos rangos de IP determinados.
+
+202
+00:17:11,360 --> 00:17:20,040
+Otra cosa que puedo hacer, una contraseña, algo que sé y algo que tengo, un móvil.
+
+203
+00:17:20,040 --> 00:17:22,760
+Me pasas la contraseña y luego te pido un código que te va a salir en el móvil.
+
+204
+00:17:22,760 --> 00:17:30,640
+Y lo último, por favor, hay que minimizar las cosas extra que hace nuestro programa,
+
+205
+00:17:30,640 --> 00:17:36,240
+escribir en ficheros, operaciones privilegiadas del sistema operativo. Todo eso hay que minimizarlo
+
+206
+00:17:36,240 --> 00:17:41,560
+lo máximo posible. ¿Por qué? Porque son sitios donde un atacante puede ir a ver si
+
+207
+00:17:41,560 --> 00:17:47,240
+tiene suerte. Esto siempre es un balance. Un ejemplo es, por ejemplo, usar servicios
+
+208
+00:17:47,240 --> 00:17:51,280
+en la nube. Normalmente, cuando tú usas un servicio en la nube pública como Amazon
+
+209
+00:17:51,280 --> 00:17:56,760
+West Services, estás alquilando un entorno de ejecución y en esa misma máquina puedes
+
+210
+00:17:56,760 --> 00:18:01,320
+estar un atacante. Es así. Lo que pasa es que Amazon West Services se presupone que
+
+211
+00:18:01,320 --> 00:18:06,760
+tiene unos equipos muy potentes en aislamiento de entornos de ejecución, en seguridad, en
+
+212
+00:18:06,760 --> 00:18:10,360
+monitorización. Entonces dices, ¿vale? Pues me renta. ¿Qué pasa? Que a lo mejor es un
+
+213
+00:18:10,360 --> 00:18:14,800
+banco y no te renta. Entonces tienes que montarte tu nube privada con a lo mejor OpenStack
+
+214
+00:18:14,800 --> 00:18:21,200
+en tus servidores. Bueno, pues como todo es un tradeoff, un balance que tenemos que hacer
+
+215
+00:18:21,200 --> 00:18:25,960
+con nuestro contexto en mente. Entonces, una vez que ya tenemos los privilegios,
+
+216
+00:18:25,960 --> 00:18:30,720
+asignaos que tenemos que hacer. Ya la usuaria está autorizada para hacer algo. Pues tenemos
+
+217
+00:18:30,720 --> 00:18:35,880
+que validar las entradas. Todo lo que llegue tenemos que validarlo con la palabra rigurosamente,
+
+218
+00:18:35,880 --> 00:18:41,040
+validarlo. O sea, tenemos que tocarlo como si fuese ahí Biohazard, ¿vale? Hay que validarlo
+
+219
+00:18:41,040 --> 00:18:45,280
+rigurosamente porque como viene de fuera de nuestro entorno de confianza, pues puede
+
+220
+00:18:45,280 --> 00:18:51,520
+ser malicioso. Si os acordáis, teníamos la superficie de ataque, por ejemplo, un servicio
+
+221
+00:18:51,520 --> 00:18:57,400
+web, la superficie de ataque que es, pues, el API y los puertos abiertos. Entonces, si
+
+222
+00:18:57,400 --> 00:19:02,200
+esa operación del API no hace falta hacerla, intentemos convencer a nuestro stakeholder
+
+223
+00:19:02,200 --> 00:19:06,680
+de que no hace falta exponer una operación de API más, porque es un punto más por el
+
+224
+00:19:06,680 --> 00:19:16,440
+que pueden entrar. Si no hace falta hacer lo público, pues mantengamos la privada, ¿vale?
+
+225
+00:19:16,440 --> 00:19:21,760
+Me he quedado en blanco un segundo. Vale, eso es lo que quería deciros. Las operaciones
+
+226
+00:19:21,760 --> 00:19:26,560
+de Debug. Mucho cuidado con las operaciones de Debug porque son el típico sitio por donde
+
+227
+00:19:26,560 --> 00:19:31,080
+tenemos problemas. Si dejamos unas operaciones de Debug en producción hay mogollón de incidentes
+
+228
+00:19:31,080 --> 00:19:34,320
+por ahí que están reportados por internet de gente que gracias a las operaciones de
+
+229
+00:19:34,320 --> 00:19:39,200
+Debug sacó las contraseñas y se coló, ¿vale? Las operaciones de Debug mucho cuidadito con
+
+230
+00:19:39,200 --> 00:19:46,440
+ellas. Y después, intentamos hacer esas validaciones en sitios en los que tengamos el control.
+
+231
+00:19:46,440 --> 00:19:50,880
+Por ejemplo, esto ya, la verdad que en general la gente lo tiene bastante en cuenta. No hagamos
+
+232
+00:19:50,880 --> 00:19:54,800
+las validaciones en el equipo del cliente porque entonces una persona con unos conocimientos
+
+233
+00:19:54,800 --> 00:20:02,320
+medios puede saltarse esas validaciones y hacernos un bypass de validaciones que se llama y colarse
+
+234
+00:20:02,320 --> 00:20:06,040
+porque estamos haciendo las validaciones en un sitio donde no teníamos que hacerlas. Vale,
+
+235
+00:20:06,040 --> 00:20:11,600
+que hagamos unos controlcillos ahí para darle un error rapidito al cliente si ha metido
+
+236
+00:20:11,600 --> 00:20:15,600
+un campo mal. Pero esas validaciones hay que complementarlas con validaciones en el servidor
+
+237
+00:20:15,600 --> 00:20:22,480
+siempre porque si no, no tienes nada. Y después, una cosa que es un antipatrón es la seguridad
+
+238
+00:20:22,480 --> 00:20:26,800
+por oscuridad, ¿qué es en plan? ¿Vale? Voy a hacer estas validaciones en un sitio que
+
+239
+00:20:26,800 --> 00:20:31,840
+puede controlar a un atacante, pero las voy a ofuscar, las voy a cifrar y bueno, esto es
+
+240
+00:20:31,840 --> 00:20:36,040
+totalmente da una falsa sensación de seguridad grandísima porque tú haces una búsqueda
+
+241
+00:20:36,040 --> 00:20:42,560
+en Google con un troncho así cifrado y hay páginas web que les metes el troncho, te
+
+242
+00:20:42,560 --> 00:20:47,880
+lo intenta de cifrar con mil tipos de algoritmos y tú vas mirando hasta que ves uno que sale
+
+243
+00:20:47,880 --> 00:20:54,120
+algo coherente. Entonces no vale para nada. Y lo último, intentemos que los datos que
+
+244
+00:20:54,120 --> 00:20:59,640
+nos llegan esas entradas lleguen por un canal de comunicaciones seguro como SSH, como HTTPS
+
+245
+00:20:59,640 --> 00:21:09,320
+por ejemplo, ¿vale? Y ya lo último, vale, gracias, lo último, la simplicidad. ¿Por qué
+
+246
+00:21:09,320 --> 00:21:13,280
+tenemos que hacer nuestros sistemas simples para que sean más seguros? Lo primero, no
+
+247
+00:21:13,280 --> 00:21:17,840
+tenemos que depender de la ignorancia de un atacante porque sería también seguridad
+
+248
+00:21:17,840 --> 00:21:22,840
+por escuridad para que nuestro sistema sea seguro, ¿vale? Sabemos que OpenSource, ¿por
+
+249
+00:21:22,840 --> 00:21:26,600
+qué es más seguro? Porque hay una auditoría pública grandísima que hace que nuestro
+
+250
+00:21:26,600 --> 00:21:31,120
+sistema, los usuarios se han convencido por sí mismos de que el sistema es seguro y
+
+251
+00:21:31,120 --> 00:21:35,320
+además nos han ayudado a hacerlo más seguro, ¿vale? No tenemos que depender de esa ignorancia
+
+252
+00:21:35,320 --> 00:21:39,680
+de los atacantes porque nos pueden tocar las atacantes listas. Después tenemos que
+
+253
+00:21:39,680 --> 00:21:43,560
+hacer una cosa que se llama economía de mecanismo, que esto en vuestro próximo cómic quiero
+
+254
+00:21:43,560 --> 00:21:48,480
+que lo pongáis. Economía de mecanismo, ¿qué es la economía de mecanismo? La parte de
+
+255
+00:21:48,480 --> 00:21:53,480
+nuestro sistema de la que depende de la seguridad tiene que ser lo más pequeña posible. Esto
+
+256
+00:21:53,480 --> 00:21:58,800
+suena un poco a utopía, pero hay que intentarlo, ¿vale? Veste, por. ¿Por qué? Porque será
+
+257
+00:21:58,800 --> 00:22:03,760
+más fácil no cagarla en esa parte básicamente y porque será más fácil devuguearla. Si
+
+258
+00:22:03,760 --> 00:22:07,580
+tenemos ahí una parte con la seguridad muy tocha, pues va a ser más fácil que haya
+
+259
+00:22:07,580 --> 00:22:13,880
+problemas con esa parte. Y después tenemos que intentar que nuestros sistemas sean fáciles
+
+260
+00:22:13,880 --> 00:22:19,160
+de usar para la usuaria o el usuario. Si imaginamos un coche que llegas te sientas y se te pone
+
+261
+00:22:19,160 --> 00:22:23,560
+el cinturón solo y otro que llegas y tienes que abrir una caja, montar el cinturón y ponerlo,
+
+262
+00:22:23,560 --> 00:22:27,720
+pues seguramente que en el primer coche la gente se pondrá mucho más el cinturón que
+
+263
+00:22:27,720 --> 00:22:32,760
+en el segundo. Entonces tenemos que hacer que las usuarias puedan usar los mecanismos
+
+264
+00:22:32,760 --> 00:22:38,600
+de protección de una manera fácil. Hay usuarias muy listas y la gente ya te encuentra a backdoors
+
+265
+00:22:38,600 --> 00:22:43,200
+como tú no le pongas las cosas fáciles y quiera conseguir algo con tu programa. Yo
+
+266
+00:22:43,200 --> 00:22:46,040
+lo de que el usuario es tonto que siempre se ha dicho no estoy nada de acuerdo porque
+
+267
+00:22:46,040 --> 00:22:50,720
+las usuarias cada vez son más listas. Encuentra una manera de hacerlo, va y paseando las validaciones
+
+268
+00:22:50,720 --> 00:22:57,680
+de seguridad y eso no nos interesa nada. Normalmente cuando un software es difícil de utilizar por
+
+269
+00:22:57,680 --> 00:23:01,320
+temas de seguridad es porque la seguridad no se tuvo en cuenta en el primer momento y esto
+
+270
+00:23:01,320 --> 00:23:05,640
+me recuerda a la batalla hasta que hubo hace unos años de las webs responsive que era
+
+271
+00:23:05,640 --> 00:23:09,880
+un plan tú te ponías a pensar hostia que tengo que hacer esta web responsive era infumable
+
+272
+00:23:09,880 --> 00:23:12,840
+¿no? ¿por qué? Porque no se tuvo en cuenta en el primer momento que la gente la podía
+
+273
+00:23:12,840 --> 00:23:17,240
+usar con móviles. Pues esto es un poco lo mismo, vale. Si es difícil de implementar
+
+274
+00:23:17,240 --> 00:23:23,160
+isla a muerte es porque no se tuvo en cuenta desde el primer momento. Y lo último, tengamos
+
+275
+00:23:23,160 --> 00:23:28,400
+valores por defectos seguros para la usuaria, vale. Me diréis, contraseñas por defecto,
+
+276
+00:23:28,400 --> 00:23:33,120
+bueno si podemos evitarlas las evitamos y si por lo que se las tenemos que utilizar,
+
+277
+00:23:33,120 --> 00:23:38,280
+pues bueno, forcemos a la usuaria a cambiarlo en un primer momento por una contraseña robusta,
+
+278
+00:23:38,280 --> 00:23:43,560
+¿vale? Y ya por último que me quedan unos minutillos, unos consejitos para reutilizar
+
+279
+00:23:43,560 --> 00:23:50,280
+su por externo. Porque ¿qué porcentaje de líneas de código voy a beber agua? A ver
+
+280
+00:23:50,280 --> 00:23:58,800
+veis, si os gusta esto ya, ya. Lo he modificado para hacerlo más castiza y ponía Nebraska,
+
+281
+00:23:58,800 --> 00:24:06,040
+pero bueno da igual. ¿Qué porcentaje de líneas de código de las que ponéis en producción
+
+282
+00:24:06,040 --> 00:24:10,600
+habéis escrito vosotres? Pues mira, si te pones a pensar en todas las librerías que
+
+283
+00:24:10,600 --> 00:24:16,280
+utilizamos, en lo que hay debajo el Runtan de Contenedores, el Kubernetes, el sistema
+
+284
+00:24:16,280 --> 00:24:23,240
+operativo, es un porcentaje muy muy pequeño, pero la verdad es que el mundo tecnológico
+
+285
+00:24:23,240 --> 00:24:27,320
+hoy en día no se concibe sin la cantidad de recursos que tenemos para reutilizar, es
+
+286
+00:24:27,320 --> 00:24:33,600
+imposible pensarlo. Entonces tenemos que utilizar las cosas con un poquito de cabeza, vale utilizarlo,
+
+287
+00:24:33,600 --> 00:24:38,800
+pero vamos a pararnos a pensar cinco minutillos antes de utilizar esa librería de la Pava
+
+288
+00:24:38,800 --> 00:24:44,520
+Estadécuenca que es la leche. Vamos a pararnos a pensar, por ejemplo, preguntas que nos podemos
+
+289
+00:24:44,520 --> 00:24:49,560
+hacer. Tiene buena documentación, los ejemplos que hay en la documentación son fáciles
+
+290
+00:24:49,560 --> 00:24:56,960
+de seguir, los ejemplos que hay en la documentación utilizan el API de una manera segura, utilizan
+
+291
+00:24:56,960 --> 00:25:03,720
+un detector de vulnerabilidades, utilizan un detector de estos que, como dependa a
+
+292
+00:25:03,720 --> 00:25:08,160
+bot que te dice si tienes las versiones desactualizadas y más importante, hacen caso a lo que les
+
+293
+00:25:08,160 --> 00:25:18,720
+dice ese detector. Si vemos qué hace en caso y que la librería es popular, aunque usarla
+
+294
+00:25:18,720 --> 00:25:24,240
+porque es popular no es lo mejor del mundo, pero si es popular y la usa mucha gente probablemente
+
+295
+00:25:24,240 --> 00:25:28,480
+más gente se haya preguntado si era segura o no. Entonces tenemos que hacernos esa serie
+
+296
+00:25:28,480 --> 00:25:34,280
+de preguntas antes de utilizarla y una vez que ya nos hemos decidido utilizarla porque
+
+297
+00:25:34,280 --> 00:25:39,440
+esas preguntas tienen respuestas que nos gustan. ¿Qué tenemos que hacer? Os voy a contar dos
+
+298
+00:25:39,440 --> 00:25:45,680
+tipos de ataques que me parecen geniales de los chorras que son. El primer ataque es el
+
+299
+00:25:45,680 --> 00:25:51,920
+type squatting, que es una chorrada, pero es que me encanta. Tú te coges y estás ahí
+
+300
+00:25:51,920 --> 00:25:58,040
+cagando fuego con un programa que no te funciona, tal buscas el típico blog de Medium Monísimo
+
+301
+00:25:58,040 --> 00:26:03,160
+en el que te cuentan cómo resolverlo instalando esta maravillosa librería y arreglándolo.
+
+302
+00:26:03,160 --> 00:26:07,960
+Y te ponen ahí un bloque de código con todos los colorines que ya estás ya salivando y
+
+303
+00:26:07,960 --> 00:26:14,280
+que se copia casi solo. Lo copias, lo pegas y has instalado una librería que parecía
+
+304
+00:26:14,280 --> 00:26:18,840
+que a lo mejor en PiPi era una librería con estrellas y tal, pero realmente no estás
+
+305
+00:26:18,840 --> 00:26:23,720
+instalando esa porque te han cambiado un carácter, te han cambiado una o por un cero y ese me
+
+306
+00:26:23,720 --> 00:26:28,240
+diréis, ese yo lo noto. Pero es que hay otros caracteres, el mundo es muy grande, es un mundo
+
+307
+00:26:28,240 --> 00:26:34,440
+inmenso y hay lenguas que tienen un carácter que es igual que la I, pero no es la I, es
+
+308
+00:26:34,440 --> 00:26:40,280
+otro carácter. Entonces te lo cambian y no te enteras y tú instalas una librería que
+
+309
+00:26:40,280 --> 00:26:45,280
+es un fork de la librería original, entonces parece que hace lo que tiene que hacer, pero
+
+310
+00:26:45,280 --> 00:26:48,880
+además de hacer lo que tiene que hacer hace más cosas y ya os imagináis qué tipo de
+
+311
+00:26:48,880 --> 00:26:55,800
+cosas. Vamos a poner verde a los de Javascript ya que estamos en la PiCom. Creo que en NPM
+
+312
+00:26:55,800 --> 00:27:02,720
+hay un paquete que su nombre es, gracias, su nombre es un espacio y tiene como 80 millones
+
+313
+00:27:02,720 --> 00:27:07,920
+de descargas o algo así, o sea, imaginados o un espacio, un dión bajo, una mierda de
+
+314
+00:27:07,920 --> 00:27:12,880
+esas, no? Pues vamos a intentar que eso no pase en PiPi, que seguro que habrá alguno,
+
+315
+00:27:12,880 --> 00:27:19,160
+¿vale? Y el segundo ataque que os quiero contar es uno que, bueno, esto, hay un blog
+
+316
+00:27:19,160 --> 00:27:24,440
+muy bueno de un investigador de ciberseguridad que te cuenta cómo lo hizo, este tío le
+
+317
+00:27:24,440 --> 00:27:30,760
+pagaban para intentar hackear a la peña y con esto hackeó a Apple, a PiPiL y a unos
+
+318
+00:27:30,760 --> 00:27:38,160
+cuantos más así, top. Y cómo era? Es que era una chorrada, era trabajo en la empresa
+
+319
+00:27:38,160 --> 00:27:44,320
+X, esa en Apple, por ejemplo, y tenemos una librería que se llama Apple Commons o Apple
+
+320
+00:27:44,320 --> 00:27:49,880
+Utils, o sea, ¿sabéis que estos nombres son? Pues como, ¿quién no ha tenido un Utils?
+
+321
+00:27:49,880 --> 00:27:55,160
+Bueno, pues qué pasa, que cojo y por lo que sea, porque me he enterado de que tienen ese
+
+322
+00:27:55,160 --> 00:28:00,560
+Apple Utils o simplemente por probar, cojo y creo una librería que se llama Apple Utils,
+
+323
+00:28:00,560 --> 00:28:03,880
+o sea, estamos hablando de una librería que sería interna de Apple, ¿vale? Que no está
+
+324
+00:28:03,880 --> 00:28:11,000
+en PiPi, que está en los servidores internos de Apple. Pues cojo, la librería, o sea,
+
+325
+00:28:11,000 --> 00:28:15,480
+creo una librería que es maliciosa y que no tiene nada que ver con el Apple Utils original
+
+326
+00:28:15,480 --> 00:28:21,320
+y lo publico o PiPiL, PiPiL cómo lo publico ahí en el PiPi y lo publico con una versión
+
+327
+00:28:21,320 --> 00:28:28,720
+Altita en plan la 30, por ejemplo, una versión que probablemente los de PiPiL no tengan todavía,
+
+328
+00:28:28,720 --> 00:28:34,120
+porque si tienen la 30, te lita. Entonces, la publico con la versión 30, entonces qué
+
+329
+00:28:34,120 --> 00:28:39,140
+pasa? PiPiL cómo lo tiene montado? PiPiL seguramente sus desarrolladores tendrán un
+
+330
+00:28:39,140 --> 00:28:43,880
+registro de dependencias donde estén todas las librerías privadas y estén las públicas.
+
+331
+00:28:43,880 --> 00:28:49,080
+Y cuando tú pides una librería ese registro de dependencias, que son pues el PiPi interno,
+
+332
+00:28:49,080 --> 00:28:55,040
+lo que hace es mirar en internet a ver si hay una versión superior, porque tú, por supuesto,
+
+333
+00:28:55,040 --> 00:29:00,000
+no la tienes pineada y tienes puesto leites ahí, a lo loco, y mirar en internet a ver
+
+334
+00:29:00,000 --> 00:29:04,200
+si tienes una versión superior y si la tiene, lo que hace es la coge de internet, la cachea,
+
+335
+00:29:04,200 --> 00:29:08,600
+para que la gente ya tenga más rapidez a la hora de descargarla y te la pasa. Entonces
+
+336
+00:29:08,600 --> 00:29:14,880
+tú tienes ahí tu PiPiL común sin versión y nada, haces ahí el PiPi install y dice
+
+337
+00:29:14,880 --> 00:29:19,680
+Artifactory, por ejemplo, que es uno de estos registros, una marca de registro. Venga pues
+
+338
+00:29:19,680 --> 00:29:23,960
+Artifactory, en qué versión la tengo? En versión 3. ¿Qué versión hay en el PiPi?
+
+339
+00:29:23,960 --> 00:29:29,320
+Uff, versión 13. Pues nada, cojo la cachea y te la paso. Y estás instalando algo que
+
+340
+00:29:29,320 --> 00:29:35,760
+no tiene nada que ver con lo que querías instalar. Esto, el investigador este de ciberseguridad,
+
+341
+00:29:35,760 --> 00:29:39,880
+además claro es que es una persona que trabaja en esto, no solo hizo eso, sino que además
+
+342
+00:29:39,880 --> 00:29:44,760
+hizo que su librería, mediante una consulta inversa al DNS, le avisase de que le estaban
+
+343
+00:29:44,760 --> 00:29:49,520
+usando, ¿no? Entonces le llegaban logs de que te estaban usando en todo el sitio, en PiPi,
+
+344
+00:29:49,520 --> 00:29:55,360
+en Apple, no sé qué. Entonces hay que intentar evitar esto, como pineando las versiones,
+
+345
+00:29:55,360 --> 00:30:01,760
+pineando las versiones, además si una librería externa usa versionado semántico, que es
+
+346
+00:30:01,760 --> 00:30:07,240
+una manera muy simple de comunicar los cambios en una interfaz, pues mejor que mejor. Entonces
+
+347
+00:30:07,240 --> 00:30:10,880
+tenemos que tener pinear las versiones y las tenemos que tener actualizadas a la última
+
+348
+00:30:10,880 --> 00:30:15,480
+versión, además de otras series de medidas que podemos tomar a nivel de registro y tal.
+
+349
+00:30:15,480 --> 00:30:21,280
+Entonces tenemos que tener cuidado con ellas, las dependencias al final son como hijas que
+
+350
+00:30:21,280 --> 00:30:25,360
+tienes, ¿no? Entonces hay que cuidarlas, hay que darles mantenimiento, ¿vale? Hay
+
+351
+00:30:25,360 --> 00:30:31,480
+analizadores que te dicen si las tienes desactualizadas y hay algunos incluso que te dicen si en
+
+352
+00:30:31,480 --> 00:30:36,680
+la versión que tienes ha salido alguna vulnerabilidad pública. Si no ha salido vulnerabilidad,
+
+353
+00:30:36,680 --> 00:30:42,920
+sabéis que no es porque no haya una vulnerabilidad, es porque a lo mejor no es pública. Entonces
+
+354
+00:30:42,920 --> 00:30:48,520
+tenemos que darles cariño. Y nada, ya con esto acabo, creo que además ha quedado tiempo
+
+355
+00:30:48,520 --> 00:30:53,360
+para preguntas, cinco minutos para preguntas, genial. Y nada, pues muchas gracias por venir
+
+356
+00:30:53,360 --> 00:31:08,680
+y espero que os haya servido. Me voy a atar los cordones porque me voy a matar.
+
+357
+00:31:23,360 --> 00:31:35,560
+Hola, te quería preguntar si por la parte que creo que has hecho mencionar ello, la parte
+
+358
+00:31:35,560 --> 00:31:41,240
+de la gestión de identidades y excesos, la tenéis implementado vosotros o usáis un
+
+359
+00:31:41,240 --> 00:31:45,640
+software externo. No sé si te puedo contestar, la verdad.
+
+360
+00:31:45,640 --> 00:31:49,440
+Por privacidad. No sé si te puedo contestar, pero yo creo,
+
+361
+00:31:49,440 --> 00:31:56,720
+te puedo decir lo que pienso. Lo que pienso es que normalmente si tu negocio es, por
+
+362
+00:31:56,720 --> 00:32:03,400
+ejemplo, nuestro negocio es vender comida para perros, ¿no? A lo mejor no eres... ¿esto
+
+363
+00:32:03,400 --> 00:32:07,880
+se ha pagado o sigue encendido? Es que de repente dejo de oír sonido, es por eso,
+
+364
+00:32:07,880 --> 00:32:12,680
+¿vale? Si eres un vendedor de comida para perros, a lo mejor te interesa especializarte
+
+365
+00:32:12,680 --> 00:32:18,480
+en cosas de tu negocio, no en gestión de identidades, ¿no? Porque hay empresas que
+
+366
+00:32:18,480 --> 00:32:23,680
+se especializan que su producto es gestión de identidades y lo hacen muy bien y con
+
+367
+00:32:23,680 --> 00:32:29,560
+eso no te digo nada y te digo todo, ¿no? Entonces depende, depende si yo montase una
+
+368
+00:32:29,560 --> 00:32:35,000
+empresa hoy en día y fuese de cosas así, de temas de ciberseguridad, pues probablemente
+
+369
+00:32:35,000 --> 00:32:40,960
+lo intentaría para intentar venderlo, pero si no, no te interesa probablemente porque
+
+370
+00:32:40,960 --> 00:32:49,080
+es un tema crítico y difícil. Más preguntas, ¿no? Pues nada, nos vamos a café todos.
+

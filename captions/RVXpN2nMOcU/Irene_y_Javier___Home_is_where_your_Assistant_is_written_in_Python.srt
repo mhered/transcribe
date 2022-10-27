@@ -1,0 +1,1352 @@
+1
+00:00:00,000 --> 00:00:24,880
+Irene Pérez, Javier Torres, van a hacer esta presentación. Las preguntas, por favor, al final,
+
+2
+00:00:24,880 --> 00:00:30,840
+en caso de que no de tiempo, pues ellos están encantados de atenderos por el pasillo, discord,
+
+3
+00:00:30,840 --> 00:00:34,520
+otras redes, ¿vale? Un aplauso antes de empezar.
+
+4
+00:00:39,520 --> 00:00:45,400
+Muchas gracias a todos por haber venido, se me oye bien, ¿sí? Bueno, pues como veis en el título,
+
+5
+00:00:45,400 --> 00:00:49,760
+la charla se llama Home is Where Your Assistant is Written in Python. Perdóname por poner un título
+
+6
+00:00:49,760 --> 00:00:53,480
+en inglés en una charla en español, pero es que me gustan mucho los juegos de palabras y no me
+
+7
+00:00:53,480 --> 00:00:58,360
+pude resistir. Antes de meternos en materia, quería presentarnos, somos Javier Torres,
+
+8
+00:00:58,360 --> 00:01:03,960
+Rezeire Pérez y también nuestras compañeras de equipo Agueda y Enar, que por alguna razón han
+
+9
+00:01:03,960 --> 00:01:08,800
+preferido quedarse la ludoteca en vez de venir a dar la charla con nosotros. Más que nada,
+
+10
+00:01:08,800 --> 00:01:13,560
+dar las gracias, porque eso sea así, porque esta ludoteca es lo que ha favorecido que
+
+11
+00:01:13,560 --> 00:01:17,040
+nosotros podamos estar aquí hoy dando esa charla. Así que muchísimas gracias a la organización.
+
+12
+00:01:17,040 --> 00:01:27,120
+Y bueno, la razón por la que os traemos esta charla hoy es porque en nuestra casa nosotros no hablamos,
+
+13
+00:01:27,120 --> 00:01:31,040
+por ejemplo, de hacer mudanzas o de cambiar las cosas de una habitación o su propósito,
+
+14
+00:01:31,040 --> 00:01:36,280
+sino que hablamos de migraciones o refactorizaciones y cuando el salón está lleno de juguetes se
+
+15
+00:01:36,280 --> 00:01:40,640
+produce un overflow, ¿no? Entonces en una casa con este contexto os podríais imaginar que nuestro
+
+16
+00:01:40,640 --> 00:01:45,800
+álfres particular se llama Ada y es una Raspberry Pi, que es la que nos permite controlar ciertos
+
+17
+00:01:45,800 --> 00:01:51,200
+aspectos de la casa. Entonces ahí veis gracias a Jomasistan, que está corriendo en esa Raspberry Pi,
+
+18
+00:01:51,200 --> 00:01:55,480
+ahí veis una imagen de cómo se vería, por ejemplo, en mi móvil algunos de los controles
+
+19
+00:01:55,480 --> 00:02:00,240
+más básicos que usamos para ir motivando a lo que os vamos a contar en el resto de las charlas. Yo
+
+20
+00:02:00,240 --> 00:02:03,840
+con esto puedo controlar si se encienden algunas luces del salón, de estas que son lámparas
+
+21
+00:02:03,840 --> 00:02:09,200
+de ambiente, que están enchufadas a un enchufe inteligente, puedo ver cómo está la batería
+
+22
+00:02:09,200 --> 00:02:15,200
+del coche o puedo controlar la idea condicionado. Y aquí en los siguientes pasos, bueno, antes de
+
+23
+00:02:15,200 --> 00:02:20,800
+empezar a hacer la chicha, pues empecemos por el principio una pequeña introducción a Jomasistan,
+
+24
+00:02:20,800 --> 00:02:25,560
+lo primero que tenemos que hacer como siempre es instalarlo, hay varios tipos de instalación,
+
+25
+00:02:25,560 --> 00:02:29,360
+la Operating System es una máquina virtual que está pensada para gente a lo mejor no tan
+
+26
+00:02:29,360 --> 00:02:33,720
+técnicas, muy sencillo, tiene con todo, pero bueno para los que somos a lo mejor más técnicos
+
+27
+00:02:33,720 --> 00:02:37,560
+que nos gusta cacharrear o queremos, por ejemplo, pues yo lo tengo aquí en el ordenador conviviendo
+
+28
+00:02:37,560 --> 00:02:43,160
+con otro tipo de cosas, está también la opción de usar Docker o directamente con Pi para hacer
+
+29
+00:02:43,160 --> 00:02:48,160
+una instalación core. Aparte del Larrasbri Pi o en mi ordenador que es Linux, pues se puede
+
+30
+00:02:48,160 --> 00:02:54,520
+instalar en los otros sistemas operativos y en otras plaquitas como Droid o Tinkertab. Cuando lo
+
+31
+00:02:54,520 --> 00:02:58,480
+instalamos y lo lanzamos, de primera, nos pide una serie de configuración, siempre tenemos que
+
+32
+00:02:58,480 --> 00:03:02,280
+tener como una carpeta en la que va a guardar luego esa configuración, los primeros pasos
+
+33
+00:03:02,280 --> 00:03:06,960
+son muy sencillos, creamos una cuenta, le damos una serie de parámetros de donde estamos nosotros,
+
+34
+00:03:06,960 --> 00:03:11,760
+de si queremos el sistema métrico internacional o el imperial, por favor, el internacional.
+
+35
+00:03:11,760 --> 00:03:17,720
+Y también, pues, decimos si queremos reportar estadísticas por aquello de la solubabilidad,
+
+36
+00:03:17,720 --> 00:03:23,960
+como hablábamos ayer con Israel. Y también, si en el último paso de la configuración puede
+
+37
+00:03:23,960 --> 00:03:27,880
+hasta incluso autodetectar algunas de las cosas que tenemos ya en nuestra red, por ejemplo,
+
+38
+00:03:27,880 --> 00:03:33,560
+nosotros nos detectaba directamente la impresora que está en red en la red local. Y ya está,
+
+39
+00:03:33,560 --> 00:03:39,960
+cuando terminamos esos pasos, AuroDVox, recelo de alguna forma, ya nos da la configuración que
+
+40
+00:03:39,960 --> 00:03:43,800
+veis ahí. Por un lado tenemos un panel de control principal donde podemos emediar estas
+
+41
+00:03:43,800 --> 00:03:47,960
+tarjetas que ahora veremos. Y luego, por otro lado, en la sección de ajustes, pues,
+
+42
+00:03:47,960 --> 00:03:51,560
+hay varias secciones en las que nosotros nos vamos a centrar más en la de dispositivos y
+
+43
+00:03:51,560 --> 00:03:58,640
+servicios, no sé si se ve el puntero aquí, no, pero si se ve la pantalla del puntero. Y en la de
+
+44
+00:03:58,640 --> 00:04:05,560
+automatizaciones y escenas. Entonces, nos metemos en la parte de dispositivos y servicios. Y aquí
+
+45
+00:04:05,560 --> 00:04:09,680
+queríamos hacer una demo, pero como siempre el efecto de hemos apoyado con nosotros, hemos estado
+
+46
+00:04:09,680 --> 00:04:13,560
+aquí un rato gracias a la ayuda de la organización intentando montarlo todo para poder hacerlo,
+
+47
+00:04:13,560 --> 00:04:18,560
+pero se ha soltado un cable, entonces nada. Si luego conseguimos volverlo a ajustar,
+
+48
+00:04:18,560 --> 00:04:24,840
+pues en los pasillos o en la comida lo intentamos. Bueno, pues aquí en la zona de integraciones,
+
+49
+00:04:24,840 --> 00:04:29,280
+una integración no deja de ser un módulo que nos permite hablar con una serie de dispositivos,
+
+50
+00:04:29,280 --> 00:04:33,320
+de un tipo. Aquí veis que tenemos varios, pues, por ejemplo, de la EMED, del aire acondicionado,
+
+51
+00:04:33,320 --> 00:04:40,080
+de ZigBee, de MQTT. Dentro de estas integraciones nos permiten hablar con dispositivos, como,
+
+52
+00:04:40,080 --> 00:04:43,600
+por ejemplo, un dispositivo podría ser cada máquina, cada split de aire acondicionado que
+
+53
+00:04:43,600 --> 00:04:48,400
+tenemos en casa. Y dentro de ese aire acondicionado puede haber distintas entidades. Una entidad puede
+
+54
+00:04:48,400 --> 00:04:52,160
+ser el sensor de temperatura, que me permite saber qué temperatura tiene la habitación. Y otra
+
+55
+00:04:52,160 --> 00:04:56,040
+entidad puede ser la de realmente activar el aire acondicionado en modo frío o en modo calor.
+
+56
+00:04:56,040 --> 00:05:00,880
+Y bueno, luego también veis hay unos ayudantes que son como unas entidades virtuales que es
+
+57
+00:05:00,880 --> 00:05:04,800
+un uso un poquito más avanzado. Entonces, eso no lo vamos a curar en las charlas, pero si tenéis
+
+58
+00:05:04,800 --> 00:05:10,120
+curiosidad, siempre nos podéis preguntar más tarde. Esto es lo que queríamos hacer con la demo.
+
+59
+00:05:10,120 --> 00:05:13,600
+Habíamos traído un enchufe de IKEA para ello. Queríamos configurar una nueva integración,
+
+60
+00:05:13,600 --> 00:05:17,640
+pues, por ejemplo, ZigBee, que sería en este caso. Nos vamos al panel de nuevas integraciones.
+
+61
+00:05:17,640 --> 00:05:23,760
+Simplemente seleccionamos, hay muchísimas. Ponemos el dispositivo en modo emparejamiento,
+
+62
+00:05:23,760 --> 00:05:29,560
+si lo detecta, y luego simplemente le podemos dar un nombre que sea algo intuitivo para nosotros.
+
+63
+00:05:29,560 --> 00:05:35,120
+Aquí no nos hemos ocurrado mucho nada y hemos puesto enchufe. Y luego, una vez que tenemos
+
+64
+00:05:35,120 --> 00:05:40,160
+eso, en el panel inicial que os enseñaba al principio, había una opción, quería verlo
+
+65
+00:05:40,160 --> 00:05:46,080
+enseñado con mi instalación, pero no se va a poder, donde podemos elegir qué tipo de tarjeta
+
+66
+00:05:46,080 --> 00:05:51,280
+queremos asociar a este dispositivo que ya hemos instalado. Hay muchos tipos de tarjeta. Aquí,
+
+67
+00:05:51,280 --> 00:05:54,960
+por ejemplo, como es un enchufe que vamos a querer encender y apagar, que nosotros, por ejemplo,
+
+68
+00:05:54,960 --> 00:05:58,880
+el ejemplo que traíamos es para tener una lámpara de ambiente o algo así en el salón,
+
+69
+00:05:58,880 --> 00:06:05,200
+pues podríamos darle el botón, que lo que nos permite simplemente es un on-off y que tendría
+
+70
+00:06:05,200 --> 00:06:10,240
+esta pinta, aunque aquí este es el enchufe por defecto, también podríamos elegir diferentes
+
+71
+00:06:10,240 --> 00:06:14,800
+tipos de iconos. Y, por ejemplo, en este caso, como es una bombilla, podríamos haber elegido
+
+72
+00:06:14,800 --> 00:06:19,720
+un icono más representativo de una bombilla. Y cuando ya hemos hecho esto con diferentes
+
+73
+00:06:19,720 --> 00:06:24,000
+dispositivos y diferentes integraciones, pues un panel de una casa como la nuestra podría tener
+
+74
+00:06:24,000 --> 00:06:28,000
+una pinta tal que así, ¿no? Donde ponemos varios ejemplos. Por ejemplo, las luces del salón,
+
+75
+00:06:28,000 --> 00:06:33,880
+hay otro tipo de tarjeta que se puede poner, que no es la que os enseñaba antes del icono,
+
+76
+00:06:33,880 --> 00:06:38,480
+sino esta de los switches, ¿por qué he usado esta en este caso? Porque quiero poder
+
+77
+00:06:38,480 --> 00:06:43,280
+encender todas las luces de ambiente de una sola vez o por separado. Entonces, con este control,
+
+78
+00:06:43,280 --> 00:06:49,560
+veis que hay un switch arriba que me permite activar todas o ninguna y luego ya de los individuales.
+
+79
+00:06:49,560 --> 00:06:54,200
+También puedo tener, por ejemplo, predicción del tiempo, puedo tener un sensor de temperatura
+
+80
+00:06:54,200 --> 00:06:59,520
+con su histórico. Por ejemplo, estos son otros posibles, son el mismo botón que os hemos
+
+81
+00:06:59,520 --> 00:07:04,920
+dicho antes del enchufe, pero en el caso del coche para encender y apagar su cargador o
+
+82
+00:07:04,920 --> 00:07:08,360
+una fuente, por ejemplo, que tenemos en el patio para encenderla y apagarla. Al final, son también
+
+83
+00:07:08,360 --> 00:07:13,600
+enchufe. Esto es para controlar el aire acondicionado, para ver en qué nivel está la batería del
+
+84
+00:07:13,600 --> 00:07:17,200
+coche o para ver, por ejemplo, el histórico de la producción solar de nuestros paneles.
+
+85
+00:07:17,200 --> 00:07:22,640
+Y aquí esta otra parte, que luego la veremos más en detalle, son una serie de automatizaciones
+
+86
+00:07:22,640 --> 00:07:27,800
+que tenemos definidas y que podemos activarlas o desactivarlas. Pero bueno, si todas estas
+
+87
+00:07:27,800 --> 00:07:32,800
+integraciones no parecen suficientes, pues ahora os voy a contar, Javier, cómo aumentar
+
+88
+00:07:32,800 --> 00:07:34,800
+las integraciones que podemos tener en nuestro sistema.
+
+89
+00:07:34,800 --> 00:07:41,240
+Bueno, pues si yo os voy a contar, pues cómo añadir algún cacharrito. Nos lo recomiendo.
+
+90
+00:07:41,240 --> 00:07:46,880
+La primera opción siempre es, JomaSystem viene con la última vez que lo mire, 2.176 integraciones,
+
+91
+00:07:46,880 --> 00:07:51,560
+pero en todo caso son más de 2.000 y si no, esperáis un mes y cada mes viene una nueva
+
+92
+00:07:51,560 --> 00:07:55,880
+versión que viene como las 10 de media, a veces 15, a veces 5, lo que sea. Y si acaso
+
+93
+00:07:55,880 --> 00:07:59,120
+no es suficiente, está la que me dice Store, que hay un montón de integraciones que igual
+
+94
+00:07:59,120 --> 00:08:05,200
+no son tan estables y tienen alguna cosilla que peta, pero hay 24.000 y funcionan suficientemente
+
+95
+00:08:05,200 --> 00:08:11,160
+bien, si no es muy exigente, por lo menos se conecta. O sea, que va que bien. Pero si
+
+96
+00:08:11,160 --> 00:08:14,480
+insistís en buscar complicados la vida, y esto se por experiencia propia, hay gente
+
+97
+00:08:14,480 --> 00:08:17,760
+que no sé por qué nos da por complicarnos la vida, pues podéis hacer vuestras propias
+
+98
+00:08:17,760 --> 00:08:21,720
+integraciones. Aun así, lo más fácil es intentar reutilizar una integración de las
+
+99
+00:08:21,720 --> 00:08:26,160
+que ya existe. Yo, por ejemplo, aquí voy a hablar de cómo enchufar la piscina, tiene
+
+100
+00:08:26,160 --> 00:08:30,600
+una bomba con un filtro, es cómo controlar eso de JomaSystem. Como yo controlo el hardware
+
+101
+00:08:30,600 --> 00:08:35,600
+que estoy creando, pues lo que hice fue conectarlo por MQTT. ¿Qué es MQTT? Es sencillamente
+
+102
+00:08:35,600 --> 00:08:39,640
+un bus de pasos y mensajes, para pasar mensajes entre dispositivos y OT, es muy sencillito.
+
+103
+00:08:39,640 --> 00:08:44,320
+En este caso, la RRP que tengo enchufada la bomba de la piscina, haría un mensaje de
+
+104
+00:08:44,320 --> 00:08:50,600
+suscribirte al tema de Pumpset. Y entonces ahora, cuando JomaSystem manda un mensaje,
+
+105
+00:08:50,600 --> 00:08:56,320
+Pumpset on, el servidor de MQTT sabe que lo tiene que retramitir a la otra Raspberry,
+
+106
+00:08:56,320 --> 00:09:00,320
+que recibe el mensaje y enciende la bomba. Vamos a ver cómo se implementa, o sea, el
+
+107
+00:09:00,320 --> 00:09:06,880
+código que está ejecutándose en la bomba en Python. Pues, relativamente sencillo.
+
+108
+00:09:06,880 --> 00:09:11,040
+Utilizamos GPi0, que es una librería que se utiliza en la RRP para controlar las entradas
+
+109
+00:09:11,040 --> 00:09:16,240
+y salidas que tiene, y Pajo MQTT, que es un cliente MQTT. Está sencillo, construir
+
+110
+00:09:16,240 --> 00:09:21,600
+el cliente y decirle, cuando te conectes, manda un mensaje de subscribe y cuando recibes
+
+111
+00:09:21,600 --> 00:09:27,760
+un mensaje, lea el mensaje, mira si es on o off, pone el PIN al mismo valor y luego también
+
+112
+00:09:27,760 --> 00:09:32,480
+hay que hacer una publicación de un mensaje en el otro sentido, desde la bomba hasta como
+
+113
+00:09:32,480 --> 00:09:37,160
+asista, para que actualice la interfaz de, oye, ya lo he encendido y dejeme la interfaz.
+
+114
+00:09:37,160 --> 00:09:41,720
+Con esto ya podríamos funcionar. Sin embargo, tendríamos que configurar manualmente en
+
+115
+00:09:41,720 --> 00:09:47,600
+Home Assistant, oye, cuáles son los temas, pullpumpset, pullpumpstate y habría que meter
+
+116
+00:09:47,600 --> 00:09:51,440
+eso en el pichero de configuración de Home Assistant, que se pueda hacer perfectamente.
+
+117
+00:09:51,440 --> 00:09:55,840
+Pero si queremos que sea todo mucho más fácil, pues directamente desde nuestro cliente MQTT
+
+118
+00:09:55,840 --> 00:10:00,760
+podemos mandar un mensaje a ese topic que en el que decimos Home Assistant, una cosa de
+
+119
+00:10:00,760 --> 00:10:05,000
+tipo switch, que es un interruptor o no, que se llama pullpump y tiene la configuración
+
+120
+00:10:05,000 --> 00:10:08,280
+esta, este es el topic de set, este es el tipo de state, este es el nombre que va a tener,
+
+121
+00:10:08,280 --> 00:10:13,160
+este es el icono que va a tener, se pone eso y nada más hacer eso, nada más arrancarse
+
+122
+00:10:13,160 --> 00:10:17,400
+el código, van a mediar este mensaje y en Home Assistant a recibir el mensaje, pues ya
+
+123
+00:10:17,400 --> 00:10:20,480
+todo mativamente creaba configuración y no tenemos que tocar absolutamente nada en
+
+124
+00:10:20,480 --> 00:10:24,560
+Home Assistant, en Home Assistant, siempre que tenga instalada la integración de MQTT,
+
+125
+00:10:24,560 --> 00:10:33,080
+lo de esta solo. Entonces, todo está muy bien, pero hay una cosilla que da, por supuesto,
+
+126
+00:10:33,080 --> 00:10:37,320
+es que nosotros controlamos el protocolo que está hablando nuestro cacharro, si queremos
+
+127
+00:10:37,320 --> 00:10:41,800
+enganchar un cacharro de terceras partes que no controlamos nosotros el protocolo, no nos
+
+128
+00:10:41,800 --> 00:10:46,120
+queda más remedio que hacer la integración con Home Assistant. Esta es la opción que
+
+129
+00:10:46,120 --> 00:10:50,440
+utiliza en las 2.000 integraciones que hay, o sea, una opción bastante bien probada para
+
+130
+00:10:50,440 --> 00:10:56,280
+que sea sencilla, pero tiene un poquito más de injundia. Y en este ejemplo lo que estoy
+
+131
+00:10:56,280 --> 00:11:00,640
+haciendo es conectarme con el API de Aerial Weather, es una API de predicción meteorológica
+
+132
+00:11:00,640 --> 00:11:05,120
+para que tenga una API y quería integrarlo porque no había integración. Entonces, tiene
+
+133
+00:11:05,120 --> 00:11:10,280
+un país en el DK con lo cual en teoría debería ser sencilla. Entonces, lo primero que hacemos
+
+134
+00:11:10,280 --> 00:11:14,920
+es crear un esqueleto de integración con el comando de este de Home Assistant y luego
+
+135
+00:11:14,920 --> 00:11:19,760
+tenemos que añadir unas pocas líneas desde su esqueleto modificado lo que necesitamos.
+
+136
+00:11:19,760 --> 00:11:24,000
+En nuestro caso, sobre inicialización, este es el código de inicialización, le añadimos,
+
+137
+00:11:24,000 --> 00:11:27,640
+oye, nuestra plataforma vamos a implementar un sensor de tipo Weather, que es de pronóstico
+
+138
+00:11:27,640 --> 00:11:32,240
+meteorológico. Y luego hacemos una inicialización de nuestras cosas, de nuestro API. Creamos
+
+139
+00:11:32,240 --> 00:11:37,080
+ahí un cliente para la API de Aerial Weather que la configuración del API aquí viene
+
+140
+00:11:37,080 --> 00:11:41,760
+de la configuración de Home Assistant, sin más. Y luego cogemos el cliente y lo metemos
+
+141
+00:11:41,760 --> 00:11:45,480
+ahí dentro de la variable hash.data, que es la variable que te da él para una global
+
+142
+00:11:45,480 --> 00:11:49,960
+para toda integración, para meter ahí tus cosas. Metemos ahí nuestro cliente de API.
+
+143
+00:11:49,960 --> 00:11:53,760
+Y entonces, como hemos definido un plazo de Weather, lo único que tenemos que hacer es
+
+144
+00:11:53,760 --> 00:11:59,560
+un fichero WeatherPy en el que definimos nuestra integración, que es crear una clase que hereda
+
+145
+00:11:59,560 --> 00:12:03,760
+de WeatherEntity, porque estamos creando un sensor de Weather, implementar el método
+
+146
+00:12:03,760 --> 00:12:12,000
+asyncUpdate, que en nuestro caso es una llamada al API de Aerial Weather para traerme los datos.
+
+147
+00:12:12,000 --> 00:12:16,200
+Home Assistant llamará a ese método automáticamente, tiene un scan interval, pues cada 30 minutos
+
+148
+00:12:16,200 --> 00:12:20,200
+está puesto, pues cada 30 minutos va a llamar al update. Y luego, cuando Home Assistant quida
+
+149
+00:12:20,200 --> 00:12:24,520
+dator de nuestra integración, pues va a llamar a propiedades, por ejemplo, native temperature.
+
+150
+00:12:24,520 --> 00:12:28,760
+Entonces ahí tenemos que devolver nuestra temperatura. En mi caso, pues me voy al resultado de la
+
+151
+00:12:28,760 --> 00:12:33,480
+llamada del API y devuelvo el valor donde está. También en la implementación, pues tendría,
+
+152
+00:12:33,480 --> 00:12:37,040
+se podría hacer lo mismo para humedad, para el forcas, el forcas en vez de devolver un
+
+153
+00:12:37,040 --> 00:12:42,640
+entero, pues va a devolver una raíz de enteros uno para cada día. Entonces, hacia esta integración
+
+154
+00:12:42,640 --> 00:12:48,040
+se añadiría Home Assistant como cualquier otra. Nos faltaría para que sepa Home Assistant
+
+155
+00:12:48,040 --> 00:12:52,920
+como llamarla, tocar el manifest.json para poner el nombre, strings.json para poner las
+
+156
+00:12:52,920 --> 00:12:57,840
+strings y configflow para decirle qué variables de configuración necesitamos. Y sólo con
+
+157
+00:12:57,840 --> 00:13:04,040
+eso, pues ya no sale una cosa como esta. Tenemos ahí el device, su presión, su dispositivo,
+
+158
+00:13:04,040 --> 00:13:07,920
+su pronóstico, las mínimas, las máximas, por lo que hayamos puesto de datos. Nosotros
+
+159
+00:13:07,920 --> 00:13:11,280
+lo tenemos que hacer, la parte de conectarnos con el API y Home Assistant se ocupa de toda
+
+160
+00:13:11,280 --> 00:13:19,520
+la visualización, todo el manejo de datos. Esto, mi idea era publicarlo, pero cuando
+
+161
+00:13:19,520 --> 00:13:22,840
+esto fue hace un mes, cuando me dije, venga, voy a limpiarlo y publicarlo para Python y
+
+162
+00:13:22,840 --> 00:13:27,800
+así lo tenemos publicado bonito, de Precated. Yo, tengo visiones, yo juraría que cuando
+
+163
+00:13:27,800 --> 00:13:30,960
+empezaba a hacer esto no estaba de Precated, sino no habría empezado a hacerlo. Me fui
+
+164
+00:13:30,960 --> 00:13:35,960
+al archivo de WebArchive y efectivamente en enero, que cuando empezaba a hacer esto además,
+
+165
+00:13:35,960 --> 00:13:41,160
+no estaba de Precated. Entonces, pues me quedaba sin publicarla en Home Assistant, ya no
+
+166
+00:13:41,160 --> 00:13:44,160
+sé si contributores de Home Assistant, pero bueno, el código le subí al repo, así que
+
+167
+00:13:44,160 --> 00:13:47,480
+le podéis echar un ojo y si algún día me animo igual, me implemento yo el país en
+
+168
+00:13:47,480 --> 00:13:53,440
+el decay y ya le quitamos las equitadas. Y bueno, pues todo esto está muy bien, ya
+
+169
+00:13:53,440 --> 00:13:57,240
+hemos aprendido como añadir cacharritos, como añadirlos a Home Assistant, como controlar
+
+170
+00:13:57,240 --> 00:14:01,280
+los DDA Interfads, pero dices, pues para esto puede utilizar casi que un interruptor. La
+
+171
+00:14:01,280 --> 00:14:04,840
+gracia de Home Assistant muchas veces es cómo automatizar cosas, cómo hacer que cosas pasen
+
+172
+00:14:04,840 --> 00:14:11,840
+automáticamente, que me lea la mente. Desde eso se va a hablar otra vez, Irene.
+
+173
+00:14:11,840 --> 00:14:16,680
+Sí, a ver, yo creo que aquí a todos los que estamos nos gusta automatizar cosas y no programaríamos,
+
+174
+00:14:16,680 --> 00:14:20,240
+pero bueno, además tenemos la carga mental, por ejemplo, muchas veces también es muy,
+
+175
+00:14:20,240 --> 00:14:25,320
+muy útil poder automatizar cosillas de casa. Lo que tenemos que entender de las automatizaciones
+
+176
+00:14:25,320 --> 00:14:29,160
+es que tienen varias partes, es muy sencillo. Lo más importante es tener un trigger o un
+
+177
+00:14:29,160 --> 00:14:33,960
+desencadenante, algo que sea la condición que inicia esa automatización. Por ejemplo,
+
+178
+00:14:33,960 --> 00:14:38,320
+lo que quiero es que cuando la temperatura en una habitación suba de 27 grados y su
+
+179
+00:14:38,320 --> 00:14:42,280
+contraparte sería la acción que quiero que se realice en ese caso. Por ejemplo, enciende
+
+180
+00:14:42,280 --> 00:14:47,880
+el aire condicionado en modo frío. ¿Qué podemos también meter en medio una condición?
+
+181
+00:14:47,880 --> 00:14:51,120
+¿Siempre voy a querer que el aire acondicionado se encienda? Pues a lo mejor si no estoy en
+
+182
+00:14:51,120 --> 00:14:55,120
+casa no quiero que eso pase por no gastar energía tontamente. Entonces podría poner
+
+183
+00:14:55,120 --> 00:15:00,240
+la condición de estar en casa. ¿Cómo podemos hacer esto en Home Assistant? La forma más
+
+184
+00:15:00,240 --> 00:15:04,640
+sencilla sería con su propia interfaz. En la siguiente, en la otra sección que os decía,
+
+185
+00:15:04,640 --> 00:15:08,360
+la automatizaciones, le daríamos a crear una nueva automatización y nos saldría esto
+
+186
+00:15:08,360 --> 00:15:12,880
+así uno debajo de otro. Aquí lo hemos puesto al lado para que se vea mejor. En la primera
+
+187
+00:15:12,880 --> 00:15:17,240
+sección de desencadenantes yo elijo, hay muchísimos tipos de desencadenantes. En este caso,
+
+188
+00:15:17,240 --> 00:15:20,680
+como lo que estoy haciendo es una temperatura de un sensor, pues elijo que es un estado
+
+189
+00:15:20,680 --> 00:15:27,240
+numérico, elijo cuál es mi sensor de temperatura y lo que le digo es que cuando pase por encima,
+
+190
+00:15:27,240 --> 00:15:32,200
+vale, como nosotros lo usamos a veces en inglés, nos había por encima de 27. Ocionalmente
+
+191
+00:15:32,200 --> 00:15:36,720
+le puedo indicar durante un tiempo, si por ejemplo no quiero que a la mínima salte.
+
+192
+00:15:36,720 --> 00:15:42,360
+En este caso en las condiciones lo que hemos puesto es una condición de presencia. Otro
+
+193
+00:15:42,360 --> 00:15:47,680
+de las integraciones posibles que tiene Home Assistant detecta la presencia de tu móvil
+
+194
+00:15:47,680 --> 00:15:51,320
+dentro de la red LAN. Entonces cuando se detecta que el móvil de Javier, por ejemplo en este
+
+195
+00:15:51,320 --> 00:15:55,240
+caso hemos puesto Javier, está en la red LAN, entendemos que estamos en casa y en ese caso
+
+196
+00:15:55,240 --> 00:15:59,440
+sí que vamos a querer que se produzca la acción. ¿Y cuál es la acción? Bueno, pues hay también
+
+197
+00:15:59,440 --> 00:16:03,800
+muchas formas de definir las acciones. Luego vamos a ver otra distinta, pero digamos que
+
+198
+00:16:03,800 --> 00:16:09,360
+la más intuitiva que se ha hecho en el último año es ¿qué dispositivo quiero que se active?
+
+199
+00:16:09,360 --> 00:16:13,160
+Primero, el dispositivo. ¿Cuál es el aire acondicionado? Por ejemplo, en este caso,
+
+200
+00:16:13,160 --> 00:16:17,720
+del estudio. Y ahora, ¿ese dispositivo qué posibles acciones tiene? En este caso, una
+
+201
+00:16:17,720 --> 00:16:23,800
+de sus posibles acciones por ser un aire acondicionado es encenderse en modo frío y así de sencillo
+
+202
+00:16:23,800 --> 00:16:28,360
+se puede configurar una automatización. Esta, a lo mejor, es muy trivial, ¿no? Pero hay
+
+203
+00:16:28,360 --> 00:16:32,320
+otras automatizaciones que realmente nos ayudan en aquello de la carga mental que comentaba
+
+204
+00:16:32,320 --> 00:16:38,080
+antes también. Otra forma de hacerlo, también porque veáis alternativas, es con YAML. Al
+
+205
+00:16:38,080 --> 00:16:43,360
+final toda la configuración por detrás de Home Assistant son YAML. Normalmente editar
+
+206
+00:16:43,360 --> 00:16:47,560
+este YAML desde el principio es complicado, pero sí que puede ser útil que a lo mejor
+
+207
+00:16:47,560 --> 00:16:52,880
+empecéis la automatización con la interfaz gráfica y luego ya el tweak, el cambiar alguna
+
+208
+00:16:52,880 --> 00:16:57,760
+cosita se puede hacer directamente en el YAML. En este caso, el ejemplo que os traemos es
+
+209
+00:16:57,760 --> 00:17:03,760
+un botón que tenemos con ZigBee, que está automatizado para que al darle la aspiradora
+
+210
+00:17:03,760 --> 00:17:06,840
+que tenemos, que se llama Isidora, porque nuestra casa a todos los cachartos tiene un
+
+211
+00:17:06,840 --> 00:17:13,680
+nombre. Lo de Isidora, voy muy mal de tiempo, pero necesito contarlo, es porque nuestra hija
+
+212
+00:17:13,680 --> 00:17:18,880
+es pequeña decía, Isidora, Isidora, de aspiradora y al final pues ya se llama Isidora y es una
+
+213
+00:17:18,880 --> 00:17:22,960
+de sus mejores amigas, cada vez que sale la aspiradora está ahí detrás como loca, como
+
+214
+00:17:22,960 --> 00:17:28,760
+los gatitos, vamos. Pues bueno, no sé de los que seáis padres sabréis la tierra que
+
+215
+00:17:28,760 --> 00:17:33,080
+traen los zapatos de los niños cuando vienes del parque y entonces lo de poner la aspiradora
+
+216
+00:17:33,080 --> 00:17:36,680
+en la entrada se convierte en algo bastante necesario en el día a día. Así que nosotros
+
+217
+00:17:36,680 --> 00:17:40,520
+lo que tenemos es un botón ZigBee que se conecta a una automatización que lo que hace
+
+218
+00:17:40,520 --> 00:17:44,840
+es enviarle un mensaje por MQTT, como veis en la parte de acciones, le enviamos un mensaje
+
+219
+00:17:44,840 --> 00:17:49,840
+por MQTT a la aspiradora y tenemos ya predefinido el mapa de la entrada para que en ese topic
+
+220
+00:17:49,840 --> 00:17:54,480
+que publica en MQTT cuando recibe el mensaje directamente active el aspirar esa zona.
+
+221
+00:17:54,480 --> 00:18:00,800
+Y bueno, tanto el editor gráfico como ya me le está muy bien, pero si vosotros es
+
+222
+00:18:00,800 --> 00:18:05,560
+como yo más de pantalla negra, me perdonen los de front, al final prefiero escribir código
+
+223
+00:18:05,560 --> 00:18:10,080
+Python, es verdad que si os miráis la documentación de AppDemon, que es una aplicación que nos
+
+224
+00:18:10,080 --> 00:18:16,840
+permite escribir automatizaciones o como ellos en sus términos aplicaciones para jomasistas
+
+225
+00:18:16,840 --> 00:18:22,560
+entre otras cosas. Los ejemplos que vienen desde mi punto de vista en la web son un poco
+
+226
+00:18:22,560 --> 00:18:26,440
+rebuscados, a lo mejor no hay que ir a un ejemplo tan rebuscado simplemente porque hay
+
+227
+00:18:26,440 --> 00:18:30,280
+ciertas cosas que para nosotros que sabemos programarnos es más fácil escribirlo en
+
+228
+00:18:30,280 --> 00:18:36,280
+Python y es muy muy sencillo. La parte de Instalar AppDemon es trivial, entonces esa
+
+229
+00:18:36,280 --> 00:18:40,800
+parte no la cuento, lo que os voy a contar es otro ejemplo de una automatización que
+
+230
+00:18:40,800 --> 00:18:45,400
+he hecho con AppDemon y la he llamado Quiero dormir bien en verano porque a mí personalmente
+
+231
+00:18:45,400 --> 00:18:50,080
+me pican los mosquitos, o sea yo soy el antimosquito de la familia, solo todos vienen a mí y entonces
+
+232
+00:18:50,080 --> 00:18:54,800
+estoy harta de todas las noches tener que acordar, me descender el matamosquitos y apagarlo
+
+233
+00:18:54,800 --> 00:18:58,600
+por la mañana, pero claro es algo que además solo hago en verano y me diréis bueno pues
+
+234
+00:18:58,600 --> 00:19:03,000
+definer automatización y la desactivas, las activas en verano y las desactivas en invierno,
+
+235
+00:19:03,000 --> 00:19:07,440
+pero eso ya requiere acción manual por mis partes, yo quiero automatizar al 100%, que
+
+236
+00:19:07,440 --> 00:19:13,120
+solo ocurre en verano. Entonces bueno en AppDemon lo único que tenemos que tener en cuenta
+
+237
+00:19:13,120 --> 00:19:18,200
+es tenemos que heredar de la clase hash, tenemos una función initialize donde definimos esos
+
+238
+00:19:18,200 --> 00:19:23,080
+triggers y luego en ese initialize lo que vamos a conectar es el tipo de trigger que
+
+239
+00:19:23,080 --> 00:19:27,600
+queremos, puede ser un trigger de escucha un estado y cuando ese estado pase un valor
+
+240
+00:19:27,600 --> 00:19:32,240
+no queda el primer ejemplo que veíamos o puede ser un round daily como en este caso, todos
+
+241
+00:19:32,240 --> 00:19:36,480
+los días a una cierta hora quiero que se ejecute un callback, en este caso he puesto
+
+242
+00:19:36,480 --> 00:19:41,280
+dos callbacks, uno por la noche al irme a la cama quiero que se encienda y otro callback
+
+243
+00:19:41,280 --> 00:19:46,680
+por la mañana quiero que se apague y ya luego dentro de los, aquí defino las horas, aquí
+
+244
+00:19:46,680 --> 00:19:51,000
+engancho digamos el trigger round daily con el callback y aquí ya en cada callback defino
+
+245
+00:19:51,000 --> 00:19:54,880
+lo que hace y aquí tengo la condición de si es verano, que por supuesto me encanta
+
+246
+00:19:54,880 --> 00:19:58,960
+esta condición porque en Payzone es una línea de código y me encanta como poder definir
+
+247
+00:19:58,960 --> 00:20:03,600
+condiciones aquí los 8 por meses, simplemente si estoy entre el mes 6 y el mes 9 incluidos
+
+248
+00:20:03,600 --> 00:20:07,880
+a sumo que es verano, obviamente se podrían hacer cosas mucho más complejas, por ejemplo
+
+249
+00:20:07,880 --> 00:20:13,080
+una de las synchronizaciones posibles, una de las integraciones quería decir es con Google
+
+250
+00:20:13,080 --> 00:20:16,240
+Calendar, entonces por ejemplo si vosotros preferís hacerlo de esa manera podríais en
+
+251
+00:20:16,240 --> 00:20:19,680
+Google Calendar definir vuestros eventos y en función de vuestros eventos de Google
+
+252
+00:20:19,680 --> 00:20:23,720
+Calendar activar ciertas automatizaciones, yo personalmente prefiero no darle mis datos
+
+253
+00:20:23,720 --> 00:20:30,480
+a Google entonces prefiero hacerlo en código aunque me cueste un poco más de trabajo.
+
+254
+00:20:30,480 --> 00:20:34,320
+Y básicamente esto y diréis bueno pues esto es muy sencillo tampoco me aporta mucho pero
+
+255
+00:20:34,320 --> 00:20:39,840
+otro de las potencias de definir las automatizaciones con AppDemon es que si ahora por ejemplo esa
+
+256
+00:20:39,840 --> 00:20:43,560
+que veíais era pues para una habitación, si yo ahora quiero replicar este mismo comportamiento
+
+257
+00:20:43,560 --> 00:20:47,960
+tanto en mi habitación como por ejemplo en el cuarto de las niñas lo puedo generalizar
+
+258
+00:20:47,960 --> 00:20:52,280
+simplemente en un fichado de configuración ya ML Instancia, mi aplicación dos veces
+
+259
+00:20:52,280 --> 00:20:56,760
+y mi aplicación la aplicación lo llamo así porque es como se llaman en AppDemon,
+
+260
+00:20:56,760 --> 00:21:00,560
+no deja de ser la misma automatización que hablábamos, la hago más genérica, me permite
+
+261
+00:21:00,560 --> 00:21:04,960
+hacer un no sé se ve el puntero si selfArcs y con selfArcs puedo coger los parámetros
+
+262
+00:21:04,960 --> 00:21:09,280
+que tengo definidos en el ya ML y esos parámetros pueden ser desde horas hasta el enchufe en
+
+263
+00:21:09,280 --> 00:21:12,720
+concreto que quiero activar en cada caso, en mi habitación quiero activar el enchufe
+
+264
+00:21:12,720 --> 00:21:16,080
+uno y en la de las niñas el enchufe dos y los horarios no tienen porque ser ni siquiera
+
+265
+00:21:16,080 --> 00:21:23,040
+los mismos y bueno pues eso era lo más interesante que queríamos contaros pero no es lo único
+
+266
+00:21:23,040 --> 00:21:26,800
+entonces ahora les cedo la palabra Javier que os va a contar unas conclusiones y también
+
+267
+00:21:26,800 --> 00:21:29,200
+otras cosillas que se pueden hacer con Jomassistan.
+
+268
+00:21:29,200 --> 00:21:36,480
+Pues muy rápidamente es un poquito ver un poquito que otras que tienes Jomassistan
+
+269
+00:21:36,480 --> 00:21:39,880
+además de cacharritos y automatizaciones tiene por ejemplo una cosa que está muy bien
+
+270
+00:21:39,880 --> 00:21:43,720
+que es un histórico te guarda los valores de todos los sensores que ha recibido siempre
+
+271
+00:21:43,720 --> 00:21:48,480
+y cualquier cosa que hagas en interfaz alguna vez utilizado como kit plane casero en plan
+
+272
+00:21:48,480 --> 00:21:54,920
+quién se ha dejado ir a condición de encendido el registro se puede ver también tiene escenas
+
+273
+00:21:54,920 --> 00:21:58,840
+y zonas cuando añades un cacharrito se puede añadir una zona entonces puede decir entiende
+
+274
+00:21:58,840 --> 00:22:03,160
+o apaga todo lo que hay en esta zona son automáticos para hacerlo más sencillo o por ejemplo las
+
+275
+00:22:03,160 --> 00:22:07,240
+escenas que nosotros utilizamos para control de lámparas ambiente una escena es una serie
+
+276
+00:22:07,240 --> 00:22:10,960
+de dispositivos y un estado en el que están entonces puede decir en esta escena escena
+
+277
+00:22:10,960 --> 00:22:14,520
+romántica tengo la lámpara con la intensidad bajada está encendida está apagada no sé
+
+278
+00:22:14,520 --> 00:22:19,520
+qué de la escena y se pone todo en el estado que querías y es una cosa que utilizamos
+
+279
+00:22:19,520 --> 00:22:23,920
+nosotros otra cosa utilizamos para gestión energética tenemos paneles solares y un coche
+
+280
+00:22:23,920 --> 00:22:28,600
+eléctrico y tenemos todo conectado en Jomassistan y decimos oye pues carga el coche sólo con
+
+281
+00:22:28,600 --> 00:22:31,560
+energía que nos sobra no queremos tirar de la red de la función de energía que esté
+
+282
+00:22:31,560 --> 00:22:37,680
+consumiendo la casa hacer la resta y el resto se va a asignar al coche y luego pues por
+
+283
+00:22:37,680 --> 00:22:42,280
+no decir que estamos retrabando en Jomassistan o algún otro proyectito de ecosistema además
+
+284
+00:22:42,280 --> 00:22:46,080
+de abdimos no otra forma de hacer automatizaciones está no de red que es un lenguaje visual
+
+285
+00:22:46,080 --> 00:22:50,240
+al gastar en doble chitas y demás no de es de que está hecho en no de javascript no
+
+286
+00:22:50,240 --> 00:22:59,040
+lo sé pero si alguien quiere y se puede existe es de pejón es un fin para micro controladores
+
+287
+00:22:59,040 --> 00:23:04,000
+de sepe como el que habló Jimena ayer que está integrado automáticamente con Jomassistan
+
+288
+00:23:04,000 --> 00:23:09,360
+este permite decirle oye este pin está enchufado un sensor de humedad este pin está enchufado
+
+289
+00:23:09,360 --> 00:23:17,120
+a un pin PWM y automáticamente sólo con eso con pilas de igual y aparece en Jomassistan
+
+290
+00:23:17,120 --> 00:23:22,000
+micro lo mencionó nieves en la intro es un asistente de bot pues es la versión open source
+
+291
+00:23:22,000 --> 00:23:25,600
+que mejor integrada está con Jomassistan también está Alexa y todas estas cosas y que hay
+
+292
+00:23:25,600 --> 00:23:32,120
+que vender vuestros datos voluntariamente pero esta mejor y luego OpenHab es otra alternativa
+
+293
+00:23:32,120 --> 00:23:35,680
+Jomassistan también bastante popular que es otro que nos dice Magistit de traición
+
+294
+00:23:35,680 --> 00:23:39,680
+javas tiene sus automátricaciones sus integraciones pero hay también mucha gente que lo usa es
+
+295
+00:23:39,680 --> 00:23:42,840
+muy popular en alemania por lo entonces si tenéis algún cacharro alemán como una cadera
+
+296
+00:23:42,840 --> 00:23:51,240
+alemania están integraciones para OpenHab pero no para Jomassistan es curioso y nada eso
+
+297
+00:23:51,240 --> 00:23:55,760
+es todo ahí tenéis las redes sociales en el enlace al código ahí está el código las
+
+298
+00:23:55,760 --> 00:24:00,120
+presentaciones todas las slides de la eso para poder ver lo que queráis y muchas gracias
+
+299
+00:24:00,120 --> 00:24:02,120
+por venir y preguntas
+
+300
+00:24:30,120 --> 00:24:43,120
+hacemos el apetaquita
+
+301
+00:24:43,120 --> 00:24:54,120
+mucho guirale mucho guirale pero después
+
+302
+00:24:54,120 --> 00:25:00,120
+mucho mucho
+
+303
+00:25:00,120 --> 00:25:06,120
+creo que tengo una pregunta bastante común que va a funcionar mi cacharro y por supuesto
+
+304
+00:25:06,120 --> 00:25:10,120
+para funcionar con la integración es que ya hay que visto que hay un buscador en la web
+
+305
+00:25:10,120 --> 00:25:17,120
+y si no qué probabilidad hay de que yo realmente sea capaz de conectar ese cacharro porque entiendo
+
+306
+00:25:17,120 --> 00:25:22,120
+que esto moviendo Open Source muy digamos anti cloud aunque podáis conectar algunos
+
+307
+00:25:22,120 --> 00:25:28,120
+servicios cloud cuando te lo permiten pero hay veces que tú compras un cacharro y funciona con la cloud
+
+308
+00:25:28,120 --> 00:25:32,120
+de esa empresa y si no pues le jode
+
+309
+00:25:32,120 --> 00:25:38,120
+sí pues la mayoría hay muchas integraciones que son locales pero también muchas integraciones que son online
+
+310
+00:25:38,120 --> 00:25:45,120
+que se conecta a la pi que es ponga el el cacharro en internet muchas veces está hackeado y ya desde ahí haciendo
+
+311
+00:25:45,120 --> 00:25:51,120
+clis en el html o cosas de esas un poquito hacke pero en general y nosotros todo lo que tenemos en casa ha funcionado
+
+312
+00:25:51,120 --> 00:25:56,120
+y muchos cacharros lo que decíamos por ejemplo el tenemos el aire acondicionado con diking y la integración
+
+313
+00:25:56,120 --> 00:26:01,120
+sobre la instala tiene dos modos tiene modo cloud que se conecta a los servidores de diking y da ahí al aire acondicionado
+
+314
+00:26:01,120 --> 00:26:07,120
+y tiene modo directo que se conecta por la red local y es bastante habitual o por ejemplo nuestro coche
+
+315
+00:26:07,120 --> 00:26:11,120
+el coche va por el cloud directamente no hay otra forma de hacerlo
+
+316
+00:26:11,120 --> 00:26:16,120
+entonces hasta ahora todo lo que hemos intentado en chufar a funcionar al primero con las integraciones que hay
+
+317
+00:26:16,120 --> 00:26:23,120
+no que hemos programado porque me gusta hacer cosas me gusta añadir casaritos pero me lo buscaba yo solo
+
+318
+00:26:23,120 --> 00:26:34,120
+Hola gracias no quería abusar con dos preguntas a una vez yo tengo open motics
+
+319
+00:26:34,120 --> 00:26:41,120
+y si conocéis como está la integración con open motics porque la parte de open motics dicen que es beta desde la parte de open motics
+
+320
+00:26:41,120 --> 00:26:47,120
+y el otro que has dicho que la aspiradora hablaba mosquito es verdad si es así que marca ese modelo
+
+321
+00:26:47,120 --> 00:26:56,120
+la aspiradora es una Xiaomi y lo único que hay un firmware que se llama valetudo que puede se instalar en la aspiradora
+
+322
+00:26:56,120 --> 00:27:01,120
+la aspiradora al final correo Linux se puede rutear, puede instalar en lo que quieras y la instalas valetudo que habla mosquito
+
+323
+00:27:01,120 --> 00:27:07,120
+tiene una integración normal con Xiaomi a través de cloud también la puedes usar pero puedes usar la versión esta
+
+324
+00:27:07,120 --> 00:27:14,120
+yo cuando decía que Javier solo habla por mqt te lo decía en serio no tiene redes sociales o sea nuestra casa nada puede salir al cloud
+
+325
+00:27:14,120 --> 00:27:18,120
+pero sí hay cosas para gente normal también
+
+326
+00:27:18,120 --> 00:27:37,120
+¿Alguna pregunta más?
+
+327
+00:27:37,120 --> 00:27:44,120
+Hola habéis comentado que habéis conseguido integrar el inversor de los paneles dentro del sistema de control
+
+328
+00:27:44,120 --> 00:27:50,120
+¿Puedes dar una pistilla de cómo lo habéis hecho? Es un inversor de Huawei que es el más popular
+
+329
+00:27:50,120 --> 00:27:53,120
+Es Pro News
+
+330
+00:27:53,120 --> 00:27:59,120
+El inversor es Pro News y tiene Pro News entre otras cosas cuando lo elegimos también miramos que hay una integración
+
+331
+00:27:59,120 --> 00:28:07,120
+pero tiene una integración pues se conecta a la red local y tiene una pi que es ponen la red local que te puedes conectar
+
+332
+00:28:07,120 --> 00:28:11,120
+igual estas otras integraciones que también tiene dos modos el modo local y el modo a través de internet
+
+333
+00:28:11,120 --> 00:28:18,120
+y también el modo de modo de modo de modo de modo de modo de modo de modo de modo de modo de modo de modo también
+
+334
+00:28:18,120 --> 00:28:22,120
+El Huawei he visto buscando inversor me salió en la lista de Huawei y sé que hay una integración no la he probado
+
+335
+00:28:22,120 --> 00:28:24,120
+Genial gracias
+
+336
+00:28:24,120 --> 00:28:30,120
+¿Alguna pregunta más?
+
+337
+00:28:30,120 --> 00:28:36,120
+Muchas gracias
+
+338
+00:28:36,120 --> 00:28:41,120
+Gracias
+

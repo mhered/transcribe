@@ -1,0 +1,1440 @@
+1
+00:00:00,000 --> 00:00:21,560
+Muy bien pues vamos a ir empezando. A continuación tenemos a Enrique Catalan.
+
+2
+00:00:21,560 --> 00:00:28,020
+Él es ingeniero de software Microsoft AI MVP, está certificado como administrador de Kubernetes,
+
+3
+00:00:28,020 --> 00:00:32,800
+así como Azure Data Scientist y Azure Data Engineer, trabaja como ingeniero experto en la
+
+4
+00:00:32,800 --> 00:00:38,120
+nube en Svart's Global Services en Barcelona y nos va a hablar sobre cómo desplegar tu red neuronal
+
+5
+00:00:38,120 --> 00:00:48,360
+Python con fast API en Kubernetes. Bueno, gracias. Gracias que quiera los datos de
+
+6
+00:00:48,360 --> 00:01:01,340
+contacto. Voy a intentar que vaya la cosa rápida con demo y tal. Voy a ver si consigo que esto me
+
+7
+00:01:01,340 --> 00:01:13,460
+de tiempo. Entonces, ¿quién de vosotros se considera asientista aquí en la sala? ¿Quién de vosotros
+
+8
+00:01:13,460 --> 00:01:23,900
+trabaja en producción con modelos de inteligencia artificial en producción? ¿Quién desplegáis
+
+9
+00:01:23,900 --> 00:01:37,020
+en Kubernetes? Real-time inferencing o batch? Esta charla va para aquellos que hagáis ciencia de datos
+
+10
+00:01:37,020 --> 00:01:43,140
+y queráis desplegar modelos en producción para real-time inferencing. Entonces, si no lo habéis
+
+11
+00:01:43,140 --> 00:01:50,980
+visto esto, pues está la charla, porque aquí voy a comentar un poco de cosas precisamente para eso,
+
+12
+00:01:50,980 --> 00:01:59,340
+para hacer inferencia en tiempo real en modelos de IA. No voy a usar ni Azure ML, ni MLOps,
+
+13
+00:01:59,340 --> 00:02:03,140
+ni nada, lo vamos a hacer aquí a pelo y lo que pasa es que vamos a presuponer que ya tenemos el
+
+14
+00:02:03,140 --> 00:02:10,300
+modelo entrenado. Lo que vamos a hacer es enseñarles un poco el envoltorio que podemos usar para
+
+15
+00:02:10,300 --> 00:02:15,460
+desplegar nuestros modelos al final dentro de una restapi para poder consumirlos luego. Entonces,
+
+16
+00:02:15,460 --> 00:02:19,260
+las claves un poco de todo esto, al final, así intento resumir aquí en esta slide y es,
+
+17
+00:02:19,260 --> 00:02:24,980
+tenemos que tener, si queremos hacer real-time inferencing, yo lamentablemente aquí no lo
+
+18
+00:02:24,980 --> 00:02:30,580
+tengo, entonces no va a poderse ver en mi portátil, porque eso no lo tengo, pero bueno, tenemos que
+
+19
+00:02:30,580 --> 00:02:36,820
+tener o tarjeta envidia o una ati, concretamente, pues bueno, ya sabéis, aquí cualquiera que trabaje
+
+20
+00:02:36,820 --> 00:02:41,980
+un poco con esto, sabe que las envidia pues están comiendo el mercado. Luego de desplegar los drivers,
+
+21
+00:02:41,980 --> 00:02:49,660
+vale, entonces tenemos los CUDA y los ROK-M, según si son de envidia o de ati. Y entonces,
+
+22
+00:02:49,660 --> 00:02:54,540
+la clave aquí, si vais a desplegar, aquellos que vais a desplegar sobre vuestro Kubernetes,
+
+23
+00:02:54,540 --> 00:02:59,900
+por eso decía que no vamos a hacerlo con Azure ML ni MLOps, porque si quieres desplegarlo directamente
+
+24
+00:02:59,900 --> 00:03:05,380
+en tu cluster de Kubernetes, tienes que hacer una pequeña parte que es desplegar un Diamond Set,
+
+25
+00:03:05,380 --> 00:03:11,500
+que es de envidia, por ejemplo, que es el, bueno, lo tengo por ahí, ahora lo digo, y eso hay que
+
+26
+00:03:11,500 --> 00:03:16,780
+desplegarlo como Diamond Set dentro del cluster, porque a pesar de que tengas, digamos, el código
+
+27
+00:03:16,780 --> 00:03:21,120
+bien hecho, estés esperando que haya hardware, tengas el hardware, la tarjeta pinchada, si no
+
+28
+00:03:21,120 --> 00:03:27,140
+tenéis el Diamond Set de envidia, pues el cluster no va a ser capaz de saber que tiene la tarjeta y
+
+29
+00:03:27,140 --> 00:03:33,460
+poder aprovechar el hardware que tengáis, vale. Luego, lo siguiente es utilizar una imagen que tenga
+
+30
+00:03:33,460 --> 00:03:41,700
+los drivers de GPU, porque ya sabéis que, según si usáis, pues Python, Chotensor Flow, pues necesitáis
+
+31
+00:03:41,700 --> 00:03:48,100
+desplegar las librerías asociadas a cada una de las tarjetas que tengáis, entonces es importante saber
+
+32
+00:03:48,100 --> 00:03:54,340
+sobre qué hardware vais a desplegar y en función de eso, utilizar una librería o utilizar directamente
+
+33
+00:03:54,340 --> 00:04:00,700
+los drivers de CPU, vale. Luego, en cuanto a lo que es, ¿dónde desplegar el modelo? Al final,
+
+34
+00:04:00,700 --> 00:04:06,060
+modelo de inteligencia artificial, tú lo que quieres es consumirlo de una forma, en el caso,
+
+35
+00:04:06,060 --> 00:04:10,180
+vale, que lo queremos hacer aquí, que es real-time, lo que queremos es, al final tener una API a la
+
+36
+00:04:10,180 --> 00:04:16,540
+que llamar, entonces hay un montón de formas de montarla, yo escogí Fast API, porque en su día,
+
+37
+00:04:16,540 --> 00:04:21,700
+pues bueno, me dio muy buen rendimiento, es muy fácil de utilizar y tiene, bueno, bastantes
+
+38
+00:04:21,700 --> 00:04:31,220
+cosas interesantes que para mí, pues, me hicieron degantarme por ahí. En cuanto a la parte de
+
+39
+00:04:31,220 --> 00:04:36,300
+cómo hacer el despliegue, lo que sí que os recomendaría es que tengáis en cuenta, si vais a desplegar
+
+40
+00:04:36,300 --> 00:04:42,580
+modelos complejos, que se dependen unos de otros, vale, por ejemplo, si vais a desplegar una solución
+
+41
+00:04:42,580 --> 00:04:48,420
+que para el output que tú necesitas requiere la llamada de varias redes neuronales, pues a lo mejor
+
+42
+00:04:48,420 --> 00:04:53,340
+una que te hace sentimiento, otra que te hace en identity recognition, otra que te hace, pues yo
+
+43
+00:04:53,340 --> 00:04:57,780
+que sé, cualquier otra cosa que se os pueda ocurrir, que necesite combinación de varias, lo que sí
+
+44
+00:04:57,780 --> 00:05:02,740
+que os recomiendo es que lo que hagáis sea, si desplegáis en Kubernetes, tenéis la opción de
+
+45
+00:05:02,740 --> 00:05:09,540
+crear los node pools y el node pool lo que puede hacer es definir, vale, luego lo comentaré,
+
+46
+00:05:09,540 --> 00:05:15,780
+lo enseñarán un poco, tú puedes definir digamos sets de hardware específicos para, digamos,
+
+47
+00:05:15,780 --> 00:05:20,380
+desacoplar todas las redes entre sí y que, pues bueno, una de ellas a lo mejor que necesita más
+
+48
+00:05:20,380 --> 00:05:25,620
+capacidad de cálculo, pues esté desplegada en una máquina con yo que sé, 52 giga de RAM y otra que
+
+49
+00:05:25,620 --> 00:05:29,500
+necesita menos capacidad de cálculo, pues esté en una que tenga 14 gigas de RAM, por ejemplo, y
+
+50
+00:05:29,500 --> 00:05:35,540
+pueda escalar diferente, vale, pues para todo eso, el final, utilizemos los node pools, que es para
+
+51
+00:05:35,540 --> 00:05:41,660
+lo que se tiene que hacer y luego lo último es un poco tener en cuenta cómo configuramos la memoria
+
+52
+00:05:41,660 --> 00:05:46,460
+del CPU para cada una de las redes que vais a desplegar, vale, y esto es pues prueba y error,
+
+53
+00:05:46,460 --> 00:05:52,700
+aquí yo lo que no me da tiempo de esta charla, pero lo que hice, bueno, lo que hago en cada caso,
+
+54
+00:05:52,700 --> 00:05:57,780
+ahora ya no me dedico a esta parte, vale, ahora estoy haciendo temas de Tengineer mucho más que
+
+55
+00:05:57,780 --> 00:06:01,740
+es la parte de IA, pero cuando hacía todo esto, lo que hacía era mucho, pues, hacía probar de
+
+56
+00:06:01,740 --> 00:06:07,900
+estrés, testeaba hasta donde era capaz de llegar un único pod ejecutando una red y con ese cálculo
+
+57
+00:06:07,900 --> 00:06:14,820
+lo que hacía era pues ajustar, ahora les enseñaré un poco cómo monta la solución, ajustar hasta
+
+58
+00:06:14,820 --> 00:06:21,660
+cuánto quiero que cada uno de los pods gestione tanto de CPU como de memoria y con eso luego
+
+59
+00:06:21,660 --> 00:06:29,620
+configurar el autoscale de cada uno de los pods, vale, entonces un poco así resumen así ultra rápido,
+
+60
+00:06:29,620 --> 00:06:38,140
+entonces yo utilizo Asure, entonces en Asure lo que tenemos son tres grandes tipos de hardware
+
+61
+00:06:38,140 --> 00:06:44,020
+donde podemos desplegar específicamente este tipo de sistemas, vale, tenemos la base más barata que
+
+62
+00:06:44,020 --> 00:06:50,420
+es la serie NC que es ultra barata, además está con descuentos, a ese plan pues igual,
+
+63
+00:06:50,420 --> 00:06:56,420
+pues con 100 dólares al mes tiene una máquina de estas, bueno, una máquina, un nodo corriendo en
+
+64
+00:06:56,420 --> 00:07:02,020
+Kubernetes con una tarjeta gráfica K80 que con eso puedes mover para que os hagáis una idea UGPT2,
+
+65
+00:07:02,020 --> 00:07:09,820
+vale, 24 gigas de RAM por tarjeta, o sea que es y va razonablemente bien y si lo quisieras tener en
+
+66
+00:07:09,820 --> 00:07:14,980
+on-premises pues más o menos la tarjeta roda pues eso, los 180 dólares, nos podemos ir a la serie
+
+67
+00:07:14,980 --> 00:07:19,940
+NCUV3 que ya es un poco para cosas más gordas y en ese caso pues cada una de las tarjetas que trae
+
+68
+00:07:19,940 --> 00:07:26,980
+es ronda en los 10.000 dólares, estos ya son para modelos un poco más exigentes, pero bueno si
+
+69
+00:07:26,980 --> 00:07:32,180
+algunos de vosotros tienen esa necesidad para bajar al milisegundo lo que es la inferencia
+
+70
+00:07:32,180 --> 00:07:38,060
+pues tenemos esa y la siguiente pues bueno eso ya es el tope de gama y tarjeta de 30.000 pavos y
+
+71
+00:07:38,060 --> 00:07:43,540
+bueno una Nvidia a 100 y puedes tener una un, puedes tener node pools con nodos que cada uno de ellos
+
+72
+00:07:43,540 --> 00:07:51,900
+tenga hasta 8 a 100, evidentemente pues vale para hacer cosas locuras, todo para entrenar gpc3 y cosas
+
+73
+00:07:51,900 --> 00:07:58,620
+así, vale entonces como lo primero que tenemos que hacer que no se nos olvide es desplegar dentro
+
+74
+00:07:58,620 --> 00:08:03,420
+de nuestro cluster, o sea es que lo digo porque cuando uno tira de Azure ML vale o de ML Ops,
+
+75
+00:08:03,420 --> 00:08:07,860
+todo esto se olvida porque digamos que dentro de lo que tú estás pagando dentro de utilizar un
+
+76
+00:08:07,860 --> 00:08:12,580
+servicio ya gestionado de todo esto te olvida, pero si lo tienes que hacer tú, tienes que desplegar
+
+77
+00:08:12,580 --> 00:08:19,020
+este este este demon set, vale esto te metes en docker, te lo bajas y al final pues bueno lo desplegas
+
+78
+00:08:19,020 --> 00:08:24,260
+dentro de pues le crees un namespace y simplemente haces el deploy y esto no lo voy a hacer por tiempo
+
+79
+00:08:24,260 --> 00:08:29,260
+pero vamos, coge si lo desplegas y con eso simplemente en el momento en el que tú tires código que
+
+80
+00:08:29,260 --> 00:08:36,220
+está utilizando o que quiere cargar digamos una tarjeta que tiene acceso a este tipo de hardware
+
+81
+00:08:36,220 --> 00:08:40,860
+la podrá ver, sino como digo o sea y no te va a dar ningún error especial te va a decir que no
+
+82
+00:08:40,860 --> 00:08:50,500
+encuentra y ya está, vale. Lo siguiente es ¿cuánto de vosotros genera imágenes docker personalizadas?
+
+83
+00:08:52,500 --> 00:08:58,700
+Poco en manos veo. Bueno lo siguiente es que hay que generar tu propia imagen, vale, lo tienes que
+
+84
+00:08:58,700 --> 00:09:05,540
+crear ¿por qué? Pues porque cuando estás haciendo lo que os comentaba, uso de tu propio sitio para
+
+85
+00:09:05,540 --> 00:09:12,260
+desplegar tu propia IA, lo que tienes que hacer es afinar al máximo el tamaño de tu imagen, entonces
+
+86
+00:09:12,260 --> 00:09:18,140
+no puedes pretender digamos que usando una imagen que ya viene preconfigurada digamos tu código corra
+
+87
+00:09:18,140 --> 00:09:23,060
+de forma eficiente, entonces eso es lo que os recomendaría ¿no? Que tiréis y hay tres tipos de imagen que
+
+88
+00:09:23,060 --> 00:09:29,460
+puedes tirar de base ¿no? La Pytorch, la TensorFlow o la Dendvidia CUDA. Yo personalmente bueno y
+
+89
+00:09:29,460 --> 00:09:35,380
+luego está la Ubuntu, en esta demo concretamente he usado la Ubuntu, la 20.04 y a partir de ahí
+
+90
+00:09:35,380 --> 00:09:41,500
+monto todo el tinglao ¿vale? Entonces ¿por qué digo que estas tres? Pues porque digamos que si tú
+
+91
+00:09:41,500 --> 00:09:46,980
+vas a desplegar directamente en máquinas que tienen hardware ya directamente pues envidia,
+
+92
+00:09:46,980 --> 00:09:51,740
+todas estas tres están ya preparadas, no tienes que hacerle nada especial, directamente coger la
+
+93
+00:09:51,740 --> 00:09:58,140
+imagen, le instalas tu, ahora lo veréis ¿vale? Instalas tus librerías y a correr, pero son más
+
+94
+00:09:58,140 --> 00:10:03,900
+gordas, es decir la imagen de CUDA por ejemplo, creo que rondaba los 7 gigas y por la Pytorch y la
+
+95
+00:10:03,900 --> 00:10:09,340
+TensorFlow por el estilo, entonces si quieres minimizar al máximo y dejarlo a lo mejor en 2, 3
+
+96
+00:10:09,340 --> 00:10:15,420
+gigas por imagen, estamos hablando de drivers que ocupan bastante, que pesan mucho y al final de todo
+
+97
+00:10:15,420 --> 00:10:20,780
+eso lo que haces es ocupar espacio y memoria en el nodo donde lo vas a levantar, pues tú lo que
+
+98
+00:10:20,780 --> 00:10:25,500
+quieres es un poco afinar a top eso ¿vale? Entonces yo lo que hago personalmente es tirar por esa que
+
+99
+00:10:25,500 --> 00:10:32,340
+os comentaba de envidia. Y por último ya la parte de desplegar el código, entonces aquí podéis
+
+100
+00:10:32,340 --> 00:10:37,260
+utilizar yo digo la forma que más os convenga, yo os recomendaría usar o que le pegáis un vistazo
+
+101
+00:10:37,260 --> 00:10:41,780
+por lo menos si no lo conocéis a Fast API, cuántos de vosotros lo conoce, lo ha visto, lo ha usado
+
+102
+00:10:41,780 --> 00:10:46,900
+alguna vez, estupendo, ya sabéis un poco y cuántos de vosotros se ha quedado con Fast API después de
+
+103
+00:10:46,900 --> 00:10:55,700
+probarla ¿vale? No jodan tan manos, bueno pocas manos veo, bueno a mí personalmente lo que me gustó
+
+104
+00:10:55,700 --> 00:11:01,180
+es todo esto que veis, aquí cada uno pues ya, esto es un poco, bueno esto es lo de siempre,
+
+105
+00:11:01,180 --> 00:11:07,140
+cada uno tira para donde le gusta, a mí me gustaba bastante esto, entonces cosa que tienes que tener
+
+106
+00:11:07,140 --> 00:11:11,980
+en cuenta cuando, como mínimo, cuando quieras lanzar, pues bueno tienes que tener en cuenta un poco
+
+107
+00:11:11,980 --> 00:11:19,900
+cómo configurar, como os comentaba ¿no? Por código de alguna forma lo que os decía ¿no? Si desplegas
+
+108
+00:11:19,900 --> 00:11:27,540
+en Kubernetes, tú lo que vas siempre a querer es tener cuantas más instancias mejor para aproximarte
+
+109
+00:11:27,540 --> 00:11:35,420
+al tamaño de nodo que tienes, es decir tienes 120 algo pods disponibles para desplegar por nodo en
+
+110
+00:11:35,420 --> 00:11:41,540
+una máquina Kubernetes, Azure Kubernetes Services, con lo cual tú intentaras más o menos aproximarte
+
+111
+00:11:41,540 --> 00:11:48,100
+al máximo de eso, dependiendo del digamos del tamaño de round que tengas, una de las formas de
+
+112
+00:11:48,100 --> 00:11:54,220
+intentar limitar que no te crezca digamos el tamaño del pod que está lanzando tu reneuronal,
+
+113
+00:11:54,220 --> 00:11:59,700
+pues una de estas opciones pues puede ser esta ¿vale? Otra de las opciones pues puede ser configurar
+
+114
+00:11:59,700 --> 00:12:04,180
+dentro de lo que es el servicio web que vas a levantar por debajo, pues luego lo veréis,
+
+115
+00:12:04,180 --> 00:12:11,340
+una configuración que también puedes hacer para limitarlo y la siguiente es como mínimo pues decirle
+
+116
+00:12:11,340 --> 00:12:15,180
+al driver que se tiene que activar para funcionar el modo hardware ¿vale? Entonces por lo menos
+
+117
+00:12:15,180 --> 00:12:20,700
+tienes que tener un if como este ¿vale? Este es el de PyTorch, pues decirles si tengo código CUDA
+
+118
+00:12:20,700 --> 00:12:27,540
+pues hacer o no hacer dependiendo de ¿vale? Entonces esto es lo mínimo imprescindible para poder
+
+119
+00:12:28,740 --> 00:12:35,140
+trabajar con esto, entonces bueno ya ha acabado la parte de teoría, entonces vamos a ver,
+
+120
+00:12:35,140 --> 00:12:52,740
+a demo, a dejarme un segundo que duplicar. Vale, vamos a empezar directamente por comentaros,
+
+121
+00:12:54,660 --> 00:13:02,100
+bueno voy a hacer una cosa primero, voy a levantar primero, no esto creo que no era,
+
+122
+00:13:02,100 --> 00:13:16,700
+era PyCon, C, C de full demo, demo uno, vale, voy a abrir la solución un poco que os propongo
+
+123
+00:13:16,700 --> 00:13:26,500
+con Fast API, esta solución al final como os comentaba tira un poco de, vale, se ve bien detrás,
+
+124
+00:13:26,500 --> 00:13:35,460
+soy muy pequeño, muy bien, vale, entonces ¿cómo montar esto? Primero elegimos la imagen,
+
+125
+00:13:35,460 --> 00:13:40,340
+vale en este caso pues elegimos la Ubuntu, en este caso pues bueno esta es la que tengo yo
+
+126
+00:13:40,340 --> 00:13:44,420
+recientemente, Ubuntu 20.0 cuando entonces tienes que empezar a instalarte tus historias,
+
+127
+00:13:44,420 --> 00:13:49,740
+tus historias pues Python y estas un poco después de darle muchas vueltas la configuración que
+
+128
+00:13:49,740 --> 00:13:54,020
+me generaba la imagen más pequeña de todas como os comentaba antes ¿vale? Y lo bueno que tiene
+
+129
+00:13:54,020 --> 00:13:59,820
+esta es que me sirve tanto para si ejecuto la imagen contra CPU como en mi caso como si la
+
+130
+00:13:59,820 --> 00:14:06,020
+monto contra un nodo en el que va a ejecutar con hardware CUDA, vale, bueno aquí configuramos
+
+131
+00:14:06,020 --> 00:14:13,460
+un poco, perdón, configuramos un poco, a ver, configuramos un poco los requerimientos,
+
+132
+00:14:13,460 --> 00:14:20,020
+entonces en los requerimientos, vale, bueno aquí he puesto, me tomé la libertad el otro día de
+
+133
+00:14:20,020 --> 00:14:23,580
+pegar un repaso y mirar a ver cuáles eran las últimas versiones para actualizar esto,
+
+134
+00:14:23,580 --> 00:14:27,380
+vale, porque esto lo tengo como repositorio público ahora luego os diré dónde está.
+
+135
+00:14:27,380 --> 00:14:33,900
+Como mínimo las librerías que tú vayas a utilizar aquí no estoy utilizando ninguna todavía,
+
+136
+00:14:33,900 --> 00:14:40,420
+vale, de Spacey, no estoy usando How Infraiting nada todavía en esta en este pequeño demo y lo
+
+137
+00:14:40,420 --> 00:14:47,100
+que simplemente os quería comentar era que le podemos meter OpenCensus en mi caso concreto como
+
+138
+00:14:47,100 --> 00:14:54,180
+utilizo Azure, esta es la librería para hacer envío de telemetría, ahora os enseñaré cómo y el
+
+139
+00:14:54,180 --> 00:15:00,300
+servicio web que utilizo en este caso es Geunicorn, entonces con esto y una configuración especial
+
+140
+00:15:00,300 --> 00:15:04,900
+que está, por bueno no sé si alguna de vosotros la conoce porque está la oficial de Fast API,
+
+141
+00:15:04,900 --> 00:15:10,500
+tú puedes hacer que tu servicio web aparte de cambiarle parámetros de el puerto de escucha y
+
+142
+00:15:10,500 --> 00:15:19,740
+demás le puedes decir cuántos procesos, cuántos threads quieres levantar por máquina, entonces es
+
+143
+00:15:19,740 --> 00:15:24,340
+una configuración, vale, bueno esto es decir no tiene nada especial, esto es copia pega de lo
+
+144
+00:15:24,340 --> 00:15:35,500
+que hay en Fast API en la URL correcta, digamos en la URL de FastAPI.com, pero dentro del Docker
+
+145
+00:15:35,500 --> 00:15:42,380
+Compose hay algunas cosas que como os decía uno intenta configurar que es la parte de Workers
+
+146
+00:15:42,380 --> 00:15:48,300
+Per Core, entonces con esto al final digamos es una de las como os decía una de las cosas que
+
+147
+00:15:48,300 --> 00:15:52,780
+como mínimo tienes que hacer, entonces primero le vas a hacer una parte de voy a desplegar mi
+
+148
+00:15:53,980 --> 00:15:59,780
+Fast API pero quiero decidir yo dentro de qué pod, vale, porque estoy haciendo un pod,
+
+149
+00:15:59,780 --> 00:16:05,100
+estoy montando un pod, dentro del pod le voy a meter mi red neuronal, en algún punto de mi
+
+150
+00:16:05,100 --> 00:16:13,980
+código estará la carga de esa de esa IA, vale, y la cargaré pero cuántos threads quiero por pod,
+
+151
+00:16:13,980 --> 00:16:19,860
+eso lo puedo controlar con esto, vale, hay más flags para cambiarlo pero uno de los flags es si
+
+152
+00:16:19,860 --> 00:16:25,620
+lo quiero dinámico en función de cuántos CPUs tengo por máquina dentro de mi Kubernetes,
+
+153
+00:16:25,620 --> 00:16:34,580
+esta es una buena opción, vale, 0,125 cores va a generar porque a 0,125 cores tenga yo en la
+
+154
+00:16:34,580 --> 00:16:42,380
+máquina donde este pod levante me va a levantar en instancias de mi red neuronal, de mi REST API,
+
+155
+00:16:42,380 --> 00:16:49,380
+de mi FAST API, ok, vale, lo siguiente que vamos a hacer es decirle donde se encuentra nuestro
+
+156
+00:16:49,380 --> 00:16:54,540
+modelo, en mi caso no tengo modelo en este ejemplo muy sencillo pero quiero que simplemente quiero que
+
+157
+00:16:54,540 --> 00:17:06,780
+veáis una cosa, si utilizamos Visual Studio Code, ¿quién de vosotros utiliza Visual Studio Code?
+
+158
+00:17:06,780 --> 00:17:12,380
+¿De puráis en contenedores? ¿Sabéis que se podría depurar en contenedores? ¿Alguien lo sabía?
+
+159
+00:17:12,380 --> 00:17:19,940
+Sí, vale, para los que no lo sepáis lo que estamos haciendo es levantar un docker, es decir,
+
+160
+00:17:19,940 --> 00:17:25,140
+una imagen que va a tener nuestro código con nuestra IA, la vamos a levantar dentro de un pod,
+
+161
+00:17:25,140 --> 00:17:33,060
+en mi caso lo voy a hacer en mi máquina aquí, en mi laptop, lo que quiero es levantarla en modo
+
+162
+00:17:33,060 --> 00:17:37,780
+de bug, es decir, yo quiero coger y que me levante este contenedor, que lo que está haciendo es
+
+163
+00:17:37,780 --> 00:17:44,500
+instalarme estos requisitos de aquí, estos requirements con estas librerías, que me levante el docker
+
+164
+00:17:44,500 --> 00:17:52,300
+file, que me instale y me coja de donde yo tenga el modelo que esté aquí, que me lo coja,
+
+165
+00:17:52,300 --> 00:17:56,780
+ahora no tengo nada, pero bueno, cuando lo tenga, que me escuche en el puerto 80, que me abra el puerto
+
+166
+00:17:56,780 --> 00:18:01,900
+80, en este caso lo he dicho creo que en el 5001, que me coja y me saque los datos que tenga de mi
+
+167
+00:18:01,900 --> 00:18:08,220
+aplicación, mi aplicación va a ser, ahora lo enseño, lo que tenga aquí dentro, que me monta un pod,
+
+168
+00:18:08,220 --> 00:18:16,300
+que cuando arranque, me utilice la configuración de GeoNicon, que os comentaba, que es tal cual,
+
+169
+00:18:16,300 --> 00:18:22,260
+el fichero que hay en Fast API, lo he pegado ahí, lo lanzo y lo ejecuto, simplemente para tener
+
+170
+00:18:22,260 --> 00:18:31,300
+la opción de no levantar de un único instancia por pod, sino las que yo quiera, y finalmente,
+
+171
+00:18:31,300 --> 00:18:36,940
+añadirle por seguridad un usuario, para que el usuario, para que no puedas hacer trastadas,
+
+172
+00:18:36,940 --> 00:18:42,380
+porque al final, malos adentro de los lados, quedamos un usuario especial, y ejecutamos
+
+173
+00:18:42,380 --> 00:18:47,620
+StartSH, que es al final el que va a hacer, que me levante, después de toda la historia,
+
+174
+00:18:47,620 --> 00:18:52,660
+lo que va a hacer es que me levante aquí la parte del Fast API, donde está mi aplicación,
+
+175
+00:18:52,660 --> 00:18:56,180
+entonces qué hace mi aplicación, pues tengo un módulo, que es el que tiene toda la parte del
+
+176
+00:18:56,180 --> 00:19:04,300
+enrutamiento, donde tengo aquí la configuración, los event handlers y toda la historia de Fast API,
+
+177
+00:19:04,300 --> 00:19:07,540
+que ya lo digo por tiempo, no voy a entrar, pero bueno, me carga el modelo con mi clase,
+
+178
+00:19:07,540 --> 00:19:12,980
+está todo preparado, digamos, para que en un punto muy concreto de mi código, que está
+
+179
+00:19:12,980 --> 00:19:21,740
+aquí en el modelo, en servicios, perdón, en services, en models, en algún punto concreto
+
+180
+00:19:21,740 --> 00:19:29,780
+de mi clase, yo cargue el modelo, que en este caso está, esto es un esqueleto vacío, entonces,
+
+181
+00:19:29,780 --> 00:19:35,380
+a mí lo que me interesaría es poder hacer, pues eso, poner un breakpoint aquí y darle a F5,
+
+182
+00:19:35,380 --> 00:19:41,140
+y entonces que me levante un docker, supongo que me fallará, porque como esto es así,
+
+183
+00:19:41,140 --> 00:19:47,380
+las demos siempre suele fallar, no está fallando por ahora, ah, estupendo, se ha parado,
+
+184
+00:19:47,380 --> 00:19:55,700
+entonces, ¿cómo haces que tu docker que está lanzándose en tu máquina, se levante, se conecte
+
+185
+00:19:55,700 --> 00:19:58,740
+y puedes hacer breakpoint, y a partir de aquí ya es vuestro código lo que queráis hacer,
+
+186
+00:19:58,740 --> 00:20:04,060
+¿cómo haces eso? Bueno, pues dentro de la solución de Visual Studio Code, si creas un
+
+187
+00:20:04,060 --> 00:20:10,620
+fichero que se llama VS Code, una carpetita aquí y le pones aquí en launch, le da la
+
+188
+00:20:10,620 --> 00:20:15,500
+configuración de lo que tú quieres lanzar, que en este caso lo que quiero es hacer una
+
+189
+00:20:15,500 --> 00:20:21,620
+tarea de launch, es decir, cuando le yo desde D a la F5, quiero que me haga un, me mapeas
+
+190
+00:20:21,620 --> 00:20:29,100
+el local root a la ruta barra app, es decir, donde tengo mi código, y me levantas un proyecto
+
+191
+00:20:29,100 --> 00:20:33,100
+de tipo Fast API, que existe como tal, es decir, en el propio Visual Studio Code, lo voy
+
+192
+00:20:33,100 --> 00:20:37,340
+a parar aquí, ¿vale? En el propio Visual Studio Code, en este botón de aquí que pone
+
+193
+00:20:37,340 --> 00:20:44,500
+runand debug, tú puedes venirte aquí, pinchar aquí, decirle yo quiero añadir una configuración,
+
+194
+00:20:44,500 --> 00:20:47,940
+lo bajéis tú ya lo haéis hecho, ¿vale? Le voy a decir una configuración y aquí tenéis
+
+195
+00:20:47,940 --> 00:20:53,820
+varios tipos y entre todas estas está, bueno, por aquí está, no sé dónde está ahora,
+
+196
+00:20:53,820 --> 00:20:59,180
+pero bueno, entre todas estas está la de Fast API, está la de Django, etcétera, ¿vale?
+
+197
+00:20:59,180 --> 00:21:07,060
+Entonces, ¿cómo hacemos que esto sea un poco, digamos más rápido, ¿no? Pues, ¿quién
+
+198
+00:21:07,060 --> 00:21:13,380
+de vosotros conoce Helm, ha hecho Helm una vez para desplegar pods? ¿Sabéis que Go,
+
+199
+00:21:13,380 --> 00:21:19,540
+o suena Go, lenguaje, Go, alguien, eso no. Bueno, hay una herramienta que se llama QQQutter,
+
+200
+00:21:19,540 --> 00:21:24,980
+o suena QQQutter, ¿alguno? Sí, hay más manos aquí. Vale, pues una de las opciones que
+
+201
+00:21:24,980 --> 00:21:29,380
+podemos hacer es coger esta solución, que os acabo de enseñar así muy rápido, porque
+
+202
+00:21:29,380 --> 00:21:34,820
+por tiempo tampoco ha dado mucho más tiempo, y parametrizarla dentro de un QQQutter, de
+
+203
+00:21:34,820 --> 00:21:38,580
+un template en Go, donde tú básicamente le digas qué parámetros quieres, porque al
+
+204
+00:21:38,580 --> 00:21:43,340
+final es un esqueleto, que tengo un Docker compose, tengo un Docker file, tengo un directorio
+
+205
+00:21:43,340 --> 00:21:47,020
+barra app, donde está el código que para mí es ProductionReady, es decir, tengo la
+
+206
+00:21:47,020 --> 00:21:54,580
+parte de Application Insights, tengo la parte de configuración de cuántos threads quiero
+
+207
+00:21:54,580 --> 00:21:58,820
+levantar por dentro del pod, tengo toda la configuración de autenticación por token,
+
+208
+00:21:58,820 --> 00:22:03,460
+vale, que no explicaba por nada tiempo, pero aquí hay también autenticación con token,
+
+209
+00:22:03,460 --> 00:22:11,460
+tengo toda la parte de best practices con anotaciones, todo eso lo podemos tener dentro de un repositorio
+
+210
+00:22:11,460 --> 00:22:16,780
+dentro de GitHub y utilizando QQQutter, poder crearnos nuestra propia solución, que lo
+
+211
+00:22:16,780 --> 00:22:22,660
+voy a enseñar un poco. Entonces, yo, esto está público, lo tengo, os diré dónde,
+
+212
+00:22:22,660 --> 00:22:29,700
+lo tengo por aquí, entonces, simplemente lo podéis probar vosotros mismos, dentro de
+
+213
+00:22:29,700 --> 00:22:35,180
+este GitHub de aquí, no me acuerdo dónde lo tengo, aquí, vale, esto que os he comentado
+
+214
+00:22:35,180 --> 00:22:38,940
+muy rápido, si cualquiera de vosotros lo quiere utilizar, está aquí dentro, dentro
+
+215
+00:22:38,940 --> 00:22:43,900
+del GitHub mío, Enrique Catalá, FastAPI, AI Template, tengo dos templates, uno para
+
+216
+00:22:43,900 --> 00:22:47,780
+Spacey y uno para el Base Template, que es el mismo, pero con el Spacey hay como un ejemplo
+
+217
+00:22:47,780 --> 00:22:52,460
+ahí que carga un modelo de Spacey, y entonces, para hacer uso de eso, aparte que aquí tengo
+
+218
+00:22:52,460 --> 00:22:57,780
+todo el churro explicado y demás, hacer uso de esto, pues es tan sencillo como coger,
+
+219
+00:22:57,780 --> 00:23:03,420
+venirte a, bueno, lo voy a hacer desde aquí, que es un poco más cómodo, me voy a meter
+
+220
+00:23:03,420 --> 00:23:12,380
+dentro de la carpeta full demo, vale, voy a copiar esto, QQQutter, no sé si lo conocéis,
+
+221
+00:23:12,380 --> 00:23:15,660
+pero bueno, con QQQutter, básicamente lo que puedes hacer es esto, voy a ejecutar
+
+222
+00:23:15,660 --> 00:23:22,900
+esto, vale, y entonces lo que lo estoy diciendo aquí es, te vas a ir a este repositorio,
+
+223
+00:23:22,900 --> 00:23:28,140
+te vas a clonar este repositorio de aquí, que está preparado para esperar un QQQutter
+
+224
+00:23:28,140 --> 00:23:33,820
+y me vas a coger el directorio Base Template, si queréis, bueno, el de Hugging Face, no
+
+225
+00:23:33,820 --> 00:23:38,420
+sé si cuando lo subiré, cuando tenga tiempo, o el de Spacey, en este caso lo que voy a
+
+226
+00:23:38,420 --> 00:23:40,740
+hacer es Base Template, le das al intro y entonces lo que te va a pedir, bueno, te
+
+227
+00:23:40,740 --> 00:23:44,380
+va a decir si quiero ir a bajar la última versión, voy a decir que sí, y entonces
+
+228
+00:23:44,380 --> 00:23:48,940
+empieza a pedirte cosas, te empieza a pedir, ¿quién es el full name? pues lo voy a decir
+
+229
+00:23:48,940 --> 00:23:55,740
+yo, que es Manolito, Manolo, el correo, pues este mismo, que es eso y yo, Project Name,
+
+230
+00:23:55,740 --> 00:24:02,420
+y aquí le pongo pues ejemplo, PyCon 2022, y el Project isLog, es decir, la carpeta que
+
+231
+00:24:02,420 --> 00:24:07,620
+te va a montar, pues me está ya, digamos, definiendo este, se lo puedo cambiar o no,
+
+232
+00:24:07,620 --> 00:24:14,420
+le voy a decir que está, el Project Role, pues lo voy a decir Fast API RoleExample,
+
+233
+00:24:14,420 --> 00:24:27,580
+el nombre del contenedor pues PyCon Demo2, el Docker Service Name, pues SVC PyCon Demo2,
+
+234
+00:24:27,580 --> 00:24:33,660
+el puerto de escucha pues el 5000, el nombre del repo Fast API Template y una descripción,
+
+235
+00:24:33,660 --> 00:24:39,900
+aquí, aquí una descripción, esto es un poco, bueno, la versión por defecto y aquí
+
+236
+00:24:39,900 --> 00:24:44,620
+la aplic, vuestra clave de application insights, si tenéis, si no, pues ponéis esto, no va
+
+237
+00:24:44,620 --> 00:24:47,700
+a hacer nada, y la piquí para seguridad, ¿vale? para el token, para la validación,
+
+238
+00:24:47,700 --> 00:24:51,980
+pues el token que queráis secreto para poder validar, entonces ¿qué te hace esto? esto
+
+239
+00:24:51,980 --> 00:25:03,420
+te descarga de este repo de aquí, ¿vale? te descarga esto con las configuraciones como
+
+240
+00:25:03,420 --> 00:25:07,100
+os comentaba, si os fijáis aquí dentro, aquí por ejemplo, pues yo que sé, el Dockerfile,
+
+241
+00:25:07,100 --> 00:25:13,100
+no, pues el Dockerfile ya está preparado para que, por aquí veis, no sé si aprecia
+
+242
+00:25:13,100 --> 00:25:20,140
+bien, se ve bien o muy pequeño, ¿no? muy pequeño, bueno, está con el propio template,
+
+243
+00:25:20,140 --> 00:25:22,900
+por eso preguntaba si alguno había hecho Helm, porque está utilizando la sintaxis
+
+244
+00:25:22,900 --> 00:25:27,860
+de Go que se utiliza para montar Helms, y esto lo que hace es, pues tengo toda la solución
+
+245
+00:25:27,860 --> 00:25:32,380
+preparada para que te pida unos parámetros, tú se los das y esto te crea un clon y tienes
+
+246
+00:25:32,380 --> 00:25:36,300
+literalmente lo que se ha enseñado hace un momento que le hemos hecho de VUGITAL, tal
+
+247
+00:25:36,300 --> 00:25:40,900
+cual está dentro de la carpeta que le he dicho que se me ha creado, como os decía,
+
+248
+00:25:40,900 --> 00:25:48,220
+la carpeta PyConS, bueno, algunos de vosotros, mientras rompemos el tiempo, algunos de vosotros
+
+249
+00:25:48,220 --> 00:25:53,820
+ya me habéis dicho que no, pero ha creado por lo menos su propio Helm para hacer algún
+
+250
+00:25:53,820 --> 00:26:00,780
+deploy, bueno, no me va a dar tiempo, pero Helm, puedes hacer un doble tipo de bufón
+
+251
+00:26:00,780 --> 00:26:06,100
+y utilizando QQQuter puedes generar Helms también, entonces esta solución que os comento,
+
+252
+00:26:06,100 --> 00:26:10,340
+al final la tengo también dentro de un QQQuter que tú le haces el QQQuter a la solución
+
+253
+00:26:10,340 --> 00:26:17,580
+y te saca el deploy que acabáis de ver, a ver si ahora funcionas, voy a ir directamente,
+
+254
+00:26:17,580 --> 00:26:21,900
+me sabe fatal, porque quería simplemente enseñaros un space y con esto funcionando, tenía el postman
+
+255
+00:26:21,900 --> 00:26:26,260
+todo preparado, simplemente para que veis que funciona, pero de todo eso lo que me interesa
+
+256
+00:26:26,260 --> 00:26:35,220
+un poco que os acordéis es, primero que, bueno, primero que, como digo, puedes hacer
+
+257
+00:26:35,220 --> 00:26:43,220
+un doble tirabuzón y generarte tu Helm, dentro del Helm, aquí, vale, lo que os comentaba,
+
+258
+00:26:43,220 --> 00:26:50,900
+puedes afinar dentro de tu Kubernetes, le puedes afinar cuántos nodos quieres desplegar,
+
+259
+00:26:50,900 --> 00:26:55,220
+pero lo importante aquí ya no es eso, lo importante es cómo hacéis que cada red neuronal
+
+260
+00:26:55,220 --> 00:26:58,900
+acabe dentro de uno de los node pools, vale, entonces para eso lo que es, habéis trabajado
+
+261
+00:26:58,900 --> 00:27:04,220
+con Kubernetes, habéis que tenemos los Tains y los Tolerations y los Node Affinity, entonces
+
+262
+00:27:04,220 --> 00:27:10,540
+lo que os recomendaría es, cuando creas el clúster de Kubernetes, le pones un Tain
+
+263
+00:27:10,540 --> 00:27:15,780
+a los node pools, los marcas y por ejemplo puedes decir, pues yo quiero desplegar la
+
+264
+00:27:15,780 --> 00:27:22,300
+red neuronal de Name and Tick Tick Recognition sobre el node pool 23 y la de Sentiment la
+
+265
+00:27:22,300 --> 00:27:30,540
+quiero con el 24, entonces dentro de tu deploy de Helm, lo que puedes hacer es, hacerle,
+
+266
+00:27:30,540 --> 00:27:40,580
+como decía, donde está, Popo está por aquí, donde lo tengo, no tengo este ejemplo tampoco,
+
+267
+00:27:40,580 --> 00:27:47,980
+no da igual, tenéis que desplegar, no tengo aquí, más, pero bien, bueno, tenéis que
+
+268
+00:27:47,980 --> 00:27:51,780
+desplegar dentro de cada uno de los pods, o sea, cada uno de los pods tenéis que desplegar
+
+269
+00:27:51,780 --> 00:27:56,740
+dentro de un node pool utilizando Tains y Tolerations, que no sé si sabéis lo que es,
+
+270
+00:27:56,740 --> 00:28:01,540
+pero es la forma de enrutar dentro de, y esto espero que sí que por lo menos me vaya,
+
+271
+00:28:01,540 --> 00:28:07,100
+porque si no ya, mira, me voy, como sabía que lo podía pasar algo de esto, yo ya
+
+272
+00:28:07,100 --> 00:28:11,660
+cogí y desplegué la red neuronal dentro de un clúster de Kubernetes, lo tenía ahí
+
+273
+00:28:11,660 --> 00:28:15,420
+preparado para hacer simplemente la llamada de Postman, que es lo que me va a dar tiempo,
+
+274
+00:28:15,420 --> 00:28:22,860
+todo lo tenía desplegado en un clúster que monté, que llamamos PyConFinanceIdev, bueno,
+
+275
+00:28:22,860 --> 00:28:27,940
+dentro de este clúster, lo que tengo es esa red neuronal que os iba a hacer ahí un poco
+
+276
+00:28:27,940 --> 00:28:31,660
+para que la viera, simplemente, bueno, os voy a enseñar simplemente el código, para
+
+277
+00:28:31,660 --> 00:28:38,460
+que veáis que no os miento, porque no ya me ha dado tiempo, porque, a ver, dentro de,
+
+278
+00:28:38,460 --> 00:28:44,820
+como os decía, la forma de cargarlo, o sea, si utilizáis el, el QQQter que os he enseñado
+
+279
+00:28:44,820 --> 00:28:50,780
+antes, dentro de él os va a generar este template tal cual, simplemente tenéis que
+
+280
+00:28:50,780 --> 00:28:57,900
+venir a la parte de modelo y dentro del modelo, ¿vale? Dentro del modelo lo que tenéis que
+
+281
+00:28:57,900 --> 00:29:07,780
+hacer es, en mi caso concreto, lo que hice fue meterle el, si tengo CUDA a Bailable,
+
+282
+00:29:07,780 --> 00:29:12,300
+y si es así, pues le cargo el modelo de, este caso es el ejemplo con Spacey, cargo el modelo
+
+283
+00:29:12,300 --> 00:29:17,900
+con Spacey, prefiriendo la parte de GPU y si no, pues lo cargo sin nada, y luego, pues
+
+284
+00:29:17,900 --> 00:29:20,740
+en este caso, ya le ha sido esto la forma de trabajar con Spacey, cualquiera que haya
+
+285
+00:29:20,740 --> 00:29:25,180
+trabajado con Spacey, pues habrá que la forma de cargar un modelo es así, el self-path
+
+286
+00:29:25,180 --> 00:29:30,580
+se lo tienes que pasar en el Docker compose, que como digo, ya te viene predefinido, simplemente
+
+287
+00:29:30,580 --> 00:29:35,340
+tienes que cambiarle dónde te encuentre, dónde se encuentra tu modelo, en mi caso el modelo
+
+288
+00:29:35,340 --> 00:29:40,700
+está aquí dentro, ¿vale? Este es mi modelo de, de Name Entity Recognition que ya afiné
+
+289
+00:29:40,700 --> 00:29:46,700
+en su día, y bueno, básicamente lo cargas diciéndole eso, o sea, digamos que la solución
+
+290
+00:29:46,700 --> 00:29:51,100
+está preparada para que le digas dónde está, en el caso de Spacey, cualquiera de
+
+291
+00:29:51,100 --> 00:29:56,140
+que haya hecho afinamiento de modelo, simplemente le dice dónde está la ruta con la configuración,
+
+292
+00:29:56,140 --> 00:30:00,300
+¿vale? Como digo, cualquiera que haya trabajado con Spacey, pues conocerá esto, y si no,
+
+293
+00:30:00,300 --> 00:30:04,540
+pues vais al agua de Spacey, cogeis cualquier modelo que os dé la gana, lo clonáis, lo
+
+294
+00:30:04,540 --> 00:30:09,020
+metéis aquí dentro, le decís dónde está, y simplemente con eso, esta solución que
+
+295
+00:30:09,020 --> 00:30:15,620
+os he comentado, que lo podéis usar, lo que la puse OpenSource, directamente está ya
+
+296
+00:30:15,620 --> 00:30:20,860
+preparado para que lo esperes dentro del container en esa ruta, y con eso, lo único que tienes
+
+297
+00:30:20,860 --> 00:30:27,700
+que hacer es irte a la parte de, como os decía, en Services Models y meterle tu código, es
+
+298
+00:30:27,700 --> 00:30:32,140
+decir, esto está hecho, y aquí en Preprocess, que el método existe, pues ya le metes tu,
+
+299
+00:30:32,140 --> 00:30:35,860
+lo que tú quieres hacer con el preproceso, lo que haga tu red, ¿vale? Pues no sé, lo
+
+300
+00:30:35,860 --> 00:30:40,340
+que haga ya, y aquí es donde entra tu magia, ¿no? Es un poco la idea, vale. Yo cogié
+
+301
+00:30:40,340 --> 00:30:45,580
+este modelo y lo desplegué allí. Lo tengo despegado en un, como un deployment, utilizando
+
+302
+00:30:45,580 --> 00:30:49,320
+ese help chart que os comentaba, lo tengo aquí desplegado con un deployment de tres
+
+303
+00:30:49,320 --> 00:30:54,660
+nodos, y lo que quiero hacer es simplemente, a modo rápido, porque me quedan dos minutos,
+
+304
+00:30:54,660 --> 00:31:00,180
+es, a, me voy a decir, si no me falla, porque siempre, vale, voy a hacer un port forward
+
+305
+00:31:00,180 --> 00:31:09,060
+aquí a lo sucio, a 5.000, start, tengo para que un postman ya preparado, start, venga,
+
+306
+00:31:09,060 --> 00:31:15,380
+bueno, docs, poco para que veáis que tenemos aquí, digamos, la configuración, podemos
+
+307
+00:31:15,380 --> 00:31:23,540
+ver un poco toda la parte de swagger, y podemos utilizar esto o venirnos a la parte de postman,
+
+308
+00:31:23,540 --> 00:31:31,380
+no sé, tengo aquí un postman, poco para enseñaros que tal como está montado, lo que espera es
+
+309
+00:31:31,380 --> 00:31:36,820
+un token de seguridad que tú le dices en el deploy, que yo no me acuerdo si te digo,
+
+310
+00:31:36,820 --> 00:31:45,260
+bueno, lo tendré, seguro que lo tengo montado, suprimir, hemos dicho 5.000, puerto a 5.000,
+
+311
+00:31:45,260 --> 00:31:48,900
+le voy a enchufar aquí unos datos, voy a hacer la llamada, authentication, vale, pero he
+
+312
+00:31:48,900 --> 00:31:55,700
+puesto mal, para la clave, ah, mira, la clave de autorización está mal, entonces cuando
+
+313
+00:31:55,700 --> 00:32:03,940
+desplegué el contenedor en el helm, le dije cuál era la clave de autenticación que tenía
+
+314
+00:32:03,940 --> 00:32:14,260
+que utilizar, entonces, creo que tengo la de helm values, y está esperando la application
+
+315
+00:32:14,260 --> 00:32:22,780
+api key, que es esta, la meto aquí, vale, y a ver si ahora le da nada, send, me faltará
+
+316
+00:32:22,780 --> 00:32:28,620
+algo, algo sale directo, bueno, me sabe mal, pero, esto al final es una resta IPI desplegada
+
+317
+00:32:28,620 --> 00:32:37,940
+dentro de un Kubernetes, con la particularidad de que está funcionando en un HS, si no hubiera
+
+318
+00:32:37,940 --> 00:32:47,020
+dado, si no hubiera follado la parte que os quería enseñar antes, hubiéramos visto un
+
+319
+00:32:47,020 --> 00:32:51,460
+poco cómo desplegar la parte del deployment, vale, entonces, bueno, perdonad por la última
+
+320
+00:32:51,460 --> 00:32:56,420
+parte de la demo, sé que alguno igual he corrido demasiado, pero no sé si tenéis alguna pregunta
+
+321
+00:32:56,420 --> 00:33:00,340
+con esto, alguna pregunta, pues ya no me queda tiempo.
+
+322
+00:33:00,340 --> 00:33:02,180
+Que da un medio minuto.
+
+323
+00:33:02,180 --> 00:33:03,180
+Un medio minuto.
+
+324
+00:33:03,180 --> 00:33:04,180
+Sí.
+
+325
+00:33:04,180 --> 00:33:07,180
+Espérate, le llevo el micrófono.
+
+326
+00:33:07,180 --> 00:33:19,220
+Muchas gracias, primero darte las gracias por la charla y por el charlenaricis y hacer
+
+327
+00:33:19,220 --> 00:33:24,060
+life coding, también en charlen un poco de, el asunto.
+
+328
+00:33:24,060 --> 00:33:28,940
+Uno de los casos de uso que has comentado es cuando tienes varios diferentes modelos,
+
+329
+00:33:28,940 --> 00:33:29,940
+no?
+
+330
+00:33:29,940 --> 00:33:30,940
+Sí.
+
+331
+00:33:30,940 --> 00:33:32,940
+Sentiment analysis o clasificación en paralelo.
+
+332
+00:33:32,940 --> 00:33:35,980
+En tu experiencia, ¿cuál es la mejor opción para hacerlo en Kubernetes?
+
+333
+00:33:35,980 --> 00:33:40,340
+Tener salaries, tener subservicios y luego un block balancer.
+
+334
+00:33:40,340 --> 00:33:49,500
+A ver, lo que hago es levantar, con que se me diga un moon, como al idiotizador, lo que
+
+335
+00:33:49,500 --> 00:33:55,500
+hago es levantar, en mi caso, lo que decimos, ahora donde estoy trabajando, no, que por
+
+336
+00:33:55,500 --> 00:34:01,020
+cierto, aprovecho para dejar en las slides un momento esto, donde estoy trabajando esta
+
+337
+00:34:01,020 --> 00:34:07,660
+solución, va a haber un segundo, esta solución concretamente donde estoy trabajando ahora,
+
+338
+00:34:07,660 --> 00:34:10,740
+no la estamos utilizando porque hacemos batch inferencing.
+
+339
+00:34:10,740 --> 00:34:15,060
+Entonces este tipo de cosas concretamente donde estoy yo ahora mismo, no lo estoy haciendo
+
+340
+00:34:15,060 --> 00:34:16,060
+en este momento.
+
+341
+00:34:16,060 --> 00:34:24,060
+Aprovecho para dejar la cuñita, pero ¿cómo lo montaba donde trabajaba antes que, bueno,
+
+342
+00:34:24,060 --> 00:34:26,860
+dedicaba otra, me digo más, centraron la parte de IA?
+
+343
+00:34:26,860 --> 00:34:32,460
+Lo que hacíamos era montar concretamente el enrotador, era un external load balancer,
+
+344
+00:34:32,460 --> 00:34:41,900
+dentro de la petición, empujamos la petición hacia un resta IPI que estaba hecho en punto
+
+345
+00:34:41,900 --> 00:34:42,900
+net, ¿vale?
+
+346
+00:34:42,900 --> 00:34:48,940
+Dentro de ese punto net, la orquestación entre toda la red neuronal estaba dentro de un pod
+
+347
+00:34:48,940 --> 00:34:50,940
+en un node pool específico, ¿vale?
+
+348
+00:34:50,940 --> 00:34:58,540
+Es decir, aquí ya no os voy a mentir, es decir, Python para hacer este tipo de temas en ultra,
+
+349
+00:34:58,540 --> 00:35:01,580
+baja la atención, hay cosas que no llega, ¿vale?
+
+350
+00:35:01,580 --> 00:35:05,660
+Entonces concretamente en esta concreta, que os digo de hacer enrotado de alto rendimiento,
+
+351
+00:35:05,660 --> 00:35:06,660
+utilizamos punto net, ¿vale?
+
+352
+00:35:06,660 --> 00:35:11,140
+Entonces, desplegamos en punto net de node node pool, las peticiones iban a ese y ese,
+
+353
+00:35:11,140 --> 00:35:16,100
+al de abajo ya, desde distribuíe la carga a todo lo que viene, pues, bueno, cosas como
+
+354
+00:35:16,100 --> 00:35:17,100
+esta, ¿vale?
+
+355
+00:35:17,100 --> 00:35:20,660
+Muy bien, pues no tenemos tiempo más para las preguntas.
+
+356
+00:35:20,660 --> 00:35:21,660
+Muchas gracias.
+
+357
+00:35:21,660 --> 00:35:22,660
+Muchas gracias.
+
+358
+00:35:22,660 --> 00:35:23,660
+Muchas gracias.
+
+359
+00:35:23,660 --> 00:35:24,660
+Muchas gracias.
+
+360
+00:35:24,660 --> 00:35:41,660
+Muchas gracias.
+

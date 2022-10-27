@@ -1,0 +1,1780 @@
+1
+00:00:00,000 --> 00:00:27,920
+GE
+
+2
+00:00:30,000 --> 00:00:32,360
+y vengo a presentaros esta charla.
+
+3
+00:00:32,360 --> 00:00:34,680
+Primero de todo para los que no me conozcáis,
+
+4
+00:00:34,680 --> 00:00:38,200
+mi nombre es Katerina, soy de Mallorca, me suelen llamar Cat.
+
+5
+00:00:38,200 --> 00:00:41,960
+He ido de ingeniería telemática en la Universidad de las Baleares,
+
+6
+00:00:41,960 --> 00:00:44,640
+luego me mudé a Madrid para hacer un máster en ciberseguridad
+
+7
+00:00:44,640 --> 00:00:47,080
+y ahora estoy haciendo un doctorado en ciberseguridad,
+
+8
+00:00:47,080 --> 00:00:51,240
+bueno, en ciencia y tecnología informática por la Carlos III.
+
+9
+00:00:51,240 --> 00:00:54,840
+Y de hecho vengo a presentaros un poquito de mi doctorado.
+
+10
+00:00:54,840 --> 00:00:58,840
+Para cualquier cosa tenéis mi Twitter, mi página web,
+
+11
+00:00:58,840 --> 00:01:01,000
+que hay cosas súper chulas y un poco más de mí.
+
+12
+00:01:01,000 --> 00:01:05,920
+Y luego mi Instagram, que no va de proteger el oro ni de ser doctoranda,
+
+13
+00:01:05,920 --> 00:01:10,720
+va de cocina, porque a mí sí, algo que me gusta mucho en esta vida es comer
+
+14
+00:01:10,720 --> 00:01:13,240
+y para comer tienes que cocinar, así que cuando me inspiro,
+
+15
+00:01:13,240 --> 00:01:16,760
+cuelgo mis recetas ahí, así que os haga un poco de spam.
+
+16
+00:01:17,760 --> 00:01:20,080
+Así que vamos a empezar con la charla.
+
+17
+00:01:20,080 --> 00:01:22,760
+Os voy a proponer un supuesto.
+
+18
+00:01:22,760 --> 00:01:26,080
+Imaginaos que estáis trabajando por el Banco de España
+
+19
+00:01:26,080 --> 00:01:30,680
+y tenéis una cámara corazada llena de oro que tenéis que proteger.
+
+20
+00:01:30,680 --> 00:01:34,760
+Entonces, necesitaríamos un sistema de identificación
+
+21
+00:01:34,760 --> 00:01:39,520
+para proteger esta cámara de oro y que no nos roben.
+
+22
+00:01:39,520 --> 00:01:42,960
+Entonces, yo os voy a proponer un sistema biométrico
+
+23
+00:01:42,960 --> 00:01:45,920
+que cumpla una serie de requisitos.
+
+24
+00:01:45,920 --> 00:01:50,200
+Este sistema debería ser aceptado entre la gente
+
+25
+00:01:50,200 --> 00:01:52,840
+para que no sea muy complicado identificarle a ti mismo,
+
+26
+00:01:52,840 --> 00:01:55,360
+tener alto porcentaje de acierto,
+
+27
+00:01:55,360 --> 00:01:58,400
+de manera que no tengamos problemas si algún impostor
+
+28
+00:01:58,400 --> 00:02:00,880
+quiere venir y pasarse por nosotros.
+
+29
+00:02:00,880 --> 00:02:02,880
+Debería ser un modelo eficiente.
+
+30
+00:02:02,880 --> 00:02:04,800
+Debería tener soporte a sensores,
+
+31
+00:02:04,800 --> 00:02:09,520
+es decir, si hay algún ruido o así no debería fallar,
+
+32
+00:02:09,520 --> 00:02:12,280
+debería ser inclusivo para que cualquier persona
+
+33
+00:02:12,280 --> 00:02:16,000
+pueda identificarse con este sistema de identificación biométrica.
+
+34
+00:02:16,000 --> 00:02:18,280
+Debería tener cierta protección en los datos,
+
+35
+00:02:18,280 --> 00:02:20,800
+de manera que los datos no queden expuestos.
+
+36
+00:02:20,800 --> 00:02:25,920
+Ser reproducible y si a todo esto le sumamos
+
+37
+00:02:25,920 --> 00:02:28,600
+que tenga cierta protección ante la coacción,
+
+38
+00:02:28,600 --> 00:02:32,960
+si nos vienen a robar todo el oro, pues ya sería lo mejor.
+
+39
+00:02:32,960 --> 00:02:36,600
+Entonces, yo os voy a proponer un sistema de identificación biométrica
+
+40
+00:02:36,600 --> 00:02:39,600
+basado en el electrocardiogramas.
+
+41
+00:02:39,600 --> 00:02:44,400
+Ahora mismo hay diferentes técnicas de identificación biométrica,
+
+42
+00:02:44,400 --> 00:02:49,080
+bastante conocidas, hay de invasivas y no invasivas.
+
+43
+00:02:49,080 --> 00:02:51,320
+Entre las invasivas encontraríamos, por ejemplo,
+
+44
+00:02:51,320 --> 00:02:52,800
+un escáner de iris o de retina.
+
+45
+00:02:52,800 --> 00:02:56,040
+Es invasivo porque a nadie le apetece tener que meter su ojo
+
+46
+00:02:56,040 --> 00:02:58,040
+delante de una cámara.
+
+47
+00:02:58,040 --> 00:03:00,600
+Luego podríamos hacer una prueba de ADN,
+
+48
+00:03:00,600 --> 00:03:03,200
+también es identificativo, pero tienen que pinchar.
+
+49
+00:03:03,200 --> 00:03:07,800
+Y luego uno que no es tan físicamente abusivo,
+
+50
+00:03:07,800 --> 00:03:09,320
+pero sí en cuanto a privacidad,
+
+51
+00:03:09,320 --> 00:03:11,840
+sería ver tu comportamiento con el móvil,
+
+52
+00:03:11,840 --> 00:03:14,160
+que es un sistema de identificación biométrica totalmente válido,
+
+53
+00:03:14,160 --> 00:03:17,640
+porque es algo que tú eres ese comportamiento.
+
+54
+00:03:17,640 --> 00:03:20,280
+Entonces se te registra todos los movimientos que haces con el móvil
+
+55
+00:03:20,280 --> 00:03:23,800
+y te identificas, pero eso también es bastante invasivo.
+
+56
+00:03:23,800 --> 00:03:27,240
+Luego tenemos otras técnicas no invasivas, bastante conocidas,
+
+57
+00:03:27,240 --> 00:03:32,720
+como, por ejemplo, la huella de altidad o cuando el móvil te mira la cara.
+
+58
+00:03:32,720 --> 00:03:34,080
+Eso está muy bien para el móvil,
+
+59
+00:03:34,080 --> 00:03:36,720
+porque son sistemas bastante rápidos e eficientes.
+
+60
+00:03:36,720 --> 00:03:40,560
+Pero el problema es que si estamos intentando proteger todo el oro de España,
+
+61
+00:03:40,560 --> 00:03:44,120
+pues a lo mejor poner la huella de altilar no basta.
+
+62
+00:03:44,120 --> 00:03:48,200
+Además, si alguien te quiere robar el oro, pues sinceramente,
+
+63
+00:03:48,200 --> 00:03:51,680
+te puedo quitar un dedo y ya está.
+
+64
+00:03:51,680 --> 00:03:55,680
+Por eso ponemos la parte de los electrocardiogramas.
+
+65
+00:03:55,680 --> 00:03:57,800
+¿Y por qué electrocardiogramas?
+
+66
+00:03:57,800 --> 00:03:59,840
+Bueno, esta es la siguiente diapositiva.
+
+67
+00:03:59,840 --> 00:04:03,760
+En esta os cuenta lo que son...
+
+68
+00:04:03,760 --> 00:04:05,720
+Los electrocardiogramas no son más que las grabaciones
+
+69
+00:04:05,720 --> 00:04:08,360
+de los impulsos eléctricos de nuestro corazón.
+
+70
+00:04:08,360 --> 00:04:13,080
+Es decir, nuestro corazón late, esto se graba, se pone en el papel.
+
+71
+00:04:13,080 --> 00:04:16,080
+Si habéis tenido alguna vez ataques de ansiedad y habéis ido al médico,
+
+72
+00:04:16,080 --> 00:04:19,440
+probablemente os habrán hecho un electrocardiograma
+
+73
+00:04:19,440 --> 00:04:21,240
+para ver cómo está vuestro corazón.
+
+74
+00:04:21,240 --> 00:04:23,160
+Pues ya está, no es más.
+
+75
+00:04:23,160 --> 00:04:25,680
+¿Y ahora sí? ¿Por qué los electrocardiogramas?
+
+76
+00:04:25,680 --> 00:04:29,880
+Pues tienen ciertas ventajas que no tienen otros métodos de identificación.
+
+77
+00:04:29,880 --> 00:04:32,600
+Un electrocardiograma, como ya hemos comentado antes, es no invasivo.
+
+78
+00:04:32,600 --> 00:04:35,760
+Te puedes poner una pulserita en la muñeca
+
+79
+00:04:35,760 --> 00:04:39,200
+o te puedes poner un sensor en el pecho o algo así.
+
+80
+00:04:39,200 --> 00:04:42,400
+Luego, una de mis ventajas favoritas es la vivacidad,
+
+81
+00:04:42,400 --> 00:04:44,120
+porque es que me parece muy divertida.
+
+82
+00:04:44,120 --> 00:04:47,280
+Porque claro, tú solo puedes identificarte si estás vivo,
+
+83
+00:04:47,280 --> 00:04:52,200
+si está tu corazón la atiendo, si te arrancan el dedo,
+
+84
+00:04:52,200 --> 00:04:55,920
+te identifican con la guaya de tilar, pero si te arrancan el corazón, mueres.
+
+85
+00:04:55,920 --> 00:04:58,320
+Así que no puedes ser identificado.
+
+86
+00:04:58,320 --> 00:05:01,320
+Luego otra cosa de las que hace especial un electrocardiograma
+
+87
+00:05:01,320 --> 00:05:06,360
+es la inclusividad y es que cualquier persona tiene un electrocardiograma.
+
+88
+00:05:06,360 --> 00:05:10,720
+De hecho, está demostrado desde 2001 en un paper que se llama
+
+89
+00:05:10,720 --> 00:05:13,600
+CG-HG Student Identifying Individuals,
+
+90
+00:05:13,600 --> 00:05:18,400
+que un electrocardiograma es único e inherente de cada persona.
+
+91
+00:05:18,400 --> 00:05:21,200
+Cada persona tiene el suyo, es único y le identifica.
+
+92
+00:05:21,200 --> 00:05:24,960
+Por tanto, tenemos más de 20 años que nos avalan diciendo
+
+93
+00:05:24,960 --> 00:05:27,560
+que el electrocardiograma es único de cada persona.
+
+94
+00:05:27,560 --> 00:05:31,400
+Y además, es inclusivo, porque es que todo el mundo tiene el electrocardiograma.
+
+95
+00:05:31,400 --> 00:05:36,120
+Todas las personas, incluso, se podrían identificar animales,
+
+96
+00:05:36,120 --> 00:05:38,320
+porque también tiene el electrocardiograma.
+
+97
+00:05:38,320 --> 00:05:41,120
+Y luego, una ventaja que nos propone un electrocardiograma
+
+98
+00:05:41,120 --> 00:05:44,320
+frente a otros sistemas biométricos es el diagnóstico.
+
+99
+00:05:44,320 --> 00:05:47,400
+Y es que aparte de tener la información de identificación,
+
+100
+00:05:47,400 --> 00:05:49,360
+nos puede dar otro tipo de información,
+
+101
+00:05:49,360 --> 00:05:51,400
+como por ejemplo el estado de esta persona,
+
+102
+00:05:51,400 --> 00:05:54,440
+tanto el estado físico, si está nervioso,
+
+103
+00:05:54,440 --> 00:05:57,880
+si tiene alguna cardiopatía y esto también nos puede funcionar
+
+104
+00:05:57,880 --> 00:06:00,720
+y nos puede dar información extra.
+
+105
+00:06:00,720 --> 00:06:02,840
+Muy bien, entonces, ¿cómo lo hacemos?
+
+106
+00:06:02,840 --> 00:06:05,560
+¿Cómo identificamos a gente con el electrocardiograma?
+
+107
+00:06:05,560 --> 00:06:08,560
+Pues os vengo a proponer aquí mi modelo.
+
+108
+00:06:08,560 --> 00:06:13,560
+Lo que hacemos es pasar del electrocardiograma de toda la vida a una imagen.
+
+109
+00:06:13,560 --> 00:06:18,120
+Esto que veis en la imagen de la derecha es un electrocardiograma,
+
+110
+00:06:18,120 --> 00:06:22,160
+pero que es, lo llamamos una electrocardiomátrix.
+
+111
+00:06:22,160 --> 00:06:26,440
+Suena muy fancy, la verdad, pero no es más que poner el electrocardiograma
+
+112
+00:06:26,440 --> 00:06:29,600
+en una matriz y pintarla de colores.
+
+113
+00:06:29,600 --> 00:06:32,120
+Os voy a explicar poco a poco cómo lo hacemos.
+
+114
+00:06:32,120 --> 00:06:34,240
+Primero lo que queremos sería construir la matriz.
+
+115
+00:06:34,240 --> 00:06:38,160
+Para ello, cogeremos una ventana de una serie de picos.
+
+116
+00:06:38,160 --> 00:06:42,160
+Estos són els picos, els rpx del corazon, en numeradors de l'1 al 7.
+
+117
+00:06:42,160 --> 00:06:45,480
+Entonces, estos picos podemos elegir cuántos picos queremos.
+
+118
+00:06:45,480 --> 00:06:49,280
+Normalmente son 3, 5, 7, algunos sistemas usan 9.
+
+119
+00:06:49,280 --> 00:06:52,160
+Entonces, tenemos esta ventana de 7 picos.
+
+120
+00:06:52,160 --> 00:06:58,120
+Lo único que haremos será separar esta ventana en segmentos de dos picos
+
+121
+00:06:58,120 --> 00:07:02,640
+y alinearlos poniéndolos unos encima de otros, como veis en la segunda imagen.
+
+122
+00:07:02,640 --> 00:07:06,800
+Como veis, por ejemplo, del pico 2 al 6 se repiten siempre dos veces.
+
+123
+00:07:06,800 --> 00:07:11,040
+Esto nos da ciertas ventajas y es que no solo vemos el electrocardiograma,
+
+124
+00:07:11,040 --> 00:07:13,960
+sino que también nos focalizamos más en la distancia entre picos.
+
+125
+00:07:13,960 --> 00:07:16,560
+De hecho, la primera vez que se usó la electrocardiomátrix
+
+126
+00:07:16,560 --> 00:07:19,240
+fue para diagnóstico de cardiopatías,
+
+127
+00:07:19,240 --> 00:07:24,440
+porque se ve bastante bien la que hay la distancia entre picos.
+
+128
+00:07:24,440 --> 00:07:27,240
+Vale, Paizón?
+
+129
+00:07:27,240 --> 00:07:29,360
+Fue muy fácil.
+
+130
+00:07:29,360 --> 00:07:35,320
+Cogimos esta ventana, decidimos el final y principio de esta ventana,
+
+131
+00:07:35,320 --> 00:07:39,280
+separamos en segmentos, decidimos principio y final de cada segmento.
+
+132
+00:07:39,280 --> 00:07:43,640
+Por ejemplo, lo que hacemos es para cada usuario calcular su distancia entre picos,
+
+133
+00:07:43,640 --> 00:07:48,320
+porque así nos aseguramos que siempre para cada segmento cogemos dos picos.
+
+134
+00:07:48,320 --> 00:07:50,080
+Lo montamos un for.
+
+135
+00:07:50,080 --> 00:07:55,440
+Y lo que hacemos es concatenar estos segmentos uno encima del otro.
+
+136
+00:07:55,440 --> 00:07:58,840
+Entonces nos queda la matriz de la imagen que tenemos a la izquierda,
+
+137
+00:07:58,840 --> 00:08:00,320
+que es la que hemos visto antes.
+
+138
+00:08:00,320 --> 00:08:03,760
+Y ahora lo único que tenemos que hacer es convertir esta matriz
+
+139
+00:08:03,760 --> 00:08:05,920
+en un mapa de color, que es como un C.
+
+140
+00:08:05,920 --> 00:08:07,200
+Paizón.
+
+141
+00:08:07,200 --> 00:08:10,560
+Hay una librería guapísima que se llama Seaborn,
+
+142
+00:08:10,560 --> 00:08:14,960
+que lo único que tenemos que hacer es llamarla, yo que la he llamado con SNS,
+
+143
+00:08:14,960 --> 00:08:18,520
+y le haces punto hitmap y te hace un mapa de color.
+
+144
+00:08:18,520 --> 00:08:20,960
+Ya está, es muy sencillo.
+
+145
+00:08:20,960 --> 00:08:23,520
+Pero esto es súper efectivo.
+
+146
+00:08:23,520 --> 00:08:26,480
+Al final tendremos para cada base de datos que tenemos
+
+147
+00:08:26,480 --> 00:08:31,280
+y para cada usuario un montón de imágenes de cada uno de estos usuarios
+
+148
+00:08:31,280 --> 00:08:34,080
+de su corazón que tendrán esta pinta,
+
+149
+00:08:34,080 --> 00:08:38,560
+que es con lo que luego vamos a entrenar un modelo de inteligencia artificial.
+
+150
+00:08:38,560 --> 00:08:41,040
+Entonces, ahora tenemos esto.
+
+151
+00:08:41,040 --> 00:08:42,520
+¿Cuál es la ventaja?
+
+152
+00:08:42,520 --> 00:08:47,400
+Como hemos comentado antes, un sistema estaría bien que tenga cierta privacidad,
+
+153
+00:08:47,400 --> 00:08:49,840
+que preserve estos datos.
+
+154
+00:08:49,840 --> 00:08:53,560
+La ventaja del lugar de identificar con el electrocardiograma entero
+
+155
+00:08:53,560 --> 00:08:57,240
+y el identificar con estas imágenes es que, pasada de la imagen de la derecha,
+
+156
+00:08:57,240 --> 00:09:00,520
+el electrocardiograma clásico es prácticamente imposible.
+
+157
+00:09:00,520 --> 00:09:03,800
+Por tanto, estaríamos ofreciendo esta privacidad al usuario
+
+158
+00:09:03,800 --> 00:09:07,440
+y no estaríamos exponiendo sobre el electrocardiograma.
+
+159
+00:09:07,440 --> 00:09:09,680
+Muy bien, y ahora tenemos las imágenes,
+
+160
+00:09:09,680 --> 00:09:14,640
+pero habrá que hacer alguna clasificación para saber si esto es efectivo o no.
+
+161
+00:09:14,640 --> 00:09:18,880
+Pues para eso usamos una reneuronal convolucional.
+
+162
+00:09:18,880 --> 00:09:22,400
+I va explicar la inteligencia artificial, pero hemos tenido un montón de charlas maravillosas,
+
+163
+00:09:22,400 --> 00:09:24,840
+donde hemos hablado de inteligencia artificial,
+
+164
+00:09:24,840 --> 00:09:27,960
+se ha explicado todo superbien, así que llegados a este punto de domingo,
+
+165
+00:09:27,960 --> 00:09:31,080
+espero que todos lo sepáis.
+
+166
+00:09:31,080 --> 00:09:34,560
+Nosotros lo que usamos es una reneuronal convolucional,
+
+167
+00:09:34,560 --> 00:09:36,480
+de deep learning,
+
+168
+00:09:36,480 --> 00:09:39,160
+y lo que hace una reneuronal convolucional para aquellos que no lo sepan,
+
+169
+00:09:39,160 --> 00:09:44,600
+es que lo que hacemos es explotar la correlación espacial de las imágenes.
+
+170
+00:09:44,600 --> 00:09:46,240
+Esto suena superguapo,
+
+171
+00:09:46,240 --> 00:09:49,560
+pero simplemente es que lo hacemos es que nos fijamos en cada una de las imágenes
+
+172
+00:09:49,560 --> 00:09:51,200
+de igual que tipo de imagen sea.
+
+173
+00:09:51,200 --> 00:09:53,840
+Por ejemplo, puedes intentar clasificar gatos y perros.
+
+174
+00:09:53,840 --> 00:09:57,600
+Entonces nos fijaríamos en un gato que es lo que ese gato sea gato,
+
+175
+00:09:57,600 --> 00:09:59,760
+y para el perro que es lo que el perro sea perro,
+
+176
+00:09:59,760 --> 00:10:01,960
+los colores, las formas, todo.
+
+177
+00:10:01,960 --> 00:10:04,840
+Entonces esto es lo que hace una reneuronal convolucional.
+
+178
+00:10:04,840 --> 00:10:09,280
+Intenta ver cuáles son las diferencias y los parecidos entre imágenes,
+
+179
+00:10:09,280 --> 00:10:12,080
+para que nosotros luego podamos hacer una clasificación,
+
+180
+00:10:12,080 --> 00:10:14,880
+que es exactamente lo que queremos hacer con nuestro modelo biométrico,
+
+181
+00:10:14,880 --> 00:10:20,600
+ver qué es lo que hace que las fotos del corazón de Alicia sean de Alicia y no sean de Bea,
+
+182
+00:10:20,600 --> 00:10:23,200
+y esto para cada una de las usuarios que tenemos aquí.
+
+183
+00:10:23,200 --> 00:10:28,960
+Entonces, nuestra reneuronal, lo que haremos será pasarle muchísimas imágenes
+
+184
+00:10:28,960 --> 00:10:33,160
+de cada una de estas usuarias para tener un entrenamiento.
+
+185
+00:10:33,160 --> 00:10:36,200
+Y al final tendremos esta reneuronal entrenada,
+
+186
+00:10:36,200 --> 00:10:40,560
+que lo que haremos será pasarle nuevas imágenes de las mismas usuarias de antes,
+
+187
+00:10:40,560 --> 00:10:45,960
+pero imágenes que aún no ha visto, para testear y obtener una predicción.
+
+188
+00:10:45,960 --> 00:10:51,600
+Esta predicción nos va a decir, más o menos, qué probabilidad hay,
+
+189
+00:10:51,600 --> 00:10:57,200
+de que una imagen que le hemos pasado sea de la usuaria A, B, C o B.
+
+190
+00:10:57,200 --> 00:11:01,000
+Y así es como funciona una reneuronal convolucional, muy fácil.
+
+191
+00:11:01,000 --> 00:11:06,200
+Gente que me regañará, podrán poner una cajita dentro, así que os he puesto más cosas.
+
+192
+00:11:06,200 --> 00:11:11,560
+El código, este es el código que tiene la pinta que tiene.
+
+193
+00:11:11,560 --> 00:11:17,360
+Lo que quiero que veáis sí, es que tengo una reneuronal de dos capas.
+
+194
+00:11:17,360 --> 00:11:21,760
+Una es la capa convolucional, y la segunda es la capa con la que hago la clasificación.
+
+195
+00:11:21,760 --> 00:11:26,360
+Es decir, con una reneuronal súper, súper, súper sencilla,
+
+196
+00:11:26,360 --> 00:11:30,360
+que es que si vosotros os miráis reneuronales convolucionales entrenadas,
+
+197
+00:11:30,360 --> 00:11:33,360
+así tienen capas y capas y capas y capas,
+
+198
+00:11:33,360 --> 00:11:37,360
+yo tengo una convolucional y una para clasificar.
+
+199
+00:11:37,360 --> 00:11:40,360
+Que lo veis aquí. Ya puedo tener muy buenos resultados.
+
+200
+00:11:40,360 --> 00:11:45,760
+Entonces, frente a otros tipos de sistemas biométricos, yo lo que fresco es eficiencia.
+
+201
+00:11:45,760 --> 00:11:50,160
+Porque es muy sencillo, porque la base, las imágenes,
+
+202
+00:11:50,160 --> 00:11:55,560
+ya son suficientemente características para que con algo tan sencillo podamos clasificar los usuarios.
+
+203
+00:11:55,560 --> 00:11:58,360
+Esta es la arquitectura de mi red.
+
+204
+00:11:58,360 --> 00:12:02,360
+Os lo he puesto porque además quedaba guapísima, y estoy escribiendo la tesis,
+
+205
+00:12:02,360 --> 00:12:04,760
+así que esta foto va aquí i a la tesis.
+
+206
+00:12:04,760 --> 00:12:11,360
+Lo que hacemos es primero cogemos la imagen, tal cual me la saca,
+
+207
+00:12:11,360 --> 00:12:17,360
+tal cual, esto es lo que me saca Python, cuando yo le hago SNS.hitmap,
+
+208
+00:12:17,360 --> 00:12:18,760
+se saca esa imagen de ahí.
+
+209
+00:12:18,760 --> 00:12:23,760
+Lo primero que hago es evidentemente quitarle el marco y quitarle la leyenda,
+
+210
+00:12:23,760 --> 00:12:26,360
+para tenerle solo la imagen.
+
+211
+00:12:26,360 --> 00:12:31,160
+Hay que asegurarse que si te saca una imagen con el nombre del usuario arriba,
+
+212
+00:12:31,160 --> 00:12:33,360
+también hay que quitárselo, que si no, es trampa.
+
+213
+00:12:33,360 --> 00:12:37,560
+Entonces le hacemos un crop, la recortamos,
+
+214
+00:12:37,560 --> 00:12:42,760
+le hacemos la convolución, match-pulling, classic-renormal-convolutional,
+
+215
+00:12:42,760 --> 00:12:46,160
+luego flat-endent-soft-match, classic de clasificación,
+
+216
+00:12:46,160 --> 00:12:51,360
+y ya tenemos nuestra renormal montada, y que podemos hacer entrenar.
+
+217
+00:12:51,360 --> 00:12:55,360
+Pues ya está, entrenamos, y ya lo tenemos.
+
+218
+00:12:55,360 --> 00:12:58,160
+Y vamos a ver qué ha pasado, qué tenemos,
+
+219
+00:12:58,160 --> 00:13:02,160
+cuáles son los experimentos que demuestran que nuestro sistema biometrístico
+
+220
+00:13:02,160 --> 00:13:05,160
+es el mejor para proteger todo el oro de España.
+
+221
+00:13:05,160 --> 00:13:10,160
+Hemos entrenado con cuatro bases de datos, todas ellas públicas,
+
+222
+00:13:10,160 --> 00:13:14,160
+de manera que aseguramos la reproducibilidad de nuestro modelo.
+
+223
+00:13:14,160 --> 00:13:18,160
+También pongo de manifiesto, ya que estamos,
+
+224
+00:13:18,160 --> 00:13:20,160
+que es muy difícil encontrar bases de datos.
+
+225
+00:13:20,160 --> 00:13:23,160
+Si alguna vez algún científico dice que es que te cagaba el ECG,
+
+226
+00:13:23,160 --> 00:13:27,160
+dices sí, porque es muy difícil encontrar bases de datos.
+
+227
+00:13:27,160 --> 00:13:32,160
+A cualquier encuesta científica, siempre hay que dar vuestros datos.
+
+228
+00:13:32,160 --> 00:13:35,160
+Bueno, cierta medida, que también soy cíbera.
+
+229
+00:13:35,160 --> 00:13:38,160
+Las cuatro bases de datos, cada una es especial por una cosa.
+
+230
+00:13:38,160 --> 00:13:41,160
+La primera, la NSRDB, son usuarios control,
+
+231
+00:13:41,160 --> 00:13:44,160
+es decir, usuarios sin cardiopatias, usuarios normales,
+
+232
+00:13:44,160 --> 00:13:47,160
+18 usuarios, con un montón de imágenes cada uno.
+
+233
+00:13:47,160 --> 00:13:51,160
+La segunda, la Mid-DB, es la más famosa, la más típica
+
+234
+00:13:51,160 --> 00:13:53,160
+para hacer cualquier cosa con nuestro cardiogramas,
+
+235
+00:13:53,160 --> 00:13:56,160
+y son usuarios que están mezclados, usuarios con una ritmia,
+
+236
+00:13:56,160 --> 00:13:58,160
+y usuarios sanos.
+
+237
+00:13:58,160 --> 00:14:00,160
+La tercera, la PTBDB,
+
+238
+00:14:00,160 --> 00:14:03,160
+son usuarios con diferentes tipos de cardiopatias.
+
+239
+00:14:03,160 --> 00:14:06,160
+También hay usuarios sanos, pero está construida una forma
+
+240
+00:14:06,160 --> 00:14:09,160
+que tú puedas elegir qué tipo de cardiopatias quieres meter,
+
+241
+00:14:09,160 --> 00:14:12,160
+cuáles dejas fuera si quieres dejar fuera a usuarios sanos o no.
+
+242
+00:14:12,160 --> 00:14:16,160
+De esta al final lo que hemos hecho es usar solo usuarios con cardiopatias.
+
+243
+00:14:16,160 --> 00:14:21,160
+Y la cuarta, que es muy divertida, pero son 25 usuarios
+
+244
+00:14:21,160 --> 00:14:23,160
+haciendo cinco actividades diferentes,
+
+245
+00:14:23,160 --> 00:14:30,160
+que son andar, estar sentado, hacer un examen de mates, ir en bici, correr.
+
+246
+00:14:30,160 --> 00:14:34,160
+De manera que tenemos diferentes formas de un usuario,
+
+247
+00:14:34,160 --> 00:14:37,160
+diferentes estados de un usuario sano.
+
+248
+00:14:37,160 --> 00:14:41,160
+Vale, pues vamos a ver cada una un poco como nos ha ido.
+
+249
+00:14:41,160 --> 00:14:44,160
+Aquí lo que hemos hecho ha sido sacar el electrocardiomàtrix
+
+250
+00:14:44,160 --> 00:14:47,160
+para 3, 5 y 7 picos.
+
+251
+00:14:47,160 --> 00:14:51,160
+Bit per frame es el BPF que veis, el nombre creo que me quedó chulísimo,
+
+252
+00:14:51,160 --> 00:14:53,160
+lo de Bit per frame.
+
+253
+00:14:53,160 --> 00:14:56,160
+Y estas son las acuresis que hemos sacado.
+
+254
+00:14:56,160 --> 00:15:00,160
+Es decir, yo le paso las imágenes en la red neuronal que os he enseñado antes,
+
+255
+00:15:00,160 --> 00:15:04,160
+en treno, testeo, y estas son las acuresis que tenemos.
+
+256
+00:15:04,160 --> 00:15:07,160
+Al principio cuando empecé la tesis con todos los experimentos
+
+257
+00:15:07,160 --> 00:15:12,160
+y vimos estas, las acuresis eran ya muy altas, no tan altas, pero ya muy altas.
+
+258
+00:15:12,160 --> 00:15:15,160
+Todo el mundo me decía, revísalo, no puede ser.
+
+259
+00:15:15,160 --> 00:15:18,160
+Es que no puede ser que tengas acuresis tan altas, pues sí, las tengo.
+
+260
+00:15:18,160 --> 00:15:23,160
+Pues esto son los resultados que tenemos, son buenísimos.
+
+261
+00:15:23,160 --> 00:15:26,160
+Luego lo que intentamos hacer para verlo del ruido
+
+262
+00:15:26,160 --> 00:15:32,160
+es que a la izquierda tenemos una imagen de un usuario limpia.
+
+263
+00:15:32,160 --> 00:15:37,160
+En la imagen de la derecha lo que hicimos fue coger la señal del electrocardiogramà,
+
+264
+00:15:37,160 --> 00:15:41,160
+meterle ruido gaussiano, hacer todo el procesamiento y sacar la imagen,
+
+265
+00:15:41,160 --> 00:15:44,160
+e ir a comparar las dos imágenes y eso no igual es.
+
+266
+00:15:44,160 --> 00:15:48,160
+Allí en que ve alguna diferencia.
+
+267
+00:15:48,160 --> 00:15:51,160
+Eso demuestra que no sólo tenemos un sistema perspectivo, sino que además el preprocesado
+
+268
+00:15:51,160 --> 00:15:58,160
+que hacemos a la imagen hace que no seamos susceptibles a ciertos cantidades de ruido.
+
+269
+00:15:58,160 --> 00:16:05,160
+Entonces, como puedes ver, si encontrársemos las siete diferencias, sería muy difícil.
+
+270
+00:16:05,160 --> 00:16:11,160
+La siguiente base de datos las hemos estudiado para ver esta inclusividad en la que hablábamos.
+
+271
+00:16:11,160 --> 00:16:14,160
+¿Cómo afectan estas cardiopatías?
+
+272
+00:16:14,160 --> 00:16:18,160
+Porque al final, si estamos guardando la cámara al corazón, puede ser que el de seguridad
+
+273
+00:16:18,160 --> 00:16:23,160
+que está guardándola tenga arrima o taquicardia porque se estresa en el trabajo.
+
+274
+00:16:23,160 --> 00:16:29,160
+Entonces, la primera base de datos, el 97,89% lo obtenemos con la mid-dev,
+
+275
+00:16:29,160 --> 00:16:34,160
+que son un pool de usuarios sanos mezclados con usuarios con arrítmia.
+
+276
+00:16:34,160 --> 00:16:37,160
+Y la segunda parte son usuarios todos con cardiopatías.
+
+277
+00:16:37,160 --> 00:16:41,160
+Las acuras se siguen siendo muy muy altas.
+
+278
+00:16:41,160 --> 00:16:47,160
+Y además, es recordar que esto es con una reneuronal, como el final, con una sola capa,
+
+279
+00:16:47,160 --> 00:16:49,160
+que es muy efectivo.
+
+280
+00:16:49,160 --> 00:16:56,160
+Entonces aquí estamos demostrando que somos capaces de clasificar usuarios con cardiopatías.
+
+281
+00:16:56,160 --> 00:16:59,160
+Y ya vamos a la última base de datos, que es la WDV.
+
+282
+00:16:59,160 --> 00:17:03,160
+Como os he dicho antes, son 25 usuarios haciendo diferentes actividades.
+
+283
+00:17:03,160 --> 00:17:08,160
+Estas son los resultados de la curasi para cada una de estas actividades.
+
+284
+00:17:08,160 --> 00:17:13,160
+Como podéis ver, las he ordenado de arriba a abajo, de menos a más actividad.
+
+285
+00:17:13,160 --> 00:17:19,160
+Y se puede observar que hay una pequeña tendencia donde cada vez la curasi va bajando un poco.
+
+286
+00:17:19,160 --> 00:17:21,160
+Y tú dirías, ¿y esto por qué?
+
+287
+00:17:21,160 --> 00:17:25,160
+Pues podemos ir a investigarlo porque a lo mejor esto nos conviene.
+
+288
+00:17:25,160 --> 00:17:29,160
+Hay que decir que lo de hacer el examen de matemáticas muchas veces cambia y varía
+
+289
+00:17:29,160 --> 00:17:34,160
+que cada uno se pone más o menos nervioso según el examen de matemáticas que vaya a hacer.
+
+290
+00:17:34,160 --> 00:17:37,160
+Pero sí, más o menos ahí está tendencia.
+
+291
+00:17:37,160 --> 00:17:44,160
+Entonces lo que hemos hecho para seguir probándolo es hemos juntado dos y dos escenarios,
+
+292
+00:17:44,160 --> 00:17:47,160
+el del arma de matemática que lo hemos dejado fuera.
+
+293
+00:17:47,160 --> 00:17:51,160
+Hemos junto al escenario de estar sentada y estar andando,
+
+294
+00:17:51,160 --> 00:17:56,160
+que son escenarios que normalmente requerirían poca actividad cardiovascular.
+
+295
+00:17:56,160 --> 00:17:59,160
+Y luego hemos juntado el que ir en bicicleta y estar corriendo.
+
+296
+00:17:59,160 --> 00:18:05,160
+Como podéis ver, aquí vemos una vez más que bastantes diferencias entre una y otra.
+
+297
+00:18:05,160 --> 00:18:12,160
+En estos experimentos siempre entrenaba con una base de datos y predecía con la misma.
+
+298
+00:18:12,160 --> 00:18:16,160
+Es decir, si entrenaba con sentada y andando, predecía con las imágenes que la red neuronal
+
+299
+00:18:16,160 --> 00:18:19,160
+no había visto pero de sentada y andando.
+
+300
+00:18:19,160 --> 00:18:23,160
+Entonces lo que hemos intentado aquí es entrenar la red neuronal
+
+301
+00:18:23,160 --> 00:18:26,160
+con el escenario de poca actividad cardiovascular
+
+302
+00:18:26,160 --> 00:18:31,160
+y predecir, es decir, testear la red con el escenario de cardio.
+
+303
+00:18:31,160 --> 00:18:34,160
+¿Qué nos indica esto? Que es una corasi muy baja.
+
+304
+00:18:34,160 --> 00:18:39,160
+¿Qué puede pasar? Que si entonces estamos nerviosos o muy agitados
+
+305
+00:18:39,160 --> 00:18:42,160
+puede ser que la cámara corazada no nos reconozca.
+
+306
+00:18:42,160 --> 00:18:47,160
+¿Qué tenemos aquí? Pues una ventaja, una ventaja muy grande.
+
+307
+00:18:47,160 --> 00:18:54,160
+Al final tenemos un sistema de identificación biométrica que estamos cumpliendo todos estos requisitos
+
+308
+00:18:54,160 --> 00:18:58,160
+incluido el de proteccionante de la coacción.
+
+309
+00:18:58,160 --> 00:19:06,160
+Lo ideal sería que no nos vinieran a robar y tener todo el oro ahí guardadito
+
+310
+00:19:06,160 --> 00:19:09,160
+pero si nos vienen a robar pues vale más estar preparados.
+
+311
+00:19:09,160 --> 00:19:18,160
+Muchas gracias.
+
+312
+00:19:18,160 --> 00:19:22,160
+Ahora os tengo una sorpresa preparada.
+
+313
+00:19:22,160 --> 00:19:28,160
+¿Tengo una sorpresa preparada? Que es mucho ruido.
+
+314
+00:19:28,160 --> 00:19:33,160
+No, y es esto. O sea que a vuestros móviles que os tengo un cajut.
+
+315
+00:19:33,160 --> 00:19:41,160
+No sé si sabéis que es un cajut, pero es pa ver lo atento que habéis estado a mi charla.
+
+316
+00:19:41,160 --> 00:19:48,160
+Además, spoiler, hay premios. A ver si se hace esto.
+
+317
+00:19:48,160 --> 00:19:53,160
+Si lo tuviera no estaría aquí.
+
+318
+00:19:53,160 --> 00:20:01,160
+Si queréis os puedo decir los premios o no, como queráis.
+
+319
+00:20:01,160 --> 00:20:04,160
+Sorpresa, venga sorpresa.
+
+320
+00:20:04,160 --> 00:20:09,160
+Pues si te entrando tenéis que poner vuestro nombre, podéis o poner el pin,
+
+321
+00:20:09,160 --> 00:20:11,160
+entrar en cajut y poner...
+
+322
+00:20:11,160 --> 00:20:18,160
+Perdón, a que no lo podemos hacer.
+
+323
+00:20:18,160 --> 00:20:25,160
+Uy, vaya.
+
+324
+00:20:25,160 --> 00:20:28,160
+Ahora creo que lo puesto de pago.
+
+325
+00:20:28,160 --> 00:20:34,160
+Bueno, pues chicos, lo vamos a hacer y me levantáis la mano.
+
+326
+00:20:34,160 --> 00:20:39,160
+Sofia y Ned Florín, tenéis premios asegurados. Es broma.
+
+327
+00:20:39,160 --> 00:20:41,160
+Ya veremos cómo los repartimos.
+
+328
+00:20:41,160 --> 00:20:46,160
+Es que además así me parecía que era una buena idea porque...
+
+329
+00:20:46,160 --> 00:20:52,160
+Porque podemos, si tenéis preguntas, podemos ir viéndolo.
+
+330
+00:20:52,160 --> 00:20:57,160
+¿De dónde soy? Chiquis.
+
+331
+00:20:57,160 --> 00:21:00,160
+Vamos a decirlo vosaltam.
+
+332
+00:21:00,160 --> 00:21:06,160
+Si os equivocáis, os apunto una lista o algo.
+
+333
+00:21:06,160 --> 00:21:09,160
+Sí, soy de Mallorca, evidentemente.
+
+334
+00:21:09,160 --> 00:21:11,160
+No soy de Mallorca, ni de Madrid, ni de Granada.
+
+335
+00:21:11,160 --> 00:21:15,160
+Ojalá estaría bien, pero vivo en Madrid.
+
+336
+00:21:15,160 --> 00:21:21,160
+Muy bien, dos personas han contestado y han acertado.
+
+337
+00:21:21,160 --> 00:21:25,160
+Vale, y ahora como era esto, prometo que lo había aprobado,
+
+338
+00:21:25,160 --> 00:21:30,160
+no me acuerdo.
+
+339
+00:21:30,160 --> 00:21:35,160
+A ver si es...
+
+340
+00:21:35,160 --> 00:21:40,160
+Muy bien Inés, enhorabuena.
+
+341
+00:21:40,160 --> 00:21:42,160
+Muy bien, siguiente pregunta.
+
+342
+00:21:42,160 --> 00:21:48,160
+¿Cuál de estas de identificación biométrica es no invasiva?
+
+343
+00:21:48,160 --> 00:21:51,160
+Está muy fácil, ¿eh? Está muy fácil.
+
+344
+00:21:51,160 --> 00:21:53,160
+Es que lo ha puesto muy fácil.
+
+345
+00:21:53,160 --> 00:21:57,160
+Es de dar premios.
+
+346
+00:21:57,160 --> 00:22:04,160
+Muy bien, Inés, esta es enracha.
+
+347
+00:22:04,160 --> 00:22:10,160
+¿Cuál de estos seres vivos son identificables con su ECG?
+
+348
+00:22:10,160 --> 00:22:13,160
+¿Cómo? Muy bien.
+
+349
+00:22:13,160 --> 00:22:17,160
+Y hay un gatito en una caja que es buenísimo.
+
+350
+00:22:17,160 --> 00:22:21,160
+Somos informáticos, nos gustan los gatos.
+
+351
+00:22:21,160 --> 00:22:23,160
+Muy bien, todas.
+
+352
+00:22:23,160 --> 00:22:26,160
+Todas las personas son identificables, incluso un gato, lo podríamos identificar.
+
+353
+00:22:26,160 --> 00:22:31,160
+Si alguien quiere presentar a su gato para el experimento.
+
+354
+00:22:31,160 --> 00:22:34,160
+Muy bien, Florín también, muy bien.
+
+355
+00:22:34,160 --> 00:22:42,160
+Sofía, un poco peor.
+
+356
+00:22:42,160 --> 00:22:44,160
+Esto lo he repetido como muchísimas veces.
+
+357
+00:22:44,160 --> 00:22:47,160
+No vale no saber de inteligencia artificial y fallar,
+
+358
+00:22:47,160 --> 00:22:55,160
+pero he repetido 500.
+
+359
+00:22:55,160 --> 00:22:59,160
+¿Cómo que RnN?
+
+360
+00:22:59,160 --> 00:23:06,160
+Inés, espero que hayas fallado a puesta.
+
+361
+00:23:06,160 --> 00:23:16,160
+5 de 6.
+
+362
+00:23:16,160 --> 00:23:19,160
+Vamos a ser inclusivos, hemos dicho.
+
+363
+00:23:19,160 --> 00:23:32,160
+Y la última pregunta.
+
+364
+00:23:32,160 --> 00:23:35,160
+Si también ya es correcta, pero todas las temas también.
+
+365
+00:23:35,160 --> 00:23:44,160
+Yo creo que si lloramos un poco a la drona, a lo mejor tiene un poco de piedad.
+
+366
+00:23:44,160 --> 00:23:49,160
+Y si también hayan fallado a la drona, a lo mejor no hayan fallado.
+
+367
+00:23:49,160 --> 00:23:55,160
+¿Cómo que se puede ponerle nervioso a él también?
+
+368
+00:23:55,160 --> 00:23:57,160
+Ya estaría.
+
+369
+00:23:57,160 --> 00:24:02,160
+¿Cómo hago los premios, amigos?
+
+370
+00:24:02,160 --> 00:24:05,160
+Tengo cuatro premios.
+
+371
+00:24:05,160 --> 00:24:09,160
+He traído.
+
+372
+00:24:09,160 --> 00:24:14,160
+He traído.
+
+373
+00:24:14,160 --> 00:24:19,160
+He traído.
+
+374
+00:24:19,160 --> 00:24:25,160
+¿Cómo lo hacemos?
+
+375
+00:24:25,160 --> 00:24:30,160
+¿Cómo lo sorteo?
+
+376
+00:24:30,160 --> 00:24:38,160
+¿Hay alguien aquí que sea de Mallorca?
+
+377
+00:24:38,160 --> 00:24:48,160
+¿Cómo lo hacemos?
+
+378
+00:24:48,160 --> 00:24:58,160
+¿Cómo lo hacemos?
+
+379
+00:24:58,160 --> 00:25:08,160
+¿Cómo lo hacemos?
+
+380
+00:25:08,160 --> 00:25:18,160
+¿Cómo lo hacemos?
+
+381
+00:25:18,160 --> 00:25:27,160
+¿Cómo lo hacemos?
+
+382
+00:25:27,160 --> 00:25:37,160
+¿Cómo lo hacemos?
+
+383
+00:25:37,160 --> 00:25:47,160
+¿Cómo lo hacemos?
+
+384
+00:25:47,160 --> 00:25:57,160
+¿Cómo lo hacemos?
+
+385
+00:25:57,160 --> 00:26:07,160
+Me parecía interesante.
+
+386
+00:26:07,160 --> 00:26:17,160
+Me parecía interesante.
+
+387
+00:26:17,160 --> 00:26:27,160
+Me parecía interesante.
+
+388
+00:26:27,160 --> 00:26:37,160
+Me parecía interesante.
+
+389
+00:26:37,160 --> 00:26:47,160
+No sé si estaría bien poder acceder a ese tipo de datos.
+
+390
+00:26:47,160 --> 00:26:57,160
+¿Cómo lo hacemos?
+
+391
+00:26:57,160 --> 00:27:07,160
+¿Cómo lo hacemos?
+
+392
+00:27:07,160 --> 00:27:17,160
+¿Cómo lo hacemos?
+
+393
+00:27:17,160 --> 00:27:27,160
+¿Cómo lo hacemos?
+
+394
+00:27:27,160 --> 00:27:37,160
+¿Cómo lo hacemos?
+
+395
+00:27:37,160 --> 00:27:47,160
+No hay problema.
+
+396
+00:27:47,160 --> 00:27:57,160
+¿Cómo lo hacemos?
+
+397
+00:27:57,160 --> 00:28:07,160
+¿Cómo lo hacemos?
+
+398
+00:28:07,160 --> 00:28:17,160
+¿Cómo lo hacemos?
+
+399
+00:28:17,160 --> 00:28:27,160
+¿Cómo lo hacemos?
+
+400
+00:28:27,160 --> 00:28:37,160
+¿Cómo lo hacemos?
+
+401
+00:28:37,160 --> 00:28:47,160
+¿Cómo lo hacemos?
+
+402
+00:28:47,160 --> 00:28:57,160
+¿Cómo lo hacemos?
+
+403
+00:28:57,160 --> 00:29:07,160
+¿Cómo lo hacemos?
+
+404
+00:29:07,160 --> 00:29:17,160
+¿Cómo lo hacemos?
+
+405
+00:29:17,160 --> 00:29:27,160
+¿Cómo lo hacemos?
+
+406
+00:29:27,160 --> 00:29:37,160
+¿Cómo lo hacemos?
+
+407
+00:29:37,160 --> 00:29:47,160
+¿Cómo lo hacemos?
+
+408
+00:29:47,160 --> 00:29:57,160
+¿Cómo lo hacemos?
+
+409
+00:29:57,160 --> 00:30:07,160
+¿Cómo lo hacemos?
+
+410
+00:30:07,160 --> 00:30:17,160
+¿Cómo lo hacemos?
+
+411
+00:30:17,160 --> 00:30:27,160
+¿Cómo lo hacemos?
+
+412
+00:30:27,160 --> 00:30:37,160
+¿Cómo lo hacemos?
+
+413
+00:30:37,160 --> 00:30:57,160
+¿Cómo lo hacemos?
+
+414
+00:30:57,160 --> 00:31:07,160
+¿Cómo lo hacemos?
+
+415
+00:31:07,160 --> 00:31:17,160
+¿Cómo lo hacemos?
+
+416
+00:31:17,160 --> 00:31:27,160
+¿Cómo lo hacemos?
+
+417
+00:31:27,160 --> 00:31:37,160
+¿Cómo lo hacemos?
+
+418
+00:31:37,160 --> 00:31:47,160
+¿Cómo lo hacemos?
+
+419
+00:31:47,160 --> 00:31:57,160
+¿Cómo lo hacemos?
+
+420
+00:31:57,160 --> 00:32:07,160
+¿Cómo lo hacemos?
+
+421
+00:32:07,160 --> 00:32:17,160
+¿Cómo lo hacemos?
+
+422
+00:32:17,160 --> 00:32:27,160
+¿Cómo lo hacemos?
+
+423
+00:32:27,160 --> 00:32:37,160
+¿Cómo lo hacemos?
+
+424
+00:32:37,160 --> 00:32:47,160
+¿Cómo lo hacemos?
+
+425
+00:32:47,160 --> 00:32:57,160
+¿Cómo lo hacemos?
+
+426
+00:32:57,160 --> 00:33:07,160
+¿Cómo lo hacemos?
+
+427
+00:33:07,160 --> 00:33:17,160
+¿Cómo lo hacemos?
+
+428
+00:33:17,160 --> 00:33:27,160
+¿Cómo lo hacemos?
+
+429
+00:33:27,160 --> 00:33:37,160
+¿Cómo lo hacemos?
+
+430
+00:33:37,160 --> 00:33:47,160
+¿Cómo lo hacemos?
+
+431
+00:33:47,160 --> 00:33:57,160
+¿Cómo lo hacemos?
+
+432
+00:33:57,160 --> 00:34:07,160
+¿Cómo lo hacemos?
+
+433
+00:34:07,160 --> 00:34:17,160
+¿Cómo lo hacemos?
+
+434
+00:34:17,160 --> 00:34:27,160
+¿Cómo lo hacemos?
+
+435
+00:34:27,160 --> 00:34:37,160
+¿Cómo lo hacemos?
+
+436
+00:34:37,160 --> 00:34:47,160
+¿Cómo lo hacemos?
+
+437
+00:34:47,160 --> 00:35:07,160
+¿Cómo lo hacemos?
+
+438
+00:35:07,160 --> 00:35:17,160
+¿Cómo lo hacemos?
+
+439
+00:35:17,160 --> 00:35:27,160
+¿Cómo lo hacemos?
+
+440
+00:35:27,160 --> 00:35:37,160
+¿Cómo lo hacemos?
+
+441
+00:35:37,160 --> 00:35:47,160
+¿Cómo lo hacemos?
+
+442
+00:35:47,160 --> 00:35:57,160
+¿Cómo lo hacemos?
+
+443
+00:35:57,160 --> 00:36:07,160
+¿Cómo lo hacemos?
+
+444
+00:36:07,160 --> 00:36:17,160
+¿Cómo lo hacemos?
+
+445
+00:36:17,160 --> 00:36:37,160
+¿Cómo lo hacemos?
+

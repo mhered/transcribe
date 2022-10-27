@@ -1,0 +1,2208 @@
+1
+00:00:00,000 --> 00:00:16,000
+Música
+
+2
+00:00:16,000 --> 00:00:20,000
+Empezamos con Frani y con Sara de APSL, que nos van a
+
+3
+00:00:20,000 --> 00:00:25,000
+hablar de cómo hacer aplicaciones reutilizables con DiYanguo. Un aplauso, por favor.
+
+4
+00:00:25,000 --> 00:00:33,000
+Aplausos
+
+5
+00:00:33,000 --> 00:00:37,000
+Muchas gracias a todos por estar aquí en esta charla que está
+
+6
+00:00:37,000 --> 00:00:41,000
+sponsorizada por APSL. Hoy os contaremos un caso que tuvimos
+
+7
+00:00:41,000 --> 00:00:45,000
+trabajando con el Ayuntamiento de Barcelona y cómo intentamos
+
+8
+00:00:45,000 --> 00:00:49,000
+afrontar un proyecto que era en concreto para un ayuntamiento
+
+9
+00:00:49,000 --> 00:00:54,000
+y luego lo intentamos, digamos, estandarizar para cualquier ayuntamiento de España.
+
+10
+00:00:54,000 --> 00:00:58,000
+Pero antes de entrar en materia, os quería presentar a mi compañera, Sonia.
+
+11
+00:00:58,000 --> 00:01:02,000
+Ella es graduada en física, pasó de un poco un giro
+
+12
+00:01:02,000 --> 00:01:06,000
+de la parte de ciencias a la parte más de ingeniería.
+
+13
+00:01:06,000 --> 00:01:10,000
+Ella es mentora de las Yangogers desde que empezó en este mundillo
+
+14
+00:01:10,000 --> 00:01:14,000
+ayudando a otras mujeres que se interesan por nuestro sector.
+
+15
+00:01:14,000 --> 00:01:18,000
+Y además, en los últimos años se dedicamos sobre todo
+
+16
+00:01:18,000 --> 00:01:21,000
+a desarrollo de VAC y mucho de ciencia de datos también.
+
+17
+00:01:21,000 --> 00:01:24,000
+Y también se está muy interesada en gestión de equipo.
+
+18
+00:01:24,000 --> 00:01:26,000
+Si algún día tenéis la suerte de trabajar con ella,
+
+19
+00:01:26,000 --> 00:01:30,000
+pues solo recomiendo a los que no le mováis las cosas de sitio a la mesa
+
+20
+00:01:30,000 --> 00:01:34,000
+porque la verdad que bastante se da la cuenta. Vamos.
+
+21
+00:01:34,000 --> 00:01:39,000
+Hola, buenos días. Pues yo os presento a mi compañero, Fran Muñoz.
+
+22
+00:01:39,000 --> 00:01:44,000
+Él es de ingeniero informático, lleva con nosotros en APSL desde 2014.
+
+23
+00:01:44,000 --> 00:01:49,000
+Y fue uno de los primeros en iniciar la era del teletrabajo
+
+24
+00:01:49,000 --> 00:01:52,000
+cuando se fue a vivir a Ibiza en 2015.
+
+25
+00:01:52,000 --> 00:01:55,000
+Igualmente esto no le ha impedido ser un referente para nosotros
+
+26
+00:01:55,000 --> 00:01:58,000
+tanto en desarrollo VAC como front.
+
+27
+00:01:58,000 --> 00:02:03,000
+Y recientemente ha creado también el programa Academy dentro de APSL
+
+28
+00:02:03,000 --> 00:02:07,000
+que consiste en tres meses de formación para programadores junior
+
+29
+00:02:07,000 --> 00:02:12,000
+que ya se ha llevado a cabo en varias ocasiones con un gran éxito.
+
+30
+00:02:12,000 --> 00:02:15,000
+Que más añadiros a parte de que es el mejor compañero también
+
+31
+00:02:15,000 --> 00:02:20,000
+para irse de cañas.
+
+32
+00:02:20,000 --> 00:02:23,000
+Vale, pues esta es nuestra agenda para hoy.
+
+33
+00:02:23,000 --> 00:02:29,000
+Empezaremos con una presentación aprovechando que estamos en charla de esponsos
+
+34
+00:02:29,000 --> 00:02:32,000
+pues queremos contaros un poquito más sobre APSL.
+
+35
+00:02:32,000 --> 00:02:36,000
+Y sí, ya sabemos que esta sección suele ser un tostón
+
+36
+00:02:36,000 --> 00:02:40,000
+que estáis ya deseando entrar en materia, pero seremos breves
+
+37
+00:02:40,000 --> 00:02:44,000
+y además os avisamos en las diapositivas con esta etiquetita de sponsor time.
+
+38
+00:02:44,000 --> 00:02:48,000
+Los demás puntos son software reutilizable, diseño de software
+
+39
+00:02:48,000 --> 00:02:51,000
+y herramientas de Django.
+
+40
+00:02:51,000 --> 00:02:54,000
+Bueno, entrando un poco a explicaros lo que hace nuestra empresa
+
+41
+00:02:54,000 --> 00:02:57,000
+pues APSL se fundó en 2009, hace unos 12 años
+
+42
+00:02:57,000 --> 00:03:02,000
+básicamente sobre la premisa de que se podía hacer aplicaciones corporativas
+
+43
+00:03:02,000 --> 00:03:07,000
+para empresas de cualquier tamaño pues con Python y software libre.
+
+44
+00:03:07,000 --> 00:03:10,000
+En aquella época digamos que reinaba mucho Java,
+
+45
+00:03:10,000 --> 00:03:13,000
+mundo corporativo, Oracle y licencias.
+
+46
+00:03:13,000 --> 00:03:17,000
+Nos trataron un poco de locos, pero con el tiempo pues ya estamos aquí
+
+47
+00:03:17,000 --> 00:03:20,000
+llevamos 12 años trabajando, somos más de 100 personas ya
+
+48
+00:03:20,000 --> 00:03:24,000
+y bueno, el tiempo nos ha dado un poco la razón.
+
+49
+00:03:24,000 --> 00:03:28,000
+Estamos ligados mucho a la comunidad de Python,
+
+50
+00:03:28,000 --> 00:03:31,000
+colaboramos siempre con estas conferencias de la PyConness,
+
+51
+00:03:31,000 --> 00:03:33,000
+colaboramos con las Django Girls
+
+52
+00:03:33,000 --> 00:03:37,000
+y también participamos en la organización local de las Django Girls.
+
+53
+00:03:37,000 --> 00:03:40,000
+También tenemos un pequeño ciclo de conferencias
+
+54
+00:03:40,000 --> 00:03:43,000
+que hacemos ayer mayorca que se llama Crayon Beach,
+
+55
+00:03:43,000 --> 00:03:46,000
+donde intentamos un poco ponernos en contacto con todas las empresas de mayorca
+
+56
+00:03:46,000 --> 00:03:48,000
+y colaborar.
+
+57
+00:03:48,000 --> 00:03:49,000
+¿Y qué hacemos?
+
+58
+00:03:49,000 --> 00:03:52,000
+Pues tenemos una rama de consultoría que sería un poco lo más clásico
+
+59
+00:03:52,000 --> 00:03:55,000
+lo que todos ya conocéis, con desarrollo web a medida,
+
+60
+00:03:55,000 --> 00:03:59,000
+un poco principalmente con Python y Django,
+
+61
+00:03:59,000 --> 00:04:02,000
+en la parte de frontal trabajamos con React y con View,
+
+62
+00:04:02,000 --> 00:04:04,000
+aunque View podríamos decir que nuestro framework favorito
+
+63
+00:04:04,000 --> 00:04:08,000
+y con el que más disfrutamos, también tenemos una parte de UDU
+
+64
+00:04:08,000 --> 00:04:11,000
+y bueno, también tenemos la parte de Cloud
+
+65
+00:04:11,000 --> 00:04:13,000
+y una parte de inteligencia artificial,
+
+66
+00:04:13,000 --> 00:04:15,000
+pues que nos quiero contar mucho porque nuestros compañeros
+
+67
+00:04:15,000 --> 00:04:17,000
+también van a dar un par de charlas
+
+68
+00:04:17,000 --> 00:04:21,000
+y podríais ver también un poco lo que hacen y con ejemplos reales.
+
+69
+00:04:23,000 --> 00:04:26,000
+Vale, pues todos estos servicios que ofrecemos
+
+70
+00:04:26,000 --> 00:04:29,000
+llevados a cabo por nuestro gran equipo humano
+
+71
+00:04:29,000 --> 00:04:33,000
+nos han permitido crear soluciones a medida para diversos sectores.
+
+72
+00:04:33,000 --> 00:04:37,000
+Vaya que cuando cambiamos de equipo o de proyecto,
+
+73
+00:04:37,000 --> 00:04:42,000
+estamos trabajando en algo diferente y no nos da tiempo a aburrirnos.
+
+74
+00:04:42,000 --> 00:04:47,000
+Algunos de estos sectores son hoteles, viajes, energéticas,
+
+75
+00:04:47,000 --> 00:04:51,000
+ocio, e-commerce, fintech o el sector público.
+
+76
+00:04:51,000 --> 00:04:55,000
+Sobre este último de destacar el caso del Ayuntamiento de Barcelona,
+
+77
+00:04:55,000 --> 00:04:59,000
+llevamos casi 10 años acompañándoles en el uso de Python
+
+78
+00:04:59,000 --> 00:05:04,000
+y de programario libre, mantenemos parte de su infraestructura cloud
+
+79
+00:05:04,000 --> 00:05:08,000
+y diversas aplicaciones como por ejemplo Barcelona y Mattjes,
+
+80
+00:05:08,000 --> 00:05:12,000
+y recientemente creamos la plataforma de atención ciudadana
+
+81
+00:05:12,000 --> 00:05:16,000
+que justo vamos a usar hoy como ejemplo.
+
+82
+00:05:18,000 --> 00:05:23,000
+Como producto propio, hablaros un poco sobre Jedi.
+
+83
+00:05:23,000 --> 00:05:27,000
+Jedi es nuestro chatbot, asistente de inteligencia artificial,
+
+84
+00:05:27,000 --> 00:05:31,000
+que nos sirve para resolvernos dudas que podamos tener en el trabajo,
+
+85
+00:05:31,000 --> 00:05:36,000
+ya sea sobre horario, vacaciones, flexibilidad o como pedir nuevo material.
+
+86
+00:05:36,000 --> 00:05:41,000
+Aunque tenemos guías para esto, estando en remoto nos es muy útil
+
+87
+00:05:41,000 --> 00:05:46,000
+porque es una manera más fácil e instantánea de obtener esta respuesta.
+
+88
+00:05:46,000 --> 00:05:48,000
+Por otro lado tenemos Intraforce,
+
+89
+00:05:48,000 --> 00:05:52,000
+que es nuestro gestor de carrera profesional dentro de la empresa.
+
+90
+00:05:52,000 --> 00:05:57,000
+No solo es útil para cada trabajador porque puede saber en qué punto se encuentra
+
+91
+00:05:57,000 --> 00:06:00,000
+y cuáles serían los siguientes pasos para seguir avanzando,
+
+92
+00:06:00,000 --> 00:06:03,000
+sino que también es útil para los manajers
+
+93
+00:06:03,000 --> 00:06:09,000
+porque así tienen información detallada que les ayuda a gestionar el progreso de cada uno.
+
+94
+00:06:09,000 --> 00:06:13,000
+Aparte también mencionar brevemente Hot Share,
+
+95
+00:06:13,000 --> 00:06:16,000
+que es nuestra aplicación para reservar mesa en la oficina,
+
+96
+00:06:16,000 --> 00:06:21,000
+y Propietarios Online, que es un gestor de comunidades de vecinos.
+
+97
+00:06:21,000 --> 00:06:24,000
+Sobre todo esto si queréis comentar algo,
+
+98
+00:06:24,000 --> 00:06:27,000
+pues animaros a aprovechar estos días que nos encontramos aquí.
+
+99
+00:06:27,000 --> 00:06:30,000
+Bueno, y ya entramos en materia.
+
+100
+00:06:30,000 --> 00:06:35,000
+Básicamente el caso que vamos a usar es el gestor de incidencia ciudadanas de Barcelona,
+
+101
+00:06:35,000 --> 00:06:36,000
+que se llama Iris II.
+
+102
+00:06:36,000 --> 00:06:41,000
+Básicamente esta aplicación se basa en que cualquier comunicación que hace el ciudadano con el ayuntamiento
+
+103
+00:06:41,000 --> 00:06:42,000
+se gestiona por aquí.
+
+104
+00:06:42,000 --> 00:06:45,000
+Ya sea que haya un bache en tu calle,
+
+105
+00:06:45,000 --> 00:06:47,000
+que la basura no se recoge con la frecuencia adecuada,
+
+106
+00:06:47,000 --> 00:06:51,000
+o pedir cita previa, pues todo se gestiona por Iris.
+
+107
+00:06:51,000 --> 00:06:56,000
+Básicamente esta es una reimplementación de una aplicación que ya llevaba 10 años funcionando allí,
+
+108
+00:06:56,000 --> 00:06:59,000
+por tanto tenía una serie de retos, como por ejemplo,
+
+109
+00:06:59,000 --> 00:07:02,000
+teníamos que hacer la transición de una aplicación a otra sin downtime,
+
+110
+00:07:02,000 --> 00:07:04,000
+teníamos que hacer una migración bastante compleja,
+
+111
+00:07:04,000 --> 00:07:09,000
+y como os podéis imaginar, aunque hubiera un pliego bastante detallado,
+
+112
+00:07:09,000 --> 00:07:14,000
+pues había muchos requisitos ocultos que digamos nos fueron estallando por el camino y fuimos aprendiendo.
+
+113
+00:07:14,000 --> 00:07:19,000
+Además esperamos poder lanzarlo OpenSource para que cualquier ayuntamiento lo pueda usar el año que viene,
+
+114
+00:07:19,000 --> 00:07:22,000
+porque Barcelona tiene un compromiso muy fuerte con esto,
+
+115
+00:07:22,000 --> 00:07:26,000
+ya lanzamos Barcelona Images de la mano del ayuntamiento,
+
+116
+00:07:26,000 --> 00:07:32,000
+y Barcelona, yo creo que es un ejemplo de como una administración pública puede desarrollar software libre,
+
+117
+00:07:32,000 --> 00:07:36,000
+y al mismo tiempo intentar que su esfuerzo sirva para todos.
+
+118
+00:07:36,000 --> 00:07:38,000
+Básicamente, ¿cuál era el reto?
+
+119
+00:07:38,000 --> 00:07:42,000
+Pues tenemos un montón de sistemas por aquí que estaban en medio.
+
+120
+00:07:42,000 --> 00:07:46,000
+Básicamente la magia de Iris era un ciudadano creó una ficha,
+
+121
+00:07:46,000 --> 00:07:49,000
+y automáticamente le llega a la persona que la tiene que resolver,
+
+122
+00:07:49,000 --> 00:07:55,000
+ya sea funcionario o el que sea, y además esa ficha o esa tarea pasaba por varios estados,
+
+123
+00:07:55,000 --> 00:07:59,000
+sin cada estado, automáticamente le iba a la persona que lo tenía que trabajar.
+
+124
+00:07:59,000 --> 00:08:03,000
+Como os podéis imaginar, ahí ha ayudado mucho ese conocimiento de negocio
+
+125
+00:08:03,000 --> 00:08:06,000
+de estar 10 años refinando todos esos procesos.
+
+126
+00:08:06,000 --> 00:08:10,000
+Además de esta complejidad de negocio,
+
+127
+00:08:10,000 --> 00:08:13,000
+pues había integraciones con muchos sistemas del ayuntamiento,
+
+128
+00:08:13,000 --> 00:08:18,000
+como el Padrón, con empresas externas, como puede ser los transportes metropolitanos,
+
+129
+00:08:18,000 --> 00:08:23,000
+había proveedores de mapas, por ejemplo, que son propios del Ayuntamiento de Barcelona,
+
+130
+00:08:23,000 --> 00:08:26,000
+pero por ejemplo, otros ayuntamientos no tienen esos servicios disponibles,
+
+131
+00:08:26,000 --> 00:08:30,000
+porque quizás no tienen los recursos para tener su propio proveedor de mapas.
+
+132
+00:08:30,000 --> 00:08:34,000
+Y además, como os podéis imaginar, almacenamos información
+
+133
+00:08:34,000 --> 00:08:37,000
+bastante sensible de los ciudadanos,
+
+134
+00:08:37,000 --> 00:08:40,000
+entonces hay una lógica de permisos que es muy compleja,
+
+135
+00:08:40,000 --> 00:08:44,000
+porque la información de cada tarea solo la puede ver las personas
+
+136
+00:08:44,000 --> 00:08:47,000
+que la tienen que trabajar o que la tienen que validar.
+
+137
+00:08:47,000 --> 00:08:51,000
+Porque ya sabéis que la ley de protección de datos también es importante,
+
+138
+00:08:51,000 --> 00:08:55,000
+quizás es especialmente importante en las administraciones.
+
+139
+00:08:57,000 --> 00:09:02,000
+Al principio nos encontramos ante una situación con muchas posibilidades.
+
+140
+00:09:02,000 --> 00:09:04,000
+Tenemos un montón de funcionalidades nuevas
+
+141
+00:09:04,000 --> 00:09:08,000
+que pensamos que podrán ser útiles en el futuro en otros proyectos.
+
+142
+00:09:08,000 --> 00:09:12,000
+Nuestra idea es programarlo una vez y usarlo en EVEC.
+
+143
+00:09:12,000 --> 00:09:15,000
+No solo nosotros mismos, sino otros compañeros,
+
+144
+00:09:15,000 --> 00:09:20,000
+incluso el resto de comunidad Paisón una vez se haya publicado la librería.
+
+145
+00:09:20,000 --> 00:09:25,000
+Nuestra expectativa es encontrar esa solución global a la primera.
+
+146
+00:09:26,000 --> 00:09:29,000
+Hasta que nos encontramos con la realidad.
+
+147
+00:09:29,000 --> 00:09:35,000
+Y la realidad es que ese proyecto del cual ha surgido la idea de ir creando módulos
+
+148
+00:09:35,000 --> 00:09:38,000
+o una librería, pues no se va a hacer solo.
+
+149
+00:09:38,000 --> 00:09:41,000
+En nuestro día a día tenemos que lidiar con fechas de entrega
+
+150
+00:09:41,000 --> 00:09:47,000
+y eso hace que no tengamos todo el tiempo necesario que habría que dedicar a este problema.
+
+151
+00:09:47,000 --> 00:09:52,000
+Además, al principio podemos no entenderlo por completo,
+
+152
+00:09:52,000 --> 00:09:58,000
+quedarnos atescados pensando y llegar a esta situación de parálisis por análisis.
+
+153
+00:09:58,000 --> 00:10:03,000
+Sin olvidarnos de que crear software genérico tiene una cierta complejidad,
+
+154
+00:10:03,000 --> 00:10:05,000
+requiere de técnicas de programación
+
+155
+00:10:05,000 --> 00:10:10,000
+y al final juntando todos estos ingredientes, pues acabamos de existiendo,
+
+156
+00:10:10,000 --> 00:10:15,000
+llegamos al monte y simplemente nos dedicamos a solucionar ese caso en concreto.
+
+157
+00:10:18,000 --> 00:10:23,000
+Entonces aquí en este punto pues está claro que esta estrategia no funciona,
+
+158
+00:10:23,000 --> 00:10:26,000
+entonces habrá que seguir otro camino.
+
+159
+00:10:26,000 --> 00:10:29,000
+Bueno, y ese camino que os queríamos proponer,
+
+160
+00:10:29,000 --> 00:10:33,000
+el que seguimos nosotros que básicamente era vamos a calmarnos,
+
+161
+00:10:33,000 --> 00:10:37,000
+vamos a resolver el problema, vamos a entregar la aplicación que funcione,
+
+162
+00:10:37,000 --> 00:10:40,000
+vamos a conseguir Kiris II este en marcha,
+
+163
+00:10:40,000 --> 00:10:43,000
+después ya cuando venga otro ayuntamiento, que al final sí que llegó,
+
+164
+00:10:43,000 --> 00:10:46,000
+que es el ayuntamiento de Acoruña con el que también estamos trabajando,
+
+165
+00:10:46,000 --> 00:10:52,000
+romperemos lo que haga falta y ya lo volveremos a juntar las piezas de forma que funcione para todos.
+
+166
+00:10:52,000 --> 00:10:55,000
+Y llegados a este punto, pues habrá dos cosas que tenéis todos en la mente,
+
+167
+00:10:55,000 --> 00:10:57,000
+hay dos grandes discleimers en esta charla,
+
+168
+00:10:57,000 --> 00:11:01,000
+es si hemos buscado todas las palabras con R para ponerle el nombre a charla
+
+169
+00:11:01,000 --> 00:11:03,000
+y esa es obvio que sí,
+
+170
+00:11:03,000 --> 00:11:08,000
+y luego si esto quizás no es un poco el flujo que hay en TDD o refactorización
+
+171
+00:11:08,000 --> 00:11:12,000
+y la verdad que sí, lo queríamos resaltar y quizás pues el story telling
+
+172
+00:11:12,000 --> 00:11:15,000
+se nos ha ido un poco de las manos.
+
+173
+00:11:15,000 --> 00:11:18,000
+Vale, vamos a ver un poco más estos tres pasos,
+
+174
+00:11:18,000 --> 00:11:21,000
+empezamos con el de resolver,
+
+175
+00:11:21,000 --> 00:11:25,000
+cuando empezamos a resolver el problema el primer efecto que vamos a notar
+
+176
+00:11:25,000 --> 00:11:28,000
+es ir quitándonos un poquito esta presión en la entrega,
+
+177
+00:11:28,000 --> 00:11:32,000
+ya estamos trabajando en ello, vamos avanzando, que es lo importante
+
+178
+00:11:32,000 --> 00:11:35,000
+y así pues vamos haciendo camino.
+
+179
+00:11:35,000 --> 00:11:40,000
+En el ejemplo, en nuestro caso de Iris2 tuvimos que ir afrontando problemas,
+
+180
+00:11:40,000 --> 00:11:42,000
+lo mejor fue hacerlo de uno en uno,
+
+181
+00:11:42,000 --> 00:11:46,000
+abordarlo todo de golpe hubiera sido bastante arriesgado.
+
+182
+00:11:46,000 --> 00:11:51,000
+Además empezando a resolverlo, lo empezaremos a entender mejor,
+
+183
+00:11:51,000 --> 00:11:54,000
+nos iremos haciendo esta foto global e identificando detalles
+
+184
+00:11:54,000 --> 00:11:58,000
+que también habrá que tener en cuenta en esta solución final.
+
+185
+00:11:58,000 --> 00:12:03,000
+En general suele ser más fácil pensar en abstracta una vez que ya
+
+186
+00:12:03,000 --> 00:12:06,000
+tenemos claro el caso concreto.
+
+187
+00:12:06,000 --> 00:12:10,000
+Entonces en este punto nuestro resultado será nuestra implementación
+
+188
+00:12:10,000 --> 00:12:13,000
+sobre Django y otros paquetes.
+
+189
+00:12:17,000 --> 00:12:19,000
+Vale, el siguiente paso es romper,
+
+190
+00:12:19,000 --> 00:12:24,000
+aquí ya tenemos todo resuelto y empezaremos a ir separando las piezas
+
+191
+00:12:24,000 --> 00:12:26,000
+de nuestra solución.
+
+192
+00:12:26,000 --> 00:12:30,000
+Como veis en este caso pues ya tenemos módulos diferenciados
+
+193
+00:12:30,000 --> 00:12:33,000
+como AAUS, SMS, Padron y fichas.
+
+194
+00:12:33,000 --> 00:12:38,000
+Sobre estos módulos habrá que ir revisando los puntos de unión,
+
+195
+00:12:38,000 --> 00:12:40,000
+pensando en que sean tipo Placamp Play
+
+196
+00:12:40,000 --> 00:12:44,000
+y para ello implementaremos principios de diseño habituales
+
+197
+00:12:44,000 --> 00:12:46,000
+como separación de responsabilidades,
+
+198
+00:12:46,000 --> 00:12:50,000
+estructuración de código y control de dependencias.
+
+199
+00:12:50,000 --> 00:12:54,000
+Por último recombinar, aquí tendremos que tener claro
+
+200
+00:12:54,000 --> 00:12:57,000
+cuál es el alcance de nuestra librería,
+
+201
+00:12:57,000 --> 00:13:00,000
+qué resolvemos y qué restricciones tenemos.
+
+202
+00:13:00,000 --> 00:13:03,000
+Habremos pasado de los módulos fijos de antes
+
+203
+00:13:03,000 --> 00:13:06,000
+a módulos con otro tipo de conexiones más flexibles
+
+204
+00:13:06,000 --> 00:13:09,000
+y con puntos para poderlo extender.
+
+205
+00:13:09,000 --> 00:13:13,000
+Por ejemplo nuestro módulo de SMS ahora tiene una parte general
+
+206
+00:13:13,000 --> 00:13:17,000
+de la librería pero la parte también propia de este caso
+
+207
+00:13:17,000 --> 00:13:20,000
+que sería SMS Barcelona.
+
+208
+00:13:20,000 --> 00:13:24,000
+Y en esta última parte de la charla
+
+209
+00:13:24,000 --> 00:13:26,000
+queremos comentar un poco, primero,
+
+210
+00:13:26,000 --> 00:13:29,000
+los principios de diseño que seguimos para hacer esta división
+
+211
+00:13:29,000 --> 00:13:31,000
+y luego haremos un poco de ejemplo de código
+
+212
+00:13:31,000 --> 00:13:34,000
+para ponerle un poco caray ojos a lo que hicimos.
+
+213
+00:13:34,000 --> 00:13:36,000
+Lo primero que tenemos que entender
+
+214
+00:13:36,000 --> 00:13:38,000
+cuando hacemos una librería reutilizable
+
+215
+00:13:38,000 --> 00:13:40,000
+es que podemos pensar entre niveles.
+
+216
+00:13:40,000 --> 00:13:42,000
+El primero es que sea configurable,
+
+217
+00:13:42,000 --> 00:13:44,000
+eso significa que nosotros nos hacemos responsables
+
+218
+00:13:44,000 --> 00:13:47,000
+de dar implementación a todos los casos de uso del cliente
+
+219
+00:13:47,000 --> 00:13:50,000
+pero le damos o ya sea configuraciones
+
+220
+00:13:50,000 --> 00:13:52,000
+que pueden ser tan sencillas como flags
+
+221
+00:13:52,000 --> 00:13:54,000
+o pueden ser, yo que sé por ejemplo,
+
+222
+00:13:54,000 --> 00:13:56,000
+si estamos haciendo lo de los procesos,
+
+223
+00:13:56,000 --> 00:13:58,000
+podemos dar un editor de procesos,
+
+224
+00:13:58,000 --> 00:14:00,000
+pero somos nosotros como programadores
+
+225
+00:14:00,000 --> 00:14:02,000
+los que nos hacemos responsables de dar servicio
+
+226
+00:14:02,000 --> 00:14:04,000
+a ese caso de uso.
+
+227
+00:14:04,000 --> 00:14:06,000
+Luego tenemos que nuestro software puede ser extensible,
+
+228
+00:14:06,000 --> 00:14:08,000
+lo que significa que le damos a los programadores
+
+229
+00:14:08,000 --> 00:14:10,000
+que utilicen nuestra librería, nuestro sistema,
+
+230
+00:14:10,000 --> 00:14:12,000
+herramientas para hacer ellos mismos
+
+231
+00:14:12,000 --> 00:14:15,000
+las implementaciones que necesitan en su sistema,
+
+232
+00:14:15,000 --> 00:14:17,000
+el programador que utilice esta librería
+
+233
+00:14:17,000 --> 00:14:19,000
+conoce su cliente, conoce sus casos de uso
+
+234
+00:14:19,000 --> 00:14:21,000
+y los pueden implementar ellos mismos.
+
+235
+00:14:21,000 --> 00:14:23,000
+Y el tercer nivel es que sea interoperable,
+
+236
+00:14:23,000 --> 00:14:25,000
+que este quizás es también sencillo,
+
+237
+00:14:25,000 --> 00:14:27,000
+porque sencillamente damos un API
+
+238
+00:14:27,000 --> 00:14:30,000
+con ciertas herramientas y otro sistema esterno
+
+239
+00:14:30,000 --> 00:14:33,000
+se conecta con el nuestro y extiende la funcionalidad.
+
+240
+00:14:33,000 --> 00:14:35,000
+Básicamente lo que estamos hablando
+
+241
+00:14:35,000 --> 00:14:37,000
+es un poco de identificar responsabilidades.
+
+242
+00:14:37,000 --> 00:14:39,000
+Identificar las responsabilidades
+
+243
+00:14:39,000 --> 00:14:42,000
+en el contexto clásico de diseño de software,
+
+244
+00:14:42,000 --> 00:14:44,000
+de sólite o demás, es decir,
+
+245
+00:14:44,000 --> 00:14:46,000
+que la responsabilidad es un motivo
+
+246
+00:14:46,000 --> 00:14:48,000
+por el que el software puede cambiar.
+
+247
+00:14:48,000 --> 00:14:50,000
+Eso significa que puede ser un requisito de negocio
+
+248
+00:14:50,000 --> 00:14:53,000
+o puede ser una dependencia esterna de un tercer sistema
+
+249
+00:14:53,000 --> 00:14:55,000
+o puede ser un requisito no funcional,
+
+250
+00:14:55,000 --> 00:14:57,000
+como puede ser un tema de rendimiento,
+
+251
+00:14:57,000 --> 00:14:59,000
+un tema de infraestructura
+
+252
+00:14:59,000 --> 00:15:01,000
+o que necesitemos alta disponibilidad.
+
+253
+00:15:01,000 --> 00:15:04,000
+Una vez identificamos esas responsabilidades,
+
+254
+00:15:04,000 --> 00:15:06,000
+asignamos unidades de código
+
+255
+00:15:06,000 --> 00:15:09,000
+que básicamente van a ser clases, bases, abstractas,
+
+256
+00:15:09,000 --> 00:15:11,000
+si tenemos un enfoque más orientado a objetos
+
+257
+00:15:11,000 --> 00:15:16,000
+o funciones con una interfaz o con una firma bien definida
+
+258
+00:15:16,000 --> 00:15:20,000
+y finalmente tenemos que proveer a los desarrolladores
+
+259
+00:15:20,000 --> 00:15:22,000
+que van a usar nuestra librería
+
+260
+00:15:22,000 --> 00:15:25,000
+de herramientas para que inyecten sus propias implementaciones.
+
+261
+00:15:25,000 --> 00:15:28,000
+Aquí, por ejemplo, hemos dicho al inicio de la charla,
+
+262
+00:15:28,000 --> 00:15:31,000
+¿vale? Yris se tiene que encargar de que la tarea
+
+263
+00:15:31,000 --> 00:15:33,000
+le llegue a la persona que la tiene que resolver.
+
+264
+00:15:33,000 --> 00:15:36,000
+Pues responsabilidad, asignar la tarea.
+
+265
+00:15:36,000 --> 00:15:39,000
+Tenemos una clase básica en el contexto de nuestro negocio,
+
+266
+00:15:39,000 --> 00:15:41,000
+esto se llamaba derivar la tarea,
+
+267
+00:15:41,000 --> 00:15:43,000
+pues tenemos el derivator.
+
+268
+00:15:43,000 --> 00:15:45,000
+La acción principal, pues es obvio, derivate.
+
+269
+00:15:45,000 --> 00:15:48,000
+Y luego teníamos tres implementaciones
+
+270
+00:15:48,000 --> 00:15:51,000
+que básicamente eran directa,
+
+271
+00:15:51,000 --> 00:15:54,000
+que esto es alguien te ha señalado en una configuración
+
+272
+00:15:54,000 --> 00:15:56,000
+y dice, eres tú que la tienes que resolver,
+
+273
+00:15:56,000 --> 00:15:59,000
+por distrito, que básicamente era el distrito de Barcelona,
+
+274
+00:15:59,000 --> 00:16:02,000
+que se divide en nueve distritos o diez, si no recuerdo mal.
+
+275
+00:16:02,000 --> 00:16:04,000
+Y luego, incluso, teníamos otras,
+
+276
+00:16:04,000 --> 00:16:06,000
+como podían ser la territorial de si caen esta calle,
+
+277
+00:16:06,000 --> 00:16:08,000
+pues te va a ti, porque a veces los contratos
+
+278
+00:16:08,000 --> 00:16:12,000
+de licitación, pues de mantenimiento de las calles y demás,
+
+279
+00:16:12,000 --> 00:16:15,000
+pues van exactamente calle a calle o número a número.
+
+280
+00:16:15,000 --> 00:16:18,000
+Básicamente lo que estamos hablando es de invertir las dependencias,
+
+281
+00:16:18,000 --> 00:16:21,000
+generamos clases abstractas que definen
+
+282
+00:16:21,000 --> 00:16:23,000
+qué tiene que hacer nuestra aplicación.
+
+283
+00:16:23,000 --> 00:16:25,000
+Y luego, nosotros mismos,
+
+284
+00:16:25,000 --> 00:16:27,000
+o los desarrolladores que usan nuestra librería,
+
+285
+00:16:27,000 --> 00:16:29,000
+para cada uno de los que es que nosotros hemos dado,
+
+286
+00:16:29,000 --> 00:16:31,000
+ellos implementan su como.
+
+287
+00:16:31,000 --> 00:16:33,000
+Podemos dar implementaciones por defecto,
+
+288
+00:16:33,000 --> 00:16:35,000
+pero siempre damos la posibilidad
+
+289
+00:16:35,000 --> 00:16:37,000
+de que cada persona implemente su caso de uso.
+
+290
+00:16:37,000 --> 00:16:40,000
+Básicamente, siempre me gusta hablar de esto
+
+291
+00:16:40,000 --> 00:16:42,000
+con el ejemplo de Mario Máquez,
+
+292
+00:16:42,000 --> 00:16:44,000
+donde vamos definiendo los huecos
+
+293
+00:16:44,000 --> 00:16:46,000
+y cada uno va rellenando con lo que él necesita.
+
+294
+00:16:46,000 --> 00:16:50,000
+Le damos como una paleta de módulos y ellos van eligiendo.
+
+295
+00:16:51,000 --> 00:16:55,000
+Otro principio a seguir es construir sobre el framework.
+
+296
+00:16:55,000 --> 00:16:57,000
+Ya que estamos usando Django,
+
+297
+00:16:57,000 --> 00:16:59,000
+aprovechemos las herramientas que nos ofrece
+
+298
+00:16:59,000 --> 00:17:02,000
+para crear nuestros propios módulos reutilizables.
+
+299
+00:17:02,000 --> 00:17:05,000
+Django no servirá de ejemplo en muchos casos,
+
+300
+00:17:05,000 --> 00:17:07,000
+pero también podemos tomar como ejemplo
+
+301
+00:17:07,000 --> 00:17:10,000
+otras librerías open source que usamos habitualmente.
+
+302
+00:17:10,000 --> 00:17:13,000
+Se aprende mucho leyendo código
+
+303
+00:17:13,000 --> 00:17:15,000
+y nada mejor que seguir estrategias
+
+304
+00:17:15,000 --> 00:17:17,000
+que sabemos que funcionan.
+
+305
+00:17:17,000 --> 00:17:20,000
+Con esto bajará nuestra barrera de entrada
+
+306
+00:17:20,000 --> 00:17:23,000
+y hará que nuestro código sea más predecible.
+
+307
+00:17:25,000 --> 00:17:28,000
+Y como consejo también, recordaros
+
+308
+00:17:28,000 --> 00:17:30,000
+que he cuidado con la herencia.
+
+309
+00:17:30,000 --> 00:17:33,000
+Paíson nos ofrece, tiene herencia múltiple
+
+310
+00:17:33,000 --> 00:17:35,000
+y eso es una gran facilidad,
+
+311
+00:17:35,000 --> 00:17:37,000
+pero si abusamos de ella,
+
+312
+00:17:37,000 --> 00:17:40,000
+podemos acabar con clases tipo Dios que hacen de todo
+
+313
+00:17:40,000 --> 00:17:43,000
+o incluso peor con clases tipo Frankenstein,
+
+314
+00:17:43,000 --> 00:17:46,000
+donde hay mezcla de responsabilidades.
+
+315
+00:17:46,000 --> 00:17:49,000
+Al final, esta flexibilidad que nos ofrece
+
+316
+00:17:49,000 --> 00:17:53,000
+muchas veces equivale también a flexibilidad para equivocarse.
+
+317
+00:17:56,000 --> 00:17:58,000
+Vamos un poco a las herramientas,
+
+318
+00:17:58,000 --> 00:18:00,000
+ya vamos al código,
+
+319
+00:18:00,000 --> 00:18:03,000
+y creo que es lo que todos te ven.
+
+320
+00:18:03,000 --> 00:18:06,000
+La primera cuestión que creo que todos os imagináis,
+
+321
+00:18:06,000 --> 00:18:09,000
+la unidad básica en Django para añadir lógica es la aplicación.
+
+322
+00:18:09,000 --> 00:18:12,000
+Entonces nosotros partimos de la base siempre
+
+323
+00:18:12,000 --> 00:18:14,000
+que decaremos una Django app.
+
+324
+00:18:14,000 --> 00:18:16,000
+Básicamente esto nos permite
+
+325
+00:18:16,000 --> 00:18:19,000
+o añadir funcionalidades sobre lo que ya existe en Django.
+
+326
+00:18:19,000 --> 00:18:22,000
+Por ejemplo, podemos dar un clases de Django de admin.py
+
+327
+00:18:22,000 --> 00:18:25,000
+para que ya funcione de serie.
+
+328
+00:18:25,000 --> 00:18:28,000
+Podemos añadir templates, podemos añadir estáticos,
+
+329
+00:18:28,000 --> 00:18:31,000
+también podemos suscribirnos a los eventos del ciclo de vida
+
+330
+00:18:31,000 --> 00:18:34,000
+o registras señales o quizás también crear datos iniciales
+
+331
+00:18:34,000 --> 00:18:37,000
+para que la aplicación funcione de serie.
+
+332
+00:18:37,000 --> 00:18:39,000
+Por uno de los principios es que siempre que podamos,
+
+333
+00:18:39,000 --> 00:18:41,000
+las cosas tienen que funcionar para el caso común,
+
+334
+00:18:41,000 --> 00:18:44,000
+solo con instalar nuestra aplicación.
+
+335
+00:18:46,000 --> 00:18:50,000
+Otra herramienta que podemos usar es importe string.
+
+336
+00:18:50,000 --> 00:18:53,000
+Nos servirá para los casos en los que tengamos configuraciones
+
+337
+00:18:53,000 --> 00:18:56,000
+de una sola opción.
+
+338
+00:18:56,000 --> 00:18:59,000
+Por ejemplo, esto es un trozo de lo que sería nuestra librería
+
+339
+00:18:59,000 --> 00:19:02,000
+donde estamos definiendo sentesms
+
+340
+00:19:02,000 --> 00:19:06,000
+usando importe string y a través de un setting.
+
+341
+00:19:06,000 --> 00:19:10,000
+De esta manera, damos la libertad a un usuario
+
+342
+00:19:10,000 --> 00:19:14,000
+de nuestra librería a implementar su propio método.
+
+343
+00:19:14,000 --> 00:19:19,000
+Simplemente define su implementación de sms-sent, por ejemplo,
+
+344
+00:19:19,000 --> 00:19:22,000
+y a través del backend indica nuestra librería
+
+345
+00:19:22,000 --> 00:19:26,000
+que es el método a usar.
+
+346
+00:19:26,000 --> 00:19:30,000
+Después, tenemos también registro de inyección.
+
+347
+00:19:30,000 --> 00:19:32,000
+Tenemos un claro ejemplo de esto en Django
+
+348
+00:19:32,000 --> 00:19:34,000
+cuando usamos el Django admin.
+
+349
+00:19:34,000 --> 00:19:37,000
+Es un tipo de dependencia que se resuelve
+
+350
+00:19:37,000 --> 00:19:39,000
+con muchas implementaciones.
+
+351
+00:19:39,000 --> 00:19:43,000
+Típicamente solemos tener una por cada modelo.
+
+352
+00:19:43,000 --> 00:19:45,000
+Y al momento de hacer el registro,
+
+353
+00:19:45,000 --> 00:19:49,000
+es donde indicamos qué clase se tiene que usar.
+
+354
+00:19:49,000 --> 00:19:52,000
+Una de las cosas que os queríamos explicar
+
+355
+00:19:52,000 --> 00:19:55,000
+es cómo podemos hacer algo similar
+
+356
+00:19:55,000 --> 00:19:58,000
+a lo que hace Django admin nosotros mismos.
+
+357
+00:19:58,000 --> 00:20:02,000
+Básicamente, nosotros en Iris teníamos un requisito
+
+358
+00:20:02,000 --> 00:20:04,000
+que era que algunas fichas se tienen que validar
+
+359
+00:20:04,000 --> 00:20:06,000
+contra sistemas externos.
+
+360
+00:20:06,000 --> 00:20:09,000
+No es la propia aplicación la que lo hace.
+
+361
+00:20:09,000 --> 00:20:12,000
+Por ejemplo, tiene que ir a una empresa proveedora
+
+362
+00:20:12,000 --> 00:20:15,000
+o por ejemplo la empresa de transporte metropolitano
+
+363
+00:20:15,000 --> 00:20:17,000
+tiene su propio gestor de tareas.
+
+364
+00:20:17,000 --> 00:20:19,000
+Y de alguna manera,
+
+365
+00:20:19,000 --> 00:20:21,000
+tenemos que resolver este problema.
+
+366
+00:20:21,000 --> 00:20:23,000
+Siguiendo lo que hemos dicho, el primer paso,
+
+367
+00:20:23,000 --> 00:20:26,000
+creamos la clase base abstracta con nuestro método...
+
+368
+00:20:26,000 --> 00:20:28,000
+Es un validador, pues el método validate.
+
+369
+00:20:28,000 --> 00:20:30,000
+Otra vez bastante claro.
+
+370
+00:20:30,000 --> 00:20:32,000
+Definimos esta clase base,
+
+371
+00:20:32,000 --> 00:20:34,000
+incluso podemos añadir algunos métodos adicionales
+
+372
+00:20:34,000 --> 00:20:37,000
+para controlar el flujo y que la propia persona lo controle.
+
+373
+00:20:37,000 --> 00:20:40,000
+Y una vez tenemos nuestra clase base,
+
+374
+00:20:40,000 --> 00:20:43,000
+podemos pasar a definir nuestro registro.
+
+375
+00:20:43,000 --> 00:20:46,000
+Un registro en Python puede ser tan sencillo como un diccionario.
+
+376
+00:20:46,000 --> 00:20:49,000
+Hay herramientas en Python para controlar la inyección de dependencias,
+
+377
+00:20:49,000 --> 00:20:53,000
+pero puede ser tan sencillo como este diccionario.
+
+378
+00:20:53,000 --> 00:20:56,000
+Porque básicamente lo único que necesitamos es mapear
+
+379
+00:20:56,000 --> 00:20:58,000
+cada implementación con algún criterio.
+
+380
+00:20:58,000 --> 00:21:00,000
+En nuestro caso, pues pusimos un code name
+
+381
+00:21:00,000 --> 00:21:03,000
+y luego cuando el usuario directamente,
+
+382
+00:21:03,000 --> 00:21:07,000
+según el tipo de tarea, pues elegía de la lista de proveedores.
+
+383
+00:21:07,000 --> 00:21:10,000
+Luego damos un decorador, en este caso register validator,
+
+384
+00:21:10,000 --> 00:21:13,000
+para que el que hace una implementación
+
+385
+00:21:13,000 --> 00:21:16,000
+pues puede añadir su clase fácilmente.
+
+386
+00:21:16,000 --> 00:21:19,000
+Y un método que es get external validator, que es el más interno,
+
+387
+00:21:19,000 --> 00:21:22,000
+que es el que decide qué validador tiene que,
+
+388
+00:21:22,000 --> 00:21:25,000
+en función de la ficha, qué validador se tiene que ejecutar.
+
+389
+00:21:25,000 --> 00:21:28,000
+Finalmente, pues esto lo que haría un usuario,
+
+390
+00:21:28,000 --> 00:21:30,000
+la interfaz que tendría que implementar un usuario,
+
+391
+00:21:30,000 --> 00:21:33,000
+por ejemplo, sentuservice, tendríamos un cliente,
+
+392
+00:21:33,000 --> 00:21:36,000
+lo mandaríamos, mapearíamos los parámetros y listo.
+
+393
+00:21:36,000 --> 00:21:40,000
+Sencidamente haría esta implementación y ya estaría.
+
+394
+00:21:40,000 --> 00:21:42,000
+El problema que tenemos a veces con Django es lo que hemos dicho antes.
+
+395
+00:21:42,000 --> 00:21:45,000
+Nosotros hemos usado este decorador, pero tenemos que asegurar
+
+396
+00:21:45,000 --> 00:21:48,000
+también que esto se evalúa. Cuando la aplicación se inicie,
+
+397
+00:21:48,000 --> 00:21:51,000
+que este código se evalúa, es ejecutar validador,
+
+398
+00:21:51,000 --> 00:21:53,000
+se añada el registro y demás. Pues Django tiene una cosa,
+
+399
+00:21:53,000 --> 00:21:56,000
+que se usa en el Django admin y que no está muy documentada,
+
+400
+00:21:56,000 --> 00:21:58,000
+o al menos yo no lo he encontrado en la documentación,
+
+401
+00:21:58,000 --> 00:22:00,000
+que se llama AutodiscoverModules.
+
+402
+00:22:00,000 --> 00:22:02,000
+Entonces, con esto lo que podemos conseguir,
+
+403
+00:22:02,000 --> 00:22:05,000
+es algo similar a lo que hay con admin.pay.
+
+404
+00:22:05,000 --> 00:22:09,000
+Vosotros podéis definir que hay un fichero.pay en cada app
+
+405
+00:22:09,000 --> 00:22:12,000
+y que ese auto evalúe. Por ejemplo, nosotros lo que hicimos fue,
+
+406
+00:22:12,000 --> 00:22:16,000
+tu das tu app, creas un fichero external validados.pay
+
+407
+00:22:16,000 --> 00:22:19,000
+y con esto Autodiscover automáticamente Django recorre
+
+408
+00:22:19,000 --> 00:22:23,000
+todas las apps que están en install tabs y evalúa, registra
+
+409
+00:22:23,000 --> 00:22:27,000
+y desde ese momento ya está disponible para el usuario.
+
+410
+00:22:29,000 --> 00:22:33,000
+Pero en ocasiones nos convendrá más seguir otro tipo de estrategias
+
+411
+00:22:33,000 --> 00:22:35,000
+como las de tipo pipeline.
+
+412
+00:22:35,000 --> 00:22:39,000
+En este caso iremos iterando sobre diferentes clases
+
+413
+00:22:39,000 --> 00:22:42,000
+que tendremos ordenadas en base a nuestra prioridad
+
+414
+00:22:42,000 --> 00:22:45,000
+y hay dos casos diferentes.
+
+415
+00:22:45,000 --> 00:22:48,000
+El de ir iterando y quedarte con la primera que funciona,
+
+416
+00:22:48,000 --> 00:22:53,000
+esa ha ganado y ya está, o si no ir iterando entre todas,
+
+417
+00:22:53,000 --> 00:22:56,000
+donde cada una va aportando su parte.
+
+418
+00:22:56,000 --> 00:22:59,000
+Como ejemplo del primer caso,
+
+419
+00:22:59,000 --> 00:23:02,000
+tenemos la autenticación de Django REST Framework.
+
+420
+00:23:02,000 --> 00:23:06,000
+Aquí se va iterando sobre cada clase para autenticar.
+
+421
+00:23:06,000 --> 00:23:11,000
+Para cada una evaluamos la respuesta y decidimos si nos quedamos
+
+422
+00:23:11,000 --> 00:23:14,000
+con ese resultado o no.
+
+423
+00:23:14,000 --> 00:23:17,000
+Puede pasar que encontremos una y nos quedamos con esa
+
+424
+00:23:17,000 --> 00:23:20,000
+o que acabe la iteración sin éxito
+
+425
+00:23:20,000 --> 00:23:24,000
+y bueno, en ese caso, mala suerte, no te has loegado.
+
+426
+00:23:25,000 --> 00:23:29,000
+El siguiente caso sería esta cadena de responsabilidad.
+
+427
+00:23:29,000 --> 00:23:32,000
+Aquí tenemos como ejemplo los middleware de Django.
+
+428
+00:23:32,000 --> 00:23:35,000
+Se van procesando todos en este orden,
+
+429
+00:23:35,000 --> 00:23:40,000
+cada uno añade su parte y el resultado de uno va pasando al siguiente.
+
+430
+00:23:42,000 --> 00:23:46,000
+Finalmente, otra de las cosas que son bastante útiles
+
+431
+00:23:46,000 --> 00:23:50,000
+es cuando necesitáis desacoplar, es usar señales que den eventos
+
+432
+00:23:50,000 --> 00:23:53,000
+y así le evitáis a la persona que está usando vuestra librería
+
+433
+00:23:53,000 --> 00:23:55,000
+hacer herencias imposibles, tener que sobre escribir medio framework
+
+434
+00:23:55,000 --> 00:23:57,000
+solo para añadir cierta lógica.
+
+435
+00:23:57,000 --> 00:24:00,000
+Y también, si no, nos damos señales custom,
+
+436
+00:24:00,000 --> 00:24:03,000
+en este caso, para los eventos más importantes.
+
+437
+00:24:03,000 --> 00:24:06,000
+Esto incluso no fue útil, ya no solo cuando hablamos
+
+438
+00:24:06,000 --> 00:24:09,000
+de que esto lo use otro ayuntamiento, sino nosotros mismos como equipo,
+
+439
+00:24:09,000 --> 00:24:14,000
+esto nos permitió trabajar autónomos, porque yo con mis compañeros les podía decir
+
+440
+00:24:14,000 --> 00:24:17,000
+Vale, yo me encargo del core.
+
+441
+00:24:17,000 --> 00:24:20,000
+Tú te vas a encargar de que esto llegue a este servicio.
+
+442
+00:24:20,000 --> 00:24:23,000
+Yo te voy a dar una señal, tú te suscribirás a este evento y tú lo harás.
+
+443
+00:24:23,000 --> 00:24:27,000
+Con lo que conseguimos ahí fue paralelizar mejor el desarrollo.
+
+444
+00:24:27,000 --> 00:24:31,000
+Y ya os digo, a veces esto es muy útil porque te evita
+
+445
+00:24:31,000 --> 00:24:34,000
+que una persona tenga que hacer una herencia, tocar el punto concreto
+
+446
+00:24:34,000 --> 00:24:38,000
+de la lógica de core, y así evitamos también errores.
+
+447
+00:24:38,000 --> 00:24:41,000
+Hay veces que se abusa de las señales.
+
+448
+00:24:41,000 --> 00:24:44,000
+Yo recomiendo que no la uséis en vuestro core,
+
+449
+00:24:44,000 --> 00:24:47,000
+es decir, vuestro core hacerlo, digamos, cohesionado,
+
+450
+00:24:47,000 --> 00:24:51,000
+y donde pongáis el límite, pues ya dais la señal
+
+451
+00:24:51,000 --> 00:24:54,000
+para que otro se suscriba y ya añada la lógica.
+
+452
+00:24:54,000 --> 00:24:58,000
+Ah bueno, y finalmente también otra cosa que podemos hacer,
+
+453
+00:24:58,000 --> 00:25:02,000
+aparte de los tests que ya dábamos por hecho,
+
+454
+00:25:02,000 --> 00:25:05,000
+no lo hemos mencionado, pero ya dábamos por hecho que en esta refactorización
+
+455
+00:25:05,000 --> 00:25:08,000
+todos ibas a hacer test y lo tenéis todo en mente,
+
+456
+00:25:08,000 --> 00:25:11,000
+pero es que además vosotros como desarrolladores de la librería
+
+457
+00:25:11,000 --> 00:25:14,000
+le podéis dar facilidades a la gente, podéis dar una clase base de test también.
+
+458
+00:25:14,000 --> 00:25:16,000
+Por ejemplo, si estábamos con el validador externo,
+
+459
+00:25:16,000 --> 00:25:21,000
+podéis hacer base external validator test, donde ya déis parte de los datos
+
+460
+00:25:21,000 --> 00:25:24,000
+de prueba o de los casos de uso más habituales.
+
+461
+00:25:24,000 --> 00:25:27,000
+Y esto a mí personalmente es una de las cosas que más me gusta
+
+462
+00:25:27,000 --> 00:25:29,000
+cuando lo encuentro en una librería.
+
+463
+00:25:29,000 --> 00:25:35,000
+Vale, pues haremos todo esto sin dejar de lado la Deaf Experience.
+
+464
+00:25:35,000 --> 00:25:40,000
+Haremos que nuestra librería funcione out of the box para el caso común.
+
+465
+00:25:40,000 --> 00:25:43,000
+Haremos que nuestras clases sean fáciles de usar.
+
+466
+00:25:43,000 --> 00:25:47,000
+Como acaba de decir Fran, allá diremos clases bases de testing,
+
+467
+00:25:47,000 --> 00:25:52,000
+no sólo para hacer la vida más fácil, sino también para formentar buenas prácticas.
+
+468
+00:25:52,000 --> 00:25:57,000
+Y presentaremos los requisitos y el problema que queremos resolver
+
+469
+00:25:57,000 --> 00:25:59,000
+con una buena documentación.
+
+470
+00:25:59,000 --> 00:26:04,000
+Y ya como conclusiones, quedarnos con 5 puntos.
+
+471
+00:26:04,000 --> 00:26:08,000
+No te lies, resuelve el problema y aciteraciones,
+
+472
+00:26:08,000 --> 00:26:11,000
+nada mejor que tener software funcionando.
+
+473
+00:26:11,000 --> 00:26:16,000
+Igualmente, si sientes seguridad y dominar las técnicas, pues adelante.
+
+474
+00:26:16,000 --> 00:26:19,000
+Hazlo desde el inicio, porque lo importante es ir avanzando.
+
+475
+00:26:19,000 --> 00:26:24,000
+Piensen definir las responsabilidades, diseñas trapciones
+
+476
+00:26:24,000 --> 00:26:27,000
+y ofrece implementaciones de serie.
+
+477
+00:26:27,000 --> 00:26:33,000
+Django ya nos ofrece herramientas para implementar nuestros propios módulos reutilizables
+
+478
+00:26:33,000 --> 00:26:35,000
+que el propio Django usa.
+
+479
+00:26:35,000 --> 00:26:39,000
+Y para una buena Deaf Experience, toma de referencia a los paquetes
+
+480
+00:26:39,000 --> 00:26:43,000
+que tienen más éxito o otra vez el propio Django.
+
+481
+00:26:43,000 --> 00:26:47,000
+Bueno, y ahora que estáis desprevenidos, pues otra vez es por short time.
+
+482
+00:26:47,000 --> 00:26:52,000
+Así que, nada, esto es sólo para comentaros que estamos contratando,
+
+483
+00:26:52,000 --> 00:26:56,000
+estamos buscando oposiciones de Meet y de Seniors de Back y de Front.
+
+484
+00:26:56,000 --> 00:26:59,000
+Y también deciros que contratamos Unions,
+
+485
+00:26:59,000 --> 00:27:03,000
+tenemos el programa que ha comentado Sonia, que lo llamamos Academy,
+
+486
+00:27:03,000 --> 00:27:06,000
+quizás con mucha originalidad, pero es conciso.
+
+487
+00:27:06,000 --> 00:27:10,000
+Básicamente el programa consiste en que un programador junior
+
+488
+00:27:10,000 --> 00:27:13,000
+que va a su primer trabajo, pues tiene un mes que es sólo de formación
+
+489
+00:27:13,000 --> 00:27:17,000
+en las tecnologías que usamos, con mentores de toda la empresa,
+
+490
+00:27:17,000 --> 00:27:21,000
+tiene, aparte de lo que trabajan ellos con proyectos,
+
+491
+00:27:21,000 --> 00:27:24,000
+todo se trabaja con proyectos, pero aparte de esos proyectos que trabajan,
+
+492
+00:27:24,000 --> 00:27:29,000
+cada día hay media hora de, digamos, de ponencia que tienen con programadorita PSL,
+
+493
+00:27:29,000 --> 00:27:31,000
+también les ayuda a conocer la empresa.
+
+494
+00:27:31,000 --> 00:27:34,000
+Y durante esos tres meses, pues básicamente lo que intentamos
+
+495
+00:27:34,000 --> 00:27:40,000
+es que la tasa de éxito o lo que ellos, cuando vayan a un proyecto, consigan,
+
+496
+00:27:40,000 --> 00:27:42,000
+pues sea mucho más.
+
+497
+00:27:42,000 --> 00:27:45,000
+Creemos que es un proyecto bastante chulo, a nosotros nos ilusiona bastante,
+
+498
+00:27:45,000 --> 00:27:49,000
+y ya sabéis, si sois juniors y ya estáis buscando una primera oportunidad,
+
+499
+00:27:49,000 --> 00:27:51,000
+pues no dudéis en escribirnos.
+
+500
+00:27:51,000 --> 00:27:53,000
+Y nada, muchas gracias a todos por vuestra atención
+
+501
+00:27:53,000 --> 00:27:55,000
+y espero que tengáis muy buena Picon.
+
+502
+00:27:55,000 --> 00:28:10,000
+¡Genial! ¿Dudas?
+
+503
+00:28:26,000 --> 00:28:29,000
+A ver si nos acopran bien.
+
+504
+00:28:29,000 --> 00:28:33,000
+Bueno, muchas gracias por la charla, me parece muy interesante el approach que tenéis
+
+505
+00:28:33,000 --> 00:28:37,000
+a constituir esas aplicaciones de una forma que sean reutilizables
+
+506
+00:28:37,000 --> 00:28:42,000
+en el proceso de este que decís de, primero voy a resolver el problema que quiero hacer
+
+507
+00:28:42,000 --> 00:28:44,000
+y luego lo rompo y lo recombino.
+
+508
+00:28:44,000 --> 00:28:48,000
+Pero, y tratar de evitando, haciendo un análisis muy extenso
+
+509
+00:28:48,000 --> 00:28:50,000
+que os paralice y que no lo podéis llevar adelante.
+
+510
+00:28:50,000 --> 00:28:54,000
+Para mí lo que me preocuparía es, cuando está diseñando esta primera solución,
+
+511
+00:28:54,000 --> 00:28:57,000
+si no ves todos los casos posibles, que se pueda llegar a hacer algo
+
+512
+00:28:57,000 --> 00:29:01,000
+que después dificulte romper esto y utilizarlo.
+
+513
+00:29:01,000 --> 00:29:05,000
+Entonces, ¿habéis encontrado algún caso en el cual habéis diseñado la solución
+
+514
+00:29:05,000 --> 00:29:10,000
+y luego hayáis tenido casi que reacen muchas partes porque no es suficientemente abstracto,
+
+515
+00:29:10,000 --> 00:29:12,000
+especialmente la parte de los datos?
+
+516
+00:29:12,000 --> 00:29:20,000
+Bueno, realmente alguna parte sí que nos dimos cuenta que estábamos un poco más acoplados.
+
+517
+00:29:20,000 --> 00:29:25,000
+Perdón que no somos los...
+
+518
+00:29:29,000 --> 00:29:32,000
+Por ejemplo, está bien ¿no?
+
+519
+00:29:32,000 --> 00:29:36,000
+Sí, quizás el acoplamiento más fuerte que teníamos
+
+520
+00:29:36,000 --> 00:29:39,000
+será con el proveedor de mapas del Ayuntamiento de Barcelona
+
+521
+00:29:39,000 --> 00:29:44,000
+y ese sí que fue un poco doloroso cambiarlo en el sentido de que pasamos
+
+522
+00:29:44,000 --> 00:29:46,000
+de Barcelona a nominatim.
+
+523
+00:29:46,000 --> 00:29:52,000
+Realmente el problema fue más de tener que mapear conceptos que otra cosa.
+
+524
+00:29:52,000 --> 00:29:55,000
+Luego hubo otros, como he comentado por ejemplo,
+
+525
+00:29:55,000 --> 00:29:59,000
+por necesidades de trabajo en equipo hubo cosas que tuvimos que hacer de serie
+
+526
+00:29:59,000 --> 00:30:01,000
+y luego también durante el mismo desarrollo,
+
+527
+00:30:01,000 --> 00:30:04,000
+íbamos descubriendo los casos y tuvimos que romper cosas.
+
+528
+00:30:04,000 --> 00:30:08,000
+La parte buena es que nosotros como ya estábamos desarrollando un API,
+
+529
+00:30:08,000 --> 00:30:12,000
+quizás siempre estábamos un poco en el nivel este que decíamos de interoperable.
+
+530
+00:30:12,000 --> 00:30:16,000
+Entonces, luego cuando nos venía uno de estos problemas,
+
+531
+00:30:16,000 --> 00:30:21,000
+más o menos ya teníamos identificado incluso cada responsabilidad con una URL.
+
+532
+00:30:21,000 --> 00:30:26,000
+Entonces, cuando llegó ese momento era en esta URL que se encarga de hacer esto,
+
+533
+00:30:26,000 --> 00:30:29,000
+pues tenemos que añadir este punto de inyección,
+
+534
+00:30:29,000 --> 00:30:31,000
+sustituir y refactorizar.
+
+535
+00:30:31,000 --> 00:30:34,000
+Pero por ejemplo, el más doloroso fue el de mapas, por ejemplo.
+
+536
+00:30:34,000 --> 00:30:39,000
+Pero el resto en general, como estábamos ya en esas URLs y demás,
+
+537
+00:30:39,000 --> 00:30:42,000
+pues fue relativamente fácil.
+
+538
+00:30:44,000 --> 00:30:47,000
+Al final, bueno, la pregunta es buena porque realmente nunca sabes
+
+539
+00:30:47,000 --> 00:30:49,000
+si estás sobre diseñando cuando empiezas.
+
+540
+00:30:49,000 --> 00:30:54,000
+Cuando empezamos allí, realmente, yo teníamos un pliego,
+
+541
+00:30:54,000 --> 00:30:56,000
+estábamos trabajando, sabíamos muchos requisitos,
+
+542
+00:30:56,000 --> 00:30:58,000
+pero luego hubo muchos que también nos sorprendieron,
+
+543
+00:30:58,000 --> 00:31:00,000
+porque una aplicación que lleva 10 años funcionando,
+
+544
+00:31:00,000 --> 00:31:02,000
+por mucho que lo quieras escribir,
+
+545
+00:31:02,000 --> 00:31:05,000
+hay mucho conocimiento también que estaba, digamos, la gente que lo usa.
+
+546
+00:31:05,000 --> 00:31:08,000
+Había como muchas cosas que solo sabía la gente que lo usa.
+
+547
+00:31:08,000 --> 00:31:11,000
+Y fuimos un poco aprendiendo sobre la marcha,
+
+548
+00:31:11,000 --> 00:31:13,000
+hubo partes que quizás diseñamos de más,
+
+549
+00:31:13,000 --> 00:31:15,000
+hubo parte que diseñamos de menos,
+
+550
+00:31:15,000 --> 00:31:19,000
+pero también creo que es parte del proceso de desarrollar un software que evoluciona.
+
+551
+00:31:21,000 --> 00:31:23,000
+Muchas gracias por lo que te ha dicho.
+
+552
+00:31:23,000 --> 00:31:39,000
+Muchas gracias a vosotros por estar aquí.
+

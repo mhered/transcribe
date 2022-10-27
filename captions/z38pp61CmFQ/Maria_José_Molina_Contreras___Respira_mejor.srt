@@ -1,0 +1,1536 @@
+1
+00:00:00,000 --> 00:00:22,000
+En este caso tenemos a Mare José que nos va a hablar de monitorio del aire y calidad del aire.
+
+2
+00:00:31,000 --> 00:00:39,000
+Muy gracias. Hoy vamos a hablar de cómo crear un sistema de monitorio y predicción del aire.
+
+3
+00:00:39,000 --> 00:00:53,000
+Vamos a empezar con quién soy, solo para romper el hielo. Mi nombre es Mare José.
+
+4
+00:00:53,000 --> 00:01:03,000
+Yo tengo un background en biología molecular de plantas, nada que ver con este mundillo, pero hace unos años se hizo la transición a la industria
+
+5
+00:01:03,000 --> 00:01:09,000
+y trabajo actualmente como científico de datos en una empresa de vertical farming.
+
+6
+00:01:09,000 --> 00:01:18,000
+Y en mi tiempo libre me encanta hacer proyectos que ayuden a la gente que me rodea o a veces a mí,
+
+7
+00:01:18,000 --> 00:01:27,000
+a mejorar mi vida, especialmente en proyectos de hazlo tú mismo, do it yourself, con micro controladores y IoT.
+
+8
+00:01:27,000 --> 00:01:35,000
+Para mí es algo que me encanta. Siempre busco como también un poco la excusa de haber que puedo crear esta vez.
+
+9
+00:01:35,000 --> 00:01:48,000
+Y este caso es un caso específico de un problema real que yo tuve. Con el tema de la pandemia, mi vida, igual que la vida de todos,
+
+10
+00:01:48,000 --> 00:02:01,000
+cambió un poquito en temas de dinámicas, de ir a trabajar, de movimiento y pasé de una vida activa a trabajar 100% remoto, prácticamente encerrada en casa.
+
+11
+00:02:01,000 --> 00:02:12,000
+Y empecé a sentir de tanto en tanto cierto malestar. Tenía dolores de cabeza, sentía mucho adormecimiento.
+
+12
+00:02:12,000 --> 00:02:24,000
+Y, ah, sabes no el estrés tal cual, empecé a notar que había un patrón, que cuando yo empezaba a sentir así y empezaba a abrir mi ventana,
+
+13
+00:02:24,000 --> 00:02:35,000
+había ciertos cambios. Y dije, espera, no sé algo de que está relacionado con el tema de cómo estoy ventilando mi hogar.
+
+14
+00:02:35,000 --> 00:02:43,000
+Y dije, pues, mira, voy a empezar a hacer investigación y voy a chequear cómo es la calidad de aire en mi casa.
+
+15
+00:02:43,000 --> 00:02:53,000
+Entonces empecé a echar un ojo a la bibliografía, diferentes fuentes y empecé a ver de que había diferentes factores,
+
+16
+00:02:53,000 --> 00:02:58,000
+que afectan la calidad de aire. Uno, es el número de habitantes de casa.
+
+17
+00:02:58,000 --> 00:03:07,000
+Quiere decir, sí, hay más habitantes, pues hay que ventilar de una manera específica que si tenemos menos.
+
+18
+00:03:07,000 --> 00:03:11,000
+Si tenemos animales o no tenemos animales, también afecta.
+
+19
+00:03:11,000 --> 00:03:17,000
+Otros factores pueden ser también la humedad. La humedad es un factor súper importante,
+
+20
+00:03:17,000 --> 00:03:23,000
+porque puede ayudar a la creación de moos, de hongos y esto genera unas esporas
+
+21
+00:03:23,000 --> 00:03:28,000
+que también puede estar afectando a nuestro sistema respiratorio.
+
+22
+00:03:28,000 --> 00:03:31,000
+Y muchos más factores.
+
+23
+00:03:31,000 --> 00:03:37,000
+Luego tenemos el diseño de la ventilación, que en nuestro caso, si es una casa pequeñita,
+
+24
+00:03:37,000 --> 00:03:42,000
+normalmente es cómo abrimos las ventanas y cuánto tiempo las abrimos.
+
+25
+00:03:42,000 --> 00:03:48,000
+Que hasta este momento yo, la verdad, no me lo había planteado.
+
+26
+00:03:48,000 --> 00:03:57,000
+No sé si alguien se está planteando ahora cómo abrullo las ventanas, pero si no, os invito a hacerlo,
+
+27
+00:03:57,000 --> 00:04:02,000
+porque vais a ver en esta presentación que es muy importante.
+
+28
+00:04:02,000 --> 00:04:05,000
+Después, las fuentes contaminantes.
+
+29
+00:04:05,000 --> 00:04:12,000
+No es lo mismo vivir en la montaña que vivir en una zona volcánica que vivir en una gran ciudad.
+
+30
+00:04:12,000 --> 00:04:16,000
+Los tipos de contaminantes son diferentes.
+
+31
+00:04:16,000 --> 00:04:18,000
+Y por supuesto los gases.
+
+32
+00:04:18,000 --> 00:04:26,000
+Si vivimos cerca de fábricas, es diferente que si vivimos en otro tipo de ambientes.
+
+33
+00:04:26,000 --> 00:04:31,000
+Bueno, en este momento, cuando yo cogí toda esta bibliografía y todo este conocimiento,
+
+34
+00:04:31,000 --> 00:04:35,000
+dije, vale, voy a empezar a buscar sensores.
+
+35
+00:04:35,000 --> 00:04:41,000
+Y me planteé casi una estación meteorológica en mi casa para el interior de interiores,
+
+36
+00:04:41,000 --> 00:04:47,000
+que no era escalable, obviamente, porque no podía tener tantas cosas en mitad de mi salón.
+
+37
+00:04:47,000 --> 00:04:54,000
+Entonces dije, bueno, vale, vamos a empezar a focalizar y ver qué es lo que dice la ciencia,
+
+38
+00:04:54,000 --> 00:04:58,000
+qué está investigando la ciencia en calidad de aires en interiores.
+
+39
+00:04:58,000 --> 00:05:05,000
+Porque con el tema de COVID, muchos científicos empezaron a investigar sobre el tema de calidad de aire,
+
+40
+00:05:05,000 --> 00:05:09,000
+también relacionado con el CO2, ¿cierto?
+
+41
+00:05:09,000 --> 00:05:17,000
+Y aquí tenemos unos ejemplos de publicaciones, algunas son incluso anteriores,
+
+42
+00:05:17,000 --> 00:05:25,000
+que es relación o indican una cierta relación entre lo que es el dióxido de carbono, lo que es CO2,
+
+43
+00:05:25,000 --> 00:05:29,000
+y lo que podría ser enfermedades respiratorias.
+
+44
+00:05:29,000 --> 00:05:39,000
+De hecho, hay uno muy interesante que esta publicación,
+
+45
+00:05:39,000 --> 00:05:48,000
+que ellos apuntan a que los niveles de CO2 afectan a cómo hacemos las decisiones,
+
+46
+00:05:48,000 --> 00:05:57,000
+con lo que os invito a leer la publicación y a abrir las ventanas si tenéis que tomar una decisión importante.
+
+47
+00:05:57,000 --> 00:06:02,000
+Bueno, vamos a ir a chequear un poco de qué estamos hablando,
+
+48
+00:06:02,000 --> 00:06:08,000
+de los rangos de salud y qué es bueno, qué es valo.
+
+49
+00:06:08,000 --> 00:06:16,000
+Entonces, consideramos una buena calidad de aire en esta franja.
+
+50
+00:06:16,000 --> 00:06:24,000
+Por supuesto, esto es aproximado, los rangos dependen un poco de la fuente de información,
+
+51
+00:06:24,000 --> 00:06:29,000
+y es basado en esta fuente lo que os estoy mostrando.
+
+52
+00:06:29,000 --> 00:06:35,000
+Entonces, todo lo que está por debajo de 1000 ppm se considera una buena calidad de aire.
+
+53
+00:06:35,000 --> 00:06:38,000
+Lo que está poniendo encima ya es cuestionable.
+
+54
+00:06:38,000 --> 00:06:45,000
+Y entonces, a partir de aquí, empezamos a aparecer ciertos síntomas.
+
+55
+00:06:45,000 --> 00:06:50,000
+Por supuesto, esto va a depender de muchas cosas, va a depender de nosotros,
+
+56
+00:06:50,000 --> 00:06:55,000
+va a depender de condiciones previas, y un long etc.
+
+57
+00:06:55,000 --> 00:07:02,000
+Pero lo que está claro es que siempre tenemos que intentar estar por debajo de esos 1000.
+
+58
+00:07:02,000 --> 00:07:11,000
+Y esto iba un poco con la historia que yo iba sintiendo, es como, bueno, pues vamos a ello.
+
+59
+00:07:11,000 --> 00:07:20,000
+Vamos a ir creando la estructura del proyecto poco a poco, porque el proyecto empezó como algo muy chiquitito,
+
+60
+00:07:20,000 --> 00:07:25,000
+de voy a controlar los valores de CO2 en casa.
+
+61
+00:07:25,000 --> 00:07:33,000
+Luego dije, va, quiero un monitoreo, pero oye, y sí podemos crear también un sistema predictivo,
+
+62
+00:07:33,000 --> 00:07:39,000
+que me ayude a planear qué va a pasar, cuándo va a pasar.
+
+63
+00:07:39,000 --> 00:07:47,000
+Entonces, esto básicamente tenemos los sensores, colectamos data, data,
+
+64
+00:07:47,000 --> 00:07:52,000
+y luego pues teníamos un sistema de monitoreo y un sistema de predicción.
+
+65
+00:07:52,000 --> 00:07:57,000
+Y esto es lo que vamos a ir viendo a continuación.
+
+66
+00:07:57,000 --> 00:08:00,000
+Vamos a empezar por los sensores.
+
+67
+00:08:00,000 --> 00:08:06,000
+Aquí os muestro dos de los sensores como estrella que he usado.
+
+68
+00:08:06,000 --> 00:08:17,000
+En el a la izquierda en este, esto es un sensor de partículas, y este es un sensor de CO2.
+
+69
+00:08:17,000 --> 00:08:25,000
+Estos son los diferentes componentes que acabé usando, incluyendo una Raspberry Pi 0,
+
+70
+00:08:25,000 --> 00:08:29,000
+con Internet, esto es importante.
+
+71
+00:08:29,000 --> 00:08:34,000
+Pero como os decía, yo quería el sistema de monitoreo que estuviera cerca de mí
+
+72
+00:08:34,000 --> 00:08:39,000
+y pudiera ver qué estaba pasando cuando yo estaba trabajando.
+
+73
+00:08:39,000 --> 00:08:45,000
+Entonces, pensé, quiero que tenga una pantalla, que sea también lo suficientemente grande,
+
+74
+00:08:45,000 --> 00:08:51,000
+que tenga el display para ir monitoreando qué pasa, y a la vez que fuera pues interactiva.
+
+75
+00:08:51,000 --> 00:08:58,000
+Por eso, use una Raspberry Pi 4, que para ser también honestos la tenía en casa sin usar,
+
+76
+00:08:58,000 --> 00:09:02,000
+y dije, oye, vamos a darle un oso, esto no puede ser, esto no puede ser.
+
+77
+00:09:02,000 --> 00:09:09,000
+Entonces, era todo como, que iba todo muy bien, que por supuesto se puede usar otro tipo de approach,
+
+78
+00:09:09,000 --> 00:09:17,000
+otro tipo de pantalla, y si tenéis otro tipo de device, por supuesto se puede usar diferente.
+
+79
+00:09:17,000 --> 00:09:22,000
+Entonces, esta va a ser la estructura del monitoreo, tenemos los sensores,
+
+80
+00:09:22,000 --> 00:09:28,000
+recolectamos los datos, hacemos la conexión con la otra Raspberry Pi,
+
+81
+00:09:28,000 --> 00:09:32,000
+y hacemos un display de los datos.
+
+82
+00:09:32,000 --> 00:09:37,000
+Bueno, antes de hacer el display de los datos y mostraros qué pasa,
+
+83
+00:09:37,000 --> 00:09:44,000
+este proyecto tiene mucho data, tiene mucho necesidad,
+
+84
+00:09:44,000 --> 00:09:50,000
+que conozcamos los datos y necesita que sepamos qué estamos haciendo.
+
+85
+00:09:50,000 --> 00:09:55,000
+Entonces, solo mostraros aquí tres gráficos, muy sencillitos,
+
+86
+00:09:55,000 --> 00:10:03,000
+todos los datos que en el eje de la X tenemos las fechas y en el eje de la Y tenemos los diferentes parámetros.
+
+87
+00:10:03,000 --> 00:10:09,000
+Y lo que podemos ver es que hay ciertas oscilaciones en los tres parámetros,
+
+88
+00:10:09,000 --> 00:10:15,000
+y es normal que la temperatura cambia, el nivel de humedad y el nivel de CO2,
+
+89
+00:10:15,000 --> 00:10:17,000
+que es lo que vamos a hablar.
+
+90
+00:10:17,000 --> 00:10:21,000
+Pero aquí ya empezamos a ver cosas como un poco interesantes,
+
+91
+00:10:21,000 --> 00:10:26,000
+la calidad de aire, lo que buscamos es que esté alrededor de 1000 o por debajo de 1000.
+
+92
+00:10:26,000 --> 00:10:31,000
+Y aquí empezamos a tener unos picos que nos está diciendo que, uy,
+
+93
+00:10:31,000 --> 00:10:34,000
+ojo, ojo aquí que hay algo.
+
+94
+00:10:34,000 --> 00:10:37,000
+Y sí, había algo.
+
+95
+00:10:37,000 --> 00:10:44,000
+Eche un ojo a cuantas veces podía encontrar condiciones no óptimas en casa.
+
+96
+00:10:44,000 --> 00:10:50,000
+Lo que tenemos en este gráfico es, en el eje de las X volvemos a tener
+
+97
+00:10:50,000 --> 00:10:56,000
+el tema del CO2, parpermillion, y luego en el eje de la Y tenemos la frecuencia.
+
+98
+00:10:56,000 --> 00:11:01,000
+Cuantas veces se repetía ese valor en todos mis datos.
+
+99
+00:11:01,000 --> 00:11:08,000
+La parte verde es la que todo está muy bien, vemos una carita feliz, todo está muy bien.
+
+100
+00:11:08,000 --> 00:11:13,000
+Entre 1000 y 1200 es el me, hay algo que no.
+
+101
+00:11:13,000 --> 00:11:16,000
+Y a partir de ahí, no, esto lo estamos haciendo mal.
+
+102
+00:11:16,000 --> 00:11:24,000
+Específicamente en esta parte, en la parte de que estamos casi en los 2000.
+
+103
+00:11:24,000 --> 00:11:30,000
+Ya, entonces era como, uy, vale, hay algo que estoy haciendo realmente mal,
+
+104
+00:11:30,000 --> 00:11:36,000
+no era yo que tenía esas suposiciones que realmente estoy haciendo lo mal.
+
+105
+00:11:36,000 --> 00:11:39,000
+Pero vamos a volver de eso luego.
+
+106
+00:11:39,000 --> 00:11:44,000
+Porque el monitoreo es muy interesante,
+
+107
+00:11:44,000 --> 00:11:49,000
+y es algo que incluso en el aeropuerto, aquí cuando llegué a Granada,
+
+108
+00:11:49,000 --> 00:11:54,000
+vi que hay una pantalla que monitorean la calidad de aire, y me pareció muy interesante.
+
+109
+00:11:54,000 --> 00:12:00,000
+Pero para mí el hecho de poder predecir cuando puedo pasar esto,
+
+110
+00:12:00,000 --> 00:12:06,000
+es incluso mejor porque puedo ayudar a que esa situación mala no pase.
+
+111
+00:12:06,000 --> 00:12:11,000
+Y entonces fue cuando establecié lo que es el sistema predictivo
+
+112
+00:12:11,000 --> 00:12:14,000
+para predecir los valores.
+
+113
+00:12:14,000 --> 00:12:18,000
+Básicamente vamos a ver lo que es un time series,
+
+114
+00:12:18,000 --> 00:12:22,000
+una secuencia de tiempo que básicamente es en el eje de las X,
+
+115
+00:12:22,000 --> 00:12:28,000
+vamos a tener el tiempo y en el eje de los Y, vamos a tener los valores de los sensores.
+
+116
+00:12:28,000 --> 00:12:33,000
+Esto simplemente es un ejemplo para visualizar que por ejemplo aquí,
+
+117
+00:12:33,000 --> 00:12:35,000
+algo pasó en este periodo de tiempo.
+
+118
+00:12:35,000 --> 00:12:46,000
+Y aquí os vengo a mostrar unos datos que por cierto el gráfico,
+
+119
+00:12:46,000 --> 00:12:49,000
+no es lo más bonito, no es lo mejor bendible,
+
+120
+00:12:49,000 --> 00:12:53,000
+pero hay cosas muy interesantes que quiero discutir con vosotros.
+
+121
+00:12:53,000 --> 00:12:59,000
+Y quiero discutir con vosotros porque hay unos patrones que quiero compartir,
+
+122
+00:12:59,000 --> 00:13:06,000
+y por ejemplo, alguien podría decirme qué pasó en las flechas rosas con la A,
+
+123
+00:13:06,000 --> 00:13:13,000
+porque si veis los valores están muy cercanos a 400, lo que está muy bien.
+
+124
+00:13:13,000 --> 00:13:17,000
+¿Qué es lo que está pasando en la vacación?
+
+125
+00:13:17,000 --> 00:13:19,000
+Está de vacaciones.
+
+126
+00:13:19,000 --> 00:13:25,000
+Entonces, ¿puedes saber con este gráfico cuándo estuve de vacaciones?
+
+127
+00:13:25,000 --> 00:13:30,000
+Y de hecho, hay dos veces que estuve de vacaciones.
+
+128
+00:13:30,000 --> 00:13:32,000
+Muy interesante.
+
+129
+00:13:32,000 --> 00:13:34,000
+¿Qué pasó en la B?
+
+130
+00:13:34,000 --> 00:13:37,000
+Porque en la B también tenemos una disminución, de hecho aquí también lo vemos,
+
+131
+00:13:37,000 --> 00:13:41,000
+pero no es tanto como la 400.
+
+132
+00:13:41,000 --> 00:13:46,000
+¿Y veas?
+
+133
+00:13:46,000 --> 00:13:51,000
+Un punto intermedio.
+
+134
+00:13:51,000 --> 00:13:55,000
+Cambié el sistema de cómo estaba abriendo las ventanas.
+
+135
+00:13:55,000 --> 00:14:01,000
+Empecé a pensar en cómo podría estar circulando el aire dentro de casa
+
+136
+00:14:01,000 --> 00:14:06,000
+y cómo podría mejorar la circulación del aire.
+
+137
+00:14:06,000 --> 00:14:13,000
+Cambié los tiempos de apertura y fui consciente de qué estaba pasando.
+
+138
+00:14:13,000 --> 00:14:18,000
+Y eso también ha sido un efecto.
+
+139
+00:14:18,000 --> 00:14:21,000
+¿Y la C?
+
+140
+00:14:21,000 --> 00:14:24,000
+¿Que hay unos picos muy bonitos?
+
+141
+00:14:24,000 --> 00:14:27,000
+Sí, había más gente.
+
+142
+00:14:27,000 --> 00:14:30,000
+¿Puedes saber qué día tu bebesita en casa?
+
+143
+00:14:30,000 --> 00:14:38,000
+Lo que es súper interesante, porque en realidad esto es un análisis de data
+
+144
+00:14:38,000 --> 00:14:43,000
+que viene de sensores, pero puedes saber cuál es mi comportamiento
+
+145
+00:14:43,000 --> 00:14:45,000
+solo con ese sensor.
+
+146
+00:14:45,000 --> 00:14:47,000
+Pero eso es otro tema aparte.
+
+147
+00:14:47,000 --> 00:14:49,000
+¿Y qué es?
+
+148
+00:14:49,000 --> 00:14:53,000
+¿Hay aquí una tendencia que es bastante interesante?
+
+149
+00:14:53,000 --> 00:15:00,000
+¿Alguien sabe o piensa que puede ser esa tendencia?
+
+150
+00:15:00,000 --> 00:15:07,000
+Tenemos aquí una estilación.
+
+151
+00:15:07,000 --> 00:15:10,000
+No, estacional.
+
+152
+00:15:10,000 --> 00:15:15,000
+Pasamos de lo que era invierno a lo que era verano.
+
+153
+00:15:15,000 --> 00:15:20,000
+También hay la disminución, porque la temperatura de casa cambió.
+
+154
+00:15:20,000 --> 00:15:22,000
+¿Habría más las ventanas?
+
+155
+00:15:22,000 --> 00:15:27,000
+Porque es que hace buena temperatura.
+
+156
+00:15:27,000 --> 00:15:33,000
+Entonces conocer los datos, invertir tiempo en estos datos
+
+157
+00:15:33,000 --> 00:15:37,000
+es algo súper importante en este tipo de proyectos.
+
+158
+00:15:37,000 --> 00:15:42,000
+Más que incluso lo que es la parte posterior, porque para luego tomar las decisiones.
+
+159
+00:15:42,000 --> 00:15:45,000
+¿Qué tipo de machine learning vas a aplicar?
+
+160
+00:15:45,000 --> 00:15:47,000
+¿Qué tipo de approach vas a hacer?
+
+161
+00:15:47,000 --> 00:15:53,000
+Es súper importante primero conocer todo este tipo de información.
+
+162
+00:15:53,000 --> 00:15:57,000
+Entonces variables que yo monitoree.
+
+163
+00:15:57,000 --> 00:16:02,000
+Como os decía, yo quería monitorear todo, pero me controlé.
+
+164
+00:16:02,000 --> 00:16:07,000
+Y lo que me focalicé fue en el control de dióxido de carbono,
+
+165
+00:16:07,000 --> 00:16:12,000
+como me da la temperatura, las partículas y el nivel de actividad.
+
+166
+00:16:12,000 --> 00:16:19,000
+El nivel de actividad también es importante, porque yo estaba trabajando usando un sensor.
+
+167
+00:16:19,000 --> 00:16:23,000
+Entonces lo tenía localizado en la zona donde trabajo,
+
+168
+00:16:23,000 --> 00:16:27,000
+porque para mí lo más importante es en ese área,
+
+169
+00:16:27,000 --> 00:16:30,000
+que invierto muchas horas, que tenga mejor calidad,
+
+170
+00:16:30,000 --> 00:16:34,000
+pero quiere decir que las otras habitaciones tengo lo mismo.
+
+171
+00:16:34,000 --> 00:16:40,000
+Entonces el nivel de actividad lo consideré también como una variable.
+
+172
+00:16:43,000 --> 00:16:49,000
+Entonces cuando planteé el tema de, ok, bueno, va, y ahora qué implemento.
+
+173
+00:16:49,000 --> 00:16:56,000
+Pues pase a irme a la bibliografía y ver qué estaba haciendo los científicos.
+
+174
+00:16:56,000 --> 00:17:00,000
+Y vi que había opciones muy interesantes,
+
+175
+00:17:00,000 --> 00:17:05,000
+y que se ajustaba bastante a los datos, a los parámetros y variables que yo tenía.
+
+176
+00:17:05,000 --> 00:17:11,000
+Y luego pues básicamente decidirme por esta, por la primera,
+
+177
+00:17:11,000 --> 00:17:16,000
+que es implementar una neural network,
+
+178
+00:17:16,000 --> 00:17:19,000
+una one-dig convolutional network,
+
+179
+00:17:19,000 --> 00:17:22,000
+y vamos a ver un poquito de qué se trata esto.
+
+180
+00:17:22,000 --> 00:17:28,000
+Hay otras maneras y otros aproches que se pueden usarse y tener resultados satisfactorios.
+
+181
+00:17:28,000 --> 00:17:30,000
+¿Por qué decidir por esta?
+
+182
+00:17:30,000 --> 00:17:34,000
+Porque me interesaba aplicar ese tipo de estructura y jugar un poquito
+
+183
+00:17:34,000 --> 00:17:39,000
+con algunas técnicas que además a veces no tengo la posibilidad de hacerlo
+
+184
+00:17:39,000 --> 00:17:43,000
+con otros datos en mi trabajo o alguna cosita así.
+
+185
+00:17:43,000 --> 00:17:47,000
+Pero cada uno al final tiene que buscar sus propias motivaciones.
+
+186
+00:17:47,000 --> 00:17:53,000
+Entonces una de las cosas que implementé fue el sistema de ventanas móviles,
+
+187
+00:17:53,000 --> 00:17:59,000
+que lo que se trata es, tenemos una n que son x días o horas,
+
+188
+00:17:59,000 --> 00:18:01,000
+depende de lo que establezcamos,
+
+189
+00:18:01,000 --> 00:18:05,000
+y predecimos los niveles de CO2 en la próxima hora.
+
+190
+00:18:05,000 --> 00:18:08,000
+Lo que vamos a hacer es que esa ventana va a ser móvil.
+
+191
+00:18:08,000 --> 00:18:14,000
+Y una de las propuestas, la propuesta de la publicación es que además
+
+192
+00:18:14,000 --> 00:18:19,000
+se puede automatizar este sistema y entrenar automáticamente el modelo.
+
+193
+00:18:19,000 --> 00:18:28,000
+Yo versioné esta opción porque para poder hacer eso tienes que poder tener
+
+194
+00:18:28,000 --> 00:18:32,000
+una calidad y una cantidad de datos muy especifica.
+
+195
+00:18:32,000 --> 00:18:37,000
+Entonces pensé, bueno, vamos a partes, vamos a la parte sin automatización,
+
+196
+00:18:37,000 --> 00:18:42,000
+vemos cómo funciona y luego pues es un sistema iterativo, cierto?
+
+197
+00:18:42,000 --> 00:18:50,000
+Los proyectos de Data Science, esto es lo que es la red neuronal,
+
+198
+00:18:50,000 --> 00:18:56,000
+solo no vamos a ir a explicar esto, pero simplemente es por si alguien no tiene
+
+199
+00:18:56,000 --> 00:19:01,000
+en mente de que estamos hablando, esta es la estructura.
+
+200
+00:19:01,000 --> 00:19:07,000
+Este es un tipo, aquí, perdón que él había traducido,
+
+201
+00:19:07,000 --> 00:19:13,000
+esto es un slide que en realidad no es muy necesaria,
+
+202
+00:19:13,000 --> 00:19:18,000
+pero a mí me encanta ver qué tipo de padrán, qué tipo de activación
+
+203
+00:19:18,000 --> 00:19:24,000
+usa la gente, qué tipo de ventanas, y me pareció muy interesante incluirla.
+
+204
+00:19:24,000 --> 00:19:29,000
+Pero simplemente también es mostraros que con no mucha complejidad,
+
+205
+00:19:29,000 --> 00:19:32,000
+desde el punto de vista de escribir código en Python,
+
+206
+00:19:32,000 --> 00:19:36,000
+podemos tener una red neuronal.
+
+207
+00:19:36,000 --> 00:19:42,000
+Por supuesto, si luego queréis más información y discutir, yo encantada.
+
+208
+00:19:42,000 --> 00:19:48,000
+Luego estableci mis propias métricas y resultados,
+
+209
+00:19:48,000 --> 00:19:53,000
+y decidí como métrica de performance por una RMSE,
+
+210
+00:19:53,000 --> 00:19:58,000
+le invertí un poquito de tiempo al tema de la optimización de hiperparámetros,
+
+211
+00:19:58,000 --> 00:20:04,000
+aquí no vamos a ir ahí, pero podemos terminar también una sesión larga ahí,
+
+212
+00:20:04,000 --> 00:20:09,000
+y en el tema de las ventanas, lo que me quería comentaros,
+
+213
+00:20:09,000 --> 00:20:19,000
+es que la performance es muy dependiente de la ventana.
+
+214
+00:20:19,000 --> 00:20:23,000
+Entonces, hay que tener bastante cuidado, una vez decimos,
+
+215
+00:20:23,000 --> 00:20:27,000
+¡uy, mi modelo tiene una performance muy buena!
+
+216
+00:20:27,000 --> 00:20:33,000
+O es no muy mala, o es regular, porque era muy dependiente de ventana.
+
+217
+00:20:33,000 --> 00:20:39,000
+Entonces, quiere decir que era muy dependiente de nuestros datos.
+
+218
+00:20:39,000 --> 00:20:42,000
+Bueno, solo era esto.
+
+219
+00:20:42,000 --> 00:20:49,000
+Aquí solo quería mostraros como unos pequeños plots de resultados,
+
+220
+00:20:49,000 --> 00:20:53,000
+para ver cómo se estaba comportando el modelo.
+
+221
+00:20:53,000 --> 00:20:57,000
+En verde, lo que tenemos son los labels,
+
+222
+00:20:57,000 --> 00:21:01,000
+y lo que es en naranja son las predicciones.
+
+223
+00:21:01,000 --> 00:21:05,000
+En algunos puntos, podemos ver que, por ejemplo, en estos,
+
+224
+00:21:05,000 --> 00:21:10,000
+la predicción se ajusta bastante a la realidad.
+
+225
+00:21:10,000 --> 00:21:14,000
+Sin embargo, hay algunos como estos, que tienen un poco de...
+
+226
+00:21:14,000 --> 00:21:18,000
+Bueno, no es lo mejor, pero he dicho.
+
+227
+00:21:18,000 --> 00:21:19,000
+En este caso, por ejemplo,
+
+228
+00:21:19,000 --> 00:21:23,000
+incluso tenemos un drift que podría ser casi de una hora.
+
+229
+00:21:23,000 --> 00:21:28,000
+Lo que nos indica que el sistema como baseline,
+
+230
+00:21:28,000 --> 00:21:31,000
+como punta deportida, está bien,
+
+231
+00:21:31,000 --> 00:21:35,000
+pero hay que seguir optimizando y mejorando el sistema.
+
+232
+00:21:38,000 --> 00:21:42,000
+Entonces, lo que teníamos,
+
+233
+00:21:42,000 --> 00:21:49,000
+esto es como un summary de lo que es la estructura del proyecto,
+
+234
+00:21:49,000 --> 00:21:54,000
+es tenemos Sensor 1 y Sensor 2, que cogemos los datos,
+
+235
+00:21:54,000 --> 00:21:56,000
+los enviamos a la Raspberry Pi,
+
+236
+00:21:56,000 --> 00:21:59,000
+y entonces hacemos un display de los datos,
+
+237
+00:21:59,000 --> 00:22:02,000
+una vez analizados, una vez formateados,
+
+238
+00:22:02,000 --> 00:22:06,000
+y usando una aplicación Flask.
+
+239
+00:22:06,000 --> 00:22:10,000
+Muy sencillita, la más básica, vais a ver una cosa muy sencillita,
+
+240
+00:22:10,000 --> 00:22:14,000
+que creé y sólo era para hacer un display.
+
+241
+00:22:14,000 --> 00:22:19,000
+En el sistema predictivo, es lo que ya hemos comentado,
+
+242
+00:22:19,000 --> 00:22:26,000
+y vamos a ver cómo acabó esto.
+
+243
+00:22:26,000 --> 00:22:30,000
+Estos son los sensores, y tengo los sensores en un cuadro.
+
+244
+00:22:30,000 --> 00:22:35,000
+¿Y alguien puede decir cómo acabaron tus sensores en un cuadro, María José?
+
+245
+00:22:35,000 --> 00:22:40,000
+Pues el tema es que tenía ahí una foto,
+
+246
+00:22:40,000 --> 00:22:44,000
+que de hecho era de mi hermana, no se os digáis.
+
+247
+00:22:44,000 --> 00:22:50,000
+Y dije, oye, no tengo muy claro donde poner los sensores,
+
+248
+00:22:50,000 --> 00:22:53,000
+sin que le debo, es complicado.
+
+249
+00:22:53,000 --> 00:22:58,000
+Y dije, oye, pues tengo este cuadro, pongo los sensores ahí.
+
+250
+00:22:58,000 --> 00:23:04,000
+La verdad es que es muy útil, pero no se lo contaba mi hermana aún,
+
+251
+00:23:04,000 --> 00:23:07,000
+veremos el día que se lo cuente o lo vea.
+
+252
+00:23:07,000 --> 00:23:13,000
+Y esto es como, cuál es el display.
+
+253
+00:23:13,000 --> 00:23:18,000
+Esto es lo que vemos en la Raspberry Pi 4, que tenemos,
+
+254
+00:23:18,000 --> 00:23:24,000
+es que es muy sencillito, los valores de CO2, la temperatura relativa, la fecha,
+
+255
+00:23:24,000 --> 00:23:31,000
+y que todos estos vienen del monitoreo real, de los datos que estamos colectando,
+
+256
+00:23:31,000 --> 00:23:36,000
+y luego tenemos lo que es la predicción, que la predicción viene de nuestro modelo.
+
+257
+00:23:36,000 --> 00:23:41,000
+Y en función del tipo de predicción, pues estableció una escala de colores, pero,
+
+258
+00:23:41,000 --> 00:23:43,000
+por supuesto, es cambiable.
+
+259
+00:23:43,000 --> 00:23:47,000
+Y esto es como lo tengo en casa, básicamente.
+
+260
+00:23:47,000 --> 00:23:55,000
+Eso lo tengo en el escritorio y simplemente es así, cambia y se ve como cambia los colores,
+
+261
+00:23:55,000 --> 00:24:02,000
+y digo, ok, tenemos que acabar la reunión, que la predicción dice que los valores no van bien.
+
+262
+00:24:02,000 --> 00:24:08,000
+No, broma, aún no lo he probado, como excusa.
+
+263
+00:24:08,000 --> 00:24:11,000
+Pero quizá.
+
+264
+00:24:11,000 --> 00:24:16,000
+Y qué más quería contaros sobre esto, es lo que estoy haciendo ahora.
+
+265
+00:24:16,000 --> 00:24:21,000
+Lo que estoy haciendo es la optimización del sistema, porque como os decía,
+
+266
+00:24:21,000 --> 00:24:28,000
+este modelo, como inicial, funciona bastante bien, depende un poco de eso, de las ventanas,
+
+267
+00:24:28,000 --> 00:24:33,000
+pero las predicciones son bastante buenas, pero aún falta trabajo.
+
+268
+00:24:33,000 --> 00:24:41,000
+Y si dijimos, vamos a hacer deployment mañana, no, no, no, no, no, esto aún queda trabajo.
+
+269
+00:24:41,000 --> 00:24:50,000
+Pero es algo muy divertido, muy iterativo, que realmente os motivo a hacer,
+
+270
+00:24:50,000 --> 00:24:57,000
+y que voy a compartir también la información del proyecto, por si alguien se quiere hacerlo en casa.
+
+271
+00:24:57,000 --> 00:25:02,000
+Además, estoy haciendo la implementación con microcontroladores,
+
+272
+00:25:02,000 --> 00:25:07,000
+y el sensor de partículas, porque tal y como os de...
+
+273
+00:25:07,000 --> 00:25:12,000
+No sé si alguien se ha dado cuenta que al principio mostraba el sensor de partículas,
+
+274
+00:25:12,000 --> 00:25:18,000
+pero en el modelo, y todos los datos eran de CO2, y yo estaba centrada en el CO2.
+
+275
+00:25:18,000 --> 00:25:21,000
+Y por qué es esto?
+
+276
+00:25:21,000 --> 00:25:27,000
+Esto es porque el sensor de partículas, por supuesto se podría haber incluido en el sistema,
+
+277
+00:25:27,000 --> 00:25:33,000
+pero lo estoy usando para otro proyecto, o la segunda parte de este proyecto.
+
+278
+00:25:33,000 --> 00:25:58,000
+¿Qué es hacer el control de...
+
+279
+00:26:04,000 --> 00:26:10,000
+Y podríamos... Gracias.
+
+280
+00:26:10,000 --> 00:26:20,000
+Y podríamos acabar viendo que la calidad de aire es no la que deberíamos tener en algunos casos.
+
+281
+00:26:20,000 --> 00:26:23,000
+Entonces, esto me motivó a pensar hoy,
+
+282
+00:26:23,000 --> 00:26:30,000
+¿por qué no con el conocimiento previo que venimos del proyecto de calidad de aire interior ya?
+
+283
+00:26:30,000 --> 00:26:34,000
+Puedo ir a un paso más allá y hacer exteriores.
+
+284
+00:26:34,000 --> 00:26:37,000
+Y además, que sea portátil.
+
+285
+00:26:37,000 --> 00:26:42,000
+Y buscaba también la justificación de poder hacerlo.
+
+286
+00:26:42,000 --> 00:26:49,000
+Y esto fue para mí como la mayor justificación de sí, necesitamos hacerlo.
+
+287
+00:26:49,000 --> 00:26:53,000
+Y estos son los inicios.
+
+288
+00:26:53,000 --> 00:27:01,000
+Esto es un spoiler básicamente para lo que se viene en la parte dos del proyecto, o en otro proyecto,
+
+289
+00:27:01,000 --> 00:27:04,000
+que es crear un sistema móvil.
+
+290
+00:27:04,000 --> 00:27:08,000
+Voy a usar lo que es este sensor de partículas.
+
+291
+00:27:08,000 --> 00:27:11,000
+Va a ser con microcontrolador.
+
+292
+00:27:11,000 --> 00:27:15,000
+Y va a ser un sistema posible de llevar encima,
+
+293
+00:27:15,000 --> 00:27:22,000
+de la manera de que vamos a poder saber si estamos en una buena condición de aire o no.
+
+294
+00:27:22,000 --> 00:27:24,000
+¿Qué es importante esto?
+
+295
+00:27:24,000 --> 00:27:27,000
+Alguien puede pensar, si no puedo hacer nada.
+
+296
+00:27:27,000 --> 00:27:30,000
+Podemos ponernos una mascarilla, por ejemplo.
+
+297
+00:27:30,000 --> 00:27:33,000
+Simplemente con ese dato de decir,
+
+298
+00:27:33,000 --> 00:27:38,000
+estoy en una condición de aire que no soy consciente que es mala, pero lo es.
+
+299
+00:27:38,000 --> 00:27:43,000
+Simplemente poniéndonos una mascarilla podemos evitar esos daños.
+
+300
+00:27:43,000 --> 00:27:53,000
+Pero los futuros daños que podemos…
+
+301
+00:27:53,000 --> 00:28:07,040
+Es un post de MicroPython que es una simplificación, que es una simplificación de MicroPython.
+
+302
+00:28:07,040 --> 00:28:14,740
+Si alguien piensa por qué circuito y Python y no MicroPython, ambos oxenes son muy buenas,
+
+303
+00:28:14,740 --> 00:28:20,540
+pero estaba haciendo esta versión con circuito y Python, porque me gustaria también que
+
+304
+00:28:20,540 --> 00:28:26,560
+fuera muy fácil de introducir para la gente que está empezando a programar.
+
+305
+00:28:26,560 --> 00:28:35,720
+Entonces circuito y Python es una de las opciones con muchos tutoriales que puede ayudar ahí.
+
+306
+00:28:35,720 --> 00:28:40,520
+Por supuesto, esta no va a ser la versión que vais a ver en los próximos mesas,
+
+307
+00:28:40,520 --> 00:28:44,640
+pero es como el inicio de que está pasando y hacia dónde vamos.
+
+308
+00:28:44,640 --> 00:28:51,920
+Y con esto voy a acabar. Aquí están mis redes sociales. Si queréis contactar,
+
+309
+00:28:51,920 --> 00:28:57,360
+si necesitáis información, si queréis colaborar con los proyectos,
+
+310
+00:28:57,360 --> 00:29:01,680
+yo estaré muy feliz de compartir. Muchas gracias.
+
+311
+00:29:01,680 --> 00:29:13,000
+Muy bien, alguien tiene preguntas?
+
+312
+00:29:31,680 --> 00:29:38,880
+Hola, en primer lugar, me gusta mucho la gracia con lo que has enfocado todo esto.
+
+313
+00:29:38,880 --> 00:29:43,400
+No puedo evitar preguntarte si cuando has construido todo esto,
+
+314
+00:29:43,400 --> 00:29:48,840
+no te has planteado también cómo inside el tema del diócio de carbono en medir con las plantas
+
+315
+00:29:48,840 --> 00:29:57,200
+o monitorizar también parámetros de electroconductividad y la misión de la luz solar.
+
+316
+00:29:57,200 --> 00:30:03,240
+Y bueno, ya está una pregunta también porque estás decantado por un protocolo socket en lugar de mi QTT.
+
+317
+00:30:03,240 --> 00:30:06,880
+Ah, ok. Bueno, buen punto.
+
+318
+00:30:08,880 --> 00:30:12,040
+Como acopela. El tema de las plantas...
+
+319
+00:30:15,640 --> 00:30:22,880
+El tema de las plantas fue una de mis primeras ideas porque tengo muchas plantas en casa.
+
+320
+00:30:22,880 --> 00:30:30,360
+Entonces pensé, oye, y si compro más plantas y menos y las muevo y las pongo y las quito y empiezo a jugar con eso.
+
+321
+00:30:30,360 --> 00:30:36,800
+El tema es que es bastante complicado el tema de estar seguros que realmente viene de las plantas
+
+322
+00:30:36,800 --> 00:30:43,760
+y no viene de que alguien te visita y da una complejidad, yo creo, mayor.
+
+323
+00:30:43,760 --> 00:30:48,200
+Realmente es un experimento que a mí me encantaría o ver o hacer.
+
+324
+00:30:48,200 --> 00:30:53,040
+O sea, si alguien le motiva esto, por favor, hacerlo así.
+
+325
+00:30:53,040 --> 00:30:57,120
+Super. Pues quiero saber más. Me encantará saber más.
+
+326
+00:30:57,120 --> 00:31:09,200
+Y yo feliz porque era una de las cosillas que es que viniendo del mundo de las plantas era como, sí, de hecho empecé por ahí.
+
+327
+00:31:09,200 --> 00:31:18,320
+Respecto al protocolo, la verdad es que yo busqué opciones en internet.
+
+328
+00:31:18,320 --> 00:31:27,840
+Y una de las opciones era esta y dije, pues, oiga, pues ya está, la probé, funcionó y esa fue mi decisión.
+
+329
+00:31:27,840 --> 00:31:36,320
+Pero si hay otra opción que es mejor, yo encantada de conocerla, pero simplemente fue un tema de,
+
+330
+00:31:36,320 --> 00:31:40,520
+¿cómo conecto esto tal? Ah, mira, bastante esticó, funciona.
+
+331
+00:31:40,520 --> 00:31:45,400
+Para ser honesta, eso es lo, en eso va a ser mi decisión.
+
+332
+00:31:50,600 --> 00:31:55,240
+Hola. Mi pregunta es sobre los sensores.
+
+333
+00:31:55,240 --> 00:32:00,720
+Si fue muy complicado calibrarlos o son más bien que los enchufadas y ya funcionan,
+
+334
+00:32:00,720 --> 00:32:06,480
+¿lo hay que hacer unas mediciones previas y tratar de encontrar un máximo mínimo y como perder mucho tiempo con eso?
+
+335
+00:32:06,480 --> 00:32:08,600
+O es relativamente sencillo.
+
+336
+00:32:08,600 --> 00:32:14,360
+Muy buena pregunta. De hecho, uno de los miedos que yo tenía por el tema del CO2
+
+337
+00:32:14,360 --> 00:32:23,440
+era que algunos de los sensores necesitas incluso comprar el CO2 en Sprite para poder calibrarlos.
+
+338
+00:32:23,440 --> 00:32:32,680
+Este específico, en teoría, venía calibrado y simplemente tenías que mirar el exterior
+
+339
+00:32:32,680 --> 00:32:40,000
+y echarle un ojo según el protocolo y las instrucciones del fabricante.
+
+340
+00:32:40,000 --> 00:32:45,520
+Lo compré con el riesgo de pensar, ahi, ahora voy a tener que comprarme el CO2,
+
+341
+00:32:45,520 --> 00:32:50,560
+no es la cosa que más se ilusiona por los riesgos que conlleva,
+
+342
+00:32:50,560 --> 00:32:57,200
+hice la prueba del exterior interior, funcionó súper bien según lo que el fabricante describía
+
+343
+00:32:57,200 --> 00:33:00,920
+y ya está. La verdad es que fue súper sencillo.
+
+344
+00:33:00,920 --> 00:33:07,960
+En el tema de las partículas igual, no necesité calibración previa,
+
+345
+00:33:07,960 --> 00:33:14,160
+pero el del CO2 es un poco más complicado, pero la verdad es que en este caso fue muy fácil.
+
+346
+00:33:14,160 --> 00:33:18,160
+¡Hola!
+
+347
+00:33:18,160 --> 00:33:23,160
+Igual no me hace falta el micrófono.
+
+348
+00:33:23,160 --> 00:33:32,160
+Me parece un proyecto súper interesante y quería preguntarte si tal cual está con los sensores
+
+349
+00:33:32,160 --> 00:33:38,160
+que has probado esto tendría aplicación para detectar alérgenos o si es algo que te has planteado,
+
+350
+00:33:38,160 --> 00:33:43,960
+podría ser una expansión. Por ejemplo, o sea, es que yo soy alérgico y la graminar me la puñe tanto,
+
+351
+00:33:43,960 --> 00:33:55,960
+por qué si lo podría tratar. Sí, con el sensor de partículas es suficiente para detectar alérgicos.
+
+352
+00:33:55,960 --> 00:34:03,960
+Por ejemplo, el polvo, porque el sensor te da cuatro canales, creo que son cuatro diámetros de partículas
+
+353
+00:34:03,960 --> 00:34:13,760
+y uno de ellos es el polvo, el otro es otros alergénicos que podemos encontrar que puede ser el polen,
+
+354
+00:34:13,760 --> 00:34:23,560
+aunque etcétera. Pero sí, simplemente es la misma implementación, es simplemente usar los datos que vienen de este sensor,
+
+355
+00:34:23,560 --> 00:34:29,560
+que de hecho yo ya tengo los datos, que es el mismo sistema.
+
+356
+00:34:29,560 --> 00:34:35,760
+El tema es que, por ejemplo, la optimización en el modelo está focalizado los datos del CO2,
+
+357
+00:34:35,760 --> 00:34:44,760
+pero el tema del monitoreo, sí, completamente, solo con este sensor.
+
+358
+00:34:50,760 --> 00:34:54,760
+¿Puedes poner la foto de la foto que está en nuestra hermana?
+
+359
+00:34:54,760 --> 00:34:59,760
+La foto porque no es mi hermana.
+
+360
+00:35:00,760 --> 00:35:04,760
+¿El que tiene la ruborito dice?
+
+361
+00:35:04,760 --> 00:35:08,760
+Hola, ¿vodero? Muchas gracias. Muchos gracias y mucho el proyecto.
+
+362
+00:35:08,760 --> 00:35:16,760
+Me he hecho atención cuando has enseñado la gráfica y nos has contado que se puede sacar de la gráfica
+
+363
+00:35:16,760 --> 00:35:19,760
+cuando estás de vacaciones y cuando viene gente de visita a casa.
+
+364
+00:35:19,760 --> 00:35:30,760
+Primero no me lo esperaba y me pregunto si tenéis, tienes el sensamiento de, no sé si comercializarlo o lo que sea,
+
+365
+00:35:30,760 --> 00:35:34,760
+¿tiene implicaciones de privacidad y de seguridad?
+
+366
+00:35:34,760 --> 00:35:36,760
+Se ve pensabros sobre ese tema.
+
+367
+00:35:36,760 --> 00:35:42,760
+La verdad es que este proyecto simplemente se surgió,
+
+368
+00:35:42,760 --> 00:35:46,760
+como buscar una solución a lo que para mí era un problema.
+
+369
+00:35:46,760 --> 00:35:52,760
+Y siempre yo los pensamientos que teníamos que sea compartible, que sea de open source,
+
+370
+00:35:52,760 --> 00:35:55,760
+que toda la gente pueda usarlo, implementarlo en casa, por ejemplo,
+
+371
+00:35:55,760 --> 00:36:02,760
+si podemos detectar a los alergénicos o el polvo, pues ayudar a gente.
+
+372
+00:36:02,760 --> 00:36:10,760
+Obviamente no he pensado en temas de seguridad porque realmente esto era como mi proyectito, mi casa,
+
+373
+00:36:10,760 --> 00:36:19,760
+es como pensé en algún momento expandirlo a casa de mis padres y tener el control remoto.
+
+374
+00:36:19,760 --> 00:36:26,760
+Ahí ya empecé a pensar en temas de seguridad, de data privacy, conexiones.
+
+375
+00:36:26,760 --> 00:36:33,760
+Y la verdad es que le vi tantos problemas que dije, de momento me lo quedo en casa.
+
+376
+00:36:33,760 --> 00:36:39,760
+Pero si alguien además tiene ideas o como podemos hablar, yo estaría muy feliz
+
+377
+00:36:39,760 --> 00:36:49,760
+porque quería también implementarlo en casa de mis padres y ir controlando el aire.
+
+378
+00:36:49,760 --> 00:36:53,760
+Lo siento, pero no hay más temas para preguntas que vamos un poquito a pillar la charla.
+
+379
+00:36:53,760 --> 00:36:56,760
+Igualmente tienes una slide con todas tus redes sociales.
+
+380
+00:36:56,760 --> 00:36:59,760
+Sí, además estaré por aquí todos los días con lo que...
+
+381
+00:36:59,760 --> 00:37:02,760
+Y además recordar que luego está el Discord disponible donde podéis entrar
+
+382
+00:37:02,760 --> 00:37:05,760
+y hacer todas las preguntas que queráis, en si tenéis.
+
+383
+00:37:05,760 --> 00:37:08,760
+Y vamos a estar aquí los ponentes durante todos los días.
+
+384
+00:37:08,760 --> 00:37:10,760
+Así que nada, pues muchas gracias.
+

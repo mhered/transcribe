@@ -1,0 +1,2336 @@
+1
+00:00:00,000 --> 00:00:08,240
+Hola, hola, y ya estamos fuera aquí.
+
+2
+00:00:08,240 --> 00:00:10,240
+Estamos otra vez.
+
+3
+00:00:10,240 --> 00:00:15,240
+Vale, pues siguiente charla viene sobre tests.
+
+4
+00:00:15,240 --> 00:00:21,240
+Y además va a ser sobre una de las librerías más famosas de Python de tests, que es Python.
+
+5
+00:00:21,240 --> 00:00:27,240
+Quizás la conozcáis, si no ahora mismo la vais a conocer, es de las librerías más potentes.
+
+6
+00:00:27,240 --> 00:00:30,840
+Y como sabemos los tests son una de las partes importantes del código.
+
+7
+00:00:30,840 --> 00:00:33,340
+Nos gustó, no siempre nos toca hacerlos.
+
+8
+00:00:33,340 --> 00:00:39,140
+Entonces vamos a aprender cómo hacerlos, cómo hacerlo si bien y de una forma muy amena seguro.
+
+9
+00:00:39,140 --> 00:00:42,440
+Cuéntanos, Sergio, ¿quién nos habla sobre los tests?
+
+10
+00:00:42,440 --> 00:00:50,140
+Bueno, pues la charla va a impartir Héctor Canto, es desarrollador de software de Python desde hace 11 años.
+
+11
+00:00:50,140 --> 00:00:58,740
+Ya es veterano porque es su segunda participación como oponente en la Python y me gustó mucho una frase que puso su biografía,
+
+12
+00:00:58,740 --> 00:01:02,740
+que decía que trata con mucho cariño tanto el testing como la documentación.
+
+13
+00:01:02,740 --> 00:01:07,040
+Yo creo que es algo que quizás no todas hacemos con tanto cariño.
+
+14
+00:01:07,040 --> 00:01:12,240
+Así que nada, le damos la bienvenida y lo pasamos por aquí.
+
+15
+00:01:12,240 --> 00:01:13,740
+Hola Héctor.
+
+16
+00:01:13,740 --> 00:01:16,240
+Hola, ¿qué tal? ¿Me escuchas bien?
+
+17
+00:01:16,240 --> 00:01:19,240
+Todo bien, se te ve y se te escucha perfecto.
+
+18
+00:01:19,240 --> 00:01:21,240
+Sí, sí. ¿Cómo estás?
+
+19
+00:01:21,240 --> 00:01:24,240
+Con mucha ganas de empezar ya, esto ha hecho por el río.
+
+20
+00:01:24,240 --> 00:01:25,240
+Sí, qué bueno.
+
+21
+00:01:25,240 --> 00:01:26,540
+Está en el río.
+
+22
+00:01:26,540 --> 00:01:30,540
+Tranquilo, tranquilo que no nos está viendo a nadie, tú no te preocupes.
+
+23
+00:01:30,540 --> 00:01:37,240
+Pues nada, con muchas ganas de verte Héctor, todo tu y yo.
+
+24
+00:01:37,240 --> 00:01:41,240
+Esos, comparte la presentación y adelante cuando quieras.
+
+25
+00:01:41,240 --> 00:01:42,240
+Suerte.
+
+26
+00:01:42,240 --> 00:01:50,240
+Pues bien, vamos a hablar de testing y nos vamos a centrar en Python Test.
+
+27
+00:01:50,240 --> 00:01:58,240
+Todo el contenido de las transparencias, lo voy a subir a SlideShare y también a GitHub.
+
+28
+00:01:58,240 --> 00:02:07,240
+Va a haber ejemplos de código que también podréis revisar y probar por vosotros tanto en GitHub como los propios de la presentación
+
+29
+00:02:07,240 --> 00:02:09,240
+más o menos funcionan.
+
+30
+00:02:09,240 --> 00:02:14,240
+Tendréis que hacer algún import que los hayas retirado, pero está todo preparado para funcionar.
+
+31
+00:02:14,240 --> 00:02:18,240
+Seguro que no podréis hacer algún fallo y me lo pasáis.
+
+32
+00:02:18,240 --> 00:02:25,240
+Vamos a centrarnos en testing unitario, aunque muchas cosas son válidas para más allá de unitario.
+
+33
+00:02:25,240 --> 00:02:32,240
+También nos tendrán con el framework by test, pero muchas cosas sirven para otros frameworks también,
+
+34
+00:02:32,240 --> 00:02:36,240
+como el nativo, unitest, incluso para otros lenguajes.
+
+35
+00:02:36,240 --> 00:02:40,240
+Aplicarlo allí donde veáis que es posible.
+
+36
+00:02:40,240 --> 00:02:42,240
+Bien, ¿por qué by test?
+
+37
+00:02:42,240 --> 00:02:52,240
+En mi opinión, by test es un framework muy completo, muy maduro, y realmente supera lo que nos da el unitest,
+
+38
+00:02:52,240 --> 00:02:54,240
+la librería standard.
+
+39
+00:02:54,240 --> 00:02:58,240
+Está muy bien documentado, es compatible con mundo de herramientas.
+
+40
+00:02:58,240 --> 00:03:01,240
+Yo lo recomiendo encarecidamente.
+
+41
+00:03:01,240 --> 00:03:02,240
+No dejéis de probarlo.
+
+42
+00:03:02,240 --> 00:03:07,240
+Además, es compatible con unitest, así que pueden convivir test de los dos tipos.
+
+43
+00:03:07,240 --> 00:03:12,240
+Vamos a hablar sobre todo de ser efectivos.
+
+44
+00:03:12,240 --> 00:03:14,240
+¿Por qué?
+
+45
+00:03:14,240 --> 00:03:18,240
+Porque el test te ocupa una parte muy grande de nuestro tiempo programando.
+
+46
+00:03:18,240 --> 00:03:22,240
+Yo podría decir que dedico a lo mejor el 50%.
+
+47
+00:03:22,240 --> 00:03:27,240
+Cuanto mejor testing tengamos, mejor software vamos a hacer.
+
+48
+00:03:27,240 --> 00:03:32,240
+Y cuanto más efectivos, más tiempo se lo vamos por otros cosas.
+
+49
+00:03:32,240 --> 00:03:36,240
+Estamos en cuenta, si dedicáis el 50% y ahorraes la mitad del tiempo de testing,
+
+50
+00:03:36,240 --> 00:03:38,240
+porque lo estás haciendo bien tenéis una buena estrategia,
+
+51
+00:03:38,240 --> 00:03:42,240
+estáis sabiendo el 25% de vuestro tiempo, es mucho tiempo.
+
+52
+00:03:42,240 --> 00:03:48,240
+Así que merece la pena invertir en mejorar nuestro approach a testing.
+
+53
+00:03:48,240 --> 00:03:58,240
+También quería un poco convenceros, si nos traes ya, de que testear es importante más allá de garantizar que nuestro código funciona.
+
+54
+00:03:58,240 --> 00:04:03,240
+Es importante para poder desarrollar fichos nuevas con tranquilidad,
+
+55
+00:04:03,240 --> 00:04:06,240
+que no se nos rompa nada por detrás.
+
+56
+00:04:06,240 --> 00:04:09,240
+Para mí es parte de la documentación.
+
+57
+00:04:09,240 --> 00:04:13,240
+Son ejemplos de uso de nuestro programa
+
+58
+00:04:13,240 --> 00:04:19,240
+y nos da un contexto, de contextos pequeñitos para saber cómo creemos que funciona un programa.
+
+59
+00:04:19,240 --> 00:04:24,240
+Es un buen punto de entrada para un programador nuevo a un proyecto nuevo.
+
+60
+00:04:24,240 --> 00:04:30,240
+Además, ese pequeño contexto son pequeños entornos de depuración.
+
+61
+00:04:30,240 --> 00:04:34,240
+Entonces, muchas veces no es fácil saltar a un servidor,
+
+62
+00:04:34,240 --> 00:04:40,240
+especialmente si está en cloud o si ni siquiera podemos entrar en esa máquina,
+
+63
+00:04:40,240 --> 00:04:44,240
+podemos intentar reproducirlo en nuestro pequeño entorno.
+
+64
+00:04:44,240 --> 00:04:49,240
+Y para mí, casi lo más importante, que nos habilita para resfotarizar.
+
+65
+00:04:49,240 --> 00:04:55,240
+Tenemos un programa que funciona y queremos mejorarlo a nivel mantenimiento.
+
+66
+00:04:55,240 --> 00:04:58,240
+Con los test podemos programar mucho más rápido,
+
+67
+00:04:58,240 --> 00:05:02,240
+arriesgar mucho más porque siempre tendremos una red de seguridad
+
+68
+00:05:02,240 --> 00:05:06,240
+para saber qué lo estamos haciendo bien, que no estamos rompiendo nuestro programa.
+
+69
+00:05:06,240 --> 00:05:12,240
+En esto habría mucho más que hablar, os recomiendo un artículo que vivimos hace un par de años.
+
+70
+00:05:12,240 --> 00:05:15,240
+Tenéis ahí el link, tips and tricks for unit test.
+
+71
+00:05:15,240 --> 00:05:19,240
+También hay ejemplos de código usando paí test,
+
+72
+00:05:19,240 --> 00:05:24,240
+así que extiende un poco más lo que tiene esta charla.
+
+73
+00:05:24,240 --> 00:05:27,240
+Bien.
+
+74
+00:05:27,240 --> 00:05:32,240
+¿Qué vamos a buscar con este tipo de efectividad?
+
+75
+00:05:32,240 --> 00:05:37,240
+Queremos ser efectivos a nivel tiempo, sobre todo, tiempo de programador, tiempo nuestro.
+
+76
+00:05:37,240 --> 00:05:42,240
+Entonces, lanzar los unit test tiene que ser algo manejable,
+
+77
+00:05:42,240 --> 00:05:44,240
+tenemos que lanzar solo lo que queremos,
+
+78
+00:05:44,240 --> 00:05:47,240
+los test tienen que ser lo más rápidos posibles y para eso hay muchas técnicas,
+
+79
+00:05:47,240 --> 00:05:49,240
+pero no vamos a entrar en ellas.
+
+80
+00:05:49,240 --> 00:05:55,240
+Queremos que el código, tanto el propio de producción como el de test,
+
+81
+00:05:55,240 --> 00:05:59,240
+sea fácil de entender, que sea mantenible.
+
+82
+00:05:59,240 --> 00:06:02,240
+Y sobre todo, tenemos que pensar en nuestros compañeros,
+
+83
+00:06:02,240 --> 00:06:05,240
+en nuestros futuros compañeros, los que se incorporan,
+
+84
+00:06:05,240 --> 00:06:10,240
+y en el futuro yo, es muy típico que dejéis un proyecto aparcado unos meses,
+
+85
+00:06:10,240 --> 00:06:15,240
+que solo habéis trabajado vosotros en él, volvéis a él y estáis periodísimos.
+
+86
+00:06:15,240 --> 00:06:21,240
+Si tenemos unos test, eso nos va a ayudar a coger el contexto mucho más rápido.
+
+87
+00:06:21,240 --> 00:06:28,240
+Y en esta charla vamos a ver cómo conseguir esta efectividad mediante.
+
+88
+00:06:28,240 --> 00:06:33,240
+Utilizar PyTest en toda su potencia, entender un poquito más la teoría,
+
+89
+00:06:33,240 --> 00:06:36,240
+mocs, fixtures, parametrizización, etc.
+
+90
+00:06:36,240 --> 00:06:41,240
+Aprovechar muy bien librerías complementarias, plugins,
+
+91
+00:06:41,240 --> 00:06:45,240
+y librerías independientes que funcionan muy bien en la parte de test.
+
+92
+00:06:45,240 --> 00:06:51,240
+Debemos aplicar prácticas generales del código a nuestro código de test,
+
+93
+00:06:51,240 --> 00:06:53,240
+tenemos que tratarlo como un ciudadano de primera clase,
+
+94
+00:06:53,240 --> 00:06:57,240
+no como algo lateral y menos importante,
+
+95
+00:06:57,240 --> 00:07:03,240
+y en general utilizar estrategias de código potentes y mucho sentido común.
+
+96
+00:07:03,240 --> 00:07:08,240
+Vamos ya a la materia, a la chicha.
+
+97
+00:07:08,240 --> 00:07:15,240
+Vamos a hablar de técnicas que son efectivas en las fases típicas de un test,
+
+98
+00:07:15,240 --> 00:07:18,240
+que muchas veces se conoce como la triple A,
+
+99
+00:07:18,240 --> 00:07:21,240
+arrange, que es la preparación, act, que es la ejecución,
+
+100
+00:07:21,240 --> 00:07:23,240
+y assert, que es la validación.
+
+101
+00:07:23,240 --> 00:07:26,240
+También lo conoceréis por los nombres de setup, ejecución,
+
+102
+00:07:26,240 --> 00:07:28,240
+y también tigdown.
+
+103
+00:07:28,240 --> 00:07:32,240
+Más o menos esto también cubre esos conceptos.
+
+104
+00:07:32,240 --> 00:07:37,240
+Empezaremos de todas formas con cómo lanzamos la suite de test,
+
+105
+00:07:37,240 --> 00:07:42,240
+porque eso no nos da efectividad, ya lo veréis.
+
+106
+00:07:42,240 --> 00:07:47,240
+Tenemos muchas opciones de paytest que nos ayudan a seleccionar perfectamente
+
+107
+00:07:47,240 --> 00:07:50,240
+exactamente lo que queremos lanzar.
+
+108
+00:07:50,240 --> 00:07:53,240
+Podemos usar marcadores para muchas cosas,
+
+109
+00:07:53,240 --> 00:07:57,240
+y finalmente solo lanzaremos lo que necesitemos.
+
+110
+00:07:57,240 --> 00:07:59,240
+¿Y cómo?
+
+111
+00:07:59,240 --> 00:08:04,240
+El primer comando que os quiero recordar es paytest.gionhelp,
+
+112
+00:08:04,240 --> 00:08:07,240
+que os dará todos los comandos que tenemos disponibles.
+
+113
+00:08:07,240 --> 00:08:11,240
+Revisarlos de vez en cuando, porque encontraréis cosas que os habéis olvidado,
+
+114
+00:08:11,240 --> 00:08:17,240
+que nunca habéis visto, y que realmente os da una mejora.
+
+115
+00:08:17,240 --> 00:08:22,240
+Para lanzar test específicos, podemos tanto nombrarlos,
+
+116
+00:08:22,240 --> 00:08:26,240
+un grupo de test en un directorio, en un subdirectorio,
+
+117
+00:08:26,240 --> 00:08:30,240
+en un archivo concreto, incluso podríamos llegar al nivel de una clase
+
+118
+00:08:30,240 --> 00:08:33,240
+o una función específica con esa sintaxis.
+
+119
+00:08:33,240 --> 00:08:36,240
+Yo realmente lo que más uso son los marcadores,
+
+120
+00:08:36,240 --> 00:08:39,240
+y de vez en cuando el filtro, el minusk,
+
+121
+00:08:39,240 --> 00:08:43,240
+que nos permite seleccionar un test por un trozo de su nombre.
+
+122
+00:08:43,240 --> 00:08:48,240
+Por ejemplo, de las opciones que nos da paytest nativamente,
+
+123
+00:08:48,240 --> 00:08:51,240
+tenemos esto para repetir los test fallidos.
+
+124
+00:08:51,240 --> 00:08:54,240
+Es muy típico que lanzamos una sub completa,
+
+125
+00:08:54,240 --> 00:08:56,240
+que tarda dos minutos y nos fallan dos test.
+
+126
+00:08:56,240 --> 00:08:59,240
+Vamos a trabajar en esos test durante un rato.
+
+127
+00:08:59,240 --> 00:09:03,240
+Y lo primero que vamos a hacer es probar que esos test se han sido resueltos.
+
+128
+00:09:03,240 --> 00:09:08,240
+Podemos lanzarlos los últimos que han fallado, las failet,
+
+129
+00:09:08,240 --> 00:09:10,240
+lanzarlos los que han fallado primero,
+
+130
+00:09:10,240 --> 00:09:14,240
+y si tal la cortamos ya, si vemos que siguen fallando.
+
+131
+00:09:14,240 --> 00:09:18,240
+Incluso también para acelerar nuestra ejecución,
+
+132
+00:09:18,240 --> 00:09:23,240
+podemos usar el plugin Xdisk que lanza los test en paralelo.
+
+133
+00:09:23,240 --> 00:09:25,240
+Es un plugin un poco complejo,
+
+134
+00:09:25,240 --> 00:09:28,240
+porque da mucho trabajo configurarlo,
+
+135
+00:09:28,240 --> 00:09:31,240
+a veces tienes algunos problemas de race condition
+
+136
+00:09:31,240 --> 00:09:33,240
+cuando utilizas bases de datos,
+
+137
+00:09:33,240 --> 00:09:35,240
+entonces no siempre se puede usar
+
+138
+00:09:35,240 --> 00:09:38,240
+y puede ser que os lleve bastante tiempo a ponerlo a punto.
+
+139
+00:09:38,240 --> 00:09:44,240
+Pero si, me da un intento que si funciona realmente ahorras mucho tiempo,
+
+140
+00:09:44,240 --> 00:09:50,240
+especialmente en la pipeline de integración continua.
+
+141
+00:09:50,240 --> 00:09:54,240
+Lo que os decía antes, para lanzarte específicos,
+
+142
+00:09:54,240 --> 00:09:58,240
+esos dos test serían lanzados con ese comando,
+
+143
+00:09:58,240 --> 00:10:00,240
+con Python Skyusers,
+
+144
+00:10:00,240 --> 00:10:04,240
+y claro, aquí se vuelve muy importante el name,
+
+145
+00:10:04,240 --> 00:10:07,240
+que es algo que también nos propone Clean Code.
+
+146
+00:10:07,240 --> 00:10:13,240
+Entonces, intentad darle a los test nombres con chicha,
+
+147
+00:10:13,240 --> 00:10:15,240
+que tengan significado y que os ayuden a entender
+
+148
+00:10:15,240 --> 00:10:18,240
+solo con el nombre que hace ese test.
+
+149
+00:10:18,240 --> 00:10:22,240
+Los marcadores, a mí es una cosa que me encanta,
+
+150
+00:10:22,240 --> 00:10:24,240
+me hace la vida mucho más fácil,
+
+151
+00:10:24,240 --> 00:10:26,240
+uso mucho el segundo que he puesto,
+
+152
+00:10:26,240 --> 00:10:29,240
+que es el mark.current,
+
+153
+00:10:29,240 --> 00:10:32,240
+para lanzar solo los test que tengo marcados
+
+154
+00:10:32,240 --> 00:10:34,240
+que estoy desarrollando ahora mismo.
+
+155
+00:10:34,240 --> 00:10:38,240
+Además, tenéis también algunos ya nativos,
+
+156
+00:10:38,240 --> 00:10:41,240
+como Slow, como TriFers,
+
+157
+00:10:41,240 --> 00:10:47,240
+que nos permiten seleccionar que te ejecutamos
+
+158
+00:10:47,240 --> 00:10:50,240
+según nuestras preferencias.
+
+159
+00:10:50,240 --> 00:10:53,240
+También os recomiendo mucho usar el Skill,
+
+160
+00:10:53,240 --> 00:10:55,240
+el Skip y el X Fail,
+
+161
+00:10:55,240 --> 00:10:57,240
+cuando tengáis un test,
+
+162
+00:10:57,240 --> 00:11:00,240
+que no conseguís el entorno que queréis,
+
+163
+00:11:00,240 --> 00:11:03,240
+no queréis demostrar lo que queréis,
+
+164
+00:11:03,240 --> 00:11:05,240
+y habéis trabajado un montón en él.
+
+165
+00:11:05,240 --> 00:11:07,240
+No lo borréis, no lo comenteis.
+
+166
+00:11:07,240 --> 00:11:10,240
+Lo marcais así, y así os queda como un marcador
+
+167
+00:11:10,240 --> 00:11:12,240
+y tengo que arreglar este test.
+
+168
+00:11:12,240 --> 00:11:14,240
+Este test falla por este motivo,
+
+169
+00:11:14,240 --> 00:11:16,240
+cuando os resuelva este motivo,
+
+170
+00:11:16,240 --> 00:11:17,240
+podría ejecutarlo.
+
+171
+00:11:17,240 --> 00:11:20,240
+Incluso el Skip nos permite,
+
+172
+00:11:20,240 --> 00:11:22,240
+según ciertos parámetros,
+
+173
+00:11:22,240 --> 00:11:24,240
+escoger que te se danzan en qué entornos.
+
+174
+00:11:24,240 --> 00:11:26,240
+Esto es muy importante cuando hay que tener
+
+175
+00:11:26,240 --> 00:11:28,240
+competitividad con diferentes sistemas operativos,
+
+176
+00:11:28,240 --> 00:11:30,240
+por ejemplo, o que hay un enbarallón entorno
+
+177
+00:11:30,240 --> 00:11:32,240
+que cambia según cuando ejecutes el test,
+
+178
+00:11:32,240 --> 00:11:35,240
+entonces tomas la decisión de saltártelo.
+
+179
+00:11:35,240 --> 00:11:37,240
+Es muy potente.
+
+180
+00:11:37,240 --> 00:11:40,240
+Y una vez que tenemos nuestra suit marcada,
+
+181
+00:11:40,240 --> 00:11:44,240
+podemos seleccionar con el comando menos M,
+
+182
+00:11:44,240 --> 00:11:46,240
+qué test queremos.
+
+183
+00:11:46,240 --> 00:11:49,240
+Y tenemos una sintaxis completa con ants,
+
+184
+00:11:49,240 --> 00:11:51,240
+si nots o ors,
+
+185
+00:11:51,240 --> 00:11:54,240
+entonces la capacidad de selección es muy grande.
+
+186
+00:11:54,240 --> 00:11:58,240
+Yo uso este, digamos que es el pack,
+
+187
+00:11:58,240 --> 00:12:00,240
+que uso habitualmente Smoke, Unit,
+
+188
+00:12:00,240 --> 00:12:02,240
+Integration, Curret y Slow.
+
+189
+00:12:02,240 --> 00:12:05,240
+Y de hecho hablaremos sobre Smoke.
+
+190
+00:12:05,240 --> 00:12:11,240
+Los marcadores, antes los veis en una función concreta,
+
+191
+00:12:11,240 --> 00:12:14,240
+pero se pueden usar también a nivel más global,
+
+192
+00:12:14,240 --> 00:12:16,240
+tanto en módulos como en clases.
+
+193
+00:12:16,240 --> 00:12:19,240
+Entonces eso también nos ahorra un poco de sintaxis,
+
+194
+00:12:19,240 --> 00:12:21,240
+de marcar todo,
+
+195
+00:12:21,240 --> 00:12:24,240
+se puede volver un poco repetitivo.
+
+196
+00:12:24,240 --> 00:12:26,240
+Vale,
+
+197
+00:12:26,240 --> 00:12:29,240
+para más un momento en la estructura de los test,
+
+198
+00:12:29,240 --> 00:12:31,240
+hay varias propuestas por ahí.
+
+199
+00:12:31,240 --> 00:12:34,240
+Este es, sí, más o menos la estructura clásica
+
+200
+00:12:34,240 --> 00:12:36,240
+que yo utilizo.
+
+201
+00:12:36,240 --> 00:12:38,240
+Lo bueno que tiene es que utilizando los nombres
+
+202
+00:12:38,240 --> 00:12:41,240
+de los directorios, podemos marcar los test automáticamente.
+
+203
+00:12:41,240 --> 00:12:44,240
+Quedados con que tenemos los test divididos en grupos
+
+204
+00:12:44,240 --> 00:12:47,240
+por su tipo, Smoke, Unit, Integration,
+
+205
+00:12:47,240 --> 00:12:50,240
+suelo separar fixed factors para
+
+206
+00:12:50,240 --> 00:12:53,240
+tenerlas limpias en un sitio aparte.
+
+207
+00:12:53,240 --> 00:12:56,240
+Y normalmente si conocéis por...
+
+208
+00:12:56,240 --> 00:12:59,240
+¿Qué es el test?
+
+209
+00:12:59,240 --> 00:13:02,240
+Tendréis el test en cada uno de los vectorios
+
+210
+00:13:02,240 --> 00:13:05,240
+que os permite varias cosas, es bastante importante.
+
+211
+00:13:05,240 --> 00:13:09,240
+Entonces, utilizando este código,
+
+212
+00:13:09,240 --> 00:13:11,240
+podemos filtrar...
+
+213
+00:13:11,240 --> 00:13:14,240
+Me acabo de ir ahora un susto muy grande
+
+214
+00:13:14,240 --> 00:13:17,240
+porque se quedó todo como congelado.
+
+215
+00:13:17,240 --> 00:13:20,240
+No sé si seré yo solamente, pero nada, está todo bien.
+
+216
+00:13:20,240 --> 00:13:22,240
+¿No?
+
+217
+00:13:22,240 --> 00:13:24,240
+¿Lo escuchas, Héctor?
+
+218
+00:13:24,240 --> 00:13:26,240
+Ahora sí.
+
+219
+00:13:26,240 --> 00:13:29,240
+Vale, es que te veo como la imagen congelada.
+
+220
+00:13:29,240 --> 00:13:32,240
+¿Gimena?
+
+221
+00:13:32,240 --> 00:13:35,240
+¿Tú lo escuchas bien?
+
+222
+00:13:35,240 --> 00:13:37,240
+Sí.
+
+223
+00:13:37,240 --> 00:13:40,240
+Ahora sí, ha sido un momentito que ha habido un...
+
+224
+00:13:40,240 --> 00:13:43,240
+Y también me ha asustado.
+
+225
+00:13:43,240 --> 00:13:46,240
+Nos hemos saltado alguna en transporte?
+
+226
+00:13:46,240 --> 00:13:49,240
+No, fueron dos segundos.
+
+227
+00:13:49,240 --> 00:13:52,240
+Bueno, pues continuamos.
+
+228
+00:13:52,240 --> 00:13:55,240
+Estamos hablando de los marcadores automáticos.
+
+229
+00:13:55,240 --> 00:13:59,240
+Tenemos el primer test principal, el primer directorio test.
+
+230
+00:13:59,240 --> 00:14:02,240
+Y antes de ejecutarse de la subcompeta,
+
+231
+00:14:02,240 --> 00:14:04,240
+se marcan los test automáticamente.
+
+232
+00:14:04,240 --> 00:14:07,240
+Esto nos permite, sin tener que estar marcando,
+
+233
+00:14:07,240 --> 00:14:12,240
+una y otra vez, todos los test seleccionar por tipado.
+
+234
+00:14:12,240 --> 00:14:16,240
+El tipado es importante por el coste que tiene ejecutarlos.
+
+235
+00:14:16,240 --> 00:14:19,240
+Los smokes suelen ser test muy simples, los unit también,
+
+236
+00:14:19,240 --> 00:14:22,240
+y los integrations suelen ser bastante costosos.
+
+237
+00:14:22,240 --> 00:14:25,240
+Entonces no los queremos ejecutar siempre.
+
+238
+00:14:25,240 --> 00:14:28,240
+Y esto es una maravilla.
+
+239
+00:14:31,240 --> 00:14:35,240
+Hago una parte, podríamos hablar muchísimo sobre tipos de test,
+
+240
+00:14:35,240 --> 00:14:37,240
+cuando hay que usarlos, cuáles no,
+
+241
+00:14:37,240 --> 00:14:39,240
+o podemos hablar de la pirámide de test.
+
+242
+00:14:39,240 --> 00:14:44,240
+Una ausencia habitual en muchas sus de test son los smokes.
+
+243
+00:14:44,240 --> 00:14:49,240
+Es muy interesante utilizarlos para comprobar
+
+244
+00:14:49,240 --> 00:14:52,240
+los casos más básicos, que no hemos roto la configuración,
+
+245
+00:14:52,240 --> 00:14:57,240
+que algún objeto se instancia perfectamente con sus valores
+
+246
+00:14:57,240 --> 00:14:59,240
+por efecto, algunos errores simples,
+
+247
+00:14:59,240 --> 00:15:03,240
+que el entorno es como esperamos que sea.
+
+248
+00:15:03,240 --> 00:15:06,240
+Esto es muy importante para evitar sustos imaginados.
+
+249
+00:15:06,240 --> 00:15:10,240
+Tocamos algo, convertimos algo, rompemos algo,
+
+250
+00:15:10,240 --> 00:15:12,240
+y de repente hay 20 test que fallan.
+
+251
+00:15:12,240 --> 00:15:13,240
+¡Buah! ¡Qué susto!
+
+252
+00:15:13,240 --> 00:15:16,240
+Pues con los smokes los corremos los primeros
+
+253
+00:15:16,240 --> 00:15:19,240
+y sabemos que si algo no se puede instaciar,
+
+254
+00:15:19,240 --> 00:15:21,240
+no se van a poder instaciar en ningún caso.
+
+255
+00:15:21,240 --> 00:15:23,240
+Entonces, resolvemos ese pequeño error
+
+256
+00:15:23,240 --> 00:15:25,240
+y volvemos a la normalidad.
+
+257
+00:15:25,240 --> 00:15:28,240
+Por vuestro corazón y por vuestro tiempo,
+
+258
+00:15:28,240 --> 00:15:29,240
+os lo recomiendo.
+
+259
+00:15:29,240 --> 00:15:32,240
+También, no solo en local, sino también en las pipelines.
+
+260
+00:15:32,240 --> 00:15:35,240
+Los primeros que se corren son los smokes,
+
+261
+00:15:35,240 --> 00:15:37,240
+que fallen en unos segundos,
+
+262
+00:15:37,240 --> 00:15:39,240
+ya nos notifica el fallo,
+
+263
+00:15:39,240 --> 00:15:41,240
+corregimos y volvemos a subir.
+
+264
+00:15:41,240 --> 00:15:44,240
+Si no, es muy tipo de tener que esperar al final de la pipeline
+
+265
+00:15:44,240 --> 00:15:46,240
+que puede tardar 10 minutos,
+
+266
+00:15:46,240 --> 00:15:48,240
+dependiendo del tamaño del proyecto.
+
+267
+00:15:48,240 --> 00:15:53,240
+Y ese tiempo de espera que no estamos haciendo nada importante,
+
+268
+00:15:53,240 --> 00:15:56,240
+es una pérdida de tiempo muy severa.
+
+269
+00:15:56,240 --> 00:16:00,240
+Otro plugin importante es la alternación.
+
+270
+00:16:00,240 --> 00:16:05,240
+Realmente, ustedes deben ejecutar de una manera aleatoria
+
+271
+00:16:05,240 --> 00:16:08,240
+para comprobar que no hay efectos colaterales entre ellos,
+
+272
+00:16:08,240 --> 00:16:10,240
+pero a veces queremos algunos concretos,
+
+273
+00:16:10,240 --> 00:16:12,240
+como los smokes, lanzarlos primero.
+
+274
+00:16:12,240 --> 00:16:15,240
+Este plugin nos ayuda con eso.
+
+275
+00:16:15,240 --> 00:16:17,240
+Y los lentos, al final, también.
+
+276
+00:16:17,240 --> 00:16:19,240
+Y para el entorno,
+
+277
+00:16:19,240 --> 00:16:22,240
+recomiendo mucho este plugin, el Pytest M,
+
+278
+00:16:22,240 --> 00:16:25,240
+que nos permite separar los entornos de local
+
+279
+00:16:25,240 --> 00:16:28,240
+y de producción del DTES.
+
+280
+00:16:28,240 --> 00:16:31,240
+Entonces, no los tenemos en nuestro sistema,
+
+281
+00:16:31,240 --> 00:16:33,240
+no lo tenemos en nuestro punto M,
+
+282
+00:16:33,240 --> 00:16:35,240
+no lo tenemos en nuestro docker.
+
+283
+00:16:35,240 --> 00:16:37,240
+Dentro de la ProcureSoot se cargan
+
+284
+00:16:37,240 --> 00:16:39,240
+y al final de la ejecución se descargan.
+
+285
+00:16:39,240 --> 00:16:42,240
+Y ningún problema.
+
+286
+00:16:42,240 --> 00:16:45,240
+Y también para cambiar el entorno,
+
+287
+00:16:45,240 --> 00:16:48,240
+por ejemplo, las variables en torno a nivel puntual,
+
+288
+00:16:48,240 --> 00:16:50,240
+tenemos la texture monkey patch,
+
+289
+00:16:50,240 --> 00:16:55,240
+que nos permite cambiar o introducir o quitar
+
+290
+00:16:55,240 --> 00:16:57,240
+variables en torno.
+
+291
+00:16:57,240 --> 00:16:59,240
+Entonces, no hay que hacer cosas locas
+
+292
+00:16:59,240 --> 00:17:02,240
+con librería OS, ni nada.
+
+293
+00:17:02,240 --> 00:17:05,240
+Usamos lo que nos da Pytest.
+
+294
+00:17:05,240 --> 00:17:08,240
+Ahora pasamos a la primera fase
+
+295
+00:17:08,240 --> 00:17:10,240
+de un test propiamente dicho,
+
+296
+00:17:10,240 --> 00:17:12,240
+que es el setup.
+
+297
+00:17:12,240 --> 00:17:16,240
+Vamos a hablar de parametriz afición, de fixtos y de facturis.
+
+298
+00:17:16,240 --> 00:17:20,240
+Así es como luce una parametriz afición
+
+299
+00:17:20,240 --> 00:17:22,240
+de un test muy simple.
+
+300
+00:17:22,240 --> 00:17:25,240
+Enunciamos unos parámetros de entrada,
+
+301
+00:17:25,240 --> 00:17:28,240
+por ejemplo, entry y expected,
+
+302
+00:17:28,240 --> 00:17:31,240
+creamos un conjunto de casos
+
+303
+00:17:31,240 --> 00:17:34,240
+y ejecutamos nuestra función
+
+304
+00:17:34,240 --> 00:17:37,240
+que está siendo testeada con los parámetros de entrada
+
+305
+00:17:37,240 --> 00:17:39,240
+y nos vamos a controlar el resultado
+
+306
+00:17:39,240 --> 00:17:41,240
+que esperamos.
+
+307
+00:17:41,240 --> 00:17:43,240
+En vez de hacer un test por caso,
+
+308
+00:17:43,240 --> 00:17:45,240
+que es algo que he visto muchas veces,
+
+309
+00:17:45,240 --> 00:17:48,240
+hacemos un test para todas las entradas posibles.
+
+310
+00:17:48,240 --> 00:17:50,240
+También se va a separarlos en dos bloques,
+
+311
+00:17:50,240 --> 00:17:53,240
+uno de entradas positivas y uno de entradas negativas,
+
+312
+00:17:53,240 --> 00:17:56,240
+porque a veces la forma del test cambia.
+
+313
+00:17:56,240 --> 00:17:58,240
+Por ejemplo, si lanzan una sección,
+
+314
+00:17:58,240 --> 00:18:01,240
+es difícil de hacer código que cubra el caso positivo
+
+315
+00:18:01,240 --> 00:18:02,240
+y el caso negativo.
+
+316
+00:18:02,240 --> 00:18:06,240
+Es mucho más fácil hacer dos grupos.
+
+317
+00:18:06,240 --> 00:18:10,240
+La primera es las fixtures para los más nomatos.
+
+318
+00:18:10,240 --> 00:18:15,240
+Una fixture es súper difícil de definir,
+
+319
+00:18:15,240 --> 00:18:17,240
+porque son muchas cosas así.
+
+320
+00:18:17,240 --> 00:18:21,240
+Pero reduciendo lo mucho es el conjunto de elementos
+
+321
+00:18:21,240 --> 00:18:25,240
+que situamos para crear un entorno concreto para un test.
+
+322
+00:18:25,240 --> 00:18:27,240
+Que implica tanto el sistema que estamos probando
+
+323
+00:18:27,240 --> 00:18:29,240
+como su entorno,
+
+324
+00:18:29,240 --> 00:18:31,240
+y incluye también los datos.
+
+325
+00:18:31,240 --> 00:18:33,240
+Y entonces hablaremos de cómo preparar datos,
+
+326
+00:18:33,240 --> 00:18:36,240
+cómo colocar el sistema en un entorno concreto,
+
+327
+00:18:36,240 --> 00:18:39,240
+usando sobre todo...
+
+328
+00:18:42,240 --> 00:18:45,240
+y cómo trucar el comportamiento de elementos activos.
+
+329
+00:18:49,240 --> 00:18:52,240
+Vale, en concreto,
+
+330
+00:18:52,240 --> 00:18:55,240
+PiTest viene con el decorador fixture
+
+331
+00:18:55,240 --> 00:18:58,240
+que nos permite crear sus fixtures.
+
+332
+00:18:58,240 --> 00:19:02,240
+No son exactamente las fixtures que estamos pensando en general,
+
+333
+00:19:02,240 --> 00:19:05,240
+son las concretas, el elemento programado.
+
+334
+00:19:05,240 --> 00:19:08,240
+Y no han estado dividido en tres partes.
+
+335
+00:19:08,240 --> 00:19:11,240
+El setup, preparamos la fixture,
+
+336
+00:19:11,240 --> 00:19:16,240
+el jet que devolvemos un parámetro para ser utilizados en tiempo real,
+
+337
+00:19:16,240 --> 00:19:20,240
+y el test-down, donde limpiamos lo que hayamos creado
+
+338
+00:19:20,240 --> 00:19:24,240
+para dejar el entorno tal cual estaba cuando empezamos.
+
+339
+00:19:24,240 --> 00:19:27,240
+Y podemos tener fixtures que solo tienen setup,
+
+340
+00:19:27,240 --> 00:19:29,240
+fixtures que solo tienen tirdown,
+
+341
+00:19:29,240 --> 00:19:32,240
+o que tienen las dos cosas, como es este caso.
+
+342
+00:19:32,240 --> 00:19:35,240
+Este es un ejemplo bastante real,
+
+343
+00:19:35,240 --> 00:19:38,240
+meter datos en una base de datos.
+
+344
+00:19:38,240 --> 00:19:41,240
+Entonces, creamos un usuario,
+
+345
+00:19:41,240 --> 00:19:44,240
+lo escribimos en base de datos,
+
+346
+00:19:44,240 --> 00:19:47,240
+y lo devolvemos para que el test lo pueda usar.
+
+347
+00:19:47,240 --> 00:19:50,240
+Y al final, después del test,
+
+348
+00:19:50,240 --> 00:19:53,240
+borramos el usuario para dejar la base de datos en día.
+
+349
+00:19:55,240 --> 00:19:57,240
+¿Cómo usamos esa fixture?
+
+350
+00:19:57,240 --> 00:19:59,240
+La metemos por parámetro.
+
+351
+00:19:59,240 --> 00:20:01,240
+Hay dos maneras de meterla por parámetro,
+
+352
+00:20:01,240 --> 00:20:03,240
+usando el marcador useFistures,
+
+353
+00:20:03,240 --> 00:20:05,240
+y usando directamente como parámetro.
+
+354
+00:20:05,240 --> 00:20:08,240
+La diferencia es que una,
+
+355
+00:20:08,240 --> 00:20:10,240
+utilizamos lo que devuelve,
+
+356
+00:20:10,240 --> 00:20:11,240
+y la otra no.
+
+357
+00:20:11,240 --> 00:20:13,240
+Es importante sacar la variable interface,
+
+358
+00:20:13,240 --> 00:20:16,240
+porque si no tenemos un parámetro que no utilizamos,
+
+359
+00:20:16,240 --> 00:20:19,240
+nos va a dar un aviso en el inter.
+
+360
+00:20:21,240 --> 00:20:24,240
+También es importante colocar las fixtures en los comftest,
+
+361
+00:20:24,240 --> 00:20:26,240
+no es obligatorio, pero es interesante.
+
+362
+00:20:26,240 --> 00:20:29,240
+Para poder usarlos directamente,
+
+363
+00:20:29,240 --> 00:20:31,240
+se auto cargan, no hay que importar.
+
+364
+00:20:31,240 --> 00:20:35,240
+Esto nos quita mucho ruido en el código de test.
+
+365
+00:20:35,240 --> 00:20:38,240
+Vale, PayTest tiene la ventaja,
+
+366
+00:20:38,240 --> 00:20:45,240
+que nos permite reutilizar las fixtures por scope.
+
+367
+00:20:45,240 --> 00:20:48,240
+Entonces, podemos marcar un fixture como reutilizable
+
+368
+00:20:48,240 --> 00:20:51,240
+a nivel de sesión, de módulo, de clase,
+
+369
+00:20:51,240 --> 00:20:53,240
+o de función, que es el valor por defecto,
+
+370
+00:20:53,240 --> 00:20:56,240
+de forma que solo instanciamos esa fixture
+
+371
+00:20:56,240 --> 00:20:59,240
+una vez por Paquetetest.
+
+372
+00:20:59,240 --> 00:21:00,240
+Esto nos ahorra, sobre todo,
+
+373
+00:21:00,240 --> 00:21:02,240
+en fixtures muy costosas, como escribir más datos,
+
+374
+00:21:02,240 --> 00:21:04,240
+o modificar algo que sea lento,
+
+375
+00:21:04,240 --> 00:21:06,240
+o contactar con algo externo,
+
+376
+00:21:06,240 --> 00:21:08,240
+nos ahorra muchísimo tiempo.
+
+377
+00:21:08,240 --> 00:21:12,240
+Y esto va en una línea de ser efectivos con nuestro tiempo.
+
+378
+00:21:12,240 --> 00:21:17,240
+También podemos tener fixtures un poco ciegas,
+
+379
+00:21:17,240 --> 00:21:20,240
+que no se ven, que se cargan automáticamente.
+
+380
+00:21:20,240 --> 00:21:24,240
+Esto es típico para crear más carganas en datos,
+
+381
+00:21:24,240 --> 00:21:27,240
+colocar un archivo en un sitio concreto.
+
+382
+00:21:27,240 --> 00:21:31,240
+Normalmente, estas fixtures son solo de teardown.
+
+383
+00:21:31,240 --> 00:21:33,240
+Bueno, en este caso es de teardown,
+
+384
+00:21:33,240 --> 00:21:36,240
+y solo se ejecuta después de los test.
+
+385
+00:21:36,240 --> 00:21:40,240
+En este caso podría ser incluso una fixture de sesión,
+
+386
+00:21:40,240 --> 00:21:43,240
+que solo se ejecuta al final de todo.
+
+387
+00:21:43,240 --> 00:21:48,240
+Y fijaos que está referida con dbClient,
+
+388
+00:21:48,240 --> 00:21:52,240
+por parámetro, es otra fixture.
+
+389
+00:21:52,240 --> 00:21:56,240
+Entonces, dáos cuenta de que podéis encadenar fixtures
+
+390
+00:21:56,240 --> 00:21:59,240
+de forma que reutilizamos aún más código.
+
+391
+00:21:59,240 --> 00:22:01,240
+Además, esto también nos permite asegurarnos
+
+392
+00:22:01,240 --> 00:22:05,240
+de que una fixture se ejecuta después de otra.
+
+393
+00:22:05,240 --> 00:22:07,240
+Que el orden de ejecución puede ser importante,
+
+394
+00:22:07,240 --> 00:22:09,240
+porque puede faltar algo,
+
+395
+00:22:09,240 --> 00:22:11,240
+puede que no haya una tabla 1,
+
+396
+00:22:11,240 --> 00:22:15,240
+y la fixture X no puede escribir en esa tabla,
+
+397
+00:22:15,240 --> 00:22:17,240
+porque aún no existe.
+
+398
+00:22:17,240 --> 00:22:20,240
+Vale, y ahora vamos a las fixtures de datos.
+
+399
+00:22:20,240 --> 00:22:23,240
+Es algo que da mucho trabajo,
+
+400
+00:22:23,240 --> 00:22:26,240
+porque para toda la casoística de test que podamos tener,
+
+401
+00:22:26,240 --> 00:22:33,240
+especialmente en fixtures de APIs, por ejemplo,
+
+402
+00:22:33,240 --> 00:22:36,240
+es muy importante crear datos de fixtures programáticamente.
+
+403
+00:22:36,240 --> 00:22:41,240
+No copiar y pegar json, que es algo muy típico.
+
+404
+00:22:41,240 --> 00:22:43,240
+Para ello tenemos la librería Factory,
+
+405
+00:22:43,240 --> 00:22:49,240
+que nos permite crear fixtures de manera muy, muy efectiva.
+
+406
+00:22:49,240 --> 00:22:51,240
+Voy un poco más rápido, que voy super mal de tiempo,
+
+407
+00:22:51,240 --> 00:22:55,240
+y como los ejemplos de código están ahí,
+
+408
+00:22:55,240 --> 00:22:57,240
+los podéis reutilizar,
+
+409
+00:22:57,240 --> 00:22:59,240
+tampoco tiene mucho sentido que me pare demasiado.
+
+410
+00:22:59,240 --> 00:23:01,240
+Y si veis algún caso que os estáis muy perdidos,
+
+411
+00:23:01,240 --> 00:23:06,240
+me preguntáis si os contesto perfectamente.
+
+412
+00:23:06,240 --> 00:23:09,240
+Vale, para esto vamos a usar la librería Factory Boy,
+
+413
+00:23:09,240 --> 00:23:11,240
+y Haker, que me encanta.
+
+414
+00:23:11,240 --> 00:23:16,240
+Podemos crear objetos, modelos, diccionarios,
+
+415
+00:23:16,240 --> 00:23:21,240
+y podemos generar valores aleatorios para un montón de tipos.
+
+416
+00:23:21,240 --> 00:23:23,240
+Para generar esos valores,
+
+417
+00:23:23,240 --> 00:23:28,240
+podemos usar cualquier función, o casos como la librería Haker.
+
+418
+00:23:28,240 --> 00:23:33,240
+Podemos tener un primer nombre, un apellido, un número,
+
+419
+00:23:33,240 --> 00:23:38,240
+un número de Inglaterra, un número en un rango,
+
+420
+00:23:38,240 --> 00:23:41,240
+un número un íntegre, un entero.
+
+421
+00:23:41,240 --> 00:23:45,240
+Podemos hacer referencia a valores de otros campos.
+
+422
+00:23:45,240 --> 00:23:49,240
+Podemos hacer referencias a otras factorías.
+
+423
+00:23:49,240 --> 00:23:54,240
+La capacidad de inteligencia de Factories es altísima.
+
+424
+00:23:54,240 --> 00:23:57,240
+Y funciona muy bien con modelos.
+
+425
+00:23:57,240 --> 00:23:59,240
+De hecho, el...
+
+426
+00:24:02,240 --> 00:24:06,240
+Y nos permite crear incluso librerías relacionadas,
+
+427
+00:24:06,240 --> 00:24:09,240
+con factorías que son bastante complejos,
+
+428
+00:24:09,240 --> 00:24:12,240
+y con Factories, esto se resuelva ya a nivel de ORM.
+
+429
+00:24:12,240 --> 00:24:15,240
+La verdad, es un lujo.
+
+430
+00:24:15,240 --> 00:24:19,240
+Vale, este es un ejemplo de cómo crear diccionarios,
+
+431
+00:24:19,240 --> 00:24:22,240
+tanto directamente desde una librería en model,
+
+432
+00:24:22,240 --> 00:24:27,240
+o como es una factoría propiamente diccionaria.
+
+433
+00:24:27,240 --> 00:24:30,240
+Y vamos a pasar a la fase de ejecución.
+
+434
+00:24:30,240 --> 00:24:33,240
+Hablaremos de cómo controlar el tiempo, muy probablemente,
+
+435
+00:24:33,240 --> 00:24:36,240
+de los mocs y sus amigos.
+
+436
+00:24:36,240 --> 00:24:39,240
+La librería ideal para controlar el tiempo es Frisian.
+
+437
+00:24:39,240 --> 00:24:41,240
+Nos permite parar el tiempo en el momento...
+
+438
+00:24:41,240 --> 00:24:44,240
+parar y mover el tiempo en el momento que queramos.
+
+439
+00:24:44,240 --> 00:24:47,240
+Y se puede usar tanto directamente como un decorador,
+
+440
+00:24:47,240 --> 00:24:51,240
+podemos usarlo con un Contest Manager,
+
+441
+00:24:51,240 --> 00:24:54,240
+o podemos usarlo como una fixture de...
+
+442
+00:24:54,240 --> 00:24:56,240
+como es el caso, que se llama Frisian,
+
+443
+00:24:56,240 --> 00:24:58,240
+me gusta mucho el nombre.
+
+444
+00:24:58,240 --> 00:25:00,240
+No tiene mucho más, o sea,
+
+445
+00:25:00,240 --> 00:25:03,240
+podemos poner en el sistema el tiempo que nosotros queramos,
+
+446
+00:25:03,240 --> 00:25:06,240
+y moverlo a nuestro antojo.
+
+447
+00:25:06,240 --> 00:25:10,240
+Además, para librerías de tiempo, os recomiendo estas cuatro,
+
+448
+00:25:10,240 --> 00:25:12,240
+cada una tiene sus cositas,
+
+449
+00:25:12,240 --> 00:25:15,240
+y ahora son muy potentes, nos permite tanto pasar de texto
+
+450
+00:25:15,240 --> 00:25:20,240
+a fecha, a objeto fecha, de fácilmente y viceversa,
+
+451
+00:25:20,240 --> 00:25:25,240
+como generar rangos, calcular una delta de tiempo,
+
+452
+00:25:25,240 --> 00:25:27,240
+o olvidarse un poco del Time Delta,
+
+453
+00:25:27,240 --> 00:25:30,240
+que es un poco raro, difícil de manejar,
+
+454
+00:25:30,240 --> 00:25:34,240
+con estas librerías os vais a manejar mucho mejor.
+
+455
+00:25:34,240 --> 00:25:38,240
+Vale, los mocs, esto te haría para...
+
+456
+00:25:38,240 --> 00:25:43,240
+para 50 minutos de charla o 2 horas o lo que fuera.
+
+457
+00:25:43,240 --> 00:25:46,240
+Me lo quiero que os quedáis con estos 5 tipos,
+
+458
+00:25:46,240 --> 00:25:49,240
+y os enseñaremos un ejemplo prácticamente de cada uno de ellos.
+
+459
+00:25:49,240 --> 00:25:52,240
+Los Dammys, que son objetos que simplemente se pasan,
+
+460
+00:25:52,240 --> 00:25:54,240
+no se usan, los Fakes,
+
+461
+00:25:54,240 --> 00:25:58,240
+que son implementaciones muy simples que sustituyen a la principal,
+
+462
+00:25:58,240 --> 00:26:02,240
+los Staps, que son respuestas fabricadas, los mocs,
+
+463
+00:26:02,240 --> 00:26:05,240
+que también son respuestas prefabricadas,
+
+464
+00:26:05,240 --> 00:26:08,240
+pero intentamos no modificar todo el conjunto,
+
+465
+00:26:08,240 --> 00:26:11,240
+solo lo que necesitamos, es un reemplazo parcial,
+
+466
+00:26:11,240 --> 00:26:15,240
+y los espías, que no hacen nada, no intercetan nada,
+
+467
+00:26:15,240 --> 00:26:17,240
+pero registran lo que está pasando.
+
+468
+00:26:17,240 --> 00:26:21,240
+Cuidado con los nombres, porque la librería MoC
+
+469
+00:26:21,240 --> 00:26:24,240
+nos hace todos los tipos de dobles que podemos.
+
+470
+00:26:24,240 --> 00:26:26,240
+Entonces, se puede causar os confusión.
+
+471
+00:26:26,240 --> 00:26:28,240
+MoC es la librería que hace todos,
+
+472
+00:26:28,240 --> 00:26:31,240
+y entre otros, hace mocs.
+
+473
+00:26:31,240 --> 00:26:36,240
+Vale, esto es un ejemplo de un patch.
+
+474
+00:26:36,240 --> 00:26:39,240
+Podemos decir que valor retornamos,
+
+475
+00:26:39,240 --> 00:26:43,240
+podemos decidir si que retornamos una excepción,
+
+476
+00:26:43,240 --> 00:26:49,240
+súper simple, cambiar el comportamiento de una función o de un método.
+
+477
+00:26:49,240 --> 00:26:52,240
+Y como podéis ver, tiene un espía
+
+478
+00:26:52,240 --> 00:26:56,240
+que nos permite comprobar si se ha llamado o cómo se ha llamado.
+
+479
+00:26:56,240 --> 00:27:03,240
+Los Staps, que los Staps empiezan teniendo PiTest,
+
+480
+00:27:03,240 --> 00:27:07,240
+podemos usar Manky Patch para sustituir el atributo
+
+481
+00:27:07,240 --> 00:27:12,240
+de un objeto o de un modulo, y el reemplazo es total.
+
+482
+00:27:12,240 --> 00:27:20,240
+Que más os quería decir aquí, Manky Patch usa por abajo MoC,
+
+483
+00:27:20,240 --> 00:27:24,240
+así que tened cuidado que os puede dar alguna interacción,
+
+484
+00:27:24,240 --> 00:27:27,240
+si usáis las dos a la vez, tened cuidado con eso.
+
+485
+00:27:27,240 --> 00:27:29,240
+Y por último, lo espía,
+
+486
+00:27:29,240 --> 00:27:35,240
+que podéis usarlo con MoC normal, con Grubbs,
+
+487
+00:27:35,240 --> 00:27:38,240
+o MoC que también os deja MoC.spy,
+
+488
+00:27:38,240 --> 00:27:42,240
+que nos permite eso, colocar un capturador de información
+
+489
+00:27:42,240 --> 00:27:47,240
+y saber si un método se ha llamado una vez o varias,
+
+490
+00:27:47,240 --> 00:27:48,240
+con qué se ha llamado.
+
+491
+00:27:48,240 --> 00:27:52,240
+Realmente comprobar, no necesitamos cambiar el comportamiento,
+
+492
+00:27:52,240 --> 00:27:56,240
+simplemente comprobar que se llega a un punto de nuestro programa.
+
+493
+00:27:56,240 --> 00:28:01,240
+Y una parte, los interceptores,
+
+494
+00:28:01,240 --> 00:28:06,240
+a veces es mejor interceptar las llamadas a nivel de protocolo
+
+495
+00:28:06,240 --> 00:28:08,240
+que hacer MoC.
+
+496
+00:28:08,240 --> 00:28:13,240
+Perdona, Héctor, mira, siento interrumpirte.
+
+497
+00:28:13,240 --> 00:28:17,240
+Es que nos queda muy poquito tiempo y queríamos pasar al menos una pregunta.
+
+498
+00:28:17,240 --> 00:28:20,240
+No sé si te queda algo mucho más importante que contar.
+
+499
+00:28:20,240 --> 00:28:24,240
+Sí, me queda la validación y ya está.
+
+500
+00:28:24,240 --> 00:28:27,240
+Le doy rápido validación y me metáis la pregunta.
+
+501
+00:28:27,240 --> 00:28:28,240
+Venga.
+
+502
+00:28:28,240 --> 00:28:29,240
+Venga, vale.
+
+503
+00:28:29,240 --> 00:28:33,240
+Vale, bueno, la parte de validación es la última.
+
+504
+00:28:33,240 --> 00:28:38,240
+Nos quedamos con que podemos utilizar centíficas lógicas de todo tipo.
+
+505
+00:28:38,240 --> 00:28:42,240
+Con A SER podemos introducir mensajes de error para cuando falla
+
+506
+00:28:42,240 --> 00:28:43,240
+y esto es muy importante.
+
+507
+00:28:43,240 --> 00:28:49,240
+Después de la coma, eso se jutará cuando hay un error.
+
+508
+00:28:49,240 --> 00:28:53,240
+No perdáis el tiempo en comparaciones imposibles,
+
+509
+00:28:53,240 --> 00:28:54,240
+ísalo a lo básico.
+
+510
+00:28:54,240 --> 00:28:58,240
+Podéis usar Python's Approx,
+
+511
+00:28:58,240 --> 00:29:01,240
+funciones de la librería Math.
+
+512
+00:29:01,240 --> 00:29:03,240
+No vayáis el detalle.
+
+513
+00:29:03,240 --> 00:29:05,240
+Muchas veces no es importante.
+
+514
+00:29:05,240 --> 00:29:09,240
+Y para comparar listas, utilizaremos los sets
+
+515
+00:29:09,240 --> 00:29:12,240
+y para comparar escenarios, la librería Additive.
+
+516
+00:29:12,240 --> 00:29:17,240
+Esta librería nos permite ignorar valores con el esclude
+
+517
+00:29:17,240 --> 00:29:22,240
+y decidir conseguir el orden que queremos.
+
+518
+00:29:22,240 --> 00:29:26,240
+Entonces, esta librería os ayuda muchísimo.
+
+519
+00:29:26,240 --> 00:29:30,240
+Vale.
+
+520
+00:29:30,240 --> 00:29:35,240
+Bien, y el último concepto de validación que os quiero introducir es
+
+521
+00:29:35,240 --> 00:29:36,240
+validar los logs.
+
+522
+00:29:36,240 --> 00:29:38,240
+Los logs son muy importantes.
+
+523
+00:29:38,240 --> 00:29:41,240
+Es importante para monetizar, para métricas,
+
+524
+00:29:41,240 --> 00:29:44,240
+sobre todo en microservicios, en serverless.
+
+525
+00:29:44,240 --> 00:29:47,240
+Entonces, no dejéis de validar vuestros logs.
+
+526
+00:29:47,240 --> 00:29:51,240
+Y tenemos la Fistur CupLog, que nos permite...
+
+527
+00:29:51,240 --> 00:29:53,240
+Se nos queda un poco congeladora.
+
+528
+00:29:53,240 --> 00:29:55,240
+Está la igual.
+
+529
+00:29:55,240 --> 00:29:57,240
+Pues eso, tenéis la Fistur CupLog,
+
+530
+00:29:57,240 --> 00:29:59,240
+que os permite capturar los logs
+
+531
+00:29:59,240 --> 00:30:02,240
+y comprobar que los mensajes son como esperáis.
+
+532
+00:30:02,240 --> 00:30:04,240
+Vale.
+
+533
+00:30:04,240 --> 00:30:09,240
+Ahora mismo que tenemos congelado en imagen...
+
+534
+00:30:09,240 --> 00:30:11,240
+Vale, ¿me escucháis?
+
+535
+00:30:11,240 --> 00:30:12,240
+Sí, te escuchamos.
+
+536
+00:30:12,240 --> 00:30:14,240
+Esto ha pasado tres o cuatro veces durante la charla.
+
+537
+00:30:14,240 --> 00:30:17,240
+Es verdad que eso, ahora ya volviste.
+
+538
+00:30:17,240 --> 00:30:18,240
+Bueno.
+
+539
+00:30:18,240 --> 00:30:20,240
+Bueno, hay programas de conexión.
+
+540
+00:30:20,240 --> 00:30:23,240
+Si queréis, me pase la pregunta.
+
+541
+00:30:23,240 --> 00:30:25,240
+Intento contestaros.
+
+542
+00:30:25,240 --> 00:30:26,240
+Sí, no hay que preocupes.
+
+543
+00:30:26,240 --> 00:30:29,240
+Vamos a ver una preguntilla rápida que han ido apareciendo.
+
+544
+00:30:29,240 --> 00:30:30,240
+Vamos a ver.
+
+545
+00:30:30,240 --> 00:30:33,240
+En el Discord teníamos...
+
+546
+00:30:33,240 --> 00:30:36,240
+Sí, la pregunta en el Discord nos la pasa Jaime Crespo.
+
+547
+00:30:36,240 --> 00:30:39,240
+Y lo que está preguntando es si podrías decir
+
+548
+00:30:39,240 --> 00:30:42,240
+qué te gusta más a ti, ventaja inconveniente,
+
+549
+00:30:42,240 --> 00:30:44,240
+de Python sobre unit test,
+
+550
+00:30:44,240 --> 00:30:46,240
+porque es la librería que él suele utilizar.
+
+551
+00:30:46,240 --> 00:30:47,240
+Sí.
+
+552
+00:30:47,240 --> 00:30:48,240
+Vale.
+
+553
+00:30:48,240 --> 00:30:50,240
+Python tiene la ventaja de que aparte de un framework,
+
+554
+00:30:50,240 --> 00:30:52,240
+está mismo un runner.
+
+555
+00:30:52,240 --> 00:30:55,240
+Entonces, tenemos las dos funcionalidades juntas.
+
+556
+00:30:55,240 --> 00:31:00,240
+Además, Python nos da una sintaxis mucho más libre.
+
+557
+00:31:00,240 --> 00:31:03,240
+Diría más Pythonica incluso.
+
+558
+00:31:03,240 --> 00:31:12,240
+Y nos dan muchas herramientas extras ya incluidas dentro de Python.
+
+559
+00:31:12,240 --> 00:31:15,240
+Entonces, el resultado final nos quedan los test mucho más,
+
+560
+00:31:15,240 --> 00:31:18,240
+diría, comprimidos, más suaves,
+
+561
+00:31:18,240 --> 00:31:21,240
+que nos hace mucho más fácil la vida.
+
+562
+00:31:21,240 --> 00:31:25,240
+En opinión de unit test queda un poco muy,
+
+563
+00:31:25,240 --> 00:31:30,240
+mucho ruido, como el self-assert equals like.
+
+564
+00:31:30,240 --> 00:31:32,240
+Para mí es complejo.
+
+565
+00:31:32,240 --> 00:31:36,240
+Y realmente a veces el sintaxis de la set-up-tire-round
+
+566
+00:31:36,240 --> 00:31:38,240
+me parece también excesivo.
+
+567
+00:31:38,240 --> 00:31:40,240
+Hay que acostumbrarse a Python.
+
+568
+00:31:40,240 --> 00:31:41,240
+Tiene su arquitectura,
+
+569
+00:31:41,240 --> 00:31:45,240
+tiene una curva de aprendizaje un poco regulona,
+
+570
+00:31:45,240 --> 00:31:46,240
+al principio sobre todo,
+
+571
+00:31:46,240 --> 00:31:49,240
+pero a la larga es que es mucho más apetivo.
+
+572
+00:31:49,240 --> 00:31:52,240
+Lo recomiendo muy fuerte.
+
+573
+00:31:52,240 --> 00:31:55,240
+Pues nos la apuntamos, Hitor.
+
+574
+00:31:55,240 --> 00:31:57,240
+Muchas gracias.
+
+575
+00:31:57,240 --> 00:31:58,240
+Gracias, Hitor.
+
+576
+00:31:58,240 --> 00:32:00,240
+Te están escribiendo en el canal de Discord,
+
+577
+00:32:00,240 --> 00:32:02,240
+¿vale? Porque ahora le echas un ojillo.
+
+578
+00:32:02,240 --> 00:32:05,240
+Sí, ahora os contesto.
+
+579
+00:32:05,240 --> 00:32:07,240
+Y nada más, muchísimas gracias.
+
+580
+00:32:07,240 --> 00:32:09,240
+Que me muy buen al charla.
+
+581
+00:32:09,240 --> 00:32:12,240
+Y nada, por Discord nos seguimos hablando.
+
+582
+00:32:12,240 --> 00:32:14,240
+Vale, muchas gracias por tenerme.
+
+583
+00:32:14,240 --> 00:32:16,240
+Venga, chao, chao.
+
+584
+00:32:16,240 --> 00:32:19,240
+Chau.
+

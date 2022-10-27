@@ -1,0 +1,1672 @@
+1
+00:00:00,000 --> 00:00:24,240
+Gracias. Bueno, pues vamos a empezar ya en el segundo turno. Después de la comida, como
+
+2
+00:00:24,240 --> 00:00:31,760
+veis, tenemos aquí, a una pedazo de campeona, Nerea Luis Minguesa, que nos va a hablar de
+
+3
+00:00:31,760 --> 00:00:35,480
+algo básico y súper importante para que a ninguno del día de mañana nos metan en
+
+4
+00:00:35,480 --> 00:00:43,240
+la cárcel. Así que la dejo y escuchad bien, atento a todos, ¿eh?
+
+5
+00:00:43,240 --> 00:00:55,440
+Gracias. Bueno, bueno, estardes. La verdad es que, ostras, cuando me dijeron que sí
+
+6
+00:00:55,440 --> 00:00:59,400
+a esta charla estaba muy emocionada, luego vi que me había tocado las tres y media y
+
+7
+00:00:59,400 --> 00:01:06,480
+dije una charla de regulación algorítmica después de comer a tope. Pior no puede ir,
+
+8
+00:01:06,480 --> 00:01:10,720
+así que perfecto que hayáis puesto una banda aquí de rock que arriba un poco el tema.
+
+9
+00:01:10,720 --> 00:01:17,840
+Bueno, yo soy Nerea Luis. Tradicionalmente, bueno, pues estudié un doctorado en inteligencia
+
+10
+00:01:17,840 --> 00:01:23,800
+artificial y llevo tres años trabajando para singular ahora en la parte de desarrollo
+
+11
+00:01:23,800 --> 00:01:29,840
+de negocio y técnico relacionado con las áreas de visión artificial, lenguaje natural
+
+12
+00:01:29,840 --> 00:01:34,320
+y también un área muy emergente que es inteligencia artificial responsable, ¿no? Que es de lo
+
+13
+00:01:34,320 --> 00:01:39,720
+que vamos a hablar hoy. Además, he hecho otras cosas. Luego, al final, os daré un par
+
+14
+00:01:39,720 --> 00:01:45,880
+de recordatorios y creo que son importantes, pero vamos con el impacto. Yo me había traído
+
+15
+00:01:45,880 --> 00:01:51,360
+esta slide, por eso de que íbamos a estar un poco todavía con este modo si está, para
+
+16
+00:01:51,360 --> 00:02:00,720
+empezar con una pregunta, ¿no? Y es, honestamente, ¿cuántos de vosotros developers y developers
+
+17
+00:02:00,720 --> 00:02:07,040
+pensasteis que vuestro trabajo estaba en peligro cuando salió GitHub Copilot? O sea,
+
+18
+00:02:07,040 --> 00:02:13,440
+vamos que fue un momento en el que yo al menos percibi que igual ahora sí que calaba esto
+
+19
+00:02:13,440 --> 00:02:18,440
+de hacia dónde va la inteligencia artificial, ¿no? Porque, digamos que como técnicos siempre
+
+20
+00:02:18,440 --> 00:02:23,520
+hemos estado, vamos a decir, en el lado bueno o en el lado favorable, ¿no? De todos estos
+
+21
+00:02:23,520 --> 00:02:28,400
+avances tecnológicos, sentimos que los controlamos y todo va guay, pero de repente sale una inteligencia
+
+22
+00:02:28,400 --> 00:02:33,680
+artificial que genera código, ¿no? Y ya pues, oye, es parte de nuestro trabajo, ¿no? A ver,
+
+23
+00:02:33,680 --> 00:02:39,560
+hasta dónde va esto. Muchos ya habéis hablado, muestra charlas de automatización. Al final
+
+24
+00:02:39,560 --> 00:02:46,480
+la automatización no es otra cosa que bueno pues intentar crear procesos, ¿no? Sobre todo
+
+25
+00:02:46,480 --> 00:02:52,120
+de tareas que son repetitivas y especializadas, que es algo que hacemos mucho en inteligencia
+
+26
+00:02:52,120 --> 00:02:57,000
+artificial, ¿no? Todo el procesamiento de datos no deja de ser automatización, ¿no? O esa
+
+27
+00:02:57,000 --> 00:03:01,640
+detección de patrones a través de un entrenamiento, luego pues está en producción, etcétera,
+
+28
+00:03:01,640 --> 00:03:09,160
+¿qué es lo que pasa que a día de hoy digamos que bueno pues entendemos un poquito mejor,
+
+29
+00:03:09,160 --> 00:03:14,680
+quizá, hasta dónde puede llegar la automatización, pero lo que no entendemos quizá también
+
+30
+00:03:14,680 --> 00:03:21,240
+es qué impacto puede tener a nivel de la sociedad y esto es un velón, ¿vale? Porque hasta ahora
+
+31
+00:03:21,240 --> 00:03:26,160
+nosotros como técnicos, bueno, pues hemos ido sacando piezas de software, ¿no? Pues que
+
+32
+00:03:26,160 --> 00:03:31,440
+si web, que si cloud, que si tal, ¿no? Pero cuando vamos a inteligencia artificial y vemos
+
+33
+00:03:31,440 --> 00:03:37,880
+que de forma masiva podemos empezar a hacer esos procesos de ayuda a la toma de decisiones,
+
+34
+00:03:37,880 --> 00:03:41,360
+bueno pues hay ciertas cosas que se ponen un poquito peliagudas, ¿no? Por ejemplo, pues
+
+35
+00:03:41,360 --> 00:03:46,080
+pensar en sectores como la salud. Entonces, a día de hoy al menos lo que sí que sabemos
+
+36
+00:03:46,080 --> 00:03:50,200
+bien es que a las máquinas, a los algoritmos, bueno pues toda esta parte de automatización
+
+37
+00:03:50,200 --> 00:03:56,520
+guay, o sea tareas específicas, repetitivas funcionan bastante bien y nosotros podríamos
+
+38
+00:03:56,520 --> 00:04:01,640
+resumir nuestras cualidades en esta tira que está aquí verde, que por cierto esto es
+
+39
+00:04:01,640 --> 00:04:07,160
+un documental que se llama mi empleo, mi futuro y entonces dice aquí, somos buenos cruzando
+
+40
+00:04:07,160 --> 00:04:12,240
+cosas, ¿no? O sea, al final cuando cruzamos cosas es porque entendemos el contexto, se
+
+41
+00:04:12,240 --> 00:04:18,360
+nos da bien lo imprediciable, esto es muy importante, somos capaces de reaccionar a situaciones
+
+42
+00:04:18,360 --> 00:04:22,800
+que igual no sabíamos que iban a suceder, ¿vale? y generalmente lo hacemos bastante
+
+43
+00:04:22,800 --> 00:04:28,680
+bien, ¿no? Somos capaces de razonar en entornos pues quizá un poco caóticos o inesperados,
+
+44
+00:04:28,680 --> 00:04:32,480
+necesitamos emociones, eso también está claro, es una cosa que nos diferencia bastante
+
+45
+00:04:32,480 --> 00:04:38,680
+de las máquinas y luego se habla de pensamiento crítico y de que no dejamos de ser complementarios,
+
+46
+00:04:38,680 --> 00:04:43,760
+¿no? Tanto unos a otros, nosotros como con las máquinas también. Entonces vamos a quedarnos
+
+47
+00:04:43,760 --> 00:04:48,320
+un poco con esa definición que yo creo que es muy humana y que aplica muy bien y la entendéis
+
+48
+00:04:48,320 --> 00:04:54,600
+todos y todos los que estáis aquí y vamos a ver, bueno, pues entre otras cosas, ¿por
+
+49
+00:04:54,600 --> 00:04:58,280
+qué, no? Que yo creo que este es un buen punto de partida, ¿por qué se abre la hora tanto
+
+50
+00:04:58,280 --> 00:05:03,480
+de sesgos e inteligencia artificial y por qué traigo yo una charla sobre regulación
+
+51
+00:05:03,480 --> 00:05:10,440
+si yo no soy nada de eso? O sea, yo realmente, o sea, soy desarrolladora o digamos, me dedico
+
+52
+00:05:10,440 --> 00:05:14,720
+a la venta de proyectos de inteligencia artificial, no, a la divulgación también, pero no soy
+
+53
+00:05:14,720 --> 00:05:19,200
+para nada una experta en esto, ¿no? Entonces, ¿por qué traigo esta charla? Bueno, todo
+
+54
+00:05:19,200 --> 00:05:24,880
+empezó con esto, me interés realmente por este tema, surgió por el debate de los sesgos
+
+55
+00:05:24,880 --> 00:05:30,120
+y la inteligencia artificial. Cuando te das cuenta de que no te sientes representado
+
+56
+00:05:30,120 --> 00:05:36,440
+en algo que has cupido un sistema que nosotros denominamos inteligente, ¿no? Y cuando te
+
+57
+00:05:36,440 --> 00:05:41,040
+das cuenta de que a pesar de que hayas hecho bien las cosas, ¿no?, o que has seguido todos
+
+58
+00:05:41,040 --> 00:05:47,320
+los pasos, tal y como te los han ido enseñando, pues en determinadas situaciones, ves que
+
+59
+00:05:47,320 --> 00:05:53,120
+tu modelo de inteligencia artificial selecciona siempre al mismo tipo de personas. A mí me
+
+60
+00:05:53,120 --> 00:05:59,400
+impactó mucho hace unos años cuando salió la noticia de que se había filtrado que Amazon
+
+61
+00:05:59,400 --> 00:06:05,560
+utilizaba un sistema de filtro de currículums, no sé si os acordáis, bueno, pues que seleccionaba
+
+62
+00:06:05,560 --> 00:06:11,240
+como los cinco mejores currículums, sobre todo posiciones técnicas, ¿no? Y entonces,
+
+63
+00:06:11,240 --> 00:06:16,280
+claro, casi siempre eran chicos y entonces el sistema aprendió que ser mujer, bueno,
+
+64
+00:06:16,280 --> 00:06:20,880
+pues era un poco diferente, ¿no?, a esos cinco perfiles que habitualmente filtraba como
+
+65
+00:06:20,880 --> 00:06:26,200
+mejores candidatos, ¿no? Y esto no fue que es que Amazon no quisiese contratar mujeres.
+
+66
+00:06:26,200 --> 00:06:30,720
+Esto fue directamente un proceso en el que, bueno, pues había un patrón oculto, ¿no?,
+
+67
+00:06:30,720 --> 00:06:36,920
+y quizá no había mecanismos o el equipo no se preocupó de que esas cosas podían pasar,
+
+68
+00:06:36,920 --> 00:06:40,880
+porque ahora es como si nos hubiesen puesto un espejo delante de la cara. Y esto es muy
+
+69
+00:06:40,880 --> 00:06:45,640
+incómodo, ¿no?, cuando te dicen tus propios fallos y los ves y tiene una repercusión
+
+70
+00:06:45,640 --> 00:06:51,360
+mediática, esto es una movida, ¿no? Y por eso también, pues yo me empecé a interesar
+
+71
+00:06:51,360 --> 00:06:55,960
+por este tema para intentar ver, bueno, pues cómo había proyectos que intentaban, en
+
+72
+00:06:55,960 --> 00:07:01,480
+cierto modo, cambiar las cosas. Para que veáis que esto, en cierto modo, sigue pasando.
+
+73
+00:07:01,480 --> 00:07:07,800
+Esta es una foto, bueno, un conjunto de fotos que genera a Dalí dos. Ahora han ido refinando,
+
+74
+00:07:07,800 --> 00:07:13,760
+pero esto está en su, bueno, su repositorio, en la parte de The Limitations y Vallas y demás,
+
+75
+00:07:13,760 --> 00:07:19,440
+tienen reportado esto en concreto. Y me llamó mucho la atención, porque habitualmente asociamos
+
+76
+00:07:19,440 --> 00:07:26,600
+mucho toda la parte de sesgos, ¿no?, a temas de estos de persona física en sí, o sea, temas
+
+77
+00:07:26,600 --> 00:07:31,880
+de etnia, temas de mujer, hombre, no, todo ese tipo de cosas, pero aquí hay un concepto,
+
+78
+00:07:31,880 --> 00:07:38,840
+que es el concepto boda, ¿vale? Y la boda que te genera Dalí, el imaginario de Dalí
+
+79
+00:07:38,840 --> 00:07:44,280
+hacia las bodas, si os fijáis, tiene mucho que ver con el mundo occidental, ¿no? Casi
+
+80
+00:07:44,280 --> 00:07:50,880
+todos se sentís representados en estas imágenes, seguramente, pero pensar en otro tipo de bodas,
+
+81
+00:07:50,880 --> 00:07:58,360
+¿vale?, bodas árabes, no sé, bodas indias, ¿vale?, con otra cultura, otra vestimenta,
+
+82
+00:07:58,360 --> 00:08:04,800
+otro decorado, no sé, a mí me dio que pensar, porque dije, ostras, hasta que nivel, ¿no?,
+
+83
+00:08:04,800 --> 00:08:09,840
+llega esto y llega a calar y nos damos cuenta de que efectivamente, de alguna forma, está
+
+84
+00:08:09,840 --> 00:08:15,880
+pasando algo, ¿no?, en esos históricos y en ese conjunto de datos, pero también luego
+
+85
+00:08:15,880 --> 00:08:22,080
+el modelo, bueno, pues sigue aprendiendo, ¿no?, de todo esto y nos escupe cosas como esta.
+
+86
+00:08:22,080 --> 00:08:27,520
+Y la otra movida es cómo lo arreglamos, porque claro, todavía detectarlo, pues si ves que
+
+87
+00:08:27,520 --> 00:08:32,520
+salen estas cosas, igual te lo planteas, pero claro, cuando lo arreglas, cuando tienes un
+
+88
+00:08:32,520 --> 00:08:38,240
+sistema, bueno, pues que ni siquiera tú bien sabes cómo interpreta las cosas, ¿no?, y por
+
+89
+00:08:38,240 --> 00:08:41,560
+qué establece según qué relaciones.
+
+90
+00:08:41,560 --> 00:08:47,640
+Y ese es un poco el punto de partida de todo el marco regulatorio que se ha ido gestando
+
+91
+00:08:47,640 --> 00:08:51,640
+alrededor de la inteligencia artificial en los últimos años, ¿vale?
+
+92
+00:08:51,640 --> 00:08:57,920
+Yo me voy a referir sobre todo al sector Machine Learning, Deep Learning, ¿vale?, a este sector
+
+93
+00:08:57,920 --> 00:09:03,000
+que se llama de caja negra, ¿no?, por esa opacidad y por todos esos trabajos que van
+
+94
+00:09:03,000 --> 00:09:10,600
+saliendo, quizás suena el término AI explainability, ¿vale?, que utilizamos pues para investigar
+
+95
+00:09:10,600 --> 00:09:14,360
+pues esas tomas de decisiones internas, ¿no?, que hacen los modelos.
+
+96
+00:09:14,360 --> 00:09:18,920
+Eso surge por esa carencia precisamente, porque en el Machine Learning, pues con todas estas
+
+97
+00:09:18,920 --> 00:09:23,920
+estructuras complejas que utilizamos a nivel matemático, pues trazarlas no es tan sencillo
+
+98
+00:09:23,920 --> 00:09:25,920
+como parece, ¿vale?
+
+99
+00:09:25,920 --> 00:09:31,160
+Y entonces la pregunta a la que yo quiero contestar o que intentemos de alguna forma
+
+100
+00:09:31,160 --> 00:09:33,840
+que os llevéis ese aprendizaje es esta, ¿no?
+
+101
+00:09:33,840 --> 00:09:38,760
+O sea, ¿qué se está haciendo en Europa para fomentar un desarrollo responsable de la
+
+102
+00:09:38,760 --> 00:09:43,400
+inteligencia artificial y qué derechos tengo yo como ciudadano, ¿no?
+
+103
+00:09:43,400 --> 00:09:49,200
+Pongámonos yo que sé en el caso de que Copilot lo revienta, ¿vale?
+
+104
+00:09:49,200 --> 00:09:54,560
+Y de repente vuestras empresas deciden que, ostras, es que, joder, ahora en vez de contratar
+
+105
+00:09:54,560 --> 00:09:56,640
+tres juniors, voy a contratar uno.
+
+106
+00:09:56,640 --> 00:10:02,000
+Y el resto, bueno, pues tiramos aquí, ¿no?, de Copilot, pues un poco mierda, ¿no?
+
+107
+00:10:02,000 --> 00:10:07,720
+Entonces, bueno, pues para generar un poquito de al menos mensaje, ¿no?, y de ver cosas
+
+108
+00:10:07,720 --> 00:10:13,000
+que podrían pasar, creo que está bien que estemos informados de qué ha estado pasando
+
+109
+00:10:13,000 --> 00:10:15,120
+en una esfera que no es la nuestra, ¿no?
+
+110
+00:10:15,120 --> 00:10:17,240
+No es la nuestra, no es nuestra esfera técnica.
+
+111
+00:10:17,240 --> 00:10:24,480
+Y todo esto comenzó, pues alrededor de 2017-2018, se empezaron a comunicar las primeras estrategias
+
+112
+00:10:24,480 --> 00:10:29,560
+de inteligencia artificial por numerosos gobiernos, entre ellas la europea, ¿vale?
+
+113
+00:10:29,560 --> 00:10:34,640
+En abril de 2018 sale la comunicación de la estrategia, digamos, o de las líneas estratégicas
+
+114
+00:10:34,640 --> 00:10:40,520
+de Europa en cuanto a la inteligencia artificial y ahí ya se posiciona, digamos, en una estrategia
+
+115
+00:10:40,520 --> 00:10:47,000
+en cierto modo proteccionista hacia el usuario y muy centrada en la ética, ¿vale?
+
+116
+00:10:47,000 --> 00:10:50,800
+Cuando sale todo esto, claro, hay un boom ahí de, bueno, pues gobiernos, como os digo,
+
+117
+00:10:50,800 --> 00:10:55,760
+de distintos partes del mundo que hacen lo mismo, ¿vale?, que todo el mundo quiere tener
+
+118
+00:10:55,760 --> 00:11:00,760
+una estrategia de algo que es nuevo y que saben que va a tener un impacto bastante alto.
+
+119
+00:11:00,760 --> 00:11:05,880
+En el caso del gobierno español, la primera vez que sale algo relacionado con esto, con
+
+120
+00:11:05,880 --> 00:11:11,040
+estas estrategias, es en marzo de 2019, no me voy a centrar en esta porque esto fue un
+
+121
+00:11:11,040 --> 00:11:17,480
+primer borrador y el motivo fue pues un cambio, digamos, de elecciones que hubo entre medias,
+
+122
+00:11:17,480 --> 00:11:18,480
+¿vale?
+
+123
+00:11:18,480 --> 00:11:22,520
+La primera estrategia caía del Ministerio de Ciencia, aunque finalmente la que se hace
+
+124
+00:11:22,520 --> 00:11:29,360
+oficial es una que se saca en noviembre de 2020 y en este caso cuelga del Ministerio
+
+125
+00:11:29,360 --> 00:11:32,480
+de Asuntos Económicos, ¿vale?
+
+126
+00:11:32,480 --> 00:11:38,400
+Es la primera vez que una disciplina, digamos, científica, la inteligencia artificial surge
+
+127
+00:11:38,400 --> 00:11:44,320
+del mundo científico, cuelga, digamos, de un ministerio que no sea propiamente el de
+
+128
+00:11:44,320 --> 00:11:47,280
+ciencia, ¿vale?, o el de universidades.
+
+129
+00:11:47,280 --> 00:11:49,040
+Entonces, ¿por qué?
+
+130
+00:11:49,040 --> 00:11:53,120
+Pues porque se supone que también querían darle mayor impulso, ¿no?, puesto que también
+
+131
+00:11:53,120 --> 00:11:56,800
+es algo que impacta pues en lo digital y en la economía, ¿vale?
+
+132
+00:11:56,800 --> 00:12:02,440
+Y los seis principios están resumidos aquí, no cuentan nada nuevo, que no cuente la europea
+
+133
+00:12:02,440 --> 00:12:07,040
+realmente, o sea, hay una línea muy centrada en investigación, otra en retención del
+
+134
+00:12:07,040 --> 00:12:12,200
+talento, ¿no?, otra en plataformas de datos e infraestructuras tecnológicas, todo esto
+
+135
+00:12:12,200 --> 00:12:16,840
+suena, tejido económico, ¿no?, ver cómo se interra la inteligencia artificial en cadenas
+
+136
+00:12:16,840 --> 00:12:21,680
+de valor, cómo potenciamos la inteligencia artificial en la administración pública,
+
+137
+00:12:21,680 --> 00:12:26,600
+este es otro marrón también y melón, porque hay que ver ahora con todo ese procesamiento,
+
+138
+00:12:26,600 --> 00:12:30,960
+por ejemplo, masivo de documentos, cómo va a impactar la inteligencia artificial ahí,
+
+139
+00:12:30,960 --> 00:12:31,960
+¿no?
+
+140
+00:12:31,960 --> 00:12:36,640
+Y luego tenemos el punto seis, que es ese marco ético y normativo, ¿vale?
+
+141
+00:12:36,640 --> 00:12:41,360
+La ENIA, que es como sea glutina, digamos, este acerónimo, se complementa también con
+
+142
+00:12:41,360 --> 00:12:45,800
+una iniciativa que se llama GAIAX, que os animo a conocer, tiene que ver con una nube
+
+143
+00:12:45,800 --> 00:12:52,120
+más proteccionista a nivel europeo en cuanto a privacidad y con el Plan de Tecnologías
+
+144
+00:12:52,120 --> 00:12:56,680
+del Lenguaje, ¿vale?, que es algo que se está tratando de impulsar bastante, en cuanto
+
+145
+00:12:56,680 --> 00:13:02,440
+a que, pues al final, el español es, digamos, la segunda lengua no más utilizada en el
+
+146
+00:13:02,440 --> 00:13:07,400
+mundo y tenemos que conseguir que tengamos modelos también de inteligencia artificial
+
+147
+00:13:07,400 --> 00:13:10,280
+igual de potentes que los del inglés, ¿no?
+
+148
+00:13:10,280 --> 00:13:15,320
+Pero avanzando un poquito más, digamos, que llega en mayo de 2021, aquella que sí que
+
+149
+00:13:15,320 --> 00:13:22,120
+empiezan a suceder bastantes cosas y entonces sale el primer borrador de una norma, una
+
+150
+00:13:22,120 --> 00:13:25,320
+ley que se llama de AI Act, ¿vale?
+
+151
+00:13:25,320 --> 00:13:31,120
+Y esto lo saca la ONU en Europea, por primera vez hay un consenso o mayoritariamente consenso
+
+152
+00:13:31,120 --> 00:13:37,320
+entre todos los países para traducir ese impacto de la inteligencia artificial en una especie
+
+153
+00:13:37,320 --> 00:13:39,320
+de semáforo, ¿vale?
+
+154
+00:13:39,320 --> 00:13:43,360
+Y yo creo que el simil está bastante guay porque hace que se entienda bien por dónde
+
+155
+00:13:43,360 --> 00:13:44,360
+va la historia.
+
+156
+00:13:44,360 --> 00:13:48,720
+Y os he traído un ejemplo para que se entienda muy rápido, ¿no?
+
+157
+00:13:48,720 --> 00:13:53,520
+Vosotros cuando abrís Netflix, Netflix os está recomendando todo el rato películas,
+
+158
+00:13:53,520 --> 00:14:00,400
+las que sean series, que Netflix os recomiende una por encima de otra, pues, igual se aleja
+
+159
+00:14:00,400 --> 00:14:06,440
+un poco más de vuestros gustos, pero yo creo que ninguno os sentiréis atacados, igual
+
+160
+00:14:06,440 --> 00:14:11,120
+es yo que sé porque ha visto algo a tu padre usando tu cuenta o alguna historia así, ¿no?
+
+161
+00:14:11,120 --> 00:14:16,400
+Pero digamos que esa toma de decisiones no tiene impacto o al menos directamente en
+
+162
+00:14:16,400 --> 00:14:22,160
+ti mismo, pero sí que, por ejemplo, el ámbito laboral que lo he mencionado antes o la salud
+
+163
+00:14:22,160 --> 00:14:27,240
+son temas que si hay a inteligencia artificial de alguna forma envuelta en ese proceso de
+
+164
+00:14:27,240 --> 00:14:32,560
+toma de decisiones, o igual es algo que queremos mirar con más detenimiento, ¿no?
+
+165
+00:14:32,560 --> 00:14:37,320
+Entonces, la forma en la que se va a traducir, o sea, habla de que se va a traducir este marco
+
+166
+00:14:37,320 --> 00:14:42,080
+regulatorio es con este semáforo y lo que vamos a hacer es catalogar a las inteligencias
+
+167
+00:14:42,080 --> 00:14:46,000
+artificiales en tres categorías distintas, ¿vale?
+
+168
+00:14:46,000 --> 00:14:51,840
+Hay una que es la de minimal risk, que serían casos, bueno, pues casi como de laboratorio
+
+169
+00:14:51,840 --> 00:14:53,680
+tipo este de Netflix, ¿no?
+
+170
+00:14:53,680 --> 00:14:58,960
+En el que, bueno, pues se mirará un poco cómo funciona el sistema, pero digamos que
+
+171
+00:14:58,960 --> 00:15:02,200
+tampoco es una cosa que nos preocupa excesivamente.
+
+172
+00:15:02,200 --> 00:15:07,560
+Hay otros que tiene que ver, bueno, pues sobre todo con, se habla con chatbots también y
+
+173
+00:15:07,560 --> 00:15:12,000
+con conversación que serían estos de limited risk, ¿no?
+
+174
+00:15:12,000 --> 00:15:17,720
+Limited risk significa que la medida que se va a poner para observar estos sistemas va
+
+175
+00:15:17,720 --> 00:15:19,920
+a ser sobre todo la transparencia, ¿vale?
+
+176
+00:15:19,920 --> 00:15:24,640
+Que haya de alguna forma una documentación pública o que tú puedas acceder a ella sobre
+
+177
+00:15:24,640 --> 00:15:27,160
+el sistema de inteligencia artificial.
+
+178
+00:15:27,160 --> 00:15:29,240
+Y así vamos subiendo, ¿vale?
+
+179
+00:15:29,240 --> 00:15:32,400
+Y llegamos hasta los unacceptable risk.
+
+180
+00:15:32,400 --> 00:15:34,800
+En unacceptable risk, sobre todo, la...
+
+181
+00:15:34,800 --> 00:15:39,920
+Una europea se ha posicionado de forma bastante tajante en todo lo que tiene que ver con biometría,
+
+182
+00:15:39,920 --> 00:15:44,840
+digamos, en espacios públicos y vigilancia, ¿vale?
+
+183
+00:15:44,840 --> 00:15:51,600
+Son dos de las áreas que ha prohibido de forma bastante tajante y hay una excepción
+
+184
+00:15:51,600 --> 00:15:54,080
+que es, bueno, pues en tornos militares, ¿vale?
+
+185
+00:15:54,080 --> 00:15:55,080
+Os podéis imaginar.
+
+186
+00:15:55,080 --> 00:16:00,480
+Pero digamos que con este semáforo, bueno, pues podríamos resumir que estas son las
+
+187
+00:16:00,480 --> 00:16:07,880
+áreas donde va a ser más complicado empezar a sacar a nuestros algoritmos, ¿no?
+
+188
+00:16:07,880 --> 00:16:08,880
+Al público general.
+
+189
+00:16:08,880 --> 00:16:13,840
+Entonces, salud, empleo, justicia, servicios sociales, educación, seguridad, son algunos
+
+190
+00:16:13,840 --> 00:16:14,920
+de estos.
+
+191
+00:16:14,920 --> 00:16:21,400
+Si queréis entrar más en detalle, si entrais a la normativa hasta del AI Act, los anexos
+
+192
+00:16:21,400 --> 00:16:27,320
+3 y 4 contienen la información que a mi gusto todo el mundo debería leer.
+
+193
+00:16:27,320 --> 00:16:29,400
+Son anexos cortitos, ¿vale?
+
+194
+00:16:29,400 --> 00:16:31,920
+De un poquito más largos que está el slide.
+
+195
+00:16:31,920 --> 00:16:33,840
+Pero os especifican, ¿vale?
+
+196
+00:16:33,840 --> 00:16:40,160
+Con todo detalle qué casos específicos son donde tenemos que, bueno, pues pasar una serie
+
+197
+00:16:40,160 --> 00:16:44,680
+de filtros bastante exhaustos, ¿vale?
+
+198
+00:16:44,680 --> 00:16:49,360
+Identificación biométrica, infraestructuras esenciales tipo tráfico, suministro, de energía
+
+199
+00:16:49,360 --> 00:16:51,480
+y demás, educación, empleo, ¿vale?
+
+200
+00:16:51,480 --> 00:16:57,760
+Todos los que he dicho antes, pero aquí digamos que un poquito ya más aterrizados, ¿vale?
+
+201
+00:16:57,760 --> 00:17:04,480
+Entonces cualquier sistema que estáis haciendo a día de hoy o que vayáis a hacer en el medio
+
+202
+00:17:04,480 --> 00:17:10,920
+plazo seguramente va a tener que pasar algún tipo de registro o ya se verá en que se
+
+203
+00:17:10,920 --> 00:17:12,520
+va a materializar esto.
+
+204
+00:17:12,520 --> 00:17:18,960
+Por ahora, intentando traducir o mapear un poco esta normativa y lo que se te pide,
+
+205
+00:17:18,960 --> 00:17:23,360
+porque la normativa sí que aparece lo que la Unión Europea te quiere pedir sobre tu
+
+206
+00:17:23,360 --> 00:17:27,840
+algoritmo, no se va a pedir el código, pero sí que se va a pedir una serie de estudios
+
+207
+00:17:27,840 --> 00:17:28,840
+sobre algoritmo.
+
+208
+00:17:28,840 --> 00:17:32,720
+Se está implementando este tipo de model card, ¿no?
+
+209
+00:17:32,720 --> 00:17:38,240
+De iniciativa, que yo la vi la primera vez la verdad de la mano de Google, no sé si
+
+210
+00:17:38,240 --> 00:17:43,240
+fueron los originales, pero sí que sería como hacer una especie de ritmi sobre nuestros
+
+211
+00:17:43,240 --> 00:17:47,760
+modelos de inteligencia artificial que tenga más o menos estos cinco pasos, ¿no?
+
+212
+00:17:47,760 --> 00:17:51,640
+Que tenga un paso relacionado con el contenido, aquí nos podemos centrar en los datos, en
+
+213
+00:17:51,640 --> 00:17:57,120
+cómo hemos seleccionado las fuentes, en qué distribución tienen mis datos, por ejemplo.
+
+214
+00:17:57,120 --> 00:18:01,120
+Luego en el proceso, qué tipo de algoritmo hemos utilizado, si hemos utilizado, por
+
+215
+00:18:01,120 --> 00:18:04,720
+ejemplo, algún modelo por entrenado, ¿vale?
+
+216
+00:18:04,720 --> 00:18:06,600
+También se podría mencionar aquí.
+
+217
+00:18:06,600 --> 00:18:07,600
+Experiencia, ¿no?
+
+218
+00:18:07,600 --> 00:18:12,320
+El cómo va a pedir el modelo que métricas tenemos y luego tenemos la parte de Furnace
+
+219
+00:18:12,320 --> 00:18:18,280
+y Privacy, ¿no? Que serían las dos que complementan todo ese estudio y que igual no estamos tan
+
+220
+00:18:18,280 --> 00:18:20,840
+habituados a llevarlas a cabo.
+
+221
+00:18:20,840 --> 00:18:27,600
+Pues esto es una cosa que se traduce muy bien de esa primera normativa que sale de la Unión
+
+222
+00:18:27,600 --> 00:18:28,600
+Europea, ¿no?
+
+223
+00:18:28,600 --> 00:18:34,400
+Y aquí tendremos que poner foco en habituarnos a hacer este tipo de documentación, especialmente
+
+224
+00:18:34,400 --> 00:18:39,320
+cuando empecemos a trabajar con algoritmos de limited risk para arriba.
+
+225
+00:18:39,320 --> 00:18:40,320
+¿Vale?
+
+226
+00:18:40,320 --> 00:18:44,680
+Hay otras iniciativas que también lo quería mencionar porque aquí se está uniendo mucho
+
+227
+00:18:44,680 --> 00:18:50,160
+Hacking Face y tiene que ver con las licencias OpenRail, ¿vale?
+
+228
+00:18:50,160 --> 00:18:56,320
+Las licencias OpenRail surgen porque, claro, ahora hay un tema que es cómo hago yo para
+
+229
+00:18:56,320 --> 00:18:58,920
+limitar el uso de mis modelos, ¿no?
+
+230
+00:18:58,920 --> 00:19:03,800
+Todo el mundo creemos modelos open source, pero yo no quiero que se utilicen para el mal,
+
+231
+00:19:03,800 --> 00:19:04,800
+¿vale?
+
+232
+00:19:04,800 --> 00:19:08,600
+Entonces, bueno, pues hay un conjunto de gente que está trabajando en esta iniciativa.
+
+233
+00:19:08,600 --> 00:19:13,680
+Podéis leer más en internet donde ya se habla de licencias y de hecho ellos tienen varios
+
+234
+00:19:13,680 --> 00:19:15,200
+modelos colgados en internet.
+
+235
+00:19:15,200 --> 00:19:20,160
+Ya se ha utilizado también para la iniciativa Big Science, en la que nos ha traído Bloom,
+
+236
+00:19:20,160 --> 00:19:23,920
+que es ese GPT-3 Open Source.
+
+237
+00:19:23,920 --> 00:19:27,520
+Entonces, lo que hacen es restringir, bueno, pues casos de uso.
+
+238
+00:19:27,520 --> 00:19:31,600
+Es decir, que si yo te publico mi modelo, yo además pongo explícitamente en qué casos
+
+239
+00:19:31,600 --> 00:19:33,600
+de uso no lo puedes utilizar.
+
+240
+00:19:33,600 --> 00:19:37,440
+Pongo también clóssulas de comportamiento y hay una parte que es la que me parece muy
+
+241
+00:19:37,440 --> 00:19:39,320
+relevante que es la de obras derivadas.
+
+242
+00:19:39,320 --> 00:19:45,840
+Es decir, que si tú vas a utilizar luego ese modelo de forma pre-entrenada, tú te tengas
+
+243
+00:19:45,840 --> 00:19:48,600
+que ceñir a lo que ha dicho el autor.
+
+244
+00:19:48,600 --> 00:19:55,160
+Es decir, que tu propio software no se va a poder utilizar en nada que digamos el autor
+
+245
+00:19:55,160 --> 00:19:57,720
+original haya dicho que no se puede, ¿vale?
+
+246
+00:19:57,720 --> 00:20:03,320
+Y esto empieza a darle forma también, bueno, pues a esos gaps que había ahí de cómo cubrimos
+
+247
+00:20:03,320 --> 00:20:09,880
+este uso restrictivo de la inteligencia artificial hasta ahora, bueno, casi todos podemos hacer
+
+248
+00:20:09,880 --> 00:20:12,080
+un poco lo que nos den a gana, ¿no?
+
+249
+00:20:12,080 --> 00:20:18,320
+Salvo al sector salud, que es el que tiene una legislación un poquito más extensa.
+
+250
+00:20:18,320 --> 00:20:24,760
+El resto, pues, bueno, no tendría ahora mismo quizá una repercusión más allá de, bueno,
+
+251
+00:20:24,760 --> 00:20:27,880
+pues de reputación, no sé si sería.
+
+252
+00:20:27,880 --> 00:20:34,080
+Pero sale a nivel nacional la Agencia Española de Supervisión de Inteligencia Artificial.
+
+253
+00:20:34,080 --> 00:20:40,300
+Y esto sale a finales del año pasado un poco con la idea de ver qué órgano tiene que
+
+254
+00:20:40,300 --> 00:20:49,760
+existir para que, bueno, pues todo este AI Act sea, digamos, digerible a nivel español,
+
+255
+00:20:49,760 --> 00:20:50,760
+en este caso.
+
+256
+00:20:50,760 --> 00:20:55,880
+Entonces, bueno, pues se acuerda que en algún momento se va a crear este órgano, está
+
+257
+00:20:55,880 --> 00:21:00,000
+publicado ya en el BOE y tiene un presupuesto de 5 millones de euros.
+
+258
+00:21:00,000 --> 00:21:05,720
+Y aquí realmente la finalidad de este órgano es esa, es, oye, vamos a crear, bueno, pues
+
+259
+00:21:05,720 --> 00:21:10,520
+algunos mecanismos de control, ya sea a través de bancos de registro de algoritmos, ya sea
+
+260
+00:21:10,520 --> 00:21:14,920
+a través de otros procesos, no se sabe todavía mucho más, pero sí que, digamos, que ponga
+
+261
+00:21:14,920 --> 00:21:19,680
+en práctica, bueno, pues esa independencia no que va a tener este órgano para, pues,
+
+262
+00:21:19,680 --> 00:21:24,160
+analizar todos esos riesgos que podrían tener los algoritmos que se van utilizando, por
+
+263
+00:21:24,160 --> 00:21:25,680
+ejemplo, en la administración pública.
+
+264
+00:21:25,680 --> 00:21:30,200
+Vale, ayudas sociales, sectores de estos que hemos visto de high risk.
+
+265
+00:21:30,200 --> 00:21:35,920
+Vale, o sea, este órgano estaría muy orientado a cómo se gestiona, de forma amplia a nivel
+
+266
+00:21:35,920 --> 00:21:40,520
+nacional, toda esa inteligencia artificial de alto riesgo.
+
+267
+00:21:40,520 --> 00:21:43,800
+La serie física no está decidida, de hecho, Granada creo que es una de las que se va
+
+268
+00:21:43,800 --> 00:21:48,040
+a presentar para elvergarlo y está viendo ahí, bueno, pues bastantes al seo, no con
+
+269
+00:21:48,040 --> 00:21:52,400
+quien se la lleva, pero bueno, ahí está Angalicia, no sé, Alicante, hay varias que
+
+270
+00:21:52,400 --> 00:21:56,040
+se quieren presentar y se verá qué pasa con esto, ¿vale?
+
+271
+00:21:56,040 --> 00:22:01,000
+Digo porque seguramente escucharéis ahora en las noticias bastante todo esto, ¿no?
+
+272
+00:22:01,000 --> 00:22:06,360
+Y luego en junio de 2022, y esto fue bastante sorprendente, porque todas las iniciativas
+
+273
+00:22:06,360 --> 00:22:10,600
+generalmente cuelgan de la Secretaría de Estado de Inteligencia Artificial y aquí
+
+274
+00:22:10,600 --> 00:22:16,280
+el Ministerio de Trabajo liderado por Yolanda Díaz saca esta iniciativa en base a lo que
+
+275
+00:22:16,280 --> 00:22:21,240
+había sucedido con la Ley Reiber, donde ya metieron, digamos, esa necesidad de que le
+
+276
+00:22:21,240 --> 00:22:27,080
+contasen al trabajador cómo el algoritmo, en este caso, bueno, de Globo o otras marcas,
+
+277
+00:22:27,080 --> 00:22:33,800
+estaba pues de alguna forma dándoles los servicios, ¿no?, para hacer este delivery.
+
+278
+00:22:33,800 --> 00:22:40,040
+Pues en este caso lo que se quiere es implantar un mecanismo también de control en el sector
+
+279
+00:22:40,040 --> 00:22:45,040
+del empleo y lo que se propone por ahora es un conjunto de 25 preguntas que tendrían
+
+280
+00:22:45,040 --> 00:22:51,920
+que responder todas, digamos, aquellas empresas o instituciones que hayan implementado algoritmos
+
+281
+00:22:51,920 --> 00:22:57,360
+pues desde filtrado de currículums hasta control, por ejemplo, de evaluación interna
+
+282
+00:22:57,360 --> 00:23:01,920
+de trabajadores o de promociones o de horas extra, ¿vale?
+
+283
+00:23:01,920 --> 00:23:06,640
+También habla de esa relación de, digamos, todo lo que tiene a ver con los sindicatos
+
+284
+00:23:06,640 --> 00:23:10,960
+y esta negociación de cómo los algoritmos van a afectar a la plantilla.
+
+285
+00:23:10,960 --> 00:23:17,640
+Es una cosa bastante novedosa y también habla de qué, pues, qué derechos tenemos los trabajadores
+
+286
+00:23:17,640 --> 00:23:23,280
+a la hora de si yo sé que se está utilizando un algoritmo pues para ya os digo, este calculador
+
+287
+00:23:23,280 --> 00:23:28,080
+asestra o para decir lo bien que lo hago o lo mal que lo hago, pues qué información
+
+288
+00:23:28,080 --> 00:23:34,120
+puedo pedir yo y se me debe garantizar para, bueno, pues que mi trabajo, digamos, sea lo
+
+289
+00:23:34,120 --> 00:23:38,240
+más transparente posible y yo tenga toda la información, ¿no?, de cómo debo ejecutarlo.
+
+290
+00:23:38,240 --> 00:23:41,880
+Y luego se habla también de esto último que pongo aquí debajo que es el registro automatizado
+
+291
+00:23:41,880 --> 00:23:42,880
+de la asestra.
+
+292
+00:23:42,880 --> 00:23:47,160
+No se sabe mucho de esto, pero sí que parece que quieren utilizar algún tipo de algoritmo
+
+293
+00:23:47,160 --> 00:23:52,960
+también el Ministerio de Trabajo para computar todas esas horas extras que supuestamente,
+
+294
+00:23:52,960 --> 00:23:55,320
+pues, no se pagan a día de hoy, ¿vale?
+
+295
+00:23:55,320 --> 00:23:58,720
+Entonces, digamos que la visión que tiene aquí el Ministerio de Trabajo es, sobre
+
+296
+00:23:58,720 --> 00:24:04,080
+todo, intentar también utilizar la inteligencia artificial para empoderar, vamos a decirlo
+
+297
+00:24:04,080 --> 00:24:07,000
+así, al trabajador, ¿vale?
+
+298
+00:24:07,000 --> 00:24:12,400
+Lo último que os voy a contar, porque ya tengo que ir terminando, es un piloto que quiere
+
+299
+00:24:12,400 --> 00:24:19,320
+liderar España relacionado con los sandboxes, es decir, cómo creamos espacios donde podamos
+
+300
+00:24:19,320 --> 00:24:24,400
+probar estos algoritmos, sobre todo, pensad en estos de alto riesgo, ¿vale?, o pensad
+
+301
+00:24:24,400 --> 00:24:27,840
+yo que si en un caso que sea de los coches inteligentes, que este yo creo que lo entendéis
+
+302
+00:24:27,840 --> 00:24:33,720
+todos, ¿no?, el peligro que tiene el probar esto así en un entorno no controlado.
+
+303
+00:24:33,720 --> 00:24:39,040
+Aquí se quiere hacer un estudio a nivel europeo y, como os digo, España se ha ofrecido a
+
+304
+00:24:39,040 --> 00:24:40,040
+liderarlo.
+
+305
+00:24:40,040 --> 00:24:45,080
+Un poco para ver, bueno, pues, ¿qué pasa si ofrecemos un entorno sandbox?
+
+306
+00:24:45,080 --> 00:24:50,040
+Pues desde yo que sé, sector financiero, sector salud, no sé, a un conjunto de empresas
+
+307
+00:24:50,040 --> 00:24:55,120
+que ya tengan algoritmos que estén maduros, ¿no?, que se puedan poner en producción.
+
+308
+00:24:55,120 --> 00:24:59,920
+Y para ver un poco, bueno, pues, dentro del marco legal europeo, si estas mismas empresas
+
+309
+00:24:59,920 --> 00:25:02,480
+tendrían sanciones o no, ¿vale?
+
+310
+00:25:02,480 --> 00:25:08,440
+La preocupación que empieza a llegar desde Europa es, ostras, ¿qué hacemos si de repente
+
+311
+00:25:08,440 --> 00:25:12,800
+se han hecho unas inversiones grandísimas, ¿no?, en esta inteligencia artificial que
+
+312
+00:25:12,800 --> 00:25:18,800
+ahora se cataloga de alto riesgo y estas empresas de repente no pueden utilizar toda esa innovación
+
+313
+00:25:18,800 --> 00:25:20,400
+que han generado, ¿no?
+
+314
+00:25:20,400 --> 00:25:24,720
+Entonces, bueno, pues, parece que el mecanismo del sandbox va a ser de alguna forma algo
+
+315
+00:25:24,720 --> 00:25:30,040
+que de forma transitoria nos ayude a todos a, pues, probar nuestros algoritmos.
+
+316
+00:25:30,040 --> 00:25:34,960
+Ya os digo que aquí se sabe todavía poco y tiene que salir además una ley que permita
+
+317
+00:25:34,960 --> 00:25:41,000
+en España, bueno, pues, un marco legal, digamos, más flexible para que las empresas que participen
+
+318
+00:25:41,000 --> 00:25:46,360
+en estos sandbox, pues, no tengan, digamos, repercusiones legales durante ese periodo
+
+319
+00:25:46,360 --> 00:25:48,880
+de tiempo, ¿vale?, bastante acotado.
+
+320
+00:25:48,880 --> 00:25:55,440
+Y ya por último, bueno, han salido dos cosas, una tiene que ver con el estado de Nueva York,
+
+321
+00:25:55,440 --> 00:26:00,160
+que se comentaba hace tiempo que iban a sacar, sacaron una, no sé si se llama ley o como
+
+322
+00:26:00,160 --> 00:26:04,240
+se llama en ese caso si es un decreto que es, pero digamos que sí que parece que a partir
+
+323
+00:26:04,240 --> 00:26:11,800
+del 1 de enero de 2023 cualquier algoritmo que se vaya a utilizar en el sector del empleo
+
+324
+00:26:11,800 --> 00:26:17,760
+en el estado de Nueva York, pues, va a tener que ser auditado por una entidad independiente,
+
+325
+00:26:17,760 --> 00:26:23,440
+esto es, bueno, de las primeras veces yo creo que vemos este tipo de cosas, veremos
+
+326
+00:26:23,440 --> 00:26:29,720
+también cómo va eso, y luego por otro lado ha salido esto que también es a nivel europeo
+
+327
+00:26:29,720 --> 00:26:34,320
+y son nuevas normas de responsabilidad para los productos de ahí y otras cosas, bueno,
+
+328
+00:26:34,320 --> 00:26:40,080
+pues como drones, robots, etcétera, es decir, que ahora, por ejemplo, si tú te enteras
+
+329
+00:26:40,080 --> 00:26:43,840
+de que eres discriminado por un algoritmo inteligencial artificial, pues lo mismo, que
+
+330
+00:26:43,840 --> 00:26:50,200
+tengas cierta capacidad para decir, oye, cuáles son mis derechos, yo tengo derecho también
+
+331
+00:26:50,200 --> 00:26:54,760
+a pedir información de cómo funciona este sistema, esa empresa o la que esté detrás
+
+332
+00:26:54,760 --> 00:27:00,080
+pues te lo tendrá que quedar, vale, y entonces también están trabajando en esta línea, sobre
+
+333
+00:27:00,080 --> 00:27:05,200
+todo en que haya algún tipo de indemnización si se demuestra, pues que se ha ejercido esa
+
+334
+00:27:05,200 --> 00:27:12,280
+discriminación, vale, el acceso a las pruebas, cuando digo pruebas me refiero a ese entorno
+
+335
+00:27:12,280 --> 00:27:17,800
+del algoritmo, no al código, pero sí a toda esa supervisión que se supone que se tendría
+
+336
+00:27:17,800 --> 00:27:23,160
+que haber hecho antes, pues será algo que empecemos a ver como habitual, vale, ahora
+
+337
+00:27:23,160 --> 00:27:29,640
+yo sé que suena muy raro, para mí incluso esto suena como gaños luz, pero no se acostumbraremos
+
+338
+00:27:29,640 --> 00:27:35,720
+y yo creo que no debemos tener miedo, vale, para mí la conclusión de esta charla sería,
+
+339
+00:27:35,720 --> 00:27:41,320
+oye, vamos a también intentar entender por qué se han establecido estos marcos regulatorios
+
+340
+00:27:41,320 --> 00:27:46,000
+y vamos a intentar, bueno, pues mapearlo, es la medida lo posible y esto necesitaremos
+
+341
+00:27:46,000 --> 00:27:51,360
+investigadores, gente legal de todo tipo que nos ayude a llevar esto al plano técnico,
+
+342
+00:27:51,360 --> 00:27:56,040
+a nuestro día a día y que no le tengamos miedo, o sea, igual que ha pasado con la GDPR,
+
+343
+00:27:56,040 --> 00:28:01,680
+pues algo parecido, pasará con este AI Act y esperemos que sea para bien, así que nada,
+
+344
+00:28:01,680 --> 00:28:06,240
+muchas gracias y si hay preguntas no sé si tengo tiempo y si no las contestamos fuera,
+
+345
+00:28:06,240 --> 00:28:07,240
+muchas gracias.
+
+346
+00:28:07,240 --> 00:28:19,240
+¿Alguna preguntilla?
+
+347
+00:28:19,240 --> 00:28:23,240
+¿Qué no sé si hay micro?
+
+348
+00:28:23,240 --> 00:28:27,120
+Ah, sí, está ahí, por allí abajo.
+
+349
+00:28:27,120 --> 00:28:39,760
+Muchísimas gracias por la charla, ha sido espectacular.
+
+350
+00:28:39,760 --> 00:28:40,760
+Gracias.
+
+351
+00:28:40,760 --> 00:28:44,400
+Te quería preguntar por qué has hablado del caso, por ejemplo, de Netflix, que cuando
+
+352
+00:28:44,400 --> 00:28:50,800
+nos recomienda algo no es relevante, pero Netflix ejerce soft power, porque al final
+
+353
+00:28:50,800 --> 00:28:54,760
+las cosas que vemos determinan nuestra imaginación.
+
+354
+00:28:54,760 --> 00:28:55,760
+Exacto.
+
+355
+00:28:55,760 --> 00:28:57,280
+¿Te diera una ahorita mágica?
+
+356
+00:28:57,280 --> 00:28:59,400
+¿Qué harías con regularías?
+
+357
+00:28:59,400 --> 00:29:02,400
+¿Qué harías tú con los soft powers?
+
+358
+00:29:02,400 --> 00:29:08,000
+Con las cosas que no son ni sanidad ni educación, pero que nos afectan.
+
+359
+00:29:08,000 --> 00:29:13,280
+Vale, aquí una cosa, o sea, no es que, si es verdad que igual es solo la palabra relevante
+
+360
+00:29:13,280 --> 00:29:17,200
+y no es la más adecuada, pero, o sea, no es que no se vaya a regular, es que se van
+
+361
+00:29:17,200 --> 00:29:20,680
+a pedir menos mecanismos de control, ¿no?
+
+362
+00:29:20,680 --> 00:29:24,320
+Entonces, aquí para mí la palabra esencial es transparencia.
+
+363
+00:29:24,320 --> 00:29:29,960
+Nos tenemos que habitual que nada se puede poner en producción si yo no he hecho una
+
+364
+00:29:29,960 --> 00:29:35,320
+serie de pruebas y no os digo calcularé la cura, sí, o el recall, o estas métricas
+
+365
+00:29:35,320 --> 00:29:40,360
+que estamos habituados, sino hacer experimentos un poquito más sesudos que tengan que ver
+
+366
+00:29:40,360 --> 00:29:42,880
+pues con esa representación que bien estabas diciendo.
+
+367
+00:29:42,880 --> 00:29:47,080
+Pues igual hay que ver también el catálogo de Netflix cuántas veces te recomienda algo
+
+368
+00:29:47,080 --> 00:29:50,880
+en tu propia lengua, o en una que sea diferente, o que sea minoritaria.
+
+369
+00:29:50,880 --> 00:29:56,040
+En fin, digamos que también habría que prestar atención a ese tipo de cosas, pero ahí creo
+
+370
+00:29:56,040 --> 00:29:59,040
+que va mucho la parte esa de transparencia, ¿no?
+
+371
+00:29:59,040 --> 00:30:03,920
+La que se va hacia la model card y hacia ver, bueno, pues que los sistemas cada vez tengan
+
+372
+00:30:03,920 --> 00:30:06,160
+ese tipo de supervisión.
+
+373
+00:30:06,160 --> 00:30:11,280
+En mi caso, yo lo único que espero, por esto que decía de la barita mágica, es que no
+
+374
+00:30:11,280 --> 00:30:16,520
+se ve a esto como algo malo, es decir, yo sé que causa muchas preguntas, yo misma tengo
+
+375
+00:30:16,520 --> 00:30:22,640
+preguntas sobre esta normativa, pero no creo en esto que dice alguna gente de que la regulación
+
+376
+00:30:22,640 --> 00:30:24,140
+frena la innovación, ¿no?
+
+377
+00:30:24,140 --> 00:30:30,440
+Yo creo que para que todos podamos convivir y podamos de alguna forma digerir también
+
+378
+00:30:30,440 --> 00:30:36,240
+qué impacto puede tener esto en nosotros mismos algún día, necesitamos también esos mecanismos.
+
+379
+00:30:36,240 --> 00:30:40,960
+Entonces, bueno, que nos demos tiempo también un poco para ver hasta dónde llega esto y
+
+380
+00:30:40,960 --> 00:30:44,360
+quién sabe, igual alguno de vosotros que estáis aquí terminais contribuyendo también
+
+381
+00:30:44,360 --> 00:30:45,560
+a esto algún día.
+
+382
+00:30:45,560 --> 00:30:47,080
+Nunca se sabe.
+
+383
+00:30:47,080 --> 00:30:53,240
+Hola, muchas gracias, Nerea, por la charla.
+
+384
+00:30:53,240 --> 00:30:59,000
+Yo te quería preguntar acerca de lo que has mencionado de las licencias RAIL de Responsable
+
+385
+00:30:59,000 --> 00:31:02,760
+AI, porque, claro, yo estoy viendo un montón de debate con esto, ¿no?
+
+386
+00:31:02,760 --> 00:31:08,040
+De alguna forma la definición opensource de la OSI no casa con eso, ¿no?
+
+387
+00:31:08,040 --> 00:31:09,040
+Claro.
+
+388
+00:31:09,040 --> 00:31:13,400
+Porque ahora estoy ingiendo el uso y la gente critica este tipo de licencias porque no
+
+389
+00:31:13,400 --> 00:31:15,680
+se puede hacer un enforcement, ¿no?
+
+390
+00:31:15,680 --> 00:31:19,320
+O es difícil o depende de la regulación local, etcétera.
+
+391
+00:31:19,320 --> 00:31:22,440
+Pero al mismo tiempo parece una cosa bastante necesaria, ¿no?
+
+392
+00:31:22,440 --> 00:31:28,000
+Porque si no, abrimos la caja de pandora de los deepfakes y no sé, no sabemos hasta
+
+393
+00:31:28,000 --> 00:31:29,400
+dónde llega esto, ¿no?
+
+394
+00:31:29,400 --> 00:31:33,520
+Entonces, no sé, quería preguntarte si puedes expandir un poco tu opinión sobre esto o
+
+395
+00:31:33,520 --> 00:31:34,520
+hacia dónde vamos a ir.
+
+396
+00:31:34,520 --> 00:31:40,120
+Sí, la verdad es que yo la iniciativa de Open RAIL, bueno, la conocía de OIDAS y hace
+
+397
+00:31:40,120 --> 00:31:45,520
+poco tuvo una conversación, bueno, con uno de los chicos que está implicado en esta
+
+398
+00:31:45,520 --> 00:31:50,720
+iniciativa que trabaja en Hagen-Face y es español, por cierto, vive en Valencia, y
+
+399
+00:31:50,720 --> 00:31:55,760
+tiene un post, de hecho lo he linkado en la slide, bueno, de cómo en Hagen-Face, al
+
+400
+00:31:55,760 --> 00:31:59,440
+menos han entendido, digamos, que se puede aplicar ese tipo de licencias porque la han
+
+401
+00:31:59,440 --> 00:32:01,240
+utilizado, ¿no?
+
+402
+00:32:01,240 --> 00:32:05,840
+Yo creo que es positivo, no sé si será la paracea, pero sí que desde luego hay y yo
+
+403
+00:32:05,840 --> 00:32:12,600
+lo veo también, ¿no? cuando yo misma en mi trabajo, ¿no? o en distintas iniciativas
+
+404
+00:32:12,600 --> 00:32:20,120
+en las que pueda estar involucrada, veo utilizar, por ejemplo, un algoritmo preentrenado, ¿ostras?
+
+405
+00:32:20,120 --> 00:32:24,800
+Así estamos todos acostumbrados que si a la Apache License, el MIT License tal, pero
+
+406
+00:32:24,800 --> 00:32:30,120
+hay casos en los que realmente no sabes hasta qué punto se puede utilizar libremente ese
+
+407
+00:32:30,120 --> 00:32:35,320
+modelo o qué pensaría el autor, yo que sé, ¿no? de que te estés ahí forrando, bueno,
+
+408
+00:32:35,320 --> 00:32:41,760
+no lo sé, pero el caso es que creo que es un primer paso, o sea que exista, no creo que
+
+409
+00:32:41,760 --> 00:32:46,880
+sea negativo sino al contrario, que sea ver ese debate, creo que va a ser difícil y ahí
+
+410
+00:32:46,880 --> 00:32:52,840
+te doy la razón el converger en algo que, bueno, pues que se utilice de forma amplia,
+
+411
+00:32:52,840 --> 00:32:59,320
+no sé, creo que para eso todavía falta tiempo en que vayamos digiriendo todos estos implicaciones,
+
+412
+00:32:59,320 --> 00:33:03,840
+¿no? igual que se habla de que los tatasets que son públicos o ahora el código de GitHub,
+
+413
+00:33:03,840 --> 00:33:08,680
+no de vuestros proyectos, pues si yo puedo decir si quiero que forme parte o no de un
+
+414
+00:33:08,680 --> 00:33:13,920
+sistema, ¿no? veremos todo eso poco a poco en que se va traduciendo, pero que al menos
+
+415
+00:33:13,920 --> 00:33:18,080
+haya ese debate yo creo que es sano y que existan propuestas diferentes a las que ya
+
+416
+00:33:18,080 --> 00:33:29,160
+existen, creo que también. Ya me voy, ¿no? Vale. Una última cosa, está abierto por
+
+417
+00:33:29,160 --> 00:33:34,760
+fin el registro de techfes para recibir nuevas charlas. A los que os hayan denegado la charla
+
+418
+00:33:34,760 --> 00:33:52,240
+en la Picon, tenéis una oportunidad si queréis, 2 y 3 de marzo en Madrid. Muchas gracias.
+

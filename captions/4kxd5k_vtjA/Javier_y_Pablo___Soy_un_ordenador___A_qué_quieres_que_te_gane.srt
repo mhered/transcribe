@@ -1,0 +1,1720 @@
+1
+00:00:00,000 --> 00:00:20,960
+Bueno, os presento a los chicos de Bluta, a Javier Arcaidi y Pablo Magón, que van contando
+
+2
+00:00:20,960 --> 00:00:34,080
+su ordenador. ¿Qué quieres que te gane? Vamos a darle un aplauso. ¿Podéis hacerle
+
+3
+00:00:34,080 --> 00:00:43,720
+pregunta entre medias? Tampoco hace daño. Bueno, buenos días. En algún momento se me
+
+4
+00:00:43,720 --> 00:00:47,960
+lleve flojo para decirme que hable más alto. Bueno, vamos a dar comienzo a la charla. Soy
+
+5
+00:00:47,960 --> 00:00:52,240
+un ordenador a que quieras que te gane. Bueno, como ya el título dice, vamos a hablar de,
+
+6
+00:00:52,240 --> 00:00:59,560
+gracias. Bueno, como el título dice, vamos a hablar de cómo puede jugar la máquina contra
+
+7
+00:01:00,680 --> 00:01:07,680
+los humanos. Entonces, vamos a explicar los dos modos que tenemos de, bueno, en esta charla
+
+8
+00:01:07,680 --> 00:01:12,720
+vamos a aplicar dos modos que tenemos de enseñarle a los ordenadores a jugar a juego de mesa. Y
+
+9
+00:01:12,720 --> 00:01:16,320
+luego vamos a ver también un ejemplo de un juego que nos implementamos nosotros y para el que hemos
+
+10
+00:01:16,320 --> 00:01:21,000
+hecho una disidencia y una regla para el cuarto contra el humano, para responder a estas caminas.
+
+11
+00:01:21,000 --> 00:01:27,600
+Y si es verdad que el ordenador puede ganar algo más. La respuesta es verdad, pero por
+
+12
+00:01:27,600 --> 00:01:31,520
+entretenimiento es un poco el ente del sistema. Bueno, primero vamos a hablar un poco sobre
+
+13
+00:01:31,520 --> 00:01:36,080
+Bluta, que supongo que es una empresa de, bueno, que lo ha empleado ya y que nos dedicamos a
+
+14
+00:01:36,080 --> 00:01:42,800
+dar a todo el tema de la acción a la cualidad los datos. Damos soluciones a empresas para cualquier tema,
+
+15
+00:01:42,800 --> 00:01:49,560
+ya sea la FANALITY, CLOUD, cualquier cosa así. Desde 2021 formamos parte del grupo UDM y luego
+
+16
+00:01:49,560 --> 00:01:55,840
+pues tenemos presencia en otros países como México, Perú, Colombia. Y bueno, en cualquier caso,
+
+17
+00:01:55,840 --> 00:02:01,560
+para más información, la opción está ahí en la entrada que podéis preguntar y os lo
+
+18
+00:02:01,560 --> 00:02:07,880
+van a explicar con más acción. Vale, lo nosotros, yo no soy Pablo Magán, tenemos
+
+19
+00:02:07,880 --> 00:02:14,760
+sus cinco años de experiencia, yo llevo un año y medio en Bluta y bueno, nosotros somos
+
+20
+00:02:14,760 --> 00:02:20,880
+matemáticos los dos, trabajamos más sobre toda la parte de la Aya Niel, pero bueno, estamos
+
+21
+00:02:20,880 --> 00:02:24,760
+interesados en toda esta parte de inteligencia artificial y como también somos un poco fans
+
+22
+00:02:24,760 --> 00:02:30,560
+de los juegos de mesa pues en los 8th year, si tú quieres añadir algo. Vale, bueno, vamos
+
+23
+00:02:30,560 --> 00:02:34,200
+a ver un ídice de qué es lo que vamos a ver en esta salón. Bueno, lo primero es una
+
+24
+00:02:34,200 --> 00:02:39,440
+introducción ¿no? Y luego vamos a aplicar, vamos a pasar por las estrategias básicas
+
+25
+00:02:39,440 --> 00:02:45,480
+de cómo enseñar a los ordenadoras a jugar algo ¿no? Tenemos todos los vertientes muy
+
+26
+00:02:45,480 --> 00:02:49,320
+diferenciados, las reglas o el aprendizaje automático ¿vale? Ahora lo veremos en ello
+
+27
+00:02:49,320 --> 00:02:53,580
+luego, van a hacer unos conceptos básicos para entender un poco de toda la teoría.
+
+28
+00:02:53,580 --> 00:02:58,440
+Veremos el ejemplo del juego que hemos presentado nosotros, es un juego que ya existe ¿vale?
+
+29
+00:02:58,440 --> 00:03:02,520
+Simplemente hemos hecho la implementación y hemos enseñado a la máquina 4. Veremos
+
+30
+00:03:02,520 --> 00:03:05,440
+la implementación de cómo se ha hecho todo esto y luego veremos unos ejemplos de los
+
+31
+00:03:05,440 --> 00:03:10,200
+algoritmos que hemos utilizado para ser clean y en minimap son ejemplos de algoritmos como
+
+32
+00:03:10,200 --> 00:03:14,760
+se usaba para las estrategias con reglas y luego el aprendizaje por recuerdo que es
+
+33
+00:03:14,760 --> 00:03:18,320
+lo que se ha hecho en la parte de la estrategia automática. Tenemos los resultados que ha
+
+34
+00:03:18,320 --> 00:03:24,720
+sacado de esto y luego veremos un poco la comuna. Vale, bueno, vamos a poner un poco
+
+35
+00:03:24,720 --> 00:03:29,280
+de contexto histórico ¿no? Los juegos ya han existido desde hace mucho ¿no? 5.000 años
+
+36
+00:03:29,280 --> 00:03:41,440
+se le da hace el primer juego ¿no? Le pasa para ti. Vale, bueno, pues algo ya de la historia
+
+37
+00:03:41,440 --> 00:03:46,600
+a alguien gente ya que ha intentado dejar al humano intentando hacer algo automático
+
+38
+00:03:46,600 --> 00:03:54,000
+una máquina o algo que no. Primero ejemplo que tenemos es este, un señor de 1780 uniga
+
+39
+00:03:54,000 --> 00:03:59,280
+que creó una automata algo parecido a este que ya decía que ganaba la piedrez a cualquier
+
+40
+00:03:59,280 --> 00:04:07,600
+persona. Entonces lo llevaba por la fe y bueno, y ganaba el juego contra la corea. Mucha gente
+
+41
+00:04:07,600 --> 00:04:15,000
+¿no? ¿alguien sabe cómo jugaba este automata? Especialmente. Esto no tenía todavía nada
+
+42
+00:04:15,000 --> 00:04:18,480
+de inteligencia artificial ¿no? Pero bueno era un poco por contextualizar que esto ya
+
+43
+00:04:18,480 --> 00:04:23,040
+se desde hace mucho tiempo ya se quería ir haciendo ¿no? Los primeros casos reales que
+
+44
+00:04:23,040 --> 00:04:27,640
+tenemos son el Deep Blue y el Alfa 0 ¿no? Yo creo que son conocidos ¿no? Alguien me
+
+45
+00:04:27,640 --> 00:04:31,480
+sabe decir que diferencias hay entre el Deep Blue y el Alfa 0.
+
+46
+00:04:31,480 --> 00:04:38,680
+¿Tienen un su ordenador de la Eiffelon que ganó al...
+
+47
+00:04:38,680 --> 00:04:45,160
+Antes ganó. Sí, bueno sí, ambos son ordenadores ¿no? Bueno, procesadores da igual, el ordenador
+
+48
+00:04:45,160 --> 00:04:50,280
+ahora al Alfa 0 cuestan incluso el móvil da igual ¿no? La principal diferencia es que
+
+49
+00:04:50,280 --> 00:04:56,960
+el Deep Blue jugaba con reglas ¿no? Se daba ningún tipo de inteligencia artificial. Simplemente
+
+50
+00:04:56,960 --> 00:05:01,840
+tenía estipuladas que cosas... O sea, un humano le había dicho esto es mejor, esto es peor,
+
+51
+00:05:01,840 --> 00:05:07,760
+entonces si puedes hacer esto, sino simplemente reglas. Alfa 0 ya utiliza algoritmos de aprendizaje
+
+52
+00:05:07,760 --> 00:05:13,920
+reforzado ¿vale? Y hace que bueno los resultados son mucho mejores. Ahora lo veremos. Bueno,
+
+53
+00:05:13,920 --> 00:05:18,160
+Deep Blue ganó a Casparova, un mejor de tres partidas y Alfa 0 ya conseguió desbancar
+
+54
+00:05:18,160 --> 00:05:23,880
+a todos los grandes maestros de ajedrez de... Vamos de la actualidad y vamos para siempre.
+
+55
+00:05:23,880 --> 00:05:32,040
+Bueno, ¿qué tipo de algoritmos tenemos? El primero que vamos a hablar es la regla ¿no?
+
+56
+00:05:32,040 --> 00:05:36,160
+Las reglas es como hemos dicho que aprendía el Deep Blue ¿vale? Son algoritmos que se
+
+57
+00:05:36,160 --> 00:05:40,000
+basan en una heurística. Una heurística es simplemente determinar como le decimos al
+
+58
+00:05:40,000 --> 00:05:44,840
+ordenador que es mejor o que es peor ¿vale? Entonces, por ejemplo, tenemos aquí unos
+
+59
+00:05:44,840 --> 00:05:48,320
+ejemplos ¿no? En el ajedrez, por ejemplo, si no nos podemos comer de adama, pues mejor
+
+60
+00:05:48,320 --> 00:05:52,640
+que si nos podemos comer el alfil, ¿no? Porque esto es mejor a priori. En el coneta 4, pues
+
+61
+00:05:52,640 --> 00:05:57,240
+si podemos poner dos piezas a diacente, mejor que si ponemos en columnas separadas y tal.
+
+62
+00:05:57,240 --> 00:06:01,400
+Y en el 3 en raya, por ejemplo, pues si podemos evitar que el otro gane, pues es bueno para
+
+63
+00:06:01,400 --> 00:06:07,400
+nosotros también en general. ¿vale? La otra forma es el aprendizaje automático ¿vale?
+
+64
+00:06:07,400 --> 00:06:11,000
+Estos algoritmos no se basan en una heurística que nosotros le definimos, tratamos de que
+
+65
+00:06:11,000 --> 00:06:17,360
+aprenda esa heurística. Entonces, ¿cómo lo hace? Utiliza un montón de partidas ya
+
+66
+00:06:17,360 --> 00:06:21,560
+que se le introducen y entonces él aprende esas, las B y entonces B que jugadas le llevan
+
+67
+00:06:21,560 --> 00:06:25,840
+a victoria, así que jugadas le llevan a derrotas y en base a eso va infiriendo las heurísticas.
+
+68
+00:06:25,840 --> 00:06:31,640
+¿vale? Entonces estos algoritmos, pues a priori pueden hacer jugadas que para los humanos pueden
+
+69
+00:06:31,640 --> 00:06:36,920
+parecer malas, pero que ellos han visto que en un futuro puede darle un resultado mejor
+
+70
+00:06:36,920 --> 00:06:41,360
+y tira por ahí. ¿vale? Bueno, vamos a pasar ahora a unos conceptos básicos que os comento
+
+71
+00:06:41,360 --> 00:06:47,720
+Javier. Bueno, hola. Vale, ahora vamos a ver eso, lo que ha dicho Pablo, unos conceptos
+
+72
+00:06:47,720 --> 00:06:54,320
+básicos sobre todo el tema del aprendizaje por refuerzo y para entender bien la charla.
+
+73
+00:06:54,320 --> 00:07:00,000
+El primero de ellos es la recompensa. La recompensa es el valor que obtenemos de realizar una
+
+74
+00:07:00,000 --> 00:07:05,000
+acción. Pues, pues Pablo ha comentado, por ejemplo, que comer una, en el ajedrez comer
+
+75
+00:07:05,000 --> 00:07:10,360
+una dama es mejor que comer un alfil. Ahora si ponemos números sobre eso, pues esa es
+
+76
+00:07:10,360 --> 00:07:16,440
+la recompensa, una de las posibles recompensas con esa heurística. Una recompensa se puede
+
+77
+00:07:16,440 --> 00:07:21,440
+dividir, podemos diferenciarlas entre las recompensas a corto plazo, por ejemplo, estar
+
+78
+00:07:21,440 --> 00:07:27,240
+de comer una dama que a priori tiene una recompensa de 9 o una recompensa a largo plazo, que
+
+79
+00:07:27,240 --> 00:07:33,000
+es mirar varios turnos adelante y retroceder hasta las 5 que hemos hecho y que recompensa
+
+80
+00:07:33,000 --> 00:07:41,360
+tenemos a la recompensa. Vale, el estado de una partida, el estado de ese contexto y
+
+81
+00:07:41,360 --> 00:07:47,960
+situación del foco en un momento dado, pues es un ejemplo, nuestro caso es el tablero,
+
+82
+00:07:47,960 --> 00:07:52,640
+el tablero de la agendera, del estado inicial, las 16 piedras de cada jugador, colocadas
+
+83
+00:07:52,640 --> 00:07:58,440
+que nosotros conocemos y cuando se mueve una pieza, pues cambia el estado y tenemos una
+
+84
+00:07:58,440 --> 00:08:03,480
+recompensa de 9 o 1. Aquí ya entramos en concretos un poco más extraques, pero mejor
+
+85
+00:08:03,480 --> 00:08:08,080
+no es un poco más difícil de entender, pero yo creo que lo que vamos a hacer es ponerse
+
+86
+00:08:08,080 --> 00:08:12,320
+en cuenta que vamos a darles tanto. El espacio de acciones es el conjunto de todas las acciones
+
+87
+00:08:12,320 --> 00:08:16,720
+que podemos realizar en cualquier estado y en cualquier momento de la partida, sin tener
+
+88
+00:08:16,720 --> 00:08:22,400
+en cuenta eso es un elevado. Por ejemplo, el conjunto de acciones de tercera en raya es
+
+89
+00:08:22,400 --> 00:08:29,400
+un número de acciones, no tiene 9 elementos, uno por casi 1. Si en cualquier momento podemos
+
+90
+00:08:29,400 --> 00:08:35,400
+encontrar un estado... Ah, perdón, sí. En cualquier momento podemos encontrar un estado
+
+91
+00:08:35,400 --> 00:08:39,400
+en el que podemos poner una pieza en cualquiera de las 9 casillas, en el 3 en raya es un sencillo,
+
+92
+00:08:39,400 --> 00:08:44,400
+porque el estado inicial podemos encontrar y hacer las 9 acciones. En el Conecta 4,
+
+93
+00:08:44,400 --> 00:08:53,400
+que es un juego de 7 columnas por 6 pilas, el conjunto de acciones es... Tenemos una acción
+
+94
+00:08:53,400 --> 00:08:58,400
+porque la columna, porque el juego consiste en seguir una columna y tirar una pieza por
+
+95
+00:08:58,400 --> 00:09:03,400
+esa columna, así que cae hasta los decales. Entonces, el conjunto de acciones de Conecta
+
+96
+00:09:03,400 --> 00:09:10,400
+4 es de 7 de 10. El accederito es un poco más complejo, pero básicamente se puede estimar.
+
+97
+00:09:10,400 --> 00:09:15,400
+Yo creo que es exactamente igual que 10 y 6, que es el número de piezas por cada jugador,
+
+98
+00:09:15,400 --> 00:09:22,400
+por las 64 piezas por cillas de encabez, que es 24. Porque en cualquier momento podemos encontrar
+
+99
+00:09:22,400 --> 00:09:28,400
+un estado en el que cualquiera de esas acciones es elevado, es imposible hacer.
+
+100
+00:09:28,400 --> 00:09:34,400
+Vale, y una política es, matemáticamente, es una función entre el espacio de estado,
+
+101
+00:09:34,400 --> 00:09:40,400
+el conjunto de todos los estados y el espacio de acciones. Es decir, a cada estado se le asigna
+
+102
+00:09:40,400 --> 00:09:46,400
+una acción. Por ejemplo, si hemos puesto este ejemplo, lo que parece de estado del 3 en raya
+
+103
+00:09:46,400 --> 00:09:51,400
+pues le asignamos la acción de colocar en la silla 1 una 100. Esto si lo hacemos para todos
+
+104
+00:09:51,400 --> 00:09:56,400
+los estados, tenemos una política. Nosotros, por meter algo de la seguridad dentro de las
+
+105
+00:09:56,400 --> 00:10:01,400
+políticas, lo que vamos a hacer es no establecer una acción concreta para cada estado, sino
+
+106
+00:10:01,400 --> 00:10:06,400
+una distribución de probabilidad en el conjunto de acciones que dará una probabilidad a cada acción
+
+107
+00:10:06,400 --> 00:10:11,400
+de manera que hacer esta, que es una buena jugada, porque evita que el otro gane, sea más probable
+
+108
+00:10:11,400 --> 00:10:15,400
+que cualquier otra jugada.
+
+109
+00:10:15,400 --> 00:10:21,400
+Vale, ahora vamos a hablar del ejemplo que hemos implementado todos estos agentes de inteligencia
+
+110
+00:10:21,400 --> 00:10:30,400
+y hemos elegido el blogus, que es un poco de cuatro jugadores, que consiste en un tablero
+
+111
+00:10:30,400 --> 00:10:35,400
+de 20 por 20 casillas, en el que se van colocando piezas de distintas formas. Las distintas
+
+112
+00:10:35,400 --> 00:10:40,400
+que son estas que vemos aquí. Como vemos hay piezas de una casilla, de dos, de tres,
+
+113
+00:10:40,400 --> 00:10:45,400
+hasta de cinco casillas. Estas piezas se pueden rotar, se pueden girar y se colocan en el
+
+114
+00:10:45,400 --> 00:10:53,400
+tablero. Para colocarlas en el tablero tenemos ciertas reddas. Por ejemplo, un jugador no
+
+115
+00:10:53,400 --> 00:10:59,400
+puede colocar una pieza tocando otra que ya haya colocado, pero tiene que colocarlas que
+
+116
+00:10:59,400 --> 00:11:04,400
+coincidan en una esquina. Ahora vemos un ejemplo y se deran. Si un jugador puede colocar más
+
+117
+00:11:04,400 --> 00:11:09,400
+piezas, en ese caso pasa tú, no existe un jugador de más y al final del juego, cuando
+
+118
+00:11:09,400 --> 00:11:13,400
+nadie puede poner más piezas, se cuentan el número de casillas, no el número de piezas,
+
+119
+00:11:13,400 --> 00:11:18,400
+el número de casillas y el que más casillas haya completado en el tablero. Un ejemplo,
+
+120
+00:11:18,400 --> 00:11:22,400
+vamos a pasar rápido por esto, es el siguiente. Aquí vemos los cuatro colores, los cuatro
+
+121
+00:11:22,400 --> 00:11:27,400
+jugadores y la casilla inicial donde pueden estar. El primer jugador, el azul, pues,
+
+122
+00:11:27,400 --> 00:11:35,400
+por ejemplo, podría realizar esta pieza de cinco piezas en su esquina. El podro, el verde
+
+123
+00:11:35,400 --> 00:11:46,400
+y el amarillo. Ahora el jugador, el jugador azul tendría ahora tres casillas en las
+
+124
+00:11:46,400 --> 00:11:56,400
+que podría colocar. La primera, bueno, en la diagonal, ahora para, por ejemplo, esta sería
+
+125
+00:11:56,400 --> 00:11:59,400
+una de las posibilidades. Tiene tres casillas en las que podría colocar, lo que hay tres
+
+126
+00:11:59,400 --> 00:12:02,400
+casillas en las que puede tener una diagonal. A estas casillas, nosotros vamos a llamar
+
+127
+00:12:02,400 --> 00:12:09,400
+Fortfels y veremos por qué presentamos este nombre después. Pasados ciertos turnos,
+
+128
+00:12:09,400 --> 00:12:15,400
+esto sería un posible tablero. Como vemos, siempre se pueden distinguir las piezas de
+
+129
+00:12:15,400 --> 00:12:20,400
+cada jugador de la serie un vistazo porque no se pueden tocar entre ellos. Y un posible
+
+130
+00:12:20,400 --> 00:12:25,400
+tablero final, si lo analizamos, pues vemos que no hay ninguna posibilidad para ninguno
+
+131
+00:12:25,400 --> 00:12:31,400
+de los jugadores de poner ninguna posibilidad. Alguien me sabe decir cuál es el espacio
+
+132
+00:12:31,400 --> 00:12:43,400
+de acciones este poco. Estimarlo, darme idea. Vale, bueno, pues tenemos cuatrocientas
+
+133
+00:12:43,400 --> 00:12:51,400
+casillas, veintiún fichas por jugador y más o menos cuatro rotaciones. Hay fichas que
+
+134
+00:12:51,400 --> 00:12:57,400
+tienen más o fichas que tienen menos, pero más o menos es 33.600 acciones. Claro,
+
+135
+00:12:57,400 --> 00:13:02,400
+esto es un espacio de acciones diamantesco para un acente de rendición por recorto.
+
+136
+00:13:02,400 --> 00:13:07,400
+Y nosotros hemos simplificado el juego para esta charla y lo que hemos hecho es coger
+
+137
+00:13:07,400 --> 00:13:13,400
+un tablero 10x10 y usar solo las fichas que tienen como mucho cuatrocientas. Así, el
+
+138
+00:13:13,400 --> 00:13:19,400
+espacio de acciones tiene 2.200 acciones, 2.200 uno porque hay que sumar una por el
+
+139
+00:13:19,400 --> 00:13:24,400
+turno, pero bueno, no es muy truco. Vale, ahora vamos a ver la implementación en
+
+140
+00:13:24,400 --> 00:13:30,400
+Python de cómo hemos hecho todo esto. La primera librería y yo creo que la más
+
+141
+00:13:30,400 --> 00:13:35,400
+importante de las que hemos usado es GIMP, es una librería desarrollada por OpenAI,
+
+142
+00:13:35,400 --> 00:13:40,400
+es OpenSource, y te permite desarrollar entornos, bueno, contiene muchos entornos
+
+143
+00:13:40,400 --> 00:13:47,400
+de aprendizaje por refuerzo y de una manera muy sencilla te permite desarrollar nuevos.
+
+144
+00:13:47,400 --> 00:13:54,400
+En realidad, para desarrollar un nuevo envirom, un nuevo entorno de este tipo de
+
+145
+00:13:54,400 --> 00:13:59,400
+juegos, lo único que necesitas es un esquema como este que vemos aquí. Necesitas definir
+
+146
+00:13:59,400 --> 00:14:08,400
+en la función step, cuáles son las dinámicas del juego, en la función reset,
+
+147
+00:14:08,400 --> 00:14:13,400
+cómo se comienza el juego, cuál es el estado inicial. Bueno, tiene una función render
+
+148
+00:14:13,400 --> 00:14:18,400
+que te permite un humano visualizar cuál es el estado en cierto momento y luego
+
+149
+00:14:18,400 --> 00:14:23,400
+hay algunas funciones más, como la función observation que devuelve, es
+
+150
+00:14:23,400 --> 00:14:26,400
+esquematizado de alguna manera cuál es el estado del juego para que el modelo lo
+
+151
+00:14:26,400 --> 00:14:34,400
+pueda entender y algunas más, pero es muy muy sencillo crear nuevos entornos
+
+152
+00:14:34,400 --> 00:14:41,400
+de GIMP. La segunda librería que hemos utilizado, que es simple, es una librería
+
+153
+00:14:41,400 --> 00:14:46,400
+desarrollada por un señor que se llama David Foster y que permite de una manera
+
+154
+00:14:46,400 --> 00:14:53,400
+muy muy fácil desarrollar agentes de aprendizaje por refuerzo tanto usando
+
+155
+00:14:53,400 --> 00:14:59,400
+reglas como usando aprendizaje automático. Para esto utilizamos la técnica self play
+
+156
+00:14:59,400 --> 00:15:03,400
+que básicamente consiste en de todas las posibles agentes que tenemos, que tenemos
+
+157
+00:15:03,400 --> 00:15:07,400
+ahí un banco de, ahí pone banco de networks, pero es un banco de agentes,
+
+158
+00:15:07,400 --> 00:15:11,400
+escogemos el número de jugadores, en general se escogen el mejor, el de más arriba,
+
+159
+00:15:11,400 --> 00:15:15,400
+el último que haya salido y se ponen a jugar, se ponen a jugar varias veces,
+
+160
+00:15:15,400 --> 00:15:19,400
+muchas veces, muchas veces, entonces interactúan con el environment,
+
+161
+00:15:19,400 --> 00:15:24,400
+que está desarrollado en GIMP y con ese set de ejemplos grandes entrenamos
+
+162
+00:15:24,400 --> 00:15:28,400
+un nuevo modelo usando, bueno eso lo explicaré luego, pero usando un modelo
+
+163
+00:15:28,400 --> 00:15:34,400
+PPO que es un modelo basado en políticas. De ahí sale una nueva red y la metemos
+
+164
+00:15:34,400 --> 00:15:40,400
+al banco de redes de la que volvemos a sacar y volvemos a iterar, cada vez mejorando
+
+165
+00:15:40,400 --> 00:15:44,400
+más, por eso se llama aprendizaje por refuerzo. Esta técnica self play se ha utilizado
+
+166
+00:15:44,400 --> 00:15:49,400
+por ejemplo en Alfacero que antes lo comentaba Pablo, con resultados muy muy buenos.
+
+167
+00:15:51,400 --> 00:15:54,400
+Y ahora otra vez Pablo.
+
+168
+00:15:57,400 --> 00:15:59,400
+Vale, si dale.
+
+169
+00:15:59,400 --> 00:16:04,400
+¿Qué es el desarrollo de entornos, de todas las dinámicas del juego?
+
+170
+00:16:04,400 --> 00:16:10,400
+Y da un API para comunicarse luego con los modelos. Simple lo que hace es facilitar
+
+171
+00:16:10,400 --> 00:16:16,400
+el tema de que haya más de un agente. Es relativamente fácil entrenar un agente
+
+172
+00:16:16,400 --> 00:16:21,400
+de reinforcement ledgerine en el que solo hay un jugador, por ejemplo,
+
+173
+00:16:21,400 --> 00:16:26,400
+que es un jugador que tiene un agente que tiene un agente que tiene un agente
+
+174
+00:16:26,400 --> 00:16:31,400
+en el que solo hay un jugador. Por ejemplo, lo hemos visto todos, los típicas
+
+175
+00:16:31,400 --> 00:16:37,400
+carreras de coches o los muñequitos que se mueven, esos son todo agentes de reinforcement ledgerine.
+
+176
+00:16:37,400 --> 00:16:40,400
+El problema viene cuando hay más, entra en juego más de un agente.
+
+177
+00:16:40,400 --> 00:16:46,400
+Y esta librería simple lo facilita mucho porque permite jugar contra versiones
+
+178
+00:16:46,400 --> 00:16:49,400
+anteriores del mismo agente, de manera que se van...
+
+179
+00:16:49,400 --> 00:16:52,400
+Sí, exacto, eso es, gracias.
+
+180
+00:16:52,400 --> 00:16:57,400
+Vamos a ver unos puntos de algoritmo basados en heurísticas.
+
+181
+00:16:57,400 --> 00:17:03,400
+El primero va a ser el algoritmo gritty. Como hemos visto antes, esta es una parte
+
+182
+00:17:03,400 --> 00:17:09,400
+de algoritmos por reglas. Entonces, un algoritmo gritty necesita de una heurística.
+
+183
+00:17:09,400 --> 00:17:13,400
+Todos los algoritmos por reglas se basan en heurística. Una heurística es la manera
+
+184
+00:17:13,400 --> 00:17:17,400
+de medir qué recompensa obtenemos por hacer una jugada priori.
+
+185
+00:17:17,400 --> 00:17:22,400
+Entonces, por ejemplo, los algoritmos gritty por hacer una vez definidas una heurística,
+
+186
+00:17:22,400 --> 00:17:28,400
+lo que harían sería, sin más, escoger la jugada que más recompensa de,
+
+187
+00:17:28,400 --> 00:17:32,400
+¿vale?, más esta heurística. Entonces, bueno, esta ha sido priori,
+
+188
+00:17:32,400 --> 00:17:36,400
+pues parece ver que no va a ir muy bien. Bueno, veremos ahora que esto se puede
+
+189
+00:17:36,400 --> 00:17:40,400
+mejorar mucho. Entonces, la ventaja que tiene es que son muy fáciles de desarrollar,
+
+190
+00:17:40,400 --> 00:17:47,400
+¿vale?, pero pues no tienen cuenta de que recompensa es a largo plazo y al final
+
+191
+00:17:47,400 --> 00:17:52,400
+va a escoger jugadas malas porque no puede ver más allá.
+
+192
+00:17:52,400 --> 00:17:55,400
+Entonces, bueno, vamos a ver un ejemplo de cómo serían algunas de estas heurísticas.
+
+193
+00:17:55,400 --> 00:17:58,400
+Por ejemplo, con el 44, ¿no?, pues la que hemos comentado antes,
+
+194
+00:17:58,400 --> 00:18:03,400
+una heurística podría ser, sin más, cuento en cada posición que puedo hacer,
+
+195
+00:18:03,400 --> 00:18:07,400
+cuento cuántas casillas me quedan juntas, cuántas fichas de mi color.
+
+196
+00:18:07,400 --> 00:18:11,400
+Entonces, en este caso, tendríamos las diferentes opciones, ¿vale?,
+
+197
+00:18:11,400 --> 00:18:14,400
+¿de dónde poner? Bueno, faltaría ahí arriba una también.
+
+198
+00:18:14,400 --> 00:18:17,400
+Y en todas estas de la izquierda hacemos más dos, ¿vale?,
+
+199
+00:18:17,400 --> 00:18:20,400
+porque conseguiríamos una fila de dos y en estas, que están solas,
+
+200
+00:18:20,400 --> 00:18:23,400
+pues haríamos más uno. ¿Vale?, esto sería un ejemplo de una heurística.
+
+201
+00:18:23,400 --> 00:18:26,400
+Esta heurística es muy mala, ¿vale?, seguro que podemos encontrar algunas mejores,
+
+202
+00:18:26,400 --> 00:18:33,400
+¿vale?, pero bueno, es una forma de definir cómo se le da una recompensa a una jugada, ¿vale?,
+
+203
+00:18:33,400 --> 00:18:36,400
+otra que podríamos mejorar un poco sería decir, bueno, como esto es un juego de adversario,
+
+204
+00:18:36,400 --> 00:18:41,400
+lo que me acerca a mí a la victoria se la leja al otro y al revés, ¿no?,
+
+205
+00:18:41,400 --> 00:18:44,400
+entonces lo que es bueno para mí es malo para el otro, así que podemos decir,
+
+206
+00:18:44,400 --> 00:18:49,400
+vale, yo quiero sumar mi recompensa y luego voy a restar lo que haga el adversario, ¿no?,
+
+207
+00:18:49,400 --> 00:18:53,400
+porque al final es malo para mí. Entonces, de estas opciones, por ejemplo,
+
+208
+00:18:53,400 --> 00:18:57,400
+la que tenemos aquí la tercera, ¿vale?, si ponemos esa casilla,
+
+209
+00:18:57,400 --> 00:19:01,400
+nos damos cuenta que el adversario podría hacer un más tres, con nuestra heurística,
+
+210
+00:19:01,400 --> 00:19:05,400
+esta heurística definida, ¿vale?, así que esto se simplificaría en una menos uno,
+
+211
+00:19:05,400 --> 00:19:09,400
+lo que probablemente me diera, pues, que hay que elegir otra jugada mejor,
+
+212
+00:19:09,400 --> 00:19:14,400
+el Grady nos diría que otra jugada mejor, ¿vale?, bueno, esto sería para todas.
+
+213
+00:19:14,400 --> 00:19:17,400
+Bueno, con esto hemos mejorado claramente ya un poco esta heurística, ¿vale?,
+
+214
+00:19:17,400 --> 00:19:20,400
+como digo, se puede elegir cualquier heurística.
+
+215
+00:19:20,400 --> 00:19:24,400
+Vale, para la GEDREX, por ejemplo, pues la heurística más clásica es asignar un valor a cada pieza
+
+216
+00:19:24,400 --> 00:19:28,400
+y sin más, pues, si como una pieza me apunto su valor en recompensa,
+
+217
+00:19:28,400 --> 00:19:32,400
+me da la recompensa ese valor y si no, cero. Aquí tenemos, por ejemplo,
+
+218
+00:19:32,400 --> 00:19:36,400
+un ejemplo de una partida, pues, esas serían todas las acciones posibles que podemos hacer
+
+219
+00:19:36,400 --> 00:19:40,400
+para este tablero y, bueno, aquí, por como hemos definido la heurística,
+
+220
+00:19:40,400 --> 00:19:45,400
+todo tiene recompensa cero, ¿vale?, bueno, podríamos definir otras que se ocupen
+
+221
+00:19:45,400 --> 00:19:49,400
+en que te puntúen rellenar el centro del tablero, otras cosas, ¿vale?,
+
+222
+00:19:49,400 --> 00:19:52,400
+la que hemos definido es esta, todas tendrían cero menos esa jugada, ¿vale?,
+
+223
+00:19:52,400 --> 00:19:56,400
+que tendrían más uno porque nos comemos un peón, pero bueno, volviendo a lo de antes,
+
+224
+00:19:56,400 --> 00:19:59,400
+no vemos que cualquiera que sepa un poco jugar a la GEDREX ve que se ha jugado en mala ya,
+
+225
+00:19:59,400 --> 00:20:03,400
+¿por qué?, porque nos pasa lo de antes. Podemos hacer la misma heurística
+
+226
+00:20:03,400 --> 00:20:07,400
+que hemos aplicado antes para el 4 en raya, la podemos aplicar aquí, ¿no?,
+
+227
+00:20:07,400 --> 00:20:14,400
+si hacemos eso, vemos que a esa jugada le sigue esta, que es menos 3, ¿vale?,
+
+228
+00:20:14,400 --> 00:20:17,400
+porque se come nuestro caballo, así que esto se simplificaría en una menos dos
+
+229
+00:20:17,400 --> 00:20:21,400
+y probablemente, pues, no fuera la jugada óptima ni para el GEDREX, ¿vale?,
+
+230
+00:20:21,400 --> 00:20:25,400
+entonces, ahora, para nuestro juego, ¿elquemos desarrollar o qué heurísticas podremos decir?
+
+231
+00:20:25,400 --> 00:20:30,400
+Pues una heurística puede ser, sin más, una muy simple, como cuenta las piezas que has puesto,
+
+232
+00:20:30,400 --> 00:20:33,400
+pues pon la pieza más grande que puedas y ya está, ¿no?
+
+233
+00:20:33,400 --> 00:20:40,400
+Entonces aquí, por ejemplo, no diría, pues pones ahí, ¿vale?, pues bien, sería una heurística, ¿vale?,
+
+234
+00:20:40,400 --> 00:20:45,400
+¿vale?, vamos a ver esto, los algoritmos grid, ¿cómo lo hemos implementado, no?,
+
+235
+00:20:45,400 --> 00:20:50,400
+pues, bueno, esto es muy fácil, ¿no?, a ver, necesitamos al final darle un tablero,
+
+236
+00:20:50,400 --> 00:20:54,400
+que es el estado que tenemos de lo que hablábamos antes, una función de heurística
+
+237
+00:20:54,400 --> 00:20:58,400
+y una acción que hemos elegido, esto es porque vamos, previamente,
+
+238
+00:20:58,400 --> 00:21:01,400
+antes de llamar esta función, vamos a iterar entre todas nuestras posibilidades
+
+239
+00:21:01,400 --> 00:21:05,400
+y vamos a, queremos que nos dé la recompensa total, ¿vale?,
+
+240
+00:21:05,400 --> 00:21:11,400
+entonces, esto aquí lo que hace es colocar nuestra pieza, nos dice qué recompensa tenemos, a ver, no va,
+
+241
+00:21:11,400 --> 00:21:14,400
+nos dice qué recompensa tenemos y entonces, luego, lo que hacemos, básicamente,
+
+242
+00:21:14,400 --> 00:21:19,400
+es iterar entre todas las legalizaciones, las, en los jugadores que tenemos
+
+243
+00:21:19,400 --> 00:21:26,400
+y qué acciones pueden hacer legales, a ver, y luego, entre todas esas legales, pues,
+
+244
+00:21:26,400 --> 00:21:32,400
+aquí dice, pues, Chose Action MaxReward, ¿vale?, te dice de todas las legales que puede hacer,
+
+245
+00:21:32,400 --> 00:21:35,400
+ahí tenemos una función que simplemente te dice, esta es la mejor que puede hacer
+
+246
+00:21:35,400 --> 00:21:39,400
+y esta es la recompensa que tiene, se la resta la tuya y te da con todos los jugadores
+
+247
+00:21:39,400 --> 00:21:44,400
+y te devuelve cuál es la que más recompensa salga, sale en base a eso,
+
+248
+00:21:44,400 --> 00:21:48,400
+bueno, ahí lo parte entre el número de jugadores para equilibrar un poco
+
+249
+00:21:48,400 --> 00:21:54,400
+porque si no, siempre elegiría que no, que los otros jugadores no hicieran jugadas buenas sin, sin intentar el hacer buenas,
+
+250
+00:21:54,400 --> 00:21:58,400
+¿vale?, bueno, como podemos esto mejorar drásticamente, ¿no?,
+
+251
+00:21:58,400 --> 00:22:03,400
+está claro que una pega que tiene el algoritmo greedy es que no mirad hacia adelante,
+
+252
+00:22:03,400 --> 00:22:08,400
+pues, bueno, ya teníamos que implementar la lógica, ¿no?, vamos a añadirle un poco, ¿no?,
+
+253
+00:22:08,400 --> 00:22:11,400
+como son juegos de adversario, pues, lo que hemos dicho antes,
+
+254
+00:22:11,400 --> 00:22:16,400
+lo que es bueno para uno es malo para otro, entonces, vamos a abrir el árbol y vamos a darle una profundidad,
+
+255
+00:22:16,400 --> 00:22:20,400
+entonces, igual que antes habíamos parado solo en el siguiente turno, porque no pensamos,
+
+256
+00:22:20,400 --> 00:22:26,400
+nosotros también nuestro siguiente turno y así en vez, eso va a ser lo que vamos a llamar profundidad, ¿vale?,
+
+257
+00:22:26,400 --> 00:22:30,400
+y lo que va a tratar de hacer este algoritmo siempre va a ser cuál es mi mejor jugada
+
+258
+00:22:30,400 --> 00:22:34,400
+para la que, contando que los otros hacen su mejor jugada,
+
+259
+00:22:34,400 --> 00:22:39,400
+esa suma resta que es lo que más recompensa me da a mí,
+
+260
+00:22:39,400 --> 00:22:43,400
+¿vale?, vamos a verlo con algunos ejemplos, ¿vale?, en el ajedrez,
+
+261
+00:22:43,400 --> 00:22:47,400
+antes, por ejemplo, el algoritmo greedy nos hubiéramos, en esta situación, siendo negra, nos hubiera dicho,
+
+262
+00:22:47,400 --> 00:22:52,400
+comete la torre, que es más cinco, que vas a encontrar mejor, bueno, esto es el greedy, ¿no?,
+
+263
+00:22:52,400 --> 00:22:57,400
+pero si ahora ponemos un algoritmo de minimax con una profundidad ya de uno, simplemente,
+
+264
+00:22:57,400 --> 00:23:01,400
+pues ya no diría, mira, baja la rein ahí, que te da más cero ahora, pero tú esperate,
+
+265
+00:23:01,400 --> 00:23:05,400
+porque el otro va a hacer eso, porque si no, enmate, luego tú te comes la torre
+
+266
+00:23:05,400 --> 00:23:09,400
+y te llevas una jugada más infinito, que es ganar la partida, la recompensa, ¿vale?,
+
+267
+00:23:09,400 --> 00:23:15,400
+entonces, simplemente, con una profundidad de uno, ya hemos mejorado mucho cualquier juego, ¿vale?,
+
+268
+00:23:15,400 --> 00:23:18,400
+para el blocus, por ejemplo, el caso de antes, ¿qué pondríamos ahí?,
+
+269
+00:23:18,400 --> 00:23:22,400
+antes nos decía de poner ahí esa pieza, la pieza grande, porque es la más grande,
+
+270
+00:23:22,400 --> 00:23:26,400
+pero ¿qué podría haber ahora un algoritmo minimax de una profundidad mayor?,
+
+271
+00:23:26,400 --> 00:23:31,400
+pues que, por ejemplo, podríamos poner esa, que esto es independiente de la heurística, ¿vale?,
+
+272
+00:23:31,400 --> 00:23:36,400
+o sea, que la heurística siga siendo, poner la pieza más grande, nos podría decir eso, ¿por qué?,
+
+273
+00:23:36,400 --> 00:23:41,400
+porque con más profundidad va a haber que podría meter otra pieza ahí y ampliar toda esa zona,
+
+274
+00:23:41,400 --> 00:23:44,400
+y ahora ha ganado toda esa zona donde ahora puede poner piezas y antes no,
+
+275
+00:23:44,400 --> 00:23:47,400
+si hubiese puesto la grande, pues hubiese quedado ahí encerrado.
+
+276
+00:23:47,400 --> 00:23:53,400
+Entonces, vemos que al margen de conservar la misma heurística, podemos mejorar mucho el algoritmo, ¿vale?,
+
+277
+00:23:53,400 --> 00:23:59,400
+y bueno, esto si le pones profundidad, tanto como quieras, al final te deglosa el juego entero
+
+278
+00:23:59,400 --> 00:24:02,400
+y se calcula y no va a encontrar nada que le ganes.
+
+279
+00:24:02,400 --> 00:24:06,400
+El problema es que esto computacionalmente es muy caro, porque se abre un árbol muy grande.
+
+280
+00:24:06,400 --> 00:24:10,400
+Entonces, bueno, ¿cómo lo hemos implementado?, pues la implementación ha sido la primera parte,
+
+281
+00:24:10,400 --> 00:24:13,400
+es exactamente lo de antes, ¿vale?, calcular la jugada de los otros.
+
+282
+00:24:13,400 --> 00:24:16,400
+Lo que pasa es que esto ahora, como podemos ver, pues es una función recursiva.
+
+283
+00:24:16,400 --> 00:24:20,400
+Después de calcular la jugada de los otros jugadores, volvemos a calcular la nuestra.
+
+284
+00:24:20,400 --> 00:24:24,400
+¿Cuál sería la nuestra mejor después de esto? ¿Vale?
+
+285
+00:24:24,400 --> 00:24:29,400
+Entonces, iteramos ahí y nos da otra acción que elegimos y una máxima reguard,
+
+286
+00:24:29,400 --> 00:24:33,400
+y entonces si llegamos con que la profundidad en la que estamos ejecutando esta función es cero,
+
+287
+00:24:33,400 --> 00:24:37,400
+pues volvemos a esa recompensa y si no, volvemos a llamar otra vez a esta misma función,
+
+288
+00:24:37,400 --> 00:24:40,400
+pero con una profundidad menos.
+
+289
+00:24:40,400 --> 00:24:45,400
+Vale, entonces, bueno, vamos a ver ahora por otra parte los algoritmos.
+
+290
+00:24:45,400 --> 00:24:53,400
+Bueno, la segunda parte de esta charla, lo que la queríamos ver en este tipo de agentes, ¿no?,
+
+291
+00:24:53,400 --> 00:25:01,400
+los agentes que aprenden de partidas anteriores sin ningún tipo de heurística y la...
+
+292
+00:25:01,400 --> 00:25:05,400
+Esto genera... la idea es que esto genera su propia heurística,
+
+293
+00:25:05,400 --> 00:25:11,400
+entonces la va estimando con redes neuronales de manera que cada vez se hace mejor la heurística
+
+294
+00:25:11,400 --> 00:25:19,400
+y al final obtiene una política que es la mejor posible o equivalente.
+
+295
+00:25:19,400 --> 00:25:24,400
+Vale, voy a pasar rápido por esto porque no nos queda mucho tiempo,
+
+296
+00:25:24,400 --> 00:25:31,400
+pero básicamente aquí tenemos varios actores, ¿no?, el agente que es el programa que nosotros entrenamos
+
+297
+00:25:31,400 --> 00:25:38,400
+para que tome las decisiones, el entorno que ya hemos contado antes lo que era y se desarrolla en GIM,
+
+298
+00:25:38,400 --> 00:25:44,400
+nosotros lo hemos usado, lo hemos desarrollado en GIM, la acción es el movimiento que la gente decide realizar
+
+299
+00:25:44,400 --> 00:25:50,400
+dentro de todas sus acciones legales y las recompensas, que es el retorno numérico de la acción,
+
+300
+00:25:50,400 --> 00:25:53,400
+que puede ser positivo o negativo.
+
+301
+00:25:53,400 --> 00:26:01,400
+Las recompensas ahora las medimos a posterior y la heurística lo que hace es medir a priori cuánto va a ser la recompensa,
+
+302
+00:26:01,400 --> 00:26:05,400
+ahora las tenemos... realizamos una acción y de eso tenemos una recompensa.
+
+303
+00:26:05,400 --> 00:26:11,400
+Y mediante y usando algoritmos de entrenamiento por refuerzo, como el PPO,
+
+304
+00:26:11,400 --> 00:26:18,400
+nosotros vamos mejorando la política para alcanzar una que sea óptima.
+
+305
+00:26:18,400 --> 00:26:26,400
+El algoritmo PPO que hemos usado que es próxima al Policie Optimization utiliza un método que se llama
+
+306
+00:26:26,400 --> 00:26:32,400
+Actor Critic y que cuenta con dos modelos o dos redes neuronales dentro.
+
+307
+00:26:32,400 --> 00:26:36,400
+La red neuronal actor que es la que estima el valor de la política, es decir,
+
+308
+00:26:36,400 --> 00:26:41,400
+estima la probabilidad que va a tener cada acción del espacio de acciones dado un estado
+
+309
+00:26:41,400 --> 00:26:46,400
+y el modelo critic que lo que hace es estimar la función ventaja, es decir, la función del valor de la acción.
+
+310
+00:26:46,400 --> 00:26:52,400
+O sea, estima el valor de la acción a priori y de esa manera va iterando y va mejorando el modelo.
+
+311
+00:26:52,400 --> 00:26:56,400
+Las redes neuronales, el ejemplo que nosotros hemos utilizado en blocus, han sido estas,
+
+312
+00:26:56,400 --> 00:27:00,400
+como vemos, como son espacios dos dimensionales porque es un tablero,
+
+313
+00:27:00,400 --> 00:27:06,400
+los que usamos son redes convolucionales de tensorflow y luego algunas capac densas
+
+314
+00:27:06,400 --> 00:27:11,400
+para obtener el número de salidas que necesitábamos, pero nada complicadísimo.
+
+315
+00:27:11,400 --> 00:27:15,400
+Los resultados han sido estos.
+
+316
+00:27:15,400 --> 00:27:23,400
+No sé si se ve muy bien, pero vemos arriba un player que es el agente que hemos medido
+
+317
+00:27:23,400 --> 00:27:28,400
+jugando contra tres del eje vertical.
+
+318
+00:27:28,400 --> 00:27:34,400
+Entonces, estos son las probabilidades que tenía de ganar y vemos que los agentes,
+
+319
+00:27:34,400 --> 00:27:39,400
+es que no puedo señalar bien, pero los agentes griddies no son muy buenos.
+
+320
+00:27:39,400 --> 00:27:46,400
+Los que hemos entrenado con redes neuronales han ido funcionando bien,
+
+321
+00:27:46,400 --> 00:27:50,400
+pero ninguno se acerca a un minimax con profundidad 2.
+
+322
+00:27:50,400 --> 00:27:55,400
+Es muy probable que si hubiésemos dejado entrenando el modelo mucho más tiempo
+
+323
+00:27:55,400 --> 00:28:00,400
+o en máquinas mucho más grandes, los modelos con redes neuronales hubiesen mejorado
+
+324
+00:28:00,400 --> 00:28:05,400
+al minimax y la problemática del minimax es que con profundidad 2
+
+325
+00:28:05,400 --> 00:28:09,400
+en los tiempos ya se volvían muy altos para jugar.
+
+326
+00:28:09,400 --> 00:28:14,400
+Y los resultados contra humanos, que estos hay que cogerlos con pinzas
+
+327
+00:28:14,400 --> 00:28:20,400
+porque hemos jugado muy pocas partidas, pero bueno, básicamente a los algoritmos griddies
+
+328
+00:28:20,400 --> 00:28:25,400
+son los primeros hasta el 1, 2, 3, hasta el séptimo, los hemos ganado la mayoría de veces.
+
+329
+00:28:25,400 --> 00:28:29,400
+Luego los algoritmos con redes neuronales han ido mejorando cada vez más
+
+330
+00:28:29,400 --> 00:28:33,400
+y a los minimax nos costaba ganarlos y sobre todo al minimax 2,
+
+331
+00:28:33,400 --> 00:28:38,400
+que solo hemos jugado una partida cada uno, nos ha ganado las dos.
+
+332
+00:28:38,400 --> 00:28:42,400
+Claro, esto no es relevante, seguro que si viene aquí el campeón de blocus del mundo
+
+333
+00:28:42,400 --> 00:28:46,400
+gana al minimax 2 y probablemente al minimax 3, pero bueno,
+
+334
+00:28:46,400 --> 00:28:50,400
+no sería un momento que no sería así.
+
+335
+00:28:50,400 --> 00:28:56,400
+Y bueno, las conclusiones son estas, los algoritmos minimax son tan buenos
+
+336
+00:28:56,400 --> 00:29:00,400
+como queramos contando con la máquina que tengamos
+
+337
+00:29:00,400 --> 00:29:04,400
+y tenemos capacidad de computación al infinita, pues podemos poner el minimax
+
+338
+00:29:04,400 --> 00:29:07,400
+a jugar con todos los turnos de profundidad que queramos
+
+339
+00:29:07,400 --> 00:29:10,400
+y va a ser mejor que cualquier modelo porque va a calcular el juego entero.
+
+340
+00:29:10,400 --> 00:29:16,400
+¿Qué pasa? Que ese coste computacional es tan grande que se soluciona
+
+341
+00:29:16,400 --> 00:29:19,400
+pues entrenando algoritmos de reinforcement learning
+
+342
+00:29:19,400 --> 00:29:28,400
+que son capaces de alcanzar resultados muy buenos sin esa capacidad computacional.
+
+343
+00:29:28,400 --> 00:29:34,400
+Y bueno, hemos aprendido mucho realizando esto, con los frameworks como GIMO,
+
+344
+00:29:34,400 --> 00:29:36,400
+simple, nos han facilitado muchísimo la vida
+
+345
+00:29:36,400 --> 00:29:41,400
+y la verdad es que invitamos a cualquiera que le interese este mundo a utilizar
+
+346
+00:29:41,400 --> 00:29:47,400
+sobre todo simple nos ha parecido una cosa magnífica para enseñar al ordenador
+
+347
+00:29:47,400 --> 00:29:52,400
+a jugar a juegos de mesa. Y nada, preguntas.
+
+348
+00:29:52,400 --> 00:30:06,400
+Un momento. Voy intentando en el micro este para que puedan responder a preguntas
+
+349
+00:30:06,400 --> 00:30:08,400
+y vayamos un poco más.
+
+350
+00:30:08,400 --> 00:30:14,400
+Un momento, un momento, un momento. No me vais, por favor.
+
+351
+00:30:14,400 --> 00:30:17,400
+Es que si no, un salida al follo. ¿Quién querés hacer preguntas?
+
+352
+00:30:17,400 --> 00:30:23,400
+Respecto la heurística del modelo Minimax en caso de que como decías vosotros
+
+353
+00:30:23,400 --> 00:30:27,400
+si tuvías una profundidad infinita entiendo que podría calcular el juego entero.
+
+354
+00:30:27,400 --> 00:30:32,400
+Pero aun así está limitado por la heurística inicial que es un conjunto de valores dados.
+
+355
+00:30:32,400 --> 00:30:37,400
+Entonces lo quiero decir es entiendo que esta heurística inicial que tú das
+
+356
+00:30:37,400 --> 00:30:43,400
+condiciona en forma significativa a la performance del Minimax.
+
+357
+00:30:43,400 --> 00:30:48,400
+Lo mejor será la heurística antes va a converger a jugadas buenas, menos profundidad
+
+358
+00:30:48,400 --> 00:30:51,400
+vas a necesitar para que empiece a jugar decentemente.
+
+359
+00:30:51,400 --> 00:30:55,400
+Tú puedes meter una heurística a todo lo compleja que quieras y eso le va a ayudar.
+
+360
+00:30:55,400 --> 00:30:58,400
+Lo que decíamos antes en la JEDREZ en vez de valorar simplemente
+
+361
+00:30:58,400 --> 00:31:03,400
+comerte una pieza de tanto valor o no le dices, bueno, vamos a valorar cosas
+
+362
+00:31:03,400 --> 00:31:09,400
+como controlar el centro, vamos a valorar cosas como bloquear fichas suyas,
+
+363
+00:31:09,400 --> 00:31:13,400
+que clavarle fichas o algo así pues va a mejorar, va a hacer que converja,
+
+364
+00:31:13,400 --> 00:31:17,400
+que vea jugadas buenas antes sin tener que irse a tanta profundidad.
+
+365
+00:31:17,400 --> 00:31:22,400
+En el caso del blocus, nosotros hemos utilizado una heurística muy buena
+
+366
+00:31:22,400 --> 00:31:27,400
+que es medir, dada una jugada, cuántas jugadas te permite el turno siguiente.
+
+367
+00:31:27,400 --> 00:31:29,400
+Entonces eso...
+
+368
+00:31:29,400 --> 00:31:33,400
+Claro, con las diferentes heurísticas se nota un montón el que jueguen unas con otras
+
+369
+00:31:33,400 --> 00:31:35,400
+que hay unas mucho mejores.
+
+370
+00:31:35,400 --> 00:31:40,400
+Y entiendo que por la parte de aprendizaje automático lo que cambia concretamente es esto,
+
+371
+00:31:40,400 --> 00:31:43,400
+la heurística esta que es, escoge su propia heurística.
+
+372
+00:31:43,400 --> 00:31:48,400
+Podrías llegar a tener, por ejemplo, una heurística dinámica
+
+373
+00:31:48,400 --> 00:31:53,400
+que va basando el juego y tener una combinación de como se llama ahora,
+
+374
+00:31:53,400 --> 00:31:58,400
+de aprendizaje automático que genera su propia heurística
+
+375
+00:31:58,400 --> 00:32:03,400
+y por ejemplo combinado con un minimax partiendo de esta heurística.
+
+376
+00:32:03,400 --> 00:32:05,400
+¿Tiene algún tipo de sentido o realmente no?
+
+377
+00:32:05,400 --> 00:32:10,400
+Una de las cosas que se puede hacer con SIMPLE es entrenar el modelo
+
+378
+00:32:10,400 --> 00:32:13,400
+partiendo desde un jugador con reglas.
+
+379
+00:32:13,400 --> 00:32:19,400
+Entonces eso va a hacer que los modelos aprendan de su regla al principio
+
+380
+00:32:19,400 --> 00:32:23,400
+y eso suponemos que no lo podemos confirmar pero la heurística
+
+381
+00:32:23,400 --> 00:32:27,400
+se va a aparecer más a la que le hayamos dado a un jugador con reglas.
+
+382
+00:32:27,400 --> 00:32:29,400
+Pero bueno, a lo que te refiere de si se puede combinar,
+
+383
+00:32:29,400 --> 00:32:35,400
+puedes hacer unas reglas que me quedó un compendio de lo que sale
+
+384
+00:32:35,400 --> 00:32:39,400
+por parte de la gente del reinforcement learning y otro del minimax
+
+385
+00:32:39,400 --> 00:32:44,400
+y yo elijo en base a eso un threshold que le dices o una ponderación a cada uno.
+
+386
+00:32:44,400 --> 00:32:47,400
+Si funciona mejor o peor, no sabemos la verdad.
+
+387
+00:32:47,400 --> 00:32:51,400
+Yo creo que, no sé si va a tener algo,
+
+388
+00:32:51,400 --> 00:32:54,400
+yo creo que cada uno te va a tirar por un lado en general.
+
+389
+00:32:54,400 --> 00:32:59,400
+Perfecto, gracias.
+
+390
+00:33:04,400 --> 00:33:05,400
+Hola, buenas.
+
+391
+00:33:05,400 --> 00:33:07,400
+Bueno, como fan de los juegos de mesa también,
+
+392
+00:33:07,400 --> 00:33:10,400
+era bueno por la charla muy chula, muy interesante.
+
+393
+00:33:10,400 --> 00:33:11,400
+Mi pregunta iba dedicada,
+
+394
+00:33:11,400 --> 00:33:16,400
+hay muchos videojuegos de juegos de mesa en el que el jugador elige la dificultad de la IA.
+
+395
+00:33:16,400 --> 00:33:20,400
+Entonces el juego tiene diferentes heurísticas en función,
+
+396
+00:33:20,400 --> 00:33:25,400
+más potente o menos potente función de la dificultad que elige el jugador para la partida
+
+397
+00:33:25,400 --> 00:33:27,400
+o cómo se adapta la dificultad.
+
+398
+00:33:27,400 --> 00:33:31,400
+Bueno, esto dependerá del que haya hecho el desarrollo de ese videojuego,
+
+399
+00:33:31,400 --> 00:33:36,400
+pero yo diría que en general lo que hace puede variar entre la heurística
+
+400
+00:33:36,400 --> 00:33:38,400
+y la profundidad, seguro.
+
+401
+00:33:38,400 --> 00:33:39,400
+Entonces, bueno.
+
+402
+00:33:39,400 --> 00:33:43,400
+Yo creo que los que yo conozco lo que hacen es limitar el tiempo.
+
+403
+00:33:43,400 --> 00:33:46,400
+O, desde el dice, con este tiempo tienes que,
+
+404
+00:33:46,400 --> 00:33:51,400
+el modelo tiene que ser capaz de elegir una acción y te asignara menos tiempo.
+
+405
+00:33:51,400 --> 00:33:53,400
+El ejemplo de la jugada va a ser un juego.
+
+406
+00:33:53,400 --> 00:33:56,400
+Salvo que sea un modelo de aprendizaje automático,
+
+407
+00:33:56,400 --> 00:33:58,400
+que en ese caso la verdad es que no tengo...
+
+408
+00:33:58,400 --> 00:33:59,400
+Pero en general...
+
+409
+00:33:59,400 --> 00:34:01,400
+...haberán varios ejemplos de dirigir al juego.
+
+410
+00:34:01,400 --> 00:34:06,400
+En los videojuegos sobre juegos de mesa no hay cosas con aprendizaje automático hechas.
+
+411
+00:34:06,400 --> 00:34:08,400
+En general, son todos reglas.
+
+412
+00:34:08,400 --> 00:34:10,400
+Muchas gracias.
+
+413
+00:34:10,400 --> 00:34:15,400
+Última pregunta.
+
+414
+00:34:23,400 --> 00:34:24,400
+Hola.
+
+415
+00:34:24,400 --> 00:34:26,400
+Bueno, muchas gracias por la charla.
+
+416
+00:34:26,400 --> 00:34:31,400
+La verdad que ha sido muy interesante y ha dejado bastante temas claros.
+
+417
+00:34:31,400 --> 00:34:34,400
+Yo quería preguntar más sobre la aplicación,
+
+418
+00:34:34,400 --> 00:34:36,400
+o sea, no tanto sobre el método,
+
+419
+00:34:36,400 --> 00:34:39,400
+pero por lo que había dicho explicando los métodos pasados como en minimás,
+
+420
+00:34:39,400 --> 00:34:42,400
+pero nos piden por示ribution de 76Сп y masked boiler,
+
+421
+00:34:42,400 --> 00:34:46,160
+papel troublesome,
+
+422
+00:34:46,400 --> 00:34:48,400
+™
+
+423
+00:34:48,400 --> 00:34:51,040
+trillion,
+
+424
+00:34:52,400 --> 00:34:57,400
+cómo se hace el mismo tech-commerce salvo que con la offera.
+
+425
+00:34:57,400 --> 00:35:00,400
+¿ released la mejor milkshake?
+
+426
+00:35:00,400 --> 00:35:04,400
+¿Para mejorar el conocimiento de jugadores?
+
+427
+00:35:30,400 --> 00:35:34,400
+¿Para mejorar el programa de jugadores?
+
+428
+00:36:00,400 --> 00:36:06,400
+¿Para mejorar el conocimiento de jugadores?
+
+429
+00:36:30,400 --> 00:36:46,400
+¿Para mejorar el conocimiento de jugadores?
+
+430
+00:37:00,400 --> 00:37:08,400
+¿Para mejorar el conocimiento de jugadores?
+

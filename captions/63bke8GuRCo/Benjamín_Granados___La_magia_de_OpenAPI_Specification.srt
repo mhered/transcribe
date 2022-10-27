@@ -1,0 +1,1452 @@
+1
+00:00:00,000 --> 00:00:26,140
+Bueno, hola a todos y a todas. Muchas gracias por quedarnos en mi charla. La conferencia
+
+2
+00:00:26,140 --> 00:00:30,780
+está siendo la leche. Yo es mi primera pi con y enhorabuena a la organización y muchas
+
+3
+00:00:30,780 --> 00:00:33,480
+gracias a todos los que habéis venido y a los que desvelle de ustedes que dieron mi
+
+4
+00:00:33,480 --> 00:00:39,200
+charla. Bueno, empezamos con una pregunta. ¿Cuántos de los que estamos aquí usamos
+
+5
+00:00:39,200 --> 00:00:46,600
+y hemos usado APIs alguna vez? O hay, era lo esperado. Bueno, hay una empresa que se
+
+6
+00:00:46,600 --> 00:00:52,340
+amas las data, hace estudios bastante buenos de developer experience y hace un par de años
+
+7
+00:00:52,340 --> 00:00:57,520
+decían que el 90% de los desarrolladores usan o han usado APIs. Y eso a final no es más
+
+8
+00:00:57,520 --> 00:01:02,860
+que un número que nos dice lo importante que son las APIs en cómo se hace el software
+
+9
+00:01:02,860 --> 00:01:09,060
+hoy en día. En la charla voy a hablar de un Open API. Si las APIs son importantes en
+
+10
+00:01:09,060 --> 00:01:14,420
+cómo se hace el software hoy en día, Open API es importante en cómo se hacen las APIs
+
+11
+00:01:14,420 --> 00:01:21,700
+hoy en día. La charla es introductoria. Vamos a repasar conceptos generales de documentos
+
+12
+00:01:21,700 --> 00:01:27,620
+de especificación de APIs, el estándar, qué ventajas tiene, qué retos se enfrenta
+
+13
+00:01:27,620 --> 00:01:36,420
+y qué features viene en la versión 3.1 que justo sacaron el año pasado. También tengo
+
+14
+00:01:36,420 --> 00:01:41,020
+que decir que he estado muy tentado a poner un emoji en esta slide. Lo tenía ahí y la
+
+15
+00:01:41,020 --> 00:01:45,020
+he quitado en el último momento, así que los que nos gusten los emojis lo siento, a
+
+16
+00:01:45,020 --> 00:01:52,180
+todos que nos gusten los emojis, le quité. La charla se llama la magia de Open API Specification.
+
+17
+00:01:52,180 --> 00:01:56,020
+Mi nombre es Benjamin Granados y trabajo en una empresa que se llama Twilio. Twilio es
+
+18
+00:01:56,020 --> 00:02:00,460
+una empresa, una plataforma de comunicaciones y tenemos un montón de APIs bastante potentes
+
+19
+00:02:00,460 --> 00:02:04,980
+que permiten hacer prácticamente cualquier experiencia de comunicación con usuarios
+
+20
+00:02:04,980 --> 00:02:12,100
+que implique canales como WhatsApp, SMS, voz, video, chat y bueno, muchos más que llegarán.
+
+21
+00:02:12,100 --> 00:02:19,740
+Y todo con una sola API que te permite interconectar y cambiar de un canal a otro de manera superflexible.
+
+22
+00:02:19,740 --> 00:02:23,580
+Ahí tenéis mi Twitter para todo aquel que quiera charlar conmigo de APIs o de otras
+
+23
+00:02:23,580 --> 00:02:30,900
+cosas y también luego estaré por ahí fuera. Hay muchas maneras de describir qué son las
+
+24
+00:02:30,900 --> 00:02:38,420
+APIs, dependiendo de si estamos hablando con gente de negocio o de producto o de diseñadores.
+
+25
+00:02:38,420 --> 00:02:43,500
+Pero al final las APIs, las que las hacemos y las consumimos somos nosotros. Entonces,
+
+26
+00:02:43,500 --> 00:02:47,460
+si tuviera que decir algo, es que las APIs hacen la vida, nos hacen la vida más fáciles.
+
+27
+00:02:47,460 --> 00:02:55,460
+De una manera un poco más técnica, pues una API es una interfaz que nos da acceso a una
+
+28
+00:02:55,460 --> 00:03:01,220
+serie de operaciones que resuelven una necesidad y nosotros no tenemos por qué saber cuánto
+
+29
+00:03:01,220 --> 00:03:06,780
+dolor o cuánta complejidad hay detrás. Simplemente tenemos acceso a esas operaciones, lo cual es
+
+30
+00:03:06,780 --> 00:03:12,580
+súper útil. Imaginaros que queremos hacer una aplicación que nos muestra en el mapa
+
+31
+00:03:12,580 --> 00:03:18,100
+los restaurantes paraceliacos de Granada. En vez de tener que resolver todos los problemas
+
+32
+00:03:18,100 --> 00:03:23,300
+de geolocalización, mapas, etcétera, cojemos la API de Google Maps y nos centramos en saber
+
+33
+00:03:23,300 --> 00:03:28,460
+los restaurantes. O si queremos permitir que se hagan reservas, en vez de picar la solución
+
+34
+00:03:28,460 --> 00:03:33,380
+de reservas, cojemos la API de Calendly o alguna otra y lo podemos resolver. O si queremos
+
+35
+00:03:33,380 --> 00:03:37,340
+que la gente se pueda pedir autenticación, podemos coger la API de Verify y de Twiglo
+
+36
+00:03:37,340 --> 00:03:43,820
+para que se autentiquen con el teléfono. Y todo eso mola bastante. ¿Qué ventajas nos
+
+37
+00:03:43,820 --> 00:03:48,220
+trae a los desarrolladores? Pues en primer lugar tenemos que estar programando menos
+
+38
+00:03:48,220 --> 00:03:55,060
+tiempo, al final todas esas funcionalidades que ya existen las coges y las usas. Menos
+
+39
+00:03:55,060 --> 00:03:59,380
+código, pues menos tiempo menos código. Código más limpio y más consistente, pero
+
+40
+00:03:59,380 --> 00:04:02,700
+sobre todo y para mí lo más importante es que estás enfocado en resolver el problema,
+
+41
+00:04:02,700 --> 00:04:07,060
+la propuesta de valor que tú tienes, te centras en eso y no te centras en resolver cosas
+
+42
+00:04:07,060 --> 00:04:14,100
+que ya han resolvido otros. Vamos, el copy paste de toda la vida a otro nivel. Hay muchos
+
+43
+00:04:14,100 --> 00:04:21,140
+tipos, hay muchos sabores de desarrollo de APIs, estos son algunos, hay muchos más.
+
+44
+00:04:21,140 --> 00:04:27,620
+Y en la charla nos vamos a centrar en el primero, que son las APIs REST, APIs sincronas ligadas
+
+45
+00:04:27,620 --> 00:04:33,780
+al protocolo HTTP. También existe en las APIs el protocolo o el estándar de especificación
+
+46
+00:04:33,780 --> 00:04:39,860
+async API más centrado en APIs asincronas o de eventos. No sé si alguno por aquí
+
+47
+00:04:39,860 --> 00:04:47,940
+ha utilizado async API. Lo ha creado un español que se llama FranMendez, un tío bastante guay.
+
+48
+00:04:47,940 --> 00:04:52,300
+Entonces bueno es bueno saber también que estas cosas a veces vienen de España pues
+
+49
+00:04:52,300 --> 00:04:57,940
+async API se creó en España y el equipo sigue haciendo cosas muy chulas. La conferencia
+
+50
+00:04:57,940 --> 00:05:04,020
+va a ser ahora me parece en noviembre, así que es online, es gratis, lo que quiera. GraphQL,
+
+51
+00:05:04,020 --> 00:05:10,620
+GraphQL bastante potente también pero enfocado a consumo de datos en el front pues todas las
+
+52
+00:05:10,620 --> 00:05:15,100
+restricciones que puede tener REST en cuanto a consumo de datos o a flexibilidad ahora
+
+53
+00:05:15,100 --> 00:05:20,900
+es poner nuevos cambios en tu modelo pues con GraphQL te liberas de todo eso y por último
+
+54
+00:05:20,900 --> 00:05:27,260
+GRPC pues más enfocado a temas de IoT o ligereza donde lo que te importa es por ejemplo dispositivos
+
+55
+00:05:27,260 --> 00:05:31,860
+muy pequeños que tienen que gastar poca energía pues que los mensajes sean muy óptimos y
+
+56
+00:05:31,860 --> 00:05:36,500
+en la SAPI REST pues tienes un montón de metadata que no ayuda tanto. Así que una
+
+57
+00:05:36,500 --> 00:05:43,980
+vez mostrado este panorama de sabores vamos a centrarnos en la SAPI REST. Bueno esto es
+
+58
+00:05:43,980 --> 00:05:49,900
+nuevo esto lleva ya más de 20 años no sé también voy a hacer otra pregunta ¿Quiénes
+
+59
+00:05:49,900 --> 00:05:54,100
+de los que estamos aquí habéis utilizado alguna vez los WISDEL, WSDEL para llamar a
+
+60
+00:05:54,100 --> 00:06:01,180
+Servicio SOAP. Esto ya son más de veteranos como yo. Bueno pues era un carajal de la leche
+
+61
+00:06:01,180 --> 00:06:05,580
+y para llamar Servicio SOAP necesitabas ese ficherito WISDEL que era el contrato pues eso
+
+62
+00:06:05,580 --> 00:06:12,300
+que ya existía en el 2000 ha sido un poco los cimientos de otros estándares de especificación
+
+63
+00:06:12,300 --> 00:06:19,220
+como puede ser OpenAPI. OpenAPI se creó en el 2010 con el nombre de Swagger lo creó
+
+64
+00:06:19,220 --> 00:06:23,860
+un tipo que se llamaba Tony Tam en su empresa pues tenía la necesidad de diseñar y comentar
+
+65
+00:06:23,860 --> 00:06:28,340
+a PIS y las herramientas que había en ese momento pues eran una mierdecilla o no le
+
+66
+00:06:28,340 --> 00:06:31,740
+solucionaban su problema entonces cogió lo mejor de cada una de las cosas que había
+
+67
+00:06:31,740 --> 00:06:39,140
+por entonces que era web services, SOAP, el paradigma REST y cositas de RPC lo puso todo
+
+68
+00:06:39,140 --> 00:06:46,860
+junto en una manera bastante genial y hasta hoy eso fue en el 2010 en el 2014 sacaron
+
+69
+00:06:46,860 --> 00:06:55,860
+la versión 2.0 y había otros estándares como Rammel que estaban un poco luchando por
+
+70
+00:06:55,860 --> 00:07:02,540
+quien era el estándar o el que resolviera un poco el problema de tener varias opciones
+
+71
+00:07:02,540 --> 00:07:07,220
+a elegir y eso se resolvió porque llegó una empresa que se llamaba SmartBear que era bastante
+
+72
+00:07:07,220 --> 00:07:11,740
+conocida por una herramienta que se llamaba SOAPUI de testing de servicios SOAP y compró
+
+73
+00:07:11,740 --> 00:07:18,020
+Swagger y lo donó a la OpenAPI Initiative una fundación open source que se ha encargado
+
+74
+00:07:18,020 --> 00:07:24,620
+hasta ahora de la evolución del protocolo eso fue en 2015 en 2015 también aparecieron
+
+75
+00:07:24,620 --> 00:07:30,860
+dos estándares que os he comentado antes que era GraphQL y GRPC y la primera versión
+
+76
+00:07:30,860 --> 00:07:38,380
+con el nuevo nombre que es OpenAPI fue en julio del 2017 también en 2017 Fran Mendez
+
+77
+00:07:38,380 --> 00:07:45,140
+que creó así en KPI y desde entonces ha habido muy poquitas relíces más a finales
+
+78
+00:07:45,140 --> 00:07:53,580
+de 2017 fue la versión 3.0.1 en el 2018 la 3.2 2020 3.0.3 y justo el año pasado la 3.1
+
+79
+00:07:53,580 --> 00:07:57,460
+que es lo que os voy a comentar luego ya habéis visto que es una es una organización que se
+
+80
+00:07:57,460 --> 00:08:03,940
+toma mucho tiempo para hacer evolución de la estándar que para algunas cosas pues la
+
+81
+00:08:03,940 --> 00:08:09,220
+estabilidad es mola pero hay veces también que mola que pasen más cosas en menos tiempo
+
+82
+00:08:09,220 --> 00:08:14,820
+y ya os contaré luego que a veces han pecado de ser demasiado cautos en sacar funcionalidades
+
+83
+00:08:18,500 --> 00:08:23,420
+os he comentado OpenAPI Initiative una visión muy general que hay detrás
+
+84
+00:08:24,900 --> 00:08:29,420
+como os comentaba OpenAPI Initiative se encarga de la evolución y el sustento del estándar
+
+85
+00:08:29,420 --> 00:08:35,020
+forma parte de la Linux Foundation y bueno esta parte de la Linux Foundation pues también nos
+
+86
+00:08:35,020 --> 00:08:40,580
+aseguramos que también tienen buenas prácticas en cuanto a gobierno y gestión de proyectos
+
+87
+00:08:40,580 --> 00:08:48,020
+open source veis ahí que hay peces muy gordos como Oracle, Microsoft, Google, etcétera y eso
+
+88
+00:08:48,020 --> 00:08:52,420
+enlaza un poco con los los dos órganos de gobierno que tienen dentro que es el business
+
+89
+00:08:52,420 --> 00:08:59,740
+governance board que se encarga de temas de trainings, budget, dirección no técnica, politiqueo, etcétera
+
+90
+00:08:59,740 --> 00:09:03,500
+al final cuando hay tantas entidades ahí entre medias tomando decisiones pues las decisiones son
+
+91
+00:09:03,500 --> 00:09:07,980
+más más lentas y luego los que curran realmente y los que están haciendo la evolución del estándar
+
+92
+00:09:07,980 --> 00:09:12,700
+que es el técnico del steering committee que bueno el que quiera echar un vistacillo ese gobierno
+
+93
+00:09:12,700 --> 00:09:20,660
+está todo en el jithab.com barra o ahí OpenAPI Initiative cualquiera puede si no estáis colaborando
+
+94
+00:09:20,660 --> 00:09:27,620
+ya o contribuyendo es una comunidad abierta a cualquiera esa es la visión general perdóname
+
+95
+00:09:27,620 --> 00:09:34,820
+por pasar por encima de los términos más generales y bueno ahora que hemos visto la historia
+
+96
+00:09:34,820 --> 00:09:40,980
+la organización que lo sustenta pues vamos a ver el estándar al final es un es un es un yamel
+
+97
+00:09:43,100 --> 00:09:49,300
+pero nos permite describir a piz web y nos permite describirlas de manera que establecemos un contrato
+
+98
+00:09:49,300 --> 00:09:55,660
+entre un consumidor y un productor que pone sobre la mesa las expectativas de lo que vas a esperar
+
+99
+00:09:55,660 --> 00:10:05,060
+es totalmente agnóstico de lenguaje de formación o de framework leíble por humanos y por máquinas y
+
+100
+00:10:05,060 --> 00:10:11,020
+como se deslibre por humanos como estáis viendo pues permite trabajar bien con ello para temas de
+
+101
+00:10:11,020 --> 00:10:18,260
+documentación y demás y soporta yamel y jason tiene una estructura bastante sencilla como podemos
+
+102
+00:10:18,260 --> 00:10:24,460
+ver aquí un elemento principal para proporcionar la información general del api que involucra el
+
+103
+00:10:24,460 --> 00:10:30,180
+nombre la descripción versión etcétera dos nodos bastante importantes también que como veis no los
+
+104
+00:10:30,180 --> 00:10:35,140
+estoy utilizando el error número uno cuando os enseña mi ejemplo servers donde está tu
+
+105
+00:10:35,140 --> 00:10:40,500
+implementación y el security los esquemas de seguridad que vas a utilizar pads donde están las
+
+106
+00:10:40,500 --> 00:10:46,140
+operaciones que es lo que utilizaremos los usuarios que queremos utilizar este api elemento otros dos
+
+107
+00:10:46,140 --> 00:10:50,380
+elementos un poco más secundarios como tax que te permite agrupar operaciones para que la documentación
+
+108
+00:10:50,380 --> 00:10:56,180
+sea un poquito más consumible external docs para enlazar documentos externos y recursos y luego
+
+109
+00:10:56,180 --> 00:11:07,260
+componentes que es el área enfocado a la reutilización porque en aquí está en open api
+
+110
+00:11:07,260 --> 00:11:13,540
+su agar antigua mente ahora api todo lo puedes declarar en line pero te puedes al final uno de los
+
+111
+00:11:13,540 --> 00:11:19,820
+problemas de las de las apis rest es que tienes que utilizar un montón de veces entonces como
+
+112
+00:11:19,820 --> 00:11:23,980
+no os hagas partida de la parte de components pues te puedes morir y aquí bueno estoy utilizando
+
+113
+00:11:23,980 --> 00:11:31,740
+visual studio co con un plugin que me está marcando referente al versión 303 no estoy utilizando la
+
+114
+00:11:31,740 --> 00:11:38,180
+301 porque todavía luego os contaré que hay muchas herramientas que todavía no son compatibles y una
+
+115
+00:11:38,180 --> 00:11:43,740
+visión un poco más detallada la parte info con el título de descripción el contacto del
+
+116
+00:11:43,740 --> 00:11:48,860
+developer la licencia muy importante y la parte de versión la parte de versión que ha sido un tema
+
+117
+00:11:48,860 --> 00:11:53,980
+que probablemente muchos equipos han considerado como secundario es crítico a la hora de cómo los
+
+118
+00:11:53,980 --> 00:11:59,460
+consumidores de tu api van a esperar los cambios si haces un cambio un cambio no es otro compatible
+
+119
+00:11:59,460 --> 00:12:04,460
+y no solo informas en la versión pues la vas a liar para elísima que es un clásico por cierto
+
+120
+00:12:04,460 --> 00:12:13,820
+external docs tax y aquí la parte importante aquí en este ejemplo que es una api para exponer
+
+121
+00:12:13,820 --> 00:12:19,620
+servicios de conferencia información de conferencias estoy exponiendo una operación muy sencilla que
+
+122
+00:12:19,620 --> 00:12:25,100
+me que llamando por get a un método que se llama conferencias me devuelve los datos de una conferencia
+
+123
+00:12:25,100 --> 00:12:31,460
+con un parámetro de url que es este de aquí y definiendo los códigos de respuesta los códigos
+
+124
+00:12:31,460 --> 00:12:36,420
+de respuesta es muy importante porque son los códigos de respuesta que no está inventando
+
+125
+00:12:36,420 --> 00:12:44,620
+nada si ha ido bien es un 200 sin si ha ido mal un 400 si nos lo ha encontrado 404 405 son los
+
+126
+00:12:44,620 --> 00:12:48,900
+códigos estándares de http y si no los soportas al diseñar tu api pues cuando alguien que ya utilice
+
+127
+00:12:48,900 --> 00:12:55,380
+muchas apis vea tu api pues se le pondrá a llorar el corazón y por último la parte de
+
+128
+00:12:55,380 --> 00:13:04,300
+componentes y esquemas qué importante en la parte derecha en la parte derecha derecha hoy en día
+
+129
+00:13:04,300 --> 00:13:08,220
+cualquier editor de código pues tiene plugins que te permiten directamente renderizarlo en
+
+130
+00:13:08,220 --> 00:13:11,860
+una página web es otra de las ventajas de api que hay un montón de herramientas entonces tú vas
+
+131
+00:13:11,860 --> 00:13:23,420
+cambiando por ejemplo y voy a cambiar el ser el nombre del servicio y ya está cambiándose
+
+132
+00:13:23,420 --> 00:13:28,660
+automáticamente porque es útil esto pues porque muchas veces a veces hacemos camis muy rápidos
+
+133
+00:13:28,660 --> 00:13:36,180
+y a final verlo estructurado pues está bien vale esa visión en cuanto al documento los nodos de
+
+134
+00:13:36,180 --> 00:13:42,900
+manera muy rápida voy a utilizar ese ejemplo más adelante en al ver otras herramientas bueno visión
+
+135
+00:13:42,900 --> 00:13:50,780
+estándar un llamel super potente pero porque es tan importante opena y pi en primer lugar porque tiene
+
+136
+00:13:50,780 --> 00:13:54,740
+una base de usuarios enorme si antes decíamos o veíamos que el 90 por ciento de los desarrolladores
+
+137
+00:13:54,740 --> 00:14:02,700
+utilizan apis pues un estudio de es más ver del 2020 estimaba que el 80 por ciento de los
+
+138
+00:14:02,700 --> 00:14:08,900
+desarrolladores que hacen apis utilizan opena y pi con lo cual son millones y si tú estás pensando
+
+139
+00:14:08,900 --> 00:14:14,140
+en hacer apis sin cronas pues tendrás que irte donde está la gente y donde está la gente utilizando
+
+140
+00:14:14,140 --> 00:14:21,220
+y otro factor interesante desde el punto de vista de ct o si demás la estabilidad es un estándar
+
+141
+00:14:21,220 --> 00:14:24,820
+que ha evolucionado tomándose muy en serio la estabilidad de los relises con lo cual si es
+
+142
+00:14:24,820 --> 00:14:30,380
+confiable porque es estable y está todo el mundo ahí pues es un factor muy importante que si vas a
+
+143
+00:14:30,380 --> 00:14:35,220
+hacer apis pues que te plantees hacerlo si te encaja desde el punto de vista de arquitectura con
+
+144
+00:14:35,220 --> 00:14:41,140
+los estándares que te mostré al principio lo más normal que las hagas con con opena y pi otro
+
+145
+00:14:41,140 --> 00:14:45,340
+factor muy interés muy importante para mí es uno de los temas unos pilares de mi trabajo la
+
+146
+00:14:45,340 --> 00:14:51,860
+developer experience con opena y pi puedes hacer un desarrollo totalmente centrado en las necesidades
+
+147
+00:14:51,860 --> 00:14:59,100
+del usuario puedes hacer documentación mucho mejor ejemplos como hemos visto antes que redundan
+
+148
+00:14:59,100 --> 00:15:04,020
+en que el consumidor del api pues tenga una mejor experiencia y además puedes hacer muchos más
+
+149
+00:15:04,020 --> 00:15:11,660
+relises mucho más rápido con lo cual el feedback look con tu usuario es mucho mejor y más eficiente y
+
+150
+00:15:11,660 --> 00:15:15,580
+otro tema fundamental que también ha sido los pilares de mi trabajo durante bastante tiempo el
+
+151
+00:15:15,580 --> 00:15:20,900
+gobierno y la colaboración porque facilita el gobierno si nos referimos al gobierno de las
+
+152
+00:15:20,900 --> 00:15:26,340
+apis como la intersección entre los procesos las herramientas y las personas que están en un programa
+
+153
+00:15:26,340 --> 00:15:32,660
+en un api program pues opena y pi aparte del estándar tiene un montón de tooling que luego
+
+154
+00:15:32,660 --> 00:15:37,580
+os voy a presentar un poquito por encima y ese tooling me va a permitir pues que algunos procesos
+
+155
+00:15:37,580 --> 00:15:41,980
+desaparezcan otros sean súper automáticos y livianos y que al final de las personas que
+
+156
+00:15:41,980 --> 00:15:49,100
+estamos trabajando en esos procesos vivamos mejor entonces gobiernos mucho más eficientes y luego
+
+157
+00:15:49,100 --> 00:15:54,620
+colaboración cuando la relación entre dos personas se basa en un contrato pues las expectativas
+
+158
+00:15:54,620 --> 00:16:00,820
+son mucho más claras hay menos problemas no a veces con los caseros no es igual es un contrato
+
+159
+00:16:00,820 --> 00:16:10,740
+pues chiste malo pues el contrato al final alivia esas fricciones entre consumidores y productores de
+
+160
+00:16:10,740 --> 00:16:19,660
+apis y qué pasa pues el contrato se puede obtener en distintos puntos de la vida de las apis lo puedes
+
+161
+00:16:19,660 --> 00:16:24,300
+hacer yo por ejemplo yo soy desarrollador y sé que quiero hacer que tengo una idea buenísima y me
+
+162
+00:16:24,300 --> 00:16:29,260
+pongo a desarrollarlo y tiro millas con todo hasta que solucione el problema y luego a coño la gente
+
+163
+00:16:29,260 --> 00:16:35,020
+lo tiene que utilizar voy a generar la especificación al final en ese caso pues si tiene sentido que la
+
+164
+00:16:35,020 --> 00:16:39,660
+especificación para que la gente pueda llamar a tu api y ver cómo es lo hagas al final pero en unos
+
+165
+00:16:39,660 --> 00:16:43,900
+entornos en los que hay más equipos colaborando y demás en el momento que decides hacer la
+
+166
+00:16:43,900 --> 00:16:49,380
+especificación generarla a tras después de que tengas todo codificado estás comprando todas
+
+167
+00:16:49,380 --> 00:16:53,860
+las papeletas para que te suceda eso tú ibas a hacer algo le dijiste alguien hoy te voy a hacer
+
+168
+00:16:53,860 --> 00:16:57,500
+una api que te va a resolver todos estos temas te va a devolver esta información vale vale
+
+169
+00:16:57,500 --> 00:17:04,100
+cuando la tienes a tener tres expirines o cuatro y luego pues te das cuenta que tienes que cambiar
+
+170
+00:17:04,100 --> 00:17:07,780
+ciertas cosas no se lo avisas y pasan cosas así yo esto lo he visto como gallón de veces sobre
+
+171
+00:17:07,780 --> 00:17:13,940
+todo en apis internas en cambio cuando empiezas al desarrollo con la especificación y haces el
+
+172
+00:17:13,940 --> 00:17:19,180
+contrato es del principio cualquier cambio ya lo puedes tener totalmente disponible en el contrato
+
+173
+00:17:19,180 --> 00:17:24,980
+para todos los implicados con lo cual vas a reducir un montón el riesgo y por eso el estándar de
+
+174
+00:17:24,980 --> 00:17:30,900
+facto es hacer empezar a hacer apis con la especificación primero eso no significa que no se
+
+175
+00:17:30,900 --> 00:17:35,100
+puede hacer con las con las especificaciones pues pero requiere que controles mucho mejor las normas
+
+176
+00:17:35,100 --> 00:17:43,620
+del juego y bueno yo soy una persona que le encantan las comparaciones absurdas vale para aplicar
+
+177
+00:17:43,620 --> 00:17:51,740
+cosas a mis amigos a mis hijos pues comparó con tartas con entonces open api para mí es un tema
+
+178
+00:17:51,740 --> 00:17:58,020
+crítico para el ciclo de vida de las apis y tiene un potencial brutal y cuando estaba pensando
+
+179
+00:17:58,020 --> 00:18:02,500
+cómo explicarlo pues me vino la cabeza los mentos con la coagacola cuando echas un mento en la coagacola
+
+180
+00:18:02,500 --> 00:18:10,300
+o 50 mentos explota esa explosión es descontrolada pero con el api no es así tú tienes el control
+
+181
+00:18:10,300 --> 00:18:15,940
+total no pues encontré este vídeo que para mí evoca el cómo afecta positivamente
+
+182
+00:18:15,940 --> 00:18:20,820
+open api el ciclo de vida de las apis
+
+183
+00:18:24,380 --> 00:18:26,780
+van a hacer una cosita con mentos y coagacola vale
+
+184
+00:18:33,220 --> 00:18:39,740
+bueno el vídeo a lento pero básicamente cuál es la comparación para mí en cuanto tú coges el
+
+185
+00:18:39,740 --> 00:18:45,260
+documento de especificación y lo pones lo automatizas con todas las herramientas de que tienes en tu
+
+186
+00:18:45,260 --> 00:18:53,100
+ciclo de vida todos los equipos desarrollados involucrados están totalmente alineados contigo
+
+187
+00:18:53,100 --> 00:18:58,300
+hacen cosas muy chulas luego compartir el vídeo que quiera verlo hacer una fuente
+
+188
+00:19:02,060 --> 00:19:07,340
+entonces me quedo con el ejemplo del mentos vale este es nuestro mento redondito también
+
+189
+00:19:07,340 --> 00:19:16,540
+como vamos a empezar el desarrollo con la especificación pues lo primero que tenemos que
+
+190
+00:19:16,540 --> 00:19:22,620
+saber es que hay una herramienta que es la leche que nos permite validar nuestra especificación en
+
+191
+00:19:22,620 --> 00:19:27,860
+base a nuestros estándares de definición de apis si tú estás tú solo haciendo tu api pues ya te
+
+192
+00:19:27,860 --> 00:19:31,740
+lo sabes pero nuevamente cuando estamos trabajando en una organización con muchos equipos lo primero
+
+193
+00:19:31,740 --> 00:19:36,220
+que tenemos que establecer es cuáles son nuestras buenas prácticas comunes no puede haber nada peor
+
+194
+00:19:36,220 --> 00:19:42,620
+en una organización en la que varios equipos están haciendo apis sin criterios compartidos porque
+
+195
+00:19:42,620 --> 00:19:49,260
+porque el usuario cuando vea una pide uno y el otro sabiendo que si los mismos pues va a tener
+
+196
+00:19:49,260 --> 00:19:54,540
+va a echar en falta la consistencia como usuarios de las apis lo que más amamos es la consistencia y
+
+197
+00:19:54,540 --> 00:19:59,860
+si no tenéis unas normas comunes de desarrollo pues el usuario lo va a notar enseguida entonces
+
+198
+00:19:59,860 --> 00:20:07,620
+esas normas comunes las podemos codificar reglas que validen automáticamente nuestro documento
+
+199
+00:20:07,620 --> 00:20:11,540
+de especificación de tal manera que no necesitamos que nadie venga a revisarlo nosotros podemos validarlo
+
+200
+00:20:11,540 --> 00:20:19,500
+y esa herramienta se llama espectral espectral es la leche entonces ahora que hemos validado
+
+201
+00:20:19,500 --> 00:20:29,500
+con espectral vamos a echar el mento en la coagola automáticamente vamos a poder generar
+
+202
+00:20:29,500 --> 00:20:35,500
+nuestro código fuente en el lenguaje que queráis en python no de go java el que quiera solo tienes que
+
+203
+00:20:35,500 --> 00:20:40,860
+coger la herramienta adecuada de generación o regeneración del código para hacer los cambios
+
+204
+00:20:40,860 --> 00:20:46,820
+correspondientes o hacer la implementación automáticamente tienes mocs de todos tus servicios
+
+205
+00:20:46,820 --> 00:20:49,900
+todo el mundo lo puede ejecutar la nueva versión ya está disponible todo el mundo lo puede ejecutar
+
+206
+00:20:49,900 --> 00:20:54,900
+y aquí tenéis varias herramientas postman que la conocen mucha gente y micro x y primes que los
+
+207
+00:20:54,900 --> 00:20:59,620
+dos son los pensores también micro x súper potente y primes que lo voy a enseñar también un
+
+208
+00:20:59,620 --> 00:21:03,780
+poco más sencillo pero bastante y de la misma empresa que espectral que se llama stop light
+
+209
+00:21:03,780 --> 00:21:11,060
+documentación igual en el mismo momento regeneras toda la documentación herramientas más interesantes
+
+210
+00:21:11,060 --> 00:21:19,900
+red o click rapido y su agredor testin puedes regenerar la emplea el código de tus tres
+
+211
+00:21:19,900 --> 00:21:26,140
+cases por ejemplo esquema texis que es para python en cuando tú tienes el documento de
+
+212
+00:21:26,140 --> 00:21:31,500
+especificación te genera todos los test cases contra el moque que ya acabas de publicar con lo cual
+
+213
+00:21:31,500 --> 00:21:41,740
+ya puedes ver si todo es consistente de por ejemplo te permite probar que lo que has publicado es
+
+214
+00:21:41,740 --> 00:21:46,580
+consistente con el documento de especificación de tal manera que automáticamente va a coger la
+
+215
+00:21:46,580 --> 00:21:50,380
+especificación y va a tirarlo contra el moque o contra producción contra el moque va a ir bien pero
+
+216
+00:21:50,380 --> 00:21:55,940
+si lo tienes desplegado va a detectar exactamente si hago algo al roto con lo cual te vas a prever
+
+217
+00:21:55,940 --> 00:22:00,940
+un montón de problemas también puedes utilizar micro x y algo súper interesante que no he puesto
+
+218
+00:22:00,940 --> 00:22:07,220
+aquí contract testing lo que os decía la gente la caga muchísimo con la versión de la api y hacer
+
+219
+00:22:07,220 --> 00:22:14,140
+una desplegar una pi que no es retro compatible y no reflejarlo en la versión tiene un impacto
+
+220
+00:22:14,140 --> 00:22:18,820
+bastante importante entonces con contract testing te puedes asegurar de que la versión que has puesto
+
+221
+00:22:18,820 --> 00:22:24,180
+en el documento de especificación es consistente con la implementación entonces eso lo puedes hacer
+
+222
+00:22:24,180 --> 00:22:30,460
+de manera automática por supuesto puedes generar también clientes en el lenguaje que quieras para
+
+223
+00:22:30,460 --> 00:22:34,580
+que en vez de utilizar la pi directamente por un cliente a 7 tp lo utilicen en el lenguaje más
+
+224
+00:22:34,580 --> 00:22:40,580
+frien li pues no deja igual y por último monitoring y security aquí puesto unos cuantos logos de
+
+225
+00:22:40,580 --> 00:22:46,260
+productos no son opensource porque aquí nuevamente te suele tocar pagar pero yo destacaría el logo
+
+226
+00:22:46,260 --> 00:22:51,500
+este pequeñito de una t que se llama es una persona trebel que tiene un producto súper chulo todo esto
+
+227
+00:22:51,500 --> 00:22:57,940
+automáticamente en cuanto tuvimos el documento especificación con lo cual pues vamos a poder
+
+228
+00:22:57,940 --> 00:23:04,060
+diseñar desarrollar probar y desplegar a pis más rápido más veces y mejor que este concepto de
+
+229
+00:23:04,060 --> 00:23:11,300
+apios como hay tanto ops pues también hay apios hay muchísimas herramientas aquí tenéis opere
+
+230
+00:23:11,300 --> 00:23:16,020
+y pi punto tools son las las que hay opensource os voy a enseñar muy rápido
+
+231
+00:23:19,540 --> 00:23:26,140
+es esta página web vale cómo elegir cómo elegir qué herramienta utilizar pues bueno
+
+232
+00:23:26,140 --> 00:23:31,180
+dependiendo de vuestra necesidad dependiendo de qué versión de la estanda que es utilizar la 2 0
+
+233
+00:23:31,180 --> 00:23:36,500
+la 3 0 o la 3 1 ya veis que la 3 1 que es la que voy a hablar luego todavía falta mucha compatibilidad
+
+234
+00:23:36,500 --> 00:23:42,500
+con lo cual a la hora de utilizar un estándar lo primero mirar vuestro técnico al stack mirar
+
+235
+00:23:42,500 --> 00:23:48,860
+vuestra necesidad y luego hay un truquillo o no truquillo un consejo que es ir al proyecto de
+
+236
+00:23:48,860 --> 00:23:53,700
+jithub y ver cómo está de vivo si vas a decidirte por un proyecto y llevan si hay contribuciones
+
+237
+00:23:54,820 --> 00:24:00,580
+yo que sé seis meses o un año pues a lo mejor tienes que pensártelo a veces eso lo puedes ver en
+
+238
+00:24:00,580 --> 00:24:05,700
+jithub o puedes utilizar otras herramientas que te hacen reporten de un de un repo y os quiero
+
+239
+00:24:05,700 --> 00:24:09,340
+presentar a cual dron si no lo conocíais cual dron es una herramienta que ha quedado una empresa
+
+240
+00:24:09,340 --> 00:24:13,740
+española que se llama vitergia que hace analítica de proyectos opensource e innersource entonces si
+
+241
+00:24:13,740 --> 00:24:19,780
+tú estás pensando e integrar un proyecto opensource eche que un vistazo porque vas a poder ver qué
+
+242
+00:24:19,780 --> 00:24:26,660
+actividad de comits ha habido y un reporten bastante chulo que a la gente de datos le gusta
+
+243
+00:24:26,660 --> 00:24:33,260
+reporten como decía un compañero ayer como está de viva la comunidad entonces esto está
+
+244
+00:24:33,260 --> 00:24:38,220
+enseñando es espectral y espectral es un pepino como os decía y está super vivo entonces a la
+
+245
+00:24:38,220 --> 00:24:45,020
+hora cuando tengáis que tomar una decisión pues un buen consejo que os dejo con con este juguetito
+
+246
+00:24:45,020 --> 00:24:53,260
+que es cual dron y ahora voy a presentar rápido dos herramientas una es espectral hecho mucho
+
+247
+00:24:53,260 --> 00:25:00,020
+hincapié en esto a mí me encanta la fase de diseño de las apis porque también hemos llegado a la
+
+248
+00:25:00,020 --> 00:25:06,260
+visión de producto que me gusta también manejar los dos mundos entonces espectral te permite
+
+249
+00:25:06,260 --> 00:25:13,780
+automatizar la automatizar la revisión de apis se puede ejecutar por línea de comandos o si tienes
+
+250
+00:25:13,780 --> 00:25:17,900
+montado un fronjab script también lo puedes integrar entonces esto es lo que se ve y voy a
+
+251
+00:25:17,900 --> 00:25:29,100
+ejecutarlo un poquitito un momentillo tengo por aquí bueno super sencillo me lo descargué con
+
+252
+00:25:29,100 --> 00:25:38,220
+en lo puedes bajar con un npm con el comando npm y comando espectral lint y tu documento puedes
+
+253
+00:25:38,220 --> 00:25:43,180
+utilizar ellos te ofrecen un conjunto de reglas estándar que si tú tienes que definir desde cero
+
+254
+00:25:43,180 --> 00:25:47,980
+las reglas de un nuevo equipo de desarrollo pues yo no me cogería o sea no me no me haría la rueda me
+
+255
+00:25:47,980 --> 00:25:55,060
+voy a espectral veo el estandar que están manejando y a correr y aquí veis pues la la ejecución sobre
+
+256
+00:25:55,060 --> 00:25:59,340
+el ejemplo que se enseñé antes me está diciendo que no he declarado el nodo servers y que tengo
+
+257
+00:25:59,340 --> 00:26:07,500
+una descripción y aquí podemos cambiar un montón de cosas si me voy al ejemplo lo modifico y por
+
+258
+00:26:07,500 --> 00:26:18,100
+ejemplo cambio aquí el nombre del parámetro y vuelvo a ejecutar espectral lo esperado es que me
+
+259
+00:26:18,100 --> 00:26:24,860
+avise vale acabo de romper algo y esto está guay vale hay muchas empresas y los que hay equipo a ver
+
+260
+00:26:24,860 --> 00:26:29,660
+yo yo me he dedicado al gobierno de a pis y a revisar a pis lo cual está guay pero espectral
+
+261
+00:26:29,660 --> 00:26:37,940
+amigos no se ha venido a quitar el trabajo voy a arreglar y luego la documentación de espectral
+
+262
+00:26:37,940 --> 00:26:43,540
+está brutal vale es algo que también nos gusta a cualquier desarrollador los voy a enseñar muy
+
+263
+00:26:43,540 --> 00:26:48,500
+rápido la comentación está brutal entonces si alguno está disinvolucrado en este tema
+
+264
+00:26:48,500 --> 00:26:54,500
+de diseño de a pis os recomiendo que eche un vistacillo a espectral y un montón de de reglas
+
+265
+00:26:54,500 --> 00:26:59,100
+ya implementadas con lo cual sólo tienes que descarrártelo y disfrutar y cómo se des como
+
+266
+00:26:59,100 --> 00:27:08,020
+simplemente a una regla pues aquí lo vais a ver estas aquí están implementando una estructura
+
+267
+00:27:08,020 --> 00:27:14,380
+es otro llamel vale y luego tiene un lenguaje especial para decir el selector de qué elemento
+
+268
+00:27:14,380 --> 00:27:19,060
+vas a validar y qué regla vas a ejecutar vale este es el primero nuestro amigo espectral brutal
+
+269
+00:27:20,740 --> 00:27:28,140
+y el segundo que quiero presentaros es prims hacer un mock es algo super super rápido y
+
+270
+00:27:28,140 --> 00:27:31,580
+al momento que tienes un documento de explicación pues permite que cualquiera el mundo pueda ejecutarlo
+
+271
+00:27:31,580 --> 00:27:36,220
+empezar a probar test ver qué es lo que quieres hacer etcétera y saber que esperar de la nueva
+
+272
+00:27:36,220 --> 00:27:45,020
+versión pues con es con prims también es bastante sencillo vamos a ejecutarlo igual me lo bajé con
+
+273
+00:27:45,020 --> 00:27:52,900
+npm prims mock del ejemplo que os enseñé y si no hemos roto nada pues ya habéis visto que de
+
+274
+00:27:52,900 --> 00:27:59,620
+repente me ha creado un mock accesible en la url cientemente de localhost en el porto 40 a 10
+
+275
+00:27:59,620 --> 00:28:07,700
+conferencias y si lo quiero ejecutar pues vamos a hacer una llamada y ya lo tenemos ejecutando vale
+
+276
+00:28:07,700 --> 00:28:12,100
+súper útil entonces eso me vuelve al mento cada vez que tenemos un pequeño cambio en el documento
+
+277
+00:28:12,100 --> 00:28:17,180
+explicación os he puesto dos dos dos herramientas del tooling pero podéis regenerar todo con lo cual
+
+278
+00:28:17,180 --> 00:28:26,660
+súper potente y es un poco lo que me gustaría destacar en cuanto al ciclo de vida de las apis
+
+279
+00:28:26,660 --> 00:28:35,340
+vale hemos dado visto un montón de cosas porque es la leche y p&i porque nos permite hacer más mejor
+
+280
+00:28:35,340 --> 00:28:42,980
+más veces hicieron la versión 3.1 el año pasado entonces qué esperar de la versión 3.1 bueno es una
+
+281
+00:28:42,980 --> 00:28:48,820
+versión es una buena versión porque en primer lugar porque bueno opa y pi se apoya en json
+
+282
+00:28:48,820 --> 00:28:53,220
+esquema el que esté utilizando y eso opa y pi de manera masiva seguro que tenía que hacer cosas en
+
+283
+00:28:53,220 --> 00:28:58,340
+json esquema y no era compatible hasta ahora el tooling de json esquema no traba algunos de los
+
+284
+00:28:58,340 --> 00:29:01,980
+elementos declarados de tío pen y pi ahora lo han arreglado es totalmente compatible con lo cual
+
+285
+00:29:01,980 --> 00:29:12,740
+mola bastante web hooks quien no sabe lo que es un web hook la comunidad de python ha hecho hablamos
+
+286
+00:29:12,740 --> 00:29:19,420
+luego compañero bueno lo que se utilizan de manera masiva para entrar sistemas y hasta ahora en
+
+287
+00:29:19,420 --> 00:29:23,460
+opinión no había manera de declararlos de una manera limpia tienes que trampearlos como si fuera un
+
+288
+00:29:23,460 --> 00:29:29,820
+un api había una cosa que se llama callback que te quería declarar parcialmente ahora permiten
+
+289
+00:29:29,820 --> 00:29:33,700
+declarar web hook como un elemento más como patch con lo cual puedes tener unos catálogos mucho
+
+290
+00:29:33,700 --> 00:29:38,860
+más limpios y tú lo tienes específico para regenerar web hook esto está esto está guay y luego
+
+291
+00:29:38,860 --> 00:29:44,180
+rehusabilidad el que haya tenido que crear documentos de explicación de apis pues habrá dicho joder
+
+292
+00:29:44,180 --> 00:29:49,780
+tienes que escribir lo mismo un montón de veces porque no puedes reutilizar operaciones y como es
+
+293
+00:29:49,780 --> 00:29:53,780
+un documento es un api res que va enfocada recursos tienes que reutilizar tienes que picar
+
+294
+00:29:53,780 --> 00:29:58,340
+muchas veces lo mismo pues en la nueva versión puedes reutilizar operaciones con lo cual el get
+
+295
+00:29:58,340 --> 00:30:02,780
+conferencias que había ahí hay veces que como son las apis res que son muy grandes tienes que
+
+296
+00:30:02,780 --> 00:30:08,780
+devolverlo en otro punto distinto de otra operación ahora mismo eso lo han arreglado porque en la parte
+
+297
+00:30:08,780 --> 00:30:12,780
+componentes se puede meter el elemento pata item pata item es toda una operación y ahora la puedes
+
+298
+00:30:12,780 --> 00:30:18,020
+reutilizar desde la parte de componentes y arriba pongo el tema de web hook entonces ahora con
+
+299
+00:30:18,020 --> 00:30:25,220
+muchísimo menos esfuerzo puedes hacer muchas más cosas vale en que están trabajando a futuro y
+
+300
+00:30:25,220 --> 00:30:30,260
+esto bueno alguien de dentro del del business gobernador me escribió me lo compartió con
+
+301
+00:30:30,260 --> 00:30:35,580
+mío o sea que esto es fres fres están trabajando con esa que se llama overlice o verlais permite
+
+302
+00:30:35,580 --> 00:30:39,780
+hacer transformaciones sobre una especificación o sea coger un documento de explicación y en base
+
+303
+00:30:39,780 --> 00:30:45,260
+a otro input transformarlo en otro lo que permite templatizar y evolucionar apis de una manera
+
+304
+00:30:45,260 --> 00:30:51,700
+bastante potente segundo hablantes de grpc grpc es un estándar que o sea que todavía no tiene un
+
+305
+00:30:51,700 --> 00:30:57,820
+un protocolo de especificación totalmente definido entonces en opn y pi están trabajando en que se
+
+306
+00:30:57,820 --> 00:31:02,900
+pueda manejar protobuf que es el tipo de dato que maneja grpc con lo cual probablemente si no tardan
+
+307
+00:31:02,900 --> 00:31:08,340
+dos o tres años en hacerlo pues podemos perder y pi que nos permita trabajar con grpc mucho mejor
+
+308
+00:31:11,140 --> 00:31:17,700
+y bueno a qué se enfrenta qué retos enfrenta al estándar pues primero a que la gente de
+
+309
+00:31:17,700 --> 00:31:24,340
+utilizar su agar 2.0 que es del 2014 en la última encuesta de postman decían que el 50% de la gente
+
+310
+00:31:24,340 --> 00:31:28,420
+todavía utiliza su agar 2 su agar 2 que todavía estaba tonitán el tío antes de que se lo compraran
+
+311
+00:31:28,420 --> 00:31:34,620
+y y por qué pues yo creo que mucha gente que todavía se piensa que son cosas distintas que
+
+312
+00:31:34,620 --> 00:31:38,580
+su agar y open api no es lo mismo pues es lo mismo lo único que lo cambiaron en el nombre o luego hay
+
+313
+00:31:38,580 --> 00:31:45,580
+gente también que piensa que opn api son las opn espacio api que son las apis públicas pues hay que
+
+314
+00:31:45,580 --> 00:31:50,140
+migrar y luego también yo creo que hay una cosa que los desarrolladores somos gente de costumbres
+
+315
+00:31:50,140 --> 00:31:57,100
+entonces cuando hay algo que funciona y están produciendo ahí desde el 2015 no lo toques tío pues hay
+
+316
+00:31:57,100 --> 00:32:00,140
+que cambiar vale hay que migrar es un reto bastante importante que está frenando la evolución del
+
+317
+00:32:00,140 --> 00:32:06,460
+estándar y hay que cambiar y luego os mostré la slide de cómo es el gobierno de opn api pues están
+
+318
+00:32:06,460 --> 00:32:10,060
+teniendo problemas de evolucionar rápido el estándar porque por mucho tiempo ha sido un modelo
+
+319
+00:32:10,060 --> 00:32:16,180
+gobierno que se llama lifetime dictator o algo así en el que las decisiones no son guiadas por la
+
+320
+00:32:16,180 --> 00:32:19,580
+mediator gracia sino que había un grupo de técnicos que quedan un poco el estándar y eso
+
+321
+00:32:19,580 --> 00:32:24,180
+funcionó al principio pero tiene que ser un modelo más guiado guiado a que quiere que quiera
+
+322
+00:32:24,180 --> 00:32:29,220
+contribuir que contribuye que contribuye y están en ese punto en el que quieren ver cómo pueden
+
+323
+00:32:29,220 --> 00:32:32,980
+cambiar el modelo gobierno pero no está siendo fácil porque ya es un hábito que ha oído por su
+
+324
+00:32:32,980 --> 00:32:41,980
+comunidad y lo que os comentaba de migración un montón de recursos lo he puesto en este
+
+325
+00:32:41,980 --> 00:32:50,900
+repo me he pasado un slide me parece bueno y las claves finales es una versión guay hay un montón
+
+326
+00:32:50,900 --> 00:32:56,860
+de tooling que te podría tener un ciclo y montar tu ciclo de vida y apiops de manera supersónica y
+
+327
+00:32:56,860 --> 00:33:15,340
+por favor si estoy utilizando su agar 2.0 migrar gracias enhorabuena muy buena la charla un montón
+
+328
+00:33:15,340 --> 00:33:20,860
+de información si queréis vamos mal de tiempo pero vamos a hacer dos preguntas por allí veo una y
+
+329
+00:33:20,860 --> 00:33:31,460
+por allí veo otras perdón a la de más buena me gustaría saber tu opinión con respecto a la
+
+330
+00:33:31,460 --> 00:33:38,220
+herramienta estas de de auto generación de la especificación porque supongo que por lo que
+
+331
+00:33:38,220 --> 00:33:45,220
+ha dicho de escribir primero el contrato supongo que en tuilo no la utiliza pero quiero saber
+
+332
+00:33:45,220 --> 00:33:51,340
+que opinas de generar la especificación de partir del código donde estás compañero
+
+333
+00:33:53,100 --> 00:33:57,700
+se puede hacer a ver sobre imagínate que tienes un proyecto que es personal y que eres tú o un
+
+334
+00:33:57,700 --> 00:34:04,060
+compañero pues ahí los posibilidades de impactar o de impactar al consumidor son mínimas entonces
+
+335
+00:34:04,060 --> 00:34:09,340
+en ese ámbito lo veo muy bien pero en un ámbito en el que son varios equipos colaborando y demás
+
+336
+00:34:09,340 --> 00:34:15,180
+requiere que tengas un conocimiento mucho más profundo de las herramientas se puede hacer si pero para
+
+337
+00:34:15,180 --> 00:34:20,380
+mí estás empezando a comprar billetes para la desgracia entonces se puede hacer y de hecho hay
+
+338
+00:34:20,380 --> 00:34:24,460
+un montón de conversaciones y discusiones al respecto se puede hacer si pero requiere que
+
+339
+00:34:24,460 --> 00:34:30,680
+controles mucho más los efectos secundarios vale vale gracias y hay tú en el país de un
+
+340
+00:34:30,680 --> 00:34:35,660
+país tú en pues para flags para fast api van las principales frameworks de desarrollo de
+
+341
+00:34:35,660 --> 00:34:42,740
+gracias muy bueno bueno primero muchas gracias por la charla me interesa mucho verla porque nosotros
+
+342
+00:34:42,740 --> 00:34:48,380
+usamos bastante en por ahora hasta ahora o penapi dos o su agres que es en lo mismo
+
+343
+00:34:51,660 --> 00:34:57,220
+por eso de todo usamos porque queremos generar buena documentación desde el propio yango resfraing
+
+344
+00:34:57,220 --> 00:35:02,060
+en nuestro caso y con esa documentación usamos generadores de código typescript para que todos
+
+345
+00:35:02,060 --> 00:35:07,500
+esos contratos de opena p lleguen al frontal y al final todos automatice y mola y los frontales
+
+346
+00:35:07,500 --> 00:35:11,900
+funcionen bien así si a un frontal no le va algo bien simplemente tiene que decir al baquín han
+
+347
+00:35:11,900 --> 00:35:16,460
+mejor ese contrato porque no está bien definido no está suficientemente bien especificado y si
+
+348
+00:35:16,460 --> 00:35:22,500
+verdad que llevo tres años viéndole faltas a opena p dos cosas que no termina de solucionar y
+
+349
+00:35:22,500 --> 00:35:27,660
+opinapi tres si la soluciona y siempre cada año así le doy una vuelta a ver cómo van los generadores
+
+350
+00:35:27,660 --> 00:35:32,940
+tanto de yango o rest a opena p tres como después de opena p tres hacia tepe script para intentar
+
+351
+00:35:32,940 --> 00:35:39,460
+montar los workflows y volveré a darle otra vuelta más porque visto que poco a poco avanzando
+
+352
+00:35:39,460 --> 00:35:44,980
+de 2017 que salió la tres es como la sinatura pendiente de cuando decías lo de hoy e ir usando
+
+353
+00:35:44,980 --> 00:35:48,940
+la tres porque así por final es como la pescadilla que se muere de la cola no usan la tres porque
+
+354
+00:35:48,940 --> 00:35:52,540
+los generadores no están pero los generadores no avanzan porque tú no fuerzas a usar la tres así
+
+355
+00:35:52,540 --> 00:35:58,220
+que bueno simplemente darte la gracia y me me anima de nuevo a dar otro empujón hacia hacia tres ahí el
+
+356
+00:35:58,220 --> 00:36:02,660
+consejo que os puedo dar y esto ya entramos en tema de opensource que también podemos hablar largo
+
+357
+00:36:02,660 --> 00:36:09,220
+y tendido si estáis utilizando un framework opensource para generación de código al final siempre
+
+358
+00:36:09,220 --> 00:36:13,780
+puedes dar el paso y en vez de esperar hacer la contribución y seguramente hay que montar
+
+359
+00:36:13,780 --> 00:36:18,540
+de gente en todas las partes del mundo te amará y es también ya que estáis tomando la decisión
+
+360
+00:36:18,540 --> 00:36:23,220
+de utilizar esa herramienta tomáis un poco el control también de hacia dónde va no sólo a
+
+361
+00:36:23,220 --> 00:36:27,740
+arreglar lo que no te funciona sino que porque no proponer fichos nuevas
+
+362
+00:36:32,180 --> 00:36:38,220
+hola perfecto no hay tiempo para más si tienen más preguntas te pueden preguntar por discord
+
+363
+00:36:38,220 --> 00:36:48,980
+me podéis preguntar fuera o en twitter o en algún bar tomando una capita
+

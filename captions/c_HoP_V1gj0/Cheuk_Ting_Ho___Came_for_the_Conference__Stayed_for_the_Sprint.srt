@@ -1,0 +1,988 @@
+1
+00:00:00,000 --> 00:00:25,400
+Hello, thank you for having the English track which I can present because my Spanish, if
+
+2
+00:00:25,400 --> 00:00:32,120
+you have spoken to me before, then you know it's not good. Hopefully next year I can give
+
+3
+00:00:32,120 --> 00:00:38,320
+a talk in Spanish maybe. Anyway, thank you so much for coming as well to listen to this
+
+4
+00:00:38,320 --> 00:00:46,520
+talk instead of other amazing talk. First of all, this is the slides and my Twitter handle
+
+5
+00:00:46,520 --> 00:00:53,560
+and stuff. I love people tweet about me, so please. If you love tweeting things, we are
+
+6
+00:00:53,560 --> 00:01:02,520
+a perfect match so you can tweet about me. So, yeah. So for those of you here, so do
+
+7
+00:01:02,520 --> 00:01:06,280
+you come here because you have been to a sprint, you know what is a sprint or you have no idea,
+
+8
+00:01:06,280 --> 00:01:11,600
+you just come here just to see what I'm going to talk about. So who have attended the sprint?
+
+9
+00:01:11,600 --> 00:01:17,920
+So, oh, there's a few of you. So you know what a sprint is, which is great. But before
+
+10
+00:01:17,920 --> 00:01:24,720
+I dive into the talk, I would like to introduce you to a different type of sprint. So, oh,
+
+11
+00:01:24,720 --> 00:01:30,720
+the picture is not loading. So, okay. I would basically, I don't know why the picture is
+
+12
+00:01:30,720 --> 00:01:37,080
+not loading, but maybe because it needs to be on. Anyway, this one actually you can find
+
+13
+00:01:37,080 --> 00:01:44,320
+the picture on my Twitter. So I was holding an ice cream on the street of Granada. So
+
+14
+00:01:44,320 --> 00:01:52,480
+I was having a Granada ice cream in Granada. So it's actually a joke that I sometimes,
+
+15
+00:01:52,480 --> 00:01:57,680
+you know, during a conference, I would, you know, type in the channel saying I'm going
+
+16
+00:01:57,680 --> 00:02:02,400
+for an ice cream sprint who's coming with me and like sometimes people come with me,
+
+17
+00:02:02,400 --> 00:02:05,640
+they thought it's a sprint at the conference. So they were like, oh, I've heard good things
+
+18
+00:02:05,640 --> 00:02:11,640
+about the sprint and join me and they end up eating an ice cream. So that's what I sometimes
+
+19
+00:02:11,640 --> 00:02:19,000
+do. So I'm checked. Oh, this is loading. Good. Okay. So hello, I'm checked. And I work in
+
+20
+00:02:19,000 --> 00:02:22,840
+a lot of open source project. I love open source project. I think open source project
+
+21
+00:02:22,840 --> 00:02:31,400
+are important. And also I, yeah, so I also organize a lot of conference. I also organize
+
+22
+00:02:31,400 --> 00:02:35,680
+something called pattern sprints in the past. It's not coming back after the pandemic yet
+
+23
+00:02:35,680 --> 00:02:41,840
+because I was too busy. But anyway, so this is all the conference that I've been involved
+
+24
+00:02:41,840 --> 00:02:47,480
+in the past. Also I stream a little bit on Twitch during the pandemic because I was having
+
+25
+00:02:47,480 --> 00:02:53,960
+too much time at hand. So that's what I did. So what is the sprint that we got to talk
+
+26
+00:02:53,960 --> 00:02:59,920
+about now? It's not the sport. For those of you who are very athletic and love running,
+
+27
+00:02:59,920 --> 00:03:06,760
+so that's not that type of sprint. I actually have been to a lot of sprints, but I don't
+
+28
+00:03:06,760 --> 00:03:11,960
+actually understand why it's called a sprint. And what does it mean? So I, you know, I have
+
+29
+00:03:11,960 --> 00:03:16,240
+to give a talk, right? So I have to look it up. I have to find it on the internet. And
+
+30
+00:03:16,240 --> 00:03:22,080
+then, so in the internet actually says that in, you know, software development, sometimes,
+
+31
+00:03:22,080 --> 00:03:27,760
+you know, we have this development cycle and then you will have these kind of sprints.
+
+32
+00:03:27,760 --> 00:03:33,480
+That means that for a small team of member, they have to, you know, they may have a lot
+
+33
+00:03:33,480 --> 00:03:39,320
+of problem to solve or they have a lot of new features need to add. So they would, you
+
+34
+00:03:39,320 --> 00:03:47,000
+know, put that go into small task and then try to finish it within a set amount of time.
+
+35
+00:03:47,000 --> 00:03:51,600
+So that's the sprint. It's software development. So basically just sit together and finish
+
+36
+00:03:51,600 --> 00:03:58,360
+some small tasks. That's basically what a sprint means in software development. But
+
+37
+00:03:58,360 --> 00:04:05,040
+when we go to a conference, we are not actually developing a software. Nobody pay, well, nobody
+
+38
+00:04:05,040 --> 00:04:10,960
+got to pay you, you know, give you money in the conference. So you, you know, you don't
+
+39
+00:04:10,960 --> 00:04:16,720
+go to the conference to work, well, except maybe me, but you don't, you don't, you know,
+
+40
+00:04:16,720 --> 00:04:22,200
+you don't go to a conference, you know, to expect to be developing some software and
+
+41
+00:04:22,200 --> 00:04:28,160
+get paid, right? So what does it mean about a sprint in a conference? So in the sprint
+
+42
+00:04:28,160 --> 00:04:32,160
+in the conference, so I think some of you already know, especially for those of you
+
+43
+00:04:32,160 --> 00:04:38,360
+who has been to a sprint, that basically it's just fixing some bugs and writing some, you
+
+44
+00:04:38,360 --> 00:04:44,440
+know, a test and then closing some issues. Isn't it? Like we just, you know, go to find
+
+45
+00:04:44,440 --> 00:04:52,000
+an open source project and then go to the GitHub and then do what, you know, you think
+
+46
+00:04:52,000 --> 00:04:58,680
+a contribution would be. And it's just to find issues and try to make a PR, you know,
+
+47
+00:04:58,680 --> 00:05:07,080
+make it do be accepted. And then everybody's happy. But I would like to say that a sprint
+
+48
+00:05:07,080 --> 00:05:13,400
+contribution is just, is not limited to just code contribution. A lot of time people mistaken
+
+49
+00:05:13,400 --> 00:05:19,320
+and thought that open source contribution need to be technical, need to be some code
+
+50
+00:05:19,320 --> 00:05:25,800
+or some tests. Some people may think, oh yeah, documentation. Yes. But that's, you know,
+
+51
+00:05:25,800 --> 00:05:29,120
+that's some people like, that's people with experience with things that documentation
+
+52
+00:05:29,120 --> 00:05:35,760
+is also important. Most people just think that I need to write some code to contribute
+
+53
+00:05:35,760 --> 00:05:43,040
+to a project, which I'm going to tell you today. That's not true. This is, I was just
+
+54
+00:05:43,040 --> 00:05:48,040
+inspired by the keynote just before because she was talking about the conversational AI
+
+55
+00:05:48,040 --> 00:05:53,520
+and things like that. I would like to introduce you to this. This is a Mozilla common voice
+
+56
+00:05:53,520 --> 00:06:02,400
+project. I have contributed to it before, but I didn't write any code. I just go and
+
+57
+00:06:02,400 --> 00:06:09,520
+speak my mother tongue because at that time I found this project by a tweet, someone saying
+
+58
+00:06:09,520 --> 00:06:15,400
+that, you know, oh, they need a Cantonese speaker to contribute to this database and
+
+59
+00:06:15,400 --> 00:06:22,840
+to, you know, also listen to verify whether some recordings are correct and things like
+
+60
+00:06:22,840 --> 00:06:30,360
+that. So, when I was at the keynote, I was, you know, trying to understand it, I think,
+
+61
+00:06:30,360 --> 00:06:36,200
+oh, yes, because in a lot of machine learning and things like that, it's written or the
+
+62
+00:06:36,200 --> 00:06:44,040
+database that they use would be in more popular language, English, or, you know, now they're,
+
+63
+00:06:44,040 --> 00:06:49,400
+like, I think that by the example that was shown in the keynote, the Spanish model was
+
+64
+00:06:49,400 --> 00:06:54,200
+quite good as well. But if you speak any other language or maybe, you know, you know, someone
+
+65
+00:06:54,200 --> 00:06:59,320
+who speak any other language that is less spoken, then that may be something you can
+
+66
+00:06:59,320 --> 00:07:08,040
+contribute to open source. It's not code. It's just what you can do to help the community.
+
+67
+00:07:08,040 --> 00:07:12,560
+This is again a picture that's missing. I forgot that the picture won't work if I use
+
+68
+00:07:12,560 --> 00:07:18,240
+another computer. But anyway, this picture, again, you can find it on Twitter. So this
+
+69
+00:07:18,240 --> 00:07:26,080
+is a picture that I was talking in PyCon Portugal, actually, sorry, it's JungleCon Europe in
+
+70
+00:07:26,080 --> 00:07:31,000
+Portugal last week. So this is at the end of the conference. I took a picture at the
+
+71
+00:07:31,000 --> 00:07:36,760
+auditorium where, during the closing, when there are lots of volunteers that come on
+
+72
+00:07:36,760 --> 00:07:42,160
+stage and then, you know, everybody claps because we thank them because they contribute
+
+73
+00:07:42,160 --> 00:07:49,480
+to the community. They didn't, like, well, maybe they also can, you know, they're also
+
+74
+00:07:49,480 --> 00:07:54,680
+technical, maybe they can code or maybe they work as a software developer, but they contribute
+
+75
+00:07:54,680 --> 00:08:02,600
+to the community by other things, by organizing things, by, you know, and organize the coffee
+
+76
+00:08:02,600 --> 00:08:07,840
+break, you know, code won't give you coffee break and the yummy pastry that you just had,
+
+77
+00:08:07,840 --> 00:08:13,000
+right? So someone needs to organize that. Someone needs to make that happen. And there's also
+
+78
+00:08:13,000 --> 00:08:21,600
+contribution to organize events to do stuff that's not code-based for the community. But
+
+79
+00:08:21,600 --> 00:08:28,160
+then go back to the sprints, like, why we do the sprints? Why we just, like, not, you
+
+80
+00:08:28,160 --> 00:08:36,080
+know, do what we want for the community? Well, because the sprint is actually something
+
+81
+00:08:36,080 --> 00:08:43,920
+that would really help you in your journey in the community, I would say, because there
+
+82
+00:08:43,920 --> 00:08:49,120
+are a few benefits that I can think of that I think that would really, you would really
+
+83
+00:08:49,120 --> 00:08:57,520
+enjoy and benefit from the sprint. For example, you can make new friends. Some example, including,
+
+84
+00:08:57,520 --> 00:09:05,000
+you know, if you go to a sprint at the conference, you will meet some project maintainers that
+
+85
+00:09:05,000 --> 00:09:12,040
+you may have used the package or the library for your work for a long time, but you have
+
+86
+00:09:12,040 --> 00:09:18,520
+never met the maintainers. In my example, when I was started working as a data scientist,
+
+87
+00:09:18,520 --> 00:09:25,440
+I used pandas a lot, right? So I hope all of you have heard about pandas, at least. So
+
+88
+00:09:25,440 --> 00:09:32,560
+it's a library for managing data, so it's very popular. And by going to a sprint, I
+
+89
+00:09:32,560 --> 00:09:37,440
+matched the maintainer of pandas for the first time, and they are really nice people. I
+
+90
+00:09:37,440 --> 00:09:43,720
+wasn't expecting that because at that time I was not that, you know, I was new to the
+
+91
+00:09:43,720 --> 00:09:48,800
+community. I don't understand too much how it works. I just think that all these people
+
+92
+00:09:48,800 --> 00:09:55,000
+must be genius that they create this stuff for us to use for free. But when I meet them,
+
+93
+00:09:55,000 --> 00:10:00,160
+they are actually real people. They are just like you and me, but they may have created
+
+94
+00:10:00,160 --> 00:10:07,080
+something or working on something that is very popular. I do have a lot of respect for
+
+95
+00:10:07,080 --> 00:10:10,720
+them, but they are also very nice. And just like they would talk to you, they would, you
+
+96
+00:10:10,720 --> 00:10:15,520
+know, so you thought they are, oh my God, like these people, maybe they are too good
+
+97
+00:10:15,520 --> 00:10:19,480
+for me to talk to. No, they would talk to you. It's very nice that you become their
+
+98
+00:10:19,480 --> 00:10:25,720
+friends. And then you can learn about a new package. There are things that you may have
+
+99
+00:10:25,720 --> 00:10:31,960
+not never heard of. You may, it's maybe something that is outside of your work domain that you
+
+100
+00:10:31,960 --> 00:10:39,800
+may never, ever know what it's going to do. If you go to a sprint, then usually at the
+
+101
+00:10:39,800 --> 00:10:46,080
+beginning of the sprint, people will come and explain what the project they are leading.
+
+102
+00:10:46,080 --> 00:10:52,760
+So some of the fun ones are like, for example, I learned about a library called Pi Game Zero
+
+103
+00:10:52,760 --> 00:10:57,320
+that actually is about making games or pipe them. Something that I would never think about
+
+104
+00:10:57,320 --> 00:11:04,440
+I would know and pipe and could do at that time. And so I would know about a new project
+
+105
+00:11:04,440 --> 00:11:09,040
+and then a new package that you have never heard of. And if it's not for the sprint,
+
+106
+00:11:09,040 --> 00:11:15,880
+I would never get a chance to know what it is and look at the code and try it out myself.
+
+107
+00:11:15,880 --> 00:11:22,960
+Also to get inspired, a lot of times, you know, you keep working for your work or something,
+
+108
+00:11:22,960 --> 00:11:28,360
+your code, you use the package that you use every day, you thought you know it inside
+
+109
+00:11:28,360 --> 00:11:34,680
+out, you thought you are a very advanced user. But at the sprint, when you actually look
+
+110
+00:11:34,680 --> 00:11:39,800
+at the source code of the project, then you would actually understand that there may be
+
+111
+00:11:39,800 --> 00:11:45,320
+another better way of doing it. That you have never thought of if you are just doing your
+
+112
+00:11:45,320 --> 00:11:52,400
+day-to-day work. So which is very good. And something that, you know, I think it's an
+
+113
+00:11:52,400 --> 00:11:56,600
+experience that you can't really get a lot when you are just working with the same group
+
+114
+00:11:56,600 --> 00:12:02,440
+of people in your company and things like that. The last thing is to collaborate. A
+
+115
+00:12:02,440 --> 00:12:10,520
+lot of times, I have, I see people that they are maybe working on similar libraries. They
+
+116
+00:12:10,520 --> 00:12:17,080
+would actually cross-check how do you do this? Or maybe there are some upstream dependencies
+
+117
+00:12:17,080 --> 00:12:25,000
+that, you know, for example, in Python US, we have sprints. And then I was working with
+
+118
+00:12:25,000 --> 00:12:32,760
+a maintainer of the hypothesis. So, you know, we were testing our things and then we found
+
+119
+00:12:32,760 --> 00:12:40,160
+out, oh, there is something that maybe the newer version of Python, C Python, that gives
+
+120
+00:12:40,160 --> 00:12:45,960
+us a strange error or something like that. So there is a chance because the C Python
+
+121
+00:12:45,960 --> 00:12:50,600
+developers are sitting in the next room, just next door. You can go there and hello, I have
+
+122
+00:12:50,600 --> 00:12:57,840
+this problem. And talk to them. So not just that, but other libraries like PyTest. We
+
+123
+00:12:57,840 --> 00:13:02,560
+also try to test a lot of things with PyTest. And sometimes if we have a question, we can
+
+124
+00:13:02,560 --> 00:13:09,280
+just ask the people working on PyTest. So it's very easy to collaborate. Instead of
+
+125
+00:13:09,280 --> 00:13:13,080
+you may have to open an issue, well, you can still open an issue during the sprints.
+
+126
+00:13:13,080 --> 00:13:18,200
+But on top of that, you know, there is something that you may be lost in the communication,
+
+127
+00:13:18,200 --> 00:13:23,920
+in the typing. You can just talk to the real person who may take care of that issue for
+
+128
+00:13:23,920 --> 00:13:30,560
+you. So that's really good. So this is, again, the picture of the ice cream because I want
+
+129
+00:13:30,560 --> 00:13:35,880
+to say that with the ice cream sprints, you can also make friends. Maybe exchange ideas,
+
+130
+00:13:35,880 --> 00:13:43,360
+but maybe not sit down and code. So that's the only difference. So you do learn a lot
+
+131
+00:13:43,360 --> 00:13:49,720
+in the sprint, which is something that I am advocating for, that for people, because
+
+132
+00:13:49,720 --> 00:13:55,280
+I've seen a lot of times during the conference. You know, some conference they will have sprint
+
+133
+00:13:55,280 --> 00:14:02,840
+date as their tradition. But I have met some participant that they would just disappear
+
+134
+00:14:02,840 --> 00:14:07,520
+during the sprint date. It's fine, but I would recommend if you have never tried, maybe think
+
+135
+00:14:07,520 --> 00:14:13,840
+about that. I will tell you my personal experience. Again, I was sprinting on hypothesis. So who
+
+136
+00:14:13,840 --> 00:14:20,360
+have used hypothesis before and know what it is? So one, two, a few. Okay, good. So hypothesis
+
+137
+00:14:20,360 --> 00:14:28,200
+is a testing library that is doing property-based testing. So I won't dive into too much detail,
+
+138
+00:14:28,200 --> 00:14:32,680
+but it's just a testing library. If you want to know more, you can watch my previous talks
+
+139
+00:14:32,680 --> 00:14:38,960
+in other conferences. So I was working on hypothesis. I have used hypothesis before,
+
+140
+00:14:38,960 --> 00:14:46,560
+a little bit. But then by going to the sprint, I learned something new, because who knows
+
+141
+00:14:46,560 --> 00:14:53,960
+that there is a ghost writer in hypothesis? None. Yeah, so I wasn't one of you. I didn't
+
+142
+00:14:53,960 --> 00:14:59,240
+heard about ghost writer before, but because I was at the sprints, I was contributing to
+
+143
+00:14:59,240 --> 00:15:04,520
+a hypothesis. And then I was tackling this issue with ghost writer. Then I was scratching
+
+144
+00:15:04,520 --> 00:15:10,880
+my head. Wait a second. What is a ghost writer? So I read the documentation of ghost writer.
+
+145
+00:15:10,880 --> 00:15:16,360
+I understand what it's trying to achieve. Look at the code base and try to solve the
+
+146
+00:15:16,360 --> 00:15:22,560
+problem that that issue was describing. So by going to the sprints, by contribution,
+
+147
+00:15:22,560 --> 00:15:28,040
+you learn something new that you may overlook, because you have never used it before and
+
+148
+00:15:28,040 --> 00:15:36,840
+never heard of it before. So that's the benefit of doing that. There's also other great ideas
+
+149
+00:15:36,840 --> 00:15:42,040
+can come from the sprints. A lot of times, you know, we have a lot of amazing projects
+
+150
+00:15:42,040 --> 00:15:49,240
+that people are doing during the sprint. So this is actually something that all of you
+
+151
+00:15:49,240 --> 00:15:55,000
+can contribute, because this is the project of translating the Python documentation into
+
+152
+00:15:55,000 --> 00:16:02,360
+Spanish. So I think the first time I heard about this effort was a few years ago, I think,
+
+153
+00:16:02,360 --> 00:16:09,360
+in maybe Euro Python. But I think it started in Python US years ago. So I think it's still
+
+154
+00:16:09,360 --> 00:16:16,560
+ongoing because you can see that it's now Python 3.10.7, but Python 3.11 is coming out
+
+155
+00:16:16,560 --> 00:16:23,440
+and there will be new features and new things that need to be translated. So next time,
+
+156
+00:16:23,440 --> 00:16:28,720
+you know, maybe consider, you know, maybe talk to someone who is more experienced in
+
+157
+00:16:28,720 --> 00:16:35,320
+this effort and then if you go to a sprints, you can maybe lead the effort to start translating
+
+158
+00:16:35,320 --> 00:16:42,400
+some new things about the C Python documentation. So by doing that, actually, you are contributing
+
+159
+00:16:42,400 --> 00:16:49,320
+also to C Python, going back to the point that not all contribution are code contribution.
+
+160
+00:16:49,320 --> 00:17:01,600
+It's also a contribution, so highly recommend that. So to sum up, I think, is like everything
+
+161
+00:17:01,600 --> 00:17:08,640
+just go back to the community. So missing picture again. So this picture, actually, you
+
+162
+00:17:08,640 --> 00:17:13,120
+don't have to look at it online, you can just go downstairs, back to the main hall. Next
+
+163
+00:17:13,120 --> 00:17:19,280
+to the registration, there was a bot. So there was a bot yesterday, I took a picture yesterday,
+
+164
+00:17:19,280 --> 00:17:25,800
+so it asked what does Python mean to you? And people write stuff there, right? So I
+
+165
+00:17:25,800 --> 00:17:32,440
+try to understand what people are written down. So I saw one person with the green pen
+
+166
+00:17:32,440 --> 00:17:41,160
+written down community. Which is community. So what Python means to you is the community.
+
+167
+00:17:41,160 --> 00:17:49,480
+And I totally agree on that. Because for me, a lot of people ask me, why do you prefer
+
+168
+00:17:49,480 --> 00:17:55,840
+Python? It's a very good programming language. I would answer that. I am not technical enough
+
+169
+00:17:55,840 --> 00:18:01,320
+to judge different languages because I can write Python, I learn a little bit of maybe
+
+170
+00:18:01,320 --> 00:18:06,720
+JavaScript and things, but I don't know enough to judge what programming language is better
+
+171
+00:18:06,720 --> 00:18:11,240
+than the other. Or maybe there's no good answer to that because they may be for different
+
+172
+00:18:11,240 --> 00:18:17,360
+tasks. But I can proudly tell people that the Python community could probably be the
+
+173
+00:18:17,360 --> 00:18:25,160
+best. That's why I am in this zone. I am in the Python community. So community is a very
+
+174
+00:18:25,160 --> 00:18:34,480
+important part of Python, I would say. So without the community, there will be no sprints.
+
+175
+00:18:34,480 --> 00:18:39,080
+Just like I said before, things doesn't just happen. Just like the coffee break, just like
+
+176
+00:18:39,080 --> 00:18:44,840
+the keynote, just like anything, the room that you are sitting in right now. Without the
+
+177
+00:18:44,840 --> 00:18:51,120
+community, without people organizing it, there will be no sprints. Nothing will happen. There
+
+178
+00:18:51,120 --> 00:18:57,120
+will be no conference and no sprints. But without the sprints, there will be less contributions.
+
+179
+00:18:57,120 --> 00:19:03,080
+People are less aware that they can actually do something for the community. They can translate
+
+180
+00:19:03,080 --> 00:19:07,160
+the documentation, they can, you know, if you can, you can also work on a code if you
+
+181
+00:19:07,160 --> 00:19:12,480
+want to. Or you can, you know, try some new libraries and find out some issues and report
+
+182
+00:19:12,480 --> 00:19:18,880
+it back. Without the sprints, there may still be contributions, but there will be much less.
+
+183
+00:19:18,880 --> 00:19:24,080
+Because you are refined in your zone of your work. Maybe a few, you know, pet projects
+
+184
+00:19:24,080 --> 00:19:31,080
+and hobby projects, but it's quite limited. And then without the contributions, there's
+
+185
+00:19:31,080 --> 00:19:38,880
+no community. Because, again, you know, without the contribution, without people putting effort
+
+186
+00:19:38,880 --> 00:19:46,280
+in, we won't be gathering here. The Python community won't be the same. So this is the
+
+187
+00:19:46,280 --> 00:19:51,880
+picture. Again, look up on my Twitter. Actually, don't look it up on my Twitter. Look it up
+
+188
+00:19:51,880 --> 00:20:00,920
+on the EuroSciPy Twitter. This is probably the top tweet from EuroSciPy. So EuroSciPy
+
+189
+00:20:00,920 --> 00:20:10,720
+happened at the end of August. So just two months ago now. Or actually, like last, yeah,
+
+190
+00:20:10,720 --> 00:20:19,120
+it's like end of August. So it was EuroSciPy. And then it's a five-day conference, right?
+
+191
+00:20:19,120 --> 00:20:23,280
+Very intense, you know. If you have been to a conference, you know, conference is, you
+
+192
+00:20:23,280 --> 00:20:27,560
+know, you socialize with people when you work, you know, have to use your brain because you
+
+193
+00:20:27,560 --> 00:20:34,720
+go to workshops and talks and then you socialize again at the end and then maybe go out late.
+
+194
+00:20:34,720 --> 00:20:41,000
+But at the end of EuroSciPy, there's a day of sprint. And this is the, supposedly, like
+
+195
+00:20:41,000 --> 00:20:49,280
+if it doesn't mess up, the picture was taken during the sprint. And it was a room full
+
+196
+00:20:49,280 --> 00:20:55,000
+of people. I was very impressed because I told you, I've met people that sometimes
+
+197
+00:20:55,000 --> 00:21:01,360
+they left after the conference. They may be too tired or they have other things at home
+
+198
+00:21:01,360 --> 00:21:05,640
+they have to take care of, they have to go back early or they would rather check out the
+
+199
+00:21:05,640 --> 00:21:12,200
+city. But at EuroSciPy, it was the first, actually, it was the first time they organized
+
+200
+00:21:12,200 --> 00:21:19,600
+in Basel. So it's a new city for a lot of people. People decided to not go around but
+
+201
+00:21:19,600 --> 00:21:25,760
+stay in the room, actually two rooms but they are both full, around 70 people. Compared
+
+202
+00:21:25,760 --> 00:21:31,080
+to a conference, there's around 200 people that stay in the room to contribute to the
+
+203
+00:21:31,080 --> 00:21:37,640
+open source project. I was very impressed and I hope that may be the case for a lot of different
+
+204
+00:21:37,640 --> 00:21:46,520
+conferences as well. So I've told you a lot about why sprint is good, why contributing
+
+205
+00:21:46,520 --> 00:21:55,240
+is good. But sometimes we have challenges. So who know about HectorvaFest, which is happening
+
+206
+00:21:55,240 --> 00:22:05,040
+now? Yes, some of you. So every year there's this event called HectorvaFest. The idea is
+
+207
+00:22:05,040 --> 00:22:11,200
+to encourage people to contribute to open source project. I haven't been actively participated
+
+208
+00:22:11,200 --> 00:22:17,160
+for a few years but in the past when I was actively participating, they would give free
+
+209
+00:22:17,160 --> 00:22:24,360
+t-shirts for people who signed up and contribute to free pool requests, to free contribution,
+
+210
+00:22:24,360 --> 00:22:32,440
+you have a free t-shirt. The idea is really good but technically it created some problem
+
+211
+00:22:32,440 --> 00:22:38,880
+because they create a lot of noise, a lot of people. I can't tell you what their intention
+
+212
+00:22:38,880 --> 00:22:45,880
+is but I have been told by some maintainers that there are some pool requests that are
+
+213
+00:22:45,880 --> 00:22:58,880
+not a very effective pool request because they may fix some minor typos or just some
+
+214
+00:22:58,880 --> 00:23:04,000
+even, for example today I saw a tweet, one maintainer was saying someone just go to the
+
+215
+00:23:04,000 --> 00:23:12,200
+Q&A page and add question and answer in front of the question and answers, which is not
+
+216
+00:23:12,200 --> 00:23:18,760
+necessary but people do make that kind of pool request, try to finish the quest to get
+
+217
+00:23:18,760 --> 00:23:29,280
+the free t-shirt. So it's a lot of maintainers nowadays, they doubt about this effort, they
+
+218
+00:23:29,280 --> 00:23:37,200
+doubt about whether this is a healthy thing to encourage people to contribute like that.
+
+219
+00:23:37,200 --> 00:23:47,120
+I would say that yes, Hector Buffett's do have a fault, some people may not truly understand
+
+220
+00:23:47,120 --> 00:23:55,240
+the idea of contributing and they just want to get the t-shirt but I think by organizing
+
+221
+00:23:55,240 --> 00:24:03,040
+a sprinch those things can be minimized because in a sprinch people sit together in the room,
+
+222
+00:24:03,040 --> 00:24:07,960
+you can have an introductory talk or something to explain to people what's the idea of a
+
+223
+00:24:07,960 --> 00:24:16,000
+contribution and how they can contribute and also there will be better guidance because
+
+224
+00:24:16,000 --> 00:24:22,160
+the maintainer will be there sitting with them and guide them through some pool requests
+
+225
+00:24:22,160 --> 00:24:28,320
+or issues that is suited for their ability so they don't have to be struggling in finding
+
+226
+00:24:28,320 --> 00:24:33,080
+something that they can do so they end up doing something that is not very helpful for
+
+227
+00:24:33,080 --> 00:24:41,760
+the project. So that's why I think that if you ask me how to improve Hector Buffett's,
+
+228
+00:24:41,760 --> 00:24:49,880
+I would say we can't just run Hector Buffett's without the support with the sprints that
+
+229
+00:24:49,880 --> 00:24:58,200
+we actually put an effort to guide people to contribute and also some maintainer may
+
+230
+00:24:58,200 --> 00:25:04,280
+say that running a sprinch, guiding people to solve the problem is more difficult than
+
+231
+00:25:04,280 --> 00:25:10,400
+solving the problem themselves but why do they do that? Same question may happen in your
+
+232
+00:25:10,400 --> 00:25:16,120
+company that why do you teach your junior developers or interns to do stuff? It's faster
+
+233
+00:25:16,120 --> 00:25:21,480
+to do it yourself. If you stay up, maybe stay later at work one day you can finish all of
+
+234
+00:25:21,480 --> 00:25:31,880
+them. Why spend another extra day or two to teach them, to guide them, to make them grow?
+
+235
+00:25:31,880 --> 00:25:37,720
+The problem is we need to make them grow. We need to have people. One day we would all
+
+236
+00:25:37,720 --> 00:25:43,440
+want to be retired and if young people or new people doesn't come in and get the help
+
+237
+00:25:43,440 --> 00:25:51,040
+that they need, then we may not have good developers or it will only be the developers
+
+238
+00:25:51,040 --> 00:26:01,520
+who are just like in the environment that they have advantage of. That's why if we want
+
+239
+00:26:01,520 --> 00:26:09,160
+a community with more diversity and inclusion, we should also put in more efforts to support
+
+240
+00:26:09,160 --> 00:26:14,520
+people who are maybe less confident because they see themselves as minority and you need
+
+241
+00:26:14,520 --> 00:26:21,080
+to give them more encouragement and more support. That's why if you are a maintainer or if
+
+242
+00:26:21,080 --> 00:26:26,280
+you are a more senior developer, try to help others, try to be kind and help younger or
+
+243
+00:26:26,280 --> 00:26:37,080
+maybe newer people in the community to grow, to learn. I think that's a D.N. of my talk.
+
+244
+00:26:37,080 --> 00:26:47,720
+I would like to ask this question and leave this to you. Do we want the spring at PyCon
+
+245
+00:26:47,720 --> 00:26:55,960
+Spain next year? If your answer is yes, I would love to see that. Talk to the organizers
+
+246
+00:26:55,960 --> 00:27:01,840
+and tell them that you would love to join us. You would love to be sitting with amazing
+
+247
+00:27:01,840 --> 00:27:08,840
+people next year and maybe it will happen. That's it for me. Thank you.
+

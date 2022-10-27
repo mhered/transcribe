@@ -1,0 +1,1736 @@
+1
+00:00:00,000 --> 00:00:20,200
+So, yeah, without further ado then let's welcome Vasia.
+
+2
+00:00:20,200 --> 00:00:27,960
+Hello everyone and thank you for coming.
+
+3
+00:00:27,960 --> 00:00:28,960
+Is the sound okay?
+
+4
+00:00:28,960 --> 00:00:29,960
+Can you hear me okay?
+
+5
+00:00:29,960 --> 00:00:30,960
+Okay.
+
+6
+00:00:30,960 --> 00:00:35,040
+Thanks very much for coming and thank you to the organizers for having us here and welcome
+
+7
+00:00:35,040 --> 00:00:37,680
+to fail fast ML ops.
+
+8
+00:00:37,680 --> 00:00:41,360
+So just a little note before I begin.
+
+9
+00:00:41,360 --> 00:00:47,280
+At intelligence we use Python for pretty much all machine learning projects that we do.
+
+10
+00:00:47,280 --> 00:00:52,280
+For this talk we're mostly going to be talking about more high level concepts so in case
+
+11
+00:00:52,280 --> 00:00:57,120
+anybody is interested in deploying machine learning solutions in any other language,
+
+12
+00:00:57,120 --> 00:01:00,680
+hopefully it will be just as relevant.
+
+13
+00:01:00,680 --> 00:01:06,440
+So with that let's begin and I like to start by deconstructing a little bit the title because
+
+14
+00:01:06,440 --> 00:01:13,080
+we have some terms there that people might understand with different meanings.
+
+15
+00:01:13,080 --> 00:01:14,840
+So first of all fail fast.
+
+16
+00:01:14,840 --> 00:01:17,600
+Many of you will be familiar with this phrase.
+
+17
+00:01:17,600 --> 00:01:19,400
+I may have heard it before.
+
+18
+00:01:19,400 --> 00:01:26,440
+Fail fast is a guiding principle that prioritizes fast execution over perfect execution.
+
+19
+00:01:26,440 --> 00:01:30,680
+So the idea is if I spent too long trying to perfect my solution before putting it out
+
+20
+00:01:30,680 --> 00:01:35,520
+there into the world, the situation may have changed and by the time it's deployed it may
+
+21
+00:01:35,520 --> 00:01:40,200
+no longer be fully relevant or as relevant as intended.
+
+22
+00:01:40,200 --> 00:01:46,000
+And so according to the fail fast principle the idea is it's best to deploy the first
+
+23
+00:01:46,000 --> 00:01:52,720
+iteration as fast as possible and then iterate based on the feedback received.
+
+24
+00:01:52,720 --> 00:01:54,720
+Next up ML ops.
+
+25
+00:01:54,720 --> 00:02:03,440
+I include here a quote from Google where I'd like to highlight a couple of aspects from
+
+26
+00:02:03,440 --> 00:02:07,160
+their influential article on ML ops.
+
+27
+00:02:07,160 --> 00:02:14,080
+So first of all ML ops as they highlight here is the first in ML engineering culture
+
+28
+00:02:14,080 --> 00:02:15,280
+and practice.
+
+29
+00:02:15,280 --> 00:02:19,400
+So we're not talking about specific set of technologies or a specific role on machine
+
+30
+00:02:19,400 --> 00:02:21,000
+learning projects.
+
+31
+00:02:21,000 --> 00:02:23,120
+It's about the culture and practice.
+
+32
+00:02:23,120 --> 00:02:27,480
+And the second aspect, so two specific process to highlight.
+
+33
+00:02:27,480 --> 00:02:33,040
+So automation and monitoring at all steps of the construction of a machine learning system.
+
+34
+00:02:33,040 --> 00:02:38,800
+So in practical terms the term ML ops tends to be used a little bit more broadly as well
+
+35
+00:02:38,800 --> 00:02:44,200
+to refer to a wider set of good practices when it comes to developing and deploying
+
+36
+00:02:44,200 --> 00:02:46,000
+machine learning solutions.
+
+37
+00:02:46,000 --> 00:02:52,640
+Especially those that help to smooth the transition between the development and the operation
+
+38
+00:02:52,640 --> 00:02:55,560
+side of things in production.
+
+39
+00:02:55,560 --> 00:02:58,400
+So ML ops as such is an enormous field.
+
+40
+00:02:58,400 --> 00:03:00,080
+It covers a huge amount of ground.
+
+41
+00:03:00,080 --> 00:03:04,920
+And don't worry about not being able to read any text on this diagram.
+
+42
+00:03:04,920 --> 00:03:11,240
+But it's a figure from a recent review that I'm happy to provide a reference later on.
+
+43
+00:03:11,240 --> 00:03:15,600
+I think the reference just falls off the bottom of the slide.
+
+44
+00:03:15,600 --> 00:03:25,040
+But so what we see here is starting off from the very beginning of the initiating the project,
+
+45
+00:03:25,040 --> 00:03:32,000
+the analysis of the business goals and so on, going through the requirements, feature
+
+46
+00:03:32,000 --> 00:03:37,560
+engineering pipeline development, on to the experimentation phase where we do what we
+
+47
+00:03:37,560 --> 00:03:42,200
+typically associate us with the breadth and budget of data science work, developing our
+
+48
+00:03:42,200 --> 00:03:44,520
+models, validating them and so on.
+
+49
+00:03:44,520 --> 00:03:49,680
+And then onwards to feature stores, work flow orchestration and automated machine learning
+
+50
+00:03:49,680 --> 00:03:51,280
+work flow pipelines.
+
+51
+00:03:51,280 --> 00:03:54,840
+And then all of this is tied together.
+
+52
+00:03:54,840 --> 00:03:59,640
+See here at the bottom, through monitoring and feedback loops.
+
+53
+00:03:59,640 --> 00:04:04,040
+It's a vast field and it would be presumptuous to think we can do justice in 30 minutes,
+
+54
+00:04:04,040 --> 00:04:09,320
+but also given our limited experience with, we don't have experience with all of this.
+
+55
+00:04:09,320 --> 00:04:14,040
+So I selected two aspects for the talk.
+
+56
+00:04:14,040 --> 00:04:18,560
+So we'll dwell on the experimentation part of the process, specifically around model
+
+57
+00:04:18,560 --> 00:04:24,320
+training and validation, where I like to talk specifically about the concepts of traceability
+
+58
+00:04:24,320 --> 00:04:27,280
+and reproducibility.
+
+59
+00:04:27,280 --> 00:04:32,200
+And then after that, we'll move on to the production and we'll talk about monitoring
+
+60
+00:04:32,200 --> 00:04:39,560
+and feedback loops specifically, so the concepts of observability and feedback.
+
+61
+00:04:39,560 --> 00:04:44,640
+And yeah, over there, underwriter Zalemzian just illustrating the wide variety of different
+
+62
+00:04:44,640 --> 00:04:48,120
+roles that are involved at the various stages of the process.
+
+63
+00:04:48,120 --> 00:04:51,440
+And then finally, last bit of the title, lessons learned.
+
+64
+00:04:51,440 --> 00:04:53,440
+So we're not here to teach anyone a lesson.
+
+65
+00:04:53,440 --> 00:04:55,840
+We're here very much to learn ourselves.
+
+66
+00:04:55,840 --> 00:05:00,840
+And so once we have gained a little bit of experience over the past few years, having
+
+67
+00:05:00,840 --> 00:05:06,080
+had lots of opportunities to fail and improve, we're very much here to learn.
+
+68
+00:05:06,080 --> 00:05:11,000
+And so whatever your perspective and your experience from ML Ops would be really best
+
+69
+00:05:11,000 --> 00:05:12,000
+to hear from you.
+
+70
+00:05:12,000 --> 00:05:14,920
+So do please reach out after the talk.
+
+71
+00:05:14,920 --> 00:05:16,200
+Okay.
+
+72
+00:05:16,200 --> 00:05:17,680
+So with that, let's begin.
+
+73
+00:05:17,680 --> 00:05:31,560
+And let's talk about traceability and reproducibility.
+
+74
+00:05:31,560 --> 00:05:38,320
+So a lot of data scientists, machine learning engineers, and myself included, we started
+
+75
+00:05:38,320 --> 00:05:44,120
+our data science journey through notebooks that like you interspersed the code with the
+
+76
+00:05:44,120 --> 00:05:46,480
+results that it produces.
+
+77
+00:05:46,480 --> 00:05:51,520
+And notebooks are a fantastic tool for lots of things, for teaching, for learning, for
+
+78
+00:05:51,520 --> 00:05:54,840
+exploration and prototyping and so on.
+
+79
+00:05:54,840 --> 00:06:03,120
+But when it comes to developing solutions for production, if your workflow is too heavily
+
+80
+00:06:03,120 --> 00:06:10,240
+dependent on notebooks, it can lead to difficulties when it comes to the concept of traceability.
+
+81
+00:06:10,240 --> 00:06:11,240
+And why is that?
+
+82
+00:06:11,240 --> 00:06:16,080
+So I'm sure data scientists in the room here will appreciate that without me having to
+
+83
+00:06:16,080 --> 00:06:17,080
+tell you.
+
+84
+00:06:17,080 --> 00:06:21,200
+So whenever you're creating a candidate solution, you have all of these different components
+
+85
+00:06:21,200 --> 00:06:22,920
+that go into it.
+
+86
+00:06:22,920 --> 00:06:27,120
+And you have your input data set.
+
+87
+00:06:27,120 --> 00:06:29,760
+You write your code for preprocessing it.
+
+88
+00:06:29,760 --> 00:06:34,880
+You write your model training code and choose your specific set of hyperparameters for it.
+
+89
+00:06:34,880 --> 00:06:41,480
+And a unique combination of those will produce a unique result and a unique candidate solution.
+
+90
+00:06:41,480 --> 00:06:43,760
+What happens in the real world?
+
+91
+00:06:43,760 --> 00:06:46,320
+All of these components go through a lot of different iterations.
+
+92
+00:06:46,320 --> 00:06:52,000
+So for example, you may have to discard a certain part of data because a certain subset
+
+93
+00:06:52,000 --> 00:06:54,480
+is just not suitable for the project.
+
+94
+00:06:54,480 --> 00:06:59,240
+And you may iterate all of those other components that go into it.
+
+95
+00:06:59,240 --> 00:07:03,760
+And so before you know it, you have results in hand that maybe you find it very hard to
+
+96
+00:07:03,760 --> 00:07:05,680
+trace how exactly you got them.
+
+97
+00:07:05,680 --> 00:07:11,520
+And let's say, for example, that you shared your results with excited business stakeholders
+
+98
+00:07:11,520 --> 00:07:16,160
+and two weeks later, they come to you, oh, we really love seeing those results.
+
+99
+00:07:16,160 --> 00:07:20,280
+But could you run it just changing that one tiny little detail?
+
+100
+00:07:20,280 --> 00:07:25,240
+And if in the meantime, you iterate it 10 or 15 times on your code, you might find it
+
+101
+00:07:25,240 --> 00:07:29,640
+very hard to reproduce exactly what you did two weeks ago.
+
+102
+00:07:29,640 --> 00:07:33,800
+And it can be even more difficult if the results that we're talking about were not produced
+
+103
+00:07:33,800 --> 00:07:34,800
+by yourself.
+
+104
+00:07:34,800 --> 00:07:38,840
+But maybe there was a colleague who worked on that project.
+
+105
+00:07:38,840 --> 00:07:39,840
+Maybe that was a year ago.
+
+106
+00:07:39,840 --> 00:07:41,360
+Maybe they loved the company since then.
+
+107
+00:07:41,360 --> 00:07:48,040
+So given all these considerations, larger amounts of work can be rendered useless in
+
+108
+00:07:48,040 --> 00:07:52,440
+the absence of good traceability and reproducibility.
+
+109
+00:07:52,440 --> 00:07:57,280
+So the solution to all of this, of course, involves versioning everything that you can
+
+110
+00:07:57,280 --> 00:07:58,360
+version.
+
+111
+00:07:58,360 --> 00:08:04,560
+So I know that you'll be familiar with some or many of the tools highlighted here.
+
+112
+00:08:04,560 --> 00:08:12,280
+So Git and DVC and MLflow for versioning not just code, but data sets and your models
+
+113
+00:08:12,280 --> 00:08:13,960
+and your model results.
+
+114
+00:08:13,960 --> 00:08:19,320
+And there was a talk earlier today, which I suppose many of you would have seen on MLflow,
+
+115
+00:08:19,320 --> 00:08:25,880
+to introduce MLflow for experiment tracking and registering models, which was excellent.
+
+116
+00:08:25,880 --> 00:08:30,560
+If you're not familiar with experiment tracking with an established framework such as MLflow,
+
+117
+00:08:30,560 --> 00:08:36,160
+I would really encourage you to give it a go and MLflow is a great place to start.
+
+118
+00:08:36,160 --> 00:08:41,840
+One thing that I would like to talk about today is the concept of linking the results
+
+119
+00:08:41,840 --> 00:08:46,000
+that you track with a tool like MLflow with the exact version of the code that was used
+
+120
+00:08:46,000 --> 00:08:47,920
+to produce it.
+
+121
+00:08:47,920 --> 00:08:56,040
+And specifically, the way that we do this is by using Git tags as triggers for our model
+
+122
+00:08:56,040 --> 00:09:00,520
+training runs on a CI CD platform.
+
+123
+00:09:00,520 --> 00:09:07,160
+So if you run your model training on a CI CD platform like GitHub Actions, for example,
+
+124
+00:09:07,160 --> 00:09:12,440
+as shown here, you can configure it in such a way that the pipeline is triggered whenever
+
+125
+00:09:12,440 --> 00:09:14,000
+you push a certain tag.
+
+126
+00:09:14,000 --> 00:09:19,640
+So the example here shows a convolutional neural network training that gets triggered
+
+127
+00:09:19,640 --> 00:09:25,440
+every time that I push to the repo, a tag that follows this pattern, train CNN.
+
+128
+00:09:25,440 --> 00:09:30,160
+And then for my experiment tracking code, I can extract the tag from the environment
+
+129
+00:09:30,160 --> 00:09:37,720
+and pass it on as a tag to my experiment tracking tool such as MLflow.
+
+130
+00:09:37,720 --> 00:09:48,040
+And so as a consequence, when I go to my MLflow board to see all the results, we can see
+
+131
+00:09:48,040 --> 00:09:52,240
+all the metrics resulting from a run and higher up, all the parameters that were tracked
+
+132
+00:09:52,240 --> 00:09:54,200
+with the same run.
+
+133
+00:09:54,200 --> 00:10:02,200
+For every one of those runs, we can see a Git tag that's associated with this run.
+
+134
+00:10:02,200 --> 00:10:05,360
+So it seems like a part of the screen is cut off.
+
+135
+00:10:05,360 --> 00:10:07,480
+Is there something we can do about the resolution, perhaps?
+
+136
+00:10:07,480 --> 00:10:14,640
+Sorry, I didn't notice that earlier.
+
+137
+00:10:14,640 --> 00:10:24,040
+Yeah, I think that's better.
+
+138
+00:10:24,040 --> 00:10:30,480
+Yeah, I think that's good.
+
+139
+00:10:30,480 --> 00:10:34,320
+A little bit smaller, but I think that's okay.
+
+140
+00:10:34,320 --> 00:10:37,360
+Fantastic, thank you.
+
+141
+00:10:37,360 --> 00:10:43,320
+So I'm not sure if you're able to read, but so on MLflow, that is the experiment tracking
+
+142
+00:10:43,320 --> 00:10:50,920
+board where for every experiment that we run, we have a time stamp and we'll have all the
+
+143
+00:10:50,920 --> 00:10:54,360
+associated metrics and parameters that were used with that run.
+
+144
+00:10:54,360 --> 00:11:01,160
+And the point I'm making here is that if we pass the Git tag to MLflow, we can then get
+
+145
+00:11:01,160 --> 00:11:05,360
+the, for any experiment that we have run in the past, we can return to the exact same
+
+146
+00:11:05,360 --> 00:11:07,640
+version of the code that produced it.
+
+147
+00:11:07,640 --> 00:11:15,000
+And even better, the fact of running all our training runs on a CICD platform offers a
+
+148
+00:11:15,000 --> 00:11:19,240
+possibility to just relaunch any pass-trans just at a click of a button because the platforms
+
+149
+00:11:19,240 --> 00:11:24,160
+tend to have this relaunch button at a single click.
+
+150
+00:11:24,160 --> 00:11:28,360
+So if we return to the same example of a colleague of ours that may have left the company a year
+
+151
+00:11:28,360 --> 00:11:35,960
+ago, I'm no longer at the mercy of having to, you know, depend on whatever documentation
+
+152
+00:11:35,960 --> 00:11:38,040
+they left behind.
+
+153
+00:11:38,040 --> 00:11:41,960
+But now we can just go to their MLflow board and find the best run based on the metrics
+
+154
+00:11:41,960 --> 00:11:49,880
+and that leads us straight via the Git tag to be able to reproduce their experiments.
+
+155
+00:11:49,880 --> 00:11:54,920
+Okay, so these concepts of traceability and reproducibility really permeate the way that
+
+156
+00:11:54,920 --> 00:12:00,280
+we've designed our experimentation environment with which we work.
+
+157
+00:12:00,280 --> 00:12:03,720
+And I'll talk you through how it's constructed.
+
+158
+00:12:03,720 --> 00:12:06,560
+So everything runs in a Kubernetes cluster.
+
+159
+00:12:06,560 --> 00:12:11,080
+And here on the top you see we have the user tools within which individual users, mostly
+
+160
+00:12:11,080 --> 00:12:17,640
+the data scientists, will develop their solutions in notebooks and using an IT like VS code.
+
+161
+00:12:17,640 --> 00:12:23,320
+And they're connected with the data store via Migno, so connecting through to S3.
+
+162
+00:12:23,320 --> 00:12:29,760
+And there are two, so this offers a flexible environment like a sandbox, like a playground,
+
+163
+00:12:29,760 --> 00:12:32,080
+full flexibility for the users.
+
+164
+00:12:32,080 --> 00:12:34,040
+But there are two intentional limitations.
+
+165
+00:12:34,040 --> 00:12:37,640
+First of all, they have limited persistence.
+
+166
+00:12:37,640 --> 00:12:42,560
+And secondly, they don't have right permissions back to the data store.
+
+167
+00:12:42,560 --> 00:12:43,560
+Why is that?
+
+168
+00:12:43,560 --> 00:12:49,800
+So it's intended such that it removes the temptation for me to, if I've just developed
+
+169
+00:12:49,800 --> 00:12:56,560
+a model through some quick experimentation or constructed a new proposal data set, it
+
+170
+00:12:56,560 --> 00:13:01,720
+prevents me from storing it under a name that I've just invented into the data store without
+
+171
+00:13:01,720 --> 00:13:06,880
+leaving a trace that can be used by my colleagues to then track where that data set or that
+
+172
+00:13:06,880 --> 00:13:08,440
+model came from.
+
+173
+00:13:08,440 --> 00:13:12,720
+So whenever I have something that I consider is worth persisting, I have to go through the
+
+174
+00:13:12,720 --> 00:13:15,320
+path that I described earlier.
+
+175
+00:13:15,320 --> 00:13:21,800
+I have to push a tag that will launch a workflow that I defined to the code repository and
+
+176
+00:13:21,800 --> 00:13:28,880
+that will then trigger the CI CD server to launch a series of jobs, well, the workflow
+
+177
+00:13:28,880 --> 00:13:31,760
+for the training.
+
+178
+00:13:31,760 --> 00:13:35,360
+And the intern will connect with the MLflow tracking server.
+
+179
+00:13:35,360 --> 00:13:39,840
+So the consequence of working in this way is that any produced artifacts through our
+
+180
+00:13:39,840 --> 00:13:51,680
+experimentation can always be traced back to their origin.
+
+181
+00:13:51,680 --> 00:13:52,760
+Okay.
+
+182
+00:13:52,760 --> 00:13:56,040
+So for the rest of the talk, I'd like to switch gears and move to the production environment
+
+183
+00:13:56,040 --> 00:14:00,640
+and speak specifically about the concepts of observability and feedback and tell you
+
+184
+00:14:00,640 --> 00:14:05,680
+a couple of stories from our own projects along the way.
+
+185
+00:14:05,680 --> 00:14:09,560
+And I'd like to begin this section with a little thought experiment.
+
+186
+00:14:09,560 --> 00:14:14,360
+So imagine that you're in charge of hospitals in a certain town, right?
+
+187
+00:14:14,360 --> 00:14:18,640
+And you're tasked with improving the treatment for a certain condition, it's called a condition
+
+188
+00:14:18,640 --> 00:14:19,640
+X.
+
+189
+00:14:19,640 --> 00:14:23,840
+And you have resources available to do so, but you have to choose from one of the three
+
+190
+00:14:23,840 --> 00:14:25,880
+available hospitals.
+
+191
+00:14:25,880 --> 00:14:30,240
+And you know about these hospitals that one of them has an 80% recovery rate for the patients
+
+192
+00:14:30,240 --> 00:14:31,240
+treated there.
+
+193
+00:14:31,240 --> 00:14:34,200
+And I don't have only 60% recovery rate.
+
+194
+00:14:34,200 --> 00:14:37,080
+And for hospital C, there's no data available.
+
+195
+00:14:37,080 --> 00:14:41,640
+Which one will you choose to allocate more resources?
+
+196
+00:14:41,640 --> 00:14:46,680
+Most people will say the hospital with the best known recovery rate, the one with 80%,
+
+197
+00:14:46,680 --> 00:14:48,960
+and ignore the one with no data.
+
+198
+00:14:48,960 --> 00:14:53,040
+So it can be a real shame if it turns out that the hospital that we didn't know anything
+
+199
+00:14:53,040 --> 00:14:58,680
+about turns out to be the best one, has fantastic doctors, fantastic facilities, but they just
+
+200
+00:14:58,680 --> 00:15:03,280
+don't have a very good administration department and they don't submit their reports on time.
+
+201
+00:15:03,280 --> 00:15:06,200
+What's the point of this story, right?
+
+202
+00:15:06,200 --> 00:15:11,640
+I'm bringing that because I think it has parallels to machine learning solutions in the sense
+
+203
+00:15:11,640 --> 00:15:16,280
+that we can have a perfect machine learning solution running in production.
+
+204
+00:15:16,280 --> 00:15:21,240
+In the absence of good observability, it can serve a little purpose because the people
+
+205
+00:15:21,240 --> 00:15:26,440
+who depend on it, the people who need to make decisions, aren't able to make informed decisions
+
+206
+00:15:26,440 --> 00:15:30,160
+because of not being able to see those outputs.
+
+207
+00:15:30,160 --> 00:15:34,200
+So that's on the importance of observability.
+
+208
+00:15:34,200 --> 00:15:37,360
+And I'd like to share a little story from one of our own projects.
+
+209
+00:15:37,360 --> 00:15:47,000
+So the visibility is not very good, but it's not, it's not, the details don't matter.
+
+210
+00:15:47,000 --> 00:15:55,440
+We ran a project for a telecommunications company that was, so the idea of the solution
+
+211
+00:15:55,440 --> 00:16:00,520
+that we put in production there was to automate the processing of emails coming in through
+
+212
+00:16:00,520 --> 00:16:01,920
+to their customer service department.
+
+213
+00:16:01,920 --> 00:16:06,280
+It was an email classification service.
+
+214
+00:16:06,280 --> 00:16:13,120
+And so here on the dashboard, you might be able to see a timeline of the request and
+
+215
+00:16:13,120 --> 00:16:15,560
+the responses.
+
+216
+00:16:15,560 --> 00:16:21,720
+So what happened on this project was we were being very careful to cover our solution with
+
+217
+00:16:21,720 --> 00:16:31,360
+automated testing, had a bunch of unit tests, production tests, integration tests.
+
+218
+00:16:31,360 --> 00:16:35,400
+And it was running fairly, you know, running stably on the side of the solution that was
+
+219
+00:16:35,400 --> 00:16:41,360
+aimed at generating the predictions.
+
+220
+00:16:41,360 --> 00:16:46,400
+But the part of the solution for observability, we didn't pay so much attention.
+
+221
+00:16:46,400 --> 00:16:53,120
+And so invariably there came an upgrade where we, with the upgrade, we broke the dashboards,
+
+222
+00:16:53,120 --> 00:16:55,840
+we broke the observability.
+
+223
+00:16:55,840 --> 00:17:01,040
+And intuitively thinking, perhaps naively thinking, you might not pay so much attention
+
+224
+00:17:01,040 --> 00:17:06,200
+because, you know, if you log to, if you connect via the console to observe what's happening
+
+225
+00:17:06,200 --> 00:17:11,000
+with your solution in production, you can still see responses coming in, you can still
+
+226
+00:17:11,000 --> 00:17:14,080
+see predictions going out, and you may be comforted.
+
+227
+00:17:14,080 --> 00:17:18,640
+Well, things are running as they should be running and we'll just get on with fixing
+
+228
+00:17:18,640 --> 00:17:20,320
+the dashboards in our own time.
+
+229
+00:17:20,320 --> 00:17:25,760
+But from the point of view of the business stakeholder, from the product owner, that
+
+230
+00:17:25,760 --> 00:17:31,000
+can be a very frustrating experience because they're left blind and they're not able to
+
+231
+00:17:31,000 --> 00:17:39,080
+make any from decisions from this based on the processes they have running in production.
+
+232
+00:17:39,080 --> 00:17:43,480
+So what we learned from this experience is that observability has to be treated as a
+
+233
+00:17:43,480 --> 00:17:44,480
+first-class citizen.
+
+234
+00:17:44,480 --> 00:17:47,880
+It can't be treated as an afterthought.
+
+235
+00:17:47,880 --> 00:17:55,120
+And so the observability code requires the same amount of love and attention and testing
+
+236
+00:17:55,120 --> 00:18:00,560
+and test coverage as the rest of your machine learning code.
+
+237
+00:18:00,560 --> 00:18:04,240
+So far we've been talking about, you know, observing the requests and responses and so
+
+238
+00:18:04,240 --> 00:18:06,120
+on.
+
+239
+00:18:06,120 --> 00:18:10,800
+But another thing that's really interesting to know is whether those predictions are
+
+240
+00:18:10,800 --> 00:18:12,120
+correct or not, right?
+
+241
+00:18:12,120 --> 00:18:15,840
+We need to know whether the patients are not just coming into the hospital and going out
+
+242
+00:18:15,840 --> 00:18:16,840
+of it.
+
+243
+00:18:16,840 --> 00:18:21,800
+We need to know a week later, did they recover, did they get worse.
+
+244
+00:18:21,800 --> 00:18:27,880
+And so I'd like to move to speaking about the concept of feedback.
+
+245
+00:18:27,880 --> 00:18:31,920
+So in this particular case, as I mentioned, it was an email classification project.
+
+246
+00:18:31,920 --> 00:18:37,040
+So we're going from the incoming email through various steps of processing and a couple
+
+247
+00:18:37,040 --> 00:18:42,480
+of different models to produce an output, which is one of the four different classes.
+
+248
+00:18:42,480 --> 00:18:50,160
+And the emails could be associated with, for example, a request to conduct some repairs,
+
+249
+00:18:50,160 --> 00:18:54,840
+maybe related to billing or new orders or change.
+
+250
+00:18:54,840 --> 00:19:00,280
+And the process that they had in place before we deployed our solutions to automate a part
+
+251
+00:19:00,280 --> 00:19:03,440
+of that process went like this.
+
+252
+00:19:03,440 --> 00:19:09,720
+So the incoming email would arrive and it would go to operators who would manually categorize
+
+253
+00:19:09,720 --> 00:19:13,040
+them according to which of the four classes it belonged to.
+
+254
+00:19:13,040 --> 00:19:16,840
+And depending on the class, depending on the tag that they give to the email, it would
+
+255
+00:19:16,840 --> 00:19:19,880
+go to the correct processing queue.
+
+256
+00:19:19,880 --> 00:19:26,520
+And then within each of those correct departments, they would open a ticket that would then go
+
+257
+00:19:26,520 --> 00:19:31,920
+on to the correct people to address the issue that the customer brought up.
+
+258
+00:19:31,920 --> 00:19:35,880
+And so our solution set at this point of the process.
+
+259
+00:19:35,880 --> 00:19:42,400
+So now instead of a person looking manually and sorting all these emails, it would go
+
+260
+00:19:42,400 --> 00:19:44,040
+to our solution.
+
+261
+00:19:44,040 --> 00:19:48,000
+So this is the point here in a Kubernetes cluster.
+
+262
+00:19:48,000 --> 00:19:53,720
+And the inference workflow here would receive the email, run all that preprocessing and
+
+263
+00:19:53,720 --> 00:20:00,600
+classification, and return the predicted email tag at the same time as then storing the prediction
+
+264
+00:20:00,600 --> 00:20:08,520
+and the influx database for live monitoring and the chronograph dashboards.
+
+265
+00:20:08,520 --> 00:20:12,000
+And so in order to know whether the predictions are correct or not, the idea is we need to
+
+266
+00:20:12,000 --> 00:20:16,920
+go a step later in the process where we can extract the information.
+
+267
+00:20:16,920 --> 00:20:23,200
+And in this case, we have to look at the tickets generated because tickets always carry an
+
+268
+00:20:23,200 --> 00:20:27,320
+email ID that lets us identify the email on which they were based.
+
+269
+00:20:27,320 --> 00:20:32,080
+And so if we predicted for a certain email that it's a repair email, and then it turns
+
+270
+00:20:32,080 --> 00:20:37,880
+out that a change ticket was opened from that same email, then we have to record that as
+
+271
+00:20:37,880 --> 00:20:40,760
+a wrong prediction.
+
+272
+00:20:40,760 --> 00:20:44,200
+And otherwise if we predicted repair and the ticket is of type repair, then all is good
+
+273
+00:20:44,200 --> 00:20:47,440
+and we record it as a correct prediction.
+
+274
+00:20:47,440 --> 00:20:50,800
+And so in parallel with our inference workflow, here we have the feedback workflow, which
+
+275
+00:20:50,800 --> 00:20:59,520
+is receiving the tickets for feedback, and then it's storing the performance metrics
+
+276
+00:20:59,520 --> 00:21:07,120
+in influx DB that go onto the dashboards, and it's storing all of those data points,
+
+277
+00:21:07,120 --> 00:21:12,680
+and the feedback, the correct labels from the tickets in among the DB.
+
+278
+00:21:12,680 --> 00:21:18,760
+And that there is available for us to run a retraining and then plug an updated retraining
+
+279
+00:21:18,760 --> 00:21:26,120
+classifier back into the inference workflow.
+
+280
+00:21:26,120 --> 00:21:32,520
+So one interesting thing that happened in this particular project was we thought, well,
+
+281
+00:21:32,520 --> 00:21:36,600
+we developed our model first, and then we think about feedback later.
+
+282
+00:21:36,600 --> 00:21:41,680
+So once we had the inference workflow developed, we found ourselves in a situation where we
+
+283
+00:21:41,680 --> 00:21:45,840
+didn't dare to deploy it, we didn't dare to activate our service without having the feedback
+
+284
+00:21:45,840 --> 00:21:50,320
+in place, given all the considerations about observability, we didn't want to operate blind
+
+285
+00:21:50,320 --> 00:21:55,720
+because if critical processes are involved, you could be getting it wrong and not having
+
+286
+00:21:55,720 --> 00:21:59,960
+that fast feedback to iterate on it.
+
+287
+00:21:59,960 --> 00:22:05,760
+And so what we ended up having to do in this project was we had our inference code just
+
+288
+00:22:05,760 --> 00:22:15,160
+sitting there for a few weeks making predictions, but not acting on them whilst we were developing
+
+289
+00:22:15,160 --> 00:22:18,080
+the feedback workflow to catch up.
+
+290
+00:22:18,080 --> 00:22:24,240
+So what we learned from this experience is at least in some situations, it can be very
+
+291
+00:22:24,240 --> 00:22:28,800
+useful to think about developing your feedback workflow first.
+
+292
+00:22:28,800 --> 00:22:31,640
+And it actually has a couple of different advantages.
+
+293
+00:22:31,640 --> 00:22:37,480
+So I mean, it's in line with the fast-fill approach whereby you get your feedback as quickly
+
+294
+00:22:37,480 --> 00:22:40,720
+as possible and you can iterate quickly.
+
+295
+00:22:40,720 --> 00:22:45,040
+It helps you avoid that early stage where you might be operating blind without having
+
+296
+00:22:45,040 --> 00:22:52,800
+that feedback from the environment, from, I say, the business application and so on.
+
+297
+00:22:52,800 --> 00:22:59,800
+But also, another upshot of this approach is it lets you collect the data from the live
+
+298
+00:22:59,800 --> 00:23:03,760
+production environment, which in many cases can be quite different from data that you
+
+299
+00:23:03,760 --> 00:23:06,200
+might be given to develop your model in the first place.
+
+300
+00:23:06,200 --> 00:23:09,520
+I don't know how many of you might have been given a data set by somebody saying, you know,
+
+301
+00:23:09,520 --> 00:23:14,600
+this is a very nicely carefully curated, carefully selected data set.
+
+302
+00:23:14,600 --> 00:23:20,720
+It's very clean, so use that to develop your model.
+
+303
+00:23:20,720 --> 00:23:24,400
+Having had experience of developing models like that that work great in the laboratory,
+
+304
+00:23:24,400 --> 00:23:28,960
+but then reliably fall over on their nose as soon as you expose them to the data from
+
+305
+00:23:28,960 --> 00:23:36,240
+the real world, it's much nicer to be able to collect all the data in the environment
+
+306
+00:23:36,240 --> 00:23:39,200
+where the model will actually be encountering.
+
+307
+00:23:39,200 --> 00:23:42,920
+So that you're not developing your model based on some distributions that are completely
+
+308
+00:23:42,920 --> 00:23:47,200
+different from the ones that it will see in production.
+
+309
+00:23:47,200 --> 00:23:52,080
+Okay, so that brings me to conclusions.
+
+310
+00:23:52,080 --> 00:23:58,720
+Just to wrap up, the main messages with respect to traceability and reproducibility in the
+
+311
+00:23:58,720 --> 00:24:01,800
+experimentation phase of MLOPs.
+
+312
+00:24:01,800 --> 00:24:07,840
+One thing that we think helps us a lot with these concepts is using CICD workflows to
+
+313
+00:24:07,840 --> 00:24:09,680
+run our experiments.
+
+314
+00:24:09,680 --> 00:24:18,800
+And we tend to trigger them by using Git tags as triggers for the CICD workflows.
+
+315
+00:24:18,800 --> 00:24:24,760
+You could achieve the same with Git commits and so on, but we find Git tags just help
+
+316
+00:24:24,760 --> 00:24:27,960
+a little bit with keeping it organized and so on.
+
+317
+00:24:27,960 --> 00:24:32,240
+And then when it comes to observability and feedback, observability code is a first class
+
+318
+00:24:32,240 --> 00:24:33,240
+citizen.
+
+319
+00:24:33,240 --> 00:24:40,120
+It's treated as an afterthought and it can be really helpful to at least consider deploying
+
+320
+00:24:40,120 --> 00:24:43,760
+the feedback code before deploying the model.
+
+321
+00:24:43,760 --> 00:24:51,480
+So with quickly skimmed over, MLOPs, a couple of concrete parts of it, but that's only
+
+322
+00:24:51,480 --> 00:24:53,000
+just scratching the surface.
+
+323
+00:24:53,000 --> 00:24:55,680
+There's a lot more there to explore.
+
+324
+00:24:55,680 --> 00:24:58,120
+But maybe just one concluding thought.
+
+325
+00:24:58,120 --> 00:25:06,680
+A lot of people who speak to, you know, clients, managers, and so on, may still have that preconception
+
+326
+00:25:06,680 --> 00:25:10,920
+that putting a model in production effectively just means, oh, I'll develop my model in a
+
+327
+00:25:10,920 --> 00:25:13,440
+notebook and then wrap an API around it.
+
+328
+00:25:13,440 --> 00:25:17,800
+But in reality, there's so much more that needs to go into a mature machine learning
+
+329
+00:25:17,800 --> 00:25:19,480
+system in production.
+
+330
+00:25:19,480 --> 00:25:24,200
+And in fact, if you were looking for that model serving code on that diagram, you'll
+
+331
+00:25:24,200 --> 00:25:30,880
+find it corresponds to just that one tiny little block on the edge.
+
+332
+00:25:30,880 --> 00:25:34,760
+So yeah, I hope some of that has been useful.
+
+333
+00:25:34,760 --> 00:25:38,840
+And as I said earlier, do please reach out and get in touch.
+
+334
+00:25:38,840 --> 00:25:42,240
+And thank you very much for your attention.
+
+335
+00:25:42,240 --> 00:25:48,720
+Thank you very much for your talk.
+
+336
+00:25:48,720 --> 00:25:51,280
+Do we have any questions in the audience?
+
+337
+00:25:51,280 --> 00:25:59,840
+If you remember, you can make it the question in English, Spanish, Portuguese, I don't know.
+
+338
+00:25:59,840 --> 00:26:00,840
+Any questions?
+
+339
+00:26:00,840 --> 00:26:01,840
+No?
+
+340
+00:26:01,840 --> 00:26:06,680
+Well, let me, maybe, maybe, well, I don't know.
+
+341
+00:26:06,680 --> 00:26:08,680
+I just be loud.
+
+342
+00:26:08,680 --> 00:26:09,680
+Okay.
+
+343
+00:26:09,680 --> 00:26:30,880
+Yeah, that's a good question.
+
+344
+00:26:30,880 --> 00:26:35,160
+We moved away from training in local.
+
+345
+00:26:35,160 --> 00:26:37,680
+So we tend to train on CSD platform.
+
+346
+00:26:37,680 --> 00:26:46,040
+I know that you can use MLflow for experiment tracking and just deploy the MLflow application
+
+347
+00:26:46,040 --> 00:26:48,440
+on your local machine and run it there.
+
+348
+00:26:48,440 --> 00:26:57,560
+So I think in terms of collaborating as a team, it helps to move it to a CSD platform
+
+349
+00:26:57,560 --> 00:27:01,080
+individually.
+
+350
+00:27:01,080 --> 00:27:02,080
+It may be possible.
+
+351
+00:27:02,080 --> 00:27:03,080
+I don't know.
+
+352
+00:27:03,080 --> 00:27:08,320
+I don't have a clear answer to that, but you can certainly use MLflow to give you that
+
+353
+00:27:08,320 --> 00:27:10,840
+traceability aspect.
+
+354
+00:27:10,840 --> 00:27:22,800
+And if you're working alone on a project, that's probably good enough.
+
+355
+00:27:22,800 --> 00:27:28,080
+What is your recommendation to improve the quality of the code that data science normally
+
+356
+00:27:28,080 --> 00:27:29,080
+produces?
+
+357
+00:27:29,080 --> 00:27:31,080
+That's a good question.
+
+358
+00:27:31,080 --> 00:27:35,080
+So a few different things.
+
+359
+00:27:35,080 --> 00:27:42,800
+So one thing that we tend to do within our teams, can you hear me okay?
+
+360
+00:27:42,800 --> 00:27:45,400
+So we tend to do a fair amount of code review.
+
+361
+00:27:45,400 --> 00:27:46,880
+So we'll review each other's code.
+
+362
+00:27:46,880 --> 00:27:51,720
+And sometimes just being in that different mindset of saying, oh, I mean, the role of
+
+363
+00:27:51,720 --> 00:27:57,600
+reviewing somebody's code and you may just take that little bit more attention to think
+
+364
+00:27:57,600 --> 00:28:02,800
+about good practices than when you're coding on your own and in a hurry.
+
+365
+00:28:02,800 --> 00:28:06,480
+So that's one mechanism.
+
+366
+00:28:06,480 --> 00:28:09,120
+Static code analysis tools as well.
+
+367
+00:28:09,120 --> 00:28:10,120
+So various...
+
+368
+00:28:10,120 --> 00:28:12,440
+You're talking about file linters?
+
+369
+00:28:12,440 --> 00:28:16,880
+Yeah, automated linters, formators.
+
+370
+00:28:16,880 --> 00:28:19,120
+And what's the name of the...
+
+371
+00:28:19,120 --> 00:28:20,120
+Sonar cloud.
+
+372
+00:28:20,120 --> 00:28:21,120
+Sonar cloud.
+
+373
+00:28:21,120 --> 00:28:22,120
+That's the one.
+
+374
+00:28:22,120 --> 00:28:23,120
+Yes.
+
+375
+00:28:23,120 --> 00:28:26,320
+So I don't know if you're familiar with Sonar cloud, but it's a...
+
+376
+00:28:26,320 --> 00:28:27,320
+Yeah.
+
+377
+00:28:27,320 --> 00:28:31,520
+So yeah, I would say a combination of these various approaches.
+
+378
+00:28:31,520 --> 00:28:32,520
+Also insisting that...
+
+379
+00:28:32,520 --> 00:28:33,520
+Sorry.
+
+380
+00:28:33,520 --> 00:28:42,160
+I think maybe there's a cultural component there as well because in certain teams, it's
+
+381
+00:28:42,160 --> 00:28:46,680
+expected that data scientists will just write the quickest code that will get a model trained
+
+382
+00:28:46,680 --> 00:28:52,040
+and maybe setting expectations within your team if that really makes it very hard for
+
+383
+00:28:52,040 --> 00:28:58,040
+the people who then have to productionize their code, maybe some cultural aspects there
+
+384
+00:28:58,040 --> 00:29:04,360
+in the conversation about code quality can help.
+
+385
+00:29:04,360 --> 00:29:07,000
+Do we have another question in the audience?
+
+386
+00:29:07,000 --> 00:29:13,560
+In the meantime, I can tell you about...
+
+387
+00:29:13,560 --> 00:29:15,160
+Hello.
+
+388
+00:29:15,160 --> 00:29:23,600
+I think it's a good approach to analyze the data scientist team from the operation team,
+
+389
+00:29:23,600 --> 00:29:30,160
+like they use the MLflow tracking server and the operational team use node that there are
+
+390
+00:29:30,160 --> 00:29:34,800
+some models there and can use them wherever they need.
+
+391
+00:29:34,800 --> 00:29:37,280
+It's a good approach.
+
+392
+00:29:37,280 --> 00:29:41,960
+Thanks for the question.
+
+393
+00:29:41,960 --> 00:29:45,080
+Good question.
+
+394
+00:29:45,080 --> 00:29:49,680
+Maybe there are situations when it's good to have that separation.
+
+395
+00:29:49,680 --> 00:29:53,480
+In our project, we like to keep people working a little bit more closely together.
+
+396
+00:29:53,480 --> 00:29:58,800
+So typically, machine learning engineers and data scientists will work together through
+
+397
+00:29:58,800 --> 00:30:04,760
+different phases of the project and that can be helpful both for the data scientists to
+
+398
+00:30:04,760 --> 00:30:08,840
+appreciate what the machine learning engineers will have to think about later on, productivizing
+
+399
+00:30:08,840 --> 00:30:12,120
+the solutions and the other way around, maybe.
+
+400
+00:30:12,120 --> 00:30:13,120
+There are certain...
+
+401
+00:30:13,120 --> 00:30:21,200
+I can give you an example from one of our projects to put a bit more weight on this point.
+
+402
+00:30:21,200 --> 00:30:28,920
+So there was a model that had a specific role of the operations, maybe some filtering, some
+
+403
+00:30:28,920 --> 00:30:34,920
+normalizations, and then some other mathematical operations.
+
+404
+00:30:34,920 --> 00:30:39,920
+And later on, when we looked at the production code, it turned out that at some point, the
+
+405
+00:30:39,920 --> 00:30:43,360
+order of two operations was changed.
+
+406
+00:30:43,360 --> 00:30:47,680
+And in some cases, it doesn't matter, but in some cases, it matters a whole lot.
+
+407
+00:30:47,680 --> 00:30:53,560
+And so if you have a strong separation between your experimentation, exploration, and data
+
+408
+00:30:53,560 --> 00:30:57,720
+science team and the people putting it in production, you maybe raise the risk of having
+
+409
+00:30:57,720 --> 00:31:01,560
+these sort of incidents happen.
+
+410
+00:31:01,560 --> 00:31:08,720
+So based on my experience, I would say it's usually better to have it a little bit less
+
+411
+00:31:08,720 --> 00:31:11,640
+separated and a little bit more communicated.
+
+412
+00:31:11,640 --> 00:31:16,200
+But maybe in some situations, a clear separation is useful.
+
+413
+00:31:16,200 --> 00:31:18,880
+We have any time.
+
+414
+00:31:18,880 --> 00:31:22,920
+It's working, yes.
+
+415
+00:31:22,920 --> 00:31:28,920
+There will be the last, so.
+
+416
+00:31:28,920 --> 00:31:34,000
+And if someone wants to ask, in Castellano, it's no problem.
+
+417
+00:31:34,000 --> 00:31:43,880
+In your day-to-day, how do you work and struggle with the difference between the data in development
+
+418
+00:31:43,880 --> 00:31:44,880
+and production?
+
+419
+00:31:44,880 --> 00:31:50,720
+Especially with the, I'm not talking about maybe to watch about the data screen or not,
+
+420
+00:31:50,720 --> 00:32:00,600
+but what the data expires because you need newer data, because it's very time series-related.
+
+421
+00:32:00,600 --> 00:32:02,320
+How do you work with the difference?
+
+422
+00:32:02,320 --> 00:32:08,080
+So you test your models and you know that it won't be an issue when you deploy?
+
+423
+00:32:08,080 --> 00:32:09,920
+That's a very good question.
+
+424
+00:32:09,920 --> 00:32:15,640
+And in fact, we're on a journey to be able to do that better.
+
+425
+00:32:15,640 --> 00:32:20,800
+So currently we have too much of a separation between the laboratory data and the production
+
+426
+00:32:20,800 --> 00:32:27,280
+data and that loop of connecting the two, of establishing that symmetry between the experimental
+
+427
+00:32:27,280 --> 00:32:29,000
+environment and production environment.
+
+428
+00:32:29,000 --> 00:32:33,320
+We don't have it fully connected and fully set up and automated, so it's still a little
+
+429
+00:32:33,320 --> 00:32:39,640
+bit manual to create new data sets for training based on production data.
+
+430
+00:32:39,640 --> 00:32:48,120
+So I'm afraid I can't give you a very satisfying answer there, but if anyone has experience
+
+431
+00:32:48,120 --> 00:32:53,320
+on this topic, it'll be really nice to have a conversation about that.
+
+432
+00:32:53,320 --> 00:32:56,000
+And that was the last question.
+
+433
+00:32:56,000 --> 00:32:57,840
+So let's thank or speak it again.
+
+434
+00:32:57,840 --> 00:33:00,120
+Okay, thank you very much.
+

@@ -1,0 +1,1068 @@
+1
+00:00:00,000 --> 00:00:12,880
+Hola, buenos días a todas y a todos. Estamos en la primera sesión de hoy con José Andrés
+
+2
+00:00:12,880 --> 00:00:15,360
+Fizarro. ¿Qué tal, José Andrés? ¿Cómo estás?
+
+3
+00:00:15,360 --> 00:00:18,800
+Hola, ¿qué tal? Bueno, él nos va a hablar de documentación,
+
+4
+00:00:18,800 --> 00:00:22,760
+que es un poco esa gran olvida que hablábamos antes de entrar. Trabaja para bancas y lleva
+
+5
+00:00:22,760 --> 00:00:27,520
+10 años en PAITO y les voy a contar cosas muy interesantes de documentar, así que nada,
+
+6
+00:00:27,520 --> 00:00:29,320
+adelante. Vale, gracias Sergio.
+
+7
+00:00:29,320 --> 00:00:37,080
+Bueno, pues lo he dicho. Buenos días a todos y espero que estéis empezando el día con un buen
+
+8
+00:00:37,080 --> 00:00:43,040
+café o un desayuno para disfrutar la jornada de hoy en la PAITCON. Yo no soy menos, todo aquí
+
+9
+00:00:43,040 --> 00:00:48,760
+mi café. De hecho, es el segundo café del día porque los niños mandan guerra y estoy aquí para
+
+10
+00:00:48,760 --> 00:00:54,640
+compartiros esta sesión que lleva por título documenta sin ser un escriba. Y aquí me
+
+11
+00:00:54,640 --> 00:01:00,800
+gustaría que saliésemos con algún consejillo para generar mejor documentación, que conozcáis
+
+12
+00:01:00,800 --> 00:01:06,440
+alguna herramienta que os va a ayudar a mantener alguna documentación y que cosecís alguna risa,
+
+13
+00:01:06,440 --> 00:01:12,040
+así que sin más, pues vamos allá. Lo primero que voy a hacer es presentarme,
+
+14
+00:01:12,040 --> 00:01:16,640
+para que me conozcáis un poquito. Bueno, mi nombre es José Andrés, aunque mucha gente me llama
+
+15
+00:01:16,640 --> 00:01:21,760
+simplemente Andrés y vivo en Madrid donde trabajo como desarrollador para una empresa que se llama
+
+16
+00:01:21,760 --> 00:01:28,240
+Datio, donde nos dedicamos a desarrollar la plataforma de datos del banco VVA. Básicamente,
+
+17
+00:01:28,240 --> 00:01:33,800
+lo que estamos haciendo es hacer que los científicos de datos hagan sus procesos de datos,
+
+18
+00:01:33,800 --> 00:01:39,120
+sean ingestas o sean endramentos modelos de manera muy fácil. Y bueno, eso me dedico ahora,
+
+19
+00:01:39,120 --> 00:01:45,360
+pero desde 2009 me llevo dedicando a otro tipo de proyectos relacionados con PAITCON en el
+
+20
+00:01:45,360 --> 00:01:52,480
+entusiario espacial. Bueno, he puesto algunas aficiones, básicamente me encanta dibujar,
+
+21
+00:01:52,480 --> 00:01:57,160
+a veces lo hago de forma consciente en un liento o en otro soporte y a veces simplemente estoy
+
+22
+00:01:57,160 --> 00:02:02,120
+haciendo cada batalla en sus fallernos y mucho de mi tiempo lo paso escuchando música,
+
+23
+00:02:02,120 --> 00:02:06,520
+más, escucho, dedico más tiempo a escuchar música que a dormir, o sea, no os digo más,
+
+24
+00:02:06,520 --> 00:02:13,360
+sueto por los niños. Y nada, os dejo ahí mi datos de contacto, podemos estar hablando por el
+
+25
+00:02:13,360 --> 00:02:19,000
+servidor de Discord del evento, pero si en otro momento me quieres contactar, os dejo ahí mi
+
+26
+00:02:19,000 --> 00:02:28,040
+perfil de Twitter y de GitHub. Así que, sin más, vamos al tema. Lo que os he dicho, yo me dedico a
+
+27
+00:02:28,040 --> 00:02:33,920
+trabajo en el endusiar los datos, pero yo creo que en este evento tenemos gente muchísimo más preparada
+
+28
+00:02:33,920 --> 00:02:39,520
+para enseñarnos lo que hacen, así que habría hablar de un tema mucho menos atractivo que es la
+
+29
+00:02:39,520 --> 00:02:46,080
+documentación. Espero que no hayáis estado con el café en la boca, porque a lo mejor lo echáis.
+
+30
+00:02:46,080 --> 00:02:51,640
+La cosa es que con la documentación, me pasa que de la misma manera que hacemos software,
+
+31
+00:02:51,640 --> 00:02:56,400
+tenemos que mantener una documentación para el mismo, porque es súper habitual en torno
+
+32
+00:02:56,400 --> 00:03:01,760
+profesional, que hay igual que entregamos un software, tenemos que entregar una documentación. Lo
+
+33
+00:03:01,760 --> 00:03:07,400
+que suele decirse en plan, la documentación también es una entregable. Y seguro que hay
+
+34
+00:03:07,400 --> 00:03:11,720
+igual que hay algún rezagado que dice, no, pero es que lo que se manifiesta allá y dice que el
+
+35
+00:03:11,720 --> 00:03:15,960
+software es más importante que la documentación. Yo digo que sí, toda la documentación también
+
+36
+00:03:15,960 --> 00:03:20,800
+hay que hacerlo. Y lo que nos pasa con la documentación es que más o menos estamos ahí trabajando en
+
+37
+00:03:20,800 --> 00:03:27,200
+nuestro software, sabemos lo que tenemos que hacer, nos lanzamos a hacer el código y la documentación
+
+38
+00:03:27,200 --> 00:03:32,040
+la acabamos dejando para el final o para el final del final o simplemente entregamos y decimos la
+
+39
+00:03:32,040 --> 00:03:38,600
+documentación y ya trabamos después. Se bascaba esa. Y el primer problema que tenemos para la
+
+40
+00:03:38,600 --> 00:03:44,680
+documentación al no cuidarla es el desorden que le metemos. Nos liamos ahí a poner cosas,
+
+41
+00:03:45,760 --> 00:03:51,360
+sin ningún sentido, sin ningún cariño, también puede ser porque no nos hemos formado y al final
+
+42
+00:03:51,360 --> 00:03:57,520
+lo que estamos entregando es una porquería, una virgüera documentación. Y aquí es algo simil,
+
+43
+00:03:57,520 --> 00:04:02,760
+que es que si fuesemos cocineros, pues nuestro nivel a la hora de documentar, pues sería el de
+
+44
+00:04:02,760 --> 00:04:07,920
+León come gambas. Para los que véis, el más del chef, un chaval en una final presentó ese
+
+45
+00:04:07,920 --> 00:04:12,800
+plato de la derecha y no le llegó ni haberlo jurado, pararon la competición y le echaron,
+
+46
+00:04:12,800 --> 00:04:18,280
+¿vale? Pues más o menos nos pasa con la documentación. Hacemos esta virgüera y lo que nos toca es
+
+47
+00:04:18,280 --> 00:04:26,760
+hacerla otra vez o repasarla. Así que eso es lo que tenemos que evitar. Se me pasan las lemurs
+
+48
+00:04:26,760 --> 00:04:32,640
+rápido. El segundo problema que tenemos es el contenido, ¿vale? La claridad. Ya no es que
+
+49
+00:04:32,640 --> 00:04:37,880
+solo la estructura no sea clara, ¿vale? Es que el contenido es confuso. Si estuviésemos en un museo,
+
+50
+00:04:37,880 --> 00:04:42,560
+pues con una documentación clara sería el equiparable al arte figurativo, por ejemplo,
+
+51
+00:04:42,560 --> 00:04:47,200
+como las obras de Goya. Sabemos un cuadro de Goya y más o menos sabemos interpretar lo que hay,
+
+52
+00:04:47,200 --> 00:04:52,760
+es un retrato o es una escena. Pero si nos enfrentamos a un cuadro abstracto, pues a lo mejor lo que
+
+53
+00:04:52,760 --> 00:04:57,560
+nos gustaría es tener cerca al propio artista para que nos comente la obra, ¿vale? Para que no
+
+54
+00:04:57,560 --> 00:05:01,320
+conozcáis el de la derecha es de Fernando Zóbel, que es una artista muy apreciada de un poelcar,
+
+55
+00:05:01,320 --> 00:05:07,000
+que es desde el yovenio, ¿vale? Bueno, lo que diga. No podemos suponer que teníamos que estar
+
+56
+00:05:07,000 --> 00:05:11,000
+ahí para aplicarla a nuestros usuarios y a nuestros compañeros lo que hace nuestro software
+
+57
+00:05:11,000 --> 00:05:17,320
+a través de la documentación. Así que quizá sea más oportuno ponernos solo las manos a la hora de
+
+58
+00:05:17,320 --> 00:05:25,640
+escribir la documentación, sino también un poco la cabeza. Y todo esto que acabo de contar es que
+
+59
+00:05:25,640 --> 00:05:31,080
+nos retratan como creadores de documentación, pero es que es todavía más contradictorio cuando
+
+60
+00:05:31,080 --> 00:05:37,360
+tenemos un, en general, los desarrolladores, tenemos un paladar tan fino cuando consumimos la
+
+61
+00:05:37,360 --> 00:05:42,000
+documentación, porque es que nos encanta la buena documentación. Vemos un montón de herramientas que
+
+62
+00:05:42,000 --> 00:05:47,280
+nos molan y no solo por la funcionalidad, sino porque tiene una documentación excelente, ¿vale?
+
+63
+00:05:47,280 --> 00:05:51,920
+Voy a poner dos ejemplos. El primero es Fastapi, ¿vale? Que es el framework de microservicios que lo está
+
+64
+00:05:51,920 --> 00:05:58,960
+apetando. Vais a ver que en la charla en esta pi con hay unas cuantas charlas que van, que tienen que
+
+65
+00:05:58,960 --> 00:06:05,760
+ver con Fastapi, y no solo porque la funcionalidad es excelente, sino porque la documentación es buenísima.
+
+66
+00:06:05,760 --> 00:06:10,800
+Está llena de ejemplos, de explicaciones, te cuentan todo muy bien y es muy fácil de seguir.
+
+67
+00:06:10,800 --> 00:06:17,800
+El otro ejemplo que ha dado es el propio Python. Claro que es una pasada de la documentación de todos
+
+68
+00:06:17,800 --> 00:06:22,560
+los módulos que nos vienen de caja y lo bien documentado que está y la cantidad de ejemplos que trae.
+
+69
+00:06:22,560 --> 00:06:28,400
+Entonces, aquí en este punto nos podemos hacer una pregunta que es ¿Qué tiene la buena documentación,
+
+70
+00:06:28,400 --> 00:06:36,520
+que tanto nos encanta? Pues a mí parecer la documentación que tiene mejor contenido
+
+71
+00:06:36,520 --> 00:06:43,520
+básicamente incluye dos tipos de contenido. Por un lado, está la parte práctica, ¿vale? Que es la que nos
+
+72
+00:06:43,520 --> 00:06:48,880
+enseña cómo funciona el producto y cómo se usa, ¿vale? Y esto es cómo se consigue. Pues bien,
+
+73
+00:06:48,880 --> 00:06:54,520
+a base de tutoriales y también mostrándonos toda la documentación programática o el ar. ¿vale?
+
+74
+00:06:54,520 --> 00:07:00,000
+Y luego está la parte teórica, que es la parte más literaria de la documentación, donde tenemos
+
+75
+00:07:00,000 --> 00:07:04,560
+que poner el foco en explicar el por qué y el cómo de nuestra herramienta, ¿vale? Como ya digo,
+
+76
+00:07:04,560 --> 00:07:11,120
+la segunda parte pues es como más literaria y si que requiere de más minoridad, ¿vale? Pero es que
+
+77
+00:07:11,120 --> 00:07:16,040
+la primera parte está muy relacionada con el código. Y aquí es donde vengo con la clave de
+
+78
+00:07:16,040 --> 00:07:22,360
+esta charla. Cuando algo está muy asociado al código, lo que nos invita es a mantener la
+
+79
+00:07:22,360 --> 00:07:27,480
+documentación de la misma manera que hacemos nuestro código, ¿vale? De tal manera que podamos
+
+80
+00:07:27,480 --> 00:07:35,120
+intentar asegurar que tanto el código como la documentación son consistentes, ¿vale? Y volviendo
+
+81
+00:07:35,120 --> 00:07:40,680
+al título de la charla, los escribas son esas personas que en la antigüedad se dedicaban a copiar
+
+82
+00:07:40,680 --> 00:07:45,960
+textos completamente a mano, ¿vale? Así que nosotros vamos a intentar diferenciarnos de ellos y vamos
+
+83
+00:07:45,960 --> 00:07:51,000
+a intentar empezar a automatizar partes de la documentación. Y bueno, lo que voy a hacer a
+
+84
+00:07:51,000 --> 00:07:55,560
+partir de este momento va a ser centrarme en la parte práctica de la documentación, o sea,
+
+85
+00:07:55,560 --> 00:08:00,920
+en una parte de ejemplos y tutoriales irapi. Voy a pasar por la primera parte de manera breve
+
+86
+00:08:00,920 --> 00:08:07,600
+con una idea muy sencilla y luego voy a continuar con la parte de aquí, ¿vale? Bueno, con respecto
+
+87
+00:08:07,600 --> 00:08:12,040
+a los snippets, ¿vale? Porque nos gusta tener la documentación con muchos ejemplos, ¿cuántos
+
+88
+00:08:12,040 --> 00:08:18,160
+más mejor? ¿Qué podemos hacer para que nuestra documentación incluya snippets de código consistentes
+
+89
+00:08:18,160 --> 00:08:26,080
+con nuestro software? Pues aquí la idea es muy sencilla. Si queremos incluir ejemplos consistentes,
+
+90
+00:08:26,080 --> 00:08:31,760
+pues simplemente podemos hacer que esos trozos de código que queremos juntar como ejemplos sean
+
+91
+00:08:31,760 --> 00:08:37,960
+text, ¿vale? Y Paizantina tiene una cosita que son los doc test, que no son más que trozos de código
+
+92
+00:08:37,960 --> 00:08:43,600
+que incluimos como parte de los doc strings y que también se pueden poner en los sistemas
+
+93
+00:08:43,600 --> 00:08:48,960
+diferentes de documentación, ¿vale? Y estos trozos de código se pueden testear, ¿vale? Con una
+
+94
+00:08:48,960 --> 00:08:53,480
+serie de configuración. Cuando vamos a ejecutar nuestros test, por ejemplo, o vamos a generar la
+
+95
+00:08:53,480 --> 00:09:00,440
+documentación, no los evaluan y si están bien, pues pasan y si no, pues fallan, sin más. Aquí
+
+96
+00:09:00,440 --> 00:09:09,640
+se han puesto dos ejemplillos. Uno es el flag de los test modules de Sphinx y el otro es para el
+
+97
+00:09:09,640 --> 00:09:14,760
+propio Sphinx, que tiene una extensión que se llama doc test, ¿vale? Que nos permite evaluar los
+
+98
+00:09:14,760 --> 00:09:20,600
+doc test. Y, nada, siguiendo esta aproximación tan sencilla que luego os enseñaré en una pequeña
+
+99
+00:09:20,600 --> 00:09:27,800
+demo, podemos tener snippets de código consistentes con nuestra documentación. Y la otra parte que os
+
+100
+00:09:27,800 --> 00:09:32,840
+quería un poco comentar es la parte de API, ¿vale? Nos gusta tener una documentación siempre
+
+101
+00:09:32,840 --> 00:09:38,320
+actualizada, no es algo bastante frecuente que te vas a probar una librería que ves la documentación,
+
+102
+00:09:38,320 --> 00:09:44,560
+te enseñan unos snippets de código en el ritm y cuando vas a usarlos, pues no encajan, ¿vale? Y con
+
+103
+00:09:44,560 --> 00:09:48,720
+el API pasa también lo mismo. Te vas a encontrar una firma de un método y dices, esto es así y
+
+104
+00:09:48,720 --> 00:09:53,880
+luego se usará y no funciona así. Entonces, ¿qué podemos hacer para mantener una API consistente
+
+105
+00:09:53,880 --> 00:10:02,560
+con el código? Pues aquí voy a hablar de los PEPs, que son las propuestas de mejora de Python y voy a
+
+106
+00:10:02,560 --> 00:10:07,840
+empezar por el más pequeñito, el T8, ¿vale? Yo creo que es bastante frecuente que trabajemos
+
+107
+00:10:07,840 --> 00:10:13,600
+con... intentemos hacer un código que sea complayán con el PEP 8, ¿vale? Así que estamos ahí escribiendo
+
+108
+00:10:13,600 --> 00:10:19,600
+nuestro código formateado y de repente luego nos falla y empezamos a decir, joder, me falla el PEP 8
+
+109
+00:10:19,600 --> 00:10:24,400
+o me dice, no, puto PEP 8 me ha vuelto a fallar, ¿vale? Esto nos pasa a todos, ¿vale? Porque estamos
+
+110
+00:10:24,400 --> 00:10:29,880
+intentando hacer que nuestro código tenga una estructura conforme a esa propuesta y nos dice que
+
+111
+00:10:29,880 --> 00:10:35,200
+el código tiene que tener una serie de identaciones, tiene que tener una serie de espacios, los imports
+
+112
+00:10:35,200 --> 00:10:41,360
+tienen que ir arriba, tiene que haber unos saltos de línea, no puede haber el número de líneas en
+
+113
+00:10:41,360 --> 00:10:46,320
+blanco que queramos, en fin, el PEP 8 trata de estas cosas. Y al final todo esto, aunque nos
+
+114
+00:10:46,320 --> 00:10:50,920
+ponga una poñeta, pues lo que nos está ayudando es a tener un código mínimamente estructurado y
+
+115
+00:10:50,920 --> 00:10:57,040
+para ello además disponemos de un mogollón de herramientas como flake, como pyflakes o como
+
+116
+00:10:57,040 --> 00:11:05,080
+piling, entre otras, ¿vale? Pues bien, del año 2001 hay otro par de PEPs que hacen lo mismo, pero
+
+117
+00:11:05,080 --> 00:11:09,600
+para los docker strings, que son esos textos que estamos encerrando entre triples comillas,
+
+118
+00:11:09,600 --> 00:11:19,120
+justo debajo de las definiciones de las funciones de las clases o de los métodos. Y concretamente,
+
+119
+00:11:19,120 --> 00:11:27,280
+el 257 nos dice donde podemos colocar los docker strings y el 287 nos propone cómo escribirlos,
+
+120
+00:11:27,280 --> 00:11:35,000
+en este caso usando el formato de restructur text, ¿vale? Y lo bueno de todo esto es que de la misma
+
+121
+00:11:35,000 --> 00:11:42,360
+manera que el PEP 8 hablaba de cómo estructura nuestro código y facilitar la creación de herramientas
+
+122
+00:11:42,360 --> 00:11:47,600
+para estos PES, para los docker strings, pues el caso es similar. Existen una serie de herramientas
+
+123
+00:11:47,600 --> 00:11:52,520
+que nos permiten validar los docker strings, ¿vale? Con lo cual podríamos, digamos, tener
+
+124
+00:11:52,520 --> 00:11:56,200
+una serie de herramientas para validar tanto el código fuente, por lo que en este caso flake,
+
+125
+00:11:56,200 --> 00:12:03,760
+como una que os voy a mostrar ahora para validar los docker strings. Y nada, lo que os decía,
+
+126
+00:12:03,760 --> 00:12:09,240
+es que es una herramientilla que es la que utilizo yo para validar docker strings y se llama Dark
+
+127
+00:12:09,240 --> 00:12:14,600
+Lint. La podéis instalar en el PIP, o sea, la podéis coger del PIP y así que se instala simplemente
+
+128
+00:12:14,600 --> 00:12:21,240
+con PIP. Y bueno, aquí os ha hablado del PEP 287, que ha hablado de los docker strings,
+
+129
+00:12:21,240 --> 00:12:26,440
+escritos en formato restructur text, pero hay otros formatos donde destacan los de Google y los de
+
+130
+00:12:26,440 --> 00:12:31,600
+NumPy, ¿vale? Esta herramienta soporta todos los formatos. Y al final, además, independientemente del
+
+131
+00:12:31,600 --> 00:12:35,920
+formato que te olijas en la misma, existe una especificación para estos docker strings y
+
+132
+00:12:35,920 --> 00:12:41,440
+existen herramientas que permiten procesarlos, ¿vale? Y bueno, lo veréis ahora. La manera de
+
+133
+00:12:41,440 --> 00:12:45,600
+utilizar Dark Lint es muy sencilla. Tiene una interfaz de línea de comandos donde tú le dices
+
+134
+00:12:45,600 --> 00:12:51,680
+Dark Lint, el módulo o el director que quieres chequear y te mira los docker strings y te dice,
+
+135
+00:12:51,680 --> 00:12:56,840
+pues, te falta un argumento. Te sobre un argumento, este no lo has especificado. Te falta el retorno,
+
+136
+00:12:56,840 --> 00:13:01,880
+¿vale? Es así de sencillo. Pero es que además Dark Lint tiene un punto que si lo combinas con
+
+137
+00:13:01,880 --> 00:13:09,160
+Flake 8, pues, actúa como plugin. ¿Qué quiere decir esto? Flake 8 tiene una serie de reglas de
+
+138
+00:13:09,160 --> 00:13:15,000
+validación para que el código sea complaya con el PEP 8 y Dark Lint le aporta, cuando está instalado,
+
+139
+00:13:15,000 --> 00:13:18,760
+le aporta una serie de reglas adicionales para validar los docker strings. Por lo tanto,
+
+140
+00:13:18,760 --> 00:13:24,800
+a la hora de usar los dos validadores, si los dos están instalados, simplemente con invocar a Flake 8,
+
+141
+00:13:24,800 --> 00:13:29,840
+ya estamos validando tanto el código como los docker strings. Y bueno, un poco resumiendo,
+
+142
+00:13:29,840 --> 00:13:34,240
+al final, no estamos hablando más de hacer una etapa de análisis estético del código,
+
+143
+00:13:34,240 --> 00:13:39,640
+donde estamos haciendo un análisis sintáctico del código y validar una serie de reglas. En este
+
+144
+00:13:39,640 --> 00:13:44,320
+caso, con Flake 8 y Dark Lint. Y además, bueno, Flake 8 para los que se hayan curiosos,
+
+145
+00:13:44,320 --> 00:13:51,880
+tiene un mogulón de planes para validar más cosas. Y nada, pues, no sé, la mejor manera de verlo,
+
+146
+00:13:51,880 --> 00:13:56,560
+creo que es con una demo. Así que vamos allá. Voy a mostraros mi editor, lo voy a enseñar en vivo,
+
+147
+00:13:56,560 --> 00:14:03,320
+seguro que me equivoco, pero vamos, seguro que pilláis la copla rápidamente. Vale,
+
+148
+00:14:03,320 --> 00:14:10,360
+le doy al Zoom mucho al Visual Studio Code para que se vea bien en el vídeo. Espero que se vea y
+
+149
+00:14:10,360 --> 00:14:17,080
+nada, os lo voy a enseñar. Este es el repo que tenéis en mi cuenta de GitHub y que es lo compartido
+
+150
+00:14:17,080 --> 00:14:25,000
+por el canal de Discord. No podéis clonar, forquear y contribuir sin problema. He hecho un código
+
+151
+00:14:25,000 --> 00:14:31,440
+Lamar de avanzado que consiste en una calculada. No tiene nada especial. Básicamente, le he metido
+
+152
+00:14:31,440 --> 00:14:38,200
+cuatro operaciones, una resta multiplicación y división. Al final, el código aquí es lo menos
+
+153
+00:14:38,200 --> 00:14:43,600
+importante. No he venido a hablar del código ni hablar de los doggestrings, así que lo enseño,
+
+154
+00:14:43,600 --> 00:14:49,560
+básicamente. La división. Le pones un texto libre para describir la función y por partes,
+
+155
+00:14:49,560 --> 00:14:55,080
+aquí le he metido el doggest. Este es el ejemplo que he puesto. Puedes poner uno o puedes poner
+
+156
+00:14:55,080 --> 00:15:01,200
+tres ejemplos o los que quieras. Simplemente, digamos, lo que es el uso va con las tres flechitas y
+
+157
+00:15:01,200 --> 00:15:05,800
+el resultado que debería de volver, sin las flechitas, justo debajo. Puedes poner otra continuación
+
+158
+00:15:05,800 --> 00:15:10,080
+sin problemas. Luego, en este caso, por ejemplo, he puesto que tiene dos parámetros, ahí ve,
+
+159
+00:15:10,080 --> 00:15:16,960
+lo que devuelve, el resultado de la división de entre b y he puesto un races, porque si pones
+
+160
+00:15:16,960 --> 00:15:22,800
+una división por cero es lo que te va a devolver. Y luego la implementación. ¿Qué podemos hacer
+
+161
+00:15:22,800 --> 00:15:31,120
+aquí? Imaginaos que ahora nos dicen que metamos un parámetro nuevo. Os ponemos un c. Entero.
+
+162
+00:15:31,120 --> 00:15:42,120
+Ahora cojo y después de guardar, digo, voy a comprobar cómo fiten esto. Darklynt calc. Me dice c.
+
+163
+00:15:42,120 --> 00:15:47,880
+Vale, es así. Darklynt es así. Es poco verboso. Tiene una opción para aumentar la
+
+164
+00:15:47,880 --> 00:15:57,320
+verbociidad. Verbosit y todos. Calc. Dice, te falta un parámetro en el doggestream c. Vale,
+
+165
+00:15:57,320 --> 00:16:06,720
+pues simplemente se habría que añadir aquí un bloque c. Guardamos y ya pasaría.
+
+166
+00:16:09,400 --> 00:16:16,640
+Vale, volviendo atrás. Estamos en el parámetro que no nos vale para nada. Nos pasa lo mismo
+
+167
+00:16:16,640 --> 00:16:23,320
+con el tipo de retorno. ¿Qué podemos hacer? ¿Qué podemos hacer aquí? Comprobar más.
+
+168
+00:16:23,320 --> 00:16:28,720
+Pues lo que os he dicho, flake 8 es Darklynt actúa como plugin de flake 8. Con lo cual si hacemos
+
+169
+00:16:28,720 --> 00:16:41,400
+flake 8 calc está comprobando sus reglas, hilos de Darklynt. Por ejemplo, si aquí
+
+170
+00:16:41,400 --> 00:16:47,120
+tuve ese parámetro mal nombrado. Aquí me dice, por ejemplo, un error de p8.
+
+171
+00:16:47,120 --> 00:16:55,480
+Me está diciendo, has documentado un parámetro c que no sé lo que hace. Estoy echando de menos
+
+172
+00:16:55,480 --> 00:17:02,240
+un parámetro b y este es de p8. Si os fijáis, las reglas de p8 tienen este código que no sabemos
+
+173
+00:17:02,240 --> 00:17:07,680
+qué es exactamente y las de Darklynt se amandan. Empezan por dar. Si volvemos a reglar.
+
+174
+00:17:07,680 --> 00:17:20,960
+Perfecto, ya está. Os voy a enseñar más la comprobación de los docks. Lo que os he dicho,
+
+175
+00:17:20,960 --> 00:17:26,120
+este código de aquí, que es el código del docks string, se puede testear. Entonces,
+
+176
+00:17:26,120 --> 00:17:30,480
+imagina que ponemos aquí una división 10 entre 2, 5. Pero por algún motivo,
+
+177
+00:17:30,480 --> 00:17:35,440
+pues lo que sé en algún momento de aquí es un 20. Si ejecutamos los tests,
+
+178
+00:17:38,080 --> 00:17:45,760
+un alias en torno de poetry, me ha valido los tests y me ha dicho, has ejecutado esta división,
+
+179
+00:17:45,760 --> 00:17:53,040
+20 entre 2, esperaba 5 y tuve 10. O sea que realmente no os complayan. Está diciendo,
+
+180
+00:17:53,040 --> 00:17:59,320
+yo debería devolver 5 y se está devolviendo 10. Lo que ha hecho es ejecutar este código y no consiste
+
+181
+00:17:59,320 --> 00:18:03,360
+20 entre 2 es 10 y no es 5. Aquí podríamos coger a arreglarlo.
+
+182
+00:18:09,000 --> 00:18:16,720
+Ya pasan los tests. Y otro punto donde podemos comprobar los tests es en la propia documentación.
+
+183
+00:18:17,720 --> 00:18:25,200
+Aquí he metido unos snippets muy sencillos. Uno de sus motores está multiplicación y división,
+
+184
+00:18:25,200 --> 00:18:31,600
+pues el caso es el mismo. Por ejemplo, aquí tengo una multiplicación que es 5 por 5 y pongo 6 por 5.
+
+185
+00:18:33,120 --> 00:18:37,080
+La hora de generar la documentación, que lo tenéis todo aquí en el repo,
+
+186
+00:18:37,080 --> 00:18:42,320
+dentro del directorio docks, he creado un scaffolding con Sphinx Quickstart y tiene muy pocos cambios.
+
+187
+00:18:42,320 --> 00:18:48,800
+Entonces, yo voy a hacer la creación de los docks con el makefile que me da Sphinx Quickstart
+
+188
+00:18:48,800 --> 00:18:53,760
+y le he puesto el argumento de la opción de menos b.doctest para que valúe los doctests.
+
+189
+00:18:53,760 --> 00:19:00,640
+Entonces, cuando vas a generar la documentación, te pones el resumen de los docks y te he ejecutado
+
+190
+00:19:00,640 --> 00:19:09,680
+8 tests. ¿Cuáles son esos tests? Los 4 que hay en el R7 del proyecto de Sphinx, más los 4 docks
+
+191
+00:19:09,680 --> 00:19:16,080
+que hay aquí, los ejecuta a todos. Y dice, ¿me ha fallado uno? ¿Y cuál ha fallado? Pues ha fallado
+
+192
+00:19:16,080 --> 00:19:22,320
+la multiplicación de 6 por 5 que esperaba tener aquí un 30 y en cambio le he puesto un 25.
+
+193
+00:19:22,320 --> 00:19:28,640
+Entonces, la arreglamos, le hacemos otra vez el docks.
+
+194
+00:19:28,640 --> 00:19:36,800
+Ya lo ha pasado y te construye la documentación, sin más. ¿Vale? ¿Pasta aquí qué es lo que hemos visto?
+
+195
+00:19:36,800 --> 00:19:44,000
+Haberemos conseguido, digamos, tener los docks Sphinx consistentes con el código,
+
+196
+00:19:44,000 --> 00:19:51,280
+utilizando la herramienta de Darklyn y luego estamos robando los docks o bien en la fase de tests.
+
+197
+00:19:51,280 --> 00:19:55,520
+En este caso lo hemos hecho con Python test o bien a la hora de generar la documentación.
+
+198
+00:19:55,520 --> 00:20:01,120
+Pero al final también es interesante ver cómo trabajando. ¿Cuál momento hay que ir trabajando esto?
+
+199
+00:20:01,120 --> 00:20:09,040
+Yo mi recomendación es trabajar esto a poquitos. ¿Vale? Entonces, imagínalo que estamos trabajando
+
+200
+00:20:09,040 --> 00:20:13,920
+y vamos haciendo nuestros commits. Pues lo suyo es, por ejemplo, tener una cosa como el pre-commit.
+
+201
+00:20:13,920 --> 00:20:24,080
+¿Vale? Entonces, cuando vamos a hacer el commit...
+
+202
+00:20:24,080 --> 00:20:29,120
+El pre-commit nos lanzan una serie de checks. ¿Vale? Y en este caso lo puesto en el repo
+
+203
+00:20:29,120 --> 00:20:35,200
+podemos poner un comprobador de flake 8. De tal manera que si estamos trabajando haciendo pequeños commits
+
+204
+00:20:35,200 --> 00:20:40,400
+vamos cambiando el código y se nos olvida de mantener la documentación, de la parte que luego va a
+
+205
+00:20:40,400 --> 00:20:46,080
+pasar a formar parte de la documentación, pues aquí nos fallaría y nos invitaría a cambiarlo.
+
+206
+00:20:46,080 --> 00:20:50,240
+Incluso se pueden poner más stages en el pre-commit y podrías poner, por ejemplo,
+
+207
+00:20:50,240 --> 00:20:57,440
+un formateador tipo black o así para ir generando siempre el código formateado y consistente.
+
+208
+00:20:57,440 --> 00:21:04,320
+¿Vale? Y nada, hasta aquí la demo. El general de la documentación no es nada atractiva.
+
+209
+00:21:04,320 --> 00:21:09,120
+Si queréis os la enseño, pero vamos a ver los snippets y no hay mucho más.
+
+210
+00:21:09,120 --> 00:21:16,160
+Así que en el ritmo y del repo veis cómo generarla y la podéis abrir como sea una de las favoritas.
+
+211
+00:21:16,160 --> 00:21:24,560
+Y bueno, voy a volver a las slides. Ha sido la demo. Espero que os haya molado. Me parece muy
+
+212
+00:21:24,560 --> 00:21:31,600
+sencilla y muy concisa pero va al grano. Y bueno, ya vamos a empezar a aterrizar todo
+
+213
+00:21:31,600 --> 00:21:36,000
+como genera nuestra documentación en nuestro proyecto Python. Vamos a suponer que ya tenemos
+
+214
+00:21:36,000 --> 00:21:41,040
+una pico consistente con el código y está verificado con herramientas como Darkly y como Python.
+
+215
+00:21:41,920 --> 00:21:48,160
+Y por dónde empezamos? Pues bueno, vamos a empezar brevemente. Por aquí habré que escoger un enjai
+
+216
+00:21:48,160 --> 00:21:54,320
+de documentación. Aquí hay dos pero hay muchos más. Los más conocidos son Sphinx y MakeDocs.
+
+217
+00:21:55,120 --> 00:22:02,160
+MakeDocs se basa en un formato markdown, es más asequible. ¿Vale? Y Sphinx tira por defecto de
+
+218
+00:22:02,160 --> 00:22:09,680
+un formato con mucho más rico en sintaxis y también en nociones de formateo que es restructo. ¿Vale?
+
+219
+00:22:10,240 --> 00:22:18,160
+Aquí voy a hacer un inciso porque luego hay una sesión que lidera Juan Luis Cano y que nos va a
+
+220
+00:22:18,160 --> 00:22:22,960
+hablar de un plugin para Sphinx para utilizar un diálecto de markdown o lo cual es que Sphinx
+
+221
+00:22:22,960 --> 00:22:28,480
+solo tira de RCT no es cierto, tiene un multitud de plugins para poder utilizar markdown. Y nada,
+
+222
+00:22:28,480 --> 00:22:33,760
+os invito a que os apuntéis para quien quiera profundizar. Y bueno lo que lo he dicho aparte
+
+223
+00:22:33,760 --> 00:22:39,360
+del plugin de Juan Luis para el markdown para todos los motores, para Sphinx, para MakeDocs, hay infinidad
+
+224
+00:22:39,360 --> 00:22:45,520
+de plugins para hacer todo tipo de cosas. ¿Vale? Desde por ejemplo, si genera la documentación HTML
+
+225
+00:22:45,520 --> 00:22:54,400
+que tengan otra presentación distinta para incluir otro tipo de recursos no solo texto plano y código
+
+226
+00:22:54,400 --> 00:22:59,040
+pues por ejemplo cuando haces un microservicio pues a lo mejor te interesa incluir el OpenAppi
+
+227
+00:22:59,680 --> 00:23:03,920
+para los que hacen ciencia de datos por ejemplo les interesa incluir el código de los Jupyter
+
+228
+00:23:03,920 --> 00:23:09,120
+notebooks y vamos mucho más, te puede incluir todo tipo de recursos. Y luego también hay plugins
+
+229
+00:23:09,120 --> 00:23:14,320
+para formator de salida o sea no se genera solo HTML, también se pueden generar pdfs, se pueden
+
+230
+00:23:14,320 --> 00:23:23,120
+generar docx, vamos hay infinidad de plugins cuando te puedes a mirar te quedas loco. Y poco más,
+
+231
+00:23:23,120 --> 00:23:30,560
+os voy a dar unos tips finales, a modo de un poco en plan de mi experiencia y espero que os sirvan.
+
+232
+00:23:30,560 --> 00:23:37,040
+El primero es, yo soy el primero en reconocer, os quiero comentar, es un rollo ¿vale? Y más si os
+
+233
+00:23:37,040 --> 00:23:41,280
+molas lanzarás a hacer código que además con país aún es tan sencillito que te invito a hacerlo.
+
+234
+00:23:42,000 --> 00:23:47,440
+Pero lo que es lo peor de lo peor es dejar todo para el final así que vamos a empezar por lo
+
+235
+00:23:47,440 --> 00:23:52,720
+básico y vamos a automatizar todo lo que podamos. O sea hemos visto como mantener SNP de código,
+
+236
+00:23:52,720 --> 00:23:58,880
+hemos visto como mantener una pico existente y seguro que hay muchas cosas que vosotros podéis
+
+237
+00:23:58,880 --> 00:24:04,080
+automatizar en vuestro día a día así que no lo dudéis ni un minuto y si está relacionado con la
+
+238
+00:24:04,080 --> 00:24:09,120
+documentación lanzaros a hacerlo. Luego también a la hora de documentar pues hay que pensar en la
+
+239
+00:24:09,120 --> 00:24:15,200
+audiencia ¿vale? No es lo mismo hacer un documento para un compañero de equipo que para un usuario
+
+240
+00:24:15,200 --> 00:24:22,640
+final así que es buena cosa ponerse en su lugar y adaptar el mensaje que transmitimos al que
+
+241
+00:24:22,640 --> 00:24:28,960
+lo vales ¿vale? La tercera idea es simplificar ¿vale? Porque es la mejor manera de escribir la
+
+242
+00:24:28,960 --> 00:24:36,000
+documentación si hay algún concepto o alguna sección que se puede simplificar también. Ponte
+
+243
+00:24:36,000 --> 00:24:40,480
+manos a la obra y hazlo simplificar la medida lo posible y por último que es bastante obvio y
+
+244
+00:24:40,480 --> 00:24:45,920
+yo os he enseñado ahora mismo un par de cosillas país a nuestro aliado. Hay multitud de herramientas y
+
+245
+00:24:45,920 --> 00:24:52,400
+de plugins que nos facilitan muchísimo la vida a la hora de generar la documentación y vamos,
+
+246
+00:24:52,400 --> 00:24:56,240
+este honor nuestro producto implementado en Python hay muchas de herramientas para la
+
+247
+00:24:56,240 --> 00:24:59,520
+documentación que sí que están implementadas en Python que nos hacen la vida mucho más fácil.
+
+248
+00:25:01,200 --> 00:25:06,720
+Y nada por mi parte nada más. Os doy la gracias para acompañarme en este rato y espero haber
+
+249
+00:25:06,720 --> 00:25:11,040
+conseguido mi objetivo y si os lleváis algo nuevo en la mochila o al menos si no ha risa una risa con
+
+250
+00:25:11,040 --> 00:25:16,800
+la foto de Leon con Megambas pues entonces ha merecido la pena y nada ha sido honor abrir
+
+251
+00:25:16,800 --> 00:25:23,200
+esto lo que ha dicho en sábado y quedan la espera de vuestra pregunta y feedback en el por aquí o en el discord.
+
+252
+00:25:23,200 --> 00:25:30,960
+Pues muy bien Andrés muchísimas gracias por la presentación. Siempre empezarnos a abrir el camino
+
+253
+00:25:30,960 --> 00:25:38,400
+como que cuesta más pero muchas gracias por tu presentación. Tenemos alguna preguntilla por
+
+254
+00:25:38,400 --> 00:25:45,880
+aquí por el chat de YouTube. Jimena nos pregunta si podríamos dar estilo a la documentación
+
+255
+00:25:45,880 --> 00:25:51,240
+generada imagino que al usar más daos y cuando te refieres al estilo no necesitas
+
+256
+00:25:51,240 --> 00:25:57,160
+refieres a cambiar lo que es la presentación de la HTML y la respuesta he pasado un poco por encima
+
+257
+00:25:57,160 --> 00:26:03,480
+pero estaba en las slides puedes incluir plugins para para cambiar el la presentación de salida
+
+258
+00:26:03,480 --> 00:26:09,800
+por ejemplo utilizar el el formato este de google se llama el con polimer con pichete polimer y
+
+259
+00:26:09,800 --> 00:26:14,600
+y si no por efecto el por ejemplo en es fings utiliza el tema de la vaste pero si la respuesta
+
+260
+00:26:14,600 --> 00:26:21,560
+es puede cambiar el tema de la documentación con plugins vale genial nada y algunos comentarios
+
+261
+00:26:21,560 --> 00:26:27,560
+en discord que ha sido muy interesante la charla de momento no veo más preguntas andrés
+
+262
+00:26:29,760 --> 00:26:38,840
+así que nada en principio él desde que pueda pues ya se meterán el chat de discord y le pueden
+
+263
+00:26:38,840 --> 00:26:46,160
+ir preguntando pues pues lo que lo que quieren por ahí como te ha sentido bien bien bien la verdad que
+
+264
+00:26:46,160 --> 00:26:52,360
+no sé es el tema del que me apetecía hablar es un tema de que nos habla mucho y que luego al
+
+265
+00:26:52,360 --> 00:26:56,800
+final es una cuestión de práctica o sea de empezar a poner en práctica estas pequeñas cositas y
+
+266
+00:26:56,800 --> 00:27:04,240
+luego al final la vida más fácil bueno pues nada si podemos en práctica los consejos gracias y nos
+
+267
+00:27:04,240 --> 00:27:09,040
+vemos por ahí en red de muy bien gracias a salud a la tarea chau chau chau
+

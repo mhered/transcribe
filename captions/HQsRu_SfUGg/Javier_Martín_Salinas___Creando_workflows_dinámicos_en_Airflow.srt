@@ -1,0 +1,1028 @@
+1
+00:00:00,000 --> 00:00:16,000
+Música
+
+2
+00:00:16,000 --> 00:00:21,000
+Os presento a Javier Salinas, Martín Salinas, perdón, muchas gracias por el yao.
+
+3
+00:00:21,000 --> 00:00:25,000
+Y bueno, nos vamos a hablar de la Pache Club.
+
+4
+00:00:25,000 --> 00:00:33,000
+Vamos a dar un aplauso. La pregunta, por favor, al final.
+
+5
+00:00:33,000 --> 00:00:35,000
+Gracias.
+
+6
+00:00:35,000 --> 00:00:40,000
+Hola a todos, buenos días. Bienvenidos a esta charla de Apache Airflow.
+
+7
+00:00:40,000 --> 00:00:46,000
+De lo que vamos a hablar hoy es de algunas de las cosas que implementa Apache Airflow,
+
+8
+00:00:46,000 --> 00:00:53,000
+algunas de las funcionalidades que tiene, que no son tan conocidas y que nos van a permitir diseñar workflows
+
+9
+00:00:53,000 --> 00:01:00,000
+que sean más flexibles y que se salgan un poco del caso de uso típico de Apache Airflow.
+
+10
+00:01:00,000 --> 00:01:07,000
+Empezamos por el principio. Me presento, soy Javier. Llevo desarrollando en Python desde hace casi 10 años,
+
+11
+00:01:07,000 --> 00:01:14,000
+principalmente en el área de datos y actualmente trabajo como ingeniero de datos en Trash U.
+
+12
+00:01:14,000 --> 00:01:19,000
+Trash U es una empresa que se dedica a desarrollar productos para hoteles,
+
+13
+00:01:19,000 --> 00:01:25,000
+para mejorar la comunicación entre el hotel y los clientes y fomentar el feedback del cliente,
+
+14
+00:01:25,000 --> 00:01:28,000
+o una forma de mejorar la gestión.
+
+15
+00:01:28,000 --> 00:01:36,000
+Y una de las cosas que hacemos nosotros es procesamos todas las semanas miles de millones de reseñas de clientes en internet,
+
+16
+00:01:36,000 --> 00:01:41,000
+analizamos cada una de las reseñas, identificamos de lo que está hablando el cliente,
+
+17
+00:01:41,000 --> 00:01:45,000
+identificamos el sentimiento si el cliente tiene un sentimiento positivo o negativo
+
+18
+00:01:45,000 --> 00:01:49,000
+y con eso generamos unos informes agregados para cada uno de los hoteles
+
+19
+00:01:49,000 --> 00:01:55,000
+de forma que es muy fácil identificar los puntos fuertes y los puntos flacos de cada uno de los hoteles y incorporarlos.
+
+20
+00:01:55,000 --> 00:02:00,000
+El equipo de ingeniería lo tenemos distribuido en un montón de países en todo el mundo
+
+21
+00:02:00,000 --> 00:02:07,000
+y aquí en concreto en España también estamos super repartidos y creo que estamos trabajando en casi todas las comunidades autónomas.
+
+22
+00:02:07,000 --> 00:02:17,000
+Vamos a ver. Os voy a explicar un poco de dónde sale esta charla. Nosotros hasta hace poco tiempo no usábamos Airflow
+
+23
+00:02:17,000 --> 00:02:23,000
+como orquestador en nuestros pipeline de datos y en un proyecto hace un año más o menos decidimos incorporarlo
+
+24
+00:02:23,000 --> 00:02:26,000
+para ver las posibilidades que nos daba.
+
+25
+00:02:26,000 --> 00:02:35,000
+Este diagrama de aquí que espero que podáis leer es más o menos el diagrama de una pipeline típica de las que nosotros gestionamos.
+
+26
+00:02:35,000 --> 00:02:43,000
+Es el tipo de pipeline que se ejecuta de forma periódica cada x tiempo donde tú tienes un control sobre la entrada de datos
+
+27
+00:02:43,000 --> 00:02:49,000
+y más o menos está todo bastante acotado. Sería lo típico en unas etapas de carga de datos, un preprocesado de esos datos,
+
+28
+00:02:49,000 --> 00:02:56,000
+combinamos los datos, hacemos distinto procesado, luego los combinamos y igual guardamos los datos.
+
+29
+00:02:56,000 --> 00:03:04,000
+En este proyecto en el que os comentaba antes, el enfoque es un poco distinto.
+
+30
+00:03:04,000 --> 00:03:08,000
+No es un entorno tan acotado sino que está más orientado a lo que es una aplicación de usuario.
+
+31
+00:03:08,000 --> 00:03:18,000
+Nosotros lo que hemos hecho es sobre Airflow, hemos diseñado unos plugins y al final es una aplicación de usuario donde el usuario va a subir los ficheros
+
+32
+00:03:18,000 --> 00:03:25,000
+que quiere analizar, va a configurar algunos de los parámetros de la ejecución y va a lanzar el proceso.
+
+33
+00:03:25,000 --> 00:03:28,000
+Al final luego se le devolverán unos resultados.
+
+34
+00:03:28,000 --> 00:03:37,000
+La primera versión que hicimos era también una cosa parecida a esta y pensando mientras lo estamos implementando,
+
+35
+00:03:37,000 --> 00:03:46,000
+eso de que se te va la cabeza y empiezas a pensar, que realmente tiene sentido que estemos haciendo este tipo de diagrama para este caso de uso.
+
+36
+00:03:46,000 --> 00:03:59,000
+Tenemos una aplicación de usuario donde estamos dejando que el usuario configure distintas cosas y aquí este diagrama al final se supone
+
+37
+00:03:59,000 --> 00:04:10,000
+estamos esperando que todas las tareas se realicen, se completen, si alguno de las tareas falla, la ejecución de este flujo de datos va a fallar.
+
+38
+00:04:10,000 --> 00:04:19,000
+¿Cómo podemos hacer para que sea algo más flexible? Por ejemplo, imaginemos que en nuestra aplicación queremos implementar diferentes modelos,
+
+39
+00:04:19,000 --> 00:04:27,000
+un modelo que sea muy costoso, que de unas predicciones súper precisas y otro que sea más ligero, que de unas predicciones no tan precisas
+
+40
+00:04:27,000 --> 00:04:34,000
+pero suficientemente buenas. El usuario puede elegir uno u otro en función de la necesidad que tenga en ese momento.
+
+41
+00:04:34,000 --> 00:04:45,000
+Igual si necesita un resultado rápido, puede ir con el modelo ligero, entonces realmente necesitaríamos ejecutar las dos partes de este diagrama
+
+42
+00:04:45,000 --> 00:04:53,000
+o podríamos ignorar una de las partes y dedicarnos únicamente a lo que va a aportar valor.
+
+43
+00:04:53,000 --> 00:05:07,000
+Sigue dándole vueltas a la cabeza y dices, igual alguna de estas fases del diagrama solo tiene sentido si tenemos unos resultados previos
+
+44
+00:05:07,000 --> 00:05:21,000
+que merece la pena profesar, si resulta que por ejemplo nuestros usuarios van a subir sus ficheros, les pedimos un formato específico
+
+45
+00:05:21,000 --> 00:05:29,000
+pero la calidad de los datos que ellos nos pueden pasar son distintos, entonces podemos aplicar distintos preprocesados a esos ficheros.
+
+46
+00:05:29,000 --> 00:05:36,000
+Ahora mismo estamos aplicando todo el preprocesado, incluso si el fichero que nos dan es de muy buena calidad y no necesita aternada.
+
+47
+00:05:36,000 --> 00:05:46,000
+Podríamos hacer que este workflow se atate en función de cómo sea la calidad de ese fichero y ejecute unas tareas vueltas de forma automática.
+
+48
+00:05:46,000 --> 00:05:55,000
+Yo no tenía claro exactamente cómo se podía implementar esto, estuve revisando la documentación de Airflow,
+
+49
+00:05:55,000 --> 00:06:01,000
+tampoco me quedó una idea muy clara de cómo hacerlo porque la documentación de Airflow para mí personalmente
+
+50
+00:06:01,000 --> 00:06:04,000
+parece que se concentra mucho en el caso típico.
+
+51
+00:06:04,000 --> 00:06:21,000
+Bueno, pues entonces hicimos una pequeña investigación y al final los resultados los presentamos en la empresa,
+
+52
+00:06:21,000 --> 00:06:30,000
+que es parecida a la que ahora vais a ver. La idea es encontrar una especie de pequeñas recetas combinando los elementos y las funcionalidades de Airflow
+
+53
+00:06:30,000 --> 00:06:35,000
+para poder darle flexibilidad a los workflow.
+
+54
+00:06:35,000 --> 00:06:44,000
+Básicamente lo que queremos conseguir son cuatro cosas, queremos poder diseñar e implementar workflows de datos flexibles
+
+55
+00:06:44,000 --> 00:06:50,000
+que nos permitan ignorar partes de ramas del procesado a demanda,
+
+56
+00:06:50,000 --> 00:07:01,000
+nos gustaría poder hacer que algunas de esas tareas dentro del workflow se ejecuten o no en función de resultados anteriores.
+
+57
+00:07:01,000 --> 00:07:06,000
+Queremos hacer todo esto sin perder nada del histórico de los estados de las ejecuciones,
+
+58
+00:07:06,000 --> 00:07:15,000
+porque en workflow puedes definir el diagrama de forma dinámica y todo eso,
+
+59
+00:07:15,000 --> 00:07:19,000
+pero de una ejecución a otra puedes perder algunas tareas y puedes perder datos.
+
+60
+00:07:19,000 --> 00:07:23,000
+Eso es lo que queremos hacer, lo queremos que estén los datos siempre y accesibles.
+
+61
+00:07:23,000 --> 00:07:30,000
+Y otra cosa importante, nosotros trabajamos con un montón de datos, no podemos ejecutarlos con procesado en padezo impuro,
+
+62
+00:07:30,000 --> 00:07:37,000
+necesitamos usar Spark, entonces todo lo que vayamos a hacer tiene que poder funcionar en Spark.
+
+63
+00:07:37,000 --> 00:07:51,000
+Ahora viene la parte interesante, hemos hecho una demo corriendo en una instancia local de Airflow,
+
+64
+00:07:51,000 --> 00:08:08,000
+donde os voy a presentar, está en un repo de KitHab, tenemos 7 o 8 ejemplos distintos,
+
+65
+00:08:08,000 --> 00:08:14,000
+donde se van cubriendo cada una de las funcionalidades que vamos a ver, con ejemplos súper tontos.
+
+66
+00:08:14,000 --> 00:08:22,000
+Los diagramas tienen la mayoría de las tareas vacías, entonces no hay nada que pasa aquí.
+
+67
+00:08:22,000 --> 00:08:26,000
+Hay que duplicar otro trabajo. Tú sigue, tú sigue.
+
+68
+00:08:31,000 --> 00:08:37,000
+Bueno, aprovecho, si alguien no está muy familiarizado con Airflow, para poder seguir los ejemplos,
+
+69
+00:08:37,000 --> 00:08:43,000
+básicamente hay que saber tres cosas, cada uno de los ejemplos define un objeto que se llama Taz,
+
+70
+00:08:43,000 --> 00:08:51,000
+que va a ser el diagrama del workflow, donde van a aparecer las tareas, cada una de las tareas se define con un operador,
+
+71
+00:08:51,000 --> 00:08:56,000
+que van a ser todos operadores de Python, o sea la lógica la vamos a definir como una función de Python,
+
+72
+00:08:56,000 --> 00:09:02,000
+y en la parte de abajo del código lo que hacemos es definir las dependencias,
+
+73
+00:09:02,000 --> 00:09:13,000
+es decir, bueno, esta tarea se va a ejecutar después de esta y de esta, entonces con eso definimos todo lo que es el workflow.
+
+74
+00:09:15,000 --> 00:09:16,000
+Son los riesgos del director.
+
+75
+00:09:23,000 --> 00:09:31,000
+El enlace al repo de KitHab, los que pasaré, las diapositivas podéis acceder a él y usarlo como queráis.
+
+76
+00:09:31,000 --> 00:09:38,000
+Dentro del repo hay también un docker compose, donde viene con las instrucciones para poder lanzar una instancia local de Airflow
+
+77
+00:09:38,000 --> 00:09:41,000
+y poder jugar con ella en vuestro ordenador.
+
+78
+00:09:45,000 --> 00:09:46,000
+J. Martinter.
+
+79
+00:09:46,000 --> 00:09:51,000
+A ver si me gusta complicar, que mi cosa es...
+
+80
+00:09:56,000 --> 00:10:05,000
+Nosotros usamos para definir las pipeline de datos, que al final son tareas que son trabajos en Spark, SparkYobes.
+
+81
+00:10:05,000 --> 00:10:10,000
+Al final lo que hace Airflow es, digamos, lanzar cada una de las tareas cuando le toca.
+
+82
+00:10:10,000 --> 00:10:20,000
+No es un ETL, sino que antes, supinamos como ETL, pero si me hablo ahí lo que tú decías que falla en mitad de datos,
+
+83
+00:10:20,000 --> 00:10:22,000
+eso no tiene un...
+
+84
+00:10:25,000 --> 00:10:32,000
+No, eso lo tienes que implementar tú. Al final tú lo que tienes es simplemente una herramienta que gestiona cómo se ejecutan tus tareas.
+
+85
+00:10:32,000 --> 00:10:39,000
+Se sabe que empieza por esta tarea, que después de esta tarea vienen otras, que solo se van a ejecutar las condiciones determinadas
+
+86
+00:10:39,000 --> 00:10:43,000
+y si hay algo que falla, pues la tarea va a fallar por favor.
+
+87
+00:10:47,000 --> 00:10:49,000
+Tenéis alguna otra pregunta?
+
+88
+00:10:54,000 --> 00:10:56,000
+Ya sé cuál es el problema, no puedes maximizar.
+
+89
+00:10:56,000 --> 00:10:57,000
+No puedes maximizar.
+
+90
+00:10:57,000 --> 00:10:59,000
+Si maximiza se rupe, por favor.
+
+91
+00:11:02,000 --> 00:11:03,000
+Vale.
+
+92
+00:11:03,000 --> 00:11:05,000
+Le damos un aplauso a los proyectos de la UGR.
+
+93
+00:11:05,000 --> 00:11:06,000
+Me pasa nada.
+
+94
+00:11:07,000 --> 00:11:09,000
+Si quieres luego retomamos la pregunta.
+
+95
+00:11:10,000 --> 00:11:11,000
+Muy bien.
+
+96
+00:11:13,000 --> 00:11:15,000
+Hemos dicho que queríamos hacer cuatro cosas.
+
+97
+00:11:17,000 --> 00:11:26,000
+Queremos ignorar partes de nuestro workflow de datos, queremos adaptar nuestro workflow de datos en función de los datos que vayamos procesando,
+
+98
+00:11:26,000 --> 00:11:30,000
+queremos mantener el histórico y queremos que esto funcione sobre Spark.
+
+99
+00:11:30,000 --> 00:11:35,000
+Empezamos por lo primero.
+
+100
+00:11:35,000 --> 00:11:40,000
+¿Cómo podemos hacer que haya partes del workflow que se ejecuten?
+
+101
+00:11:40,000 --> 00:11:42,000
+Esto es de perógruyo.
+
+102
+00:11:42,000 --> 00:11:47,000
+Hay un operador que te da Airflow, que se llama el branch Python operator.
+
+103
+00:11:47,000 --> 00:11:55,000
+Lo que hace es que tú le pasas una función Python, que va a devolver la lista de los sides de las tareas que se van a ejecutar después.
+
+104
+00:11:55,000 --> 00:12:07,000
+Si este operador viene detrás cuatro tareas distintas y devolvemos la idea de una de ellas, sólo se va a ejecutar esa tarea.
+
+105
+00:12:07,000 --> 00:12:10,000
+Si devolvemos una lista vacía, no se va a ejecutar ninguna.
+
+106
+00:12:10,000 --> 00:12:14,000
+Si devolvemos desde los cuatro, se ejecutará los cuatro.
+
+107
+00:12:14,000 --> 00:12:15,000
+¿De acuerdo?
+
+108
+00:12:15,000 --> 00:12:25,000
+Entonces, vamos a ver si se ve bien el ejemplo.
+
+109
+00:12:25,000 --> 00:12:36,000
+¿Se ve bien?
+
+110
+00:12:36,000 --> 00:12:38,000
+Estamos jugando con fuego aquí.
+
+111
+00:12:38,000 --> 00:12:43,000
+¿Puedo ir donde eso?
+
+112
+00:12:43,000 --> 00:12:46,000
+No.
+
+113
+00:12:46,000 --> 00:12:48,000
+Siento.
+
+114
+00:12:48,000 --> 00:12:56,000
+Otra oportunidad.
+
+115
+00:12:56,000 --> 00:13:02,000
+No había maximizado.
+
+116
+00:13:02,000 --> 00:13:03,000
+Ahí le gustó.
+
+117
+00:13:03,000 --> 00:13:10,000
+Venga, ahí lo dejamos.
+
+118
+00:13:10,000 --> 00:13:15,000
+¿Qué te quedes aquí?
+
+119
+00:13:15,000 --> 00:13:18,000
+Tenemos este ejemplo.
+
+120
+00:13:18,000 --> 00:13:26,000
+Tenemos aquí esta primera tarea, input branch, que es un branch Python operator.
+
+121
+00:13:26,000 --> 00:13:31,000
+Por defecto, siempre va a ejecutar esta primera.
+
+122
+00:13:31,000 --> 00:13:39,000
+Hemos quedado que este operador va a decidir cuáles son las tareas que se van a ejecutar a continuación.
+
+123
+00:13:39,000 --> 00:13:44,000
+¿Cómo configuramos ese operador en cada una de las ejecuciones?
+
+124
+00:13:44,000 --> 00:13:50,000
+En esta ejecución quiero que ejecutes la tarea A y la tarea B, y en la siguiente la sólo la tarea B.
+
+125
+00:13:50,000 --> 00:14:00,000
+Básicamente tenemos dos formas de pasarle datos de configuración a un DAG de Airflow.
+
+126
+00:14:00,000 --> 00:14:16,000
+La primera de ellas es...
+
+127
+00:14:16,000 --> 00:14:25,000
+A la hora de ejecutar el DAG podemos pasarle un diccionario con distintas configuraciones.
+
+128
+00:14:25,000 --> 00:14:35,000
+Vamos a escribir aquí el argumento que vale el operador y con eso va a poder decidir.
+
+129
+00:14:35,000 --> 00:14:46,000
+Por ejemplo, si yo le pasase un fichero de anotaciones podría ejecutar una rama en la que hagamos la evaluación de los resultados porque tenemos algo que comparar.
+
+130
+00:14:46,000 --> 00:14:55,000
+La otra forma sería con el uso de variables.
+
+131
+00:14:55,000 --> 00:15:09,000
+Hemos definido tres variables aquí. Airflow te permite centralizar unas variables que son accesibles a todas las tareas que se están ejecutando en Airflow.
+
+132
+00:15:09,000 --> 00:15:17,000
+Una tarea puede saber la tarea B, leer el valor en tiempo real y aplicarlo como necesito.
+
+133
+00:15:17,000 --> 00:15:31,000
+Vamos uniendo partes. Tenemos el branch operator y podemos configurarlo dinámicamente o bien con los parámetros de entrada o bien con las variables.
+
+134
+00:15:31,000 --> 00:15:42,000
+Ahora es cuando yo os enseñaré al código pero es que me da miedo cambiar de pantalla en el código.
+
+135
+00:15:42,000 --> 00:16:07,000
+Les explico el ejemplo.
+
+136
+00:16:07,000 --> 00:16:14,000
+Aquí tenemos dos branch operators y este variable branch.
+
+137
+00:16:14,000 --> 00:16:23,000
+El primero va a funcionar cuando yo le pase un parámetro de entrada que en este caso se llama both.
+
+138
+00:16:23,000 --> 00:16:30,000
+Si el valor es yes va a ejecutar las dos tareas y si es no solo va a ejecutar una.
+
+139
+00:16:30,000 --> 00:16:44,000
+En este otro variable branch lo que va a hacer es leer una de las variables que tenemos. Si el valor de la variable está true ejecutará esta tarea extra y si no siempre ejecutará esta tarea a hacer.
+
+140
+00:16:44,000 --> 00:16:49,000
+Tenemos otro operador distinto que se llama sort circuit. Es similar al branch Python operator.
+
+141
+00:16:49,000 --> 00:17:01,000
+Lo único que en vez de volver una lista de las tareas que se van a ejecutar lo que hace es devolver true o false. Si devuelve true todo lo que venga detrás se va a ejecutar.
+
+142
+00:17:01,000 --> 00:17:10,000
+Tenemos también otro operador aquí el weekday branch que el nombre es week of the day operator.
+
+143
+00:17:10,000 --> 00:17:23,000
+Me resulta muy curioso. Este es un operador que le el día de la semana en el que se ejecuta y lo que hace es el día que has configurado ejecuta una cosa y si no ejecuta un drama.
+
+144
+00:17:23,000 --> 00:17:25,000
+Vamos a ver esto funcionando.
+
+145
+00:17:25,000 --> 00:17:49,000
+No le vamos a pasar ningún operador en ningún parámetro y vamos a ver qué es lo que tiene.
+
+146
+00:17:49,000 --> 00:17:58,000
+Como no le hemos pasado un operador esa tarea seco no se ejecuta. Como la variable está false esa tarea extra tampoco se ejecuta.
+
+147
+00:17:58,000 --> 00:18:06,000
+El sort circuit la variable que le también está false. La última tarea es a forth no se ejecuta.
+
+148
+00:18:06,000 --> 00:18:11,000
+Y como hoy es sábado vamos a ejecutar la tarea del resto de días y no la del jueves.
+
+149
+00:18:11,000 --> 00:18:29,000
+Ahora vamos a pasar los parámetros.
+
+150
+00:18:29,000 --> 00:18:44,000
+En el otro parámetro tenemos una forma más chula donde tenemos una interfaz de usuario y simplemente tiene que seleccionar unas cosas y esto ya por detrás ya se ve configurada de la forma que necesitemos.
+
+151
+00:18:44,000 --> 00:19:00,000
+Este ejemplo vamos a poner las dos.
+
+152
+00:19:00,000 --> 00:19:07,000
+Vamos a ver qué es lo que ha hecho.
+
+153
+00:19:07,000 --> 00:19:16,000
+Hemos pasado el parámetro. El operador, el branch operator devuelve los sitios de las dos tareas que se van a ejecutar. La segunda tarea se ha ejecutado esta vez.
+
+154
+00:19:16,000 --> 00:19:27,000
+La tarea extra como la variable ahora es true también se ejecuta. Nuestro sort circuit lo mismo, le la variable es true ejecuta la última parte.
+
+155
+00:19:27,000 --> 00:19:41,000
+Tenemos una forma de elegir qué partes del diagrama queremos ejecutar y cuáles no. Vamos a ver ahora este ejemplo un poquito distinto.
+
+156
+00:19:41,000 --> 00:20:02,000
+Hemos añadido una última tarea final para decir que la ejecución ha terminado y se ejecuta después de las 10.
+
+157
+00:20:02,000 --> 00:20:16,000
+Hemos ignorado la última tarea y no se ha ejecutado y queremos que se ejecute siempre. Por defecto las tareas en Airflow necesitan un requisito previo que todas las tareas de las que dependen hayan tenido éxito.
+
+158
+00:20:16,000 --> 00:20:22,000
+En este caso ha habido una que ha tenido éxito pero la otra no. Entonces la tarea no se ejecuta.
+
+159
+00:20:22,000 --> 00:20:35,000
+Cómo podemos cambiar esto porque queremos que esta tarea se ejecute siempre. Hay una cosa que se llama las trigger rules que es una configuración de las tareas en Airflow que te va a permitir definir ese requisito previo.
+
+160
+00:20:35,000 --> 00:20:46,000
+Tenemos distintas trigger rules. Por defecto es que todas las tareas presentes tengan éxito pero hay otras que podrían ser que todas las tareas presentes hayan fallado.
+
+161
+00:20:46,000 --> 00:20:52,000
+Hay que ninguna haya fallado y una haya tenido éxito. Hay distintas combinaciones.
+
+162
+00:20:52,000 --> 00:21:01,000
+Tenemos otro ejemplo para poder ver esto. Vamos a lanzarlo.
+
+163
+00:21:01,000 --> 00:21:13,000
+Nuestra primera tarea siempre falla. Está programada para lanzar una excepción.
+
+164
+00:21:13,000 --> 00:21:24,000
+La siguiente tarea, All Su Sit, solo se va a lanzar si todas las previas han tenido éxito. En este caso no es y está marcada como amarillo porque ha fallado.
+
+165
+00:21:24,000 --> 00:21:33,000
+Tenemos otra tarea donde el trigger rule está configurado para que se lance si han fallado todas las anteriores. En este caso se cumple ese requisito.
+
+166
+00:21:33,000 --> 00:21:40,000
+La tarea se ha ejecutado está en verde. La siguiente tiene el mismo trigger rule. Pero claro, ¿qué es lo que dice? Las tareas anteriores han fallado. No.
+
+167
+00:21:40,000 --> 00:21:51,000
+Está tenido éxito. O sea, no se ejecuta. Tenemos aquí otra que es que ninguna de las anteriores haya fallado y depende de esta que se ha ignorado y de esta que ha tenido éxito.
+
+168
+00:21:51,000 --> 00:21:57,000
+La siguiente es que se ejecuta con la condición y se ejecuta. Y así con el resto de las tareas.
+
+169
+00:21:57,000 --> 00:22:10,000
+Ya sabemos cómo podemos seleccionar partes del workflow para que se ejecuten a demanda y además cómo podemos continuar la ejecución sin que esto afecte a las partes que vienen después.
+
+170
+00:22:10,000 --> 00:22:27,000
+Vamos a ver. Teníamos otro tema. ¿Qué es? ¿Cómo hacer para que el workflow se adapte en función de los resultados intermedios que vayamos consiguiendo?
+
+171
+00:22:27,000 --> 00:22:36,000
+Airflow nos permite una funcionalidad que se llama los XCOM que básicamente lo que permite es pasar información de estado entre tareas.
+
+172
+00:22:36,000 --> 00:22:41,000
+Aquí sí que vamos a ver el código.
+
+173
+00:22:41,000 --> 00:23:06,000
+Está sencillo como en la tarea pasarle este objeto TI que es la Task Instance. Es información de la ejecución de la tarea.
+
+174
+00:23:06,000 --> 00:23:14,000
+Aquí tenemos un método en este objeto que se llama XCOM PUSH donde tenemos que pasar la clave y el valor.
+
+175
+00:23:14,000 --> 00:23:38,000
+Y estos son los XCOM que hemos creado de antes. Entonces tenemos dos tareas. Una que va a escribir el XCOM y otra tarea que lo va a leer.
+
+176
+00:23:38,000 --> 00:23:49,000
+Al final una va a invocar al método XCOM PUSH y la otra va a invocar al método XCOM PUL. Super sencillo.
+
+177
+00:23:49,000 --> 00:23:54,000
+Aquí lo ejecutamos.
+
+178
+00:23:54,000 --> 00:24:14,000
+Ahora las dos han funcionado. Nos vamos a nuestra lista de XCOM y vemos que nuestra tarea PUSH XCOM ha escrito un XCOM con la clave MyFirstScom y el valor FU.
+
+179
+00:24:14,000 --> 00:24:29,000
+Y además nos dice la fecha en la que se ha escrito y el time-stamp de ejecución. En el inicio de la ejecución de la pipeline.
+
+180
+00:24:29,000 --> 00:24:43,000
+Si nos vamos al log de la segunda tarea, aquí te dice el valor que ha leído que es el mismo que hemos escrito.
+
+181
+00:24:43,000 --> 00:24:48,000
+Vamos a lanzarlo otra vez más.
+
+182
+00:24:48,000 --> 00:24:52,000
+Las dos están en verde.
+
+183
+00:24:52,000 --> 00:24:58,000
+Actualizamos y vemos que la segunda ejecución escribe un XCOM nuevo.
+
+184
+00:24:58,000 --> 00:25:10,000
+Aunque sea el mismo valor. No estamos sobrescribiendo el valor anterior. Esto no es una base de datos clave valor sino que funciona sobre una base de datos relacional donde los XCOM dependen de la ejecución.
+
+185
+00:25:10,000 --> 00:25:20,000
+Tenemos que escribir distintos XCOM para cada una de las ejecuciones. Se va a mantener esta información de estado incluso si hacemos nuevas ejecuciones de la pipeline.
+
+186
+00:25:20,000 --> 00:25:29,000
+Y lo que es importante, una tarea solo va a poder leer los XCOM que tienen el mismo tiempo de ejecución que el suyo.
+
+187
+00:25:29,000 --> 00:25:35,000
+Una tarea ejecutada en la segunda ejecución no va a poder leer el XCOM que ha ejecutado la primera.
+
+188
+00:25:35,000 --> 00:25:50,000
+Tenemos aquí otro ejemplo que es exactamente lo mismo pero de una forma distinta de hacerlo.
+
+189
+00:25:50,000 --> 00:25:56,000
+En vez de llamar al objeto TI, lo que podemos hacer es que nuestra función Python devuelva un valor.
+
+190
+00:25:56,000 --> 00:26:12,000
+Y ese valor va a ser un XCOM. Se va a guardar como un XCOM. Lo vamos a ejecutar para que lo veáis.
+
+191
+00:26:12,000 --> 00:26:27,000
+En esta nueva edad, esa función ha escrito ese XCOM con una clave que siempre es por defecto retumbalio.
+
+192
+00:26:27,000 --> 00:26:42,000
+Vamos a abreviar este ejemplo de aquí. Sería lo mismo pero queremos crear múltiples XCOM con esta notación.
+
+193
+00:26:42,000 --> 00:26:49,000
+Podemos devolver una lista o un diccionario y podemos guardar distintos valores.
+
+194
+00:26:49,000 --> 00:27:01,000
+Con el branch Python operator ya tenemos una forma de poder modificar dinámicamente en función de los resultados que vayamos obteniendo nuestra ejecución.
+
+195
+00:27:01,000 --> 00:27:08,000
+Aquí tenemos dos ejemplos porque nos queda el problema de cómo va a hacer funcionar esto en Spark.
+
+196
+00:27:08,000 --> 00:27:15,000
+Airflow, el operador que funciona con Spark, es el Spark Summary Operator, si no recuerdo mal.
+
+197
+00:27:15,000 --> 00:27:19,000
+Y a ese no se le pasa una función de Python, sino que se le pasa un fichero.
+
+198
+00:27:19,000 --> 00:27:24,000
+Si no le pasamos una función, estamos perdiendo toda la información del contexto de ejecución,
+
+199
+00:27:24,000 --> 00:27:28,000
+que es donde sacamos ese objeto TI y que podemos usar para escribir los ESCO.
+
+200
+00:27:28,000 --> 00:27:39,000
+¿Qué es lo que podemos hacer? Si estamos en un fichero y perdemos eso, pues hay un método que está escondido por ahí por el código.
+
+201
+00:27:39,000 --> 00:27:46,000
+Es como un montón de datos, porque soy un poco limitado, que se llama GetContest, que nos va a devolver el contexto
+
+202
+00:27:46,000 --> 00:27:53,000
+y ya podemos usarlo de igual forma que si lo hubiésemos pasado como argumento de la función de Python.
+
+203
+00:27:53,000 --> 00:28:03,000
+No me voy a detener mucho más. Aquí tenemos otro ejemplo, que es básicamente los ESCO se escriben en una tabla,
+
+204
+00:28:03,000 --> 00:28:06,000
+en una base de datos donde está la configuración de Python.
+
+205
+00:28:06,000 --> 00:28:11,000
+Una forma que tenemos de saltarnos estas limitaciones es escribir y leer directamente de la base de datos.
+
+206
+00:28:11,000 --> 00:28:18,000
+¿Por qué no? No voy a entrar en el ejemplo, pero simplemente es el ejemplo de cómo podemos escribir un ESCO directamente
+
+207
+00:28:18,000 --> 00:28:24,000
+con el modelo ESCOM que te proporciona Airflow y cómo podemos leerlo.
+
+208
+00:28:24,000 --> 00:28:30,000
+Esto nos permite cosas como podemos leer todos los ESCOM de cualquiera de las ejecuciones que ya hemos hecho antes.
+
+209
+00:28:30,000 --> 00:28:37,000
+Te da mucha más flexibilidad aunque también tienes la posibilidad de meter la pata.
+
+210
+00:28:37,000 --> 00:28:42,000
+Hay otro ejemplo más que es, si podemos acceder a los datos de la base de datos, podemos borrar los ESCOM,
+
+211
+00:28:42,000 --> 00:28:47,000
+que eso es algo que no podíamos hacer de la forma normal, o sea, podemos eliminar esos registros.
+
+212
+00:28:47,000 --> 00:28:56,000
+Y ya para acabar, tenemos aquí un ejemplo donde digamos que ponemos todo esto junto.
+
+213
+00:28:56,000 --> 00:29:05,000
+Tenemos un workflow que simula la entrada de datos, luego hay una etapa en la que detectaría el idioma del fichero
+
+214
+00:29:05,000 --> 00:29:11,000
+que le estamos pasando, esta tarea lo que va a hacer es escribir, identificar el idioma,
+
+215
+00:29:11,000 --> 00:29:14,000
+que al final es un random entre tres valores distitos.
+
+216
+00:29:14,000 --> 00:29:21,000
+Escribir un ESCOM, el branch operator, este es el language, está basado en branchPython operator,
+
+217
+00:29:21,000 --> 00:29:27,000
+que va a leer ese ESCOM y va a ejecutar uno de los tres modelos únicamente.
+
+218
+00:29:27,000 --> 00:29:32,000
+En función del lenguaje que hemos detectado, luego vamos a guardar los resultados.
+
+219
+00:29:32,000 --> 00:29:38,000
+Esta tarea tiene que funcionar independientemente que de las tres anteriores solo se ejecute una.
+
+220
+00:29:38,000 --> 00:29:42,000
+Por la parte de arriba vamos a hacer como una rama opcional,
+
+221
+00:29:42,000 --> 00:29:48,000
+es decir, si nosotros le proporcionamos un fichero de anotaciones para comparar la precisión de los datos,
+
+222
+00:29:48,000 --> 00:29:52,000
+vamos a querer ejecutar la parte de arriba, por defecto no.
+
+223
+00:29:52,000 --> 00:29:58,000
+Finalmente vamos a mandar una notificación si todo ha ido bien y si hay algún error,
+
+224
+00:29:58,000 --> 00:30:01,000
+vamos a mandar una notificación de error.
+
+225
+00:30:01,000 --> 00:30:08,000
+Y ya para rematar aquí, esta función evaluateRecords, lee una variable y sin esa variable está true,
+
+226
+00:30:08,000 --> 00:30:10,000
+lo que va a hacer es simular un error.
+
+227
+00:30:10,000 --> 00:30:13,000
+O sea, quedamos a ver cómo funciona esto.
+
+228
+00:30:13,000 --> 00:30:18,000
+Vamos a pasarlo por defecto sin ningún tipo de argumento.
+
+229
+00:30:22,000 --> 00:30:26,000
+Vamos a la vista de gráfico que es mucho más chulo.
+
+230
+00:30:26,000 --> 00:30:33,000
+Y vale, ha ejecutado, ha procesado como el idioma como si fuese español.
+
+231
+00:30:33,000 --> 00:30:36,000
+¿Dónde estoy?
+
+232
+00:30:36,000 --> 00:30:38,000
+¿Dónde estoy?
+
+233
+00:30:38,000 --> 00:30:41,000
+Vamos a ver si he escrito el ESCOM, vale.
+
+234
+00:30:41,000 --> 00:30:47,000
+Tenemos aquí el detectado español, ha ejecutado el modelo correspondiente,
+
+235
+00:30:47,000 --> 00:30:51,000
+la parte de arriba, como no le hemos pasado el argumento, no ha hecho nada
+
+236
+00:30:51,000 --> 00:30:54,000
+y todo ha ido bien y mandamos la notificación.
+
+237
+00:30:54,000 --> 00:31:02,000
+Ahora, vamos a hacer que se ejecute la parte opcional,
+
+238
+00:31:02,000 --> 00:31:05,000
+vamos a simular que le pasamos un fichero de anotaciones
+
+239
+00:31:05,000 --> 00:31:09,000
+y vamos a ver qué es lo que pasa.
+
+240
+00:31:15,000 --> 00:31:20,000
+Qué bien, mi día yo cuando practicaba en casa de verdad lo tenía todo en la misma pantalla.
+
+241
+00:31:22,000 --> 00:31:26,000
+Exactamente lo mismo, en este caso también hemos vuelto a detectar que es el idioma español
+
+242
+00:31:26,000 --> 00:31:32,000
+y ejecutamos la parte de arriba de la pipeline que antes habíamos ignorado.
+
+243
+00:31:32,000 --> 00:31:35,000
+¿Y ya para rematar?
+
+244
+00:31:35,000 --> 00:31:38,000
+No puedo rematar y rematar, ¿de qué termina ya?
+
+245
+00:31:38,000 --> 00:31:41,000
+Ya es la última, le cambiamos el...
+
+246
+00:31:41,000 --> 00:32:03,000
+Simplemente, vamos a hacer que falle...
+
+247
+00:32:03,000 --> 00:32:12,000
+Y esto es lo último, lo último, lo último.
+
+248
+00:32:16,000 --> 00:32:21,000
+Ahora esa función ha fallado, la ley de la variable que simulaba el error
+
+249
+00:32:21,000 --> 00:32:27,000
+y lo que hace es enviar la notificación de error y estar de aquí nos envía,
+
+250
+00:32:27,000 --> 00:32:31,000
+nos ejecuta al final, parece que ha sido un error y simplemente se ignora.
+
+251
+00:32:31,000 --> 00:32:35,000
+Y un poco pues eso es...
+
+252
+00:32:35,000 --> 00:32:38,000
+digamos las pequeñas recetas que quería compartir con vosotros,
+
+253
+00:32:38,000 --> 00:32:43,000
+no sé exactamente qué aplicación real puede tener en vuestros proyectos,
+
+254
+00:32:43,000 --> 00:32:47,000
+yo hace 6 meses pensaba que ninguna, ahora le estoy viendo muchas posibilidades
+
+255
+00:32:47,000 --> 00:32:51,000
+a lo que estamos haciendo nosotros y con eso es todo.
+
+256
+00:32:51,000 --> 00:33:01,000
+Os dejo el link al repo.
+
+257
+00:33:01,000 --> 00:33:23,000
+Y nada, muchas gracias por vuestra atención.
+

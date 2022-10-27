@@ -1,0 +1,1128 @@
+1
+00:00:00,000 --> 00:00:17,040
+Hola a todos y a todas, bienvenidas y bienvenidos a este bloque A del domingo de la Pai con España.
+
+2
+00:00:17,040 --> 00:00:26,080
+Soy Pablo García y junto con Clara vamos a repartirnos este bloque que comienza justo
+
+3
+00:00:26,080 --> 00:00:32,800
+ahora. En primer lugar muchas gracias a todos y todas por asistir a esta hora tan
+
+4
+00:00:32,800 --> 00:00:38,520
+prontas de la mañana. Es genial haber tanto comunidad colaborando haciendo cosas juntas
+
+5
+00:00:38,520 --> 00:00:48,880
+y es un placer también estar aquí organizando la Pai con de este año. Es un proceso muy completo,
+
+6
+00:00:48,880 --> 00:00:55,840
+muy complejo donde han surgido muchas sinergias y la verdad es que es un honor formar parte de esto.
+
+7
+00:00:55,840 --> 00:01:05,800
+Bueno como sabéis tenemos una serie de charlas que duran media hora, 20 minutillos y luego
+
+8
+00:01:05,800 --> 00:01:14,080
+10 minutillos de preguntas. Podéis utilizar el canal de Discord para poner vuestras preguntas
+
+9
+00:01:14,080 --> 00:01:20,480
+y también el canal de YouTube. Podemos verlo en los comentarios. Bueno, sin más dilación
+
+10
+00:01:20,480 --> 00:01:25,400
+voy a pasar a presentaros la primera charla. La primera charla se llama tracking counter
+
+11
+00:01:25,400 --> 00:01:35,440
+fating on the web with Python and ML. Qué introducción sería... madre mía, counter fating.
+
+12
+00:01:35,440 --> 00:01:40,320
+Sé cuál es que quiere decir en español pero no en inglés. Pero bueno, no la va a presentar Valerio
+
+13
+00:01:40,320 --> 00:01:50,280
+Valerio Cosentino. Y la idea es de cómo detectar productos falsos, productos que no son reales,
+
+14
+00:01:50,280 --> 00:01:57,040
+utilizando Python y machine learning. Como sabéis ahora mismo hay cientos de tiendas,
+
+15
+00:01:57,040 --> 00:02:04,000
+un montón de opiniones, un montón de cosas falsas que siempre es necesario utilizar temas de
+
+16
+00:02:04,000 --> 00:02:14,920
+ciberseguridad y machine learning para poder detectar esos productos. Nos va a enseñar Valerio
+
+17
+00:02:14,920 --> 00:02:23,440
+cómo hacer scrapping y cómo aplicarle algoritmos de machine learning artificial para detectar
+
+18
+00:02:23,440 --> 00:02:34,200
+esos productos y visualizarlos. Bueno, vamos a dar la bienvenida a Valerio. Bueno, Valerio,
+
+19
+00:02:34,200 --> 00:02:42,360
+¿qué tal estás? Un placer estar aquí contigo. Bueno, muy bien también aquí de mañana. Bueno,
+
+20
+00:02:42,360 --> 00:02:51,160
+Valerio es ingeniero de software que trabaja con análisis de código fuente, procesos ETL,
+
+21
+00:02:51,160 --> 00:02:57,800
+ingeniería inversa y por supuesto software libre como casi toda la comunidad de Python. Él
+
+22
+00:02:57,800 --> 00:03:05,200
+ha pasado también algunos años en la academia, ¿vale? Donde estoy yo ahora, o sea que si te
+
+23
+00:03:05,200 --> 00:03:13,160
+quieras me puedes contar tu experiencia luego. Y él ha trabajado en ingeniería inversa y sistemas
+
+24
+00:03:13,160 --> 00:03:20,840
+Legarsi y análisis de OpenData y código fuente. Luego contestaré contigo porque esos temas me
+
+25
+00:03:20,840 --> 00:03:26,180
+interesan muchísimo a ver si podemos llevar a cabo algún proyecto. Y la verdad es que es un
+
+26
+00:03:26,180 --> 00:03:32,600
+curcule muy interesante y la charla tiene una pinta fantástica. Así que cuando quieras te doy paso,
+
+27
+00:03:32,600 --> 00:03:38,720
+me quito yo y puedes empezar a compartir. Ok, muchas gracias Pablo. Voy a compartir,
+
+28
+00:03:38,720 --> 00:03:50,280
+pues al principio se ve. Vale, pues empezamos entonces. Vale, empezamos con un poco de contexto. Hoy
+
+29
+00:03:50,280 --> 00:03:58,720
+en día tenemos, hay, existe muchos marketplaces, aquí podemos ver que hay Amazon, IBI, mil
+
+30
+00:03:58,720 --> 00:04:06,840
+anuncios y hay también pues otros que veis aquí que quizás son un poco más desconocidos. En estos
+
+31
+00:04:06,840 --> 00:04:13,280
+marketplaces podemos comprar productos de cualquier tipo que sean móviles, ordenadores,
+
+32
+00:04:13,280 --> 00:04:22,680
+ropa, sabatilla y mucho más. El tema es que a veces cuando cuando compramos algo no no recibimos
+
+33
+00:04:22,680 --> 00:04:29,280
+el producto original. En este caso podemos ver que hay pues las vans, pues entonces existen las
+
+34
+00:04:29,280 --> 00:04:38,840
+vans y si compramos que el vinclin podemos recibir que vinclin o adidas tenemos a días. Aparte
+
+35
+00:04:38,840 --> 00:04:46,200
+estos casos como muy evidentes de falsificación, a veces los falsos están muy bien hechos y no
+
+36
+00:04:46,200 --> 00:04:52,440
+nos damos cuenta que hemos recibido un producto que no es original. El problema de la falsificación
+
+37
+00:04:52,440 --> 00:04:58,240
+en internet o bueno en los marketplaces es un problema que ha ido creciendo en los últimos
+
+38
+00:04:58,240 --> 00:05:04,920
+años. Aquí he puesto unas referencias, unos enlaces para quien quiere leer un poco más sobre el tema
+
+39
+00:05:04,920 --> 00:05:12,360
+y este problema afecta un poco a todos los actores involucrados en el proceso de compraventa. Entonces
+
+40
+00:05:12,360 --> 00:05:18,960
+vemos el comprador, el buyer que está desesperado porque no ha recibido el producto que quería.
+
+41
+00:05:18,960 --> 00:05:27,880
+El marketplace que se ve un poco afectado, triste, porque puede perder usuarios por el tema que si hay
+
+42
+00:05:27,880 --> 00:05:37,080
+productos falsos en su plataforma pues el comprador podría no tener confianza en los servicios que
+
+43
+00:05:37,080 --> 00:05:42,880
+proporciona el marketplace. Y luego tenemos las marcas que pueden ver el volumen de su negocio
+
+44
+00:05:42,880 --> 00:05:49,880
+reducido porque hay alguien que está vendiendo falsos de sus productos y también podría
+
+45
+00:05:49,880 --> 00:05:56,640
+haber ciertos usuarios, ciertos clientes irse porque como decía antes hay falsos que están muy
+
+46
+00:05:56,640 --> 00:06:03,360
+bien hechos entonces quizá compramos unas zapatillas que cuestan bastante y al mes siguiente la tenemos
+
+47
+00:06:03,360 --> 00:06:07,720
+rotas. Entonces pensamos que quizá es la marca que está produciendo un producto de baja calidad
+
+48
+00:06:07,720 --> 00:06:16,760
+cuando en realidad lo que hemos recibido no era un original. Hecho que este problema es algo que
+
+49
+00:06:16,760 --> 00:06:24,440
+ha ido creciendo como decía en estos años, se han puesto en marchas estas medidas. Entonces
+
+50
+00:06:24,440 --> 00:06:29,480
+con respecto al comprador pues ahora hay información sobre los vendedores de esta manera por ejemplo
+
+51
+00:06:29,480 --> 00:06:35,440
+podemos saber que no sé el feedback del vendedor y cuando compramos algo podemos estar un poco más
+
+52
+00:06:35,440 --> 00:06:42,960
+seguros, tener un poco más de confianza en lo que estamos comprando. Lado marketplace pues se han
+
+53
+00:06:42,960 --> 00:06:49,840
+puesto en marcha diferentes políticas de antifacificación y también de protección del
+
+54
+00:06:49,840 --> 00:06:57,920
+comprador. También aquí he puesto unos enlaces para quien quiera profundizar un poco más y luego
+
+55
+00:06:57,920 --> 00:07:06,560
+tenemos la marca pues la marca de los tres actores es la que tiene el problema un poco más complicado
+
+56
+00:07:06,560 --> 00:07:15,600
+porque es muy difícil saber que si uno sus productos se están falsificando en uno o varios
+
+57
+00:07:15,600 --> 00:07:22,120
+marketplace y son en internet en general. Si vemos el problema de un marketplace con un poquito más
+
+58
+00:07:22,120 --> 00:07:31,640
+técnico podríamos considerar cada marketplace como un silo de datos donde cada marketplace,
+
+59
+00:07:31,640 --> 00:07:38,840
+cada silo de datos tiene sus peculiaridades por ejemplo la búsqueda pues casi todos los marketplace
+
+60
+00:07:38,840 --> 00:07:44,360
+implementan una búsqueda pero de forma un poco diferente se puede buscar por relevancia se puede
+
+61
+00:07:44,360 --> 00:07:51,200
+buscar por fecha se puede buscar por precio o por categoría y luego otra particularidad que tenemos
+
+62
+00:07:51,200 --> 00:07:57,800
+es la manera que el producto se enseña en marketplace en el sentido que el producto se define como
+
+63
+00:07:57,800 --> 00:08:07,960
+un conjunto de atributos que sean obligatorios o opcionales y entonces estos atributos pueden
+
+64
+00:08:07,960 --> 00:08:13,000
+no ser consistentes en todos los marketplaces o sea que hay ciertas cosas que estarán en amazon y
+
+65
+00:08:13,000 --> 00:08:18,440
+hay otra información que probablemente no estará en aliexpress o estará escrita de otra estará
+
+66
+00:08:18,440 --> 00:08:23,760
+visible de otra manera entonces el primer problema que la marca tiene es una heterogeneidad del dato
+
+67
+00:08:23,760 --> 00:08:30,560
+eso quiere decir que pues tenemos muchos marketplace y si cada uno pues ofrece la información como
+
+68
+00:08:30,560 --> 00:08:37,360
+como quiera la otra el otro problema es que es muy difícil hacer consultas transversales en el sentido
+
+69
+00:08:37,360 --> 00:08:42,760
+que considerando que todos los marketplace son como silos de datos y no están comunicando entre ellos
+
+70
+00:08:42,760 --> 00:08:50,760
+es muy difícil hacer una pregunta como para el producto x dime dónde se está vendiendo a qué
+
+71
+00:08:50,760 --> 00:08:57,040
+precio y cuál es el vendedor entonces es por eso que las marcas tienen bastante dificultades en
+
+72
+00:08:57,040 --> 00:09:05,320
+saber qué es esta si hay falsificación de sus productos si pensamos en un proceso manual para
+
+73
+00:09:05,320 --> 00:09:12,360
+identificar un poco los pasos que debíamos de hacer para contestar a esta pregunta probablemente
+
+74
+00:09:12,360 --> 00:09:20,720
+habría una fase de surf donde pues tenemos que buscar en uno o varios marketplace luego tendríamos
+
+75
+00:09:20,720 --> 00:09:27,400
+una fase de extracción porque para cada elemento que hemos buscado lo tenemos que procesar para
+
+76
+00:09:27,400 --> 00:09:35,920
+sacar la información que queremos y luego habría una fase de evaluación de evaluación donde lo que
+
+77
+00:09:35,920 --> 00:09:42,440
+hacemos es pues entender qué es un falso que no es si un producto es falso no y también
+
+78
+00:09:43,560 --> 00:09:50,200
+reportar esta información al marketplace cuando detectemos algo que es falso y todos estos
+
+79
+00:09:50,200 --> 00:09:57,680
+tres fases son tediosas y nos hacen perder mucho tiempo y considerando que la tenemos que hacer
+
+80
+00:09:57,680 --> 00:10:04,480
+quizá cada día o cada hora o cada semana es muy posible que podríamos acabar como joy
+
+81
+00:10:04,480 --> 00:10:10,280
+bed aquí como totalmente locos y entonces la pregunta que nos hacemos es si el python de
+
+82
+00:10:10,280 --> 00:10:16,920
+machine learning puede ayudar en esto en responder a esta pregunta si podemos detectar productos falsos
+
+83
+00:10:16,920 --> 00:10:24,200
+en internet y pues la respuesta es si porque si no la presentación ya se acababa aquí y ahora vamos
+
+84
+00:10:24,200 --> 00:10:34,720
+a ver cómo se podría identificar como un framework como se podría implementar si tenemos en la
+
+85
+00:10:34,720 --> 00:10:40,320
+cabeza las fases que hemos visto antes podríamos decir que podemos identificar cuatro componentes
+
+86
+00:10:40,320 --> 00:10:45,200
+que sería un componente de búsqueda un componente de captura y luego la parte de evaluación la
+
+87
+00:10:45,200 --> 00:10:52,400
+separamos en la parte de análisis de lo que hemos extraído y reporten cuando haga falta si encontramos
+
+88
+00:10:52,400 --> 00:11:00,880
+algo un producto falso pues ahora pasamos a la fase de search muy por encima podríamos decir
+
+89
+00:11:00,880 --> 00:11:06,520
+que la fase de search pues empieza con consultas con queries que se envían al buscador del marketplace
+
+90
+00:11:06,520 --> 00:11:14,040
+y el marketplace devolve un listado de war relays ahora aquí la pregunta es qué clase de queries
+
+91
+00:11:14,040 --> 00:11:24,840
+vamos a hacer no sé podemos buscar zapatillas falsas en amazon o vamos a buscar zapatillas la
+
+92
+00:11:24,840 --> 00:11:32,040
+marca o ejemplo adidas falsas realmente aquí el punto de partida es un poco el conocimiento
+
+93
+00:11:32,040 --> 00:11:38,400
+previo imagino que cualquier persona que haya intentado comprar algo en internet pues haya puesto
+
+94
+00:11:38,400 --> 00:11:46,320
+zapatilla x baratas porque porque se espera pagar un poco menos de lo que podría pagar en una tienda
+
+95
+00:11:46,320 --> 00:11:55,080
+física o por ejemplo zapatilla nike oferta en ahora aquí es el machine learning puede ayudarnos en
+
+96
+00:11:55,080 --> 00:12:01,080
+definir estas consultas pues sí concretamente nos puede ayudar en definir queries más eficaces
+
+97
+00:12:01,080 --> 00:12:08,240
+esto como lo podemos implementar pues supongamos que cada query nos devuelve resultados pues
+
+98
+00:12:08,240 --> 00:12:14,960
+vamos a comparar el número de resultados y quizá la intersección entre los resultados que cada
+
+99
+00:12:14,960 --> 00:12:21,120
+query devuelve y ahí lo que podemos hacer es simplemente identificar que usar el término
+
+100
+00:12:21,120 --> 00:12:29,520
+barato en un marketplace con la localización de españa es mucho más eficaz que utilizar no
+
+101
+00:12:29,520 --> 00:12:36,360
+sé palabras como oferta o como chollo una vez que tengamos esta información que hayamos detectados
+
+102
+00:12:36,360 --> 00:12:41,680
+estas palabras llaves que nos permiten tener queries más eficaces luego lo que hacemos es
+
+103
+00:12:41,680 --> 00:12:46,200
+podemos por ejemplo crear un sistema de template así que el operador o quien va a buscar cuando
+
+104
+00:12:46,200 --> 00:12:53,360
+ponga la palabra pues el sistema le liste la posibilidad de completar su búsqueda con palabras
+
+105
+00:12:53,360 --> 00:12:59,320
+adecuadas que quizá son adecuadas con respecto a la categoría que se está buscando este es un
+
+106
+00:12:59,320 --> 00:13:06,240
+ejemplo luego otra otra ayuda que puede dar el machine learning es las frecuencias de las queries
+
+107
+00:13:06,240 --> 00:13:13,880
+como dijimos al principio cuando uno busca el proceso manual pues hay que hacer esta búsqueda de
+
+108
+00:13:13,880 --> 00:13:20,800
+forma recurrente y la pregunta es cuánto es recurrente buscamos cada día buscamos casi meses
+
+109
+00:13:20,800 --> 00:13:28,920
+tenemos un ejemplo por ejemplo de pues FIFA 2022 creo que salió hace unos días entonces para para
+
+110
+00:13:28,920 --> 00:13:38,400
+para fija 2022 probablemente tendría sentido si buscamos cada cada día hoy en estos días porque
+
+111
+00:13:38,400 --> 00:13:43,320
+porque acaba de salir y tiene y suponemos que en los próximos días habrá varias ofertas en
+
+112
+00:13:43,320 --> 00:13:51,640
+diferentes marketplace que ofrezcan este nuevo videojuego pero tiene sentido que sigamos sigamos
+
+113
+00:13:51,640 --> 00:13:57,160
+buscando cada día después de seis meses pues probablemente no entonces aquí el machine learning
+
+114
+00:13:57,160 --> 00:14:03,320
+como nos puede ayudar pues simplemente lo que hacemos es las consultas vamos a maximizar el
+
+115
+00:14:03,320 --> 00:14:08,280
+número de resultados nuevos con respecto a las consultas antiguas entonces lo que hacemos es la
+
+116
+00:14:08,280 --> 00:14:14,320
+consulta llega sabemos que han habido no sé 30 resultados nuevos entonces ahí se puede decidir
+
+117
+00:14:14,320 --> 00:14:22,920
+si subir la frecuencia o dejarla tal como está qué pasa si recibimos menos resultados nuevos pues el
+
+118
+00:14:22,920 --> 00:14:28,480
+algoritmo puede ir bajando la frecuencia hasta llegar quizá a ejecutar esta query cada seis meses
+
+119
+00:14:28,480 --> 00:14:33,200
+cada año sino decir simplemente pues esta cuera y se puede apagar porque ya ya no aporta nada
+
+120
+00:14:34,360 --> 00:14:41,040
+ahora que digamos la parte de cómo crear las cueras es un pelín más clara podemos ver luego
+
+121
+00:14:41,040 --> 00:14:46,480
+el sistema por debajo cómo gestiona esta información aquí vemos una arquitectura
+
+122
+00:14:46,480 --> 00:14:51,680
+serverless se ha creado así por también cabezada de manera que pueda funcionar con una query o con
+
+123
+00:14:51,680 --> 00:14:59,200
+10 mil dependiendo de cuánta cuánta información hay que traquear en en internet entonces las queries
+
+124
+00:14:59,200 --> 00:15:06,760
+pasan en una cola esta cola se consume con una lambda la lambda se encarga de identificar el módulo
+
+125
+00:15:06,760 --> 00:15:13,120
+python de que corresponde al al marketplace que se está analizando aquí la estructura que veis
+
+126
+00:15:13,120 --> 00:15:19,040
+imprente es porque pues tenemos una una clase genérica que tiene métodos genéricos y luego por
+
+127
+00:15:19,040 --> 00:15:26,960
+debajo hay hay clases más específicas que se van a encargar de gestionar las características
+
+128
+00:15:26,960 --> 00:15:31,680
+las peculiaridades de cada marketplace porque como dijimos al principio cada marketplace tiene su
+
+129
+00:15:31,680 --> 00:15:38,680
+sus particularidad entonces por ejemplo podemos tener un marketplace que acepta llamadas a
+
+130
+00:15:38,680 --> 00:15:44,720
+porque tiene un api por debajo otros marketplace donde tenemos que hacer web web para para enviar
+
+131
+00:15:44,720 --> 00:15:51,920
+esta esta consulta de search el resultado de esta de esta fase es un listado de productos digamos
+
+132
+00:15:51,920 --> 00:15:57,960
+que entran en un e otra cola esta otra cola se consume en la fase siguiente de extracción aquí
+
+133
+00:15:57,960 --> 00:16:04,240
+vemos que el patrón es más o menos parecido o sea hay una cola en la lambda la lambda llama el módulo
+
+134
+00:16:04,240 --> 00:16:11,800
+que corresponde al marketplace y también aquí porque se ha hecho así bueno porque hay cada marketplace
+
+135
+00:16:11,800 --> 00:16:18,040
+tiene sus particularidades en este caso congreso pues habrá campos obligatorios y opcionales
+
+136
+00:16:18,040 --> 00:16:29,240
+para cada para cada producto que aparece en un marketplace entonces el resultado de esta de
+
+137
+00:16:29,240 --> 00:16:35,480
+esta fase es un listado de jason donde cada jason corresponde a la información de un producto y
+
+138
+00:16:35,480 --> 00:16:42,120
+además en esta fase es interesante también el hecho que se haga una cierta normalización de
+
+139
+00:16:42,120 --> 00:16:47,760
+los datos eso quiere decir que todo lo que es que corresponde al precio del producto pues tendrá un
+
+140
+00:16:47,760 --> 00:16:52,240
+nombre único precio o todo lo que corresponde a la información del vendedor quizá empezará con
+
+141
+00:16:52,240 --> 00:17:00,720
+vendedor underscore algo esto porque porque en la fase siguiente el análisis lo tendrá más sencillo
+
+142
+00:17:00,720 --> 00:17:06,640
+porque tendrá datos más o menos homogéneos en lugar de ser heterogéneos como dijimos al principio
+
+143
+00:17:06,640 --> 00:17:12,800
+bueno en esta fase lo que se hace luego es guardar estos documentos en una base de
+
+144
+00:17:12,800 --> 00:17:20,920
+datos documental no documental que en este caso es dinamo vale pues otra fase análisis
+
+145
+00:17:20,920 --> 00:17:26,880
+aquí pues hay un paso previo porque lo que tenemos que hacer es linkear la información que hemos
+
+146
+00:17:26,880 --> 00:17:33,880
+sacado de del marketplace a la información de la marca que está en el sistema y la información
+
+147
+00:17:33,880 --> 00:17:40,040
+de la marca está definida como una base en una base de obra relacional entonces en esta fase hacemos
+
+148
+00:17:40,040 --> 00:17:47,960
+el linking y quizá hacemos también unas cuantas transformaciones para preparar el dato a que
+
+149
+00:17:47,960 --> 00:17:53,200
+el análisis luego puede hacerlo de manera más sencilla por ejemplo pues se podrían volcar parte de
+
+150
+00:17:53,200 --> 00:18:01,800
+los atributos de cada producto en una tabla y se que le vale entonces digamos que al final de esta fase
+
+151
+00:18:01,800 --> 00:18:08,080
+podemos ver el contenido capturado de una forma sencilla ahora pasamos a la fase de verdad de
+
+152
+00:18:08,080 --> 00:18:20,160
+análisis aquí tenemos un tema cuatro productos porque hemos buscado vender barato y aquí nos
+
+153
+00:18:20,160 --> 00:18:29,120
+encontramos con dos problemas el problema de la relevancia o sea saber que es si lo que hemos
+
+154
+00:18:29,120 --> 00:18:34,160
+encontrado el contenido es de relevante o no y luego la otra pregunta es del contenido relevante
+
+155
+00:18:34,160 --> 00:18:42,880
+cuál es ilegal cuál es original claramente aquí tenemos varias opciones la primera opción es manual
+
+156
+00:18:42,880 --> 00:18:51,400
+porque en ciertos casos es difícil saber si un producto es relevante para una búsqueda y otra
+
+157
+00:18:51,400 --> 00:18:56,040
+fase que ya está implementada es del análisis textual en el sentido que aquí podemos usar la
+
+158
+00:18:56,040 --> 00:19:01,880
+información de título de descripción para tener un algoritmo de machine learning que es nos diga
+
+159
+00:19:01,880 --> 00:19:07,000
+este es relevante esto es relevante y luego tenemos una tercera fase que aún no está implementada
+
+160
+00:19:07,000 --> 00:19:13,520
+que sería utilizar la imagen del producto en este caso no está implementada pero la plataforma ya
+
+161
+00:19:13,520 --> 00:19:22,120
+permitiría ya permite sacar screenshot de cada producto que se ha ido trajeando en en en un
+
+162
+00:19:22,120 --> 00:19:28,720
+marketplace entonces en esta fase para resumir pues decimos somos capaces de decir qué contenido
+
+163
+00:19:28,720 --> 00:19:35,080
+es relevante y descartamos lo que no es relevante fase de detección pues aquí vamos a ver qué el
+
+164
+00:19:35,080 --> 00:19:40,760
+contenido que es legal y el contenido que no es legal tenemos varias maneras la primera manera es
+
+165
+00:19:40,760 --> 00:19:45,160
+manual también aquí otra vez la intervención humana es muy importante porque en ciertos casos es muy
+
+166
+00:19:45,160 --> 00:19:53,720
+difícil saber si algo es legal o ilegal luego tenemos una opción que es de reglas simplemente
+
+167
+00:19:53,720 --> 00:20:00,120
+podemos decir todo lo que viene de este vendedor es original o podríamos decir todo lo que viene
+
+168
+00:20:00,120 --> 00:20:06,040
+por debajo de este precio es falso y luego otra vez tenemos el text analisis que simplemente
+
+169
+00:20:06,040 --> 00:20:11,120
+pues usamos la información textual del del oferta y luego tenemos el feature analisis esta parte
+
+170
+00:20:11,120 --> 00:20:15,120
+todavía no está implementada pero en principio la idea sería de utilizar la información por
+
+171
+00:20:15,120 --> 00:20:20,520
+ejemplo del precio del vendedor del feedback del vendedor de la descripción y tal para luego llegar
+
+172
+00:20:20,520 --> 00:20:29,240
+a saber si un producto es legal o es ilegal vale última fase reporta y reporta y en concreto
+
+173
+00:20:29,240 --> 00:20:35,320
+es una fase bastante sencilla porque es del contenido de las rls de productos que se han
+
+174
+00:20:35,320 --> 00:20:41,240
+identificado como falsos pues hay que decir al marketplace que la que la la esquita de la
+
+175
+00:20:41,240 --> 00:20:47,760
+plataforma que pasa que una parte manual una parte automática que se puede hacer porque
+
+176
+00:20:47,760 --> 00:20:52,520
+muchos market places proporcionan como un formulario que se podría rellenar de forma automática de hecho
+
+177
+00:20:52,520 --> 00:20:58,400
+el primer enlace es el reporte de infraciones de amazon entonces hay una parte que se puede
+
+178
+00:20:58,400 --> 00:21:07,000
+hacer automática pero luego antes de llegar ahí hay una serie de pasos manuales que hay que hacer
+
+179
+00:21:07,000 --> 00:21:12,680
+porque son pasos como legales donde hay que preparar un cierto papeleo y hacer unas unas
+
+180
+00:21:12,680 --> 00:21:20,680
+cuantas pues unos cuantos envíos y preparación para que luego todo está toda la rl todas las
+
+181
+00:21:20,680 --> 00:21:29,680
+redes encontradas se puedan dar de baja de forma limpia y ilegal entonces más o menos
+
+182
+00:21:29,680 --> 00:21:36,800
+estamos casi al final de la presentación que da un par de minutos takeaways pues hemos visto
+
+183
+00:21:36,800 --> 00:21:40,120
+que el problema de la falsificación internet es un problema que ha ido creciendo en estos años
+
+184
+00:21:40,120 --> 00:21:45,560
+hemos visto que pa y don el machine learning pueden ayudar hemos visto que la intervención humana es
+
+185
+00:21:45,560 --> 00:21:54,440
+muy importante sea para validar algo que para terminar para la fase de report en donde el ser humano
+
+186
+00:21:54,440 --> 00:21:58,760
+digamos la parte manual no se puede quitar de la de la ecuación y luego hemos visto que este
+
+187
+00:21:58,760 --> 00:22:04,560
+frío es bastante genérico porque como lo hemos aplicado los market places lo podríamos aplicar
+
+188
+00:22:04,560 --> 00:22:12,920
+para películas para series para eventos live claramente habrá que tener más otros extractores
+
+189
+00:22:12,920 --> 00:22:18,800
+que la plataforma de asumad ya proporciona y también adaptar los algoritmos de de machine learning
+
+190
+00:22:18,800 --> 00:22:25,280
+o sea la fase de análisis para terminar pues pasos siguientes pues ya hemos hablado que hay ciertas
+
+191
+00:22:25,280 --> 00:22:32,840
+fases del análisis que se pueden hacer que se pueden añadir y en general no sé si habéis notado
+
+192
+00:22:32,840 --> 00:22:40,040
+que la parte de captura y el distracciones bastante está bastante desacoplado de la parte de análisis
+
+193
+00:22:40,040 --> 00:22:45,720
+esto quiere decir que por debajo al final vamos teniendo un data lake de todos los productos que se
+
+194
+00:22:45,720 --> 00:22:53,240
+están trajeando en la en la plataforma entonces en algún momento será más fácil hacer análisis
+
+195
+00:22:53,240 --> 00:23:00,200
+como evolutivas por ejemplo la falsificación en en productos de tipos zapatillas ha ido creciendo
+
+196
+00:23:00,200 --> 00:23:06,080
+en los últimos años pues hecho tenemos la muestra una muestra bastante grande podríamos decir algo y la
+
+197
+00:23:06,080 --> 00:23:14,120
+otra parte es la análisis comparativa o sea entre dos marcas cuál es la marca más falsificada o si
+
+198
+00:23:14,120 --> 00:23:19,960
+no podríamos hacer lo mismo a nivel de singular producto por ejemplo el FIFA 2022 será más
+
+199
+00:23:19,960 --> 00:23:26,720
+falsificado de FIFA 2023 y esta información es es bastante útil a nivel para una marca para luego
+
+200
+00:23:26,720 --> 00:23:38,320
+quizá adoptar medidas para evitar que la falsificación siga creciendo y con esto es todo no sé si hay
+
+201
+00:23:38,320 --> 00:23:51,400
+preguntas voy a parar de compartir pues valerio muy interesante tu tu presentación bueno vamos
+
+202
+00:23:51,400 --> 00:23:59,920
+a mirar para empezar si en el discord hay hay preguntas a ver Sergio Sergio me pregunta
+
+203
+00:23:59,920 --> 00:24:03,840
+me da la hora buena por la charla y en esta seguro si lo ha comentado pero me gustaría saber
+
+204
+00:24:03,840 --> 00:24:07,360
+qué técnica de machine learning es más conveniente para este tipo de detecciones
+
+205
+00:24:08,800 --> 00:24:19,520
+ok pues entiendo que es para la parte de análisis aquí pues estamos en el proceso de de añadir
+
+206
+00:24:19,520 --> 00:24:24,640
+para la parte de machine learning entonces se ha empezado con la parte de análisis de texto porque
+
+207
+00:24:24,640 --> 00:24:30,240
+pues el producto se define como una descripción entonces es hay mucho contenido ahí que se puede
+
+208
+00:24:30,240 --> 00:24:38,400
+analizar y entonces pues nada ahí son técnicas de procesamiento un poco del del texto luego
+
+209
+00:24:38,400 --> 00:24:44,720
+claramente molaría mucho y hay también artículos de investigación sobre la análisis de vídeos de
+
+210
+00:24:44,720 --> 00:24:50,360
+imágenes para detectar pero esto todavía no hemos ido ahí por eso comentaba que la plataforma
+
+211
+00:24:50,360 --> 00:24:57,680
+ya tiene los screenshots entonces digamos que en un a medio plazo este es algo que se irá
+
+212
+00:24:57,680 --> 00:25:05,480
+haciendo y luego otra cosita sobre sobre esto es que bueno no sé quizá pasamos a otra pregunta
+
+213
+00:25:07,040 --> 00:25:13,920
+si tenemos varias preguntas la que si tomás lucas dice por discord también me gustaría
+
+214
+00:25:13,920 --> 00:25:19,640
+saber cómo manejan la mezcla de idiomas o variaciones de los mismos en el análisis de texto vale en
+
+215
+00:25:19,640 --> 00:25:28,520
+este caso lo que hacemos es cuando cuando tenemos un producto que sería digamos no sé 5 a 22 y tal
+
+216
+00:25:28,520 --> 00:25:35,920
+pues este producto se asocia a un país entonces buscamos por ejemplo amazon españa y luego si
+
+217
+00:25:35,920 --> 00:25:41,360
+si la marca dice pues vamos a buscar también en amazon francia pues buscamos buscaremos amazon
+
+218
+00:25:41,360 --> 00:25:48,640
+francia entonces digamos que lo que hacemos es el contenido está alineado con con el país y de
+
+219
+00:25:48,640 --> 00:25:54,120
+momento las formas tenemos los los idiomas para su portar idiomas soportamos todo pero
+
+220
+00:25:54,120 --> 00:26:00,440
+la análisis creo que se sienta más en la parte de inglés y de español de como decía es algo que
+
+221
+00:26:00,440 --> 00:26:05,880
+se ha empezado que hay buenos resultados y pues estamos en el proceso de mejorar y acotar más
+
+222
+00:26:05,880 --> 00:26:13,440
+el resultado muy bien tenemos más preguntas ya que un poquito de tiempo david mar en youtube nos dice
+
+223
+00:26:13,440 --> 00:26:22,600
+que librería usas para la parte de ser selenium bueno la parte de ser no usamos selenium ahí
+
+224
+00:26:22,600 --> 00:26:32,720
+simplemente nos apoyamos en una en un servicio aparte simplemente este servicio nos proporciona como
+
+225
+00:26:32,720 --> 00:26:38,120
+unos proxies también si es si hace falta porque a veces sabes cuando una hace una petición no
+
+226
+00:26:38,120 --> 00:26:42,680
+puedes pasar directamente como te pueden banear por ejemplo o no puedes pasar directamente no sea
+
+227
+00:26:42,680 --> 00:26:48,880
+hacer una llamada de europa a china porque el market es no acepta estas llamadas entonces al
+
+228
+00:26:48,880 --> 00:26:56,880
+final usamos una una plataforma un servicio online digamos que pagamos y por debajo al final es
+
+229
+00:26:56,880 --> 00:27:05,720
+spider tenemos como peticiones con la librería y cuesta no no mucho más que esto digamos vale vale
+
+230
+00:27:05,720 --> 00:27:10,840
+tengo más preguntas de ricardo guerrero nos dice por discord cómo gestionáis los faltos los
+
+231
+00:27:10,840 --> 00:27:16,520
+falsos opositivos y si tiráis abajo un producto legítimo claro este es uno de los problemas más
+
+232
+00:27:16,520 --> 00:27:24,320
+importantes porque es por eso que decía que la parte manual es muy es algo muy importante en toda
+
+233
+00:27:24,320 --> 00:27:32,160
+esta fase porque digamos que si tú tiras un producto legítimo pues va a haber un problema porque
+
+234
+00:27:32,160 --> 00:27:38,080
+pues quien va a recibir esta esta notificación te va a decir pues no entonces lo que se hace es
+
+235
+00:27:38,080 --> 00:27:46,240
+también si tenemos la parte de más un l'erning hay siempre una validación con con un operador que
+
+236
+00:27:46,240 --> 00:27:52,520
+simplemente dice pues esto vamos a comprobar y pues se puede tirar y esto no se puede tirar en esta
+
+237
+00:27:52,520 --> 00:28:00,000
+fase de donde estamos el modelo que se está creando es incluye también el una validación con con
+
+238
+00:28:00,000 --> 00:28:07,800
+el operador entonces cuando hay cuando hay una algo que se tiene que tirar pues se valida y se tira
+
+239
+00:28:09,800 --> 00:28:17,520
+vale vale vale bueno no tenemos más preguntas yo tengo yo tengo alguna bueno podemos consultar
+
+240
+00:28:17,520 --> 00:28:24,520
+esto en alguna web o algún github no es no es opensource entonces por eso que al final de la
+
+241
+00:28:24,520 --> 00:28:32,440
+presentación no ha habido nada de de modelos nada de json y tal entonces un poco esto es
+
+242
+00:28:32,440 --> 00:28:40,080
+estamos también hay discusiones para abrir algo algo a la parte opensource pero esto todavía no
+
+243
+00:28:40,080 --> 00:28:46,480
+digamos a corto plazo todavía no está entonces pues se queda acharle un poco más genérica si es una
+
+244
+00:28:46,480 --> 00:28:52,840
+pena que no haya podido bajar más en la parte de extracción por ejemplo o enseñar los algoritmos
+
+245
+00:28:52,840 --> 00:28:59,440
+de más vale porque yo te intuyo que será parte de tu nueva empresa porque lo veo muy completo yo
+
+246
+00:28:59,440 --> 00:29:04,120
+que esto podía dar dice que viene del mundo académico esto bien terminado y tal yo creo que
+
+247
+00:29:04,120 --> 00:29:10,800
+puede dar hasta para una tesis doctor al incluso no sé si te lo plantea o bueno yo estoy en certeza
+
+248
+00:29:10,800 --> 00:29:17,480
+llevo un año así hay el mucho nivel hay hay mucha mucha parte de investigación que se hace
+
+249
+00:29:17,480 --> 00:29:23,920
+y es es un tema muy interesante porque es es difícil es un problema difícil así que es por
+
+250
+00:29:23,920 --> 00:29:31,960
+eso que creo que si alguien quiere hacer una tesis sobre esto habría material y además en internet
+
+251
+00:29:31,960 --> 00:29:37,600
+si vas en google scholar ya hay pequeños framework que más o menos tienen las mismas fases o es como
+
+252
+00:29:37,600 --> 00:29:43,480
+de análisis de visualización de datos y tal entonces como decir que parece que lo que como la
+
+253
+00:29:43,480 --> 00:29:48,160
+aproximación que tenemos ahora con este framework es muy buena y además pues se orientado también a
+
+254
+00:29:48,160 --> 00:29:52,360
+una parte de escalabilidad que muchas veces esto en investigación no se hace se tiene el prototipo y
+
+255
+00:29:52,360 --> 00:29:58,680
+tal entonces puesto que tenemos la parte de los servicios de amazon y tal para que cuando lleguen
+
+256
+00:29:58,680 --> 00:30:03,800
+10 mil millones de enlaces o de productos que hay que traquear pues la plataforma puede escalar sin
+
+257
+00:30:03,800 --> 00:30:10,280
+sin demasiados problemas genial eso sí que sí que importante como dice el mundo académico simplemente
+
+258
+00:30:10,280 --> 00:30:15,080
+es una prueba de concepto pequeñita y la hora de escalar es difícil porque no se tienen datos
+
+259
+00:30:15,080 --> 00:30:20,720
+no se tiene una infraestructura grande para para llevarlo a cabo bueno la verdad es que
+
+260
+00:30:21,840 --> 00:30:29,000
+todos nos están dando la hora buena por por youtube y por discord que vemos no a esa a
+
+261
+00:30:29,000 --> 00:30:35,920
+esas felicitaciones y bueno pues estaremos a la espera de cómo avanza esto porque la verdad
+
+262
+00:30:35,920 --> 00:30:41,080
+que es un tema muy muy interesante y bueno antes de una pregunta que se me acaba de ocurrir
+
+263
+00:30:41,080 --> 00:30:46,160
+que qué nivel de datos de qué nivel de cuantos niveles de datos estamos estamos hablando cuánto
+
+264
+00:30:46,160 --> 00:30:53,760
+cuántos gigas de datos tenéis ya escrapeado en nuestra base de datos diría que son muchos
+
+265
+00:30:53,760 --> 00:31:01,120
+pues son muchísimos porque tenemos pues el dinamo pues este es digamos que ahí va se va metiendo
+
+266
+00:31:01,120 --> 00:31:09,240
+enlaces y tenemos el lase de los productos que traqueamos que son bastantes entonces yo diría
+
+267
+00:31:09,240 --> 00:31:16,640
+que pues estamos pues hablamos de casi de bitdata más o menos ahora la el tamaño exacto no lo sé
+
+268
+00:31:16,640 --> 00:31:22,560
+pero eso son muchos y estamos formando un data lake y es por eso que con este data lake luego
+
+269
+00:31:22,560 --> 00:31:27,480
+será interesante teniendo una muestra bastante grande de lo que está pasando en los market
+
+270
+00:31:27,480 --> 00:31:33,000
+basis en internet en general si voy a contestar a preguntas de como dime qué productos son
+
+271
+00:31:33,000 --> 00:31:38,280
+falsificados en internet y más o menos teniendo una muestra grande pues una vez y pues zapatillas o
+
+272
+00:31:38,280 --> 00:31:49,440
+ropa y tal fantástico fantástico bueno la verdad que yo digo súper interesante la charla un tema
+
+273
+00:31:49,440 --> 00:31:54,840
+muy interesante también como como usuarios y usuarios de estas de esta plataforma porque más
+
+274
+00:31:54,840 --> 00:32:00,120
+de una vez no hemos encontrado lo que tú dices temas de falsificaciones cuando te llega a casa
+
+275
+00:32:00,120 --> 00:32:08,280
+incluso en la propia amazon tan poderosa que es llegan muchos productos falsos en en la comprada
+
+276
+00:32:08,280 --> 00:32:13,480
+y la verdad que muy interesante haberla haber verdad esta charla con tanta información tanto
+
+277
+00:32:13,480 --> 00:32:19,320
+al nivel de extracción transformación análisis me has puesto ejemplo que no hayas puesto nos hayas
+
+278
+00:32:19,320 --> 00:32:23,320
+puesto también en los frameworks que he usado es muy interesante para aprender y para la hora que
+
+279
+00:32:23,320 --> 00:32:28,880
+queramos replicar algo parecido pues aplicar lo que tú lo que tú nos has contado la verdad muchísimas
+
+280
+00:32:28,880 --> 00:32:36,960
+gracias a valerio por por tu tiempo y genial que sigas trabajando en esto y te invitamos también
+
+281
+00:32:36,960 --> 00:32:42,960
+el año que viene si tienes alguna alguna mejora o alguna nueva idea que montar en la paico 2022
+
+282
+00:32:42,960 --> 00:32:50,080
+estará también posible un abrazo hasta ahora
+

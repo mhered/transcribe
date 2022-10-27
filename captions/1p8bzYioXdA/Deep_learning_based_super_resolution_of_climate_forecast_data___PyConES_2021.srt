@@ -1,0 +1,528 @@
+1
+00:00:00,000 --> 00:00:17,000
+Ahora se me escucha que a veces el micro no me va bien. Perfecto. Pues nada. Ahora ya vamos a dar paso a la siguiente charla.
+
+2
+00:00:17,000 --> 00:00:28,000
+Nos toca... nos va a hablar Carlos de modelos aplicados de deep learning a datos climáticos. Un tema que me parece súper interesante
+
+3
+00:00:28,000 --> 00:00:38,000
+y nada, espero que se os vayan oponiendo muchas preguntas y las iremos viendo por el chat. Recordad que sobre todo estamos muy activos en Discord
+
+4
+00:00:38,000 --> 00:00:49,000
+y en cualquier caso si queréis comentar por YouTube, pues también podemos contestar ahí a las preguntas. Y nada, ya voy a dar paso a Carlos, ¿vale?
+
+5
+00:00:49,000 --> 00:01:05,000
+Pues sí, puedes ya poner la pantalla. Hola Carlos. Hola Clara. Ya te dejo. A ver, ahí ya está. Perfecto.
+
+6
+00:01:05,000 --> 00:01:24,000
+Vale. Pues quise comenzar por decir que desde ayer estoy un poco refriedas y que espero que mi voz colabore. Gracias a los organizadores por todo este evento
+
+7
+00:01:24,000 --> 00:01:39,000
+y permitir este tipo de espacios tan diversos. Vale, las diapositivas estarán en inglés pero voy a hablar en castellano para seguir la línea del evento
+
+8
+00:01:39,000 --> 00:01:47,000
+y como Clara bien decía, voy a hablar sobre modelos de deep learning para hacer súper resolución de datos climáticos.
+
+9
+00:01:47,000 --> 00:02:03,000
+Primero un poco acerca de mí y dónde trabajo. Soy un fellow postdoctoral en el Centro Nacional de Supercomputación, el Barcelona Supercomputing Center
+
+10
+00:02:03,000 --> 00:02:13,000
+y trabajo en temas de inteligencia artificial y machine learning aplicados a temas de ciencias de la tierra. Estoy dentro del departamento de ciencias de la tierra.
+
+11
+00:02:13,000 --> 00:02:22,000
+El BSC tiene el Marinostrum que es el computador, el súper computador más poderoso de toda España, bueno, el computador más poderoso de toda España
+
+12
+00:02:22,000 --> 00:02:34,000
+y tiene además otros clusters como el PowerCTE que tiene 52 nodes de computación con cuatro GPUs cada una.
+
+13
+00:02:34,000 --> 00:02:49,000
+Además, el departamento de ciencias de la tierra alberga a más de 100 investigadores con background en temas de ciencias del clima, ciencia atmosférica y otros temas
+
+14
+00:02:49,000 --> 00:03:01,000
+y bueno, aquí aprovecharía para dar las gracias a todos mis colegas por todo el soporte en datos, en infraestructura y en todo lo que concierne a temas de ciencias de la tierra.
+
+15
+00:03:01,000 --> 00:03:12,000
+Yo vengo de un background de machine learning aplicado a otros temas de ciencias como astrofísica y fue un cambio súper interesante
+
+16
+00:03:12,000 --> 00:03:21,000
+ver que los modelos que entrenos están siendo aplicados para cosas que impactan el día a día.
+
+17
+00:03:21,000 --> 00:03:36,000
+Y bueno, eso es un poco lo que me interesa y lo que hago en el día a día y es los problemas de climate science, tomar técnicas que se desarrollan en el campo de visión computacional o de AI
+
+18
+00:03:36,000 --> 00:03:48,000
+o de ligencia artificial machine learning y aplicarle bastante de ingeniería, de ingeniería para hacer modelos robustos que se puedan reproducir,
+
+19
+00:03:48,000 --> 00:03:54,000
+que se puedan entrenar eficientemente en el hardware que tenemos, etc.
+
+20
+00:03:54,000 --> 00:04:06,000
+Un poco de contexto de lo que voy a hablar y es que las técnicas de visión computacional se pueden aplicar a temas de ciencias de la tierra
+
+21
+00:04:06,000 --> 00:04:19,000
+y esto es parte de que hablamos de procesos de espacio temporales que se ven todo el tiempo en ciencias de la tierra y tienen un prior estructural similar
+
+22
+00:04:19,000 --> 00:04:35,000
+y es que los datos por lo general vienen como un grid, vienen en una rajilla y los datos se pueden pensar como conjuntos de píxeles o como si fuesen imágenes o video.
+
+23
+00:04:35,000 --> 00:04:44,000
+Por ejemplo, aquí muestro temperatura sobre la península ibérica y veréis que cada celda es, no es otra cosa que un número.
+
+24
+00:04:44,000 --> 00:04:55,000
+Y bueno, aquí hablo de algunas de las temas en visión computacional que tienen un paralelo muy directo con temas de ciencias de la tierra.
+
+25
+00:04:55,000 --> 00:05:08,000
+Ahora, en realidad lo que pasa es lo siguiente, que claro, vienes con mucha o hay mucha expectativa acerca de todo lo que se puede hacer,
+
+26
+00:05:08,000 --> 00:05:17,000
+toda la magia que se puede hacer, pero al final te sientas a trabajar con los datos, te sientas a trabajar con las personas que están en este otro campo de la ciencia
+
+27
+00:05:17,000 --> 00:05:21,000
+y claro te das cuenta que todo era más difícil de lo que pensabas.
+
+28
+00:05:21,000 --> 00:05:26,000
+Ahora, ¿por qué hacer super resolución?
+
+29
+00:05:26,000 --> 00:05:30,000
+Primero, ¿qué es la super resolución?
+
+30
+00:05:30,000 --> 00:05:47,000
+Recordemos que es la tarea que se encara de convertir una imagen de baja resolución que tiene detalles borrosos o de baja frecuencia a una correspondiente de alta resolución con mejor calidad.
+
+31
+00:05:47,000 --> 00:05:57,000
+Y eso tiene una analogía directa con la tarea de lo que se llama el downscaling estadístico en ciencias del clima.
+
+32
+00:05:57,000 --> 00:06:12,000
+Y hay que recalcar que el downscaling estadístico es súper importante porque correr los modelos físicos que se utilizan para hacer predicciones o para dar el forcas,
+
+33
+00:06:12,000 --> 00:06:25,000
+para dar la predicción del tiempo, y ahora dicen en los noticieros, esto es bastante costoso, se utilizan súper computadores para ello y entre más alta sea la resolución, más tiempo va a tomar,
+
+34
+00:06:25,000 --> 00:06:29,000
+más energía va a gastar, más tiempo computacional va a tomar.
+
+35
+00:06:29,000 --> 00:06:33,000
+Así que se buscan técnicas que puedan agilizar este proceso.
+
+36
+00:06:33,000 --> 00:06:44,000
+Y esto es muy importante en muchas aplicaciones, entre más resolución, si veis la imagen de abajo, cuando una celda está engorda, no puedes estar gruesa,
+
+37
+00:06:44,000 --> 00:06:55,000
+no puedes dar un dato local para una determinada área que puede estar muy afectada por ejemplo por el relieve.
+
+38
+00:06:55,000 --> 00:07:11,000
+Ahora, un tema importante es la terminología y es que en ciencias del clima downscaling es bastante confuso porque upscaling es lo mismo que upscaling en ciencias de la computación o procesamiento de imágenes,
+
+39
+00:07:11,000 --> 00:07:16,000
+en computer vision, que es ir desde baja a alta resolución.
+
+40
+00:07:16,000 --> 00:07:21,000
+Así que downscaling, super resolución, upscaling, va todo por lo mismo.
+
+41
+00:07:21,000 --> 00:07:36,000
+Ahora, en cuanto a técnicas de deep learning para super resolución, es un campo que se mueve muy, se ha desarrollado mucho en los últimos años y aquí es tomado de un pequeño,
+
+42
+00:07:36,000 --> 00:07:48,000
+no un pequeño, de un gran review de este campo en el 2020 y bueno, esto también ha inspirado muchas de esas técnicas de downscaling para temas del clima.
+
+43
+00:07:48,000 --> 00:08:10,000
+Ahora, así muy rápidamente sobre redes convolucionales y la idea de que tenemos estos capas convolucionales que forman estas redes y se encargan de aprender parámetros que vienen en la forma de matrices.
+
+44
+00:08:10,000 --> 00:08:37,000
+Y estos filtros que se aprenden, que es lo que está a la derecha arriba, se van corriendo por la imagen que tenemos y se van calculando los productos y se van sumando para producir una imagen de activación, ¿de acuerdo?
+
+45
+00:08:37,000 --> 00:08:52,000
+Esto se hace en muchos layers por lo que se denomina deep learning para producir este tipo de representaciones jerárgicas de alta expresividad y modelos bastante no lineares.
+
+46
+00:08:52,000 --> 00:09:02,000
+Ahora, algo que siempre me gusta recalcar y es que Python y el software científico son muy importantes.
+
+47
+00:09:02,000 --> 00:09:24,000
+Es un trabajo difícil, es un trabajo feo, lo llamaría, y se nota en que la comunidad en prefiere publicar proof of concepts, pruebas donde bueno, te resultó un modelo específico, dale unas métricas y lo motas en GitHub y ahí está.
+
+48
+00:09:24,000 --> 00:09:33,000
+Para reproducir esto es casi imposible y esto es sobre todo muy relevante en temas de machine learning y ahí.
+
+49
+00:09:33,000 --> 00:09:49,000
+Ahora, nosotros como científicos somos muy malos programando por lo general y bueno aquí este, el que ya se ha hablado en otra charla, este principio del don't repeat yourself es bastante importante, ¿no?
+
+50
+00:09:49,000 --> 00:09:57,000
+El modelo de modularización, de abstracción, de testeo es muy importante en desarrollo software científico.
+
+51
+00:09:57,000 --> 00:10:18,000
+Python es vital para la ciencia moderna, para la ciencia de datos y bueno, sabéis muchos casos de estas librerías que han desatado un desarrollo en, digamos, avalancha porque han permitido construir sobre ellas otro tipo de funcionalidades de códigos.
+
+52
+00:10:18,000 --> 00:10:35,000
+Ahora, para este tema que estoy hablando de super resolución de datos climáticos, por supuesto que he creado un package que se llama DL4DS, que sería deep learning para downscaling o para super resolución como comentaba antes.
+
+53
+00:10:35,000 --> 00:10:48,000
+Y la idea es tomar muchas de las propuestas que se han hecho en el campo de computer vision y que se explora muy puntualmente en cada paper en ciencias de la Tierra.
+
+54
+00:10:48,000 --> 00:11:01,000
+Cada quien toma una arquitectura o una decisión de diseño, de una red muy particular, de acuerdo a sus datos o el código que tienen a la mano, etcétera, etcétera.
+
+55
+00:11:01,000 --> 00:11:14,000
+Así que he tomado bastantes de estas decisiones de diseño y las he combinado para en una API que me permita explorar arquitecturas de redes convocionales para su resolución.
+
+56
+00:11:14,000 --> 00:11:37,000
+Bueno, está escrito sobre TensorFlow Iqueras, por supuesto que un bastante de ello es la creación de crear capas custom específicas para lo que se necesite, para las transformaciones que se necesiten hacer dentro de las redes.
+
+57
+00:11:37,000 --> 00:11:50,000
+Y que esto permite tener diferentes arquitecturas de modelos, también permite tunear los hiperparámetros, optimizar el diseño de la red, la arquitectura, etcétera.
+
+58
+00:11:50,000 --> 00:12:00,000
+También me he cargado de que el entrenamiento sea distribuido, o sea que puedo utilizar varias GPUs o varios nodos de un cluster, esto utilizando horror.
+
+59
+00:12:00,000 --> 00:12:17,000
+Ahora, vamos un poco a los datos y lo que utilizamos es datos diarios de la temperatura en la superficie, o sea, la temperatura del aire en la superficie medida a dos metros sobre la superficie que es.
+
+60
+00:12:17,000 --> 00:12:35,000
+La temperatura que se ve en las noticias cuando se habla del tiempo. Tenemos datos de 1.281 al 2020, lo que da más o menos unos 15.000 ejemplos temporales para el Mediterráneo.
+
+61
+00:12:35,000 --> 00:12:53,000
+Utilizamos un dataset que es observacional, otro que es un seasonal forecast y además datos que son como la elevación o donde está el océano y la tierra, que esto es estativo.
+
+62
+00:12:53,000 --> 00:13:09,000
+Ahora, para ello, para crear los training samples, digamos, para el entrenamiento de las redes, crea un data generator subclassing el sequence, el objeto sequence de que eras.
+
+63
+00:13:09,000 --> 00:13:25,000
+Y bueno, esto tiene un método, el get item que va a devolver los batches, los grupos de samples de los ejemplos, de donde vamos hasta lo que queremos, los preditores y los predictandos.
+
+64
+00:13:25,000 --> 00:13:45,000
+Y esto en el contexto del entrenamiento supervisado. Y aquí se hace todo el preprocesado de los datos que vamos a cortar en la región o vamos a hacer un upsampling, un downsampling o vamos a hacer un slicing, todo esto que se puede hacer con datos multidimensionales.
+
+65
+00:13:45,000 --> 00:14:02,000
+Ahora, para modelos de pre-upsampling, lo que tendríamos para entrenar sería, bueno, arriba tenemos inputs, abajo el output, la irega, arriba tendríamos o empiezo por abajo.
+
+66
+00:14:02,000 --> 00:14:15,000
+Esto es la referencia observacional, esto es la temperatura y arriba lo que tenemos es una versión degradada para hacerla de baja resolución y además los auxiliares como la elevación.
+
+67
+00:14:15,000 --> 00:14:27,000
+Vemos que las imágenes son del mismo tamaño, a pesar de que sea lo que está arriba y lo que está abajo, la misma temperatura es del mismo tamaño, el mismo número de celdas, pero de menor resolución.
+
+68
+00:14:27,000 --> 00:14:36,000
+Ahora, hay otros modelos que se pueden entrenar en post upsampling y la imagen en baja resolución la X es de menor tamaño.
+
+69
+00:14:36,000 --> 00:14:47,000
+Esto se tiene que tratar con diferentes redes, las transformaciones que hacen dentro de la red tendrán que hacer diferentes, ¿de acuerdo?
+
+70
+00:14:47,000 --> 00:15:04,000
+En el caso de pre-upsampling se hace una interpolación bilinear o bicúbica antes de entrar a la red y la red aprende en alta resolución, o sea, en el tamaño de imágenes grande, que por supuesto es más costoso.
+
+71
+00:15:04,000 --> 00:15:15,000
+Ahora, aquí muestro dos redes, si tomamos solo la arriba y entrenamos esta de forma supervisada es una recogulacional, una CNN normal.
+
+72
+00:15:15,000 --> 00:15:24,000
+Ahora sí, la entrenamos de forma adversarial y también entrenamos al mismo tiempo el discriminador que está abajo.
+
+73
+00:15:24,000 --> 00:15:29,000
+Entonces ya hablaríamos de un modelo como una SIGAN, un modelo condicional adversarial.
+
+74
+00:15:29,000 --> 00:15:46,000
+Ahora, para las redes de post upsampling, la subida resolución se hace dentro de la red y para esto hay diferentes técnicas, de convoluciones, convoluciones subpixel o resize convolutions.
+
+75
+00:15:46,000 --> 00:15:58,000
+A ver, no pueden entrar en muchos detalles, pero hay diferentes formas de hacerlo, pero el aprendizaje de la red se hace en imágenes más pequeñas, lo que hace que sea más eficiente computacionalmente.
+
+76
+00:15:58,000 --> 00:16:11,000
+Ahora, del IPI de the deal for the S, la idea es que sea muy fácil interactuar con esto y que lo que se llame normalmente sea la lógica de entrenamiento, de acuerdo.
+
+77
+00:16:11,000 --> 00:16:25,000
+Así que está este objeto que es un supervised trainer o el SIGAN trainer y se le pasan todos los parámetros, además de los parámetros de las redes y parámetros del entrenamiento, de acuerdo.
+
+78
+00:16:25,000 --> 00:16:41,000
+Bueno, aquí una de las cosas que se podrían hacer, bueno, de hecho allí colocó rail or activations, pero en realidad se pueden utilizar muchas otras activaciones que se soporten en tarso flow y en Keras.
+
+79
+00:16:41,000 --> 00:17:08,000
+Ahora, vamos a ver ejemplos de si tomamos imágenes que no hemos utilizado durante el entrenamiento, un hold out dataset de validación. A la izquierda muestro una, la temperatura son 20 pasos temporales y esto es el ground truth, esto es para ese día concreto.
+
+80
+00:17:08,000 --> 00:17:26,000
+A ver, me devuelvo para que lo recorrega de nuevo y esto es el ground truth, lo que está a la izquierda a la derecha sería el output de la red que ha tomado una versión degradada del ground truth, de acuerdo.
+
+81
+00:17:26,000 --> 00:17:45,000
+Ahora, apliquemoslo a algo más interesante, no? Si tenemos un modelo que hemos aprendido sobre una referencia observacional, lo podríamos aplicar a otro tipo de datasets climáticos, no?
+
+82
+00:17:45,000 --> 00:18:12,000
+Por ejemplo, los forcas estacionales que se computan también con modelos dinámicos, resuelven ecuaciones físicas del comportamiento de la atmósfera del océano y se hacen por lo complejo que es esto a un resolución muy baja y es lo que está a la izquierda, esto es un grado de resolución que hace que sea bastante grueso el pixel.
+
+83
+00:18:12,000 --> 00:18:36,000
+Ahora, si tomamos un ejemplo de un miembro de este forcas estacional y lo pasamos por la red que aprendimos sobre la referencia observacional, pues obtenemos una versión cuatro veces más grande, podemos explorar otros factores de upscaling.
+
+84
+00:18:36,000 --> 00:18:45,000
+Ahora, dicho esto, la inspección visual no es suficiente para decir, oh wow, esto parece que funciona, no?
+
+85
+00:18:45,000 --> 00:19:05,000
+Y allí es donde entra todas las métricas de validación, de verificación del forcas para saber si este forcas que con más resolución ha perdido el esquí, ha perdido su capacidad predictiva o ha mejorado o ha quedado igual.
+
+86
+00:19:05,000 --> 00:19:20,000
+Si al final lo que queríamos era aumentar la resolución con que no nos perturbe la capacidad de predicción que tiene el sistema ya, pues perfecto.
+
+87
+00:19:20,000 --> 00:19:28,000
+Pero bueno, eso está fuera del escopo de lo que quería hablar en esta charla porque ya tenía bastante material.
+
+88
+00:19:28,000 --> 00:19:51,000
+Ahora, en cuanto a los mensajes que quisiera que quedaran de la charla, además de mostrar aquí tengo un package y hago esto en supercomputadores, es más como hay un gran potencial para la aplicación de técnicas de aprendizaje profundo, de aprendizaje automático y de EI para la ciencia de la Tierra.
+
+89
+00:19:51,000 --> 00:19:59,000
+Pero falta mucho, falta mucho porque sabemos que hay bastante en qué trabajar.
+
+90
+00:19:59,000 --> 00:20:14,000
+Python es un ecosistema de computación, de herramientas genial y open source, lo mejor que podría haber.
+
+91
+00:20:14,000 --> 00:20:22,000
+El desarrollo de software científico es muy importante y es muy importante, sobre todo hoy para la ciencia moderna.
+
+92
+00:20:22,000 --> 00:20:27,000
+Temas como reproducibilidad y esto es primordial.
+
+93
+00:20:27,000 --> 00:20:46,000
+Hemos traducido un ejemplo de técnicas de resolución que fueron desarrolladas en otro contexto para procesamiento de imágenes naturales y cómo podrían mejorar la resolución de imágenes de la temperatura o variables del clima, ¿de acuerdo?
+
+94
+00:20:46,000 --> 00:20:52,000
+Que son las que se usan en la predicción del tiempo.
+
+95
+00:20:52,000 --> 00:21:08,000
+Este package, DL4DS, es parte de un estudio que se está preparando y por ahora no ha sido hecho público, pero la idea es que sea esa.
+
+96
+00:21:08,000 --> 00:21:28,000
+Hacen falta más personas que se tomen o grupos de investigación que se tomen el trabajo feo, tedioso, de desarrollar APIs, de documentar, de testear, de mantener herramientas que puedan ser usadas,
+
+97
+00:21:28,000 --> 00:21:39,000
+no solo en ciencias, sino que esto puede incluso llegar a tocar a la industria más adelante y solo acelerar el avance de la ciencia.
+
+98
+00:21:39,000 --> 00:21:58,000
+Así que, bueno, con todo esto me queda agradecer el funding que me permite trabajar aquí en el Centro Nacional de Supercomputación y a ustedes por la atención. Gracias.
+
+99
+00:21:58,000 --> 00:22:00,000
+Si hay preguntas.
+
+100
+00:22:00,000 --> 00:22:05,000
+Esta motivada declara.
+
+101
+00:22:05,000 --> 00:22:09,000
+Perdón.
+
+102
+00:22:09,000 --> 00:22:10,000
+Gracias.
+
+103
+00:22:10,000 --> 00:22:16,000
+Nada, decía que muchas gracias por enseñarnos este proyecto. La verdad es que ha estado súper bien.
+
+104
+00:22:16,000 --> 00:22:31,000
+A mí me ha parecido un tema bastante complejo, además algunas partes de las diapositivas, sobre todo cuando explicabas las entrañas del algoritmo, es súper, súper complejo,
+
+105
+00:22:31,000 --> 00:22:34,000
+pero aún así después ha quedado claro, no?
+
+106
+00:22:34,000 --> 00:22:40,000
+O sea, los datos están muy bien explicados y yo creo que es un tema muy importante.
+
+107
+00:22:40,000 --> 00:22:56,000
+También hace falta que en este tipo de eventos que vengan personas tan preparadas, como es tu caso, para contarnos un poco las cosas que se están haciendo ahí fuera y como les damos aplicación a esos algoritmos tan potentes.
+
+108
+00:22:56,000 --> 00:23:06,000
+Y además, decías que se están corriendo ahora, imagino, en el supercomputador. Es decir, esto no es como algo para hacer en tu casa, digamos.
+
+109
+00:23:06,000 --> 00:23:16,000
+Bueno, en cuanto a cantidad de datos, todavía es algo que se puede manejar en un ordenador, digamos, que digas en tu casa.
+
+110
+00:23:16,000 --> 00:23:24,000
+En cuanto a entrenamiento, incluso hay unas versiones de las redes que se pueden entrenar en un computador modesto, digamos, de gaming.
+
+111
+00:23:24,000 --> 00:23:37,000
+Pero cuando ya quieres aplicarlo a un conjunto de datos, a una base temporal más grande, a más resolución temporal, que todos se traducen en más datos o qué quieres hacer el modelo globalmente.
+
+112
+00:23:37,000 --> 00:23:43,000
+Porque aquí estaba volviendo del Mediterráneo, pero si trabajamos con todo el globo, son imágenes, imágenes más grandes.
+
+113
+00:23:43,000 --> 00:23:56,000
+Todo esto va a hacer que los requerimientos en cuanto a memoria de la GPU o de tu acelerador de Deep Learning sean más grandes.
+
+114
+00:23:56,000 --> 00:24:07,000
+Se necesita una memoria de video más grande. Así que, claro, ahí empieza a haber la necesidad de correr esto sobre hardware especializado, sobre supercomputadores.
+
+115
+00:24:07,000 --> 00:24:17,000
+Nos comentan por Discord cuál crees tú que sería el top 3 de 3 funcionalidades útiles para Earth Science.
+
+116
+00:24:17,000 --> 00:24:22,000
+Wow, no mucho.
+
+117
+00:24:22,000 --> 00:24:26,000
+La culpa ya es de Cristian para dar esta pregunta.
+
+118
+00:24:26,000 --> 00:24:49,000
+Son muchas, son muchas. Bueno, los temas de post procesado, que es por caminado a esto que estaba hablando, que es mejorar la resolución de los forecast o hacer que el forecast en sí sea mejor que lo que se produce por estos modelos físicos.
+
+119
+00:24:49,000 --> 00:24:57,000
+Esto es importantísimo porque esto impacta el día a día en todo, en empresas.
+
+120
+00:24:57,000 --> 00:25:11,000
+A saber que si una central de térmica, digamos, recordó unas que por un bajón de temperatura muy fuerte colapsaron en Estados Unidos hace unos meses.
+
+121
+00:25:11,000 --> 00:25:22,000
+O para saber si va a haber una ola de calor y haya que tomar medidas al respecto, todo este tipo de cosas son importantísimas.
+
+122
+00:25:22,000 --> 00:25:36,000
+Pero vamos, que hay muchas otras aplicaciones. Otra es cómo hacer los modelos físicos, esos modelos dinámicos que resuelven ecuaciones del comportamiento de la atmósfera del océano.
+
+123
+00:25:36,000 --> 00:25:44,000
+Cómo hacer que vaya más rápido utilizando aceleradores de inteligencia artificial o nuevas técnicas.
+
+124
+00:25:44,000 --> 00:25:58,000
+Cómo hacer que estos modelos trabajen con datos de remote sensing, de observacionales, de satélites o datos de sensores.
+
+125
+00:25:58,000 --> 00:26:07,000
+Esto se llama asimilación de datos. Eso también es un tema donde hay mucho por explorar con machine learning.
+
+126
+00:26:07,000 --> 00:26:13,000
+Y así podría quedarme contando otras aplicaciones.
+
+127
+00:26:13,000 --> 00:26:30,000
+Y esto podría también aplicarse quizás a un sector, a las empresas tipo a las eléctricas, para hacer optimización, predicción de lo que podrían de picos que pudiesen ocurrir y prevenirlos y algún tipo de relación con esto.
+
+128
+00:26:30,000 --> 00:26:49,000
+Esto es un tema sobre energía, donde también hay un boom grande sobre aplicar EI para redes energéticas y esto. Yo no estoy muy familiarizado con ello, pero sé que es así porque sé que hay workshops al respecto, hay grupos de investigación trabajando en ello y vamos que sí.
+
+129
+00:26:49,000 --> 00:26:59,000
+Y que obviamente ellos de alguna forma u otra necesitarán datos climáticos para todo ello. Entonces fíjate que todo va de la mano.
+
+130
+00:26:59,000 --> 00:27:14,000
+Pues nada, perfecto. Por aquí no tenemos más preguntas y en YouTube tampoco, pero ya sabéis que estábamos en Discord, podéis preguntarle cualquier cosa que os vayan surgiendo.
+
+131
+00:27:14,000 --> 00:27:25,000
+Y también están publicadas las diapositivas. O sea que si queréis echar algún ojo a algún dato que os haya quedado por ahí pendiente, está todo publicado y listo para consultar.
+
+132
+00:27:25,000 --> 00:27:35,000
+Y nada más, te despedimos ya para en unos 5 minutos dar paso al siguiente ponente, ¿de acuerdo? Muchas gracias.
+

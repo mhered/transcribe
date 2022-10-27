@@ -1,0 +1,996 @@
+1
+00:00:00,000 --> 00:00:12,160
+Hola, ya estamos de vuelta. Hemos pasado por diferentes tópicos ya, cambio climático,
+
+2
+00:00:12,160 --> 00:00:16,940
+microservicios, testing y ahora nos vamos también a otro lugar del espectro, un tema
+
+3
+00:00:16,940 --> 00:00:21,920
+muy muy muy interesante, mucho por lo general nosotros cuando hacemos predicciones y cosas
+
+4
+00:00:21,920 --> 00:00:26,560
+así siempre estamos, no sé, detectando patrones y cosas pequeñitas, proyectos que se ve muy
+
+5
+00:00:26,560 --> 00:00:31,360
+guay, pero qué pasa cuando esto se lleva mucho más allá. La siguiente charla es de Azucena González y
+
+6
+00:00:31,360 --> 00:00:36,440
+va a darnos un poquito de análisis de las consecuencias del sejo de la policía predictiva,
+
+7
+00:00:36,440 --> 00:00:41,840
+tema súper interesante, así que les invito a todos a ver ahora el vídeo, lo vamos a agregar y
+
+8
+00:00:41,840 --> 00:00:46,080
+luego recuerden de dejar sus preguntas en Discord para que podamos continuar la discusión.
+
+9
+00:00:48,600 --> 00:00:53,080
+Buenos días y bienvenidos. En los próximos minutos vamos a hablar sobre la importancia de
+
+10
+00:00:53,080 --> 00:00:57,400
+los ergos no deseados en los datos y su impacto en los modelos de aprendizaje automático. Además
+
+11
+00:00:57,400 --> 00:01:01,000
+de ir recorriendo a uno de los principales aspectos teóricos veremos cómo aplica en un caso
+
+12
+00:01:01,000 --> 00:01:05,440
+práctico como es la construcción de un modelo de vigilancia predictiva. Podéis acceder al código
+
+13
+00:01:05,440 --> 00:01:08,360
+fuente desarrollado para el proyecto en el repositorio de GitHub que veis en pantalla.
+
+14
+00:01:12,560 --> 00:01:16,560
+Antes de entrar en detalle y para dar un poco de contexto a aquellas personas poco familiarizadas
+
+15
+00:01:16,560 --> 00:01:20,480
+con el aprendizaje automático o machine learning voy a hacer una verbísima introducción sobre este
+
+16
+00:01:20,480 --> 00:01:26,000
+tipo de proyectos y cómo se aborda. De manera muy resumida podemos definir el aprendizaje automático
+
+17
+00:01:26,000 --> 00:01:30,520
+como un subconjunto de la inteligente artificial que permite aplicar algoritmos o métodos estadísticos
+
+18
+00:01:30,520 --> 00:01:34,280
+sobre conjuntos de datos con el objetivo de encontrar patrones en ellos y utilizarlos para
+
+19
+00:01:34,280 --> 00:01:38,640
+resolver diferentes problemas. Habitualmente se trata de un proceso iterativo donde suelen
+
+20
+00:01:38,640 --> 00:01:42,520
+probarse diferentes técnicas o algoritmos para cada una de las técnicas aplicadas se
+
+21
+00:01:42,520 --> 00:01:46,480
+miden o evaluan los resultados obtenidos con el objetivo de seleccionar la opción con mejor
+
+22
+00:01:46,480 --> 00:01:52,760
+desempeño que habitualmente se denomina el mejor modelo. Como según muestra en el diagrama se
+
+23
+00:01:52,760 --> 00:01:56,520
+reciben ciertos datos de entrada que pueden ser de distintas fuentes y tipología sobre los que se
+
+24
+00:01:56,520 --> 00:02:01,640
+realiza un preprocesado para limpiarlo y eliminar posibles inconsistencias. Además suele realizarse
+
+25
+00:02:01,640 --> 00:02:06,240
+un análisis exploratorio de los datos que sirve para conocer mejor sus características como se
+
+26
+00:02:06,240 --> 00:02:10,600
+distribuyen qué tipo de datos incluyen el cálculo de estadísticos básicos de las palabras numéricas
+
+27
+00:02:10,600 --> 00:02:15,160
+o qué valores son más frecuentes en ciertos campos. Posteriormente dependiendo del conjunto de
+
+28
+00:02:15,160 --> 00:02:20,000
+datos disponibles y del tipo de problemas resolver, petición, clasificación o segmentación se selecciona
+
+29
+00:02:20,000 --> 00:02:23,840
+un algoritmo y se aplica una parte de los datos suministrados en lo que se denomina entrenamiento.
+
+30
+00:02:23,840 --> 00:02:28,280
+Algunos ejemplos de algoritmos pueden ser árboles de decisión, random forest o redes neuronales.
+
+31
+00:02:28,280 --> 00:02:32,120
+Una vez que el algoritmo extrae sus resultados se aplica a los datos que no ha sido empleados
+
+32
+00:02:32,120 --> 00:02:36,480
+en el entrenamiento con el objetivo de evaluarlo, es decir de medir cuánto y cómo se equivocan.
+
+33
+00:02:36,480 --> 00:02:40,640
+Este proceso de selección, entrenamiento y evaluación de un algoritmo se repite varias
+
+34
+00:02:40,640 --> 00:02:45,440
+veces hasta llegar a un modelo que se pueda considerar satisfactorio. Una vez seleccionado este modelo
+
+35
+00:02:45,440 --> 00:02:49,440
+satisfactorio o mejor modelo, empieza a aplicarse en el mundo real con los datos nuevos que van llegando.
+
+36
+00:02:51,680 --> 00:02:56,240
+Por tanto, en resumen tenemos modelos no programados explícitamente para resolver un problema concreto,
+
+37
+00:02:56,240 --> 00:03:00,680
+sino que se basan en métodos matemáticos, estadísticos, que emplean datos reales y que
+
+38
+00:03:00,680 --> 00:03:05,440
+detectan patrones y obtienen conclusiones. Y bueno, así planteado, que podría salir mal,
+
+39
+00:03:05,440 --> 00:03:09,880
+pues desafortunadamente pueden salir mal unas cuantas cosas, porque los datos con los que
+
+40
+00:03:09,880 --> 00:03:13,760
+alimentamos el modelo no tienen por qué ser perfectos y el proceso de construcción del modelo tampoco lo es,
+
+41
+00:03:13,760 --> 00:03:19,400
+lo que puede derivar en que nuestro modelo reproduzca o amplifique los errores cometidos y tenga un comportamiento no deseado.
+
+42
+00:03:21,160 --> 00:03:25,600
+Este que veis es un resumen de algunos de los sesgos que se pueden producir a lo largo del ciclo de vida de un modelo.
+
+43
+00:03:25,600 --> 00:03:29,480
+Empezando con la propia recolección de datos, se puede obtener información que representa el mundo
+
+44
+00:03:29,480 --> 00:03:34,120
+tal y como es, pero que no está alineada con los objetivos o valores que queremos reproducir con nuestro modelo.
+
+45
+00:03:34,120 --> 00:03:38,480
+Por ejemplo, para el caso del software de vigilancia predictiva, los datos de detenciones policiales
+
+46
+00:03:38,480 --> 00:03:43,600
+pueden reflejar los perjuicios de los agentes. También podemos incurrir en un sesgo de representación
+
+47
+00:03:43,600 --> 00:03:47,280
+al seleccionar la muestra de datos que se utilizará para entrenar el modelo y terminar considerando
+
+48
+00:03:47,280 --> 00:03:52,360
+solo a una parte de la población objetivo. Podemos cometer sesgos de mediciones, utilizando, por ejemplo,
+
+49
+00:03:52,360 --> 00:03:57,160
+la tasa de detenciones como sustituto de la tasa de criminalidad, algo que desafortunadamente es muy
+
+50
+00:03:57,160 --> 00:04:01,160
+frecuente en este tipo de sistemas, o midiendo de forma disigual los factores de interés,
+
+51
+00:04:01,160 --> 00:04:03,960
+algo que pasaría al patrullar más en unos barrios que en otros.
+
+52
+00:04:03,960 --> 00:04:09,240
+E incluso podemos equivocarnos al medir el rendimiento del modelo si hemos escogido una métrica poco apropiada.
+
+53
+00:04:09,240 --> 00:04:14,640
+El impacto que un modelo puede tener en la sociedad puede ser muy elevado, dependiendo de su ámbito de aplicación.
+
+54
+00:04:14,640 --> 00:04:19,880
+Por ejemplo, no es lo mismo que netflist te recomiende películas que no te gustan, que no poder acceder a un puesto de trabajo
+
+55
+00:04:19,880 --> 00:04:25,080
+porque el sistema de preselección de candidatos te ha descartado al no tener suficientes datos de personas con tu mismo perfil.
+
+56
+00:04:25,080 --> 00:04:30,920
+Con esta idea en mente y la del impacto que ciertos sistemas de inteligencia artificial pueden tener,
+
+57
+00:04:30,920 --> 00:04:35,360
+nos planteamos el diseño de un modelo de vigilancia predictiva para ver las dificultades que plantea
+
+58
+00:04:35,360 --> 00:04:38,120
+y los posibles efectos derivados de su aplicación.
+
+59
+00:04:38,120 --> 00:04:42,760
+Aunque no existe una única definición, estos sistemas se fundamentan en el análisis de datos,
+
+60
+00:04:42,760 --> 00:04:46,280
+extraídos mayoritariamente de los sistemas históricos de actividad policial.
+
+61
+00:04:46,280 --> 00:04:50,320
+Pueden aplicarse sobre individuos, ya sea para detectar criminales o sistemas potenciales,
+
+62
+00:04:50,320 --> 00:04:53,080
+o sobre localizaciones para identificar puntos calientes,
+
+63
+00:04:53,080 --> 00:04:57,320
+es decir, aquellos sitios donde es más probable que se produzca alguna actividad delictiva
+
+64
+00:04:57,320 --> 00:05:01,480
+y tienen como objetivo principal mejor las actuaciones preventivas por parte de las fuerzas policiales.
+
+65
+00:05:03,960 --> 00:05:07,040
+Pero el uso de estos modelos, sobre todo los que realizan perfilado de personas,
+
+66
+00:05:07,040 --> 00:05:11,240
+es muy cuestionado tanto por la opinión pública como por expertos de distintos ámbitos.
+
+67
+00:05:11,240 --> 00:05:15,960
+Algunas de las principales críticas son la poca transparencia sobre su diseño y su comportamiento interno,
+
+68
+00:05:15,960 --> 00:05:20,800
+la escasa o nula información sobre las organizaciones que los utilizan actualmente y cómo los emplean,
+
+69
+00:05:20,800 --> 00:05:27,960
+y la falta de estudios concluyentes sobre su efectividad, tanto en la lucha contra el crimen como su impacto en la sociedad.
+
+70
+00:05:27,960 --> 00:05:31,960
+Y ahora ya sí, empezamos a describir nuestro modelo.
+
+71
+00:05:31,960 --> 00:05:36,840
+El sistema de vigilancia predictiva planteado se centra en la operativa policial denominada detención y registro,
+
+72
+00:05:36,840 --> 00:05:41,440
+que consiste en la detención por parte de la policía de personas, ya sea circulando a pie o en vehículo,
+
+73
+00:05:41,440 --> 00:05:45,360
+para requerirles identificación y realizar un registro, habitualmente superficial,
+
+74
+00:05:45,360 --> 00:05:48,840
+que pueda hacerse sobre el individuo, el vehículo o ambos.
+
+75
+00:05:48,840 --> 00:05:51,960
+El objetivo de nuestro modelo es predecir que cachos serán sitosos,
+
+76
+00:05:51,960 --> 00:05:57,440
+reduciendo así el número de actuaciones policiales infructuosas y las molestias ocasionadas a los ciudadanos inocentes.
+
+77
+00:05:57,440 --> 00:06:05,880
+Se centran los 33 distritos del hondres, donde según el último censo publicado de 2011, viven más de 8 millones de personas.
+
+78
+00:06:05,880 --> 00:06:10,360
+La principal fuente de datos del sistema proviene del portal de datos públicos de la policía de Reino Unido,
+
+79
+00:06:10,360 --> 00:06:14,880
+donde puede encontrar información sobre las actuaciones de detención y registro en los últimos años.
+
+80
+00:06:14,880 --> 00:06:21,200
+En nuestro caso se han seleccionado los registros correspondientes al periodo comprendido entre abril de 2017 y febrero de 2021,
+
+81
+00:06:21,200 --> 00:06:24,280
+y solo para aquellas fuerzas policiales que operan en Londres.
+
+82
+00:06:24,280 --> 00:06:30,720
+Entre los datos disponibles están la ubicación de la actuación policial, longitud y latitud, la fecha y hora en que tuvo lugar,
+
+83
+00:06:30,720 --> 00:06:35,840
+la raza de la persona interpelada, diferenciando entre la que informa el policía y con la que se identifica el propio individuo,
+
+84
+00:06:35,840 --> 00:06:39,760
+el tipo de búsqueda realizado, sobre la persona, sobre el vehículo o sobre ambos,
+
+85
+00:06:39,760 --> 00:06:43,480
+el sexo del individuo o el tipo de resultado obtenido, entre otros.
+
+86
+00:06:43,480 --> 00:06:48,440
+Como podéis ver en el esquema se realiza una extracción de varios ficheros del portal Data Polisuka,
+
+87
+00:06:48,440 --> 00:06:55,440
+que están en formato CIP y es ya dentro de nuestro proyecto donde son descomprimidos y filtrados por fecha, tipo de actuación y cuerpo policial.
+
+88
+00:06:55,440 --> 00:07:00,920
+A estos datos también se ha incorporado la mediana de ingresos familiares por distrito estimada en 2012-2013,
+
+89
+00:07:00,920 --> 00:07:05,800
+que se utiliza como variable sustrito del distrito en algunos de los experimentos realizados.
+
+90
+00:07:05,800 --> 00:07:09,120
+Por otro lado necesitamos descartar aquellos registros no pertenecientes a Londres,
+
+91
+00:07:09,120 --> 00:07:14,320
+así como poder identificar los distritos a partir de las coordenadas geográficas suministradas.
+
+92
+00:07:14,320 --> 00:07:20,600
+Para ello utilizamos Geopy, una librería para Python que permite el acceso a varios servicios de geolocalización.
+
+93
+00:07:20,600 --> 00:07:26,080
+En este caso el servicio seleccionado es nomidadim, al ser uno de los pocos que es gratuito y que además permite consultas masivas.
+
+94
+00:07:26,080 --> 00:07:30,760
+Hay que tener en cuenta que tenemos decenas de miles de coordenadas diferentes que tratar.
+
+95
+00:07:30,760 --> 00:07:36,440
+Como podéis observar el funcionamiento de la librería es muy sencillo, hay que declarar a una gente el servicio de geolocalización a emplear,
+
+96
+00:07:36,440 --> 00:07:43,400
+establecer el intervalo interllamada y el tiempo máximo de espera e ir invocando el servicio con la función reverse para cada par de coordenadas existentes.
+
+97
+00:07:43,400 --> 00:07:50,280
+De esta manera se obtiene la dirección completa y ya se pueden descartar los registros que no pertenezcan a la zona seleccionada.
+
+98
+00:07:50,280 --> 00:07:55,280
+Como comentábamos previamente, realizar un análisis exploratorio de los datos es fundamental para conocer mejor el problema
+
+99
+00:07:55,280 --> 00:07:59,680
+e incluso hallar alguna relación o detalle que permita enfocar el modelo de manera diferente.
+
+100
+00:07:59,680 --> 00:08:04,000
+En nuestro caso a partir del análisis se descartan campos por no tener calidad suficiente,
+
+101
+00:08:04,000 --> 00:08:09,160
+se localizan varios siglos en los datos que explicaremos un poco más adelante y que desde luego tiene su impacto en el modelo,
+
+102
+00:08:09,160 --> 00:08:13,160
+se detectan variables similares por lo que algunas son susceptibles de ser descartadas
+
+103
+00:08:13,160 --> 00:08:19,440
+y se detecta que la variable a predecir, resultado de la intervención policial, no aparece en la misma proporción de registros.
+
+104
+00:08:19,440 --> 00:08:25,520
+En este análisis son empresas étnicas de visualización de datos, siendo Siobhan y Geopandas las librerías más usadas en este proyecto.
+
+105
+00:08:27,400 --> 00:08:32,640
+Este que veis es un ejemplo de una gráfica de barras obtenida con Siobhan que muestra el número de actuaciones policiales por edad.
+
+106
+00:08:32,640 --> 00:08:40,960
+Es un uso bastante directo y habitual de la librería por lo cual yo creo que tampoco hay mucho más detalle que comentar al respecto.
+
+107
+00:08:41,960 --> 00:08:48,520
+Este otro ejemplo se que resulta más interesante, mediante la librería Geopandas es posible pintar de forma muy sencilla el mapa de una zona.
+
+108
+00:08:48,520 --> 00:08:54,080
+Es necesario, si, disponer de ficheros SHP de la zona en cuestión, que contiene su ubicación geométrica,
+
+109
+00:08:54,080 --> 00:08:57,880
+además de otra información adicional para hacer posible su representación gráfica.
+
+110
+00:08:57,880 --> 00:09:05,120
+Simplemente hay que cargar el fichero SHP mediante la función redfile de Geopandas, cruzar el conjunto propio de datos con el del fichero SHP,
+
+111
+00:09:05,120 --> 00:09:10,680
+en nuestro caso la clave es el distrito, y utilizar la función plot indicando que campo debe ser representado.
+
+112
+00:09:13,200 --> 00:09:16,400
+Y bueno, aquí veis un poco el resultado de esta librería.
+
+113
+00:09:18,000 --> 00:09:22,240
+Otra parte muy importante es la correcta lección de las métricas para evaluar el rendimiento de los modelos.
+
+114
+00:09:22,240 --> 00:09:27,600
+En nuestro caso se ha empleado el F1 score debido a que se trata de un problema de clasificación con clases desbalanceadas,
+
+115
+00:09:27,600 --> 00:09:32,560
+con lo cual utilizar la precisión o actitud del modelo no serviría que la clase positiva, es decir,
+
+116
+00:09:32,560 --> 00:09:35,760
+las actuaciones policiales en las que se encuentra el indicio de delitos es minoritaria,
+
+117
+00:09:35,760 --> 00:09:42,520
+con aproximadamente un 25% del total de registros, y aquí es importante mantener una proporcionalidad de las actuaciones policiales,
+
+118
+00:09:42,520 --> 00:09:47,840
+por lo que se considera igual de costoso parar de registrar a una persona disinocente, un falso positivo,
+
+119
+00:09:47,840 --> 00:09:50,960
+que no interfectar a un potencial infractor, un falso negativo.
+
+120
+00:09:52,960 --> 00:09:57,200
+En esta diapositiva podéis ver un fragmento de código donde se enterna un modelo, un árbol de decisión,
+
+121
+00:09:57,200 --> 00:10:02,160
+se prueba con el conjunto de datos de validación y se muestra la informe de métricas mediante la librería Seikildam.
+
+122
+00:10:05,200 --> 00:10:10,080
+Como parte del proceso interativo de construcción del modelo se realizan varios experimentos con distintos algoritmos,
+
+123
+00:10:10,080 --> 00:10:16,000
+y además, aunque inicialmente no se había considerado necesario realizar una selección de variables ni realizar ingenierías sobre ellas,
+
+124
+00:10:16,000 --> 00:10:20,560
+debido al bajo rendimiento de los primeros modelos construidos se decidió aplicar el siguiente procedimiento.
+
+125
+00:10:20,560 --> 00:10:25,680
+En primer lugar se generan tres conjuntos de datos diferentes, el primero con las variables originales,
+
+126
+00:10:25,680 --> 00:10:30,400
+se codifican las categoricas en orden como one-hot encoding y las ordinales con orden al encoding.
+
+127
+00:10:30,400 --> 00:10:35,200
+El segundo, sustituyendo los distintos por el ingreso familiar estimado y generando nuevas variables,
+
+128
+00:10:35,200 --> 00:10:38,880
+un indicador que marca si es la semana, franjas horarias en sustitución de la hora,
+
+129
+00:10:38,880 --> 00:10:43,200
+indicador de si la enía informada por la gente coincide con la enía suministrada por el sospechoso,
+
+130
+00:10:43,200 --> 00:10:49,200
+y el tercero, incorporando las nuevas variables creadas en el anterior y aplicando min encoding a las variables categoricas en orden.
+
+131
+00:10:49,840 --> 00:10:55,040
+Posteriormente se evaluan los tres conjuntos sobre un modelo base, escogiendo distintas combinaciones de características
+
+132
+00:10:55,040 --> 00:10:57,040
+y se reservan los mejores resultados.
+
+133
+00:10:57,040 --> 00:11:01,280
+Se selecciona el conjunto de datos con mejor rendimiento y sus tres mejores combinaciones de variables
+
+134
+00:11:01,280 --> 00:11:06,880
+y se aplican a varios algoritmos diferentes, sobre los que se realizan ajustes de hyperparámetros mediante una búsqueda en rejilla.
+
+135
+00:11:06,880 --> 00:11:12,400
+Los algoritmos probados son una represión logística, un árbol de decisión, un random forest y un light GB.
+
+136
+00:11:12,400 --> 00:11:18,400
+Se escoje como modelo final aquel cual la combinación de variables y de hyperparámetros que mejores de uno score consigue.
+
+137
+00:11:18,400 --> 00:11:24,400
+Este código que veis se corresponde con las pruebas de varias combinaciones de variables sobre un modelo base.
+
+138
+00:11:24,400 --> 00:11:28,400
+Aquellas combinaciones que dan mejor resultado son las que se emplean para probar con los algoritmos ya comentados.
+
+139
+00:11:30,400 --> 00:11:34,400
+Y aquí se puede ver cómo se utilizan los grupos de atributos con mejor rendimiento en una grid search,
+
+140
+00:11:34,400 --> 00:11:38,400
+donde se entrena y evalúa un modelo modificando sus hyperparámetros.
+
+141
+00:11:38,400 --> 00:11:48,400
+Finalmente el modelo seleccionado es un random forest, con una exactitud del 67% y un F1 score del 56% sobre el conjunto de prueba.
+
+142
+00:11:48,400 --> 00:11:54,400
+Como se observan este caso, elegir correctamente la métrica con la que se evalúa los modelos es fundamental.
+
+143
+00:11:54,400 --> 00:12:00,400
+Aunque la precisión la alcanzaba en la clase negativa es casi del 80%, la baja precisión de la clase positiva,
+
+144
+00:12:00,400 --> 00:12:04,400
+deta solo el 32%, lleva a desaconsejar el uso de este modelo en un escenario real.
+
+145
+00:12:04,400 --> 00:12:08,400
+Si en lugar de escoger el F1 score para evaluar el modelo, si hubiese seleccionado por ejemplo la exactitud,
+
+146
+00:12:08,400 --> 00:12:12,400
+parecería que el modelo tiene un rendimiento aceptable cuando en realidad no es así.
+
+147
+00:12:12,400 --> 00:12:19,400
+En la matriz de confusión se muestran el número de registros y su porcentaje respecto al total para cada uno de los posibles resultados de las clasificaciones.
+
+148
+00:12:19,400 --> 00:12:24,400
+Como podéis observar, el modelo incurre en un alto porcentaje de falsos negativos y de falsos positivos.
+
+149
+00:12:24,400 --> 00:12:29,400
+Pasamos a ver ahora algunos de los sesgos que detectamos durante el análisis exploratorio de datos.
+
+150
+00:12:29,400 --> 00:12:34,400
+Uno de los más evidentes es el relativo al sexo de las personas detenidas.
+
+151
+00:12:34,400 --> 00:12:41,400
+Existe un sesgo claro de infrarepresentación de mujeres que aparecen en menos del 7% del total de registros frente a casi el 92% de hombres.
+
+152
+00:12:41,400 --> 00:12:46,400
+Centrándonos en la ENIA es fácil ver que la población negra está sobrepresentada,
+
+153
+00:12:46,400 --> 00:12:53,400
+lo que a su vez implica un sesgo prejuicio en los corpos policiales, puesto que detienen a más personas de esta ENIA aunque no es la predominante en la zona de Londres.
+
+154
+00:12:53,400 --> 00:13:01,400
+De hecho, ocupa la tercera posición, supone algo más de un 13% del total de la población de Londres por detrás de la asiática, con más de un 18%
+
+155
+00:13:01,400 --> 00:13:05,400
+y muy lejos del 60% de la población blanca. Eso sí, según el censo de 2002.
+
+156
+00:13:08,400 --> 00:13:14,400
+Si observamos la ratio del número de actuaciones positivas frente a la población por el NIA distrito, vuelve a destacar la población negra,
+
+157
+00:13:14,400 --> 00:13:17,400
+aunque esto no implica que en proporción cometan más infracciones.
+
+158
+00:13:17,400 --> 00:13:25,400
+De hecho, en la comparativa entre las ratios de actuaciones positivas y del total de actuaciones que se muestran la siguiente de positiva, no se detecta un patrón claro en ninguna de las ENIAs.
+
+159
+00:13:25,400 --> 00:13:32,400
+Esta situación se denomina retroalimentación o feedback loop, y se produce cuando al recopilar más información sobre un grupo frente a otros,
+
+160
+00:13:32,400 --> 00:13:41,400
+parece que el efecto observado es más habitual en el primero, por lo que se aumenta de nuevo en nivel de observación en ese grupo en concreto, penalizándolo así de forma constante.
+
+161
+00:13:41,400 --> 00:13:49,400
+Además de la análisis de sesgos existentes en los datos de entrada, es fundamental entender el funcionamiento del modelo y en qué pasa sus decisiones.
+
+162
+00:13:49,400 --> 00:13:55,400
+El grado de comprensión que una persona tiene sobre una decisión tomada por el sistema determina su nivel de interpretabilidad.
+
+163
+00:13:57,400 --> 00:14:01,400
+La mayoría de algoritmos de aprendizaje automático obtienen sus resultados de manera poco transparente,
+
+164
+00:14:01,400 --> 00:14:07,400
+por lo que es indispensable contar con técnicas que permitan entender en qué basan los modelos sus conclusiones para garantizar
+
+165
+00:14:07,400 --> 00:14:10,400
+que emplean información coherente y relevante para el ámbito del problema.
+
+166
+00:14:10,400 --> 00:14:17,400
+Aunque haya algoritmos que permiten un fácil entendimiento de sus mecanismos internos, no son habitualmente los más empleados ni los más potentes.
+
+167
+00:14:17,400 --> 00:14:24,400
+Por ello, últimamente han proliferado técnicas externas, como la IMSAP, que permiten realizar estudios que aportan un mayor entendimiento sobre modelos complejos.
+
+168
+00:14:26,400 --> 00:14:33,400
+Uno de los métodos más directos y sencillos para entender un modelo consiste en analizar el impacto que las características o variables tienen sobre las decisiones que toma.
+
+169
+00:14:33,400 --> 00:14:37,400
+SAP permite realizar este estudio y mostrar los resultados gráficamente.
+
+170
+00:14:37,400 --> 00:14:43,400
+Según vemos en nuestro caso, el tipo de búsqueda es la variable con mayor importancia, seguida del año, de la EMEA,
+
+171
+00:14:43,400 --> 00:14:48,400
+en concreto de la variable DAMI para la población blanca obtenida por el OneJotentcoding y el nivel de ingresos del distrito.
+
+172
+00:14:50,400 --> 00:14:57,400
+Otra de las funcionalidades de SAP permite visualizar un conjunto de observaciones y cómo se distribuyen respecto a una de las clases, teniendo en cuenta hablar de sus características.
+
+173
+00:14:58,400 --> 00:15:02,400
+Las características se muestran ordenadas de mayor a menor relevancia o contribución a la predicción.
+
+174
+00:15:02,400 --> 00:15:07,400
+La ubicación horizontal indica si el efecto de esa observación está asociado con una predicción mayor o menor.
+
+175
+00:15:07,400 --> 00:15:14,400
+El color rojo representa que la variable tiene un valor alto, uno para el caso de las DAMIs, y el azul representa un valor bajo, cero para las DAMIs.
+
+176
+00:15:14,400 --> 00:15:20,400
+La correlación con la variable objetivo se muestra a lo largo del eje X por debajo de cero negativa y por encima es positiva.
+
+177
+00:15:20,400 --> 00:15:25,400
+En este caso se muestran los datos correspondientes al conjunto de prueba tomando como referencia a la clase positiva.
+
+178
+00:15:25,400 --> 00:15:32,400
+Si nos fijamos en la primera de las variables, se puede observar que un registro de una persona contribuye a que el modelo clasifique la actuación policial como negativa,
+
+179
+00:15:32,400 --> 00:15:36,400
+al situarse la mayoría de las observaciones en la parte negativa del eje X.
+
+180
+00:15:36,400 --> 00:15:44,400
+Resulta especialmente reseñable que ser blanco aporta clasificar el registro como positivo, aunque es cierto que tiene menor influencia que otras variables como el tipo de registro o el año.
+
+181
+00:15:44,400 --> 00:15:52,400
+Para las poblaciones asiática y negra, el efecto es el contrario, pertenecer a ellas reduce la probabilidad de ser clasificado como positivo, aunque su relevancia es mucho menos.
+
+182
+00:15:52,400 --> 00:16:03,400
+También es destacable que el año tenga una correlación negativa con la clase positiva, puesto que en análisis exploratorios de datos no es observado una tendencia clara a la baja en el número de actuaciones positivas de los últimos años.
+
+183
+00:16:03,400 --> 00:16:07,400
+Por tanto, este sería un punto a revisar en futuras iteraciones del modelo.
+
+184
+00:16:10,400 --> 00:16:12,400
+Como puede verse, el uso de SAP es bastante sencillo.
+
+185
+00:16:12,400 --> 00:16:19,400
+Además de inicializar JavaScript para que se carguen bien los gráficos que son interactivos, se crea un objeto splainer al que se le pasa el modelo ya entrenado.
+
+186
+00:16:19,400 --> 00:16:25,400
+Para calcular los SAP values, semplar la función SAP values, basándole como parámetro el conjunto de datos analizar.
+
+187
+00:16:25,400 --> 00:16:30,400
+Con esta información ya se puede calcular ambas gráficas, empleando el método SAP.
+
+188
+00:16:32,400 --> 00:16:42,400
+Otro de los aspectos fundamentales a considerar en un modelo es el relativo a su equidad, para asegurar que la solución obtenida no penaliza ciertos grupos ni perpetúa situaciones discriminatorias persistentes.
+
+189
+00:16:42,400 --> 00:16:51,400
+Para detectar este tipo de situaciones se seleccionan una o varias métricas que es deseable que el modelo cumpla en todos los grupos formados por las variables sobre las que se quiere realizar el estudio.
+
+190
+00:16:51,400 --> 00:17:00,400
+La selección de estas métricas y las características consideradas sensibles dependen del objetivo del sistema de desarrollar y de los principios de igualdad que las personas o empresas involucradas determinen.
+
+191
+00:17:00,400 --> 00:17:08,400
+En nuestro caso, escogemos como variables a estudiar, la endea del sospechoso declarada por la policía y el destrito en que tiene lugar la actuación policial.
+
+192
+00:17:08,400 --> 00:17:20,400
+Las métricas a revisar son la tasa de falsos positivos, que vive la probabilidad de que la policía detenga y registre a un inocente, y la tasa de falsos negativos, que mide la probabilidad de que la policía no registre a un infractor.
+
+193
+00:17:20,400 --> 00:17:31,400
+Para facilitar la revisión de las métricas seleccionadas se ha empleado la librería Aécoitas, desarrollada por la Universidad de Chicago y que ofrece varias funcionalidades hidráficas relacionadas con la equidad algorítmica.
+
+194
+00:17:31,400 --> 00:17:40,400
+Respecto a la endea y como puedo observar en la gráfica, la población blanca tiene una tasa de falsos positivos menor, es decir, es menos probable que la policía detenga un inocente de esta raza que del resto.
+
+195
+00:17:40,400 --> 00:17:47,400
+Esta endea también presenta, aunque menor medida, una tasa de falsos negativos superior, por lo que es más probable que la policía no detenga un infractor blanco.
+
+196
+00:17:47,400 --> 00:17:58,400
+En cuanto a los distritos, a excepción de Tower Handels, la mayoría de los que presenta una tasa de falsos positivos menor son aquellos considerados turísticos, como Canden, Wendmister o la ciudad de Londres.
+
+197
+00:17:58,400 --> 00:18:09,400
+Los dos distritos para los que el modelo incurre el más esgo son Tower Handels, con una tasa de falsos positivos muy baja, y Harrod, con una tasa de falsos positivos muy elevada, pero que teniendo en cuenta alguno de sus población,
+
+198
+00:18:09,400 --> 00:18:14,400
+aparece poco representado en los datos policiales que emplea el modelo, lo que puede explicar la poca precisión de su caso.
+
+199
+00:18:14,400 --> 00:18:21,400
+Y bueno, pasamos a ver cómo utilizar Aécoitas para generar las gráficas mostradas.
+
+200
+00:18:21,400 --> 00:18:27,400
+Una vez inicializados los elementos básicos para trabajar con esta librería, se seleccionan los campos a analizar y las métricas.
+
+201
+00:18:27,400 --> 00:18:35,400
+En la disminución se crea una tabla cruzada con todos los grupos que determinan los atributos a estudiar, y se calcula, para cada uno de ellos, todas las métricas de equidad soportados por la librería.
+
+202
+00:18:35,400 --> 00:18:43,400
+Y finalmente, con el método Disparity, se muestra la gráfica que compara las métricas obtenidas para cada grupo.
+
+203
+00:18:43,400 --> 00:18:52,400
+Como conclusiones respecto al modelo obtenido, además de presentar un rendimiento muy bajo, sobre todo en lo que a la clase positiva se refiere, no ha cumplido ninguno de los criterios de equidad definidos.
+
+204
+00:18:52,400 --> 00:19:00,400
+Es más, si han detectado sesgos no ron los resultados del modelo, sino también los datos que lo alimentan, destacando en general todos los relativos a la población negra.
+
+205
+00:19:00,400 --> 00:19:05,400
+Con este ejercicio hemos puesto de manifiesto que un modelo no puede ser evaluado basándose exclusivamente en una métrica.
+
+206
+00:19:05,400 --> 00:19:14,400
+Además, realizar una buena selección de ésta, acorde las características del problema, es fundamental identificar posibles sesgos en los datos de entrada para intentar mitigar sus efectos,
+
+207
+00:19:14,400 --> 00:19:26,400
+comprender en qué va a ser el modelo sus decisiones para detectar comportamientos anómalos y sesgos no deseados, y seleccionar las variables sensibles y establecer los criterios de equidad que deben cumplirse para poder considerar el modelo como válido.
+
+208
+00:19:26,400 --> 00:19:35,400
+El uso real de modelos como el propuesto plantea cuanto menos duda sobre su eficacia e impacto en la sociedad, especialmente en aquellos grupos históricamente discriminados.
+
+209
+00:19:35,400 --> 00:19:42,400
+Además, en los últimos años ha crecido el interés por parte de la fuerza de seguridad en este tipo de sistemas, por lo que se prevé un aumento en su uso.
+
+210
+00:19:42,400 --> 00:19:49,400
+Por tanto, debería abordarse cuanto antes la realización de estudios concluyentes sobre sus efectos, la incorporación de sistemas de controles específicos,
+
+211
+00:19:49,400 --> 00:19:57,400
+la revisión de la idónea de las principales fuentes de datos que se emplean, que son los históricos policiales, la definición de unos umbrales mínimos de transparencia respecto a su diseño y uso,
+
+212
+00:19:57,400 --> 00:20:03,400
+y la formación sobre el funcionamiento y limitaciones de esta tecnología a las personas que deben trabajar con estos sistemas.
+
+213
+00:20:03,400 --> 00:20:13,400
+Y bueno, aquí concluye la presentación. Espero que os haya resultado interés y muchísimas gracias por vuestra atención.
+
+214
+00:20:13,400 --> 00:20:30,400
+Teníamos la charla de Azucena, la quería invitar a la transmisión. Hola Azucena, ¿qué tal? Hola, buenos días. Buenos días. Qué interesante la charla, me gustó mucho. Tueve todo el rato pendiente. Es un tema muy complicado, creo de ello.
+
+215
+00:20:30,400 --> 00:20:37,400
+Pero me gustaría saber tu opinión personal a parte de todas las conclusiones en cualidad, todo este sejo, por acuerdo a los datos que tenemos.
+
+216
+00:20:37,400 --> 00:20:43,400
+¿Es algo que crees tu que igual se viene en general como implementado en diferentes países?
+
+217
+00:20:43,400 --> 00:20:56,400
+Sí, digamos que uno de los problemas que tienen estos sistemas es que realmente no tenemos mucha información sobre cómo se diseñan y sobre todo qué países los están utilizando.
+
+218
+00:20:56,400 --> 00:21:10,400
+En Europa se están utilizando, por ejemplo en Alemania y en Suiza tiene su propio sistema que creo que se llama Precox, que es un juego de palabras con los Precox del libro de Minority Report, y ya lo están utilizando.
+
+219
+00:21:10,400 --> 00:21:16,400
+Pero no lo sabemos, es muy raro que informen de lo que están haciendo y de cómo lo están haciendo.
+
+220
+00:21:16,400 --> 00:21:28,400
+Este verano, coincidiendo un poco con la elaboración de este trabajo que os he presentado, empezó a ver una tendencia en los periódicos hablar un poco de este tipo de sistema y de las dudas que generaban.
+
+221
+00:21:28,400 --> 00:21:33,400
+Pero es un tema que se habla y de repente como que se apaga, como que se olvida.
+
+222
+00:21:33,400 --> 00:21:42,400
+Y creo que es muy importante que lo tengamos en cuenta, no solo con estos sistemas, sino con cualquier algoritmo o cualquier modelo de Machillers-Benz que preparemos.
+
+223
+00:21:42,400 --> 00:21:55,400
+Sí, totalmente. De hecho, yo creo que muchas veces, o sea, me paso mucho creciendo de que uno encuentra guay el tema de que mañana yo vaya a algún lugar y con mi cara solamente todo se detecte y todo es automatizado y es como que es genial.
+
+224
+00:21:55,400 --> 00:22:05,400
+Pero nunca, a veces cuesta ver todas las problemáticas, que en realidad lo que sí es tu lo sesgo, la falta de datos, por ejemplo, para identificar a cierta gente de alguna raza.
+
+225
+00:22:05,400 --> 00:22:18,400
+Y eso se ha visto incluso en otras cosas, está como en este algoritmo. Incluso ya basados más en texto, por ejemplo, en grandes compañías técnicas de que hacen como discriminación, porque son algoritmos de base a datos que chimienan currículums, por ejemplo, o lo que resumen.
+
+226
+00:22:18,400 --> 00:22:25,400
+Correcto. No sé, me parece algo que es raro, ¿no? Es como es guay por el lado, pero el lado es un poco complicado.
+
+227
+00:22:25,400 --> 00:22:26,400
+Sí.
+
+228
+00:22:26,400 --> 00:22:43,400
+Acá en Discord no teníamos puntuitas, pero gente muy feliz de todas las cosas que estaba hablando, claro, porque como yo ya comienzo a ducharla, la charla de SET Machine Learning, o en general, están aplicadas más a algún ejemplo, algo que se mueve en casa, todo guay, pero esto ya es como un mundo real, ¿no?
+
+229
+00:22:43,400 --> 00:22:44,400
+Es serio.
+
+230
+00:22:44,400 --> 00:22:54,400
+Entonces, es algo para preocuparnos. Y tú estás actualmente trabajando aún con modelos analizando este tipo de sesgo, o tú fue algo que realizaste?
+
+231
+00:22:54,400 --> 00:23:00,400
+Bueno, esto lo realicé como trabajo de fin de master. Estudié un master de ciencia de datos y este fue mi trabajo final.
+
+232
+00:23:00,400 --> 00:23:08,400
+Ahora mismo todavía no estoy trabajando en el mundo de la ciencia de datos, aunque sí iba haciendo cosas por mi cuenta.
+
+233
+00:23:08,400 --> 00:23:20,400
+Y un poco mi idea es esa, ¿no? Intentar enfocar mi carrera profesional hacia ese ámbito y, sobre todo, tener muy en cuenta este tipo de temas éticos, ¿no? Que levanta una tecnología como esta.
+
+234
+00:23:20,400 --> 00:23:31,400
+Claro, súper necesario, hoy en día, en realidad, tener algo que define a todo esto, porque el Machine Learning, por ejemplo, avanza tan rápido, pero siento que a veces como que no estamos definiendo.
+
+235
+00:23:31,400 --> 00:23:48,400
+Ahora mencionaste a Alemania, creo que había una campaña en el SESI en Alemania, en Unión, que mucha gente empezó a tapar estas cámaras que empezaron a la policía, empezó a instalar en diferentes ciudades, porque a veces no nos damos cuenta, a veces están tan escondidas que no sabemos si están creando datos, o sea, base de datos con nuestras caras sin darnos cuenta.
+
+236
+00:23:48,400 --> 00:23:59,400
+Y además, que claro, como estamos hablando de una tecnología que puede tener sus problemas, porque al final aquí nos movemos entre la gente que no se cree para nada, ¿no? El Machine Learning y la gente que se piensa que es una religión, ¿no?
+
+237
+00:23:59,400 --> 00:24:09,400
+Y era un poco lo que quería decir en mi charla, que no porque nos basemos en métodos matemáticos, no porque nos basemos en los datos que tenemos, significa que el modelo vaya a generar algo deseable, ¿no?
+
+238
+00:24:09,400 --> 00:24:13,400
+Porque nuestros datos están sesgados, históricamente están sesgados, ¿no?
+
+239
+00:24:13,400 --> 00:24:24,400
+Entonces puede pasar que, por ejemplo, un sistema de estos que decías tuve reconocimiento facial, pues a ti te equivoque con otra persona, pues porque no tiene ejemplos suficientes para clasificarte bien.
+
+240
+00:24:24,400 --> 00:24:27,400
+O sea, tiene una serie de riesgos que hay que evaluar.
+
+241
+00:24:27,400 --> 00:24:42,400
+Y sobre todo este tipo de alas, tú, por ejemplo, del tema racial, por ejemplo, yo vivo acá en Berlín y claro, o sea, si yo, por ejemplo, mi cara también no va a hacer algo muy común acá, porque claro, aquí los demás tienen la tarea un poco más blanca y cosas así.
+
+242
+00:24:42,400 --> 00:24:52,400
+Y con la cantidad de migración que tenemos en todo el mundo es complicado, porque a la hora de que vaya un inmigrante va a ser quizá un outlier en la base de datos de las diferentes ciudades o cosas que estén utilizando y ya está.
+
+243
+00:24:52,400 --> 00:24:58,400
+Entonces vamos a pagar justo por pescadores. Bueno, súper interesante tu charla.
+
+244
+00:24:58,400 --> 00:25:01,400
+Muchas gracias por haber compartido también el código.
+
+245
+00:25:01,400 --> 00:25:06,400
+Es algo que me interesaba mucho mirar, sobre todo para ver más detallitos de los modelos y eso.
+
+246
+00:25:06,400 --> 00:25:10,400
+Así que muchas gracias por haber participado en la Paisca en España de este año.
+
+247
+00:25:10,400 --> 00:25:14,400
+Y ojalá que tengamos por ahí por Discord durante el día, a ver si se puede continuar la discusión.
+
+248
+00:25:14,400 --> 00:25:16,400
+Perfecto. Muchas gracias a vosotros.
+
+249
+00:25:16,400 --> 00:25:22,400
+Tau, tau.
+

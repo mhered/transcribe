@@ -1,0 +1,796 @@
+1
+00:00:00,000 --> 00:00:14,400
+Bueno, continuamos entonces con el bloque A. Del primer día de charlas de la Python es 2021. La
+
+2
+00:00:14,400 --> 00:00:19,120
+siguiente charla se titula introducción de los algoritmos bio inspirados con Python.
+
+3
+00:00:20,800 --> 00:00:27,240
+Vamos a ver si luego vamos a contar con Andrea Morales y Antonio Manjavacas para un poquito la
+
+4
+00:00:27,240 --> 00:00:32,640
+discusión. En caso contrario les invito a que se unan a Discord para que podamos continuar y hacer
+
+5
+00:00:32,640 --> 00:00:44,960
+las preguntas por el canal de la charla. Muy buenos días somos Andrea Morales Garzón y
+
+6
+00:00:44,960 --> 00:00:50,720
+Antonio Manjavacas Lucas y para nosotros es un verdadero placer formar parte de esta nueva edición
+
+7
+00:00:50,720 --> 00:00:56,280
+de Python Spain y que mejor manera de hacerlo que con una introducción a los algoritmos
+
+8
+00:00:56,280 --> 00:01:03,560
+bio inspirados con Python. Pero qué son los algoritmos bio inspirados? Bien, todos sabemos
+
+9
+00:01:03,560 --> 00:01:09,400
+lo que es un algoritmo y sabemos cómo programar decenas de ellos. Pero ¿qué nos referimos con
+
+10
+00:01:09,400 --> 00:01:15,360
+bio inspirados? Es una palabra que nos sustita muchas dudas y que trataremos de dar respuesta a lo
+
+11
+00:01:15,360 --> 00:01:21,240
+largo de esta presentación. Los algoritmos bio inspirados son algoritmos inspirados en el funcionamiento
+
+12
+00:01:21,240 --> 00:01:26,440
+de sistemas naturales que modelan de forma aproximada fenómenos existentes en la naturaleza.
+
+13
+00:01:27,600 --> 00:01:33,480
+Estos permiten resolver problemas de gran complejidad computacional. Por ejemplo, problemas de
+
+14
+00:01:33,480 --> 00:01:40,000
+optimización basados en la búsqueda de la solución óptima de un problema o problemas orientados a
+
+15
+00:01:40,000 --> 00:01:46,360
+maximizar beneficios, minimizar costes, riesgos, recursos, tiempo. Hablamos incluso de problemas
+
+16
+00:01:46,360 --> 00:01:53,000
+multiojetivos donde la solución que tratamos de aportar es una solución de compromiso entre
+
+17
+00:01:53,000 --> 00:02:01,560
+diferentes objetivos que incluso en ocasiones pueden contradecirse. La cantidad de aplicaciones
+
+18
+00:02:01,560 --> 00:02:06,040
+que tienen los algoritmos bio inspirados es enorme, desde el cálculo de rutas mínimas entre
+
+19
+00:02:06,040 --> 00:02:12,160
+dos puntos hasta el enrutamiento de redes de comunicaciones y vehículos, agótica, aprendizaje
+
+20
+00:02:12,160 --> 00:02:17,960
+automático y predicción, medicina, incluso simulación de sistemas naturales. Hay algoritmos
+
+21
+00:02:17,960 --> 00:02:21,760
+bio inspirados que han sido utilizados para predecir la propagación de incendios forestales,
+
+22
+00:02:21,760 --> 00:02:26,720
+el comportamiento de ciertas reacciones químicas o incluso la interacción entre partículas,
+
+23
+00:02:26,720 --> 00:02:32,840
+como es el caso del CEM, donde se han utilizado este tipo de algoritmos. A continuación mi
+
+24
+00:02:32,840 --> 00:02:38,960
+compañera Andrea nos mostrará un problema muy pequeño y que nos permitirá entender de una forma
+
+25
+00:02:38,960 --> 00:02:43,320
+sencilla el dominio de la aplicación de este tipo de algoritmos.
+
+26
+00:02:45,320 --> 00:02:50,960
+Vale, pues a lo largo de estas llanlas vamos a utilizar como guía el problema de la mochila,
+
+27
+00:02:50,960 --> 00:02:58,360
+que es un problema sencillo de entender y que se puede resolver con algoritmos bio inspirados y
+
+28
+00:02:58,360 --> 00:03:04,720
+que lo utilizaremos como base en distintos puntos que veremos a continuación. Entonces este problema
+
+29
+00:03:04,720 --> 00:03:10,240
+parte de una mochila y de un conjunto de objetos. La mochila tiene una capacidad máxima que no se
+
+30
+00:03:10,240 --> 00:03:16,040
+puede superar y lo otro tiene un distinto peso y valor. Entonces buscamos una combinación de objetos
+
+31
+00:03:16,040 --> 00:03:22,440
+que nos permita maximizar la ganancia sin superar el peso máximo que tiene la mochila. Entonces
+
+32
+00:03:22,440 --> 00:03:27,680
+a simple vista, tal y como podemos ver, incluso podemos intuir cuál es la combinación que nos
+
+33
+00:03:27,680 --> 00:03:34,400
+permitiría obtener la cantidad de euros máxima, pero tenemos que pensar que muchas veces no
+
+34
+00:03:34,400 --> 00:03:39,480
+tenemos 10 o 12 objetos, tenemos una gran cantidad de objetos y que esto da lugar a un problema
+
+35
+00:03:39,480 --> 00:03:48,480
+combinatorio complejo que no es sencillo de resolver. La siguiente diapositiva, podemos ver
+
+36
+00:03:48,480 --> 00:03:54,720
+la solución propia a este problema. Realmente con esta combinación llegamos al peso tópez de la
+
+37
+00:03:54,720 --> 00:04:01,080
+mochila y conseguimos la capacidad máxima, o sea, perdón, la cantidad monetaria máxima que
+
+38
+00:04:01,080 --> 00:04:09,240
+conseguiríamos con estos objetos. Sin embargo, con el mismo peso máximo que ocupa la mochila,
+
+39
+00:04:09,240 --> 00:04:15,480
+otra vez 16 kilogramos, también podemos obtener otras soluciones que no son la óptima. Entonces,
+
+40
+00:04:15,480 --> 00:04:21,880
+esto representa un poco la naturaleza que tienen todos estos problemas que se utilizan
+
+41
+00:04:21,880 --> 00:04:31,600
+dentro del ámbito de los algoritmos bien inspirados. En la siguiente diapositiva, podemos ver otro
+
+42
+00:04:31,600 --> 00:04:35,920
+problema también muy conocido y que también se puede resolver por medio de este tipo de
+
+43
+00:04:35,920 --> 00:04:41,200
+algoritmos que es el problema del vejante de comercio. En este problema partimos de que tenemos
+
+44
+00:04:41,200 --> 00:04:46,680
+una cantidad de ciudades con unas conexiones entre ellas. Esto se representa con un grafo como el
+
+45
+00:04:46,680 --> 00:04:52,720
+que podemos ver en la diapositiva. Y las conexiones que existen entre las distintas ciudades tienen
+
+46
+00:04:52,720 --> 00:04:59,880
+un coche que puede ser mayor o menor. Aquí se puede intuir por la longitud de las aristas que
+
+47
+00:04:59,880 --> 00:05:05,480
+uno es lo propio en nodos. Entonces, aquí lo que se busca es ser capaz de recorrer todas las ciudades
+
+48
+00:05:05,480 --> 00:05:13,880
+o nodos intentando invertir el coste mínimo para ello. Es de nuevo otro problema de optimización,
+
+49
+00:05:13,880 --> 00:05:19,440
+también combinatorio, y que se puede complicar cuando el número de nodos es muy grande. Este
+
+50
+00:05:19,440 --> 00:05:25,400
+problema es un problema de NPE, que con NPE no referimos a una clase de complejidad que contiene
+
+51
+00:05:25,400 --> 00:05:29,800
+todos aquellos problemas que no se resuelven en un tiempo polinómico. Entonces, al final lo que
+
+52
+00:05:29,800 --> 00:05:38,520
+buscamos son aproximaciones por lo más cercanas posible al óptimo real. Los algoritmos bien
+
+53
+00:05:38,520 --> 00:05:43,520
+inspirados, al final son algoritmos iterativos que permitan explorar en un espacio de búsqueda,
+
+54
+00:05:43,520 --> 00:05:49,960
+e intentar alcanzar estos óptimos. Y, por tanto, son algoritmos que nos permiten hacer frente
+
+55
+00:05:49,960 --> 00:05:55,880
+a estos problemas. Esos son algoritmos que están dentro de las metaurísticas y en esta figura
+
+56
+00:05:55,880 --> 00:06:02,480
+podemos ver como un breve esquema de todo lo que se involucra en este área de la computación.
+
+57
+00:06:02,480 --> 00:06:07,120
+Podemos ver que dentro de las metaurísticas, que existen problemas basados en poblaciones y
+
+58
+00:06:07,120 --> 00:06:11,360
+otros dentro de la historia, pues entra en los algoritmos bioespirados. Y muchos de los que aparecen
+
+59
+00:06:11,360 --> 00:06:16,480
+hay como, por ejemplo, los algoritmos genéticos o los basados en las colonias de hormigas, pues
+
+60
+00:06:16,480 --> 00:06:21,000
+los veremos posteriormente con la librería que vamos a explicar en esta en esta charla.
+
+61
+00:06:23,520 --> 00:06:31,640
+Esta librería se llama Inspire y es una librería que se centra en la implementación de algoritmos
+
+62
+00:06:31,640 --> 00:06:40,120
+bioespirados en Python. Estos algoritmos, tal y como sigue, la filosofía de esta librería tienen
+
+63
+00:06:40,120 --> 00:06:45,560
+dos características, perdón, que sí son dependentes del problema. Una de ellas es la
+
+64
+00:06:45,560 --> 00:06:52,200
+representación de la solución. Aquí por solución lo que se entiende es cómo representamos una posible
+
+65
+00:06:52,200 --> 00:06:57,120
+solución a nuestro problema, es decir, cómo la representamos computacionalmente para poder obtenerla.
+
+66
+00:06:57,120 --> 00:07:02,280
+Y la otra característica es la evaluación. Una vez que tenemos representada las posibles
+
+67
+00:07:02,280 --> 00:07:08,000
+soluciones necesitamos una forma de evaluarla para poder definir cuál es mejor o cuál es peor
+
+68
+00:07:08,000 --> 00:07:14,080
+para intentar alcanzar el último local. Y luego parte de características que dependen del algoritmo,
+
+69
+00:07:14,080 --> 00:07:17,840
+que aquí ya entran, pues si es algoritmo basado en poblaciones, si es basado en trayectorias,
+
+70
+00:07:17,840 --> 00:07:23,200
+pues siempre hay como unos métodos comunes o, por ejemplo, cómo almacenar las soluciones
+
+71
+00:07:23,200 --> 00:07:30,120
+independientemente del algoritmo, pues todas estas características también están extraídas dentro de
+
+72
+00:07:30,120 --> 00:07:36,000
+la propia librería. Al final, el objetivo que tiene es separar por los componentes que son
+
+73
+00:07:36,000 --> 00:07:41,320
+específicos del problema en cuestión de los que son más concretos del algoritmo para facilitar
+
+74
+00:07:41,320 --> 00:07:51,680
+el trabajo a la hora de programarlo. Cuando hablamos de soluciones, como habéis dicho anteriormente,
+
+75
+00:07:51,680 --> 00:07:55,880
+al final, la representación que nosotros damos o con la que trabajamos para intentar alcanzar
+
+76
+00:07:55,880 --> 00:08:00,800
+el último problema. Entonces aquí vamos a ver un ejemplo de solución para hacernos una idea más
+
+77
+00:08:00,800 --> 00:08:05,720
+clara de a qué nos referimos exactamente con solución y volvemos al problema de la mochila. En este
+
+78
+00:08:05,720 --> 00:08:11,080
+caso, la solución que nosotros buscamos es cuáles son los objetos que me llevan a llevar al óptimo
+
+79
+00:08:11,080 --> 00:08:16,920
+en función de la capacidad que tenga la mochila. Pues esto se podría representar como un vector
+
+80
+00:08:16,920 --> 00:08:22,480
+binario donde hay tanto alimento como objetos y el uno puede representar que ese objeto lo incluimos
+
+81
+00:08:22,480 --> 00:08:28,200
+y el cero que no. En esto da lugar pues una explosión combinatoria de todas las posibilidades que se
+
+82
+00:08:28,200 --> 00:08:33,480
+puedan dar para intentar alcanzar el óptimo. Esto obviamente no es la única solución que se podría
+
+83
+00:08:33,480 --> 00:08:39,720
+dar. Nosotros podríamos haber elegido, por ejemplo, una tubula de elemento con el coche o alguna otra
+
+84
+00:08:39,720 --> 00:08:43,840
+representación. Al final que hay que jugar un poco pues con lo que sea más sencillo y también
+
+85
+00:08:43,840 --> 00:08:53,560
+más eficiente computacionalmente. Entonces, volviendo a la librería, una vez que ya tenemos
+
+86
+00:08:53,560 --> 00:08:58,440
+definido y tenemos claro lo que son las soluciones, pues ya podemos partir a los componentes específicos
+
+87
+00:08:58,440 --> 00:09:02,560
+del problema que realmente son los que están basados en ello. Por una parte tenemos la función
+
+88
+00:09:02,560 --> 00:09:06,880
+generator y esta función pues nos va a permitir a nosotros crear nuestra propia solución con
+
+89
+00:09:06,880 --> 00:09:11,680
+las características que queramos y como nosotros queramos diseñarla. Por otra parte tenemos el
+
+90
+00:09:11,680 --> 00:09:17,840
+otro componente clave el evaluator que nos va a permitir evaluar la solución generada. ¿Cuál sería
+
+91
+00:09:17,840 --> 00:09:22,640
+la función de evaluación del problema de la mochila? Pues ver cuál es la cantidad de euros
+
+92
+00:09:22,640 --> 00:09:28,000
+máximo que conseguimos con una selección concreta de los objetos. Y luego por otra parte pues
+
+93
+00:09:28,000 --> 00:09:31,840
+terminamos los componentes que dependen del algoritmo que ya hemos comentado son más de
+
+94
+00:09:31,840 --> 00:09:40,640
+implementación ya de características de algoritmos bioespirados por ejemplo. ¿Cómo generar nuevas
+
+95
+00:09:40,640 --> 00:09:47,240
+poblaciones? Pues hay un componente específico que nos permita lidiar con este tipo de acciones.
+
+96
+00:09:50,840 --> 00:09:57,360
+Visto de forma genérica, aunque consiste a Inspires y cuál es su metodología de programación,
+
+97
+00:09:57,360 --> 00:10:03,480
+veamos a continuación que algoritmos están disponibles en esta librería y cómo es su
+
+98
+00:10:03,480 --> 00:10:09,920
+funcionamiento. Los primeros algoritmos bioespirados que se nos pueden venir a la cabeza son los
+
+99
+00:10:09,920 --> 00:10:15,440
+algoritmos genéticos seguramente los más famosos que replican el proceso de evolución natural propuesto
+
+100
+00:10:15,440 --> 00:10:21,080
+por Darwin. Están basados en hacer evolucionar poblaciones de soluciones hacia valores óptimos
+
+101
+00:10:21,080 --> 00:10:26,600
+del problema. Recordemos que los problemas de esta naturaleza y que abordamos con algoritmos
+
+102
+00:10:26,600 --> 00:10:33,000
+bioespirados parten de un conjunto de soluciones que se van mejorando de forma iterativa. Los
+
+103
+00:10:33,000 --> 00:10:36,960
+algoritmos genéticos cuentan con una serie de operadores y elementos a tener en cuenta,
+
+104
+00:10:36,960 --> 00:10:41,560
+como la población de soluciones, la función de evaluación o fines que nos va a decir cómo
+
+105
+00:10:41,560 --> 00:10:46,800
+de buena o mala es una solución, la operación de cruce que combina diferentes soluciones para
+
+106
+00:10:46,800 --> 00:10:52,680
+dar lugar a una nueva base y la mutación que se produce de forma aleatoria y altera de forma
+
+107
+00:10:52,680 --> 00:11:01,080
+parcial, incluso mínima, una solución. Por ejemplo, para el problema de la mochila, su resolución
+
+108
+00:11:01,080 --> 00:11:06,200
+con un algoritmo genético podría ser de la siguiente forma. Al final, cada iteración parte de una
+
+109
+00:11:06,200 --> 00:11:12,160
+población en la cual se seleccionan diferentes individuos, en este caso dos, que se cruzan,
+
+110
+00:11:12,160 --> 00:11:19,640
+como podemos ver en la operación de cruce, y con cierta probabilidad, esos cruces mutan en un nuevo
+
+111
+00:11:19,640 --> 00:11:25,120
+elemento, en una nueva solución que reemplaza a la peor de la población existente, de forma
+
+112
+00:11:25,120 --> 00:11:29,000
+cíclica y dando suficiente tiempo, el algoritmo convergerá en la solución óptima.
+
+113
+00:11:31,880 --> 00:11:38,120
+A más bajo nivel, si nos centramos en el código necesario para implementar un algoritmo genético,
+
+114
+00:11:38,120 --> 00:11:43,400
+podemos utilizar la clase evolucionario y computación, que instancia un problema
+
+115
+00:11:43,400 --> 00:11:50,720
+evolutivo y hasta cualquier tipo de algoritmo evolutivo. Tras instanciar el problema evolutivo,
+
+116
+00:11:50,720 --> 00:11:55,320
+lo que hacemos es definir los diferentes elementos que lo componen, creador de selección, cruce,
+
+117
+00:11:55,320 --> 00:12:01,640
+mutación, reemplazo y terminación, definir la función que implementa el algoritmo genético
+
+118
+00:12:01,640 --> 00:12:07,440
+y simplemente obtener la solución. En este caso, para el problema con elementos duplicados son
+
+119
+00:12:07,440 --> 00:12:15,560
+duplicados. Sin embargo, si lo que buscamos es una implementación mucho más simple y nuestro
+
+120
+00:12:15,560 --> 00:12:21,560
+problema no es muy complejo, podemos utilizar directamente las clases que vienen implementadas
+
+121
+00:12:21,560 --> 00:12:26,800
+por el SPYRED y que funcionan muy bien. Por ejemplo, en este caso, tenemos un diseño simplificado
+
+122
+00:12:26,800 --> 00:12:32,280
+utilizando la clase genética de algoritmo, GA. Y la misma filosofía se da para el resto de algoritmos.
+
+123
+00:12:32,280 --> 00:12:40,320
+Una vez hemos visto que consiste el código, su yacente a este tipo de algoritmos,
+
+124
+00:12:40,320 --> 00:12:45,600
+podemos ver sus aplicaciones. Por ejemplo, aquí tenemos una serie de robots que han sido
+
+125
+00:12:45,600 --> 00:12:51,480
+entrenados para andar y que a medida que avanzan las generaciones, su aprendizaje converge en una
+
+126
+00:12:51,480 --> 00:12:58,960
+forma de caminar óptima, como es el caso de la generación 1999. Veamos otra serie de
+
+127
+00:12:58,960 --> 00:13:05,960
+algoritmos evolutivos. Por ejemplo, las estrategias evolutivas. Este tipo de algoritmos se utiliza
+
+128
+00:13:05,960 --> 00:13:10,200
+en otros problemas de diferente naturaleza, donde la solución codificada no es binaria,
+
+129
+00:13:10,200 --> 00:13:16,720
+sino que se codifica por medio de valores reales. En este caso, no hay un operador de mutación,
+
+130
+00:13:16,720 --> 00:13:20,960
+como el que hemos visto antes, sino más bien un operador de mutación que añade valores
+
+131
+00:13:20,960 --> 00:13:28,120
+a los parámetros siguiendo una distribución normal multivariante. Otro algoritmo de la misma
+
+132
+00:13:28,120 --> 00:13:34,120
+naturaleza es enfriamiento simulado, bastante conocido, que consiste en un algoritmo de búsqueda
+
+133
+00:13:34,120 --> 00:13:40,360
+local que parte de una serie de soluciones parciales explora soluciones vecinas y se va moviendo
+
+134
+00:13:40,360 --> 00:13:45,720
+dentro de espacios de búsqueda hasta caer en óptimos locales. Para evitar caer en óptimos
+
+135
+00:13:45,720 --> 00:13:50,080
+locales de forma permanente, lo que hace este algoritmo es permitir con cierta probabilidad
+
+136
+00:13:50,080 --> 00:13:55,840
+de creciente en el tiempo que puedan transicionarse hacia soluciones peores de forma controlada.
+
+137
+00:13:55,840 --> 00:14:06,400
+De esta forma garantizamos que se logre explorar todo el espacio de búsqueda y, al final,
+
+138
+00:14:06,400 --> 00:14:13,720
+logremos converger en la solución óptima global. Por ejemplo, aquí podemos ver cómo,
+
+139
+00:14:13,720 --> 00:14:20,800
+a medida que la temperatura o tiempo disminuye, es decir, convergencero, se alcanza en lo óptimo
+
+140
+00:14:20,800 --> 00:14:29,440
+global. La evolución diferencial es otro algoritmo de la misma naturaleza que,
+
+141
+00:14:29,440 --> 00:14:33,640
+en este caso, cuenta con una serie de vectores de solución formados por números reales,
+
+142
+00:14:33,640 --> 00:14:38,380
+la optimización se lleva a cabo en base a una métrica de calidad y contamos con una
+
+143
+00:14:38,380 --> 00:14:42,440
+serie de vectores de prueba que compiten con individuos de la población actual buscando su
+
+144
+00:14:42,440 --> 00:14:49,720
+superinvención. Por ejemplo, la evolución diferencial se utiliza para aproximar funciones,
+
+145
+00:14:49,720 --> 00:14:55,040
+lo que vemos es que a lo largo de las iteraciones los individuos convergen en la función que
+
+146
+00:14:55,040 --> 00:15:02,720
+define a la nube de puntos. De forma muy similar tenemos estimación de la distribución que
+
+147
+00:15:02,720 --> 00:15:07,840
+estima de forma evolutiva la distribución de probabilidad de cada variable que compone la
+
+148
+00:15:07,840 --> 00:15:12,840
+solución. No se emplea ni cruce en invutación, sino que la población se actualiza modificando
+
+149
+00:15:12,840 --> 00:15:17,740
+las distribuciones de probabilidad obtenidas y, de forma iterativa, la distribución se concentra
+
+150
+00:15:17,740 --> 00:15:24,320
+en torno a la solución óptima. Vamos ahora con otro tipo de algoritmos. En este caso hablamos
+
+151
+00:15:24,320 --> 00:15:29,640
+de optimización multi-objetivo. Los problemas multi-objetivos son aquellos donde se pretende
+
+152
+00:15:29,640 --> 00:15:36,360
+encontrar una o más soluciones óptimas bajo una toma de decisiones multi-criteria. Por ejemplo,
+
+153
+00:15:36,360 --> 00:15:41,920
+un problema multi-objetivo es cuántos vehículos deben conformar la flota de una empresa de transporte.
+
+154
+00:15:41,920 --> 00:15:49,320
+En este caso, utilizando paes, lo que buscamos es maximizar el beneficio, crecimiento y minimizar
+
+155
+00:15:49,320 --> 00:15:54,800
+los gastos, ya sea de combustible o reparación. Al final lo que buscamos es un óptimo de
+
+156
+00:15:54,800 --> 00:15:59,600
+pareto. Una solución es pareto óptima cuando no existe otra solución que mejore un objetivo
+
+157
+00:15:59,600 --> 00:16:05,640
+sin empeorar el otro. Y decimos que una solución domina otra si es mejor. Esto nos sirve muy bien
+
+158
+00:16:05,640 --> 00:16:12,480
+para abordar el siguiente algoritmo, NSGA, que también es evolutivo, elitista y multi-objetivo.
+
+159
+00:16:12,480 --> 00:16:18,640
+Nos permite la preservación y evolución de soluciones pareto óptimas y está basado en la
+
+160
+00:16:18,640 --> 00:16:25,280
+ordenación de la población empleando fronteras de no dominación. Básicamente, el funcionamiento
+
+161
+00:16:25,280 --> 00:16:31,600
+es el siguiente. Tenemos una población dividida en padres y descendientes obtenidos de esos padres.
+
+162
+00:16:31,600 --> 00:16:37,720
+La población se ordena por dominancia y a partir de un determinado presente esa población se poda
+
+163
+00:16:37,720 --> 00:16:44,200
+y contamos con un frente no dominado, una serie de frente no dominados que pasan a formar parte de
+
+164
+00:16:44,200 --> 00:16:50,520
+la siguiente iteración. Aquí podemos ver, por ejemplo, cómo se encuentra ese frente de pareto de
+
+165
+00:16:50,520 --> 00:16:58,480
+forma evolutiva. Finalmente, vamos a ver otra serie de algoritmos muy interesantes, que son los
+
+166
+00:16:58,480 --> 00:17:05,080
+basados en enjambres, por ejemplo, enjambres de partículas o partículas de suavem optimization.
+
+167
+00:17:06,280 --> 00:17:11,080
+Este tipo de algoritmos está basado en el comportamiento de las partículas en la naturaleza y
+
+168
+00:17:11,080 --> 00:17:17,320
+la inteligencia de enjambro, bandadas de llaves, bancos de peces y permiten optimizar un problema
+
+169
+00:17:17,320 --> 00:17:22,160
+partiendo de un conjunto de soluciones candidatas que son las partículas que se mueven por todo
+
+170
+00:17:22,160 --> 00:17:28,320
+el espacio de búsqueda. Este movimiento viene determinado por la posición y la velocidad de
+
+171
+00:17:28,320 --> 00:17:34,040
+las partículas. El movimiento dependerá no solo de la mejor posición local encontrada por cada
+
+172
+00:17:34,040 --> 00:17:39,160
+partícula sino de las mejores posiciones globales del resto del enjambro. Es algo similar a lo que
+
+173
+00:17:39,160 --> 00:17:46,480
+podemos ver en la imagen. Por ejemplo, aquí podemos ver su aplicación, como puede ser en un
+
+174
+00:17:46,480 --> 00:17:51,040
+descenso del gradiente o en cualquier tipo de operación que suponga moverse por un espacio
+
+175
+00:17:51,040 --> 00:17:58,840
+continuo. Y finalmente llegamos a los algoritmos de colonias de hormigas. Estos algoritmos son muy
+
+176
+00:17:58,840 --> 00:18:05,400
+famosos y normalmente se destinan a buscar el camino óptimo en un grafo basándose en cómo las
+
+177
+00:18:05,400 --> 00:18:12,360
+hormigas buscan alimento, liberan feromonas y lo llevan a la colonia. Dicho comportamiento está
+
+178
+00:18:12,360 --> 00:18:16,280
+basado en la liberación, seguimiento y evaporación de los rastros de feromonas, como veremos a
+
+179
+00:18:16,280 --> 00:18:22,720
+continuación. Básicamente, el funcionamiento es el siguiente. Una hormiga parte de la colonia y se
+
+180
+00:18:22,720 --> 00:18:29,120
+desplaza hacia el alimento o que alíce una trayectoria aleatoria que le lleva hasta él. Finalmente,
+
+181
+00:18:29,120 --> 00:18:33,440
+una vez lo alcanza, lo que hace es volver a la colonia y transportar ese alimento a la vez que
+
+182
+00:18:33,440 --> 00:18:39,440
+libera feromonas. A medida que ese camino se vuelve más viable porque es recorrido por más
+
+183
+00:18:39,440 --> 00:18:45,640
+hormigas, el rastro de feromonas aumenta y la mayoría de las hormigas lo sigue consolidando
+
+184
+00:18:45,640 --> 00:18:51,160
+esa ruta. También es importante decir que los rastros de feromonas se evaporan con el tiempo,
+
+185
+00:18:51,160 --> 00:18:58,440
+lo que evita la convergencia en óptimos locales. Como podemos ver, la idea subyacente simula el
+
+186
+00:18:58,440 --> 00:19:03,240
+comportamiento de las hormigas en el contexto de un grafo, como puede ser, por ejemplo, el del
+
+187
+00:19:03,240 --> 00:19:13,760
+viajante del comercio que mencionábamos al principio de esta charla. Y como breve, final,
+
+188
+00:19:13,760 --> 00:19:18,880
+pues lo que hemos inspirado al final nos permiten, pues, aproximar problemas muy complejos porque,
+
+189
+00:19:18,880 --> 00:19:24,680
+tal y como ha estado comentando Antonio, al final esto resulta en una exploración bastante tensa
+
+190
+00:19:24,680 --> 00:19:30,520
+de todo el espacio de búsqueda, dando lugar a múltiples comidas que nos permitan con cierta
+
+191
+00:19:30,520 --> 00:19:36,840
+inteligencia y hacia óptimos locales o incluso globales. Y con esta librería,
+
+192
+00:19:36,840 --> 00:19:42,920
+podemos atraer este concepto de algoritmo bioinspirado porque, tal y como también ha estado
+
+193
+00:19:42,920 --> 00:19:47,720
+comentando Antonio, pues al final existen poblaciones, esas poblaciones pues evolucionan, se evaluan,
+
+194
+00:19:47,720 --> 00:19:53,320
+hay pequeñas mutaciones, hay pequeñas variaciones, todas estas funciones, y no son las que atraemos,
+
+195
+00:19:53,320 --> 00:20:01,400
+las que podemos utilizar o incluso modificar o adecuar a nuestras necesidades, dotando de una
+
+196
+00:20:01,400 --> 00:20:07,040
+gran flexibilidad a la hora de poder resolver un problema completo, complejo, perdón.
+
+197
+00:20:07,040 --> 00:20:12,600
+Y esto es todo, esperamos que os haya gustado y si tenéis cualquier duda, pues estamos a vuestra
+
+198
+00:20:12,600 --> 00:20:18,160
+disposición. Aquí hemos dejado también una pequeña referencia de todo lo que hemos utilizado y eso
+
+199
+00:20:18,160 --> 00:20:43,560
+sería todo. Muchas gracias. Muchas gracias.
+

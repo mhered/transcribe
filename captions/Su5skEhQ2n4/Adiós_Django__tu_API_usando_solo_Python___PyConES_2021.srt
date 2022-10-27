@@ -1,0 +1,2016 @@
+1
+00:00:00,000 --> 00:00:13,920
+Bueno, vamos a pasar a la siguiente persona que va a componer que es Miguel Jiménez,
+
+2
+00:00:13,920 --> 00:00:17,120
+verdad que está aquí, lo agregamos a la tradición.
+
+3
+00:00:17,120 --> 00:00:19,120
+Bueno, Miguel, ¿qué tal estás?
+
+4
+00:00:19,120 --> 00:00:22,120
+Bien, bien, aquí acabando de compartir, a ver la pantalla.
+
+5
+00:00:22,120 --> 00:00:24,120
+A ver.
+
+6
+00:00:24,120 --> 00:00:29,120
+Bueno, pues Miguel es de...
+
+7
+00:00:29,120 --> 00:00:37,120
+Miguel es de Castilla y dice que desde hace más de 10 años trabaja con Python en distintos puestos,
+
+8
+00:00:37,120 --> 00:00:41,120
+con distintos...
+
+9
+00:00:41,120 --> 00:00:48,120
+relacionados siempre relacionados con Python, lo cual es genial, porque tienes que tener un background buenísimo.
+
+10
+00:00:48,120 --> 00:00:55,120
+Tienes también un canal que das programación en Twitch, que molestamos muchísimo también eso.
+
+11
+00:00:55,120 --> 00:00:59,120
+Y luego tenía la promo metida, pero bueno, ya sí me la haces tú, así me ahorro.
+
+12
+00:00:59,120 --> 00:01:01,120
+Vale, bueno.
+
+13
+00:01:03,120 --> 00:01:08,120
+Pero es genial este tipo de nuevas maneras de llegar a las personas, a la por Twitch,
+
+14
+00:01:08,120 --> 00:01:14,120
+no solamente, digamos, sitios clásicos como academia, universidades presenciales,
+
+15
+00:01:14,120 --> 00:01:24,120
+sino que ya podemos utilizar esos canales nuevos que están ahí para llegar a mucha más gente que está en esos nuevos sitios.
+
+16
+00:01:24,120 --> 00:01:25,120
+Es genial.
+
+17
+00:01:25,120 --> 00:01:29,120
+El confinamiento que nos hizo a todos dar demasiadas vueltas a la cabeza y buscarnos...
+
+18
+00:01:29,120 --> 00:01:36,120
+Exactamente, y nos cambió la manera de impartir clases, la manera de relacionarnos con los alumnos y la alumna.
+
+19
+00:01:36,120 --> 00:01:45,120
+La verdad es que nos ha hecho cambiar nuestra percepción de cómo es la docencia y cómo tenemos que migrar a esas nuevas medios.
+
+20
+00:01:45,120 --> 00:01:55,120
+La verdad es que ha sido... Fijaos en esta propia Python que estamos haciendo online, la sucesión que hacemos online,
+
+21
+00:01:55,120 --> 00:01:58,120
+como hemos tenido que cambiar la manera de interaccionar y tal.
+
+22
+00:01:58,120 --> 00:02:00,120
+Sí, la verdad es que con un resultado bastante bueno, ¿no?
+
+23
+00:02:00,120 --> 00:02:01,120
+La verdad que sí.
+
+24
+00:02:01,120 --> 00:02:06,120
+Es lo mismo que lo que se monta, ¿no? Cuando estamos todos allí en persona, ¿no?
+
+25
+00:02:06,120 --> 00:02:11,120
+Pero bueno, o sea, dentro de las condiciones que teníamos, creo que estoy haciendo un trabajo buenísimo.
+
+26
+00:02:11,120 --> 00:02:22,120
+La verdad es que está bien porque estamos con el tema de Discord, el StreamYard y tal hemos podido adoptar y más o menos estamos solventando esos problemas.
+
+27
+00:02:22,120 --> 00:02:29,120
+Hay mucha comunicación en el propio Discord, en los canales, la gente en YouTube también pregunta mucho.
+
+28
+00:02:29,120 --> 00:02:34,120
+Y bueno, aunque estemos en sitios muy distintos, también podemos la comunidad unirse desde...
+
+29
+00:02:34,120 --> 00:02:41,120
+Hemos visto a Indranil desde la India, hemos visto a gente de México, gente de Colombia también. Eso también es lo bueno.
+
+30
+00:02:41,120 --> 00:02:46,120
+El mundo es un poco más pequeño, gracias a esto.
+
+31
+00:02:46,120 --> 00:02:50,120
+Bueno, vamos a hablar también un poquito de tu charla.
+
+32
+00:02:50,120 --> 00:02:55,120
+La idea es como montar una API REST de forma muy sencilla,
+
+33
+00:02:55,120 --> 00:02:59,120
+lo cual me viene genial a mí para las clases que tengo que dar este año.
+
+34
+00:02:59,120 --> 00:03:08,120
+Así que me están tomando notas de lo que no se esté contando porque yo intento hacer API REST con Java y es un follón.
+
+35
+00:03:08,120 --> 00:03:12,120
+Madre mía, montar una API REST con Java, te mueres.
+
+36
+00:03:12,120 --> 00:03:15,120
+Y yo sé que con Python tiene que ser facilísimo.
+
+37
+00:03:15,120 --> 00:03:21,120
+Sí, sí, de hecho, ayer hice un taller también, que este año hago doblete en la Python,
+
+38
+00:03:21,120 --> 00:03:26,120
+de cómo montar una API con Django y es súper sencillo.
+
+39
+00:03:26,120 --> 00:03:31,120
+Si lo vas siguiendo y lo necesitas para explicárselo a alumnos, ya verás que es súper fácil.
+
+40
+00:03:31,120 --> 00:03:32,120
+O genial, genial.
+
+41
+00:03:32,120 --> 00:03:40,120
+Es una charla de 20 minutos en la cual he intentado comprender lo máximo posible todo,
+
+42
+00:03:40,120 --> 00:03:44,120
+pero al final da para lo que hagas, para quedarte con conceptos y con ideas,
+
+43
+00:03:44,120 --> 00:03:48,120
+pero lógicamente no lo puedo explicar todo al detalle.
+
+44
+00:03:48,120 --> 00:03:55,120
+Bueno, sabes que en la página web tenéis también las dispositivas y el repositorio que va a usar MIG.
+
+45
+00:03:55,120 --> 00:04:01,120
+Así que, bueno, son justo las 20, te doy ya, eh, ya puedes compartir.
+
+46
+00:04:01,120 --> 00:04:06,120
+Y bueno, cuando quieras, puedes empezar tu presentación.
+
+47
+00:04:06,120 --> 00:04:10,120
+Bueno, están ya las repositivas, Pablo.
+
+48
+00:04:10,120 --> 00:04:13,120
+Se pueden ver.
+
+49
+00:04:13,120 --> 00:04:16,120
+Ya están, ya están, ya pueden, ya se ven.
+
+50
+00:04:16,120 --> 00:04:18,120
+Vale, pues hoy.
+
+51
+00:04:18,120 --> 00:04:20,120
+Bueno, pues buenos días a todos y todas.
+
+52
+00:04:20,120 --> 00:04:25,120
+Que tal, pues bueno, vengo aquí a hacer una confesión. Ha sido muy doloroso, ¿no?
+
+53
+00:04:25,120 --> 00:04:28,120
+Es mucho tiempo ya junto, junto a él.
+
+54
+00:04:28,120 --> 00:04:33,120
+Y bueno, voy a utilizar esto un poquito de mi alcohólico personal, ¿no?
+
+55
+00:04:33,120 --> 00:04:38,120
+Al final, pues ha sido el momento de separar nuestros caminos, no.
+
+56
+00:04:38,120 --> 00:04:40,120
+Ha sido el momento de volar por separado.
+
+57
+00:04:40,120 --> 00:04:42,120
+Adiós, Django.
+
+58
+00:04:42,120 --> 00:04:52,120
+Pero bueno, antes de meternos un poquito en faena, pues voy a, por un poquito, educación, no, pues me voy a presentar, ¿no?
+
+59
+00:04:52,120 --> 00:04:55,120
+Soy Miguel Jiménez, llevo desarrollando en Paiso de Nijango desde 2012.
+
+60
+00:04:55,120 --> 00:04:59,120
+Ahí os dejo mi email y, bueno, mis redes sociales y lo que decía antes, Pablo, ¿no?
+
+61
+00:04:59,120 --> 00:05:03,120
+Tengo un canal de Twitch, que es el canal Aprende Paiso en español, ¿no?
+
+62
+00:05:03,120 --> 00:05:05,120
+Que os dejo también en el acta en las diapositivas.
+
+63
+00:05:05,120 --> 00:05:08,120
+Si queréis echarle un ojo, llevamos pues casi un año, ¿no?
+
+64
+00:05:08,120 --> 00:05:10,120
+Haciendo sesiones de todo tipo.
+
+65
+00:05:10,120 --> 00:05:16,120
+Paison, Live Codings, entrevistas a gente relacionadas con Paison, ¿no?
+
+66
+00:05:16,120 --> 00:05:17,120
+De alguna manera.
+
+67
+00:05:17,120 --> 00:05:20,120
+Y bueno, ahora estamos haciendo unas sesiones de introducción a Paison.
+
+68
+00:05:20,120 --> 00:05:22,120
+El próximo domingo haremos la sesión 2.
+
+69
+00:05:22,120 --> 00:05:25,120
+Y si queréis aprender Paison desde cero, pues bueno, pasos por allí,
+
+70
+00:05:25,120 --> 00:05:29,120
+que ya veréis que, bueno, os va a ser muy útil, ¿no?
+
+71
+00:05:29,120 --> 00:05:32,120
+Y bueno, ya entrando un poquito más en materia, ¿no?
+
+72
+00:05:32,120 --> 00:05:33,120
+Y ¿qué vamos a ver aquí?
+
+73
+00:05:33,120 --> 00:05:36,120
+Pues lo que vamos a ver es una forma de implementar una pires solamente utilizando Paison
+
+74
+00:05:36,120 --> 00:05:39,120
+y ayudándonos de nuestro proveedor de cloud.
+
+75
+00:05:39,120 --> 00:05:41,120
+Yo me voy a basar en Amazon Web Services,
+
+76
+00:05:41,120 --> 00:05:46,120
+pero bueno, se podría acertar en Google Cloud con Azure o con el que nosotros queramos, ¿no?
+
+77
+00:05:46,120 --> 00:05:49,120
+Pues bueno, lo primero que vamos a hacer es ver un poquito de arquitectura cloud.
+
+78
+00:05:49,120 --> 00:05:52,120
+Después vamos a ver el código Paison, ¿no?
+
+79
+00:05:52,120 --> 00:05:53,120
+Más o menos que yo utilicé.
+
+80
+00:05:53,120 --> 00:05:56,120
+Y después, bueno, me flipé poniendo diapositivas al principio
+
+81
+00:05:56,120 --> 00:05:58,120
+y me di cuenta que no me daba para entrar en 20 minutos.
+
+82
+00:05:58,120 --> 00:06:01,120
+Pero el punto 1 y el punto 2 son los más importantes.
+
+83
+00:06:01,120 --> 00:06:04,120
+Y el 3 y el 4, vais a, os voy a dejar las diapositivas y los veremos por encima,
+
+84
+00:06:04,120 --> 00:06:07,120
+pero no voy a poder ahondar tanto no en ellos.
+
+85
+00:06:07,120 --> 00:06:12,120
+Y bueno, simplemente también decir que vamos a ir realizando un ejemplo de un app y de una librería,
+
+86
+00:06:12,120 --> 00:06:15,120
+en el cual vamos a crear dos endpoints.
+
+87
+00:06:15,120 --> 00:06:22,120
+Uno para un post para crear libros en nuestra librería y un get para obtener esos libros por autor.
+
+88
+00:06:22,120 --> 00:06:28,120
+Y bueno, antes de nada, ojo, recuerda, yo no tengo la verdad absoluta, ya me gustaría a mí, ¿no?
+
+89
+00:06:28,120 --> 00:06:32,120
+Simplemente os voy a dar la solución que yo ideé, ¿no?
+
+90
+00:06:32,120 --> 00:06:33,120
+A un problema en específico.
+
+91
+00:06:33,120 --> 00:06:38,120
+Mi intención es simplemente compartiros esta solución, ¿no? que yo ideé, porque me parecía interesante compartirla
+
+92
+00:06:38,120 --> 00:06:46,120
+y que os puede servir a vosotros de inspiración o os puede servir completamente o simplemente, pues, no os puede servir.
+
+93
+00:06:46,120 --> 00:06:50,120
+Pero bueno, me parecía interesante compartirla, ¿no? en esta Python y por eso vamos con ello.
+
+94
+00:06:50,120 --> 00:06:52,120
+Pues bueno, empecemos.
+
+95
+00:06:52,120 --> 00:06:54,120
+Arquitectura Cloud.
+
+96
+00:06:54,120 --> 00:06:57,120
+Los servicios de Amazon Web Services que vamos a trabajar.
+
+97
+00:06:57,120 --> 00:07:00,120
+Vamos a trabajar lambas, que son funciones serverless de Amazon Web Services,
+
+98
+00:07:00,120 --> 00:07:03,120
+que permiten ejecutar códigos y no aprovisionar ni administrar servidores.
+
+99
+00:07:03,120 --> 00:07:06,120
+En Google Cloud se llaman Google Functions.
+
+100
+00:07:06,120 --> 00:07:12,120
+Después tenemos a Piguet Way, que es un servicio que display un API y sirve como despachador hacia otros servicios de Amazon Web Services, ¿no?
+
+101
+00:07:12,120 --> 00:07:15,120
+En Google Cloud se llama exactamente igual.
+
+102
+00:07:15,120 --> 00:07:17,120
+Cognito es un servicio de autenticación de usuarios.
+
+103
+00:07:17,120 --> 00:07:21,120
+El servicio similar en Google Cloud sería Identify Platform.
+
+104
+00:07:21,120 --> 00:07:28,120
+Y después utilizaremos RDS, que es el servicio de bases de datos relacionales de Amazon Web Services.
+
+105
+00:07:28,120 --> 00:07:31,120
+Y ahí nos da varias bases de datos diferentes para seleccionar.
+
+106
+00:07:31,120 --> 00:07:35,120
+En este caso, pues, yo me voy a basar en Puzzles, pero podríamos utilizarla que quisiéramos, ¿no?
+
+107
+00:07:35,120 --> 00:07:38,120
+Y ahora vamos a ir subiendo un poquito más en detalle cada cosa, ¿no?
+
+108
+00:07:38,120 --> 00:07:41,120
+Pues bueno, vamos a empezar de abajo para arriba.
+
+109
+00:07:41,120 --> 00:07:44,120
+Lo que hemos visto, vamos a empezar por RDS en las bases de datos.
+
+110
+00:07:44,120 --> 00:07:48,120
+Pues bueno, como no tengo tiempo para hacer una demo, que me hubiera encantado realizar una demo,
+
+111
+00:07:48,120 --> 00:07:50,120
+pues lo vamos a ir viendo con capturas de pantalla.
+
+112
+00:07:50,120 --> 00:07:52,120
+Esto sería la pinta que tiene RDS, ¿no?
+
+113
+00:07:52,120 --> 00:07:55,120
+Lo primero que tendríamos que hacer sería dar el botón de Create Database
+
+114
+00:07:55,120 --> 00:07:59,120
+y nos saltaría a el formulario de creación de bases de datos.
+
+115
+00:07:59,120 --> 00:08:04,120
+En este formulario de creación de bases de datos, pues seleccionaríamos la base de datos que nosotros queremos,
+
+116
+00:08:04,120 --> 00:08:05,120
+por ejemplo Puzzles.
+
+117
+00:08:05,120 --> 00:08:10,120
+Y en Puzzles tendríamos que seleccionar la versión, ¿no?
+
+118
+00:08:10,120 --> 00:08:12,120
+Que para nosotros es la adecuada.
+
+119
+00:08:12,120 --> 00:08:14,120
+En este caso, vamos a seleccionar la versión 12.7,
+
+120
+00:08:14,120 --> 00:08:17,120
+porque es la que tiene capa gratuita de Amazon Web Services.
+
+121
+00:08:17,120 --> 00:08:20,120
+Es decir, la free-tire, que nos permitirá realizar las pruebas
+
+122
+00:08:20,120 --> 00:08:23,120
+o realizar todo lo que queramos cacharrear con ello, ¿no?
+
+123
+00:08:23,120 --> 00:08:25,120
+Y también, si no, de forma gratuita.
+
+124
+00:08:25,120 --> 00:08:27,120
+Vale, pues seleccionamos la 12.7 y la free-tire.
+
+125
+00:08:27,120 --> 00:08:29,120
+Si riquimos con el formulario para abajo,
+
+126
+00:08:29,120 --> 00:08:32,120
+nos pedirá meter el nombre de usuario de la base de datos y la contraseña.
+
+127
+00:08:32,120 --> 00:08:35,120
+Y al final, habrá un botón que pondrá Create Database
+
+128
+00:08:35,120 --> 00:08:38,120
+y se pondrá a crear esa base de datos.
+
+129
+00:08:38,120 --> 00:08:40,120
+Tarde unos mentillos, nos preocupéis, es normal,
+
+130
+00:08:40,120 --> 00:08:43,120
+porque al final, pues, estás creando una base de datos en un ordenador que hay en Irlanda,
+
+131
+00:08:43,120 --> 00:08:45,120
+un servidor que hay en Irlanda, ¿no?
+
+132
+00:08:45,120 --> 00:08:50,120
+Y bueno, cuando ya está creada, aquí si accedemos a la base de datos haciendo click en el listado, ¿no?
+
+133
+00:08:50,120 --> 00:08:54,120
+Nos enseñará todas las características de nuestra base de datos.
+
+134
+00:08:54,120 --> 00:08:56,120
+Muy importante, quedarnos con el Endpoint,
+
+135
+00:08:56,120 --> 00:08:58,120
+que es el sitio que tenemos que apuntar,
+
+136
+00:08:58,120 --> 00:09:00,120
+o sea, el servidor donde está nuestra base de datos,
+
+137
+00:09:00,120 --> 00:09:02,120
+y quedarnos con el UBPC.
+
+138
+00:09:02,120 --> 00:09:06,120
+Pues bueno, quedaros con eso, pues lo vamos a necesitar luego.
+
+139
+00:09:06,120 --> 00:09:10,120
+Pues bueno, ya tenemos una base de datos creada, perfecto.
+
+140
+00:09:10,120 --> 00:09:12,120
+Ahora lo que necesitamos es nuestra capacidad de computación, ¿no?
+
+141
+00:09:12,120 --> 00:09:17,120
+Lo que necesitamos es utilizar algo donde poner nuestro código Python,
+
+142
+00:09:17,120 --> 00:09:20,120
+como lo que tenemos en este caso, y que cada vez que lo invoquemos,
+
+143
+00:09:20,120 --> 00:09:24,120
+se ejecute ese código Python, pues esta solución la resuelven las landas.
+
+144
+00:09:24,120 --> 00:09:27,120
+Pues bueno, le daríamos aquí a Create Function,
+
+145
+00:09:27,120 --> 00:09:31,120
+el botón de Create Function, y nos saltaría el formulario para crear una función, ¿no?
+
+146
+00:09:31,120 --> 00:09:35,120
+Introduciríamos el nombre de la función, por ejemplo, le he llamado Books Post,
+
+147
+00:09:35,120 --> 00:09:39,120
+porque va a ser el post, ¿no? El endpoint para crear libros.
+
+148
+00:09:39,120 --> 00:09:43,120
+Después Runtime, Amazon Web Services, el Runtime máximo que tiene de Python,
+
+149
+00:09:43,120 --> 00:09:45,120
+ya sabemos que la 310 sale y creo que este lunes, ¿no?
+
+150
+00:09:45,120 --> 00:09:47,120
+Pero bueno, ellos llegan un poco más atrás,
+
+151
+00:09:47,120 --> 00:09:50,120
+y el Runtime máximo de Python es la 380,
+
+152
+00:09:50,120 --> 00:09:53,120
+por lo cual, pues yo suelo seleccionar la más alta, lógicamente, ¿no?
+
+153
+00:09:53,120 --> 00:09:57,120
+Seguimos bajando por el formulario, y vemos que llegamos a esta parte, ¿no?
+
+154
+00:09:57,120 --> 00:10:01,120
+VPC, opcional. Pues bueno, VPC tendremos que meter el VPC que tenemos en la base de datos,
+
+155
+00:10:01,120 --> 00:10:05,120
+porque de esa forma vamos a tener la base de datos y la lambda en la misma red,
+
+156
+00:10:05,120 --> 00:10:11,120
+y se van a poder comunicar. Es decir, vamos a poder hacer tareas en la base de datos desde nuestra lambda, ¿vale?
+
+157
+00:10:11,120 --> 00:10:17,120
+Después en Subnet seleccionaremos todas las que tengamos, todas las que nos dé, como opción,
+
+158
+00:10:17,120 --> 00:10:24,120
+y después en el Security Group introduciremos el que nos va a dar como opción,
+
+159
+00:10:24,120 --> 00:10:27,120
+porque es el que tenemos dentro de nuestra VPC. Perfecto.
+
+160
+00:10:27,120 --> 00:10:29,120
+Pues ya tenemos que dar nuestra lambda.
+
+161
+00:10:29,120 --> 00:10:34,120
+Ahora, por defecto, lo primero que veremos será que nuestro código de la lambda es un HelloFromLanda,
+
+162
+00:10:34,120 --> 00:10:37,120
+que es básicamente un HelloWorld de lambda, ¿no?
+
+163
+00:10:37,120 --> 00:10:40,120
+Pues lo primero que haremos es entrar en la pestaña de configuración.
+
+164
+00:10:40,120 --> 00:10:48,120
+Entraremos en configuración y dentro de configuración habrá otra sección que será Environment Viable.
+
+165
+00:10:48,120 --> 00:10:52,120
+Aquí en Environment Viable vamos a introducir nuestras variables de entorno,
+
+166
+00:10:52,120 --> 00:10:59,120
+que serían exactamente igual que las variables de entorno que tendríamos dentro de nuestro servidor o dentro de nuestro ordenador, ¿no?
+
+167
+00:10:59,120 --> 00:11:06,120
+Que las vamos a poder tener acceso a ellas con el módulo OS, ¿no? de Python.
+
+168
+00:11:06,120 --> 00:11:11,120
+Pues bueno, vamos a meter las características de la base de datos, el nombre, el host, el user, el password.
+
+169
+00:11:11,120 --> 00:11:14,120
+Recordáis que os dígitos, acordáis del endpoint.
+
+170
+00:11:14,120 --> 00:11:17,120
+Pues bueno, el endpoint es lo que tendríamos que meter como database host.
+
+171
+00:11:17,120 --> 00:11:20,120
+Y aquí lo tendríamos introducido, ¿no? Le daríamos a guardar.
+
+172
+00:11:20,120 --> 00:11:27,120
+Y ahora vemos que tengo creada la lambda function de BooksPost y he creado otra para hacer el get,
+
+173
+00:11:27,120 --> 00:11:29,120
+como os he dicho, vamos a jugar con dos endpoints, ¿no?
+
+174
+00:11:29,120 --> 00:11:32,120
+Uno para crear libros y otro para obtener por adultor.
+
+175
+00:11:32,120 --> 00:11:39,120
+Pues también he creado esta lambda function de la misma manera con el mismo formulario para obtener libros por autor.
+
+176
+00:11:39,120 --> 00:11:44,120
+Pues bueno, ahora tenemos ya esas dos lambda function creadas y nos vamos a comunicar.
+
+177
+00:11:44,120 --> 00:11:47,120
+Conut es un servicio para identificar a usuarios de Amazon.
+
+178
+00:11:47,120 --> 00:11:52,120
+Además de poder utilizarlo junto a Graphi Gateway, podemos usarlo en nuestros desarrollos como en Splazca.
+
+179
+00:11:52,120 --> 00:11:58,120
+Y una cosa bastante guay es que si no queremos hacer formularios de registro, Amazon Web Services nos proporciona uno.
+
+180
+00:11:58,120 --> 00:12:03,120
+Uno directamente con una interfaz lógicamente customizada por ellos, que no tenemos mucha mano,
+
+181
+00:12:03,120 --> 00:12:08,120
+pero bueno, nos deja registrar a usuarios sin tener nosotros que hacer absolutamente nada.
+
+182
+00:12:08,120 --> 00:12:12,120
+Otra cosa bastante interesante de Cognito es que tiene un montón de opciones configurables.
+
+183
+00:12:12,120 --> 00:12:16,120
+Vamos a ver dos detallitos, pero nos tienen mil millones de opciones configurables.
+
+184
+00:12:16,120 --> 00:12:22,120
+Y además de eso, hay una librería que se llama Amplify, que proporciona Amazon Web Services,
+
+185
+00:12:22,120 --> 00:12:26,120
+que sirve para obtener el token y registrar a gente dentro de Cognito,
+
+186
+00:12:26,120 --> 00:12:29,120
+sin tener que tener nosotros peticiones para realizar estas cosas.
+
+187
+00:12:29,120 --> 00:12:35,120
+Por lo cual, vamos con Cognito. Le vamos a dar a Manage User Pools y nos saldrá en nuestros pools.
+
+188
+00:12:35,120 --> 00:12:38,120
+Como no tenemos pools, le tendremos que dar a Create a User Pool.
+
+189
+00:12:38,120 --> 00:12:44,120
+Y aquí le vamos a dar un nombre, por ejemplo, PyConestest y le vamos a dar a Review Defaults.
+
+190
+00:12:44,120 --> 00:12:51,120
+Cuando entramos aquí, tenemos los Users and Groups, que veremos que podemos importar usuarios,
+
+191
+00:12:51,120 --> 00:12:57,120
+es decir, podemos importar un Excel con nuestros usuarios o podemos crear un usuario nosotros desde aquí a mano.
+
+192
+00:12:57,120 --> 00:13:01,120
+Vamos a ver dos pequeños detalles de configuración que tiene Cognito.
+
+193
+00:13:01,120 --> 00:13:09,120
+Podemos decidir si queremos logar al usuario por username o si queremos hacerlo por email address o por phone number.
+
+194
+00:13:09,120 --> 00:13:14,120
+Y además de eso, le podemos decir que tenga activada el CasingSensitive,
+
+195
+00:13:14,120 --> 00:13:17,120
+que distingue entre mesos clases y minúsculas, o que no lo haga.
+
+196
+00:13:17,120 --> 00:13:22,120
+Después, si nos vamos aquí a la sección de Policies, podemos ver que podemos configurar esa contraseña
+
+197
+00:13:22,120 --> 00:13:28,120
+para que tenga un mínimo de tamaño, que requiera número, requiera carácter especial, requiera upper case, requiera lower case.
+
+198
+00:13:28,120 --> 00:13:32,120
+Y tiene un montón más de cosas configurables Cognito.
+
+199
+00:13:32,120 --> 00:13:35,120
+Os he enseñado estos dos detalles, pero para que os hagáis una idea,
+
+200
+00:13:35,120 --> 00:13:38,120
+puedes llegar a hacer incluso autenticación en dos pasos.
+
+201
+00:13:38,120 --> 00:13:44,120
+Simplemente haciendo clicks y tocando, sin dar que programar absolutamente de nada, cero líneas de código.
+
+202
+00:13:44,120 --> 00:13:48,120
+Pero bueno, vamos a continuar con el último servicio que sería API Gateway.
+
+203
+00:13:48,120 --> 00:13:56,120
+Lo que hace API Gateway básicamente es crearnos a API REST y redirigir hacia servicios.
+
+204
+00:13:56,120 --> 00:13:58,120
+En nuestro caso, redirigir hacia nuestras landas.
+
+205
+00:13:58,120 --> 00:14:02,120
+Le daríamos al botón de Build, aquí en la sección de API REST.
+
+206
+00:14:02,120 --> 00:14:08,120
+Y en este formulario seleccionaríamos la opción REST, seleccionaríamos New API,
+
+207
+00:14:08,120 --> 00:14:12,120
+aunque también nos da la opción de importar desde un archivo de Swagger o de OpenAPI 3.
+
+208
+00:14:12,120 --> 00:14:15,120
+Y aquí introduciríamos el API Name y la Description, lo que queramos nosotros.
+
+209
+00:14:15,120 --> 00:14:22,120
+Le daremos al botón de Credit API y lo primero que haremos será irnos a nuestro 60 de autorizadores, no?
+
+210
+00:14:22,120 --> 00:14:23,120
+Authorizers.
+
+211
+00:14:23,120 --> 00:14:28,120
+Y aquí crearemos un nuevo autorizador, un autorizador que le pondremos un nombre y seleccionaremos Cognito.
+
+212
+00:14:28,120 --> 00:14:32,120
+Es decir, nuestro autorizador va a trabajar con nuestro PUL de usuarios que hemos creado en Cognito.
+
+213
+00:14:32,120 --> 00:14:38,120
+Por lo cual, aquí en el Cognito User PUL, lo que vamos a introducir es el PUL de usuarios que antes hemos creado.
+
+214
+00:14:38,120 --> 00:14:43,120
+Si empezamos a escribir PICON, lo llamamos PICONSTEST, no? Nos lo va a autocompletar directamente.
+
+215
+00:14:43,120 --> 00:14:47,120
+Y en Token Resource, lo vamos a colocar Authorization.
+
+216
+00:14:47,120 --> 00:14:51,120
+Vale, le vamos a dar a Create y nos vamos a ir a la sección de Resource.
+
+217
+00:14:51,120 --> 00:14:54,120
+Vamos a empezar a crear nuestra URL, les vamos a crear dos URLs, no?
+
+218
+00:14:54,120 --> 00:14:56,120
+Dos PADS para poder realizar nuestras endpoints.
+
+219
+00:14:56,120 --> 00:15:00,120
+Pues le damos a Actions y le damos en Actions a Create Resource.
+
+220
+00:15:00,120 --> 00:15:03,120
+Le ponemos un nombre a nuestro Resource y le ponemos un PAD.
+
+221
+00:15:03,120 --> 00:15:05,120
+En nuestro caso va a ser para Books.
+
+222
+00:15:05,120 --> 00:15:10,120
+Una cosa que no he dicho es que tenemos que habilitar el course,
+
+223
+00:15:10,120 --> 00:15:13,120
+porque si no, para no tener problemas de course con el cliente.
+
+224
+00:15:13,120 --> 00:15:17,120
+Vale, pues le damos a Create y nos ha creado nuestro PADS Books, no?
+
+225
+00:15:17,120 --> 00:15:19,120
+Y ahora tenemos que crear un método en ese PADS Books.
+
+226
+00:15:19,120 --> 00:15:24,120
+Le damos a CreateMethod con Books seleccionado y seleccionamos el método POS y le damos OK.
+
+227
+00:15:24,120 --> 00:15:28,120
+Por lo cual, ahora nos va a pedir que es lo que queremos hacer cuando hay un POS.
+
+228
+00:15:28,120 --> 00:15:31,120
+Pues seleccionamos que nuestra IntroductionType es la Lambda Function,
+
+229
+00:15:31,120 --> 00:15:36,120
+es donde queremos enviarlo, seleccionamos que va a haber una UserLandApproximation
+
+230
+00:15:36,120 --> 00:15:41,120
+y le decimos que la Lambda Function a la que tiene que apuntar es la que nos ha llamado BooksPost.
+
+231
+00:15:41,120 --> 00:15:45,120
+Que igual que antes, vamos a empezar a escribir un slow auto completar, Amazon Web Services.
+
+232
+00:15:45,120 --> 00:15:48,120
+Vale, le damos a DataSafe y ya la tendríamos creada.
+
+233
+00:15:48,120 --> 00:15:51,120
+Ya tendríamos un endpoint que va a ciar nuestra Lambda Function, no?
+
+234
+00:15:51,120 --> 00:15:56,120
+Después vamos a crear otro endpoint que va a ser el Books barra, OTHOR.
+
+235
+00:15:56,120 --> 00:15:59,120
+Es decir, desde Books crearemos nuestro endpoint de la misma manera.
+
+236
+00:15:59,120 --> 00:16:02,120
+Y ahora entre llaves, porque eso quiere decir que es un campo dinámico.
+
+237
+00:16:02,120 --> 00:16:06,120
+Si va directo el nombre, es un Books directamente, pero al ser entre llaves
+
+238
+00:16:06,120 --> 00:16:10,120
+quiere decir que hay un campo dinámico, en este caso la ID del autor, no?
+
+239
+00:16:10,120 --> 00:16:14,120
+Vale, y lo mismo en vez de un POST, un método GET, es lo que vamos a introducir.
+
+240
+00:16:14,120 --> 00:16:19,120
+Vale, pues ahora lo que queremos es autenticar una de nuestras peticiones con Cognito.
+
+241
+00:16:19,120 --> 00:16:23,120
+Tenemos ya creado el autorizador, pero tenemos que decir en qué petición tiene que hacer efecto, no?
+
+242
+00:16:23,120 --> 00:16:28,120
+Pues, por ejemplo, en el POST lo vamos a dejar seleccionado y le vamos a dar a MethodRequest.
+
+243
+00:16:28,120 --> 00:16:32,120
+Aquí vamos a seleccionar Cognito Books en Authorization, que es el autorizador
+
+244
+00:16:32,120 --> 00:16:35,120
+en el que hemos creado antes y le vamos a dar OK.
+
+245
+00:16:35,120 --> 00:16:40,120
+Y de esta manera ya tendríamos nuestra petición para crear libros
+
+246
+00:16:40,120 --> 00:16:44,120
+que va a necesitar estar logado del usuario para poder crear ese libro, no?
+
+247
+00:16:44,120 --> 00:16:49,120
+Y ahora lo que vamos a hacer es desplagarnos rápido, le daremos a Actions, le daremos a DeployApi
+
+248
+00:16:49,120 --> 00:16:51,120
+y de esta manera va a estar ya en producción, no?
+
+249
+00:16:51,120 --> 00:16:54,120
+Nos va a preguntar en qué torno queremos, metemos PRO-PRODUCTION, no?
+
+250
+00:16:54,120 --> 00:16:58,120
+Y nos va a generar ya nuestro endpoint para poder lanzar peticiones.
+
+251
+00:16:58,120 --> 00:17:05,120
+Podemos meter un dominio personalizado que tengamos nosotros y si no nos va a crear un endpoint de este tipo, no?
+
+252
+00:17:05,120 --> 00:17:08,120
+4p, tata, tata, tata, tata, Amazon AWS.com, BarraPro,
+
+253
+00:17:08,120 --> 00:17:14,120
+y en este caso en estos tres tenemos Amazon AWS.com, BarraPro, BarraBooks, y tendremos tal,
+
+254
+00:17:14,120 --> 00:17:17,120
+lo mismo, BarraPro, BarraBooks, Barra, una idea de autor, no?
+
+255
+00:17:17,120 --> 00:17:19,120
+Y esos dos endpoints serían nuestros endpoints.
+
+256
+00:17:19,120 --> 00:17:22,120
+Bueno, nuestra arquitectura quedaría esta manera, nuestra PicketWide,
+
+257
+00:17:22,120 --> 00:17:25,120
+el cliente lanzará sobre API PicketWide las peticiones,
+
+258
+00:17:25,120 --> 00:17:28,120
+este API PicketWide las despachará entre las landas, no?
+
+259
+00:17:28,120 --> 00:17:32,120
+Que tengamos cada una por endpoint y después estas trabajaran sobre la base de datos.
+
+260
+00:17:32,120 --> 00:17:35,120
+Bueno, nosotros tenemos una base de datos, pero podríamos tener más si quisieramos, no?
+
+261
+00:17:35,120 --> 00:17:39,120
+Pues bueno, ahora nos vamos, ya un poquito de código, toca hablar de Python, no?
+
+262
+00:17:39,120 --> 00:17:46,120
+Ya era hora, pues bueno, yo lo que hice básicamente es intentar hacerme un pequeño Django, no?
+
+263
+00:17:46,120 --> 00:17:47,120
+Con solo con Python, no?
+
+264
+00:17:47,120 --> 00:17:50,120
+Para que ciertos conceptos de Django, que me parecen muy interesantes,
+
+265
+00:17:50,120 --> 00:17:56,120
+poder seguir teniéndolos. Yo utilice, tengo trazas de arquitectura saunal y dedede, no?
+
+266
+00:17:56,120 --> 00:18:00,120
+En lo que os voy a ir enseñando, pero no lo utilices tristamente,
+
+267
+00:18:00,120 --> 00:18:03,120
+simplemente pues me parece interesante hacerlo de esta manera,
+
+268
+00:18:03,120 --> 00:18:09,120
+porque había muchas cosas de Django que me podía pasar a mi nuevo desarrollo, no?
+
+269
+00:18:09,120 --> 00:18:14,120
+Pues bueno, tengo dos repositorios de código que los tengo subidos en GitHub, ahora los veréis,
+
+270
+00:18:14,120 --> 00:18:19,120
+que no confundí repositorio de código con repositorio de el concepto de arquitectura saunal,
+
+271
+00:18:19,120 --> 00:18:20,120
+que no es lo mismo, no?
+
+272
+00:18:20,120 --> 00:18:24,120
+Y ahora pues vamos a ir metiéndonos al primer repositorio, que es el repositorio de dominio.
+
+273
+00:18:24,120 --> 00:18:27,120
+El repositorio de dominio, que es el dominio de nuestra aplicación,
+
+274
+00:18:27,120 --> 00:18:32,120
+ahí os dejo el enlace, lo tenéis por todos los lados, y el código QR, no?
+
+275
+00:18:32,120 --> 00:18:37,120
+Tendrá esta pinta que vemos aquí con las entidades, los repositorios y los realizadores.
+
+276
+00:18:37,120 --> 00:18:40,120
+Estos repositorios, como os digo, no es lo mismo que el repositorio de código,
+
+277
+00:18:40,120 --> 00:18:43,120
+es el concepto de la arquitectura saunal, no?
+
+278
+00:18:43,120 --> 00:18:44,120
+El repositorio.
+
+279
+00:18:44,120 --> 00:18:50,120
+Y bueno, pues vamos a ver un poquito, voy a hacer una comparación de cositas que fui pasando o convirtiendo
+
+280
+00:18:50,120 --> 00:18:52,120
+de lo que está en Django a lo que hice yo.
+
+281
+00:18:52,120 --> 00:18:57,120
+Pues por ejemplo, lo primero que hice, la base no de Django son los modelos, no?
+
+282
+00:18:57,120 --> 00:19:03,120
+Y yo dije, pues bueno, quiero seguir teniendo esa forma de reflejar esos conceptos de nuestra aplicación
+
+283
+00:19:03,120 --> 00:19:05,120
+de alguna manera, pues yo lo pase a entidades, no?
+
+284
+00:19:05,120 --> 00:19:07,120
+Las entidades son Data Class.
+
+285
+00:19:07,120 --> 00:19:11,120
+Data Class, que en este caso nuestro ejemplo, como es un ejemplo de librería,
+
+286
+00:19:11,120 --> 00:19:17,120
+pues la única data que vamos a necesitar es la de libro, pues simplemente va a reflejar los datos de nuestro concepto.
+
+287
+00:19:17,120 --> 00:19:23,120
+Todo tipado como veis, la ID, el título, el autor, tal, pero solo reflejarán los datos.
+
+288
+00:19:23,120 --> 00:19:28,120
+Después, que es otra cosa que necesitamos, que tenemos en Django, pues tenemos el URL que es magnífico
+
+289
+00:19:28,120 --> 00:19:30,120
+y tenemos también los managers de Django, no?
+
+290
+00:19:30,120 --> 00:19:32,120
+Y yo dije, pues, ¿cómo puedo, qué puedo hacer con esto?
+
+291
+00:19:32,120 --> 00:19:37,120
+Pues voy a generar repositorios, repositorios de arquitectura saunal, no?
+
+292
+00:19:37,120 --> 00:19:46,120
+Pues bueno, lo que hice en principio fue declarar una clase astrasta con métodos astrastos, no?
+
+293
+00:19:46,120 --> 00:19:52,120
+Y de esa manera poder extender esta, dependiendo de la base de datos que utilizase.
+
+294
+00:19:52,120 --> 00:19:57,120
+En un ejemplo muy radical, esto es para si empiezas utilizándome SQL y a mitad del desarrollo dices,
+
+295
+00:19:57,120 --> 00:20:01,120
+no, no, es que yo necesito MongoDB y pues de esta manera se podría hacer de una manera muy sencilla,
+
+296
+00:20:01,120 --> 00:20:04,120
+no? Y muy amigable, porque sería como cambiar piezas de publet.
+
+297
+00:20:04,120 --> 00:20:09,120
+Pues bueno, primero definí mis métodos astrastos como veis aquí y después ya como yo quería utilizar POSGREZ,
+
+298
+00:20:09,120 --> 00:20:16,120
+definí esos métodos concretos, no? Ya con los select de POSGREZ, SQL de toda la vida y el insert into.
+
+299
+00:20:16,120 --> 00:20:23,120
+Pues bueno, este sería mi repositorio concreto para acceder a los datos de la base de datos.
+
+300
+00:20:23,120 --> 00:20:29,120
+Esto como os digo, haría olvidar entre comillas, no? El R&B de Django y los managers de Django.
+
+301
+00:20:29,120 --> 00:20:34,120
+Después, una cosa que me encanta y que me estoy dando cuenta que en otros lenguajes,
+
+302
+00:20:34,120 --> 00:20:39,120
+en otros framework, no existe en otros framework de la parte del servidor web, no?
+
+303
+00:20:39,120 --> 00:20:44,120
+Es son los realizadores de Django y yo dije, joder, los realizadores me parecen súper interesantes y súper útiles, no?
+
+304
+00:20:44,120 --> 00:20:52,120
+Pues lo que me hice yo fue generar una clase serializer que definiendo nuestro serializador concreto
+
+305
+00:20:52,120 --> 00:20:57,120
+y heredando de ella se le puede definir la clase sobre la que, la datacla sobre la que va a operar
+
+306
+00:20:57,120 --> 00:21:03,120
+los campos de lectura y la escritura y funcionaría exactamente igual con el serializador de Django, no?
+
+307
+00:21:03,120 --> 00:21:06,120
+Y ahora nos vamos a ir al repositorio de la API.
+
+308
+00:21:06,120 --> 00:21:12,120
+Igual, os dejo ahí el enlace, os dejo el QR, está por todos los sitios, en algún sitio lo encontraréis
+
+309
+00:21:12,120 --> 00:21:17,120
+y bueno, esta pinta tendría. Yo lo que he hecho básicamente es intentar seguir la estructura de carpetas
+
+310
+00:21:17,120 --> 00:21:22,120
+igual que la URL, por lo cual tenemos books, dentro de books tenemos auth sorry post,
+
+311
+00:21:22,120 --> 00:21:26,120
+pero si nos vamos directamente al post vendrá el código de la input, indel post.
+
+312
+00:21:26,120 --> 00:21:32,120
+Después si nos vamos a auth sorry, pues dentro de la carpeta get y dentro de la get tendremos el código del input indel get, básicamente.
+
+313
+00:21:32,120 --> 00:21:39,120
+Pues bueno, yo lo que hice es dividir en dos repositorios, el dominio por un lado y la API y la,
+
+314
+00:21:39,120 --> 00:21:44,120
+por otro porque el dominio puede ser útil para más servicios, no sólo para la API,
+
+315
+00:21:44,120 --> 00:21:48,120
+pero si tenemos una, pues una aplicación o una plataforma que tiene diferentes servicios,
+
+316
+00:21:48,120 --> 00:21:55,120
+pues nos puede ser interesante poder coger el dominio en los diferentes servicios ya que seguramente no sea útil en todos.
+
+317
+00:21:55,120 --> 00:21:58,120
+Por eso dividí en dos repositorios diferentes cada cosa.
+
+318
+00:21:58,120 --> 00:22:05,120
+Y que hago ahora? Pues con los submódulos de get, cojo lo que hay en el repositorio de dominio
+
+319
+00:22:05,120 --> 00:22:10,120
+y lo inserto y lo heredo en el repositorio de la API en cada endpoint.
+
+320
+00:22:10,120 --> 00:22:17,120
+Esto lo hago de esta manera, con get submodule a la URL del repositorio que queremos traernos, no,
+
+321
+00:22:17,120 --> 00:22:23,120
+y el path donde queremos insertarlo dentro del repositorio donde nos lo queremos traer, no.
+
+322
+00:22:23,120 --> 00:22:28,120
+De esta manera tenemos todo en cuanto se actualiza el repositorio de dominio,
+
+323
+00:22:28,120 --> 00:22:33,120
+se actualiza también dentro de nuestro repositorio de la API el dominio.
+
+324
+00:22:33,120 --> 00:22:39,120
+Pues bueno, después, siguiendo con el tema de la arquitectura sauvona, alillango,
+
+325
+00:22:39,120 --> 00:22:42,120
+pues lo que hice fue decir, vale, yo siempre utilizo muchos servicios,
+
+326
+00:22:42,120 --> 00:22:46,120
+no intento hacerlo en trocitos pequeños, cada cosa que voy haciendo pues que hago,
+
+327
+00:22:46,120 --> 00:22:52,120
+pues tengo servicios también en mi nuevo desarrollo, no, y por eso tenemos services.
+
+328
+00:22:52,120 --> 00:22:57,120
+Bueno, como habéis visto, como lo he dicho, en todo voy dejando la ruta, no, al código para que lo podáis ver.
+
+329
+00:22:57,120 --> 00:23:01,120
+Dentro del repositorio veréis que hay muchos más archivos y vais a poder ver más en detalle,
+
+330
+00:23:01,120 --> 00:23:04,120
+aquí me he quedado unos pocos pues para poder explicaros lo mejor y más rápido.
+
+331
+00:23:04,120 --> 00:23:07,120
+Bueno, no tendría mucho sentido, pero como es un ejemplo de actico,
+
+332
+00:23:07,120 --> 00:23:11,120
+hemos creado, he creado este books getter para obtener los libros,
+
+333
+00:23:11,120 --> 00:23:15,120
+utilizo inyección de dependencias también en el dominio, luego explico un poquito más,
+
+334
+00:23:15,120 --> 00:23:19,120
+y básicamente lo que tengo es mi repositor inyectado por dependencias
+
+335
+00:23:19,120 --> 00:23:24,120
+del repositorio, le digo que me busque por autor, por ir del autor, y me devuelve libros,
+
+336
+00:23:24,120 --> 00:23:28,120
+y después para sustituir, digamos, las vistas de Django, las view,
+
+337
+00:23:28,120 --> 00:23:31,120
+lo que voy a hacer será crear casos de uso, pues mi caso de uso, por ejemplo,
+
+338
+00:23:31,120 --> 00:23:35,120
+va a ser obtener libros que hacen mi caso de uso, pues le inyecto por,
+
+339
+00:23:35,120 --> 00:23:40,120
+hay inyección de dependencias del books getter, que es el que obtienen los libros,
+
+340
+00:23:40,120 --> 00:23:43,120
+y directamente le digo que me los obtenguen, los devuelva,
+
+341
+00:23:43,120 --> 00:23:46,120
+como veis no tiene mucho sentido porque es muy sencillo este caso,
+
+342
+00:23:46,120 --> 00:23:49,120
+pero la idea es que el caso de uso concatene diferentes servicios
+
+343
+00:23:49,120 --> 00:23:52,120
+para el final de volver el resultado, en este caso solo utiliza un servicio
+
+344
+00:23:52,120 --> 00:23:54,120
+y lo devuelve, y ya estaría, ¿no?
+
+345
+00:23:54,120 --> 00:23:57,120
+Y por último, ¿cuál es el punto de entrada a todo este código?
+
+346
+00:23:57,120 --> 00:23:59,120
+¿Por dónde se accede, no?
+
+347
+00:23:59,120 --> 00:24:03,120
+Pues accede por la Lambda Function, la Lambda Function punto P,
+
+348
+00:24:03,120 --> 00:24:07,120
+que viene directamente en la Lambda, es el punto de entrada a la Lambda Function
+
+349
+00:24:07,120 --> 00:24:10,120
+y donde comienza todo por defecto en Lambda de Amazon Web Services.
+
+350
+00:24:10,120 --> 00:24:13,120
+Aquí lo que he hecho básicamente es en Lambda Handler,
+
+351
+00:24:13,120 --> 00:24:18,120
+que es la función, no, que inicia todo lo que he hecho,
+
+352
+00:24:18,120 --> 00:24:23,120
+ha sido cargar el contenedor de dependencias, cojo el caso de uso,
+
+353
+00:24:23,120 --> 00:24:25,120
+siguiendo un poquito para abajo, ¿no?
+
+354
+00:24:25,120 --> 00:24:27,120
+Que no me he entrado en una depositiva,
+
+355
+00:24:27,120 --> 00:24:30,120
+utilizo ese caso de uso con el autor ID,
+
+356
+00:24:30,120 --> 00:24:34,120
+y después lo serializo con los realizadores que hemos visto antes, ¿no?
+
+357
+00:24:34,120 --> 00:24:38,120
+Y devuelvo el status code y el JSON, ¿no?
+
+358
+00:24:38,120 --> 00:24:41,120
+que de los libros que acabo de obtener, y ya estaría.
+
+359
+00:24:41,120 --> 00:24:44,120
+Vale, y un poco por hablar del contenedor de dependencias,
+
+360
+00:24:44,120 --> 00:24:47,120
+bueno, el tema de la inyección de dependencias,
+
+361
+00:24:47,120 --> 00:24:49,120
+el contenedor de dependencias no viene nativo en Python,
+
+362
+00:24:49,120 --> 00:24:51,120
+hay muchas formas de hacerlo, pero yo lo que suelo utilizar
+
+363
+00:24:51,120 --> 00:24:53,120
+es la librería que se llama PyPendency,
+
+364
+00:24:53,120 --> 00:24:55,120
+os dejo ahí el enlace a PyPI,
+
+365
+00:24:55,120 --> 00:24:58,120
+que es una librería que desarrolló el equipo de la Startup Fiber,
+
+366
+00:24:58,120 --> 00:25:01,120
+y bueno, me parece una librería super sencilla de utilizar
+
+367
+00:25:01,120 --> 00:25:03,120
+y bastante potente, ¿no? para hacer esto,
+
+368
+00:25:03,120 --> 00:25:06,120
+simplemente definees archivos.john y puedes,
+
+369
+00:25:06,120 --> 00:25:09,120
+y puedes, pues, no, montarte tu contenedor de dependencias.
+
+370
+00:25:09,120 --> 00:25:12,120
+Y, bueno, si es un tutorial que hicimos en el canal de Twitch,
+
+371
+00:25:12,120 --> 00:25:15,120
+el Appendepython en español, de cómo utilizarlo, ¿no? en YouTube.
+
+372
+00:25:15,120 --> 00:25:17,120
+Después, bueno, este diagrama que explica un poquito, ¿no?
+
+373
+00:25:17,120 --> 00:25:19,120
+lo que vamos haciéndolo en la Fansion,
+
+374
+00:25:19,120 --> 00:25:21,120
+llama el causador, usa el caso de uso al servicio,
+
+375
+00:25:21,120 --> 00:25:23,120
+el solicitor y el repositorio, el repositorio a la base de datos.
+
+376
+00:25:23,120 --> 00:25:26,120
+Y demás, y os podéis preguntar, ¿y por qué tanto lío, no?
+
+377
+00:25:26,120 --> 00:25:28,120
+Pues si podría haber sido mucho más sencillo, todo esto, tal.
+
+378
+00:25:28,120 --> 00:25:31,120
+Bueno, al final, yo opte por este tipo de arquitectura, ¿no?
+
+379
+00:25:31,120 --> 00:25:34,120
+porque pensaba que, bueno, porque yo necesitaba
+
+380
+00:25:34,120 --> 00:25:36,120
+que todo fuera como piezas de puzzle, ¿no?
+
+381
+00:25:36,120 --> 00:25:39,120
+Y que si alguna fallaba, alguna no me interesaba poder cambiarlas
+
+382
+00:25:39,120 --> 00:25:41,120
+y poder, y poder poner otra, ¿no?
+
+383
+00:25:41,120 --> 00:25:44,120
+De esta manera, puedes sustituir de esa forma tan ágil y versátil
+
+384
+00:25:44,120 --> 00:25:47,120
+las piezas una por otra sin terren ningún problema.
+
+385
+00:25:47,120 --> 00:25:51,120
+Bueno, ya os digo, es el caso que yo me encontré
+
+386
+00:25:51,120 --> 00:25:53,120
+y lo que necesitaba en ese momento.
+
+387
+00:25:53,120 --> 00:25:56,120
+Y, bueno, ahora, como os he dicho, esto no me va a dar tiempo,
+
+388
+00:25:56,120 --> 00:25:58,120
+tanto el display como el testio, pero vamos a ver super rápido,
+
+389
+00:25:58,120 --> 00:26:01,120
+ya en un minuto, dos minutos, y ya, pues, me cayo
+
+390
+00:26:01,120 --> 00:26:03,120
+y me voy a hacer las preguntas que queráis.
+
+391
+00:26:03,120 --> 00:26:06,120
+¿Qué tema del display? Pues, ¿cómo en sufa el punto 2 en el punto 1, ¿no?
+
+392
+00:26:06,120 --> 00:26:10,120
+Pues, básicamente, utilizo un repositorio que se llama Club Deploy
+
+393
+00:26:10,120 --> 00:26:14,120
+que este repositorio también lo he creado yo, ¿no?
+
+394
+00:26:14,120 --> 00:26:17,120
+Y es un repositorio que te ayuda, mediante un JSON,
+
+395
+00:26:17,120 --> 00:26:22,120
+a desplegar en Amazon Web Services en el Lambda tu código, ¿no?
+
+396
+00:26:22,120 --> 00:26:27,120
+O también en S3, dependiendo de lo que resiste a su front o un back end, ¿no?
+
+397
+00:26:27,120 --> 00:26:32,120
+Pues, con JSON de esta pinta, que puedes directamente
+
+398
+00:26:32,120 --> 00:26:35,120
+en la ruta, ¿no?
+
+399
+00:26:35,120 --> 00:26:40,120
+Pues, te lo desplegaría automáticamente sin tener que hacer absolutamente nada,
+
+400
+00:26:40,120 --> 00:26:43,120
+poniendo la ID de la Lambda, el PAD que quieres desplegar
+
+401
+00:26:43,120 --> 00:26:46,120
+y si tienes algún módulo extra, en nuestro caso el Domino, pues te lo despliega.
+
+402
+00:26:46,120 --> 00:26:50,120
+Y después, bueno, yo lo hice con Jithub Actions, pero como un IJithub Actions
+
+403
+00:26:50,120 --> 00:26:54,120
+o lo que surja, y tengo también los pipes de Jithub Actions
+
+404
+00:26:54,120 --> 00:26:58,120
+para desplegar el layer, que es como lo que es despliegantes de la Lambda
+
+405
+00:26:58,120 --> 00:27:01,120
+para crear el entorno en la Lambda, es decir, para instalar las dependencias,
+
+406
+00:27:01,120 --> 00:27:09,120
+los requirements dentro de la Lambda y el archivo para desplegar la Lambda en sí.
+
+407
+00:27:09,120 --> 00:27:13,120
+Los dos están en el repositorio, podéis echarle un ojo, si tienes alguna duda.
+
+408
+00:27:13,120 --> 00:27:17,120
+Yo he encantado de atenderos, pues, por redes sociales, por email o por donde veáis.
+
+409
+00:27:17,120 --> 00:27:22,120
+Y después, testing, ¿qué es eso del testing? No, pues, destrozar cosas, básicamente.
+
+410
+00:27:22,120 --> 00:27:26,120
+Bueno, yo hice mucho test unitario de código, ¿no?
+
+411
+00:27:26,120 --> 00:27:30,120
+Aquí os he dejado un ejemplo y podéis verlos también en el repositorio.
+
+412
+00:27:30,120 --> 00:27:36,120
+Pues básicamente con mocs de Python, de Python, que son super wise,
+
+413
+00:27:36,120 --> 00:27:39,120
+si no sabéis utilizados los consultos, los utilizéis, los probéis.
+
+414
+00:27:39,120 --> 00:27:43,120
+Y después con otra librería que se llama Data Class B, que básicamente ofrece una forma elegante
+
+415
+00:27:43,120 --> 00:27:45,120
+de crear objetos basados en Data Classes para testing.
+
+416
+00:27:45,120 --> 00:27:49,120
+Os dejo también en la acera Pipe I el tutorial de cómo utilizarlo,
+
+417
+00:27:49,120 --> 00:27:53,120
+que lo grabamos en el canal de Aprend de Python en español y el código de la librería.
+
+418
+00:27:53,120 --> 00:27:58,120
+Y simplemente decir, por último, que podéis también simular que tienes una Lambda
+
+419
+00:27:58,120 --> 00:28:05,120
+dentro de vuestro ordenador en local con este contenedor de Docker para poder hacer test en tu M, ¿no?
+
+420
+00:28:05,120 --> 00:28:08,120
+Y bueno, eso es todo por mi parte.
+
+421
+00:28:08,120 --> 00:28:11,120
+Y ahora, pues, turno de preguntas.
+
+422
+00:28:11,120 --> 00:28:14,120
+Caer un poco como Homer, no sé cómo me iréis preguntando,
+
+423
+00:28:14,120 --> 00:28:18,120
+me iré metiendo en el seto y saldré con un constelmolo tov si no me ha gustado la pregunta.
+
+424
+00:28:20,120 --> 00:28:27,120
+Muchas gracias, Miguel. La verdad es que es muy completa estar tomando notas de todo lo que ha hecho
+
+425
+00:28:27,120 --> 00:28:30,120
+para ver si luego puedo yo también aplicarlo.
+
+426
+00:28:30,120 --> 00:28:32,120
+De hecho, una de las preguntas que tenía, ya me la ha respondido,
+
+427
+00:28:32,120 --> 00:28:37,120
+porque yo quería preguntar si podía hacer Lambda en local.
+
+428
+00:28:37,120 --> 00:28:40,120
+Y con el contenedor Docker, que es del final, pues perfecto, porque así es.
+
+429
+00:28:40,120 --> 00:28:45,120
+Si queremos empezar fácilmente, sobre todo gente que está empezando y tal, hacer pruebas en local,
+
+430
+00:28:45,120 --> 00:28:50,120
+siempre le tiran un poco lo de montarlo online y tal, en las cuentas de Amazon y tal.
+
+431
+00:28:50,120 --> 00:28:54,120
+Es que no he dicho una cosa que la tenía puntada y se me ha olvidado,
+
+432
+00:28:54,120 --> 00:28:58,120
+pero es una cosa muy interesante. Ese stack que yo he explicado,
+
+433
+00:28:58,120 --> 00:29:01,120
+es un stack totalmente gratuito en Amazon Web Services.
+
+434
+00:29:01,120 --> 00:29:05,120
+O sea, te creas tu cuenta y RDS, como os he dicho,
+
+435
+00:29:05,120 --> 00:29:09,120
+si seleccionas la versión 2.7 de Poscores, es gratuito durante un año.
+
+436
+00:29:09,120 --> 00:29:13,120
+Lambda tiene un millón de peticiones gratuitas al mes.
+
+437
+00:29:13,120 --> 00:29:17,120
+O sea, lo que es una puta locura, porque es imposible estar trasteando
+
+438
+00:29:17,120 --> 00:29:20,120
+y llegar a un millón de peticiones. A no ser que hagas el burro, ¿no?
+
+439
+00:29:20,120 --> 00:29:24,120
+Cognito es gratuito hasta 40.000 logings al mes.
+
+440
+00:29:24,120 --> 00:29:31,120
+Y let it go, igual, tiene un barbaridad de peticiones que resuelven de forma gratuita al mes.
+
+441
+00:29:31,120 --> 00:29:33,120
+Vale, vale, vale, mola.
+
+442
+00:29:33,120 --> 00:29:37,120
+Te hemos también preguntas en YouTube, por ejemplo, Clara nos pregunta,
+
+443
+00:29:37,120 --> 00:29:42,120
+¿qué magnitud acepta hacer una API así? Es decir, ¿se podría implementar en una gran empresa?
+
+444
+00:29:42,120 --> 00:29:48,120
+Pues sí, la respuesta es totalmente... Sí, se puede implementar en una gran empresa,
+
+445
+00:29:48,120 --> 00:29:51,120
+porque esto, por suerte, es server, es todo.
+
+446
+00:29:51,120 --> 00:29:55,120
+Tú te olvidas de mantenimiento de servidores, de escalabilidad.
+
+447
+00:29:55,120 --> 00:29:59,120
+Amazon te garantiza esa escalabilidad, te garantiza que cuando se realiza una petición,
+
+448
+00:29:59,120 --> 00:30:01,120
+se va a dar servicio a esa petición.
+
+449
+00:30:01,120 --> 00:30:05,120
+Por lo cual es totalmente utilizable en una empresa.
+
+450
+00:30:05,120 --> 00:30:10,120
+De hecho, esto que os he explicado, Luis Ello, en la última empresa que trabajé,
+
+451
+00:30:10,120 --> 00:30:16,120
+fue como implementamos el desarrollo que había que realizar, no el proyecto que había que realizar.
+
+452
+00:30:16,120 --> 00:30:18,120
+Genial, genial.
+
+453
+00:30:18,120 --> 00:30:23,120
+Bueno, Javier nos da también la pedala no era buena por la charla,
+
+454
+00:30:23,120 --> 00:30:25,120
+conceptos claros, presentación muy ágil.
+
+455
+00:30:25,120 --> 00:30:33,120
+En el... Tenéis el Discord también, por si queréis, después de esta charla,
+
+456
+00:30:33,120 --> 00:30:38,120
+preguntarle a Miguel, que también estará online, supongo,
+
+457
+00:30:38,120 --> 00:30:45,120
+durante el resto de la conferencia, para cualquier duda que tengáis.
+
+458
+00:30:45,120 --> 00:30:48,120
+Nos pregunta también, Jordi, por Discord,
+
+459
+00:30:48,120 --> 00:30:51,120
+¿se podría realizar la misma implementación con Django?
+
+460
+00:30:51,120 --> 00:30:54,120
+Sí, sí, sí, claro, perfectamente.
+
+461
+00:30:54,120 --> 00:30:56,120
+Tú puedes utilizar la misma arquitectura que ha explicado yo,
+
+462
+00:30:56,120 --> 00:31:00,120
+pero en tus requirements de la Lambda, meterías Django.
+
+463
+00:31:00,120 --> 00:31:04,120
+Y de esa manera podrías utilizar el ORM y toda la potencia,
+
+464
+00:31:04,120 --> 00:31:06,120
+no, que te da Django dentro de la Lambda.
+
+465
+00:31:06,120 --> 00:31:09,120
+¿Qué pasa? Bueno, que yo lo que quería era intentar,
+
+466
+00:31:09,120 --> 00:31:13,120
+pues, no acoplarme a un framework y que este código,
+
+467
+00:31:13,120 --> 00:31:15,120
+igual que lo utilizan Amazon Web Services,
+
+468
+00:31:15,120 --> 00:31:18,120
+no lo puede llegar a WellCloud y utilizarlo de la misma manera.
+
+469
+00:31:18,120 --> 00:31:21,120
+Pero bueno, sí, sí, totalmente posible.
+
+470
+00:31:21,120 --> 00:31:26,120
+Fantástico, bueno, Lorena también nos da todas las felicidades.
+
+471
+00:31:26,120 --> 00:31:31,120
+Pues, la verdad que está muy interesante,
+
+472
+00:31:31,120 --> 00:31:33,120
+es montar una arquitectura propia,
+
+473
+00:31:33,120 --> 00:31:35,120
+analizando los pro y contras de cada cosa,
+
+474
+00:31:35,120 --> 00:31:39,120
+además, integrar todas estas cosas siempre requiere un montón de esfuerzo,
+
+475
+00:31:39,120 --> 00:31:43,120
+y cada componente case bien y que pueda escalar y tal.
+
+476
+00:31:43,120 --> 00:31:45,120
+La verdad es que es un trabajazo grande.
+
+477
+00:31:45,120 --> 00:31:48,120
+Y la verdad que te agradezco también que toda esta información
+
+478
+00:31:48,120 --> 00:31:51,120
+la tengas pública en GitHub para que la gente pueda aprender.
+
+479
+00:31:51,120 --> 00:31:54,120
+Porque, claro, la gracia de hacer comunidades
+
+480
+00:31:54,120 --> 00:31:57,120
+que entre todos y todas aprendamos y crezcamos,
+
+481
+00:31:57,120 --> 00:32:01,120
+no solo como profesionales, sino también como personas curiosas
+
+482
+00:32:01,120 --> 00:32:05,120
+y que queremos mejorar lo que ya existe.
+
+483
+00:32:05,120 --> 00:32:11,120
+Me pareció, como he dicho al principio, un caso extraño,
+
+484
+00:32:11,120 --> 00:32:17,120
+no suele ser lo típico, y que era interesante explicarlo en la Python,
+
+485
+00:32:17,120 --> 00:32:20,120
+porque la gente ya no, en su totalidad,
+
+486
+00:32:20,120 --> 00:32:23,120
+pero se puede inspirar para que cuando tenga un problema en el futuro
+
+487
+00:32:23,120 --> 00:32:26,120
+poder resolverlo o incluso le ha parecido todo perfecto
+
+488
+00:32:26,120 --> 00:32:29,120
+y le encaja con su problema poder utilizar la misma arquitectura
+
+489
+00:32:29,120 --> 00:32:31,120
+y la misma solución.
+
+490
+00:32:31,120 --> 00:32:36,120
+Genial, genial. Bueno, pues se veo que ya no hay más preguntas
+
+491
+00:32:36,120 --> 00:32:40,120
+en Discord ni el chat de Facebook de YouTube,
+
+492
+00:32:40,120 --> 00:32:43,120
+pero podéis preguntarle a Miguel por Discord si queréis
+
+493
+00:32:43,120 --> 00:32:46,120
+a lo largo del día y seguro que os responde.
+
+494
+00:32:46,120 --> 00:32:51,120
+Pues, Miguel, muchísimas gracias por tu charla.
+
+495
+00:32:51,120 --> 00:32:56,120
+Me encantado. Y estamos en contacto para futuras ediciones de Python.
+
+496
+00:32:56,120 --> 00:33:00,120
+Si quieres volver a enviar una charla con las mejoras que haya hecho y tal.
+
+497
+00:33:00,120 --> 00:33:02,120
+El año que viene también te esperamos.
+
+498
+00:33:02,120 --> 00:33:07,120
+Por supuesto, es mi tercer año, mi cuarto año, no echarlas en la Python
+
+499
+00:33:07,120 --> 00:33:12,120
+y tener su suelo que yo siempre que tenga algo interesante que contar,
+
+500
+00:33:12,120 --> 00:33:13,120
+aplicaré, ¿no?
+
+501
+00:33:13,120 --> 00:33:16,120
+Fantástico, fantástico. Muy bien.
+
+502
+00:33:16,120 --> 00:33:18,120
+Pues, muchas gracias, Miguel.
+
+503
+00:33:18,120 --> 00:33:19,120
+Adiós.
+
+504
+00:33:19,120 --> 00:33:31,120
+¡Toda!
+

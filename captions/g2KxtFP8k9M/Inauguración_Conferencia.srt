@@ -1,0 +1,644 @@
+1
+00:00:00,000 --> 00:00:22,800
+Por fin, por fin, una pandemia por en medio, pero por fin estamos aquí.
+
+2
+00:00:22,800 --> 00:00:30,560
+Vamos a presentar un poco lo que es la Python, sé que la conocéis, sé que sabéis que es
+
+3
+00:00:30,560 --> 00:00:38,280
+nuestro 10º año, 10 veces con esta conferencia y seguimos y seguiremos. Así que nada, aquí Pablo
+
+4
+00:00:38,280 --> 00:00:44,200
+y yo, vamos a contar un poco todo lo que hemos preparado, que estos dos años nos han dado para mucho mucho.
+
+5
+00:00:44,200 --> 00:00:53,800
+Bueno, en primer lugar, yo soy Pablo García, soy el director de la Oficina de Sosuas Libres,
+
+6
+00:00:53,800 --> 00:00:57,400
+ella es Jiménez Vermuda, presidenta del país en España y bueno, en nombre de la
+
+7
+00:00:57,400 --> 00:01:03,280
+Universidad de Granada queremos daros las gracias por haber venido hoy, por todo el esfuerzo que
+
+8
+00:01:03,280 --> 00:01:09,920
+hacéis y todas las ganas que de verdad estamos viendo, que todas las personas ponentes, todas las
+
+9
+00:01:09,920 --> 00:01:14,520
+personas voluntarias, todas las personas asistentes, todas las ganas y la emoción que le estáis poniendo.
+
+10
+00:01:14,520 --> 00:01:18,640
+Y quiero darle también la gracias a Jiménez, porque ha sido un placer, un placer auténtico
+
+11
+00:01:18,640 --> 00:01:24,040
+placer colaborar con Paisón España para la organización de este evento, la verdad. Seguindo
+
+12
+00:01:24,040 --> 00:01:30,440
+en Twitter, hemos puesto ahí los desktop, que subamos ahí los rankings a esos. Y bueno,
+
+13
+00:01:30,440 --> 00:01:35,600
+también queremos darle las gracias al resto de las ONCE que han trabajado con nosotras en esta
+
+14
+00:01:35,600 --> 00:01:41,360
+edición. Bueno, Paisón España, por supuesto, la Universidad de Granada es una universidad que le
+
+15
+00:01:41,360 --> 00:01:46,960
+gusta mucho este tipo de eventos, porque queremos que desde esta universidad Granada se convierta en
+
+16
+00:01:46,960 --> 00:01:52,280
+un polo de atracción de talento y ver a gente tan brillante como todas las personas que está aquí,
+
+17
+00:01:52,280 --> 00:01:57,040
+la verdad que no hace mucha edución y esperemos que disfrutéis de las instalaciones que esta
+
+18
+00:01:57,040 --> 00:02:04,560
+universidad ofrece. Por ejemplo, la Oficina de Sosuas Libres que dirijo yo, que es una entidad
+
+19
+00:02:04,560 --> 00:02:09,960
+comprometida con el desarrollo de Sosuas Libres, la comunidad de Sosuas Libres, la formación a
+
+20
+00:02:09,960 --> 00:02:12,720
+estudiantes, pero no solo estudiantes de la Universidad de Granada, sino está abierta en
+
+21
+00:02:12,720 --> 00:02:17,520
+nuestros talleres, están abiertos a todas las personas de Granada a provincia y realizamos
+
+22
+00:02:17,520 --> 00:02:23,960
+distintas actividades que son muy relevantes a todos. También queremos dar la gracia al grupo
+
+23
+00:02:23,960 --> 00:02:30,840
+de Paisón Granada que de verdad se está importando súper bien, son súper currantes y es un honor
+
+24
+00:02:30,840 --> 00:02:36,000
+trabajar con estas personas. Y finalmente también a la asociación Yes We Tech, que es una asociación
+
+25
+00:02:36,000 --> 00:02:41,200
+feminista y tecnológica de Granada, ahí está Paloma, ahí está Carmen, hay mucha gente aquí,
+
+26
+00:02:41,200 --> 00:02:46,080
+súper importante, qué alegría haberos a todas. Y bueno, esas son las personas que hemos trabajado
+
+27
+00:02:46,080 --> 00:02:51,840
+para que este evento sea un éxito. Recordad que todas las personas que trabajamos aquí somos
+
+28
+00:02:51,840 --> 00:02:57,200
+personas voluntarias, así que si algo se rompe, algo no funciona, no estamos comprando un duro.
+
+29
+00:02:57,200 --> 00:03:04,600
+No enfadéis mucho, por favor, no nos pongáis en tuya de parís. No ganamos dinero, solo ganamos
+
+30
+00:03:04,600 --> 00:03:10,600
+ansiedad. Exactamente. Pero porque os queremos, no pasa nada. Ahora no me vemos, ves de energía,
+
+31
+00:03:10,600 --> 00:03:18,600
+no me vemos a través de ansiedad. Nada, deciros desde Paisón España que este año hemos puesto
+
+32
+00:03:18,600 --> 00:03:24,840
+una mesita junto al resto de sponsors, la tenemos en la entrada para que os acercéis,
+
+33
+00:03:24,840 --> 00:03:30,400
+conozcáis la asociación, las cosas que hacemos, las cosas que os jugáis que tenemos. Al final damos
+
+34
+00:03:30,400 --> 00:03:37,560
+soporte económico a todos los grupos locales, ya sean directamente de Paisón o de Pai Ladies o
+
+35
+00:03:37,560 --> 00:03:45,440
+de Django Girls o lo que surja. Y estamos ahí para apoyar a las comunidades y para eso necesitamos
+
+36
+00:03:45,440 --> 00:03:51,320
+pues que la gente se nos una y ya no solo por eso también para que forméis parte de manera activa
+
+37
+00:03:51,320 --> 00:03:56,760
+que podáis votar, pues donde va a ser la próxima piscina es. Podéis votar, escucha que sé,
+
+38
+00:03:56,760 --> 00:04:02,080
+cualquier cosa que queráis votar, lo que deces, porque todo va por asamblea. Entonces estamos
+
+39
+00:04:02,080 --> 00:04:08,840
+al lado donde las acreditaciones para que os paseéis a conocernos y hoy mismo al final del día
+
+40
+00:04:08,840 --> 00:04:14,760
+tenemos la Asamblea General de Paisón España, entonces os podéis pasar incluso a echar un ojo,
+
+41
+00:04:14,760 --> 00:04:20,760
+son las personas que formen parte, podrán participar de las votaciones, pero bueno que es
+
+42
+00:04:20,760 --> 00:04:25,640
+una forma más de involucrarse, que Paisón no es solo el lenguaje, es una comunidad y aquí estamos.
+
+43
+00:04:27,240 --> 00:04:32,640
+Queremos dar también muchas gracias a todas las entidades y empresas patrocinadores que hacen
+
+44
+00:04:32,640 --> 00:04:38,800
+posible esta conferencia. Como sabéis el precio de la entrada es muy muy bajito para que puedan
+
+45
+00:04:38,800 --> 00:04:44,640
+venir estudiantes de la universidad, estudiantes de cualquier sitio y el esfuerzo económico lo hacen
+
+46
+00:04:44,640 --> 00:04:48,760
+empresas y entidades que apoyan mucho este tipo de evento ya los que le damos la gracia, como por
+
+47
+00:04:48,760 --> 00:04:52,880
+ejemplo EuroPaisón Society y Paisón Software Foundation que son patrocinadores Kaston,
+
+48
+00:04:52,880 --> 00:04:57,560
+pero también patrocinadores Diamante como TravelPerc, Cívica, Intelligence, Twilio, Datador,
+
+49
+00:04:57,560 --> 00:05:02,600
+Blutap, APSL, Inteligenia que son empresas comprometidas con la causa, muchas de ellas son
+
+50
+00:05:02,600 --> 00:05:08,520
+Granadinas y nos alegra ver a empresas granadinas en esta conferencia. También tenemos patrocinadores
+
+51
+00:05:08,520 --> 00:05:15,080
+Platinos como Cacidra, TransU, Perkinelmer, Frontiers, Ebury, Octopus Energy y Nucleos. También
+
+52
+00:05:15,080 --> 00:05:20,560
+tenemos patrocinadores Oro, Skade in Animation, Financial Force, El Tiberian, Back Market, Alight,
+
+53
+00:05:20,560 --> 00:05:27,680
+Orbitalats, Forgeeks Academy, U-Energia, Bright, Kairos y Kabehome. También tenemos patrocinadores
+
+54
+00:05:27,680 --> 00:05:31,000
+Platinos, tenemos muchos patrocinadores, espero que estéis disfrutando en su stand y cogiendo
+
+55
+00:05:31,000 --> 00:05:36,360
+cosas del GIF bar porque se han portado a saltar bien, andando un montón de regalos y cosas superchulas
+
+56
+00:05:36,360 --> 00:05:41,960
+y organizan unas ciudades más interesantes. Plata, Ota, Olaluz, Hore, Novatek, Hiceko,
+
+57
+00:05:41,960 --> 00:05:48,600
+The Sintax, Badger Maps, Alea, Kaleidos, Photopill, Singular, Nazaries y Bling. Estoy muy contento
+
+58
+00:05:48,600 --> 00:05:52,960
+de ver tantas empresas que apoyan este tipo de eventos y me gusta mucho que haya muchas
+
+59
+00:05:52,960 --> 00:05:57,400
+empresas granadinas. Me hace ilusión porque conozco mucha gente, muchos de mi estudiante
+
+60
+00:05:57,400 --> 00:06:02,920
+están trabajando en esa empresa y me hace mucha ilusión verle a todas y a todas en
+
+61
+00:06:02,920 --> 00:06:08,120
+los stands y me preguntan Pablo, que tal. Muy contento. También para terminar colaboran
+
+62
+00:06:08,120 --> 00:06:13,160
+con el frigüeal, Renfe, que ha puesto los billetes un poco más baratos, Coviran, que
+
+63
+00:06:13,160 --> 00:06:16,320
+ha donado comida, la facultad de medicina, que también se de la... No es solo para
+
+64
+00:06:16,320 --> 00:06:19,440
+nífora, porque también se de espacio y el entamiento de granada, que también ha
+
+65
+00:06:19,440 --> 00:06:25,440
+cedido un sitio donde realizaremos la cena de ponentes. El mapa es un poco complicado,
+
+66
+00:06:25,440 --> 00:06:30,600
+lo sabemos. Nosotros estamos ahora mismo aquí. Este que pone para nífora. Aquí están los
+
+67
+00:06:30,600 --> 00:06:37,920
+sponsors, salimos por aquí y vamos al aula 5 y 8, que es donde se accederán las ponencias.
+
+68
+00:06:37,920 --> 00:06:42,480
+Ayer fueron en el aula 3 y 4, también hubo eventos paralelos como Jango Girls, pero hoy
+
+69
+00:06:42,480 --> 00:06:47,160
+va a ser todo aquí. Salimos por este pasillo y lo vemos directamente. Hay un cartel aquí
+
+70
+00:06:47,160 --> 00:06:55,000
+de Python de la Python. Importante, aquí tenemos una green room para personas ponentes que
+
+71
+00:06:55,000 --> 00:06:59,000
+quieran estar tranquilas antes de empezar. Y también tenemos una sala de silencio para
+
+72
+00:06:59,000 --> 00:07:03,720
+todo el mundo que quiera quitarse un poco del estrés y el ruido de la conferencia y
+
+73
+00:07:03,720 --> 00:07:08,600
+quitarse, trabajar allí o lo que queráis. Tenemos también la luz o teca subiendo las
+
+74
+00:07:08,600 --> 00:07:13,480
+escaleras de aquí y la sala de la actancia aquí a la izquierda, junto a los estancios.
+
+75
+00:07:13,480 --> 00:07:22,040
+Y nada, para nuestras amigas y amigos que venís de fuera, tenemos un track pequeñito
+
+76
+00:07:22,040 --> 00:07:31,000
+en inglés en la mañana de hoy. Me parece que es en teoría 7. Y nada que muchísimas
+
+77
+00:07:31,000 --> 00:07:35,880
+gracias, thank you. Porque es una conferencia principalmente en español, pero que tenga
+
+78
+00:07:35,880 --> 00:07:42,840
+gente internacional, nos hace muchísima ilusión y nos hace platearnos a futuro el enviar las
+
+79
+00:07:42,840 --> 00:07:50,720
+opciones del lenguaje y la herda. Luego contaros nuestra supernovedad. Hemos creado, por fin,
+
+80
+00:07:50,720 --> 00:07:56,000
+se han aprobado los capítulos de Pylidis España. Pylidis es una organización a nivel
+
+81
+00:07:56,000 --> 00:08:02,720
+global que da soporte a mujeres programadoras dentro del entorno de Paisón. Normalmente
+
+82
+00:08:02,720 --> 00:08:07,440
+funcionan por grupos locales, grupos Pylidis Madrid, Pylidis Barcelona, que eran las que
+
+83
+00:08:07,440 --> 00:08:13,360
+existían aquí en España, pero como sabéis la pandemia nos ha pasado mucha factura. Entonces
+
+84
+00:08:13,360 --> 00:08:19,960
+hemos querido crear una asociación a nivel de todo el país para dar soporte a todas
+
+85
+00:08:19,960 --> 00:08:25,240
+las comunidades locales, a todas las mujeres que quieran empezar su capítulo en su ciudad,
+
+86
+00:08:25,240 --> 00:08:29,680
+en su pueblo, en donde queráis. Y también para hacer eventos que puedan ser híbridos
+
+87
+00:08:29,680 --> 00:08:36,600
+y nos podamos conocer todas. Que ese es el objetivo, ojalá aparezcan 200 mil capítulos
+
+88
+00:08:36,600 --> 00:08:41,520
+de Pylidis dentro de la península y las islas y ya no nos necesitéis. Pero que aquí estamos
+
+89
+00:08:41,520 --> 00:08:47,920
+para todo lo que queráis. Y antes de final de año empezaremos ya por los proyectos,
+
+90
+00:08:47,920 --> 00:08:51,560
+los talleres, el inicio del curso y todas las cositas que hacemos.
+
+91
+00:08:51,560 --> 00:09:00,080
+Importante contaros que hemos trabajado muchísimo en la diversidad en este evento. Tenemos unas
+
+92
+00:09:00,080 --> 00:09:06,840
+200 mujeres asistentes de 800 personas, quizás nos suena un porcentaje muy alto, pero si
+
+93
+00:09:06,840 --> 00:09:11,000
+hablamos de los números que hay en el sector tecnológico, que es verdad que somos menos,
+
+94
+00:09:11,000 --> 00:09:16,960
+somos una miloría, haber conseguido traer a 200 mujeres a un evento de Paisón específico,
+
+95
+00:09:16,960 --> 00:09:24,320
+es un logro. Además nos hemos acercado a las comunidades QWID y también contamos con
+
+96
+00:09:24,320 --> 00:09:28,720
+presencia de estas comunidades. Por todo ello hemos querido crear un punto específico,
+
+97
+00:09:28,720 --> 00:09:35,360
+un punto violeta, si ocurriera cualquier agresión que hubiese un sitio seguro a donde acudir
+
+98
+00:09:35,360 --> 00:09:40,480
+a denunciar o la veáis o la sufriáis. Todas las personas con el amor gurumi, este tan
+
+99
+00:09:40,480 --> 00:09:44,960
+buenísimo que nos ha hecho Sara, son personas que forman parte del punto violeta, y con
+
+100
+00:09:44,960 --> 00:09:51,040
+las que podéis consultar cualquier temática de este tipo. Por otro lado recordaros que
+
+101
+00:09:51,040 --> 00:09:56,720
+toda la conferencia tiene un código de conducta y de buena fe, que es algo que aplica a todas
+
+102
+00:09:56,720 --> 00:10:03,080
+las personas. Ya sabéis, vine por el lenguaje, me quedé por la comunidad, es algo que tenemos
+
+103
+00:10:03,080 --> 00:10:07,320
+que hacer, que sigas siempre así, y creo que lo estamos haciendo muy bien, porque es
+
+104
+00:10:07,320 --> 00:10:11,720
+algo que no solo dicen los grupos de hombres, lo dicen todas las Pailedis y todos los grupos
+
+105
+00:10:11,720 --> 00:10:18,520
+de mujeres. Entonces vamos de muy buena dirección y la idea es seguir así como siempre, simplemente
+
+106
+00:10:18,520 --> 00:10:25,200
+recordarlo que tenéis herramientas, por si ocurre cualquier cosa para dirigiros y comunicarlo,
+
+107
+00:10:25,200 --> 00:10:31,440
+que sería genial tener un evento con cero infracciones, pero lo ideal es tener cero infracciones,
+
+108
+00:10:31,440 --> 00:10:36,320
+porque hemos puesto los recursos para que la gente las comunique si las ve, no cero,
+
+109
+00:10:36,320 --> 00:10:42,720
+porque no está avisado a dónde a seguir. Charlas de Lampa o este año las hemos cambiado,
+
+110
+00:10:42,720 --> 00:10:48,000
+les hemos dado toda la vuelta, sabemos que es algo que encanta y por eso las hemos querido
+
+111
+00:10:48,000 --> 00:10:53,320
+hacer un poco más inclusivas. Las charlas de Lampa o solo serán hoy, al finalizar el
+
+112
+00:10:53,320 --> 00:10:59,240
+día, son esas charlas cortitas de unos pocos minutos que serán aquí y tenemos un más
+
+113
+00:10:59,240 --> 00:11:04,400
+teoría de normas. La primera norma que hemos puesto es que las personas ponentes no den
+
+114
+00:11:04,400 --> 00:11:08,440
+una charla de Lampa o que dejemos ese espacio a otras personas pues que no han tenido la
+
+115
+00:11:08,440 --> 00:11:17,640
+oportunidad de ser ponentes. Y luego también, vamos, tenemos unos esponsos y en gratitud
+
+116
+00:11:17,640 --> 00:11:21,920
+a ellos podemos hacer todas las cosas que hacemos, entonces no queremos que las charlas
+
+117
+00:11:21,920 --> 00:11:28,280
+de Lampa sean usadas para promocionar empresas o temas de recruiting de empresas que no sean
+
+118
+00:11:28,280 --> 00:11:33,680
+las de nuestros esponsos que son los que nos están apoyando. Más cosas chulas, este
+
+119
+00:11:33,680 --> 00:11:37,760
+año no hay que llegar el primero ni haber madrugado un montón para apuntarse en un
+
+120
+00:11:37,760 --> 00:11:43,800
+tablón, lo podéis hacer a través de Discord, espero que ya estéis todos en Discord y todas,
+
+121
+00:11:43,800 --> 00:11:48,360
+porque ahí van a ocurrir todos los concursos, tenéis muchísima comunicación, un montón
+
+122
+00:11:48,360 --> 00:11:53,800
+de cosas, las podéis ver a través de nuestro Discord. Entonces, este año por formulario
+
+123
+00:11:53,800 --> 00:11:58,920
+subís vuestras propuestas con diferentes temáticas, lo que queráis. Y para que haya un poco
+
+124
+00:11:58,920 --> 00:12:02,560
+más de diversidad porque es verdad que es un espacio que normalmente no es muy diverso,
+
+125
+00:12:02,560 --> 00:12:07,000
+las charlas de Lampa las evaluaremos para que haya variedad de temas, que no sea siempre
+
+126
+00:12:07,000 --> 00:12:11,440
+lo mismo y también variedad de personas y dar la oportunidad a personas que a lo mejor
+
+127
+00:12:11,440 --> 00:12:15,800
+nunca se han atrevido a hacer esto. La última cosa que os tengo que decir sobre las charlas
+
+128
+00:12:15,800 --> 00:12:22,400
+de Lampa es, como siempre las podéis presentar en castellano y en inglés, pero somos país
+
+129
+00:12:22,400 --> 00:12:29,400
+en España y en España se hablan otras lenguas, entonces bienvenida a charlas en catalán,
+
+130
+00:12:29,400 --> 00:12:36,960
+en gallego, en oscura, en cuasturiano y vamos encantada y creo que lo hablo por tal organización
+
+131
+00:12:36,960 --> 00:12:41,480
+de poder escuchar a las lenguas que tenemos aquí, que también están presentes.
+
+132
+00:12:41,480 --> 00:12:45,000
+Muchas gracias.
+
+133
+00:12:45,000 --> 00:12:54,360
+Los sorpenas, pero si ha sido un poco algo que ha sido como, eh, lo tenemos que crear,
+
+134
+00:12:54,360 --> 00:12:59,360
+porque es verdad nos han fallado algunas ponencias a última hora, nos da mucha pena, pero no
+
+135
+00:12:59,360 --> 00:13:03,600
+íbamos a dejarnos esos huecos vacíos para que aproveches al máximo la conferencia, hemos
+
+136
+00:13:03,600 --> 00:13:08,680
+creado unos Open Space, los Open Space funcionan proponiendo un tema también a través de
+
+137
+00:13:08,680 --> 00:13:15,440
+Discord, la gente vota que es lo que le interesa hablar y son una sala de un punto de encuentro,
+
+138
+00:13:15,440 --> 00:13:20,360
+de reunión, de debate en torno a ese tema. La persona que lo ha propuesto puede dirigir
+
+139
+00:13:20,360 --> 00:13:26,880
+o iniciar este debate, pero es algo participativo, vale, no es, eh, yo propongo el Open Space
+
+140
+00:13:26,880 --> 00:13:32,560
+y yo hablo todo el rato, sino que sea un entorno de debate y de compartir. Vamos a tener, creo
+
+141
+00:13:32,560 --> 00:13:38,360
+que son 4 Open Space, así que pensad temas de cualquier tipo que os apetezca compartir
+
+142
+00:13:38,360 --> 00:13:45,640
+y debatir, los votamos en Discord y nada, y ya está, los publicaremos y adelante.
+
+143
+00:13:45,640 --> 00:13:51,960
+Y nada más que disfrutéis muchísimo del evento, mil gracias de verdad por estar aquí, mucho
+
+144
+00:13:51,960 --> 00:13:57,560
+ánimo a todas las personas que se exponen antes, va a salir súper bien, estas tranquilas,
+
+145
+00:13:57,560 --> 00:14:01,640
+hay mucha gente que es su primera vez que se ha animado por fin, lo mismo, va a salir
+
+146
+00:14:01,640 --> 00:14:08,520
+súper bien, estas tranquilas, os merecéis 100% el espacio que tenéis para hablar, entonces
+
+147
+00:14:08,520 --> 00:14:12,920
+nada que a disfrutar, que lo paséis súper bien y ahora mismo os presentamos a Nieves
+
+148
+00:14:12,920 --> 00:14:16,800
+que es nuestra Keynote y vamos, una persona espectacular.
+
+149
+00:14:16,800 --> 00:14:22,080
+Antes de terminar, nos había dado mencionar que tenemos una ucha en la mesa de País en
+
+150
+00:14:22,080 --> 00:14:26,240
+España para distintas asociaciones animalistas en las que colaboramos desde la organización,
+
+151
+00:14:26,240 --> 00:14:29,960
+o animamos a que va a hacer Key y haga una donación para seguir haciendo que su trabajo
+
+152
+00:14:29,960 --> 00:14:34,160
+funcione. También os recordamos, no olvido de decir, que a las 2.30 va a ver aquí en
+
+153
+00:14:34,160 --> 00:14:39,080
+el Paraninfo un concierto de música en vivo de el grupo Epic Wing, es un grupo de rock,
+
+154
+00:14:39,080 --> 00:14:44,120
+vale, que toca rock tal, pero toca cosas especiales. Y con especiales me refiero, la canción de
+
+155
+00:14:44,120 --> 00:14:49,960
+Dragon, Dragones y Más Morra, Bola de Dragón, de verdad, si os gusta ese rollo es flipante,
+
+156
+00:14:49,960 --> 00:14:55,640
+vale, así que esperamos a todo el mundo aquí, a las 2.30 en el Paraninfo, de acuerdo.
+
+157
+00:14:55,640 --> 00:15:00,040
+Y nada más, muchísimas gracias a todas las personas que venís, que hacéis esto posible,
+
+158
+00:15:00,040 --> 00:15:06,000
+muchísimas gracias al equipo de organización que lleva currando meses, no salimos del Paraninfo
+
+159
+00:15:06,000 --> 00:15:12,640
+desde hace dos meses, queremos ver a nuestras familias y un placer de verdad veros a todas
+
+160
+00:15:12,640 --> 00:15:17,680
+las personas que venís aquí y queremos que este evento sea un éxito y nos pasemos todo
+
+161
+00:15:17,680 --> 00:15:32,760
+el mundo genial. Nos vemos en la próxima.
+

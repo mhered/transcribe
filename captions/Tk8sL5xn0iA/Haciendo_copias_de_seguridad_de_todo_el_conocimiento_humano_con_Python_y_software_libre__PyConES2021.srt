@@ -1,0 +1,984 @@
+1
+00:00:00,000 --> 00:00:12,440
+Bueno, seguimos ya enseguida con la siguiente charla. Gracias por estar acompañándonos,
+
+2
+00:00:12,440 --> 00:00:19,240
+sé que es prontito, un sábado, pero vamos ya con una charla súper interesante. Vamos
+
+3
+00:00:19,240 --> 00:00:25,440
+a ver. Vamos a ver. Tenemos la siguiente charla. Hola Sergio, estaba viendo. Uy, me
+
+4
+00:00:25,440 --> 00:00:33,240
+va a hablar. Buenos días, ¿qué tal? La charla siguiente me encanta porque este, de una de
+
+5
+00:00:33,240 --> 00:00:41,120
+esas preguntas que te haces no sabrías responder. ¿Cómo la Wikipedia guarda todos sus datos? ¿Cómo
+
+6
+00:00:41,120 --> 00:00:46,200
+hace las copias de seguridad? ¿Cómo hace los backups? ¿Cómo lo hace? ¿Cómo guarda todo el
+
+7
+00:00:46,200 --> 00:00:53,800
+conocimiento humano? ¿No? Y además la persona que nos va a hacer esta presentación, esta charla,
+
+8
+00:00:53,800 --> 00:01:01,200
+es que lo lleva, así que genial. Háblenos un poco de Jaime, por favor, Sergio. Sí, bueno, Jaime
+
+9
+00:01:01,200 --> 00:01:07,600
+trabaja como administrar de copias de seguridad, bases de datos en el equipo SR de Wikimedia,
+
+10
+00:01:07,600 --> 00:01:12,000
+que es la organización que está por detrás de Wikipedia, así que creo que una persona súper
+
+11
+00:01:12,000 --> 00:01:19,200
+interesante y que nos va a contar cosas que pueden ser muy curiosas. Sí, seguro, seguro. Vamos,
+
+12
+00:01:19,200 --> 00:01:24,200
+seguro que de esta charla salen un montón de preguntas y tomamos un montón de notas porque,
+
+13
+00:01:24,200 --> 00:01:29,520
+Jolín, es que algo así, no tenemos, seguro que no trabajamos en aplicaciones tan grandes,
+
+14
+00:01:29,520 --> 00:01:35,000
+la mayoría como lo que es la Wikipedia y vamos a poder aprender un montón de esta charla.
+
+15
+00:01:36,840 --> 00:01:45,800
+Damos la bienvenida a Jaime. Bueno, buenas tardes. Se me escucha bien, se me ve bien. Perfecto.
+
+16
+00:01:45,800 --> 00:01:53,120
+Tienes una calidad de imagen increíble. Me encanta el fondo, como se ven, me gusta todo.
+
+17
+00:01:53,120 --> 00:02:02,440
+Es lo que tiene que trabajar todos los días en remoto. Bueno, pues nada, Jaime, adelante y que vaya
+
+18
+00:02:02,440 --> 00:02:06,520
+todo bien en la charla. Por aquí estaremos para lo que necesites y luego volvemos para algunas
+
+19
+00:02:06,520 --> 00:02:13,240
+preguntas, ¿de acuerdo? De acuerdo, muchísimas gracias. Pues ahí voy. Bueno, como ha dicho,
+
+20
+00:02:13,240 --> 00:02:20,760
+muchas gracias Sergio y Jimena por organizar todo esto. Yo me llamo Jaime, trabajo en Wikimedia.
+
+21
+00:02:20,760 --> 00:02:27,600
+¿Qué es esto de Wikimedia, Wikipedia? Pues lo voy a explicar ahora, pero os quiero contar primero
+
+22
+00:02:27,600 --> 00:02:34,680
+qué es de lo que voy a hablar. Le he titulado Haciendo Copias de Seguridad de Todo el Conocimiento
+
+23
+00:02:34,680 --> 00:02:45,440
+Humano con Python y Software Libre. Parece que todo el conocimiento humano es un poco todo,
+
+24
+00:02:45,440 --> 00:02:51,240
+todo. Hombre, Internet es muy grande, pero realmente eso es lo que estamos intentando
+
+25
+00:02:51,240 --> 00:03:00,040
+hacer en la fundación Wikimedia. Intentar recoger todo el conocimiento, hacer un en
+
+26
+00:03:00,040 --> 00:03:05,600
+un público el día grandísima de todo lo que puede haber y ponerlo disponible de manera
+
+27
+00:03:05,600 --> 00:03:11,040
+gratuita y de manera libre para todo el mundo. Esto es un poco lo que intentamos hacer con
+
+28
+00:03:11,040 --> 00:03:18,280
+Wikimedia y con otros proyectos. Y os voy a contar la parte un poco que me toca a mí
+
+29
+00:03:18,280 --> 00:03:27,440
+más de primera mano, que es cómo conseguir que eso que nosotros recopilamos, obviamente
+
+30
+00:03:27,440 --> 00:03:33,600
+con la aportación de muchísimos voluntarios alrededor del mundo, va a seguir existiendo
+
+31
+00:03:33,600 --> 00:03:38,920
+en el futuro y no va a haber ningún problema, no se va a perder realizando copias de seguridad
+
+32
+00:03:38,920 --> 00:03:47,160
+y un poco como las demos nosotros exclusivamente usando software libre y en su mayor parte Python.
+
+33
+00:03:47,160 --> 00:03:54,160
+Entonces, una de las primeras preguntas que decía antes es Wikimedia, Wikipedia. La
+
+34
+00:03:54,160 --> 00:04:02,440
+gente cuando le digo que trabajo en Wikimedia, no a veces no entienden muy bien lo que les
+
+35
+00:04:02,440 --> 00:04:11,760
+cuento. Bueno, me gustaría explicar un poquito. No sé si en el chat conocen todos los logos
+
+36
+00:04:11,760 --> 00:04:18,240
+que tengo aquí en esta transparencia a la derecha. Lo más seguro es que conozcan el
+
+37
+00:04:18,240 --> 00:04:25,920
+de arriba a la izquierda, la bolita de Wikipedia, es normalmente conocida, sobre todo en ambientes
+
+38
+00:04:25,920 --> 00:04:34,360
+técnicos, muchísimo. Pero no es el único proyecto que hay en la organización para
+
+39
+00:04:34,360 --> 00:04:39,440
+el que trabajo. Yo trabajo para una organización que se llama Wikimedia Foundation, traducido
+
+40
+00:04:39,440 --> 00:04:45,440
+la Fundación Wikimedia. Es una organización sin dánimo de lucro, es decir, no somos una
+
+41
+00:04:45,440 --> 00:04:51,800
+empresa que estamos para ganar dinero. Nos basamos exclusivamente en donaciones que hacen.
+
+42
+00:04:51,800 --> 00:04:59,320
+La mayor parte de las donaciones son donaciones muy pequeñas de gente de manera individual.
+
+43
+00:04:59,320 --> 00:05:06,840
+Y la organización lo que básicamente intenta es soportar, digamos, dar los medios técnicos,
+
+44
+00:05:06,840 --> 00:05:14,040
+los servidores, la defensa legal, un poco todo lo necesario para que la Wikipedia, que
+
+45
+00:05:14,040 --> 00:05:20,400
+realmente los protagonistas de Wikipedia son, como ya decía, los voluntarios de todo el
+
+46
+00:05:20,400 --> 00:05:26,440
+mundo que aportan su trabajo, su conocimiento a lo largo de todo el mundo para que puedan
+
+47
+00:05:26,440 --> 00:05:34,280
+funcionar. O sea, realmente nosotros en Wikimedia, la Fundación Unicrede es permitir que eso
+
+48
+00:05:34,280 --> 00:05:40,280
+funcione. Y yo estoy dentro del equipo de tecnología en Wikimedia, que básicamente
+
+49
+00:05:40,280 --> 00:05:47,400
+se dedica a la parte tecnica en concreto, como bien decían los homenidadores. Estoy
+
+50
+00:05:47,400 --> 00:05:53,440
+en el equipo de SRS, site reliability engineering, que lo que hace es soportar básicamente los
+
+51
+00:05:53,440 --> 00:05:59,240
+servidores, lo que antiguamente se conocía como amistades de sistemas. Ahora entra Python,
+
+52
+00:05:59,240 --> 00:06:06,840
+y hablaréis un poquito más en detalle, porque ya esto no se hace a la antigua usanza, juntando
+
+53
+00:06:06,840 --> 00:06:13,160
+comandos de Linux, lo que se hace es a través de la automatización, y en el equipo de SRS
+
+54
+00:06:13,160 --> 00:06:17,960
+la mayor parte de esa automatización se hace a través de Python.
+
+55
+00:06:17,960 --> 00:06:23,040
+Y bueno, dejo aquí una cita que es, imagínanme un mundo en el que cada persona en Panadet
+
+56
+00:06:23,040 --> 00:06:29,360
+ha tuve acceso libre y gratuito a todo el conocimiento humano, y digamos, esto es nuestro
+
+57
+00:06:29,360 --> 00:06:37,760
+objetivo final. No solo en Wikipedia, sino en todos estos proyectos, tales como Wikimedia
+
+58
+00:06:37,760 --> 00:06:45,840
+Commons o Wikidata, es recoger a través de aportaciones voluntarias todo ese conocimiento
+
+59
+00:06:45,840 --> 00:06:54,880
+y ponerlo al disponible de todo el mundo. Algunos datos rápidamente para que veáis
+
+60
+00:06:54,880 --> 00:07:03,120
+un poco el tamaño de este proyecto. Tenemos unos 22.000 millones de páginas vistas en
+
+61
+00:07:03,120 --> 00:07:11,240
+el último mes. Creo que estamos sobre el top 10 de páginas más vistas en internet,
+
+62
+00:07:11,240 --> 00:07:17,240
+pero cuidado porque somos la única organización sin ánimo de lucro de ese top 10. Todo el
+
+63
+00:07:17,240 --> 00:07:24,160
+resto son enormes entidades con ánimo de lucro, empresas. Somos la única, digamos,
+
+64
+00:07:24,160 --> 00:07:34,040
+que nuestro objetivo no es ganar dinero, sino hacerlo por compartir conocimiento. ¿Qué
+
+65
+00:07:34,040 --> 00:07:40,440
+se traduce esos 22.000 millones de visitas? Pues desde el punto de vista de infraestructura
+
+66
+00:07:40,440 --> 00:07:48,240
+nosotros lo vemos que varía un poco el tráfico entre 100.000 y 150.000 consultas HTTP por
+
+67
+00:07:48,240 --> 00:07:59,080
+segundo. Cada segundo tenemos que servir entre 100.000 y 150.000 requests. Año de aportaciones,
+
+68
+00:07:59,080 --> 00:08:04,640
+cuantos 17 millones de ediciones el último mes. Como os decía, no solo es Wikimedia,
+
+69
+00:08:04,640 --> 00:08:12,240
+¿vale? Wikimedia la tenemos en muchísimos idiomas. Creo que es 300 más de 300 idiomas,
+
+70
+00:08:12,240 --> 00:08:18,160
+pero luego hay otros proyectos, Wikidata, Commons, todos proyectos libres, todos con licencia
+
+71
+00:08:18,160 --> 00:08:22,760
+libre y todos disponibles de manera gratuita. Y ahora mismo, bueno, pues Wikimedia lo podéis
+
+72
+00:08:22,760 --> 00:08:28,560
+encontrar no solo en la página web, sino cuando buscáis en Google o sale un enlace
+
+73
+00:08:28,560 --> 00:08:36,840
+y un esto de conocimiento, si preguntáis a Alexa muchas veces coge los datos de Wikimedia
+
+74
+00:08:36,840 --> 00:08:46,080
+y bueno, más para hacernos una idea del tamaño en 6.3 millones de páginas Wikianingles.
+
+75
+00:08:46,080 --> 00:08:53,720
+Wikianingles es el proyecto más grande que tenemos a nivel de Wikipedias y hay como
+
+76
+00:08:53,720 --> 00:09:01,840
+6 millones de páginas. Aunque en realidad, desde el punto de vista de infraestructura,
+
+77
+00:09:01,840 --> 00:09:06,360
+hay un montón de páginas más y un montón de revisiones más que nosotros tenemos porque
+
+78
+00:09:06,360 --> 00:09:13,440
+de cada página se guarda todo el historial. Y luego a nivel de interesante también para
+
+79
+00:09:13,440 --> 00:09:20,480
+lo que voy a contar de compres de seguridad, mantenemos a día de hoy 77 millones de archivos
+
+80
+00:09:20,480 --> 00:09:30,240
+libres, imágenes, vídeos, PDFs y Wikidata si conocéis el proyecto, hay 95 millones
+
+81
+00:09:30,240 --> 00:09:38,560
+de items. Y bueno, una pregunta que me suelen hacer muchas veces es bueno, y todo esto
+
+82
+00:09:38,560 --> 00:09:50,160
+cuánto pesa o cuánto ocupa. Por ejemplo, que tenéis en la imagen una instalación artística
+
+83
+00:09:50,160 --> 00:09:56,520
+que se hizo de print Wikipedia, Wikipedia imprimida, realmente no su imprimió la Wikipedia
+
+84
+00:09:56,520 --> 00:10:02,160
+entera porque serían miles de volúmenes y no cabían en una sola habitación, o sea,
+
+85
+00:10:02,160 --> 00:10:10,040
+estamos hablando de 7000, 3000, 7000, 10000 volúmenes dependiendo del tamaño de letra
+
+86
+00:10:10,040 --> 00:10:15,720
+y sin imágenes. Y se imprimieron unos cuantos de ellos que eran unas decenas de volúmenes
+
+87
+00:10:15,720 --> 00:10:22,800
+y aún así te hace darte cuenta de lo grande que es Wikipedia. Desde un punto de vista
+
+88
+00:10:22,800 --> 00:10:30,800
+técnico, realmente Wikipedia no es tan grande. Nosotros trabajamos, yo que estoy en el tema
+
+89
+00:10:30,800 --> 00:10:37,680
+un poco más de stories, realmente no es tan grande. Nosotros somos casi small data porque
+
+90
+00:10:37,680 --> 00:10:46,640
+sí, hay muchos artículos, hay muchas imágenes, muchos archivos, pero realmente con el usuario
+
+91
+00:10:46,640 --> 00:10:52,960
+típico mandamos unos poquitos de kilobytes a la vez. Entonces, realmente estamos casi
+
+92
+00:10:52,960 --> 00:11:00,440
+en lo que a la gente lo llama como small data. No somos big data, no manejamos normalmente
+
+93
+00:11:00,440 --> 00:11:07,880
+en el día a día archivos de petabytes de tamaño. O sea, trabajamos casi normalmente
+
+94
+00:11:07,880 --> 00:11:15,360
+con kilobytes o con mucho con megabytes. Entonces, sí que tenemos muchísimos de esos, muchísimos
+
+95
+00:11:15,360 --> 00:11:24,560
+archivos distribuidos en muchísimos servidores, pero son archivos muy pequeñitos. Bueno,
+
+96
+00:11:24,560 --> 00:11:31,360
+pues esta es la respuesta que he intentado calcular de cuánto vesa la Wikipedia o qué
+
+97
+00:11:31,360 --> 00:11:38,200
+tamaño tiene. Entonces, miré el día 25 cuando estuve preparando esta presentación,
+
+98
+00:11:38,200 --> 00:11:45,440
+cuánto ocupaba en ese momento, porque eso varía y crece y a veces decrece. Y dividí
+
+99
+00:11:45,440 --> 00:11:52,440
+un poquito por temas, no es lo único que hay, pero de cara a backups era lo más interesante.
+
+100
+00:11:52,440 --> 00:11:58,760
+Y vi, por ejemplo, que en nuestro repositorio de hit, nosotros realmente mantenemos todos
+
+101
+00:11:58,760 --> 00:12:07,720
+nuestros datos, incluido el software, en nuestros propios data centers. No, usamos solo software
+
+102
+00:12:07,720 --> 00:12:15,360
+libre y en la mayoría de los casos, no usamos el servicio de terceros como cloud o como
+
+103
+00:12:15,360 --> 00:12:23,560
+CDNs, tenemos nuestra propia infraestructura para todo. Pues, en nuestro código Git, que
+
+104
+00:12:23,560 --> 00:12:29,160
+es donde tenemos no solo media wiki, que es nuestro software que sirve para Wikipedia,
+
+105
+00:12:29,160 --> 00:12:35,000
+sino todos los proyectos, tanto de voluntarios como de empleados para la Wikipedia, había
+
+106
+00:12:35,000 --> 00:12:43,200
+56 gigas de datos. Luego está lo que tenemos en bases de datos, que sería la segunda y la
+
+107
+00:12:43,200 --> 00:12:55,440
+tercera fila. Ahí tenemos 78 terabytes en formato texto, en formato original de contenido,
+
+108
+00:12:55,440 --> 00:13:04,320
+lo que se llaman páginas wiki. Aunque pongo aquí el lasterisco en tamaño aproximado,
+
+109
+00:13:04,320 --> 00:13:11,280
+porque realmente esto, al guardarlo en servidores, hay que cortarlo en trocitos y no ocupa solo
+
+110
+00:13:11,280 --> 00:13:17,320
+eso. Es decir, hay un montón de avergidas, hay un montón de duplicación, por ejemplo,
+
+111
+00:13:17,320 --> 00:13:25,600
+las bases de datos, se duplican entre 10 o 20 veces por centro de datos, porque hay que
+
+112
+00:13:25,600 --> 00:13:32,280
+servir esos datos a muchísima gente a la vez. Entonces, aquí solo estoy calculando, digamos,
+
+113
+00:13:32,280 --> 00:13:39,160
+el tamaño que me importaría a mi de cara a los backups. Y aparte de eso, 78 terabytes,
+
+114
+00:13:39,160 --> 00:13:46,600
+tenemos más de diectera bytes de metadatos. Esto sería cuentas de usuario, número de
+
+115
+00:13:46,600 --> 00:13:55,120
+ediciones, todo lo que digamos se necesita para que funcione la Wikipedia, no solo el
+
+116
+00:13:55,120 --> 00:14:09,000
+wiki código. Luego, nuestro dataset, digamos, más grande es multimedia, que calculé en
+
+117
+00:14:09,000 --> 00:14:16,320
+unos 380 terabytes y también es el que más crecen. Por ejemplo, en los últimos 30 días
+
+118
+00:14:16,320 --> 00:14:23,080
+aumentó en 1,3 terabytes. Y luego, bueno, pues dentro de backups también calculé algo
+
+119
+00:14:23,080 --> 00:14:31,360
+extra a nivel de configuración, un poco todo lo avergid que hay para que son datos que
+
+120
+00:14:31,360 --> 00:14:37,760
+queremos guardar, pero que no entran entre ninguna de las otras categorías. Insisto,
+
+121
+00:14:37,760 --> 00:14:44,200
+también lo de aproximado. Y un poco el comentario aquí del negativo. Normalmente todo lo demás
+
+122
+00:14:44,200 --> 00:14:49,840
+siempre es a perdón y siempre va creciendo. A veces, con los metadatos, por ejemplo,
+
+123
+00:14:49,840 --> 00:14:57,200
+en este caso pudimos optimizar y en el mes pasado, o gracias al trabajo de nuestros DBAs,
+
+124
+00:14:57,200 --> 00:15:02,560
+pudimos reducir el tamaño, pero no es lo normal, no, antes siempre vamos creciendo.
+
+125
+00:15:02,560 --> 00:15:10,480
+Bueno, esta era un poco la idea de ese small data que tenemos en Wikipedia para que os
+
+126
+00:15:10,480 --> 00:15:17,520
+hagáis una idea de cuánto nos ocupa. Vale, pues os he contado que nosotros usamos
+
+127
+00:15:17,520 --> 00:15:27,160
+software libre, incluido para las copias de seguridad, usamos Python. Ahora los voy
+
+128
+00:15:27,160 --> 00:15:35,520
+a contar un poco cómo hacemos esas copias de seguridad. Bueno, muchos de vosotros
+
+129
+00:15:35,520 --> 00:15:43,640
+estaréis haciendo ya copias de seguridad, tanto de datos personales como de en vuestra,
+
+130
+00:15:43,640 --> 00:15:49,520
+en los sitios de trabajo y mucha gente se enfoca a hacer copias, hacer copias seguras,
+
+131
+00:15:49,520 --> 00:15:53,840
+hacer copias seguras. Hacer copias seguras no es lo importante, lo importante es tener un
+
+132
+00:15:53,840 --> 00:15:59,320
+plan de recuperación. Entonces, lo que es la implementación de la copia de seguridad,
+
+133
+00:15:59,320 --> 00:16:05,040
+realmente es muy poquito de mi trabajo. La mayor parte de mi trabajo es saber cómo vamos a
+
+134
+00:16:05,040 --> 00:16:12,120
+recuperar y diseñar todo de acuerdo a cómo vamos a recuperar. Y luego hay una parte también
+
+135
+00:16:12,120 --> 00:16:17,000
+muy importante de la implementación, que es probar que esas copias de seguridad funcionan,
+
+136
+00:16:17,000 --> 00:16:23,240
+haciendo recuperaciones rutinarias y monitorizar que esas copias se hacen. Y eso es lo que en
+
+137
+00:16:23,240 --> 00:16:29,840
+mucha gente no hace. Y si no tienes pruebas y no hablo solo de unites, hablo de pruebas en
+
+138
+00:16:29,840 --> 00:16:36,600
+producción, de recuperar eso a producción y ver que realmente esas copias de seguridad están
+
+139
+00:16:36,600 --> 00:16:42,560
+funcionando, pues vas a tener problemas como nosotros tuvimos hace años de igual ir a la
+
+140
+00:16:42,560 --> 00:16:52,640
+copia de seguridad y darte cuenta de que no tienes lo que estás copiando. Y bueno,
+
+141
+00:16:52,640 --> 00:16:59,520
+cómo funciona muy por encima, porque si queréis luego puedo detallar más si tenéis preguntas,
+
+142
+00:16:59,520 --> 00:17:12,440
+divido un poco las copias de seguridad en tres formas, digamos sistemas. Una son las copias
+
+143
+00:17:12,440 --> 00:17:19,600
+genéricas, las copias backups, varios que llamo aquí, que básicamente son copias del sistema de
+
+144
+00:17:19,600 --> 00:17:25,960
+archivos, configuración o archivos generados que tenemos que guardar, por si el día de mañana
+
+145
+00:17:25,960 --> 00:17:31,040
+se pierde no se necesita una versión anterior. Bueno, para esto, como ya decía, usamos o
+
+146
+00:17:31,040 --> 00:17:38,280
+web libre, lo que nosotros usamos aquí es vacula. Vacula funciona con una gente que se instala
+
+147
+00:17:38,280 --> 00:17:45,160
+tanto en los clientes como en el storage y básicamente nosotros definimos una política de
+
+148
+00:17:45,160 --> 00:17:51,280
+copia de seguridad. El director se conecta al cliente, le dice al cliente que omice la transferencia
+
+149
+00:17:51,280 --> 00:17:59,320
+al storage que tenemos en nuestro propio data center y lo tenemos duplicado en dos centros de datos,
+
+150
+00:17:59,320 --> 00:18:05,920
+de forma que si por lo que sea el hardware o el centro de datos se pierde, tenemos disponible
+
+151
+00:18:05,920 --> 00:18:13,280
+una copia en un sitio abundante de manera geográfica. Vacula el software libre y lo podéis usar
+
+152
+00:18:13,280 --> 00:18:21,080
+vosotros también sin un tipo de restricción. Pongo más detalles de cómo hacemos la política,
+
+153
+00:18:21,080 --> 00:18:30,800
+pero bueno voy a ir pasando rápido. El segundo bloque lo he dividido en lo que realmente seguimos
+
+154
+00:18:30,800 --> 00:18:37,160
+usando vacula para el storage pero en tiempo de procesado inicial. Por ejemplo, las bases de datos
+
+155
+00:18:37,160 --> 00:18:43,280
+tú no puedes copiar del sistema de archivos directamente porque acabarías con algo de lo
+
+156
+00:18:43,280 --> 00:18:51,080
+que no puedes recuperar, que es completamente desynchronizado. Si tú intentas hacer una copia
+
+157
+00:18:51,080 --> 00:18:57,360
+del sistema archivos de donde está guardada la base de datos, lo más seguro es que no vuelva a
+
+158
+00:18:57,360 --> 00:19:05,800
+arrancar. Bueno pues para eso hay un tiempo de procesado extra que implementamos en Python y que
+
+159
+00:19:05,800 --> 00:19:13,880
+usa software libre también, en nuestro caso MyDumper y ExtraBackup, para hacer esa copia inicial y
+
+160
+00:19:13,880 --> 00:19:21,440
+ese preprocesado antes de mandarlo a vacula. Y en el caso del código como también queremos que
+
+161
+00:19:21,440 --> 00:19:27,680
+RIT sea completamente consistente en el caso de que se hiciera una copia justo cuando se está
+
+162
+00:19:27,680 --> 00:19:35,160
+haciendo cambios, pues también termos, usamos en el caso de FITLAB la propia aplicación integrada
+
+163
+00:19:35,160 --> 00:19:44,360
+en FITLAB para empaquetarlo antes de mandarlo a vacula. Insisto, ya me extenderé en toda la
+
+164
+00:19:44,360 --> 00:19:52,040
+arquitectura si hay preguntas. Y por último, multimedia también requiere gestionarse aparte,
+
+165
+00:19:52,040 --> 00:19:58,320
+¿por qué? Porque es una cantidad de datos muy brutal y la recuperación al contrario de todas
+
+166
+00:19:58,320 --> 00:20:05,480
+las demás no suele hacerse todo el dataset a la vez, sino recuperarme un fichero o recuperarme
+
+167
+00:20:07,120 --> 00:20:11,720
+los archivos que se han subido entre esa fecha y esta fecha. Entonces realmente vacula no nos
+
+168
+00:20:11,720 --> 00:20:18,360
+funcionaba bien para eso y lo que hicimos, bueno, no se si os hubiese gustado usar el mismo backend
+
+169
+00:20:18,360 --> 00:20:27,400
+que usamos para servir imágenes multimedia que en nuestro caso es Swift, pero no tenía sentido
+
+170
+00:20:27,400 --> 00:20:33,720
+utilizar el mismo software porque el software tenía un VOO y ese VOO nos hacía perder datos,
+
+171
+00:20:33,720 --> 00:20:38,240
+no tenía sentido utilizar el mismo software. Entonces normalmente nos gusta consolidar,
+
+172
+00:20:38,240 --> 00:20:48,960
+pero en este caso utilizamos un sistema compatible, digamos, con el API DS3 mini-IO de forma que
+
+173
+00:20:48,960 --> 00:20:56,320
+tenemos un backend completamente distinto. Y esto requiere un preprocesado, una descarga y un
+
+174
+00:20:56,320 --> 00:21:06,640
+análisis de nuestros ficheros antes de subirse a este servicio aparte, no online, no abierto al
+
+175
+00:21:06,640 --> 00:21:15,280
+acceso de la aplicación. Y luego este proceso lo hacemos en dos data centers de manera independiente,
+
+176
+00:21:15,280 --> 00:21:23,920
+de forma que seguimos teniendo esa redundancia geográfica. También este preprocesado lo hacemos
+
+177
+00:21:23,920 --> 00:21:32,240
+con Python. Entonces voy a saltarme un poco la arquitectura. ¿Qué es lo que tenemos de Python
+
+178
+00:21:32,240 --> 00:21:39,960
+por ir acabando? ¿Qué tenemos lo que tenemos de Python nosotros en SR? Bueno, realmente si
+
+179
+00:21:39,960 --> 00:21:45,840
+viene a gestión de configuración utilizamos PAPID, todo lo demás que es automatización,
+
+180
+00:21:45,840 --> 00:21:55,520
+monitorización en parte, la parte que por ejemplo yo implemento de monitorización de backups está
+
+181
+00:21:55,520 --> 00:22:04,360
+en Python, orquestación, es decir, poder ejecutar un comando en los cientos de servidores que tenemos
+
+182
+00:22:04,360 --> 00:22:09,080
+manteniendo esto. También está implementado en Python. Pegamento entre aplicaciones. Por
+
+183
+00:22:09,080 --> 00:22:14,160
+ejemplo, realmente los backups no los hago yo, no los he implementado yo, es decir, utilizo aplicaciones
+
+184
+00:22:14,160 --> 00:22:21,080
+standard como MyDumper, como extra backup. Pero sí que Python nos viene muy bien para unir
+
+185
+00:22:21,080 --> 00:22:29,080
+automatizar esa ejecución de manera de manera estándar. Y bueno, generación de statutigas,
+
+186
+00:22:29,080 --> 00:22:38,160
+generación de dashboards, no me va a dar tiempo de hacer una demo a no ser que haya preguntas
+
+187
+00:22:38,160 --> 00:22:45,080
+dedicadas sobre eso más tarde. Pero sí que os quería enseñar un poco que realmente es Python
+
+188
+00:22:45,080 --> 00:22:52,920
+lo que tenemos por debajo. Sí, perdona Jaime, es que entramos al stream por comentarte que bueno,
+
+189
+00:22:52,920 --> 00:22:57,960
+hay alguna pregunta, pero quizás puedes aprovechar el cinco minutitos, no sé la de, no sé si la
+
+190
+00:22:57,960 --> 00:23:08,880
+demo te ocupa mucho tiempo. Vamos a terminar esto y digamos lo que intergramos. Tengo que decir una
+
+191
+00:23:08,880 --> 00:23:14,400
+cosa. Jaime es el ponente más disciplinado que yo he visto. Es la primera persona que respondía al
+
+192
+00:23:14,400 --> 00:23:19,960
+correo, es la persona que terminó a las 10 y 5 minutos, es tremendo. Bueno,
+
+193
+00:23:19,960 --> 00:23:29,440
+Jimena tenía algunas preguntas para ti. Bueno, si es acabado, creo que Jaime aún, si me dejáis lo único 30 segunditos para terminar.
+
+194
+00:23:29,440 --> 00:23:38,840
+Claro, así. Entonces se implemente poner muy relevantes los slides del software que nosotros hemos hecho,
+
+195
+00:23:38,840 --> 00:23:44,360
+no solo yo, sino muchos de mis compañeros, Kumin, un framework de automitación escrito en Python,
+
+196
+00:23:44,360 --> 00:23:52,160
+Kubux, sistema de automitización escrito en Python, DoubleMath backups, que es lo que y
+
+197
+00:23:52,160 --> 00:24:01,480
+transferpy, escrito con voluntarios y también por mí para automatizar los backups. Todo esto os lo voy a dejar
+
+198
+00:24:01,480 --> 00:24:14,480
+aquí con enlaces para que lo podáis ver por vosotros mismos. Y bueno, simplemente gracias por
+
+199
+00:24:14,480 --> 00:24:23,880
+asistir, a ver si podemos responder algunas preguntas. Nada, gracias a ti Jaime. Muy interesante la
+
+200
+00:24:23,880 --> 00:24:31,800
+charla. Solo si es MayaDB como motor de base de datos o tenéis varias bases de datos diferentes.
+
+201
+00:24:31,800 --> 00:24:38,600
+A ver, este es como cuando nos preguntan qué lenguaje de programación usamos y la respuesta es todos.
+
+202
+00:24:38,600 --> 00:24:50,280
+Es decir, hay código de todos lados y en caso de bases de datos usamos el POS y el SQL, usamos
+
+203
+00:24:50,280 --> 00:24:58,000
+casandra, usamos pero el motor básico para contenido y para meta datos, llama un meta datos digamos
+
+204
+00:24:58,000 --> 00:25:04,840
+al contenido de usuarios en todo relación con eso, es MayaDB y actualmente estamos migrando de
+
+205
+00:25:04,840 --> 00:25:11,920
+MayaDB 10 1 a MayaDB 10 4. Entonces es el motor principal pero luego hay muchísimos otros sistemas
+
+206
+00:25:11,920 --> 00:25:19,680
+de almacenamiento. Claro, imaginaba, pero ya quedaba con la duda. Antes has dicho, yo me equivoco,
+
+207
+00:25:19,680 --> 00:25:24,840
+que usabais no todo software libre, lo que usáis verdad, porque casandra no es software libre.
+
+208
+00:25:24,840 --> 00:25:31,800
+Casandra es software libre o al menos la parte que usamos nosotros es posible que hay una versión
+
+209
+00:25:31,800 --> 00:25:38,760
+enterprise o por ejemplo el Aztec. Técnicamente ahora no es software libre. Usamos el Aztec para
+
+210
+00:25:38,760 --> 00:25:46,000
+búsquedas pero usamos la versión antigua que es software libre y creo que cuando hagamos un
+
+211
+00:25:46,000 --> 00:25:54,000
+upgrade usamos, usaremos el fork, creo que, de Amazon que va a ser libre. Entonces todo lo que hay en
+
+212
+00:25:54,000 --> 00:26:01,480
+el centro de datos es software, es más, todo lo que hacemos nosotros o que reutilizamos tienen que
+
+213
+00:26:01,480 --> 00:26:06,560
+estar en un repositorio de Git abierto al público antes de que yo lo pueda llevar a producción.
+
+214
+00:26:06,560 --> 00:26:14,520
+Todo. Qué genial, qué genial. De verdad que muchas gracias, voy a ver en esos enlaces si hay más
+
+215
+00:26:14,520 --> 00:26:19,440
+detalles sobre la arquitectura de la Wikipedia que me da mucha curiosidad ver cómo está montada por
+
+216
+00:26:19,440 --> 00:26:26,880
+dentro y de verdad con placer tenerte aquí ya ha sido muy interesante. Sí, Jai, me lo digo lo mismo.
+
+217
+00:26:26,880 --> 00:26:33,320
+No sé si salió una preguntilla también ¿qué retos tenéis para el futuro? No sé si me pregunta.
+
+218
+00:26:33,320 --> 00:26:44,000
+En general o en backups porque en general son muchísimos. De backups pues bueno,
+
+219
+00:26:44,000 --> 00:26:52,360
+primero terminar, porque lo que tenemos hecho ahora siempre, cualquier cosa que tú empiezas
+
+220
+00:26:52,360 --> 00:26:58,200
+nunca la termina. Siempre hay una forma de trabajar mejor, siempre una forma. Entonces ya estamos muy
+
+221
+00:26:58,200 --> 00:27:05,800
+healthy, muy sanos a nivel de tenemos todo en backups. Ahora lo que quizás vamos a luchar es
+
+222
+00:27:05,800 --> 00:27:12,400
+conseguir más redundancia. Ahora el proyecto que voy a empezar dentro de poco es tener algo
+
+223
+00:27:12,400 --> 00:27:19,480
+almacenado no sólo geográficamente sino también en un sitio que sea completamente offline que no
+
+224
+00:27:19,480 --> 00:27:27,680
+tenga nada de acceso fuera de nuestra infraestructura y lo otro es mejorar el time to recovery. Porque
+
+225
+00:27:27,680 --> 00:27:36,280
+claro ahora mismo lo más habitual, lo ponía un wakend en la slide, es recuperar por ejemplo
+
+226
+00:27:36,280 --> 00:27:43,200
+una base de datos en 30 minutos, una base de datos de 1 o 2 terabytes, pero nos gustaría bajar eso
+
+227
+00:27:43,200 --> 00:27:51,880
+incluso más o una copia muchísimo más atrás en el tiempo poder recuperarla muchísimo más rápido.
+
+228
+00:27:51,880 --> 00:27:59,120
+Eso digamos serían los retos a corto plazo. Gracias por las preguntas y por las respuestas,
+
+229
+00:27:59,120 --> 00:28:03,360
+Jaime. Yo también te quería preguntar, seguramente habrás pasado por encima,
+
+230
+00:28:03,360 --> 00:28:09,360
+estoy super liado en el backstage y no puedo atender casi a las charlas, lo siento, pero te
+
+231
+00:28:09,360 --> 00:28:14,080
+quería preguntar a nivel físico de hardware entiendo que también tendrán sistemas write o
+
+232
+00:28:14,080 --> 00:28:22,320
+sistemas de respaldo. No sé si puedes comentar algo. Entonces nosotros no usamos cloud de terceros
+
+233
+00:28:22,320 --> 00:28:29,200
+y que tenemos nuestra propia instante en cloud pero claro está más para storage, no va también,
+
+234
+00:28:29,200 --> 00:28:37,680
+digamos se usan más sobre todo para nivel aplicación. Entonces a nivel storage, para backups,
+
+235
+00:28:37,680 --> 00:28:48,600
+ustedes llamamos servidores digamos normales y corrientes, usamos tape, usamos cintas, son hd normales
+
+236
+00:28:48,600 --> 00:28:56,800
+y corrientes, lo que sí los tenemos es en rice 6. Rice 6 para nosotros es suficiente, o sea dos
+
+237
+00:28:56,800 --> 00:29:04,400
+discos digamos pueden fallar antes de que se corrompa todo porque también tenemos redundancia
+
+238
+00:29:04,400 --> 00:29:10,280
+a nivel geográfico, es decir si se cae en meteorito en nuestro centro de datos de Virginia,
+
+239
+00:29:10,280 --> 00:29:20,480
+seguimos teniendo otra copia de backup en nuestro centro de datos de Texas y ya digo,
+
+240
+00:29:20,480 --> 00:29:25,000
+son servidores normales y corrientes pues cada uno ahora mismo los que estamos comprando creo
+
+241
+00:29:25,000 --> 00:29:34,360
+que tienen 170 terabytes de espacio en dosu que nos da bastante densidad y son los mismos servidores
+
+242
+00:29:34,360 --> 00:29:42,680
+que usamos para almacenamiento live, para almacenamiento en swift digamos que es el que sirve
+
+243
+00:29:42,680 --> 00:29:49,640
+directamente a los usuarios. Bueno muy interesante Jaime Gracia, ¿puedo hacer alguna cosa más Jimena?
+
+244
+00:29:49,640 --> 00:29:55,640
+Nada más, nada más veo por aquí en las preguntas, cualquier duda ya sabéis que seguimos por
+
+245
+00:29:55,640 --> 00:30:00,680
+Discord que podéis hablar con Jaime por Discord y de verdad muchísimas gracias que ha sido
+
+246
+00:30:00,680 --> 00:30:20,440
+súper interesante. Muchísimas gracias a vosotros. Chao. Chao. Chao. Chao. Chao.
+

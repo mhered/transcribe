@@ -1,0 +1,884 @@
+1
+00:00:00,000 --> 00:00:13,840
+Hola, me llamo José Manuel Ortega y en esta charla vamos a hablar un poco de Python para
+
+2
+00:00:13,840 --> 00:00:19,840
+equipos de cdsurvey. Vamos a ver un poco, hacer una pequeña introducción a Python
+
+3
+00:00:19,840 --> 00:00:25,120
+para equipos de cdsurvey y luego principalizan herramientas en el punto de vista ofensivo
+
+4
+00:00:25,120 --> 00:00:33,280
+que podemos utilizar. Podéis seguirme en Twitter, también tengo una página personal
+
+5
+00:00:33,280 --> 00:00:43,080
+jmrta.yhoc.io donde podéis encontrar algunos de sus libros y publicaciones que he ido realizando.
+
+6
+00:00:43,080 --> 00:00:49,800
+Algunos de estos libros que he publicado, algunos están relacionados con el tema
+
+7
+00:00:49,800 --> 00:00:56,200
+jacquenético con Python, escrito tanto en español o inglés y por ejemplo estos
+
+8
+00:00:56,200 --> 00:01:06,560
+libros cubren estas temáticas relacionadas con la obtención de información de diferentes fuentes,
+
+9
+00:01:06,560 --> 00:01:13,240
+la redtor por ejemplo, conexión con diferentes modus que tenemos en Python para testear la
+
+10
+00:01:13,240 --> 00:01:20,440
+seguridad de los servidores, aplicaciones, etc. y luego otras aplicaciones orientadas, más orientadas
+
+11
+00:01:20,440 --> 00:01:30,880
+a temas de descubrimiento de paquetes, etc. También dispongo de un curso de formación donde
+
+12
+00:01:30,880 --> 00:01:37,520
+cubro algunas de estas temáticas. Este curso te he publicado en la reformación,
+
+13
+00:01:37,520 --> 00:01:47,040
+su encurso de 35 horas y cubro la mayoría de las temáticas relacionadas con el tema de Python
+
+14
+00:01:47,040 --> 00:01:57,520
+en jacquenético y temas de seguridad. Python para proyectos de seguridad,
+
+15
+00:01:57,520 --> 00:02:04,240
+cuando básicamente como profesionales de la seguridad parte del trabajo, de
+
+16
+00:02:04,240 --> 00:02:12,640
+nosotros vamos a imitar los ataques para asegurarnos de que las empresas estén
+
+17
+00:02:12,640 --> 00:02:19,440
+preparadas cuando se produzcan ataques reales, entonces entendiendo el lenguaje y las bibliotecas
+
+18
+00:02:19,440 --> 00:02:25,520
+que ofrece Python podríamos de alguna forma simular estos ataques. Entonces Python,
+
+19
+00:02:25,520 --> 00:02:31,920
+dada las características que ofrece, pues lo convierten en un lenguaje ideal para temas de
+
+20
+00:02:31,920 --> 00:02:39,720
+automatización de tareas y desarrollo rápido de este tipo de herramientas. Una aplicación
+
+21
+00:02:39,720 --> 00:02:45,720
+importante de la aprobación en Python en sirves seguras se encuentra en el área de pruebas de
+
+22
+00:02:45,720 --> 00:02:51,760
+pen testing. Entonces una prueba de pen testing básicamente es el proceso de intentar atacar
+
+23
+00:02:51,760 --> 00:02:55,360
+un sitio web, aplicación, dispositivos o red para aprobar la seguridad de esta organización.
+
+24
+00:02:55,360 --> 00:02:59,760
+Entonces nuestro principal objetivo sería escribir escribidos en Python que permitan
+
+25
+00:02:59,760 --> 00:03:06,360
+automatizar muchas de las tareas que un profesional de la seguridad se puede encontrar en su día a día.
+
+26
+00:03:07,360 --> 00:03:11,720
+Por ejemplo el módulo Redex, por bueno, es uno de los módulos más autorizados para
+
+27
+00:03:11,720 --> 00:03:18,720
+manejar especies regulares y buscar patrones específicos dentro de un bloque de texto.
+
+28
+00:03:18,720 --> 00:03:26,120
+Entonces es un módulo muy interesante ya que podríamos extraer información de los archivos
+
+29
+00:03:26,120 --> 00:03:29,880
+de registro durante una investigación o cuando su extra información de internet entonces en
+
+30
+00:03:29,880 --> 00:03:34,640
+siguiente código por ejemplo nos permitiría validar que la entrada sea una dirección IP.
+
+31
+00:03:34,640 --> 00:03:40,080
+Entonces al combinar esta librería por ejemplo con otras de la biblioteca standard por ejemplo
+
+32
+00:03:40,080 --> 00:03:47,480
+podríamos crear scripts que nos permitan extra información, por ejemplo buscar archivos de
+
+33
+00:03:47,480 --> 00:03:52,960
+registro, ubicar dirección en cp para que pueda determinar, para que se pueda determinar por
+
+34
+00:03:52,960 --> 00:03:58,000
+ejemplo si alguien pudo hacer a la red, que hace un realizado, etcétera.
+
+35
+00:03:58,000 --> 00:04:06,520
+Muchas de las tareas de seguridad requieren que aplique la misma operación en diferentes
+
+36
+00:04:06,520 --> 00:04:12,560
+máquinas, cuando estás trabajando en la nube con tipo entornos Amazon por ejemplo Google Cloud
+
+37
+00:04:12,560 --> 00:04:20,240
+podríamos, nos interesaría por ejemplo gestionar la configuración. Entonces ese tipo de entornos
+
+38
+00:04:20,240 --> 00:04:30,400
+nos facilitan el tema de la configuración y de los diferentes servicios que estás
+
+39
+00:04:30,400 --> 00:04:37,960
+exponiendo puertos abiertos, Firewall etcétera. Entonces el CLSK de Amazon Work Services,
+
+40
+00:04:37,960 --> 00:04:44,480
+voto 3 permite eso a los desarrolladores crear configurar y administrar servicios de Amazon
+
+41
+00:04:44,480 --> 00:04:54,400
+con EC2, EC3. Entonces voto proporciona una API orientada a objetos con acceso a los servicios
+
+42
+00:04:54,400 --> 00:05:02,600
+de Amazon. En este ejemplo estamos testeando el servicio Secrets Manager que contiene las
+
+43
+00:05:02,600 --> 00:05:08,400
+claves registradas en una cuenta de Amazon a partir de las SQL, Secret Key en nombre
+
+44
+00:05:08,400 --> 00:05:09,400
+de la región.
+
+45
+00:05:09,400 --> 00:05:17,520
+A medida que intruimos en herramienta de test y bueno pues por ejemplo el tema de escano
+
+46
+00:05:17,520 --> 00:05:26,080
+de puertos, es un proceso con el cual podemos verificar que estar abiertos en una máquina
+
+47
+00:05:26,080 --> 00:05:31,400
+y que servicios están ejecutados entonces. Python en map, pues bueno, ayudaría a mucho
+
+48
+00:05:31,400 --> 00:05:36,120
+automatizar este proceso de escano de puertos en busca de vulnerabilidades y ofreciendo
+
+49
+00:05:36,120 --> 00:05:41,600
+personalización en sus escaneos por ejemplo. Entonces esta librería permitiría analizar
+
+50
+00:05:41,600 --> 00:05:47,560
+los resultados de escaneo y realizar escaneos personalizados e importar los resultados en
+
+51
+00:05:47,560 --> 00:05:53,600
+el map a otras herramientas por ejemplo. Cualquier proyecto que requiera comunicaciones a través
+
+52
+00:05:53,600 --> 00:06:00,040
+de una interfaz de red probablemente utilizará sockets. Entonces el módulo de sockets es
+
+53
+00:06:00,040 --> 00:06:08,120
+una librería de interfaz de red que permite acceder a bajo nivel para de abajo nivel de
+
+54
+00:06:08,120 --> 00:06:12,880
+a nivel de red que permite crear aplicaciones clientes servidas. Entonces en el contexto
+
+55
+00:06:12,880 --> 00:06:19,560
+de la ciberseguridad por ejemplo esto es importante porque te permite conectarte a cualquier máquina
+
+56
+00:06:19,560 --> 00:06:23,880
+en un puerto específico, con un puerto por específico y enviar datos a esa máquina. Por
+
+57
+00:06:23,880 --> 00:06:29,520
+ejemplo podríamos tener una función que acepte como por parámetros un IP y no lista de puertos
+
+58
+00:06:29,520 --> 00:06:35,240
+y nos diga por cada puerto si está abierto o cerrado. Esto se puede utilizar para escalar
+
+59
+00:06:35,240 --> 00:06:44,040
+el puerto de una máquina si como para evitar enviar datos os trae información de una máquina.
+
+60
+00:06:44,040 --> 00:06:50,520
+Entonces la clave del port scanning es el uso del método connectex del método del
+
+61
+00:06:50,520 --> 00:06:59,160
+módulo socket para comprobar si un puerto está abierto o cerrado básicamente. También
+
+62
+00:06:59,160 --> 00:07:06,200
+podríamos el tema del port scanning se podría mejorar con el siguiente script por ejemplo. En este
+
+63
+00:07:06,200 --> 00:07:11,520
+caso estamos utilizando un socket para probar la conexión y luego estamos utilizando el módulo
+
+64
+00:07:11,520 --> 00:07:18,080
+subcockcurren.futures para indicar el número de subprocesos o ceras o hilos con el objetivo de
+
+65
+00:07:18,080 --> 00:07:24,160
+realizar petriciones en parámetros. Entonces podríamos optimizar o agilizar el proceso de
+
+66
+00:07:24,160 --> 00:07:32,760
+ejecución de un port scanning utilizando este módulo que nos permitiría crear un pool de
+
+67
+00:07:32,760 --> 00:07:42,920
+CDs y para que si necesitamos escanear diferentes puertos en paralelo puede hacerlo de una forma
+
+68
+00:07:42,920 --> 00:07:50,480
+rápida. A niveles port scanning podemos encontrar, bueno realmente se ha hecho con Python para el
+
+69
+00:07:50,480 --> 00:07:55,640
+tema del port scanning hay varias por ejemplo está Legion que permite descubrir en formato
+
+70
+00:07:55,640 --> 00:08:01,320
+gráfico puertos abiertos y para cada servicio que detectas puesto lazar un proceso de fuerza
+
+71
+00:08:01,320 --> 00:08:10,000
+gruta gracias a la integración de herramientas como Hydra para descubrir servicios vulnerables
+
+72
+00:08:10,000 --> 00:08:17,680
+a creencias por defecto, el uso de defecto pianónimo, etcétera. Otra de las técnicas que
+
+73
+00:08:17,680 --> 00:08:21,560
+podemos aplicar para obtener información es la técnica del VALNEGramming que es una técnica de
+
+74
+00:08:21,560 --> 00:08:27,680
+numeración utilizada para recuperar información y se utiliza para identificar la versión de
+
+75
+00:08:27,680 --> 00:08:35,320
+las aplicaciones y el sistema operativo de los hosderas. Entonces los vanes exponen en nombre
+
+76
+00:08:35,320 --> 00:08:42,960
+del servidor web o la versión que está ejecutándose en el servidor. Entonces la forma más sencilla de
+
+77
+00:08:42,960 --> 00:08:47,160
+obtener el vanner de un servidor es utilizando el módulo socket. Enviendo una petición web
+
+78
+00:08:47,160 --> 00:08:52,960
+y utilizando la respuesta a través del método recube que devolvería la tupla con el resultado.
+
+79
+00:08:54,640 --> 00:09:01,800
+A nivel de extracción de datos podríamos, bueno, la extracción de datos puede ser importante durante
+
+80
+00:09:01,800 --> 00:09:06,080
+por ejemplo la fase de obtención de información ya que esta fase está dedicada a encontrar
+
+81
+00:09:06,080 --> 00:09:11,320
+la información sobre el objetivo como sea posible entonces el módulo request y el módulo
+
+82
+00:09:11,320 --> 00:09:17,720
+bit.is.vul.sul nos permitiría obtener esta fase, nos puede ayudar en esta fase de corrección de información.
+
+83
+00:09:20,720 --> 00:09:26,960
+En la imagen por ejemplo vemos la, se muestra la arquitectura de Scrappy que es un, básicamente
+
+84
+00:09:26,960 --> 00:09:34,160
+es un crawler donde la principal, el principal elemento son los spiders que realizan las requests,
+
+85
+00:09:34,160 --> 00:09:41,320
+estos quedan planificadas en el cellular y estos son los que realizan las peticiones al servidor
+
+86
+00:09:41,320 --> 00:09:47,440
+finalmente cuando responde el server. Esta respuesta es enviada de nuevo al spider y de forma que el
+
+87
+00:09:47,440 --> 00:09:52,620
+spider se va digamos retroalimentando por como compadre con cada petición que va realizando el
+
+88
+00:09:52,620 --> 00:10:00,480
+cellular. Este framework es muy utilizado por eso cuando queremos sobre todo crear crawlers
+
+89
+00:10:00,480 --> 00:10:08,400
+complejos ya que amplió la arquitectura bastante compleja y puede ayudar a eso a obtener información
+
+90
+00:10:10,160 --> 00:10:16,880
+ejecutando lo que se despide desde diferentes sitios.
+
+91
+00:10:18,360 --> 00:10:23,600
+Para luego hay otro tipo de herramientas por ejemplo el tema de la extracción de sus dominios,
+
+92
+00:10:23,600 --> 00:10:29,600
+herramientas por ejemplo que tienen como objetivo extraer información de un dominio de forma automática
+
+93
+00:10:29,600 --> 00:10:35,640
+pues pues podemos destacar esta black window que es una aplicación que actúa como crawler o araña
+
+94
+00:10:35,640 --> 00:10:44,720
+para obtener sus dominios u reales, direcciones de correo eltónico, etcétera. O esta por ejemplo
+
+95
+00:10:44,720 --> 00:10:50,040
+recon spider que es una herramienta que permite escanear direcciones IP, direcciones IP, correos
+
+96
+00:10:50,040 --> 00:10:54,120
+eltónicos, sitios web, organizaciones y obtener información de diferentes fuentes como se dan por
+
+97
+00:10:54,120 --> 00:11:00,840
+ejemplo. Aquí vemos algunas capturas de pantalla con alguna de las opciones que permiten realizar
+
+98
+00:11:00,840 --> 00:11:06,400
+un escaneo de puertos con NMAP y obtener información sobre los servidores de nombres de dominio.
+
+99
+00:11:08,200 --> 00:11:12,880
+Otras de las herramientas interesantes, una de las más utilizadas para el tema de reconexión de
+
+100
+00:11:12,880 --> 00:11:20,360
+información realizadas en Python es SpiderFoot que es una herramienta oriental a la automatización
+
+101
+00:11:20,360 --> 00:11:25,480
+de inteligencia cuyo objetivo es automatizar el proceso de reconexión de información sobre
+
+102
+00:11:25,480 --> 00:11:31,720
+un objetivo determinado con una dirección IP, nombre de dominio, nombre de juegos o una subred.
+
+103
+00:11:31,720 --> 00:11:36,940
+Entonces esta herramienta se puede utilizar tanto ofensiva como defensivamente, entonces desde
+
+104
+00:11:36,940 --> 00:11:43,760
+punto de vista ofensivo como parte de un proceso de pen testing, caja negra por ejemplo para
+
+105
+00:11:43,760 --> 00:11:50,960
+recorrecer y recorreter información sobre el objetivo o de forma defensiva, es decir, de forma
+
+106
+00:11:50,960 --> 00:11:54,920
+defensiva nos podría ayudar a identificar qué información proporciona una entidad o organización
+
+107
+00:11:54,920 --> 00:12:03,480
+para que los atacantes la usen en su contra. Entonces en este punto para el tema de análisis
+
+108
+00:12:03,480 --> 00:12:12,160
+ofensivo o defensivo pues diferenciamos entre RedTin y Blutin. Entonces el Blutin se enfoca en
+
+109
+00:12:12,160 --> 00:12:19,560
+tareas de seguridad defensiva mientras que el RedTin se enfoca en tareas relacionadas con la seguridad
+
+110
+00:12:19,560 --> 00:12:28,840
+defensiva. Entonces desde el punto de vista de la seguridad defensiva por ejemplo la mayoría de
+
+111
+00:12:28,840 --> 00:12:37,520
+estas herramientas de los Blutin van enfocadas a la detección de vulnerabilidades principalmente en
+
+112
+00:12:37,520 --> 00:12:44,960
+aplicaciones, dominios, servidores. Por ejemplo una de las más usadas es SQLMap que básicamente es
+
+113
+00:12:44,960 --> 00:12:50,640
+una aplicación de vulnerabilidad de inyección SQL, un atacante podría leer los datos en la base
+
+114
+00:12:50,640 --> 00:12:58,040
+de datos incluyendo información confidencial, por ejemplo, hojas de contraseñas. Entonces SQLMap es
+
+115
+00:12:58,040 --> 00:13:02,360
+una de las herramientas más conocidas para el detalle de vulnerabilidades de este tipo. Para ello la
+
+116
+00:13:02,360 --> 00:13:06,560
+herramienta permite realizar peticiones a los parámetros de una URL que se le indique y que sea
+
+117
+00:13:06,560 --> 00:13:14,440
+mediante una petición de TOPOS y detase para algún parámetro el dominio es vulnerable porque por
+
+118
+00:13:14,440 --> 00:13:20,640
+ejemplo no se estén variando correctamente los parámetros. Entonces además esta herramienta
+
+119
+00:13:20,640 --> 00:13:27,800
+se detecta algún tipo de vulnerabilidad, además tiene la capacidad de por decirlo de algún modo
+
+120
+00:13:27,800 --> 00:13:35,280
+de atacar el servidor para descubrir nombres de tablas, de cargar la base a todos y realizar
+
+121
+00:13:35,280 --> 00:13:40,840
+consultas que se cuelen de forma automática. Dentro del conshista de Python disponemos diferentes
+
+122
+00:13:40,840 --> 00:13:47,760
+herramientas desarrolladas que tienen como objetivo analizar un sitio web busca de vulnerabilidades,
+
+123
+00:13:47,760 --> 00:13:52,440
+por ejemplo esta se trata de un escribe desarrollado en Python 7 que tiene como
+
+124
+00:13:52,440 --> 00:13:55,720
+dependencias principales de V2FullSub y V2FullSub y V2FullSub, entonces la herramienta a partir de un
+
+125
+00:13:55,720 --> 00:14:00,880
+sitio web que le pasamos como parámetro de forma automática va probando diferentes payloads para
+
+126
+00:14:00,880 --> 00:14:08,320
+un determinado dominio. Sí, va a ver si es vulnerable a este en esta vulnerabilidad de course ray scripting.
+
+127
+00:14:10,320 --> 00:14:15,200
+Luego aplicaciones orientadas al tema de fuci en este concepto permite por ejemplo inyectar cualquier
+
+128
+00:14:15,200 --> 00:14:20,600
+entrada en cualquier campo de una solicitud hdp permitiendo realizar ataques complejos de
+
+129
+00:14:20,600 --> 00:14:25,040
+seguridad web en diferentes componentes de la aplicación web como parámetros, autotocación,
+
+130
+00:14:25,040 --> 00:14:31,040
+formularios, directorios, encabezadas, etc. Entonces con estas dos herramientas podríamos realizar
+
+131
+00:14:31,040 --> 00:14:38,080
+pruebas manuales y simautomáticas con el objetivo de tener ficheros y directorios ocultos.
+
+132
+00:14:40,400 --> 00:14:44,200
+Luego desde el punto de vista de detección de vulnerabilidades, por ejemplo fuci scanner,
+
+133
+00:14:44,200 --> 00:14:50,080
+es un scanner de vulnerabilidades open source de cual podemos destacar como funcionalidades la
+
+134
+00:14:50,080 --> 00:14:54,600
+detección y gestión de vulnerabilidades y el descubrimiento y gestión de activos del dominio
+
+135
+00:14:54,600 --> 00:14:59,120
+que estamos analizando. Además de análisis de vulnerabilidades también podemos realizar un
+
+136
+00:14:59,120 --> 00:15:06,280
+escenario de puertos y la dotación de su dominio. En ciberseguridad, existen situaciones en las
+
+137
+00:15:06,280 --> 00:15:13,640
+que es necesario controlar los paquetes que se envían a través de una red. Entonces podría
+
+138
+00:15:13,640 --> 00:15:18,560
+ser importante determinar si alguien haciado el entorno o haber propuesto si servicios están
+
+139
+00:15:18,560 --> 00:15:25,880
+ejecutando una máquina o solucionar un problema de red. Entonces desde el punto de vista ofensivo,
+
+140
+00:15:25,880 --> 00:15:30,880
+un equipo de red team podría construir un script de este estilo de la misma forma que tenemos
+
+141
+00:15:30,880 --> 00:15:35,760
+herramientas como webshare podríamos utilizar el módulo socket para capturar y visualizar
+
+142
+00:15:35,760 --> 00:15:40,880
+paquetes de red con el objetivo de realizar un reconocimiento en el sistema destino.
+
+143
+00:15:40,880 --> 00:15:46,560
+Entonces posteriormente podríamos usar esta información para manipular el contenido del
+
+144
+00:15:46,560 --> 00:15:52,320
+paquete. En este script por ejemplo estamos usando la biblioteca socket para obtener paquetes en nuestra
+
+145
+00:15:52,320 --> 00:16:00,760
+red para posteriormente analizarlos para inspeccionar el contenido. Entonces para ayudarnos para todo el
+
+146
+00:16:00,760 --> 00:16:07,760
+tema de manipulación de paquetes, etcétera, dentro de Python la más utilizada es Scapi que permite
+
+147
+00:16:07,760 --> 00:16:14,240
+la manipulación de paquetes que manipulación y codificación de paquetes en la mayoría de
+
+148
+00:16:14,240 --> 00:16:22,120
+los protocolos de red que encontramos. Podríamos identificar con esta librería podríamos
+
+149
+00:16:22,120 --> 00:16:28,280
+identificar ciertos ataques a través de la identificación de paquetes concretos analizando por
+
+150
+00:16:28,280 --> 00:16:35,000
+ejemplo los archivos pk. Entonces básicamente podríamos con esta herramienta podríamos capturar,
+
+151
+00:16:35,000 --> 00:16:39,720
+crear y manipular paquetes, podríamos crear herramientas de análisis de tráfico de red,
+
+152
+00:16:39,720 --> 00:16:46,680
+podemos crear incluso nuestros propios protocolos o otras herramientas en general herramientas de
+
+153
+00:16:46,680 --> 00:16:53,440
+descubrimiento de redes. En este ejemplo estamos capturando paquetes a nivel de IP y contando los
+
+154
+00:16:53,440 --> 00:16:59,800
+paquetes de este tipo a través de una función personalizada. Entonces para cada paquete mostramos
+
+155
+00:16:59,800 --> 00:17:08,960
+en lo que son las direcciones IP, origen y destino. También podríamos tener un control sobre los
+
+156
+00:17:08,960 --> 00:17:18,600
+paquetes en cada una de las capas del protocolo TCP entonces en este ejemplo podríamos usar Scapi
+
+157
+00:17:18,600 --> 00:17:28,960
+para tener en ver los paquetes que se están enviando a través de la red para cada una de las capas,
+
+158
+00:17:28,960 --> 00:17:40,960
+para cada uno de los nomos de las capas del protocolo TCP y P. El siguiente ejemplo, el
+
+159
+00:17:40,960 --> 00:17:46,560
+siguiente script podría ser el sniper más sencillo que podríamos construir con Scapi,
+
+160
+00:17:46,560 --> 00:17:52,520
+en este caso estamos creando un filtro sobre el protocolo TCP port 80 y peticiones que entonces
+
+161
+00:17:52,520 --> 00:17:58,920
+cuando reciben un paquete de este tipo imprimimos el paquete en formato raw. Aquí estamos funcionando,
+
+162
+00:17:58,920 --> 00:18:05,640
+utilizando la función snip, en el primer parámetro le pasamos lo que es la función,
+
+163
+00:18:05,640 --> 00:18:15,920
+htpg, en el segundo parámetro le pasamos lo que es el filtro. Entonces cuando va a una medida que
+
+164
+00:18:15,920 --> 00:18:24,600
+va analizando la medida que vaya haciendo las peticiones, lo que hace es detectar en las
+
+165
+00:18:24,600 --> 00:18:34,160
+cabeceras ese filtro y si coincide pues lo saca por pantalla. Luego a nivel de explotación,
+
+166
+00:18:34,160 --> 00:18:39,240
+otra de las herramientas que podrían ser utilizados desde el punto de vista ofensivo,
+
+167
+00:18:39,240 --> 00:18:46,360
+orientaste digamos a la ejecución de comandos en equipo de la víctima con el objetivo de,
+
+168
+00:18:46,360 --> 00:18:53,640
+por ejemplo, tener creenciales o realizar una evaluación de privilegios a través de una
+
+169
+00:18:53,640 --> 00:19:00,440
+buena medida, por ejemplo, estas herramientas están orientados a eso. Para Crabmask,
+
+170
+00:19:00,440 --> 00:19:11,360
+ESEG y DevStars básicamente utilizan los módulos de Metasploid y Mimicad para ello. En concreto,
+
+171
+00:19:11,360 --> 00:19:16,640
+por ejemplo, pipicad es la implementación de Python para Mimicad y permite extraer
+
+172
+00:19:16,640 --> 00:19:22,520
+contraseñas en texto plano, hases y por ejemplo, tickets de queveros formacionados en memoria en
+
+173
+00:19:22,520 --> 00:19:30,600
+sistemas Windows. Desde el punto de vista ofensivo, ¿cuánto tipo de herramientas en
+
+174
+00:19:30,600 --> 00:19:35,240
+SenseOS podían ocurrir? Por ejemplo, podríamos utilizar el módulo zipfile para extraer el contenido
+
+175
+00:19:35,240 --> 00:19:42,120
+de un zip protegido con contraseña. Para ello podríamos, podemos utilizar un fichero con
+
+176
+00:19:42,120 --> 00:19:47,680
+posibles passwords y mediante un proceso de fuerza bruta y probando con cada password, por ejemplo.
+
+177
+00:19:47,680 --> 00:19:56,360
+Luego, otras herramientas que también se suele utilizar para el tema de un punto de vista ofensivo
+
+178
+00:19:56,360 --> 00:20:02,600
+es Paramico, que permite la creación de clientes y realizar conexiones a servidores SSH. Entonces,
+
+179
+00:20:02,600 --> 00:20:08,280
+la clase SSH, crea en proporción un objeto sobre el cual disponemos para conectarnos
+
+180
+00:20:08,280 --> 00:20:13,400
+a un determinado host introduciendo las credenciales del usuario con traseña. También podríamos
+
+181
+00:20:13,400 --> 00:20:18,400
+ejecutar comandos sobre el servidor SSH que nos conectemos. Para ello utilizamos el método
+
+182
+00:20:18,400 --> 00:20:25,120
+de SETCOMAND, al cual le pasamos el comando ejecutar. Luego, con el módulo paramico podríamos
+
+183
+00:20:25,120 --> 00:20:32,200
+realizar un proceso, por ejemplo, de fuerza bruta, típico proceso de fuerza bruta, a partir de un
+
+184
+00:20:32,200 --> 00:20:37,080
+fichero de usuarios y password que podríamos probar realizando combinaciones. Entonces,
+
+185
+00:20:37,080 --> 00:20:42,760
+en este método toma como entrada dos ficheros de lectura y mediante un proceso de fuerza de
+
+186
+00:20:42,760 --> 00:20:48,560
+fuerza bruta intentamos probar todas las combinaciones posibles del usuario y password. Entonces,
+
+187
+00:20:48,560 --> 00:20:56,040
+si posible establecer la conexión con el usuario y password que obtenga,
+
+188
+00:20:56,040 --> 00:21:00,560
+pues ejecutamos un comando desde la consola del servidor al cual los hemos conectado.
+
+189
+00:21:02,720 --> 00:21:06,880
+Desde el punto de vista ofensivo, bueno, también podríamos, nos podría interesar,
+
+190
+00:21:06,880 --> 00:21:12,840
+por ejemplo, también el uso del subproses con el objetivo de ejecutar tareas del sistema operativo.
+
+191
+00:21:15,440 --> 00:21:21,480
+Por ejemplo, para listar los archivos alcuntos del sistema de ficheros metásticos del archivo
+
+192
+00:21:21,480 --> 00:21:27,360
+podríamos usar el siguiente código. Aquí el problema es el parámetro SELTRU que tiene
+
+193
+00:21:27,360 --> 00:21:33,720
+algunas desventajas, algunas de las relacionadas con las filtraciones de seguridad. Entonces,
+
+194
+00:21:33,720 --> 00:21:40,040
+la mejor manera de pasar comandos, por ejemplo, a esta función es usar una lista donde en la
+
+195
+00:21:40,040 --> 00:21:44,720
+primera posición tenemos el comando ejecutar y en las siguientes posiciones representa los
+
+196
+00:21:44,720 --> 00:21:51,880
+argumentos de ese comando. En el siguiente ejemplo, por ejemplo, estamos comprobando,
+
+197
+00:21:51,880 --> 00:21:57,800
+por ejemplo, si la máquina tiene el intérprete de Python 3. Entonces, en este ejemplo vemos como
+
+198
+00:21:57,800 --> 00:22:06,480
+el parámetro Capture Output nos permite capturar la salida de este comando. Y luego también
+
+199
+00:22:06,480 --> 00:22:10,120
+podríamos ejecutar otro comando relacionados con la navegación, por el sistema de ficheros,
+
+200
+00:22:13,720 --> 00:22:21,680
+etcétera. Por último, comentar que podríamos, por ejemplo, construir una SEL inversa. Una SEL
+
+201
+00:22:21,680 --> 00:22:26,960
+inversa se trata de una acción y ante lo cual un usuario consigue acceder a la SEL de un servidor
+
+202
+00:22:26,960 --> 00:22:32,080
+por ejemplo, si estás trabajando en una fase de pentes, tienes relacionada con la pos explotación y
+
+203
+00:22:32,080 --> 00:22:37,120
+te gustaría crear un script que simbolque en ciertos escenarios que automáticamente hagan
+
+204
+00:22:37,120 --> 00:22:41,080
+obtener una SEL para acceder al sistema de ficheros de otra máquina, podríamos construir nuestra
+
+205
+00:22:41,080 --> 00:22:47,280
+propia SEL inversa en Python. En este caso, estamos utilizando los módulos OS y subproses.
+
+206
+00:22:49,560 --> 00:22:55,240
+Básicamente, el módulo OS es el módulo Interface de sistema operativo y el módulo subproses es el
+
+207
+00:22:55,240 --> 00:23:04,760
+ejecutar procesos en la máquina. En este caso, estamos utilizando el método Coneg de el módulo
+
+208
+00:23:04,760 --> 00:23:11,720
+SOC para conectarnos a un host correspondiente a una de las version IP y puertos especificados. Una
+
+209
+00:23:11,720 --> 00:23:16,560
+vez hemos obtenido la SEL, podríamos obtener un listado al directorio mediante el comando
+
+210
+00:23:16,560 --> 00:23:22,560
+barra y barra LS, pero antes necesitamos, por ejemplo, establecer la conexión con nuestro SOC
+
+211
+00:23:22,560 --> 00:23:32,640
+a través de la serie de comando. Entonces eso lo logramos con la instrucción OS.dap2 del sistema
+
+212
+00:23:32,640 --> 00:23:39,360
+operativo. Y para finalizar comentaron algunos libros que pueden ser interesantes. Estos, por
+
+213
+00:23:39,360 --> 00:23:45,400
+ejemplo, están orientados al tema de obtener información en fuentes abiertas en español y
+
+214
+00:23:45,400 --> 00:23:57,480
+estos están en inglés y están orientados a Python para herramientas o scripts desde punto
+
+215
+00:23:57,480 --> 00:24:04,720
+vista defensivo y ofensivo. Por último, los ejemplos que hemos ido comentando en la presentación,
+
+216
+00:24:04,720 --> 00:24:14,080
+los podéis descubrir, obtener en mi repositorio de GitHub, jmortega.barrapyton.cbsc2021,
+
+217
+00:24:14,080 --> 00:24:21,560
+pues aquí podéis encontrar todos los scripts. Bueno, comentar que los scripts son compatibles
+
+218
+00:24:21,560 --> 00:24:28,000
+en principio con cualquier versión, con una última versión de Python, una 3.7, una 3.8,
+
+219
+00:24:28,000 --> 00:24:33,960
+incluso vamos, no creo que hay ningún problema en juntarlo en versiones nuevas.
+
+220
+00:24:33,960 --> 00:24:42,640
+Nada más por mi parte. Si queréis, tenéis algún tipo de pregunta o tenéis el chat.
+
+221
+00:24:42,640 --> 00:25:00,480
+Y nada, nos vemos. Un saludo.
+

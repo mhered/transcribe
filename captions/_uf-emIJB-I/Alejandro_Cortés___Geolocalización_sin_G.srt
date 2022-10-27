@@ -1,0 +1,1872 @@
+1
+00:00:30,000 --> 00:00:37,000
+Good morning. Thank you for coming to this room.
+
+2
+00:00:37,000 --> 00:00:42,000
+The first chat we will have is from Alejandro Cortez.
+
+3
+00:00:42,000 --> 00:00:44,000
+You will present yourself in a machine.
+
+4
+00:00:44,000 --> 00:00:47,000
+Let's give him a big applause.
+
+5
+00:00:52,000 --> 00:00:55,000
+The question is at the end of the session.
+
+6
+00:00:55,000 --> 00:01:01,000
+Good morning. Do you hear me well?
+
+7
+00:01:01,000 --> 00:01:04,000
+I will do it without a microphone because I think I can.
+
+8
+00:01:04,000 --> 00:01:10,000
+I am Alejandro Cortez, a humble teacher.
+
+9
+00:01:10,000 --> 00:01:13,000
+I have been involved in many things.
+
+10
+00:01:13,000 --> 00:01:16,000
+I have been involved in engineering, industrial, it is strange.
+
+11
+00:01:16,000 --> 00:01:22,000
+My fundamental specialty is that I am a forensic and judicial informatic peritoneum.
+
+12
+00:01:22,000 --> 00:01:26,000
+I have been a lawyer since 1986.
+
+13
+00:01:26,000 --> 00:01:28,000
+I am a lawyer since 1986.
+
+14
+00:01:28,000 --> 00:01:32,000
+I was probably not born when I was already in contact with the Bites.
+
+15
+00:01:32,000 --> 00:01:36,000
+I am an expert in cybersecurity.
+
+16
+00:01:36,000 --> 00:01:39,000
+I try to make students know something.
+
+17
+00:01:39,000 --> 00:01:42,000
+I can't do it, but we will continue.
+
+18
+00:01:42,000 --> 00:01:45,000
+I am a professor of FPL at the School of Engineering and Engineering.
+
+19
+00:01:45,000 --> 00:01:49,000
+I try to convey everything as possible.
+
+20
+00:01:49,000 --> 00:01:54,000
+I am a master of international cybersecurity in Ecuador and here in Spain.
+
+21
+00:01:54,000 --> 00:01:57,000
+I am very passionate about this.
+
+22
+00:01:57,000 --> 00:02:02,000
+I am a security engineer and an analysis of forensics.
+
+23
+00:02:02,000 --> 00:02:07,000
+If I am defined, these are the three specialties.
+
+24
+00:02:07,000 --> 00:02:09,000
+I mix them all.
+
+25
+00:02:09,000 --> 00:02:13,000
+I am a forensic informatic, a protection of cybercrime,
+
+26
+00:02:13,000 --> 00:02:16,000
+any fraud or any fraud, I get involved.
+
+27
+00:02:16,000 --> 00:02:19,000
+It is a problem I have.
+
+28
+00:02:19,000 --> 00:02:22,000
+I am also a multimedia engineer at ESIC
+
+29
+00:02:22,000 --> 00:02:25,000
+and I teach at the International School of Pogrado
+
+30
+00:02:25,000 --> 00:02:28,000
+about the dark web that I use with Python.
+
+31
+00:02:28,000 --> 00:02:30,000
+I love to use things.
+
+32
+00:02:30,000 --> 00:02:33,000
+You will see the reason for this chat now.
+
+33
+00:02:33,000 --> 00:02:36,000
+Public articles, conferences, investigations,
+
+34
+00:02:36,000 --> 00:02:38,000
+what happens to me in my head,
+
+35
+00:02:38,000 --> 00:02:41,000
+if I sleep more than six hours, I start to go around and around,
+
+36
+00:02:41,000 --> 00:02:45,000
+I create an article, a video, or whatever.
+
+37
+00:02:45,000 --> 00:02:49,000
+My social media channels are on Twitter and Telegram,
+
+38
+00:02:49,000 --> 00:02:52,000
+and my email is at cortearrobaexerencia.com
+
+39
+00:02:52,000 --> 00:02:54,000
+in case it is longer than a tweet.
+
+40
+00:02:54,000 --> 00:02:56,000
+I have open messages,
+
+41
+00:02:56,000 --> 00:03:00,000
+so you can always write to me and I will see it.
+
+42
+00:03:00,000 --> 00:03:04,000
+That is something I usually don't see.
+
+43
+00:03:04,000 --> 00:03:07,000
+I recently discovered that I speak Chinese.
+
+44
+00:03:07,000 --> 00:03:09,000
+I think I am not going to speak Chinese here,
+
+45
+00:03:09,000 --> 00:03:12,000
+but a master told me, they speak Chinese.
+
+46
+00:03:12,000 --> 00:03:15,000
+That destroyed me.
+
+47
+00:03:15,000 --> 00:03:18,000
+I said, please, send me the WhatsApp,
+
+48
+00:03:18,000 --> 00:03:20,000
+because I have to say this.
+
+49
+00:03:20,000 --> 00:03:23,000
+If I speak Chinese, you ask me, what is this?
+
+50
+00:03:23,000 --> 00:03:28,000
+Let's go to the mess, to the jail or father.
+
+51
+00:03:28,000 --> 00:03:31,000
+As a forensic engineer,
+
+52
+00:03:31,000 --> 00:03:34,000
+because if you combine my experience,
+
+53
+00:03:34,000 --> 00:03:37,000
+the subject of the computer field,
+
+54
+00:03:37,000 --> 00:03:40,000
+and the engineering, there you have it.
+
+55
+00:03:40,000 --> 00:03:42,000
+When we do a forensic experience,
+
+56
+00:03:42,000 --> 00:03:45,000
+we always have to geolocate
+
+57
+00:03:45,000 --> 00:03:48,000
+how we do the station and where we do it.
+
+58
+00:03:48,000 --> 00:03:50,000
+We have a protocol for that.
+
+59
+00:03:50,000 --> 00:03:53,000
+When I go to a station, in a notary,
+
+60
+00:03:53,000 --> 00:03:55,000
+I say, I go to this place,
+
+61
+00:03:55,000 --> 00:03:57,000
+but sometimes they call me and tell me,
+
+62
+00:03:57,000 --> 00:04:00,000
+no, you don't have to go to the site.
+
+63
+00:04:00,000 --> 00:04:02,000
+Why? Because the tests are there,
+
+64
+00:04:02,000 --> 00:04:05,000
+I have to get evidence from the place.
+
+65
+00:04:05,000 --> 00:04:08,000
+If you have to go, you will be charged equally.
+
+66
+00:04:08,000 --> 00:04:12,000
+That's what this talk gives.
+
+67
+00:04:12,000 --> 00:04:15,000
+I haven't been to Isla Pérez-Hil,
+
+68
+00:04:15,000 --> 00:04:17,000
+but I usually go to the local,
+
+69
+00:04:17,000 --> 00:04:19,000
+with their GPS coordinates,
+
+70
+00:04:19,000 --> 00:04:21,000
+and it's phenomenal.
+
+71
+00:04:21,000 --> 00:04:24,000
+The problem is that I have to go to the notary,
+
+72
+00:04:24,000 --> 00:04:26,000
+or the public notary, depending on who calls me,
+
+73
+00:04:26,000 --> 00:04:28,000
+if it's the judge,
+
+74
+00:04:28,000 --> 00:04:31,000
+or the client,
+
+75
+00:04:31,000 --> 00:04:33,000
+and I have to take him there.
+
+76
+00:04:33,000 --> 00:04:35,000
+The notary doesn't want to move,
+
+77
+00:04:35,000 --> 00:04:38,000
+but if he wants to move, I have to take him there.
+
+78
+00:04:38,000 --> 00:04:40,000
+So I had to cut it off a bit,
+
+79
+00:04:40,000 --> 00:04:42,000
+because from what we were going to talk about,
+
+80
+00:04:42,000 --> 00:04:44,000
+there are things I had to camouflage,
+
+81
+00:04:44,000 --> 00:04:47,000
+because it has a certain confidentiality,
+
+82
+00:04:47,000 --> 00:04:51,000
+but it is almost 95% true.
+
+83
+00:04:51,000 --> 00:04:55,000
+Well, they asked me to do a police station,
+
+84
+00:04:55,000 --> 00:04:57,000
+a police station in my hometown,
+
+85
+00:04:57,000 --> 00:04:59,000
+I'm from Málaga,
+
+86
+00:04:59,000 --> 00:05:01,000
+and the plan is that I go from Málaga,
+
+87
+00:05:01,000 --> 00:05:03,000
+I have continued to keep it,
+
+88
+00:05:03,000 --> 00:05:05,000
+and I have been allying with the poor people,
+
+89
+00:05:05,000 --> 00:05:07,000
+they have given me nothing,
+
+90
+00:05:07,000 --> 00:05:09,000
+and I have come here to ally with them.
+
+91
+00:05:09,000 --> 00:05:12,000
+Well, I have accepted the budget,
+
+92
+00:05:12,000 --> 00:05:14,000
+and the fund provision,
+
+93
+00:05:14,000 --> 00:05:16,000
+and I have to accept it,
+
+94
+00:05:16,000 --> 00:05:18,000
+I have to do it,
+
+95
+00:05:18,000 --> 00:05:20,000
+I have to get the digital evidence,
+
+96
+00:05:20,000 --> 00:05:22,000
+in the site, I say,
+
+97
+00:05:22,000 --> 00:05:24,000
+well, I have to go, I'm getting lazy,
+
+98
+00:05:24,000 --> 00:05:26,000
+since the pandemic, I'm getting lazy to move,
+
+99
+00:05:26,000 --> 00:05:28,000
+but well, I'm going.
+
+100
+00:05:28,000 --> 00:05:30,000
+So I'm going with the client,
+
+101
+00:05:30,000 --> 00:05:32,000
+I'm going with the notary,
+
+102
+00:05:32,000 --> 00:05:34,000
+I'm going to do the extraction.
+
+103
+00:05:34,000 --> 00:05:36,000
+I like to prepare the things before time,
+
+104
+00:05:36,000 --> 00:05:38,000
+I'm not going to see what I find.
+
+105
+00:05:38,000 --> 00:05:40,000
+I like it.
+
+106
+00:05:40,000 --> 00:05:42,000
+I'm going to a site,
+
+107
+00:05:42,000 --> 00:05:44,000
+we'll see where it is,
+
+108
+00:05:44,000 --> 00:05:46,000
+I'm going to check it,
+
+109
+00:05:46,000 --> 00:05:48,000
+I'll see what I find in the car,
+
+110
+00:05:48,000 --> 00:05:50,000
+because the same is true,
+
+111
+00:05:50,000 --> 00:05:52,000
+if the evidence is entered in a armored suit,
+
+112
+00:05:52,000 --> 00:05:54,000
+and I have to break it,
+
+113
+00:05:54,000 --> 00:05:56,000
+I have to break it,
+
+114
+00:05:56,000 --> 00:05:58,000
+I have to carry the biggest one,
+
+115
+00:05:58,000 --> 00:06:00,000
+well, I'll look where I was at the place,
+
+116
+00:06:00,000 --> 00:06:03,360
+The GPS says, well, more or less, phenomenal.
+
+117
+00:06:03,360 --> 00:06:07,920
+The location is fictitious, because I already tell you that I had to change it.
+
+118
+00:06:07,920 --> 00:06:13,800
+This is a place that I had an office in Malga, more or less, to make the idea.
+
+119
+00:06:13,800 --> 00:06:19,040
+And now it turns out that I arrive at day D, hour H, notary, present, client, present,
+
+120
+00:06:19,040 --> 00:06:24,440
+location, fictitious, this coordinate, and the location changes the coordinate.
+
+121
+00:06:24,440 --> 00:06:30,960
+When I go, the GPS that I carried was not the coordinates that I had located.
+
+122
+00:06:30,960 --> 00:06:38,200
+I bought it once, twice, changed from GPS, took another, and they are not the coordinates.
+
+123
+00:06:38,200 --> 00:06:43,400
+The notary, who knows me, already looks at me, he says, oops, something happens to him,
+
+124
+00:06:43,400 --> 00:06:46,080
+because it is normal, things do not match.
+
+125
+00:06:46,080 --> 00:06:48,200
+I say, well, where am I?
+
+126
+00:06:48,200 --> 00:06:52,640
+Actually, they do not match, and, let's see, I like to carry things in the middle.
+
+127
+00:06:52,640 --> 00:06:57,920
+Well, man, you have many times to improvise, but here, in front of the notary, you cannot improvise.
+
+128
+00:06:57,920 --> 00:07:02,680
+You have to give security, because if not, the uncle asks you in any story,
+
+129
+00:07:02,680 --> 00:07:05,640
+he asks you your age and you make mistakes.
+
+130
+00:07:05,640 --> 00:07:13,320
+In total, my face, worried, no.
+
+131
+00:07:13,320 --> 00:07:18,360
+The following, as I think I was more worried than when my children were born.
+
+132
+00:07:18,360 --> 00:07:22,760
+I said, what's going to happen? Well, cancel it.
+
+133
+00:07:22,760 --> 00:07:27,280
+The notary charges for displacement, charges for everything, and pays for the client,
+
+134
+00:07:27,280 --> 00:07:31,960
+but in this case, when I cancel it, I say, I have to pay the notary another day.
+
+135
+00:07:31,960 --> 00:07:33,840
+What's wrong here?
+
+136
+00:07:33,840 --> 00:07:37,160
+Well, this is little for what I started thinking about.
+
+137
+00:07:37,160 --> 00:07:39,880
+I do not know, this has never happened to me.
+
+138
+00:07:39,880 --> 00:07:44,400
+I talk to my fellow experts, I talk to everyone and nobody tells me anything.
+
+139
+00:07:44,400 --> 00:07:49,520
+This, something strange happens here. I investigate and say, let's see, I'm going to start looking at GPS,
+
+140
+00:07:49,520 --> 00:07:52,400
+let's see what happens and I find GPS inhibitors.
+
+141
+00:07:52,400 --> 00:07:57,800
+We have mobile inhibitors when we are near a police station, it is normal,
+
+142
+00:07:57,800 --> 00:07:59,720
+you are talking on the phone and you hang up.
+
+143
+00:07:59,720 --> 00:08:06,240
+My mother knows all the nights that I go through the National Police of my neighborhood and they cut me.
+
+144
+00:08:06,240 --> 00:08:09,880
+But hey, but GPS is more strange, no?
+
+145
+00:08:09,880 --> 00:08:15,640
+There are GPS inhibitors and they are bought for 4 euros, but this is not a blocker.
+
+146
+00:08:15,640 --> 00:08:18,760
+The GPS has changed me.
+
+147
+00:08:18,760 --> 00:08:21,560
+And it scares you, no?
+
+148
+00:08:21,560 --> 00:08:24,600
+So, look, this is Aliexpress, I have picked it up from there,
+
+149
+00:08:24,600 --> 00:08:29,080
+you can even connect it directly to the center of the car and say, but no, I don't want to block this.
+
+150
+00:08:29,080 --> 00:08:31,840
+Something else happens here, no?
+
+151
+00:08:31,840 --> 00:08:34,160
+They have displaced the signal.
+
+152
+00:08:34,160 --> 00:08:41,720
+And this, how? This is the place that the GPS sends me and this is the place where I am,
+
+153
+00:08:41,720 --> 00:08:43,800
+I have to do the peri-sial.
+
+154
+00:08:43,800 --> 00:08:49,440
+There is a distance of 12 kilometers.
+
+155
+00:08:49,440 --> 00:08:53,000
+For me it is a 12-kilometer distance, it is a barbarity.
+
+156
+00:08:53,000 --> 00:08:56,320
+And I say, what's going on?
+
+157
+00:08:56,320 --> 00:09:01,200
+I investigate, I see the issue of wall-driven,
+
+158
+00:09:01,200 --> 00:09:05,480
+what happens is that there is a possibility of deceiving the signal of the optometres,
+
+159
+00:09:05,480 --> 00:09:07,120
+especially in the United States.
+
+160
+00:09:07,120 --> 00:09:10,880
+You know that truck drivers should not drive for more than two hours,
+
+161
+00:09:10,880 --> 00:09:14,280
+immediately, three hours, and that goes all in a machine and others,
+
+162
+00:09:14,280 --> 00:09:15,400
+because they deceive them.
+
+163
+00:09:15,400 --> 00:09:20,800
+Here not so much, but they deceive them here, they don't care, but in the United States they do.
+
+164
+00:09:20,800 --> 00:09:25,160
+And it says that the GPS is vulnerable to this issue, no?
+
+165
+00:09:25,160 --> 00:09:28,200
+And I say, well, but that's the United States, this is bad, no?
+
+166
+00:09:28,200 --> 00:09:31,360
+I don't know, it's true that Google has already arrived, but when I said this,
+
+167
+00:09:31,360 --> 00:09:33,120
+Google was not there, no?
+
+168
+00:09:33,120 --> 00:09:37,000
+I say, well, nothing, let's see.
+
+169
+00:09:37,000 --> 00:09:41,560
+I keep looking and I find that it can be done a supply of GPS.
+
+170
+00:09:41,560 --> 00:09:49,160
+And this article, look, it was achieved a kilometer and a half ago in 2008,
+
+171
+00:09:49,160 --> 00:09:54,560
+more than five years had passed, that is, someone has the technology to move,
+
+172
+00:09:54,560 --> 00:10:00,240
+that is very dangerous and above all, it can be a risk of security of all levels,
+
+173
+00:10:00,240 --> 00:10:03,480
+especially if you have a airport nearby or anything nearby,
+
+174
+00:10:03,480 --> 00:10:09,360
+because imagine a person who is driving a plane and says,
+
+175
+00:10:09,360 --> 00:10:13,000
+oh, what is not here, although you see the runway, I see the runway,
+
+176
+00:10:13,000 --> 00:10:16,480
+but it is not 12 kilometers further and instead of landing on the airport,
+
+177
+00:10:16,480 --> 00:10:19,360
+you get into a polygon.
+
+178
+00:10:19,360 --> 00:10:23,280
+That is national security is quite important and quite.
+
+179
+00:10:23,280 --> 00:10:26,680
+And it touches me and I say, go for it, I've already touched the rare case,
+
+180
+00:10:26,680 --> 00:10:30,840
+it is that someone has to make the easy cases, because I don't get it.
+
+181
+00:10:30,840 --> 00:10:36,320
+Well, I'll tell you a little bit, in case you don't know how GPS is,
+
+182
+00:10:36,320 --> 00:10:43,000
+a system that everyone calls it in a way, they invented it in the United States,
+
+183
+00:10:43,000 --> 00:10:49,120
+there is 31 operating satellites there and the Soviet Union has its system,
+
+184
+00:10:49,120 --> 00:10:52,760
+in Europe we have ours, in China they have theirs,
+
+185
+00:10:52,760 --> 00:10:56,840
+and well, there is a great technology behind it,
+
+186
+00:10:56,840 --> 00:10:59,880
+so that the location is the most precise.
+
+187
+00:10:59,880 --> 00:11:06,720
+Look, now I will show you the GPS that I have used,
+
+188
+00:11:06,720 --> 00:11:11,440
+it returns me to the series port, because everything in plane text mode,
+
+189
+00:11:11,440 --> 00:11:16,480
+and you can always, the most important thing about what returns you is the time,
+
+190
+00:11:16,480 --> 00:11:22,480
+the GPS coordinates, this is my home from here in Granada,
+
+191
+00:11:22,480 --> 00:11:26,560
+you don't record it much, because if not, the altitude,
+
+192
+00:11:26,560 --> 00:11:31,520
+and you say more or less yes, the altitude, and the time, sorry, and the day,
+
+193
+00:11:31,520 --> 00:11:35,200
+that is the most important thing, the UTC time coordinates GPS,
+
+194
+00:11:35,200 --> 00:11:37,840
+the altitude at sea level and the date of the satellite.
+
+195
+00:11:37,840 --> 00:11:42,160
+Well, okay, but it is a georegulation without G,
+
+196
+00:11:42,160 --> 00:11:44,240
+it is clear, without GPS, right?
+
+197
+00:11:44,240 --> 00:11:47,480
+So, well, what other ways do we have to locate ourselves?
+
+198
+00:11:47,480 --> 00:11:52,760
+Well, we can call Legolas, who is a machine and he knows where the sun is,
+
+199
+00:11:52,760 --> 00:11:54,360
+he knows where it is, okay?
+
+200
+00:11:54,360 --> 00:11:57,600
+Tranco, also, Tranco, this, how was it, Aragorn,
+
+201
+00:11:57,600 --> 00:11:59,640
+I call him Tranco, okay?
+
+202
+00:11:59,640 --> 00:12:03,280
+This man also knows where he is, but I don't have him,
+
+203
+00:12:03,280 --> 00:12:07,240
+so the people's pastor called him and he knows when the sun comes out,
+
+204
+00:12:07,240 --> 00:12:09,240
+what time it is, he knows perfectly where it is,
+
+205
+00:12:09,240 --> 00:12:13,600
+but I don't have anyone close here either, right?
+
+206
+00:12:13,600 --> 00:12:17,680
+So the object of this conference is, well, working on technology,
+
+207
+00:12:17,680 --> 00:12:18,520
+how not?
+
+208
+00:12:18,520 --> 00:12:25,120
+Because we have the Wi-Fi, the Wi-Fi, well, this is such a step,
+
+209
+00:12:25,120 --> 00:12:28,680
+because this is not important, the important thing is what we are here, right?
+
+210
+00:12:28,680 --> 00:12:34,120
+We have the 2.4 GHz, which is the most extended, and we have the 5 GHz, right?
+
+211
+00:12:34,120 --> 00:12:38,480
+Normally, a router is needed and the most important thing about routers
+
+212
+00:12:38,480 --> 00:12:41,600
+is that, apart from giving access to the internet and others,
+
+213
+00:12:41,600 --> 00:12:46,320
+well, I love using IP Info.io to locate IP addresses,
+
+214
+00:12:46,320 --> 00:12:51,000
+and the other things are the derivatives that each one uses, right?
+
+215
+00:12:51,000 --> 00:12:55,120
+So the most important thing about routers is that most routers
+
+216
+00:12:55,120 --> 00:13:01,160
+have the BSSID, which is the Chromebook of BASY SERVICE SET INDIVIDEFILE,
+
+217
+00:13:01,160 --> 00:13:05,440
+it looks like a Mac address, but it's not, it's not,
+
+218
+00:13:05,440 --> 00:13:09,200
+there are people who mention it, but it's not a Mac, that's precisely, right?
+
+219
+00:13:09,200 --> 00:13:13,800
+So you can't easily change it because it comes in the ROM of routers,
+
+220
+00:13:13,800 --> 00:13:17,440
+in the ROM of routers and in the ROM of the Alambri accession points,
+
+221
+00:13:17,440 --> 00:13:23,440
+that is, if you want to change the direction of the BSSID of a device,
+
+222
+00:13:23,440 --> 00:13:27,120
+well, nothing, you have to change the ROM, or hack the ROM,
+
+223
+00:13:27,120 --> 00:13:34,120
+to see who has the technology to take the ROM and reflect it, I don't.
+
+224
+00:13:34,120 --> 00:13:38,120
+There are people who will be able to, but well, we are already talking about bigger words,
+
+225
+00:13:38,120 --> 00:13:41,120
+and then solve it again and it works.
+
+226
+00:13:41,120 --> 00:13:47,120
+Well, with two cables, maybe three, but to reflect a ROM?
+
+227
+00:13:47,120 --> 00:13:53,120
+No. Well, it is confused with the SSID, which is the name of the Wi-Fi,
+
+228
+00:13:53,120 --> 00:13:55,120
+but the name of the Wi-Fi you change it with the nose,
+
+229
+00:13:55,120 --> 00:14:00,120
+just as your router or not, you put it in and you change it, right?
+
+230
+00:14:00,120 --> 00:14:03,120
+Well, and all this for what?
+
+231
+00:14:03,120 --> 00:14:08,120
+Look, in 2010 I found the article in which Google went through all,
+
+232
+00:14:08,120 --> 00:14:11,120
+through all of Spain and all over the world,
+
+233
+00:14:11,120 --> 00:14:14,120
+precisely by armacenando this value, right?
+
+234
+00:14:14,120 --> 00:14:17,120
+The BSSID, he knows that sound changes, then, of course,
+
+235
+00:14:17,120 --> 00:14:21,120
+they put a mult because of private traffic,
+
+236
+00:14:21,120 --> 00:14:25,120
+but it was not because of taking the BSSID, but it was because of traffic,
+
+237
+00:14:25,120 --> 00:14:27,120
+but it doesn't matter, right?
+
+238
+00:14:27,120 --> 00:14:33,120
+He says that if we put Nomapp in our SSID, he does not armacen it.
+
+239
+00:14:33,120 --> 00:14:35,120
+I did not put it, what armacen?
+
+240
+00:14:35,120 --> 00:14:37,120
+It doesn't matter.
+
+241
+00:14:37,120 --> 00:14:40,120
+He will take me on the other hand.
+
+242
+00:14:40,120 --> 00:14:43,120
+Well, then, can you geolocate by Wi-Fi?
+
+243
+00:14:43,120 --> 00:14:48,120
+Okay, but in bad hands we can make a man in the middle
+
+244
+00:14:48,120 --> 00:14:51,120
+and well, and here we don't end today, right?
+
+245
+00:14:51,120 --> 00:14:53,120
+So what did I do?
+
+246
+00:14:53,120 --> 00:14:55,120
+Well, look, that was in a polygon.
+
+247
+00:14:55,120 --> 00:14:58,120
+I scanned all the BSSIDs of the polygon
+
+248
+00:14:58,120 --> 00:15:01,120
+before it came to the notary, I realized, I said,
+
+249
+00:15:01,120 --> 00:15:05,120
+let's see, it's true, now I tell you, it's true that there are today
+
+250
+00:15:05,120 --> 00:15:09,120
+systems that already do it alone, but when I did this, I didn't know it, okay?
+
+251
+00:15:09,120 --> 00:15:12,120
+That's why I did this jaleo.
+
+252
+00:15:12,120 --> 00:15:15,120
+We arrived at one of the Malga University, which I used as a reference,
+
+253
+00:15:15,120 --> 00:15:21,120
+the Malga University was, or was, sorry, it is in a very, very specific place in Malga,
+
+254
+00:15:21,120 --> 00:15:23,120
+I used it as a reference and everything else,
+
+255
+00:15:23,120 --> 00:15:28,120
+well, I took the distance and I came up with, well, the formula of distance
+
+256
+00:15:28,120 --> 00:15:34,120
+existed there, the programs, and you are able to, now I tell you exactly,
+
+257
+00:15:34,120 --> 00:15:38,120
+what two values ​​you give a very approximate distance, right?
+
+258
+00:15:38,120 --> 00:15:25,080
+The public
+
+259
+00:15:38,120 --> 00:15:44,120
+fairytale, what I asked for, sorry, was to check and there was faith in the
+
+260
+00:15:44,120 --> 00:15:49,120
+provincial that this was a certain distance, it will not be in the GPS,
+
+261
+00:15:49,120 --> 00:15:53,120
+because if I go to the GPS and there is someone who is dissing me,
+
+262
+00:15:53,120 --> 00:15:58,120
+it does not serve my provincial, just as something that is as evident as the GPS,
+
+263
+00:15:58,120 --> 00:16:05,120
+which seems, okay, thank you, which seems that without a movable and movable,
+
+264
+00:16:05,120 --> 00:16:09,120
+well, I could not base it there, right? Well, the federal, I told him,
+
+265
+00:16:09,120 --> 00:16:13,120
+look, you have to give faith that on a screen this distance comes out,
+
+266
+00:16:13,120 --> 00:16:17,120
+with that I conform, it will be my provincial in that distance,
+
+267
+00:16:17,120 --> 00:16:24,120
+not in the GPS, I did not mention anything, look, this is a 3B Raspberry Pi,
+
+268
+00:16:24,120 --> 00:16:31,120
+put inside a touch screen, to which I put a GPS, that costs 15 euros or 20 euros,
+
+269
+00:16:31,120 --> 00:16:35,120
+not more, by the USB port, it recognizes it from the remote control,
+
+270
+00:16:35,120 --> 00:16:37,120
+what?
+
+271
+00:16:37,120 --> 00:16:42,120
+No, no, no, but hey, I have that issue of talking about it, right?
+
+272
+00:16:42,120 --> 00:16:49,120
+Well, anyway, what did I do with Python? How not to use C?
+
+273
+00:16:49,120 --> 00:16:54,120
+I go crazy and with the notary there, not looking, but he says,
+
+274
+00:16:54,120 --> 00:16:57,120
+when are we going to be back? I can not tell you within four months,
+
+275
+00:16:57,120 --> 00:17:01,120
+I have to do something quick, how do I do it quick? I do not know if you can see it,
+
+276
+00:17:01,120 --> 00:17:06,120
+well, I import what I am going to use, I create a few functions,
+
+277
+00:17:06,120 --> 00:17:11,120
+this is the function of the Panacea, that is, I found the function,
+
+278
+00:17:11,120 --> 00:17:17,120
+the function that works, it is true that there is an equation of Maxwell that gives it to you,
+
+279
+00:17:17,120 --> 00:17:20,120
+I do not know, well, there I will go for two weeks and there I did not find it,
+
+280
+00:17:20,120 --> 00:17:26,120
+well, in the end, Derek Wartner has his jihava and you have it,
+
+281
+00:17:26,120 --> 00:17:30,120
+I recognize that it occurred to him, because it worked for me,
+
+282
+00:17:30,120 --> 00:17:34,120
+there were 50 more if none worked, I mean, but if I have the route at 5 meters,
+
+283
+00:17:34,120 --> 00:17:40,120
+how is it? Well, that works, you say how many additional functions
+
+284
+00:17:40,120 --> 00:17:45,120
+that I returned to the frequency of the quality that only the parameters that I needed
+
+285
+00:17:45,120 --> 00:17:53,120
+obtained the SSID because I had a reference of it, especially when it has a list of a lot of WIFIs,
+
+286
+00:17:53,120 --> 00:17:57,120
+and what happened? Look, this is another way of doing it,
+
+287
+00:17:57,120 --> 00:18:00,120
+but I say, for the urgency of doing it, I said, what do I do?
+
+288
+00:18:00,120 --> 00:18:06,120
+Well, I run a operating system command that puts it in a file and then I read the file,
+
+289
+00:18:06,120 --> 00:18:11,120
+possibly there are a thousand ways to do this better, much more professional,
+
+290
+00:18:11,120 --> 00:18:16,120
+but normally in an operating system it is that it does not give you time and you have to go,
+
+291
+00:18:16,120 --> 00:18:21,120
+it is true that you have a second veil off your pocket, but I say, come on, what works,
+
+292
+00:18:21,120 --> 00:18:25,120
+let's see what works, when I get jubile I improve it,
+
+293
+00:18:25,120 --> 00:18:29,120
+I think that will never happen because I always said, when you are a teacher, I improve it,
+
+294
+00:18:29,120 --> 00:18:36,120
+I improve it, I lie, neither. Well, I already say this, it is the only so strange thing I did,
+
+295
+00:18:36,120 --> 00:18:46,120
+I emulated the operating system, and well, I simply put it in a, I don't know if it comes from before,
+
+296
+00:18:46,120 --> 00:18:50,120
+I think I ate it, I have a Whale True, people tell me what a Whale True does,
+
+297
+00:18:50,120 --> 00:18:57,120
+because it is not an infinite loop, I want it to be showing and mom is recording it,
+
+298
+00:18:57,120 --> 00:19:02,120
+I say, well, nothing happens, of course it can be in a database, it can do it millions of ways,
+
+299
+00:19:02,120 --> 00:19:09,120
+yes, yes, it can be improved, but it is that, no, I'm sorry, no.
+
+300
+00:19:09,120 --> 00:19:14,120
+So, well, look, it is very simple, the truth is that these are my students have already learned
+
+301
+00:19:14,120 --> 00:19:18,120
+and are saying, when are you going to teach it? I say, come to the PaiKong.
+
+302
+00:19:18,120 --> 00:19:25,120
+Well, and what I do is call and that I get out of the screen the frequency, the distance
+
+303
+00:19:25,120 --> 00:19:30,120
+is approximate, I said, look, it is approximate, but well, when you have a lot of approximate distance,
+
+304
+00:19:30,120 --> 00:19:36,120
+in the end you have a more or less specific location in the circle where all confluents, there.
+
+305
+00:19:36,120 --> 00:19:43,120
+The notary understood me, look, the notaries today every time more know more about our own,
+
+306
+00:19:43,120 --> 00:19:51,120
+and he understood me and gave me faith, I paid him, fantastic, because he has ever told me,
+
+307
+00:19:51,120 --> 00:19:57,120
+I mean, hey, I don't understand this here well and I'm saying, well, I'm going to explain it to you,
+
+308
+00:19:57,120 --> 00:20:02,120
+I'm going to explain it to you as if it were a judge who is like a three-year-old child and finds out,
+
+309
+00:20:02,120 --> 00:20:10,120
+I say, fantastic, come on, well, I get a similar result, like this, with the SSID,
+
+310
+00:20:10,120 --> 00:20:20,120
+I say, similar, I have to tune it, and with the frequency of the signal and with the level of the signal
+
+311
+00:20:20,120 --> 00:20:25,120
+you can calculate the distance, it is approximate, it is true, it is approximate, but well, I tell you,
+
+312
+00:20:25,120 --> 00:20:30,120
+if you don't have GPS, if you can't use it, well, even if it is a potato, not a cable connected to the potato
+
+313
+00:20:30,120 --> 00:20:36,120
+that I give you a signal, right, because the same, well, I have to do this all morning, okay,
+
+314
+00:20:36,120 --> 00:20:40,120
+I find out that there are services that do more or less the same, but they are not fun,
+
+315
+00:20:40,120 --> 00:20:45,120
+those who know me from here know that I am like a goat, and they tell me, many times they tell me,
+
+316
+00:20:45,120 --> 00:20:50,120
+you're going to put the goat, well, I put it, I'm like a goat.
+
+317
+00:20:50,120 --> 00:20:55,120
+The services, well, Alexander Milynikov has a service, but it doesn't work for me,
+
+318
+00:20:55,120 --> 00:21:01,120
+it doesn't exist for me, Stars Cop is a Russian web that has us all monitored, be careful,
+
+319
+00:21:01,120 --> 00:21:07,120
+the same doesn't annex to Russia now, GeoWifi, well, if I go back to the HDMI, okay,
+
+320
+00:21:07,120 --> 00:21:12,120
+GeoWifi also does it, it is in Python that allows you to obtain it, but I, it is preferable to do it,
+
+321
+00:21:12,120 --> 00:21:17,120
+I, on my own, and wiggel.net has a fantastic service, I can finish it first,
+
+322
+00:21:17,120 --> 00:21:23,120
+it has a fantastic service that, to be honest, you can take it on your mobile,
+
+323
+00:21:23,120 --> 00:21:27,120
+they give you points for being the most wifi-mete, well, I can go back every day,
+
+324
+00:21:27,120 --> 00:21:30,120
+when I go in the car, I am showing you everything I get, I say,
+
+325
+00:21:30,120 --> 00:21:34,120
+let's see if I get up from 10,000, because I don't get up, right, there has to be someone who is
+
+326
+00:21:34,120 --> 00:21:40,120
+traveling every day, but hey, the site is cool, right, let's see, this is hot, it seems that,
+
+327
+00:21:40,120 --> 00:21:47,120
+well, you look for anything, for a GPS, for a BSSID, whatever you want, there it is,
+
+328
+00:21:47,120 --> 00:21:54,120
+but I didn't know that, in the press, look, the civil war knows that, well,
+
+329
+00:21:54,120 --> 00:22:01,120
+I think this man who killed a girl, well, the journalist has no idea,
+
+330
+00:22:01,120 --> 00:22:05,120
+he talks about three different routes and a Mac address, it's not the Mac address,
+
+331
+00:22:05,120 --> 00:22:10,120
+it's the BSSID, but the journalists don't know about technology, right, well,
+
+332
+00:22:10,120 --> 00:22:16,120
+I found it and said, look, the Mac address, well, it's the BSSID,
+
+333
+00:22:16,120 --> 00:22:21,120
+you have to convey the concept well, you have no idea, well, it seems, remember,
+
+334
+00:22:21,120 --> 00:22:26,120
+look, when, as a reference, with a celebrity who has used a device,
+
+335
+00:22:26,120 --> 00:22:31,120
+a mobile, he takes me out 60,000 pages of everything he has done on the mobile,
+
+336
+00:22:31,120 --> 00:22:37,120
+and what happens, well, it includes the BSSID to which he has tried to connect,
+
+337
+00:22:37,120 --> 00:22:41,120
+it is fundamental to know that parameter, and people don't know it,
+
+338
+00:22:41,120 --> 00:22:46,120
+they think it's the name of the Wi-Fi, which is not, no, BSSID,
+
+339
+00:22:46,120 --> 00:22:51,120
+it's good to always have a GPS in your hand, because if we go less or less
+
+340
+00:22:51,120 --> 00:22:55,120
+knowing what the coordinates of your site are, and they change it,
+
+341
+00:22:55,120 --> 00:23:01,120
+then it's that there is some funny thing there, that funny thing can be as,
+
+342
+00:23:01,120 --> 00:23:07,120
+as I say, as denounceable as the one that, well, because it avoids the radar signal,
+
+343
+00:23:07,120 --> 00:23:11,120
+I have already told you about it, I don't know if you will take measures or not,
+
+344
+00:23:11,120 --> 00:23:17,120
+but I tell you, if you go back to the GPS, there is some funny thing that is moving the signal, right?
+
+345
+00:23:17,120 --> 00:23:23,120
+Then I could say that it is called localization, this talk could be,
+
+346
+00:23:23,120 --> 00:23:29,120
+as a curiosity, well, we won the trial, the opposite part,
+
+347
+00:23:29,120 --> 00:23:33,120
+I wanted to attack by the GPS, but there was no GPS,
+
+348
+00:23:33,120 --> 00:23:37,120
+in front of the judge, they asked me, but why haven't you used the GPS?
+
+349
+00:23:37,120 --> 00:23:42,120
+I say, because the GPS is there, it's not the case, and in fact, we knew that there is,
+
+350
+00:23:42,120 --> 00:23:46,120
+in fact, in Malga, it has happened again, yesterday I myself,
+
+351
+00:23:46,120 --> 00:23:51,120
+a colleague asked me, who also dedicates himself to these foreign halos,
+
+352
+00:23:51,120 --> 00:23:56,120
+that they have a similar case, and that there is a person in jail because of this,
+
+353
+00:23:56,120 --> 00:24:02,120
+that is, there is some funny thing in Malga that is capable of changing the location of GPS.
+
+354
+00:24:02,120 --> 00:24:08,120
+Well, anyway, we won.
+
+355
+00:24:08,120 --> 00:24:12,120
+My days I do it here, I am in the School of International Management,
+
+356
+00:24:12,120 --> 00:24:18,120
+trying to transmit all this knowledge that, for a lot of years, I accumulated,
+
+357
+00:24:18,120 --> 00:24:21,120
+and every day I have more things to tell, right?
+
+358
+00:24:21,120 --> 00:24:26,120
+And well, thank you very much, and I am at your disposal, you know, my networks,
+
+359
+00:24:26,120 --> 00:24:30,120
+my LinkedIn, in case there are, I burn, there are many people who know me,
+
+360
+00:24:30,120 --> 00:24:33,120
+because I burn the networks, I don't know, what I do is transmit,
+
+361
+00:24:33,120 --> 00:24:36,120
+that knowledge is not left.
+
+362
+00:24:36,120 --> 00:24:40,120
+And now your turn, one question, I think I'm in time, right?
+
+363
+00:24:40,120 --> 00:24:49,120
+Thank you very much.
+
+364
+00:24:49,120 --> 00:24:52,120
+I have a question.
+
+365
+00:24:52,120 --> 00:24:56,120
+I have a microphone.
+
+366
+00:24:56,120 --> 00:25:00,120
+This is not a big problem.
+
+367
+00:25:00,120 --> 00:25:04,120
+Very good.
+
+368
+00:25:04,120 --> 00:25:10,120
+Can you tell me something about the CSIV casting for you to decide?
+
+369
+00:25:10,120 --> 00:25:14,120
+Although you use it, someone who goes to the channel can't go to the same place.
+
+370
+00:25:14,120 --> 00:25:21,120
+Well, I have a lot of networks that don't have a name, or they are just like 0x, 0x, 0x, 0x,
+
+371
+00:25:21,120 --> 00:25:25,120
+they don't have the same, but the CSIV of the SAC.
+
+372
+00:25:25,120 --> 00:25:28,120
+Ah, okay, because you can hide it, that yes, you don't have to do it.
+
+373
+00:25:28,120 --> 00:25:34,120
+And then you have to do it, and then you have to do it.
+
+374
+00:25:34,120 --> 00:25:38,120
+I had an opportunity, I would go to 80 wifi, I mean, you can be in the middle of the field,
+
+375
+00:25:38,120 --> 00:25:40,120
+like there are 80.
+
+376
+00:25:40,120 --> 00:25:49,120
+I take everything I ask, obviously, the more frequent I have, the further I go.
+
+377
+00:25:49,120 --> 00:26:02,120
+Hello, good morning. Very interesting, I would like to ask, because we pay attention to this,
+
+378
+00:26:02,120 --> 00:26:14,120
+especially for a personal matter, because wifi is a very sensitive signal to the signal,
+
+379
+00:26:14,120 --> 00:26:21,120
+and maybe the distance is not according to the potential of the network,
+
+380
+00:26:21,120 --> 00:26:26,120
+and that can happen to someone who puts a switch on, or just a switch.
+
+381
+00:26:26,120 --> 00:26:31,120
+Is that the problem you would like to put?
+
+382
+00:26:31,120 --> 00:26:40,120
+I would like to talk about everything, but not just a wifi, I put myself in a polygon and look at them all,
+
+383
+00:26:40,120 --> 00:26:47,120
+and I would come all night and all in the morning, because with one night you can't trust,
+
+384
+00:26:47,120 --> 00:26:55,120
+one day they are putting the window open, because you know that the glass is above the wifi.
+
+385
+00:26:55,120 --> 00:27:01,120
+So if you are above the office, you have the door open, as it was just in the plan,
+
+386
+00:27:01,120 --> 00:27:06,120
+well, a lot of wifi comes out, but you have the door and it comes out.
+
+387
+00:27:06,120 --> 00:27:12,120
+You scan everything, you have to do everything, you have to do everything.
+
+388
+00:27:12,120 --> 00:27:19,120
+With everything you have a place to control everything, but with one you can't trust,
+
+389
+00:27:19,120 --> 00:27:25,120
+as it is called, a sample is not reliable, 300, yes.
+
+390
+00:27:25,120 --> 00:27:37,120
+Any other questions?
+
+391
+00:27:37,120 --> 00:27:46,120
+I have a question, I know that you know, but I have a question, how do you know if it is a program or how do you do it?
+
+392
+00:27:46,120 --> 00:28:01,120
+What I do is ask them, I see it works, I see it works to learn something,
+
+393
+00:28:01,120 --> 00:28:05,120
+but if you want to get a cube, you have to ask me, I see it works.
+
+394
+00:28:05,120 --> 00:28:17,120
+The cube will arrive quickly and it is a system command.
+
+395
+00:28:17,120 --> 00:28:23,120
+In this case, you can use the wwlancer, what you see is the device, the Raspberry,
+
+396
+00:28:23,120 --> 00:28:26,120
+or whatever you want, I have a device, I will try again,
+
+397
+00:28:26,120 --> 00:28:35,120
+I will say that this is my laptop and whatever, and I just want you to take the four words that I would like,
+
+398
+00:28:35,120 --> 00:28:42,120
+the SSID, the channel and the reality, simply so that I have it organized.
+
+399
+00:28:42,120 --> 00:28:49,120
+And I want it to come out in a little thing, here, it comes out.
+
+400
+00:28:49,120 --> 00:28:56,120
+Then you take the two, there are a thousand ways to do it, you have to know with the hands,
+
+401
+00:28:56,120 --> 00:29:02,120
+I have done it wrong, you put it in a database, you have it there and you do it in the same way,
+
+402
+00:29:02,120 --> 00:29:12,120
+you see what you want, there are programs that you do, but I love putting my hand on the computer,
+
+403
+00:29:12,120 --> 00:29:20,120
+I do not know how to do it, but I do not know how to do it.
+
+404
+00:29:20,120 --> 00:29:31,120
+In relation to that screen, what is the quality of the data, of the representation
+
+405
+00:29:31,120 --> 00:29:35,120
+of the frequency and the reaction of the signal, I mean,
+
+406
+00:29:35,120 --> 00:29:43,120
+because it seems that a person who is a participant does that, the signal, the signal quality is low,
+
+407
+00:29:43,120 --> 00:29:47,120
+so it is quite simple, for example, a cloudy day, a cloudy day, the signal is also changing,
+
+408
+00:29:47,120 --> 00:29:49,120
+so it is something that is not ideal.
+
+409
+00:29:49,120 --> 00:29:54,120
+Of course, but when you go to take samples, you do not take more, as I said,
+
+410
+00:29:54,120 --> 00:29:58,120
+you do not take more, I go back in the morning, at night, I take several samples,
+
+411
+00:29:58,120 --> 00:30:06,120
+which in conjunction, as you know, the VSSID does not change, you put it in a database
+
+412
+00:30:06,120 --> 00:30:12,120
+and then I do a study of that VSSID with all the readings that you have done
+
+413
+00:30:12,120 --> 00:30:18,120
+and with all the readings, you see how different colors change in the day.
+
+414
+00:30:18,120 --> 00:30:14,620
+If you take that, you can do your own
+
+415
+00:30:14,620 --> 00:30:30,120
+to have a close proximity with that and then with the 300 additional readings that you had.
+
+416
+00:30:30,120 --> 00:30:36,620
+So, with all together, approximately, you had the distance compared to the VSSID
+
+417
+00:30:36,620 --> 00:30:39,120
+of the base, which is what it is called.
+
+418
+00:30:39,120 --> 00:30:45,120
+And how reliable is it? I understand that you have been playing for a while,
+
+419
+00:30:45,120 --> 00:30:46,620
+but really...
+
+420
+00:30:46,620 --> 00:30:50,120
+How reliable? To me, the VSSID is reliable, but if I do not give it to me...
+
+421
+00:30:50,120 --> 00:30:53,120
+I understand, but from the point of view of the VSSID, I am not wrong,
+
+422
+00:30:53,120 --> 00:30:56,620
+so generating networks, of dynamic format, with the same numbers,
+
+423
+00:30:56,620 --> 00:30:59,120
+that in this area, if you want to do something different,
+
+424
+00:30:59,120 --> 00:31:01,120
+the VSSID is not something that is impossible.
+
+425
+00:31:01,120 --> 00:31:03,620
+No, no, of course, it is reliable.
+
+426
+00:31:03,620 --> 00:31:06,620
+We always use it as a whole.
+
+427
+00:31:06,620 --> 00:31:11,120
+But I also suppose, on the contrary, that it cannot be done.
+
+428
+00:31:11,120 --> 00:31:16,120
+There are many ways to get the VSSID, but on the other hand,
+
+429
+00:31:16,120 --> 00:31:21,120
+they wanted to defend the GPS, and as the GPS could not be used,
+
+430
+00:31:21,120 --> 00:31:23,120
+I used this.
+
+431
+00:31:23,120 --> 00:31:25,120
+It could have been thrown away, of course, it could have been thrown away,
+
+432
+00:31:25,120 --> 00:31:27,120
+but they did not fall into the system.
+
+433
+00:31:27,120 --> 00:31:29,120
+I went with what I had.
+
+434
+00:31:29,120 --> 00:31:31,120
+How reliable?
+
+435
+00:31:31,120 --> 00:31:38,120
+In a judicial system, where the judge has the doubt, he leaves you free.
+
+436
+00:31:38,120 --> 00:31:43,120
+If you put the judge in his head, he leaves you free.
+
+437
+00:31:43,120 --> 00:31:48,120
+I used all my means, and he is free.
+
+438
+00:31:48,120 --> 00:31:50,120
+When he leaves, he falls.
+
+439
+00:31:50,120 --> 00:31:53,120
+He gave me the mouse and the other mouse.
+
+440
+00:31:53,120 --> 00:31:57,120
+But if you put it seriously, the other part is not him.
+
+441
+00:31:57,120 --> 00:32:02,120
+Last question.
+
+442
+00:32:02,120 --> 00:32:05,120
+Hello, thank you for the presentation.
+
+443
+00:32:05,120 --> 00:32:08,120
+If you have any questions, if you have any questions,
+
+444
+00:32:08,120 --> 00:32:13,120
+please send them to the router, that is the ID, the police station.
+
+445
+00:32:13,120 --> 00:32:17,120
+Because I know that mobile phones, if you have any questions,
+
+446
+00:32:17,120 --> 00:32:21,120
+the latest generation phones have been used for a whole month.
+
+447
+00:32:21,120 --> 00:32:24,120
+Change that, that's good.
+
+448
+00:32:24,120 --> 00:32:27,120
+For us, the use of the user is dangerous,
+
+449
+00:32:27,120 --> 00:32:30,120
+because you cannot use it for this reason.
+
+450
+00:32:30,120 --> 00:32:35,120
+If you have a mobile phone, the generation is changing its generation.
+
+451
+00:32:35,120 --> 00:32:38,120
+Do you have a router that you have used to launch?
+
+452
+00:32:38,120 --> 00:32:44,120
+I have not yet, but it is also true that a mobile phone that costs a lot.
+
+453
+00:32:44,120 --> 00:32:49,120
+A router that costs a lot of money, you will not buy it.
+
+454
+00:32:49,120 --> 00:32:56,120
+It is possible that there are certain
+
+455
+00:32:56,120 --> 00:32:59,120
+smart phones that are capable of changing that.
+
+456
+00:32:59,120 --> 00:33:03,120
+It is possible, mobile phones are also going to change that.
+
+457
+00:33:03,120 --> 00:33:07,120
+I have not found it, but it is possible that within
+
+458
+00:33:07,120 --> 00:33:11,120
+three or four years this will not be so reliable.
+
+459
+00:33:11,120 --> 00:33:15,120
+But now we must pass on to who will change their generation.
+
+460
+00:33:15,120 --> 00:33:19,120
+Someone who has something to hide. The rest of the companies,
+
+461
+00:33:19,120 --> 00:33:22,120
+which is something that I want to say, but, because they are still having
+
+462
+00:33:22,120 --> 00:33:25,120
+cyber attacks every day.
+
+463
+00:33:25,120 --> 00:33:28,120
+As the rest of the companies do nothing, they put on the router
+
+464
+00:33:28,120 --> 00:33:31,120
+and they put it on, they are the same, because possibly
+
+465
+00:33:31,120 --> 00:33:36,120
+there is always a path of hope to make them at least know how to do it.
+
+466
+00:33:36,120 --> 00:33:38,120
+Thank you.
+
+467
+00:33:38,120 --> 00:33:45,120
+Applause.
+
+468
+00:34:08,120 --> 00:34:13,120
+Music.
+

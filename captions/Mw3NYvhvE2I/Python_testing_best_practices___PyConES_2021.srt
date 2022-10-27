@@ -1,0 +1,1220 @@
+1
+00:00:00,000 --> 00:00:08,320
+Volvemos entonces para la siguiente charla.
+
+2
+00:00:08,320 --> 00:00:12,440
+Va a comenzar en 9 minutos, así que aprovechan de ir a buscar un vasito de agua, un café,
+
+3
+00:00:12,440 --> 00:00:16,880
+un bocata, no sé, pero venimos con todo para la siguiente charla luego.
+
+4
+00:00:16,880 --> 00:00:32,880
+No vemos en 1 minuto.
+
+5
+00:07:16,880 --> 00:07:22,200
+Estamos de vuelta con la siguiente charla que comienza ahora en 1 minuto.
+
+6
+00:07:22,200 --> 00:07:25,840
+Un tema súper interesante. Yo creo que todas las personas que hemos estado
+
+7
+00:07:25,840 --> 00:07:31,080
+desarrollando código de manera malas intentamos hacer el quité a todo lo que es testing,
+
+8
+00:07:31,080 --> 00:07:35,320
+pero algo realmente necesario. Cualquier persona que trabaje profesionalmente en esto es
+
+9
+00:07:35,320 --> 00:07:39,720
+algo que hay que hacer sí o sí. Así que el tema es súper interesante. La charla se
+
+10
+00:07:39,720 --> 00:07:46,120
+titula Python Testing Best Practices y quería invitar ahora la transmisión a Ismael Mendonza.
+
+11
+00:07:46,120 --> 00:07:55,240
+¿Qué tal? Ismael, hola, se te escucha muy bien, se te ve bien, perfecto.
+
+12
+00:07:55,240 --> 00:08:00,040
+Creo que estamos preparados. Vamos a mirar. Ah, ya te compartí de tu pantalla también para
+
+13
+00:08:00,040 --> 00:08:09,240
+hacer la charla. La tenemos ahí. Crisaz, si quieres aumentar un pelín font.
+
+14
+00:08:09,240 --> 00:08:20,440
+Si yo al menos lo pudo leer, déjame comprobarlo en YouTube, sí, se ve bastante claro. De
+
+15
+00:08:20,440 --> 00:08:23,560
+todas formas, si es que alguien encuentra que hay algún problema o algo, nos puede avisar
+
+16
+00:08:23,560 --> 00:08:29,240
+por YouTube, sí que tenemos que subir un par de puntitos en la fuente. Bueno, Ismael,
+
+17
+00:08:29,240 --> 00:08:33,120
+bienvenido a la PyConespaña. No sé si le hubieras ya participado en la PyConespaña alguna
+
+18
+00:08:33,120 --> 00:08:42,800
+vez. No como ponente, pero sí que vine desde 2019 que fue alicante. Ah, perfecto. Qué
+
+19
+00:08:42,800 --> 00:08:47,480
+genial entonces que ahora tenga la oportunidad de ponerte. No te quiero quitar más tiempo,
+
+20
+00:08:47,480 --> 00:08:51,640
+ya estamos en el horario de tu charla, como sabes tienes 20 minutitos y después luego
+
+21
+00:08:51,640 --> 00:08:58,440
+veremos un par de preguntas. Así que, mucha suerte. Vale, muchas gracias. Bueno, buenos
+
+22
+00:08:58,440 --> 00:09:03,240
+días. Muchas gracias por haberme invitado. Mi nombre es Ismael Mendonza, yo soy ingeniero
+
+23
+00:09:03,240 --> 00:09:07,560
+de software, actualmente estoy trabajando en Zapier y les voy a hablar un poco sobre
+
+24
+00:09:07,560 --> 00:09:12,520
+buenas prácticas para escribir pruebas en Python. Quiero empezar la charla hablando
+
+25
+00:09:12,520 --> 00:09:17,440
+sobre principios de prueba, que estos sí que son un poco generales a cualquier lenguaje
+
+26
+00:09:17,440 --> 00:09:22,640
+que utilicemos, así que vamos allá. Una de las primeras cosas a tomar en cuenta para
+
+27
+00:09:22,640 --> 00:09:27,680
+escribir pruebas vendría siendo test isolation, que quiere decir que los casos de prueba que
+
+28
+00:09:27,680 --> 00:09:33,280
+escribas no deberían causar efectos secundarios sobre otras pruebas y hay varias razones por
+
+29
+00:09:33,280 --> 00:09:39,480
+la que esto puede ocurrir. Una de ellas es que en Python en particular tengamos un patch
+
+30
+00:09:39,480 --> 00:09:45,680
+que permanezca activo entre varias pruebas, verdad. Entonces, vamos a verlo con ejemplos.
+
+31
+00:09:45,680 --> 00:09:50,920
+Aquí tengo un cliente de GitHub al cual le estoy aplicando un patch, un método, simplemente
+
+32
+00:09:50,920 --> 00:09:57,640
+el método get y lo estoy aplicando mediante una API un poco riesgosa de patch que es start.
+
+33
+00:09:57,640 --> 00:10:02,000
+Luego en la siguiente prueba lo que voy a probar es si el mock se está manteniendo.
+
+34
+00:10:02,000 --> 00:10:09,680
+Entonces, si ejecutamos esta prueba vemos que pasa, lo cual es un poco extraño, porque
+
+35
+00:10:09,680 --> 00:10:15,880
+quiere decir que tenemos un efecto secundario en caso de prueba en el otro. ¿Cómo lo solucionamos?
+
+36
+00:10:15,880 --> 00:10:20,600
+Una de las formas que tenemos en Python para solucionar este side effect es utilizando context
+
+37
+00:10:20,600 --> 00:10:26,520
+manager, sobre todo en el API de patch. Todo lo que ocurre dentro de este context manager
+
+38
+00:10:26,520 --> 00:10:31,480
+va a permanecer ahí y el patch se va a eliminar una vez que salgas del context manager. De
+
+39
+00:10:31,480 --> 00:10:37,120
+manera que en la siguiente prueba esto ya no va a ser un mock. Si lo ejecutamos, vamos
+
+40
+00:10:37,120 --> 00:10:41,360
+a ver que ahora sí tenemos el comportamiento indicado que en lo que esperábamos que es
+
+41
+00:10:41,360 --> 00:10:49,160
+que el mock ya no funciona. Otra manera es un decorador. Si decoramos el método de prueba
+
+42
+00:10:49,160 --> 00:10:55,760
+con el patch, la única diferencia con la anterior es que el scope en el que se aplica
+
+43
+00:10:55,760 --> 00:10:59,320
+el patch va a ser a través de todo el método de prueba y no solamente en la parte de código
+
+44
+00:10:59,320 --> 00:11:06,760
+que queríamos. Entonces, si lo ejecutamos, vamos a tener el mismo comportamiento que antes,
+
+45
+00:11:06,760 --> 00:11:11,960
+que es justamente lo que esperamos. Otra de las causas y esto es una de las más comunes
+
+46
+00:11:11,960 --> 00:11:16,840
+que pueden causar efectos secundarios en diferentes casos de pruebas es cuando utilizamos una base
+
+47
+00:11:16,840 --> 00:11:22,760
+de datos. Por ejemplo, aquí tengo un user store en donde creamos un usuario en este
+
+48
+00:11:22,760 --> 00:11:28,520
+método de prueba y en el siguiente método estoy esperando que ese store esté vacío.
+
+49
+00:11:28,520 --> 00:11:34,400
+Entonces si lo ejecutamos, los vamos a dar cuenta que va a fallar porque sí que tenemos
+
+50
+00:11:34,400 --> 00:11:37,920
+algo en esa base de datos. Entonces, cuando tenemos una base de datos de prueba tenemos
+
+51
+00:11:37,920 --> 00:11:45,400
+que procurar que entre las pruebas estemos utilizando algún método de cleanup. Entonces,
+
+52
+00:11:45,400 --> 00:11:50,200
+por ejemplo, si estamos utilizando pytest, utilizaríamos algo como un fixture y los
+
+53
+00:11:50,200 --> 00:11:58,160
+fixtures tienen este feature que podemos hacer el teardown después de hacer yield del fixture
+
+54
+00:11:58,160 --> 00:12:06,440
+y antes de hacer el yield vendría haciéndolo el setup. Entonces, si ejecutamos esta prueba,
+
+55
+00:12:06,440 --> 00:12:12,120
+en este caso particular estoy usando el fixture automáticamente. Si ejecutamos la prueba,
+
+56
+00:12:12,120 --> 00:12:19,160
+ahora sí que nos va a funcionar porque estamos garantizando que entre cada caso de prueba
+
+57
+00:12:19,160 --> 00:12:26,160
+estamos limpiando la base de datos. Otro caso muy particular de side effects es cuando
+
+58
+00:12:26,160 --> 00:12:31,800
+estamos compartiendo estado entre los casos de prueba. Muy común cuando estamos usando
+
+59
+00:12:31,800 --> 00:12:38,760
+un setup class. Entonces, si setiamos un usuario, username o lo que sea, lo compartimos entre
+
+60
+00:12:38,760 --> 00:12:43,360
+los casos de prueba y en este caso de prueba estamos cambiando el nombre, bien sea por
+
+61
+00:12:43,360 --> 00:12:49,400
+un error, bien sea por cualquier cosa, aquí ya esto no va a funcionar. Entonces, si lo
+
+62
+00:12:49,400 --> 00:12:55,040
+ejecutamos, vamos a ver que nos va a fallar y es porque el string que estamos esperando
+
+63
+00:12:55,040 --> 00:13:00,440
+en el primer método que habíamos seteado a través de clases ya es diferente. Entonces,
+
+64
+00:13:00,440 --> 00:13:04,960
+cuando vayas a setear estado o compartir estado en una clase de prueba, lo más importante
+
+65
+00:13:04,960 --> 00:13:10,000
+es que lo use solo para lectura pero que no escribas sobre ello porque esto es un claro
+
+66
+00:13:10,000 --> 00:13:15,800
+indicio de que van a causar side effects en sus pruebas. Quiero mostrarles este quote que
+
+67
+00:13:15,800 --> 00:13:22,360
+me parece de Michael Ford que es el que creó la librería MOC que ahora está en el Standard
+
+68
+00:13:22,360 --> 00:13:27,200
+Library of Python y viene de este artículo de 30 best practices for software development
+
+69
+00:13:27,200 --> 00:13:33,680
+and testing. Dice, mientras más tengas que hacer MOCs en tu código, peores tu código.
+
+70
+00:13:33,680 --> 00:13:40,560
+Más más tengas que instanciar estado para probar un pedacito de código, peores el código.
+
+71
+00:13:40,560 --> 00:13:46,320
+Y la idea vendría siendo que tengas unidades pequeñitas que puedas probar y en cambio
+
+72
+00:13:46,320 --> 00:13:51,240
+uses unidades grandes de integración y test funcionales, de manera que tú puedas ver
+
+73
+00:13:51,240 --> 00:14:00,280
+que estas unidades se comporten bien correctamente entre ellas. Ahora, siguiendo esta idea sobre
+
+74
+00:14:00,280 --> 00:14:05,720
+las unidades, hablemos de pruebas unitalias. Las pruebas unitalias tienen ciertas reglas
+
+75
+00:14:05,720 --> 00:14:12,400
+que deberíamos tomar en cuenta para que funcionen bien. Entre ellas tenemos una que las pruebas
+
+76
+00:14:12,400 --> 00:14:17,800
+unitalias debemos tratarlas como cajas negras. Es decir, si vamos a probar una clase, si vamos
+
+77
+00:14:17,800 --> 00:14:23,480
+a probar un método privado, traten de no modificar ni métodos privados ni comportamientos internos
+
+78
+00:14:23,480 --> 00:14:27,640
+de los métodos que vayan a probar durante la prueba. Mientras más se haga esto, las
+
+79
+00:14:27,640 --> 00:14:33,120
+pruebas se van haciendo cada vez menos fiable. Deben ser pequeñas y bien enfocadas cuando
+
+80
+00:14:33,120 --> 00:14:37,800
+estás viendo que tu prueba unitaria empieza a crecer muchísimo, es un indicador superclaro
+
+81
+00:14:37,800 --> 00:14:43,440
+que el código está mal estructurado. En esto, por ejemplo, cosas como TDD, que es
+
+82
+00:14:43,440 --> 00:14:49,040
+Driven Development, te enseñan a modularizar un poco más el código. No estoy diciendo
+
+83
+00:14:49,040 --> 00:14:55,800
+que hagan TDD o que lo hagan, aunque no lo hagan, sino que tomen en cuenta lo que enseña
+
+84
+00:14:55,800 --> 00:15:01,400
+TDD, que también es importante para estructurar sus pruebas. Deben ser rápidas, es decir,
+
+85
+00:15:01,400 --> 00:15:06,520
+las pruebas deben durar, o sea, pruebas que duran menos de 0.1 segundos y no son consideradas
+
+86
+00:15:06,520 --> 00:15:12,560
+pruebas unitalias. Esto tomenlo con un granito de sal porque no es 100%, así, pero es un
+
+87
+00:15:12,560 --> 00:15:17,120
+buen mindset a tener cuando escriban pruebas unitalias. Imagínense que tengan un codebase
+
+88
+00:15:17,120 --> 00:15:22,920
+donde tienen más de mil pruebas y cada una dure un segundo. Ya el continuous integration
+
+89
+00:15:22,920 --> 00:15:28,760
+se devuelve a infinito y no se puede trabajar así. Algunas recomendaciones generales, no
+
+90
+00:15:28,760 --> 00:15:35,240
+sólo para unit tests. Siempre deben incluir pruebas. Cuando en la industria, cuando tienes
+
+91
+00:15:35,240 --> 00:15:39,160
+código que está en producción, debe ir siempre con pruebas. Toda base de códigos
+
+92
+00:15:39,160 --> 00:15:46,000
+sin pruebas se sume como defectuoso y es muy propenso a que tenga regressions, bugs y,
+
+93
+00:15:46,000 --> 00:15:51,160
+bueno, quién sabe. O sea, en un codebase ya empiezan a trabajar un equipo grande de
+
+94
+00:15:51,160 --> 00:15:56,800
+ingeniería y necesita pruebas. Las pruebas debemos tratarlas como código producto, a
+
+95
+00:15:56,800 --> 00:16:01,240
+veces por ser pruebas como que las dejamos a un lado y no nos importan tanto y las hacemos
+
+96
+00:16:01,240 --> 00:16:06,600
+como queramos. Pero todo esto de join going on, keep it simple, stupid, don't repeat yourself
+
+97
+00:16:06,600 --> 00:16:11,240
+y cualquier tipo de patrón de diseño aplican igualmente a las pruebas. Porque a medida que
+
+98
+00:16:11,240 --> 00:16:17,120
+el codebase crece, las pruebas crecen y se vuelven inmantenibles. Lo más importante es
+
+99
+00:16:17,120 --> 00:16:22,080
+que se estructuren de una buena manera de forma que puedan crecer con tu código.
+
+100
+00:16:22,080 --> 00:16:27,600
+Y otro es favorecer dependency injection sobre moquear y hacer patch. Esto va muy ligado
+
+101
+00:16:27,600 --> 00:16:33,440
+a la idea anterior que el cuodo anterior que me mostré en mycalford y es que en vez de
+
+102
+00:16:33,440 --> 00:16:38,440
+colocar objetos espía o moquear muchas cosas, lo ideal sería crear el objeto como tal e
+
+103
+00:16:38,440 --> 00:16:40,840
+inyectarlo sobre el método que quieren probar.
+
+104
+00:16:40,840 --> 00:16:49,560
+En Python tenemos vario frameworks. En estos quiero hacer énfasis principalmente en estos
+
+105
+00:16:49,560 --> 00:16:56,120
+dos empites y unit tests. Nose y Nose2 son básicamente unit tests con plugins. Nose
+
+106
+00:16:56,120 --> 00:17:02,000
+ya no está mantenido. Nose2 sería lo que ahora está en mantenimiento por la comunidad.
+
+107
+00:17:02,000 --> 00:17:06,720
+Mi recomendación es que se mantengan con los dos primeros. Y mi recomendación entre
+
+108
+00:17:06,720 --> 00:17:12,640
+estos dos empites porque te ofrece toda la flexibilidad que necesitas para adquirir pruebas
+
+109
+00:17:12,640 --> 00:17:18,640
+funcionales y pruebas de clases, te permite usar fixtures que favorece dependency injection
+
+110
+00:17:18,640 --> 00:17:24,600
+y reusabilidad de código. Unit test fue una portabilidad que vino de JUnit que por eso
+
+111
+00:17:24,600 --> 00:17:32,760
+se parece tanto cosas como ya utilizaba camelcase y todo. Y es solo basado en clases.
+
+112
+00:17:32,760 --> 00:17:37,240
+Entonces usando estos dos frameworks o conociéndolos muchas veces nos preguntamos ¿Pruedas
+
+113
+00:17:37,240 --> 00:17:42,840
+funcionales o pruebas basadas en clases? ¿Qué tengo que utilizar? Como les mencioné,
+
+114
+00:17:42,840 --> 00:17:50,760
+empites por lo general se pueden utilizar funciones o clases. Y unit tests por lo general
+
+115
+00:17:50,760 --> 00:17:57,720
+son solo clases que es lo único que te ofrece. Hay cierto creencia de que empites favorece
+
+116
+00:17:57,720 --> 00:18:02,120
+más funcional que en clases pero eso realmente no es cierto. Puedes utilizar tantas funciones
+
+117
+00:18:02,120 --> 00:18:08,080
+como clases. Así se ve una prueba funcional en empites, es muy sencilla, es bastante to
+
+118
+00:18:08,080 --> 00:18:14,440
+the point. Así se ve una clase en empites, básicamente la única diferencia con unit tests
+
+119
+00:18:14,440 --> 00:18:19,960
+es que no estamos heredando de test case y favorecemos a usar fixtures antes de usar
+
+120
+00:18:19,960 --> 00:18:25,480
+los métodos de setup tieredown que te ofrece unit tests. Y en unit tests si que heredamos
+
+121
+00:18:25,480 --> 00:18:31,480
+de test case y utilizamos cosas como set up. Es básicamente por ahí va la idea, la diferencia
+
+122
+00:18:31,480 --> 00:18:36,200
+entre ellas. De hecho si las ejecutamos estas tres cosas que acabé mostrales son completamente
+
+123
+00:18:36,200 --> 00:18:42,600
+equivalente y las tres funcionan. Mi recomendación es que bien sea pites o bien sea unit tests
+
+124
+00:18:42,600 --> 00:18:48,840
+se mantengan con uno de ellos, es decir no los mezclen en el sentido de que si estás
+
+125
+00:18:48,840 --> 00:18:54,360
+usando test case no utilices pites, no utilices fixtures porque el comportamiento empieza a
+
+126
+00:18:54,360 --> 00:19:01,440
+fallar y los tests no van a funcionar como ustedes. Recomendaciones generales para decir
+
+127
+00:19:01,440 --> 00:19:09,200
+entre función o clases. La idea sería usar clases como una forma de agrupación semántica
+
+128
+00:19:09,200 --> 00:19:15,080
+de pruebas. Esto quiere decir que si estás haciendo pruebas de un mismo feature, que
+
+129
+00:19:15,080 --> 00:19:22,040
+de hecho que compartan estado entre ellos o que engloben como la misma idea, lo ideal
+
+130
+00:19:22,040 --> 00:19:27,840
+sería utilizar una clase. Si necesitas ejecutar un conjunto de pruebas dentro de un mismo core,
+
+131
+00:19:27,840 --> 00:19:33,600
+es decir cuando estemos en continuous integration y tengamos la prueba ejecuta en una forma
+
+132
+00:19:33,600 --> 00:19:39,200
+paralela, las todo lo que vienen en una clase se ejecuta en el mismo core. Y si estamos
+
+133
+00:19:39,200 --> 00:19:45,160
+en pites utiliza fixtures para rehusar código entre funciones y métodos, es decir no utilices
+
+134
+00:19:45,160 --> 00:19:52,520
+el estilo de yay unit para este tipo de cosas. Generalmente cuando estamos escribiendo pruebas
+
+135
+00:19:52,520 --> 00:19:57,720
+una cosa importante es set up y tear down, que ya lo mencionaba mucho durante la charla.
+
+136
+00:19:57,720 --> 00:20:01,800
+Estos métodos generalmente lo usamos para preparar y limpiar datos en las pruebas. Esa
+
+137
+00:20:01,800 --> 00:20:06,920
+es nuestra idea principal de los set ups y tear downs. En pites la recomendación en
+
+138
+00:20:06,920 --> 00:20:14,760
+fixtures y hay varias maneras de usarla. Si lo vamos a usar más como set ups y tear downs,
+
+139
+00:20:14,760 --> 00:20:18,920
+el auto-use es importante porque esto es lo que va a permitir que se usen automáticamente
+
+140
+00:20:18,920 --> 00:20:23,840
+en cada una de tus pruebas. Es decir esto se va a ejecutar dependiendo del scope en el
+
+141
+00:20:23,840 --> 00:20:29,200
+que lo definen. Si lo definen a función se va a ejecutar una vez antes de cada función
+
+142
+00:20:29,200 --> 00:20:33,680
+de prueba. Y el scope puede cambiar mucho, puedes hacerlo a package, session, class,
+
+143
+00:20:33,680 --> 00:20:39,600
+module. Bueno hay muchas, o sea de manera que te da la flexibilidad que tú quieras. Si
+
+144
+00:20:39,600 --> 00:20:45,680
+la fixture no lo vas a colocar como auto-use, la puedes utilizar en cualquier prueba si
+
+145
+00:20:45,680 --> 00:20:50,280
+la pasas como parámetro de la prueba y esto es lo que favorece dependency injection si
+
+146
+00:20:50,280 --> 00:20:55,800
+estamos utilizando fixtures. Esto es a lo que yo me refería cuando hablábamos de xunit
+
+147
+00:20:55,800 --> 00:21:00,960
+style ¿no? Es como en pites también podrías hacer lo que haces en unit tests de usar set
+
+148
+00:21:00,960 --> 00:21:05,760
+up class, set up module, set up function, etc. Se escriben diferente así que tengan cuidado
+
+149
+00:21:05,760 --> 00:21:12,840
+porque las de unit tests son camel case y estas son snack case. No son te recomendadas porque
+
+150
+00:21:12,840 --> 00:21:17,960
+no puedes reutilizarlas mucho. El scope es lo que sea, bien sea el módulo, bien sea la clase,
+
+151
+00:21:17,960 --> 00:21:24,680
+la función di ahí no van a salir. En unit test es lo que me había mencionado, tenemos
+
+152
+00:21:24,680 --> 00:21:29,600
+set up, set up class, teardown y teardown class. Aquí hay algo importante a tomar en cuenta
+
+153
+00:21:29,600 --> 00:21:35,720
+y es que set up class puede causar cosas como efectos como el que vimos al principio de
+
+154
+00:21:35,720 --> 00:21:41,560
+la charla en donde definíamos un usuario a nivel de clase y si lo modificamos en alguna
+
+155
+00:21:41,560 --> 00:21:48,760
+de los métodos esto nos podría causar un side effect. Moviendonos un poco del tema de set
+
+156
+00:21:48,760 --> 00:21:54,560
+up y teardown patch in mock son otros los conceptos que vemos muchísimo en python. Quiero enfocarme
+
+157
+00:21:54,560 --> 00:21:59,200
+en dos librerías principalmente para mocking y a pesar de que hay recomendado python voy
+
+158
+00:21:59,200 --> 00:22:06,560
+a recomendar unit test.mock para hacer los mocks. La razón es que unit test mock es una
+
+159
+00:22:06,560 --> 00:22:12,360
+librería que se introdujo al standard library porque fue creada por Michael Ford y pasó
+
+160
+00:22:12,360 --> 00:22:18,040
+a ser parte de unit test en el standard library y funciona muy bien con pytest. El problema
+
+161
+00:22:18,040 --> 00:22:25,400
+de otras librerías como pytest mock es que te da un fixture que te llama mocker. Es
+
+162
+00:22:25,400 --> 00:22:30,160
+conveniente porque automáticamente deshace los patch al final de las pruebas, no tenemos
+
+163
+00:22:30,160 --> 00:22:35,840
+que usar ni context manager ni decorators como se los mostré anteriormente pero puede
+
+164
+00:22:35,840 --> 00:22:39,640
+causar confusión porque en el momento de que tienes un codebase suficientemente grande
+
+165
+00:22:39,640 --> 00:22:45,720
+y una cantidad suficientemente importante de ingenieros trabajando en ella, muy posible
+
+166
+00:22:45,720 --> 00:22:51,160
+ves unit test mock y mocker funcionando ahí en conjunto y no funcionan también y se los
+
+167
+00:22:51,160 --> 00:22:56,080
+quiero mostrar con un ejemplo. Aquí estoy haciendo lo que no debería y usar mocker
+
+168
+00:22:56,080 --> 00:23:03,360
+como un context manager. En hecho si lo ejecuto lo que va a pasar es un poco lo esperado,
+
+169
+00:23:03,360 --> 00:23:07,080
+el test pasa pero me dan un warning, me dice mock return by pytest mock, you don't need
+
+170
+00:23:07,080 --> 00:23:12,640
+to be used as context manager. No dice vale, me dio un warning. Pero qué pasa si yo quiero
+
+171
+00:23:12,640 --> 00:23:17,000
+cambiar el comportamiento de mi mock? Ahora ya no quiero que sea un mock nada más sino
+
+172
+00:23:17,000 --> 00:23:22,800
+que devuelva una función nueva con un valor nuevo por alguna razón en mi test. Aquí
+
+173
+00:23:22,800 --> 00:23:28,160
+sé que ya empiezan a ocurrir cosas oscuras y te dan un error crítico que dice attribute
+
+174
+00:23:28,160 --> 00:23:34,080
+error enter. Vale, básicamente te están diciendo que mocker la estás utilizando con context
+
+175
+00:23:34,080 --> 00:23:38,760
+manager cuando no. Este tipo de cosas puede suceder y por eso yo recomiendo mantenerse
+
+176
+00:23:38,760 --> 00:23:44,880
+solo con unit test mock que está bastante bien. Otro de las cosas interesantes de la
+
+177
+00:23:44,880 --> 00:23:51,240
+librería de mock es que te permite hacer comprobaciones sobre si tu método ha sido llamado,
+
+178
+00:23:51,240 --> 00:23:55,600
+cómo ha sido llamado y con qué parámetros. Con este pequeño ejemplo se los quiero mostrar
+
+179
+00:23:55,600 --> 00:24:01,340
+y es que tenemos un cliente de github que obtiene los gits de github y nada más estamos
+
+180
+00:24:01,340 --> 00:24:08,040
+llamando aquí a un método get. Eso es todo lo que hace este método. Ahora en mi prueba
+
+181
+00:24:08,040 --> 00:24:14,080
+voy a hacer un mock sobre un método completamente diferente y voy a llamar a get gits que como
+
+182
+00:24:14,080 --> 00:24:18,480
+vimos solo llama get. Esta prueba debería fallar porque aquí no estoy llamando a get
+
+183
+00:24:18,480 --> 00:24:25,520
+gits URLs en ningún sitio. Sin embargo, esta prueba pasa y se preguntarán pero
+
+184
+00:24:25,520 --> 00:24:30,920
+por qué pasa. Simplemente es porque la API de los mocks es un poco diferente a lo que
+
+185
+00:24:30,920 --> 00:24:36,120
+uno esperaría. Aquí estamos haciendo una cert sobre un método llamado cold ones cuando
+
+186
+00:24:36,120 --> 00:24:41,800
+realmente debería hacerse de la siguiente forma. Sin embargo, lo que yo quiero que se
+
+187
+00:24:41,800 --> 00:24:47,680
+lleven de aquí y se los muestro ejecutando esto es que aquí sí que vemos el error,
+
+188
+00:24:47,680 --> 00:24:52,480
+¿no? Expect get gits URLs to have been cold ones. Lo que quiero que se lleven de este
+
+189
+00:24:52,480 --> 00:24:57,360
+ejemplo es que la API de los mocks es infinito. O sea, tú puedes hacer punto tal, punto método,
+
+190
+00:24:57,360 --> 00:25:02,320
+punto método y eso va a funcionar porque justamente es la idea de los mocks. Pero hay
+
+191
+00:25:02,320 --> 00:25:09,680
+que tener cuidado. En los patch que justamente es la acción que estamos ejecutando para
+
+192
+00:25:09,680 --> 00:25:15,160
+poder crear mocks en nuestro código, pasa algo particular en Python al menos y es que
+
+193
+00:25:15,160 --> 00:25:21,040
+el objeto al que queremos aplicar el patch le exclupir con ciertas reglas. Uno, ser importado
+
+194
+00:25:21,040 --> 00:25:24,440
+desde tu archivo de pruebas, es decir, no vas a poder hacer un patch que no puedas importar
+
+195
+00:25:24,440 --> 00:25:30,720
+desde ahí y que el patch que estemos definiendo en el patch tiene que ser de donde el objeto
+
+196
+00:25:30,720 --> 00:25:37,360
+se use, no donde el objeto se define y esto es motivo de confusión. En este ejemplo, imagínense
+
+197
+00:25:37,360 --> 00:25:44,040
+el archivo service.py y aquí tenemos nuestro cliente de GitHub al que le hacemos get gits.
+
+198
+00:25:44,040 --> 00:25:48,640
+Vale, bien. Y tenemos el GitHub Climb que se define GitHub Climb que es otro módulo
+
+199
+00:25:48,640 --> 00:25:54,400
+completamente diferente. En mis pruebas yo debo hacer el patch en service y no en GitHub
+
+200
+00:25:54,400 --> 00:26:00,520
+Climb. De hecho, debe escribirse así. Service, GitHub Climb, get gits. Aquí nos está definiendo
+
+201
+00:26:00,520 --> 00:26:06,920
+GitHub Climb, aquí se está usando GitHub Climb y aquí sí que nuestra prueba va a funcionar
+
+202
+00:26:06,920 --> 00:26:15,240
+porque los patch tienen esta particularidad. Otra cosa que nos encontramos y a lo mejor
+
+203
+00:26:15,240 --> 00:26:21,880
+que alguno ya ha visto esto es cuando estamos viendo un caso de prueba que necesita tanto
+
+204
+00:26:21,880 --> 00:26:27,040
+aplicar tantos mocs que se vuelve una escalera, lo que llamamos un patch help. Tienes tanto
+
+205
+00:26:27,040 --> 00:26:32,880
+mocs que hasta el código se vuelve elegible y complicado. Esto tiene un par de red flags,
+
+206
+00:26:32,880 --> 00:26:37,120
+el más importante es el que está haciendo demasiados mocs, probablemente deberías modularizar
+
+207
+00:26:37,120 --> 00:26:43,320
+el código para no tener que aplicar tantos patch. Sin embargo, si existe el caso en el
+
+208
+00:26:43,320 --> 00:26:50,080
+que lo necesitas hacer patch multiple puede ayudar en este caso. Fíjense cómo se abstrae
+
+209
+00:26:50,080 --> 00:26:57,360
+toda la lógica del patching afuera del método y de manera que queda como un one-liner. Y
+
+210
+00:26:57,360 --> 00:27:02,000
+aquí sí que se entiende lo que está pasando en el caso de prueba. Lo importante ya de
+
+211
+00:27:02,000 --> 00:27:11,400
+aquí es revisar la IPI de patch porque tiene múltiples ideas, que la IPI es bastante rica,
+
+212
+00:27:11,400 --> 00:27:15,560
+es decir que puedes valerte eso para no solo utilizar un context manager, el mismo context
+
+213
+00:27:15,560 --> 00:27:22,840
+manager en todos los casos. Si ejecutamos estos dos ejemplos, los dos van a pasar porque
+
+214
+00:27:22,840 --> 00:27:29,640
+los dos funcionan, esto es más de cómo estructurar el código. Por lo general, cuando estamos
+
+215
+00:27:29,640 --> 00:27:34,720
+haciendo pruebas también queremos probar que nuestro código es capaz de elevar excepciones.
+
+216
+00:27:34,720 --> 00:27:39,840
+En este caso particular tenemos un método que simplemente eleva una excepción cuya
+
+217
+00:27:39,840 --> 00:27:47,880
+string va a ser error. Y en este caso de prueba estoy haciendo una cert de que el string
+
+218
+00:27:47,880 --> 00:27:53,040
+que estoy devolviendo aquí que debe ser error es some other string. Es completamente distinto.
+
+219
+00:27:53,040 --> 00:28:00,240
+Esta prueba no puede pasar. En embargo, la ejecuto y también va a pasar. Y eso son,
+
+220
+00:28:00,240 --> 00:28:04,320
+dice, pero por qué, por qué está pasando. Lo que sucede en este caso particular es que
+
+221
+00:28:04,320 --> 00:28:09,440
+la cert debe ejecutarse fuera del context manager. Si estás haciendo la cert dentro
+
+222
+00:28:09,440 --> 00:28:13,280
+del context manager, lo que va a suceder es que la excepción se va a elevar y en ese
+
+223
+00:28:13,280 --> 00:28:18,320
+contexto el código que sigue dentro del context manager no se ejecuta. Pero error, como es
+
+224
+00:28:18,320 --> 00:28:23,480
+un objeto en Python, mantendrá su valor fuera del context manager. Y ahí sí que puedes
+
+225
+00:28:23,480 --> 00:28:28,600
+hacer la cert y va a funcionar correctamente. Ese es el comportamiento que esperaríamos,
+
+226
+00:28:28,600 --> 00:28:39,320
+es que falla. Fechas, tiempo y todo lo relacionado es complicado en las pruebas. Son un indicador
+
+227
+00:28:39,320 --> 00:28:46,480
+de que pueden ocurrir test flaking, digamos, como lo que llamamos pruebas indeterminísticas.
+
+228
+00:28:46,480 --> 00:28:52,400
+En este caso, muy sencillo, tenemos una función que calcula que día es mañana y en nuestra
+
+229
+00:28:52,400 --> 00:28:57,320
+prueba estamos usando datetime.today. Entonces, si ejecutamos esta prueba, la prueba va a
+
+230
+00:28:57,320 --> 00:29:01,320
+pasar porque hoy estamos a 2 y mañana es 3. Pero esta prueba les va a durar un solo
+
+231
+00:29:01,320 --> 00:29:07,000
+día y a mañana va a fallar. Entonces, ¿qué vamos a hacer? Uno favorecer dependence
+
+232
+00:29:07,000 --> 00:29:13,040
+injection si queremos irnos por ese lado y es instanciar nuestra fecha y pasarla a medida
+
+233
+00:29:13,040 --> 00:29:17,680
+de dependence injection en la función que queremos probar. Y la opción 2 que tenía Python
+
+234
+00:29:17,680 --> 00:29:23,120
+es frisgan, que es una librería que es bastante útil. Esta es lo que va a ser un patch sobre
+
+235
+00:29:23,120 --> 00:29:29,280
+cualquier datetime, time o cualquier de estas funciones que te devuelva fechas y la va a
+
+236
+00:29:29,280 --> 00:29:35,560
+devolver la fecha que especifica acá. Si ejecutamos esas pruebas que acabo de mencionarles,
+
+237
+00:29:35,560 --> 00:29:41,720
+van a pasar las dos porque hemos instanciado la fecha que queremos. En cuanto a pruebas
+
+238
+00:29:41,720 --> 00:29:47,920
+asínconas, tenemos PyTest o SyncIO o PyTest Tornado, depende del framework que estás
+
+239
+00:29:47,920 --> 00:29:53,640
+utilizando. Lo más importante es que revises la documentación y, por ejemplo, si es asyncIO,
+
+240
+00:29:53,640 --> 00:29:58,720
+utilices PyTest, marca SyncIO, si es tornado, marque GenTest. Si los mezclas van a empezar
+
+241
+00:29:58,720 --> 00:30:04,120
+a tener problemas. Ellos, como las sintaxis es más o menos la misma, pueden funcionar,
+
+242
+00:30:04,120 --> 00:30:10,880
+tienen comportamientos extraños cuando empiezas a mezclar las dos API. También tenemos fixtures
+
+243
+00:30:10,880 --> 00:30:18,560
+que pueden hacer asignos, simplemente se pueden utilizar con la sintaxis de asyncAwait y Mox,
+
+244
+00:30:18,560 --> 00:30:24,920
+que me parece una de las cosas más brutales de Python 3.9 en la librería de Unites,
+
+245
+00:30:24,920 --> 00:30:31,960
+es que te trae un asyncMog. Entonces, esto libra muchísimos dolores de cabeza cuando queremos
+
+246
+00:30:31,960 --> 00:30:39,280
+hacer Mox que son asínconos y necesitamos llamarlos con await. Ahora me gustaría terminar
+
+247
+00:30:39,280 --> 00:30:45,760
+la charla con un par de consejos para continuous integration. El primero de ellos es Coverage.
+
+248
+00:30:45,760 --> 00:30:51,160
+100% de Coverage no implica 100% de calidad. Sin embargo, es muy común y es necesario
+
+249
+00:30:51,160 --> 00:30:57,960
+tener al menos un mínimo nivel que nos garantice la calidad del código. En Backend, 80, 90%
+
+250
+00:30:57,960 --> 00:31:05,080
+suele ser lo más recomendado, apunten al 90%. A pesar de que 100% no implica calidad,
+
+251
+00:31:05,080 --> 00:31:09,440
+mientras más Coverage tenga, pues menos probabilidades tienes de que el código tenga problemas.
+
+252
+00:31:09,440 --> 00:31:15,360
+En Python se hace muy fácil con CopFailUnder90, este flag básicamente va a fallar el test
+
+253
+00:31:15,360 --> 00:31:23,440
+de continuous integration si el Coverage baja al menos del 90%. Paralelización. Esto
+
+254
+00:31:23,440 --> 00:31:28,320
+ayuda muchísimo a agilizar las pruebas en continuous integration. En PyTest tenemos
+
+255
+00:31:28,320 --> 00:31:32,800
+PyTest Exdist, que es una librería que es la que te permite hacer la paralelización.
+
+256
+00:31:32,800 --> 00:31:38,520
+Y aquí hay una de las cosas que quería mostrarles, que voy a ejecutar la primera prueba que hice
+
+257
+00:31:38,520 --> 00:31:44,120
+en la charla, que fue el patch que lo hicimos a Start y funcionaba en los dos casos de prueba.
+
+258
+00:31:44,120 --> 00:31:52,480
+Pero esta vez la voy a ejecutar en dos cores. De hecho, si ejecutamos la prueba, ya aquí
+
+259
+00:31:52,480 --> 00:31:57,960
+tenemos, va a fallar, a diferencia que al principio sí que pasaba, ¿no? Y falla porque
+
+260
+00:31:57,960 --> 00:32:02,520
+se está ejecutando en dos hilos diferentes. Es decir, el side effect que teníamos del
+
+261
+00:32:02,520 --> 00:32:07,520
+patch ya no se va a ejecutar, o sea, ya no va a ocurrir en el segundo caso de prueba.
+
+262
+00:32:07,520 --> 00:32:12,680
+Esto es por eso que le he querido mostrar este tipo de cosas, porque tu continuous integration
+
+263
+00:32:12,680 --> 00:32:18,760
+empieza a ser indeterminístico cuando tenemos estas problemas en los casos de prueba. En
+
+264
+00:32:18,760 --> 00:32:26,520
+Yango es bastante sencillo, con el flag paralel lo podemos hacer. Y por último, reportes.
+
+265
+00:32:26,520 --> 00:32:30,320
+Cuando tenemos continuous integration, por lo general queremos saber qué pasa. Uno de
+
+266
+00:32:30,320 --> 00:32:36,960
+los reportes más importantes vendría siendo el reporte de Corel, que al ejecutarlo vemos
+
+267
+00:32:36,960 --> 00:32:42,480
+por dónde ha pasado las pruebas. En este caso, como solo estoy ejecutando un solo archivo,
+
+268
+00:32:42,480 --> 00:32:48,160
+que es el patch, vamos a ver que GitHub Client es el único por el que se pasó y tenemos
+
+269
+00:32:48,160 --> 00:32:57,280
+un 67% de coverage, y tan bueno. Y por último, el reporte de Flaky o HazenTest, que vendría
+
+270
+00:32:57,280 --> 00:33:03,680
+siendo si tu prueba pasa en tu continuous integration, luego no pasa y luego vuelve
+
+271
+00:33:03,680 --> 00:33:10,960
+a pasar, es lo que llamamos FlakyTest, en cierta también se llama HazenTest o pruebas
+
+272
+00:33:10,960 --> 00:33:14,640
+indeterminísticas. Entonces, este es el tipo de cosas que ya toman en cuenta. No hay un
+
+273
+00:33:14,640 --> 00:33:21,680
+custom solution para esto. Como decir, patch is exist, pero sí que lo puedes implementar
+
+274
+00:33:21,680 --> 00:33:27,120
+y es un reporte interesante a tener en tu continuous integration. Y bueno, con esto yo creo que
+
+275
+00:33:27,120 --> 00:33:33,320
+daré final a mi charla. Muchísimas gracias por escucharme y bueno, puedo abrir la puerta
+
+276
+00:33:33,320 --> 00:33:40,120
+para preguntas que tengan. Muchas gracias, Imel. Super interesante tu charla. Teníamos
+
+277
+00:33:40,120 --> 00:33:45,400
+una preguntita que apareció por YouTube a mediados de tu charla más o menos relacionado
+
+278
+00:33:45,400 --> 00:33:52,920
+a medir el tiempo máximo por test. De todas formas, quería recordar a las personas que
+
+279
+00:33:52,920 --> 00:33:57,960
+igual escriban sus preguntas por Discord, que por allá vamos a continuar la discusión,
+
+280
+00:33:57,960 --> 00:34:05,440
+pero en caso si quieras decir algo relacionado al tiempo. Sí, ahí justamente, si no me quedó
+
+281
+00:34:05,440 --> 00:34:12,280
+con la librería de PyTest, que te permite medir el tiempo entre las pruebas y como un
+
+282
+00:34:12,280 --> 00:34:17,880
+step de continuous integration que es bastante interesante es acotarlo. Es decir, si decimos
+
+283
+00:34:17,880 --> 00:34:25,080
+que nuestras pruebas, máximo un segundo, digamos, por ejemplo. Y esa prueba, ese step
+
+284
+00:34:25,080 --> 00:34:29,440
+de continuous integration ya no va a pasar si tienes pruebas que duren más de ese tiempo.
+
+285
+00:34:29,440 --> 00:34:36,880
+Esto a lo mejor hay que ver cómo se hace porque si tienes end-to-ends o pruebas que
+
+286
+00:34:36,880 --> 00:34:43,160
+implican no solamente Python, sino la UI, un segundo a lo mejor es poco. Pero eso ya
+
+287
+00:34:43,160 --> 00:34:48,880
+es un poco de fine tuning, dependiendo del continuous integration que tengas.
+
+288
+00:34:48,880 --> 00:34:54,040
+Y es muy común escuchar a veces en charla relacionada a testing también este módulo
+
+289
+00:34:54,040 --> 00:34:59,480
+que se llama Hypothesis. No sé si lo ha utilizado o si tiene alguna opinión con respecto
+
+290
+00:34:59,480 --> 00:35:06,080
+a eso, respecto a lo que presentaste hoy. Sí, Hypothesis es muy bueno, lo he visto
+
+291
+00:35:06,080 --> 00:35:14,600
+sobre todo cuando estamos probando APIs. Cuando tenemos APIs definidas con Open API, justamente,
+
+292
+00:35:14,600 --> 00:35:19,600
+una combinación que es como muy natural es Hypothesis y Eschematicis, que es básicamente
+
+293
+00:35:19,600 --> 00:35:27,840
+probar tu esquema de Open API y utilizar Hypothesis para generar esta prueba. Es el caso de uso
+
+294
+00:35:27,840 --> 00:35:32,480
+que yo más he visto con Hypothesis, realmente.
+
+295
+00:35:32,480 --> 00:35:37,800
+Ya veo. Bueno, hay un par de comentarios positivos en el canal que después los puedes
+
+296
+00:35:37,800 --> 00:35:44,080
+leer, pero a la gente le gustó mucho tu charla, todos quedaron impresionados con FrisGun y
+
+297
+00:35:44,080 --> 00:35:52,400
+muchos otros detalles. Así que, sí, bueno, ya estamos casi hace en el tiempo. No me
+
+298
+00:35:52,400 --> 00:35:56,960
+había dado cuenta buen nombre de ordenador. Lo estaba viendo yo.
+
+299
+00:35:56,960 --> 00:35:59,880
+Gracias. Muchas gracias, Himael, por participar de
+
+300
+00:35:59,880 --> 00:36:05,440
+la Python 2021. Y bueno, y esperemos que podamos obtenerte quizás un durante el día
+
+301
+00:36:05,440 --> 00:36:10,720
+en el canal de Discord para que continuamos la discusión, porque hay mucha gente con
+
+302
+00:36:10,720 --> 00:36:15,240
+muchas opiniones y con ganas de ser mejor en el test. Vale, perfecto.
+
+303
+00:36:15,240 --> 00:36:18,680
+Muchas gracias. Estoy en el canal y podemos hablar por ahí.
+
+304
+00:36:18,680 --> 00:36:21,920
+Gracias, Himael. Muchas gracias, Himael, que tenga buen sado.
+
+305
+00:36:21,920 --> 00:36:41,200
+Gracias.
+

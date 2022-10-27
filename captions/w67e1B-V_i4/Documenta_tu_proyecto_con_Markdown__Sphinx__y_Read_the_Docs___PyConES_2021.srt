@@ -1,0 +1,1712 @@
+1
+00:00:00,000 --> 00:00:08,280
+¿uche aams la
+
+2
+00:00:08,280 --> 00:00:10,880
+verdadera
+
+3
+00:00:11,380 --> 00:00:12,560
+Maori Y
+
+4
+00:00:13,900 --> 00:00:14,600
+Hola compact
+
+5
+00:00:15,480 --> 00:00:27,480
+doing
+
+6
+00:00:28,200 --> 00:00:28,900
+represent
+
+7
+00:00:28,900 --> 00:00:30,600
+Spinks es una cosa guay que tiene,
+
+8
+00:00:30,600 --> 00:00:33,340
+que es cómo está hecha la documentación de Python.
+
+9
+00:00:33,340 --> 00:00:35,020
+Y la verdad es que la documentación de Python está
+
+10
+00:00:35,020 --> 00:00:35,980
+bastante bien.
+
+11
+00:00:35,980 --> 00:00:38,060
+Así que es una buena herramienta a usar, seguro,
+
+12
+00:00:38,060 --> 00:00:39,400
+el seguro.
+
+13
+00:00:39,400 --> 00:00:41,980
+Sergio, hablamos de Juanlu, que es nuestro oponente.
+
+14
+00:00:41,980 --> 00:00:43,780
+Bueno, pues Juanluis Cano, Juanlu.
+
+15
+00:00:43,780 --> 00:00:46,580
+Yo creo que es una persona muy conocida en la comunidad.
+
+16
+00:00:46,580 --> 00:00:48,940
+Él fue presidente de Python España.
+
+17
+00:00:48,940 --> 00:00:51,460
+Es ingeniero aeronáutico, está trabajando en Rituedox.
+
+18
+00:00:51,460 --> 00:00:55,020
+Y, bueno, qué mejor persona para hablarnos de Spinks y
+
+19
+00:00:55,020 --> 00:00:58,700
+documentación que alguien que trabaja en Rituedox.
+
+20
+00:00:58,700 --> 00:00:59,200
+Y nada más.
+
+21
+00:00:59,200 --> 00:01:01,260
+Bueno, en su tiempo libre, imparté clases,
+
+22
+00:01:01,260 --> 00:01:03,260
+escuché la música y berré al LinkedIn.
+
+23
+00:01:03,260 --> 00:01:05,580
+Y además de eso, que creo que es una cosa muy bonita,
+
+24
+00:01:05,580 --> 00:01:07,460
+persigo sueños imposibles.
+
+25
+00:01:07,460 --> 00:01:11,620
+O sea, que yo creo que esa autopía nos viene bastante bien.
+
+26
+00:01:11,620 --> 00:01:14,180
+Así que, nada, damos la bienvenida a Juanlu.
+
+27
+00:01:14,180 --> 00:01:18,540
+Juanlu, que sueño imposible persigue.
+
+28
+00:01:18,540 --> 00:01:20,260
+Que sueño imposible.
+
+29
+00:01:20,260 --> 00:01:24,540
+Esta pregunta me pilló un poco descolocado.
+
+30
+00:01:24,540 --> 00:01:26,660
+No sé que la gente deje de decir tonterías el LinkedIn,
+
+31
+00:01:26,660 --> 00:01:28,500
+por ejemplo, si no soy imposible.
+
+32
+00:01:28,500 --> 00:01:29,500
+Eso es imposible.
+
+33
+00:01:29,500 --> 00:01:31,780
+Es el nuevo Facebook.
+
+34
+00:01:31,780 --> 00:01:33,260
+Sí, mucho peor, yo creo.
+
+35
+00:01:36,820 --> 00:01:41,380
+Pues nada, Juanlu, te dejamos a ti, todo tuyo, el escenario.
+
+36
+00:01:41,380 --> 00:01:43,620
+Muchísimas gracias por estar aquí.
+
+37
+00:01:43,620 --> 00:01:44,460
+Vamos a ir poniendo.
+
+38
+00:01:44,460 --> 00:01:46,260
+Eso es la presentación.
+
+39
+00:01:46,260 --> 00:01:48,460
+Y nada, adelante, cuando quieras.
+
+40
+00:01:48,460 --> 00:01:49,940
+Venga, suerte.
+
+41
+00:01:49,940 --> 00:01:50,420
+Estupendo.
+
+42
+00:01:50,420 --> 00:01:53,100
+Muchísimas gracias.
+
+43
+00:01:53,100 --> 00:01:55,180
+Bueno, hola a todos y todas.
+
+44
+00:01:55,180 --> 00:01:57,020
+Gracias por vuestra atención.
+
+45
+00:01:57,020 --> 00:01:59,340
+Vamos a hablar un poco de documentación,
+
+46
+00:01:59,340 --> 00:02:02,380
+que es un tema que a veces lo dejamos un poquito de lado.
+
+47
+00:02:02,380 --> 00:02:05,220
+Y en concreto, vamos a documentar nuestro proyecto
+
+48
+00:02:05,220 --> 00:02:08,100
+utilizando Sphinx, Markdown y Ritd.
+
+49
+00:02:08,100 --> 00:02:09,700
+Docs.
+
+50
+00:02:09,700 --> 00:02:12,220
+Lo primero, vamos a hablar un poquito de qué es Sphinx.
+
+51
+00:02:12,220 --> 00:02:15,740
+Bastante rápido, porque tenemos poco tiempo y mucho que
+
+52
+00:02:15,740 --> 00:02:16,900
+contar.
+
+53
+00:02:16,900 --> 00:02:20,940
+Y vamos a crear nuestro primer proyecto en Sphinx.
+
+54
+00:02:20,940 --> 00:02:23,740
+Y lo vamos a hacer siguiendo el tutorial de Ritd.
+
+55
+00:02:23,740 --> 00:02:25,700
+Docs y directamente la interfaz de GitHub,
+
+56
+00:02:25,700 --> 00:02:28,060
+para que todo sea un poco más fácil.
+
+57
+00:02:28,060 --> 00:02:33,500
+Y vamos a pasar de Markdown a HTML.
+
+58
+00:02:33,500 --> 00:02:37,540
+Vamos a personalizar un poquito la apariencia, etcétera.
+
+59
+00:02:37,540 --> 00:02:39,580
+Y vamos a terminar con todo esto online.
+
+60
+00:02:39,580 --> 00:02:43,740
+Y espero dejar un poquito de tiempo para preguntas al final.
+
+61
+00:02:43,740 --> 00:02:48,820
+Lo primero me presento para los que no me conozcan un poquito.
+
+62
+00:02:48,820 --> 00:02:53,340
+Soy ingeniero aeronáutico y paisonista autodidacta.
+
+63
+00:02:53,340 --> 00:02:55,660
+Ahora vivo en Madrid, en España.
+
+64
+00:02:55,660 --> 00:02:58,740
+Y trabajo, como decíamos, de developer at vocate en Ritd.
+
+65
+00:02:58,740 --> 00:03:00,100
+Docs.
+
+66
+00:03:00,100 --> 00:03:02,620
+He sido sociofundador y presidente de la Asociación
+
+67
+00:03:02,620 --> 00:03:05,940
+Paisón España, muchos años organizando la Python S.
+
+68
+00:03:05,940 --> 00:03:09,140
+Y bueno, alguna cosita más.
+
+69
+00:03:09,140 --> 00:03:13,380
+Entonces, qué lata no me están saliendo las imágenes.
+
+70
+00:03:13,380 --> 00:03:18,100
+Sphinx es una herramienta que sirve para construir
+
+71
+00:03:18,100 --> 00:03:23,620
+documentación y de alguna forma se podría considerar que es un
+
+72
+00:03:23,620 --> 00:03:28,540
+static-side generator, como puede ser Pelican, Hugo,
+
+73
+00:03:28,540 --> 00:03:31,020
+o alguno de los otros que existen en el mercado.
+
+74
+00:03:31,020 --> 00:03:34,940
+No, lo que pasa es que está muy, muy orientado a documentación.
+
+75
+00:03:34,940 --> 00:03:38,500
+Y también es verdad que para ser un generado autodistático de
+
+76
+00:03:38,500 --> 00:03:40,940
+documentación es un poquito antiguo,
+
+77
+00:03:40,940 --> 00:03:45,100
+sino posiblemente de los más antiguos que existen.
+
+78
+00:03:45,100 --> 00:03:49,500
+Entonces, Sphinx lee unos ficheros fuente que normalmente están
+
+79
+00:03:49,500 --> 00:03:53,100
+escritos en un lenguaje que se llama restructur text,
+
+80
+00:03:53,100 --> 00:03:56,700
+pero nosotros nos vamos a centrar en Mac Town y genera una
+
+81
+00:03:56,700 --> 00:04:04,020
+salida que puede ser HTML, PDFs, man pages para Linux, formato
+
+82
+00:04:04,020 --> 00:04:06,100
+OEPU para libros electrónicos, etcétera.
+
+83
+00:04:06,100 --> 00:04:08,220
+Con lo cual, lo interesante que tiene también,
+
+84
+00:04:08,220 --> 00:04:12,700
+que no tienen otras herramientas, es que se pueden
+
+85
+00:04:12,700 --> 00:04:17,220
+generar salidas en distintos formatos diferentes.
+
+86
+00:04:17,220 --> 00:04:20,060
+Otra de las cosas que tiene Sphinx que es muy interesante es que
+
+87
+00:04:20,060 --> 00:04:22,860
+se pueden generar referencias cruzadas entre
+
+88
+00:04:22,860 --> 00:04:23,980
+diferentes documentos.
+
+89
+00:04:23,980 --> 00:04:26,540
+Entonces, por ejemplo, si yo estoy en la página 1 del
+
+90
+00:04:26,540 --> 00:04:28,380
+tutorial que estoy escribiendo y digo, bueno,
+
+91
+00:04:28,380 --> 00:04:31,380
+y ahora puedes ir a la referencia de la API a consultar más
+
+92
+00:04:31,380 --> 00:04:33,620
+detalles de esta función, por ejemplo,
+
+93
+00:04:33,620 --> 00:04:38,220
+eso lo puedo hacer de manera muy sencilla en Sphinx e incluso
+
+94
+00:04:38,220 --> 00:04:41,260
+puedo generar referencias cruzadas entre proyectos
+
+95
+00:04:41,260 --> 00:04:42,260
+diferentes.
+
+96
+00:04:42,260 --> 00:04:45,140
+Entonces, si yo estoy escribiendo un proyecto que utiliza
+
+97
+00:04:45,140 --> 00:04:48,740
+Django, por ejemplo, yo puedo generar una referencia cruzada
+
+98
+00:04:48,740 --> 00:04:52,700
+a cierta clase de Django o a cualquier otro proyecto que tenga
+
+99
+00:04:52,700 --> 00:04:56,620
+su documentación que también esté escrita en Sphinx.
+
+100
+00:04:56,620 --> 00:05:00,300
+Se maneja con una estructura jerárquica de documentos.
+
+101
+00:05:00,300 --> 00:05:05,020
+Entonces, nosotros vamos a definir cuáles son todas esas
+
+102
+00:05:05,020 --> 00:05:08,900
+partes de la estructura y cuáles son los documentos RAIF y
+
+103
+00:05:08,900 --> 00:05:11,700
+cuáles son los documentos que heredan de ahí.
+
+104
+00:05:11,700 --> 00:05:15,460
+Y a partir de ahí se va generando toda la documentación.
+
+105
+00:05:15,460 --> 00:05:19,100
+Tiene cosas chuglas también como numeración automática de
+
+106
+00:05:19,100 --> 00:05:22,940
+páginas y figuras y muy importante al ser la
+
+107
+00:05:22,940 --> 00:05:25,460
+herramienta, como comentaba Jimena al principio,
+
+108
+00:05:25,460 --> 00:05:28,420
+que es la que se utiliza para generar la documentación de
+
+109
+00:05:28,420 --> 00:05:29,580
+Cepaison en sí mismo.
+
+110
+00:05:32,340 --> 00:05:36,500
+Tiene capacidades nativas para documentar código.
+
+111
+00:05:36,500 --> 00:05:41,380
+Entonces, va a ser muy sencillo tener una biblioteca de código
+
+112
+00:05:41,380 --> 00:05:44,460
+en algún sitio y que los doxtrings de esa biblioteca se
+
+113
+00:05:44,460 --> 00:05:46,540
+muestren directamente en la documentación.
+
+114
+00:05:46,540 --> 00:05:49,700
+Entonces, vamos a poder tener documentación autogenerada a
+
+115
+00:05:49,700 --> 00:05:53,140
+partir de doxtrings y también documentación,
+
+116
+00:05:53,140 --> 00:05:56,340
+que yo lo llamo documentación narrativa.
+
+117
+00:05:56,340 --> 00:05:58,740
+Y bueno, aparte de eso, es súper extensible.
+
+118
+00:05:58,740 --> 00:06:03,340
+Hay docenas de extensiones que se pueden usar y os animo que
+
+119
+00:06:03,340 --> 00:06:06,020
+le echéis un vistazo.
+
+120
+00:06:06,020 --> 00:06:10,700
+Entonces, lo que vamos a hacer es documentar una pequeña
+
+121
+00:06:10,700 --> 00:06:13,300
+biblioteca de Python.
+
+122
+00:06:13,300 --> 00:06:15,420
+Uy, qué mal está hecho esto.
+
+123
+00:06:15,420 --> 00:06:17,100
+Creo que estoy usando la versión que no es.
+
+124
+00:06:17,100 --> 00:06:19,740
+Así que vamos a saltar directamente a la demo, por
+
+125
+00:06:19,740 --> 00:06:22,540
+favor.
+
+126
+00:06:22,540 --> 00:06:28,220
+Y para eso, voy a cambiar de compartir esta pantalla y voy
+
+127
+00:06:28,220 --> 00:06:30,660
+a compartir esta otra.
+
+128
+00:06:30,660 --> 00:06:33,660
+Bueno.
+
+129
+00:06:33,660 --> 00:06:34,660
+¿Tranquilo, Juan?
+
+130
+00:06:34,660 --> 00:06:37,660
+Estamos de soporte, no te preocupes.
+
+131
+00:06:37,660 --> 00:06:39,660
+Por favor, ponedme la otra pantalla.
+
+132
+00:06:39,660 --> 00:06:41,660
+Muchas gracias.
+
+133
+00:06:41,660 --> 00:06:45,660
+Entonces, lo que vamos a hacer es seguir el tutorial de
+
+134
+00:06:45,660 --> 00:06:50,660
+read.docs directamente, que lo he escrito hace casas dos
+
+135
+00:06:50,660 --> 00:06:51,660
+semanas.
+
+136
+00:06:51,660 --> 00:06:55,660
+Y ahora, vamos a seguir con el tutorial de read.docs.
+
+137
+00:06:55,660 --> 00:07:00,660
+Directamente, que lo he escrito hace casas dos semanas, con lo
+
+138
+00:07:00,660 --> 00:07:02,660
+cual está bastante fresco.
+
+139
+00:07:02,660 --> 00:07:08,660
+Y lo que tenemos es una plantilla de GitHub, que es
+
+140
+00:07:08,660 --> 00:07:13,660
+esta de aquí, en la que ya tenemos una cierta estructura ya
+
+141
+00:07:13,660 --> 00:07:17,660
+creada y vamos a ir viendo un poco cómo se va generando la
+
+142
+00:07:17,660 --> 00:07:19,660
+documentación en Sphinx.
+
+143
+00:07:19,660 --> 00:07:22,660
+Entonces, me he creado una cuenta de GitHub de prueba para
+
+144
+00:07:22,660 --> 00:07:27,660
+poder hacer esto como si fueseis un usuario normal que
+
+145
+00:07:27,660 --> 00:07:29,660
+empieza de nuevas.
+
+146
+00:07:29,660 --> 00:07:34,660
+Así que voy a hacer clic aquí en Fork y voy a hacer una
+
+147
+00:07:34,660 --> 00:07:38,660
+copia de la plantilla que tenemos.
+
+148
+00:07:38,660 --> 00:07:42,660
+Entonces, esto ya lo tenemos aquí y vamos a ver un poquito
+
+149
+00:07:42,660 --> 00:07:44,660
+qué es lo que tenemos.
+
+150
+00:07:44,660 --> 00:07:48,660
+En primer lugar, tenemos este código que está basado en el
+
+151
+00:07:48,660 --> 00:07:52,660
+tutorial nuevo de Sphinx, que también lo estoy escribiendo yo
+
+152
+00:07:52,660 --> 00:07:56,660
+con la ayuda de la comunidad, en la que tenemos nada más que
+
+153
+00:07:56,660 --> 00:08:00,660
+una versión, una excepción custom que tenemos definida y
+
+154
+00:08:00,660 --> 00:08:03,660
+una función con su Dockstream.
+
+155
+00:08:03,660 --> 00:08:07,660
+Entonces, si retrocedo de nuevo, aquí tenemos su Readme,
+
+156
+00:08:07,660 --> 00:08:12,660
+por supuesto, tenemos un PyProject.tunnel con la estructura
+
+157
+00:08:12,660 --> 00:08:15,660
+básica, los metadatos básicos para que esto se pueda
+
+158
+00:08:15,660 --> 00:08:19,660
+instalar, es decir, yo puedo hacer pip install y que esto
+
+159
+00:08:19,660 --> 00:08:21,660
+funcione directamente.
+
+160
+00:08:21,660 --> 00:08:26,660
+Y en esta carpeta de documentación, lo que tenemos es el
+
+161
+00:08:26,660 --> 00:08:31,660
+esqueleto básico que se ha creado con Sphinx Quickstar.
+
+162
+00:08:31,660 --> 00:08:34,660
+Entonces, esto es Makefile, no me interesa mucho verlos,
+
+163
+00:08:34,660 --> 00:08:38,660
+tienen una magia que facilita crear la documentación.
+
+164
+00:08:38,660 --> 00:08:41,660
+Pero sobre todo, lo interesante son, por un lado,
+
+165
+00:08:41,660 --> 00:08:46,660
+este Conf.py, que esta configuración lo que tiene
+
+166
+00:08:46,660 --> 00:08:49,660
+son valores que va a utilizar Sphinx para personalizar
+
+167
+00:08:49,660 --> 00:08:50,660
+nuestro proyecto.
+
+168
+00:08:50,660 --> 00:08:53,660
+Entonces, tenemos el nombre del proyecto, Copyright,
+
+169
+00:08:53,660 --> 00:08:57,660
+Autor, cosas como el número de la versión,
+
+170
+00:08:57,660 --> 00:09:00,660
+qué extensiones vamos a usar, ahora vamos a profumizar
+
+171
+00:09:00,660 --> 00:09:02,660
+un poquito sobre eso.
+
+172
+00:09:02,660 --> 00:09:07,660
+Y que proyectos externos, voy a querer referenciar
+
+173
+00:09:07,660 --> 00:09:10,660
+con lo que decíamos al principio de las referencias cruzadas.
+
+174
+00:09:10,660 --> 00:09:16,660
+Y si voy para atrás, tengo este index.rst,
+
+175
+00:09:16,660 --> 00:09:19,660
+que de momento está escrito en RestarterText,
+
+176
+00:09:19,660 --> 00:09:24,660
+lo puedo ver así, con Plane igual a 1 en GitHub.
+
+177
+00:09:24,660 --> 00:09:29,660
+Y entonces, bueno, tengo esta documentación en RestarterText.
+
+178
+00:09:29,660 --> 00:09:34,660
+Así que, sin más dilación, vamos a importar este proyecto,
+
+179
+00:09:34,660 --> 00:09:37,660
+con lo cual voy a venir aquí y, en principio,
+
+180
+00:09:37,660 --> 00:09:41,660
+cuando yo tengo mi cuenta de GitHub enlazada con mi cuenta
+
+181
+00:09:41,660 --> 00:09:44,660
+de RITDocs, van a aparecer ya todos mis repositorios,
+
+182
+00:09:44,660 --> 00:09:49,660
+con lo cual, en este caso, sólo tengo que hacer clic aquí.
+
+183
+00:09:49,660 --> 00:09:53,660
+Y esto me va a pedir ya cómo importar esta documentación.
+
+184
+00:09:53,660 --> 00:09:57,660
+Aquí este nombre tiene que ser único en todo RITDocs,
+
+185
+00:09:57,660 --> 00:10:00,660
+con lo cual voy a poner aquí, astro Juanlu al final.
+
+186
+00:10:00,660 --> 00:10:03,660
+Y bueno, todo el resto lo voy a dejar igual.
+
+187
+00:10:03,660 --> 00:10:05,660
+Esto es la URL del repositorio,
+
+188
+00:10:05,660 --> 00:10:09,660
+esto es un repositorio GitHub y la rama por defecto es Main.
+
+189
+00:10:09,660 --> 00:10:14,660
+Así que le voy a dar anex.
+
+190
+00:10:14,660 --> 00:10:19,660
+Y esto, en principio, ya lo tengo funcionando.
+
+191
+00:10:19,660 --> 00:10:23,660
+Aquí me dice que no tengo los permisos correctos.
+
+192
+00:10:23,660 --> 00:10:27,660
+Ay, qué lata.
+
+193
+00:10:27,660 --> 00:10:32,660
+Entonces, esto de momento...
+
+194
+00:10:32,660 --> 00:10:35,660
+¡Uy, se ha roto todo!
+
+195
+00:10:35,660 --> 00:10:40,660
+Esto funcionaba en mi casa.
+
+196
+00:10:40,660 --> 00:10:44,660
+Tranquilo Juanlu, son cosas que pasan del directo.
+
+197
+00:10:44,660 --> 00:10:46,660
+Aquí han pasado cosas muy feas.
+
+198
+00:10:46,660 --> 00:10:49,660
+Bueno, pues como están pasando cosas feas...
+
+199
+00:10:49,660 --> 00:10:53,660
+La parte interesante es entender las cosas feas que pasan.
+
+200
+00:10:53,660 --> 00:10:55,660
+Que seguro que nos pasa también en casa.
+
+201
+00:10:55,660 --> 00:10:58,660
+Espero que no, espero que nos pasen cosas tan feas,
+
+202
+00:10:58,660 --> 00:11:01,660
+pero bueno, es la ley de las demos en directo.
+
+203
+00:11:01,660 --> 00:11:06,660
+Vamos a intentar arreglar un poquito esta desafortunada situación.
+
+204
+00:11:06,660 --> 00:11:09,660
+Y voy a ver si lo puedo hacer.
+
+205
+00:11:09,660 --> 00:11:11,660
+Mira, si quieres Juanlu, te dejamos un momentito
+
+206
+00:11:11,660 --> 00:11:13,660
+y nosotros vamos hablando de una cosita aquí.
+
+207
+00:11:13,660 --> 00:11:15,660
+Ahora me avisas cuando ustedes valen.
+
+208
+00:11:15,660 --> 00:11:17,660
+Yo estoy, ¿eh? O sea, ¿a ver?
+
+209
+00:11:17,660 --> 00:11:21,660
+Aquí estoy en Ritddox otra vez
+
+210
+00:11:21,660 --> 00:11:25,660
+y ahora espero que me deje clonar mi propio proyecto de nuevo.
+
+211
+00:11:25,660 --> 00:11:31,660
+Vale, pues entonces, vamos de nuevo al tutorial.
+
+212
+00:11:31,660 --> 00:11:33,660
+Y perdona por esto, ¿eh?
+
+213
+00:11:33,660 --> 00:11:35,660
+No, no, no, no.
+
+214
+00:11:35,660 --> 00:11:38,660
+Es la parte bonita también de las demos en directo, que es todo real.
+
+215
+00:11:38,660 --> 00:11:41,660
+Sí, todo lo que pasa es que sin ver las risas del público es un poco frío.
+
+216
+00:11:41,660 --> 00:11:46,660
+Para el ponente no sé si están divertidos.
+
+217
+00:11:46,660 --> 00:11:50,660
+Bueno, nada, voy a repetir los pasos de antes.
+
+218
+00:11:50,660 --> 00:11:55,660
+Voy a utilizar el tutorial con lo cual esto es Ritddox tutorial.
+
+219
+00:11:55,660 --> 00:11:59,660
+Vale, te dejamos, te dejamos por aquí, Juanlu.
+
+220
+00:11:59,660 --> 00:12:01,660
+Muchas gracias, ¿eh? Por el apoyo moral.
+
+221
+00:12:01,660 --> 00:12:03,660
+Si alguien quiere tirarme tomates virtuales,
+
+222
+00:12:03,660 --> 00:12:05,660
+creo que está a tiempo ahora de hacerlo.
+
+223
+00:12:05,660 --> 00:12:10,660
+Bueno, y entonces, esto ya lo tengo disponible,
+
+224
+00:12:10,660 --> 00:12:13,660
+con lo cual voy a importar el proyecto.
+
+225
+00:12:13,660 --> 00:12:15,660
+Aquí como tengo muchos repositorios,
+
+226
+00:12:15,660 --> 00:12:17,660
+y esto no estaba muy pensado,
+
+227
+00:12:17,660 --> 00:12:20,660
+voy a tener que navegar un poquito por aquí.
+
+228
+00:12:26,660 --> 00:12:28,660
+Mami, ¿se rompió todo?
+
+229
+00:12:28,660 --> 00:12:30,660
+O aquí ¿qué pasó?
+
+230
+00:12:33,660 --> 00:12:37,660
+Bueno, estoy teniendo unos problemas con Ritddox,
+
+231
+00:12:37,660 --> 00:12:41,660
+y estoy quedando un poco mal, así que voy a hacer el plan C,
+
+232
+00:12:41,660 --> 00:12:46,660
+que es hacer todo esto desde la terminal, y ya está.
+
+233
+00:12:49,660 --> 00:12:52,660
+Así que vamos allá.
+
+234
+00:12:56,660 --> 00:13:00,660
+Venga, por favor, si me asomáis la pantalla, muy bien.
+
+235
+00:13:00,660 --> 00:13:06,660
+Bueno, pues, vamos a...
+
+236
+00:13:06,660 --> 00:13:08,660
+Madre mía, qué nervios.
+
+237
+00:13:08,660 --> 00:13:10,660
+Vamos a...
+
+238
+00:13:12,660 --> 00:13:17,660
+Vale, pues lo que voy a hacer va a ser clonar el repositorio
+
+239
+00:13:17,660 --> 00:13:20,660
+que acabo de crear, con lo cual, bueno, pues voy aquí a...
+
+240
+00:13:22,660 --> 00:13:26,660
+Astro Juanlu, y este repositorio nuevo.
+
+241
+00:13:26,660 --> 00:13:29,660
+Y esto me lo clono por aquí.
+
+242
+00:13:33,660 --> 00:13:38,660
+Ay, qué feo, Juan Luis mostrando contraseñas, como antiguamente.
+
+243
+00:13:38,660 --> 00:13:40,660
+Venga.
+
+244
+00:13:44,660 --> 00:13:46,660
+Y vamos, ¿qué nos vamos?
+
+245
+00:13:46,660 --> 00:13:49,660
+Bueno, pues, vamos a hacer un poco más de esto,
+
+246
+00:13:49,660 --> 00:13:51,660
+y vamos a hacer un poco más de esto,
+
+247
+00:13:51,660 --> 00:13:53,660
+y vamos a hacer un poco más de esto,
+
+248
+00:13:53,660 --> 00:13:56,660
+y vamos, ¿qué nos vamos?
+
+249
+00:13:56,660 --> 00:13:59,660
+Bueno, pues, entonces, voy a crear un entorno virtual.
+
+250
+00:13:59,660 --> 00:14:02,660
+Si no se me ve la pantalla, por favor, que alguien me avise.
+
+251
+00:14:02,660 --> 00:14:11,660
+Esto es así, y voy a activarlo, y voy a instalar Sphinx,
+
+252
+00:14:11,660 --> 00:14:14,660
+que es lo mínimo que necesito por aquí.
+
+253
+00:14:17,660 --> 00:14:19,660
+Bueno, y yo creo que ya estamos.
+
+254
+00:14:19,660 --> 00:14:24,660
+Entonces, si yo navego al directorio de la documentación,
+
+255
+00:14:24,660 --> 00:14:30,660
+que es donde tenía todo el contenido de mi documentación,
+
+256
+00:14:30,660 --> 00:14:33,660
+entonces yo aquí puedo hacer MakeHTML,
+
+257
+00:14:33,660 --> 00:14:36,660
+que sería la parte...
+
+258
+00:14:36,660 --> 00:14:41,660
+Tengo que instalar también Sphinx ReadTheDocsTheme.
+
+259
+00:14:42,660 --> 00:14:46,660
+Vale, pues, entonces, si hago MakeHTML,
+
+260
+00:14:46,660 --> 00:14:52,660
+voy a tener la documentación ya servida en este directorio
+
+261
+00:14:52,660 --> 00:14:58,660
+BuildHTML, sí, con lo cual, si navego ahí,
+
+262
+00:14:58,660 --> 00:15:05,660
+ah, los... navego aquí, a los docs,
+
+263
+00:15:05,660 --> 00:15:08,660
+a la documentación,
+
+264
+00:15:10,660 --> 00:15:15,660
+y ya tengo un servidor para mostrar esto, aquí estoy,
+
+265
+00:15:15,660 --> 00:15:20,660
+vale, pues, esto es la documentación en HTML,
+
+266
+00:15:20,660 --> 00:15:23,660
+que es lo que quería mostrar antes, que no me estaba saliendo,
+
+267
+00:15:23,660 --> 00:15:28,660
+que está generada a partir de estos archivos RestarterText.
+
+268
+00:15:28,660 --> 00:15:33,660
+Entonces, tengo varias secciones, tenía otro documento de Usage,
+
+269
+00:15:33,660 --> 00:15:38,660
+etcétera, pero hay un par de cosillas que vamos a arreglar.
+
+270
+00:15:38,660 --> 00:15:43,660
+Lo primero es que, esto, como decía, está escrito en RestarterText,
+
+271
+00:15:43,660 --> 00:15:46,660
+vamos a ver que también se puede hacer en Markdown,
+
+272
+00:15:46,660 --> 00:15:50,660
+y la parte de la API, de momento, está vacía,
+
+273
+00:15:50,660 --> 00:15:53,660
+porque tengo que trabajar un poquito más,
+
+274
+00:15:53,660 --> 00:15:56,660
+tengo que instalar el módulo antes de generar la API.
+
+275
+00:15:57,660 --> 00:16:02,660
+Entonces, lo primero que voy a hacer, si navego aquí a la documentación,
+
+276
+00:16:02,660 --> 00:16:08,660
+es a esta parte de Source,
+
+277
+00:16:09,660 --> 00:16:12,660
+como os decía, todo esto está escrito en RestarterText,
+
+278
+00:16:12,660 --> 00:16:16,660
+pero, si a mí me gusta más, en Markdown,
+
+279
+00:16:16,660 --> 00:16:20,660
+entonces, voy a agregar una extensión aquí, que se llama MissedParser,
+
+280
+00:16:20,660 --> 00:16:24,660
+que es una extensión que se ha creado recientemente,
+
+281
+00:16:24,660 --> 00:16:28,660
+y esto, lo que me va a permitir es poder escribir la documentación
+
+282
+00:16:28,660 --> 00:16:32,660
+en Markdown, como si fuese un documento de Sphinx normal.
+
+283
+00:16:32,660 --> 00:16:37,660
+Entonces, aquí, voy a renombrar IndexRCT, a index.md directamente,
+
+284
+00:16:37,660 --> 00:16:42,660
+y ahora, bueno, pues ya no necesito esta,
+
+285
+00:16:42,660 --> 00:16:45,660
+huips, ya no necesito esta cabecera, por ejemplo,
+
+286
+00:16:45,660 --> 00:16:49,660
+aquí los links los podéis escribir ya colado
+
+287
+00:16:49,660 --> 00:16:54,660
+con la sintaxis nativa de Markdown,
+
+288
+00:16:54,660 --> 00:16:58,660
+con lo cual puedo hacer esto de aquí, como si estuviese en GitHub,
+
+289
+00:16:58,660 --> 00:17:01,660
+o cualquier otro editor que soporta Markdown.
+
+290
+00:17:01,660 --> 00:17:09,660
+Y aquí, esto lo voy a dejar así de momento,
+
+291
+00:17:09,660 --> 00:17:13,660
+y todas las, lo que se llaman las Admonitions,
+
+292
+00:17:13,660 --> 00:17:17,660
+que son estas notas que aparecen aquí, etcétera,
+
+293
+00:17:17,660 --> 00:17:21,660
+las voy a cambiar, y esto voy a poner así,
+
+294
+00:17:23,660 --> 00:17:26,660
+Note, y esto se va a quedar así.
+
+295
+00:17:26,660 --> 00:17:34,660
+A ver, huips, listo,
+
+296
+00:17:34,660 --> 00:17:38,660
+y los contenidos ahora va a ser una cabecera de segundo nivel.
+
+297
+00:17:41,660 --> 00:17:43,660
+Y esto va a ser mi Toctry,
+
+298
+00:17:45,660 --> 00:17:47,660
+y esto lo voy a dejar así.
+
+299
+00:17:47,660 --> 00:17:54,660
+Huipa, ah, socorro, socorro.
+
+300
+00:18:02,660 --> 00:18:04,660
+Vale, entonces esto así,
+
+301
+00:18:04,660 --> 00:18:08,660
+con lo cual, como esto ya es un documento de Markdown,
+
+302
+00:18:08,660 --> 00:18:11,660
+si yo ahora hago MakeHTML,
+
+303
+00:18:11,660 --> 00:18:16,660
+tengo que instalar MissedParser para eso primero,
+
+304
+00:18:16,660 --> 00:18:18,660
+que es la otra extensión,
+
+305
+00:18:18,660 --> 00:18:22,660
+y ahora sí, hago MakeHTML,
+
+306
+00:18:22,660 --> 00:18:25,660
+y esto bueno, me queda aquí un par de cosas por corregir,
+
+307
+00:18:25,660 --> 00:18:28,660
+pero la cosa es que ya Sphinx va a funcionar
+
+308
+00:18:28,660 --> 00:18:30,660
+con documentación de Markdown.
+
+309
+00:18:30,660 --> 00:18:33,660
+Y la otra parte, lo bonito de las LiveDemo,
+
+310
+00:18:33,660 --> 00:18:35,660
+y la otra parte que me queda es generar la API
+
+311
+00:18:35,660 --> 00:18:37,660
+para ver si es correcto,
+
+312
+00:18:37,660 --> 00:18:41,660
+y la otra parte que me queda es generar la API por aquí,
+
+313
+00:18:41,660 --> 00:18:44,660
+que esto lo que va a contener es los doc strings
+
+314
+00:18:44,660 --> 00:18:47,660
+de la extensión y la función que tenía en mi código.
+
+315
+00:18:47,660 --> 00:18:50,660
+Con lo cual, lo único que tengo que hacer es,
+
+316
+00:18:53,660 --> 00:18:55,660
+a ver, estoy aquí,
+
+317
+00:18:56,660 --> 00:18:58,660
+activar mi entorno virtual,
+
+318
+00:18:58,660 --> 00:19:01,660
+y ahora voy a hacer un pipinstall.
+
+319
+00:19:01,660 --> 00:19:03,660
+Con lo cual, ya mi propio código,
+
+320
+00:19:03,660 --> 00:19:06,660
+al tener los metadatos en el PyProject.toml,
+
+321
+00:19:06,660 --> 00:19:08,660
+ya lo estoy pudiendo instalar,
+
+322
+00:19:08,660 --> 00:19:12,660
+y ahora cuando regenere la documentación,
+
+323
+00:19:14,660 --> 00:19:17,660
+todavía me está saliendo ahí un warningcito,
+
+324
+00:19:17,660 --> 00:19:19,660
+pero no pasa nada,
+
+325
+00:19:19,660 --> 00:19:21,660
+ahora...
+
+326
+00:19:23,660 --> 00:19:25,660
+no, pues esto sí que ha roto,
+
+327
+00:19:25,660 --> 00:19:27,660
+madre mía...
+
+328
+00:19:28,660 --> 00:19:30,660
+Vale, aquí estamos.
+
+329
+00:19:30,660 --> 00:19:33,660
+Entonces, ahora sí,
+
+330
+00:19:33,660 --> 00:19:36,660
+en la parte de... del uso,
+
+331
+00:19:36,660 --> 00:19:38,660
+aparecen esta función,
+
+332
+00:19:38,660 --> 00:19:41,660
+con el doc string que estaba definido directamente el Python,
+
+333
+00:19:41,660 --> 00:19:44,660
+y el doc string con la extensión,
+
+334
+00:19:46,660 --> 00:19:49,660
+que estaba definido en el código también.
+
+335
+00:19:53,660 --> 00:19:55,660
+Y me parece que lo voy a dejar aquí,
+
+336
+00:19:55,660 --> 00:19:58,660
+porque está siendo ya un poco caótico,
+
+337
+00:19:58,660 --> 00:20:00,660
+así que con vuestro permiso,
+
+338
+00:20:00,660 --> 00:20:04,660
+yo creo que vamos a detenernos en esta parte,
+
+339
+00:20:04,660 --> 00:20:08,660
+por lo menos hemos llegado a ver un poco...
+
+340
+00:20:09,660 --> 00:20:11,660
+aquí estoy.
+
+341
+00:20:11,660 --> 00:20:14,660
+Por lo menos hemos llegado a ver un poco,
+
+342
+00:20:14,660 --> 00:20:18,660
+cómo es la mecánica al funcionar con Sphinx,
+
+343
+00:20:18,660 --> 00:20:24,660
+y espero que haya algunas preguntas sobre esto,
+
+344
+00:20:25,660 --> 00:20:27,660
+para que podamos profundizar un poco más.
+
+345
+00:20:27,660 --> 00:20:29,660
+Sí, claro que sí.
+
+346
+00:20:29,660 --> 00:20:31,660
+Gracias, Juanlu.
+
+347
+00:20:31,660 --> 00:20:33,660
+Gracias.
+
+348
+00:20:33,660 --> 00:20:36,660
+Nada, no te preocupes por nada.
+
+349
+00:20:36,660 --> 00:20:39,660
+Vamos a ver qué ponía la gente por el chat,
+
+350
+00:20:39,660 --> 00:20:41,660
+o me vais a leer vosotros las preguntas.
+
+351
+00:20:41,660 --> 00:20:43,660
+Vamos a ver.
+
+352
+00:20:43,660 --> 00:20:45,660
+Sí, vamos a ver.
+
+353
+00:20:45,660 --> 00:20:48,660
+Ah, sí, sí, sí, hay una preguntilla que es mía,
+
+354
+00:20:48,660 --> 00:20:50,660
+para variar.
+
+355
+00:20:50,660 --> 00:20:54,660
+No sobre la charla de más,
+
+356
+00:20:54,660 --> 00:20:56,660
+porque no sobre la charla,
+
+357
+00:20:56,660 --> 00:20:58,660
+pero sí que me da mucha curiosidad,
+
+358
+00:20:58,660 --> 00:21:00,660
+y aprovechando que tenemos este ratito,
+
+359
+00:21:00,660 --> 00:21:02,660
+es que el este me lo operó, ok?
+
+360
+00:21:02,660 --> 00:21:04,660
+Que es un puesto que me encanta,
+
+361
+00:21:04,660 --> 00:21:06,660
+es uno de estos puestos nuevos que he salido,
+
+362
+00:21:06,660 --> 00:21:09,660
+y creo que la gente le genera mucha curiosidad.
+
+363
+00:21:09,660 --> 00:21:12,660
+Entonces me gustaría mucho que nos contases un poquito,
+
+364
+00:21:12,660 --> 00:21:14,660
+que haces un papel operado, ok?
+
+365
+00:21:14,660 --> 00:21:16,660
+Y que nos contarás cómo llegaste ahí,
+
+366
+00:21:16,660 --> 00:21:19,660
+si esas ofertas de verdad existen en LinkedIn,
+
+367
+00:21:19,660 --> 00:21:21,660
+o tienes que ir ganándote lo desde dentro,
+
+368
+00:21:21,660 --> 00:21:23,660
+o cómo lo conseguiste.
+
+369
+00:21:23,660 --> 00:21:26,660
+¿Existen en LinkedIn están un poco difíciles de encontrar?
+
+370
+00:21:26,660 --> 00:21:28,660
+Bueno, vivelo pero advocate,
+
+371
+00:21:28,660 --> 00:21:30,660
+yo lo traduzco como defensor del desarrollador.
+
+372
+00:21:30,660 --> 00:21:33,660
+Advocate, sin una connotación así un poco como reivindicativa,
+
+373
+00:21:33,660 --> 00:21:35,660
+como animal rights advocate,
+
+374
+00:21:35,660 --> 00:21:37,660
+defensor de los derechos de los animales.
+
+375
+00:21:37,660 --> 00:21:40,660
+Entonces yo me veo como alguien que defiende
+
+376
+00:21:40,660 --> 00:21:42,660
+un poco los intereses, por así decirlo,
+
+377
+00:21:42,660 --> 00:21:44,660
+de los desarrolladores, en mi empresa.
+
+378
+00:21:44,660 --> 00:21:47,660
+Entonces me fijo en que eso que no funciona bien,
+
+379
+00:21:47,660 --> 00:21:50,660
+que es la parte de la documentación que nos entiende bien,
+
+380
+00:21:50,660 --> 00:21:54,660
+qué problemas típicos hay al importar un proyecto, por ejemplo.
+
+381
+00:21:54,660 --> 00:21:57,660
+Y bueno, trato de trasladar esas preocupaciones
+
+382
+00:21:57,660 --> 00:22:00,660
+y intentar que haya cambios en el producto,
+
+383
+00:22:00,660 --> 00:22:02,660
+en la documentación, en el onboarding, etcétera.
+
+384
+00:22:02,660 --> 00:22:05,660
+Así que así un poco en resumen,
+
+385
+00:22:05,660 --> 00:22:07,660
+es un poco lo que hago.
+
+386
+00:22:07,660 --> 00:22:09,660
+Luego mucho marketing, redes sociales,
+
+387
+00:22:09,660 --> 00:22:12,660
+escribir documentación, hablar con gente en GitHub.
+
+388
+00:22:12,660 --> 00:22:14,660
+Es muy divertido.
+
+389
+00:22:14,660 --> 00:22:16,660
+Tiene que ser lo seguro.
+
+390
+00:22:16,660 --> 00:22:18,660
+Sí, son una de esas puestos del futuro.
+
+391
+00:22:18,660 --> 00:22:21,660
+Así que genial que nos cuentes un poquito sobre ello.
+
+392
+00:22:21,660 --> 00:22:23,660
+Sí, mira, Juan,
+
+393
+00:22:23,660 --> 00:22:25,660
+lo hay una pregunta de Israel.
+
+394
+00:22:25,660 --> 00:22:28,660
+Dice qué es lo que ofrece Ritddox
+
+395
+00:22:28,660 --> 00:22:31,660
+frente a compilar la documentación con el FIMS
+
+396
+00:22:31,660 --> 00:22:34,660
+y publicar la documentación en GitHub Pages, por ejemplo.
+
+397
+00:22:34,660 --> 00:22:37,660
+Bueno, en Ritddox hay varias funcionalidades
+
+398
+00:22:37,660 --> 00:22:39,660
+que están bien con respecto a publicarlo directamente
+
+399
+00:22:39,660 --> 00:22:42,660
+en GitHub Pages o cualquier otro hosting estático.
+
+400
+00:22:42,660 --> 00:22:45,660
+Lo primero es que tienes varias versiones de la documentación
+
+401
+00:22:45,660 --> 00:22:48,660
+al mismo tiempo, de manera sencilla.
+
+402
+00:22:48,660 --> 00:22:51,660
+Es decir, si tú tienes la versión estable y la versión de desarrollo,
+
+403
+00:22:51,660 --> 00:22:54,660
+puedes tener las dos al mismo tiempo.
+
+404
+00:22:54,660 --> 00:22:56,660
+Si creas un pull request, por ejemplo,
+
+405
+00:22:56,660 --> 00:22:59,660
+también te construye la documentación de ese pull request,
+
+406
+00:22:59,660 --> 00:23:02,660
+con lo cual puedes ver esos cambios que has hecho en el código
+
+407
+00:23:02,660 --> 00:23:05,660
+o en los docs en que se traducen
+
+408
+00:23:05,660 --> 00:23:08,660
+en el HTML y en el PDF final, etcétera.
+
+409
+00:23:08,660 --> 00:23:12,660
+Hay otras funcionalidades tipo que se indexa
+
+410
+00:23:12,660 --> 00:23:15,660
+todo el contenido, con lo cual hay una búsqueda
+
+411
+00:23:15,660 --> 00:23:17,660
+que está del lado del servidor,
+
+412
+00:23:17,660 --> 00:23:20,660
+con lo cual hay ciertas modificaciones y mejoras
+
+413
+00:23:20,660 --> 00:23:23,660
+con respecto a la búsqueda nativa de Sphinx.
+
+414
+00:23:23,660 --> 00:23:27,660
+Y en general, que es cuando las cosas no se rompen,
+
+415
+00:23:27,660 --> 00:23:32,660
+es fácil importar un proyecto
+
+416
+00:23:32,660 --> 00:23:35,660
+y que la documentación funcione y ya está.
+
+417
+00:23:35,660 --> 00:23:43,660
+Pues creo que no tenemos más preguntas,
+
+418
+00:23:43,660 --> 00:23:45,660
+si no me equivoco, Sergio.
+
+419
+00:23:45,660 --> 00:23:47,660
+No.
+
+420
+00:23:47,660 --> 00:23:49,660
+Pero que no me mal.
+
+421
+00:23:49,660 --> 00:23:51,660
+Tienes el Discord también al tope de mensajitos,
+
+422
+00:23:51,660 --> 00:23:54,660
+entonces si tú apeteces, ahora te pasas por Discord.
+
+423
+00:23:54,660 --> 00:23:58,660
+Y nada más que muchas gracias,
+
+424
+00:23:58,660 --> 00:24:00,660
+que no te preocupes por nada.
+
+425
+00:24:00,660 --> 00:24:03,660
+Y nada, tiene un placer tenerte aquí.
+
+426
+00:24:03,660 --> 00:24:05,660
+Muchas gracias a vosotros. Un saludo.
+
+427
+00:24:05,660 --> 00:24:06,660
+Venga.
+
+428
+00:24:06,660 --> 00:24:35,660
+Salud.
+

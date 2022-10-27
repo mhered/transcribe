@@ -1,0 +1,1492 @@
+1
+00:00:00,000 --> 00:00:18,340
+Y bien, por favor, un aplauso para Bea.
+
+2
+00:00:18,340 --> 00:00:25,060
+Que tal, hola?
+
+3
+00:00:25,060 --> 00:00:28,980
+Bueno, enhorabuena que habeis llegado al final, no es fácil,
+
+4
+00:00:28,980 --> 00:00:35,100
+es fácil, ya veo que no hemos llenado casa, pero bueno, nada, un aplauso para vosotros
+
+5
+00:00:35,100 --> 00:00:38,860
+que haguis llegado al final, para los organizadores, bien.
+
+6
+00:00:38,860 --> 00:00:42,860
+Ya está, ya estamos todos despiertos.
+
+7
+00:00:42,860 --> 00:00:46,900
+Vale, pues vamos a hablar de explicabilidad local, ¿se me ello bien?
+
+8
+00:00:46,900 --> 00:00:47,900
+Vale.
+
+9
+00:00:47,900 --> 00:00:57,300
+Yo soy esta persona, soy Bea, llevo más de 8 años trabajando en data en unas cosas
+
+10
+00:00:57,300 --> 00:01:04,180
+y otras, ahora soy en la ingenier y yo soy mayor, soy mayor, ya estoy cansada.
+
+11
+00:01:04,180 --> 00:01:12,420
+Entonces, soy mayor, ya la edad me achaca y he dicho pues va siendo hora de comprarse
+
+12
+00:01:12,420 --> 00:01:13,420
+una casa.
+
+13
+00:01:13,420 --> 00:01:18,980
+Yo sé que el mercado está muy mal, pero no se puede vivir siempre alquileres ni en
+
+14
+00:01:18,980 --> 00:01:21,140
+casa a tus padres, eso está clarísimo.
+
+15
+00:01:21,140 --> 00:01:28,380
+Entonces yo me metí en idea lista y dije, vamos a ver, que es la zona la que a mí me
+
+16
+00:01:28,380 --> 00:01:35,700
+gusta y esto es el panorama, os lo juro que es una captura de hace una semana, este es
+
+17
+00:01:35,700 --> 00:01:43,780
+el panorama de un barrio de Madrid, en concreto esto está en Calle Cartagena en Avenida
+
+18
+00:01:43,780 --> 00:01:53,460
+América, claro yo aquí dije, me está estimando, no me está jodiendo bien, o sea no puede
+
+19
+00:01:53,460 --> 00:01:55,700
+ser, no puede ser.
+
+20
+00:01:55,700 --> 00:02:02,540
+Y me entró una depresión muy grande y dije madre mía, madre mía que estás haciendo
+
+21
+00:02:02,540 --> 00:02:06,340
+con tu vida, a ver, vas a estar de alquiler toda la vida como las abuelas, es que al
+
+22
+00:02:06,340 --> 00:02:11,740
+final les dan el piso porque están de alquiler toda la vida, 80 años y el piso no quiere
+
+23
+00:02:11,740 --> 00:02:14,780
+a nadie, pues así eso vas a ser tú.
+
+24
+00:02:14,780 --> 00:02:22,620
+Y dije no hombre, dije yo tú trabajas en data, esto es emergente, esto es un negocio
+
+25
+00:02:22,620 --> 00:02:27,460
+que tiene salidas y repuesto a crear todo UBM.
+
+26
+00:02:27,460 --> 00:02:35,420
+Un UBM es un modelo de evaluación automática, donde tú metes pues eso, la información
+
+27
+00:02:35,420 --> 00:02:43,100
+de la casa, localización, imágenes si tienes, todas esas cosas, haces tu magia, tu caja
+
+28
+00:02:43,100 --> 00:02:50,180
+negra, tiki tiki tiki, la remones bien y te sale un precio de lo que tú quieres, de
+
+29
+00:02:50,180 --> 00:02:53,340
+la casa donde tú quieres saber.
+
+30
+00:02:53,340 --> 00:03:01,180
+Y aquí es donde vienen las dudas, porque qué tipo de modelo cojo, qué tipo de modelo
+
+31
+00:03:01,180 --> 00:03:02,180
+cojo.
+
+32
+00:03:02,180 --> 00:03:13,700
+Normalmente los modelos son explicables globalmente, en esto no tenemos problema, pues yo hago
+
+33
+00:03:13,700 --> 00:03:19,100
+mi predicción, cómo se ajustan general, cuáles son los errores, cómo afecta la variable
+
+34
+00:03:19,100 --> 00:03:25,740
+X con un feature importans o con un feature permutation.
+
+35
+00:03:25,740 --> 00:03:31,780
+Básicamente es el entrenamiento, cómo de bueno es el entrenamiento de ese modelo
+
+36
+00:03:31,780 --> 00:03:33,500
+con esos datos.
+
+37
+00:03:33,500 --> 00:03:39,020
+Y luego tengo para el mismo modelo otro tipo de explicabilidad, que es la explicabilidad
+
+38
+00:03:39,020 --> 00:03:45,300
+local, que es cómo se ajusta la predicción, es decir, si yo meto un input una vez entrenado
+
+39
+00:03:45,300 --> 00:03:54,700
+mi modelo, cómo la predicción cómo se ajusta, qué variables importan o qué variables afectan
+
+40
+00:03:54,700 --> 00:03:59,700
+más esa predicción, mejor dicho, cuál es el error, cómo se desvía esa predicción
+
+41
+00:03:59,700 --> 00:04:03,580
+de mi error de entrenamiento, etcétera, etcétera.
+
+42
+00:04:03,580 --> 00:04:10,260
+Entonces, hasta aquí todo claro, yo tengo mi modelo lo globalmente y lo localmente podría
+
+43
+00:04:10,260 --> 00:04:11,260
+ser.
+
+44
+00:04:11,260 --> 00:04:20,820
+Y me interesa, porque cuando voy a comprar una casa, pues yo meto mis variables y yo quiero
+
+45
+00:04:20,820 --> 00:04:26,100
+saber por qué coño esa casa cuesta medio millón de euros y si me están timando realmente,
+
+46
+00:04:26,100 --> 00:04:30,300
+o sea, es importante.
+
+47
+00:04:30,300 --> 00:04:37,780
+Y cuando voy a explicar lo que realmente es una de las partes importantes, porque me
+
+48
+00:04:37,780 --> 00:04:43,660
+interesa esto, me interesa saber por qué mi predicción está dando lo que está dando,
+
+49
+00:04:43,660 --> 00:04:47,940
+me pueden pasar dos cosas, que sea explicable e intricionalmente el modelo, o sea que sea
+
+50
+00:04:47,940 --> 00:04:53,540
+un modelo caja blanca, lo que como mente se llama caja blanca, como una regresión lineal,
+
+51
+00:04:53,540 --> 00:04:59,020
+donde yo tengo cómo afectan las variables a la predicción final, un KNN también es
+
+52
+00:04:59,020 --> 00:05:02,780
+un modelo de caja blanca, los árboles de decisión por supuesto son modelos de caja
+
+53
+00:05:02,780 --> 00:05:13,140
+blanca y luego podría ser no explicable o caja negra, pero yo tengo métodos y estrategias
+
+54
+00:05:13,140 --> 00:05:18,580
+para dar una estimación de la explicabilidad local, como puede ser line y sap, que es lo
+
+55
+00:05:18,580 --> 00:05:22,580
+que vamos a ver aquí.
+
+56
+00:05:22,580 --> 00:05:32,740
+Y ahora vamos a ver cómo funciona con line, cómo se puede explicar con line y cuál
+
+57
+00:05:32,740 --> 00:05:35,220
+es la explicabilidad que te dan métodos.
+
+58
+00:05:35,220 --> 00:05:42,100
+Estos son los distintos outputs que podemos conseguir con las diferentes librerías que
+
+59
+00:05:42,100 --> 00:05:44,100
+vamos a ver ahora.
+
+60
+00:05:44,100 --> 00:05:54,220
+Y bueno, antes de seguir, por supuesto, yo cojo mi data set, entreno mi modelo y de aquí
+
+61
+00:05:54,220 --> 00:05:59,460
+de mi entrenamiento puedo, lo que hemos dicho antes, darle una explicabilidad global.
+
+62
+00:05:59,460 --> 00:06:05,420
+¿Con qué? Con un fichero importante, un fichero importante es lo que te dices como una explicabilidad
+
+63
+00:06:05,420 --> 00:06:10,260
+global, como lo que te dice el modelo, como lo que te dice el modelo, como lo que te
+
+64
+00:06:10,260 --> 00:06:15,900
+dice un fichero importante, un fichero importante es lo que te dices como han afectado las variables
+
+65
+00:06:15,900 --> 00:06:17,900
+al entrenamiento de tu modelo.
+
+66
+00:06:17,900 --> 00:06:25,380
+Aquí tengo el fichero, bueno, las variables que más han afectado a ese entrenamiento,
+
+67
+00:06:25,380 --> 00:06:29,580
+o sea, que potencialmente podrían afectar más también a las predicciones, pero eso
+
+68
+00:06:29,580 --> 00:06:30,580
+no lo sabemos.
+
+69
+00:06:30,580 --> 00:06:37,740
+Para que veáis el ejemplo, he cogido el Boston Data Set, que está en la librería
+
+70
+00:06:37,740 --> 00:06:43,500
+de ese calerno, o sea, no he cogido ningún data set privado que tenga yo, ni nada, no
+
+71
+00:06:43,500 --> 00:06:45,900
+es estilo, esto es para el puro ejemplo.
+
+72
+00:06:45,900 --> 00:06:53,300
+Pero el Boston Data Set es un data set de precios, bastante antiguo para hacer ejemplos
+
+73
+00:06:53,300 --> 00:07:01,340
+con precios de casas de Boston en no sé qué año, no sé qué época, tampoco es importante.
+
+74
+00:07:01,340 --> 00:07:06,420
+Pero bueno, aquí tenemos las variables y como han afectado.
+
+75
+00:07:06,420 --> 00:07:12,060
+He cogido este data set y no por ejemplo el de California.
+
+76
+00:07:12,060 --> 00:07:15,140
+Me interesaba que veáis esto.
+
+77
+00:07:15,140 --> 00:07:24,340
+Esta variable es la proporción de gente de color oscuro que hay en ese barrio.
+
+78
+00:07:24,340 --> 00:07:30,540
+Y este data set se retiró de la librería ese calerno precisamente por...
+
+79
+00:07:30,540 --> 00:07:36,420
+¿Cómo se dice?
+
+80
+00:07:36,420 --> 00:07:43,300
+Porque éticamente no es correcto utilizar este tipo de variables, pero la ética no
+
+81
+00:07:43,300 --> 00:07:44,900
+tiene que ver con la explicabilidad.
+
+82
+00:07:44,900 --> 00:07:50,380
+O sea, una cosa es que éticamente no sea correcto utilizar este tipo de variables,
+
+83
+00:07:50,380 --> 00:07:52,540
+o género, o edad, por ejemplo.
+
+84
+00:07:52,540 --> 00:07:59,780
+Si estamos utilizando préstamos, por ejemplo, a lo mejor la edad puede influir mucho, pero
+
+85
+00:07:59,780 --> 00:08:04,380
+éticamente no es correcto decir, pues, a ti te doy un préstamo porque tienes menos
+
+86
+00:08:04,380 --> 00:08:08,380
+edad y a ti no te lo doy porque...
+
+87
+00:08:08,380 --> 00:08:13,180
+Bueno, me va a decir una burrada, a ti no te lo doy porque estás más mayor y a lo mejor
+
+88
+00:08:13,180 --> 00:08:14,180
+no puedes pagar.
+
+89
+00:08:14,180 --> 00:08:16,300
+No es éticamente correcto.
+
+90
+00:08:16,300 --> 00:08:18,380
+Pero la explicabilidad no tiene nada que ver con la ética.
+
+91
+00:08:18,380 --> 00:08:23,500
+La explicabilidad en lo que te dice es cómo funciona tu modelo.
+
+92
+00:08:23,500 --> 00:08:25,220
+Hayas utilizado las variables que hayas utilizado.
+
+93
+00:08:25,220 --> 00:08:30,900
+O sea, y aquí vamos a seguir con esta variable y hemos implementado el modelo con esta variable
+
+94
+00:08:30,900 --> 00:08:33,540
+y afecta a las predicciones.
+
+95
+00:08:33,540 --> 00:08:36,580
+Pero éticamente no lo usayamos.
+
+96
+00:08:36,580 --> 00:08:40,500
+Pero bueno, para que sepáis un poco, que a veces mezclamos los dos conceptos, a veces
+
+97
+00:08:40,500 --> 00:08:45,020
+tienen que ver, pero realmente no van unidos.
+
+98
+00:08:45,020 --> 00:08:53,100
+Y bueno, pues ya he entrenado mi modelo, he visto mi explicabilidad global, cómo funciona
+
+99
+00:08:53,100 --> 00:08:58,660
+el entrenamiento, porque esto es un ejemplo.
+
+100
+00:08:58,660 --> 00:09:04,660
+Tampoco necesitamos ver errores, he utilizado un gradient boosting con las argumentos por
+
+101
+00:09:04,660 --> 00:09:07,980
+defectos, ni siquiera me he molestado.
+
+102
+00:09:07,980 --> 00:09:15,300
+Pero lo que me interesa ahora es ver las predicciones, cómo las explico.
+
+103
+00:09:15,300 --> 00:09:19,100
+Una de las librerías que voy a utilizar es slime.
+
+104
+00:09:19,100 --> 00:09:25,860
+Bueno, no sé si en este... bueno, compartiré la presentación porque aquí tenéis linkados
+
+105
+00:09:25,860 --> 00:09:31,260
+el paper donde se habla de ello y la librería en Python para que la podáis utilizar.
+
+106
+00:09:31,260 --> 00:09:39,740
+Y por explicarlo un poco por encima, slime lo que hace es localmente crear un modelo
+
+107
+00:09:39,740 --> 00:09:46,060
+lineal, que el modelo lineal sabéis que es explicable, porque es una ecuación.
+
+108
+00:09:46,060 --> 00:09:52,620
+La ecuación, los pesos de la ecuación son lo que afecta cada variable a la predicción
+
+109
+00:09:52,620 --> 00:09:53,620
+final.
+
+110
+00:09:53,620 --> 00:10:02,980
+Entonces, coge... nosotros tenemos nuestro input y alrededor, en el espacio de variables,
+
+111
+00:10:02,980 --> 00:10:05,740
+alrededor tenemos otros inputs.
+
+112
+00:10:05,740 --> 00:10:12,180
+Coge esos, hace un modelo lineal con esos inputs y predice lo que queremos predicir.
+
+113
+00:10:12,180 --> 00:10:19,740
+Entonces, ¿qué pasa? que localmente ese modelo es muy parecido al modelo que estamos
+
+114
+00:10:19,740 --> 00:10:23,820
+implementando en ese momento, al gradient boosting en nuestro caso.
+
+115
+00:10:23,820 --> 00:10:33,460
+O sea, localmente en ese punto podríamos decir que el modelo lineal es igual que el gradient
+
+116
+00:10:33,460 --> 00:10:34,460
+boosting.
+
+117
+00:10:34,460 --> 00:10:43,800
+Así de simple, se utiliza la librería, se crea un splainer, como veis aquí con los
+
+118
+00:10:43,800 --> 00:10:51,780
+mismos datos de entrenamiento, le decimos que es del modo regresión, y luego lo que
+
+119
+00:10:51,780 --> 00:10:54,500
+hacemos es explicar la instancia con ese splainer.
+
+120
+00:10:54,500 --> 00:11:01,460
+Ese splainer lo que está haciendo es el modelo lineal y luego explicamos la instancia, o sea,
+
+121
+00:11:01,460 --> 00:11:06,060
+el input que le estamos metiendo con ese splainer.
+
+122
+00:11:06,060 --> 00:11:15,700
+Y nos da este tipo de output, en este caso lo hemos sacado en un gráfico para que podamos
+
+123
+00:11:15,700 --> 00:11:22,940
+ver bien o a primera vista cómo han afectado las variables a mi predicción.
+
+124
+00:11:22,940 --> 00:11:26,860
+En este caso lo que está diciendo es que, así un poco ponen encima, la primera variable
+
+125
+00:11:26,860 --> 00:11:33,580
+que se llama RM, no me pregunté qué significa cada una, pero bueno, la documentación está
+
+126
+00:11:33,580 --> 00:11:44,820
+en la librería de SciKill Learn, o sea que, cuando RM es mayor a 6.63, entonces afecta
+
+127
+00:11:44,820 --> 00:11:51,460
+en un 6, o sea, quiere decir que a la esperanza le añadimos 6, a la esperanza que es el valor
+
+128
+00:11:51,460 --> 00:11:56,980
+esperado, que normalmente suele ser la media, que es donde empiezan todos los modelos, a la esperanza
+
+129
+00:11:56,980 --> 00:11:59,220
+le añadimos 6.
+
+130
+00:11:59,220 --> 00:12:00,500
+Luego, ¿qué quiere decir la siguiente?
+
+131
+00:12:00,500 --> 00:12:11,820
+La siguiente el stat, bajo esos valores le resta a lo que ya teníamos, menos uno, o
+
+132
+00:12:11,820 --> 00:12:12,820
+lo que sea.
+
+133
+00:12:12,820 --> 00:12:18,340
+Y así se le da este gráfico.
+
+134
+00:12:18,340 --> 00:12:24,660
+¿Qué voy a hacer con SAP?
+
+135
+00:12:24,660 --> 00:12:31,820
+Voy a hacer exactamente lo mismo, voy a crear un explainer y voy a explicar con este nuevo
+
+136
+00:12:31,820 --> 00:12:38,340
+modelo, los explainer al final son modelos nuevos, voy a explicar con este nuevo modelo
+
+137
+00:12:38,340 --> 00:12:43,700
+el mismo input que he metido antes.
+
+138
+00:12:43,700 --> 00:12:44,700
+¿Cómo funciona SAP?
+
+139
+00:12:44,700 --> 00:12:47,660
+SAP funciona bajo teoría de juegos.
+
+140
+00:12:47,660 --> 00:12:58,140
+SAP lo que dice es que, bueno, se basa en los app livalius, lo que dicen es, ¿cuánto
+
+141
+00:12:58,140 --> 00:13:03,900
+en un juego, por ejemplo, imaginaos en un juego de mesa o lo que sea, ¿cuánto contribuye
+
+142
+00:13:03,900 --> 00:13:09,100
+cada jugador a la ganancia final?
+
+143
+00:13:09,100 --> 00:13:16,660
+Imaginaos que estamos, bueno, en este caso, que es muy fácil de ver, tengo una casa, ¿cuánto
+
+144
+00:13:16,660 --> 00:13:21,620
+contribuye cada una de las features a ese precio final?
+
+145
+00:13:21,620 --> 00:13:27,180
+Y para eso se utiliza teoría de juegos, se utiliza los app livalius y combinatoria básicamente,
+
+146
+00:13:27,180 --> 00:13:35,140
+lo que voy haciendo es hacer combinaciones de los distintos features y para saber en
+
+147
+00:13:35,140 --> 00:13:39,620
+media cuánto contribuye cada una de las variables.
+
+148
+00:13:39,620 --> 00:13:45,780
+Se crea de la misma manera, de forma local, se crea este tipo de modelo, que este modelo,
+
+149
+00:13:45,780 --> 00:13:54,420
+que es una suma, es explicable igual, y se ejecuta con Python, es exactamente de la misma manera,
+
+150
+00:13:54,420 --> 00:14:06,620
+se crea un esplaner del modelo, que tiene esta forma lineal o aditiva, por así decirlo,
+
+151
+00:14:06,620 --> 00:14:11,060
+y luego lo que hacemos es sacar los app livalius, los app livalius es la contribución de cada
+
+152
+00:14:11,060 --> 00:14:18,420
+una de las features a mi predicción final, y luego lo ploteo.
+
+153
+00:14:18,420 --> 00:14:23,460
+Los app livalius a diferencia de line, o en este caso la librería sap a diferencia de
+
+154
+00:14:23,460 --> 00:14:27,620
+line es bastante más compleja, ¿por qué?
+
+155
+00:14:27,620 --> 00:14:37,660
+Porque en line lo que hago es simplificar mucho mi modelo, lo simplifico mucho, cojo las variables
+
+156
+00:14:37,660 --> 00:14:42,380
+más importantes, en este caso solo tengo 13 variables, pero imaginaos que tengo 100 variables,
+
+157
+00:14:42,380 --> 00:14:49,900
+no podría hacer un modelo lineal con 100 variables porque no tendría ningún sentido,
+
+158
+00:14:49,900 --> 00:14:55,900
+o sea ningún sentido, porque cada una portaría súper poco, entonces lo que hace es coger,
+
+159
+00:14:55,900 --> 00:15:02,180
+tú le dices cuántas, coge las más importantes y hace un modelo lineal, pero la librería
+
+160
+00:15:02,180 --> 00:15:06,700
+sap funciona relativamente distinto porque tú puedes meterle todas las variables y lo
+
+161
+00:15:06,700 --> 00:15:16,340
+que te haces es un kernel que te da este tipo de ecuación, no es tanto que yo tenga una
+
+162
+00:15:16,340 --> 00:15:24,700
+suma lineal con los app livalius, sino que tengo una matriz que es el kernel de esta
+
+163
+00:15:24,700 --> 00:15:33,900
+ecuación que me da la explicabilidad o que me da un modelo nuevo localmente igual que
+
+164
+00:15:33,900 --> 00:15:42,380
+el modelo que estoy aplicando. Este gráfico se le da la misma manera, lo que hago es tener
+
+165
+00:15:42,380 --> 00:15:47,140
+un expected value que es mi media, que es donde empiezan todos los modelos o casi todos
+
+166
+00:15:47,140 --> 00:15:57,020
+los modelos, tengo la media y el RM que pasa que a la media le añade 431, el Indus a la
+
+167
+00:15:57,020 --> 00:16:02,980
+media le quita, bueno a la media más esto le quita 114, y así voy asumando cada una
+
+168
+00:16:02,980 --> 00:16:08,860
+de las features y me da la predicción final.
+
+169
+00:16:08,860 --> 00:16:20,660
+Sap values, aunque yo puesto el modelo el ejemplo más sencillo, la librería sap te da realmente
+
+170
+00:16:20,660 --> 00:16:31,500
+muchísimo más insight sobre tu predicción, pero por simplificar aquí, por no estar aquí
+
+171
+00:16:31,500 --> 00:16:39,140
+toda la vida, porque se puede hacer una charla, son la frenta de la librería, he elegido
+
+172
+00:16:39,140 --> 00:16:46,300
+este tipo de explicabilidad que es el que te lo saqué con barras y se ve perfectamente
+
+173
+00:16:46,300 --> 00:16:56,300
+como afecta cada variable a mi predicción. Bueno, antes de seguir y luego lo vamos a
+
+174
+00:16:56,300 --> 00:17:03,620
+ver de todas formas, darnos cuenta que RM aunque sea la variable que más ha afectado y lo
+
+175
+00:17:03,620 --> 00:17:10,260
+hemos visto online y lo vemos en Sap, la segunda variable que más ha afectado aquí es Indus
+
+176
+00:17:10,260 --> 00:17:19,140
+y antes era el STAT, o sea quiere decir que los modelos localmente no son iguales, esto
+
+177
+00:17:19,140 --> 00:17:29,180
+es lo que quiero decir con esto es que nunca vas a tener con este tipo de métodos una
+
+178
+00:17:29,180 --> 00:17:36,900
+cosa real sobre tu modelo, porque estás creando un algoritmo nuevo que es localmente parecido
+
+179
+00:17:36,900 --> 00:17:42,340
+a tu modelo, pero no es tu modelo, tu modelo hemos creado que aunque estemos utilizando
+
+180
+00:17:42,340 --> 00:17:47,300
+ahora un modelo explicable, tu modelo podría ser caja negra, podrías no tener explicabilidad
+
+181
+00:17:47,300 --> 00:17:54,860
+local sobre él y podrías no saber cómo funcionan las predicciones, pero localmente
+
+182
+00:17:54,860 --> 00:18:00,540
+son parecidos, sin embargo, la Inmissab ya empiezan a diferir sobre las variables que
+
+183
+00:18:00,540 --> 00:18:07,780
+más han influido en esta predicción en concreto, que he utilizado la misma para los dos casos.
+
+184
+00:18:07,780 --> 00:18:15,340
+Y finalmente, y yo creo que estaba en el título de la charla, así que es auto promoción,
+
+185
+00:18:15,340 --> 00:18:21,940
+este es la explicabilidad que tiene Gradient Boosting, que es explicabilidad local, este
+
+186
+00:18:21,940 --> 00:18:30,860
+viper yo soy co-autora, es auto promoción, no vale como publicidad como dice la 1 y tiene
+
+187
+00:18:30,860 --> 00:18:33,740
+código en GitHub y se llama feature contribution.
+
+188
+00:18:33,740 --> 00:18:41,380
+Y qué decimos, qué pasa cuando es explicable o intensivamente explicable, lo que decimos
+
+189
+00:18:41,380 --> 00:18:47,820
+es que sin necesidad de crear otro modelo localmente igual, podemos explicar la predicción, o sea
+
+190
+00:18:47,820 --> 00:18:54,340
+que podemos remover en las tripas del modelo para sacar cada una de las contribuciones,
+
+191
+00:18:54,340 --> 00:19:00,460
+igual que se puede hacer en una función lineal donde tú tienes los pesos de cada una de
+
+192
+00:19:00,460 --> 00:19:04,620
+las contribuciones, cada una de las fichas, en el Gradient Boosting también lo puedes
+
+193
+00:19:04,620 --> 00:19:05,620
+hacer.
+
+194
+00:19:05,620 --> 00:19:15,420
+Aquí esto es cómo funciona el algoritmo, lo que hago es, como lo Gradient Boosting
+
+195
+00:19:15,420 --> 00:19:22,080
+son modelos, son árboles de decisión que luego al final se unen de forma, bueno se
+
+196
+00:19:22,080 --> 00:19:26,700
+unen en una suma, las decisiones se unen en una suma, lo que voy haciendo es recorriendo
+
+197
+00:19:26,700 --> 00:19:32,540
+esas decisiones y viendo cómo han afectado las variables a cada una de las decisiones
+
+198
+00:19:32,540 --> 00:19:36,820
+de cada nodo.
+
+199
+00:19:36,820 --> 00:19:43,060
+Esto es un poco más complejo porque no es librería ni tiene un plot directamente
+
+200
+00:19:43,060 --> 00:19:50,980
+ni nada pero bueno lo que hago básicamente es coger esos residuos, cojo las explicaciones
+
+201
+00:19:50,980 --> 00:19:57,180
+que son cada una de las decisiones que hemos ido tomando, la sumo, hago un group by, la
+
+202
+00:19:57,180 --> 00:19:59,980
+sumo y saco un plot.
+
+203
+00:19:59,980 --> 00:20:05,860
+Y este podríamos decir que es el ejemplo más real de explicabilidad local de este algoritmo
+
+204
+00:20:05,860 --> 00:20:12,060
+porque no he tenido que crear ningún modelo por encima y directamente sobre la propia
+
+205
+00:20:12,060 --> 00:20:18,220
+predicción, sobre el propio entrenamiento he podido explicar mi predicción del input
+
+206
+00:20:18,220 --> 00:20:19,220
+en este caso.
+
+207
+00:20:19,220 --> 00:20:26,580
+Como vemos para comparar los tres RM sigue siendo la variable que más ha influido o
+
+208
+00:20:26,580 --> 00:20:34,340
+sea que podríamos friarnos del SAP y del LIME completamente y luego con INDUS que es la
+
+209
+00:20:34,340 --> 00:20:40,620
+que también nos daba SAP como la segunda variable que más influye, también nos dice
+
+210
+00:20:40,620 --> 00:20:44,980
+la explicabilidad intrinseca del modelo que también es la segunda variable que más influye.
+
+211
+00:20:44,980 --> 00:20:52,940
+Entonces con esto que quiero decir que SAP es bastante verídico realmente o sea que
+
+212
+00:20:52,940 --> 00:20:58,580
+si yo tuviese que coger un modelo, una red neuronal que no es explicable y aplicar la
+
+213
+00:20:58,580 --> 00:21:07,540
+explicabilidad local sin duda, sin duda, sin duda utilizaría SAP porque comprobado con
+
+214
+00:21:07,540 --> 00:21:13,180
+modelos que son explicables y con su propia explicabilidad nos da soluciones muy, muy,
+
+215
+00:21:13,180 --> 00:21:14,180
+muy parecidas.
+
+216
+00:21:14,180 --> 00:21:22,300
+Por comparar un poco los tres este es el input que yo le he metido al modelo para poder
+
+217
+00:21:22,300 --> 00:21:27,340
+ver, para hacer todo este análisis que hemos hecho.
+
+218
+00:21:27,340 --> 00:21:33,620
+Yo lo he dejado aquí pero vamos para que da un poco de veracidad al tema pero vamos
+
+219
+00:21:33,620 --> 00:21:36,860
+que son las variables y sus valores.
+
+220
+00:21:36,860 --> 00:21:46,620
+LIME como vemos este es el gráfico que hemos sacado antes, la predicción local que nos
+
+221
+00:21:46,620 --> 00:21:56,460
+da es 2789 que son creo que son miles de dólares, aquí tenemos la explicabilidad, SAP nos da
+
+222
+00:21:56,460 --> 00:22:05,580
+una predicción ligeramente parecida o sea localmente el splainer de las dos librerías
+
+223
+00:22:05,580 --> 00:22:08,260
+nos da una predicción parecida.
+
+224
+00:22:08,260 --> 00:22:13,940
+Sin embargo la predicción del modelo sin necesidad de utilizar un splainer es 25 en
+
+225
+00:22:13,940 --> 00:22:14,940
+vez de 27.
+
+226
+00:22:14,940 --> 00:22:23,180
+Aquí es donde vemos que realmente lo que estamos haciendo es crear un modelo local,
+
+227
+00:22:23,180 --> 00:22:31,140
+un modelo análogo, bueno no es análogo, perdón, un modelo localmente igual, lo localmente
+
+228
+00:22:31,140 --> 00:22:39,860
+bueno, si, localmente igual pero no es el modelo que estamos utilizando, sin embargo
+
+229
+00:22:39,860 --> 00:22:45,900
+como veis la predicción no la usaría porque la predicción del modelo es 25 y tal pero
+
+230
+00:22:45,900 --> 00:22:53,380
+lo que es la esencia del feature contribution de cómo han influido cada una de las variables
+
+231
+00:22:53,380 --> 00:22:58,980
+como vemos las dos primeras en los dos últimos casos coinciden.
+
+232
+00:22:58,980 --> 00:23:05,700
+LIME lo que pasa es que a ser un modelo lineal obviamente si tus variables tienen correlaciones
+
+233
+00:23:05,700 --> 00:23:11,860
+que no son lineales no las va a coger eso es así por eso es un modelo muy muy muy sencillo
+
+234
+00:23:11,860 --> 00:23:16,260
+pero yo que sé para ver la primera variable la que más ha influido me parece muy lógico
+
+235
+00:23:16,260 --> 00:23:23,180
+utilizarlo y me diréis si tengo explicabilidad local intrinseca porque quería utilizarlo
+
+236
+00:23:23,180 --> 00:23:32,340
+pero bueno porque es muy posible que en este caso como una renunal no tenga explicabilidad
+
+237
+00:23:32,340 --> 00:23:40,260
+local y que si utilizar alguna de estas librerías line por ejemplo para una red inception te da
+
+238
+00:23:40,260 --> 00:23:46,580
+este tipo de resultados este ejemplo que es el que tienen ellos puesto en el github
+
+239
+00:23:46,580 --> 00:23:56,740
+es la diferencia la predicción de un perro en una imagen con una red inception y te dice
+
+240
+00:23:56,740 --> 00:24:03,780
+exactamente que en este caso es la del perro y porque te dice exactamente que parte de la
+
+241
+00:24:03,780 --> 00:24:12,500
+imagen es la que ha influido en la predicción de si hay un perro en la imagen.
+
+242
+00:24:12,500 --> 00:24:20,220
+Igualmente con SAP utilizando una resnet con el imagen de dataset te dice que partes de
+
+243
+00:24:20,220 --> 00:24:34,340
+la imagen han influido para darte la predicción de ser un pato de estos o un barco pero lo
+
+244
+00:24:34,340 --> 00:24:40,220
+que vemos es que igual que podría utilizar un Gradient Boosty no podría utilizar una
+
+245
+00:24:40,220 --> 00:24:45,500
+revisión lineal para tener explicabilidad también puede utilizar modelos más complejos
+
+246
+00:24:45,500 --> 00:24:55,580
+e igualmente con estas dos librerías tener explicabilidad local y poder explicarle a
+
+247
+00:24:55,580 --> 00:25:01,100
+mis clientes a mis jefes por qué mi modelo funciona o por qué no funciona.
+
+248
+00:25:01,100 --> 00:25:11,300
+Y bueno ya hemos pasado de no tener ni puta idea por lo menos pensar que sabemos algo
+
+249
+00:25:11,300 --> 00:25:38,940
+y creo que ya está eso es todo y bueno ahora las preguntas.
+
+250
+00:25:38,940 --> 00:25:42,420
+Me lo cojo con la mano.
+
+251
+00:25:42,420 --> 00:25:45,420
+Me lo cojo con la otra.
+
+252
+00:25:45,420 --> 00:25:46,420
+Tengo dos.
+
+253
+00:25:46,420 --> 00:25:47,420
+Hola.
+
+254
+00:25:47,420 --> 00:25:50,420
+Me veo una pregunta por ahí.
+
+255
+00:25:50,420 --> 00:25:51,420
+Oíba.
+
+256
+00:25:51,420 --> 00:25:52,420
+Eje ya estamos muy cansados.
+
+257
+00:25:52,420 --> 00:26:03,420
+Hola, más gracias a los primeros por la tabla y mi pregunta es ¿se que dan y tienen
+
+258
+00:26:03,420 --> 00:26:16,580
+la acción de sacar por ahí y le digas por ejemplo esta persona o esta vivienda porque
+
+259
+00:26:16,580 --> 00:26:21,700
+tiene este precio y simplemente te saqué de cada uno en SASE puede hacer lo mismo.
+
+260
+00:26:21,700 --> 00:26:27,900
+O sea que le digas cuánto ha influido cada feature.
+
+261
+00:26:27,900 --> 00:26:30,220
+De una predicción es directamente.
+
+262
+00:26:30,220 --> 00:26:31,220
+Eso es lo que está mostrando justo.
+
+263
+00:26:31,220 --> 00:26:33,500
+¿No es general, no?
+
+264
+00:26:33,500 --> 00:26:34,500
+No, no.
+
+265
+00:26:34,500 --> 00:26:35,500
+Por cada predicción.
+
+266
+00:26:35,500 --> 00:26:40,740
+Exactamente, o sea en esta predicción donde yo he metido estas variables.
+
+267
+00:26:40,740 --> 00:26:42,740
+Para esa línea de.
+
+268
+00:26:42,740 --> 00:26:43,740
+Justo, justo.
+
+269
+00:26:43,740 --> 00:26:47,340
+O sea cuando hablamos de explicabilidad local siempre para las predicciones.
+
+270
+00:26:47,340 --> 00:26:55,180
+La IMISAP te dan solo explicabilidad local y la explicabilidad global cuando se hace en
+
+271
+00:26:55,180 --> 00:26:59,180
+el entrenamiento lo suele dar la propia librería del entrenamiento.
+
+272
+00:26:59,180 --> 00:27:03,460
+Los errores por ejemplo el error de entrenamiento es una métrica de explicabilidad global porque
+
+273
+00:27:03,460 --> 00:27:11,060
+te está diciendo realmente cuánto difiere tu modelo del del del caso real.
+
+274
+00:27:11,060 --> 00:27:12,900
+Y en este caso sí, efectivamente.
+
+275
+00:27:12,900 --> 00:27:18,220
+Todo la IMISAP te da esa información y en este caso también te está dando esa misma
+
+276
+00:27:18,220 --> 00:27:19,220
+información.
+
+277
+00:27:19,220 --> 00:27:25,540
+Lo que pasa es que los algoritmos que utilizan para explicarla son distintos.
+
+278
+00:27:25,540 --> 00:27:29,740
+Perdona que no lo habían tenido.
+
+279
+00:27:29,740 --> 00:27:30,740
+No, no, para nada.
+
+280
+00:27:30,740 --> 00:27:31,740
+Ya, sí, sí, sí.
+
+281
+00:27:31,740 --> 00:27:32,740
+El piezo de principio.
+
+282
+00:27:32,740 --> 00:27:41,740
+Bueno, muchas gracias por la charla, súper interesante.
+
+283
+00:27:41,740 --> 00:27:47,900
+Bueno, igual es una pregunta muy poco PyCon, pero como le das también a R que quería
+
+284
+00:27:47,900 --> 00:27:53,740
+preguntar si estas librerías están también como portadas a R o hay otras opciones así
+
+285
+00:27:53,740 --> 00:27:54,740
+parecidas.
+
+286
+00:27:54,740 --> 00:27:55,740
+Sí, sí, sí, hay opciones.
+
+287
+00:27:55,740 --> 00:28:05,420
+SAPI LIME en este caso las dos o las dos librerías que yo he puesto aquí, mejor dicho, son las
+
+288
+00:28:05,420 --> 00:28:06,420
+dos en Python.
+
+289
+00:28:06,420 --> 00:28:07,420
+En R hay opciones.
+
+290
+00:28:07,420 --> 00:28:14,140
+Te lo compartiré porque no lo recuerdo de memoria, pero sé que hay un señor, un señor,
+
+291
+00:28:14,140 --> 00:28:20,460
+un profesor de universidad en Polonia, ya un señor random, ¿no?
+
+292
+00:28:20,460 --> 00:28:27,900
+Un señor en Polonia que tiene libros de explicabilidad local y que tiene un departamento o un grupo
+
+293
+00:28:27,900 --> 00:28:31,700
+de trabajo donde hacen este tipo de cosas con R.
+
+294
+00:28:31,700 --> 00:28:35,900
+No sé muy bien cómo se llama ahora mismo, pero cuando estuve haciendo el paper es uno
+
+295
+00:28:35,900 --> 00:28:37,580
+de las cosas las que me base.
+
+296
+00:28:37,580 --> 00:28:39,700
+O de las que nos basamos, mejor dicho.
+
+297
+00:28:39,700 --> 00:28:41,180
+Yo sola no lo hice.
+
+298
+00:28:41,180 --> 00:28:49,700
+Y utiliza los mismos métodos en los mismos principios, pero implementados de otra manera.
+
+299
+00:28:49,700 --> 00:28:59,700
+Y además está muy guay porque SAPA lo mejor como concepto o cuando te metes a leer el
+
+300
+00:28:59,700 --> 00:29:03,660
+paper o cuando te metes a leer realmente con función es un poco complejo, pero este
+
+301
+00:29:03,660 --> 00:29:07,980
+señor tiene un par de libros que los tiene online que lo explican súper bien.
+
+302
+00:29:07,980 --> 00:29:10,020
+O sea, os lo comparto, se me ha olvidado totalmente.
+
+303
+00:29:10,020 --> 00:29:16,300
+Bueno, también es que en la Python tampoco, pero sí lo compartiré porque es súper interesante
+
+304
+00:29:16,300 --> 00:29:17,980
+lo que hace ese señor realmente.
+
+305
+00:29:17,980 --> 00:29:18,980
+Gracias.
+
+306
+00:29:18,980 --> 00:29:19,980
+Nada.
+
+307
+00:29:19,980 --> 00:29:30,740
+Muchas gracias por la, ha sido muy, muy interesante.
+
+308
+00:29:30,740 --> 00:29:36,420
+Quería preguntar sobre el tercer método de los residuos.
+
+309
+00:29:36,420 --> 00:29:44,980
+Supongo que ese se ha podido comparar porque la red neuronal se ha hecho con el método
+
+310
+00:29:44,980 --> 00:29:49,620
+de árbol o porque se no se podría hacer con todo.
+
+311
+00:29:49,620 --> 00:29:50,620
+Dices este.
+
+312
+00:29:50,620 --> 00:29:51,620
+Sí, correcto.
+
+313
+00:29:51,620 --> 00:29:59,700
+Este es como esa explicabilidad local sobre el Gadi embusting, solo es para el embusting.
+
+314
+00:29:59,700 --> 00:30:00,700
+¿Por qué?
+
+315
+00:30:00,700 --> 00:30:07,940
+Porque la explicabilidad local, o sea, la explicabilidad intrínseca, lo llamo intrínseca,
+
+316
+00:30:07,940 --> 00:30:09,940
+porque creo que en inglés se utiliza esa palabra.
+
+317
+00:30:09,940 --> 00:30:15,460
+Pero bueno, lo que hace es coger cómo funciona el modelo por dentro, o sea, cómo funciona
+
+318
+00:30:15,460 --> 00:30:24,980
+el algoritmo y recoger las importancias y las contribuciones dentro del algoritmo.
+
+319
+00:30:24,980 --> 00:30:29,260
+O sea, de cómo voy yo tomando esas decisiones, en este caso como es un árbol, cómo voy
+
+320
+00:30:29,260 --> 00:30:35,460
+tomando esas decisiones, recojo esa información y la plasmo aquí.
+
+321
+00:30:35,460 --> 00:30:41,500
+¿Qué pasa? que en una red neuronal no se podría aplicar esto porque no hay decisiones
+
+322
+00:30:41,500 --> 00:30:44,260
+como tal, o sea, no funciona de la misma manera.
+
+323
+00:30:44,260 --> 00:30:53,300
+Hay una serie de activaciones y encima también al tener que volver los datos a la misma red,
+
+324
+00:30:53,300 --> 00:30:57,100
+pues es todo más confuso, pero eso se llama mancaja negra, porque no se puede volver
+
+325
+00:30:57,100 --> 00:31:02,020
+atrás sobre la decisión que ha tomado, sobre la predicción que ha tomado.
+
+326
+00:31:02,020 --> 00:31:03,020
+¿Qué pasa?
+
+327
+00:31:03,020 --> 00:31:07,420
+Es que las decisiones son modelos explicables en sí, o sea, tú coges un árbol y tú tienes
+
+328
+00:31:07,420 --> 00:31:12,140
+tus decisiones y es totalmente explicable.
+
+329
+00:31:12,140 --> 00:31:18,700
+El gradient boosting lo único que hace es que al final del todo, bueno, lo único que
+
+330
+00:31:18,700 --> 00:31:27,100
+hace, pero al final del todo, coge esas decisiones que ha tomado y la suma, igual que el random
+
+331
+00:31:27,100 --> 00:31:28,100
+forest.
+
+332
+00:31:28,100 --> 00:31:32,500
+Bueno, no es exactamente igual, el random forest, no la suma.
+
+333
+00:31:32,500 --> 00:31:37,620
+Pero es, bueno, mejor dicho, no utiliza boosting el random forest, pero como los árboles de
+
+334
+00:31:37,620 --> 00:31:42,980
+decisión son otra vez explicables, yo puedo volver atrás en las decisiones y al final
+
+335
+00:31:42,980 --> 00:31:47,060
+tener todas las contribuciones de todas las features.
+
+336
+00:31:47,060 --> 00:31:48,060
+¿Qué pasa?
+
+337
+00:31:48,060 --> 00:31:50,420
+Que eso no pasa en casi ningún algoritmo.
+
+338
+00:31:50,420 --> 00:31:54,060
+Esto es explicabilidad intrínseca de este algoritmo.
+
+339
+00:31:54,060 --> 00:31:55,060
+Ya está.
+
+340
+00:31:55,060 --> 00:32:03,740
+Muchas gracias.
+
+341
+00:32:03,740 --> 00:32:05,780
+Qué manda, envidia.
+
+342
+00:32:05,780 --> 00:32:07,500
+Muchas gracias por la charla.
+
+343
+00:32:07,500 --> 00:32:09,500
+Una pregunta más o menos rápida.
+
+344
+00:32:09,500 --> 00:32:14,300
+Hemos comparado varias predicciones y hay alguna forma de saber cómo de fiable o de
+
+345
+00:32:14,300 --> 00:32:17,220
+dirección es una explicación versus otra.
+
+346
+00:32:17,220 --> 00:32:22,940
+Entiendo que el método intrínseco es 100% de digno, pero si tengo una caja negra y tengo
+
+347
+00:32:22,940 --> 00:32:26,100
+una explicación de la IME, ¿cómo sé si me puedo fiar de la explicación?
+
+348
+00:32:26,100 --> 00:32:28,700
+Es una buena pregunta.
+
+349
+00:32:28,700 --> 00:32:35,620
+A ver, ¿cómo sabes si te puedes fiar?
+
+350
+00:32:35,620 --> 00:32:40,500
+Te puedes fiar porque localmente, y eso está demostrado en los papers, igual que en el
+
+351
+00:32:40,500 --> 00:32:50,980
+SAP, localmente son modelos iguales, localmente.
+
+352
+00:32:50,980 --> 00:32:52,900
+Qué pasa?
+
+353
+00:32:52,900 --> 00:32:55,460
+Que no son el mismo modelo globalmente.
+
+354
+00:32:55,460 --> 00:33:08,060
+Si hay alguna afección en el espacio de variables que se sale de esa localidad, no
+
+355
+00:33:08,060 --> 00:33:09,060
+son el mismo modelo.
+
+356
+00:33:09,060 --> 00:33:10,700
+No van a afectar de la misma forma.
+
+357
+00:33:10,700 --> 00:33:15,420
+Por eso dan ligeramente predicciones distintas.
+
+358
+00:33:15,420 --> 00:33:16,420
+Pero te puedes fiar.
+
+359
+00:33:16,420 --> 00:33:17,420
+¿Por qué?
+
+360
+00:33:17,420 --> 00:33:25,060
+Porque matemáticamente está demostrado que son el mismo modelo local.
+
+361
+00:33:25,060 --> 00:33:27,860
+Pero bueno, es lo que decíamos antes.
+
+362
+00:33:27,860 --> 00:33:39,220
+SAP Li-valuable, por ejemplo, o SAP te recoge, como lo haría una renduina oral, te recoge
+
+363
+00:33:39,220 --> 00:33:43,900
+con relaciones o relaciones entre variables que no son lineales.
+
+364
+00:33:43,900 --> 00:33:46,620
+No pasa con line porque line es un modelo lineal.
+
+365
+00:33:46,620 --> 00:33:53,380
+Lo que pasa aquí es que tienes que jugar un poco tú con lo que buscas.
+
+366
+00:33:53,380 --> 00:33:58,140
+Si lo que quieres es en un momento dado, pues qué variable va a afectar más, o porque
+
+367
+00:33:58,140 --> 00:34:02,940
+mi predicción está yendo mal, a lo mejor line te sirve.
+
+368
+00:34:02,940 --> 00:34:04,740
+Porque es un momentillo y bla, bla.
+
+369
+00:34:04,740 --> 00:34:10,020
+Si lo que quieres saber es exactamente qué está pasando en esa predicción, SAP te va
+
+370
+00:34:10,020 --> 00:34:12,220
+a dar muchísima más información.
+
+371
+00:34:12,220 --> 00:34:17,100
+Pero simplemente por el hecho del modelo final que crea cada uno.
+
+372
+00:34:17,100 --> 00:34:18,540
+Uno es lineal y el otro no.
+
+373
+00:34:18,540 --> 00:34:43,340
+Bueno, muchas gracias.
+

@@ -1,0 +1,1772 @@
+1
+00:00:00,000 --> 00:00:26,360
+Bueno, como lo bueno se hace esperar, buenas tardes, somos Alejandro Campoy y Antonio
+
+2
+00:00:26,360 --> 00:00:33,360
+Javacas y vamos a concluir esta jornada con una introducción al Aprendizaje por Refuerzo en Python.
+
+3
+00:00:33,360 --> 00:00:41,860
+Vamos a ver primero qué es eso del Aprendizaje por Refuerzo, qué utilidades tiene, qué casos de éxito
+
+4
+00:00:41,860 --> 00:00:48,860
+podemos ver en aplicaciones reales. Después vamos a hablar de dos herramientas fundamentales dentro del Aprendizaje
+
+5
+00:00:48,860 --> 00:00:56,860
+por Refuerzo y obviamente basados en Python. Posteriormente veremos un ejemplo de uso de estas dos aplicaciones
+
+6
+00:00:56,860 --> 00:01:04,360
+que son OpenIG y Stable Baselines y finalmente hablaremos de un caso de uso propio que deriva de nuestra investigación
+
+7
+00:01:04,360 --> 00:01:14,360
+aquí en la Universidad de Granada, ¿vale? Así que comencemos. Y vamos a hablar primero de qué es el Aprendizaje por Refuerzo.
+
+8
+00:01:14,360 --> 00:01:22,360
+Seguramente a todos os suena este señor que se llama Ivan Pavlov y su famoso experimento del perro de Pavlov
+
+9
+00:01:22,360 --> 00:01:28,860
+y es que para hablar de Aprendizaje por Refuerzo computacional primero tenemos que fijarnos en el Aprendizaje por Refuerzo
+
+10
+00:01:28,860 --> 00:01:35,360
+desde un punto de vista psicológico, animal. Básicamente el experimento del perro de Pavlov
+
+11
+00:01:35,360 --> 00:01:44,360
+consistía en un perro al que se le daba de comer y cada vez que se le daba de comer Pavlov le hacía sonar una campana.
+
+12
+00:01:44,360 --> 00:01:51,360
+De tal forma que llegó un punto en el que simplemente haciendo sonar esa campanilla el perro empezaba a salivar
+
+13
+00:01:51,360 --> 00:01:59,360
+sin haber ningún atibo de comida. En este caso lo que Pavlov estaba estudiando era la relación entre los estímulos ambientales
+
+14
+00:01:59,360 --> 00:02:06,360
+que en este caso es el sonido de la campanilla, la asociación que el perro establecía que era la comida
+
+15
+00:02:06,360 --> 00:02:11,360
+y una respuesta intuitiva que era salivar, ¿vale?
+
+16
+00:02:11,360 --> 00:02:16,360
+Dentro de este pensamiento conductista estos procesos de aprendizaje por refuerzo
+
+17
+00:02:16,360 --> 00:02:22,360
+aparece un segundo experimento muy importante en este campo que es el de la caja de Skinner.
+
+18
+00:02:22,360 --> 00:02:30,360
+En este caso lo que hacía Skinner era meter una paloma dentro de una jaula y darle a su disposición dos botones, ¿vale?
+
+19
+00:02:30,360 --> 00:02:38,360
+Si la paloma pulsaba un botón esa era su conducta, recibía un estímulo, en este caso se dejaba caer comida
+
+20
+00:02:38,360 --> 00:02:46,360
+y la paloma recibía por tanto un refuerzo positivo, es decir esto la incentivaba a repetir el pulsar ese botón, a repetir esa acción.
+
+21
+00:02:46,360 --> 00:02:53,360
+Sin embargo si la paloma pulsaba otro botón, recibía una descarga eléctrica que interpretaba como un refuerzo negativo
+
+22
+00:02:53,360 --> 00:03:01,360
+y por tanto, pasado el tiempo y tras múltiples iteraciones la paloma aprendía a pulsar siempre el mismo botón.
+
+23
+00:03:01,360 --> 00:03:08,360
+Pues bien, la pregunta es la siguiente, ¿pueden las máquinas aprender así?
+
+24
+00:03:08,360 --> 00:03:22,360
+¿Pueden tener un pensamiento conductista o aprender como lo hacen? A lo mejor no los humanos, pero sí los animales, digamos, con menor libertinaje.
+
+25
+00:03:22,360 --> 00:03:33,360
+Y bueno, lo que nos diría Richard Sarton y Andriu Bartó, padres del Aprendizaje por Refuerzo, es un punto de vista computacional, es que sí, las máquinas pueden aprender así.
+
+26
+00:03:33,360 --> 00:03:46,360
+Y vamos a ver cómo. El Aprendizaje por Refuerzo es un método de aprendizaje computacional que se diferencia en muchos aspectos del aprendizaje supervisado
+
+27
+00:03:46,360 --> 00:03:54,360
+donde una gente aprende a través de ejemplos o el no supervisado basado en el reconocimiento de patrones.
+
+28
+00:03:54,360 --> 00:04:03,360
+El Aprendizaje por Refuerzo no deja de ser un método de aprendizaje donde la gente interactúa con el entorno por medio de acciones, ¿vale?
+
+29
+00:04:03,360 --> 00:04:11,360
+Y estas acciones suponen una recompensa para la gente si le conducen a estados deseables.
+
+30
+00:04:11,360 --> 00:04:18,360
+Por tanto, el objetivo de la gente va a ser siempre buscar aquellas acciones que le lleven a maximizar su recompensa
+
+31
+00:04:18,360 --> 00:04:26,360
+y de esta forma, con el paso del tiempo, lo que hará la gente será aprender una política de comportamiento óptima.
+
+32
+00:04:26,360 --> 00:04:37,360
+Y bueno, como estamos utilizando redes neuronales profundas para garantizar ese aprendizaje, pues hablamos de Aprendizaje Profundo por Refuerzo o Deep Reinforcement Learning, ¿vale?
+
+33
+00:04:37,360 --> 00:04:45,360
+Y bueno, casos de éxito del Aprendizaje por Refuerzo en entornos reales, hay muchos y muy interesantes.
+
+34
+00:04:45,360 --> 00:04:51,360
+Seguramente el que más os suene es el de Alfagó, no sé si habéis oído hablar de Alfagó,
+
+35
+00:04:51,360 --> 00:04:58,360
+donde bueno, una gente basada en Aprendizaje por Refuerzo y la mano de Dismayn, empresa de Google,
+
+36
+00:04:58,360 --> 00:05:03,360
+pues logró vencer al campeón mundial de este famoso juego.
+
+37
+00:05:03,360 --> 00:05:10,360
+Pero esto no se queda aquí y de hecho hay otros muchos casos de éxito donde agentes basados en Aprendizaje por Refuerzo
+
+38
+00:05:10,360 --> 00:05:19,360
+han llegado a igualar y superar con creces el nivel de desempeño de grandes maestros de juegos como Starcraft,
+
+39
+00:05:19,360 --> 00:05:23,360
+Agedrez y otros muchos juegos, ¿vale?
+
+40
+00:05:23,360 --> 00:05:30,360
+Pero esto no se queda simplemente en el caso de juegos o experimentos, digamos, poco serios,
+
+41
+00:05:30,360 --> 00:05:36,360
+sino que realmente todo lo que podemos sacar de estos experimentos se puede aplicar en otras ramas de la ciencia
+
+42
+00:05:36,360 --> 00:05:42,360
+con grandes repercusiones, como por ejemplo el plegado de proteínas que desde hace años
+
+43
+00:05:42,360 --> 00:05:49,360
+era un dolor de cabeza para los biólogos y que gracias a Aprendizaje por Refuerzo se ha podido resolver.
+
+44
+00:05:49,360 --> 00:05:53,360
+Y bueno, dentro del campo de la robótica también encontramos muchas aplicaciones,
+
+45
+00:05:53,360 --> 00:06:00,360
+desde resolver Cubos de Rubix, como podemos ver ahí, o hacer andar a robots, ¿vale?
+
+46
+00:06:00,360 --> 00:06:07,360
+El problema que tenemos es el siguiente, tenemos el framework de Aprendizaje, es decir,
+
+47
+00:06:07,360 --> 00:06:11,360
+sabemos que elementos componen el framework de Aprendizaje por Refuerzo,
+
+48
+00:06:11,360 --> 00:06:16,360
+pero a la hora de llevar esto a casos reales es necesario un entrenamiento previo,
+
+49
+00:06:16,360 --> 00:06:21,360
+es decir, a la gente necesita adquirir una experiencia para poder entrenar esa red neuronal
+
+50
+00:06:21,360 --> 00:06:25,360
+y actuar de la mejor forma posible.
+
+51
+00:06:25,360 --> 00:06:30,360
+Entonces lo que nos va a explicar, mi compañero Alejandro, es cómo entrenar a dicha gente,
+
+52
+00:06:30,360 --> 00:06:33,360
+lo que nos lleva a hablar de OpenAging.
+
+53
+00:06:33,360 --> 00:06:35,360
+Buenas, ¿se me escucha bien?
+
+54
+00:06:35,360 --> 00:06:40,360
+Bueno, mi compañero Antonio acaba de explicar en qué consiste el Aprendizaje por Refuerzo
+
+55
+00:06:40,360 --> 00:06:45,360
+y para poder entrenar una gente en este paradigma se necesitan principalmente dos cosas.
+
+56
+00:06:45,360 --> 00:06:50,360
+Una, se ha capaz de definir el entorno en el que la gente va a poder generar su propia experiencia
+
+57
+00:06:50,360 --> 00:06:55,360
+para aprender del mismo y otra, el algoritmo de Aprendizaje por Refuerzo concreto
+
+58
+00:06:55,360 --> 00:06:59,360
+que vamos a utilizar para definir cómo se va a utilizar esta experiencia
+
+59
+00:06:59,360 --> 00:07:05,360
+y cómo va a conseguir, digamos, construir una estrategia para resolver el problema de dicho entorno.
+
+60
+00:07:05,360 --> 00:07:10,360
+Entonces, para lo primero, definir el entorno, tenemos la herramienta OpenAging
+
+61
+00:07:10,360 --> 00:07:14,360
+que consiste en una librería Python de código abierto
+
+62
+00:07:14,360 --> 00:07:18,360
+que implementa una API que nos permite establecer esta comunicación
+
+63
+00:07:18,360 --> 00:07:21,360
+que ha explicado Antonio entre agentes y entornos.
+
+64
+00:07:21,360 --> 00:07:24,360
+Básicamente, tenemos cuatro principales métodos,
+
+65
+00:07:24,360 --> 00:07:27,360
+que son los que estamos viendo aquí, que aplicaremos ahora un poco más adelante,
+
+66
+00:07:27,360 --> 00:07:33,360
+y con esto implementamos el entorno y el comportamiento que va a tener la lógica, la transición de Estado.
+
+67
+00:07:33,360 --> 00:07:36,360
+Al final, la gente realizará una acción sobre el entorno.
+
+68
+00:07:36,360 --> 00:07:41,360
+Este entorno con OpenAging se calculará el siguiente estado que le lleva
+
+69
+00:07:41,360 --> 00:07:44,360
+y se le devolverá a la gente junto con una recompensa.
+
+70
+00:07:44,360 --> 00:07:53,360
+Esta herramienta además permite alguna funcionalidad extra, como es la BroApers.
+
+71
+00:07:53,360 --> 00:07:57,360
+Al final, lo que nos permite es personalizar un poco a este entorno
+
+72
+00:07:57,360 --> 00:08:01,360
+sin necesidad de que el usuario tenga que tener un conocimiento explícito
+
+73
+00:08:01,360 --> 00:08:05,360
+sobre la herramienta, es decir, picar código o tocar el código directamente
+
+74
+00:08:05,360 --> 00:08:08,360
+para cambiar algún aspecto del entorno. También veremos un ejemplo más adelante.
+
+75
+00:08:08,360 --> 00:08:12,360
+Y, por último, otra de las ventajas que tiene esta herramienta
+
+76
+00:08:12,360 --> 00:08:17,360
+es que nos permite crear nuestros propios entornos siguiendo un estándar, una serie de pasos
+
+77
+00:08:17,360 --> 00:08:23,360
+y de esta manera poder plantear a la gente nuestros propios problemas que queramos resolver.
+
+78
+00:08:23,360 --> 00:08:29,360
+Vamos con un ejemplo sencillo, que incluye la propia librería, que es el de Mountain Carp.
+
+79
+00:08:29,360 --> 00:08:36,360
+Al final consiste en una vagoneta que se sitúa aleatoriamente en el fondo de un valles inusoidal, como estáis viendo aquí.
+
+80
+00:08:36,360 --> 00:08:45,360
+La opción es que vamos a definir que la vagoneta puede ir a la izquierda, a la derecha o no hacer nada.
+
+81
+00:08:45,360 --> 00:08:48,360
+Esto puede tener una versión discreta que es la que vamos a utilizar aquí
+
+82
+00:08:48,360 --> 00:08:55,360
+o puede tener una versión continua que consiste en un valor que puede ser negativo si va a girar a la izquierda,
+
+83
+00:08:55,360 --> 00:09:00,360
+neutro si es cero o girar a la derecha si es positivo.
+
+84
+00:09:00,360 --> 00:09:06,360
+El estado o la observación que se conforma en este entorno son solamente dos palores,
+
+85
+00:09:06,360 --> 00:09:10,360
+una en la posición de la carreta y otra en la velocidad que esta tiene.
+
+86
+00:09:10,360 --> 00:09:15,360
+No es necesaria, por ejemplo, la altura de la carreta porque el valle siempre es igual,
+
+87
+00:09:15,360 --> 00:09:18,360
+entonces contad en información del eje aquí es suficiente.
+
+88
+00:09:18,360 --> 00:09:24,360
+Por último, el objetivo que tiene este entorno es alcanzar la meta que estáis viendo situada en el lado derecho
+
+89
+00:09:24,360 --> 00:09:32,360
+y para ello se tiene que definir una recompensa en el que el objetivo es alcanzarla en el menor tiempo posible.
+
+90
+00:09:32,360 --> 00:09:37,360
+Entonces la recompensa se diseña de tal manera que en cada paso, en cada decisión que toma la gente,
+
+91
+00:09:37,360 --> 00:09:39,360
+se resta menos una la recompensa.
+
+92
+00:09:39,360 --> 00:09:43,360
+Aquí, implícitamente, se le está diciendo que tiene que tardar lo menos posible,
+
+93
+00:09:43,360 --> 00:09:48,360
+porque cuanto más tiempo tarde el valor se va a alejar cada vez más de cero,
+
+94
+00:09:48,360 --> 00:09:50,360
+que sería como el resultado perfecto.
+
+95
+00:09:50,360 --> 00:09:54,360
+Aquí también creo que es importante definirlo que un episodio.
+
+96
+00:09:54,360 --> 00:09:57,360
+Un episodio, para el resto de la aplicación que voy a dar,
+
+97
+00:09:57,360 --> 00:10:01,360
+es el problema que se plantea en el entorno desde un estado inicial,
+
+98
+00:10:01,360 --> 00:10:03,360
+que sería situarse en medio del valle,
+
+99
+00:10:03,360 --> 00:10:07,360
+hasta el estado terminal, que hay dos tipos de estado terminal aquí.
+
+100
+00:10:07,360 --> 00:10:12,360
+Al alcanzar la meta o que ocurran 200 pasos no cumple el objetivo,
+
+101
+00:10:12,360 --> 00:10:14,360
+es decir, ten una recompensa de menos 200.
+
+102
+00:10:14,360 --> 00:10:21,360
+En este caso se entiende que la gente no es lo suficientemente bueno y termina el episodio.
+
+103
+00:10:21,360 --> 00:10:25,360
+Ahora, vamos a ver, ya sabemos el entorno que queramos hacer,
+
+104
+00:10:25,360 --> 00:10:28,360
+cómo definimos este entorno en GIMP, aunque este ya esté definido,
+
+105
+00:10:28,360 --> 00:10:31,360
+pero es un ejemplo sencillo para ver cómo se implementaría.
+
+106
+00:10:31,360 --> 00:10:33,360
+Los cuatro métodos que he comentado antes.
+
+107
+00:10:33,360 --> 00:10:36,360
+El reset, que es para iniciar un episodio.
+
+108
+00:10:36,360 --> 00:10:39,360
+Bueno, el Init, que quería antes, que es para definir el entorno.
+
+109
+00:10:39,360 --> 00:10:43,360
+El step, que es para mandar una acción en el entorno
+
+110
+00:10:43,360 --> 00:10:45,360
+de vuelva la siguiente observación.
+
+111
+00:10:45,360 --> 00:10:47,360
+Y el Render, que es opcional, que es simplemente,
+
+112
+00:10:47,360 --> 00:10:52,360
+si tirada alguna librería para hacer una visión gráfica del estado actual del entorno.
+
+113
+00:10:52,360 --> 00:10:57,360
+Para el Init, simplemente aquí se hacen dos cosas principalmente.
+
+114
+00:10:57,360 --> 00:10:59,360
+Una es definir el espacio de acción y observación,
+
+115
+00:10:59,360 --> 00:11:01,360
+que es lo que tenemos ahí abajo.
+
+116
+00:11:01,360 --> 00:11:05,360
+Las acciones serían un espacio discreto de tres posibles valores,
+
+117
+00:11:05,360 --> 00:11:07,360
+izquierda, derecha, no hacer nada.
+
+118
+00:11:07,360 --> 00:11:10,360
+Y el espacio de observación, al final, es un valor continuo.
+
+119
+00:11:10,360 --> 00:11:15,360
+Dos valores que son la posición y la velocidad de la carreta en ese momento.
+
+120
+00:11:15,360 --> 00:11:19,360
+Luego, aquí también vamos a montar los atributos del entorno,
+
+121
+00:11:19,360 --> 00:11:20,360
+lo que va a definir el entorno.
+
+122
+00:11:20,360 --> 00:11:25,360
+Por ejemplo, qué gravedad hay, qué rozamiento, qué frición tiene,
+
+123
+00:11:25,360 --> 00:11:27,360
+cuál es la velocidad máxima que pueda alcanzar la carreta.
+
+124
+00:11:27,360 --> 00:11:31,360
+Y ese tipo de información que luego se utiliza para hacer la transición de estado
+
+125
+00:11:31,360 --> 00:11:33,360
+cuando recibe una acción.
+
+126
+00:11:33,360 --> 00:11:38,360
+El reset simplemente es para iniciar o reinicializar un episodio.
+
+127
+00:11:38,360 --> 00:11:42,360
+Y se define el estado inicial, que al final es un valor aleatorio
+
+128
+00:11:42,360 --> 00:11:44,360
+para situarlo en medio del valle.
+
+129
+00:11:44,360 --> 00:11:47,360
+Se llamaría Render, en caso de que se quiera cargar una vista,
+
+130
+00:11:47,360 --> 00:11:48,360
+como estáis viendo aquí.
+
+131
+00:11:48,360 --> 00:11:52,360
+Y se devuelve la primera observación del primer estado.
+
+132
+00:11:52,360 --> 00:11:56,360
+El step, aquí es donde le manda la acción.
+
+133
+00:11:56,360 --> 00:12:01,360
+Lo que se hace es aquí calcular la recompensa también,
+
+134
+00:12:01,360 --> 00:12:04,360
+que como veis, en este caso es muy sencillo simplemente ponerla a menos uno
+
+135
+00:12:04,360 --> 00:12:05,360
+y mandarla.
+
+136
+00:12:05,360 --> 00:12:09,360
+Y también se calcula una bandera, un bull,
+
+137
+00:12:09,360 --> 00:12:13,360
+que es si ha terminado el episodio o no.
+
+138
+00:12:13,360 --> 00:12:16,360
+Se ha alcanzado la meta o se ha alcanzado 200 pasos.
+
+139
+00:12:16,360 --> 00:12:20,360
+Y se calcula el siguiente estado, que aquí al final habría un cálculo,
+
+140
+00:12:20,360 --> 00:12:22,360
+que lo he puesto ahí como comentado, no lo iba a poner aquí,
+
+141
+00:12:22,360 --> 00:12:25,360
+que utilizando las tributas del entorno,
+
+142
+00:12:25,360 --> 00:12:27,360
+calcula cuál es el siguiente estado.
+
+143
+00:12:27,360 --> 00:12:29,360
+Por ejemplo, si le decimos que gira la derecha,
+
+144
+00:12:29,360 --> 00:12:31,360
+pero justo está girando a la izquierda,
+
+145
+00:12:31,360 --> 00:12:33,360
+tendrá que hacer un cálculo con la gravedad,
+
+146
+00:12:33,360 --> 00:12:35,360
+con la velocidad que lleva, que frena,
+
+147
+00:12:35,360 --> 00:12:37,360
+porque no tiene porque necesariamente empezar a girar a la derecha.
+
+148
+00:12:37,360 --> 00:12:41,360
+Pues esos cálculos lo hacen y calculan el siguiente estado y lo mandan.
+
+149
+00:12:41,360 --> 00:12:45,360
+Vale, una vez que tenemos esta estando restablecido,
+
+150
+00:12:45,360 --> 00:12:48,360
+nosotros podemos conectar lo que queramos a este entorno,
+
+151
+00:12:48,360 --> 00:12:51,360
+siempre y cuando respete el espacio de acciones y de observaciones
+
+152
+00:12:51,360 --> 00:12:52,360
+que hemos definido.
+
+153
+00:12:52,360 --> 00:12:55,360
+Entonces, por ejemplo, podemos poner un agente aleatorio,
+
+154
+00:12:55,360 --> 00:12:57,360
+que al final lo que hacemos es que en Actions,
+
+155
+00:12:57,360 --> 00:13:00,360
+la variable Actions, le mandamos del entorno,
+
+156
+00:13:00,360 --> 00:13:03,360
+que es una de las espaciaciones que tiene un ejemplo,
+
+157
+00:13:03,360 --> 00:13:06,360
+un valor aleatorio, y es el que lo utilizamos para el step,
+
+158
+00:13:06,360 --> 00:13:08,360
+para mandarse al entorno.
+
+159
+00:13:08,360 --> 00:13:10,360
+Al final, como podéis ver ahí en el GIF,
+
+160
+00:13:10,360 --> 00:13:13,360
+obviamente un agente aleatorio no es capaz de resolver el problema,
+
+161
+00:13:13,360 --> 00:13:16,360
+pero simplemente para demostrar que podemos jarnar estas cosas,
+
+162
+00:13:16,360 --> 00:13:21,360
+no tiene porque ser ya una red neuronal o algo más sofisticado.
+
+163
+00:13:21,360 --> 00:13:23,360
+Esto es un ejemplo un poco asurdo,
+
+164
+00:13:23,360 --> 00:13:25,360
+porque no resuelve tampoco el problema,
+
+165
+00:13:25,360 --> 00:13:27,360
+pero es para que veáis cómo se puede utilizar un wrapper.
+
+166
+00:13:27,360 --> 00:13:30,360
+Al final la recompensa, he dicho que es de menos uno,
+
+167
+00:13:30,360 --> 00:13:33,360
+imaginemos que queramos modificar esa recompensa,
+
+168
+00:13:33,360 --> 00:13:35,360
+aunque tenga otra lógica distinta,
+
+169
+00:13:35,360 --> 00:13:39,360
+si no existiera lo wrapper tendríamos que entrar al método step
+
+170
+00:13:39,360 --> 00:13:43,360
+y modificar esto que tenemos aquí de reward igual a menos uno,
+
+171
+00:13:43,360 --> 00:13:46,360
+pero lo podemos hacer directamente con wrapper prediseñado,
+
+172
+00:13:46,360 --> 00:13:48,360
+como este, como el de transformar la recompensa,
+
+173
+00:13:48,360 --> 00:13:51,360
+que básicamente lo que hacemos es encapsular el entorno
+
+174
+00:13:51,360 --> 00:13:55,360
+dentro de otra clase y decirle, especificarle la función de recompensa.
+
+175
+00:13:55,360 --> 00:13:58,360
+Al final lo decimos que la recompensa queremos que sea igual que la antigua,
+
+176
+00:13:58,360 --> 00:14:00,360
+solo que la mitad, que resten a 0,5.
+
+177
+00:14:00,360 --> 00:14:02,360
+La lógica del problema sigue siendo exactamente igual,
+
+178
+00:14:02,360 --> 00:14:04,360
+obviamente se va a comportar exactamente igual,
+
+179
+00:14:04,360 --> 00:14:07,360
+pero es para que veáis un ejemplo de cómo se podría cambiar.
+
+180
+00:14:07,360 --> 00:14:11,360
+Ahora ya hemos dicho cómo se define un entorno,
+
+181
+00:14:11,360 --> 00:14:13,360
+ahora vamos a ver el lado de la gente
+
+182
+00:14:13,360 --> 00:14:15,360
+cómo podemos utilizar a estos entornos
+
+183
+00:14:15,360 --> 00:14:17,360
+y la experiencia que podemos generar con ellos
+
+184
+00:14:17,360 --> 00:14:20,360
+para establecer alguna estrategia que resuelva el problema.
+
+185
+00:14:20,360 --> 00:14:26,360
+Como decía Alejandro, todo lo que se adapte a ese espacio de acciones
+
+186
+00:14:26,360 --> 00:14:29,360
+que hemos definido puede ser considerado una gente,
+
+187
+00:14:29,360 --> 00:14:34,360
+considerarlo inteligente ya es otra historia.
+
+188
+00:14:34,360 --> 00:14:37,360
+Entonces lo que vamos a intentar aquí es utilizar este Google Baseline,
+
+189
+00:14:37,360 --> 00:14:43,360
+que es una librería bastante utilizada por la comunidad de RL,
+
+190
+00:14:43,360 --> 00:14:48,360
+y que tiene implementados una serie de agentes especialmente útiles
+
+191
+00:14:48,360 --> 00:14:50,360
+para resolver todo tipo de tareas.
+
+192
+00:14:50,360 --> 00:14:54,360
+Por ejemplo, como el que os hemos mostrado de Montencar,
+
+193
+00:14:54,360 --> 00:14:57,360
+lo superan con creces.
+
+194
+00:14:57,360 --> 00:15:02,360
+La pregunta aquí es por qué utilizamos DeepRainformer Learning,
+
+195
+00:15:02,360 --> 00:15:06,360
+por qué utilizamos agentes basados en redes neuronales profundas.
+
+196
+00:15:06,360 --> 00:15:09,360
+Para el que conozca un poco de Reinformer Learning,
+
+197
+00:15:09,360 --> 00:15:14,360
+existen ciertos algoritmos clásicos que no están basados en redes neuronales
+
+198
+00:15:14,360 --> 00:15:16,360
+y que funcionan bastante bien.
+
+199
+00:15:16,360 --> 00:15:19,360
+Como por ejemplo el famoso Q-Learning.
+
+200
+00:15:19,360 --> 00:15:24,360
+Sin embargo, estos métodos están limitados a espacios de acciones o estados
+
+201
+00:15:24,360 --> 00:15:26,360
+que son relativamente pequeños.
+
+202
+00:15:26,360 --> 00:15:32,360
+Sin embargo, imaginaos que pongo a una gente a jugar al Super Mario.
+
+203
+00:15:32,360 --> 00:15:36,360
+En este caso, la definición de un estado, por ejemplo,
+
+204
+00:15:36,360 --> 00:15:42,360
+es un frame del juego donde tengo cientos miles de píxeles
+
+205
+00:15:42,360 --> 00:15:47,360
+y que en cierto modo constituyen un estado intratable para la gente.
+
+206
+00:15:47,360 --> 00:15:49,360
+Son demasiadas datos.
+
+207
+00:15:49,360 --> 00:15:54,360
+Entonces, como pongo aquí, tenemos que ir a un nivel de extracción mayor
+
+208
+00:15:54,360 --> 00:15:56,360
+y utilizar redes neuronales.
+
+209
+00:15:56,360 --> 00:16:00,360
+Las redes neuronales dotan a la gente de capacidad de extracción.
+
+210
+00:16:00,360 --> 00:16:03,360
+Los estados, por ejemplo, en este caso, se comprimen,
+
+211
+00:16:03,360 --> 00:16:06,360
+utilizando redes neuronales convolicionales,
+
+212
+00:16:06,360 --> 00:16:11,360
+y pasamos a estimar el valor de acciones y estados.
+
+213
+00:16:11,360 --> 00:16:13,360
+Por ejemplo, le pasamos el frame,
+
+214
+00:16:13,360 --> 00:16:17,360
+pasa que no dejas de ser una matriz, utilizamos una convolución
+
+215
+00:16:17,360 --> 00:16:20,360
+y la red neuronal nos devuelve esos valores.
+
+216
+00:16:20,360 --> 00:16:24,360
+¿Qué acciones la mejor? ¿O se toma con mayor probabilidad?
+
+217
+00:16:24,360 --> 00:16:30,360
+¿O qué valor tiene un estado o un conjunto definido por un estado y una acción?
+
+218
+00:16:30,360 --> 00:16:34,360
+Hay diferentes métodos de abordar estos problemas.
+
+219
+00:16:34,360 --> 00:16:36,360
+Dentro de stable baselights,
+
+220
+00:16:36,360 --> 00:16:41,360
+tenemos diferentes implementaciones de algunos algoritmos de DeepRainformer-Landing
+
+221
+00:16:41,360 --> 00:16:46,360
+que constituyen el estado del arte y están todos implementados en Pytorch.
+
+222
+00:16:46,360 --> 00:16:52,360
+Estos son los principales, ya veremos que hay algunos más por ahí
+
+223
+00:16:52,360 --> 00:16:55,360
+implementados en otros repositorios.
+
+224
+00:16:57,360 --> 00:17:02,360
+Claro, tenemos muchas opciones, pero ¿qué algoritmo elegimos?
+
+225
+00:17:02,360 --> 00:17:07,360
+Aunque no existe una solución perfecta,
+
+226
+00:17:07,360 --> 00:17:12,360
+siempre va a depender del problema y de las posibilidades de paralelización
+
+227
+00:17:12,360 --> 00:17:14,360
+a la hora de entrenar a estos agentes.
+
+228
+00:17:14,360 --> 00:17:17,360
+Siguiendo las guías que nos ofrece stable baselights,
+
+229
+00:17:17,360 --> 00:17:21,360
+si tenemos un problema con acciones discretas, por ejemplo en el mountain car
+
+230
+00:17:21,360 --> 00:17:24,360
+y simplemente izquierda, derecha, o no hace nada,
+
+231
+00:17:24,360 --> 00:17:27,360
+la experiencia dice que de QN funciona muy bien
+
+232
+00:17:27,360 --> 00:17:30,360
+si hacemos un entrenamiento sin el proser,
+
+233
+00:17:30,360 --> 00:17:34,360
+y a 2CIPPO funciona muy bien si es multiprooser.
+
+234
+00:17:34,360 --> 00:17:37,360
+Y para acciones continuas, por ejemplo en el mountain car,
+
+235
+00:17:37,360 --> 00:17:41,360
+lo que introducimos es un valor numérico para la aceleración hacia un lado u otro,
+
+236
+00:17:41,360 --> 00:17:46,360
+pues Sáquite de 3 ganan de calle en este y otros muchos problemas,
+
+237
+00:17:46,360 --> 00:17:51,360
+y a 2CIPPO también dan buenos resultados y podemos paralelizar el entrenamiento.
+
+238
+00:17:53,360 --> 00:17:56,360
+Claro, siempre que trabajamos con redes neuronales,
+
+239
+00:17:56,360 --> 00:18:00,360
+y este es el caso porque son agentes basados en redes neuronales profundas,
+
+240
+00:18:00,360 --> 00:18:04,360
+tenemos el problema de los hiperparámetros, la elección de hiperparámetros,
+
+241
+00:18:04,360 --> 00:18:09,360
+que en este caso determinan en gran medida el rendimiento de los agentes.
+
+242
+00:18:09,360 --> 00:18:12,360
+La elección de hiperparámetros pues es un problema complejo,
+
+243
+00:18:12,360 --> 00:18:14,360
+incluso de las semillas aleatorias,
+
+244
+00:18:14,360 --> 00:18:18,360
+y afecta significativamente al rendimiento de nuestros agentes.
+
+245
+00:18:18,360 --> 00:18:21,360
+Y bueno, para facilitar la tarea de elección de hiperparámetros
+
+246
+00:18:21,360 --> 00:18:25,360
+y probar diferentes combinaciones, más allá de hacer una búsqueda en rejilla,
+
+247
+00:18:25,360 --> 00:18:30,360
+podemos utilizar el framework RL Baselines Zoo,
+
+248
+00:18:30,360 --> 00:18:33,360
+que nos ofrece la gente de Steeveville Baselines,
+
+249
+00:18:33,360 --> 00:18:36,360
+y que cuenta con agentes preentredados,
+
+250
+00:18:36,360 --> 00:18:39,360
+script para entrenamiento y evaluación,
+
+251
+00:18:39,360 --> 00:18:41,360
+herramientas de ajuste de hiperparámetros,
+
+252
+00:18:41,360 --> 00:18:47,360
+y nos permite generar gráficas y vídeos de las diferentes simulaciones, entrenamiento y test.
+
+253
+00:18:47,360 --> 00:18:52,360
+Por ejemplo, aquí podemos ver un vídeo generado con Baselines Zoo,
+
+254
+00:18:52,360 --> 00:18:57,360
+donde tenemos un bipedal Walker que está aprendiendo a andar.
+
+255
+00:18:57,360 --> 00:19:01,360
+Luego Steeveville Baselines 3 cuenta también con contenido adicional,
+
+256
+00:19:01,360 --> 00:19:06,360
+bastante interesante, y que si os metís en este mundillo os recomiendo echarle un vistazo.
+
+257
+00:19:06,360 --> 00:19:13,360
+Desde Grapple, Colbax y Loggers para modificar, visualizar,
+
+258
+00:19:13,360 --> 00:19:16,360
+y llevar un seguimiento del entrenamiento de nuestros agentes,
+
+259
+00:19:16,360 --> 00:19:22,360
+integración con TensorBoard, Weight and Biasis para visualizar diferentes métricas,
+
+260
+00:19:22,360 --> 00:19:25,360
+Haggering Face para subir nuestros modelos entrenados,
+
+261
+00:19:25,360 --> 00:19:28,360
+o coger otros que haya entrenado otra gente,
+
+262
+00:19:28,360 --> 00:19:35,360
+y MLflow para todo el proceso de gestión de versiones de los agentes,
+
+263
+00:19:35,360 --> 00:19:38,360
+o registro de métricas, resultados, etcétera.
+
+264
+00:19:38,360 --> 00:19:42,360
+También hay material didáctico, ejemplos y consejos a la vuestra disposición
+
+265
+00:19:42,360 --> 00:19:46,360
+en la documentación de esta librería.
+
+266
+00:19:46,360 --> 00:19:50,360
+Y también cabe destacar otro repositorio bastante interesante,
+
+267
+00:19:50,360 --> 00:19:57,360
+que es Steeveville Baselines Country, donde tenemos algoritmos y herramientas experimentales,
+
+268
+00:19:57,360 --> 00:20:01,360
+que son algoritmos que constituyen el estado del arte,
+
+269
+00:20:01,360 --> 00:20:05,360
+que teóricamente se ha aprobado que funcionan bien y que son interesantes,
+
+270
+00:20:05,360 --> 00:20:12,360
+pero que no han pasado esa fase de aprobación para que estén en el proyecto principal.
+
+271
+00:20:12,360 --> 00:20:16,360
+Lo que nos va a enseñar ahora Alejandro es un ejemplo de cómo podemos combinar
+
+272
+00:20:16,360 --> 00:20:22,360
+OpenIgim, definiendo nuestro entorno, y Steeveville Baselines para definir nuestros agentes.
+
+273
+00:20:22,360 --> 00:20:26,360
+Ya sabiendo cómo son estos algoritmos que nos acabo de explicar Antonio,
+
+274
+00:20:26,360 --> 00:20:29,360
+vamos a intentar resolver el problema de antes, el de monta en cara,
+
+275
+00:20:29,360 --> 00:20:32,360
+al final vamos a utilizar los hiperparámetros que trae por defecto,
+
+276
+00:20:32,360 --> 00:20:35,360
+porque el problema es bastante sencillo.
+
+277
+00:20:35,360 --> 00:20:39,360
+Luego, veremos en otros casos de uso, como eficiencia energética,
+
+278
+00:20:39,360 --> 00:20:41,360
+que es una de las cosas que nosotros nos dedicamos,
+
+279
+00:20:41,360 --> 00:20:47,360
+como esto se quedaría corto, pero bueno, para este problema va bien.
+
+280
+00:20:47,360 --> 00:20:51,360
+Al final, la librería es bastante sencilla, simplemente importamos,
+
+281
+00:20:51,360 --> 00:20:55,360
+en este caso el algoritmo PPO, cargamos el entorno GIM,
+
+282
+00:20:55,360 --> 00:20:58,360
+y el modelo que vamos a utilizar, que es el de PPO,
+
+283
+00:20:58,360 --> 00:21:03,360
+y le llamamos al método Learn, que al final lo que pasa es comenzar su entrenamiento.
+
+284
+00:21:03,360 --> 00:21:05,360
+Va a empezar a interaccionar con el entorno,
+
+285
+00:21:05,360 --> 00:21:09,360
+va a empezar a recorrer esta experiencia y a utilizarla para buscar una estrategia.
+
+286
+00:21:09,360 --> 00:21:13,360
+Aquí especificamos el número de steps que queremos que entrene.
+
+287
+00:21:13,360 --> 00:21:17,360
+Si no le damos lo suficiente, pues obviamente no conseguirá convergar en una estrategia
+
+288
+00:21:17,360 --> 00:21:19,360
+que le permita resolver el problema,
+
+289
+00:21:19,360 --> 00:21:23,360
+y llegar a un punto, dependiendo del problema, dependiendo del algoritmo,
+
+290
+00:21:23,360 --> 00:21:27,360
+en el que consigue resolverlo, o incluso puede que no.
+
+291
+00:21:27,360 --> 00:21:30,360
+Luego, una vez que entrenamos los modelos,
+
+292
+00:21:30,360 --> 00:21:34,360
+fuimos entrenando con diferentes longitudes de entrenamiento,
+
+293
+00:21:34,360 --> 00:21:40,360
+y luego fuimos cargando los modelos, y los estuvimos probando durante 2.000 steps,
+
+294
+00:21:40,360 --> 00:21:42,360
+a ver cómo se comportaban.
+
+295
+00:21:42,360 --> 00:21:46,360
+Como podemos ver, en los cuatro primeros fueron 1.000 steps de entrenamiento,
+
+296
+00:21:46,360 --> 00:21:49,360
+10.000, 100.000, 500.000,
+
+297
+00:21:49,360 --> 00:21:52,360
+y ninguno consiguía una política que resolviera el problema.
+
+298
+00:21:52,360 --> 00:21:55,360
+Por tanto, tiene una recompensa media de menos de 200,
+
+299
+00:21:55,360 --> 00:22:00,360
+que alcanzaba el cupo máximo que tenía de tiempo para resolver el problema en cada episodio,
+
+300
+00:22:00,360 --> 00:22:01,360
+y fallaba.
+
+301
+00:22:01,360 --> 00:22:05,360
+A partir de los 850.000, que es el de aquí abajo a la izquierda,
+
+302
+00:22:05,360 --> 00:22:07,360
+conseguía resolver el problema.
+
+303
+00:22:07,360 --> 00:22:11,360
+De hecho, lo conseguía resolver el 100 % de las veces.
+
+304
+00:22:11,360 --> 00:22:14,360
+Otra cosa que medimos fue la recompensa que obtenían en cada episodio,
+
+305
+00:22:14,360 --> 00:22:18,360
+y hicimos media, y obtenía una recompensa media de menos de 109.
+
+306
+00:22:18,360 --> 00:22:20,360
+Esto quiere decir que de menos de 109 pasos,
+
+307
+00:22:20,360 --> 00:22:22,360
+en conseguir llegar a la melta.
+
+308
+00:22:22,360 --> 00:22:25,360
+Una de las cosas que tiene el aprendizaje por refuerzo,
+
+309
+00:22:25,360 --> 00:22:29,360
+es que podemos conseguir una solución eficaz, pero no tiene por qué ser la mejor.
+
+310
+00:22:29,360 --> 00:22:33,360
+En este caso es su óptimo, porque si lo entrenamos durante 1 millón de pasos,
+
+311
+00:22:33,360 --> 00:22:38,360
+obtenemos otro agente que de media conseguía una recompensa de menos de 105.
+
+312
+00:22:38,360 --> 00:22:42,360
+Es decir, de media conseguía hacerlo en 4 pasos menos.
+
+313
+00:22:42,360 --> 00:22:45,360
+Por tanto, esta solución es mejor.
+
+314
+00:22:45,360 --> 00:22:50,360
+Y al final, en eso consiste el aprendizaje por refuerzo.
+
+315
+00:22:50,360 --> 00:22:54,360
+El prédio del modelo siempre va a respetar por estar entrenando con Jim
+
+316
+00:22:54,360 --> 00:22:56,360
+en el espacio de acciones, obviamente, del entorno.
+
+317
+00:22:56,360 --> 00:22:58,360
+Esto es lo que me refiero.
+
+318
+00:22:58,360 --> 00:23:01,360
+Si tenemos la estandar bien definida de Jim, podemos conectar ahí lo que queramos,
+
+319
+00:23:01,360 --> 00:23:04,360
+siempre y cuando respete ese espacio.
+
+320
+00:23:04,360 --> 00:23:07,360
+Y este es un caso de uso nuestro,
+
+321
+00:23:07,360 --> 00:23:11,360
+que obviamente buscamos programas complejos que resolver,
+
+322
+00:23:11,360 --> 00:23:16,360
+que es Inner Jim, que trata de la eficiencia energética en edificios,
+
+323
+00:23:16,360 --> 00:23:20,360
+y que va a explicar a mi compañero, Antonio, cómo utilizamos este tipo de herramientas.
+
+324
+00:23:20,360 --> 00:23:24,360
+Bueno, he visto los fundamentos del aprendizaje por refuerzo,
+
+325
+00:23:24,360 --> 00:23:27,360
+cómo definimos un entorno, cómo podemos utilizar un agente.
+
+326
+00:23:27,360 --> 00:23:33,360
+Es decir, vos llevamos este problema al caso del control energético de edificios.
+
+327
+00:23:33,360 --> 00:23:37,360
+Y diseñar nuestro propio framework, que se llama Inner Jim,
+
+328
+00:23:37,360 --> 00:23:41,360
+y que no solo está elaborado por Alejandro y por mí,
+
+329
+00:23:41,360 --> 00:23:45,360
+sino por otros miembros de nuestro grupo de investigación aquí en la Universidad de Granada.
+
+330
+00:23:45,360 --> 00:23:50,360
+Básicamente, Inner Jim es un framework open source, en Python, como no,
+
+331
+00:23:50,360 --> 00:23:55,360
+para la simulación y control energético de edificios utilizando DRL.
+
+332
+00:23:55,360 --> 00:23:59,360
+Tenemos por aquí el enlace al repositorio,
+
+333
+00:23:59,360 --> 00:24:01,360
+pues si le queréis luego echar un vistazo.
+
+334
+00:24:01,360 --> 00:24:08,360
+Básicamente, lo que hemos elaborado es un entorno basándonos en la interfaz de OpenIjim,
+
+335
+00:24:08,360 --> 00:24:15,360
+donde el entorno es un edificio que simulamos utilizando energy plus,
+
+336
+00:24:15,360 --> 00:24:19,360
+que es un simulador bastante utilizado.
+
+337
+00:24:19,360 --> 00:24:23,360
+Y tenemos múltiples funcionalidades extras, como Europeus propios,
+
+338
+00:24:23,360 --> 00:24:29,360
+para normalización de observaciones, funciones de recompensa, logs, etcétera.
+
+339
+00:24:29,360 --> 00:24:37,360
+Básicamente, lo que estamos haciendo ahora mismo es definir un problema de aprendizaje por refuerzo,
+
+340
+00:24:37,360 --> 00:24:41,360
+donde tenemos a una gente encargada por medio de sus acciones,
+
+341
+00:24:41,360 --> 00:24:46,360
+de regular los setpoints de frío y calor de un edificio.
+
+342
+00:24:46,360 --> 00:24:49,360
+En ese edificio lo simulamos con energy plus y en nuestro entorno.
+
+343
+00:24:49,360 --> 00:24:54,360
+En este caso, las observaciones son todas las variables que podemos recoger de esa simulación.
+
+344
+00:24:54,360 --> 00:24:58,360
+Por ejemplo, la temperatura interior del edificio, la temperatura exterior,
+
+345
+00:24:58,360 --> 00:25:01,360
+la humedad, la ocupación, la fecha, que es muy importante.
+
+346
+00:25:01,360 --> 00:25:05,360
+Y bueno, la recompensa está basada en penalizaciones.
+
+347
+00:25:05,360 --> 00:25:09,360
+Y lo que buscamos es equilibrar el confort y el consumo.
+
+348
+00:25:09,360 --> 00:25:16,360
+Es decir, cada vez que la gente escapa de los límites de confort que nosotros le establecemos,
+
+349
+00:25:16,360 --> 00:25:21,360
+se le da una penalización que le afecta a su recompensa.
+
+350
+00:25:21,360 --> 00:25:29,360
+Y cuanto mayor sea el consumo, también es mayor la penalización que le damos a esa parte de la recompensa.
+
+351
+00:25:29,360 --> 00:25:33,360
+Entonces, es como una especie de problema multi-objetivo que la gente tiene que resolver.
+
+352
+00:25:33,360 --> 00:25:39,360
+Podéis ver aquí en la parte derecha que el código es exactamente igual que para cualquier otro problema
+
+353
+00:25:39,360 --> 00:25:41,360
+de aprendizaje por refuerzo.
+
+354
+00:25:41,360 --> 00:25:45,360
+Definimos nuestro entorno y realizamos nuestras acciones.
+
+355
+00:25:45,360 --> 00:25:47,360
+Las acciones tienen esta pinta.
+
+356
+00:25:47,360 --> 00:25:50,360
+Es un vector con dos valores.
+
+357
+00:25:50,360 --> 00:25:52,360
+Setpoint de frío y setpoint de calor.
+
+358
+00:25:52,360 --> 00:25:56,360
+Es decir, a partir de que temperatura nuestro sistema de climatización enfría
+
+359
+00:25:56,360 --> 00:26:00,360
+y a partir de que temperatura nuestro sistema de climatización calienta,
+
+360
+00:26:00,360 --> 00:26:06,360
+las observaciones es un vector enorme con valores continuos que normalizamos con gruapes.
+
+361
+00:26:06,360 --> 00:26:11,360
+Y el reward es ese valor que es negativo y que tratamos de que se acerque lo máximo posible a cero.
+
+362
+00:26:11,360 --> 00:26:15,360
+Es decir, tratamos de maximizar la recompensa.
+
+363
+00:26:15,360 --> 00:26:19,360
+Y con esto llegamos al final de nuestra presentación.
+
+364
+00:26:19,360 --> 00:26:25,360
+Esperamos que os haya resultado interesante y que os sintáis libres de preguntar.
+
+365
+00:26:25,360 --> 00:26:30,360
+Podemos formular esta charla como un problema de aprendizaje por refuerzo.
+
+366
+00:26:30,360 --> 00:26:32,360
+Nosotros somos los agentes.
+
+367
+00:26:32,360 --> 00:26:35,360
+Nuestra acción ha sido presentar en PyCon 2022.
+
+368
+00:26:35,360 --> 00:26:40,360
+Y si nos dais una buena recompensa, seguro que nos vemos en PyCon 2023.
+
+369
+00:26:40,360 --> 00:26:42,360
+Así que muchas gracias.
+
+370
+00:26:42,360 --> 00:26:44,360
+Ya está próximo.
+
+371
+00:26:44,360 --> 00:26:46,360
+Gracias.
+
+372
+00:26:51,360 --> 00:26:53,360
+Sí, acá.
+
+373
+00:26:53,360 --> 00:26:56,360
+Me damos un micrófono, pero luego te lo traigo.
+
+374
+00:27:04,360 --> 00:27:06,360
+Bueno, muchas gracias por la presentación.
+
+375
+00:27:06,360 --> 00:27:10,360
+La verdad que a mí me ha quedado bastante claro algunos conceptos que no tenían,
+
+376
+00:27:10,360 --> 00:27:14,360
+o sea que estaban ahí en el aire, pero sí que están bastante bien aterrizados.
+
+377
+00:27:14,360 --> 00:27:20,360
+Mi pregunta es, vosotros que seáis más de aprendizaje por refuerzo,
+
+378
+00:27:20,360 --> 00:27:25,360
+claro, en deep learning o en otro tipo de aprendizaje como el supervisado,
+
+379
+00:27:25,360 --> 00:27:30,360
+sí que ya existen, estamos desarrollando esa idea del transfer learning,
+
+380
+00:27:30,360 --> 00:27:35,360
+de que utilicen arquitectura, por ejemplo, si tienen problemas de clasificación de imágenes,
+
+381
+00:27:35,360 --> 00:27:41,360
+lo que se hace es coger arquitecturas que saben que han funcionado en problemas de clasificación de imágenes,
+
+382
+00:27:41,360 --> 00:27:47,360
+como AlexNet, por ejemplo, y carga un modelo preentrenado.
+
+383
+00:27:47,360 --> 00:27:51,360
+¿Existe algo parecido en reinforcement learning?
+
+384
+00:27:51,360 --> 00:27:53,360
+¿Crees que se puede hacer o si no se puede hacer,
+
+385
+00:27:53,360 --> 00:27:59,360
+¿cuáles son las limitaciones por las cuales te aparecen supervisados, pero no por refuerzo?
+
+386
+00:27:59,360 --> 00:28:04,360
+La principal ventaja que tiene el aprendizaje por refuerzo frente al aprendizaje por supervisado
+
+387
+00:28:04,360 --> 00:28:06,360
+es que no necesita de un histórico de datos grandes.
+
+388
+00:28:06,360 --> 00:28:09,360
+Esto, por ejemplo, en edificios como está aplicando el Sinergym,
+
+389
+00:28:09,360 --> 00:28:12,360
+no es tan fácil conseguir un histórico durante años.
+
+390
+00:28:12,360 --> 00:28:20,360
+Entonces, por un lado, sí que sería…, o sea, esto está por aquí, es un problema,
+
+391
+00:28:20,360 --> 00:28:26,360
+pero luego, una de las inconvenientes que tiene el aprendizaje por refuerzo es el aprendizaje en frío.
+
+392
+00:28:26,360 --> 00:28:31,360
+Al principio parte con un agente aleatorio el cual tiene que ir explorando el espacio de acciones
+
+393
+00:28:31,360 --> 00:28:34,360
+y viendo dónde consigue refuerzo positivo y dónde lo consigue negativo.
+
+394
+00:28:34,360 --> 00:28:39,360
+Entonces, una de las propuestas que hay que se puede conseguir si tiene suficiente datos,
+
+395
+00:28:39,360 --> 00:28:44,360
+es entrenar un agente con aprendizaje supervisado si tiene suficiente datos,
+
+396
+00:28:44,360 --> 00:28:49,360
+una vez tiene una red neuronal, medianamente inteligente, la meta es interactuar con un entorno
+
+397
+00:28:49,360 --> 00:28:52,360
+y trata de optimizar aún más esos parámetros.
+
+398
+00:28:52,360 --> 00:28:54,360
+O sea, que hay un sistema híbrido, ¿qué hace eso?
+
+399
+00:28:54,360 --> 00:28:59,360
+Con respecto a reutilizar otros modelos que ya asisten, por ejemplo,
+
+400
+00:28:59,360 --> 00:29:02,360
+en el tema de edificios en los que trabajamos nosotros,
+
+401
+00:29:02,360 --> 00:29:09,360
+no existe un agente que esté subido, por ejemplo, a Haggin Face y que tú puedas descargar y pueda reutilizar.
+
+402
+00:29:09,360 --> 00:29:12,360
+Sería interesante que de aquí unos años eso exista.
+
+403
+00:29:12,360 --> 00:29:15,360
+Luego también tenemos que tener en cuenta que cada edificio es un mundo
+
+404
+00:29:15,360 --> 00:29:19,360
+con diferentes variables observadas, diferentes tipos de acciones,
+
+405
+00:29:19,360 --> 00:29:22,360
+no los mismos y controla solo en los segments de frío y calor,
+
+406
+00:29:22,360 --> 00:29:27,360
+que si tienes también en cuenta, por ejemplo, la ventilación o la apertura de persianas
+
+407
+00:29:27,360 --> 00:29:30,360
+o cualquier otro tipo de aspecto.
+
+408
+00:29:30,360 --> 00:29:33,360
+Entonces, si el objetivo es a largo plazo poder tener agentes,
+
+409
+00:29:33,360 --> 00:29:36,360
+que tú simplemente te lo descargas, se lo enchufes a tu sistema domótico,
+
+410
+00:29:36,360 --> 00:29:39,360
+por ejemplo, y eso pueda funcionar.
+
+411
+00:29:39,360 --> 00:29:42,360
+Una pregunta súper rápida más.
+
+412
+00:29:42,360 --> 00:29:47,360
+Y mientras tanto os digo que se han retrasado los lightning talks,
+
+413
+00:29:47,360 --> 00:29:52,360
+así que a la media podemos ir al parámetro.
+
+414
+00:29:52,360 --> 00:29:54,360
+¿Una última pregunta?
+
+415
+00:29:54,360 --> 00:29:57,360
+Bueno, gracias por la presentación.
+
+416
+00:29:57,360 --> 00:30:05,360
+Quisiera preguntar, en cada step se calcula la penalización o el refuerzo.
+
+417
+00:30:05,360 --> 00:30:15,360
+Pero cuando ese refuerzo positivo es varias jugadas o varios más hacia adelante,
+
+418
+00:30:15,360 --> 00:30:19,360
+¿cómo se retroalimenta hacia atrás?
+
+419
+00:30:19,360 --> 00:30:22,360
+Eso dependería del algoritmo concreto que utilice.
+
+420
+00:30:22,360 --> 00:30:26,360
+Hay algunos que utilizan tasas de descuento,
+
+421
+00:30:26,360 --> 00:30:31,360
+que al final es que tu recompensa, es decir, esto es bastante amplio.
+
+422
+00:30:31,360 --> 00:30:34,360
+Y dependería del algoritmo, como te digo, concreto que utilices.
+
+423
+00:30:34,360 --> 00:30:36,360
+Por ejemplo, se utiliza una tasa de descuento,
+
+424
+00:30:36,360 --> 00:30:41,360
+que lo que hace que la recompensa vayan valiendo cada vez menos, vista atrás.
+
+425
+00:30:41,360 --> 00:30:44,360
+Luego existe el concepto de recompensa acumulada,
+
+426
+00:30:44,360 --> 00:30:46,360
+que es acumulando la recompensa.
+
+427
+00:30:46,360 --> 00:30:50,360
+Hay algunos algoritmos que se optimizan cada episodio, no en cada step.
+
+428
+00:30:50,360 --> 00:30:53,360
+Es decir, luego echar como una vista atrás de todo el episodio,
+
+429
+00:30:53,360 --> 00:30:56,360
+todo lo que ha estado haciendo, depende del algoritmo concreto.
+
+430
+00:30:56,360 --> 00:31:02,360
+Hay algoritmos que lo que hacen es almacenar un batch de observaciones,
+
+431
+00:31:02,360 --> 00:31:06,360
+recompensas y digamos que como si fuese una cola,
+
+432
+00:31:06,360 --> 00:31:10,360
+van retroalimentando conforme va pasando el tiempo,
+
+433
+00:31:10,360 --> 00:31:13,360
+pero digamos que tienen en cuenta una ventana temporal
+
+434
+00:31:13,360 --> 00:31:20,360
+antes de alimentar la red con el feedback que ha recibido la gente.
+
+435
+00:31:20,360 --> 00:31:22,360
+Hay algunos que aprenden más en tiempo real,
+
+436
+00:31:22,360 --> 00:31:27,360
+otros que luego miran retroefectivamente el episodio entero y ve lo que ha pasado.
+
+437
+00:31:27,360 --> 00:31:28,360
+O sea, depende.
+
+438
+00:31:28,360 --> 00:31:29,360
+Depende del algoritmo.
+
+439
+00:31:29,360 --> 00:31:30,360
+Sí.
+
+440
+00:31:30,360 --> 00:31:35,360
+Es un dolor que no podamos seguir porque es un tema y la misma que el que ha vuelto.
+
+441
+00:31:35,360 --> 00:31:37,360
+Tenemos que ir al Paranífida.
+
+442
+00:31:37,360 --> 00:31:39,360
+La INDOX, un aplauso, por favor.
+
+443
+00:31:39,360 --> 00:32:00,360
+Muchas gracias.
+

@@ -1,0 +1,960 @@
+1
+00:00:00,000 --> 00:00:16,560
+Bueno, pues continuamos este bloque de domingo por la mañana. Vamos a seguir con estas charlas.
+
+2
+00:00:16,560 --> 00:00:23,320
+La siguiente charla es de Andrea Vázquez-Ingelmo. Aquí le damos la bienvenida.
+
+3
+00:00:23,320 --> 00:00:31,480
+Andrea, ¿qué tal? Buenas, Andrea. Muy buenas. Qué tal, un placer verte. Andrea es doctor Anda de la Universidad de Salamanca.
+
+4
+00:00:31,480 --> 00:00:38,520
+Es vicaria FPU y investiga ingeniería automática de interfazas gráficas para el soporte de las tomas de decisiones
+
+5
+00:00:38,520 --> 00:00:41,080
+mediante la aplicación de ingeniería de dominio y machine learning.
+
+6
+00:00:41,080 --> 00:00:48,040
+En mirados internet tu currículum tiene ya diez revistas y veintipico conferencias.
+
+7
+00:00:48,040 --> 00:00:53,040
+Madre mía, ya te puedes dar a titular prácticamente. Ahí vamos poco a poco.
+
+8
+00:00:53,040 --> 00:01:00,360
+Poco a poco, madre mía. En este poquito de tiempo que llevas de doctor Anda tienes muchísimas publicaciones.
+
+9
+00:01:00,360 --> 00:01:07,800
+Estás trabajando durísimo y me quedo flipado con tu currículazo.
+
+10
+00:01:07,800 --> 00:01:19,800
+Andrea, nos va a hablar de la superficie y dificultad del desarrollo dirigido por modelo y cómo Python nos puede ayudar junto con Ginge2.
+
+11
+00:01:19,800 --> 00:01:30,360
+Nos puede servir para obtener un entorno de generación de código que sea flexible y que permita distanciar metamodelos en tiempo de ejecución
+
+12
+00:01:30,360 --> 00:01:36,440
+y ofrecer visualizaciones al vuelo. Lo cual es una cosa siempre interesante a la hora de trabajar con este tipo de datos,
+
+13
+00:01:36,440 --> 00:01:49,080
+poder visualizar lo que está pasando para poder escribir, detectar en una conclusión y obtener entender y discutir los resultados de la aplicación de estos métodos.
+
+14
+00:01:49,080 --> 00:01:55,880
+Pues nada más, Andrea, te doy la palabra para que empiece tu presentación.
+
+15
+00:01:55,880 --> 00:02:09,080
+Perfecto, muchas gracias.
+
+16
+00:02:09,080 --> 00:02:11,880
+Vale.
+
+17
+00:02:11,880 --> 00:02:15,880
+¿DESB?
+
+18
+00:02:15,880 --> 00:02:19,400
+Ahora mismo no, ¿les has dado a compartir?
+
+19
+00:02:19,400 --> 00:02:31,640
+Estoy en ello, a ver. Espero que me pide permisos.
+
+20
+00:02:31,640 --> 00:02:45,640
+Un momento.
+
+21
+00:02:45,640 --> 00:02:47,640
+Ahora?
+
+22
+00:02:47,640 --> 00:02:49,640
+Vale.
+
+23
+00:02:49,640 --> 00:03:01,640
+Bueno, voy a comenzar esta presentación. Voy de hecho a presentar un poquito esos resultados de las investigaciones que estoy realizando en lo que es mi tesis doctoral.
+
+24
+00:03:01,640 --> 00:03:17,640
+Que se basan sobre todo en ver, en solucionar ese problema de implementación de la metodología del desarrollo dirigido por modelos, que realmente es una de las mayores dificultades que está teniendo este campo a la hora de avanzar.
+
+25
+00:03:17,640 --> 00:03:23,640
+Que es que teóricamente, bueno, pues es un concepto muy potente, pero es complicado llevarlo a la realidad.
+
+26
+00:03:23,640 --> 00:03:31,640
+Entonces, voy a hablar un poco de cómo he solucionado estos problemas a través de lo que es Python y de las plantillas.
+
+27
+00:03:31,640 --> 00:03:35,640
+Ese lenguaje de plantillas que nos ofrece Jinja2.
+
+28
+00:03:35,640 --> 00:03:43,640
+Yo, como ya me han presentado, soy André Vázquez Ingelmo, soy doctor Andán, ingeniera informática y bueno, ahí tenéis mis redes sociales por si quisierais contactar.
+
+29
+00:03:43,640 --> 00:03:47,640
+Entonces, ¿qué vamos a ver un poco en esta presentación?
+
+30
+00:03:47,640 --> 00:04:05,640
+Os voy a hablar de cómo utilizar ese concepto del metamodelado, de desarrollo dirigido por modelos, y ver cómo lo vamos a implementar mediante el uso de plantillas de Jinja2 para obtener finalmente
+
+31
+00:04:05,640 --> 00:04:15,640
+un motor de generación de visualizaciones de datos para permitir una mayor facilidad a la hora de implementar estas herramientas.
+
+32
+00:04:15,640 --> 00:04:27,640
+Entonces, bueno, lo general en lo que se basa el desarrollo dirigido por modelos es en utilizar los modelos, porque es verdad que muchas veces teóricamente nosotros tenemos una idea,
+
+33
+00:04:27,640 --> 00:04:37,640
+decimos que buena idea, vamos a programar esto, vamos a programar una herramienta, y lo suyo es modelar esa herramienta y finalmente ponernos a programar.
+
+34
+00:04:37,640 --> 00:04:53,640
+Que sucede que muchas veces este paso intermedio nos puede lancer y pasamos directamente a programar sin una planificación, sin un modelado que es beneficioso a la hora de finalmente implementar estos sistemas.
+
+35
+00:04:53,640 --> 00:05:04,640
+También hay un problema principal y es que incluso cuando se usan los modelos y los utilizamos para guiar ese proceso de desarrollo, muchas veces cuando actualizamos el código,
+
+36
+00:05:04,640 --> 00:05:17,640
+esos cambios no se ven representados en el modelo del sistema, es decir, yo cambio cualquier parte de mi sistema, pero no actualizo los modelos que he utilizado para diseñarlo.
+
+37
+00:05:17,640 --> 00:05:26,640
+Entonces, bueno, esto genera una brecha entre lo que es el marco teórico y el práctico, entre lo que es el modelado y el código,
+
+38
+00:05:26,640 --> 00:05:35,640
+que lo que no nos permite es trazar todos esos cambios que se van generando tanto en el diseño como en el código.
+
+39
+00:05:35,640 --> 00:05:46,640
+Entonces, para esto está un poco el concepto del desarrollo dirigido por modelos, sería ideal que yo a través de mi modelo ya genere mi propio sistema software,
+
+40
+00:05:46,640 --> 00:05:53,640
+sin necesidad de tener todos estos problemas de la brecha entre el código y el modelo.
+
+41
+00:05:53,640 --> 00:06:07,640
+Entonces, la filosofía de esta metodología es que básicamente vamos a tener un lenguaje de meta, metamodelado, a través del cual vamos a definir un metamodero,
+
+42
+00:06:07,640 --> 00:06:17,640
+y ese metamodero va a instanciar modelos del sistema, es decir, voy a tener un lenguaje abstracto a través del cual representar mis sistemas
+
+43
+00:06:17,640 --> 00:06:23,640
+y ese sistema final lo acabaré implementando, basándonos en esos modelos.
+
+44
+00:06:23,640 --> 00:06:31,640
+Entonces, el programador, al final lo que hace es que en función del metamodelo, que puede estar materializado o no, simplemente lo puede tener en la cabeza,
+
+45
+00:06:31,640 --> 00:06:37,640
+va a utilizar el modelo del sistema para finalmente producir o implementar el sistema final.
+
+46
+00:06:37,640 --> 00:06:43,640
+¿Qué sucede? Que esto al final lo vamos a poder también hacer a través de un generador de código,
+
+47
+00:06:43,640 --> 00:06:49,640
+porque al final todo esto se va a basar en reglas, en un lenguaje abstracto, en una sintaxis abstracta,
+
+48
+00:06:49,640 --> 00:06:55,640
+que es posible programar a través de este tipo de herramientas.
+
+49
+00:06:55,640 --> 00:07:02,640
+Entonces, ¿cómo hacemos esto? Este es el principal problema que tiene en la literatura el desarrollo dirigido por modelos,
+
+50
+00:07:02,640 --> 00:07:12,640
+y es que muchas herramientas están hechas al uso y bueno, no funcionan, no son muy potentes a la hora de resolver ciertos problemas
+
+51
+00:07:12,640 --> 00:07:17,640
+y por ello, bueno, pues a veces es necesario buscar otras soluciones.
+
+52
+00:07:17,640 --> 00:07:22,640
+Entonces, en este caso, el lenguaje que he utilizado yo es Python,
+
+53
+00:07:22,640 --> 00:07:29,640
+y bueno, la metodología final es usar las plantillas de Jinjados.
+
+54
+00:07:29,640 --> 00:07:34,640
+¿Por qué Jinjados? Bueno, aparte de que Python, como voy a explicar luego,
+
+55
+00:07:34,640 --> 00:07:41,640
+también nos tiene esa parte tan potente de análisis de datos que para el dominio que yo investigo,
+
+56
+00:07:41,640 --> 00:07:44,640
+que es la visualización de datos, vienen muy bien.
+
+57
+00:07:44,640 --> 00:07:53,640
+Bueno, pues Jinja nos ofrece un lenguaje rápido, extensible, expresivo, tiene ahora como veremos muchas directivas,
+
+58
+00:07:53,640 --> 00:07:58,640
+es similar a la sintasis de Python, me permite separar los datos de lo que es la lógica,
+
+59
+00:07:58,640 --> 00:08:01,640
+que eso también es muy interesante para este dominio,
+
+60
+00:08:01,640 --> 00:08:05,640
+y también es independiente del lenguaje de programación de destino.
+
+61
+00:08:05,640 --> 00:08:13,640
+Al final puedo crear una plantilla para cualquier lenguaje, aunque principalmente estén destinadas al lenguaje HTML,
+
+62
+00:08:13,640 --> 00:08:20,640
+al final con esta herramienta se puede utilizar cualquier lenguaje.
+
+63
+00:08:20,640 --> 00:08:27,640
+Entonces, así un poco por introducir Jinjados, lo que me permite es, a través de esas plantillas,
+
+64
+00:08:27,640 --> 00:08:34,640
+de ese lenguaje de plantillas, pues me permite inyectar cadenas o datos a través de esas sintaxis,
+
+65
+00:08:34,640 --> 00:08:43,640
+con lo cual si yo instanciase esta plantilla y dijese que la variable hueco va a tener la cadena ola,
+
+66
+00:08:43,640 --> 00:08:47,640
+también podría introducir cualquier número o cualquier otro tipo de datos,
+
+67
+00:08:47,640 --> 00:08:50,640
+bueno, pues a la hora de renderizar esa plantilla,
+
+68
+00:08:50,640 --> 00:08:56,640
+se inyectaría ese dato que he introducido en el hueco correspondiente de la plantilla.
+
+69
+00:08:56,640 --> 00:09:01,640
+También me permite manejo de arrays, de diccionarios,
+
+70
+00:09:01,640 --> 00:09:08,640
+mismo procedimiento que Python, con lo cual lo hace muy sencillo también y muy intuitivo a la hora de programar,
+
+71
+00:09:08,640 --> 00:09:12,640
+también se renderizaría en el propio resultado,
+
+72
+00:09:12,640 --> 00:09:17,640
+pues ese primer elemento de la lista porque he accedido a través del índice.
+
+73
+00:09:17,640 --> 00:09:26,640
+También tenemos condiciones, puedo declarar variables que me permiten renderizar ciertas partes de la plantilla o no,
+
+74
+00:09:26,640 --> 00:09:35,640
+que es la función de dicha variable, con lo cual si yo pusiese a verdadero esa variable que estoy utilizando en la plantilla,
+
+75
+00:09:35,640 --> 00:09:41,640
+pues se renderizaría esa parte y si no, pues se renderizaría la contraria.
+
+76
+00:09:41,640 --> 00:09:52,640
+Y también podemos utilizar bucles, puedo recorrer una lista o un diccionario y que me vaya imprimiendo los diversos datos que contuviese dicha lista.
+
+77
+00:09:52,640 --> 00:09:59,640
+Entonces esto, ¿qué nos va a permitir? Pues es muy útil de cara a esa generación de código, ¿por qué?
+
+78
+00:09:59,640 --> 00:10:06,640
+Porque yo al final puedo hacer una compilación entre comillas porque no es compilación, pero podría hacer una compilación condicional.
+
+79
+00:10:06,640 --> 00:10:16,640
+Y esto para el desarrollo dirigido por modelos es muy útil porque al final se va a basar en partes del sistema que yo quiero introducir o quitar en ciertos momentos.
+
+80
+00:10:16,640 --> 00:10:20,640
+Entonces ¿cómo aplico todo esto a la visualización de datos?
+
+81
+00:10:20,640 --> 00:10:25,640
+Bueno, al final una visualización de datos como veis está compuesta de muchas partes.
+
+82
+00:10:25,640 --> 00:10:34,640
+Yo si ponemos una lupa en lo que es una visualización y vamos astrayendo sus elementos, pues en vez de decir aquí tengo un gráfico de barras,
+
+83
+00:10:34,640 --> 00:10:44,640
+puedo decir aquí tengo dos escalas, una escala ndx, una escala ndhi, tengo una marca visual, en este caso un rectángulo,
+
+84
+00:10:44,640 --> 00:10:50,640
+que tiene una determinada posición x, una determinada posición y, un determinado color.
+
+85
+00:10:50,640 --> 00:10:58,640
+Entonces voy dividiendo las distintas partes de una visualización en sus elementos más primitivos y así es como conseguimos el metamodero, ¿no?
+
+86
+00:10:58,640 --> 00:11:07,640
+Así es como hemos descompuesto las partes de un dominio específico como es el dominio de la visualización de datos,
+
+87
+00:11:07,640 --> 00:11:16,640
+lo hemos descompuesto en partes más simples que voy a poder combinar para obtener esa visualización final, ¿no?
+
+88
+00:11:16,640 --> 00:11:25,640
+Entonces, al final, en este caso el lenguaje de programación de la visualización es de 3, javascript,
+
+89
+00:11:25,640 --> 00:11:34,640
+y a la hora de identificar esos elementos primitivos lo que puedo hacer es asociarlo a porciones de código independientes,
+
+90
+00:11:34,640 --> 00:11:46,640
+las escalas, las instancias por una parte, llamo a los ejes para que aparezcan en pantalla, los llamo a través de otra porción de código,
+
+91
+00:11:46,640 --> 00:11:55,640
+para incluirlas los rectángulos, los llamo a otra porción de código para añadirles color, posición y demás, llamo a otra porción de código.
+
+92
+00:11:55,640 --> 00:12:03,640
+Entonces, al final, aparte de identificar esos elementos primitivos lo que hacemos es asociarlo a esas pequeñas porciones,
+
+93
+00:12:03,640 --> 00:12:11,640
+y con esas pequeñas porciones ya lo que puedo es incluir a través de Jinja2 etiquetar esas porciones de código
+
+94
+00:12:11,640 --> 00:12:17,640
+para que se incluyan o no en función de lo que yo le pase a través del código de Python, ¿no?
+
+95
+00:12:17,640 --> 00:12:24,640
+Si yo digo quiero que mi visualización tenga una escala X, pues eso se lo pasaría a través de Python,
+
+96
+00:12:24,640 --> 00:12:33,640
+se encarga de pasarlo a la plantilla y ya mediante las directivas de Jinja2 se va recorriendo todo ese diccionario,
+
+97
+00:12:33,640 --> 00:12:40,640
+toda esa configuración que le pasa a través de Python y se van incluyendo esas pequeñas porciones de código, ¿de acuerdo?
+
+98
+00:12:40,640 --> 00:12:51,640
+Entonces, al final me quedaría, digamos, como una serie de macros, una serie de funciones que yo puedo añadir o quitar en tiempo de ejecución.
+
+99
+00:12:51,640 --> 00:12:59,640
+Entonces, ¿cuál sería, ese sería mi metamodelo, ¿no? como he dicho antes, las partes primitivas de la visualización.
+
+100
+00:12:59,640 --> 00:13:05,640
+¿Cuál sería el modelo del sistema? Pues sería esa configuración que yo le paso a Python, ¿no?
+
+101
+00:13:05,640 --> 00:13:15,640
+Sería pues una visualización concreta que yo quiero instanciar, la estoy representando en este caso, mediante un fichero JSON
+
+102
+00:13:15,640 --> 00:13:25,640
+que se procesa antes de pasarse a las plantillas, pero vamos, podría representarse mediante cualquier otro lenguaje de modelado,
+
+103
+00:13:25,640 --> 00:13:35,640
+como UML, un fichero XML e incluso ahora estamos tratando de utilizar interfaces gráficas que permitan instanciar los modelos de manera visual.
+
+104
+00:13:35,640 --> 00:13:42,640
+Entonces, finalmente, el sistema final, esta es parte del código que utilizamos,
+
+105
+00:13:42,640 --> 00:13:54,640
+yo le puedo ir pasando los diversos variables para que se vayan instanciando las visualizaciones que quiero que se implementen automáticamente
+
+106
+00:13:54,640 --> 00:14:02,640
+y ya Djinga 2 y todo el motor de plantillas se va encargando de introducir las porciones de código,
+
+107
+00:14:02,640 --> 00:14:10,640
+las variables concretas que necesita la visualización que he modelado a través de ese documento JSON.
+
+108
+00:14:10,640 --> 00:14:19,640
+Y esta sería, bueno, en este caso sería la visualización que se genera a través de la configuración que he mostrado anteriormente.
+
+109
+00:14:19,640 --> 00:14:27,640
+Claro, ahora mismo vamos actualizando poco a poco ese repositorio de código, de esas porciones de código,
+
+110
+00:14:27,640 --> 00:14:31,640
+para que se puedan ir generando cada vez visualizaciones más complejas,
+
+111
+00:14:31,640 --> 00:14:38,640
+como en este caso que se está utilizando ya un plano polar de coordenadas.
+
+112
+00:14:38,640 --> 00:14:47,640
+Pero bueno, esta sería la idea básica y este ya sería el sistema final que yo he instanciado a través del modelo de mi sistema
+
+113
+00:14:47,640 --> 00:14:51,640
+que está representado a través de ese metamodelo.
+
+114
+00:14:51,640 --> 00:14:58,640
+¿Entonces qué beneficios nos trae al final toda esta metodología?
+
+115
+00:14:58,640 --> 00:15:04,640
+Bueno, por supuesto la trazabilidad del modelo, yo ahora mismo sé en mi producto final,
+
+116
+00:15:04,640 --> 00:15:09,640
+en mi visualización final sé de dónde proviene esa porción de código,
+
+117
+00:15:09,640 --> 00:15:17,640
+porque la he modelado anteriormente y porque el sistema de plantillas me ha introducido ahí, digamos, ese modelo.
+
+118
+00:15:17,640 --> 00:15:20,640
+También es adaptable a otras librerías de visualización.
+
+119
+00:15:20,640 --> 00:15:31,640
+Yo aquí he utilizado de 3 y Javascript, pero por supuesto al final la plantilla lo que nos permite es introducir o no ciertas partes del sistema,
+
+120
+00:15:31,640 --> 00:15:39,640
+con lo cual aquí si quisiésemos finalmente utilizar otra librería de visualización o otro lenguaje de programación,
+
+121
+00:15:39,640 --> 00:15:47,640
+pues sería posible adaptarlo siempre siguiendo ese metamodelo que hemos explicado anteriormente.
+
+122
+00:15:47,640 --> 00:15:55,640
+También es integrable con otras aplicaciones, claro, al final tú lo estás pasando a ese código de Python,
+
+123
+00:15:55,640 --> 00:15:58,640
+se le está pasando un JSON.
+
+124
+00:15:58,640 --> 00:16:04,640
+Ese JSON se lo puedo pasar mediante directamente que lo lea en local,
+
+125
+00:16:04,640 --> 00:16:07,640
+pero también se lo podría pasar mediante por medio de un API,
+
+126
+00:16:07,640 --> 00:16:10,640
+con lo cual al final se pueden generar servicios web,
+
+127
+00:16:10,640 --> 00:16:12,640
+que es lo que estamos trabajando ahora mismo,
+
+128
+00:16:12,640 --> 00:16:20,640
+que me permita directamente yo pasarles a configuración y que me genere al vuelo la visualización de datos,
+
+129
+00:16:20,640 --> 00:16:23,640
+sólo pasándole el modelo.
+
+130
+00:16:23,640 --> 00:16:31,640
+Y incluso lo que os decía anteriormente, que estamos investigando formas de instanciar esos modelos,
+
+131
+00:16:31,640 --> 00:16:35,640
+en vez de a través de un documento JSON, que quizás es menos legible,
+
+132
+00:16:35,640 --> 00:16:42,640
+a través de una interfaz gráfica que simplemente arrastre esos elementos primitivos de las visualizaciones
+
+133
+00:16:42,640 --> 00:16:51,640
+y ya el propio backend de Python vaya asociando y componiendo las diversas partes de la visualización,
+
+134
+00:16:51,640 --> 00:16:56,640
+para finalmente ofrecerle al usuario la visualización generada.
+
+135
+00:16:56,640 --> 00:17:02,640
+También lo bueno de todo esto es que el preprocesamiento de datos es en Python,
+
+136
+00:17:02,640 --> 00:17:08,640
+con lo cual ya no solo tenemos que introducir simplemente el elemento de visualización,
+
+137
+00:17:08,640 --> 00:17:11,640
+sino que también podríamos incluso añadir en el propio metamodelo,
+
+138
+00:17:11,640 --> 00:17:16,640
+que es algo que se contempla, operaciones de datos, un preprocesamiento.
+
+139
+00:17:16,640 --> 00:17:22,640
+Si los datos no han llegado limpios, pues yo podría decirla a través del modelo,
+
+140
+00:17:22,640 --> 00:17:27,640
+que se realiza en ciertas operaciones antes de visualizarse los datos.
+
+141
+00:17:27,640 --> 00:17:32,640
+Y esto también nos da un beneficio de trazabilidad, ya no solo del modelo,
+
+142
+00:17:32,640 --> 00:17:37,640
+sino de todas las operaciones que se han ido haciendo con los datos,
+
+143
+00:17:37,640 --> 00:17:40,640
+para ofrecer una visualización más honesta.
+
+144
+00:17:40,640 --> 00:17:46,640
+Yo tengo todo el proceso de detrás, gracias a esta metodología.
+
+145
+00:17:46,640 --> 00:17:52,640
+Y bueno, por supuesto también, lo que es este método permitiría la inclusión de reglas,
+
+146
+00:17:52,640 --> 00:18:00,640
+y recomendaciones, restricciones, pues si el usuario ha elegido una cierta configuración,
+
+147
+00:18:00,640 --> 00:18:09,640
+que no es del todo buena en el modelo, pues el propio programa podría avisarle
+
+148
+00:18:09,640 --> 00:18:12,640
+que hay algún error, no?
+
+149
+00:18:12,640 --> 00:18:20,640
+Preproceso el modelo, y voy buscando incongruencias y demás para avisar al usuario,
+
+150
+00:18:20,640 --> 00:18:25,640
+con lo cual también aquí podría haber un elemento didáctico para que la gente aprenda más
+
+151
+00:18:25,640 --> 00:18:30,640
+sobre las visualizaciones de datos, y lo importante que es elegir una buena codificación de los datos
+
+152
+00:18:30,640 --> 00:18:35,640
+para mostrarlos de manera más eficiente y efectiva.
+
+153
+00:18:35,640 --> 00:18:43,640
+Y bueno, este sería un poco el proceso que hemos seguido para lo que es este método.
+
+154
+00:18:43,640 --> 00:18:50,640
+Muchas gracias por tenerme aquí, y ahora están encantadas de responder cualquier pregunta que tengáis al respecto.
+
+155
+00:18:52,640 --> 00:18:56,640
+Fantástico, Andrea. Muchísimas gracias por tu presentación.
+
+156
+00:18:56,640 --> 00:19:01,640
+La verdad es que yo, este no es mi tema, pero lo ha explicado muy bien.
+
+157
+00:19:01,640 --> 00:19:05,640
+Yo me entero de muchas cosas que no sabía y he dicho, vale, todas estas cosas,
+
+158
+00:19:05,640 --> 00:19:10,640
+porque tengo compañeros y compañeras que trabajan en este tema también,
+
+159
+00:19:10,640 --> 00:19:13,640
+y siempre me cuentan lo que hacen y nunca me entero.
+
+160
+00:19:13,640 --> 00:19:22,640
+Yo trabajo en otro rollo, pero tu presentación ha sido muy clara, muy fácil de seguir,
+
+161
+00:19:22,640 --> 00:19:26,640
+que eso también es importante. Muchas veces empiezan a lanzar conceptos y muchas veces te pierdas,
+
+162
+00:19:26,640 --> 00:19:31,640
+de qué está pasando, pero me ha gustado muchísimo.
+
+163
+00:19:31,640 --> 00:19:38,640
+Hay alguna pregunta, nos preguntan por el YouTube, por aquí el comentario,
+
+164
+00:19:38,640 --> 00:19:41,640
+¿se podrían añadir gráficas dinámicas?
+
+165
+00:19:41,640 --> 00:19:46,640
+Pues eso de hecho es algo que también, ahora mismo en el metamodelo,
+
+166
+00:19:46,640 --> 00:19:50,640
+digamos, hemos representado, es como un mapa conceptual de visualizaciones,
+
+167
+00:19:50,640 --> 00:19:55,640
+y están incluidas, de hecho, lo que es el tema de interacción también.
+
+168
+00:19:55,640 --> 00:19:59,640
+Ya no solo dinámico a nivel temporal, que se actualice cada equis tiempo,
+
+169
+00:19:59,640 --> 00:20:04,640
+sino también dinámico a nivel de que si yo clico aquí, pues se filtre este dato,
+
+170
+00:20:04,640 --> 00:20:07,640
+eso está ahora mismo contemplado en el metamodelo.
+
+171
+00:20:07,640 --> 00:20:11,640
+¿Se podría añadir a través de Jinja 2? Porque sería de nuevo,
+
+172
+00:20:11,640 --> 00:20:18,640
+añadir más directivas que, diga, bueno, pues si en D3 puedo añadir el dinamismo a través de este código,
+
+173
+00:20:18,640 --> 00:20:22,640
+pues lo añado aquí y sí, se podría perfectamente.
+
+174
+00:20:22,640 --> 00:20:26,640
+Genial, genial. Tenemos más preguntas en Discord.
+
+175
+00:20:26,640 --> 00:20:31,640
+Tomás se repita, nos dice, en Jinja 2, con muchas macro y lógica compleja,
+
+176
+00:20:31,640 --> 00:20:34,640
+no encuentran los tiempos de renderizados de las templates.
+
+177
+00:20:34,640 --> 00:20:38,640
+¿Es largo? ¿Tiene recomendaciones para mejorar esos tiempos?
+
+178
+00:20:38,640 --> 00:20:44,640
+Pues básicamente, ahora mismo como estamos explorando esta idea,
+
+179
+00:20:44,640 --> 00:20:50,640
+no le hemos dado tanta caña a la parte del rendimiento.
+
+180
+00:20:50,640 --> 00:20:56,640
+Ahora mismo no tarda mucho en renderizarse, porque claro, no son unas plantillas muy grandes.
+
+181
+00:20:56,640 --> 00:21:02,640
+Pero bueno, de cara a cómo hacerlo más eficiente,
+
+182
+00:21:02,640 --> 00:21:07,640
+pues yo creo, desde mi punto de vista que es con lo que he trabajado,
+
+183
+00:21:07,640 --> 00:21:12,640
+sería hacer más eficiente el modelo, el propio modelo.
+
+184
+00:21:12,640 --> 00:21:17,640
+Si no se utilizan ya tantos bucles, si no es necesario utilizar tantos bucles,
+
+185
+00:21:17,640 --> 00:21:22,640
+para mí la forma más simple de bajar esos tiempos de renderización
+
+186
+00:21:22,640 --> 00:21:28,640
+sería simplificar también el lenguaje con el que se representa el modelo.
+
+187
+00:21:28,640 --> 00:21:34,640
+Genial, la verdad es que también puede surgir otra publicación científica
+
+188
+00:21:34,640 --> 00:21:37,640
+comparando estos rendimientos.
+
+189
+00:21:37,640 --> 00:21:39,640
+Y también porque a partir de las tablas
+
+190
+00:21:39,640 --> 00:21:46,640
+puede explicar los conceptos de visualizaciones que sería un...
+
+191
+00:21:46,640 --> 00:21:50,640
+Esa meta publicación.
+
+192
+00:21:50,640 --> 00:21:54,640
+Y que más... Bueno, también Yamila en YouTube nos da...
+
+193
+00:21:54,640 --> 00:21:58,640
+te da la hora buena por el trabajo.
+
+194
+00:21:58,640 --> 00:22:01,640
+Oye, esto lo has presentado en la última jornada, si ustedes,
+
+195
+00:22:01,640 --> 00:22:05,640
+que fueron en el CEDI de Málaga, creo que fue la semana pasada.
+
+196
+00:22:05,640 --> 00:22:09,640
+No, estuve en el CEDI, pero no presenté ahí.
+
+197
+00:22:09,640 --> 00:22:11,640
+Ah, vale, vale, vale.
+
+198
+00:22:11,640 --> 00:22:15,640
+Yo creo que pega mucho también en estas jornadas.
+
+199
+00:22:15,640 --> 00:22:21,640
+Y bueno, otra manera de conocer las jornadas y tal es si irías, ¿no?
+
+200
+00:22:21,640 --> 00:22:23,640
+Verdad?
+
+201
+00:22:23,640 --> 00:22:24,640
+A todo el mundo.
+
+202
+00:22:24,640 --> 00:22:25,640
+Genial.
+
+203
+00:22:25,640 --> 00:22:30,640
+Bueno, tenemos más alguna otra pregunta por YouTube
+
+204
+00:22:30,640 --> 00:22:34,640
+o tenemos alguna otra pregunta por Discord.
+
+205
+00:22:34,640 --> 00:22:36,640
+Bueno, una pregunta te quería hacer yo.
+
+206
+00:22:36,640 --> 00:22:40,640
+¿Qué consideras que es la parte más difícil de todo esto?
+
+207
+00:22:40,640 --> 00:22:45,640
+Están abstractos y tan difícil de primer entenderlo
+
+208
+00:22:45,640 --> 00:22:47,640
+y ver a donde uno quiere llegar.
+
+209
+00:22:47,640 --> 00:22:49,640
+¿Qué consideras que es lo más difícil?
+
+210
+00:22:49,640 --> 00:22:54,640
+Para mí, lo más difícil ha sido conceptualizar todo lo que es la visualización, ¿no?
+
+211
+00:22:54,640 --> 00:22:59,640
+Porque, claro, hay ya muchas librerías que te permiten generar visualizaciones.
+
+212
+00:22:59,640 --> 00:23:01,640
+Pero no a tan bajo nivel.
+
+213
+00:23:01,640 --> 00:23:06,640
+Entonces, hasta encontrar la fórmula esta con Jinja y con Python,
+
+214
+00:23:06,640 --> 00:23:11,640
+con mucho recorrido de probar otras librerías, probar otros,
+
+215
+00:23:11,640 --> 00:23:15,640
+pues usar más React, usar otro tipo de tecnologías.
+
+216
+00:23:15,640 --> 00:23:22,640
+Pero al final esta es la que mejor es el resultado que me ha dado tanto a nivel de resultados funcionales y finales,
+
+217
+00:23:22,640 --> 00:23:26,640
+tanto para mí de facilidad a la hora de implementar.
+
+218
+00:23:26,640 --> 00:23:28,640
+Vale, vale, vale.
+
+219
+00:23:28,640 --> 00:23:30,640
+Bueno, tenemos alguna otra pregunta.
+
+220
+00:23:30,640 --> 00:23:34,640
+¿Alguien quiere preguntar por YouTube o por Discord?
+
+221
+00:23:34,640 --> 00:23:39,640
+Vale, ahora mismo no hay más preguntas, pero recordad que tenéis el Discord,
+
+222
+00:23:39,640 --> 00:23:44,640
+el canal de Desarrollo por Modelos abierto para que, después de la charla,
+
+223
+00:23:44,640 --> 00:23:47,640
+podáis seguir contactando directamente con Andrea,
+
+224
+00:23:47,640 --> 00:23:50,640
+que seguro que os resuelve todas vuestras preguntas.
+
+225
+00:23:50,640 --> 00:23:51,640
+Efectivamente.
+
+226
+00:23:51,640 --> 00:23:54,640
+Bueno, pues nada más quiero decirte que no era buena.
+
+227
+00:23:54,640 --> 00:23:56,640
+Bueno, ¿cuánto planteas leer la tesis?
+
+228
+00:23:56,640 --> 00:23:58,640
+Pues se supone que el año que viene.
+
+229
+00:23:58,640 --> 00:24:00,640
+Sí, sí, te queda poco.
+
+230
+00:24:00,640 --> 00:24:03,640
+La verdad que está ya muy que te pones ese.
+
+231
+00:24:03,640 --> 00:24:09,640
+Mucho ánimo con eso, que es una cosa durilla, pero seguro que sale genial,
+
+232
+00:24:09,640 --> 00:24:15,640
+porque madre mía, no me había dado flipado con todas las cosas que has hecho ya.
+
+233
+00:24:15,640 --> 00:24:21,640
+Y ahí tengo que no sea la parte que yo controlo, me ha parecido muy fácil de entender
+
+234
+00:24:21,640 --> 00:24:25,640
+y con un trabajazo detrás muy, muy, muy grande.
+
+235
+00:24:25,640 --> 00:24:26,640
+Muchas gracias.
+
+236
+00:24:26,640 --> 00:24:32,640
+Pues ya sabéis, preguntarle a Andrea cualquier duda que tengáis en el Discord,
+
+237
+00:24:32,640 --> 00:24:38,640
+y si no quieres decir ninguna otra cosa más, Andrea, pues terminemos ya tu presentación.
+
+238
+00:24:38,640 --> 00:24:42,640
+Nada, gracias a vosotros por estas jornadas tan interesantes.
+
+239
+00:24:42,640 --> 00:24:45,640
+Fantástico, muchas gracias a ti, Andrea.
+
+240
+00:24:45,640 --> 00:25:03,640
+¡Chao!
+

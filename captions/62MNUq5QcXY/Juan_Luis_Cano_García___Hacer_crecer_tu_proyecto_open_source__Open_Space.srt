@@ -1,0 +1,936 @@
+1
+00:00:00,000 --> 00:00:20,560
+Vamos a hablar ahora de cómo hacer creer tu comunidad de open source. Va a dirigir la
+
+2
+00:00:20,560 --> 00:00:26,960
+sesión huallu, arroba astro huallu y bueno la idea es que vais participando la sesión y
+
+3
+00:00:26,960 --> 00:00:32,760
+tal. Así que bueno él va a contar ahora unas cosillas y venga que esto sea una conversación
+
+4
+00:00:32,760 --> 00:00:36,640
+que no sea un... Venga eso es un aplauso.
+
+5
+00:00:40,560 --> 00:00:45,120
+Vais a hablar vosotros, o sea que el aplauso es para vosotros. Yo ya he hablado hasta mañana y tengo
+
+6
+00:00:45,120 --> 00:00:54,000
+la voz así regular. Bueno muchas gracias por venir creo que es obligatorio empezar con algunas
+
+7
+00:00:54,000 --> 00:00:58,120
+preguntas. Bueno esto es un open space sobre cómo hacer crecer tu proyecto, tu comunidad de open source,
+
+8
+00:00:58,120 --> 00:01:11,320
+quien tiene algo de código subido a internet. Bueno bastante gente y de esos proyectos que
+
+9
+00:01:11,320 --> 00:01:16,400
+tenéis subido, ¿cuáles están pensados para que otra persona lo reutilice? Porque puede ser que
+
+10
+00:01:16,400 --> 00:01:20,680
+habéis hecho un análisis o lo que sea y lo habéis puesto ahí o habéis hecho una biblioteca,
+
+11
+00:01:20,680 --> 00:01:28,560
+algo que es más reutilizable, etcétera. Entonces bibliotecas, bastante gente. Todo el mundo GitHub
+
+12
+00:01:28,560 --> 00:01:39,440
+o otras cosas también. GitLab más sourceHUD, Bitbucket.
+
+13
+00:01:39,440 --> 00:01:52,480
+¿Y quién tiene algún proyecto popular en GitHub o GitLab? No sé dónde poner el umbral.
+
+14
+00:01:52,480 --> 00:01:56,760
+¿Cuánto popular? No sé. ¿Tú tres cuantas falsas como el Chocas?
+
+15
+00:01:56,760 --> 00:02:14,960
+100 estrellitas en GitHub, más de 100. Una poquita gente, más de 10. Y de los que no habéis
+
+16
+00:02:14,960 --> 00:02:22,800
+levantado la mano es porque os da igual la popularidad que es perfectamente válido o os gustaría que
+
+17
+00:02:22,800 --> 00:02:30,160
+más gente lo descubriese, que más gente lo utilizase, etcétera. Pero que si no no se grabo.
+
+18
+00:02:35,560 --> 00:02:40,000
+Perdona, yo creo que la popularidad se debería definir como que lo usen otra gente y no como
+
+19
+00:02:40,000 --> 00:02:47,360
+que te pongan una estrellita en un sistema en particular. Sí, sí. O sea las estrellitas en
+
+20
+00:02:47,360 --> 00:02:53,640
+GitHub no necesariamente son un proxy de la adopción de un proyecto. Eso es 100% en verdad.
+
+21
+00:02:53,640 --> 00:03:01,280
+Pero como no sabemos quién usa los proyectos. Lo que quiero decir es, por ejemplo, que yo
+
+22
+00:03:01,280 --> 00:03:07,640
+colaboro en un proyecto en el que no sé cuántas estrellas tiene. Seguramente tiene algunas. No
+
+23
+00:03:07,640 --> 00:03:11,760
+he levantado la mano porque no sé cuántas estrellas tiene. Pero sí que recibimos feedback de gente
+
+24
+00:03:11,760 --> 00:03:18,720
+preguntando cómo usarlo, qué posibilidades tiene, etcétera.
+
+25
+00:03:18,720 --> 00:03:26,560
+Bueno, entonces eso. De esa gente, dejémonos un poco de las estrellas de Rija, tienes ajeno.
+
+26
+00:03:26,560 --> 00:03:31,440
+Pero de esa gente que tenéis un proyecto que os gustaría que otros usasen pero a lo mejor no lo
+
+27
+00:03:31,440 --> 00:03:40,960
+están usando. O sea, vale, pues alguna gente. Ok, bueno, pues yo os puedo contar un poco mi
+
+28
+00:03:40,960 --> 00:03:47,960
+experiencia personal. No sé si puedo proyectar cosas aquí o... Pero solo ahí por favor, no? No, no, no, no, no voy a quitar nada.
+
+29
+00:03:47,960 --> 00:03:59,880
+Pinc y promesa. Yo tengo algunos proyectos que los usa gente y algunos los usa bastante gente.
+
+30
+00:03:59,880 --> 00:04:06,240
+Tengo un proyecto que se llama Polyastro que es mi proyecto más exitoso. Digamos que es una biblioteca
+
+31
+00:04:06,240 --> 00:04:14,920
+Python para mecánica orbital que tiene 678 estrellas.
+
+32
+00:04:14,920 --> 00:04:17,920
+La damos a Plauso, venga.
+
+33
+00:04:19,920 --> 00:04:25,920
+Pero bueno, la gente pone estrellas porque el logo mola. O sea, no porque lo estén usando, me refiero.
+
+34
+00:04:25,920 --> 00:04:34,480
+Lo hice yo. La documentación está razonablemente bien hecha y actualizada y eso gusta.
+
+35
+00:04:34,480 --> 00:04:40,480
+Entonces, bueno, mi proyecto tiene una peculiaridad, digamos, que no tienen
+
+36
+00:04:40,480 --> 00:04:45,480
+posible, hay otros proyectos que tenéis vosotros, que es que mi audiencia no son
+
+37
+00:04:45,480 --> 00:04:52,480
+desarrolladores, son ingenieros espaciales, estudiantes de mecánica orbital, etcétera.
+
+38
+00:04:52,480 --> 00:04:58,080
+Entonces es gracioso porque primero hay mucha gente que se registra en GitHub solo para abrirle un
+
+39
+00:04:58,080 --> 00:05:04,880
+issue y eso me llena de orgullo y satisfacción porque significa que estoy atraendo gente al mundo
+
+40
+00:05:04,880 --> 00:05:12,600
+open source y eso me mola mucho. Pero esta gente no sabe abrir un issue. Entonces me dice que esto
+
+41
+00:05:12,600 --> 00:05:18,120
+se me ha roto y yo digo, a ver, qué versión estás usando, qué has hecho, qué esperabas,
+
+42
+00:05:18,120 --> 00:05:24,000
+qué te has salido, las típicas, cómo hacer preguntas inteligentes. Los artículos estos
+
+43
+00:05:24,000 --> 00:05:31,080
+son chorral, y digo, hay, y demás. Y luego lo que pasa es que los proyectos que tienen una
+
+44
+00:05:31,080 --> 00:05:39,000
+dinámica más intensa son aquellos cuya audiencia son al final desarrolladores.
+
+45
+00:05:39,000 --> 00:05:46,480
+Yo no tengo ninguno de esos o que yo recuerde no, pero si vamos a los repositorios de tipo
+
+46
+00:05:46,480 --> 00:05:52,320
+pipeline o pip o lo que sea, al final son herramientas que durante el propio desarrollo las estás
+
+47
+00:05:52,320 --> 00:05:59,480
+usando y por eso tienen esa dinámica. Entonces yo creo que una de las claves es identificar la
+
+48
+00:05:59,480 --> 00:06:06,960
+audiencia cuáles y a veces la audiencia van a ser desarrolladores y en otros momentos no va a ser.
+
+49
+00:06:06,960 --> 00:06:15,360
+Y ya dentro de la audiencia profundizar un poco más de bueno qué conocimientos tiene esta gente.
+
+50
+00:06:15,360 --> 00:06:23,760
+Por ejemplo, en el issue tracker de pip, pues hay, ocurre en toda clase de situaciones porque todo
+
+51
+00:06:23,760 --> 00:06:30,840
+el mundo necesita pip para instalar paquetes y no sé si os ha pasado alguna vez que os ha salido
+
+52
+00:06:30,840 --> 00:06:36,960
+un error de pip. No sé si alguna vez os ha ocurrido, a mí me ha ocurrido alguna vez. Y claro,
+
+53
+00:06:38,880 --> 00:06:44,960
+la gente que está utilizando pip no necesariamente entiende que este will no está compilado para
+
+54
+00:06:44,960 --> 00:06:49,640
+esta arquitectura, etcétera, etcétera. Entonces también las interacciones que se crean con los
+
+55
+00:06:49,640 --> 00:06:56,160
+usuarios van un poco condicionadas con cuál es su nivel de conocimientos, de madurez, etcétera.
+
+56
+00:06:58,160 --> 00:07:04,440
+Estoy soltando ideas así random hasta que se me ocurra como devolveros la conversación, digamos.
+
+57
+00:07:04,440 --> 00:07:12,760
+Hay algunos truquitos que GitHub concretamente ya te ofrece, que está un poco más avanzado,
+
+58
+00:07:12,760 --> 00:07:22,200
+que Gilda y otras que es que te ayudan a tener un tono, unas normas, etcétera para la comunidad.
+
+59
+00:07:22,200 --> 00:07:27,800
+Por ejemplo, veis aquí a la derecha que hay un enlace que pone el código de conducta. Poliastro
+
+60
+00:07:27,800 --> 00:07:34,120
+tiene un código de conducta que no es nada especial, no me acuerdo que plantilla cogí,
+
+61
+00:07:34,120 --> 00:07:39,880
+pero básicamente dice que seamos todos respetuosos, etcétera. A mí todavía no se me ha enfadado
+
+62
+00:07:39,880 --> 00:07:49,440
+nadie en Poliastro, pero podría ocurrir. Aquí no me aparece posiblemente porque no lo tengo
+
+63
+00:07:49,440 --> 00:07:57,800
+bien hecho o no lo estoy encontrando, pero también te animan a que pongas unas instrucciones de cómo
+
+64
+00:07:57,800 --> 00:08:07,840
+contribuir. Y esto es súper importante porque hay un montón de capas aquí de la cebolla por pegar.
+
+65
+00:08:07,840 --> 00:08:13,960
+Por un lado, la gente se piensa que contribuir a l'open source es imposible y eso es una barrera que la podemos
+
+66
+00:08:13,960 --> 00:08:21,640
+tumbar porque no hace falta ser el core cometer de pandas, etcétera, que se sabe todos los
+
+67
+00:08:21,640 --> 00:08:29,360
+entrecijos del proyecto para contribuir a pandas. Y eso por un lado y por otro lado que para contribuir
+
+68
+00:08:29,360 --> 00:08:36,400
+a l'open source no hace falta escribir código necesariamente. O sea, si escribes código y encima
+
+69
+00:08:36,400 --> 00:08:44,240
+es un código que a la gente del proyecto le gusta, pues, fantástico. Entonces yo creo que poner de qué
+
+70
+00:08:44,240 --> 00:08:49,680
+maneras se puede contribuir al proyecto es muy interesante. Por ejemplo, yo pongo aquí reportar
+
+71
+00:08:49,680 --> 00:08:56,000
+un bug ya es contribuir al proyecto porque me estás avisando de algo que no funciona con respecto a tus
+
+72
+00:08:56,000 --> 00:09:01,400
+expectativas. Luego yo te puedo decir tus expectativas estaban mal o, efectivamente,
+
+73
+00:09:01,400 --> 00:09:08,120
+has encontrado un problema, pero de entrada que sepan que eso ya es contribuir. Participar en el chat y
+
+74
+00:09:08,120 --> 00:09:13,520
+si alguien pregunta x, que no sea yo el que tenga que responder, pero que lo responda a otro, porque es
+
+75
+00:09:13,520 --> 00:09:20,000
+una duda básica y se la sabía, también es contribuir. Contribuir a la documentación, que no sé
+
+76
+00:09:20,000 --> 00:09:26,480
+todos, o sea, mis primeros pull requests han sido arreglar errores tipográficos en un pay y
+
+77
+00:09:26,480 --> 00:09:31,760
+astro pay, eso que faltaba un punto o una S o algo así. Y aún así lo hacía mal, me hacía un lío ahí
+
+78
+00:09:31,760 --> 00:09:38,000
+con los commits de greedy, no sé qué, pero eso es una forma de arrancar a contribuir. Entonces yo creo que es
+
+79
+00:09:39,920 --> 00:09:46,280
+como listar todo eso y cómo o qué necesita la gente para hacer ese tipo de cosas, yo creo que
+
+80
+00:09:46,280 --> 00:09:52,800
+aporta y es interesante. Por ejemplo, te tienes que instalar la versión de desarrollo del proyecto
+
+81
+00:09:52,800 --> 00:09:58,360
+para contribuir a la documentación, pues a lo mejor no, porque aquí si le das al lapicerito,
+
+82
+00:09:59,840 --> 00:10:04,240
+porque no me da el lapicerito, porque no estoy logueado. Bueno, que si tienes una cuenta y le das
+
+83
+00:10:04,240 --> 00:10:08,800
+aquí, puedes ir y traer el archivo directamente de mi hija, no tienes que saber git, no tienes que
+
+84
+00:10:08,800 --> 00:10:16,080
+hacer un pipping stall, menos lo que sea. Entonces también establecer como niveles de cuánto tienes
+
+85
+00:10:16,080 --> 00:10:24,160
+que profundizar para contribuir un proyecto, pues aporta bastante. De qué otra forma pensáis que
+
+86
+00:10:24,160 --> 00:10:27,600
+se puede contribuir. Vamos a dar la idea para que me da más cosa aquí en el contribuiting,
+
+87
+00:10:27,600 --> 00:10:36,440
+que parece que lo tiene un poquilloso uso. Traducciones, excelente, es más, lo que has dado en el clavo.
+
+88
+00:10:36,440 --> 00:10:47,720
+Yo antes trabajaba en Ritddox, que sonará a lo mejor, que es la gente que tiene la documentación
+
+89
+00:10:47,720 --> 00:10:55,240
+de un montón de paquetes de Python y la documentación, por cierto, está también humitos por aquí que
+
+90
+00:10:55,240 --> 00:11:04,920
+sigue trabajando en Ritddox. La documentación de Ritddox, las traducciones no están actualizadas
+
+91
+00:11:04,920 --> 00:11:12,120
+y es un problema. Y además te diré que no hemos encontrado un flujo de trabajo muy bueno para
+
+92
+00:11:12,120 --> 00:11:19,760
+traducirlo, porque al final todos los que es docs.scode, o sea la documentación que se
+
+93
+00:11:19,760 --> 00:11:25,200
+nace en archivos markdown o lo que sea, la forma de traducirlo es con los archivos gettext,
+
+94
+00:11:25,200 --> 00:11:34,480
+estos no, los.pop,.o.mo. Y entonces lo que se suele hacer es usar interfaces tipo weblate o
+
+95
+00:11:34,480 --> 00:11:39,920
+transifex y demás, entonces sincronizar lo que está en el transifex con lo que está en el repo
+
+96
+00:11:39,920 --> 00:11:45,600
+para que luego no haga un conflicto y no sé qué, no es trivial en absoluto. O sea que sí, 100%
+
+97
+00:11:45,600 --> 00:11:55,600
+traducciones.
+
+98
+00:11:55,600 --> 00:12:03,600
+Que se habla de ella.
+
+99
+00:12:03,600 --> 00:12:11,600
+Hola, bueno yo soy traductora. Bienvenida.
+
+100
+00:12:11,600 --> 00:12:17,960
+Esa localización de página web y documentación más a través de agencias que directamente con el
+
+101
+00:12:17,960 --> 00:12:26,320
+desarrollador. Suele haber herramientas de traducción asistidas, la mayoría son propietarias y se
+
+102
+00:12:26,320 --> 00:12:34,280
+usan como contextos profesionales, pero vamos a empezar, la forma de la utilizar, distinguir
+
+103
+00:12:34,280 --> 00:12:40,520
+contenido, contenido nuevo del que ya se ha traducido suele haber, se suele trabajar con lo que se
+
+104
+00:12:40,520 --> 00:12:46,320
+llama memorias de traducción, que son como una especie de bases de datos, entonces se guardan un
+
+105
+00:12:46,320 --> 00:12:54,560
+archivo que no recuerdo el formato, pero hay archivos que son como, hay formatos estándares para
+
+106
+00:12:54,560 --> 00:13:01,720
+distintas herramientas. Y luego el programa traducción asistida coge su memoria y a partir de ahí a la
+
+107
+00:13:01,720 --> 00:13:09,320
+hora de procesar el archivo de texto identifica las palabras o vamos a decir segmentos que suelen
+
+108
+00:13:09,320 --> 00:13:15,360
+dividir por puntos en frases, distinguir las que son nuevas o las que no han encontrado la memoria
+
+109
+00:13:15,360 --> 00:13:20,160
+traducción que tiene cargada, las que son exactamente iguales, que se suelen hablar de 100%
+
+110
+00:13:20,160 --> 00:13:25,160
+matches o que se conten que es matches cuando no es simplemente las frases sino también en las
+
+111
+00:13:25,160 --> 00:13:30,080
+frases que están antes y después y también las fáciles que mejor hay como una coincidencia
+
+112
+00:13:30,080 --> 00:13:39,920
+parcial. Y eso puede ser de una manera, mi omega t también es una open source. La interfaz no es bellísima.
+
+113
+00:13:39,920 --> 00:13:48,440
+Pero sirve, yo cuando aún estaba trabajando por mi cuenta la utilicé para entrar en un concurso
+
+114
+00:13:48,440 --> 00:13:56,160
+porque era una cosa literaria, pero me servía el tener dividido en segmentos y es como que te
+
+115
+00:13:56,160 --> 00:14:02,440
+organiza el texto que tienes que traducir y para luego hacer concordancia de lo que has traducido
+
+116
+00:14:02,440 --> 00:14:09,640
+antes y mantener coherencia terminológica y de frases, de un mejor nombre de personaje incluso y
+
+117
+00:14:09,640 --> 00:14:15,520
+demás. En fin, una cosa que si alguien le interesa tener como establecer un proceso, un flujo de trabajo
+
+118
+00:14:15,520 --> 00:14:20,160
+de traducción, una manera de hacerlo, de ponerse de acuerdo con los traductoras voluntarios, profesionales.
+
+119
+00:14:20,160 --> 00:14:25,480
+Muchísimas gracias. Ya que hemos comentado de las traducciones, no sé si la gente lo sabe,
+
+120
+00:14:25,480 --> 00:14:32,760
+pero la documentación de país o de un oficial está traducida al español, está bastante avanzada. Creo
+
+121
+00:14:32,760 --> 00:14:38,600
+que quedan cosas todavía y ellos tienen un proceso que no va por TransiVix y tal sino que es directamente
+
+122
+00:14:38,600 --> 00:14:44,560
+editar los archivos y si alguien quiere participar está Manu, mitos por aquí, si no, decime a mí que
+
+123
+00:14:44,560 --> 00:14:49,680
+yo os pongo en contacto con ellos y Christian también participa en eso. Muchas gracias.
+
+124
+00:14:49,680 --> 00:14:55,800
+Una pista que ha tirado Israel antes, que más formas de contribuir aquí.
+
+125
+00:14:55,800 --> 00:15:01,080
+¿Qué llevamos haciendo aquí todo el fin de semana? Charlá, hablar, eso al final es contribuir
+
+126
+00:15:01,080 --> 00:15:04,480
+también al proyecto por un lado, por ejemplo, de Python, o sea porque aquí va a tocar Python,
+
+127
+00:15:04,480 --> 00:15:10,360
+pero ya después que los que están con el Airflow, pues es otra forma de contribuir el Flow. Yo,
+
+128
+00:15:10,360 --> 00:15:16,240
+alias que estaba hablando aquí de Distribut Tracing o Pentelema Trigidal, lo mismo, no tienes
+
+129
+00:15:16,240 --> 00:15:22,760
+porque sea un experto en la materia, pero a lo mejor si lo eres utilizando la herramienta o simplemente
+
+130
+00:15:22,760 --> 00:15:28,320
+cuando estás empezando y no vale eso de, ¡uy, yo qué no sé, no, de Argo Sabrán! O sea,
+
+131
+00:15:28,320 --> 00:15:31,800
+tú por lo menos estás de la banda por la mañana y eres capaz de hacer tus cosillas,
+
+132
+00:15:31,800 --> 00:15:35,560
+no hay delante de los los de Argo Sabrán. O sea, que ya eso lo puedas compartir a personas que
+
+133
+00:15:35,560 --> 00:15:42,640
+estamos con nivel cero y eso también contribuir a un proyecto. Aquí mientras llega el micrófono,
+
+134
+00:15:42,640 --> 00:15:51,360
+we're boost, tenemos que hablar. No sé si alguien está en mi charla de polars esta mañana, pero me
+
+135
+00:15:51,360 --> 00:15:55,920
+han aceptado a la paydata de Nueva York que es en noviembre y aquí el autor de polars dice,
+
+136
+00:15:55,920 --> 00:16:00,800
+la primera charla de polars dada por la comunidad, o sea, soy la primera persona que da una charla
+
+137
+00:16:00,800 --> 00:16:06,280
+de polars que no es el autor de polars y yo no contribuyo código a polars porque yo no tengo
+
+138
+00:16:06,280 --> 00:16:12,840
+idea de RAST y no sé, pero dar charlas, efectivamente, también es contribuir.
+
+139
+00:16:12,840 --> 00:16:19,560
+Juan, le quería preguntar, yo sé que el año pasado en Hustover Fest hubo una iniciativa de
+
+140
+00:16:19,560 --> 00:16:27,040
+poner repos españoles y que la comunidad española trabaja, yo sé que el tuyo estuvo entre ellos,
+
+141
+00:16:27,040 --> 00:16:33,480
+yo no contribuirá el año pasado, pero este año si os poneis, me apunto, ¿cómo fue la experiencia?
+
+142
+00:16:33,480 --> 00:16:38,560
+Y si parece que no vais a repetir este año, por lo menos no he visto nada, vais a repetir y sí,
+
+143
+00:16:38,560 --> 00:16:45,240
+sí, sí, ¿por qué? Pues muy buena, bueno, para quien no lo conozca, Hustover Fest es un juego de
+
+144
+00:16:45,240 --> 00:16:51,400
+palabras maravilloso, por un lado, es una celebración de Open Source que promociona,
+
+145
+00:16:53,200 --> 00:17:02,360
+no puedo escribir y hablar a la vez, que promociona la empresa Digital Ocean, que consiste en que
+
+146
+00:17:02,360 --> 00:17:07,600
+si tú contribuyes a Open Source durante este mes más de cuatro pull requests, creo, y además este
+
+147
+00:17:07,600 --> 00:17:14,680
+año se permite código, pero también, no sé, un nuevo diseño para la web o hay como más cosas,
+
+148
+00:17:14,680 --> 00:17:23,080
+documentación, te da una camiseta y me lo mucho. Entonces, efectivamente, el año pasado hicimos
+
+149
+00:17:23,080 --> 00:17:31,680
+Hustover Fest es, que fue, teníamos un servidor de Discord todo el mes y la gente se iba apuntando
+
+150
+00:17:31,680 --> 00:17:38,760
+y tal, Victor Suárez, que no le veo, ahí hay estas, hay unos talleres de Git, super chiles,
+
+151
+00:17:40,120 --> 00:17:44,920
+que al final es un poco la barrera de entrada y fue llegando gente al proyecto, se daban charlas,
+
+152
+00:17:44,920 --> 00:17:50,960
+se juntaba a la gente, eso estuvo bastante bien, mi proyecto estuvo efectivamente poliastro y hubo
+
+153
+00:17:50,960 --> 00:17:57,280
+varias personas que se acercaron a contribuir y lo que pasa es que, a decir verdad, no pude seguirles
+
+154
+00:17:57,280 --> 00:18:02,880
+el ritmo, porque estaban contribuyendo un montón, pero tenían dudas y hubo algunas cosas que nos
+
+155
+00:18:02,880 --> 00:18:10,080
+quedaron ahí en el tintero. Estamos un poquito flojos de fuerzas para hacer esto este año, pero sí
+
+156
+00:18:10,080 --> 00:18:14,880
+que quería yo por lo menos en Madrid organizar un evento presencial, no sé, un taller de Git o
+
+157
+00:18:14,880 --> 00:18:22,440
+cómo contribuir a Open Source o por qué un pull request es como regalar un gatito a alguien y
+
+158
+00:18:22,440 --> 00:18:28,440
+a lo mejor alguien no le gusta los gatitos, o sea no sé, que a lo mejor lo hacemos como más
+
+159
+00:18:30,840 --> 00:18:36,680
+comprimido, más en Peti Comité, pero si estás interesado en contribuir a Poliastro este año,
+
+160
+00:18:41,680 --> 00:18:43,800
+y si alguien quiere ayudarnos a que esto ocurra otra vez.
+
+161
+00:18:45,080 --> 00:18:49,600
+Respecto al Hacktoberfest es nosotros desde la comunidad de País de Malicante,
+
+162
+00:18:49,600 --> 00:18:57,000
+este año vamos a hacer un proyecto y la charla de presentar el proyecto va a ser en el Discord
+
+163
+00:18:57,000 --> 00:19:06,120
+de País de Malicante día 10. De todas maneras, he hablado con Christian, Mauriayra, para ver si
+
+164
+00:19:06,120 --> 00:19:08,600
+retomamos el Hacktoberfestes.
+
+165
+00:19:08,600 --> 00:19:21,080
+Como veis Discord está de moda aquí en la Paiconés y no sabía que había uno de País de Malicante
+
+166
+00:19:21,080 --> 00:19:27,600
+puntualmente, pero aparte de la conferencia hay uno que se llama País de Malicante en español,
+
+167
+00:19:27,600 --> 00:19:32,360
+que bueno le estamos intentando dar un poco de vidilla y luego está enlazado con los otros y tal,
+
+168
+00:19:32,360 --> 00:19:38,520
+o sea que si queréis participar está ahí también. Es como un grupo de Telegram pero con canales.
+
+169
+00:19:38,520 --> 00:19:43,520
+Alguien quiere hacer alguna otra pull request a la conversación?
+
+170
+00:19:50,520 --> 00:19:52,520
+Good first contribution.
+
+171
+00:19:52,520 --> 00:20:03,040
+Eso es, al hilo de eso, otra cosa que suele hacer la gente lo marca los issues que están abiertos a
+
+172
+00:20:03,040 --> 00:20:08,280
+contribuir como Good First Issue, pero aquí yo considero que hace falta trabajar un poquito,
+
+173
+00:20:08,280 --> 00:20:14,680
+porque tú no puedes decir refactorizar código y marcar eso como Good First Issue,
+
+174
+00:20:14,680 --> 00:20:20,160
+porque es como, a lo mejor en tu cabeza sabes, no lo sabes, que es refactorizar el código,
+
+175
+00:20:20,160 --> 00:20:25,960
+pero alguien que está recién arrancando lo más fácil es resolver un bug por ejemplo,
+
+176
+00:20:25,960 --> 00:20:33,240
+porque dices esto es el código que lanza un error o lo que sea, esto es lo que no tiene que ocurrir
+
+177
+00:20:33,240 --> 00:20:38,760
+y arreglalo, o sea como que el feedback loop es muy fácil de cerrar, porque en el momento que
+
+178
+00:20:38,760 --> 00:20:45,400
+consigue es que no salta el error, ya los conseguí, pero refactorizar no se sabe cuál es la definición
+
+179
+00:20:45,400 --> 00:20:50,960
+de éxito de eso, entonces yo lo uso mucho por ejemplo para tareas un poco mecánicas,
+
+180
+00:20:53,960 --> 00:21:00,720
+pero que son fáciles, por ejemplo yo he migrado la documentación de Polyastro, estaba escrita en
+
+181
+00:21:00,720 --> 00:21:08,280
+restractor text, que es el lenguaje de marcas de Sphinx que lo odio y ahora está escrita en
+
+182
+00:21:08,280 --> 00:21:13,440
+Markdown, que Markdown mola porque lo usa todo el mundo, no porque sea mejor, sino porque está
+
+183
+00:21:13,440 --> 00:21:21,120
+en todas partes y entonces como que han quedado unos restos de rest en la documentación, y entonces
+
+184
+00:21:21,120 --> 00:21:26,720
+tengo un iso abierto aquí de bueno coge estos bloques y convierte los a Markdown y eso es relativamente
+
+185
+00:21:26,720 --> 00:21:31,000
+sencillo, no hace falta que los cojas todos a la vez, pero y de vez en cuando va viniendo gente,
+
+186
+00:21:31,000 --> 00:21:39,040
+mira pues yo he cogido esto, ya sí. Algo un consejo para que las personas se animen a contribuir,
+
+187
+00:21:39,040 --> 00:21:48,800
+no sólo publicitándolo en Twitter y tal, sino alguna manera de conseguir más gente. Pues aparte
+
+188
+00:21:48,800 --> 00:21:58,520
+de todo esto que hemos dicho, que yo creo que ayuda, a mí me pasaba por ejemplo cuando yo empecé a
+
+189
+00:21:58,520 --> 00:22:03,720
+organizar País en Madrid o más bien, cuando yo empecé a asistir a País en Madrid, la mecánica
+
+190
+00:22:03,720 --> 00:22:07,120
+era la siguiente, Pablo Lovariña que fue el primer presidente de País en España además,
+
+191
+00:22:07,120 --> 00:22:13,440
+mandaba un mensaje a la lista de correo, ¿quién quiere dar una charla este mes? Pasaban abrojos
+
+192
+00:22:13,440 --> 00:22:18,400
+de estos, corre mundos, no sé cómo lo llamáis en vuestra tierra, la pelusa gigante del desierto,
+
+193
+00:22:20,120 --> 00:22:27,520
+y al final decía Jesús, vea, arroyo una charla, tal, no, y cuando empecé yo a organizar los meetups,
+
+194
+00:22:27,520 --> 00:22:34,040
+descubrí un mind hack impresionante que es que si yo dego y digo, Isra, ¿me quieres dar una charla
+
+195
+00:22:34,040 --> 00:22:41,960
+en País en Madrid? Y yo te digo no. Es muy violento decir que no, o sea la gente de manera natural huye
+
+196
+00:22:41,960 --> 00:22:48,200
+de la confrontación, salvo que sean psicópatas tal, que puede ser también, o sea esta industria hay un
+
+197
+00:22:48,200 --> 00:22:55,720
+poco de todo, pero me habéis dado cuenta cómo se ha retirado, porque es un psicópata y no quiero
+
+198
+00:22:55,720 --> 00:23:03,280
+esta perca. O sea he encontrado que diciendo a la gente genuinamente, oye me interesa mucho esto
+
+199
+00:23:03,280 --> 00:23:08,920
+que haces, te gustaría dar una charla, funciona, la gente te dice, ah pues sí, y es más funciona
+
+200
+00:23:08,920 --> 00:23:14,440
+también que estoy contactando con gente random en LinkedIn, que están fuera de mi red y funciona
+
+201
+00:23:14,440 --> 00:23:21,280
+también, la gente me dice, ah pues sí, que guay. Se van a pensar que van de cristo modada. Cristo qué?
+
+202
+00:23:21,280 --> 00:23:33,840
+Crito eso. ¿De qué es tu grafía? No sé qué me hablas. Bueno entonces yo creo que hacerle sentir
+
+203
+00:23:33,840 --> 00:23:41,560
+a la gente especial, a la otra persona le hace sentir guay y además ayuda a que contribuir a tu
+
+204
+00:23:41,560 --> 00:23:46,480
+proyecto, porque si tú te digo, bueno que quien quiera podéis contribuir a Poliastro, pues lo que
+
+205
+00:23:46,480 --> 00:23:52,400
+se ve lo estoy tirando así al auditorio y habrá quien se dé por aludida y quien no, pero si yo digo
+
+206
+00:23:52,400 --> 00:24:00,840
+jueves tienes un linear aquí de Airbus, tú tienes que contribuir a Poliastro tal pues estuve de becario
+
+207
+00:24:00,840 --> 00:24:09,160
+en Airbus. Entonces sí, yo creo que individualizar un poco, claro pero para eso tú tienes que ya
+
+208
+00:24:09,160 --> 00:24:15,480
+saber y tener identificada a la persona, pero claro si estás en internet, pues yo creo que es eso,
+
+209
+00:24:15,480 --> 00:24:22,880
+tener good first issues, tener una buena guía de cómo contribuir, no sé que se vea que hay buen
+
+210
+00:24:22,880 --> 00:24:30,200
+rollo en el proyecto. Yo lo que hago, a veces cuando voy a un proyecto leo issues del proyecto y si veo
+
+211
+00:24:30,200 --> 00:24:39,480
+que está el típico maintainer, que da respuestas cortantes y va del Isti, no sé qué, se me quitan
+
+212
+00:24:39,480 --> 00:24:48,480
+las ganas de contribuir. Nos queda un pedamíndoto y ya con esto terminamos. Ya, sí, se acaba de empezar.
+
+213
+00:24:48,480 --> 00:24:56,920
+¿Has visto? Bueno, bueno. Voy a hacer una pregunta, si un proyecto Pensors está monetizado, o sea,
+
+214
+00:24:56,920 --> 00:25:02,200
+estás cobrando de alguna manera para tenerlo, tú crees que vas a tener menos contribuidores?
+
+215
+00:25:02,200 --> 00:25:11,200
+Qué buena pregunta que tienes, verás, esta camiseta es de la empresa que me paga, ¿no? Entonces es un proyecto Pensors.
+
+216
+00:25:11,200 --> 00:25:23,480
+Yo voy aquí, guija, orquest, orquest, qué cuña más buena voy a meter. Y mira, es AGPL3, o sea, más
+
+217
+00:25:23,480 --> 00:25:32,480
+software libre que esto, ahora mismo no hay. Y yo creo que, o sea, no sé cómo funciona la cabeza de la gente,
+
+218
+00:25:32,480 --> 00:25:40,000
+pero yo sí que me acerca un proyecto de manera diferente. Si veo que es un proyecto que lo lleva una fundación
+
+219
+00:25:40,000 --> 00:25:47,200
+o que hay un cuerpo de gobernanza multi stakeholder, que no hay una empresa, sino que son varias, por ejemplo,
+
+220
+00:25:47,200 --> 00:25:57,200
+para mí no es igual eso, que un proyecto que depende de una empresa, que no sé, puede tener sus intereses y tal.
+
+221
+00:25:57,200 --> 00:26:06,200
+Habiendo dicho eso, yo creo que hay maneras de que, aún así, la gente se acerque. El problema de los Pensors corporativo,
+
+222
+00:26:06,200 --> 00:26:13,200
+para mí, hoy en día, no es tanto que sea corporativo, sino que yo estoy una hora hablando con Slack, por Slack,
+
+223
+00:26:13,200 --> 00:26:20,200
+con mis compañeros, y luego aquí, abre un pull request, sin comentarios, y es como, ah, he refactorizado todo,
+
+224
+00:26:20,200 --> 00:26:27,200
+y la gente lo lee y dice, aquí, ¿qué ha pasado? O sea, de esto, por ejemplo, en nuestro proyecto ha pasado,
+
+225
+00:26:27,200 --> 00:26:37,200
+perdóname si lo encuentro, lo puedo ordenar, es tú por, no sé, es que hay un pull request aquí,
+
+226
+00:26:37,200 --> 00:26:47,200
+me refactorizo todo, cinco días, no sé qué, bueno, no sé si lo voy a encontrar, pero básicamente que cambió todo el proyecto,
+
+227
+00:26:47,200 --> 00:26:54,200
+todo el UI, y no hay ningún comentario en el pull request. Y claro, tú lleves a un proyecto y ves eso a lo mejor,
+
+228
+00:26:54,200 --> 00:27:01,200
+y dices, vamos a ver, o sea, ¿cómo puedo yo contribuir a este proyecto? Si el roadmap no sé para dónde va, por ejemplo,
+
+229
+00:27:01,200 --> 00:27:06,200
+nosotros tenemos un roadmap, o sea, yo estoy intentando como que las conversaciones sean más en abierto y eso,
+
+230
+00:27:06,200 --> 00:27:12,200
+pero a veces las propias dinámicas de las empresas, que tengo un canal de comunicación privado, etc.,
+
+231
+00:27:12,200 --> 00:27:18,200
+ocultan mucha información de cómo funciona eso, y yo creo que para mí ese es el principal problema.
+
+232
+00:27:18,200 --> 00:27:20,200
+Open source, pero no mucho.
+
+233
+00:27:20,200 --> 00:27:23,200
+O sea, claro, es open source, pero no es open deep, el op-ment.
+
+234
+00:27:23,200 --> 00:27:37,200
+Bueno, terminamos aquí la sesión. Muchas gracias a todo el mundo por haber participado.
+

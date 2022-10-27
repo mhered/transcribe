@@ -1,0 +1,1952 @@
+1
+00:00:00,000 --> 00:00:17,440
+Bueno, continuamos con nuestras presentaciones del bloque de hoy y vamos a pasar a la siguiente
+
+2
+00:00:17,440 --> 00:00:24,480
+charla, que va a ser la charla de Indranil Ghosh. Indranil es un estudiante de doctorado
+
+3
+00:00:24,480 --> 00:00:31,000
+de matemática aplicada de la Universidad de Masa University y su investigación trata
+
+4
+00:00:31,000 --> 00:00:35,200
+sobre sistemas dinámicos y caos robustos. Es un tema súper interesante. Él trabaja
+
+5
+00:00:35,200 --> 00:00:48,080
+con Python IR y trata sus intereses son análisis de datos, software libre, ciencia computacional
+
+6
+00:00:48,080 --> 00:00:54,400
+y atención, que suítese también son el fútbol. Entonces claro, lo que nos va a contar Indranil
+
+7
+00:00:54,400 --> 00:01:06,080
+Ghosh es cómo podemos utilizar datos de Notepads de Jupyter para acceder y visualizar datos
+
+8
+00:01:06,080 --> 00:01:11,480
+de fútbol. Un tema interesante y seguro que veremos cómo parece que el fútbol es algo
+
+9
+00:01:11,480 --> 00:01:15,960
+a priori simple pero tiene una gran cantidad de datos que pueden ser analizados y traer
+
+10
+00:01:15,960 --> 00:01:23,720
+un montón de información muy relevante y muy interesante. Bueno, sin más, os dejamos
+
+11
+00:01:23,720 --> 00:01:27,000
+la presentación de Indranil.
+
+12
+00:01:53,720 --> 00:02:02,000
+Bienvenidos a la conferencia prestagiosa. Estoy muy feliz que estoy aquí para presentar mi
+
+13
+00:02:02,000 --> 00:02:09,840
+tema con todos ustedes. Hoy voy a cubrir algunas de las cosas. Voy a enseñar cómo
+
+14
+00:02:09,840 --> 00:02:22,120
+obtener datos de datos de fútbol de la Universidad de Masa de Jupyter para acceder y visualizar
+
+15
+00:02:22,120 --> 00:02:35,760
+datos de fútbol de la Universidad de Masa de Jupyter.
+
+16
+00:02:35,760 --> 00:02:54,520
+Así que, como estoy dando 20 minutos para presentar este tema, voy a dar un overview de las cosas
+
+17
+00:02:54,520 --> 00:02:54,520
+y si quieres ir en el distrito, voy a dar el link al blog y también voy a dar las informaciones
+
+18
+00:02:54,520 --> 00:03:01,560
+sobre los recursos que he usado para aprender estos temas y puedes seguir adelante.
+
+19
+00:03:01,560 --> 00:03:12,280
+Entonces, como para cualquier otro pack, usamos pip para instalar Statsbombi y antes de usar
+
+20
+00:03:12,280 --> 00:03:17,800
+el data de fútbol de Statsbomb, usamos el termo, lo que es el termo de las condiciones
+
+21
+00:03:17,800 --> 00:03:24,640
+de fútbol de Statsbombi y después de que lo desluzguemos o instalezca el pack de Statsbombi,
+
+22
+00:03:24,640 --> 00:03:34,800
+usamos el pack de Numpy y Pandas y la próxima vez, vamos a tener acceso a los datos de computación
+
+23
+00:03:34,800 --> 00:03:37,680
+y para eso usamos los datos de Sb.
+
+24
+00:03:37,680 --> 00:03:44,840
+Todas las informaciones sobre estos están producidas en Statsbombi y Github.
+
+25
+00:03:44,840 --> 00:03:49,600
+Y después de que obtenemos el dataset, el dataset se ve como esto.
+
+26
+00:03:49,600 --> 00:03:54,780
+Así que tiene las ideas deいくiggon, la idea de laificialidad, el nombre del país,
+
+27
+00:03:54,780 --> 00:04:00,580
+el nombre de la computación, la KIR profunda, el nombre de la selección hanitado y accessibility
+
+28
+00:04:00,580 --> 00:04:08,680
+My ещё es una idea jamás eargentiva, las Mann toutes serán utilizadas como binding native
+
+29
+00:04:08,680 --> 00:04:14,760
+para obtener el 저arily raw data, así que aquí puedes ver que para la pareja de
+
+30
+00:04:14,760 --> 00:04:20,400
+La nación de competición en 2016 y el año de la década de 1994, el nombre de continente, en realidad, es Europa.
+
+31
+00:04:20,400 --> 00:04:26,760
+Y fue un juego de Champions League y fue en 2018-19.
+
+32
+00:04:26,760 --> 00:04:30,960
+Así que podemos usar esta información para obtener el data.
+
+33
+00:04:30,960 --> 00:04:34,800
+Así que usamos la nación de competición en 2016 y el año de la década de 1991.
+
+34
+00:04:34,800 --> 00:04:44,720
+Y aquí la nación fue en 2017-18 y podemos usarlos, como dije aquí, en mat.iq.sb.mag.com.
+
+35
+00:04:44,720 --> 00:04:48,720
+Usamos la idea de competición en 2016 y la idea es 1.
+
+36
+00:04:48,720 --> 00:04:51,720
+Y la data set en mat.iq.sb.mag.com.
+
+37
+00:04:51,720 --> 00:04:54,720
+Y lo cubrimos en el data set en mat.iq.sb.mag.com.
+
+38
+00:04:54,720 --> 00:04:56,720
+Y se ve como esto.
+
+39
+00:04:56,720 --> 00:04:57,720
+Es una idea de mat.iq.sb.mag.com.
+
+40
+00:04:57,720 --> 00:05:01,720
+Una data de 1845, un date de mat.iq.sb.mag.com.
+
+41
+00:05:01,720 --> 00:05:02,720
+Y así.
+
+42
+00:05:02,720 --> 00:05:14,720
+Así que fue un combate entre Real Madrid y Liverpool, que Real Madrid ganó 3-1 contra Liverpool.
+
+43
+00:05:14,720 --> 00:05:16,720
+Y fue un final combate.
+
+44
+00:05:16,720 --> 00:05:20,720
+Y puedes usar esta idea de mat.iq.sb.mag.com.
+
+45
+00:05:20,720 --> 00:05:22,720
+Así que lo haré.
+
+46
+00:05:22,720 --> 00:05:25,720
+Y esto es el data set de event.
+
+47
+00:05:25,720 --> 00:05:29,720
+El data set de open.iq.sb.mag.com.
+
+48
+00:05:29,720 --> 00:05:32,720
+Y tiene diferentes rows.
+
+49
+00:05:32,720 --> 00:05:37,720
+Diferentes colombias que puedes ver aquí.
+
+50
+00:05:37,720 --> 00:05:41,720
+Y estos son todos los nombres de colombias.
+
+51
+00:05:41,720 --> 00:05:46,720
+Y como hemos podido coger el data de event,
+
+52
+00:05:46,720 --> 00:05:52,720
+vamos a ver cómo usar el package de MPL soccer para dibujar el piso de fútbol.
+
+53
+00:05:52,720 --> 00:05:59,720
+Se desarrolló Anmol Durga-Pall y Andrew Rawlingson.
+
+54
+00:05:59,720 --> 00:06:03,720
+Y vamos a usar pip para instalar el package de MPL soccer.
+
+55
+00:06:03,720 --> 00:06:09,720
+Vamos a importar matplotlib y el piso de fútbol.iq.sb.mag.com.
+
+56
+00:06:09,720 --> 00:06:14,720
+Y desde MPL soccer.pitch importaremos el piso de fútbol.iq.sb.mag.com.
+
+57
+00:06:14,720 --> 00:06:20,720
+Y luego podemos dibujar los pichos.
+
+58
+00:06:20,720 --> 00:06:27,720
+Aquí puedes hacer el color de piso y otros parámetros para obtener una picha hermosa.
+
+59
+00:06:27,720 --> 00:06:35,720
+Aquí vemos que los x axis range de 0 a 120 y los y axis range de 80 a 0.
+
+60
+00:06:35,720 --> 00:06:39,720
+De default es un tipo de estrés bomba.
+
+61
+00:06:39,720 --> 00:06:45,720
+Pero si quieres, puedes cambiar a otros tipos.
+
+62
+00:06:45,720 --> 00:06:50,720
+También puedes cambiar el color y decir a black.
+
+63
+00:06:50,720 --> 00:06:55,720
+Si quieres, puedes tener otros tipos de estrés,
+
+64
+00:06:55,720 --> 00:07:01,720
+como opta, trackab, skillcorner, y scout y así.
+
+65
+00:07:01,720 --> 00:07:07,720
+Aquí he dicho que el piso es un tipo de ufa.
+
+66
+00:07:07,720 --> 00:07:16,720
+Aquí los x axis range de 0 a 100 y los y axis range de 0 a 70.
+
+67
+00:07:16,720 --> 00:07:23,720
+También puedes cambiar la orientación del fútbol vertical.
+
+68
+00:07:23,720 --> 00:07:26,720
+Puedes cambiar la orientación del fútbol a la mitad.
+
+69
+00:07:26,720 --> 00:07:30,720
+Ahora que hemos usado MPL soccer para dibujar pichos de fútbol,
+
+70
+00:07:30,720 --> 00:07:38,720
+podemos usar esta información para los eventos,
+
+71
+00:07:38,720 --> 00:07:50,720
+los eventos de data set y el package de MPL soccer para dibujar un pásico de fútbol.
+
+72
+00:07:50,720 --> 00:07:56,720
+Después de eso, podemos usar el package de pichos de fútbol para el pásico de analisis.
+
+73
+00:07:56,720 --> 00:08:01,720
+Para eso, no voy a hacer todo el detalle de la coda,
+
+74
+00:08:01,720 --> 00:08:08,720
+pero si quieres puedes leer el tutorial de YouTube,
+
+75
+00:08:08,720 --> 00:08:13,720
+o puedes leer mi blog, los links están en la descripción.
+
+76
+00:08:13,720 --> 00:08:19,720
+Y usando el pásico de pichos de fútbol,
+
+77
+00:08:19,720 --> 00:08:25,720
+usaremos este pásico para generar la neta de pásico.
+
+78
+00:08:25,720 --> 00:08:29,720
+Aquí hemos conectado las informaciones de jugadores,
+
+79
+00:08:29,720 --> 00:08:32,720
+como su ID, su nombre y sus posiciones,
+
+80
+00:08:32,720 --> 00:08:37,720
+como con el golsco y su id y su número de jersey.
+
+81
+00:08:37,720 --> 00:08:41,720
+Es importante conectar estos, como para Liverpool.
+
+82
+00:08:41,720 --> 00:08:44,720
+Para los eventos de data set,
+
+83
+00:08:44,720 --> 00:08:48,720
+vamos a extender los 11 colombios para nuestros pásicos de analisis.
+
+84
+00:08:48,720 --> 00:08:51,720
+Estos son los colombios que usaremos.
+
+85
+00:08:51,720 --> 00:08:55,720
+Tenemos el pásico de fútbol,
+
+86
+00:08:55,720 --> 00:08:59,720
+y el pásico de fútbol.
+
+87
+00:08:59,720 --> 00:09:03,720
+Esos son los 10 roles de los eventos de DataFrame.
+
+88
+00:09:03,720 --> 00:09:07,720
+Tenemos el pásico de fútbol,
+
+89
+00:09:07,720 --> 00:09:10,720
+y el pásico de fútbol.
+
+90
+00:09:10,720 --> 00:09:13,720
+Como estamos interesados en la generación de pásicos,
+
+91
+00:09:13,720 --> 00:09:17,720
+vamos a filtrar los datos por mantener only los roles que el tipo está listo.
+
+92
+00:09:17,720 --> 00:09:21,720
+Estos son los datos de renovación,
+
+93
+00:09:21,720 --> 00:09:25,720
+con el tipo que se va a pasar.
+
+94
+00:09:25,720 --> 00:09:29,720
+Y luego vamos a replicar los nombres de jugadores con los números de jersey.
+
+95
+00:09:29,720 --> 00:09:33,720
+Me han esquivado muchas de las cosas,
+
+96
+00:09:33,720 --> 00:09:37,720
+pero si quieres, puedes ir a mi blog o a mi blog
+
+97
+00:09:37,720 --> 00:09:41,720
+o a escuchar el tutorial de MagaJont.
+
+98
+00:09:41,720 --> 00:09:45,720
+Aquí, pasamos a Real New.
+
+99
+00:09:45,720 --> 00:09:48,720
+Este es el dataset ultima que vamos a crear
+
+100
+00:09:48,720 --> 00:09:52,720
+y con la utilización de generar visualización.
+
+101
+00:09:52,720 --> 00:09:55,720
+Esa es la visualización de la red.
+
+102
+00:09:55,720 --> 00:09:58,720
+El número de pasos de fútbol,
+
+103
+00:09:58,720 --> 00:10:01,720
+el número de pasos de recientes,
+
+104
+00:10:01,720 --> 00:10:04,720
+el número de pasos que se ha hecho por el paso,
+
+105
+00:10:04,720 --> 00:10:07,720
+el número de pásicos de fútbol,
+
+106
+00:10:07,720 --> 00:10:10,720
+el número de pásicos de fútbol,
+
+107
+00:10:10,720 --> 00:10:13,720
+y el número de pásicos de fútbol,
+
+108
+00:10:13,720 --> 00:10:19,720
+este es el total de pasos
+
+109
+00:10:19,720 --> 00:10:21,720
+que se ha hecho por el paso,
+
+110
+00:10:21,720 --> 00:10:24,720
+y el mismo para el paso de recientes.
+
+111
+00:10:24,720 --> 00:10:29,720
+El valor de pasos es actualmente usado por los nombres
+
+112
+00:10:29,720 --> 00:10:33,720
+de los nombres que se van a crear en la red.
+
+113
+00:10:33,720 --> 00:10:36,720
+Es el mismo para Liverpool.
+
+114
+00:10:36,720 --> 00:10:40,720
+Y como pueden ver, aquí he usado la función de pichas de arroz
+
+115
+00:10:40,720 --> 00:10:44,720
+para crear las edificaciones con arroz.
+
+116
+00:10:44,720 --> 00:10:47,720
+Las arroz indican la dirección del paso,
+
+117
+00:10:47,720 --> 00:10:51,720
+y la arroz indican los pasos de los nombres,
+
+118
+00:10:51,720 --> 00:10:55,720
+y los nombres indican las locaciones de los jugadores.
+
+119
+00:10:55,720 --> 00:10:58,720
+Esto es para Real Madrid contra Liverpool,
+
+120
+00:10:58,720 --> 00:11:01,720
+y esto es para Liverpool contra Real Madrid
+
+121
+00:11:01,720 --> 00:11:04,720
+en el mismo juego.
+
+122
+00:11:04,720 --> 00:11:07,720
+Ahora podemos usar el package de la red
+
+123
+00:11:07,720 --> 00:11:10,720
+para hacer un análisis de neto complejo.
+
+124
+00:11:10,720 --> 00:11:14,720
+Para esto, solo necesitamos el paso de recientes,
+
+125
+00:11:14,720 --> 00:11:17,720
+el paso de recientes, y el número de colombias de pasos.
+
+126
+00:11:17,720 --> 00:11:22,720
+Porque ahora no estamos interesados en las locaciones de los jugadores,
+
+127
+00:11:22,720 --> 00:11:27,720
+sino solo en el paso de recientes
+
+128
+00:11:27,720 --> 00:11:30,720
+y el peso que le da el número de pasos.
+
+129
+00:11:30,720 --> 00:11:34,720
+La función de la función de la red de grafas de nombres,
+
+130
+00:11:34,720 --> 00:11:37,720
+la grafa actualmente significa directa grafa,
+
+131
+00:11:37,720 --> 00:11:39,720
+y esto es un grafas directa.
+
+132
+00:11:39,720 --> 00:11:42,720
+Y aquí, este grafas es isomorbícola,
+
+133
+00:11:42,720 --> 00:11:45,720
+el grafas que mostré que se generó en el campo.
+
+134
+00:11:45,720 --> 00:11:49,720
+Pero aquí no estamos interesados en las locaciones de los nombres,
+
+135
+00:11:49,720 --> 00:11:51,720
+así que puede ser de cualquier manera,
+
+136
+00:11:51,720 --> 00:11:55,720
+pero las edificaciones indican el número de...
+
+137
+00:11:55,720 --> 00:11:58,720
+las arroz indican la dirección del paso,
+
+138
+00:11:58,720 --> 00:12:02,720
+y la peso de las edificaciones indican los nombres,
+
+139
+00:12:02,720 --> 00:12:06,720
+como el número de pasos total de uno jugador a otro.
+
+140
+00:12:06,720 --> 00:12:11,720
+Así que es lo que es, como el grafas anterior.
+
+141
+00:12:11,720 --> 00:12:14,720
+Lo mismo para Liverpool.
+
+142
+00:12:14,720 --> 00:12:19,720
+Entonces, podemos calcular los grados de los nombres,
+
+143
+00:12:19,720 --> 00:12:21,720
+junto con los grados de los in y los en,
+
+144
+00:12:21,720 --> 00:12:23,720
+los grados de los en significa que el número de pasos total
+
+145
+00:12:23,720 --> 00:12:26,720
+del jugador está involucrado en el juego.
+
+146
+00:12:26,720 --> 00:12:29,720
+Los grados de los in denotan el número de pasos que reciben,
+
+147
+00:12:29,720 --> 00:12:33,720
+y así podemos usar la función de la función de los nombres.
+
+148
+00:12:33,720 --> 00:12:38,720
+Y esto es el plato de histograma para cada y cada jugador de los nombres,
+
+149
+00:12:38,720 --> 00:12:41,720
+para la actualidad contra Liverpool.
+
+150
+00:12:41,720 --> 00:12:46,720
+Podemos hacer lo mismo para los jugadores de Liverpool.
+
+151
+00:12:46,720 --> 00:12:50,720
+Podemos hacer lo mismo para los grados de los in y los en,
+
+152
+00:12:50,720 --> 00:12:53,720
+por lo que utilizamos la función de los in y los en.
+
+153
+00:12:53,720 --> 00:12:57,720
+Entonces, podemos hacer lo mismo para los grados de los in y los en,
+
+154
+00:12:57,720 --> 00:13:00,720
+por lo que utilizamos la función de los en y los en.
+
+155
+00:13:00,720 --> 00:13:04,720
+Podemos también generar las metrallas de los nombres adhesivos
+
+156
+00:13:04,720 --> 00:13:07,720
+a Liverpool y Real Madrid.
+
+157
+00:13:07,720 --> 00:13:10,720
+Hacemos una métrica que se enfoca en la distancia geodética
+
+158
+00:13:10,720 --> 00:13:13,720
+entre dos nombres de jugadores en un grafas.
+
+159
+00:13:13,720 --> 00:13:17,720
+Para esto, solo, en vez de usar el peso,
+
+160
+00:13:17,720 --> 00:13:21,720
+el precio anterior, usamos el inverso del peso,
+
+161
+00:13:21,720 --> 00:13:24,720
+así que uno por ese particular peso.
+
+162
+00:13:24,720 --> 00:13:29,720
+Y luego generamos los grafas de la misma manera como hicimos antes.
+
+163
+00:13:29,720 --> 00:13:33,720
+Y lo mismo para Real Madrid y Liverpool.
+
+164
+00:13:33,720 --> 00:13:35,720
+Ahora, con los grafas modificados,
+
+165
+00:13:35,720 --> 00:13:37,720
+podemos calcular los todos los puntos de los cortes
+
+166
+00:13:37,720 --> 00:13:39,720
+entre los nombres para los dos nombres.
+
+167
+00:13:39,720 --> 00:13:42,720
+Y podemos usar la función de los nombres cortes
+
+168
+00:13:42,720 --> 00:13:46,720
+y donde el peso es el peso renovado, el peso nuevo.
+
+169
+00:13:46,720 --> 00:13:49,720
+Y supongo que queremos calcular los cortes
+
+170
+00:13:49,720 --> 00:13:52,720
+de los nombres de los nombres de los golpeers
+
+171
+00:13:52,720 --> 00:13:55,720
+durante ese juego en 2017-2018.
+
+172
+00:13:55,720 --> 00:13:58,720
+Y podemos justamente escribir a Real Madrid 1-7
+
+173
+00:13:58,720 --> 00:14:00,720
+y esto les dará el camino.
+
+174
+00:14:00,720 --> 00:14:05,720
+Entonces, si el golpeer fue pasado a Ramos
+
+175
+00:14:05,720 --> 00:14:09,720
+y de Ramos a la jugadora con el número 12,
+
+176
+00:14:09,720 --> 00:14:11,720
+creo que fue Marcelo
+
+177
+00:14:11,720 --> 00:14:13,720
+y de Marcelo a Cristiano Ronaldo,
+
+178
+00:14:13,720 --> 00:14:17,720
+entonces, sería el camino optimista.
+
+179
+00:14:17,720 --> 00:14:20,720
+Así que, sí, fue Marcelo.
+
+180
+00:14:20,720 --> 00:14:23,720
+Entonces, esto parece como un buen pós-met de canalista.
+
+181
+00:14:23,720 --> 00:14:26,720
+Esto parece ser una buena matriz,
+
+182
+00:14:26,720 --> 00:14:29,720
+pero podemos actualizarlo.
+
+183
+00:14:29,720 --> 00:14:31,720
+Entonces, he tenido esta idea
+
+184
+00:14:31,720 --> 00:14:34,720
+después de discutir con un persona llamado Sarad Babu.
+
+185
+00:14:34,720 --> 00:14:37,720
+Entonces, podemos hacer lo mismo para Liverpool.
+
+186
+00:14:37,720 --> 00:14:41,720
+Puedemos calcular la esenticidad de todos los nombres.
+
+187
+00:14:41,720 --> 00:14:48,720
+Uno para Real Madrid y el otro para Liverpool.
+
+188
+00:14:48,720 --> 00:14:51,720
+También podemos calcular la esenticidad de la pós-met.
+
+189
+00:14:51,720 --> 00:14:54,720
+Entonces, nos dice que por qué este jugador de pós-met
+
+190
+00:14:54,720 --> 00:14:57,720
+se posicionó en el pós-met.
+
+191
+00:14:57,720 --> 00:15:01,720
+Entonces, podemos también calcular
+
+192
+00:15:01,720 --> 00:15:03,720
+la esenticidad de los nombres de los golpes de la jugadora
+
+193
+00:15:03,720 --> 00:15:05,720
+de una particular equipo.
+
+194
+00:15:05,720 --> 00:15:07,720
+La esenticidad de los golpes de la jugadora
+
+195
+00:15:07,720 --> 00:15:09,720
+está en el rango 0-1,
+
+196
+00:15:09,720 --> 00:15:11,720
+donde la valor 0 denora el hecho
+
+197
+00:15:11,720 --> 00:15:13,720
+que ninguno de los nombres se conecta a cada uno
+
+198
+00:15:13,720 --> 00:15:15,720
+y la valor 1 denora un clic.
+
+199
+00:15:15,720 --> 00:15:17,720
+Todos los nombres se conectan a todos los otros nombres.
+
+200
+00:15:17,720 --> 00:15:21,720
+Entonces, aquí este valor es mayor
+
+201
+00:15:21,720 --> 00:15:23,720
+para Liverpool
+
+202
+00:15:23,720 --> 00:15:26,720
+comparado con el de Real Madrid.
+
+203
+00:15:26,720 --> 00:15:29,720
+También podemos calcular la esenticidad
+
+204
+00:15:29,720 --> 00:15:31,720
+de los jugadores.
+
+205
+00:15:31,720 --> 00:15:33,720
+Podemos usar la esenticidad de los nombres.
+
+206
+00:15:33,720 --> 00:15:35,720
+Y esto supuestamente
+
+207
+00:15:35,720 --> 00:15:37,720
+nos da la mejor
+
+208
+00:15:37,720 --> 00:15:40,720
+jugadora de la particular equipo en ese juego.
+
+209
+00:15:40,720 --> 00:15:42,720
+Entonces, para Real Madrid
+
+210
+00:15:42,720 --> 00:15:45,720
+fue el jugador 14
+
+211
+00:15:45,720 --> 00:15:47,720
+y fue el de Casemiro.
+
+212
+00:15:47,720 --> 00:15:49,720
+Para Liverpool,
+
+213
+00:15:49,720 --> 00:15:51,720
+fue el de Mellner
+
+214
+00:15:51,720 --> 00:15:53,720
+con el jugador 7.
+
+215
+00:15:55,720 --> 00:15:56,720
+Luego,
+
+216
+00:15:56,720 --> 00:15:58,720
+nos enfocamos
+
+217
+00:15:58,720 --> 00:16:00,720
+en visualizar los desplazos de los jugadores
+
+218
+00:16:00,720 --> 00:16:02,720
+de la esenticidad de los jugadores.
+
+219
+00:16:02,720 --> 00:16:04,200
+Entonces, nos vamos a
+
+220
+00:16:04,200 --> 00:16:06,720
+a hacer un reto de los conceptos de la geometría computacional.
+
+221
+00:16:06,720 --> 00:16:08,720
+Y si quieres estudiar más
+
+222
+00:16:08,720 --> 00:16:10,720
+sobre los desplazos de los jugadores
+
+223
+00:16:10,720 --> 00:16:12,720
+de la artículo Wikipedia
+
+224
+00:16:12,720 --> 00:16:14,720
+o podemos justamente hacer los slides,
+
+225
+00:16:14,720 --> 00:16:16,720
+usaremos el package de sci-fi
+
+226
+00:16:16,720 --> 00:16:18,720
+para calcular
+
+227
+00:16:18,720 --> 00:16:20,720
+los convexos de los jugadores.
+
+228
+00:16:20,720 --> 00:16:22,720
+Entonces, lo que hacemos
+
+229
+00:16:22,720 --> 00:16:24,720
+es que usaremos estos
+
+230
+00:16:24,720 --> 00:16:26,720
+colombios de la data set de eventos.
+
+231
+00:16:26,720 --> 00:16:28,720
+Entonces,
+
+232
+00:16:28,720 --> 00:16:30,720
+team, locación,
+
+233
+00:16:30,720 --> 00:16:32,720
+tipo y jugador.
+
+234
+00:16:32,720 --> 00:16:34,720
+Y nos vamos a
+
+235
+00:16:34,720 --> 00:16:36,720
+aquí, solo a hacer el tipo
+
+236
+00:16:36,720 --> 00:16:14,720
+para que sea el de
+
+237
+00:16:33,500 --> 00:16:14,720
+el de
+
+238
+00:16:14,720 --> 00:16:44,480
+palace all.
+
+239
+00:16:44,720 --> 00:16:50,720
+y separaremos este dataset, uno para Real Madrid y uno para Liverpool.
+
+240
+00:16:55,720 --> 00:16:58,720
+Así que uno para Real Madrid y uno para Liverpool.
+
+241
+00:16:58,720 --> 00:17:02,720
+Y estos son los nombres de los jugadores.
+
+242
+00:17:02,720 --> 00:17:06,720
+Y luego, solo vamos a enfocar en un particular jugador
+
+243
+00:17:06,720 --> 00:17:09,720
+y encontrar su convicción,
+
+244
+00:17:09,720 --> 00:17:13,720
+como de las locaciones donde se han hecho un pas o tomaron un corte.
+
+245
+00:17:13,720 --> 00:17:16,720
+Aquí vamos a enfocar en Tony Cruz.
+
+246
+00:17:16,720 --> 00:17:20,720
+Aquí vemos que el tipo es el pas y el jugador ha sido lejos a Tony Cruz.
+
+247
+00:17:20,720 --> 00:17:25,720
+Y también es la posición x y la posición y.
+
+248
+00:17:25,720 --> 00:17:30,720
+Como denotando las locaciones de donde el pas fue tomado o el corte fue tomado.
+
+249
+00:17:32,720 --> 00:17:37,720
+También podemos, antes de computar y visualizar la convicción,
+
+250
+00:17:37,720 --> 00:17:40,720
+es una buena práctica para discutir los jugadores de los dataset.
+
+251
+00:17:40,720 --> 00:17:45,720
+En realidad, MacKay Jones usa un score z,
+
+252
+00:17:45,720 --> 00:17:48,720
+pero también podemos usar la rama intercuartal.
+
+253
+00:17:48,720 --> 00:17:51,720
+Así que he intentado esto.
+
+254
+00:17:51,720 --> 00:17:53,720
+Aquí, desde los jugadores de los vizcaros,
+
+255
+00:17:53,720 --> 00:17:56,720
+podemos entender los jugadores de los jugadores
+
+256
+00:17:56,720 --> 00:17:58,720
+y podemos discutirlo
+
+257
+00:17:58,720 --> 00:18:02,720
+por calcular las cuarteles,
+
+258
+00:18:02,720 --> 00:18:04,720
+la rama intercuartal
+
+259
+00:18:04,720 --> 00:18:07,720
+y el máximo de los valores.
+
+260
+00:18:07,720 --> 00:18:10,720
+Así que es lo que hacemos aquí.
+
+261
+00:18:10,720 --> 00:18:16,720
+Calculamos el par y el bajo y luego nos desplazamos los valores que están en las casas.
+
+262
+00:18:16,720 --> 00:18:18,720
+Y luego,
+
+263
+00:18:18,720 --> 00:18:21,720
+cogemos todos estos puntos
+
+264
+00:18:21,720 --> 00:18:24,720
+y de los dos colombianos,
+
+265
+00:18:24,720 --> 00:18:25,720
+como un método 2D,
+
+266
+00:18:25,720 --> 00:18:27,720
+y luego que se usará para traer la convicción
+
+267
+00:18:27,720 --> 00:18:30,720
+usando la función de la convicción de la cipaí.special.
+
+268
+00:18:30,720 --> 00:18:32,720
+Eso es lo que hacemos aquí.
+
+269
+00:18:32,720 --> 00:18:37,720
+Les mostré la convicción para Tony Cruz.
+
+270
+00:18:37,720 --> 00:18:39,720
+Esto es lo que parece.
+
+271
+00:18:39,720 --> 00:18:42,720
+Y podemos traer las convicciones
+
+272
+00:18:42,720 --> 00:18:45,720
+para otros jugadores de los jugadores de los jugadores.
+
+273
+00:18:45,720 --> 00:18:48,720
+Estos son para Rafael Varón,
+
+274
+00:18:48,720 --> 00:18:51,720
+Luca Modric, Danny Carval y así.
+
+275
+00:18:51,720 --> 00:18:53,720
+Entonces,
+
+276
+00:18:53,720 --> 00:18:56,000
+podemos actualmente
+
+277
+00:18:56,000 --> 00:19:03,000
+desplazar los datos de traje usando el module mplsocker.staresbomb.
+
+278
+00:19:03,000 --> 00:19:05,000
+Y,
+
+279
+00:19:05,000 --> 00:19:09,000
+de nuevo, usaremos el código de los documentos de los datos de traje
+
+280
+00:19:09,000 --> 00:19:11,000
+para hacer eso,
+
+281
+00:19:11,000 --> 00:19:13,000
+para desplazar los datos de traje.
+
+282
+00:19:13,000 --> 00:19:15,000
+Entonces, el data de traje es
+
+283
+00:19:15,000 --> 00:19:18,000
+como el data de GPS
+
+284
+00:19:18,000 --> 00:19:20,000
+dado en una
+
+285
+00:19:20,000 --> 00:19:22,000
+particular tiempo
+
+286
+00:19:22,000 --> 00:19:24,000
+de la combina.
+
+287
+00:19:24,000 --> 00:19:26,000
+Entonces,
+
+288
+00:19:26,000 --> 00:19:28,000
+esto es lo que
+
+289
+00:19:28,000 --> 00:19:30,000
+los datos de traje
+
+290
+00:19:30,000 --> 00:19:32,000
+parecen
+
+291
+00:19:32,000 --> 00:19:34,000
+los de traje y el de traje.
+
+292
+00:19:34,000 --> 00:19:36,000
+Entonces,
+
+293
+00:19:36,000 --> 00:19:38,000
+si nos veamos más allá
+
+294
+00:19:38,000 --> 00:19:40,000
+en el data de traje,
+
+295
+00:19:40,000 --> 00:19:42,000
+entendemos que la ID de color representa la ID unica
+
+296
+00:19:42,000 --> 00:19:44,000
+para una frontera de frontera.
+
+297
+00:19:44,000 --> 00:19:46,000
+Entonces, de una frontera particular,
+
+298
+00:19:46,000 --> 00:19:48,000
+una frontera particular
+
+299
+00:19:48,000 --> 00:19:50,000
+te da la idea de
+
+300
+00:19:50,000 --> 00:19:52,000
+los lugares de los jugadores en esa particular tiempo
+
+301
+00:19:52,000 --> 00:19:54,000
+de la frontera.
+
+302
+00:19:54,000 --> 00:19:56,000
+Entonces,
+
+303
+00:19:56,000 --> 00:19:58,000
+en el column de nombre de jugadores,
+
+304
+00:19:58,000 --> 00:20:00,000
+tenemos que añadir un column de team
+
+305
+00:20:00,000 --> 00:20:02,000
+para el data de traje,
+
+306
+00:20:02,000 --> 00:20:04,000
+darnos información sobre
+
+307
+00:20:04,000 --> 00:20:06,000
+cuál team el tío de traje
+
+308
+00:20:06,000 --> 00:20:08,000
+es lo que podemos hacer.
+
+309
+00:20:08,000 --> 00:20:10,000
+Y luego,
+
+310
+00:20:10,000 --> 00:20:12,000
+solo vamos a extrepar los columnos relevantes,
+
+311
+00:20:12,000 --> 00:20:14,000
+ID, nombre de jugadores,
+
+312
+00:20:14,000 --> 00:20:16,000
+X, Y y team.
+
+313
+00:20:16,000 --> 00:20:18,000
+Y esto es
+
+314
+00:20:18,000 --> 00:20:20,000
+la ID particular
+
+315
+00:20:20,000 --> 00:20:22,000
+de la frontera.
+
+316
+00:20:24,000 --> 00:20:26,000
+Entonces, vamos a usar
+
+317
+00:20:26,000 --> 00:20:28,000
+una forma particular
+
+318
+00:20:28,000 --> 00:20:30,000
+para conectar los números de jugadores
+
+319
+00:20:30,000 --> 00:20:32,000
+y ponerlo en el
+
+320
+00:20:32,000 --> 00:20:34,000
+data set, como es
+
+321
+00:20:34,000 --> 00:20:36,000
+lo que está presente aquí.
+
+322
+00:20:36,000 --> 00:20:38,000
+Entonces, podemos ver
+
+323
+00:20:38,000 --> 00:20:40,000
+que Isco, el número de jugadores
+
+324
+00:20:40,000 --> 00:20:42,000
+fue 22 y él
+
+325
+00:20:42,000 --> 00:20:44,000
+se llama a Spain.
+
+326
+00:20:44,000 --> 00:20:46,000
+Y su jugador es esto.
+
+327
+00:20:46,000 --> 00:20:48,000
+Entonces, podemos usar esto para
+
+328
+00:20:48,000 --> 00:20:50,000
+extreparlos como
+
+329
+00:20:50,000 --> 00:20:52,000
+un dictionary.
+
+330
+00:20:52,000 --> 00:20:54,000
+Es igual para Liverpool.
+
+331
+00:20:54,000 --> 00:20:56,000
+Y aquí,
+
+332
+00:20:56,000 --> 00:20:58,000
+hemos conectado todos los fríes
+
+333
+00:20:58,000 --> 00:21:00,000
+de ID.
+
+334
+00:21:00,000 --> 00:21:02,000
+Entonces, ahora vamos a filtrar el data set
+
+335
+00:21:02,000 --> 00:21:04,000
+por usar este corte ID.
+
+336
+00:21:04,000 --> 00:21:06,000
+Seleccione un valor particular
+
+337
+00:21:06,000 --> 00:21:08,000
+de la column de ID.
+
+338
+00:21:08,000 --> 00:21:10,000
+Es lo que hacemos aquí.
+
+339
+00:21:10,000 --> 00:21:12,000
+Y así, vemos que aquí todos los
+
+340
+00:21:12,000 --> 00:21:14,000
+column de ID, los valores son igual
+
+341
+00:21:14,000 --> 00:21:16,000
+para cada y cada ropa.
+
+342
+00:21:16,000 --> 00:21:18,000
+Así que,
+
+343
+00:21:18,000 --> 00:21:20,000
+vamos a computar los triangulos de delino.
+
+344
+00:21:20,000 --> 00:21:22,000
+Entonces, si quieres
+
+345
+00:21:22,000 --> 00:21:24,000
+aprender más sobre los triangulos de delino,
+
+346
+00:21:24,000 --> 00:21:26,000
+hazlo en la página Wikipedia.
+
+347
+00:21:26,000 --> 00:21:28,000
+Es un recurso muy bueno.
+
+348
+00:21:28,000 --> 00:21:30,000
+También tenemos que importar delino
+
+349
+00:21:30,000 --> 00:21:32,000
+de la ID de la especial.
+
+350
+00:21:32,000 --> 00:21:34,000
+Para entender
+
+351
+00:21:34,000 --> 00:21:36,000
+cómo usarlo.
+
+352
+00:21:36,000 --> 00:21:38,000
+Y luego,
+
+353
+00:21:38,000 --> 00:21:40,000
+vamos a separar el filtrado de data
+
+354
+00:21:40,000 --> 00:21:42,000
+para los fríes.
+
+355
+00:21:42,000 --> 00:21:44,000
+Uno para Real Madrid
+
+356
+00:21:44,000 --> 00:21:46,000
+y luego
+
+357
+00:21:46,000 --> 00:21:48,000
+vamos a construir el triangulo de delino.
+
+358
+00:21:48,000 --> 00:21:50,000
+Igual
+
+359
+00:21:50,000 --> 00:21:52,000
+como lo hicimos para los convocatorios,
+
+360
+00:21:52,000 --> 00:21:54,000
+vamos a convertir los lugares de los fríes
+
+361
+00:21:54,000 --> 00:21:56,000
+en un método 2D.
+
+362
+00:21:56,000 --> 00:21:58,000
+Entonces, podemos computar los triangulos.
+
+363
+00:22:00,000 --> 00:22:02,000
+Déjame
+
+364
+00:22:02,000 --> 00:22:04,000
+ir directamente.
+
+365
+00:22:04,000 --> 00:22:06,000
+Así que, usando la función de tríplot
+
+366
+00:22:06,000 --> 00:22:08,000
+y este es lo que parece.
+
+367
+00:22:10,000 --> 00:22:12,000
+Entonces, los lugares de red notas
+
+368
+00:22:12,000 --> 00:22:14,000
+son los jugadores de Liverpool
+
+369
+00:22:14,000 --> 00:22:16,000
+y los lugares de los playas de Real Madrid.
+
+370
+00:22:16,000 --> 00:22:18,000
+Y los lugares de la black line indican
+
+371
+00:22:18,000 --> 00:22:20,000
+los links directos entre los jugadores
+
+372
+00:22:20,000 --> 00:22:22,000
+de un equipo particular
+
+373
+00:22:22,000 --> 00:22:24,000
+formando los triangulos de delino
+
+374
+00:22:24,000 --> 00:22:26,000
+también llamados pas triangulos.
+
+375
+00:22:26,000 --> 00:22:28,000
+Entonces, en el libro Socar Matrix
+
+376
+00:22:28,000 --> 00:22:30,000
+de Dr. Sumter, él menciona
+
+377
+00:22:30,000 --> 00:22:32,000
+que estas líneas tienen dos indicaciones
+
+378
+00:22:32,000 --> 00:22:34,000
+útiles.
+
+379
+00:22:34,000 --> 00:22:36,000
+Primero, aportan la disponibilidad
+
+380
+00:22:36,000 --> 00:22:38,000
+de los jugadores de una particular equipo
+
+381
+00:22:38,000 --> 00:22:40,000
+y segundo, también indican las líneas de no-man
+
+382
+00:22:40,000 --> 00:22:42,000
+de la equipo principal.
+
+383
+00:22:42,000 --> 00:22:44,000
+Es decir, si un jugador de oposición
+
+384
+00:22:44,000 --> 00:22:46,000
+está en ese lugar,
+
+385
+00:22:46,000 --> 00:22:48,000
+entonces, están atendidos a la desadventura.
+
+386
+00:22:48,000 --> 00:22:50,000
+Entonces, eso es realmente útil
+
+387
+00:22:50,000 --> 00:22:52,000
+para analizar.
+
+388
+00:22:52,000 --> 00:22:54,000
+Y luego, podemos también
+
+389
+00:22:54,000 --> 00:22:56,000
+calcular los diagrams de Voronoi
+
+390
+00:22:56,000 --> 00:22:58,000
+que es
+
+391
+00:22:58,000 --> 00:23:00,000
+actualmente el duelo de la triangulación delino.
+
+392
+00:23:04,000 --> 00:23:06,000
+Entonces, para computar los diagrams de Voronoi,
+
+393
+00:23:06,000 --> 00:23:08,000
+de nuevo, usamos
+
+394
+00:23:08,000 --> 00:23:10,000
+primero la clas
+
+395
+00:23:10,000 --> 00:23:12,000
+de Voronoi
+
+396
+00:23:12,000 --> 00:23:14,000
+y la clas
+
+397
+00:23:14,000 --> 00:23:16,000
+de Voronoi para
+
+398
+00:23:16,000 --> 00:23:18,000
+calcular los diagrams en una pichada.
+
+399
+00:23:18,000 --> 00:23:20,000
+Entonces, eso es lo que
+
+400
+00:23:20,000 --> 00:23:22,000
+hacemos aquí.
+
+401
+00:23:22,000 --> 00:23:24,000
+Entonces, esto es lo que el diagrama de Voronoi
+
+402
+00:23:24,000 --> 00:23:26,000
+parece.
+
+403
+00:23:26,000 --> 00:23:28,000
+Los diagrams de Voronoi nos dieron
+
+404
+00:23:28,000 --> 00:23:30,000
+las líneas de cada jugador en ese pichado
+
+405
+00:23:30,000 --> 00:23:32,000
+en un momento particular, por romper el pichado
+
+406
+00:23:32,000 --> 00:23:34,000
+en diferentes regiones, como podemos ver aquí.
+
+407
+00:23:34,000 --> 00:23:36,000
+Y, adivinando a los jugadores indicando
+
+408
+00:23:36,000 --> 00:23:38,000
+el coverage de cada jugador en ese momento particular.
+
+409
+00:23:38,000 --> 00:23:40,000
+Entonces, esto se completará
+
+410
+00:23:40,000 --> 00:23:42,000
+mi paro.
+
+411
+00:23:42,000 --> 00:23:44,000
+Gracias.
+
+412
+00:23:44,000 --> 00:23:46,000
+Aparo a estas referencias.
+
+413
+00:23:46,000 --> 00:23:48,000
+El libro Socar Metrics
+
+414
+00:23:48,000 --> 00:23:50,000
+de Dr. David Sumter, el frío de
+
+415
+00:23:50,000 --> 00:23:52,000
+la TECN Youtube Channel
+
+416
+00:23:52,000 --> 00:23:54,000
+de Dr. Sumter y obviamente
+
+417
+00:23:54,000 --> 00:23:56,000
+el canal Youtube para la data soca
+
+418
+00:23:56,000 --> 00:23:58,000
+de MacAjones. El libro
+
+419
+00:23:58,000 --> 00:24:00,000
+de las redes complexas de GrafTheorien
+
+420
+00:24:00,000 --> 00:24:02,000
+de Dr. Martin Vanstein
+
+421
+00:24:02,000 --> 00:24:04,000
+y, al menos, el blog FCPicon
+
+422
+00:24:04,000 --> 00:24:06,000
+es el último partido.
+
+423
+00:24:06,000 --> 00:24:08,000
+Muchas gracias y mucho exertour
+
+424
+00:24:08,000 --> 00:24:10,000
+y 1968.
+
+425
+00:24:10,000 --> 00:24:12,000
+Gracias.
+
+426
+00:24:14,000 --> 00:24:16,000
+Gracias
+
+427
+00:24:16,000 --> 00:24:18,000
+muy mucho
+
+428
+00:24:18,000 --> 00:24:19,760
+a Sintanela, tu пойдan a sin
+
+429
+00:24:20,000 --> 00:24:22,000
+Sul lost.
+
+430
+00:24:21,780 --> 00:24:23,780
+Hola. Gracias.
+
+431
+00:24:24,000 --> 00:24:26,000
+Perfecto.
+
+432
+00:24:26,000 --> 00:24:27,140
+Gracias
+
+433
+00:24:27,140 --> 00:24:29,140
+por dos presentaciones muy intericas.
+
+434
+00:24:29,300 --> 00:24:32,140
+Un montón de data, muitos cumplement 보여드�es doenود.
+
+435
+00:24:32,140 --> 00:24:38,340
+a los interesantes pasajes, incluso source code.
+
+436
+00:24:38,340 --> 00:24:42,420
+We love your presentation.
+
+437
+00:24:42,420 --> 00:24:46,340
+OK, we are going to start the questions.
+
+438
+00:24:46,340 --> 00:24:49,940
+By now, there is no question in the channel,
+
+439
+00:24:49,940 --> 00:24:51,820
+but I have some questions.
+
+440
+00:24:51,820 --> 00:24:55,020
+I'm going to make the question first in Spanish
+
+441
+00:24:55,020 --> 00:24:58,340
+and then in English.
+
+442
+00:24:58,340 --> 00:25:00,820
+¿Me gustaría saber si esto es parte de tu tesis?
+
+443
+00:25:00,820 --> 00:25:04,700
+Y si es, tienes alguna referencia ya publicada que
+
+444
+00:25:04,700 --> 00:25:08,220
+podamos leer, porque es un tema muy interesante.
+
+445
+00:25:08,220 --> 00:25:11,380
+Y la segunda pregunta que voy a hacerte es si algún equipo
+
+446
+00:25:11,380 --> 00:25:14,260
+de fútbol ya ha contactado contigo para que le hagas
+
+447
+00:25:14,260 --> 00:25:16,420
+algún análisis.
+
+448
+00:25:16,420 --> 00:25:19,980
+OK, now the same question in English.
+
+449
+00:25:19,980 --> 00:25:24,220
+¿Do you have any reference already published of your work?
+
+450
+00:25:24,220 --> 00:25:28,060
+Is that for your thesis or something like that?
+
+451
+00:25:28,060 --> 00:25:29,140
+No, no, no.
+
+452
+00:25:29,140 --> 00:25:30,220
+No, no, no.
+
+453
+00:25:30,220 --> 00:25:32,120
+No me encanta mucho este libro lo queini nos he
+
+454
+00:25:32,120 --> 00:25:35,140
+tirado leading this book by doctor David Sumter
+
+455
+00:25:35,140 --> 00:25:37,980
+y also the YouTube channel by Mac conventions.
+
+456
+00:25:37,980 --> 00:25:40,620
+Y hay otro blog llamado FC Python.
+
+457
+00:25:40,620 --> 00:25:42,660
+So and these three are the main resources
+
+458
+00:25:42,660 --> 00:25:45,660
+that I found very interesting.
+
+459
+00:25:45,660 --> 00:25:47,340
+So I learned from most of the things I learned
+
+460
+00:25:47,340 --> 00:25:49,460
+from this and then I wrote a blog, actually.
+
+461
+00:25:49,460 --> 00:25:53,460
+So there is a blog that I'm currently maintaining so
+
+462
+00:25:53,460 --> 00:25:55,340
+yeah, that's it.
+
+463
+00:25:55,340 --> 00:25:57,860
+Oh, that's great, that's great.
+
+464
+00:25:57,860 --> 00:26:09,860
+Indranil nos cuenta que es un proyecto como un hobby y que tiene el blog que nos ha comentado, lo mantiene también él y después de leer esta referencia y esta idea que lo mantiene, lo mantiene, podéis visitarlo.
+
+465
+00:26:27,860 --> 00:26:42,860
+Dice que todavía no pero que espera que en un futuro algún equipo contacte con él. Yo creo que la verdad que es una idea muy buena, muy completa y fijaos la información que hay en las redes.
+
+466
+00:26:57,860 --> 00:27:09,860
+En realidad, esta data set, la data set de la opción que se ha provocado por Statsbomb es muy rica, así que puedes hacer un montón de estudios con Statsbomb data set.
+
+467
+00:27:09,860 --> 00:27:17,860
+Hay otros providentes también pero no estoy tan afuera de ellos, pero esto, yo principalmente trabajo con Statsbomb Open Data.
+
+468
+00:27:17,860 --> 00:27:26,860
+Mucha de las analisis pueden ser realizadas con esta data, creo que es muy rica.
+
+469
+00:27:26,860 --> 00:27:42,860
+Indranil nos cuenta que el dataset que he usado de Statsbomb es muy completo y que se puede utilizar para aplicarle mucho algoritmo de analisis y demás.
+
+470
+00:27:42,860 --> 00:27:53,860
+Vamos a ver si... Clara, es preguntando en el Discord que es este proyecto que hiciste en el pasado o estás trabajando en esto?
+
+471
+00:27:53,860 --> 00:28:04,860
+Así que, como yo empezó a hacer esto durante el marzo de este año, como dije, es una blog que estoy manteniendo, voy a poner el link al blog.
+
+472
+00:28:04,860 --> 00:28:14,860
+Pero como yo obtengo más ideas, estaré trabajando en los blogs. Es el plan, en realidad.
+
+473
+00:28:14,860 --> 00:28:27,860
+Indranil nos cuenta que empezó en marzo, pero sigue teniendo muchas ideas y la está publicando en su blog, así que nos invita a que le visitemos.
+
+474
+00:28:27,860 --> 00:28:33,860
+Bueno, ok, so thank you very much Indranil, a very interesting presentation.
+
+475
+00:28:33,860 --> 00:28:44,860
+Yo actualmente aprendí mucho sobre los pasajos, los conceptos de las mathematicales que no conocí, entonces me tomé muchos notas.
+
+476
+00:28:44,860 --> 00:28:53,860
+Bueno, una pregunta, porque estamos en tiempo, pero Miguel Flasquet pregunta en Youtube, ¿estatsbomb data es real?
+
+477
+00:28:53,860 --> 00:28:59,860
+¿Puedes combinar o puedes usar solo data histórica?
+
+478
+00:28:59,860 --> 00:29:12,860
+Real, yo creo que, por el data real, ¿tienen gps? Si están hablando de gps, creo que también se proporcionan gps.
+
+479
+00:29:12,860 --> 00:29:24,860
+Yo creo que el data real también se proporciona, pero si quieres más data, creo que tienes que obtener el data licenciado, así que tienes que pagar por eso.
+
+480
+00:29:24,860 --> 00:29:29,860
+Ok, ok.
+
+481
+00:29:29,860 --> 00:29:36,860
+Ok, nos dice que hay parte de datos, pero que si queréis datos en tiempo real y más completos hay que pagar.
+
+482
+00:29:36,860 --> 00:29:42,860
+Ok, so I think we are just on time for the next presentation.
+
+483
+00:29:42,860 --> 00:29:48,860
+Thank you very much Indranil.
+
+484
+00:29:48,860 --> 00:29:55,860
+La gente que está haciendo preguntas, podéis seguir preguntándole en el canal de Discord y él puede contestar las preguntas después.
+
+485
+00:29:55,860 --> 00:30:04,860
+You will receive some other questions in the Discord channel, so you can answer after this presentation.
+
+486
+00:30:04,860 --> 00:30:07,860
+Ok, so thank you very much Indranil.
+
+487
+00:30:07,860 --> 00:30:10,860
+Thank you, thank you, thank you so much Pablo.
+
+488
+00:30:10,860 --> 00:30:19,860
+Bye.
+

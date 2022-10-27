@@ -1,0 +1,1308 @@
+1
+00:00:00,000 --> 00:00:20,040
+Bueno, creo que ya sí que estamos en tiempo. Así que, sin
+
+2
+00:00:20,040 --> 00:00:27,520
+madilación, pues os presento a Daniel Sánchez Jopiz de Blutab, que pretende ser
+
+3
+00:00:27,520 --> 00:00:33,040
+compañía IBM actualmente y va a presentar su trabajo que se titula
+
+4
+00:00:33,040 --> 00:00:37,680
+MAPVALE WACTAIL en manos que se me esbole.
+
+5
+00:00:37,680 --> 00:00:41,280
+Le paso directamente el micrófono.
+
+6
+00:00:45,680 --> 00:00:52,960
+Buenas tardes. Bueno, vamos a empezar la presentación. Un pequeño índice, porque
+
+7
+00:00:52,960 --> 00:00:58,640
+luego esto lo subiré, pero bueno, para que tengáis un poco el contexto de los
+
+8
+00:00:58,640 --> 00:01:03,600
+puntos que voy a analizar. Bien, la primera pregunta antes de empezar, que es un
+
+9
+00:01:03,600 --> 00:01:08,720
+CMS. ¿Cuántos de aquí a nivel básico o a nivel avanzado? ¿Sabe lo que es un
+
+10
+00:01:08,720 --> 00:01:18,200
+CMS? ¿Y cuántos lo han usado? ¿Y cuántos los han programado? Me gusta, hay público.
+
+11
+00:01:18,200 --> 00:01:24,960
+Bueno, entonces, ¿qué es un CMS? Entonces, la pregunta que se da y la
+
+12
+00:01:24,960 --> 00:01:29,520
+respuesta que es básica es un sistema de gestión de contenido. Básicamente,
+
+13
+00:01:29,520 --> 00:01:33,520
+luego eso se puede ampliar y podemos hacer verdaderas barbaridades con un CMS.
+
+14
+00:01:33,520 --> 00:01:37,560
+Tenemos el ejemplo del más conocido que tenemos aquí, que es Warpress.
+
+15
+00:01:37,560 --> 00:01:40,240
+Voy a coger el punterito.
+
+16
+00:01:41,080 --> 00:01:46,440
+Temos Warpress, que es el que creo que todos conocemos, todos hemos usado, al
+
+17
+00:01:46,440 --> 00:01:51,640
+menos hemos bichado con él. Sin olvidar, pues, tales como Ljombla, Kirby,
+
+18
+00:01:51,640 --> 00:01:58,440
+Magento y nuestro pajarito, que es el que voy a hablar hoy, de Woktail.
+
+19
+00:01:58,760 --> 00:02:05,920
+Bien, un poco el análisis de la historia de Woktail. Viene porque realmente, hasta
+
+20
+00:02:05,920 --> 00:02:12,800
+2000, empezó en 2014 y hasta 2019 fue un CMS que pasó... podemos decir
+
+21
+00:02:12,800 --> 00:02:15,960
+entre comidas desapercibido, en la final tenemos a día de hoy un extracte
+
+22
+00:02:15,960 --> 00:02:19,200
+tecnológico y una oferta tecnológica muy amplia para hacer diferentes tipos de
+
+23
+00:02:19,200 --> 00:02:27,000
+desarrollo. Pero a finales de 2019, principios de 2020, Google le metió
+
+24
+00:02:27,000 --> 00:02:32,880
+el Injecto de parte de dinero, parte de proyecto y eso se ha visto muy
+
+25
+00:02:32,880 --> 00:02:38,160
+respaldado porque a partir de 2020, los programas de Google del Summercamps, en
+
+26
+00:02:38,160 --> 00:02:43,520
+este caso empezó en el 2021, se ha extendido 2022, han provocado que el
+
+27
+00:02:43,520 --> 00:02:48,120
+sistema en sí crezca a niveles agigantados. O sea, una subida de
+
+28
+00:02:48,120 --> 00:02:54,240
+versión podía pasar antes de la entrada de Google, podía pasar siete, ocho meses
+
+29
+00:02:54,240 --> 00:02:59,760
+y ahora tienen una periodicidad de dos meses. Es más, cuando empezó a preparar
+
+30
+00:02:59,760 --> 00:03:05,480
+esto, estaba la 3.9, 31 de agosto, lo miro y dije, voy a bichar un poco, 4.0.
+
+31
+00:03:05,480 --> 00:03:11,240
+Cambio completamente el arquitecto del editor de Interface, que es esto del
+
+32
+00:03:11,240 --> 00:03:16,240
+programa de mejoras de WIUX del administrador, que eso fue el proyecto
+
+33
+00:03:16,240 --> 00:03:25,480
+del Google Cam de 2021, que consiguió el mayor respaldo en ese evento.
+
+34
+00:03:26,080 --> 00:03:30,960
+Bueno, presentación rápida de los proyectos más destacables a día de hoy o de
+
+35
+00:03:30,960 --> 00:03:37,640
+empresas que son las más destacables que lo utilizan, la NASA, BMW, Mozilla, la
+
+36
+00:03:37,640 --> 00:03:43,120
+la agencia de salud británica y el mismo Google. A nivel de Google podemos
+
+37
+00:03:43,120 --> 00:03:48,200
+destacar que ha estado en sus blogs, ahora mismo están respaldados por WIUX
+
+38
+00:03:48,200 --> 00:03:54,840
+directamente. Entonces, todo esto nos hace ver que realmente hay mucho peso detrás
+
+39
+00:03:54,840 --> 00:04:02,200
+de este CMS, pero ¿qué es este CMS? No, al final no deja de ser algo que podemos
+
+40
+00:04:02,200 --> 00:04:06,880
+de forma básica, sin tener ningún conocimiento de él, de crearnos un
+
+41
+00:04:06,880 --> 00:04:12,120
+proyectito. He cogido una capturita de la documentación que te dicen, oye, mira,
+
+42
+00:04:12,120 --> 00:04:15,560
+tú tienes estos pasos, te monta la estructura del proyecto que tenés a la
+
+43
+00:04:15,560 --> 00:04:20,480
+derecha y vas tirando. Y efectivamente, en el momento que creamos un site,
+
+44
+00:04:20,480 --> 00:04:25,400
+directamente ya te gestiona todo el sistema. Te crea la carpeta de
+
+45
+00:04:25,400 --> 00:04:28,880
+migración, este genera los estáticos básicos, te genera todo, o sea, para que
+
+46
+00:04:28,880 --> 00:04:34,560
+tú ya tengas un de cero para poder crear pues una página. O sea, esto podríamos
+
+47
+00:04:34,560 --> 00:04:37,400
+incluirlo como que podría ser una fase de aprendizaje para gente que no conozca
+
+48
+00:04:37,400 --> 00:04:41,760
+muy bien cómo implementar un CMS. O sea, directamente ya te genera una estructura
+
+49
+00:04:41,760 --> 00:04:49,920
+fija que luego podemos ampliar de manera bastante fuerte.
+
+50
+00:04:50,320 --> 00:04:54,840
+Bueno, previamente contar que te genera también los requirements, te genera la
+
+51
+00:04:54,840 --> 00:04:59,040
+imagen de Docker, o sea, ya te lo da todo, o sea, nivel de instalación, nivel
+
+52
+00:04:59,040 --> 00:05:05,440
+de infraestructura básica. Y bueno, ¿cuáles son las bases de WorkTale?
+
+53
+00:05:05,440 --> 00:05:11,720
+Lo primero que hay que mencionar que, si alguno sabe cuál es la base, sobre qué
+
+54
+00:05:11,720 --> 00:05:17,040
+está basado, ¿al qué lo sabe? Efectivamente. Entonces, si nos
+
+55
+00:05:17,040 --> 00:05:19,840
+pusemos a hablar de Django, nos tenemos aquí hasta la semana que viene y no
+
+56
+00:05:19,840 --> 00:05:24,800
+tenemos vacaciones aquí, yo creo ninguno. Vale, entonces, ¿cuál es la base principal
+
+57
+00:05:24,800 --> 00:05:30,120
+que tiene WorkTale o el uso que tiene WorkTale principal de Django? Es, básicamente,
+
+58
+00:05:30,120 --> 00:05:39,400
+los, digamos, el tratamiento de la base de datos, los middleware, las señales y lo
+
+59
+00:05:39,400 --> 00:05:44,400
+iremos viendo más adelante, otro de los, digamos, fuertes que tiene Django con
+
+60
+00:05:44,400 --> 00:05:51,480
+WorkTale. En esencia, la base de datos va a ser un sistema de modelo tabla, en el
+
+61
+00:05:51,480 --> 00:05:55,120
+cual vamos a tener una tabla inicial, que es la tabla page, la cual ya de por
+
+62
+00:05:55,120 --> 00:06:01,520
+per se nos genera una base, una base SEO, una base de tratamiento y que luego
+
+63
+00:06:01,520 --> 00:06:04,840
+nosotros podemos, vamos, tenemos que heredar, no es que podamos, es que tenemos
+
+64
+00:06:04,840 --> 00:06:08,880
+que heredar de page y generar nuestras propias páginas. Es muy sencillo en ese
+
+65
+00:06:08,880 --> 00:06:15,040
+aspecto. Como os muestro ahí, el tema del middleware, al final, pues todo el
+
+66
+00:06:15,040 --> 00:06:19,400
+sistema de middleware base de Django, incluso la ampliación podemos, o sea, podemos
+
+67
+00:06:19,400 --> 00:06:25,280
+hacer bastante, bastante virgaría con ese sistema. Además, os invito mucho a que,
+
+68
+00:06:25,280 --> 00:06:30,920
+si no lo conocéis bien Django, middleware y tal y queréis tratar ya sea
+
+69
+00:06:30,920 --> 00:06:35,240
+con Django o con WorkTale, los middleware es uno de los puntos fuertes que tiene y
+
+70
+00:06:35,240 --> 00:06:38,880
+una de las bases que tienen que, digamos, estudiar, porque se pueden hacer
+
+71
+00:06:38,880 --> 00:06:45,000
+verdaderas cabriolas con ellos. Bueno, el tema de señales y hooks, vale, voy a
+
+72
+00:06:45,000 --> 00:06:49,320
+pasar a explicarlo porque es una de las potencias que tiene este sistema,
+
+73
+00:06:49,320 --> 00:06:53,480
+las señales al final, está basado en las signales también de Django, que al final
+
+74
+00:06:53,480 --> 00:06:58,280
+lo que te permite dentro de WorkTale es los flujos de trabajo que se tengan a
+
+75
+00:06:58,280 --> 00:07:02,040
+la hora del tratamiento de páginas, o sea, la publicación, la publicación, el
+
+76
+00:07:02,040 --> 00:07:07,040
+borrado, los movimientos, las copias, te permite ampliarlo, no dejarlo en una base
+
+77
+00:07:07,040 --> 00:07:13,160
+sino poder hacer diferentes tipos de autenticación, comprobaciones, vale, que
+
+78
+00:07:13,160 --> 00:07:18,000
+eso ahora veo, bueno, es un caso, un ejemplo muy, un caso de uso muy básico.
+
+79
+00:07:18,000 --> 00:07:22,760
+Y por otro lado, los hooks, los hooks son una serie, bueno, es básicamente WorkTale
+
+80
+00:07:22,760 --> 00:07:27,680
+tiene un fichero que es WorkTale Hooks, el cual en todo el código va a
+
+81
+00:07:27,680 --> 00:07:33,080
+registrar un decorador, que es un hook, que nos permite tanto modificar la
+
+82
+00:07:33,080 --> 00:07:39,200
+interface, nos permite alterar también parte de los workflows y no solo eso,
+
+83
+00:07:39,200 --> 00:07:44,360
+también hay una funcionalidad de propias de WorkTale para generar flujo de
+
+84
+00:07:44,360 --> 00:07:47,980
+trabajo para los creadores de contenido, no para los programadores, que también nos
+
+85
+00:07:47,980 --> 00:07:53,960
+permite editarlos, nos permite ampliarlos y darle más uso, vale, un ejemplo, un caso
+
+86
+00:07:53,960 --> 00:07:58,200
+de uso base que tenemos aquí, ¿se ve bien?
+
+87
+00:07:58,200 --> 00:08:04,840
+Sí, vale, nosotros tenemos un supervisor, vale, esto hablamos ya a nivel, digamos,
+
+88
+00:08:04,840 --> 00:08:08,760
+negocio, hablamos de nivel usuario, no estamos hablando de un programa, estamos
+
+89
+00:08:08,760 --> 00:08:14,480
+hablando de una persona que está usando nuestro sistema, vale, el supervisor, X,
+
+90
+00:08:14,480 --> 00:08:21,040
+publica una página, vale, entonces se lanzan dos procesos, bueno, se lanza un
+
+91
+00:08:21,040 --> 00:08:26,320
+proceso el cual tiene dos pasos que hemos editado, vale, el primero de ellos va a
+
+92
+00:08:26,320 --> 00:08:32,120
+ser el registro, dos hooks, los hooks se van a lanzar, va a mirar todo lo que es
+
+93
+00:08:32,120 --> 00:08:35,640
+están todos los hooks presentes y hay alguno que nos interesa, vale, nosotros
+
+94
+00:08:35,640 --> 00:08:40,040
+tenemos aquí, AfterCreatePage, básicamente, después de que creemos una
+
+95
+00:08:40,040 --> 00:08:43,800
+página va a pasar por ese hook, en el cual vamos a chequear qué tipo de página es,
+
+96
+00:08:43,800 --> 00:08:49,040
+con esa lógica nosotros vamos a asignar una serie de permisos a una gente o
+
+97
+00:08:49,040 --> 00:08:53,440
+a X agentes dependiendo del tipo de página que sea y si nos interesa, también
+
+98
+00:08:53,440 --> 00:08:58,440
+podemos ampliarlo si es el supervisor A, el supervisor B o el supervisor C y a
+
+99
+00:08:58,440 --> 00:09:05,360
+mayores con el, con la señal una vez que nosotros recogemos la página y el hook
+
+100
+00:09:05,360 --> 00:09:09,600
+porque va a ir todo asociado podemos enviar pues hace una notificación por
+
+101
+00:09:09,600 --> 00:09:14,520
+Slack, una notificación por email o lo que se nos ocurra para notificar a la
+
+102
+00:09:14,520 --> 00:09:19,480
+persona, en plan, te hemos enviado esta página, ya puedes crear tu contenido,
+
+103
+00:09:19,480 --> 00:09:23,560
+puedes publicarla, está atento o hablamos también de revisiones, o sea esto se
+
+104
+00:09:23,560 --> 00:09:27,960
+puede ampliar de publicación, generar una revisión, esté generando una
+
+105
+00:09:27,960 --> 00:09:32,280
+automatización de la publicación, revísalo todo, o sea nos permite tener
+
+106
+00:09:32,280 --> 00:09:35,600
+bastante flexibilidad
+
+107
+00:09:35,600 --> 00:09:40,000
+y bueno hablando de permís, de dar permísos y quitar permísos, vamos a hablar de
+
+108
+00:09:40,000 --> 00:09:46,120
+los permisos porque digamos una de las partes de la columna vertebral de
+
+109
+00:09:46,120 --> 00:09:50,720
+walktail, los permisos, al final un CMS que hemos contenido y si lo estamos
+
+110
+00:09:50,720 --> 00:09:53,800
+creando para nosotros, para nosotros mismos, pues no va de igual tema, los permisos, te creas un
+
+111
+00:09:53,800 --> 00:09:58,880
+súper usuario y tirapalante, pero cuando entramos en organizaciones en las
+
+112
+00:09:58,880 --> 00:10:03,280
+cuales hablamos de grupos de trabajo bastante amplios, vamos a tener que
+
+113
+00:10:03,280 --> 00:10:07,680
+tener un control exhaustivo de todo lo que se haga, al final de forma nativa
+
+114
+00:10:07,680 --> 00:10:12,960
+walktail nos va a dar un sistema de permisos, digamos una especie de arquetipo
+
+115
+00:10:12,960 --> 00:10:18,040
+vamos a llamarlo grupal, porque lo asocia todo a grupos de
+
+116
+00:10:18,040 --> 00:10:22,440
+usuarios, lo cual nos permite que no tener que estar controlando si el usuario
+
+117
+00:10:22,440 --> 00:10:27,240
+uno tiene x permiso, sino si el usuario uno está en el grupo que le corresponde
+
+118
+00:10:27,240 --> 00:10:32,440
+estar, toda la gestión se hace a través de grupos, lo que nos permite pues como
+
+119
+00:10:32,440 --> 00:10:37,280
+comentado, tener áreas de contenido aisladas, si yo estoy trabajando y mi
+
+120
+00:10:37,280 --> 00:10:42,480
+área de contenido es marketing por ejemplo y yo tengo que tener acceso al
+
+121
+00:10:42,480 --> 00:10:47,360
+marketing orientado a México, a mí no me tienes que dar
+
+122
+00:10:47,360 --> 00:10:51,040
+permisos, ni tengo que tocar nada, a lo mejor incluso ni visualizar lo que
+
+123
+00:10:51,040 --> 00:10:55,600
+están haciendo por ejemplo en Canadá, entonces eso te facilita mucho, también la
+
+124
+00:10:55,600 --> 00:11:01,440
+carga de trabajo, los controles y demás. Un punto y esto es importante saberlo
+
+125
+00:11:01,440 --> 00:11:07,280
+siempre es que cuando nosotros creamos como usuarios, creamos una página
+
+126
+00:11:07,280 --> 00:11:12,280
+nueva, automáticamente paso a ser el propietario de esa página, ¿qué quiere
+
+127
+00:11:12,280 --> 00:11:16,760
+decir? que si tu supervisor, como en el caso de esto, te dice mira, créate una
+
+128
+00:11:16,760 --> 00:11:20,520
+página y veas de metiendo contenido, hay que tener en cuenta que a nivel de
+
+129
+00:11:20,520 --> 00:11:25,200
+permisos, a nivel programático, de base el usuario que crea la página es el
+
+130
+00:11:25,200 --> 00:11:28,840
+propietario, veis el que tiene que asignar los permisos y el que tiene que jugar con
+
+131
+00:11:28,840 --> 00:11:32,800
+ellos. ¿Por qué llegamos a esto? porque el sistema de eliminación de walktail
+
+132
+00:11:32,800 --> 00:11:39,480
+tiene una característica, es para poder hacer un borrado, tú tienes que tener
+
+133
+00:11:39,480 --> 00:11:46,920
+permisos tanto de publicación como de edición, no puedes, tú porque publiques,
+
+134
+00:11:46,920 --> 00:11:52,120
+no tienes porque borrar y porque edites, no tienes porque borrar, entonces es un
+
+135
+00:11:52,120 --> 00:11:57,920
+sistema bastante seguro, luego esto obviamente es ampliable, porque ahora
+
+136
+00:11:57,920 --> 00:12:01,520
+entramos a parte de la ampliación, ¿no? el plan, a nivel programático nosotros
+
+137
+00:12:01,520 --> 00:12:07,360
+podemos, a través de un hook, que es registrar un permiso, no lo creamos, lo
+
+138
+00:12:07,360 --> 00:12:13,120
+registran en Django, la base de Django, la base de walktail y eso luego lo podemos
+
+139
+00:12:13,120 --> 00:12:17,960
+tener asociado a cierto distinto tipo de páginas en plan, oye mira, cógeme esta
+
+140
+00:12:17,960 --> 00:12:23,320
+lógica, cógeme este permiso y este permiso es necesario para X.
+
+141
+00:12:23,320 --> 00:12:30,880
+Y bueno, alguien me puede decir que, bueno se ve bien la imagen, bueno alguien sabe lo
+
+142
+00:12:30,880 --> 00:12:33,760
+que es el concepto de streamfile?
+
+143
+00:12:35,520 --> 00:12:42,520
+Tú sí, el streamfile, vale, es bueno, vamos a pasar anteriormente, nosotros
+
+144
+00:12:42,520 --> 00:12:48,880
+tenemos, vamos a generar contenido, vale, y visualizamos un formulario todos, un
+
+145
+00:12:48,880 --> 00:12:52,880
+formulario base en el cual tú tienes una serie de campos fijos, la pregunta es
+
+146
+00:12:52,880 --> 00:12:54,880
+qué flexibilidad tiene eso?
+
+147
+00:12:56,560 --> 00:13:03,200
+Ninguna, ¿no? O sea si tú tienes un modelo fijo en el cual tienes X cajitas o X
+
+148
+00:13:03,200 --> 00:13:07,880
+campos a rellenar, tú no vas a tener ninguna flexibilidad para ello.
+
+149
+00:13:07,880 --> 00:13:13,120
+¿Qué ocurre? Que eso nos crea un problema, el cual si tú tienes una
+
+150
+00:13:13,120 --> 00:13:17,600
+organización grande o tienes un contenido muy divergente, lo que vas a
+
+151
+00:13:17,600 --> 00:13:22,800
+crear va a ser muchísimos modelos, lo que conlleva muchísimas tablas y conlleva
+
+152
+00:13:22,800 --> 00:13:29,880
+una complicación y mucha complejidad. Entonces en casos por ejemplo de modelos
+
+153
+00:13:29,880 --> 00:13:34,840
+que estén orientados a, voy a tener, poner un número, 30 tipos de página
+
+154
+00:13:34,840 --> 00:13:41,200
+diferentes, vale, vamos a crear que los 30 modelos de página no van a ser tan
+
+155
+00:13:41,200 --> 00:13:46,960
+diferenciales para generar 30 modelos programáticamente en base de datos.
+
+156
+00:13:46,960 --> 00:13:53,480
+Entonces, Walktale tiene lo que ven a hacer los streamfield que digamos que es un, vamos a llamarlo
+
+157
+00:13:53,480 --> 00:13:57,920
+entre comillas, una generación de formulario entre comillas, llamemos formulario para que
+
+158
+00:13:57,920 --> 00:14:02,240
+tengamos una imagen mental, sino es la interface que va a tener el creador de
+
+159
+00:14:02,240 --> 00:14:09,560
+contenido más luego, la correspondiente representación, vale, estructural, va a
+
+160
+00:14:09,560 --> 00:14:13,760
+ser dinámica, lo cual por ejemplo,
+
+161
+00:14:13,760 --> 00:14:18,720
+me voy a poner para acá que si no no veo bien,
+
+162
+00:14:18,720 --> 00:14:23,320
+vale, nosotros vamos a tener ahora mismo el streamfield, no deja de ser una
+
+163
+00:14:23,320 --> 00:14:26,520
+colección a nivel de campo programático, vale, que nosotros le hemos metido que
+
+164
+00:14:26,520 --> 00:14:35,200
+tenga una caja de texto, un rich text, no perdón un router, un router HTML y un rich text.
+
+165
+00:14:35,200 --> 00:14:40,320
+Entonces nosotros aquí a nivel visual, o sea, y coloque en esta captura, coloque
+
+166
+00:14:40,320 --> 00:14:47,040
+uno otro y otro para que se viese un poco y bueno, nosotros podemos ver aquí,
+
+167
+00:14:48,400 --> 00:14:52,920
+pues el botón del más me lo comido, bueno, nosotros tenemos aquí la capacidad de
+
+168
+00:14:52,920 --> 00:14:59,240
+añadir de forma dinámica un número n de campos que sean del tipo que nosotros
+
+169
+00:14:59,240 --> 00:15:03,200
+vamos a almacenar en el streamfield, vale, podemos tener tres tipos como es este caso,
+
+170
+00:15:03,200 --> 00:15:10,600
+podemos tener 50, vale, y esto viene dado que la estructura dinámica se puede
+
+171
+00:15:10,600 --> 00:15:15,360
+ser incluso más personalizable con los struc blocks y los stream blocks que
+
+172
+00:15:15,360 --> 00:15:19,960
+viene dentro de lo que viene a ser la parte de blocks de walktail, que es lo que
+
+173
+00:15:19,960 --> 00:15:25,120
+da vida a este concepto, vale, pues podemos llegar a tener una complejidad
+
+174
+00:15:25,120 --> 00:15:33,880
+muy alta y un dinamismo y una, digamos, una oferta muy amplia para hacer un modelo
+
+175
+00:15:33,880 --> 00:15:37,680
+solo y ese modelo tiene el streamfield y yo, mira, dinámicamente voy a generar
+
+176
+00:15:37,680 --> 00:15:44,320
+diferentes páginas según yo quiera, vale, base de datos, es un, pues,
+
+177
+00:15:44,320 --> 00:15:48,600
+puesto ahí el puntito de la base de datos, es importante tenerlo en cuenta porque
+
+178
+00:15:48,600 --> 00:15:56,240
+esto es un campo y este campo se almacena en un JSON, vale, lo cual
+
+179
+00:15:56,240 --> 00:16:00,600
+conceptualmente me lleva a la parte izquierda, no todo bonito, no todo lo
+
+180
+00:16:00,600 --> 00:16:05,760
+dinámico es precioso, pero tiene ciertos problemas, vale, problemas que no tienen
+
+181
+00:16:05,760 --> 00:16:11,360
+por qué suceder, pero pueden suceder, por ejemplo, los problemas de edición, no de
+
+182
+00:16:11,360 --> 00:16:16,120
+edición a nivel usuario, sino que a nosotros nos toca pringar y tener que
+
+183
+00:16:16,120 --> 00:16:19,800
+editar directamente, pues, con un gestor de base de datos o en base de datos
+
+184
+00:16:19,800 --> 00:16:23,360
+directamente o como tengamos que, vamos, que tengamos que tocar la información
+
+185
+00:16:23,360 --> 00:16:29,240
+directamente y hay que meterse con el JSON, hay que deserrealizar, hay que, entonces,
+
+186
+00:16:29,240 --> 00:16:32,640
+que no es cambiar un campo al uso, sino que hay que mirar bien la estructura que
+
+187
+00:16:32,640 --> 00:16:37,520
+te genera el, lo que viene a ser el streamfield y por qué he puesto la
+
+188
+00:16:37,520 --> 00:16:41,920
+renderización, es porque luego voy a hablar un poquito de lo que viene a ser
+
+189
+00:16:41,920 --> 00:16:47,320
+una característica de WebTel, que es el multilenguitz y es que la renderización
+
+190
+00:16:47,320 --> 00:16:53,560
+te la hace de todos los idiomas en los cuales tú hayas insertado la página,
+
+191
+00:16:53,560 --> 00:16:57,720
+porque luego, a la hora de hacer la traducción, al ser dinámico lo tiene
+
+192
+00:16:57,720 --> 00:17:03,040
+cargado de una manera persilla, entonces, si nosotros ponemos un caso en el cual
+
+193
+00:17:03,040 --> 00:17:07,520
+tenemos una página con un streamfield con 50 campos diferentes y lo tenemos en
+
+194
+00:17:07,520 --> 00:17:13,840
+tres idiomas, la renderización va a ser costosa, entonces, es algo yo que, yo sé
+
+195
+00:17:13,840 --> 00:17:18,400
+que WebTel está viendo sus isus y viendo sus, sus trabajos en lo que está
+
+196
+00:17:18,400 --> 00:17:25,280
+trabajando, pero es algo que, es un arma de doble filo, vale, los streamfields.
+
+197
+00:17:26,920 --> 00:17:31,560
+Y bueno, viendo un poquito, tema de multilenguitz, vale, es un sistema que
+
+198
+00:17:31,560 --> 00:17:36,640
+multisite, multilenguitz, todo esto lo podéis ver, vale, y aquí tengo que hacer
+
+199
+00:17:36,640 --> 00:17:41,560
+un pequeño inciso, que es, yo estuve trabajando con WebTel de forma
+
+200
+00:17:41,560 --> 00:17:49,120
+bastante profunda, cuando estaba la versión 202829, vale, en ese momento no
+
+201
+00:17:49,120 --> 00:17:53,200
+existía el multilenguitz nativo, existían los paquetes que tenemos aquí un poco a
+
+202
+00:17:53,200 --> 00:17:58,440
+la derecha, en las alternativas de terceros y la verdad es que era una
+
+203
+00:17:58,440 --> 00:18:03,000
+característica que luego implementaron pues en la 213 y fue como de, bueno, migrar
+
+204
+00:18:03,000 --> 00:18:09,200
+todo el contenido que teníamos hecho con el sistema de terceros, migrarlo al
+
+205
+00:18:09,200 --> 00:18:14,400
+nativo de WebTel era tan abajo, o sea, lo dejamos como estaba, en plan vamos a dejarlo
+
+206
+00:18:14,400 --> 00:18:20,760
+tal cual y ya futuro se verá, pero luego a partir de la 213, 214, creo que
+
+207
+00:18:20,760 --> 00:18:25,560
+23214, no recuerdo exactamente cuál, implementaron de moderna nativa el
+
+208
+00:18:25,560 --> 00:18:29,880
+multilenguitz, que por de base lo que te crea es un árbol por cada idioma de
+
+209
+00:18:29,880 --> 00:18:33,240
+contenido, hay que diferenciar entre entre dos conceptos el idioma de de los
+
+210
+00:18:33,240 --> 00:18:37,240
+frontales y el idioma de los contenidos, el idioma de contenidos es el que marca
+
+211
+00:18:37,240 --> 00:18:41,960
+los árboles, el que marca la diferenciación de contenido en sí, o valga
+
+212
+00:18:41,960 --> 00:18:47,400
+la redundancia, todo esto se gestiona de la manera de que el frontal le hace una
+
+213
+00:18:47,400 --> 00:18:53,000
+llamada al mí del web local que es de Django, Persec que trabaja con INDI 18n,
+
+214
+00:18:53,000 --> 00:18:57,800
+te busca la translation key correspondiente a la búsqueda que está realizando a la
+
+215
+00:18:57,800 --> 00:19:04,440
+hora de cambiar de un idioma a otro, en base de datos las páginas están
+
+216
+00:19:04,440 --> 00:19:10,680
+asociadas a través de esa translation key y recoge los datos y vuelta para arriba,
+
+217
+00:19:10,680 --> 00:19:15,960
+sabes un poco el sistema visualmente hablando de cómo se lleva el
+
+218
+00:19:15,960 --> 00:19:24,320
+multilenguitz, vale como comenté, tenemos alternativas de terceros, que son
+
+219
+00:19:24,320 --> 00:19:29,080
+el Wachtail localize, el Wachtail trans y el mod of translation, yo utilicé el mod
+
+220
+00:19:29,080 --> 00:19:34,360
+of translation, el localize es digamos a día de hoy el más potente por el
+
+221
+00:19:34,360 --> 00:19:39,200
+siguiente concepto, vamos al flujo de traducción y esto, usuario estándar que
+
+222
+00:19:39,200 --> 00:19:44,600
+le mandan trabajar a crear contenido pues pongamos inglés español y francés,
+
+223
+00:19:44,600 --> 00:19:50,120
+que era una copia de la página, estructura de la página, la copia, esa copia
+
+224
+00:19:50,120 --> 00:19:54,600
+genera un borrador, uno genera una página publicada y le toca editar
+
+225
+00:19:54,600 --> 00:20:01,480
+manualmente el contenido, el localize, hay que probarlo, hay que darle un buen uso,
+
+226
+00:20:01,480 --> 00:20:07,160
+ya persegunte hace algunas traducciones de ciertos campos automáticamente,
+
+227
+00:20:07,160 --> 00:20:10,840
+imagino que con todo lo si no probó todos los idiomas, no nada por probar todos
+
+228
+00:20:10,840 --> 00:20:17,920
+los idiomas, pero es bastante potente y bueno, veníamos a hablar no, en plan
+
+229
+00:20:17,920 --> 00:20:23,240
+tenemos Wachtail, hemos visto que trabaja con Django, todos sabemos que
+
+230
+00:20:23,240 --> 00:20:30,800
+Django podemos tener un mod o sea una aplicación independiente que tenga su
+
+231
+00:20:30,800 --> 00:20:35,160
+backend y su frontend con sus plantillas y su tratamiento, pero por otro lado
+
+232
+00:20:35,160 --> 00:20:39,800
+también podemos desacoplar digamos todo el backend de Wachtail y dejarlo
+
+233
+00:20:39,800 --> 00:20:44,960
+pues eso, generando pues view Wachtail perfectamente, vale y lo podemos
+
+234
+00:20:44,960 --> 00:20:50,360
+apificar, vale en este caso hay que planter dos cuestiones,
+
+235
+00:20:50,360 --> 00:20:57,840
+apificar de un principio o apificar después, recomendación de un
+
+236
+00:20:57,840 --> 00:21:02,720
+principio, porque te cambia bastante el concepto a la hora de generar los modelos,
+
+237
+00:21:02,720 --> 00:21:08,800
+del tratamiento de cierto tipo de permiso, cierto tipo de traducciones y el
+
+238
+00:21:08,800 --> 00:21:11,480
+tratamiento por ejemplo de la configuración, porque hay tres digamos
+
+239
+00:21:11,480 --> 00:21:18,560
+tres al 11 ms, tenemos tres bloques principales que es el contenido, el
+
+240
+00:21:18,560 --> 00:21:24,680
+media, de imágenes, vídeos, etcétera y el tema de documentos, entonces dentro de
+
+241
+00:21:24,680 --> 00:21:28,640
+cuando tú apificas tienes que separar esos tres y ya tienes que hacer unos
+
+242
+00:21:28,640 --> 00:21:32,320
+cambios, tienes que hacer una refactorización que si de un principio
+
+243
+00:21:32,320 --> 00:21:38,160
+apificas pues te libras de ello, bueno si me pongo a hablar de
+
+244
+00:21:38,160 --> 00:21:43,600
+apificación igualmente nos tengamos bastante más tiempo porque base Django
+
+245
+00:21:43,600 --> 00:21:48,800
+y quien conozca Django Raze Framework, desde un principio puede hacer cosas muy
+
+246
+00:21:48,800 --> 00:21:54,920
+muy potentes con las APIs de Wachtail y bueno esto es un pequeño ejemplo no
+
+247
+00:21:54,920 --> 00:22:00,200
+sé si se verá bien, no me quedo, no sé el tamaño que iba a tener la
+
+248
+00:22:00,200 --> 00:22:05,960
+proyección, vale de si una vez que nosotros tenemos un sistema que está
+
+249
+00:22:05,960 --> 00:22:11,720
+totalmente acoplado con subfronte y tal y lo queremos desacoplar, si no queremos
+
+250
+00:22:11,720 --> 00:22:15,240
+meternos en la apificación a través de Django, también hay alternativas como
+
+251
+00:22:15,240 --> 00:22:19,840
+por ejemplo utilizarlo con GraphQL, con GraphQL bueno, todos son unos puntos a
+
+252
+00:22:19,840 --> 00:22:24,000
+seguir muy básicos, nos instalamos y hacemos Wachtail, obviamente
+
+253
+00:22:24,000 --> 00:22:28,680
+desarrollamos los modelos, desarrollamos nuestro trabajo y a partir de aquí ya
+
+254
+00:22:28,680 --> 00:22:35,160
+sería entrar a trabajar con Raze en Django, y es configurarlo, que al
+
+255
+00:22:35,160 --> 00:22:39,880
+final todo eso está muy bien documentado en la documentación de posibilidad de GraphN
+
+256
+00:22:39,880 --> 00:22:48,600
+e incluir lo que viene a ser los esquemas, las queries y demás conceptos de
+
+257
+00:22:48,600 --> 00:22:53,800
+GraphQL a la altura de Wachtail, del proyecto de Wachtail, que pros y que
+
+258
+00:22:53,800 --> 00:22:57,960
+contras puede tener eso, contra que hay que currarse la parte de GraphQL, vale,
+
+259
+00:22:57,960 --> 00:23:03,600
+pero es mucho más sencillo, currarse una parte de GraphQL, la cual también nos
+
+260
+00:23:03,600 --> 00:23:11,520
+permite, nos permite, aparte de las queries normales, podemos hacer queries
+
+261
+00:23:11,520 --> 00:23:17,160
+discriminativas, podemos hacer una serie de trabajos muy bien ampliados, vale, esa
+
+262
+00:23:17,160 --> 00:23:21,400
+la parte, esa sería la parte mala en adelante, tienes que currar y tal, no sé qué, la parte
+
+263
+00:23:21,400 --> 00:23:25,320
+buena, que no tienes que hacer una refactorización de ningún tipo, a menos
+
+264
+00:23:25,320 --> 00:23:29,400
+que lo requiera por algún tipo de búsqueda específica, algún tema de
+
+265
+00:23:29,400 --> 00:23:35,720
+SEO específico, que tal, realmente es como más sencillo, una vez que ya tienes
+
+266
+00:23:35,720 --> 00:23:43,760
+creado un sistema bastante grande. Y bueno, he ido a lo fácil, digamos, a lo fácil,
+
+267
+00:23:43,760 --> 00:23:48,480
+es que la documentación de Wachtail está muy bien, a día de hoy es muy
+
+268
+00:23:48,480 --> 00:23:54,040
+amplia, por otro lado, ahí dejo un enlace que es una comunidad de Github que
+
+269
+00:23:54,040 --> 00:23:58,880
+desde 2000, desde que se creó Wachtail, están almacenando todo tipo de charlas,
+
+270
+00:23:58,880 --> 00:24:03,640
+tutoriales, cursos, lo cual está muy bien y más servido bastante para ver
+
+271
+00:24:03,640 --> 00:24:08,320
+cierto tipo de avances que ha tenido la herramienta y bueno, la documentación de
+
+272
+00:24:08,320 --> 00:24:14,680
+Grafen para el último caso que se ha mostrado. Y gracias.
+
+273
+00:24:22,520 --> 00:24:26,200
+Tenemos tiempo para preguntas, ¿si que queréis hacer alguna
+
+274
+00:24:26,200 --> 00:24:29,960
+comentario, alguna pregunta concreta?
+
+275
+00:24:41,280 --> 00:24:47,080
+Hola, buenas. Muy buenas. Muchas gracias por la presentación, me han encantado.
+
+276
+00:24:47,080 --> 00:24:51,880
+Tengo una duda sobre el stream fill que me ha encantado el concepto, me recuerdo un
+
+277
+00:24:51,880 --> 00:24:58,040
+poco con Díaz, muchas comillas a Gutemberg, un poco que es un buen
+
+278
+00:24:58,040 --> 00:25:01,240
+editor que te permite juntar muchos compuán en el término, que al final
+
+279
+00:25:01,240 --> 00:25:09,080
+acabo con la idea que hay por ahí. Te permite crear plantillas para que
+
+280
+00:25:09,080 --> 00:25:15,120
+luego los editores, ya vemos, le más torpes, trabajen sobre una plantilla ya
+
+281
+00:25:15,120 --> 00:25:18,440
+precargada en vez de tener que ir creando los múltiples elementos para que los
+
+282
+00:25:18,440 --> 00:25:21,120
+tutos lo apacen. Sí, porque luego al final, como lo
+
+283
+00:25:21,120 --> 00:25:24,720
+acerca más de un micro. O esto ya más cerca, no sé.
+
+284
+00:25:24,720 --> 00:25:29,040
+Sí, te permite la verdad, porque yo he mostrado un ejemplo muy básico, he
+
+285
+00:25:29,040 --> 00:25:32,120
+hablado muy generalmente, los stream fill además son para mí otra
+
+286
+00:25:32,120 --> 00:25:37,320
+documentación con paciencia, pero sí que puedes generar plantillas, los
+
+287
+00:25:37,320 --> 00:25:41,280
+puedes además, puedes jugar con ellos con los stream blocks y los
+
+288
+00:25:41,280 --> 00:25:46,120
+struct blocks para generar directamente bloques de contenido que tú puedes crear
+
+289
+00:25:46,120 --> 00:25:50,200
+una plantilla base que esté descolapsado, descolapsada,
+
+290
+00:25:50,200 --> 00:25:55,240
+incluso luego generar más contenido, puedes limitar el número de...
+
+291
+00:25:55,240 --> 00:25:58,560
+Porque puesto que es limitado, por defecto.
+
+292
+00:25:58,560 --> 00:26:02,040
+Realmente tu stream fill lo puedes controlar para decir, oye, pues de este
+
+293
+00:26:02,040 --> 00:26:06,720
+bloque en esta posición me puedes meter uno nada más o dos, porque a lo mejor
+
+294
+00:26:06,720 --> 00:26:10,280
+tiene ejemplo de información, pero sí que puedes crear una serie estructurada
+
+295
+00:26:10,280 --> 00:26:15,880
+visualmente para que luego pueda ser ampliable por parte del creador.
+
+296
+00:26:15,880 --> 00:26:20,640
+Genial. Gracias.
+
+297
+00:26:20,640 --> 00:26:23,120
+¿Has alguna pregunta más?
+
+298
+00:26:23,120 --> 00:26:25,120
+Ahora se lo pasaba.
+
+299
+00:26:31,120 --> 00:26:35,160
+Mi pregunta era relativa, si tiene algún sistema de plantillas de diseño,
+
+300
+00:26:35,160 --> 00:26:40,480
+tipo pull trap, design de Google o así, por defecto.
+
+301
+00:26:40,480 --> 00:26:43,240
+Por defecto no, por defecto lo tienes que acoplar, o sea tú tienes que acoplarlo,
+
+302
+00:26:43,240 --> 00:26:47,960
+tienes el sistema de llango de plantillas que es similar a la Jinja, muy similar,
+
+303
+00:26:47,960 --> 00:26:54,600
+y lo único lo tienes que acoplar, pero es una integración complicada,
+
+304
+00:26:54,600 --> 00:26:57,000
+está muy bien llevada.
+
+305
+00:26:57,000 --> 00:27:01,560
+O sea, referos a día de hoy casi todos los lugares que yo he visto que utilicen
+
+306
+00:27:01,560 --> 00:27:05,680
+el cocktail lo tienen integrado con bustras, por ejemplo, que no da mucho
+
+307
+00:27:05,680 --> 00:27:07,840
+problema, es integrar.
+
+308
+00:27:07,840 --> 00:27:10,880
+Creo que estaba documentado, creo recordar que está documentado,
+
+309
+00:27:10,880 --> 00:27:15,600
+sino es igual es seguir una integración básica de bustras.
+
+310
+00:27:15,600 --> 00:27:18,320
+Claro, pero tenías que ver, por ejemplo, cómo queda la maquetación,
+
+311
+00:27:18,320 --> 00:27:23,320
+el editor que está editando contenido, cómo puede dar de los estilos,
+
+312
+00:27:23,320 --> 00:27:26,600
+cómo queda respecto a cómo va a quedar la versión final.
+
+313
+00:27:26,600 --> 00:27:31,720
+Eso tienes previsual, tienes para jugar con ello los hooks,
+
+314
+00:27:31,720 --> 00:27:36,760
+o sea tú puedes alterar también todo lo que tengas acoplado de CSS,
+
+315
+00:27:36,760 --> 00:27:39,960
+lo puedes también tu ajustar, puedes dar personalización completa con los hooks,
+
+316
+00:27:39,960 --> 00:27:43,720
+es que si hubies hablado de los hooks todo lo que hay, es muy largo,
+
+317
+00:27:43,720 --> 00:27:45,200
+no me daba tiempo.
+
+318
+00:27:45,200 --> 00:27:47,440
+Y por otro lado tienes, a la hora de crear el contenido,
+
+319
+00:27:47,440 --> 00:27:49,840
+por otro lado tienes un botón que es previsualizar,
+
+320
+00:27:49,840 --> 00:27:52,720
+y eso te da también un concepto de cómo va quedando todo.
+
+321
+00:27:52,720 --> 00:27:57,680
+O sea, puedes jugar tanto como usuario, como programador,
+
+322
+00:27:57,680 --> 00:28:01,360
+y como las dos cosas a la vez, con ello.
+
+323
+00:28:01,360 --> 00:28:02,920
+No he sido respondido bien.
+
+324
+00:28:02,920 --> 00:28:15,560
+Sí, no me ha dado así. Gracias.
+
+325
+00:28:15,560 --> 00:28:18,120
+Bueno, en principio, si no hay ninguna pregunta más,
+
+326
+00:28:18,120 --> 00:28:20,320
+le damos la gracia otra vez al...
+
+327
+00:28:20,320 --> 00:28:36,320
+Gracias.
+

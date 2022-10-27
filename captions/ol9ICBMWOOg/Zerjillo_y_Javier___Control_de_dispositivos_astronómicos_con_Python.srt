@@ -1,0 +1,1736 @@
+1
+00:00:00,000 --> 00:00:24,120
+Vamos a empezar con la siguiente charla que tiene muy buena pinta y una sorpresita al
+
+2
+00:00:24,120 --> 00:00:29,960
+final que en este caso tenemos a Sergio y Javier que nos van a exponer y las preguntas
+
+3
+00:00:29,960 --> 00:00:34,160
+en principio al final sí da tiempo. Muchas gracias.
+
+4
+00:00:34,160 --> 00:00:43,900
+Bueno pues buenos días. Yo sabía que esto iba a pasar porque estamos compitiendo con
+
+5
+00:00:43,900 --> 00:00:50,240
+penes de plástico vibratorio y eso y eso es complicado. Lo mismo cuando no que pama gente
+
+6
+00:00:50,240 --> 00:00:54,360
+allí pues viene más gente a sentarse aquí a ver nuestros cacharros son más gordo vale.
+
+7
+00:00:54,360 --> 00:00:59,400
+Si eso sirve de consuelo pues pues vamos a ver qué pasa. Además en esta charla pretendemos
+
+8
+00:00:59,400 --> 00:01:03,680
+hacer una cosa que yo desaconsejo totalmente a mi alumno que hace pruebas en directo porque
+
+9
+00:01:03,680 --> 00:01:07,600
+ya sabemos lo malo que el directo la pasaba bilge y le ha pasado a un montón de gente famosa que
+
+10
+00:01:07,600 --> 00:01:11,480
+en directo no funcionan las cosas y estamos Javi y yo aquí cruzando los dedos porque hoy
+
+11
+00:01:11,480 --> 00:01:15,720
+si funcione mínimamente la pequeña cosa que queremos la pequeña muestra que queremos enseñar.
+
+12
+00:01:15,720 --> 00:01:20,760
+Lo primero que vamos a hacer es presentarnos un poquito nosotros somos Sergio y Javi de
+
+13
+00:01:20,760 --> 00:01:24,520
+profesión nos dedicamos a la astronomía que es del tema que vamos a hablar pero sí que es
+
+14
+00:01:24,520 --> 00:01:28,160
+verdad que en nuestro hobby bueno en realidad Javi se ha estudiado física y ha hecho un máster en
+
+15
+00:01:28,160 --> 00:01:33,000
+astrofísica pero no está haciendo astronomía de manera profesional todavía aunque la verdad
+
+16
+00:01:33,000 --> 00:01:36,480
+que le gustaría pero ya sabemos cómo se hace de estas cosas no hace falta ser litencia o tener
+
+17
+00:01:36,480 --> 00:01:41,280
+máster y tal también hay que conseguir el trabajo y a veces no es no es tan fácil no. Yo por mi
+
+18
+00:01:41,280 --> 00:01:44,760
+parte soy profesora aquí en la universidad de Granada pero de temas de informática no tienen
+
+19
+00:01:44,760 --> 00:01:49,040
+nada que ver con la astronomía pero sí es verdad que bueno es mi pasión y al final intento siempre
+
+20
+00:01:49,040 --> 00:01:57,400
+que puedo unir un poco los dos campos y hoy vamos a contaros cómo podemos utilizar Python igual
+
+21
+00:01:57,400 --> 00:02:01,320
+que otro lenguaje de programación pero en concreto Python para manejar nuestra equipación
+
+22
+00:02:01,320 --> 00:02:06,880
+astronómica. Bueno por si acaso la gente está un poco perdida y no saber lo que es la astronomía
+
+23
+00:02:06,880 --> 00:02:10,880
+pues la astronomía es básicamente la ciencia que estudia los distintos astros que tenemos ya
+
+24
+00:02:10,880 --> 00:02:17,480
+pueden ser planetas, cometas, estrellas, galaxias, nebulosas, ese tipo de objeto. Clásicamente la
+
+25
+00:02:17,480 --> 00:02:23,320
+astronomía que se lleva estudiando desde la antigüedad utilizaba unos cuantos instrumentos,
+
+26
+00:02:23,320 --> 00:02:26,880
+unos cuantos instrumentos del cual el más conocido es el telescopio, todo el mundo entiende
+
+27
+00:02:26,880 --> 00:02:31,360
+lo que es un telescopio o un sistema óptico que te permite ver un poquito más allá que lo que
+
+28
+00:02:31,360 --> 00:02:36,960
+te permite hacer tu ojo, te permite más ampliación, te permite captar más luz y ver objetos que son
+
+29
+00:02:36,960 --> 00:02:43,760
+muy muy muy difuso o muy muy tenue. Pues como ya os digo hasta hace no tantos años pues la
+
+30
+00:02:43,760 --> 00:02:48,160
+astronomía se hacía con medio más o menos rudimentario, una óptica la que tú pudieras
+
+31
+00:02:48,160 --> 00:02:54,440
+acceder a ella, tu telescopio, un trípode básicamente para que estuviera aquello estable y la
+
+32
+00:02:54,440 --> 00:02:58,960
+poca información que pudieras tener con tu carta celeste y con tu libro de ephemérides que te
+
+33
+00:02:58,960 --> 00:03:04,160
+dijera bueno pues qué iba a pasar en cada momento de la noche y qué cosas iban a poder observar o
+
+34
+00:03:04,160 --> 00:03:09,200
+no. Y sin embargo en los últimos años esto ha cambiado absolutamente de manera radical y
+
+35
+00:03:09,200 --> 00:03:13,640
+cuando digo los últimos años podemos pensar en un par de décadas, esto ha cambiado absolutamente,
+
+36
+00:03:13,640 --> 00:03:18,160
+yo muchos compañeros de afición que conozco que tienen un poquito más mayores que yo nos cuentan
+
+37
+00:03:18,160 --> 00:03:22,720
+sus aventurillas de hace 20-25 años y desde lo que se hacía antes todo completamente manual,
+
+38
+00:03:22,720 --> 00:03:29,160
+hoy lo hacemos todo completamente asistido por máquina de diversa categoría, de hecho aquí
+
+39
+00:03:29,160 --> 00:03:33,320
+ya estamos poniendo una foto de un equipo pequeñito, ligero, de aficionado en concreto,
+
+40
+00:03:33,320 --> 00:03:38,800
+es de Javi en el que tenemos un mogollón de cacharros que tenemos que sincronizar perfectamente
+
+41
+00:03:38,800 --> 00:03:43,400
+si queremos sacarle Pringles y queremos hacer unas observaciones de calidad. Por supuesto,
+
+42
+00:03:43,400 --> 00:03:48,480
+seguimos teniendo ópticas, seguimos teniendo telescopios ópticas de cámara de foto, no hace
+
+43
+00:03:48,480 --> 00:03:53,720
+falta tener un gran telescopio para hacer cosas astronómicas interesantes, tenemos monturas,
+
+44
+00:03:53,720 --> 00:03:57,520
+en nuestro caso ya son monturas automatizadas, antes las monturas que son los cacharros que
+
+45
+00:03:57,520 --> 00:04:02,400
+se ponen encima del tripo y te permiten seguir el movimiento aparente de las estrellas en el cielo,
+
+46
+00:04:02,400 --> 00:04:06,320
+antes se hacían a mano, estabas toda la noche dándole a la manivela más o menos a un ritmo
+
+47
+00:04:06,320 --> 00:04:10,760
+constante para siempre estar observando el objeto en la misma posición, si estabas por ejemplo
+
+48
+00:04:10,760 --> 00:04:16,120
+echando una fotografía o simplemente disfrutando de manera visual del cielo, bueno pues ahora
+
+49
+00:04:16,120 --> 00:04:21,240
+no, ahora ya se mueven con su motorcillo y con una electrónica de precisión que nos permiten
+
+50
+00:04:21,240 --> 00:04:25,880
+hacer pues auténticas virgerías sin mucho esfuerzo, incluso lleva un sistema goto que tú le dices
+
+51
+00:04:25,880 --> 00:04:29,320
+quiero ver Júpiter y a ti te da igual donde este Júpiter él te localiza Júpiter te lo
+
+52
+00:04:29,320 --> 00:04:33,680
+centra en el ocular y pueda empezar a hacer tus cosillas y quien dice Júpiter el objeto que
+
+53
+00:04:33,680 --> 00:04:37,760
+nosotros no está interesando, por supuesto se han incorporado otras cosas como cámara CCD que son
+
+54
+00:04:37,760 --> 00:04:43,240
+cámara ultra sensible, la fotografía hace 20-25 años se hacía con negativo de manera no digital
+
+55
+00:04:43,240 --> 00:04:47,120
+y eso pues tenía muchas pega y ya sabes que hoy en día tenemos unos camarones impresionantes
+
+56
+00:04:47,120 --> 00:04:52,040
+incluso cámaras especializadas para astronomía que bueno que son capaces de ver en otros espectros
+
+57
+00:04:52,040 --> 00:04:55,920
+diferentes al óptico habitual de las cámaras de fotos que nos permiten obtener una instantánea
+
+58
+00:04:55,920 --> 00:05:01,360
+absolutamente de infarto y de hecho ahí ya aficionados que están haciendo fotografías y están
+
+59
+00:05:01,360 --> 00:05:08,680
+haciendo estudios a nivel de altísimo nivel como podría estar haciendo la NASA o la ESA hace 20 o
+
+60
+00:05:08,680 --> 00:05:13,520
+25 años pues ya lo hacemos con equipos totalmente de aficionado que te lo puedes comprar ahorrando
+
+61
+00:05:13,520 --> 00:05:19,000
+ahorrando un poco y más cosillas que le metemos, ruedas porta filtros, focadores automáticos,
+
+62
+00:05:19,000 --> 00:05:25,000
+sistemas de autoguillado, ópticas activas que intentan mejorar la imagen que tenemos debido a bueno
+
+63
+00:05:25,000 --> 00:05:29,200
+las turbulencias amoféricas que se producen y tal bueno pues todo ese tipo de cosas las podemos
+
+64
+00:05:29,200 --> 00:05:32,680
+ya manejar y de hecho se manejan y hay que controlarlo con lo cual pasamos de hacer algo
+
+65
+00:05:32,680 --> 00:05:37,840
+totalmente manual con muy poco instrumento hacer cosas muy complejas con demasiados cacharros en
+
+66
+00:05:37,840 --> 00:05:41,440
+los que muchas cosas pueden salir mal por mucho que intentemos automatizarlo.
+
+67
+00:05:43,560 --> 00:05:48,080
+¿Cómo se controlan estos distintos cacharros? Pues hay muchas políticas diferentes,
+
+68
+00:05:48,080 --> 00:05:54,320
+muchos software que nos permiten hacer control de este tipo de dispositivo para sistema Windows
+
+69
+00:05:54,320 --> 00:05:58,000
+y de una manera bueno que ya va funcionando bastante tiempo que la verdad es que lo que suele
+
+70
+00:05:58,000 --> 00:06:02,520
+manejar todo el mundo está el protocolo ASCOM que permite pues conectar varios de nuestros
+
+71
+00:06:02,520 --> 00:06:06,320
+cacharros astronómicos y intentar controlarlo con distintos programas digamos que es un
+
+72
+00:06:06,320 --> 00:06:10,640
+intermediario entre el hardware astronómico que nosotros tenemos y nuestras aplicaciones
+
+73
+00:06:10,640 --> 00:06:14,120
+finales que son las que nosotros controlaríamos y las que nosotros le diríamos bueno pues vete de
+
+74
+00:06:14,120 --> 00:06:19,120
+tal montura, tal estrella, cámara de foto empieza a tomar una exposición o pon tal filtro pero hay
+
+75
+00:06:19,120 --> 00:06:23,960
+otra idea o otro software diferente que podemos manejar y nosotros hemos seleccionado Indy como
+
+76
+00:06:23,960 --> 00:06:28,240
+una de esas alternativas para manejarlo primero porque es un software libre lo cual nos mola,
+
+77
+00:06:28,240 --> 00:06:33,880
+podemos modificarlo y además nos permite manejar de manera más o menos sencilla o que no digo que
+
+78
+00:06:33,880 --> 00:06:39,200
+sea todo perfecto ni mucho menos nos permite empezar a controlar las cosas en remoto cosa que
+
+79
+00:06:39,200 --> 00:06:43,080
+ASCOM hasta hace muy poco no nos permitía es verdad que la astronomía es la visión romántica
+
+80
+00:06:43,080 --> 00:06:48,880
+que tenemos del astrónomo es salir de noche con tu tubo al hombro te vas a un sitio despoblao lo más
+
+81
+00:06:48,880 --> 00:06:53,200
+lejos de fuentes lumínicas para que no te molesten y estar la noche disfrutando de la soledad y
+
+82
+00:06:53,200 --> 00:06:58,000
+del cielo estrellado suena muy bonito pero la realidad es que hace un frío que te cagas y si
+
+83
+00:06:58,000 --> 00:07:01,520
+pudiera hacer las observaciones desde tu casa pues estarías mucho más cómodo y la verdad es que
+
+84
+00:07:01,520 --> 00:07:05,360
+cuando ya se te ha pasado la fase de romanticismo inicial de la astronomía lo que te apetece
+
+85
+00:07:05,360 --> 00:07:10,160
+es tener tu observatorio remoto intentar hacer todas las observaciones desde la comodidad de tu
+
+86
+00:07:10,160 --> 00:07:14,880
+casa para luego bueno pues procesar tu imagen y demás no y esto Indy si desde el principio estaba
+
+87
+00:07:14,880 --> 00:07:21,120
+pensado para poder hacer este tipo de observaciones en remoto de manera más o menos más o menos
+
+88
+00:07:21,120 --> 00:07:25,280
+sencilla en principio que es Indy esto que os he mencionado por Indy es un protocolo basado en
+
+89
+00:07:25,280 --> 00:07:30,680
+xml que se plantea hace una pila de años no es una cosa súper reciente que básicamente lo que
+
+90
+00:07:30,680 --> 00:07:35,000
+permita es controlar cualquier tipo de instrumental pero en principio estaba pensado para temas
+
+91
+00:07:35,000 --> 00:07:40,040
+astronómicos de manera remota de tal manera que tú tienes un servidor normalmente al lado
+
+92
+00:07:40,040 --> 00:07:44,560
+cerca de tu telescopio que es el que controla realmente el hardware y tú tienes tu cliente por
+
+93
+00:07:44,560 --> 00:07:48,560
+otro lado en tu ordenador de tu casa o también al lado o en la misma máquina que el servidor
+
+94
+00:07:48,560 --> 00:07:54,480
+si quisiera para crear el cliente el programa que realmente va a hacer el control de este hardware
+
+95
+00:07:54,480 --> 00:08:02,680
+astro astronómico momento aquí más o menos hay un esquemilla de cómo de cómo se estructura
+
+96
+00:08:02,680 --> 00:08:08,120
+esta estructura esta arquitectura de Indy por un lado tenemos a la parte izquierda los clientes
+
+97
+00:08:08,120 --> 00:08:11,600
+que se pueden conectar a nuestro hardware astronómico una de las ventajas de indias que
+
+98
+00:08:11,600 --> 00:08:16,080
+podríamos tener varios programas simultáneos conectados al mismo hardware astronómico podrían
+
+99
+00:08:16,080 --> 00:08:19,920
+varias personas estar controlandolo de manera remoto de manera independiente unos podrían
+
+100
+00:08:19,920 --> 00:08:24,360
+estar viendo los resultados otros podrían estar dando órdenes se conectan a un servidor Indy
+
+101
+00:08:24,360 --> 00:08:29,360
+que lanza una serie de driver que son los que realmente se conectan a los dispositivos esos
+
+102
+00:08:29,360 --> 00:08:33,000
+drivers no son ni más ni menos que pequeños programitas están escritos para el sistema
+
+103
+00:08:33,000 --> 00:08:37,120
+operativo que corresponda normalmente siempre el sistema operativo abierto linu o similares
+
+104
+00:08:37,120 --> 00:08:42,480
+al inu y entonces pues nosotros con nuestro cliente nos conectamos a través de un de un de un socket
+
+105
+00:08:42,480 --> 00:08:47,880
+de internet a la máquina remota donde nosotros estemos y podemos controlar las cosas es un esquema
+
+106
+00:08:47,880 --> 00:08:54,840
+bastante abierto que permite pues mucha mucha flexibilidad más cosillas que hay que contar
+
+107
+00:08:54,840 --> 00:08:59,080
+cómo hace indy para conseguir que realmente podamos conectarnos a casi cualquier hardware
+
+108
+00:08:59,080 --> 00:09:03,360
+astronómico que nosotros podamos adquirir en una tienda o en cualquier sitio pues lo que hace
+
+109
+00:09:03,360 --> 00:09:08,840
+indy es que crea una especie de abstracción de los dispositivos y entonces ya no estamos
+
+110
+00:09:08,840 --> 00:09:14,600
+controlando una cámara concreta que hemos traído una cámara son y alfa y no hace falta que nosotros
+
+111
+00:09:14,600 --> 00:09:19,120
+para controlarla sepamos exactamente cómo funciona esa cámara sino que directamente indy hace una
+
+112
+00:09:19,120 --> 00:09:23,480
+abstracción que se llama cámara y le asigna una serie de propiedades genérica por ejemplo que
+
+113
+00:09:23,480 --> 00:09:27,720
+parámetros tiene una cámara cuando nosotros tiramos una foto pues pueden ser muchos parámetros
+
+114
+00:09:27,720 --> 00:09:32,600
+distintos pero normalmente no sonarán cosas como el iso el tiempo de exposición pues creamos esa
+
+115
+00:09:32,600 --> 00:09:38,040
+abstracción y así nuestros programas van a poder controlar cualquier cámara que nosotros tengamos
+
+116
+00:09:38,040 --> 00:09:43,240
+exactamente de la misma manera no hace falta crear un cliente nuevo para disparar una cámara cada vez
+
+117
+00:09:43,240 --> 00:09:47,960
+que salga la cámara ponemos nuestro driver y directamente va a funcionar y cómo crea esa
+
+118
+00:09:47,960 --> 00:09:56,720
+abstracción pues para indy en general los dispositivos son un conjunto de propiedades que nosotros
+
+119
+00:09:56,720 --> 00:10:00,760
+podremos cambiar esas propiedades pueden tener varias naturalezas pueden ser números pueden ser
+
+120
+00:10:00,760 --> 00:10:05,240
+cadenas pueden ser lo que llaman las luces grupos de opciones o incluso datos binarios por ejemplo
+
+121
+00:10:05,240 --> 00:10:09,400
+el caso de una cámara pues cuando tiran la imagen por estos datos binarios son los valores de los
+
+122
+00:10:09,400 --> 00:10:13,600
+píxeles de la imagen que tú estás registrando y que sería una propiedad numérica por ejemplo el
+
+123
+00:10:13,600 --> 00:10:17,960
+tiempo de exposición que nosotros queremos manejar de la cámara de tal manera que si yo quiero hacer
+
+124
+00:10:17,960 --> 00:10:22,120
+un disparo de la cámara y que esté poniendo durante un segundo durante un minuto pues simplemente
+
+125
+00:10:22,120 --> 00:10:26,200
+tendría que decirle a mi servidor indy por favor cambia la propiedad por favor no se lo dice
+
+126
+00:10:26,200 --> 00:10:31,040
+es más mal educado cambia el valor de la propiedad tiempo de exposición a este valor numérico y
+
+127
+00:10:31,040 --> 00:10:39,240
+entonces pues él entiende que la cámara tiene que empezar a disparar bueno así pues todo el hardware
+
+128
+00:10:39,240 --> 00:10:43,480
+astronómico que nosotros tengamos al final va a ser un conjunto de propiedades numéricas de
+
+129
+00:10:43,480 --> 00:10:47,960
+texto y tal que algunas podremos cambiar otras podremos consultar y así podemos controlar el
+
+130
+00:10:47,960 --> 00:10:56,720
+cacharro que a nosotros nos venga nos venga bien aquí os pongo algún ejemplillo muy simple para que
+
+131
+00:10:56,720 --> 00:11:00,600
+veáis el tipo de mensajes como se pueden entender casi cualquiera aunque no tengan ni puñetera idea
+
+132
+00:11:00,600 --> 00:11:04,880
+de programación ni nada puede entender un poco qué es lo que está pasando cuando se mandan estos
+
+133
+00:11:04,880 --> 00:11:10,680
+mensajes estos mensajes entre nuestro cliente indy y el servidor indy que nosotros tenemos por
+
+134
+00:11:10,680 --> 00:11:16,760
+ejemplo si quisiéramos conectarnos a esa cámara y decirle tómame una fotografía con una décima
+
+135
+00:11:16,760 --> 00:11:20,720
+de segundo de exposición que para astronomía es bastante breve de aunque depende un poco de la
+
+136
+00:11:20,720 --> 00:11:24,480
+aplicación que queramos hacer por lo único tendríamos que mandar ese mensaje aquí en el
+
+137
+00:11:24,480 --> 00:11:32,120
+xml en el que le estamos diciendo a la cámara que se llama son id slr realfa 7s que esta camarita
+
+138
+00:11:32,120 --> 00:11:38,520
+de aquí cambia le la propiedad que se llama cc de exposición la exposición del cc del tiempo de
+
+139
+00:11:38,520 --> 00:11:44,320
+exposición que va a tener en concreto al valor pues punto uno cero punto uno simplemente mandando
+
+140
+00:11:44,320 --> 00:11:49,600
+ese mensaje aquí en el servidor de indy se lo trasladará al driver y se disparará la cámara con
+
+141
+00:11:49,600 --> 00:11:53,680
+lo cual esto es muy sencillo de entender casi cualquiera que se ponga a ver los mensajes que van
+
+142
+00:11:53,680 --> 00:11:57,680
+desde nuestra ordenadora hasta el otro lado pues puede entender más o menos que lo que está pasando
+
+143
+00:11:57,680 --> 00:12:04,160
+ahí o por ejemplo a ver si sale no sé por qué me salta alguna de dos en dos pero bueno por ejemplo
+
+144
+00:12:04,160 --> 00:12:08,440
+si quisiéramos mover una montura como está de aquí a una posición del cielo concreto porque quiero
+
+145
+00:12:08,440 --> 00:12:13,480
+ver un objeto particular que están tales coordenadas celeste pues lo único que tendríamos que hacer
+
+146
+00:12:13,480 --> 00:12:17,320
+es enviar una propiedad como está de aquí que también una propiedad de tipo numérico esto una
+
+147
+00:12:17,320 --> 00:12:22,440
+propiedad de tipo numérico en concreto se lo estamos mandando al dispositivo que se llama el x200
+
+148
+00:12:22,440 --> 00:12:28,080
+autostar que sería esta montura el driver que maneja esa montura en concreto y qué valor le
+
+149
+00:12:28,080 --> 00:12:33,000
+estamos dando pues en este caso un valor que se llama ecuatoria coordinates las coordenadas
+
+150
+00:12:33,000 --> 00:12:39,000
+ecuatoriales la posición del objeto en el cielo que nosotros queremos observar en ese momento se dan
+
+151
+00:12:39,000 --> 00:12:43,760
+en ascensión recta y declinación un número de grado para arriba para el este para el oeste y
+
+152
+00:12:43,760 --> 00:12:48,240
+simplemente mandando este código pues ya conseguiríamos nosotros mover nuestra montura a la posición
+
+153
+00:12:48,240 --> 00:12:53,600
+del cielo que nosotros queramos que es lo que tenemos que hacer por lo tanto si nosotros queremos
+
+154
+00:12:53,600 --> 00:12:58,080
+mover nuestro telescopio y tirar una foto pues simplemente ir encadenando mandándole a ese servidor
+
+155
+00:12:58,080 --> 00:13:05,160
+de indy una serie de mensajes que mle como estos de aquí simplemente los van mandando y el servidor
+
+156
+00:13:05,160 --> 00:13:09,400
+irá respondiendo también es verdad que alguien podría decirme bueno pues me parece que está un
+
+157
+00:13:09,400 --> 00:13:13,560
+poco flipado porque para que te va a programar todas estas cosas y ya existen programas clientes
+
+158
+00:13:13,560 --> 00:13:18,360
+servidores que te hacen las sesiones de observación más o menos cómodas y efectivamente lo hay pero
+
+159
+00:13:18,360 --> 00:13:24,360
+hay aplicaciones para la que esa hay usos para la que esa aplicación es estándar que te permiten
+
+160
+00:13:24,360 --> 00:13:29,280
+hacer astrofotografía que muchísima gente las maneja y tal pues puede que no sean las más las más
+
+161
+00:13:29,280 --> 00:13:33,960
+apropiadas sobre todo para cosas que no haga la masa esos programas están optimizados para
+
+162
+00:13:33,960 --> 00:13:38,880
+lo que hace mucha gente para lo que le gusta a la mayoría de la gente lo típico es echa fotillos
+
+163
+00:13:38,880 --> 00:13:43,280
+hay mucha gente que le gusta la fotografía astronómica y entonces se han desarrollado clientes específicos
+
+164
+00:13:43,280 --> 00:13:47,840
+para facilitarte la vida a la hora de programar tus sesiones de foto astronómica pero puede
+
+165
+00:13:47,840 --> 00:13:53,680
+haber otras utilidades que no sean otras utilidades que no sean tan comunes y os voy a soltar ahí
+
+166
+00:13:53,680 --> 00:13:59,040
+algunos ejemplos que lo están haciendo también aficionados no son simplemente cosas de de profesionales
+
+167
+00:13:59,040 --> 00:14:03,560
+de la astronomía como puede ser la detección de supernova hay un sistema que cuando aparece una
+
+168
+00:14:03,560 --> 00:14:07,920
+supernova explota una estrella en algún sitio y alguien lo detecta por primera vez para los
+
+169
+00:14:07,920 --> 00:14:12,760
+científicos es muy interesante observar esa supernova como va evolucionando desde el mismo
+
+170
+00:14:12,760 --> 00:14:17,560
+momento en el que explota hasta semanas después o meses después para ver cómo es el decaimiento
+
+171
+00:14:17,560 --> 00:14:21,920
+del brillo de esa estrella y demás y entonces lo que se hace en el sistema robótico en los que
+
+172
+00:14:21,920 --> 00:14:27,120
+mediante un mensaje que todavía sigue funcionando ese sistema de correo electrónico se avisa oye
+
+173
+00:14:27,120 --> 00:14:31,680
+acaba de reventar una estrella en tales coordenadas celestes te llega inmediatamente un corrode
+
+174
+00:14:31,680 --> 00:14:37,320
+diciendo si puedes observar y lo mejor sería que si tienes robotizado tu sistema pues tu sistema
+
+175
+00:14:37,320 --> 00:14:41,560
+cuando reciba ese correo diga a tomás por culo lo que estoy haciendo me voy a ver la supernova
+
+176
+00:14:41,560 --> 00:14:46,280
+se va directamente a esas coordenadas toma la foto y luego puede reportar tus datos para que
+
+177
+00:14:46,280 --> 00:14:50,920
+los investigadores lo estudien pues obviamente no se desarrolla un software comercial específico
+
+178
+00:14:50,920 --> 00:14:56,200
+para hacer ese tipo de cosas porque eso lo hacen solo los no sé cuántos flipados de supernova
+
+179
+00:14:56,200 --> 00:15:00,320
+habrá por ahí pero unos cuantos flipados de supernova que hay por ahí entonces para ese
+
+180
+00:15:00,320 --> 00:15:05,000
+tipo de cosas pues si tendríamos que programarlo nosotros mismos pues con este protocolo indy
+
+181
+00:15:05,000 --> 00:15:09,560
+lo podemos hacer otra utilidad que hay por ahí que se está bueno que se está haciendo y que se
+
+182
+00:15:09,560 --> 00:15:14,200
+está planteando por ejemplo es la detección de impacto en asteroides habéis leído las noticias
+
+183
+00:15:14,200 --> 00:15:19,600
+hace dos tres no dos tres semanas no dos tres días no la sonda de arte ha sido de este martes o este
+
+184
+00:15:19,600 --> 00:15:24,600
+lunes pues lo que ha hecho ha mandado una sonda y le han pegado un pepinazo a un pequeño asteroide
+
+185
+00:15:24,600 --> 00:15:29,440
+que había por ahí con la intención de ver si hace falta mandar a bruce willy o no cuando venga
+
+186
+00:15:29,440 --> 00:15:34,080
+el cometa que nos destruya o el asteroide que nos destruya no y entonces estaban estudiando
+
+187
+00:15:34,080 --> 00:15:40,200
+como ese choque levanta polvo si les vía la órbita del objeto o no bueno pues eso ha sido totalmente
+
+188
+00:15:40,200 --> 00:15:44,360
+a propósito se ha mandado la sonda para que pegar al pepinazo y se ha estudiado y ha levantado
+
+189
+00:15:44,360 --> 00:15:48,680
+una nube de polvo y hay fotografía de astrónomos no profesionales a mater que han comprobado que
+
+190
+00:15:48,680 --> 00:15:53,840
+efectivamente se veía el polvo como se desprendía del asteroide impactado bueno pues ese tipo de
+
+191
+00:15:53,840 --> 00:15:58,920
+impacto también pueden ocurrir naturalmente entre dos asteroides que haya por ahí flotando
+
+192
+00:15:58,920 --> 00:16:03,800
+en el espacio y eso los profesionales en muchas ocasiones no lo estudian porque tú no un profesional
+
+193
+00:16:03,800 --> 00:16:08,920
+puede gastar el tiempo de un telescopio caro simplemente en ver si ocurre o no ocurre esa
+
+194
+00:16:08,920 --> 00:16:13,600
+colisión pero nosotros como aficionados lo mismo si nos mola el rollo podríamos todas las noches
+
+195
+00:16:13,600 --> 00:16:19,200
+programar nuestro telescopio para monitorizar 100 200 300 asteroides echarle fotos todas las
+
+196
+00:16:19,200 --> 00:16:23,640
+noches compararla un día a otro y ver si efectivamente sale una nube de polvo alrededor de
+
+197
+00:16:23,640 --> 00:16:28,480
+alguno y en ese momento da la voz de alarma para que se estudie más en detenimiento pues obviamente
+
+198
+00:16:28,480 --> 00:16:32,920
+no existe ningún software comercial que te haga esa estructura de bueno vamos a darle una lista de
+
+199
+00:16:32,920 --> 00:16:37,000
+200 asteroides y que los timice para ver a qué hora se tiene que ver uno a qué hora tiene que
+
+200
+00:16:37,000 --> 00:16:41,760
+echar la foto ni nada pues eso no lo podríamos implementar nosotros perfectamente utilizando
+
+201
+00:16:41,760 --> 00:16:48,400
+nueve pues esta biblioteca a ver qué tenemos que hacer nosotros qué pasó vamos a seguir y
+
+202
+00:16:48,400 --> 00:16:54,000
+vaya a ver más o menos cómo como hacemos nosotros para conectar nuestros hardware real con nuestro
+
+203
+00:16:54,000 --> 00:16:58,880
+propio programa por lo primero que tendremos que hacer es la máquina servidora lanzar el servidor
+
+204
+00:16:58,880 --> 00:17:03,480
+indi la máquina servidora la que está conectada realmente a nuestra montura en este caso por no
+
+205
+00:17:03,480 --> 00:17:07,640
+traer mucha infraestructura básicamente el servidor y el cliente van a ser el mismo ordenador pero
+
+206
+00:17:07,640 --> 00:17:11,600
+podrían estar separados en dos máquinas y sería exactamente lo mismo no habría que hacer nada más
+
+207
+00:17:11,600 --> 00:17:15,200
+se lanza el servidor indi que básicamente una línea de comando en la que dice lanza el servidor
+
+208
+00:17:15,200 --> 00:17:20,480
+indi para controlar esta monturita esta cámara esta rueda porta filtro este objeto todos los hardware
+
+209
+00:17:20,480 --> 00:17:26,440
+que tú quisiera cogemos nuestro cliente y se conectará por medio de un socket a ese servidor
+
+210
+00:17:26,440 --> 00:17:31,000
+el socket lo abrimos como cualquier socket que haya por ahí y ya podemos empezar a decirle al
+
+211
+00:17:31,000 --> 00:17:37,240
+servidor oye dime qué hardware tienes tú conectado servidor y o modifica las propiedades de ese
+
+212
+00:17:37,240 --> 00:17:42,560
+hardware para que haga lo que nosotros necesitamos y entonces vamos cambiando los valores y ya empezamos
+
+213
+00:17:42,560 --> 00:17:48,600
+a operarlo va a haber en el ejemplo que lo podemos hacer sin demasiada dificultad
+
+214
+00:17:50,480 --> 00:17:54,120
+y lo que queremos hacer precisamente en este ratillo que nos queda intentar la prueba en el
+
+215
+00:17:54,120 --> 00:17:59,040
+directo con las dificultades que tiene hacer astronomía de día que salvo que seamos astrofísicos
+
+216
+00:17:59,040 --> 00:18:03,600
+solares pues no tiene tiene mucho sentido y además aquí pues ni estamos orientados a la
+
+217
+00:18:03,600 --> 00:18:07,120
+polar ni nada por el estilo pero vamos a intentar hacer una prueba en directo muy simple hemos
+
+218
+00:18:07,120 --> 00:18:11,720
+simplificado al máximo simplemente vamos a intentar mover una montura y echar una fotografía no
+
+219
+00:18:11,720 --> 00:18:15,440
+va a ser una foto de calidad ni nada por el estilo porque no estamos apuntando al cielo ni poniendo
+
+220
+00:18:15,440 --> 00:18:20,200
+una exposición vaya salido a vosotros los guapos guapas que se hay los que estáis aquí y ya está
+
+221
+00:18:20,200 --> 00:18:24,560
+pero bueno vamos a cruzar los dedos y a ver si esto funciona o no funciona vamos a contar exactamente
+
+222
+00:18:24,560 --> 00:18:28,720
+qué es lo que estamos haciendo realmente el hardware que tenemos aquí esta monturita de hecho
+
+223
+00:18:28,720 --> 00:18:33,120
+le estamos estrenando prácticamente creo que tú has hecho alguna provecita en casa pero estamos
+
+224
+00:18:33,120 --> 00:18:38,040
+prácticamente estrenando y esta una cámara de fotos normal y corriente una sonía alfa pero
+
+225
+00:18:38,040 --> 00:18:42,720
+que con una cámara astronómica específica la verdad es que no habría absolutamente ninguna
+
+226
+00:18:42,720 --> 00:19:04,040
+diferencia simplemente la única diferencia sea y bueno justo antes de ponernos realmente a la
+
+227
+00:19:04,040 --> 00:19:08,360
+acción vamos a enseñar también unas fotos para que veáis cosas que pueden hacer aficionados que
+
+228
+00:19:08,360 --> 00:19:12,920
+la gastronomía pues no es cosa solo de los profesionales no es solo cosa de la nasa que tienen de
+
+229
+00:19:12,920 --> 00:19:16,600
+hecho nosotros le hemos mojado ya la oreja la nasa en alguna cosa pero eso es otra película que
+
+230
+00:19:16,600 --> 00:19:22,360
+podemos contar en otra en otra ocasión y somos y somos aficionados vamos a enseñar aquí eso no
+
+231
+00:19:22,360 --> 00:19:27,120
+sé por qué va a dar esto una foto de júpiter que hicimos hace bueno este verano en agosto acojonante
+
+232
+00:19:27,120 --> 00:19:31,320
+la resolución que conseguimos en un telescopio más o menos decente una cámara más o menos normalita
+
+233
+00:19:31,320 --> 00:19:36,040
+y esa noche fue buenísimo en el proyecto no se se ve no se si se ve igual que de bien que en la pantalla
+
+234
+00:19:36,040 --> 00:19:40,240
+pero tenemos una ampliación acojonante el punto brillante se que está hiriendo ahí es i o una
+
+235
+00:19:40,240 --> 00:19:44,360
+de las lunas de júpiter y hasta se le ven detalles a la luna de júpiter o sea que realmente con
+
+236
+00:19:44,360 --> 00:19:51,000
+un equipo de aficionados no baratos pero aficionados se pueden conseguir resultados bastante bastante
+
+237
+00:19:51,000 --> 00:19:57,360
+potable de hecho gente del instituto astrofísica que hicieron su tesi en temas planetarios nos contaban
+
+238
+00:19:57,360 --> 00:20:02,280
+cómo ellos hace 20 años no conseguían con medios profesionales fotografías de esta de esta calidad o
+
+239
+00:20:02,280 --> 00:20:06,840
+sea que realmente hoy un aficionado ahorra y consigue resultados que hace 20 años eran punteros en
+
+240
+00:20:06,840 --> 00:20:12,920
+ciencia absolutamente punteros o podemos fotografiar alguna nebulosa como está como está de aquí la
+
+241
+00:20:12,920 --> 00:20:17,640
+nebulosa del corazón utilizando filtros cámaras específicas esto está hecho con un telescopio de
+
+242
+00:20:17,640 --> 00:20:23,360
+júpiter una foto bueno la otra dice yo con un colega y esta es una foto de júpiter con un
+
+243
+00:20:23,360 --> 00:20:28,440
+telescopio de aficionado una montura más o menos de esta de una montura más o menos de estas
+
+244
+00:20:28,440 --> 00:20:32,440
+características un equipo de aficionados esto es una nebulosa que se le llama la nebulosa del corazón
+
+245
+00:20:32,440 --> 00:20:39,080
+pero que yo veo ahí más una pollilla que un corazón lo mismo pega mucho con la con con con
+
+246
+00:20:39,080 --> 00:20:45,880
+el con el tutorial o la charla del otro del otro del otro lado y otra fotillo que vamos a poner
+
+247
+00:20:45,880 --> 00:20:49,480
+aquí para que veáis que se pueden hacer cosas incluso con menos medios esto es una fotografía
+
+248
+00:20:49,480 --> 00:20:55,560
+de la vía lastia de 360 grados en el cual casi que no hay ninguna equipación básicamente una cámara
+
+249
+00:20:55,560 --> 00:21:01,600
+de fotos con un objetivo 14 milímetros y crear una panorámica pues sabiendo hacerla pero ni montura
+
+250
+00:21:01,600 --> 00:21:05,520
+ni nada por el estilo no se pueden conseguir unas fotos por más o menos vistosas del cielo que
+
+251
+00:21:05,520 --> 00:21:11,800
+teníamos una noche esto es por el norte el lirín también de julio creo que esta foto si me suena
+
+252
+00:21:11,800 --> 00:21:16,240
+que era en julio cuando estábamos por allí entonces deciros que bueno que sí que muchas veces
+
+253
+00:21:16,240 --> 00:21:20,280
+pensamos u es que pasé una buena fotografía o para conseguir un resultado relevante necesito un
+
+254
+00:21:20,280 --> 00:21:25,000
+desembolso de la leche o necesito una equipación acojonante y eso no es verdad se pueden conseguir
+
+255
+00:21:25,000 --> 00:21:30,760
+resultados por aficionados bastante bastante potables con unos recursos más o menos limitados
+
+256
+00:21:30,760 --> 00:21:36,960
+y vamos a intentar entonces ir al asunto y a ver si esto va funcionando y nos sale el ejemplito
+
+257
+00:21:36,960 --> 00:21:49,040
+como nosotros queremos voy a abrir yupiter lab si no encendemos los cacharros no no funcionan muy
+
+258
+00:21:49,040 --> 00:21:53,400
+bien las cosas no sería la primera vez que no ha pasado esto no funciona esto no funciona en el
+
+259
+00:21:53,400 --> 00:22:00,040
+campo por allí y es porque estaba algo porque estaba algo apagado voy a resetear todo esto de aquí
+
+260
+00:22:00,040 --> 00:22:04,440
+y bueno vamos a ir viendo os vamos a ir enseñando los pasos que vemos que vamos a ejecutar y veréis
+
+261
+00:22:04,440 --> 00:22:09,320
+que no son excesivamente no son excesivamente complicados como decía lo primero que tenemos
+
+262
+00:22:09,320 --> 00:22:14,080
+que hacer en nuestro servidor en los cacharros en el ordenador que está conectado a nuestros
+
+263
+00:22:14,080 --> 00:22:19,120
+cacharros es lanzar el servidor de indy para eso vamos a ejecutar este comando en un en un shell
+
+264
+00:22:19,120 --> 00:22:23,320
+que el indy server con los dos drivers que tiene que ejecutar el driver de la montura que este
+
+265
+00:22:23,320 --> 00:22:29,000
+de aquí que se llama indy el x200 auto estar y el el el driver de la cámara son indy son y ccd que
+
+266
+00:22:29,000 --> 00:22:33,720
+ya hay driver para casi cualquier cámara casi cualquier montura que compremos en el mercado
+
+267
+00:22:33,720 --> 00:22:42,640
+entonces si todo va bien abrimos un shell ejecutamos cruzamos los dedos y parece que está funcionando
+
+268
+00:22:42,640 --> 00:22:46,160
+parece que ha detectado la cámara parece que ha detectado la montura no lo sabemos muy bien
+
+269
+00:22:46,160 --> 00:22:53,200
+para conseguir que el ejemplo vea y algo real no tengáis simplemente que creeros que esto
+
+270
+00:22:53,200 --> 00:22:57,280
+medio funciona simplemente porque haya algún ruidito u otro lo que vamos a hacer es utilizar
+
+271
+00:22:57,280 --> 00:23:05,520
+un cliente que ya existe por aquí que se llama k stars este cliente k stars es un planetario de
+
+272
+00:23:05,520 --> 00:23:08,920
+toda de toda la vida no está un planetario que nosotros podemos ver la posición de las
+
+273
+00:23:08,920 --> 00:23:14,120
+estrellas pero lo gracioso es que tiene integrado por aquí una herramienta que se llama el cliente
+
+274
+00:23:14,120 --> 00:23:19,880
+de indy que cuando tú le da aquí a conectar pues te crea un interfaz para controlar manualmente lo
+
+275
+00:23:19,880 --> 00:23:24,240
+que lo que a ti te interese si yo quiero encender la cámara le daría aquí si yo quisiera encender
+
+276
+00:23:24,240 --> 00:23:28,760
+la montura le daría aquí y aquí van saliendo las distintas propiedades que tienen mis dos cacharros
+
+277
+00:23:28,760 --> 00:23:32,440
+pero esto lo estoy abriendo simplemente para que veáis que efectivamente los comandos que
+
+278
+00:23:32,440 --> 00:23:36,840
+yo voy a mandar de python ejecutan una orden en el servidor y lo podemos estar viendo en otro
+
+279
+00:23:36,840 --> 00:23:40,640
+cliente esto es lo que os decía que pueda haber varios clientes simultáneamente contra el mismo
+
+280
+00:23:40,640 --> 00:23:46,040
+servidor de astronomía entonces yo aquí normalmente no le voy a dar en esta presentación a nada
+
+281
+00:23:46,040 --> 00:23:50,240
+simplemente vamos a comprobar que hay cambia los valores tal y como lo dice mi programa de india
+
+282
+00:23:50,240 --> 00:23:57,840
+así que lo dejo aquí minimizado todo todo esto a ver aquí tengo se me ha abierto en cromium vale
+
+283
+00:23:58,840 --> 00:24:03,920
+que vamos a hacer otra cosa perdona voy a abrir aquí otro voy a ver en qué puerto se ha conectado
+
+284
+00:24:03,920 --> 00:24:09,040
+no sé por qué tiene la manía linux de a veces los los cacharros que conecta ponerlo en puertos
+
+285
+00:24:09,040 --> 00:24:14,600
+distinto eso es algo que todavía no no sé por qué me lo hace a veces el ac m0 a veces la cme1
+
+286
+00:24:14,600 --> 00:24:18,920
+habrá un motivo pero yo no yo no lo conozco básicamente mi programa va a seguir una serie de
+
+287
+00:24:18,920 --> 00:24:22,480
+pasos como he dicho antes lo primero estoy definiendo aquí una serie de constantes que vamos a
+
+288
+00:24:22,480 --> 00:24:26,640
+utilizar pues el nombre de la cámara que quiero controlar el nombre de la montura que quiero
+
+289
+00:24:26,640 --> 00:24:31,360
+controlar y en qué puerto de mi ordenador se ha conectado ahora mismo la montura en puertos
+
+290
+00:24:31,360 --> 00:24:35,880
+como si fuera un serie mucho de los dispositivos astronómicos clásicos funcionan emulando puertos
+
+291
+00:24:35,880 --> 00:24:40,160
+serie del año de la pera y funcionan a la perfección no hace falta nada mucho más sofisticado y
+
+292
+00:24:40,160 --> 00:24:44,120
+también voy a poner aquí un par de coordenadas que luego vamos a tener cambiar que será al sitio
+
+293
+00:24:44,120 --> 00:24:48,520
+donde queremos nosotros apuntar nuestra cámara no he podido ponerlo antes pues porque no me he
+
+294
+00:24:48,520 --> 00:24:52,320
+puesto a ver ahora mismo que estrella y por ahí para que salga y vosotros pero lo vemos luego que
+
+295
+00:24:52,320 --> 00:24:56,520
+en la estrella cuál es la estrella que teóricamente está por ahí y lo pondremos y qué hacemos
+
+296
+00:24:56,520 --> 00:25:01,760
+importamos unas pocas bibliotecas de sockets para controlar la hora tal y he definido una
+
+297
+00:25:01,760 --> 00:25:06,720
+serie de funciones y ya simplemente de utilidad para conectarme al socket muy facilito mandar un
+
+298
+00:25:06,720 --> 00:25:11,280
+comando simplemente como se manda los comandos por un socket típico y recibir la función recibir
+
+299
+00:25:11,280 --> 00:25:15,600
+parece compleja pero básicamente en leer del socket imprimir por la pantalla lo que lo que
+
+300
+00:25:15,600 --> 00:25:19,240
+está saliendo no hace absolutamente nada cualquiera que haya programado cualquier aplicación remota
+
+301
+00:25:19,240 --> 00:25:24,560
+es mandar y recibir bytes por un por un socket no tiene no tiene mucho más las de fino que no
+
+302
+00:25:24,560 --> 00:25:30,440
+sé si le he dado y vamos a ver si realmente nos podemos conectar nosotros a nuestro puerto
+
+303
+00:25:30,440 --> 00:25:34,960
+ahora mismo el cliente que es nuestro programa de python que estamos ejecutando aquí se va a
+
+304
+00:25:34,960 --> 00:25:39,680
+conectar a mi misma máquina 127 001 que es donde lo tengo y en el puerto que viene por defecto de
+
+305
+00:25:39,680 --> 00:25:45,840
+indy tiene el puerto 7.624 que es un número muy bonito no sé por qué porque lo eligieron
+
+306
+00:25:45,840 --> 00:25:52,280
+directamente y ya me he conectado yo a mi ser a mi servidor con lo cual cualquier cosa que pasa en
+
+307
+00:25:52,280 --> 00:25:56,040
+el servidor de indy cualquier parámetro que se cambia en la cámara cualquier parámetro que se
+
+308
+00:25:56,040 --> 00:26:00,880
+cambia en la montura cualquier cosa que ocurra puedo yo en mi programa recibirlo y saber qué es lo
+
+309
+00:26:00,880 --> 00:26:09,200
+que está ocurriendo por ejemplo si yo mando este comando xml de get properties y recibo los bytes
+
+310
+00:26:09,200 --> 00:26:15,440
+que me acaba de enviar el servidor me va a dar un xml más o menos monstruoso en el que me está
+
+311
+00:26:15,440 --> 00:26:21,160
+diciendo absolutamente todas las propiedades que yo puedo ahora mismo cambiar de mi cámara y de mi
+
+312
+00:26:21,160 --> 00:26:25,440
+montura las que a mí me interesen pues puedes cambiar el tiempo de exposición si buscáramos por
+
+313
+00:26:25,440 --> 00:26:30,760
+aquí pues habría uno que es el tiempo de exposición conectate o desconectate fijaos que bueno para que
+
+314
+00:26:30,760 --> 00:26:35,000
+veáis que esto más o menos es real no me lo estoy inventando hay una propiedad que se llama
+
+315
+00:26:35,000 --> 00:26:40,120
+connection que puede tener dos opciones connect y disconnect y si yo me voy al otro cliente al
+
+316
+00:26:40,120 --> 00:26:44,040
+castars que yo había puesto por aquí y miro en la cámara sony veo que tengo una propiedad que se
+
+317
+00:26:44,040 --> 00:26:49,040
+llama conexión que es conectar y desconectar o sea que realmente ahora mismo yo acabo de recibir
+
+318
+00:26:49,040 --> 00:26:54,160
+la misma misma información que ha recibido este programa que a estar sobre los dispositivos que
+
+319
+00:26:54,160 --> 00:26:58,480
+tenemos conectados bueno pues me ha dado mucho roda información yo puedo parsear la puedo quedarme
+
+320
+00:26:58,480 --> 00:27:01,480
+con la información que me interese con las propiedades que a mí me interesen son muchísimas
+
+321
+00:27:01,480 --> 00:27:05,040
+las opciones que puede tener cada uno de los cacharros y ahora qué es lo que vamos a hacer
+
+322
+00:27:05,040 --> 00:27:10,720
+pues empezar a controlar los cacharros como nosotros como nosotros queremos por ejemplo lo primero
+
+323
+00:27:10,720 --> 00:27:17,760
+que le voy a decir a el servidor indie esa montura está conectada en el puerto que yo he visto antes
+
+324
+00:27:17,760 --> 00:27:24,440
+barra de barra tti a cm cero es el puerto donde realmente se me ha conectado a mí el dispositivo vamos
+
+325
+00:27:24,440 --> 00:27:31,360
+a ver en castars en la montura si busco por aquí en conexión fijaos que el puerto que por defecto
+
+326
+00:27:31,360 --> 00:27:36,800
+me ha salido aquí es uno que ni puñete la idea porque castar tiene ese ahora mismo pero en cuanto
+
+327
+00:27:36,800 --> 00:27:42,240
+yo le mande este comandito de aquí mandar ese xml pues me falla porque nombre montura no lo
+
+328
+00:27:42,240 --> 00:27:49,000
+habré definido antes hemos olvidado darle aquí perdona problema del directo tenía que pasar algo
+
+329
+00:27:49,000 --> 00:27:55,120
+siempre a ver vuelvo aquí y cuando ejecuto se manda esa información y si yo me voy a mi cliente
+
+330
+00:27:55,120 --> 00:28:00,000
+el típico que controla todo el mundo veo que efectivamente en el puerto ya se me ha puesto esa
+
+331
+00:28:00,000 --> 00:28:03,600
+dirección donde se va a conectar el dispositivo le estoy diciendo donde está enchufada y ahora
+
+332
+00:28:03,600 --> 00:28:08,680
+que le voy a decir conecta t la propiedad conexión este botoncito de aquí que sería el que yo
+
+333
+00:28:08,680 --> 00:28:13,080
+controlaría si estoy haciendo las cosas manualmente darle al botón este de conectar es
+
+334
+00:28:13,080 --> 00:28:20,160
+completamente equivalente a ejecutar este código aquí enciende la opción on de conectar le doy y
+
+335
+00:28:20,160 --> 00:28:24,720
+si miro en mi cliente pues se ha conectado y de hecho me han aparecido muchas más propiedades
+
+336
+00:28:24,720 --> 00:28:28,920
+cuando uno se conecta cuando el dispositivo se enciende pues te permite controlar más cosas
+
+337
+00:28:28,920 --> 00:28:32,400
+cuando la montura está apagada pues no pueden moverla ni nada en el momento en que te conectas
+
+338
+00:28:32,400 --> 00:28:36,360
+pues ya si te permite hacer otras cosas y ahora que es lo que tendríamos que hacer para que se
+
+339
+00:28:36,360 --> 00:28:41,440
+moviera al sitio apropiado decirle a qué coordenadas tenemos que apuntar y eso es lo que tenemos que
+
+340
+00:28:41,440 --> 00:28:45,480
+decidir ahora mismo dónde queremos apuntar yo quiero apuntar para allí pero normalmente nosotros
+
+341
+00:28:45,480 --> 00:28:48,800
+no le decimos pa'lante o pa' atrás lo que le decimos es las coordenadas celestialas que
+
+342
+00:28:48,800 --> 00:28:52,600
+queremos apuntar donde está el objeto y como ahora mismo no sé qué estrella y por ahí porque además
+
+343
+00:28:52,600 --> 00:28:58,680
+es de día pues vamos a buscar yo me gusta el programilla este que si no lo conocéis está
+
+344
+00:28:58,680 --> 00:29:03,760
+súper bien el este larión que una pasada para ver cómo va a estar el cielo en un momento del día
+
+345
+00:29:03,760 --> 00:29:07,520
+o una noche lo que quiere observar y tal y te hace una simulación ahora mismo dice que estamos
+
+346
+00:29:07,520 --> 00:29:11,920
+engranada y este es el cielo que se ve hoy en granada pues claro es de día ni puta idea de
+
+347
+00:29:11,920 --> 00:29:18,200
+lo que hay ahí entonces vamos a desactivar en aquí los efectos de la atmósfera y del sol se
+
+348
+00:29:18,200 --> 00:29:22,840
+no hace de noche seguimos estando a esta hora y bueno una cosa que no se sabe de astronomía
+
+349
+00:29:22,840 --> 00:29:27,520
+hay de montura es que normalmente cuando tú vas al campo y la pones la montura tienes que orientarla
+
+350
+00:29:27,520 --> 00:29:30,960
+de una manera determinada para que él sepa inicialmente dónde está apuntando y esa
+
+351
+00:29:30,960 --> 00:29:36,840
+dirección es el norte ahora mismo esta montura teóricamente el norte está allí no es verdad
+
+352
+00:29:36,840 --> 00:29:39,760
+lo que pasa es que no nos vamos a poner aquí a investigar dónde está el norte y dónde no
+
+353
+00:29:39,760 --> 00:29:44,120
+estaba el norte nos venía muy bien porque si allí está el norte yo sé que buscando ahora la estrella
+
+354
+00:29:44,120 --> 00:29:48,680
+que teóricamente está al oeste pues va a apuntar hacia vosotros fácilmente la cámara entonces yo
+
+355
+00:29:48,680 --> 00:29:53,440
+me vengo aquí al estelario busco aquí el oeste veo que hay una estrella más o menos en el oeste
+
+356
+00:29:53,440 --> 00:29:58,760
+betelgeuse además está bastante bajita en el horizonte y puedo ver cuáles son las coordenadas me
+
+357
+00:29:58,760 --> 00:30:04,080
+lo está diciendo aquí en declinación resta y ascensión y voy a no ponerlo tan grande y voy a mi
+
+358
+00:30:04,080 --> 00:30:09,800
+programita voy a poner justo esas coordenadas porque aquí tenía otras distintas a ver si a tino y
+
+359
+00:30:09,800 --> 00:30:25,280
+no me olvido 5 56 23 5 56 23 esto va cambiando porque el cielo se va moviendo y de inclinación 7
+
+360
+00:30:25,280 --> 00:30:39,320
+24 40 7 24 40 y ahora ya vamos a mandarle un mensajito de oye muevete a esa posición y ahora es
+
+361
+00:30:39,320 --> 00:30:43,560
+cuando Javi está cruzando todos los dedos que tiene de la mano porque esto funcione y no nos
+
+362
+00:30:43,560 --> 00:30:50,080
+deje como como unos piltrafillas que somos no le damos y si os dais cuenta pues la montura empieza
+
+363
+00:30:50,080 --> 00:30:54,320
+a moverse más o menos en la dirección que nosotros le hemos dicho hacia el oeste hacia la estrella
+
+364
+00:30:54,320 --> 00:30:59,560
+que está por allí más o menos en el oeste gira cualquiera de los doejes hasta que encuentre el
+
+365
+00:30:59,560 --> 00:31:04,040
+sitio vamos a ver si se para en el sitio más o menos está apuntando allí estaría la estrella
+
+366
+00:31:04,040 --> 00:31:08,480
+si eso fuera el norte de verdad bueno pues con un poquito de código python y mandando unos xml
+
+367
+00:31:08,480 --> 00:31:13,640
+que no son especialmente difíciles de descifrar hemos conseguido mover nuestra nuestra montura
+
+368
+00:31:13,640 --> 00:31:18,160
+y ahora vamos a pasar al control de la cámara que no es muy diferente para controlar la cámara que
+
+369
+00:31:18,160 --> 00:31:22,080
+tenemos que hacer pues también tenemos que decirle el puerto en el que está conectado a cámara que
+
+370
+00:31:22,080 --> 00:31:25,960
+curiosamente para las cámaras de serle muchas veces ese puerto no hay que decirle nada simplemente
+
+371
+00:31:25,960 --> 00:31:30,640
+que decirle puerto vacío si no se lo ponen no funciona pero pero puerto está vacío lo que vamos a
+
+372
+00:31:30,640 --> 00:31:35,040
+meter aquí y le vamos a decir que se conecte porque si miramos nuestro cliente de cástar en la cámara
+
+373
+00:31:35,040 --> 00:31:39,880
+la cámara todavía está desconectada la cámara todavía está desconectada entonces vamos a encenderla
+
+374
+00:31:39,880 --> 00:31:45,080
+a ver si es verdad que esto funciona y teóricamente la cámara se está encendiendo a sonado porque
+
+375
+00:31:45,080 --> 00:31:48,360
+ha abierto el octubre a dos cuando se conecta la cámara y efectivamente cuando vengo aquí me dice
+
+376
+00:31:48,360 --> 00:31:53,160
+que ya la cámara está conectada y tengo una serie de propiedades que yo podría que yo podría
+
+377
+00:31:53,160 --> 00:31:57,360
+cambiar y que es lo que vamos a decirle ahora a la cámara bueno tenemos que mandarle una serie de
+
+378
+00:31:57,360 --> 00:32:02,880
+parámetros de la cámara porque el controlador de cámara estas de ser funciona para todas las cámaras
+
+379
+00:32:02,880 --> 00:32:06,760
+de son y todas las cámaras de canon y todas las cámaras típicas de ser que hay si no le dice
+
+380
+00:32:06,760 --> 00:32:10,520
+estos parámetros pues no sabe muy bien cómo está tirando la foto básicamente no está diciendo
+
+381
+00:32:10,520 --> 00:32:15,240
+cuál es la resolución del sensor que tiene mandamos esa información y ya simplemente para
+
+382
+00:32:15,240 --> 00:32:21,360
+tomar la foto le vamos a decir aquí cuánto tiempo de exposición queremos nosotros tirar pues vamos a
+
+383
+00:32:21,360 --> 00:32:25,560
+probar con una décima de segundo y ya veremos si sale quemado no sale quemada no lo tengo muy claro
+
+384
+00:32:25,560 --> 00:32:30,920
+porque las condiciones de luminosidad en entorno de día no las tenemos tan controladas aquí le
+
+385
+00:32:30,920 --> 00:32:35,920
+damos la cámara tira una foto y cómo se yo que la foto se ha tirado bueno porque mi otro cliente
+
+386
+00:32:35,920 --> 00:32:40,400
+mi programilla kstar se ha dado cuenta que ha enviado una foto y fijaos que la tenemos aquí
+
+387
+00:32:40,400 --> 00:32:44,160
+absolutamente quemada demasiado tiempo de exposición vamos a hacer una un poquito más breve o cierra el
+
+388
+00:32:44,160 --> 00:32:49,920
+día frango un poquito no y repetimos y tiramos otra fotillo tiramos otra fotillo y efectivamente
+
+389
+00:32:49,920 --> 00:32:55,320
+nuestro otro cliente bueno se ve muy mal os voy a explicar por qué se ve tan mal en realidad el
+
+390
+00:32:55,320 --> 00:32:59,280
+software este el kstar está esperando una foto astronómica y las fotos astronómicas son entre
+
+391
+00:32:59,280 --> 00:33:04,760
+oscurísimas y muy oscuras siempre vale son cielos muy negros y deben cuando aparecen puntitos muy
+
+392
+00:33:04,760 --> 00:33:08,860
+brillantes entonces lo que está haciendo una especie de pre y profesor rápido de la imagen con los
+
+393
+00:33:08,860 --> 00:33:13,160
+parámetros habituales que tenemos de astronomía pero bueno se intuyen por ahí las ventanucas
+
+394
+00:33:13,160 --> 00:33:16,760
+se intuye por ahí más o menos la grada antes se intuía mejor no se veía un poquito mejor
+
+395
+00:33:16,760 --> 00:33:24,400
+abrir un poquito y tiramos y tiramos otra fotillo a ver bueno se va aclarando da igual ya os digo
+
+396
+00:33:24,400 --> 00:33:28,240
+que esto de los colorines horrorosos es por el preprocesamiento de la imagen que hay ahí pero
+
+397
+00:33:28,240 --> 00:33:32,120
+aseguro que si tú esta imagen la coge de la memoria o te la trae directamente al ordenador y te
+
+398
+00:33:32,120 --> 00:33:37,680
+la abren tu foto yo te la abren el programa que utilices de procesado fotollor no por favor u otras
+
+399
+00:33:37,680 --> 00:33:42,160
+aplicaciones de procesado astronómico pues tiene una foto más que habitual con lo cual está
+
+400
+00:33:42,160 --> 00:33:47,360
+viendo que con un código bastante sencillo que básicamente en mandazco digo xml podría automatizarte
+
+401
+00:33:47,360 --> 00:33:52,760
+toda una sesión de trabajo de manera más o menos fácil aún así parece un poco engorroso porque
+
+402
+00:33:52,760 --> 00:33:57,760
+tienes que conocer cuáles son estos mensajes tienes que construir el xml que es un xml correcto
+
+403
+00:33:57,760 --> 00:34:05,120
+pero estamos trabajando en ello como decía algún tipo por ahí como un alumno este año que también
+
+404
+00:34:05,120 --> 00:34:08,520
+le gusta la astronomía un algún alumno mío de la escuela de informática pues una de las cosas
+
+405
+00:34:08,520 --> 00:34:13,720
+que queremos hacer es precisamente desarrollar una biblioteca de python para controlar dispositivos
+
+406
+00:34:13,720 --> 00:34:17,640
+astronómicos con india en el que tú ya no tengas que estar pelearte peleándote directamente con
+
+407
+00:34:17,640 --> 00:34:23,600
+estos xml sino que sea un diseño mucho más pasado en objeto y eventos para que sea comodísimo
+
+408
+00:34:23,600 --> 00:34:28,680
+programar estas cosas y que no realmente se sea muchísimo más atracto y la gente pueda hacer
+
+409
+00:34:28,680 --> 00:34:33,040
+este mismo este mismo tipo de cosas sin conocer ni siquiera la sintax y esta de india que hemos
+
+410
+00:34:33,040 --> 00:34:36,360
+dicho vosotros pero eso hace un trabajo en curso durante este año y el que viene porque el chaval
+
+411
+00:34:36,360 --> 00:34:40,520
+va a empezar el tfg muy pronto y esperamos que esté disponible para todo el mundo que le llame
+
+412
+00:34:40,520 --> 00:34:47,400
+que le llame la atención deciros que estas cosas que pueden sonar así un poco nosotros estamos
+
+413
+00:34:47,400 --> 00:34:52,480
+hablando del ámbito de aficionado fundamentalmente que es lo que somos nosotros pero por ejemplo ya
+
+414
+00:34:52,480 --> 00:34:56,920
+estamos en contacto con gente de institutos astrofísicas andalucia y vamos a utilizar o pretenden
+
+415
+00:34:56,920 --> 00:35:01,360
+utilizar esta biblioteca y en concreto parte del software que vamos a hacer nosotros para proyectos
+
+416
+00:35:01,360 --> 00:35:05,640
+serio están desarrollando un telescopio especial de unas características que hasta ahora no se han
+
+417
+00:35:05,640 --> 00:35:10,800
+construido y probablemente el control de ese sistema esté basado en esta tecnología de india y
+
+418
+00:35:10,800 --> 00:35:15,400
+muy probablemente la biblioteca de python que desarrollemos es un telescopio que en vez de
+
+419
+00:35:15,400 --> 00:35:19,640
+ser un telescopio un tubo habitual como lo vivos otros pretenden que sean muchos telescopios a la
+
+420
+00:35:19,640 --> 00:35:26,520
+vez muchos ahora mismo es cualquier valor entre uno y 300 que son su su ambición así gorda no
+
+421
+00:35:26,520 --> 00:35:30,640
+te quieren manejar 300 telescopios a la vez ahora mismo no hay software astronómico habitual que
+
+422
+00:35:30,640 --> 00:35:35,600
+sea capaz de manejar 300 telescopios a la vez sin embargo con esta arquitectura india en principio
+
+423
+00:35:35,600 --> 00:35:41,040
+razonable pensar que si vamos a poder hacer ese tipo ese tipo de control no y bueno una provecita
+
+424
+00:35:41,040 --> 00:35:45,240
+muy sencilla pero esperamos que haya resultado interesante que hayáis visto que este tipo de
+
+425
+00:35:45,240 --> 00:35:50,720
+cosas las podemos hacer sin unos recursos de la leche y sin saber demasiado ni siquiera de programación
+
+426
+00:35:50,720 --> 00:35:57,440
+ni tampoco de astronomía y animaron a que si os mola el tema pues empecéis a salir contacté con
+
+427
+00:35:57,440 --> 00:36:02,240
+una asociación astronómica cerca de donde vivís pensé en comprar un telescopio o pregunté a gente
+
+428
+00:36:02,240 --> 00:36:06,760
+que sabe porque hay una afición poco compatible con la vida normal porque hay que estar de noche
+
+429
+00:36:06,760 --> 00:36:11,520
+a las tantas en el campo pero muy satisfactoria y muy gratificantes si tenés alguna duda alguna
+
+430
+00:36:11,520 --> 00:36:23,800
+pregunta pues encantado de responder o la si no como es la hora de comer la damos por finalizada
+
+431
+00:36:23,800 --> 00:36:27,600
+porque no da tiempo y nosotros mientras que desmontamos aquí va a acercar y tranquilamente
+
+432
+00:36:27,600 --> 00:36:33,920
+charlamos un ratito del de lo que apetezca vale sin ningún problema acuerdo y así terminamos más
+
+433
+00:36:33,920 --> 00:36:37,760
+o menos no nos estendemos más de la cuenta ya que me pasa no nos nos estendemos más de la cuenta
+
+434
+00:36:37,760 --> 00:37:02,080
+lo muchísimas gracias por vienen
+

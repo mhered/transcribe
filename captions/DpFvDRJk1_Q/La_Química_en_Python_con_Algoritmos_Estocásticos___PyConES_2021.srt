@@ -1,0 +1,564 @@
+1
+00:00:00,000 --> 00:00:14,200
+Hola, ya volvemos con la última charla que tenemos antes de lo que da el muerzo. Ojalá
+
+2
+00:00:14,200 --> 00:00:18,200
+que todos vayan teniendo harta de energía porque se viene una super keynote también
+
+3
+00:00:18,200 --> 00:00:22,720
+después de la comida. Luego tenemos un taller, no sé si creo que todavía quedan un par
+
+4
+00:00:22,720 --> 00:00:28,800
+de cupos. Y bueno, ojalá que los vídeos estén pronto porque también había muchas
+
+5
+00:00:28,800 --> 00:00:32,840
+charlas del otro bloque del lo que ve que se veían súper interesante así que esperamos
+
+6
+00:00:32,840 --> 00:00:37,480
+que puedan disfrutar de toda esta luego cuando tengamos la grabación también. Pero si están
+
+7
+00:00:37,480 --> 00:00:42,600
+por acá en el bloque A ya se viene esta super charla como le decía se titula la química
+
+8
+00:00:42,600 --> 00:00:47,160
+en python con algoritmos estocásticos es una charla desarrollada por cuatro personas
+
+9
+00:00:47,160 --> 00:00:54,160
+Jesús, Julián, Víctor y Francisco así que les recomiendo mucho de que se queden por
+
+10
+00:00:54,160 --> 00:01:01,000
+acá mirando la charla. La discusión la vamos a llevar a cabo por el canal de Discord es
+
+11
+00:01:01,000 --> 00:01:06,200
+muy probable que los autores de esta charla se presenten un poquito más tarde debido
+
+12
+00:01:06,200 --> 00:01:11,200
+a diferentes zonas horarias así que les recomendamos que puedan dejar todas sus preguntas y comentarios
+
+13
+00:01:11,200 --> 00:01:40,200
+por el canal de Discord. Sin más vamos a la charla.
+
+14
+00:01:41,200 --> 00:01:50,280
+Hola a todos los asistentes el día de hoy y antes que cualquier otra cosa queremos agradecer
+
+15
+00:01:50,280 --> 00:01:58,360
+esta oportunidad de nuestra charla con la Python España 2021 nuestra charla estará relacionada
+
+16
+00:01:58,360 --> 00:02:08,200
+a la química en python con algoritmos estocásticos. Un poco de lo que veremos a lo largo de esta
+
+17
+00:02:08,200 --> 00:02:14,440
+charla será conocernos un poco más una breve introducción de casos de estudio en la ingeniería
+
+18
+00:02:14,440 --> 00:02:21,840
+química aspen plus que es un software especializado ingenieré procesos referente a una columna
+
+19
+00:02:21,840 --> 00:02:27,480
+de estilación reactiva y por último pero no menos importante el algoritmo con python.
+
+20
+00:02:27,480 --> 00:02:39,640
+Y quiénes somos nosotros nos acompaña el día de hoy el doctor Julián Cabrera Ruiz
+
+21
+00:02:41,960 --> 00:02:46,760
+Victor Casillas y Francisco Daniel
+
+22
+00:02:46,760 --> 00:02:58,240
+Bueno ahora yo les voy a hablar sobre lo que hacemos nosotros como ingenieros químicos o
+
+23
+00:02:58,240 --> 00:03:04,080
+a qué es a lo que nos dedicamos nosotros nos dedicamos a todo lo que es la industria pero
+
+24
+00:03:04,080 --> 00:03:12,280
+al diseño escalado la optimización e incluso el control de los procesos químicos como les dije
+
+25
+00:03:12,280 --> 00:03:18,320
+nosotros estamos aplicados en básicamente cualquier industria estas incluyen desde polímeros,
+
+26
+00:03:18,320 --> 00:03:24,640
+alimentos, medicamentos energéticos hasta la industria de construcción que es donde yo me
+
+27
+00:03:24,640 --> 00:03:32,720
+encuentro trabajando ahora les voy a explicar sobre qué se trata un proceso químico en sí un
+
+28
+00:03:32,720 --> 00:03:41,960
+proceso químico se requiera toda la transformación de materia por medio de este diferentes procesos
+
+29
+00:03:41,960 --> 00:03:48,320
+diferentes transformaciones ya sean físicas o químicas para poder obtener al final un producto
+
+30
+00:03:48,320 --> 00:03:54,800
+o algún servicio que sea de nuestra conveniencia algunos de los ejemplos que podrían ser más de
+
+31
+00:03:54,800 --> 00:04:02,760
+moda ahorita sería la producción de medicamentos vacunas, alimentos que son los enatados que
+
+32
+00:04:02,760 --> 00:04:11,320
+usamos este comúnmente incluso energéticos como el bioetanol que es uno de los nuevos energéticos
+
+33
+00:04:11,320 --> 00:04:18,560
+más verdes que hay en el momento ahora la situación que nosotros vamos a ver con estos
+
+34
+00:04:18,560 --> 00:04:27,640
+procesos es porque no porque se necesita mucha dedicación para poder predecir los mismos y es
+
+35
+00:04:27,640 --> 00:04:35,680
+que estos se predicen a partir de modelados matemáticos que son muy complejos y podemos tener
+
+36
+00:04:35,680 --> 00:04:42,120
+en cantidad de ecuaciones las cuales son difíciles de resolver a mano por lo cual el uso de software
+
+37
+00:04:42,120 --> 00:04:49,640
+o de cualquier tipo de programa nos ayuda mucho en la producción de los mismos
+
+38
+00:04:54,720 --> 00:04:55,600
+ya que
+
+39
+00:04:55,600 --> 00:05:07,120
+como estaba mencionando victor tenemos la parte de ecuaciones que nos ayudan a predecir
+
+40
+00:05:07,120 --> 00:05:16,000
+los modelos de ciertos procesos separación destilación reacción etcétera actualmente
+
+41
+00:05:16,000 --> 00:05:22,320
+en la ingeniería química existe una fuerte tendencia algo que le llamamos intensificación de
+
+42
+00:05:22,320 --> 00:05:29,080
+procesos que es tratar de reducir de simplificar las estructuras en una sola para eficientarlas para
+
+43
+00:05:29,080 --> 00:05:34,240
+reducir espacio para incrementar su seguridad etcétera esto bueno por ejemplo en el caso de la
+
+44
+00:05:34,240 --> 00:05:40,520
+destilación reactiva entonces estaríamos juntando dos procesos al mismo tiempo el problema o el
+
+45
+00:05:40,520 --> 00:05:45,440
+reto más grande se vuelve en que todo este sistema de ecuaciones que ya era de por sí complejo pues
+
+46
+00:05:45,440 --> 00:05:51,080
+aumentamos la complejidad para la solución de ellos también aumentamos el número de variables
+
+47
+00:05:51,080 --> 00:05:59,160
+las en la en la manera de variables que nosotros podemos mover para la parte de optimizarlas
+
+48
+00:05:59,160 --> 00:06:05,200
+todos este conjunto de variables y ecuaciones nos generan unos grados de libertad y con
+
+49
+00:06:05,200 --> 00:06:10,400
+grados de libertad en términos matemáticos nosotros podemos optimizar el problema con
+
+50
+00:06:10,400 --> 00:06:15,080
+ello podemos hablar de encontrar un mínimo máximo de alguna función objetivo en particular
+
+51
+00:06:15,080 --> 00:06:22,240
+dos estrategias típicas para la búsqueda de este valor óptimo sería a través de estrategias
+
+52
+00:06:22,240 --> 00:06:28,080
+estocásticas o estrategias determinísticas las determinísticas es la manera más elegante que se
+
+53
+00:06:28,080 --> 00:06:34,320
+hace mediante la manipulación del modelo matemático mediante la búsqueda de gradientes o de lo que
+
+54
+00:06:34,320 --> 00:06:41,560
+nosotros comerciamos perdón lo que nosotros típicamente conocemos como las derivadas esto
+
+55
+00:06:41,560 --> 00:06:47,240
+como tal esto nos da un problema muy complejo cuando ya mencionábamos por ejemplo la destilación
+
+56
+00:06:47,240 --> 00:06:53,360
+reactiva sería muy difícil de trabajar con ello por el contrario el estocástico no necesita trabajar
+
+57
+00:06:53,360 --> 00:06:58,840
+con el modelo matemático solamente la solución eso nos da la pauta a que nosotros por ejemplo
+
+58
+00:06:58,840 --> 00:07:03,720
+podamos trabajar tal vez con un software que nosotros ya nos dé las soluciones de todo este
+
+59
+00:07:03,720 --> 00:07:13,280
+modelo matemático y solamente trabajar con la función objetivo que nosotros deseamos tener así
+
+60
+00:07:13,280 --> 00:07:18,960
+por ejemplo durante el proceso de esta búsqueda de solución por ejemplo en un estocástico aquí
+
+61
+00:07:18,960 --> 00:07:26,080
+lo representa mediante una superficie bidimensional vamos a tener diferentes mínimos y máximos que
+
+62
+00:07:26,080 --> 00:07:31,080
+obviamente ocurre en un proceso real nosotros vamos a ver cómo en la búsqueda estocástica
+
+63
+00:07:31,080 --> 00:07:37,400
+tenemos este mapeo hasta encontrar ese mínimo este por ejemplo particularmente es un ejemplo de un
+
+64
+00:07:37,400 --> 00:07:44,240
+algoritmo de pco particular optimization entonces de esta manera pues nosotros vamos a poder encontrar
+
+65
+00:07:44,240 --> 00:07:49,720
+ese diseño que nosotros deseamos para el problema industrial en particular
+
+66
+00:07:49,720 --> 00:08:03,040
+y referente a la relación de procesos y python hay tres vertientes principales la
+
+67
+00:08:03,040 --> 00:08:09,640
+parte de la investigación la documentación y los ejemplos en la documentación es simplemente
+
+68
+00:08:09,640 --> 00:08:17,600
+ver qué hay disponible referente a estos algoritmos que se pretenden implementar y con la
+
+69
+00:08:17,600 --> 00:08:24,360
+documentación referimos a la parte de las paqueterías relacionadas con toda esta ingeniería de
+
+70
+00:08:24,360 --> 00:08:31,920
+procesos en cuestión computacional con python entre ellas existen algunas como kenpai payomu
+
+71
+00:08:31,920 --> 00:08:40,080
+fai pai y obviamente aspen con los ejemplos nos dan o nos vilumbra en un camino para
+
+72
+00:08:40,080 --> 00:08:50,240
+poder implementarlos de manera correcta muy bien ahora les vamos a dar una breve introducción
+
+73
+00:08:50,240 --> 00:08:56,560
+un breve chequeo de lo que es el software especializado que mencionaba anteriormente el
+
+74
+00:08:56,560 --> 00:09:03,040
+doctor culián que nos permite obtener los resultados de lo que son las variables que
+
+75
+00:09:03,040 --> 00:09:09,400
+vamos a manejar con este código con este algoritmo que nosotros trabajamos esta herramienta que nosotros
+
+76
+00:09:09,400 --> 00:09:15,400
+usamos se llama es pen plus como podemos ver aquí rápidamente este pues nos aparece una serie de
+
+77
+00:09:15,400 --> 00:09:20,880
+opciones aquí abajo en esta parte podemos ir cambiando ya sea una columna de instalación o un
+
+78
+00:09:20,880 --> 00:09:26,280
+reactor separadores intercambiados de calor entre otras cosas es decir es una herramienta
+
+79
+00:09:26,280 --> 00:09:33,120
+demasiado potente y compleja que es muy útil para lo que es la simulación de procesos químicos
+
+80
+00:09:33,120 --> 00:09:41,520
+y adicionalmente a esto tenemos pues cómo se usa no el aspen como ya mencionamos es una
+
+81
+00:09:41,520 --> 00:09:48,000
+herramienta muy potente y por lo mismo pues tiene ciertos parámetros que hay que estar cuidando con
+
+82
+00:09:48,000 --> 00:09:53,680
+mucho bueno con mucho hay que tener mucho ojo no con esos parámetros entonces lo primero que
+
+83
+00:09:53,680 --> 00:09:58,640
+tenemos que hacer es ingresar los componentes con los que vamos a trabajar ya sea tanto productos
+
+84
+00:09:58,640 --> 00:10:05,120
+como reactivos segundo que es una parte muy importante dentro de la simulación de procesos es
+
+85
+00:10:05,120 --> 00:10:11,000
+elegir de manera adecuada el modelo termodinámico con el que vamos a trabajar y posteriormente pasamos
+
+86
+00:10:11,000 --> 00:10:15,920
+a lo que es configurar las etapas es decir el número de etapas o de platos que se va a trabajar en
+
+87
+00:10:15,920 --> 00:10:22,640
+una columna reactiva en este caso el condensador del revidor y pues también estar analizando lo
+
+88
+00:10:22,640 --> 00:10:28,440
+que es un estudio de sensibilidad el comportamiento que tienen las presiones las temperaturas en cada
+
+89
+00:10:28,440 --> 00:10:34,200
+etapa o la de específicamente la del revidor que va muy asociada a la parte de costos dentro de la
+
+90
+00:10:34,200 --> 00:10:40,800
+industria y adicionalmente pues claro siempre estar vigilando la pureza que sea la deseada dentro
+
+91
+00:10:40,800 --> 00:10:46,720
+de la del proceso que estemos trabajando porque pues eso es lo que al final del día vende en la
+
+92
+00:10:46,720 --> 00:10:54,000
+industria no una una alta pureza o una pureza muy específica entonces a la hora de tratar de implementar
+
+93
+00:10:54,000 --> 00:11:02,440
+hasta en compito es muy importante este este parámetro de la explorador explorador de variables ya
+
+94
+00:11:02,440 --> 00:11:10,480
+que nos permite hacer la llamada directamente desde nuestros software a paetón para así poderlo
+
+95
+00:11:10,480 --> 00:11:18,600
+manipular este con el algoritmo de de simulator aniline que nosotros usamos cualquier otro algoritmo
+
+96
+00:11:18,600 --> 00:11:23,840
+también es válido pero esta es la parte que nosotros implementamos para llamar nuestras variables
+
+97
+00:11:31,000 --> 00:11:37,560
+y respecto a la relación del algoritmo con paetón es fundamental tener en cuenta los siguientes
+
+98
+00:11:37,560 --> 00:11:46,280
+pasos principalmente a la hora de implementar este algoritmo necesitamos importar las librerías y
+
+99
+00:11:46,280 --> 00:11:54,320
+todo lo relacionado al archivo de aspen este chivo ya tiene una simulación de corrida en donde
+
+100
+00:11:54,320 --> 00:12:02,840
+convergen ciertos parámetros para poderlos utilizar como modelo base en este algoritmo posteriormente
+
+101
+00:12:02,840 --> 00:12:10,440
+se declaran algunas variables donde se implementan o se declaran ciertos límites se aplica un
+
+102
+00:12:10,440 --> 00:12:16,520
+normalizado de variables esto es sumamente importante para poder tener un correcto funcionamiento de
+
+103
+00:12:16,520 --> 00:12:24,920
+nuestro algoritmo posteriormente tenemos el algoritmo corriendo corriendo ya implementando
+
+104
+00:12:24,920 --> 00:12:32,520
+este vínculo directo con las rutas previamente vistas de aspen estas rust estas rutas son
+
+105
+00:12:32,520 --> 00:12:41,760
+fundamentales ya que contienen parámetros como temperaturas flujos purezas entre otros otros
+
+106
+00:12:41,760 --> 00:12:50,920
+datos que nos interesan en la parte de la ingeniería en esta parte de aspen se toman dos caminos en donde
+
+107
+00:12:50,920 --> 00:13:00,400
+se le puede aplicar un valor o se le aplica un resultado donde se invocan ciertos valores para
+
+108
+00:13:00,400 --> 00:13:07,560
+posteriormente activar una función objetivo en esta función objetivo se van a obtener ciertos
+
+109
+00:13:07,560 --> 00:13:15,320
+análisis que van a ser mostrados a través de una gráfica en esta gráfica nos van a nos van
+
+110
+00:13:15,320 --> 00:13:22,240
+a arrojar el comportamiento de por ejemplo las purezas como es que se están comportando a lo
+
+111
+00:13:22,240 --> 00:13:29,840
+largo de estas iteraciones que se tienen dentro del algoritmo con python y si es que se está obteniendo
+
+112
+00:13:29,840 --> 00:13:36,000
+el mínimo buscado en este caso de carga y de costos
+
+113
+00:13:45,560 --> 00:13:54,320
+y en la parte ya más estricta del algoritmo nos dedicamos a echar mano a código empezamos
+
+114
+00:13:54,320 --> 00:14:01,040
+como lo vimos previamente en el diagrama obviamente a importar todo todas las librerías o lo
+
+115
+00:14:01,040 --> 00:14:07,880
+necesario para poder implementar este código declaramos algunos límites y empezamos a
+
+116
+00:14:07,880 --> 00:14:15,440
+hacer funciones que estén relacionadas a lo que queremos lograr en este caso específicamente hablamos
+
+117
+00:14:15,440 --> 00:14:24,960
+de costos posteriormente como lo mencionamos también definimos algunas rutas estas rutas
+
+118
+00:14:24,960 --> 00:14:30,800
+están relacionadas con la previa estimulación que tuvimos de la del archivo de aspen
+
+119
+00:14:35,160 --> 00:14:41,440
+para ello también se consideran algunos parámetros estos parámetros vienen directamente de la
+
+120
+00:14:41,440 --> 00:14:48,960
+literatura se declaran a lo largo de nuestro algoritmo para que se tomen en cuenta a la hora de
+
+121
+00:14:48,960 --> 00:14:56,520
+hacer el cálculo de manera correcta y que se puedan llamar o implementar dentro de este código con
+
+122
+00:14:56,520 --> 00:15:06,080
+python algunas de las consideraciones que se tienen en cuenta para el diseño y la implementación de
+
+123
+00:15:06,080 --> 00:15:12,560
+esta columna reactiva es por ejemplo los platos y las número el número de tapas totales que se
+
+124
+00:15:12,560 --> 00:15:20,000
+tiene a lo largo de esta columna como tal es el diseño final o lo que pretendemos generar es
+
+125
+00:15:20,000 --> 00:15:34,200
+el diseño final de este de este equipo también incluimos algunos parámetros como por ejemplo el
+
+126
+00:15:34,200 --> 00:15:40,760
+costo de revidores o de condensadores que son los que se encuentran en la parte superior e inferior
+
+127
+00:15:40,760 --> 00:15:48,480
+de la respectiva columna que estamos analizando en estos se incluyen por ejemplo costos de vapor
+
+128
+00:15:48,480 --> 00:15:57,080
+entre otras costas a que posteriormente se se tomen en cuenta a la hora de hacer el cálculo final de
+
+129
+00:15:57,080 --> 00:16:27,040
+nuestros servicios bueno y aquí solamente como manera de demostración les queremos
+
+130
+00:16:27,040 --> 00:16:35,600
+poner este corto vídeo de cómo va corriendo el algoritmo y nos va graficando digamos en tiempo
+
+131
+00:16:35,600 --> 00:16:41,240
+real lo que son aquí tenemos nuestras variables son ocho variables las que modificamos ya sea el
+
+132
+00:16:41,240 --> 00:16:46,560
+número total de etapa de etapa en la que se alimenta así como el inicio y la finalización de
+
+133
+00:16:46,560 --> 00:16:52,920
+cada una de las zonas reactivas que se presentan y cada uno de estos puntitos representa un juego de
+
+134
+00:16:52,920 --> 00:16:58,840
+ocho variables diferentes y los valores que nos van arrojando acá abajo tenemos lo que es el mínimo
+
+135
+00:16:58,840 --> 00:17:03,960
+global es decir el valor más pequeño que se ha encontrado a lo largo de toda esta búsqueda de
+
+136
+00:17:03,960 --> 00:17:10,840
+valores y de variables y como ya lo habíamos comentado la la pureza es algo que siempre hay
+
+137
+00:17:10,840 --> 00:17:16,040
+que estar teniendo presente no hay que tener cuidado con eso y la vamos monitoreando si lo
+
+138
+00:17:16,040 --> 00:17:36,520
+queremos ver así de esa de esta manera y pues se va graficando y sólo nos queda
+
+139
+00:17:36,520 --> 00:17:44,280
+agradecer nuestra colaboración en esta ocasión con la paica en españa y si existiera alguna duda
+
+140
+00:17:44,280 --> 00:17:52,680
+pregunta o comentario estaremos respondiendo cualquiera de ellas en el canal de discord así que
+
+141
+00:17:52,680 --> 00:18:16,440
+por ahí estaremos activos muchísimas gracias por su atención hasta luego
+

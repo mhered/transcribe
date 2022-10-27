@@ -1,0 +1,1560 @@
+1
+00:00:00,000 --> 00:00:12,440
+Bueno, pues ya nos acercamos al final de las charlas de hoy del bloque A. No olvidéis que
+
+2
+00:00:12,440 --> 00:00:17,000
+tenemos varios sorteos previstos para mañana por la tarde y que podéis consultar toda la
+
+3
+00:00:17,000 --> 00:00:23,600
+información sobre cómo participar en el canal de Discord, en el canal anuncios. Os recomiendo
+
+4
+00:00:23,600 --> 00:00:28,840
+que os queréis hasta el final y que estéis atentos a 70, sobre todo mañana, porque al final
+
+5
+00:00:28,840 --> 00:00:33,480
+del evento uno de los sorteos se realizará con la herramienta Kahoot o la plataforma Kahoot y
+
+6
+00:00:33,480 --> 00:00:38,120
+las preguntas estarán relacionadas con todo lo que hemos estado viendo durante el día de hoy y
+
+7
+00:00:38,120 --> 00:00:44,680
+con lo que veremos mañana en las charlas que nos esperan. Y nada, no me voy a enrollar más,
+
+8
+00:00:44,680 --> 00:00:54,760
+os dejo con la charla de Jordi Saludes que se titula Reales de Verdad. Aquí te dejo Jordi.
+
+9
+00:00:54,760 --> 00:01:05,320
+Muchas gracias. Pues mira, aquí muchas gracias por la imitación. Entonces voy a comentaros un poco
+
+10
+00:01:05,320 --> 00:01:12,680
+cómo he llegado hasta aquí. La cosa es que, bueno, muchos, cuando estamos haciendo estudios de
+
+11
+00:01:12,680 --> 00:01:17,720
+ingeniería, pues tenemos que aprender lo que son los números reales, pero es algo que se pasa muy
+
+12
+00:01:17,720 --> 00:01:22,800
+rápidamente sobre el tema, porque la verdad es que bueno, es difícil de explicarlo bien,
+
+13
+00:01:22,800 --> 00:01:29,920
+hay poco tiempo y bueno, se deja. Entonces, yo lo que voy a comentar un poco es que cómo utilizando
+
+14
+00:01:29,920 --> 00:01:34,880
+ingeniería en país, lo que puedes capturar realmente la gracia de los números reales,
+
+15
+00:01:34,880 --> 00:01:40,120
+y es que la pega es que lo que estamos utilizando normalmente, que son los flowatolos double,
+
+16
+00:01:40,120 --> 00:01:47,800
+pues son números que son aproximados hasta cierto punto. Tienen 7 o 17 bits de precisión,
+
+17
+00:01:47,800 --> 00:01:47,800
+pero no más. Entonces un número real, por contr
+
+18
+00:01:54,800 --> 00:02:01,200
+tienes los decimales que necesitas en cualquier momento. Por tanto, la precisión se ajusta a lo que tú
+
+19
+00:02:01,200 --> 00:02:09,600
+necesitas en este momento. Entonces nosotros vamos a escribir los números reales como un intervalo
+
+20
+00:02:09,600 --> 00:02:15,240
+de números reales que será tan pequeño como se quiera o bien como una sucesión infinita de
+
+21
+00:02:15,240 --> 00:02:41,920
+números. Pero antes vamos a empezar hablando un poco de generadores. Los ingenieradores son algo como una
+
+22
+00:02:41,920 --> 00:03:11,600
+que es la definición de la sucesión de Fibonacci. Entonces la inicio diciendo que F1 y F2 son los dos
+
+23
+00:03:11,600 --> 00:03:39,920
+decimales que necesitan, es decir que voy a entregar el valor de F2 y me voy a parar hasta que lo vuelva a
+
+24
+00:03:39,920 --> 00:04:08,920
+hacer. Entonces aquí tengo aquí Fibonacci solo a secas, y digo forf en Fibonacci y esto lo comento. Lo que
+
+25
+00:04:08,920 --> 00:04:37,920
+podemos hacer es que esto se puede combinar. Por ejemplo, yo puedo poner uno en numerate aquí y ahora podría pedir,
+
+26
+00:04:37,920 --> 00:04:48,920
+entonces este es el primer ejemplo de generador. Y nosotros lo que vamos a hacer va a ser utilizar muchas cosas que están en el paquete de Itertools.
+
+27
+00:04:48,920 --> 00:04:56,920
+Por lo tanto lo que voy a hacer es importarlo todo. Itertools es para trabajar con iteradores y los generadores son un caso especial de iteradores.
+
+28
+00:04:56,920 --> 00:05:03,920
+Entonces vamos a poder trabajar con todas unas funciones que nos facilitarán el uso de generadores en particular.
+
+29
+00:05:03,920 --> 00:05:16,920
+En particular para empezar por algo hay una de las funciones de Itertools que se llama Slides. Slides lo que haces es como hacer un slice de una lista,
+
+30
+00:05:16,920 --> 00:05:25,920
+pero para un generador. Entonces tienes que darle primero el generador que quieres utilizar, que ya pongo directamente esto en numerate de Fibonacci,
+
+31
+00:05:25,920 --> 00:05:37,920
+o sea que ya es su índice y el valor de Fibonacci y luego dices dónde quieres empezar y dónde quieres terminar. Esto quiere decir que se van a saltar los 99 elementos
+
+32
+00:05:37,920 --> 00:05:48,920
+primero y que en el 100 empezaremos y que en el 110 terminaremos. Entonces yo voy a llamar esto EF. EF ahora es un generador o un iterador,
+
+33
+00:05:48,920 --> 00:05:57,920
+como dice aquí es un iterador. Entonces para los iteradores y en particular para los generadores tú puedes hacerlos paso a paso ejecutando Next.
+
+34
+00:05:57,920 --> 00:06:05,920
+Entonces yo pongo aquí Next por ejemplo y fíjate que aquí dice 100 porque claro ya le he pedido a empezar en 100, por lo tanto los 99 primeros los ha calculado
+
+35
+00:06:05,920 --> 00:06:13,920
+pero los ha tirado. Entonces el primer elemento que vemos es el 100 que tiene este valor de aquí. Y mientras yo voy evaluando Next,
+
+36
+00:06:13,920 --> 00:06:23,920
+pues esto va avanzando. Solo que en este caso el 110 se termina porque yo he hecho que hasta 110. Entonces esto es un iterador que termina y aquí nos da un stop iteration.
+
+37
+00:06:23,920 --> 00:06:35,920
+Vale, muy bien. Entonces otra forma de utilizar esto sería utilizarla también en la función drug while que también está en el literature,
+
+38
+00:06:35,920 --> 00:06:45,920
+que quiere decir mientras esta condición se acierta pues ve tirándolo. Se ve generando el generador, el generador es como si tuvieras una manivela
+
+39
+00:06:45,920 --> 00:06:52,920
+y cada vez que le das a la manivela pues te sale lo que tú ya has puesto en el 10. Pues aquí quiere decir ve delidad de la manivela
+
+40
+00:06:52,920 --> 00:07:02,920
+pero mientras se cumpla esta condición pues lo vas tirando y no das caso. Y cuando ya no se cumpla la condición entonces paras y me retornas el generador en el estado en el que está.
+
+41
+00:07:02,920 --> 00:07:12,920
+Por lo tanto aquí lo que voy a hacer con esto es generar números de Fibonacci pero voy a tirar todos los que sean menos de 100. Por lo tanto espero que el siguiente sea mayor que 100.
+
+42
+00:07:12,920 --> 00:07:21,920
+Y efectivamente esto es mayor que 100, es el primer número Fibonacci que es mayor que 100 y esto ahora lo puedo seguir iterando y tirando y seguirá como el Fibonacci normal.
+
+43
+00:07:21,920 --> 00:07:30,920
+Porque hay tirado esto. Este drug while lo voy a atualizar luego para otras cosas. Vale, entonces otra cosa que podemos hacer
+
+44
+00:07:30,920 --> 00:07:42,920
+por ejemplo es hacer un zip, hacer un zip con dos iteradores. Esto quiere decir que podríamos por ejemplo en este caso el propio Fibonacci
+
+45
+00:07:42,920 --> 00:07:51,920
+y ahora lo voy a combinar con una copia del Fibonacci pero adelantado en el tiempo como le queremos. Fijate aquí, por un rato yo tengo Fibonacci
+
+46
+00:07:51,920 --> 00:08:00,920
+pero lo otro yo tengo un slice de Fibonacci pero empezando en el uno. Esto quiere decir que el primer número de Fibonacci no aparece aquí.
+
+47
+00:08:00,920 --> 00:08:10,920
+Empiece en el uno. Y el ciplo que hace es como pasar una crema ayer, que quiere decir que va agrupando el elemento de uno con el elemento de otro, el siguiente de uno con el siguiente del otro,
+
+48
+00:08:10,920 --> 00:08:19,920
+tercero del primero con el tercero del segundo. Pero claro como el primero está adelantado en el tiempo, pues esto no es lo mismo que esto, sino que sería el siguiente.
+
+49
+00:08:19,920 --> 00:08:28,920
+Por lo tanto es una forma de tener al mismo tiempo los dos elementos de la asociación de Fibonacci el primero más adelantado que el segundo.
+
+50
+00:08:28,920 --> 00:08:38,920
+Y eso lo puedo utilizar por ejemplo de interés de 4 para imprimir, para imprimir por ejemplo el cociente entre un número de Fibonacci y el anterior, que sería esta cosa de aquí.
+
+51
+00:08:38,920 --> 00:08:50,920
+He puesto aquí un if para poder parar en el 10 porque si no ya digo el forest sería para siempre. Y aquí digo bueno pues mira estoy aquí con el 1 1 y su división es 1.
+
+52
+00:08:50,920 --> 00:09:04,920
+2 por 1 subivisiones 2, 3 dividido por 2, 1.5. Si me fijo en esta columna y en esta pues veo que es la misma columna, solo que pues es retrasada en el tiempo.
+
+53
+00:09:04,920 --> 00:09:11,920
+Aquí empieza en 1, 2, 3, 4, 5 y este empieza con 1, 1, 2, 3, 5, 7. Y el cociente es lo que aparece aquí.
+
+54
+00:09:11,920 --> 00:09:20,920
+Y nos vamos dando cuenta que esto se va acercando a un número que más o menos es 1, 6, 18. Esto se puede hacer de otra forma.
+
+55
+00:09:20,920 --> 00:09:28,920
+Y es utilizar la función map. La función map se puede aplicar para cualquier iterable, en particular para generadores.
+
+56
+00:09:28,920 --> 00:09:43,920
+Y quiere decir voy a aplicar esta función a cada uno de los dos iterables que tengo aquí. Uno es el Fibonacci que he usado antes y este es el Fibonacci pero adelantado en el tiempo.
+
+57
+00:09:43,920 --> 00:09:51,920
+Es decir quitando el primer término de todo. Por tanto está haciendo lo mismo de antes y esto quiere decir que voy a dividir el de aquí con el de aquí.
+
+58
+00:09:51,920 --> 00:10:05,920
+Por lo tanto estoy haciendo exactamente lo mismo que yo estaba haciendo aquí, pero ya de una atacada con el map. Por tanto el map me va a retornar otro iterable que en realidad será el cociente de las dos cosas que yo tenía.
+
+59
+00:10:05,920 --> 00:10:17,920
+Y luego como es un iterable pues lo voy a hacer una slice de esto y voy a quedarme con el término de 200. Es decir voy a ir ya directamente al término de 200.
+
+60
+00:10:17,920 --> 00:10:29,920
+Si al noneste de aquí que forma parte de la slice quiere decir que no vaya a parar. Es decir del 200 en adelante. Por tanto genero esto y ya directamente le pido al next porque es el valor que me interesa.
+
+61
+00:10:29,920 --> 00:10:37,920
+Por tanto este valor de aquí corresponde al 200 término, al término que hace 200 de la división entre los números de Fibonacci.
+
+62
+00:10:37,920 --> 00:10:47,920
+Y vemos que cada vez se parece más a un número como el que dijimos antes. 1.618033 etc. Vale, muy bien.
+
+63
+00:10:47,920 --> 00:10:55,920
+Pues hasta ahora no hemos hablado de cosas que se relacionen directamente con los reales, pero ahora ya vamos ahí.
+
+64
+00:10:55,920 --> 00:11:06,920
+Vale, un momento. Un momento que me he ido de la cosa.
+
+65
+00:11:06,920 --> 00:11:12,920
+Este de aquí. Correcto.
+
+66
+00:11:12,920 --> 00:11:19,920
+Vale, entonces vamos con lo de los intervalos encajados que será nuestra forma para llegar a los números reales.
+
+67
+00:11:19,920 --> 00:11:29,920
+Bueno, y primero vamos a hablar de intervalos. Un intervalo que es una tupla de dos números que serán relacionados en nuestro caso y que corresponde a este conjunto.
+
+68
+00:11:29,920 --> 00:11:38,920
+De los números racionales en principio que están entre ahí. Yo lo voy a presentar por una tupla a, b.
+
+69
+00:11:38,920 --> 00:11:44,920
+Entonces voy a generar una serie de generadores de intervalos de forma que cada uno esté contenido en los anteriores.
+
+70
+00:11:44,920 --> 00:11:54,920
+Si cada uno va a estar en el primero va a ser mayor, el siguiente va a estar dentro de este, el siguiente va a estar dentro de este cada vez más pequeño y cada uno contenido en el anterior.
+
+71
+00:11:54,920 --> 00:12:04,920
+Y además la talla de estos intervalos van a tender a cero. La talla quiere decir la longitud del intervalo, o sea que es el extremo superior menos el extremo inferior.
+
+72
+00:12:04,920 --> 00:12:11,920
+Básicamente es esto. Y vamos a utilizar fracciones, o sea números racionales porque realmente queremos resultados exactos aquí.
+
+73
+00:12:11,920 --> 00:12:23,920
+Por lo tanto lo que habrá que hacer es importar lo de los racionales. Para esto importo de la librería Fractions Fraction y lo voy a llamar F para que sea más fácil de escribir.
+
+74
+00:12:23,920 --> 00:12:40,920
+F, tú le pones F de 2 y te construye una fracción que es 2,1. Y le pones F de, por ejemplo, comillas 1 barra 2 comillas y te fabrica la fracción correspondiente.
+
+75
+00:12:40,920 --> 00:12:51,920
+Y otra cosa que voy a necesitar también es esta IB que es una función de conveniencia simplemente para poder construir intervalos con A B sin tener que escribir toda la FCA y toda la FV.
+
+76
+00:12:51,920 --> 00:12:59,920
+Entonces vamos a construir el primer número irracional que es el típico Ray de 2.
+
+77
+00:12:59,920 --> 00:13:06,920
+Entonces se sabe, desde los griegos hace 2000 años saben que la Ray de 2 no es una fracción, no es un número racional.
+
+78
+00:13:06,920 --> 00:13:13,920
+Pero si sabemos que Ray de 2 está entre 0 y 2 porque 0 al cuadrado es 0 y 2 al cuadrado es 4, entonces está entre 0 y 4.
+
+79
+00:13:13,920 --> 00:13:18,920
+Entonces lo que vamos a hacer va a ser aplicar lo que se llama bisección con esta función de aquí.
+
+80
+00:13:18,920 --> 00:13:28,920
+Bisección quiere decir que vamos a tomar una función que va a ser continua y voy a valorarla en distintos puntos y cada vez que pase de negativo o positivo,
+
+81
+00:13:28,920 --> 00:13:36,920
+quiere decir que entre medias esta función tiene que valer 0 y como cuando esto vale 0 es porque la X al cuadrado da 2,
+
+82
+00:13:36,920 --> 00:13:42,920
+pues voy a intentar localizar de esta forma el número este que corresponde a la Ray de 2.
+
+83
+00:13:42,920 --> 00:13:46,920
+Y vamos a empezar con intervalo que sea 0, 2 y que contenga el corte.
+
+84
+00:13:46,920 --> 00:13:53,920
+Conte el corte quiere decir simplemente esto, que F de 0 va a ser negativo y que F de 2 va a tener que ser positivo.
+
+85
+00:13:53,920 --> 00:13:58,920
+Ya empezamos a la mitad del intervalo y nos quedamos siempre con la mitad que contiene el trabajo.
+
+86
+00:13:58,920 --> 00:14:00,920
+Esto básicamente es lo que se ve en este vídeo.
+
+87
+00:14:00,920 --> 00:14:11,920
+Entonces yo empiezo en intervalo 0, 2, lo evaluo en una parte y otra, veo que efectivamente aquí es negativo y aquí es positivo y ahora tomo el punto medio,
+
+88
+00:14:11,920 --> 00:14:13,920
+que es este que está marcado aquí como.
+
+89
+00:14:13,920 --> 00:14:19,920
+Y ahora considero los dos intervalos que tengo aquí y miro en cual de ellos contiene el corte.
+
+90
+00:14:19,920 --> 00:14:26,920
+El corte está aquí en rojo marcado como número 1, entre 1 y 2 es donde haya el corte porque pasó de negativo positivo.
+
+91
+00:14:26,920 --> 00:14:36,920
+Y esto lo vuelvo a hacer, es decir que el siguiente paso es tomo este intervalo de aquí, busco el punto medio y ahora miro donde el corte, el corte está aquí.
+
+92
+00:14:36,920 --> 00:14:39,920
+Y por lo tanto ahora tomaría el intervalo este de aquí.
+
+93
+00:14:39,920 --> 00:14:42,920
+Y ahora lo vuelvo a hacer y lo vuelvo a hacer y lo vuelvo a hacer.
+
+94
+00:14:42,920 --> 00:14:52,920
+O sea que esta es la idea de tener estos intervalos que van a ser encajados porque cada uno está en el anterior y cada vez el intervalo este es la mitad de la anterior.
+
+95
+00:14:52,920 --> 00:14:54,920
+Por lo tanto cumplen las dos condiciones.
+
+96
+00:14:54,920 --> 00:14:57,920
+Entonces voy a definir aquí lo que es la raíz cuadrada de 2.
+
+97
+00:14:57,920 --> 00:15:08,920
+La raíz cuadrada de 2 en esta forma tendría que pasar por ejemplo con un intervalo que va a ser el intervalo 0, 2 por ejemplo.
+
+98
+00:15:08,920 --> 00:15:09,920
+Me va a hacerlo bien.
+
+99
+00:15:09,920 --> 00:15:17,920
+Y ahora voy a decir, bueno vamos a hacer mientras sea cierto, para siempre, vamos a ver.
+
+100
+00:15:17,920 --> 00:15:24,920
+Primero de todo voy a dar el intervalo este.
+
+101
+00:15:24,920 --> 00:15:30,920
+Ahora lo voy a deshacer, voy a obtener sus extremos, ahí ve.
+
+102
+00:15:30,920 --> 00:15:32,920
+Y ahora es el momento de tomar la decisión.
+
+103
+00:15:32,920 --> 00:15:36,920
+Entonces voy a calcular primero el punto medio que va a ser a más b partido por 2.
+
+104
+00:15:36,920 --> 00:15:47,920
+Y ahora voy a decir, mira si f de c es positivo, entonces es que estoy en el intervalo de la izquierda.
+
+105
+00:15:47,920 --> 00:15:52,920
+Porque en el f de a ya por entrada de entrada es negativo, si el f de c es positivo tengo el corte allá.
+
+106
+00:15:52,920 --> 00:15:56,920
+Y por lo tanto lo que habría que hacer es retornar el valor este.
+
+107
+00:15:56,920 --> 00:15:58,920
+Pero no lo voy a retornar, sino que voy a poner un yield.
+
+108
+00:15:58,920 --> 00:16:02,920
+O sea que la cosa sería yield a c.
+
+109
+00:16:02,920 --> 00:16:05,920
+Porque en a c es donde realmente tengo el cambio.
+
+110
+00:16:05,920 --> 00:16:10,920
+Y si no, pues quiere decir que de los dos sumintervalos es el otro que vale.
+
+111
+00:16:10,920 --> 00:16:15,920
+Por lo tanto lo que voy a hacer es retornar el cb.
+
+112
+00:16:15,920 --> 00:16:17,920
+Y ya está.
+
+113
+00:16:17,920 --> 00:16:22,920
+Y esto me va a dar un generador que yo puedo aquí por ejemplo usar.
+
+114
+00:16:22,920 --> 00:16:25,920
+Por ejemplo voy a llamarle s2.
+
+115
+00:16:25,920 --> 00:16:30,920
+S2 va a ser sqrt2 de tal.
+
+116
+00:16:30,920 --> 00:16:35,920
+Nuevo local y como esto es un generador, pues puedo darle aquí.
+
+117
+00:16:35,920 --> 00:16:37,920
+Que me da el intervalo que hay en un tercer 2.
+
+118
+00:16:37,920 --> 00:16:43,920
+Pero si lo vuelvo a volar, pasa algo que es que esto no está bien.
+
+119
+00:16:43,920 --> 00:16:46,920
+A ver qué pasa aquí.
+
+120
+00:16:46,920 --> 00:16:51,920
+Es positivo.
+
+121
+00:16:51,920 --> 00:16:53,920
+Ah, así que no he puesto la f.
+
+122
+00:16:53,920 --> 00:17:01,920
+Aquí hay que poner que la f es lambda x a dx por x menos 2.
+
+123
+00:17:01,920 --> 00:17:05,920
+Vale, entonces voy a valorarlo.
+
+124
+00:17:05,920 --> 00:17:07,920
+A ver si funciona mejor esto.
+
+125
+00:17:07,920 --> 00:17:09,920
+Sí, ahora tengo entre 1 y 2.
+
+126
+00:17:09,920 --> 00:17:17,920
+Ahora entre 0 y 2, entre 1 y 2 otra vez.
+
+127
+00:17:17,920 --> 00:17:28,920
+Hay demasiados deals, yo creo que lo que está pasando es que hay que decirle que el intervalo es este y que el otro intervalo es este.
+
+128
+00:17:28,920 --> 00:17:32,920
+Lo evaluó, lo evaluó otra vez.
+
+129
+00:17:32,920 --> 00:17:36,920
+0 y 2.
+
+130
+00:17:36,920 --> 00:17:38,920
+Entre 1 y 2.
+
+131
+00:17:38,920 --> 00:17:41,920
+Entre 1 y 1 medio, ahora llamamos bien.
+
+132
+00:17:41,920 --> 00:17:44,920
+Aquí, aquí, aquí, aquí, aquí, aquí.
+
+133
+00:17:44,920 --> 00:17:50,920
+Esto cada vez va a ser un intervalo que va a contener la cuadrada de 2 y cada vez va a ser menor, menor, menor.
+
+134
+00:17:50,920 --> 00:18:00,920
+Entonces para evaluar esto mejor voy a definir la función talla que quiere decir cuándo esto, bueno, que medida tiene el intervalo que estoy haciendo.
+
+135
+00:18:00,920 --> 00:18:11,920
+Y luego voy a hacer un drop while y voy a decir, mire, mientras la talla de los intervalos que vayan saliendo sea menor que 2.
+
+136
+00:18:11,920 --> 00:18:18,920
+Mayor que 1 por 10 a la menos 5, pues sigue dándole a la raíz cuadrada de esto.
+
+137
+00:18:18,920 --> 00:18:20,920
+Y luego vamos a estar en el siguiente.
+
+138
+00:18:20,920 --> 00:18:22,920
+Ya está, tídate.
+
+139
+00:18:22,920 --> 00:18:25,920
+Él ha hecho todo esto de aquí.
+
+140
+00:18:25,920 --> 00:18:28,920
+Esto de aquí es para sacar el siguiente intervalo.
+
+141
+00:18:28,920 --> 00:18:37,920
+Esto me da cuál es el número enflotante, es decir, más o menos lo que tiene que ser, que ya vemos que es correcto, porque es lo que esperamos que fuera.
+
+142
+00:18:37,920 --> 00:18:45,920
+Incluso puedes ver si realmente la distancia entre uno y otro es correcto.
+
+143
+00:18:45,920 --> 00:18:52,920
+Miro cuál es la talla del intervalo y me da y me dice que la talla del intervalo es 7 y por 10 a la menos 6, por lo tanto, cumple la condición de esto.
+
+144
+00:18:52,920 --> 00:19:00,920
+Por lo tanto, yo puedo conseguir aquí aproximaciones de realidad 2 tan buenas como se quiera utilizando esto.
+
+145
+00:19:00,920 --> 00:19:06,920
+Bueno, esto se puede modificar un poco ahora y hacer, bueno, vamos a hacer raíz cuadrada de lo que sea.
+
+146
+00:19:06,920 --> 00:19:12,920
+Lo único que hay que hacer es poner aquí una y y si quieres aumentar un poco esto para que no haya problemas.
+
+147
+00:19:12,920 --> 00:19:19,920
+Entonces, de esta forma, yo podría calcular la raíz cuadrada de 3, se que a SQR 3 de 3.
+
+148
+00:19:19,920 --> 00:19:23,920
+Y aquí pues sería S de 3.
+
+149
+00:19:23,920 --> 00:19:29,920
+Y, ups, me pasa aquí, es S3.
+
+150
+00:19:29,920 --> 00:19:36,920
+Entonces aquí vas calculando y calculando y esto se acercaría a la raíz cuadrada de 3.
+
+151
+00:19:36,920 --> 00:19:43,920
+Entonces podríamos repetir el mismo proceso poniendo aquí S de 3 a ver qué sale.
+
+152
+00:19:43,920 --> 00:19:46,920
+Se habría un número que se aproxima a la raíz cuadrada de 3.
+
+153
+00:19:46,920 --> 00:19:50,920
+Por lo tanto, ya tengo definida la raíz cuadrada, por lo menos en los racionales.
+
+154
+00:19:50,920 --> 00:19:56,920
+Bueno, entonces esta idea que es muy útil nos permite construir otros números reales.
+
+155
+00:19:56,920 --> 00:19:59,920
+Por ejemplo, el caso del lugarismo neperiano 2.
+
+156
+00:19:59,920 --> 00:20:07,920
+Y eso lo haré por tal como se empleaba en cálculo a base de integrales por sumas inferiores y superiores.
+
+157
+00:20:07,920 --> 00:20:09,920
+Entonces, vamos a ver.
+
+158
+00:20:09,920 --> 00:20:18,920
+Una integral siempre está entre una suma que es partir el interval que yo tengo en intervalitos pequeños
+
+159
+00:20:18,920 --> 00:20:22,920
+y tomar los valores mínimos y lo mismo pero tomando los valores máximos.
+
+160
+00:20:22,920 --> 00:20:27,920
+Entonces aquí en este vídeo se ve, por ejemplo, en la función de la partibora y que es
+
+161
+00:20:27,920 --> 00:20:29,920
+y la integral entre 1 y 2.
+
+162
+00:20:29,920 --> 00:20:31,920
+¿Cómo tendría que ir esto?
+
+163
+00:20:31,920 --> 00:20:38,920
+Pues bueno, el área que queda por aquí abajo estaría entre este rectángulo y este rectángulo.
+
+164
+00:20:38,920 --> 00:20:42,920
+Pero si yo refino el intervalo, lo pongo en 2.
+
+165
+00:20:42,920 --> 00:20:46,920
+Entonces, esta estaría entre esta área de aquí y esta.
+
+166
+00:20:46,920 --> 00:20:52,920
+Y si lo refino más y pongo 4 intervalitos aquí y calculo el área de estos rectángulos,
+
+167
+00:20:52,920 --> 00:20:58,920
+pues el área que queda por debajo de la curva está entre este valor de aquí y este valor de aquí.
+
+168
+00:20:58,920 --> 00:21:05,920
+Y esto se puede repetir todas las veces que haga falta conforme vaya refinando esto la aproximación cerebro.
+
+169
+00:21:05,920 --> 00:21:08,920
+Y esto me da un intervalo entre las áreas.
+
+170
+00:21:08,920 --> 00:21:11,920
+Es decir, que este intervalo de aquí entre suma 0 y suma 1
+
+171
+00:21:11,920 --> 00:21:17,920
+estaría encajando la verdadera integral que yo quiero calcular.
+
+172
+00:21:17,920 --> 00:21:19,920
+Pues esto es lo que está puesto aquí.
+
+173
+00:21:19,920 --> 00:21:26,920
+Esto yo le paso una función, le paso una lista de intervalitos como estos que se ven aquí.
+
+174
+00:21:26,920 --> 00:21:34,920
+Y en cada caso lo que hace es sumar para el valor extremo inferior de cada subintervalito en este for
+
+175
+00:21:34,920 --> 00:21:36,920
+y para el extremo superior.
+
+176
+00:21:36,920 --> 00:21:38,920
+Y me entrega la suma total.
+
+177
+00:21:38,920 --> 00:21:42,920
+Y esto necesito otra función cipla como esta que se llama partes,
+
+178
+00:21:42,920 --> 00:21:46,920
+que significa partir un intervalo en varias partes iguales.
+
+179
+00:21:46,920 --> 00:21:52,920
+Entonces, por ejemplo, si hago partes del intervalo 0, 1 y 5, pues me salen estos 5 de aquí,
+
+180
+00:21:52,920 --> 00:21:56,920
+de 0 a 1, 5, de 1, 5, 2, 5, etc.
+
+181
+00:21:56,920 --> 00:22:01,920
+Y aquí tenemos un ejemplo sobre cómo funciona esto en una integral que ya sé cuánto dan exactamente,
+
+182
+00:22:01,920 --> 00:22:03,920
+que es que da un cuarto.
+
+183
+00:22:03,920 --> 00:22:08,920
+Entonces, si hago 10 partes y hago la suma esta y luego veo lo que me sale,
+
+184
+00:22:08,920 --> 00:22:12,920
+pues esto tiene que ser el 0, 25, pero es que ya hay pocos intervalitos.
+
+185
+00:22:12,920 --> 00:22:14,920
+Si pongo 100, pues la cosa se parece más.
+
+186
+00:22:14,920 --> 00:22:17,920
+Si pongo 1000, pues la cosa se parece más.
+
+187
+00:22:17,920 --> 00:22:19,920
+Entonces, aquí quedaría esto.
+
+188
+00:22:19,920 --> 00:22:22,920
+Cortando el poder definido ahora sí un generador,
+
+189
+00:22:22,920 --> 00:22:25,920
+donde le paso la F y le paso el intervalo,
+
+190
+00:22:25,920 --> 00:22:31,920
+y él ya lo que hace es, bueno, pues hacer el id de esta de la suma de partes,
+
+191
+00:22:31,920 --> 00:22:35,920
+de n partes, pero cada vez que yo pase por este juay,
+
+192
+00:22:35,920 --> 00:22:37,920
+pues el intervalo de partes se va a multiplicar por 2,
+
+193
+00:22:37,920 --> 00:22:42,920
+con lo cual cada vez, digamos, tendré soluciones más aproximadas.
+
+194
+00:22:42,920 --> 00:22:44,920
+Entonces, voy a evaluarlo aquí a ver qué pasa,
+
+195
+00:22:44,920 --> 00:22:48,920
+y me da, por ejemplo, pues que habiendo hecho 1024 partes,
+
+196
+00:22:48,920 --> 00:22:51,920
+esto sale a 0, 25, 0, 0, 0, 0,
+
+197
+00:22:51,920 --> 00:22:52,920
+¿cuál parece que está bien?
+
+198
+00:22:52,920 --> 00:22:54,920
+Vale, entonces para el logrima de 2.
+
+199
+00:22:54,920 --> 00:22:56,920
+El logrima de 2 es esta cosa,
+
+200
+00:22:56,920 --> 00:22:59,920
+es la integral entre 1 y 2 de 1 partido por x.
+
+201
+00:22:59,920 --> 00:23:04,920
+Bueno, pues nada, utilizo el generador que acabo de definir,
+
+202
+00:23:04,920 --> 00:23:09,920
+tengo logrima de 2, y ahora ya es cuestión simplemente de ir evaluando esto,
+
+203
+00:23:09,920 --> 00:23:12,920
+y vemos que va acercándose a 0,69,
+
+204
+00:23:12,920 --> 00:23:15,920
+que más o menos tendría así el valor, ¿no?
+
+205
+00:23:15,920 --> 00:23:18,920
+Para comprobarlo, tomo la función exponencial, ya del más,
+
+206
+00:23:18,920 --> 00:23:20,920
+defino función talla, que de hecho está hecho,
+
+207
+00:23:20,920 --> 00:23:23,920
+y puedo repetir el cálculo, pues ahora pidiendo, por ejemplo,
+
+208
+00:23:23,920 --> 00:23:27,920
+que la talla sea menor que 1 por 10 a 9 de 3.
+
+209
+00:23:27,920 --> 00:23:33,920
+Y al cálculo, el next este me va a dar, pues,
+
+210
+00:23:33,920 --> 00:23:37,920
+un número bastante largo, supongo, este de aquí,
+
+211
+00:23:37,920 --> 00:23:40,920
+o sea, esto es una fracción, dos fracciones de hecho,
+
+212
+00:23:40,920 --> 00:23:41,920
+muy larga, ¿no?
+
+213
+00:23:41,920 --> 00:23:45,920
+Pero la forma de ver si lo estamos haciendo bien es convertirlo a flotante,
+
+214
+00:23:45,920 --> 00:23:48,920
+entonces aquí estamos viendo esto, ¿vale?
+
+215
+00:23:48,920 --> 00:23:52,920
+Vale, entonces la exponencial de este número está muy cerca de 2,
+
+216
+00:23:52,920 --> 00:23:54,920
+por lo tanto quiere decir que lo estamos haciendo bien,
+
+217
+00:23:54,920 --> 00:23:57,920
+y efectivamente si yo calculo la talla del intervalo que me sale,
+
+218
+00:23:57,920 --> 00:23:59,920
+pues es 6 por 10 a la menos 5,
+
+219
+00:23:59,920 --> 00:24:03,920
+es decir, que estamos dentro de la precisión que habíamos pedido aquí,
+
+220
+00:24:03,920 --> 00:24:05,920
+que era 10 a la menos 3.
+
+221
+00:24:05,920 --> 00:24:09,920
+Por lo tanto, esto puedo uitararlo hasta que tenga la precisión que yo quiera.
+
+222
+00:24:09,920 --> 00:24:12,920
+Vale, continuamos para él, muy rápidamente.
+
+223
+00:24:12,920 --> 00:24:16,920
+Esto está muy bien, este sistema, pero yo quiero definir un número real, ¿no?
+
+224
+00:24:16,920 --> 00:24:19,920
+Entonces para definir un número real, la forma es lo que está escrito aquí,
+
+225
+00:24:19,920 --> 00:24:21,920
+esencialmente es.
+
+226
+00:24:21,920 --> 00:24:25,920
+Un número real es algo que tú le pasas, es una función,
+
+227
+00:24:25,920 --> 00:24:27,920
+para mí un número real es una función,
+
+228
+00:24:27,920 --> 00:24:29,920
+tú le pasas una precisión, que sería esta delta,
+
+229
+00:24:29,920 --> 00:24:34,920
+y él lo que hace es averiguar un generador hasta que la talla del intervalo sea menor que delta,
+
+230
+00:24:34,920 --> 00:24:36,920
+y esto es lo que retorna como resultado.
+
+231
+00:24:36,920 --> 00:24:39,920
+Pero como puedo ponerle yo la delta que me dé la gana,
+
+232
+00:24:39,920 --> 00:24:42,920
+entonces, bueno, pues tengo precisión arbitraria,
+
+233
+00:24:42,920 --> 00:24:44,920
+porque puedo poner lo que me enfrezca, ¿no?
+
+234
+00:24:44,920 --> 00:24:46,920
+Y más o menos la idea sería esta,
+
+235
+00:24:46,920 --> 00:24:49,920
+como que está definido aquí como raíz cuadrada rscuérrate.
+
+236
+00:24:49,920 --> 00:24:52,920
+Aquí defino una función que le pasa a un delta,
+
+237
+00:24:52,920 --> 00:24:56,920
+y lo que hace es un drop-while del generador correspondiente a la raíz cuadrada,
+
+238
+00:24:56,920 --> 00:24:58,920
+hasta que la talla sea menor que delta,
+
+239
+00:24:58,920 --> 00:25:01,920
+y cuando lo tiene, pues me retorna este resultado.
+
+240
+00:25:01,920 --> 00:25:06,920
+Y esto yo lo he organizado un poco, aquí como una clase.
+
+241
+00:25:06,920 --> 00:25:09,920
+Entonces, en esta clase yo puedo definir un real
+
+242
+00:25:09,920 --> 00:25:12,920
+pasándolo en un generador de intervalos.
+
+243
+00:25:12,920 --> 00:25:15,920
+Si yo llamo un número real con una delta,
+
+244
+00:25:15,920 --> 00:25:19,920
+pues lo que hace es darme un intervalo de medida menor que delta,
+
+245
+00:25:19,920 --> 00:25:21,920
+y que cumpla las condiciones, ¿no?
+
+246
+00:25:21,920 --> 00:25:23,920
+Esto usado también es el re-i-pr,
+
+247
+00:25:23,920 --> 00:25:27,920
+que lo que hace básicamente es dar una aproximación flotante
+
+248
+00:25:27,920 --> 00:25:30,920
+con lo que haya especificado como precisión, que es esto.
+
+249
+00:25:30,920 --> 00:25:32,920
+Y luego tengo otra cosa,
+
+250
+00:25:32,920 --> 00:25:37,920
+que es para definir fácilmente, pues números a partir de números normales,
+
+251
+00:25:37,920 --> 00:25:38,920
+como 1, 2, 3, ¿no?
+
+252
+00:25:38,920 --> 00:25:40,920
+Aquí lo que hace básicamente es lo siguiente, ¿eh?
+
+253
+00:25:40,920 --> 00:25:42,920
+¿Cómo define un real de esta forma?
+
+254
+00:25:42,920 --> 00:25:47,920
+Pues tomo el número que me han dado,
+
+255
+00:25:47,920 --> 00:25:50,920
+construy un intervalo que básicamente es el número como el número,
+
+256
+00:25:50,920 --> 00:25:52,920
+o sea que es un intervalo de medida 0,
+
+257
+00:25:52,920 --> 00:25:54,920
+y esto utilizo repeat,
+
+258
+00:25:54,920 --> 00:25:58,920
+repeat lo que hace es generar una y otra vez el mismo intervalo,
+
+259
+00:25:58,920 --> 00:26:01,920
+porque como ya tiene medida 0, pues ya me sirve, ¿no?
+
+260
+00:26:01,920 --> 00:26:03,920
+Y en el tercer estado en generador, pues esto es la forma, ¿no?
+
+261
+00:26:03,920 --> 00:26:07,920
+Y luego defino la forma para sumar, multiplicar y hacer las operaciones, ¿no?
+
+262
+00:26:07,920 --> 00:26:13,920
+Y para último, la última cosa es ver esto de aquí, que es el número aúrio,
+
+263
+00:26:13,920 --> 00:26:16,920
+el número aúrio es uno más raíz de 5 partido por 2, ¿no?
+
+264
+00:26:16,920 --> 00:26:19,920
+Pues si hago esto, es ver que esto no lo he evaluado,
+
+265
+00:26:19,920 --> 00:26:24,920
+si calculo esto, pues mira, me sale que es uso 1,62,
+
+266
+00:26:24,920 --> 00:26:27,920
+pero esta yáreda al final me dice que esto en realidad es un número real
+
+267
+00:26:27,920 --> 00:26:29,920
+y que aquí hay más cifras, ¿eh?
+
+268
+00:26:29,920 --> 00:26:32,920
+Por lo tanto, si yo ahora aquí, pues no sé, por ejemplo,
+
+269
+00:26:32,920 --> 00:26:35,920
+y pongo de precisión 1 y lo vuelvo a calcular,
+
+270
+00:26:35,920 --> 00:26:37,920
+pues me sale con menos cifras, ¿eh?
+
+271
+00:26:37,920 --> 00:26:41,920
+Si aquí pongo precisión 100, por ejemplo, me saldrá con más cifras, ¿eh?
+
+272
+00:26:41,920 --> 00:26:45,920
+Aquí hay un poco de engañazo porque lo que aparece aquí es inflotante,
+
+273
+00:26:45,920 --> 00:26:47,920
+pero en realidad las cifras están,
+
+274
+00:26:47,920 --> 00:26:50,920
+es decir, que tú puedes hacer los cálculos con toda la precisión, ¿no?
+
+275
+00:26:50,920 --> 00:26:53,920
+Y simplemente para comprobar que los cálculos son efectivos
+
+276
+00:26:53,920 --> 00:26:56,920
+y que yo pudiera efectivamente trabajar con unos reales de esta forma,
+
+277
+00:26:56,920 --> 00:27:00,920
+pues fíjese que resulta que esto de aquí es un número aúrio,
+
+278
+00:27:00,920 --> 00:27:05,920
+fíjese que resulta que fíí menos 1 es esta coser de aquí, ¿eh?
+
+279
+00:27:05,920 --> 00:27:07,920
+Y por lo tanto, yo puedo calcular esto de esta forma,
+
+280
+00:27:07,920 --> 00:27:12,920
+es decir, yo puedo hacer cálculos con números reales como este, ¿eh?
+
+281
+00:27:12,920 --> 00:27:15,920
+De esta forma, ¿eh?
+
+282
+00:27:15,920 --> 00:27:18,920
+Como el número ahora que defino de antes y lo multiplico,
+
+283
+00:27:18,920 --> 00:27:20,920
+pues bueno, pues por la fórmula está,
+
+284
+00:27:20,920 --> 00:27:23,920
+menos 1 más raíz cuadrada al 5 partido por 2, ¿no?
+
+285
+00:27:23,920 --> 00:27:26,920
+Y el producto me da 1, ¿qué es lo que tiene que ser?
+
+286
+00:27:26,920 --> 00:27:28,920
+Producto me da 1.
+
+287
+00:27:28,920 --> 00:27:32,920
+Yo lo puedo evaluar, por ejemplo, en yo que sé 100 cifras decimales, ¿eh?
+
+288
+00:27:32,920 --> 00:27:34,920
+A ver, ¿qué me da?
+
+289
+00:27:34,920 --> 00:27:37,920
+Bueno, me daría esto, que solo en realidad es un intervalo
+
+290
+00:27:37,920 --> 00:27:39,920
+porque son dos numeritos.
+
+291
+00:27:39,920 --> 00:27:42,920
+Y ahora, bueno, pues puedo comprobar, primero,
+
+292
+00:27:42,920 --> 00:27:46,920
+que este intervalo contiene el 1, que está entre ahí, ¿b?
+
+293
+00:27:46,920 --> 00:27:50,920
+Y que la distancia entre los dos números éste es menor que 10 a la menos 100.
+
+294
+00:27:50,920 --> 00:27:55,920
+Por lo tanto, efectivamente, tengo 100 cifras decimales correctas aquí, ¿vale?
+
+295
+00:27:55,920 --> 00:27:59,920
+Y yo creo que ya más porque no me queda más tiempo.
+
+296
+00:27:59,920 --> 00:28:03,920
+O sea, que muchas gracias por haberme escuchado.
+
+297
+00:28:05,920 --> 00:28:08,920
+Perfecto, ha sido una charla muy intensa.
+
+298
+00:28:08,920 --> 00:28:12,920
+Yo he vuelto un poco a mis años de cálculo de la Universidad de Derecíles.
+
+299
+00:28:12,920 --> 00:28:14,920
+Sí, sí, sí.
+
+300
+00:28:14,920 --> 00:28:19,920
+Bueno, ahora mismo no tenemos ninguna pregunta por el canal de YouTube
+
+301
+00:28:19,920 --> 00:28:23,920
+ni por el chat de Discord, por lo que estoy viendo.
+
+302
+00:28:23,920 --> 00:28:28,920
+Pero bueno, como ha estado luego la gente también los ve un poco posterior
+
+303
+00:28:28,920 --> 00:28:33,920
+y ya sabéis que podéis comentar y estar atentos en el canal
+
+304
+00:28:33,920 --> 00:28:37,920
+para poder contestar las preguntas que pueden surgir más adelante.
+
+305
+00:28:37,920 --> 00:28:41,920
+Si puedo hacer un pequeño comentario a lo que me decía Isra,
+
+306
+00:28:41,920 --> 00:28:44,920
+me decía, estaría muy bien hacerlo esto para los que ha sido bachillerato.
+
+307
+00:28:44,920 --> 00:28:47,920
+Bueno, la experiencia es que no, ¿eh?
+
+308
+00:28:47,920 --> 00:28:52,920
+Porque yo lo probé con gente de primero de universidad
+
+309
+00:28:52,920 --> 00:28:55,920
+y en gente que estaba haciendo computer science
+
+310
+00:28:55,920 --> 00:28:57,920
+y fue un desastre bastante absoluto.
+
+311
+00:28:57,920 --> 00:29:03,920
+Es decir, igual hay que pulirlo mucho esto para que funcione bien.
+
+312
+00:29:03,920 --> 00:29:05,920
+Pero yo creo que es una buena idea.
+
+313
+00:29:05,920 --> 00:29:07,920
+O sea, yo estoy con Isra que esto es una buena idea
+
+314
+00:29:07,920 --> 00:29:10,920
+y que la labor bien pulida podría funcionar.
+
+315
+00:29:10,920 --> 00:29:15,920
+Y que porque salió mal que no terminaron de comprender o...
+
+316
+00:29:15,920 --> 00:29:18,920
+Bueno, tú ya sabes cómo es la ingeniería, ¿no?
+
+317
+00:29:18,920 --> 00:29:20,920
+O sea, hay mucha presión, ¿no?
+
+318
+00:29:20,920 --> 00:29:22,920
+Y sobre todo el primer año, hay mucha presión
+
+319
+00:29:22,920 --> 00:29:24,920
+y la gente está muy asustada.
+
+320
+00:29:24,920 --> 00:29:26,920
+Y lo que no puedes hacer con gente que está muy asustada
+
+321
+00:29:26,920 --> 00:29:30,920
+es empezar a cambiar el, digamos, el currículo y cambiar sus formas, ¿no?
+
+322
+00:29:30,920 --> 00:29:32,920
+Entonces, si hasta algún momento
+
+323
+00:29:32,920 --> 00:29:35,920
+habían aprendido lo que es un número racional y un número real
+
+324
+00:29:35,920 --> 00:29:38,920
+y los logros y los exponenciales, lo que no puedes hacer
+
+325
+00:29:38,920 --> 00:29:41,920
+y ya lo vi es hacerlo de otra forma,
+
+326
+00:29:41,920 --> 00:29:45,920
+porque la gente enseguida se pierde o se asusta.
+
+327
+00:29:45,920 --> 00:29:47,920
+Básicamente es que se asusta, ¿no?
+
+328
+00:29:47,920 --> 00:29:51,920
+Entonces, esto también lo entiendo, ¿no?
+
+329
+00:29:51,920 --> 00:29:54,920
+Pero, en fin, yo creo que estaría...
+
+330
+00:29:54,920 --> 00:29:56,920
+Yo creo que está bien, ¿no?
+
+331
+00:29:56,920 --> 00:29:59,920
+Lo que pasa es que ya digo, habrá que pulirlo mucho.
+
+332
+00:29:59,920 --> 00:30:03,920
+Y los generadores,
+
+333
+00:30:03,920 --> 00:30:08,920
+¿se te cura alguna aplicación a nivel más privado, digamos,
+
+334
+00:30:08,920 --> 00:30:11,920
+para ponerlo, por ejemplo, para utilizarlo diario en código
+
+335
+00:30:11,920 --> 00:30:16,920
+en las empresas o lo ves más común, más de nicho,
+
+336
+00:30:16,920 --> 00:30:18,920
+más de los temas matemáticos.
+
+337
+00:30:18,920 --> 00:30:20,920
+Lo verdad es que no lo conozco, porque yo no estoy metido
+
+338
+00:30:20,920 --> 00:30:23,920
+en cosas, digamos, de programación seria.
+
+339
+00:30:23,920 --> 00:30:26,920
+Yo hago mis programas para lo mío.
+
+340
+00:30:26,920 --> 00:30:28,920
+O sea, lo mejor sí, ¿no?
+
+341
+00:30:28,920 --> 00:30:31,920
+Un generador, básicamente, es algo a que tú le vas pidiendo
+
+342
+00:30:31,920 --> 00:30:33,920
+y él te va dando, ¿no?
+
+343
+00:30:33,920 --> 00:30:35,920
+Por lo tanto, podrías decir que una página web
+
+344
+00:30:35,920 --> 00:30:37,920
+es un generador, ¿no?
+
+345
+00:30:37,920 --> 00:30:39,920
+En el sentido que tú le vas mandando el request
+
+346
+00:30:39,920 --> 00:30:41,920
+y él te lo va contestando, ¿no?
+
+347
+00:30:41,920 --> 00:30:43,920
+En algún sentido, esto es así, ¿no?
+
+348
+00:30:43,920 --> 00:30:46,920
+¿Pero qué es el sentido de utilizarlo, digamos,
+
+349
+00:30:46,920 --> 00:30:48,920
+con la sintaxis propia de los generadores del Python?
+
+350
+00:30:48,920 --> 00:30:50,920
+Pues, a lo mejor, usted se queda muy limitado.
+
+351
+00:30:50,920 --> 00:30:52,920
+No te podría decir.
+
+352
+00:30:52,920 --> 00:30:54,920
+Bueno, yo sí que...
+
+353
+00:30:54,920 --> 00:30:57,920
+Esto te lo preguntaba por si conocías más casos,
+
+354
+00:30:57,920 --> 00:31:00,920
+pero nosotros, por ejemplo, en la empresa en la que yo trabajo,
+
+355
+00:31:00,920 --> 00:31:03,920
+sí los utilizamos para sustituir muchas veces
+
+356
+00:31:03,920 --> 00:31:07,920
+iteraciones de bucles, porque a veces el for es lento
+
+357
+00:31:07,920 --> 00:31:10,920
+y un generador te permite...
+
+358
+00:31:10,920 --> 00:31:13,920
+te aligera mucho la carga de memoria, ¿no?
+
+359
+00:31:13,920 --> 00:31:15,920
+Sí, lo utilizamos.
+
+360
+00:31:15,920 --> 00:31:18,920
+Perfecto. Pues me alegra saberlo.
+
+361
+00:31:18,920 --> 00:31:21,920
+Mira, pregunta por Discord.
+
+362
+00:31:21,920 --> 00:31:24,920
+¿Qué sí utilices algún otro lenguaje
+
+363
+00:31:24,920 --> 00:31:26,920
+que vio muchas programaciones funcionarias?
+
+364
+00:31:26,920 --> 00:31:28,920
+Sí, sí, sí.
+
+365
+00:31:28,920 --> 00:31:30,920
+Yo estoy muy funcionado últimamente
+
+366
+00:31:30,920 --> 00:31:33,920
+y hago cosas en Haskell, normalmente, también.
+
+367
+00:31:33,920 --> 00:31:35,920
+O sea, que es muy funcionado.
+
+368
+00:31:35,920 --> 00:31:38,920
+Y lo que no hago en Haskell lo hago con Rocket,
+
+369
+00:31:38,920 --> 00:31:40,920
+que también es una variante de Lips,
+
+370
+00:31:40,920 --> 00:31:42,920
+que es bastante funcionado.
+
+371
+00:31:42,920 --> 00:31:45,920
+Y ahora estamos tocando cosas como ACTA y Idris
+
+372
+00:31:45,920 --> 00:31:49,920
+y LEN, que son teoremprovers,
+
+373
+00:31:49,920 --> 00:31:51,920
+que son ya como un paso más, ¿no?
+
+374
+00:31:51,920 --> 00:31:54,920
+Es decir, vamos a atualizar lenguajes de programación,
+
+375
+00:31:54,920 --> 00:31:58,920
+no para calcular funciones, sino para demostrar teoremas.
+
+376
+00:31:58,920 --> 00:32:01,920
+Pero esto es muy complicado,
+
+377
+00:32:01,920 --> 00:32:04,920
+porque son tipos, pues, títulos dependientes.
+
+378
+00:32:04,920 --> 00:32:07,920
+Pero, en fin, yo estoy bastante contento
+
+379
+00:32:07,920 --> 00:32:09,920
+de cómo funciona.
+
+380
+00:32:09,920 --> 00:32:12,920
+Pero, claro, yo soy un caso muy Nietzsche.
+
+381
+00:32:12,920 --> 00:32:15,920
+Estoy aquí, digamos, y no me gano la vida haciendo programas.
+
+382
+00:32:15,920 --> 00:32:18,920
+Por lo tanto, lo que yo diga, pues, no tiene mucho valor.
+
+383
+00:32:18,920 --> 00:32:21,920
+Claro, eso es una aplicación muy concreta, ¿no?
+
+384
+00:32:21,920 --> 00:32:23,920
+En el casado.
+
+385
+00:32:23,920 --> 00:32:25,920
+Sí, sí, sí.
+
+386
+00:32:25,920 --> 00:32:28,920
+Pues, bueno, si te parece, ya vamos a despedirte,
+
+387
+00:32:28,920 --> 00:32:30,920
+porque en cinco minutos tenemos que dar paso ya
+
+388
+00:32:30,920 --> 00:32:32,920
+a los siguientes ponentes, ¿de acuerdo?
+
+389
+00:32:32,920 --> 00:32:34,920
+Muy bien, pues muchas gracias por todo.
+
+390
+00:32:34,920 --> 00:32:37,920
+Muchas gracias a ti. Nos vemos.
+

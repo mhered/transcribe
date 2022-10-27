@@ -1,0 +1,1044 @@
+1
+00:00:00,000 --> 00:00:23,920
+Bueno, vamos a dar comienzo con la segunda parte después del coffee. Espero que os hayáis
+
+2
+00:00:23,920 --> 00:00:30,720
+espabilado con el cafelito. Ahora nos va a hablar Marina Morolópez con su charla de
+
+3
+00:00:30,720 --> 00:00:40,320
+biohacking. Y como hemos hecho anteriormente, por favor, las preguntas al final de la charla.
+
+4
+00:00:40,320 --> 00:00:46,800
+¿Vale? Empezamos.
+
+5
+00:00:46,800 --> 00:00:51,440
+Muy buenas. Yo soy Marina y durante un ratillo os voy a hablar de biohacking, por supuesto,
+
+6
+00:00:51,440 --> 00:00:56,520
+con Python, porque estamos en un congreso de Python. Y he de aclarar antes de empezar
+
+7
+00:00:56,520 --> 00:01:01,520
+para aquellos que penséis ahora mismo que no sabríais ni definir lo que es una célula,
+
+8
+00:01:01,520 --> 00:01:06,560
+que por favor nos preocupéis, porque los conceptos que vamos a revisar son súper sencillos y
+
+9
+00:01:06,560 --> 00:01:12,200
+los vamos a ir explicando poco a poco. Me presento, soy una ingeniería biomédica formada
+
+10
+00:01:12,200 --> 00:01:17,160
+en Madrid y dentro de unos años, si todo va bien, seré doctora en biomedicina por la
+
+11
+00:01:17,160 --> 00:01:22,880
+Universitat de Barcelona. En cuanto a la programación, soy de esas personas científicas
+
+12
+00:01:22,880 --> 00:01:30,120
+de he escrito este código, hace lo que quiero, me sirve. Así que, por favor, desarrolladores
+
+13
+00:01:30,120 --> 00:01:36,320
+y desarrolladoras de software, gente arquitecta de software y demás, tratando de bien programación
+
+14
+00:01:36,320 --> 00:01:42,320
+de supervivencia. Vamos a ir por todos estos apartados, empezando con definiciones básicas
+
+15
+00:01:42,320 --> 00:01:47,680
+de biohacking y con unos conceptos muy básicos de genética, ya digo, muy tranquilamente,
+
+16
+00:01:47,680 --> 00:01:52,920
+muy bien explicados, para entrar entonces en el caso práctico, que es lo verdaderamente
+
+17
+00:01:52,920 --> 00:01:59,600
+interesante esta charla, y finalmente iremos con unas consideraciones y la ronda de preguntas.
+
+18
+00:01:59,600 --> 00:02:03,960
+Comenzamos con la definición de biohacking. Como su propio nombre indica, viene de juntar
+
+19
+00:02:03,960 --> 00:02:10,080
+bio más hacking y de este movimiento coge el añadir funcionalidades y el resolver problemas
+
+20
+00:02:10,080 --> 00:02:15,400
+y lo aplica al ámbito biológico. Su objetivo principal es poner las herramientas y los
+
+21
+00:02:15,400 --> 00:02:21,520
+procedimientos, la información del campo biológico al alcance de todo el mundo, es decir, que
+
+22
+00:02:21,520 --> 00:02:26,440
+un ciudadano, una persona de la calle, puede hacer experimentos científicos sin necesidad
+
+23
+00:02:26,440 --> 00:02:31,200
+de estar en las instalaciones de un hospital o un centro de investigación y también sin
+
+24
+00:02:31,200 --> 00:02:36,240
+la necesidad de tener formación especializada. Por supuesto, hay que seguir siempre un código
+
+25
+00:02:36,240 --> 00:02:42,080
+ético muy riguroso, con valores como la transparencia, la seguridad, la educación, el compromiso
+
+26
+00:02:42,080 --> 00:02:48,320
+o la responsabilidad, porque un biohacker no ha de confundirse nunca con un bioterrorista
+
+27
+00:02:48,320 --> 00:02:53,520
+o un ciberdelincuente. Los biohackers son personas guiadas por su curiosidad, por las
+
+28
+00:02:53,520 --> 00:02:59,040
+ganas de aprender, quieren aportar a la comunidad, son constructivos y siempre, siempre, siempre
+
+29
+00:02:59,040 --> 00:03:06,120
+tendrán una finalidad benigna, no son delincuentes. El biohacking está influenciado por tres
+
+30
+00:03:06,120 --> 00:03:12,040
+movimientos, especialmente, que es el movimiento DIY, el DIY, el do it yourself, el ad-lotumismo,
+
+31
+00:03:12,040 --> 00:03:19,120
+del que coge la autosuficiencia, ese sentimiento de comunidad, ese compartir experiencias. Luego,
+
+32
+00:03:19,120 --> 00:03:24,240
+está influenciado también por el hacking, evidentemente, del que coge esa democratización,
+
+33
+00:03:24,240 --> 00:03:31,960
+ese hackeo de procedimientos y de información técnica y los foros e y del transhumanismo,
+
+34
+00:03:31,960 --> 00:03:38,080
+que es la superación de los límites biológicos usando tecnología, coge el auto-experimentar,
+
+35
+00:03:38,080 --> 00:03:46,000
+el usar el cuerpo como medio de experimentación para mejorar nuestras capacidades o tener
+
+36
+00:03:46,000 --> 00:03:54,460
+más cualidades. Entonces, un biohacker sería una versión DIY, ciudadana, hacker de la biología
+
+37
+00:03:54,460 --> 00:04:01,200
+y en algunos casos, hacia un futuro transhumanista. En concreto, en el biohacking hay proyectos
+
+38
+00:04:01,200 --> 00:04:05,960
+de salud, de medio ambiente o de bioarte, entre otros, y se usan tecnologías tan variadas
+
+39
+00:04:05,960 --> 00:04:09,800
+como aquellas pertenecientes al mundo de la genética, de la medio de ingeniería, de
+
+40
+00:04:09,800 --> 00:04:16,080
+la electrónica, etcétera. Se desarrollan, por ejemplo, equipos locos, se producen medicamentos,
+
+41
+00:04:16,080 --> 00:04:22,280
+se da formación, se querán startups y, en los casos de los biohackers más transhumanistas,
+
+42
+00:04:22,280 --> 00:04:28,400
+se auto-experimenta y se realizan modificaciones corporales. En cuanto a los tipos de biohacking,
+
+43
+00:04:28,400 --> 00:04:32,720
+en esta presentación os explico tres, pero en realidad se declara que no existe una
+
+44
+00:04:32,720 --> 00:04:38,800
+clasificación oficial. Empezamos con el biohacking fisiológico, que consiste en hackear nuestro
+
+45
+00:04:38,800 --> 00:04:44,560
+propio organismo usando dietas en gesta de suplementos o hábitos de vida, como podría
+
+46
+00:04:44,560 --> 00:04:51,920
+ser el ayuno intermitente, la exposición a infrarrojos o el uso de notrópicos.
+
+47
+00:04:51,920 --> 00:04:55,960
+Continuamos con la biología de IY, que spoiler es la que usaremos en el caso práctico de
+
+48
+00:04:55,960 --> 00:05:01,400
+después, que consiste en la manipulación de la biología con técnicas más o menos
+
+49
+00:05:01,400 --> 00:05:07,200
+complejas por parte de los ciudadanos. Por ejemplo, tenemos el biohacking genético, este
+
+50
+00:05:07,200 --> 00:05:14,840
+es el que usaremos, como, por ejemplo, modificar bacterias para que produzcan caseína y así
+
+51
+00:05:14,840 --> 00:05:21,120
+fabricar queso vegano de laboratorio, la terapia celular, que, por ejemplo, sería
+
+52
+00:05:21,120 --> 00:05:26,080
+inyectar plaquetas para activar la regeneración de tejidos o la producción de medicamentos
+
+53
+00:05:26,080 --> 00:05:30,040
+como la insulina low cost y de equipo como los microscopios caseros.
+
+54
+00:05:30,040 --> 00:05:37,320
+Y, por último, tenemos los Grinder, que son aquellos biohackers transhumanistas que modifican
+
+55
+00:05:37,320 --> 00:05:43,880
+su propio cuerpo para mejorar su salud o su productividad o añadirse funcionalidades.
+
+56
+00:05:43,880 --> 00:05:50,120
+Por ejemplo, implantándose hardware, como podría ser un GPS o un sensor de redactividad
+
+57
+00:05:50,120 --> 00:05:56,240
+del ambiente o de temperatura, o chips que abran puertas o sean tarjetas o pasaportes.
+
+58
+00:05:56,240 --> 00:06:00,760
+También la modificación de implantes, como, por ejemplo, un ojo artificial, modificarlo
+
+59
+00:06:00,760 --> 00:06:07,840
+para que haga zoom o vea la oscuridad o los implantes de oído para que oigan colores.
+
+60
+00:06:07,840 --> 00:06:13,640
+Y, finalmente, la edición genética o biohacking in vivo, por ejemplo, con la fabricación
+
+61
+00:06:13,640 --> 00:06:19,680
+de bebés personalizados, que fue una noticia que podemos comentar luego si queréis, que
+
+62
+00:06:19,680 --> 00:06:23,240
+revolucionó todo el campo de la diencia.
+
+63
+00:06:23,240 --> 00:06:25,560
+Pasamos ahora a la teoría básica de genética.
+
+64
+00:06:25,560 --> 00:06:30,360
+Como ya he dicho, prometo que será muy leve y espero que es sencilla.
+
+65
+00:06:30,360 --> 00:06:34,560
+Empezamos por definiciones muy, muy básicas, como es que es un cromosoma, que es la estructura
+
+66
+00:06:34,560 --> 00:06:40,560
+que contiene todos los genes, que es un gen, un segmento de ADN que determina un rasgo como
+
+67
+00:06:40,560 --> 00:06:43,360
+puede ser el color de nuestros ojos.
+
+68
+00:06:43,360 --> 00:06:46,720
+Y que es el ADN, es una doble hélice formada por bases.
+
+69
+00:06:46,720 --> 00:06:50,920
+Y las bases no son otra cosa que letras, y son solo cuatro.
+
+70
+00:06:50,920 --> 00:06:53,480
+La A, la T, la C y la G.
+
+71
+00:06:53,480 --> 00:06:57,320
+Tienen una peculiaridad y es que son complementarias, siempre van por parejas.
+
+72
+00:06:57,320 --> 00:07:01,320
+La A con la T y la C con la G y viceversa.
+
+73
+00:07:01,320 --> 00:07:08,800
+Pero ahora bien, ¿cómo se pasa de ese string, esa secuencia de cuatro letras, a que un ojo
+
+74
+00:07:08,800 --> 00:07:11,400
+sea verde o marrón o azul?
+
+75
+00:07:11,400 --> 00:07:16,960
+Pues bien, el ADN, esa doble hélice de la que hablamos con su string de cuatro letras,
+
+76
+00:07:16,960 --> 00:07:22,640
+da lugar a la RN, que es como su hermano pequeño, que es una sola hélice, una hélice simple,
+
+77
+00:07:22,640 --> 00:07:24,520
+y que en Medetes tiene US.
+
+78
+00:07:24,520 --> 00:07:27,120
+Y además es complementario al ADN.
+
+79
+00:07:27,120 --> 00:07:32,800
+Es decir, si en el ADN hay una C, en el ARN que da lugar a ese ADN habrá una G.
+
+80
+00:07:32,800 --> 00:07:39,640
+Y es este ARN el que doble lugar a la proteína, que será marrón, azul, verde o del color
+
+81
+00:07:39,640 --> 00:07:41,960
+que tengáis los ojos.
+
+82
+00:07:41,960 --> 00:07:48,680
+Pero ¿qué pasa si este ADN original, por ejemplo, de un ojo verde tiene una modificación
+
+83
+00:07:48,680 --> 00:07:52,520
+respecto a lo que sería el ADN normal en su caso?
+
+84
+00:07:52,520 --> 00:07:57,200
+Que el ARN también se ve de la modificado y en el peor de los casos la proteína también.
+
+85
+00:07:57,200 --> 00:08:01,080
+Entonces el ojo ya no será verde, sino que será de otro color.
+
+86
+00:08:01,080 --> 00:08:07,080
+Existen muchos, muchos tipos de mutaciones, pero hoy solo nos interesan dos.
+
+87
+00:08:07,080 --> 00:08:12,680
+La primera, una sustitución o knock-in, que es cuando sustituimos una o varias letras
+
+88
+00:08:12,680 --> 00:08:15,680
+de un ADN por otras.
+
+89
+00:08:15,680 --> 00:08:20,480
+Y la otra, la de lección o knock-out, que es cuando borramos una o varias letras del
+
+90
+00:08:20,480 --> 00:08:23,880
+ADN, pero sin introducir ninguna nueva.
+
+91
+00:08:23,880 --> 00:08:28,680
+Y finalmente, acabando esta mini clase de genética, vamos a ver lo que es CRISPR, que
+
+92
+00:08:28,680 --> 00:08:32,960
+es la herramienta que vamos a usar en el caso práctico, que no es más que el corta y pega
+
+93
+00:08:32,960 --> 00:08:35,440
+del ADN.
+
+94
+00:08:35,440 --> 00:08:41,840
+Este sistema consta de una cas, que es una proteína, que es la que corta y pega, gracias
+
+95
+00:08:41,840 --> 00:08:46,840
+a que tiene una guía de ARN, que es la que le dice dónde tiene que cortar, y un molde
+
+96
+00:08:46,840 --> 00:08:51,680
+de ADN, que es lo que le dice qué tiene que poner donde ha cortado.
+
+97
+00:08:51,680 --> 00:08:59,360
+Así si este es nuestro ADN original, podríamos por ejemplo cambiar esta segunda base de aquí.
+
+98
+00:08:59,360 --> 00:09:05,480
+Y podríamos tener esta guía de ARN, que como veis coincide con esta parte de aquí, de
+
+99
+00:09:05,480 --> 00:09:12,360
+nuestro ADN original, así que le dice acá que corte en estos dos puntos de aquí.
+
+100
+00:09:12,360 --> 00:09:19,280
+Y este molde, por ejemplo, para cambiar introducir esta letra en el lugar de esta.
+
+101
+00:09:19,280 --> 00:09:23,960
+Así que en este caso os lo enseño de nuevo, si este es nuestro ADN original, corta allí
+
+102
+00:09:23,960 --> 00:09:29,360
+y allí nuestra cas, introduciendo ese molde que decíamos de ADN, hemos introducido esta
+
+103
+00:09:29,360 --> 00:09:34,440
+nueva letra respecto al ADN original, haciendo una sustitución o no KIN como definíamos
+
+104
+00:09:34,440 --> 00:09:35,440
+antes.
+
+105
+00:09:35,440 --> 00:09:41,440
+Pero también existe el caso de que cas no lleve un molde, entonces no introducirá
+
+106
+00:09:41,440 --> 00:09:48,640
+nada en ese segmento que ha cortado y se producirá una delección o no caud.
+
+107
+00:09:48,640 --> 00:09:52,600
+Y ya pasamos al caso práctico, todo ya sabemos todo de genética, todo lo que necesitamos
+
+108
+00:09:52,600 --> 00:09:54,080
+saber.
+
+109
+00:09:54,080 --> 00:10:02,920
+Y para hoy haremos un experimento de biohacking, biohacking genético, usando CRISPR y evidentemente
+
+110
+00:10:02,920 --> 00:10:06,120
+usando Python, porque había que...
+
+111
+00:10:06,120 --> 00:10:08,600
+toca usar Python hoy.
+
+112
+00:10:08,600 --> 00:10:16,040
+Y nos introduciríamos un CRISPR para convertirnos en el señor Van's Fluorescente que dice,
+
+113
+00:10:16,040 --> 00:10:23,600
+no hay guamor, para convertirnos en este señor tenemos que hacer un pequeño research científico,
+
+114
+00:10:23,600 --> 00:10:29,680
+porque hemos de replicar estos cuatro signos tan característicos que tiene este señor,
+
+115
+00:10:29,680 --> 00:10:35,240
+que son que es medio calvo, que tiene el pelo azul o canoso, que brilla la oscuridad y
+
+116
+00:10:35,240 --> 00:10:36,960
+que tiene las pupilas dilatadas.
+
+117
+00:10:36,960 --> 00:10:42,560
+Entonces hacemos esa pequeña investigación y sabemos que para la calvicie tenemos que
+
+118
+00:10:42,560 --> 00:10:47,080
+borrar hacer un knockout del gen IRF4 completo.
+
+119
+00:10:47,080 --> 00:10:51,960
+Para el pelo canoso tenemos que hacer una sustitución, un knockin de la letra C de la
+
+120
+00:10:51,960 --> 00:10:58,240
+posición 363 del gen AR cambiándolo por una T.
+
+121
+00:10:58,240 --> 00:11:04,480
+Para ser fluorescentes sustituiremos un GFP, que es un trozo de ADN que hace que una célula
+
+122
+00:11:04,480 --> 00:11:07,640
+sea fluorescente al final del gen TIR.
+
+123
+00:11:07,640 --> 00:11:12,920
+Y para las pupilas dilatadas, aquí cada uno usa su medio, el que prefiere, bien por sus
+
+124
+00:11:12,920 --> 00:11:17,720
+consustancias pecaminosas ilegales que consigueis vosotros, o bien con ciclo pentolato, que
+
+125
+00:11:17,720 --> 00:11:19,440
+son las gotitas de los oftalmólogos.
+
+126
+00:11:19,440 --> 00:11:25,720
+Entonces, vamos a usar este código, que lo tenéis en mi github, por si alguien quiere
+
+127
+00:11:25,720 --> 00:11:29,640
+replicarlo este caso práctico en su casa.
+
+128
+00:11:29,640 --> 00:11:34,120
+También tenéis en ese mismo repositorio los archivos que vamos a usar y esta presentación,
+
+129
+00:11:34,120 --> 00:11:37,960
+también podéis usar el código con archivos que consigáis.
+
+130
+00:11:37,960 --> 00:11:45,960
+Estos archivos son archivos FASTA, tipo FASTA, que contienen las strings de ADN y que podéis
+
+131
+00:11:45,960 --> 00:11:47,960
+encontrar en cualquier base de datos biológicos.
+
+132
+00:11:47,960 --> 00:11:57,760
+Os lo enseño un poco, primero seleccionaremos el archivo del gen que queremos editar, después
+
+133
+00:11:57,760 --> 00:12:02,920
+tenemos que introducir el tipo de mutación si es un knockin o un knockout y en el caso
+
+134
+00:12:02,920 --> 00:12:08,160
+de ser un knockin, tendremos que especificar si la mutación es en medio del gen o si es
+
+135
+00:12:08,160 --> 00:12:09,160
+al final.
+
+136
+00:12:09,160 --> 00:12:16,120
+Además, tenemos estos outputs, este código nos dará la secuencia mutada, la guía de
+
+137
+00:12:16,120 --> 00:12:24,480
+ARN y el molde en formato txt y para cambiar la guía de ADN a ARN tenemos esta minifunción
+
+138
+00:12:24,480 --> 00:12:29,560
+que hace lo que conté antes, el ARN es complementario, así que simplemente cambia las letras poso
+
+139
+00:12:29,560 --> 00:12:34,320
+complementaria siempre con UmbdT.
+
+140
+00:12:34,320 --> 00:12:39,720
+Bien empezamos, para ser calvos teníamos que borrar el gen IRF completo, así que si este
+
+141
+00:12:39,720 --> 00:12:46,400
+es nuestro gen original, este será el gen IRF nuevo que es la nada y esta será la función
+
+142
+00:12:46,400 --> 00:12:52,800
+de Python que nos sacará la secuencia mutada, la guía y el molde en la que la guía será
+
+143
+00:12:52,800 --> 00:12:57,080
+el gen completo porque queremos cortarlo entero y tanto la secuencia mutada como el molde
+
+144
+00:12:57,080 --> 00:12:59,960
+será la nada porque no queremos introducir nada.
+
+145
+00:12:59,960 --> 00:13:07,400
+Así que si este es nuestro gen IRF 4 original, la guía será todo ese gen de manera complementaria
+
+146
+00:13:07,400 --> 00:13:12,120
+porque es ARN y el molde será nada.
+
+147
+00:13:12,120 --> 00:13:24,440
+En cuanto al pelo canoso tenemos que sustituir en la mitad del gen AR una c por una t, entonces
+
+148
+00:13:24,440 --> 00:13:31,080
+por ejemplo si esta es la c del gen original, aquí habrá una t.
+
+149
+00:13:31,080 --> 00:13:36,320
+Y esta es la función de Python que nos va a dar nuestros outputs.
+
+150
+00:13:36,320 --> 00:13:42,480
+Primero nos consulta en qué posición va a estar la nueva letra y cuál es la nueva letra
+
+151
+00:13:42,480 --> 00:13:49,480
+y después saca la guía de ADN cogiendo más o menos 25 bases desde la base que queremos
+
+152
+00:13:49,480 --> 00:13:56,680
+cambiar, la secuencia mutada es el gen pero con la nueva letra y el molde es esas más
+
+153
+00:13:56,680 --> 00:14:01,120
+menos 25 bases pero con la t en lugar de la c.
+
+154
+00:14:01,120 --> 00:14:06,760
+Entonces si este es nuestro ADN original con esta c en la posición 363, esta sería la
+
+155
+00:14:06,760 --> 00:14:12,760
+guía que es complementaria y este es el molde con la t que es la letra nueva.
+
+156
+00:14:12,760 --> 00:14:19,320
+En cuanto a la bioluministencia, ya en la oscuridad tenemos que añadir un GFP, ese trozo
+
+157
+00:14:19,320 --> 00:14:24,400
+florecente al final del gen TIR, entonces si este es nuestro gen TIR original, este será
+
+158
+00:14:24,400 --> 00:14:27,080
+el GFP que añadimos.
+
+159
+00:14:27,080 --> 00:14:33,280
+Para ello tenemos esta función que de nuevo nos pide que seleccionemos el archivo con
+
+160
+00:14:33,280 --> 00:14:40,280
+ese GFP y después nos construye la guía que es el final, las últimas 50 bases del
+
+161
+00:14:40,280 --> 00:14:49,200
+gen TIR con la secuencia mutada que es el gen más el plasmido que es ese GFP y el molde
+
+162
+00:14:49,200 --> 00:14:53,600
+que es la guía con el plasmido.
+
+163
+00:14:53,600 --> 00:14:58,440
+Si este es el final del gen TIR, esta será la guía y este es el molde con el final del
+
+164
+00:14:58,440 --> 00:15:02,320
+gen y todo esto que es el GFP.
+
+165
+00:15:02,320 --> 00:15:05,880
+Y para las cúpulas dilatadas ya hemos dicho que cada uno se consigue sus medios ya sea
+
+166
+00:15:05,880 --> 00:15:12,440
+por gente ilegal o por una farmacia, así que lo que tenemos que hacer es comprarnos un
+
+167
+00:15:12,440 --> 00:15:17,960
+kit DIY de CRISPR en internet que los hay, preparar las tres heringas, decírselo a nuestro
+
+168
+00:15:17,960 --> 00:15:23,720
+genetista de confianza o a nuestro bioquímico de confianza o a una empresa de genética y
+
+169
+00:15:23,720 --> 00:15:26,320
+nos lo inyectamos.
+
+170
+00:15:26,320 --> 00:15:30,040
+Nos dilatamos las cúpulas con el método que ya hemos elegido y ya está, ya somos el
+
+171
+00:15:30,040 --> 00:15:31,760
+señor Rasmus Florescente.
+
+172
+00:15:31,760 --> 00:15:37,320
+Así es fácil, no hay que hacer nada más, esta es la teoría, ¿no?
+
+173
+00:15:37,320 --> 00:15:40,560
+La realidad es que hay unas consideraciones que vamos a revisar ahora mismo, aunque la
+
+174
+00:15:40,560 --> 00:15:46,200
+teoría es esta podría funcionar y es que si hacéis este experimento, si salís de aquí
+
+175
+00:15:46,200 --> 00:15:49,360
+y queréis hacer el experimento en vuestra casa, probablemente las condiciones y los
+
+176
+00:15:49,360 --> 00:15:51,400
+procedimientos no sean los óptimos.
+
+177
+00:15:51,400 --> 00:15:56,280
+Y en este caso quizá es al gracioso porque lo peor que podría pasar es que vuestros
+
+178
+00:15:56,280 --> 00:16:03,200
+hijos salían fluorescentes y sus hijos también y de los hijos también y así, pero introduciendo
+
+179
+00:16:03,200 --> 00:16:08,520
+mutaciones en esa línea germinal, por ejemplo podéis introducirle si dais en el lugar equivocado
+
+180
+00:16:08,520 --> 00:16:12,840
+con el CRISPR una enfermedad mucho unga a vuestra desdendencia y así y todos.
+
+181
+00:16:12,840 --> 00:16:19,760
+Además, podríais liberar contaminantes al ambiente creando el COVID 2.0 y si encima
+
+182
+00:16:19,760 --> 00:16:24,360
+alguno se viene arriba y pone esto en el mercado, el mercado negro por supuesto, esto
+
+183
+00:16:24,360 --> 00:16:28,040
+no estaría lo suficientemente testado como para que esto esté disponible al alcance
+
+184
+00:16:28,040 --> 00:16:30,040
+de cualquier persona.
+
+185
+00:16:30,040 --> 00:16:34,440
+Para ello hay este código ético del que hablábamos antes y un sentimiento de autosuguridad
+
+186
+00:16:34,440 --> 00:16:39,440
+que todos los aquí presentes lo vamos a seguir porque somos buenos biohackers.
+
+187
+00:16:39,440 --> 00:16:44,320
+Y además la legalidad de esto en Estados Unidos sí que quizás un poco más laxa, pero por
+
+188
+00:16:44,320 --> 00:16:49,720
+ejemplo en España y en la Unión Europea en general los organismos modificados genéticamente
+
+189
+00:16:49,720 --> 00:16:56,080
+están súper prohibidos y bueno súper regulados y en humanos súper prohibidos y si os inyectáis
+
+190
+00:16:56,080 --> 00:17:00,720
+un CRISPR seríais un organismo modificado genéticamente así que bueno seríais un poco
+
+191
+00:17:00,720 --> 00:17:03,480
+ilegales la verdad.
+
+192
+00:17:03,480 --> 00:17:09,280
+En cualquier caso el biohacking con bacterias y organismos sencillos sí que está un poco
+
+193
+00:17:09,280 --> 00:17:14,320
+en un limbo legal así que por supuesto os animo a que os acercéis a cualquier comunidad
+
+194
+00:17:14,320 --> 00:17:20,360
+de biohacking de España para toquetear estos hacer experimentos y cacharrear con biocosas
+
+195
+00:17:20,360 --> 00:17:23,320
+porque a mí por lo menos me parece muy bonito y muy interesante.
+
+196
+00:17:23,320 --> 00:17:27,160
+El mensaje es ¿no hay esto en casa?
+
+197
+00:17:27,160 --> 00:17:29,160
+Porque bueno yo no me hago responsable ¿vale?
+
+198
+00:17:29,160 --> 00:17:34,000
+Yo os doy la teoría si alguien coge y lo hace en contra de esta diapositiva bueno a
+
+199
+00:17:34,000 --> 00:17:36,440
+mí no vengáis a quejaros.
+
+200
+00:17:36,440 --> 00:17:40,400
+Pero aunque esto no nos vaya a convertir en el señor transflorescente aunque sí que
+
+201
+00:17:40,400 --> 00:17:47,600
+podría sí que os quería acabar esta presentación diciendo las potenciales aplicaciones terapéuticas
+
+202
+00:17:47,600 --> 00:17:53,120
+que tiene CRISPR que son bastante prometedoras como es la edición de genes que producen enfermedades
+
+203
+00:17:53,120 --> 00:17:59,280
+genéticas o la modificación de células inmunes para luchar contra un cáncer.
+
+204
+00:17:59,280 --> 00:18:09,520
+Una terapia antiviral modificando la capacidad virulenta y de propagación de virus como
+
+205
+00:18:09,520 --> 00:18:16,000
+puede ser el COVID o la lucha contra enfermedades infecciosas modificando esos mosquitos que
+
+206
+00:18:16,000 --> 00:18:17,000
+las propagan.
+
+207
+00:18:17,000 --> 00:18:21,600
+Y eso es todo, muchas gracias a todos y todas por venir y por escucharme, por asistir a
+
+208
+00:18:21,600 --> 00:18:23,560
+esta clase de biología.
+
+209
+00:18:23,560 --> 00:18:27,160
+Gracias por supuesto a la PaiCon por montar esto que es flipante.
+
+210
+00:18:27,160 --> 00:18:30,520
+A Pai Lidis Barcelona y la Universitat de Barcelona porque bueno también son pocos
+
+211
+00:18:30,520 --> 00:18:34,920
+culpables de que ella esté aquí y muchas muchas gracias a Miquel, mi amigo por venir
+
+212
+00:18:34,920 --> 00:18:38,080
+a verme y a mi madre que literalmente sin ella pues no estaría aquí, claro.
+
+213
+00:18:38,080 --> 00:18:52,880
+Bueno, tenemos tiempo para unas preguntas.
+
+214
+00:18:52,880 --> 00:18:58,080
+Alguien quiere preguntar algo más sobre convertirse en el señor Paz Verde y con las cúpulas
+
+215
+00:18:58,080 --> 00:18:59,080
+dilatadas.
+
+216
+00:18:59,080 --> 00:19:00,360
+Por ahí tenemos a alguien.
+
+217
+00:19:00,360 --> 00:19:01,360
+Hola.
+
+218
+00:19:01,360 --> 00:19:02,360
+Delante.
+
+219
+00:19:02,360 --> 00:19:03,360
+¿Aquí alguien?
+
+220
+00:19:03,360 --> 00:19:04,360
+¿Ven?
+
+221
+00:19:04,360 --> 00:19:16,240
+Pensaba que estaba por ahí.
+
+222
+00:19:16,240 --> 00:19:17,240
+Vale, vale.
+
+223
+00:19:17,240 --> 00:19:18,240
+Me moví muy rápido.
+
+224
+00:19:18,240 --> 00:19:22,520
+Sí, has comentado de conferencias de biohacking, entonces para alguien totalmente profano en
+
+225
+00:19:22,520 --> 00:19:27,240
+el tema, ¿recomiendas alguna en particular?
+
+226
+00:19:27,240 --> 00:19:29,680
+Comunidades o formación en general.
+
+227
+00:19:29,680 --> 00:19:36,680
+Bueno, comunidades en realidad tenéis cualquiera en cualquier capital de provincia así más
+
+228
+00:19:36,680 --> 00:19:41,480
+o menos grande o pues en Madrid y Barcelona, Granada, no lo sé, la verdad.
+
+229
+00:19:41,480 --> 00:19:46,800
+Y todas están conectadas entre ellas y demás así que en realidad recomiendo todo.
+
+230
+00:19:46,800 --> 00:19:53,720
+Y en cuanto a conferencias, formación y tal en YouTube realmente podéis encontrarlo
+
+231
+00:19:53,720 --> 00:19:56,680
+un montón e incluso detectos que están chulas.
+
+232
+00:19:56,680 --> 00:19:57,680
+Muchas gracias.
+
+233
+00:19:57,680 --> 00:19:58,680
+A ti.
+
+234
+00:19:58,680 --> 00:20:03,680
+Hola, ¿qué tal?
+
+235
+00:20:03,680 --> 00:20:06,440
+Muchas gracias por la charla, es todo muy chula.
+
+236
+00:20:06,440 --> 00:20:11,040
+Estaba mirando el código que tienes en GitHub y bueno aplica un poco los procedimientos
+
+237
+00:20:11,040 --> 00:20:12,040
+que tú has explicado.
+
+238
+00:20:12,040 --> 00:20:18,520
+Un poco a pelo entre comillas y te quería preguntar si hay alguna biblioteca a Python
+
+239
+00:20:18,520 --> 00:20:23,800
+relacionada con esto que yo no conozco nada del tema pero algo tipo biopython o algo así
+
+240
+00:20:23,800 --> 00:20:27,400
+que se utilice en estos temas.
+
+241
+00:20:27,400 --> 00:20:32,280
+Creo que sí, no recuerdo ahora mismo el nombre pero hay una página web que tiene muchos
+
+242
+00:20:32,280 --> 00:20:38,320
+ejercicios y formación de, bueno no de biohacking pero de bioinformática, tienen un montón
+
+243
+00:20:38,320 --> 00:20:43,900
+de ejercicios con ADN, código genético y demás que se llama Rosalind Genetics o algo
+
+244
+00:20:43,900 --> 00:20:45,320
+así Rosalind Aló.
+
+245
+00:20:45,320 --> 00:20:54,320
+¿Alguien más?
+
+246
+00:20:54,320 --> 00:20:59,120
+¿Alguna duda más?
+
+247
+00:20:59,120 --> 00:21:11,640
+Desde tú mencionaste la parte ética y moral incluida.
+
+248
+00:21:11,640 --> 00:21:15,720
+Mi pregunta es, tú te consideras que estamos un poco atrasados para este tipo de tecnología,
+
+249
+00:21:15,720 --> 00:21:21,480
+digase, tú nos ves en algún futuro modificando todos los bebés para evitar todo lo que viene
+
+250
+00:21:21,480 --> 00:21:28,040
+siendo pues nuestras enfermedades genéticas que para nosotros hoy en día imposible evitar
+
+251
+00:21:28,040 --> 00:21:36,240
+como lo que son fatales, no, digase, no sé alguna tú la mencionaste, ¿cuál sería
+
+252
+00:21:36,240 --> 00:21:39,440
+tu opinión en ese tema?
+
+253
+00:21:39,440 --> 00:21:46,640
+Yo personalmente en cuanto a evitar enfermedades terribles en niños bueno en embriones que
+
+254
+00:21:46,640 --> 00:21:53,680
+todavía no han nacido y demás, yo digo sí, obvio y de hecho es algo que se está empezando
+
+255
+00:21:53,680 --> 00:22:02,120
+a regular porque es con un fin benévolo, pero sí que es verdad que por ejemplo en el tema
+
+256
+00:22:02,120 --> 00:22:07,600
+eugenesia de la mejora del ser humano porque sí, por ser más fuertes, más inteligentes
+
+257
+00:22:07,600 --> 00:22:13,680
+o más guapos o elegir que un bebé tenga los ojos azules, por ejemplo, por supuesto no,
+
+258
+00:22:13,680 --> 00:22:19,960
+eso es la naturaleza y no debemos meternos con ella porque luego lucha de vuelta.
+
+259
+00:22:19,960 --> 00:22:20,960
+Gracias.
+
+260
+00:22:20,960 --> 00:22:31,800
+Bueno pues sí, ya no hay más preguntas.
+
+261
+00:22:31,800 --> 00:22:51,920
+Un último aplauso para esta gran charla por favor.
+
