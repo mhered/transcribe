@@ -92,16 +92,20 @@ Uso de la herramienta:
 
 ```sh
 $ python3 scan_channel.py -h
-usage: scan_channel.py [-h] [--channel CHANNEL] [--file FILE]
+usage: scan_channel.py [-h] --channel CHANNEL [--file FILE]
 
 Scan a YouTube channel and create a JSON file with contents
 
 optional arguments:
   -h, --help         show this help message and exit
-  --channel CHANNEL  URL of the YouTube channel to scan
-  --file FILE        Name of the output file (Optional, default is channel.json)
+  --file FILE        Name of the input file (Optional, default is
+                     'channel.json')
+
+required named arguments:
+  --channel CHANNEL  (Required) URL of the YouTube channel to scan
 
 $ python3 scan_channel.py --channel https://www.youtube.com/channel/UCPnRCRhb-6gaPZuQWS7RVag --file my_channel.json
+
 2022-10-25 21:18:41,325 [INFO] Scanning YouTube channel...
 2022-10-25 21:18:42,574 [INFO] 6 videos found in the channel.
 2022-10-25 21:18:42,575 [INFO] Building data structure...
@@ -167,26 +171,43 @@ La herramienta escanea el canal y genera un fichero JSON con detalles de los vid
 
 Herramienta de linea de comandos que lee un archivo JSON con el formato generado por `scan_channel.py` y genera subtítulos para cada uno de los vídeos.
 
-El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo usando un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida (el progreso parcial del video que se está analizando se pierde pero no empieza a escanear el canal desde el principio).
+El proceso de generar subtítulos es bastante lento (aproximadamente x3 la duración del vídeo usando un portátil modesto), por lo que la herramienta está pensada para reanudar la tarea si es interrumpida (el progreso parcial del video que se está analizando se pierde pero no graba los subtitulos generados y continúa por donde iba cuando se relanza).
 
-La herramienta lee el JSON y busca el video de mayor numero de visitas que tiene vacío el campo`transcript `(es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato SRT en el directorio `./captions/[video_id]/`, actualiza el campo `transcript` en el JSON y lo salva, y continua con el siguiente vídeo por numero de visitas.
+La herramienta lee el JSON y busca el video más prioritario que tiene vacío el campo`transcript` (es decir, para el que aun no ha generado subtítulos). Cuando termina graba los subtítulos en formato SRT en el directorio `./captions/[video_id]/`, actualiza el campo `transcript` en el JSON y lo salva, y continua con el siguiente vídeo por orden de prioridad. La prioridad la define el parámetro `--priority` que puede ser`popular` (mayor número de visualizaciones, por defecto) o `recent` (fecha de publicación) . 
 
 Uso de la línea de comandos:   
 
-```sh
+```bash
 $ python3 process_channel.py -h
-usage: process_channel.py [-h] [--file FILE]
+usage: process_channel.py [-h] [--file FILE] [--priority {popular,recent}]
 
 Resumes processing videos from a JSON file
 
 optional arguments:
-  -h, --help   show this help message and exit
-  --file FILE  Name of the input file (Optional, default is channel.json)
+  -h, --help            show this help message and exit
+  --file FILE           Name of the input file (Optional, default is
+                        'channel.json')
+  --priority {popular,recent}
+                        Criteria to prioritize queue of videos pending
+                        processing (Optional, default is 'popular')
 
-$ python3 process_channel.py --file my_channel.json
-
+$ python3 process_channel.py --file my_channel.json --priority popular
 ```
 
 ## Issues conocidos
 
 * Para interrumpir la ejecución hay que pulsar CTRL+C repetidas veces (#2)
+
+## To do
+
+* Explorar la API de youtube para subir subtitulos automáticamente:  https://github.com/youtube/api-samples/blob/master/python/captions.py y https://developers.google.com/youtube/v3/docs
+* Subir al repo automáticamente cada vez que termina de generar unos subtítulos, i.e. : 
+
+```bash
+$ git add .
+$ git commit -m "add 1 caption"
+$ git push
+```
+
+​		Esto sirve reducir conflictos si varias máquinas trabajan de forma concurrente.
+
