@@ -1,0 +1,2372 @@
+1
+00:00:00,000 --> 00:00:07,000
+A Cácega de Ogros
+
+2
+00:00:17,000 --> 00:00:19,000
+Yada, hola!
+
+3
+00:00:20,000 --> 00:00:25,000
+Que asco é de organización? Que os amanda por el café e a los cinco minutos os ha echado?
+
+4
+00:00:25,000 --> 00:00:30,000
+Vaya, non sei, dei encer a la culpa. Que desastre!
+
+5
+00:00:30,000 --> 00:00:34,000
+Pois, muchísimas gracias por aguantar hasta el cierre.
+
+6
+00:00:34,000 --> 00:00:41,000
+Vamos a ser breves, intensas pero breves para que no acabéis aburridas e para que os vayáis a casa,
+
+7
+00:00:41,000 --> 00:00:44,000
+os hagáis de fiesta o lo que queráis hacer.
+
+8
+00:00:44,000 --> 00:00:47,000
+Muchísimas gracias por aguantar hasta el final.
+
+9
+00:00:47,000 --> 00:00:52,000
+Sei que unha congerencia é descansado, é duro, é domingo, tenis que volver.
+
+10
+00:00:52,000 --> 00:00:57,000
+E é agarrable poder cerrar con gente aquí que nos este acompañando,
+
+11
+00:00:57,000 --> 00:01:01,000
+que no sea adiós entre las que organizamos e ya está,
+
+12
+00:01:01,000 --> 00:01:03,000
+sino que é bonito que quede gente.
+
+13
+00:01:03,000 --> 00:01:07,000
+Então, que vamos a decir?
+
+14
+00:01:07,000 --> 00:01:10,000
+Non lo sei. Hemos hecho de apositivas, no, estamos cansadas.
+
+15
+00:01:10,000 --> 00:01:13,000
+Por que? Porque, he dicho muchas vezes,
+
+16
+00:01:13,000 --> 00:01:18,000
+pero somos voluntarios, somos voluntarios, no ganamos dinero con esto.
+
+17
+00:01:18,000 --> 00:01:21,000
+É o nosso projeto Open Source.
+
+18
+00:01:21,000 --> 00:01:26,000
+Decíros que se os ha gustado, os ha gustado.
+
+19
+00:01:26,000 --> 00:01:29,000
+Ola, os pasa bien.
+
+20
+00:01:29,000 --> 00:01:34,000
+Pois, que seria genial que colaboráis en é.
+
+21
+00:01:34,000 --> 00:01:36,000
+O que en la petezca, quien tenga tiempo.
+
+22
+00:01:36,000 --> 00:01:39,000
+Al final, el París en España tiene grupos de trabajo
+
+23
+00:01:39,000 --> 00:01:43,000
+para ayudar a organizar la conferencia, no sólo é esta,
+
+24
+00:01:43,000 --> 00:01:47,000
+para ayudar a organizar el Hactoverfes, que está a cuenta da esquina.
+
+25
+00:01:47,000 --> 00:01:52,000
+Estamos ya en octubre, ya vamos tarde, e que hemos hecho nada todavía.
+
+26
+00:01:52,000 --> 00:01:56,000
+Entonces que sempre está a tener una mano amiga que diga,
+
+27
+00:01:56,000 --> 00:01:58,000
+oye pues, yo que sei,
+
+28
+00:01:58,000 --> 00:02:01,000
+eu me encargo de poner un tweet los domingos,
+
+29
+00:02:01,000 --> 00:02:04,000
+ou eu me encargo de escribir un boitín científico,
+
+30
+00:02:04,000 --> 00:02:07,000
+ou te os ayudo a organizar o evento,
+
+31
+00:02:07,000 --> 00:02:11,000
+ou creer una comunidade local, que é país en España,
+
+32
+00:02:11,000 --> 00:02:14,000
+está para isso, para apoyaros a crear comunidades locales,
+
+33
+00:02:14,000 --> 00:02:17,000
+e não tiene que ser en ciudades grandes,
+
+34
+00:02:17,000 --> 00:02:21,000
+que é que pode ser en mi pueblo, en mi pedanía, en mi barrio, en mi granja,
+
+35
+00:02:21,000 --> 00:02:24,000
+é que é igual, nonde queráis juntaros.
+
+36
+00:02:24,000 --> 00:02:29,000
+Así que, ojalá, também, esta vuelta a lo presencial, a los abrazos,
+
+37
+00:02:29,000 --> 00:02:32,000
+os haya animado a, pues, a tener fuerzas
+
+38
+00:02:32,000 --> 00:02:38,000
+e volver a esto, a generar comunidade que é de lo que se trata, este evento.
+
+39
+00:02:38,000 --> 00:02:41,000
+E, bueno, tengo máas coisas que decir,
+
+40
+00:02:41,000 --> 00:02:44,000
+mas, vou deixar hablar a Pablo, porque senão eu me hablaro muito.
+
+41
+00:02:44,000 --> 00:02:48,000
+Bueno, eu, desde a oficina de software libre de Universidad Granada,
+
+42
+00:02:48,000 --> 00:02:52,000
+quero dar las gracias a todas e a todos por haber venido aquí,
+
+43
+00:02:52,000 --> 00:02:55,000
+a esta granada, el esfuerzo que supone venir a un viaje,
+
+44
+00:02:55,000 --> 00:02:58,000
+pero, na verdade, que todo el esfuerzo que se ha realizado
+
+45
+00:02:58,000 --> 00:03:00,000
+en la organización, con las personas voluntarias,
+
+46
+00:03:00,000 --> 00:03:04,000
+con la gente de la universidad, con la gente de todas asociaciones,
+
+47
+00:03:04,000 --> 00:03:06,000
+na verdade que ha sido duro,
+
+48
+00:03:06,000 --> 00:03:08,000
+pero, al final, viendo como ha quedado todo,
+
+49
+00:03:08,000 --> 00:03:12,000
+na verdade que é una gran satisfacción, de verdade, haber llegado a esta parte.
+
+50
+00:03:12,000 --> 00:03:16,000
+Como sabeis, nós já somos, ya, muchos años en granada,
+
+51
+00:03:16,000 --> 00:03:19,000
+intentando celebrar a Pai con Maribel,
+
+52
+00:03:19,000 --> 00:03:21,000
+a professora Maribel García Arenas que está aí,
+
+53
+00:03:21,000 --> 00:03:24,000
+hizo a solicitud en 2019, se acestó hoy que bien,
+
+54
+00:03:24,000 --> 00:03:27,000
+2020, que pasa, bueno, 2021 seguimos,
+
+55
+00:03:27,000 --> 00:03:30,000
+e, al final, en 2022, lo hemos conseguido.
+
+56
+00:03:30,000 --> 00:03:33,000
+E, na verdade, espero que cheis disfrutado
+
+57
+00:03:33,000 --> 00:03:35,000
+de la instalación de la Universidad de Granada.
+
+58
+00:03:35,000 --> 00:03:38,000
+La comida va gustado?
+
+59
+00:03:38,000 --> 00:03:39,000
+Sí.
+
+60
+00:03:39,000 --> 00:03:41,000
+La comida de la Universidad de Granada tiene fama
+
+61
+00:03:41,000 --> 00:03:44,000
+porque está muy financiada para que el estudiantado
+
+62
+00:03:44,000 --> 00:03:47,000
+coma muy barato, o que habéis comido hoy e ayer
+
+63
+00:03:47,000 --> 00:03:50,000
+cuesta, da mejor, 3 euros e medio para
+
+64
+00:03:50,000 --> 00:03:53,000
+las personas que estudian en la Universidad de Granada.
+
+65
+00:03:53,000 --> 00:03:56,000
+Entonces, ha cedido esos espacios para que podamos comer
+
+66
+00:03:56,000 --> 00:03:59,000
+aquí todo o mundo junto e, na verdade,
+
+67
+00:03:59,000 --> 00:04:02,000
+que, yo como director de la oficina, agradezco
+
+68
+00:04:02,000 --> 00:04:05,000
+el apoyo que he tenido esta universidad, que también en mi casa
+
+69
+00:04:05,000 --> 00:04:07,000
+e la de muchas de vosotras.
+
+70
+00:04:07,000 --> 00:04:10,000
+E, ya está, sempre te quiero dar la gracia a Paizón España
+
+71
+00:04:10,000 --> 00:04:13,000
+por haber confiado en nuestro equipo
+
+72
+00:04:13,000 --> 00:04:18,000
+para organizar la Paicon aquí en España.
+
+73
+00:04:18,000 --> 00:04:20,000
+España no, en Granada.
+
+74
+00:04:20,000 --> 00:04:22,000
+Fíjate, en una Paicon en España, que bien.
+
+75
+00:04:22,000 --> 00:04:24,000
+Granada es España y España es Granada.
+
+76
+00:04:24,000 --> 00:04:25,000
+Exactamente.
+
+77
+00:04:25,000 --> 00:04:29,000
+E nada, de corazón, muchísimas gracias, Jimena,
+
+78
+00:04:29,000 --> 00:04:32,000
+que me agradezco todo o mundo.
+
+79
+00:04:32,000 --> 00:04:34,000
+Ha sido, digáme, personalmente, una de las desafías
+
+80
+00:04:34,000 --> 00:04:38,000
+má grandes de mi vida a organizar una conferencia tan grande,
+
+81
+00:04:38,000 --> 00:04:41,000
+pero viendo la gente tan maravillosa que viene,
+
+82
+00:04:41,000 --> 00:04:45,000
+de verdad que compensa con creces todo el esfuerzo que requiere.
+
+83
+00:04:45,000 --> 00:05:00,000
+Que nada, Osvo...
+
+84
+00:05:00,000 --> 00:05:04,000
+Osvo, ya contáme, que es lo que mola, no?
+
+85
+00:05:04,000 --> 00:05:06,000
+Las cotillexas, las cosas.
+
+86
+00:05:06,000 --> 00:05:11,000
+Cotillexas, cosas que hemos hecho muy bien.
+
+87
+00:05:11,000 --> 00:05:15,000
+E nos enviaros la encuesta, como sempre, de que se ha parecido,
+
+88
+00:05:15,000 --> 00:05:16,000
+que mejoraríais.
+
+89
+00:05:16,000 --> 00:05:18,000
+Hemos hecho muy bien la comida,
+
+90
+00:05:18,000 --> 00:05:19,000
+que es la queja de siempre,
+
+91
+00:05:19,000 --> 00:05:20,000
+pero os lo voy a decir,
+
+92
+00:05:20,000 --> 00:05:22,000
+yo lo hemos hecho muy bien.
+
+93
+00:05:22,000 --> 00:05:24,000
+De normal, la gente de ganas,
+
+94
+00:05:24,000 --> 00:05:26,000
+celiacas vegetarianas, las raras,
+
+95
+00:05:26,000 --> 00:05:28,000
+estamos en un rincón como, bueno,
+
+96
+00:05:28,000 --> 00:05:29,000
+ver se alguien nos trae lo nuestro,
+
+97
+00:05:29,000 --> 00:05:30,000
+e estábamos, no?
+
+98
+00:05:30,000 --> 00:05:32,000
+Ha sido guay eso.
+
+99
+00:05:32,000 --> 00:05:33,000
+Que hemos hecho mal.
+
+100
+00:05:33,000 --> 00:05:37,000
+Teníamos unas pegatinas preparadas con os pronombres
+
+101
+00:05:37,000 --> 00:05:39,000
+e al final hemos dicho, bueno, estás en blanco,
+
+102
+00:05:39,000 --> 00:05:42,000
+no lo hemos dicho, nadie lo ha hecho,
+
+103
+00:05:42,000 --> 00:05:47,000
+pero nos lo apuntamos para daño que venes,
+
+104
+00:05:47,000 --> 00:05:50,000
+pero no nos hayamos liado mucho con eso,
+
+105
+00:05:50,000 --> 00:05:52,000
+pero ahí está, apuntadito.
+
+106
+00:05:52,000 --> 00:05:55,000
+Más cosas, os voy a contar cosas curiosas.
+
+107
+00:05:55,000 --> 00:05:58,000
+Osaís que hay personas menores de edad
+
+108
+00:05:58,000 --> 00:06:00,000
+en esta conferencia
+
+109
+00:06:00,000 --> 00:06:02,000
+e non me refiero a la ludoteca, e,
+
+110
+00:06:02,000 --> 00:06:07,000
+de verdad, hay gente menor que ha venido a vernos
+
+111
+00:06:07,000 --> 00:06:10,000
+e esto nunca nos habíamos da cuenta de decir,
+
+112
+00:06:10,000 --> 00:06:13,000
+oye, porque no viene gente menor de dios e os taños
+
+113
+00:06:13,000 --> 00:06:14,000
+a la paiconés?
+
+114
+00:06:14,000 --> 00:06:16,000
+Además, creo que están por aquí,
+
+115
+00:06:16,000 --> 00:06:17,000
+quieres venir,
+
+116
+00:06:17,000 --> 00:06:19,000
+es que me hace muchísima ilusión
+
+117
+00:06:19,000 --> 00:06:23,000
+que haya gente de instituto en toda a conferencia.
+
+118
+00:06:31,000 --> 00:06:33,000
+Que guay que muchísimas gracias.
+
+119
+00:06:33,000 --> 00:06:35,000
+No tenemos un micro, no, tengo esta abierzo.
+
+120
+00:06:35,000 --> 00:06:37,000
+Que nervenza.
+
+121
+00:06:37,000 --> 00:06:38,000
+Que gísela.
+
+122
+00:06:38,000 --> 00:06:40,000
+Que es la primera vez que nos pasa este,
+
+123
+00:06:40,000 --> 00:06:42,000
+que ridículo, porque no van a venir.
+
+124
+00:06:42,000 --> 00:06:43,000
+Espera, que falta gísela,
+
+125
+00:06:43,000 --> 00:06:44,000
+que gísela tan que menos de daño.
+
+126
+00:06:44,000 --> 00:06:45,000
+Tama esta gísela,
+
+127
+00:06:45,000 --> 00:06:46,000
+dónde está?
+
+128
+00:06:46,000 --> 00:06:48,000
+No te escondas.
+
+129
+00:06:56,000 --> 00:06:58,000
+Que guay, que guay, por favor,
+
+130
+00:06:58,000 --> 00:07:00,000
+pero mirad, que es esto?
+
+131
+00:07:00,000 --> 00:07:03,000
+Porque no lo hemos pensado antes,
+
+132
+00:07:03,000 --> 00:07:05,000
+o que es una conferencia para todos públicos,
+
+133
+00:07:05,000 --> 00:07:07,000
+o que es una persona un pouco rara,
+
+134
+00:07:07,000 --> 00:07:09,000
+que habla de juguetes sexuales,
+
+135
+00:07:09,000 --> 00:07:10,000
+pero o demás,
+
+136
+00:07:10,000 --> 00:07:12,000
+entonces que nos aduntamos,
+
+137
+00:07:12,000 --> 00:07:14,000
+que es super bonito teneros aquí,
+
+138
+00:07:14,000 --> 00:07:15,000
+os lo habéis pasado bien?
+
+139
+00:07:15,000 --> 00:07:16,000
+Sí,
+
+140
+00:07:16,000 --> 00:07:17,000
+e no nos andan en micros, sí?
+
+141
+00:07:17,000 --> 00:07:18,000
+Sí.
+
+142
+00:07:18,000 --> 00:07:20,000
+E porque habéis venido?
+
+143
+00:07:20,000 --> 00:07:22,000
+A ver, a mí es que tú este tema
+
+144
+00:07:22,000 --> 00:07:23,000
+me encanta,
+
+145
+00:07:23,000 --> 00:07:24,000
+entonces saber que
+
+146
+00:07:24,000 --> 00:07:25,000
+la perdón iba a ser aquí en Granada
+
+147
+00:07:25,000 --> 00:07:27,000
+era como algo que no me podia perder,
+
+148
+00:07:27,000 --> 00:07:28,000
+entonces,
+
+149
+00:07:28,000 --> 00:07:29,000
+fue como da igual,
+
+150
+00:07:29,000 --> 00:07:30,000
+que tengas 16,
+
+151
+00:07:30,000 --> 00:07:33,000
+tengo que venir aquí a Granada,
+
+152
+00:07:33,000 --> 00:07:34,000
+e se eu sou de aquí
+
+153
+00:07:34,000 --> 00:07:35,000
+tengo que asistir,
+
+154
+00:07:35,000 --> 00:07:36,000
+e eu también.
+
+155
+00:07:36,000 --> 00:07:37,000
+Entonces,
+
+156
+00:07:37,000 --> 00:07:38,000
+no que eu pede a oportunidade.
+
+157
+00:07:38,000 --> 00:07:40,000
+Que guay, un tínar, rafa.
+
+158
+00:07:44,000 --> 00:07:46,000
+E tú porque has venido?
+
+159
+00:07:46,000 --> 00:07:47,000
+Cuenta-me.
+
+160
+00:07:47,000 --> 00:07:48,000
+Bueno, es que mi padre,
+
+161
+00:07:48,000 --> 00:07:50,000
+como bien aquí ya me gusta
+
+162
+00:07:50,000 --> 00:07:52,000
+mucho las cosas informáticas e cosas así,
+
+163
+00:07:52,000 --> 00:07:53,000
+pues,
+
+164
+00:07:53,000 --> 00:07:55,000
+dije papá, puedo venir
+
+165
+00:07:55,000 --> 00:07:56,000
+e me dijo que sí, por eso.
+
+166
+00:07:56,000 --> 00:07:57,000
+Que guay,
+
+167
+00:07:57,000 --> 00:07:59,000
+e que edad tienes?
+
+168
+00:07:59,000 --> 00:08:00,000
+9.
+
+169
+00:08:00,000 --> 00:08:01,000
+10 años.
+
+170
+00:08:01,000 --> 00:08:02,000
+Javi.
+
+171
+00:08:03,000 --> 00:08:04,000
+E por aquí,
+
+172
+00:08:04,000 --> 00:08:05,000
+tú porque has venido?
+
+173
+00:08:05,000 --> 00:08:06,000
+Pues,
+
+174
+00:08:06,000 --> 00:08:07,000
+me apuntei al que me guste ser ingeniera,
+
+175
+00:08:07,000 --> 00:08:09,000
+hace ya 3 años e de sempre,
+
+176
+00:08:09,000 --> 00:08:10,000
+bueno,
+
+177
+00:08:10,000 --> 00:08:11,000
+esos 3 años estuve asistiendo
+
+178
+00:08:11,000 --> 00:08:12,000
+e pues,
+
+179
+00:08:12,000 --> 00:08:13,000
+me empezó a encantar la programación
+
+180
+00:08:13,000 --> 00:08:14,000
+e pues,
+
+181
+00:08:14,000 --> 00:08:15,000
+decidi venir de voluntaria.
+
+182
+00:08:15,000 --> 00:08:16,000
+Que bien,
+
+183
+00:08:16,000 --> 00:08:18,000
+muchísimas gracias de verdade.
+
+184
+00:08:18,000 --> 00:08:19,000
+Que che,
+
+185
+00:08:19,000 --> 00:08:20,000
+no, no,
+
+186
+00:08:20,000 --> 00:08:21,000
+no,
+
+187
+00:08:21,000 --> 00:08:22,000
+no, no,
+
+188
+00:08:22,000 --> 00:08:23,000
+no, no,
+
+189
+00:08:23,000 --> 00:08:24,000
+no, no, no,
+
+190
+00:08:24,000 --> 00:08:25,000
+no, no, no,
+
+191
+00:08:25,000 --> 00:08:26,000
+no, no, no,
+
+192
+00:08:26,000 --> 00:08:27,000
+no, no, no,
+
+193
+00:08:27,000 --> 00:08:28,000
+no, no, no,
+
+194
+00:08:28,000 --> 00:08:29,000
+no, no,
+
+195
+00:08:29,000 --> 00:08:30,000
+stew,
+
+196
+00:08:30,000 --> 00:08:31,000
+Mohon on top.
+
+197
+00:08:31,000 --> 00:08:32,000
+Sino,
+
+198
+00:08:32,000 --> 00:08:33,000
+je,
+
+199
+00:08:33,000 --> 00:08:34,000
+jo,
+
+200
+00:08:34,000 --> 00:08:35,000
+je,
+
+201
+00:08:35,000 --> 00:08:36,000
+e moha.
+
+202
+00:08:36,000 --> 00:08:37,000
+E,
+
+203
+00:08:37,000 --> 00:08:38,660
+ok mas
+
+204
+00:08:39,560 --> 00:08:41,000
+risco succeededo
+
+205
+00:08:42,000 --> 00:08:43,000
+nan말as
+
+206
+00:08:43,000 --> 00:08:44,000
+bizarra
+
+207
+00:08:44,280 --> 00:08:45,980
+bernine
+
+208
+00:08:46,000 --> 00:08:47,000
+o resurrectora
+
+209
+00:08:47,000 --> 00:08:48,400
+b reporter
+
+210
+00:08:49,000 --> 00:08:49,880
+b projections
+
+211
+00:08:49,880 --> 00:08:50,580
+resgo
+
+212
+00:08:52,200 --> 00:08:52,940
+y
+
+213
+00:08:52,960 --> 00:08:54,020
+es sake,
+
+214
+00:08:54,960 --> 00:08:56,540
+de
+
+215
+00:08:56,540 --> 00:09:00,140
+pero sol hemos ido a charlas de mujeres todo o dia
+
+216
+00:09:00,140 --> 00:09:05,740
+e é verdade teníamos suficientes mujeres para poder ir só a charlas de mujeres.
+
+217
+00:09:05,740 --> 00:09:08,740
+Más cosas que nos han dicho tamén.
+
+218
+00:09:08,740 --> 00:09:11,940
+Pienso, pienso, ya se me olvidan las cosas.
+
+219
+00:09:11,940 --> 00:09:16,540
+Bueno, hemos tenido unha drascuí hablando nos aquí dando unha charla.
+
+220
+00:09:16,540 --> 00:09:18,540
+Tampoco ha habido drascuínsa antes.
+
+221
+00:09:18,540 --> 00:09:23,940
+O colectivo cuíra sado mo xo má representado, unha pena no haber dado lo dos pronombres,
+
+222
+00:09:23,940 --> 00:09:26,940
+porque tamén habríamos tenido mejores estadísticas,
+
+223
+00:09:26,940 --> 00:09:29,940
+pero había mxa gente que no era normativa
+
+224
+00:09:29,940 --> 00:09:33,940
+e que parece que no venga a estos eventos, pero está pente.
+
+225
+00:09:33,940 --> 00:09:38,940
+E que má, se me lo habís dicho vosotros, así es que ya no me acuerdo, que me habís dicho.
+
+226
+00:09:38,940 --> 00:09:40,940
+No lo sé.
+
+227
+00:09:40,940 --> 00:09:46,940
+Pero bueno, que a gente estaba super contenta de poder estar aquí, de poder juntarse.
+
+228
+00:09:46,940 --> 00:09:56,940
+Ya lo dije, cientas mujeres, lo que está muy guai, la verdad, juntar a 200 mujeres informáticas o de sectores tem.
+
+229
+00:09:56,940 --> 00:10:04,940
+Tamén hemos tenido, no sé, bastantes representaciones colectivos que lo mo xorde normal no tenemos.
+
+230
+00:10:04,940 --> 00:10:10,940
+Así que nada, que lo hemos hecho muy bien, que creo que esta é a línea que hay que seguir.
+
+231
+00:10:10,940 --> 00:10:14,940
+Hemos abierto mo xas puertas, ya sé lo que hei que deciros.
+
+232
+00:10:14,940 --> 00:10:19,940
+Ha sido, además de tener personas menores de edad,
+
+233
+00:10:19,940 --> 00:10:24,940
+ha bajado mo xa la media de edad de la conferencia, se os habís dado cuenta.
+
+234
+00:10:24,940 --> 00:10:26,940
+E me dado cuenta.
+
+235
+00:10:26,940 --> 00:10:29,940
+E esto es porque hemos becado a mo xa gente que está doctorando
+
+236
+00:10:29,940 --> 00:10:32,940
+e hemos trabajado mo xa cerca con la universidad, e es lo bueno, no?
+
+237
+00:10:32,940 --> 00:10:36,940
+E no al final, pues envejecemos, nos morimos, e aquí no queda nadie.
+
+238
+00:10:36,940 --> 00:10:44,940
+E, ento, é, lo hemos hecho muy bien e sonamos unha comunidad mo xa guai, mo mo xito que se pueda seguir diciendo,
+
+239
+00:10:44,940 --> 00:10:47,940
+vine por el lenguaje, me quedo por la comunidad.
+
+240
+00:10:47,940 --> 00:10:54,940
+E nada, que mo xas gracias de verdad, e dando estas las ideas posibles para seguir en esta línea.
+
+241
+00:10:54,940 --> 00:10:56,940
+E da mo xas muchas gracias.
+
+242
+00:10:56,940 --> 00:11:12,940
+E, ya dicho esto, voy a dejar a Pablo con la lista de voluntarias que os va a llamar.
+
+243
+00:11:12,940 --> 00:11:19,940
+Bueno, la lista de voluntarias son casi todas estudiantes de la Universidad de Granada,
+
+244
+00:11:19,940 --> 00:11:24,940
+casi todas han pasado por mis clases, e ento, é, eu coxido a la gente en plan,
+
+245
+00:11:24,940 --> 00:11:26,940
+oi, te interesa, te interesa, te interesa.
+
+246
+00:11:26,940 --> 00:11:30,940
+En realidad, podria haber coxido a alazar porque todas as personas que estudian en la universidad de Granada
+
+247
+00:11:30,940 --> 00:11:34,940
+son geniales, vale, pero é estas das conocidas de antes e,
+
+248
+00:11:34,940 --> 00:11:37,940
+e xe quilo, que me pongan bien buenas notas en las encuestas
+
+249
+00:11:37,940 --> 00:11:41,940
+para que me invite, el logo, a cena de profesores, vale.
+
+250
+00:11:41,940 --> 00:11:44,940
+Todas as estudiantes de la Universidad magnífico todo el mundo, e de verdad, de verdad.
+
+251
+00:11:44,940 --> 00:11:48,940
+Bueno, e, quilo darle a gracias a las personas que involuntarias porque xe le han currado,
+
+252
+00:11:48,940 --> 00:11:51,940
+xe le han currado, desde o minuto uno que las invité,
+
+253
+00:11:51,940 --> 00:11:55,940
+xe han estado involucradas a saco, pero non lo poden a hacer una idea.
+
+254
+00:11:55,940 --> 00:11:59,940
+E son unas personas magníficas que las tengo en meu corazon porque os han comprometido
+
+255
+00:11:59,940 --> 00:12:02,940
+cada vez que me veía Pablo, a tope, todo el mundo super contento,
+
+256
+00:12:02,940 --> 00:12:05,940
+que bien, non sei que, e cada vez que me lo decían,
+
+257
+00:12:05,940 --> 00:12:08,940
+minxava, de verdad, como que bien, e esta salido todo fantástico.
+
+258
+00:12:08,940 --> 00:12:11,940
+E, bueno, quilo darle a la gracia a estas persones,
+
+259
+00:12:11,940 --> 00:12:14,940
+e quilo que suban al escenario, no, lo he dicho,
+
+260
+00:12:14,940 --> 00:12:17,940
+pero vaya subi al escenario, vale, e esas persoas,
+
+261
+00:12:17,940 --> 00:12:21,940
+e, náxx poquitas que non poden a venir porque han tenido que irse, pero tamela a mencionar,
+
+262
+00:12:21,940 --> 00:12:27,940
+son Violeta Martín, Juan Diego Mariscal, Carmen Guidad, Paula Ruiz,
+
+263
+00:12:27,940 --> 00:12:34,940
+Ángela Pozo, Tacho Rubio, Alejandro Manzanares, Ignasi Camacho, Ines Jiménez,
+
+264
+00:12:34,940 --> 00:12:38,940
+Maria Sánchez, Ari Cervilla e Gisela Lorenzo.
+
+265
+00:12:38,940 --> 00:12:41,940
+Un aplausaco para esta gente, de verdad.
+
+266
+00:12:41,940 --> 00:12:43,940
+Ponés por aquí, ponés.
+
+267
+00:12:48,940 --> 00:12:50,940
+Ejeista a la cámara.
+
+268
+00:12:50,940 --> 00:13:02,940
+Pabllo, ven te aqui.
+
+269
+00:13:05,940 --> 00:13:07,940
+Grazie, por un tal.
+
+270
+00:13:07,940 --> 00:13:10,940
+Bueno, bueno, no, me ha pensado el nombre que se han puesto,
+
+271
+00:13:10,940 --> 00:13:13,940
+el nombre de los paiononos, vale, aquí están,
+
+272
+00:13:13,940 --> 00:13:21,940
+los paiononos, vale, y las paiononos, o xx,
+
+273
+00:13:21,940 --> 00:13:24,940
+porque los paiononos, para que non lo sepas,
+
+274
+00:13:24,940 --> 00:13:26,940
+son unos pastelitos muy típicos de granada
+
+275
+00:13:26,940 --> 00:13:28,940
+e se nos ocurrió este hashtag,
+
+276
+00:13:28,940 --> 00:13:31,940
+e le hemos adaptado, ya tenemos un paquete paiononos
+
+277
+00:13:31,940 --> 00:13:33,940
+que temos que crearlo e subirlo ya,
+
+278
+00:13:33,940 --> 00:13:35,940
+para que a gente se lo pueda bajar, vale,
+
+279
+00:13:35,940 --> 00:13:37,940
+non sabemos que le metemos dentro del código,
+
+280
+00:13:37,940 --> 00:13:39,940
+pero hay que pensarlo rápido, vale, que non nos lo quiten, vale,
+
+281
+00:13:39,940 --> 00:13:41,940
+e de verdad ha sido un auto-transportado,
+
+282
+00:13:41,940 --> 00:13:44,940
+e un orgullo haber trabajado con personas tan maravillosas,
+
+283
+00:13:44,940 --> 00:13:46,940
+de verdad, e, así que,
+
+284
+00:13:46,940 --> 00:13:48,940
+outro aplauso que se merdan máis.
+
+285
+00:13:59,940 --> 00:14:01,940
+E agora sí, de parte de país en España,
+
+286
+00:14:01,940 --> 00:14:03,940
+para toda esa gente que nos ha dedicado tanto tiempo
+
+287
+00:14:03,940 --> 00:14:06,940
+en organizar esto, que nos ha aguantado tanto,
+
+288
+00:14:06,940 --> 00:14:11,940
+tenemos unos regalos, e que son os mes regalos máis guais,
+
+289
+00:14:11,940 --> 00:14:13,940
+ue, que me voy a carcar ellos,
+
+290
+00:14:13,940 --> 00:14:15,940
+para os organizadores e organizadoras,
+
+291
+00:14:15,940 --> 00:14:18,940
+mirad que os hemos traído, seguto,
+
+292
+00:14:18,940 --> 00:14:20,940
+tengo que abrir,
+
+293
+00:14:20,940 --> 00:14:24,940
+doya, oros ya muy os las doy, pero es que sú muy chulas,
+
+294
+00:14:25,940 --> 00:14:28,940
+mirad que cusa máis monas, vamos a regalar!
+
+295
+00:14:28,940 --> 00:14:40,940
+Aplausos
+
+296
+00:14:40,940 --> 00:14:44,940
+Entende, muchísimas gracias a Paloma,
+
+297
+00:14:44,940 --> 00:14:46,940
+a Sara, ya podísis subiendo,
+
+298
+00:14:46,940 --> 00:14:49,940
+a Pablo, x mis Pablo,
+
+299
+00:14:49,940 --> 00:14:53,940
+a Ana, a Cristian, a Pedro,
+
+300
+00:14:53,940 --> 00:14:58,940
+a Islael, el otro Islael, a José Miguel,
+
+301
+00:14:58,940 --> 00:15:01,940
+a María Moreno, a Manuel,
+
+302
+00:15:01,940 --> 00:15:04,940
+a Pedro, a Pablo Benavidez,
+
+303
+00:15:04,940 --> 00:15:07,940
+a Javier Alonso, a Marie Belgarcía,
+
+304
+00:15:07,940 --> 00:15:11,940
+a Paula, a Cristina, a Alberto,
+
+305
+00:15:11,940 --> 00:15:24,940
+a Juananto, y a Cristian Brava.
+
+306
+00:15:24,940 --> 00:15:29,940
+Es que mirad esto,
+
+307
+00:15:29,940 --> 00:15:32,940
+porque estes para,
+
+308
+00:15:32,940 --> 00:15:35,940
+verdá que muchísimas gracias,
+
+309
+00:15:35,940 --> 00:15:37,940
+ahora ya no podis cambiar de lenguaje,
+
+310
+00:15:37,940 --> 00:15:40,940
+de programación, de puesto.
+
+311
+00:15:40,940 --> 00:15:42,940
+No,
+
+312
+00:15:42,940 --> 00:15:44,940
+entonces, de verdad que mil gracias
+
+313
+00:15:44,940 --> 00:15:46,940
+creo que tengo para todas as personas,
+
+314
+00:15:46,940 --> 00:15:48,940
+María, que actes aquí escondida?
+
+315
+00:15:48,940 --> 00:15:50,940
+Que éso es para ti, tonta.
+
+316
+00:15:50,940 --> 00:15:52,940
+Que me falta, de me perdón.
+
+317
+00:15:52,940 --> 00:15:54,940
+No te puedo ver gostosa.
+
+318
+00:15:56,940 --> 00:15:59,940
+Así que eso que de verdad que mil millones de gracias,
+
+319
+00:15:59,940 --> 00:16:01,940
+porque es muchísimo trabajo,
+
+320
+00:16:01,940 --> 00:16:05,940
+se cuesta organizar unha cena entre semana
+
+321
+00:16:05,940 --> 00:16:08,940
+con tus amigos, o un cumpleaños,
+
+322
+00:16:08,940 --> 00:16:10,940
+pues imagina, es una conferencia
+
+323
+00:16:10,940 --> 00:16:12,940
+que viene en 800 personas,
+
+324
+00:16:12,940 --> 00:16:14,940
+que tienes que elexarlas,
+
+325
+00:16:14,940 --> 00:16:16,940
+que tienes que montar el catering,
+
+326
+00:16:16,940 --> 00:16:18,940
+elegir un sitio,
+
+327
+00:16:18,940 --> 00:16:21,940
+que son mil millones de cosas,
+
+328
+00:16:21,940 --> 00:16:25,940
+e montar todas las 800 mochilas
+
+329
+00:16:25,940 --> 00:16:27,940
+que ha habido que montar.
+
+330
+00:16:27,940 --> 00:16:29,940
+Entonces, de verdad que mil millones de gracias,
+
+331
+00:16:29,940 --> 00:16:31,940
+ui, voy a llamar a Joanna,
+
+332
+00:16:31,940 --> 00:16:33,940
+porque también ha sido otra de las personas
+
+333
+00:16:33,940 --> 00:16:35,940
+que nos ha ayudado un montón a última hora,
+
+334
+00:16:35,940 --> 00:16:37,940
+ha sido el pujón que necesitábamos
+
+335
+00:16:37,940 --> 00:16:39,940
+para final, donde estás, Joanna?
+
+336
+00:16:39,940 --> 00:16:41,940
+Joanna, Joanna, toda esta.
+
+337
+00:16:41,940 --> 00:16:43,940
+Ven aquí, que es la vida presidenta.
+
+338
+00:16:51,940 --> 00:16:54,940
+Muchísimas gracias para ayudarnos.
+
+339
+00:16:54,940 --> 00:16:56,940
+E éso é o agente tan maravillosa
+
+340
+00:16:56,940 --> 00:16:58,940
+que ha hecho este evento por si,
+
+341
+00:16:58,940 --> 00:17:00,940
+así que muchísimas, muchísimas gracias.
+
+342
+00:17:00,940 --> 00:17:02,940
+Que me falta, me falta alguien.
+
+343
+00:17:03,940 --> 00:17:06,940
+Bueno, una cosa que dijimos ayer en la cena,
+
+344
+00:17:06,940 --> 00:17:08,940
+que es que esto no termina
+
+345
+00:17:08,940 --> 00:17:10,940
+hasta que llegamos ao final
+
+346
+00:17:10,940 --> 00:17:12,940
+e gritamos Jumanji, no?
+
+347
+00:17:12,940 --> 00:17:14,940
+Entonces, pero voemos darnos la mano.
+
+348
+00:17:16,940 --> 00:17:18,940
+Ai, perdón, perdón. Antonio, Antonio.
+
+349
+00:17:18,940 --> 00:17:24,940
+A la buscamos, no pasa nada.
+
+350
+00:17:24,940 --> 00:17:27,940
+O sí, que nos hace falta.
+
+351
+00:17:27,940 --> 00:17:29,940
+Pues mil millones de gracias,
+
+352
+00:17:29,940 --> 00:17:31,940
+así yo no creo que nos puedan hacer la foto,
+
+353
+00:17:31,940 --> 00:17:33,940
+pero se nos le ha hecho muchísimas gracias,
+
+354
+00:17:33,940 --> 00:17:35,940
+cabemos, así.
+
+355
+00:17:35,940 --> 00:17:37,940
+E é o momento que nos nos da,
+
+356
+00:17:37,940 --> 00:17:39,940
+que nos da, que nos nos da,
+
+357
+00:17:39,940 --> 00:17:41,940
+que nos nos da, que nos nos da,
+
+358
+00:17:41,940 --> 00:17:43,940
+que nos nos da, que nos nos da,
+
+359
+00:17:43,940 --> 00:17:45,940
+que nos nos da, que nos nos da,
+
+360
+00:17:45,940 --> 00:17:47,940
+que nos nos da, que nos nos da,
+
+361
+00:17:47,940 --> 00:17:49,940
+que nos nos da.
+
+362
+00:17:49,940 --> 00:17:51,940
+Que cabemos, así.
+
+363
+00:17:53,940 --> 00:17:55,940
+Claro, claro, no contamos.
+
+364
+00:17:55,940 --> 00:17:57,940
+No contamos.
+
+365
+00:17:57,940 --> 00:17:59,940
+Ya nos conocemos, ya nos podemos apretar.
+
+366
+00:18:07,940 --> 00:18:09,940
+A ver, non está para nada.
+
+367
+00:18:09,940 --> 00:18:11,940
+Venga, a la de 3, no?
+
+368
+00:18:11,940 --> 00:18:15,940
+1, 2, 3, Yu-Malchi!
+
+369
+00:18:15,940 --> 00:18:17,940
+Fue en muchas redas.
+
+370
+00:18:25,940 --> 00:18:29,940
+Non nos olvidamos palet, tamina, e regal os palestos.
+
+371
+00:18:29,940 --> 00:18:33,940
+Aviónos herteos, funcionando.
+
+372
+00:18:33,940 --> 00:18:37,940
+E tengo aquí a Paloma, que es mi secretaria de sorteos,
+
+373
+00:18:37,940 --> 00:18:39,940
+que nos tiene que dar os nomes de quien ha ganado.
+
+374
+00:18:39,940 --> 00:18:43,940
+Creo que falta, no, tomate, llevate, llevate, llevate, llevate.
+
+375
+00:18:43,940 --> 00:18:55,940
+Queres este micro?
+
+376
+00:19:13,940 --> 00:19:37,940
+Deja-la pulsada.
+
+377
+00:19:37,940 --> 00:19:45,940
+Hola, se me oye?
+
+378
+00:19:45,940 --> 00:19:49,940
+No, no, no.
+
+379
+00:19:49,940 --> 00:19:53,940
+Vale, no hemos encontrado ninguna herramienta para hacer el sorteo.
+
+380
+00:19:53,940 --> 00:19:57,940
+Desde aquí, se alguien en alguna alma caritativa para año que viene,
+
+381
+00:19:57,940 --> 00:19:59,940
+o que se da, pues le apetece a hacer un excri en paiz,
+
+382
+00:19:59,940 --> 00:20:03,940
+no liberar no su guixxas, pues guai.
+
+383
+00:20:03,940 --> 00:20:07,940
+Se alguien tiene alguno ya, ahora é o momento de decirlo, tamie.
+
+384
+00:20:07,940 --> 00:20:13,940
+Así que, lo que vamos a hacer, está aquí el hashtag,
+
+385
+00:20:13,940 --> 00:20:15,940
+a gente que ha tweetado, voy a hacer explore.
+
+386
+00:20:15,940 --> 00:20:19,940
+Vale, e quem salga?
+
+387
+00:20:19,940 --> 00:20:21,940
+Se está que levante la mano,
+
+388
+00:20:21,940 --> 00:20:23,940
+xinón, pues hago excri outra vez.
+
+389
+00:20:25,940 --> 00:20:27,940
+Vale, las cosas que vamos a sortear
+
+390
+00:20:27,940 --> 00:20:32,940
+son una taza de lapai connes de este año,
+
+391
+00:20:32,940 --> 00:20:34,940
+pero esta está hecha a mano completamente,
+
+392
+00:20:34,940 --> 00:20:36,940
+vale, el diseño es diferente.
+
+393
+00:20:38,940 --> 00:20:42,940
+Otra taza similar, pero es de paizón granado.
+
+394
+00:20:42,940 --> 00:20:45,940
+A más, viene bien tan é más de una,
+
+395
+00:20:45,940 --> 00:20:47,940
+porque la metallé en el congelado,
+
+396
+00:20:47,940 --> 00:20:49,940
+e mientras estáis bebiendo cosas con una,
+
+397
+00:20:49,940 --> 00:20:52,940
+a outra siguen friándose, osa que dos é bien.
+
+398
+00:20:52,940 --> 00:20:58,940
+E el inédito plato de lapai connes, vale,
+
+399
+00:20:58,940 --> 00:21:02,940
+que va a jogo con la taza e donde podais poner las tapicas,
+
+400
+00:21:02,940 --> 00:21:04,940
+e os piononos, os paiononos,
+
+401
+00:21:04,940 --> 00:21:07,940
+quando estáis tomando lo que sea na jarra.
+
+402
+00:21:07,940 --> 00:21:11,940
+Vale, pues, se querais, empezamos con la jarra,
+
+403
+00:21:11,940 --> 00:21:14,940
+empezamos con la jarra de paizón granado.
+
+404
+00:21:16,940 --> 00:21:18,940
+Venga, ahí va.
+
+405
+00:21:21,940 --> 00:21:23,940
+A la, esta persona.
+
+406
+00:21:23,940 --> 00:21:25,940
+Simón Besteiro está aquí.
+
+407
+00:21:25,940 --> 00:21:28,940
+Simón Besteiro.
+
+408
+00:21:35,940 --> 00:21:37,940
+Como veis, este método infalible,
+
+409
+00:21:37,940 --> 00:21:40,940
+no hace falta crime ni nada, en o la buena.
+
+410
+00:21:40,940 --> 00:21:45,940
+A foto.
+
+411
+00:21:51,940 --> 00:21:55,940
+Venga, continuamos con la jarra de lapai connes de esta mano.
+
+412
+00:21:55,940 --> 00:21:59,940
+Ui, da efecto especial son importantes.
+
+413
+00:21:59,940 --> 00:22:02,940
+Vale, Irene, Irene, sigues por aquí,
+
+414
+00:22:02,940 --> 00:22:04,940
+digues sí tú.
+
+415
+00:22:04,940 --> 00:22:07,940
+Ai, Mercati, ai, Mercati.
+
+416
+00:22:07,940 --> 00:22:10,940
+Bueno, pues, ui.
+
+417
+00:22:13,940 --> 00:22:17,940
+David, estáis David? David, hola David, bien.
+
+418
+00:22:27,940 --> 00:22:29,940
+Bien.
+
+419
+00:22:29,940 --> 00:22:31,940
+Felicidad.
+
+420
+00:22:47,940 --> 00:22:50,940
+Bueno, vamos por el plato.
+
+421
+00:22:50,940 --> 00:22:54,940
+Sempre que ouigo plato, me recordo algo de un vaso e un plato,
+
+422
+00:22:54,940 --> 00:22:56,940
+porque soy así de simple, vale.
+
+423
+00:22:56,940 --> 00:22:59,940
+Vamos por el plato, vale, a ver si lo hacemos bien a la primera,
+
+424
+00:22:59,940 --> 00:23:02,940
+de momento, mi método está funcionando de puta madre,
+
+425
+00:23:02,940 --> 00:23:05,940
+me tira el método de Sara, eh.
+
+426
+00:23:05,940 --> 00:23:07,940
+Ui.
+
+427
+00:23:08,940 --> 00:23:10,940
+Irene, ya no me onticho que no está,
+
+428
+00:23:10,940 --> 00:23:13,940
+pero a ver esta persona que ha caído tamen aquí,
+
+429
+00:23:13,940 --> 00:23:15,940
+que está en el plato,
+
+430
+00:23:15,940 --> 00:23:17,940
+que está en el plato,
+
+431
+00:23:17,940 --> 00:23:21,940
+Irene ya no me onticho que no está,
+
+432
+00:23:21,940 --> 00:23:23,940
+pero a ver esta persona que ha caído tamen aquí,
+
+433
+00:23:23,940 --> 00:23:26,940
+parrilla, soy parrilla.
+
+434
+00:23:26,940 --> 00:23:29,940
+Estás haziéndose a la parrilla.
+
+435
+00:23:30,940 --> 00:23:31,940
+Ui.
+
+436
+00:23:32,940 --> 00:23:34,940
+Ixá, venha, así es por aquí.
+
+437
+00:23:34,940 --> 00:23:36,940
+Ai, no, taber sayilesa, no.
+
+438
+00:23:36,940 --> 00:23:38,940
+Bueno, venga.
+
+439
+00:23:41,940 --> 00:23:42,940
+A ver, venga.
+
+440
+00:23:42,940 --> 00:23:44,940
+E se hago scroll para arriba estásided, venga.
+
+441
+00:23:44,940 --> 00:23:47,940
+Venga, está Samuel. Sigue por aquí Samuel.
+
+442
+00:23:48,940 --> 00:23:51,940
+Sí, donde está Samuel, no lo vejo. Ah, bien.
+
+443
+00:24:00,940 --> 00:24:04,940
+Está guantrega del plato inédito que bájogo colajarra para a tapa.
+
+444
+00:24:05,940 --> 00:24:07,940
+No pasa nada.
+
+445
+00:24:07,940 --> 00:24:10,940
+Que da igual. Que da igual da igual.
+
+446
+00:24:10,940 --> 00:24:14,940
+Sí, ya está. Venga, nada de proteza.
+
+447
+00:24:14,940 --> 00:24:16,940
+Foto, foto.
+
+448
+00:24:23,940 --> 00:24:27,940
+Con ese avatar tan chulo que soy fã de tu avatar de Twitter.
+
+449
+00:24:28,940 --> 00:24:29,940
+No, nada.
+
+450
+00:24:29,940 --> 00:24:31,940
+No, nada.
+
+451
+00:24:31,940 --> 00:24:33,940
+Gracias.
+
+452
+00:24:33,940 --> 00:24:41,940
+Teníamos un challenge con el tema de las chabas, pero que ahora lo hemos puesto e não lo pusimos ayer
+
+453
+00:24:41,940 --> 00:24:44,940
+e no, al final, nadie participa en el challenge.
+
+454
+00:24:44,940 --> 00:24:51,940
+De toda manera, como eran los otros premios, eran unas entradas para la PICAM
+
+455
+00:24:51,940 --> 00:24:54,940
+e unas entradas para la PICAM del año que viene,
+
+456
+00:24:54,940 --> 00:24:59,940
+pues nada, está atento ao Twitter de Paisón España, que podamos hacer el sorteo por ahí.
+
+457
+00:24:59,940 --> 00:25:00,940
+No?
+
+458
+00:25:02,940 --> 00:25:04,940
+Lo de Octopus.
+
+459
+00:25:04,940 --> 00:25:06,940
+Hay muchas cosas aquí, o...
+
+460
+00:25:07,940 --> 00:25:10,940
+O sea, a bolsa, no, tal cual?
+
+461
+00:25:10,940 --> 00:25:14,940
+Venga, pues una bolsa de Octopus en el G con un montón de cosas.
+
+462
+00:25:15,940 --> 00:25:17,940
+Así, venga, vamos a enseñar cosita.
+
+463
+00:25:17,940 --> 00:25:19,940
+Un boxing.
+
+464
+00:25:21,940 --> 00:25:22,940
+Vale.
+
+465
+00:25:22,940 --> 00:25:25,940
+Un coso para meter na tarjeta.
+
+466
+00:25:25,940 --> 00:25:27,940
+Una libreta.
+
+467
+00:25:27,940 --> 00:25:29,940
+O coso para escribir.
+
+468
+00:25:33,940 --> 00:25:34,940
+Que má.
+
+469
+00:25:34,940 --> 00:25:36,940
+Oh, me canta esto.
+
+470
+00:25:36,940 --> 00:25:38,940
+E... Eto non tava na bolsa.
+
+471
+00:25:39,940 --> 00:25:42,940
+Unos candatines super cookies.
+
+472
+00:25:42,940 --> 00:25:44,940
+De pulpitos.
+
+473
+00:25:47,940 --> 00:25:49,940
+I... I... I...
+
+474
+00:25:49,940 --> 00:25:50,940
+Hay más cosas.
+
+475
+00:25:50,940 --> 00:25:51,940
+I.
+
+476
+00:25:51,940 --> 00:25:54,940
+El boli para escribir, en el coso de escribir.
+
+477
+00:25:54,940 --> 00:25:58,940
+I un pulpito pequeñito para ponerlo en el dedo e hacer...
+
+478
+00:25:58,940 --> 00:25:59,940
+Ui!
+
+479
+00:26:00,940 --> 00:26:01,940
+Bien.
+
+480
+00:26:04,940 --> 00:26:05,940
+Vale, pues...
+
+481
+00:26:05,940 --> 00:26:07,940
+Lo tiro tú.
+
+482
+00:26:10,940 --> 00:26:13,940
+Están aquí los candatines, non me lo guano.
+
+483
+00:26:15,940 --> 00:26:17,940
+I, por supuesto, las bolsas, no, que me lo monto.
+
+484
+00:26:17,940 --> 00:26:18,940
+Venga, pues...
+
+485
+00:26:18,940 --> 00:26:20,940
+Hacemos el crawl one more time.
+
+486
+00:26:20,940 --> 00:26:23,940
+Ui, perdón.
+
+487
+00:26:25,940 --> 00:26:28,940
+Vale, e si esta vez me ayudáis vosotros, venga, la de trago, scroll,
+
+488
+00:26:28,940 --> 00:26:30,940
+e tenéis que hacer ui vosotros, vale?
+
+489
+00:26:30,940 --> 00:26:31,940
+Parece?
+
+490
+00:26:31,940 --> 00:26:32,940
+Venga.
+
+491
+00:26:32,940 --> 00:26:33,940
+Una, dos y tres.
+
+492
+00:26:33,940 --> 00:26:35,940
+I!
+
+493
+00:26:35,940 --> 00:26:36,940
+I!
+
+494
+00:26:36,940 --> 00:26:38,940
+Otra, señor Parrilla.
+
+495
+00:26:38,940 --> 00:26:40,940
+I!
+
+496
+00:26:42,940 --> 00:26:43,940
+Irene.
+
+497
+00:26:45,940 --> 00:26:46,940
+Bueno.
+
+498
+00:26:46,940 --> 00:26:49,940
+I!
+
+499
+00:26:50,940 --> 00:26:52,940
+I, Nancy.
+
+500
+00:26:54,940 --> 00:26:56,940
+I!
+
+501
+00:26:56,940 --> 00:27:03,940
+I!
+
+502
+00:27:10,940 --> 00:27:14,940
+Si no te están bien los candatines tú me los da, e que má.
+
+503
+00:27:20,940 --> 00:27:22,940
+Hay algo má o ya... ya está, no?
+
+504
+00:27:22,940 --> 00:27:23,940
+Vale, pues nada.
+
+505
+00:27:23,940 --> 00:27:26,940
+Mucha gracia por vuestra participación.
+
+506
+00:27:31,940 --> 00:27:34,940
+Non podeis quejar de transparencia.
+
+507
+00:27:35,940 --> 00:27:39,940
+Pues ya lo ultimo que nos queda, me quedan dos cocinás.
+
+508
+00:27:39,940 --> 00:27:44,940
+I, uno, sigue activo el sorteo de Navel Run
+
+509
+00:27:44,940 --> 00:27:47,940
+de un juego superchulo de científicas
+
+510
+00:27:47,940 --> 00:27:49,940
+que lo está haciendo Kairos.
+
+511
+00:27:49,940 --> 00:27:51,940
+Acorda-os que lo ha puesto en su Twitter,
+
+512
+00:27:51,940 --> 00:27:53,940
+creo que también discor, de participar.
+
+513
+00:27:53,940 --> 00:27:55,940
+Tenéis hasta el martes, vale?
+
+514
+00:27:55,940 --> 00:27:57,940
+E os lo envían a casa.
+
+515
+00:27:57,940 --> 00:28:00,940
+Segunda cosa, ya para despedir,
+
+516
+00:28:00,940 --> 00:28:03,940
+todo, todo, todo, nos queda invitar
+
+517
+00:28:03,940 --> 00:28:06,940
+pues a la siguiente comunidad
+
+518
+00:28:06,940 --> 00:28:09,940
+que va hostear la Paiconés.
+
+519
+00:28:09,940 --> 00:28:12,940
+Así que Paiconés son canarias.
+
+520
+00:28:12,940 --> 00:28:22,940
+Si, sí, están amables.
+
+521
+00:28:24,940 --> 00:28:25,940
+E nada, este es nuestro minuto
+
+522
+00:28:25,940 --> 00:28:26,940
+de convencer a la gente
+
+523
+00:28:26,940 --> 00:28:30,940
+porque volar a Canarias el año que viene.
+
+524
+00:28:31,940 --> 00:28:33,940
+Bueno, hola.
+
+525
+00:28:33,940 --> 00:28:36,940
+Quere decir que sorpresa.
+
+526
+00:28:38,940 --> 00:28:41,940
+Nada, ha sido un evento maravilloso
+
+527
+00:28:41,940 --> 00:28:44,940
+yo voy a ser breve porque tenemos que irlos ya.
+
+528
+00:28:44,940 --> 00:28:46,940
+Yo creo que, lo que sí queria decir
+
+529
+00:28:46,940 --> 00:28:50,940
+es que siguiendo la tradición de colaboración
+
+530
+00:28:50,940 --> 00:28:52,940
+e de ayudarnos,
+
+531
+00:28:52,940 --> 00:28:54,940
+ayer hice una coña,
+
+532
+00:28:54,940 --> 00:28:56,940
+oi lo quiero decir en serio,
+
+533
+00:28:56,940 --> 00:28:58,940
+la gente de Python Granada nos ha ayudado,
+
+534
+00:28:58,940 --> 00:29:00,940
+nos ha dado un montón de ideas,
+
+535
+00:29:00,940 --> 00:29:02,940
+nos ha dicho un montónas de cosas.
+
+536
+00:29:02,940 --> 00:29:05,940
+Eu he preguntado máha a la organización que ha los ponentes.
+
+537
+00:29:05,940 --> 00:29:07,940
+Nos han ofrecido toda la ayuda posible
+
+538
+00:29:07,940 --> 00:29:08,940
+para o próximo evento,
+
+539
+00:29:08,940 --> 00:29:11,940
+así que, si lo hacemos bien
+
+540
+00:29:11,940 --> 00:29:14,940
+en parte será grácia paicon granada.
+
+541
+00:29:21,940 --> 00:29:23,940
+E, se lo hacemos mal,
+
+542
+00:29:23,940 --> 00:29:25,940
+nosotros pa eso nos bastamos.
+
+543
+00:29:27,940 --> 00:29:29,940
+Afletar un avión,
+
+544
+00:29:29,940 --> 00:29:31,940
+hay un proyecto.
+
+545
+00:29:31,940 --> 00:29:33,940
+Se tienen alguna pregunta ahora,
+
+546
+00:29:33,940 --> 00:29:35,940
+e se es difícil,
+
+547
+00:29:35,940 --> 00:29:37,940
+pues, la contesta Sergio.
+
+548
+00:29:39,940 --> 00:29:41,940
+Eu non.
+
+549
+00:29:41,940 --> 00:29:43,940
+No veo nada.
+
+550
+00:29:43,940 --> 00:29:45,940
+Tenerife, Tenerife.
+
+551
+00:29:55,940 --> 00:29:57,940
+Bueno, eu soy Sergio,
+
+552
+00:29:57,940 --> 00:29:59,940
+secretario de Python Canaria
+
+553
+00:29:59,940 --> 00:30:01,940
+primeiro quería felicitar a toda a gente
+
+554
+00:30:01,940 --> 00:30:03,940
+de la organización de la Python Granada
+
+555
+00:30:03,940 --> 00:30:05,940
+porque ha sido una conferencia maravillosa
+
+556
+00:30:05,940 --> 00:30:07,940
+e é un trabajo imenso,
+
+557
+00:30:07,940 --> 00:30:09,940
+o sea que, enhorabuena
+
+558
+00:30:09,940 --> 00:30:11,940
+e gracias por esta conferencia tan bonita.
+
+559
+00:30:11,940 --> 00:30:13,940
+E nada,
+
+560
+00:30:13,940 --> 00:30:15,940
+nosotros tenemos mucha ilusión,
+
+561
+00:30:15,940 --> 00:30:17,940
+a gente aí a Tenerife en Canaria
+
+562
+00:30:17,940 --> 00:30:19,940
+está super emocionada,
+
+563
+00:30:19,940 --> 00:30:21,940
+ayer, cuando les mandamos el mesajito
+
+564
+00:30:21,940 --> 00:30:23,940
+estaba a gente ahí,
+
+565
+00:30:23,940 --> 00:30:25,940
+e vamos intentar hacer una buena conferencia
+
+566
+00:30:25,940 --> 00:30:27,940
+para o público,
+
+567
+00:30:27,940 --> 00:30:29,940
+e vamos intentar hacer una buena conferencia
+
+568
+00:30:29,940 --> 00:30:31,940
+do nivel de ésta, se podemos.
+
+569
+00:30:31,940 --> 00:30:33,940
+Así que, les invitamos a ir para aí
+
+570
+00:30:33,940 --> 00:30:35,940
+e nada,
+
+571
+00:30:35,940 --> 00:30:37,940
+os detalles los irán conociendo.
+
+572
+00:30:37,940 --> 00:30:39,940
+En principio,
+
+573
+00:30:39,940 --> 00:30:41,940
+va a ser na Universidad de Tenerife,
+
+574
+00:30:41,940 --> 00:30:43,940
+já hemos hablado aí con la rectora
+
+575
+00:30:43,940 --> 00:30:45,940
+e hemos cerrado bastantes cozas.
+
+576
+00:30:45,940 --> 00:30:47,940
+Hay un montón de ideas por aí que están en el aire
+
+577
+00:30:47,940 --> 00:30:49,940
+porque, quando hablamos con la gente nos dicen
+
+578
+00:30:49,940 --> 00:30:51,940
+que eu me voy a coger unos días
+
+579
+00:30:51,940 --> 00:30:53,940
+e aprovecho e me voy para aí a una semanita.
+
+580
+00:30:53,940 --> 00:30:55,940
+Entonces, esas cozas
+
+581
+00:30:55,940 --> 00:30:57,940
+que damos forma
+
+582
+00:30:57,940 --> 00:30:59,940
+e, ao mojo, buscamos algunos acuerdos
+
+583
+00:30:59,940 --> 00:31:01,940
+o hablar con empresas
+
+584
+00:31:01,940 --> 00:31:03,940
+que podan ofrecer cientos packs
+
+585
+00:31:03,940 --> 00:31:05,940
+o já veremos.
+
+586
+00:31:05,940 --> 00:31:07,940
+E nada,
+
+587
+00:31:07,940 --> 00:31:09,940
+les invito a que vayan para aí
+
+588
+00:31:09,940 --> 00:31:11,940
+e cualquier cosa nos ven por aí
+
+589
+00:31:11,940 --> 00:31:13,940
+e hablamos. Máre, muchas gracias por todo.
+
+590
+00:31:13,940 --> 00:31:25,940
+A unha cosa importantísima,
+
+591
+00:31:25,940 --> 00:31:29,940
+que só tenéis un año para hacer na No3.
+
+592
+00:31:29,940 --> 00:31:31,940
+Que só tenéis un año para hacer na No3.
+
+593
+00:31:31,940 --> 00:31:43,940
+A sí, un año. Yo creo que nos dá nos da.
+

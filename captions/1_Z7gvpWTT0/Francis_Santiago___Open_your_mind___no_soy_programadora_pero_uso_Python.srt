@@ -1,0 +1,1716 @@
+1
+00:00:00,000 --> 00:00:20,000
+Bueno, buenas tardes.
+
+2
+00:00:20,000 --> 00:00:22,000
+Muchísimas gracias por estar aquí.
+
+3
+00:00:22,000 --> 00:00:27,000
+Bueno, haber elegido esta charla el día de hoy.
+
+4
+00:00:27,000 --> 00:00:32,000
+Primero que nada, me gustaría darle las gracias a la organización por toda la logística
+
+5
+00:00:32,000 --> 00:00:36,000
+y toda la estructura del evento que estamos hoy presenciando.
+
+6
+00:00:36,000 --> 00:00:39,000
+Toda esta fin de semana de verdad que ha sido alucinante.
+
+7
+00:00:39,000 --> 00:00:46,000
+Estoy súper contenta y súper motivada a que creemos muchísimos más eventos como este
+
+8
+00:00:46,000 --> 00:00:51,000
+y que podamos hacer muchísimas cosas en conjunto con diferentes comunidades
+
+9
+00:00:51,000 --> 00:00:56,000
+para que sigamos creciendo todos juntos y aprendiendo todos juntos.
+
+10
+00:00:56,000 --> 00:01:02,000
+Sé que a esta hora es un poco complicada para dar una charla.
+
+11
+00:01:02,000 --> 00:01:06,000
+Todos tenemos un poco de hambre que estamos ya que queremos salir corriendo.
+
+12
+00:01:06,000 --> 00:01:10,000
+Hemos tenido un fin de semana bastante movidito,
+
+13
+00:01:10,000 --> 00:01:18,000
+con muchísimas ponencias, con muchísima información, con muchísima fiesta también.
+
+14
+00:01:18,000 --> 00:01:24,000
+El día de ayer, el día anterior, hemos tenido algunos ponentes, alguna fiesta
+
+15
+00:01:24,000 --> 00:01:28,000
+y conciendo gente también, haciendo networking.
+
+16
+00:01:28,000 --> 00:01:36,000
+Estamos un poco ya down en esa bajadita, pero ya estamos finalizando.
+
+17
+00:01:36,000 --> 00:01:43,000
+Por la charla, ni me doque nada, quería enfocarme en el título de mi charla,
+
+18
+00:01:43,000 --> 00:01:49,000
+Open Your Mind. No soy poca llamadora, pero uso paíto.
+
+19
+00:01:49,000 --> 00:01:56,000
+Quisiera empezar justamente con el nombre de mi charla porque yo misma me tuve que decir
+
+20
+00:01:56,000 --> 00:02:02,000
+Oye, Francia, no te limites. Una de las cosas que siempre decía o siempre pensaba
+
+21
+00:02:02,000 --> 00:02:08,000
+cuando estaba trabajando era, yo no quiero ser programadora, a mí no me gusta programar,
+
+22
+00:02:08,000 --> 00:02:14,000
+no quiero nada que ver con la programación, no quiero que esto sea el día a día de mi trabajo.
+
+23
+00:02:14,000 --> 00:02:18,000
+Inclusive cuando empecé a estudiar informática, no quería estudiar informática,
+
+24
+00:02:18,000 --> 00:02:22,000
+quería hacer actriz, así que nada que ver.
+
+25
+00:02:22,000 --> 00:02:26,000
+Es súper alejado de todo lo que tiene que ver con el tema de la actuación.
+
+26
+00:02:26,000 --> 00:02:29,000
+Estudía informática porque mi mamá me dijo que iba a ser millonaria,
+
+27
+00:02:29,000 --> 00:02:33,000
+también un poco alejado de la realidad porque tampoco soy millonaria.
+
+28
+00:02:33,000 --> 00:02:36,000
+Eso no quiere decir que no lo vaya a hacer, todavía estoy a tiempo.
+
+29
+00:02:36,000 --> 00:02:39,000
+Hay muchas personas que después de los 50, 60 años hacen mucho dinero,
+
+30
+00:02:39,000 --> 00:02:42,000
+así que todavía me queda camino por recorrer.
+
+31
+00:02:42,000 --> 00:02:48,000
+Pero eso era lo que yo como que siempre me limité en ese sentido.
+
+32
+00:02:48,000 --> 00:02:52,000
+Pero antes de empezar con mi historia, porque no quiero ser spoiler de lo que va mi charla,
+
+33
+00:02:52,000 --> 00:02:56,000
+quiero presentarme. Hay muchas personas que veon esta sala, que ya me conocen,
+
+34
+00:02:56,000 --> 00:03:01,000
+que me están dando buena vibra. Es la primera charla que hago aquí en España.
+
+35
+00:03:01,000 --> 00:03:06,000
+No, tenía mucho tiempo que nacías de charlas presenciales,
+
+36
+00:03:06,000 --> 00:03:10,000
+la última charla que hice fue en Chile.
+
+37
+00:03:10,000 --> 00:03:14,000
+En España no he tenido la oportunidad hasta el día de hoy que me estoy presentando.
+
+38
+00:03:14,000 --> 00:03:19,000
+Estoy bastante nerviosa, así que si por casualidad ven que estoy hablando muy rápido,
+
+39
+00:03:19,000 --> 00:03:23,000
+porque por lo general cuando estoy nerviosa, empiezo a hablar súper rápido,
+
+40
+00:03:23,000 --> 00:03:27,000
+me pueden hacer alguna señal para que vayan un poco más lento
+
+41
+00:03:27,000 --> 00:03:32,000
+y para que no termine fuera de tiempo porque si no, después qué vamos a hacer.
+
+42
+00:03:32,000 --> 00:03:34,000
+Mi nombre es Francis Santiago.
+
+43
+00:03:34,000 --> 00:03:39,000
+En todas las redes sociales me voy a poder seguir como Sans Fécil.
+
+44
+00:03:39,000 --> 00:03:45,000
+Tengo más de 10 años, no digamos cuánto, porque me siento un poco vieja ya.
+
+45
+00:03:45,000 --> 00:03:49,000
+Esté trabajando en todo lo que tiene que ver con Linux y Unix.
+
+46
+00:03:49,000 --> 00:03:55,000
+Ahí fue exactamente cuando tuve ese primer amor y dije,
+
+47
+00:03:55,000 --> 00:04:00,000
+esto sí me va a gustar. Encontré lo que realmente me iba a motivar de mi carrera,
+
+48
+00:04:00,000 --> 00:04:03,000
+que es lo que me ha motivado hasta el día de hoy aquí,
+
+49
+00:04:03,000 --> 00:04:06,000
+que fue conocer todo lo que tiene que ver con Linux y Unix.
+
+50
+00:04:06,000 --> 00:04:09,000
+Y ahí yo dije, esto sí tiene cacao, esto sí me gusta.
+
+51
+00:04:09,000 --> 00:04:12,000
+Aquí sí hay para dónde tomar.
+
+52
+00:04:12,000 --> 00:04:17,000
+Empecé todo mi trayecto profesional en la parte de base de datos,
+
+53
+00:04:17,000 --> 00:04:20,000
+todo lo que tenía que ver con la parte de VA.
+
+54
+00:04:20,000 --> 00:04:25,000
+Evidentemente empecé a trabajar con motores de base de datos que fuesen open source,
+
+55
+00:04:25,000 --> 00:04:27,000
+como lo era por SQL.
+
+56
+00:04:27,000 --> 00:04:33,000
+Y luego estuve un poco del otro lado, trabajando con temas de Oracle,
+
+57
+00:04:33,000 --> 00:04:39,000
+empecé a hacer procesos de migraciones de Oracle a POS de SQL, etcétera.
+
+58
+00:04:39,000 --> 00:04:42,000
+Y siempre tuve como esa llamita o ese gusanillo,
+
+59
+00:04:42,000 --> 00:04:46,000
+que me gustaba mucho lo que tiene que ver con la parte de infraestructura.
+
+60
+00:04:46,000 --> 00:04:52,000
+En algún momento hice implementaciones de correo electrónico, DNS, proxy, etcétera.
+
+61
+00:04:52,000 --> 00:04:56,000
+Y ya tenía como esa experiencia en la parte de infra.
+
+62
+00:04:56,000 --> 00:05:04,000
+Soy ahora directora y voluntaria en GreenTage Spain, que es una asociación sin fines de lucro,
+
+63
+00:05:04,000 --> 00:05:10,000
+que se encarga o que quiere lograr que más mujeres entren en el área de TI.
+
+64
+00:05:10,000 --> 00:05:17,000
+Y sobre todo que las niñas también vean referente y que puedan sumarse a todo lo que tiene que ver con la parte de tecnología.
+
+65
+00:05:17,000 --> 00:05:19,000
+Si no las conocen, los invito a conocerlo.
+
+66
+00:05:19,000 --> 00:05:23,000
+Trabajan una empresa que se llama Kindle, también tienen algunas posiciones.
+
+67
+00:05:23,000 --> 00:05:27,000
+Así que si ven algo por ahí que les gusta o le llaman la atención,
+
+68
+00:05:27,000 --> 00:05:31,000
+también me pueden hacer un ping y podemos conversar.
+
+69
+00:05:31,000 --> 00:05:36,000
+Los tópicos de esta charla, pues llámela pase.
+
+70
+00:05:36,000 --> 00:05:41,000
+Quien soy, mi historia, porque uso Python,
+
+71
+00:05:41,000 --> 00:05:48,000
+como trabajó hoy en día una persona que se reé con Python
+
+72
+00:05:48,000 --> 00:05:54,000
+y una pequeña demo que he traído para mostrarles más o menos cómo voy trabajando con esto.
+
+73
+00:05:54,000 --> 00:05:59,000
+En mi historia, como ya les venía diciendo, yo trabajaba con base de datos,
+
+74
+00:05:59,000 --> 00:06:04,000
+todo lo que tiene que ver con base de datos, y siempre he trabajado como consultor.
+
+75
+00:06:04,000 --> 00:06:07,000
+Por lo tanto, siempre he tenido diferentes clientes.
+
+76
+00:06:07,000 --> 00:06:12,000
+Y estos clientes, o dependiendo de la cantidad de clientes, siempre te van pidiendo diferentes cosas.
+
+77
+00:06:12,000 --> 00:06:17,000
+Que son tareas que son repetitivas y que son, por lo general, gestiones de manera manual.
+
+78
+00:06:17,000 --> 00:06:19,000
+En un principio, obviamente.
+
+79
+00:06:19,000 --> 00:06:26,000
+Entonces, iba a un cliente, tenías ciertas queries que te hacía solicitud a una base de datos,
+
+80
+00:06:26,000 --> 00:06:31,000
+en este caso, POSGRE, y en función a eso, levantabas la información y le decía al cliente,
+
+81
+00:06:31,000 --> 00:06:34,000
+oye, mira, esto es lo que hay que mejorar en tu infraestructura.
+
+82
+00:06:34,000 --> 00:06:37,000
+Hay que hacer la implementación de esto, etcétera.
+
+83
+00:06:37,000 --> 00:06:43,000
+Comencé haciendo este script en batch porque era lo que conocía,
+
+84
+00:06:43,000 --> 00:06:47,000
+porque era lo que me sentía muchísimo más cómoda, porque era súper fácil.
+
+85
+00:06:47,000 --> 00:06:53,000
+Y creé un script que me permitiese conseguir lo que yo estaba buscando.
+
+86
+00:06:53,000 --> 00:06:57,000
+Esto es más o menos una sintaxis de lo que en ese momento era mi script.
+
+87
+00:06:57,000 --> 00:07:03,000
+Me conectaba mi base de datos, ha sido una solicitud, lo arrojaba a un archivo,
+
+88
+00:07:03,000 --> 00:07:09,000
+y claro, después, con muchísimos Pi y Set, le quitaba la información que no necesitaba
+
+89
+00:07:09,000 --> 00:07:14,000
+y obtenía en este caso lo que necesitaba que eran los nombres de la base de datos.
+
+90
+00:07:14,000 --> 00:07:18,000
+Porque después creaba una carpeta con todas las bases de datos,
+
+91
+00:07:18,000 --> 00:07:21,000
+y en cada carpeta arrojaba la información por base de datos,
+
+92
+00:07:21,000 --> 00:07:27,000
+para después tener toda esa sincronización, sacar un HTML o un PDF,
+
+93
+00:07:27,000 --> 00:07:30,000
+y decirle al cliente, mira, esto es lo que pesa tu base de datos,
+
+94
+00:07:30,000 --> 00:07:32,000
+esto es lo que tienes, cómo lo mejoramos.
+
+95
+00:07:32,000 --> 00:07:39,000
+Luego empecé a utilizar, empecé a testear,
+
+96
+00:07:39,000 --> 00:07:42,000
+muchas personas a mi alrededor me empezaron a decir,
+
+97
+00:07:42,000 --> 00:07:44,000
+¡Francis, porque no utilizas Python,
+
+98
+00:07:44,000 --> 00:07:47,000
+Python está ahorita en la cresta de la Ola!
+
+99
+00:07:47,000 --> 00:07:49,000
+Yo creo que te vendría bien a utilizar Python,
+
+100
+00:07:49,000 --> 00:07:51,000
+empiezas a trabajar con Python.
+
+101
+00:07:51,000 --> 00:07:56,000
+Y ahí fue cuando empecé y dije, bueno, mirá, yo tengo un script que me funciona,
+
+102
+00:07:56,000 --> 00:08:01,000
+porque me funcionaba, vamos a ver cómo lo migro a Python.
+
+103
+00:08:01,000 --> 00:08:04,000
+No conocía mucho de Python, empecé a estudiar, empecé a leer,
+
+104
+00:08:04,000 --> 00:08:07,000
+evidentemente empecé a trabajar con amigos muy cercanos,
+
+105
+00:08:07,000 --> 00:08:10,000
+que ya utilizaban Python y que me orientaron en ese momento,
+
+106
+00:08:10,000 --> 00:08:16,000
+y migré el script que tenía del levantamiento de información a Python.
+
+107
+00:08:16,000 --> 00:08:21,000
+Así como migré ese, migré el script de base de datos que también tenía,
+
+108
+00:08:21,000 --> 00:08:25,000
+y hice varias adecuaciones en ese momento.
+
+109
+00:08:25,000 --> 00:08:28,000
+Luego empecé a trabajar en una consultora,
+
+110
+00:08:28,000 --> 00:08:32,000
+ya en la parte de todo lo que tiene que ver con CRE.
+
+111
+00:08:32,000 --> 00:08:34,000
+Empecé a trabajar en una consultora,
+
+112
+00:08:34,000 --> 00:08:39,000
+donde teníamos diferentes clientes con Kubernetes y con OpenShift.
+
+113
+00:08:39,000 --> 00:08:43,000
+Ellos querían que para que nos pudiesen pagar,
+
+114
+00:08:43,000 --> 00:08:46,000
+decían, no necesito un informe cada 25 de mes,
+
+115
+00:08:46,000 --> 00:08:49,000
+y que me diga cómo está mi cluster.
+
+116
+00:08:49,000 --> 00:08:52,000
+Entonces ahí dije, bueno, mirá,
+
+117
+00:08:52,000 --> 00:08:55,000
+no tenía ningún script hecho en Bash, evidentemente,
+
+118
+00:08:55,000 --> 00:09:00,000
+y dije, bueno, vamos a empezar desde cero a programar este script,
+
+119
+00:09:00,000 --> 00:09:04,000
+o lo que estoy necesitando, de la información que necesito,
+
+120
+00:09:04,000 --> 00:09:07,000
+de en este caso de Kubernetes, de cómo están mis nodos,
+
+121
+00:09:07,000 --> 00:09:10,000
+que es lo que tengo dentro de mis aplicaciones de Kubernetes,
+
+122
+00:09:10,000 --> 00:09:13,000
+o de OpenShift, y en función a eso,
+
+123
+00:09:13,000 --> 00:09:16,000
+pues poder generar un PDF,
+
+124
+00:09:16,000 --> 00:09:20,000
+que es, le llegaba evidentemente, automáticamente el cliente,
+
+125
+00:09:20,000 --> 00:09:24,000
+todo 25 de mes, para que me pudiese pagar mi soda.
+
+126
+00:09:24,000 --> 00:09:28,000
+Pero es parte de la demo, que les voy a mostrar más adelante,
+
+127
+00:09:28,000 --> 00:09:31,000
+por lo tanto, no quiero seguir haciendo spoilers.
+
+128
+00:09:31,000 --> 00:09:33,000
+¿Por qué Python?
+
+129
+00:09:33,000 --> 00:09:36,000
+Evidentemente, porque Python me permite,
+
+130
+00:09:36,000 --> 00:09:38,000
+o tiene una sintaxis muy legible,
+
+131
+00:09:38,000 --> 00:09:40,000
+hay muchísimas personas que ya conocen,
+
+132
+00:09:40,000 --> 00:09:43,000
+mis compañeros de trabajo muchísimo,
+
+133
+00:09:43,000 --> 00:09:45,000
+de ellos ya estaban trabajando en Python,
+
+134
+00:09:45,000 --> 00:09:47,000
+entonces iba a ser muchísimo más simple,
+
+135
+00:09:47,000 --> 00:09:49,000
+y más fácil que ellos entendieran lo que yo estaba haciendo,
+
+136
+00:09:49,000 --> 00:09:54,000
+o lo que yo en ese momento quería ejecutar,
+
+137
+00:09:54,000 --> 00:09:56,000
+o que me ayudasen para poder,
+
+138
+00:09:56,000 --> 00:09:59,000
+que la curva de aprendizaje fuese muchísimo más corta.
+
+139
+00:09:59,000 --> 00:10:03,000
+La configuración y la instalación de Python es muy sencilla,
+
+140
+00:10:03,000 --> 00:10:06,000
+dependiendo del sistema operativo,
+
+141
+00:10:06,000 --> 00:10:08,000
+hacer actitud install o yo install,
+
+142
+00:10:08,000 --> 00:10:11,000
+y en muchos sistemas operativos ya viene por default,
+
+143
+00:10:11,000 --> 00:10:14,000
+por lo tanto, no hay que hacer ningún proceso de instalación.
+
+144
+00:10:14,000 --> 00:10:16,000
+Aprenderlo es muy fácil,
+
+145
+00:10:16,000 --> 00:10:18,000
+porque hay muchísima información en internet,
+
+146
+00:10:18,000 --> 00:10:20,000
+hay muchísimos vídeos en YouTube,
+
+147
+00:10:20,000 --> 00:10:23,000
+hay muchísimas gente a tu alrededor que está usando Python,
+
+148
+00:10:23,000 --> 00:10:25,000
+por lo tanto, va a ser muchísimo más fácil.
+
+149
+00:10:25,000 --> 00:10:29,000
+La gestión de dependencia y el amplio catálogo de librerías,
+
+150
+00:10:29,000 --> 00:10:31,000
+por supuesto, lo va a permitir,
+
+151
+00:10:31,000 --> 00:10:33,000
+poder hacer muchísimas cosas,
+
+152
+00:10:33,000 --> 00:10:35,000
+tenemos librerías para muchísimas bases de datos,
+
+153
+00:10:35,000 --> 00:10:37,000
+tenemos librerías para cubrir,
+
+154
+00:10:37,000 --> 00:10:40,000
+o sea, lo puedes utilizar de una amplia manera.
+
+155
+00:10:40,000 --> 00:10:42,000
+Existen muchas comunidades, comunidades como esta,
+
+156
+00:10:42,000 --> 00:10:44,000
+que ofrecen diferentes conferencias,
+
+157
+00:10:44,000 --> 00:10:46,000
+donde también te puedes venir,
+
+158
+00:10:46,000 --> 00:10:48,000
+quizás tienes algún problema,
+
+159
+00:10:48,000 --> 00:10:50,000
+o quizás tienes algún error,
+
+160
+00:10:50,000 --> 00:10:52,000
+y este tipo de comunidades te va a permitir,
+
+161
+00:10:52,000 --> 00:10:54,000
+o este tipo de espacio te va a permitir trabajar,
+
+162
+00:10:54,000 --> 00:10:56,000
+o hablar con diferentes personas,
+
+163
+00:10:56,000 --> 00:10:58,000
+que tienen o el mismo problema que tú,
+
+164
+00:10:58,000 --> 00:11:02,000
+o que quizás tú pones tu problema en la mesa
+
+165
+00:11:02,000 --> 00:11:04,000
+y lo vas a discutir y vas a lograr verlo,
+
+166
+00:11:04,000 --> 00:11:06,000
+quizás de una manera muy diferente.
+
+167
+00:11:06,000 --> 00:11:08,000
+Reutilizar código,
+
+168
+00:11:08,000 --> 00:11:11,000
+pues evidentemente, hoy en día tú colocas en Google.
+
+169
+00:11:11,000 --> 00:11:13,000
+Quiero un script en Python
+
+170
+00:11:13,000 --> 00:11:16,000
+que haga el backup de la base de datos,
+
+171
+00:11:16,000 --> 00:11:19,000
+y vas a conseguir n script de base de datos,
+
+172
+00:11:19,000 --> 00:11:21,000
+n información sobre algo,
+
+173
+00:11:21,000 --> 00:11:23,000
+alguien que tuvo ese mismo problema,
+
+174
+00:11:23,000 --> 00:11:24,000
+que tú por lo tanto,
+
+175
+00:11:24,000 --> 00:11:26,000
+vas a poder reutilizar muchísimo código,
+
+176
+00:11:26,000 --> 00:11:27,000
+incluso tu propio código,
+
+177
+00:11:27,000 --> 00:11:31,000
+porque cuando ya tienes la cierta sintaxis creada,
+
+178
+00:11:31,000 --> 00:11:33,000
+pues va a ser muchísimo más fácil,
+
+179
+00:11:33,000 --> 00:11:35,000
+ir a ti misma y decir,
+
+180
+00:11:35,000 --> 00:11:37,000
+ah, mira, esto ya lo hice aquí,
+
+181
+00:11:37,000 --> 00:11:39,000
+muchas veces también lo mejor es,
+
+182
+00:11:39,000 --> 00:11:41,000
+o le haces un refacto, porque dices,
+
+183
+00:11:41,000 --> 00:11:45,000
+esto era antes se utilizaba esta función de esta manera,
+
+184
+00:11:45,000 --> 00:11:47,000
+ahora es mucho más fácil, mucho más simple,
+
+185
+00:11:47,000 --> 00:11:48,000
+ahora tengo una librería,
+
+186
+00:11:48,000 --> 00:11:49,000
+antes no tenía una librería,
+
+187
+00:11:49,000 --> 00:11:51,000
+dependiendo de la cantidad de años
+
+188
+00:11:51,000 --> 00:11:53,000
+y de historias que tengas trabajando en esto.
+
+189
+00:11:53,000 --> 00:11:57,000
+Y por supuesto, en el caso de DevOps,
+
+190
+00:11:57,000 --> 00:11:59,000
+pues la mayoría de las ofertas siempre te dicen,
+
+191
+00:11:59,000 --> 00:12:01,000
+oye, estás trabajando con Python,
+
+192
+00:12:01,000 --> 00:12:03,000
+conoces Python, sabes cómo es,
+
+193
+00:12:03,000 --> 00:12:06,000
+has hecho algo en Python.
+
+194
+00:12:06,000 --> 00:12:10,000
+En el uso continuo,
+
+195
+00:12:10,000 --> 00:12:13,000
+en todo lo que tiene que ver como cultura DevOps,
+
+196
+00:12:13,000 --> 00:12:16,000
+por lo general tú tienes un problema
+
+197
+00:12:16,000 --> 00:12:18,000
+y buscas una solución a ese problema.
+
+198
+00:12:18,000 --> 00:12:20,000
+Cuando tienes un problema,
+
+199
+00:12:20,000 --> 00:12:22,000
+evidentemente es un problema que es algo recurrente,
+
+200
+00:12:22,000 --> 00:12:25,000
+es algo que haces continuamente,
+
+201
+00:12:25,000 --> 00:12:27,000
+y es algo repetitivo.
+
+202
+00:12:27,000 --> 00:12:29,000
+Entonces, y por lo general,
+
+203
+00:12:29,000 --> 00:12:31,000
+la gente lo hace o tiende a hacerlo de manera manual.
+
+204
+00:12:31,000 --> 00:12:35,000
+Y ya ahí tu enfoque o tu manera de visualizarlo
+
+205
+00:12:35,000 --> 00:12:36,000
+es diferente,
+
+206
+00:12:36,000 --> 00:12:38,000
+ya tú siempre vas como el proceso de automatización.
+
+207
+00:12:38,000 --> 00:12:41,000
+Ya tú dices, oye, mira, yo un informe,
+
+208
+00:12:41,000 --> 00:12:43,000
+yo realmente detesto hacer informes.
+
+209
+00:12:43,000 --> 00:12:45,000
+No me gusta hacer informes,
+
+210
+00:12:45,000 --> 00:12:47,000
+siento que a veces es una perdida de tiempo,
+
+211
+00:12:47,000 --> 00:12:50,000
+pero si tienes un proceso que te permita automatizar
+
+212
+00:12:50,000 --> 00:12:53,000
+ese informe, pues va a ser muchísimo más rápido.
+
+213
+00:12:53,000 --> 00:12:56,000
+Enviar notificaciones,
+
+214
+00:12:56,000 --> 00:12:59,000
+no sé, por ejemplo, si tienes en tu,
+
+215
+00:12:59,000 --> 00:13:01,000
+en la parte de monitoreo de tu empresa,
+
+216
+00:13:01,000 --> 00:13:02,000
+de la organización,
+
+217
+00:13:02,000 --> 00:13:04,000
+de los diferentes clientes que tú tienes,
+
+218
+00:13:04,000 --> 00:13:06,000
+utilizas Promete, utilizas Grafana,
+
+219
+00:13:06,000 --> 00:13:08,000
+pues existe muchos bots
+
+220
+00:13:08,000 --> 00:13:10,000
+dentro de,
+
+221
+00:13:10,000 --> 00:13:12,000
+que trabajan con Python,
+
+222
+00:13:12,000 --> 00:13:14,000
+o inclusive tú te puedes hacer un script
+
+223
+00:13:14,000 --> 00:13:16,000
+que te envíe esa notificación,
+
+224
+00:13:16,000 --> 00:13:18,000
+a un Slot, a un Discord,
+
+225
+00:13:18,000 --> 00:13:19,000
+a un Whatsapp,
+
+226
+00:13:19,000 --> 00:13:22,000
+a cualquier medio de comunicación,
+
+227
+00:13:22,000 --> 00:13:25,000
+y vas a poder lograr
+
+228
+00:13:25,000 --> 00:13:27,000
+que estar pendiente de ese monitoreo
+
+229
+00:13:27,000 --> 00:13:29,000
+sin estar viendo las gráficas ahí,
+
+230
+00:13:29,000 --> 00:13:32,000
+F5, F5, F5.
+
+231
+00:13:32,000 --> 00:13:34,000
+Y, por supuesto, bueno,
+
+232
+00:13:34,000 --> 00:13:37,000
+es un script para que te empaldo a este regular.
+
+233
+00:13:37,000 --> 00:13:39,000
+Y, escribir tan simples como hay,
+
+234
+00:13:39,000 --> 00:13:41,000
+bueno, voy a hacer este limpieza de imágenes de Docker.
+
+235
+00:13:41,000 --> 00:13:42,000
+Por ejemplo,
+
+236
+00:13:42,000 --> 00:13:44,000
+hoy en día, quizás en tu local,
+
+237
+00:13:44,000 --> 00:13:45,000
+o en tu máquina local, dices,
+
+238
+00:13:45,000 --> 00:13:47,000
+ah, no, bueno, pero soy yo lo hago manual,
+
+239
+00:13:47,000 --> 00:13:49,000
+que tanto, para que voy a hacer un script para eso.
+
+240
+00:13:49,000 --> 00:13:51,000
+Pero anda tú a un servidor
+
+241
+00:13:51,000 --> 00:13:53,000
+donde tienes mil, dos mil,
+
+242
+00:13:53,000 --> 00:13:54,000
+quinientas, cien,
+
+243
+00:13:54,000 --> 00:13:56,000
+imagenes hacer eso también de manera local.
+
+244
+00:13:56,000 --> 00:13:58,000
+Entonces, es muchísimo más fácil
+
+245
+00:13:58,000 --> 00:14:00,000
+crearte un script que te permita
+
+246
+00:14:00,000 --> 00:14:02,000
+agilizar un proceso
+
+247
+00:14:02,000 --> 00:14:04,000
+de horas, que tú trabajes
+
+248
+00:14:04,000 --> 00:14:06,000
+en quizás mejorar tu plataforma,
+
+249
+00:14:06,000 --> 00:14:08,000
+acceder actualizaciones de tu plataforma,
+
+250
+00:14:08,000 --> 00:14:10,000
+buscar alguna vulnerabilidad, etcétera.
+
+251
+00:14:10,000 --> 00:14:12,000
+¿No?
+
+252
+00:14:12,000 --> 00:14:14,000
+Desde mi perspectiva
+
+253
+00:14:14,000 --> 00:14:16,000
+y desde mi, desde el conocimiento
+
+254
+00:14:16,000 --> 00:14:18,000
+que yo he adquirido
+
+255
+00:14:18,000 --> 00:14:20,000
+en este trayecto,
+
+256
+00:14:20,000 --> 00:14:22,000
+cuando he empezado a trabajar con Python,
+
+257
+00:14:22,000 --> 00:14:24,000
+siento que hay como un mínimo
+
+258
+00:14:24,000 --> 00:14:26,000
+y algo que no es tan necesario.
+
+259
+00:14:26,000 --> 00:14:28,000
+Desde mi punto de vista,
+
+260
+00:14:28,000 --> 00:14:30,000
+el mínimo es que evidentemente
+
+261
+00:14:30,000 --> 00:14:32,000
+tengas una tarea que sea repetitiva
+
+262
+00:14:32,000 --> 00:14:34,000
+y que estés haciendo manualmente
+
+263
+00:14:34,000 --> 00:14:36,000
+y que la puedes automatizar.
+
+264
+00:14:36,000 --> 00:14:38,000
+Tener conocimientos básicos
+
+265
+00:14:38,000 --> 00:14:40,000
+de Python, porque realmente no necesitas
+
+266
+00:14:40,000 --> 00:14:42,000
+tener un conocimiento muy extenso
+
+267
+00:14:42,000 --> 00:14:44,000
+de cómo trabajar con Python
+
+268
+00:14:44,000 --> 00:14:46,000
+día a día,
+
+269
+00:14:46,000 --> 00:14:48,000
+que sepas gestionar los paquetes
+
+270
+00:14:48,000 --> 00:14:50,000
+y que obviamente sepas conectarte
+
+271
+00:14:50,000 --> 00:14:52,000
+o sepas utilizar algunas librerías
+
+272
+00:14:52,000 --> 00:14:54,000
+y algunas APIs que te permitan
+
+273
+00:14:54,000 --> 00:14:56,000
+recolectar información
+
+274
+00:14:56,000 --> 00:14:58,000
+para ofrecer esa información
+
+275
+00:14:58,000 --> 00:15:00,000
+a los diferentes clientes
+
+276
+00:15:00,000 --> 00:15:02,000
+o a la organización donde tú te estés
+
+277
+00:15:02,000 --> 00:15:04,000
+trabajando.
+
+278
+00:15:04,000 --> 00:15:06,000
+Desde mi punto de vista que no es tan necesario
+
+279
+00:15:06,000 --> 00:15:08,000
+es tener un conocimiento avanzado
+
+280
+00:15:08,000 --> 00:15:10,000
+de Python, implementar aplicaciones
+
+281
+00:15:10,000 --> 00:15:12,000
+complejas, utilizar frameworks
+
+282
+00:15:12,000 --> 00:15:14,000
+o crear website.
+
+283
+00:15:14,000 --> 00:15:16,000
+Eso no quiere decir que yo no voy a utilizar eso,
+
+284
+00:15:16,000 --> 00:15:18,000
+pero en este momento, para lo que yo necesito
+
+285
+00:15:18,000 --> 00:15:20,000
+y la trayectoria que he tenido laboralmente,
+
+286
+00:15:20,000 --> 00:15:22,000
+no ha sido necesario
+
+287
+00:15:22,000 --> 00:15:24,000
+tener estos skills
+
+288
+00:15:24,000 --> 00:15:28,000
+tan arriba.
+
+289
+00:15:28,000 --> 00:15:30,000
+Entonces, ahora sí,
+
+290
+00:15:30,000 --> 00:15:32,000
+vamos a ver con la demo, vamos a ver
+
+291
+00:15:32,000 --> 00:15:34,000
+si funciona.
+
+292
+00:15:44,000 --> 00:15:46,000
+Vale,
+
+293
+00:15:46,000 --> 00:15:48,000
+esta demo
+
+294
+00:15:48,000 --> 00:15:50,000
+que les voy a mostrar es un script
+
+295
+00:15:50,000 --> 00:15:52,000
+que hice
+
+296
+00:15:52,000 --> 00:15:54,000
+para los que les comentaban con anterioridad
+
+297
+00:15:54,000 --> 00:15:56,000
+que era
+
+298
+00:15:56,000 --> 00:15:58,000
+tengo una plataforma
+
+299
+00:15:58,000 --> 00:16:00,000
+en Kubernetes
+
+300
+00:16:00,000 --> 00:16:02,000
+y los clientes querían saber cómo se estaban
+
+301
+00:16:02,000 --> 00:16:04,000
+comportando sus nodos, qué era lo que estaban haciendo
+
+302
+00:16:04,000 --> 00:16:06,000
+me conectó
+
+303
+00:16:06,000 --> 00:16:08,000
+a un Graphana
+
+304
+00:16:08,000 --> 00:16:10,000
+con un request, me traigo la información de Graphana
+
+305
+00:16:10,000 --> 00:16:12,000
+y también les muestro los gráficos
+
+306
+00:16:12,000 --> 00:16:14,000
+porque sabemos que muchísimas veces
+
+307
+00:16:14,000 --> 00:16:16,000
+para tomar decisiones
+
+308
+00:16:16,000 --> 00:16:18,000
+o para
+
+309
+00:16:18,000 --> 00:16:20,000
+visualizar de una manera
+
+310
+00:16:20,000 --> 00:16:22,000
+mejor
+
+311
+00:16:22,000 --> 00:16:24,000
+muchas personas necesitan como gráficos
+
+312
+00:16:24,000 --> 00:16:26,000
+entonces es muchísimo mejor que tengan algunos gráficos
+
+313
+00:16:26,000 --> 00:16:28,000
+que le permitan tomar ciertas decisiones.
+
+314
+00:16:34,000 --> 00:16:36,000
+Aquí, bueno,
+
+315
+00:16:36,000 --> 00:16:38,000
+ejecutar el script
+
+316
+00:16:38,000 --> 00:16:40,000
+utilizo
+
+317
+00:16:40,000 --> 00:16:42,000
+Asistop, no sé si lo conocen
+
+318
+00:16:42,000 --> 00:16:44,000
+que es un programa que te permite generar un PDF
+
+319
+00:16:46,000 --> 00:16:48,000
+de Unix normal
+
+320
+00:16:48,000 --> 00:16:50,000
+Tarde un poco porque como está haciendo
+
+321
+00:16:50,000 --> 00:16:52,000
+el request al Graphana
+
+322
+00:16:52,000 --> 00:16:54,000
+actualmente utilizo, les voy mostrando
+
+323
+00:16:54,000 --> 00:16:56,000
+estoy utilizando un Graphana
+
+324
+00:16:56,000 --> 00:16:58,000
+público
+
+325
+00:17:00,000 --> 00:17:02,000
+que es este que está aquí
+
+326
+00:17:04,000 --> 00:17:06,000
+lo ven?
+
+327
+00:17:06,000 --> 00:17:08,000
+Este Graphana lo que me traigo
+
+328
+00:17:08,000 --> 00:17:10,000
+es la URL que necesito
+
+329
+00:17:10,000 --> 00:17:12,000
+para hacer el request
+
+330
+00:17:12,000 --> 00:17:14,000
+y buscar la información
+
+331
+00:17:14,000 --> 00:17:16,000
+En este caso, si fuese un modelo
+
+332
+00:17:16,000 --> 00:17:18,000
+de producción
+
+333
+00:17:18,000 --> 00:17:20,000
+evidentemente me conectaría
+
+334
+00:17:20,000 --> 00:17:22,000
+al Graphana en este caso
+
+335
+00:17:22,000 --> 00:17:24,000
+de la empresa o de la organización
+
+336
+00:17:24,000 --> 00:17:26,000
+o del cliente que necesito
+
+337
+00:17:26,000 --> 00:17:28,000
+esta información
+
+338
+00:17:28,000 --> 00:17:30,000
+Todas estas son variables
+
+339
+00:17:30,000 --> 00:17:32,000
+que las cambio con JinJados
+
+340
+00:17:32,000 --> 00:17:34,000
+todos
+
+341
+00:17:34,000 --> 00:17:36,000
+esto es una plantilla
+
+342
+00:17:36,000 --> 00:17:38,000
+donde la gente
+
+343
+00:17:38,000 --> 00:17:40,000
+es la que está en el cliente
+
+344
+00:17:40,000 --> 00:17:42,000
+y la gente es la que está en el cliente
+
+345
+00:17:42,000 --> 00:17:44,000
+todos estos son plantillas
+
+346
+00:17:44,000 --> 00:17:46,000
+donde me trae toda la información
+
+347
+00:17:46,000 --> 00:17:48,000
+tengo una plantilla donde le inserto
+
+348
+00:17:48,000 --> 00:17:50,000
+la información que yo necesito
+
+349
+00:17:50,000 --> 00:17:52,000
+aquí como propósito del documento
+
+350
+00:17:52,000 --> 00:17:54,000
+pudo la la la
+
+351
+00:17:54,000 --> 00:17:56,000
+aquí pueden escribir todo lo que
+
+352
+00:17:56,000 --> 00:17:58,000
+ustedes quieran
+
+353
+00:17:58,000 --> 00:18:00,000
+y luego aquí es donde me trae la información
+
+354
+00:18:00,000 --> 00:18:02,000
+estoy trabajando con un mini queue
+
+355
+00:18:02,000 --> 00:18:04,000
+o sea estoy trabajando localmente
+
+356
+00:18:04,000 --> 00:18:06,000
+desde mi máquina
+
+357
+00:18:06,000 --> 00:18:08,000
+por lo tanto, evidentemente aquí cuando me trae
+
+358
+00:18:08,000 --> 00:18:10,000
+la información de los nodos
+
+359
+00:18:10,000 --> 00:18:12,000
+si estuviésemos trabajando
+
+360
+00:18:12,000 --> 00:18:14,000
+con GCP y AWS
+
+361
+00:18:14,000 --> 00:18:16,000
+evidentemente me va a traer todos los nodos que tengamos
+
+362
+00:18:16,000 --> 00:18:18,000
+con Kubernetes
+
+363
+00:18:18,000 --> 00:18:20,000
+en este caso me dice cuál es el consumo actual
+
+364
+00:18:20,000 --> 00:18:22,000
+de los nodos en cuanto a memoria
+
+365
+00:18:22,000 --> 00:18:24,000
+CPU, la cantidad de operadores que tengo
+
+366
+00:18:24,000 --> 00:18:26,000
+la versión del cluster
+
+367
+00:18:26,000 --> 00:18:28,000
+los namespace que tengo asociados
+
+368
+00:18:28,000 --> 00:18:30,000
+aquí yo puedo insertar
+
+369
+00:18:30,000 --> 00:18:32,000
+toda la información que necesite
+
+370
+00:18:32,000 --> 00:18:34,000
+ahora mismo quizás
+
+371
+00:18:34,000 --> 00:18:36,000
+la información que yo estoy solicitando
+
+372
+00:18:36,000 --> 00:18:38,000
+es con comandos muy básicos
+
+373
+00:18:38,000 --> 00:18:40,000
+de Kubernetes porque en este caso es
+
+374
+00:18:40,000 --> 00:18:42,000
+algo local
+
+375
+00:18:42,000 --> 00:18:44,000
+aunque yo coloque
+
+376
+00:18:44,000 --> 00:18:46,000
+los comandos que habitualmente utilizas como
+
+377
+00:18:46,000 --> 00:18:48,000
+en Kubernetes
+
+378
+00:18:48,000 --> 00:18:50,000
+me va a traer la misma información
+
+379
+00:18:50,000 --> 00:18:52,000
+porque es un solo nodo en este caso
+
+380
+00:18:52,000 --> 00:18:54,000
+dependiendo del cliente
+
+381
+00:18:54,000 --> 00:18:56,000
+o dependiendo de
+
+382
+00:18:56,000 --> 00:18:58,000
+a quien tú le estés haciendo este levantamiento de información
+
+383
+00:18:58,000 --> 00:19:00,000
+pues evidentemente
+
+384
+00:19:00,000 --> 00:19:02,000
+si ellos tienen algún tipo de ley
+
+385
+00:19:02,000 --> 00:19:04,000
+velo, quieren filtrar por ciertas características
+
+386
+00:19:04,000 --> 00:19:06,000
+o ciertas especificaciones
+
+387
+00:19:06,000 --> 00:19:08,000
+tu agregas todas esas características
+
+388
+00:19:08,000 --> 00:19:10,000
+dentro de la información que necesitas
+
+389
+00:19:10,000 --> 00:19:12,000
+y aquí sería
+
+390
+00:19:12,000 --> 00:19:14,000
+la parte de las imágenes
+
+391
+00:19:14,000 --> 00:19:16,000
+que les comentaba que me trae directamente de Grafana
+
+392
+00:19:16,000 --> 00:19:18,000
+y
+
+393
+00:19:18,000 --> 00:19:20,000
+este sería el reporte
+
+394
+00:19:20,000 --> 00:19:22,000
+este reporte se le enviaba por correo electrónico
+
+395
+00:19:22,000 --> 00:19:24,000
+a cada uno de los clientes
+
+396
+00:19:24,000 --> 00:19:26,000
+tengo un reporte por cada uno de los clientes
+
+397
+00:19:26,000 --> 00:19:28,000
+esto se hace de manera automatizada
+
+398
+00:19:28,000 --> 00:19:30,000
+y este es lo que estoy trabajando
+
+399
+00:19:30,000 --> 00:19:32,000
+actualmente como
+
+400
+00:19:32,000 --> 00:19:34,000
+como consultora de
+
+401
+00:19:34,000 --> 00:19:36,000
+R.E.
+
+402
+00:19:36,000 --> 00:19:38,000
+es toda mi charla
+
+403
+00:19:38,000 --> 00:19:40,000
+así que si tienen alguna duda
+
+404
+00:19:40,000 --> 00:19:42,000
+pregunta me la pueden hacer ahora
+
+405
+00:19:48,000 --> 00:19:50,000
+alguien tiene alguna duda
+
+406
+00:19:50,000 --> 00:20:06,000
+voy a hacer con...
+
+407
+00:20:06,000 --> 00:20:08,000
+primero que todo muy buena charla
+
+408
+00:20:08,000 --> 00:20:10,000
+y una pequeña pregunta tengo
+
+409
+00:20:10,000 --> 00:20:12,000
+el código con que haces todo el reporte es open source
+
+410
+00:20:12,000 --> 00:20:14,000
+lo tienes algún repositor
+
+411
+00:20:14,000 --> 00:20:16,000
+lo puedes compartir
+
+412
+00:20:16,000 --> 00:20:18,000
+si lo tengo es open source por supuesto
+
+413
+00:20:18,000 --> 00:20:20,000
+ahora mismo está privado
+
+414
+00:20:20,000 --> 00:20:22,000
+pero si lo voy a poner público
+
+415
+00:20:22,000 --> 00:20:24,000
+para que ustedes puedan si quieren utilizarlo
+
+416
+00:20:24,000 --> 00:20:26,000
+o reutilizarlo lo puedan tener
+
+417
+00:20:26,000 --> 00:20:28,000
+lo puedan ver, puedan chequear
+
+418
+00:20:28,000 --> 00:20:30,000
+si lo quieren refacto de ar, mejorar, lo que sea
+
+419
+00:20:30,000 --> 00:20:32,000
+bienvenido
+
+420
+00:20:32,000 --> 00:20:34,000
+alguien más?
+
+421
+00:20:34,000 --> 00:20:36,000
+hay
+
+422
+00:20:36,000 --> 00:20:38,000
+unos detalles
+
+423
+00:20:38,000 --> 00:20:40,000
+para las personas que me sientan una pregunta
+
+424
+00:20:40,000 --> 00:20:42,000
+perdón
+
+425
+00:20:42,000 --> 00:20:48,000
+si se la pueden hacer llega
+
+426
+00:20:48,000 --> 00:20:50,000
+alguna pregunta?
+
+427
+00:20:54,000 --> 00:20:58,000
+bueno pues si no hay ninguna pregunta más
+
+428
+00:20:58,000 --> 00:21:00,000
+seguro
+
+429
+00:21:00,000 --> 00:21:14,000
+pues ultima plaza por favor
+

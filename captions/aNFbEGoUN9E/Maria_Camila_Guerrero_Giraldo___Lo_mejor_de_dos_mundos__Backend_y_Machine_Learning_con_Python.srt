@@ -1,0 +1,1336 @@
+1
+00:00:00,000 --> 00:00:20,760
+Hola, buenos días. Muchas gracias a todos los que había madrugado para llegar aquí a tiempo.
+
+2
+00:00:20,760 --> 00:00:26,760
+El último día de la PyCon, así que esperamos que disfrute de todas las sisiones que tenemos
+
+3
+00:00:26,760 --> 00:00:34,280
+preparadas. Bueno, yo soy Manuel Villasar, el moderador de esta sesión y os presento a Camila
+
+4
+00:00:34,280 --> 00:00:40,400
+Guerrero que es software developer en Amazon y es colombiana y lleva un año ya viviendo aquí
+
+5
+00:00:40,400 --> 00:00:44,600
+en Madrid y nos va a hablar sobre lo mejor de los dos mundos de Back in Machine Learning y su
+
+6
+00:00:44,600 --> 00:00:50,640
+experiencia trabajando con Python. Muchas gracias. Gracias. Bueno, ¿me escuchan bien? Sí, bueno,
+
+7
+00:00:50,640 --> 00:00:56,360
+bienvenidos a mi charla, a los Mejor de Dos Mundos, Back in Machine Learning con Python. Antes de empezar,
+
+8
+00:00:56,360 --> 00:01:03,200
+les quiero contar un poquito de quién soy. Se apagó, se apagó el micrófono. Ahí está,
+
+9
+00:01:03,200 --> 00:01:09,000
+ahí está. Soy una ingeniería de sistemas, estoy en Colombia, es lo mismo que acá,
+
+10
+00:01:09,000 --> 00:01:16,240
+ingeniería informática. Actualmente estoy viviendo en Madrid y me relocalice de Colombia a Madrid por
+
+11
+00:01:16,240 --> 00:01:23,560
+trabajo con el rol de software developer engineer en Amazon. Regularmente doy charlas,
+
+12
+00:01:23,560 --> 00:01:29,320
+pues digamos que esta es mi primera charla en Europa oficialmente, pero en Colombia participaba
+
+13
+00:01:29,320 --> 00:01:35,560
+en muchas comunidades, participaba en Python, Colombia también tuve la oportunidad del año
+
+14
+00:01:35,560 --> 00:01:39,480
+pasado a finales, participaba en una Python Indonesia y presentaba esta charla que ustedes
+
+15
+00:01:39,480 --> 00:01:45,960
+van a ver hoy. Y pues me gusta primero porque puedo compartir un poquito de lo poco que sé y creo que
+
+16
+00:01:45,960 --> 00:01:50,960
+es una gran oportunidad para hacer networking y estoy muy feliz de estar acá y espero que les
+
+17
+00:01:50,960 --> 00:01:55,760
+guste mi charla. Un dato curioso sobre mí es que me gustaba mucho de niña, un chico que se
+
+18
+00:01:55,760 --> 00:02:00,600
+llamaba Hannah Montana, que la verdad no sé qué tan popular sea aquí en España, pero en Latinoamérica
+
+19
+00:02:00,600 --> 00:02:07,680
+eso era, sí, lo mejor de lo mejor y todas las chiquitas de mi edad amábamos a esta chica y nos
+
+20
+00:02:07,680 --> 00:02:13,240
+encantaba la historia detrás. ¿Cuál era la historia de Hannah Montana? Pues que yo era una chica normal,
+
+21
+00:02:13,240 --> 00:02:18,480
+iba a su escuela, bueno, Miley Cyrus en realidad, era una chica normal, tenía una vida normal,
+
+22
+00:02:18,480 --> 00:02:24,600
+sus compañeros de escuela, pero quería también pues tener este sueño de ser cantante y ser una
+
+23
+00:02:24,600 --> 00:02:29,480
+chica famosa sin perder lo ordinario de su vida, sí, era como lo mejor de dos mundos, tener una
+
+24
+00:02:29,480 --> 00:02:33,520
+vida ordinaria pero en las noches o los minetes se van a tener como esa oportunidad de cantar,
+
+25
+00:02:33,520 --> 00:02:39,560
+de ser famosa y de viajar por todo el mundo. Entonces algo así me pasó a mí en la carrera y no es
+
+26
+00:02:39,560 --> 00:02:45,400
+que yo quisiera ser cantante, sino que uno en la carrera tiene como encuentros consigo mismo dilemas
+
+27
+00:02:45,400 --> 00:02:52,200
+existenciales sobre ¿debería seguir en esto o debería incursionar en algo nuevo? Sí, y prácticamente
+
+28
+00:02:52,200 --> 00:02:58,400
+eso fue lo que me sucedió a mí, yo estaba, empecé desarrollando pues en web prácticamente más
+
+29
+00:02:58,400 --> 00:03:04,240
+backend que, o sea era full stack al principio pero me concentré en backend y hubo un punto en mi
+
+30
+00:03:04,240 --> 00:03:08,880
+carrera en la que pues yo me empecé a interesar por cosas de machine learning porque ya que era un
+
+31
+00:03:08,880 --> 00:03:15,240
+tema que estaba en auge, sí, entonces yo decía como wow todo lo que yo vi de niña de que podían
+
+32
+00:03:15,240 --> 00:03:21,440
+haber robots que hablaban, máquinas que pensaban, se está como consolidando alrededor de ese tema y
+
+33
+00:03:21,440 --> 00:03:25,320
+yo quisiera estar ahí, o sea aprovecho que estoy estudiando ingeniería informática, ingeniería en
+
+34
+00:03:25,320 --> 00:03:31,240
+computación, todos estos temas y puedo tomar esa oportunidad de aprovecharla y de pronto incursionar
+
+35
+00:03:31,240 --> 00:03:38,240
+en esto que está como tan tan de modo actualmente. Entonces lo que les voy a hablar hoy es esa
+
+36
+00:03:38,240 --> 00:03:44,480
+experiencia, así como yo empecé en backend, como empecé a participar en este tipo de eventos y como
+
+37
+00:03:44,480 --> 00:03:52,040
+transicione a la parte de machine learning sin abandonar el backend de todos, entonces bueno,
+
+38
+00:03:52,040 --> 00:03:58,240
+primero como fue mi experiencia haciendo backend, mi primer trabajo fue en la universidad, fue en mi
+
+39
+00:03:58,240 --> 00:04:02,520
+universidad en una oficina que se encargaba de hacer los sistemas de la universidad, sistemas
+
+40
+00:04:02,520 --> 00:04:09,520
+académicos, sistemas de nómina para los docentes, para los empleados que tenía la universidad y pues lo
+
+41
+00:04:09,520 --> 00:04:15,240
+genial de este trabajo era que los profesores eran los jefes, o sea, mis jefes directos eran mis
+
+42
+00:04:15,240 --> 00:04:21,760
+profesores de programación, daba como la oportunidad de proponer, o sea, ya no era un estudiante,
+
+43
+00:04:21,760 --> 00:04:27,720
+ya no era la persona de pronto subyugada, no sé, en la aula de clases, sino que ya podía proponer,
+
+44
+00:04:27,720 --> 00:04:32,880
+yo también podía consultar con mis jefes que eran mis profesores algunas propuestas que yo tenía y
+
+45
+00:04:32,880 --> 00:04:37,800
+a pesar de que yo recién estaba empezando, fue una oportunidad para aprender y afianzar todos los
+
+46
+00:04:37,800 --> 00:04:44,600
+conocimientos de la universidad pues en esa parte laboral, empecé desarrollando con lenguajes como
+
+47
+00:04:44,600 --> 00:04:50,520
+Python en su mayoría porque mi jefe en ese momento era la persona que me metió a mí al mundo de
+
+48
+00:04:50,520 --> 00:04:55,520
+Python que incluso yo en la universidad pues hice un curso para las personas de primeros semestres
+
+49
+00:04:55,520 --> 00:05:01,000
+para que aprendiéramos Python desde el primer semestre de la universidad, porque generalmente en
+
+50
+00:05:01,000 --> 00:05:07,720
+Colombia nos enseñaban Java o semas más, entonces yo quería como también que aprendieran Python y
+
+51
+00:05:07,720 --> 00:05:12,120
+las personas pudiéramos descubrir como todas las bondades del lenguaje desde etapas tempranas
+
+52
+00:05:12,120 --> 00:05:18,440
+de la educación, entonces mi jefe era esta persona que amaba Python y también pues empecé como a
+
+53
+00:05:18,440 --> 00:05:24,320
+trabajar back in con Python y afianzar un montón de conceptos que yo ya había visto en la teoría,
+
+54
+00:05:24,320 --> 00:05:29,520
+en la universidad depuntó en algunos proyectos prácticos, pero que realmente tienen sentido,
+
+55
+00:05:29,520 --> 00:05:35,720
+cobran como sentido cuando ya empiezas a jugar con cosas que están productivas y que las usan
+
+56
+00:05:35,720 --> 00:05:40,920
+personas, no sé las usaban los profesores por lo menos que, o sea profesores que emitaban clases
+
+57
+00:05:40,920 --> 00:05:47,480
+a mí estaban usando lo que yo hacía, entonces por ejemplo en bases de datos yo teóricamente o en
+
+58
+00:05:47,480 --> 00:05:53,240
+mis clases de bases de datos era buena, pero ya fue cuando empecé a programar APIs que me di cuenta
+
+59
+00:05:53,240 --> 00:05:58,040
+que por ejemplo un buen diseño de datos pues no permitía que yo enredara mucho mi código,
+
+60
+00:05:58,040 --> 00:06:03,000
+sí que si yo tenía que hacer mala bares para hacer un endpoint muy sencillo significaba que el
+
+61
+00:06:03,000 --> 00:06:07,640
+diseño de datos estaba muy regular que estaba muy malo, entonces me volví muy muy buena en
+
+62
+00:06:07,640 --> 00:06:16,280
+bases de datos, empecé a crear APIs y ya hay como que uno solidificaba ese conocimiento de las
+
+63
+00:06:16,280 --> 00:06:22,440
+peticiones de las respuestas, de los códigos de respuesta, de los endpoints y ya como que todo
+
+64
+00:06:22,440 --> 00:06:28,680
+pues tenía lógica de cierta manera, en esta experiencia yo también aprendí de algo que no había
+
+65
+00:06:28,680 --> 00:06:33,160
+visto para nada en la universidad que eran los microservicios, una buena práctica en ese momento
+
+66
+00:06:33,160 --> 00:06:39,000
+para la situación que vivíamos en en esa oficina de asesora de sistemas que se llamaba y aprendí de
+
+67
+00:06:39,000 --> 00:06:45,080
+microservicios de un montón de cosas que una vez se dice como que en desarrollo web de pronto no hay
+
+68
+00:06:45,080 --> 00:06:50,040
+investigación de cierta manera, pero en realidad con microservicios me di cuenta de que muchos otros
+
+69
+00:06:50,040 --> 00:06:55,360
+muy buenos desarrolladores en el mundo estaban creando patrones para aplicar microservicios,
+
+70
+00:06:55,360 --> 00:07:02,200
+buenas prácticas, libros como clean code, todo esto lo vi en mi primera experiencia como
+
+71
+00:07:02,200 --> 00:07:08,360
+backend. Yo todavía sigo haciendo backend en mi experiencia de trabajo actual, sigo haciendo
+
+72
+00:07:08,360 --> 00:07:13,920
+backend y sigo aprendiendo cosas y puedo decir que el backend es mi zona de confort, disculpen,
+
+73
+00:07:13,920 --> 00:07:19,840
+es mi zona de confort, es donde mejor me siento, o sea no me frustro, puedo quedarme 5 o 6 horas
+
+74
+00:07:19,840 --> 00:07:24,600
+haciendo backend sentada un día completo, obviamente como todos, todos tenemos momentos en los que
+
+75
+00:07:24,600 --> 00:07:31,520
+nos bloqueamos y eso, pero no me frustro, sí es mi zona de confort. Y qué libre y así frameworks
+
+76
+00:07:31,520 --> 00:07:37,720
+de Python me ayudaron a realizar esto, pues empecé con Django, como que el estándar en la
+
+77
+00:07:37,720 --> 00:07:44,120
+oficina era Django y todo era muy fácil desarrollarlo otra vez de Django porque es un framework muy
+
+78
+00:07:44,120 --> 00:07:50,440
+organizado, todo te lo da como para que siga cierta estructura, a la final es MBC, modelo
+
+79
+00:07:50,440 --> 00:07:55,480
+vista controlador y como que es sencillo y funcionaba para las necesidades de la oficina en ese momento,
+
+80
+00:07:55,480 --> 00:08:01,600
+pero después yo empecé como a trabajar ya con otros proyectos de la misma oficina,
+
+81
+00:08:01,600 --> 00:08:08,640
+proyectos en Flask, ¿por qué? Porque me daba como más libertad para yo establecer la estructura de
+
+82
+00:08:08,640 --> 00:08:15,120
+mi proyecto, por ejemplo queríamos empezar a incorporar una estructura de arquitectura hexagonal,
+
+83
+00:08:15,120 --> 00:08:23,040
+que de pronto modificar la forma en la que Django hace las cosas, la arquitectura hexagonal resulta
+
+84
+00:08:23,040 --> 00:08:30,680
+un poco no sé difícil o no difícil ni complejo, sino que simplemente se puede hacer más de forma
+
+85
+00:08:30,680 --> 00:08:36,520
+más sencilla con Flask, porque podíamos nosotros desde el principio empezar a montar esa estructura,
+
+86
+00:08:36,520 --> 00:08:43,120
+entonces empecé también con Flask y sinceramente como que creo que con Flask aprendí más de
+
+87
+00:08:43,120 --> 00:08:48,640
+Joaquin que lo que aprendí con Django, porque yo estaba creando el proyecto, yo estaba estructurando
+
+88
+00:08:48,640 --> 00:08:54,840
+lo que quería, yo estaba usando las librerías externas que yo quería y me equivocaba más,
+
+89
+00:08:54,840 --> 00:09:02,120
+entonces cuando no se equivocaba más pues aprende más y finalmente ya o sea en la etapa tarde de mi
+
+90
+00:09:02,120 --> 00:09:08,720
+carrera hace menos de, yo creo que un año en mis proyectos como aparte de mis proyectos en tiempo
+
+91
+00:09:08,720 --> 00:09:15,840
+libre y eso empecé a usar FASAPI que es un framework de un compatriota mío Sebastián Romírez y
+
+92
+00:09:15,840 --> 00:09:22,440
+pues facilita mucho lo que más para desarrollo de procesos asínconos y también de procesos que
+
+93
+00:09:22,440 --> 00:09:29,160
+tienen que ver con Machine Learning, entonces digamos que eso es lo que estoy haciendo actualmente,
+
+94
+00:09:29,160 --> 00:09:35,280
+creo que sigo trabajando con las tres de cierta manera, pero pues la que prefiero en este momento
+
+95
+00:09:35,280 --> 00:09:44,000
+es FASAPI, ahora cómo llegué yo a la parte de Machine Learning, como les decía cuando yo estaba
+
+96
+00:09:44,000 --> 00:09:49,920
+como no sé tipo sexto en Colombia tenemos diez semestres de ingeniería de sistemas o ingeniería
+
+97
+00:09:49,920 --> 00:09:55,520
+informática, cuando yo estaba como en sexto semestre me empecé a interesar por este tema de Machine
+
+98
+00:09:55,520 --> 00:10:00,160
+Learning, pero yo no sabía nada de Machine Learning, en la universidad no te daban clases de Machine
+
+99
+00:10:00,160 --> 00:10:06,280
+Learning, por lo menos no en ese punto, era una especialización que se debían al final de tu carrera,
+
+100
+00:10:06,280 --> 00:10:11,920
+pero yo ya estaba como interesada, entonces lo que yo hice fue empezar a asistir a este tipo de
+
+101
+00:10:11,920 --> 00:10:18,280
+eventos y en este tipo de eventos yo veía que gente muy buena presentaba charlas excelentes de
+
+102
+00:10:18,280 --> 00:10:26,600
+modelos entrenados de cosas increíbles en varios temas, en medio ambiente, en veterinaria me acuerdo
+
+103
+00:10:26,600 --> 00:10:32,360
+mucho una charla que vi de alguien que usaba como Machine Learning para su veterinaria, cuestiones
+
+104
+00:10:32,360 --> 00:10:37,040
+climáticas, o sea cosas que de verdad yo decía como un ingeniero de sistemas o como una persona
+
+105
+00:10:37,040 --> 00:10:44,640
+que sabe programar impacta en estas áreas, claramente eran temas que para mí como una
+
+106
+00:10:44,640 --> 00:10:49,320
+persona que nunca había tenido relación con ciencia de datos, con inteligencia artificial,
+
+107
+00:10:49,320 --> 00:10:56,280
+pues causaban cierta dificultad y no se entendía de primera, entonces lo que yo empecé a hacer
+
+108
+00:10:56,280 --> 00:11:03,400
+fue hacer mis propios proyectos en casa, ¿sí? ¿Cómo empecé a hacer estos proyectos? Yo que
+
+109
+00:11:03,400 --> 00:11:12,520
+cogía y los veía como en los meetups y recreaba esos mismos tutoriales en mi casa, ¿sí? Fue que
+
+110
+00:11:12,520 --> 00:11:17,880
+al principio no entendiera mucho, pero la salida o el resultado que yo obtenía era el mismo que
+
+111
+00:11:17,880 --> 00:11:22,600
+la persona que había presentado en meetup tenía, ¿sí? Entonces yo trataba de tomar apuntas en
+
+112
+00:11:22,600 --> 00:11:27,880
+estas charlas, trataba de revisar en realidad qué estaba pasando y a pesar de que no siempre se
+
+113
+00:11:27,880 --> 00:11:33,840
+entendía el 100, yo me ponía muy feliz de lograr un resultado, ¿sí? Y pongo aquí como un hechicero
+
+114
+00:11:33,840 --> 00:11:39,760
+porque en principio para mí estos modelos funcionaban como por arte de magia, o sea tu llamadas una
+
+115
+00:11:39,760 --> 00:11:45,960
+función en la librería, ponías unos parámetros, le dabas una entrada y funcionaba y eso era magia
+
+116
+00:11:45,960 --> 00:11:52,200
+para mí porque yo no entendía realmente qué cálculos estaban haciendo y lo que yo hacía era
+
+117
+00:11:52,200 --> 00:11:59,240
+como estas líneas de código que están acá en la esquina de la presentación, cinco líneas, seis
+
+118
+00:11:59,240 --> 00:12:04,880
+líneas, no sé, como en mínimo 10 líneas, máximo 10 líneas, tú ya tenías un modelo que predecía
+
+119
+00:12:04,880 --> 00:12:11,800
+algo o que clasificaba algo, entonces pues yo estaba súper impactada, súper sorprendida porque
+
+120
+00:12:11,800 --> 00:12:18,880
+no sabía que Python, con Python se pueden hacer estas cosas. Luego ya fui como haciendo más
+
+121
+00:12:18,880 --> 00:12:24,520
+tutoriales, como aprendiendo más por mi parte de la parte teórica del Machine Learning y fui
+
+122
+00:12:24,520 --> 00:12:30,720
+aprendiendo cosas, por ejemplo que no solamente hay cosas, hay features o características
+
+123
+00:12:30,720 --> 00:12:35,880
+cuantitativas, números, sino que también muchas cosas son cualitativas como en realidad de todo el
+
+124
+00:12:35,880 --> 00:12:42,000
+mundo, mis primeros modelos fueron de clasificación y regresión, que son los modelos como más sencillos,
+
+125
+00:12:42,000 --> 00:12:47,480
+que estadísticamente tú empiezas a aprender pues cómo se hace una clasificación y cómo se hace
+
+126
+00:12:47,480 --> 00:12:54,760
+una regresión y se puede entender la estadística y la matemática detrás de eso. La cantidad de
+
+127
+00:12:54,760 --> 00:13:01,560
+datos como era para ejercicios míos o para ejercicios académicos era relativamente pequeña,
+
+128
+00:13:01,560 --> 00:13:10,160
+eran entre 100 registros hasta mil registros, que eso es muy pequeño en comparación a lo que se
+
+129
+00:13:10,160 --> 00:13:17,400
+hace en la industria. Y bueno, qué librerías y frameworks me ayudaron acá en esta parte,
+
+130
+00:13:17,400 --> 00:13:23,320
+en esta fase como de mi carrera. La primera a la que yo me acerqué fue Pandas y no es
+
+131
+00:13:23,320 --> 00:13:29,920
+precisamente Machine Learning, es más ciencia de datos y limpieza de datos, pero pues yo Pandas la
+
+132
+00:13:29,920 --> 00:13:35,800
+recomiendo al 100, creo que es una librería bastante, bastante buena y para las personas que
+
+133
+00:13:35,800 --> 00:13:42,880
+quieren empezar a tratar datos, a limpiar datos y cómo hacer un filtro de ciertas cosas en los
+
+134
+00:13:42,880 --> 00:13:50,200
+dataset, Pandas es como la librería predilecta, se puede empezar a aprender muy fácil con Pandas,
+
+135
+00:13:50,200 --> 00:13:57,920
+la documentación es súper buena y ya después de que yo tenía los datos como limpios gracias a lo
+
+136
+00:13:57,920 --> 00:14:02,400
+que había hecho en Pandas, ya empezaba la cuestión de implementar un modelo, un modelo de aprendizaje,
+
+137
+00:14:02,400 --> 00:14:07,920
+entonces hay muchas librerías que tienen modelos muy sencillos, muy simples y otros muy complejos.
+
+138
+00:14:07,920 --> 00:14:14,400
+Yo recuerdo que yo empecé con Cycler y Cycler también tiene una buena documentación,
+
+139
+00:14:14,400 --> 00:14:20,480
+la implementación de estos métodos también es muy similar al bloque de código que les mostré
+
+140
+00:14:20,480 --> 00:14:27,000
+anteriormente, máximo 10 líneas y eso si ustedes ponen muchos parámetros y juegan con muchas otras
+
+141
+00:14:27,000 --> 00:14:33,080
+cosas, entonces en realidad era bastante sencillo implementar un modelo y ya cuando yo no sé,
+
+142
+00:14:33,080 --> 00:14:37,960
+llevaba por lo menos unos 6 meses de estar como curioso en este mundo de Machine Learning,
+
+143
+00:14:37,960 --> 00:14:45,480
+me di cuenta de que bueno, a pesar de que la librería lo diera todo masticado, yo podía
+
+144
+00:14:45,480 --> 00:14:50,920
+empezar a investigar sobre lo que hacía en realidad el modelo, entonces ya empieza una
+
+145
+00:14:50,920 --> 00:14:56,240
+parte también de lectura de papers de mi parte y sobre todo en mi carrera universitaria ya había
+
+146
+00:14:56,240 --> 00:14:59,840
+una opción de escoger una especialización, entonces ahí viene en cuál especialización
+
+147
+00:14:59,840 --> 00:15:06,880
+escogí yo, escogí la especialización de inteligencia artificial y claro, o sea ahí cambió totalmente mi
+
+148
+00:15:06,880 --> 00:15:13,200
+forma de ver esto, mi gusto por el Machine Learning se potenció muchísimo más y como que yo dije,
+
+149
+00:15:13,200 --> 00:15:18,040
+bueno acá va a haber un punto de inflexión en mi carrera, quiero empezar a hacer algo,
+
+150
+00:15:18,040 --> 00:15:24,600
+o sea quiero seguir deponente haciendo backend pero si se puede en algo que impacte también
+
+151
+00:15:24,600 --> 00:15:32,040
+pues esta cuestión de Machine Learning y ahí es cuando yo terminé mi carrera, mi tesis de grado
+
+152
+00:15:32,040 --> 00:15:38,840
+fue relacionada netamente con Machine Learning y fue una cuestión de clasificación de enfermedades,
+
+153
+00:15:38,840 --> 00:15:45,160
+bueno de epilepsia para ser específica a través de una recopilación de datos de un hospital,
+
+154
+00:15:45,160 --> 00:15:53,200
+entonces yo culminé mi carrera y ya obtuve mi primer trabajo de Machine Learning Engineer,
+
+155
+00:15:53,200 --> 00:15:59,240
+al principio yo no sabía qué era esto, simplemente yo le comenté a la reclutadora como mis
+
+156
+00:15:59,240 --> 00:16:04,400
+necesidades en ese momento de mi carrera, le dije yo hago backend pero quieren curcionar en este
+
+157
+00:16:04,400 --> 00:16:11,200
+mundo de Machine Learning y lo que quiero es que ustedes me den la oportunidad porque yo no soy,
+
+158
+00:16:11,200 --> 00:16:17,640
+o sea no estudiado estadística, no soy data scientist, no tengo como este componente de
+
+159
+00:16:17,640 --> 00:16:23,360
+matemática súper fuerte, o sea pues cálculo que uno siempre tiene en las ingenierías pero tampoco
+
+160
+00:16:23,360 --> 00:16:29,720
+era muy muy fuerte, entonces me dieron la oportunidad afortunadamente y me di cuenta de
+
+161
+00:16:29,720 --> 00:16:35,480
+que Machine Learning Engineer, este rol es la mezcla perfecta entre desarrollo de software y Machine
+
+162
+00:16:35,480 --> 00:16:41,840
+Learning, o data science también un poco y eso es lo mejor de dos mundos y les voy a empezar a contar
+
+163
+00:16:41,840 --> 00:16:48,920
+por qué es lo mejor de dos mundos. Bueno, antes de pasar aquí algo que yo o sea a pesar de que yo
+
+164
+00:16:48,920 --> 00:16:54,000
+había hecho ya mi tesis a pesar de que había tomado la especialización de inteligencia artificial,
+
+165
+00:16:54,000 --> 00:17:02,960
+seguían habiendo conceptos que yo no entendía todavía, por ejemplo, uno escucha veces ETL,
+
+166
+00:17:02,960 --> 00:17:09,480
+los trainings y las predicciones, para mí era muy claro que era un training y que era una predicción,
+
+167
+00:17:09,480 --> 00:17:13,800
+basada en la teoría y en los cursos que yo había tomado, pero por ejemplo algo que a mí no me
+
+168
+00:17:13,800 --> 00:17:22,080
+quedaba muy claro que era que era un ETL, y como se veía un ETL, entonces en esta experiencia de
+
+169
+00:17:22,080 --> 00:17:27,560
+Machine Learning Engineer mis primeros meses fue interactuar con modelos de la empresa,
+
+170
+00:17:27,560 --> 00:17:33,680
+la empresa era un e-commerce, entonces ellos tenían modelos para todas las situaciones que
+
+171
+00:17:33,680 --> 00:17:39,680
+no se puede imaginar, por ejemplo si un producto, no sé, esta botella de agua era flamable o no,
+
+172
+00:17:39,680 --> 00:17:44,080
+entonces había un modelo que se encargaba de clasificar un producto inflamable o no,
+
+173
+00:17:44,080 --> 00:17:48,160
+también había un modelo que estimaba los tiempos de envío, por ejemplo,
+
+174
+00:17:48,160 --> 00:17:53,680
+yo vivía Bogotá, entonces desde Bogotá hasta otro departamento de Colombia,
+
+175
+00:17:53,680 --> 00:17:59,800
+había un modelo que se encargaba de volver como un número donde se estimaba cuánto se iba a
+
+176
+00:17:59,800 --> 00:18:06,800
+morarlo, eso en llegar de acá a acá, había modelos de todos todos los tipos y esos primeros
+
+177
+00:18:06,800 --> 00:18:11,120
+meses en ese rol yo empecé a interactuar con esos modelos y entender que eran los ETL,
+
+178
+00:18:11,120 --> 00:18:18,480
+entonces me di cuenta que un ETL simplemente es como la información, los datos que se procesan,
+
+179
+00:18:18,480 --> 00:18:24,640
+se limpian y se serializan, se serializan y se ponen en un objeto que Python o que el lenguaje
+
+180
+00:18:24,640 --> 00:18:29,840
+con el que no estoy trabajando, en mi caso era Python, se da capaz de después leer y utilizar para
+
+181
+00:18:29,840 --> 00:18:35,320
+los train, entonces cómo se serializaban a través de una herramienta que se llama Pickle,
+
+182
+00:18:35,320 --> 00:18:41,640
+eso me creaba, o sea, yo metía datos, los limpiaba y al final eso me creaba un Pickle,
+
+183
+00:18:41,640 --> 00:18:47,920
+que era un objeto que yo podía leer desde otro script y ahí como que se me despejaron muchas
+
+184
+00:18:47,920 --> 00:18:55,000
+dudas, por lo menos en la parte de ETL, yo ya podía manejar ETL de otros equipos y luego también
+
+185
+00:18:55,000 --> 00:19:00,560
+podía modificar trainings, los trainings que cambiaban por ejemplo cambiaban algunos parámetros,
+
+186
+00:19:00,560 --> 00:19:07,680
+sí, hay parámetros que cuando yo estaba en la tapa de curiosidad, yo cambiaba como a 10
+
+187
+00:19:07,680 --> 00:19:13,120
+traes siniestras sin saber por qué los cambiaba, pero aquí ya no estaba parte de trabajar en la,
+
+188
+00:19:13,120 --> 00:19:19,200
+en como Machine Learning Engineer, me di cuenta que esos parámetros tenían cierto, pues cierta
+
+189
+00:19:19,200 --> 00:19:25,600
+razón de ser y ya hay como que también los modificaba, jugaba con estos trainings, como que
+
+190
+00:19:25,600 --> 00:19:31,640
+desplegaba los trainings y finalmente las predicciones, que las predicciones sí siempre pues creo que se
+
+191
+00:19:31,640 --> 00:19:36,640
+entendió como el concepto en realidad, que es a partir de unas entradas pasa algo en una caja
+
+192
+00:19:36,640 --> 00:19:41,360
+negra y obtenemos como esas predicciones de acuerdo a lo que es entre no dentro del modelo,
+
+193
+00:19:41,360 --> 00:19:50,480
+sí, y ahí como que pues creo que casi toda la vida, toda la vida pues es algo así como lo que
+
+194
+00:19:50,480 --> 00:19:56,840
+estoy simulando en este en este esquema y es que siempre hay como una entrada por dentro,
+
+195
+00:19:56,840 --> 00:20:02,160
+hay algo de procesamiento o una caja negra que a veces sabemos que sucede en la caja negra,
+
+196
+00:20:02,160 --> 00:20:08,720
+a veces no sabemos y da una entrada, un proceso pues obtenemos una salida, y así es toda la
+
+197
+00:20:08,720 --> 00:20:17,080
+vida, o sea hacemos algo y eso tiene un efecto en la vida y en todo lado, y pues en Machine Learning
+
+198
+00:20:17,080 --> 00:20:23,000
+era lo mismo, en realidad era lo mismo pero yo no lo había tan claro, era como que teníamos datos,
+
+199
+00:20:23,000 --> 00:20:28,760
+datos que alguien más procesaba, en este caso era un equipo de data science de la empresa que ellos
+
+200
+00:20:28,760 --> 00:20:38,240
+encargaban de crear el ETL y luego eso se entrenaba y ya nosotros los desarrolladores de Machine
+
+201
+00:20:38,240 --> 00:20:45,240
+Learning pues exponíamos esos modelos a través de APIs o los exponíamos no sé con una SDK,
+
+202
+00:20:45,240 --> 00:20:52,520
+depende de cómo lo quisiera o lo necesitar en ese momento de la compañía y pues hacíamos como
+
+203
+00:20:52,520 --> 00:20:57,680
+las predicciones con estos trains y el ETL que ya nos habían aportado.
+
+204
+00:20:57,680 --> 00:21:06,800
+Datos, bueno en la parte de la industria ya pues también a mí me impactó mucho porque
+
+205
+00:21:06,800 --> 00:21:14,720
+habían por ejemplo modelos que procesaban 10 millones de registros por hora, entonces por
+
+206
+00:21:14,720 --> 00:21:23,880
+ejemplo no sé cantidad de clicks en esta sección de la página, ese tipo de cosas como que también
+
+207
+00:21:23,880 --> 00:21:31,720
+me sorprendió mucho porque yo pues en mis ejercicios lo que les decía trabajaba en 300 y 1000
+
+208
+00:21:31,720 --> 00:21:37,000
+registros nada más, ahora ya cuando uno trabaja con 10 millones de registros por horas,
+
+209
+00:21:37,000 --> 00:21:43,000
+por hora para algunos modelos, empiezan a surgir esos retos técnicos que son tan interesantes y
+
+210
+00:21:43,000 --> 00:21:49,000
+que lo hacen a uno crecer en su carrera, entonces a pesar de que yo era junior, mi equipo era muy
+
+211
+00:21:49,000 --> 00:21:55,160
+nuevo, entonces me ponían a mí por ejemplo María Camila por favor sugíranos qué se le ocurre para
+
+212
+00:21:55,160 --> 00:22:02,200
+poder trabajar con la cantidad de datos que tiene el equipo de flamables o el modelo de flamables.
+
+213
+00:22:02,200 --> 00:22:09,880
+También por ejemplo estos scores y los buléanos de las predicciones que antes digamos en los
+
+214
+00:22:09,880 --> 00:22:15,400
+modelos de clasificación eran uno y era un cero, ya pues en la cuestión de la empresa en la que
+
+215
+00:22:15,400 --> 00:22:22,120
+trabajé cambiaba mucho, cambiaba considerablemente porque había modelos que precian cosas más allá
+
+216
+00:22:22,120 --> 00:22:28,200
+de blanco o negro, entonces siempre tocaba tener una constante comunicación con los equipos creadores
+
+217
+00:22:28,200 --> 00:22:34,920
+de estos modelos para saber qué representaba el score que se arrojaba y todo eso representa
+
+218
+00:22:34,920 --> 00:22:42,040
+un algo y surgen muchas preguntas en realidad, pero por ejemplo con la cuestión de los datos
+
+219
+00:22:42,040 --> 00:22:49,960
+nuestros retos eran cómo almacenamos estos datos, dónde almacenamos esos datos. También la otra
+
+220
+00:22:49,960 --> 00:22:55,720
+cuestión es entendemos que el modelo hace esto y hay formas de mostrar esa información para
+
+221
+00:22:55,720 --> 00:23:01,320
+nosotros los desarrolladores pues digamos que uno leyendo documentación medio encuentra lógica en
+
+222
+00:23:01,320 --> 00:23:08,080
+las cosas o no sé si uno conversa con otro desarrollador es fácil transmitir ese conocimiento,
+
+223
+00:23:08,080 --> 00:23:12,960
+pero cuando esos resultados hay que mostrárselos a alguien de negocio o a una persona que no está
+
+224
+00:23:12,960 --> 00:23:18,880
+tan relacionada con el desarrollo, cuál es la forma ideal de proyectar y mostrar esa información,
+
+225
+00:23:18,880 --> 00:23:28,280
+entonces aquí es donde me doy cuenta también del impacto que tienen por ejemplo los proveores en
+
+226
+00:23:28,280 --> 00:23:34,880
+la nube para la cuestión de Imagine Learning, usábamos muchos muchos muchos proveores,
+
+227
+00:23:34,880 --> 00:23:43,040
+no nos casamos con uno en específico y usábamos uno en particular para ciertas necesidades,
+
+228
+00:23:43,040 --> 00:23:48,280
+otro pues para otras cosas, pero por ejemplo algo que recuerdo mucho era que en los casos
+
+229
+00:23:48,280 --> 00:23:54,080
+donde trabajábamos con muchos muchos registros usábamos por ejemplo los buckets de los S3 de
+
+230
+00:23:54,080 --> 00:24:00,800
+AWS que me prometían subir mucha información al mismo tiempo cuando yo necesitara representar eso
+
+231
+00:24:00,800 --> 00:24:05,640
+a través de una gráfica, yo podía acceder fácilmente a esa información sólo con los links de los
+
+232
+00:24:05,640 --> 00:24:13,200
+S3, entonces los proveores en la nube fueron indispensables y fueron como nuestros salvavidas en
+
+233
+00:24:13,200 --> 00:24:18,760
+ese momento para muchas soluciones que teníamos que dar inmediatamente, otra cosa con el manejo de
+
+234
+00:24:18,760 --> 00:24:24,800
+los datos que es importante es el tipo de procesos con los que vamos a trabajar, hay algunos pequeños
+
+235
+00:24:24,800 --> 00:24:31,160
+sí donde se podían hacer procesos sin cronos, donde yo le mandaba una petición a la API,
+
+236
+00:24:31,160 --> 00:24:36,560
+mandaba unos datos a la API que tenía el modelo y me respondía inmediatamente, pero ya con el caso
+
+237
+00:24:36,560 --> 00:24:43,280
+por ejemplo de 10 millones de datos y de registros con muchas respuestas al mismo tiempo ya los procesos
+
+238
+00:24:43,280 --> 00:24:48,680
+sin cronos no nos servían, teníamos que hacer uso de asincronía y por ejemplo me acuerdo también
+
+239
+00:24:48,680 --> 00:24:54,320
+el uso de jobs para casi todo, entonces también todas estas herramientas en la nube nos ayudaban a
+
+240
+00:24:54,320 --> 00:25:03,680
+atraquear eso y a tener como eso en mente. Y bueno esta parte de monitoreo y mantenimiento que
+
+241
+00:25:03,680 --> 00:25:07,920
+yo creo que en realidad es lo que más me enamoró a mí de este rol de Machine Learning Engineer,
+
+242
+00:25:07,920 --> 00:25:14,000
+es que yo entré en este equipo prácticamente, habían muchos equipos de ingenieros en Machine
+
+243
+00:25:14,000 --> 00:25:20,320
+Learning, pero el que yo entré era el de monitoreo y mantenimiento y yo decía porque es importante
+
+244
+00:25:20,320 --> 00:25:29,200
+monitorear y yo entré a esa empresa en una época en la que todo el mundo estaba re, que fue la
+
+245
+00:25:29,200 --> 00:25:34,960
+época de pandemia y yo entendía por qué era necesario monitorear y ya cuando fue avanzando
+
+246
+00:25:34,960 --> 00:25:40,600
+el tiempo lo entendí, en ese mundo en ese momento no solamente el mundo, nosotros las
+
+247
+00:25:40,600 --> 00:25:45,760
+personas cambiamos, nosotros cambiamos nuestras rutinas, cambiamos nuestras formas de ver el mundo,
+
+248
+00:25:45,760 --> 00:25:50,440
+cambiamos las formas de interactuar con nosotros, los modelos de Machine Learning también cambiaron
+
+249
+00:25:50,440 --> 00:25:57,760
+y cambiaron demasiado, o sea los datos que antes tenían sentido ya en ese momento en el 2020,
+
+250
+00:25:57,760 --> 00:26:03,280
+los modelos de Machine Learning ya no podían hacer predicciones acertadas porque el mundo
+
+251
+00:26:03,280 --> 00:26:09,160
+estaba funcionando totalmente diferente, totalmente diferente, por ejemplo, o sea un envío de un lugar
+
+252
+00:26:09,160 --> 00:26:14,400
+a un punto B ya no se demoraba lo mismo, porque ya los carros por lo menos en Colombia, los carros
+
+253
+00:26:14,400 --> 00:26:20,200
+que transportaban tenían que tener permisos, habían vías cerradas, habían como cosas de
+
+254
+00:26:20,200 --> 00:26:25,040
+ese estilo que ya hacían que el modelo pues la predicción que nos daba no era acertada para
+
+255
+00:26:25,040 --> 00:26:30,200
+nada porque él no tenía en cuenta esos datos que habían cambiado debido a la pandemia y asimismo
+
+256
+00:26:30,200 --> 00:26:35,480
+con otras cosas, o sea todos los modelos de Machine Learning de ese momento de la empresa habían
+
+257
+00:26:35,480 --> 00:26:44,560
+cambiado abismalmente y una cuestión importante es que lo que nos emide no se puede mejorar, o
+
+258
+00:26:44,560 --> 00:26:49,880
+sea si no tenemos métricas de nuestro modelo de Machine Learning, nuestro modelo se va a quedar
+
+259
+00:26:49,880 --> 00:26:57,120
+con datos de hace 100 años, hace 20 años que ya hoy en pleno de 2020 pues no van a servir para
+
+260
+00:26:57,120 --> 00:27:01,920
+nada, entonces esta parte de monitorea de mantenimiento lo que nosotros hacíamos era mandarles
+
+261
+00:27:01,920 --> 00:27:08,080
+reportes a los equipos de Data Science de que también estaba prediciendo el modelo y que tan
+
+262
+00:27:08,080 --> 00:27:14,520
+normales eran las entradas que estaba recibiendo ese modelo y como lo hacíamos usábamos todo lo
+
+263
+00:27:14,520 --> 00:27:21,200
+que les comenté anteriormente, este 3 jobs, analizábamos con pandas algunas entradas,
+
+264
+00:27:21,200 --> 00:27:27,560
+analizábamos también las salidas y posteábamos esa información y enviábamos correos, oiga por
+
+265
+00:27:27,560 --> 00:27:34,440
+ejemplo tal métrica de precisión está por debajo de este 3ol, pongase las pilas,
+
+266
+00:27:34,440 --> 00:27:37,520
+pongase las pilas, es una expresión de Colombia para estar como alerta,
+
+267
+00:27:37,520 --> 00:27:44,280
+esté alerta porque puede que esto no sea normal y su modelo no esté prediciendo con veracidad,
+
+268
+00:27:44,280 --> 00:27:53,320
+las cosas que necesita predecir. Y bueno así fue como yo transicione, o sea en realidad yo seguía
+
+269
+00:27:53,320 --> 00:27:58,520
+haciendo backend, todo lo que yo seguía haciendo era backend, pero era backend que apoyaba y soportaba
+
+270
+00:27:58,520 --> 00:28:03,000
+al machine learning y en ese proceso yo seguía aprendiendo muchas cosas de machine learning,
+
+271
+00:28:03,000 --> 00:28:09,280
+que highlights o que tips o que cosas tengo así como a partir de esa experiencia, que es una
+
+272
+00:28:09,280 --> 00:28:15,680
+gran ventaja pues saber de desarrollo, sobre todo desarrollo con Python cuando uno empezará a
+
+273
+00:28:15,680 --> 00:28:22,000
+meterse en el cuento de machine learning, es una gran ventaja. También la forma en que nosotros
+
+274
+00:28:22,000 --> 00:28:28,480
+tenemos de representar las cosas en desarrollo web, de por ejemplo usar una pipa para exponer
+
+275
+00:28:28,480 --> 00:28:34,060
+cierta información, eso es súper significativo en machine learning, los data science a veces
+
+276
+00:28:34,060 --> 00:28:41,360
+crean el modelo pero pronto exponerlo para hacerse un cliente final es complejo, entonces nosotros
+
+277
+00:28:41,360 --> 00:28:46,480
+tenemos esas ventajas y también tenemos las ventajas de poder mostrar eso en algunas gráficas
+
+278
+00:28:46,480 --> 00:28:55,920
+que sean como más dicientes que simplemente un score. Y pues en resumen lo interesante de este
+
+279
+00:28:55,920 --> 00:29:01,800
+rol es que es, o sea el rol de machine learning engineer es una persona que lidia todos los días
+
+280
+00:29:01,800 --> 00:29:07,280
+con modelos en producción, entonces también van a haber retos de backing como disponibilidad,
+
+281
+00:29:07,280 --> 00:29:13,360
+que escalabilidad, que los despliegue se hagan pues o sea que se hagan de manera exitosa que haya
+
+282
+00:29:13,360 --> 00:29:20,880
+como un ciclo de integración continua, todo esto pero pues para el tema de machine learning. Y bueno
+
+283
+00:29:20,880 --> 00:29:27,640
+en realidad ahí es donde yo encontré los mejor de dos mundos, o sea la Hanna Montana de ingeniería
+
+284
+00:29:27,640 --> 00:29:32,560
+informática y pues ese fue el punto de inflexión en mi carrera donde decía como que eso era lo que
+
+285
+00:29:32,560 --> 00:29:46,680
+quería seguir haciendo y ya eso es todo. Muchas gracias y espero que les haya gustado la charla.
+
+286
+00:29:46,680 --> 00:29:50,920
+Muchas gracias Camila, muy interesante tu experiencia. Uno de preguntas, tenéis alguna por aquí?
+
+287
+00:29:50,920 --> 00:30:05,760
+Nadie? Sí. Hola qué tal, primero muchas gracias por la charla. Yo te quería preguntar qué le
+
+288
+00:30:05,760 --> 00:30:10,520
+recomendarías a alguien que quiera hacer lo contrario, o sea yo soy Tata Sayanti ahora mismo y me gustaría
+
+289
+00:30:10,520 --> 00:30:15,640
+pasar más a un rol que tenga ciertas funciones de backing como un rol de machine learning engineer,
+
+290
+00:30:15,640 --> 00:30:20,400
+entonces no sé qué puedo hacer exactamente para incorporar esas funciones en mi trabajo o cambiar
+
+291
+00:30:20,400 --> 00:30:29,320
+de trabajo aún así por ejemplo. Yo creo que funciona casi casi igual, es decir ya tienes el
+
+292
+00:30:29,320 --> 00:30:35,480
+componente de machine learning que era pues lo complicado y digamos para mí sí. Ahora también
+
+293
+00:30:35,480 --> 00:30:42,480
+lo que hacíamos en mi equipo era crear muchas librerías y desarrollar muchas herramientas para
+
+294
+00:30:42,480 --> 00:30:51,240
+los datasayantis, lo que o sea el roadmap es yo creo que el mismo en realidad es como empezar
+
+295
+00:30:51,240 --> 00:30:57,800
+desde lo básico de lo que yo decía como desarrollar un API, como diseñar una base de datos
+
+296
+00:30:57,800 --> 00:31:05,120
+que sea como confiable, que sea pues es que esté bien, que tenga lógica y luego ya gradualmente
+
+297
+00:31:05,120 --> 00:31:11,400
+conociendo tú las necesidades de los datasayantis de una persona que crea modelos o sea todas
+
+298
+00:31:11,400 --> 00:31:15,640
+las necesidades que se tienen en el día a día con los modelos de machine learning, empezar a
+
+299
+00:31:15,640 --> 00:31:20,880
+trabajar para apoyar y cubrir esos huecos, esos vacios que hay porque eso era lo que sucedía
+
+300
+00:31:20,880 --> 00:31:27,200
+como en ese momento en mi empresa. Los datasayantis eran muy buenos, habían modelos muy muy buenos
+
+301
+00:31:27,200 --> 00:31:32,640
+pero teníamos muchos vacíos, o sea ellos tenían muchos vacíos como para solventar algunas
+
+302
+00:31:32,640 --> 00:31:38,960
+necesidades como por ejemplo loguar errores o loguar cosas raras en el proceso de training,
+
+303
+00:31:38,960 --> 00:31:44,800
+entonces las personas que sabíamos backend lo que hacíamos era crear una librería,
+
+304
+00:31:44,800 --> 00:31:52,440
+una librería que permitiera que eso se solventara, entonces yo creo que en realidad se puede aplicar
+
+305
+00:31:52,440 --> 00:31:59,480
+esto mismo acá, o sea como yo les mostraba al principio, empezar con bases de datos,
+
+306
+00:31:59,480 --> 00:32:05,280
+luego empezar a desarrollar API sencillas, las librerías las que recomiendo son flasks y yangos
+
+307
+00:32:05,280 --> 00:32:11,200
+siempre y ya después de eso, o sea que tú sepas lo básico, yo creo que sería bueno un buen ejercicio
+
+308
+00:32:11,200 --> 00:32:17,520
+empezar a diseñar o a crear esas herramientas, librerías, software que tú como datasayantis
+
+309
+00:32:17,520 --> 00:32:24,000
+sientes que las en falta a tu, no sé, como a tu trabajo día a día como datasayantis,
+
+310
+00:32:24,000 --> 00:32:31,720
+entonces sí, o sea yo creo que se puede en general usar este mismo roadmap y ya y pues tú tienes
+
+311
+00:32:31,720 --> 00:32:37,280
+como esa perspectiva diferente a la de una persona que empezó en backend, entonces ya sabes como
+
+312
+00:32:37,280 --> 00:32:42,440
+qué cosas faltan, yo por lo menos cuando empecé a desarrollar en esa empresa, habían cosas que
+
+313
+00:32:42,440 --> 00:32:48,280
+parecían tan obvias pero en realidad nada es obvio y nada, o sea uno no puede dar nada por sentado y
+
+314
+00:32:48,280 --> 00:32:53,760
+pues crear todo esto y hablarme con datasayantis versus necesidades fue algo muy importante,
+
+315
+00:32:53,760 --> 00:33:00,960
+entonces sugeriría cómo hacer el mismo ejercicio, empezar a hablar con una persona o sea igual después
+
+316
+00:33:00,960 --> 00:33:06,600
+de la charla podemos hablar más en detalle pero en realidad es lo mismo, empezar a diseñar bases
+
+317
+00:33:06,600 --> 00:33:13,920
+de datos, APIs, no solamente HTTP, hay muchas otras cosas, otros esquemas y formas, HTTP es como el más
+
+318
+00:33:13,920 --> 00:33:19,760
+sencillo y creo que todos deberíamos empezar por ahí y ya después indagar y profundizar en otras
+
+319
+00:33:19,760 --> 00:33:35,600
+cosas pero empezaría por ahí. Hola, bueno muchas gracias por la charla es muy interesante,
+
+320
+00:33:35,600 --> 00:33:41,200
+según tu experiencia ¿dónde has visto los problemas más difíciles o misteriosos en la parte de
+
+321
+00:33:41,200 --> 00:33:50,200
+data o en la parte de backend? No, en la parte de data como tal, en la parte de machine learning sobre todo la parte que hice de
+
+322
+00:33:50,200 --> 00:33:57,040
+énfasis, la cantidad de datos, la cantidad de datos era increíble, o sea yo no, habían modelos que
+
+323
+00:33:57,040 --> 00:34:06,760
+solo se ejecutaban una vez al mes porque como que la infraestructura podía no reaccionar bien si se
+
+324
+00:34:06,760 --> 00:34:12,080
+ejecutaba todo el tiempo o muy seguido, entonces como que habían días específicos del mes donde
+
+325
+00:34:12,080 --> 00:34:19,000
+todo un equipo estaba 24 horas despierto mirando que el modelo corriera se ejecutara y que todo
+
+326
+00:34:19,000 --> 00:34:24,360
+saliera bien, entonces ya después se ejecutaba bien y el problema digamos que pasaba ya a nuestro
+
+327
+00:34:24,360 --> 00:34:29,240
+equipo que era como listo esa información que significa está bien, está mal, entonces sí,
+
+328
+00:34:29,240 --> 00:34:37,280
+todos los problemas así grandes, los vi más en la parte de machine learning porque obviamente
+
+329
+00:34:37,280 --> 00:34:43,360
+también eran problemas de abaquen al mismo tiempo, por ejemplo al ojar información, tener una pique
+
+330
+00:34:43,360 --> 00:34:48,480
+respondiera como a través de jobs, jobs que se quedaban, o sea que incluso con arquitectura de jobs,
+
+331
+00:34:48,480 --> 00:34:55,200
+la información era tanta, tanta que a veces también no se respondía bien, se perdían jobs de la nada,
+
+332
+00:34:55,200 --> 00:35:00,080
+pero entonces sí, creo que fue más del lado del machine learning en el que vi desafíos muy, muy grandes.
+
+333
+00:35:03,880 --> 00:35:08,080
+Ya no tenemos más tiempo para preguntas, pero vamos a agradecer de nuevo a Camila por su presentación.
+
+334
+00:35:08,080 --> 00:35:26,480
+Muchas gracias.
+

@@ -1,0 +1,2036 @@
+1
+00:00:00,000 --> 00:00:20,600
+En lo que nieves te va preparando os la voy a presentar muy brevemente, ¿vale?
+
+2
+00:00:20,600 --> 00:00:26,520
+Nieves es una persona muy guay, es antigua luna de la universidad de Granada, así que está
+
+3
+00:00:26,520 --> 00:00:34,620
+en casa y estamos súper contentas de tenerte aquí. Además, ella tiene la voz sintética más
+
+4
+00:00:34,620 --> 00:00:41,280
+bonita que existe y hoy por fin vamos a conocer su voz real. Es la única persona con la que
+
+5
+00:00:41,280 --> 00:00:47,560
+Alexa, Siri, Google no pelean, la entienden perfectamente y nos va a explicar cómo lo hace
+
+6
+00:00:47,560 --> 00:00:53,600
+y cómo consigue controlar a todos estos chatbots con Python y nada más que os dejo con ella,
+
+7
+00:00:53,600 --> 00:00:59,120
+que es una crack y va a ser súper entretenida, seguro de ducharla. Muchísimas gracias.
+
+8
+00:01:04,880 --> 00:01:10,480
+Pues muchas gracias de verdad por esa súper presentación. Además, la voz más bonita
+
+9
+00:01:10,480 --> 00:01:16,280
+y en Andalú, ¿eh? Por ahora. Pero bueno, no voy a hacer spoiler, eso luego, ¿vale? Lo primero,
+
+10
+00:01:16,280 --> 00:01:21,880
+os voy a contar rápidamente de dónde vengo. Como decía Jimena, estudié aquí en Genería
+
+11
+00:01:21,880 --> 00:01:28,320
+Informática, empecé en 2003 la carrera y la verdad es que desde el principio superapasionada
+
+12
+00:01:28,320 --> 00:01:31,880
+por todo lo que era inteligencia artificial. Estaba llegando, estaba deseando llegar a
+
+13
+00:01:31,880 --> 00:01:38,160
+quinto carrera para meterme en la asignatura de inteligencia artificial. Terminé, la carrera
+
+14
+00:01:38,160 --> 00:01:45,440
+hice un proyecto, que se, bueno, un mayor domódromótico, era una interfaz de voz que
+
+15
+00:01:45,440 --> 00:01:49,360
+me costó junto con mi compañero Gonzalo, estuvimos un año trabajando en ello, todo
+
+16
+00:01:49,360 --> 00:01:53,880
+en inglés y ahora, pues la verdad es que con Alexa y cuatro bombillas tenemos lo mismo
+
+17
+00:01:53,880 --> 00:02:02,440
+que hacíamos en aquel momento, ¿no? Pero bueno, bueno, tema aparte. Continuamos investigando
+
+18
+00:02:02,440 --> 00:02:06,960
+en el sistema de diálogo, en todo esto de interfaces de voz. Continué con un máster
+
+19
+00:02:06,960 --> 00:02:13,240
+y el doctorado no llegué a terminarlo. Me quedé hasta tercero de doctorado por temas
+
+20
+00:02:13,240 --> 00:02:20,240
+de BK, ayuda y pase a empresa privada. Estuve en Viva, que ahora es BBWA Next Technologist,
+
+21
+00:02:20,240 --> 00:02:25,200
+una empresa del grupo BBWA y ahí continúe la línea de investigación en procesamiento
+
+22
+00:02:25,200 --> 00:02:30,040
+del lenguaje natural y chatbots e interfaz de voz. De hecho, fuimos los primeros que
+
+23
+00:02:30,040 --> 00:02:35,600
+probamos a Alexa en inglés, porque no estaba en español cuando apareció, ¿no? Y después
+
+24
+00:02:35,600 --> 00:02:42,440
+de toda esa aventura en la que estuve como digo aprendiendo mucho en todos estos temas,
+
+25
+00:02:42,440 --> 00:02:47,240
+decidimos tomarnos una excedencia y montar lo que había de hoy en mi empresa, Monoceros
+
+26
+00:02:47,240 --> 00:02:52,480
+Labs. O sea, que había de hoy me pongo 20 gorro a la vez, me pongo el gorro de emprendedora,
+
+27
+00:02:52,480 --> 00:02:57,280
+el gorro de financiero, el gorro de contratar, el gorro de lo que toqué, ¿no? ¿Qué hacemos
+
+28
+00:02:57,280 --> 00:03:02,680
+en Monoceros Labs? Pues trabajamos en crear aplicaciones de voz para los asistentes de
+
+29
+00:03:02,680 --> 00:03:08,880
+voz que tenemos aquí en España, ¿vale?, en español, principalmente para Alexa y además
+
+30
+00:03:08,880 --> 00:03:16,960
+creamos voces sintéticas, ¿vale? Pero bueno, mi parte profesional además se ve... A mí
+
+31
+00:03:16,960 --> 00:03:22,520
+me refuerzo, me gusta mucho compartir todo lo que aprendo con la comunidad y por eso
+
+32
+00:03:22,520 --> 00:03:31,480
+traje la comunidad Women in Voice Spain, Women in Voice a España, ¿vale?, en 2019 y además
+
+33
+00:03:31,480 --> 00:03:38,840
+por todo esto me han dado una serie de méritos. Entre ellos soy Alexa Champion, una de todos
+
+34
+00:03:38,840 --> 00:03:43,960
+los que todo el mundo hay como unas 70 personas, en España somos cuatro y la única tía por
+
+35
+00:03:43,960 --> 00:03:48,560
+ahora. Así que bueno, he sido de interés a todo esto de la interfaz de voz y trabaja
+
+36
+00:03:48,560 --> 00:03:54,800
+ahí en Alexa. Contadme que seguramente os pueda ayudar también en esta parte. Y por
+
+37
+00:03:54,800 --> 00:04:01,440
+último, formo parte de la comunidad AWS Comunitivill. Pero vamos a lo que estamos, que si no me
+
+38
+00:04:01,440 --> 00:04:10,160
+enrollo y se nos va ahora. Yo vengo a hablar, al acorde el título de mi charla ahí, a conversacional,
+
+39
+00:04:10,160 --> 00:04:14,560
+¿no? Pues vengo a hablar de una cosa que me parece muy importante y es que el presente
+
+40
+00:04:14,560 --> 00:04:20,200
+y el futuro de la inteligencia artificial está marcado por el lenguaje humano, ¿vale?
+
+41
+00:04:20,200 --> 00:04:28,200
+Y el lenguaje humano, entre otras cosas, es muy complejo, está formado por símbolo,
+
+42
+00:04:28,200 --> 00:04:33,880
+a esos símbolos le damos un significado que además varía en función del contexto.
+
+43
+00:04:33,880 --> 00:04:38,760
+Nosotros como humanos somos muy listos, pero a veces fallamos, en entender y gestionar
+
+44
+00:04:38,760 --> 00:04:44,960
+toda esta complejidad así de rápido, ¿no? Pero no tanto las máquinas, ¿no? Ya que el
+
+45
+00:04:44,960 --> 00:04:53,200
+lenguaje humano es impreciso y ambiguo. Hablando de ambigüedad, habréis leído, escuchado,
+
+46
+00:04:53,200 --> 00:04:58,200
+muchos de estos términos que presento aquí. De hecho, si estuviste en el taller de Iván
+
+47
+00:04:58,200 --> 00:05:04,080
+ayer, estuvisteis trabajando con estos términos seguramente, ¿no? Bot, chatbot, interfaz
+
+48
+00:05:04,080 --> 00:05:10,480
+de bot, asistente virtual, ¿no? Todo eso son términos muy similares entre sí, pero hay
+
+49
+00:05:10,480 --> 00:05:15,160
+diferentes matices, ¿no? Aquí siempre estamos con las peleas. No, un voicebot, yo hago voicebot,
+
+50
+00:05:15,160 --> 00:05:20,960
+no, yo hago... Bueno, en realidad, igual como lo llamemos, ¿no? Aquí lo importante es que
+
+51
+00:05:20,960 --> 00:05:25,920
+todos estos términos se engloban dentro de un concepto para agua que es de inteligencia
+
+52
+00:05:25,920 --> 00:05:33,880
+artificial conversacional, ¿vale? El objetivo de la IA conversacional es crear tecnología
+
+53
+00:05:33,880 --> 00:05:40,120
+para la comunicación con las personas, ¿vale? Y dentro de este para agua, pues aplicamos
+
+54
+00:05:40,120 --> 00:05:44,840
+y utilizamos técnicas de machine learning, deep learning y procesamente el lenguaje natural
+
+55
+00:05:44,840 --> 00:05:53,440
+que nos ayude en proa este objetivo, ¿vale? En este caso, yo voy a hablar sobre todo de
+
+56
+00:05:53,440 --> 00:05:59,240
+tecnologías que nos permiten, tecnologías que nos escuchan, ¿vale? Tecnologías que
+
+57
+00:05:59,240 --> 00:06:07,080
+entienden lo que le decimos y, además, tecnologías que es capaz de respondernos, ¿vale? Que así
+
+58
+00:06:07,080 --> 00:06:16,040
+en dibujo parece súper fácil. Ya veremos después, ¿no? Pero deciros sí que esta
+
+59
+00:06:16,040 --> 00:06:20,200
+tecnología lleva tiempo aquí entre nosotros todas estas tecnologías, pero que gracias
+
+60
+00:06:20,200 --> 00:06:24,480
+a los avances con redes neuronales de los últimos años están cambiando mucho las
+
+61
+00:06:24,480 --> 00:06:30,600
+reglas del juego con respecto a lo que podemos y no podemos construir, ¿vale? Así que quedamos
+
+62
+00:06:30,600 --> 00:06:37,520
+conmigo este ratito para entender cómo podemos construir conversaciones, ¿vale? Con las máquinas
+
+63
+00:06:37,520 --> 00:06:44,120
+que sean más naturales, asteriscos, ya veremos por qué, y efectivas, ¿vale? Y utilizando
+
+64
+00:06:44,120 --> 00:06:50,160
+Python, ¿qué paro estamos aquí? Os voy a contar una historia, quiero empezar con una
+
+65
+00:06:50,160 --> 00:07:02,920
+historia. Es junio de este año 2020, ¿vale? Y este es Blake Lemoine. Blake Lemoine es
+
+66
+00:07:02,920 --> 00:07:11,920
+ingeniero de VLII y sale en la tele diciendo que ha estado hablando con una máquina y que
+
+67
+00:07:11,920 --> 00:07:18,080
+considera que esa máquina es consciente de sí misma, que tiene pensamiento y tiene
+
+68
+00:07:18,080 --> 00:07:28,840
+sentimiento. A tope, ¿eh? Esta es la máquina con la que estuve hablando Lemoine. Os presento
+
+69
+00:07:28,840 --> 00:07:37,000
+a Lambda. Lambda es un modelo del lenguaje. Es un modelo del lenguaje para aplicaciones
+
+70
+00:07:37,000 --> 00:07:44,040
+de diálogo que lanzó Google en mayo de 2022. Bueno, en realidad lo presentó en el Google
+
+71
+00:07:44,040 --> 00:07:55,320
+en mayo de 2021, perdón. Lambda tiene un objetivo. Es un modelo al que le damos un objetivo
+
+72
+00:07:55,320 --> 00:08:04,840
+y va a buscar cumplirlo a través de una conversación, a través del diálogo, ¿vale? Entonces podemos
+
+73
+00:08:04,840 --> 00:08:12,400
+decir que Lambda entiende lo que decía Lemoine. Lambda es realmente está haciendo ese proceso
+
+74
+00:08:12,400 --> 00:08:21,800
+de comprensión de lo que estaba hablando con Lemoine. Bueno, Lambda, como bien decía,
+
+75
+00:08:21,800 --> 00:08:27,140
+es un modelo del lenguaje, ¿vale? Los modelos del lenguaje generan respuestas que a priori
+
+76
+00:08:27,140 --> 00:08:31,640
+nos pueden parecer que tienen sentido, porque han aprendido esas posibles respuestas en
+
+77
+00:08:31,640 --> 00:08:37,200
+base a una probabilidad, ¿vale? Además, esas respuestas las podemos condicionar en base
+
+78
+00:08:37,200 --> 00:08:44,080
+al contexto, en base a lo que le hemos dicho antes. Entonces podríamos decir que Lambda
+
+79
+00:08:44,080 --> 00:08:53,080
+en realidad es un poco loro, ¿no? Entonces, ¿qué pasó? En realidad Lemoine está
+
+80
+00:08:53,080 --> 00:09:00,280
+hablando con un modelo del lenguaje cuyo objetivo era convencerle de que tenía conciencia,
+
+81
+00:09:00,280 --> 00:09:09,920
+¿vale? Y para eso realmente cumplió su objetivo. Chapó. Pero ojo, que yo quiero quedarnos
+
+82
+00:09:09,920 --> 00:09:17,600
+con la palabra conciencia. La palabra conciencia es una cualidad humana, ¿vale? Una cualidad
+
+83
+00:09:17,600 --> 00:09:25,040
+humana entre otras muchas. Estamos ahora evaluando solo la conciencia. Y os traigo el concepto
+
+84
+00:09:25,040 --> 00:09:34,160
+de antropomorfismo, porque en realidad dar forma, el antropomorfismo consiste en dar
+
+85
+00:09:34,160 --> 00:09:41,480
+forma o cualidades humanas a algo que no las tiene, a algo que no lo es. Y aquí el GIF,
+
+86
+00:09:41,480 --> 00:09:48,120
+¿no? Esta niña abrazando esa estación meteorológica pensando que es alguien, una personita,
+
+87
+00:09:48,120 --> 00:09:57,280
+un robot abrazándola, ¿no? Y este es el problema real, ¿no? Tenemos ese problema,
+
+88
+00:09:57,280 --> 00:10:03,680
+tendemos a antropomorfizar. Entonces, ¿qué cualidad humana buscamos en la tecnología
+
+89
+00:10:03,680 --> 00:10:08,480
+conversacional? Somos conscientes de ella. Yo os traigo alguna, seguro que ella está
+
+90
+00:10:08,480 --> 00:10:13,760
+y se habéis tenido alguna interacción con algunas de estas tecnologías, seguro que
+
+91
+00:10:13,760 --> 00:10:18,680
+ella tenía alguna en la cabeza. Pero yo os traigo alguna y quiero que reflejemos al
+
+92
+00:10:18,680 --> 00:10:22,560
+respecto. La primera es que esperamos que se comuniquen
+
+93
+00:10:22,560 --> 00:10:29,080
+el lenguaje natural de la misma manera que nosotros hacemos, que entiendan el contexto,
+
+94
+00:10:29,080 --> 00:10:34,840
+que tengan memoria, que se acuerden de lo que le hemos dicho y quiénes somos. ¿Vale?
+
+95
+00:10:34,840 --> 00:10:39,720
+Y ya hemos dicho, empezada diciendo en esta charla, que el lenguaje natural es de lo más
+
+96
+00:10:39,720 --> 00:10:45,800
+complejo que hay. Vale. Primera cosa que tendemos a aplicar.
+
+97
+00:10:45,800 --> 00:10:52,240
+Segunda, en ciertas situaciones buscamos incluso crear un vínculo, establecer un vínculo
+
+98
+00:10:52,240 --> 00:10:58,120
+con la tecnología. Esto lo podemos hacer de manera consciente o inconsciente, ¿vale?
+
+99
+00:10:58,120 --> 00:11:04,320
+Pero está ahí. Un vínculo que nos pueda dar apoyo, asistencia en un momento determinado.
+
+100
+00:11:04,320 --> 00:11:09,000
+Incluso a veces buscamos que tenga cierta personalidad. Le preguntamos cómo se llama,
+
+101
+00:11:09,000 --> 00:11:14,440
+de dónde viene. Que sea capaz incluso de entender nuestras emociones y de expresar emociones
+
+102
+00:11:14,440 --> 00:11:20,760
+a la vez. Estamos poniendo muchas, muchas expectativas en cuanto a ese vínculo que
+
+103
+00:11:20,760 --> 00:11:27,320
+podemos crear con la tecnología. Además, buscamos que sea inteligente. No voy a entrar
+
+104
+00:11:27,320 --> 00:11:34,840
+en definición de inteligencia. Pero si esperamos ciertas características de esa inteligencia,
+
+105
+00:11:34,840 --> 00:11:40,240
+por ejemplo, que sea capaz de razonar, que sea capaz de entender, que sea capaz de ver
+
+106
+00:11:40,240 --> 00:11:45,880
+ciertas cosas del entorno, que sea capaz de escuchar, que sea capaz de hablar. Y por
+
+107
+00:11:45,880 --> 00:11:55,160
+último, estamos esperando de esta tecnología que sea de confianza. Que sea de confianza,
+
+108
+00:11:55,160 --> 00:12:00,520
+que sepa recomendarnos lo mejor a nosotros en ese contexto, en ese momento, que no haya
+
+109
+00:12:00,520 --> 00:12:05,800
+ningún fallo, que nos dé información fiable en la que podamos confiar en todo un momento.
+
+110
+00:12:05,800 --> 00:12:12,120
+Y además esperamos que tenga todo el conocimiento del mundo. A este tipo de tecnología le preguntamos
+
+111
+00:12:12,120 --> 00:12:19,240
+cualquier cosa y esperamos una respuesta. Yo creo, no sé qué pensáis vosotros, después
+
+112
+00:12:19,240 --> 00:12:24,320
+de haber visto estas cualidades humanas a las que estamos volcando en la tecnología,
+
+113
+00:12:24,320 --> 00:12:33,240
+que la expectativa es bastante alta. Yo creo que sí. Y creo que encima hay otra cosa que
+
+114
+00:12:33,240 --> 00:12:41,040
+no nos ayuda en cuanto a la expectativa y es la ciencia ficción. Si además le sumamos
+
+115
+00:12:41,040 --> 00:12:46,280
+esto que os decía antes a esas narrativas que tenemos en la cabeza de lo que puede o
+
+116
+00:12:46,280 --> 00:12:53,440
+no llegar a ser una interfaz, una tecnología con la que hablamos, pues yo creo que tenemos
+
+117
+00:12:53,440 --> 00:13:00,480
+un problema. A ver cómo gestionamos esta expectativa. Sobre todo porque en realidad
+
+118
+00:13:00,480 --> 00:13:07,840
+la realidad es esta. Si yo le digo, Alexa, hazme un sandwich de mantequilla de cacahuete.
+
+119
+00:13:07,840 --> 00:13:25,640
+Esto es lo que pasa. La ambigüeda del lenguaje no es todo tan fácil como parece. Creo que
+
+120
+00:13:25,640 --> 00:13:34,080
+cada vez pillo perfectamente. Entonces, durante la charla de hoy, quiero que entendamos, pues,
+
+121
+00:13:34,080 --> 00:13:38,520
+esta realidad, que podemos construir con la tecnología que tenemos disponibles y de alguna
+
+122
+00:13:38,520 --> 00:13:42,440
+manera que limitaciones tiene. Aunque no me voy a extender mucho, sí voy a hacer un breve
+
+123
+00:13:42,440 --> 00:13:47,240
+repaso y os voy a dar algunas herramientas para que os lleveis a casa y podáis construir
+
+124
+00:13:47,240 --> 00:13:54,800
+este tipo de cosas. Lo primero de deciros que a día de hoy, ya que hay un montón de asistentes
+
+125
+00:13:54,800 --> 00:13:59,840
+presentes entre nosotros que viven en infinidad de lugares, tenemos la capacidad de crear
+
+126
+00:13:59,840 --> 00:14:06,760
+conversaciones en muchos momentos nuevos, en muchos contextos diferentes y en muchos lugares
+
+127
+00:14:06,760 --> 00:14:12,600
+como desde un robot, ¿no?, hasta tener una conversación con esta tecnología en el coche,
+
+128
+00:14:12,600 --> 00:14:20,760
+mi reloj, ¿no?, que no se active o incluso con la tele. Vale, eso está guay, ahí, bien.
+
+129
+00:14:20,760 --> 00:14:26,680
+Pero no todas las conversaciones son iguales de fáciles de construir. Aquí entra en
+
+130
+00:14:26,680 --> 00:14:31,760
+un juego, como decía, ciertas limitaciones. Yo vengo a hablar ahora de la complejidad
+
+131
+00:14:31,760 --> 00:14:37,360
+para que entendáis lo difícil que crear conversaciones según el tipo de conversación.
+
+132
+00:14:37,360 --> 00:14:46,240
+Es decir, si yo quiero crear tecnología que entienda las conversaciones que se pueden
+
+133
+00:14:46,240 --> 00:14:54,520
+producir en un entorno bancario, pues podemos decir que el tipo de conversaciones de dominio
+
+134
+00:14:54,520 --> 00:14:59,040
+cerrado de close domain es un dominio muy concreto y sé que quien va a estar hablando
+
+135
+00:14:59,040 --> 00:15:05,360
+conmigo no se va a salir en principio de ese contexto de preguntas sobre el bank. Entonces,
+
+136
+00:15:05,360 --> 00:15:13,720
+este tipo de conversaciones, bien, he puesto en una sonrisita, es así, ¿vale? También
+
+137
+00:15:13,720 --> 00:15:20,120
+nos funcionan muy bien si creamos conversaciones transaccionales. Es decir, cuyo objetivo es
+
+138
+00:15:20,120 --> 00:15:26,600
+darte una respuesta muy concreta o ayudarte con una funcionalidad muy concreta a lo que
+
+139
+00:15:26,600 --> 00:15:34,000
+necesita. La llamamos orientada a tareas. Por ejemplo, ¿qué tiempo hace hoy? ¿Qué saldo
+
+140
+00:15:34,000 --> 00:15:40,040
+tengo en la cuenta bancaria? Son fáciles, ¿no? Esas estupendamente. ¿Esa dentro de
+
+141
+00:15:40,040 --> 00:15:47,240
+la complejidad? Las podemos construir bien. Aquí entre medias están las de preguntas
+
+142
+00:15:47,240 --> 00:15:53,200
+y respuestas. Es el cuestión ancerino, las facts. Aquí depende un poco del material
+
+143
+00:15:53,200 --> 00:15:57,880
+y el contenido que tengamos, por eso lo he puesto ahí con una sonrisita leda ahí en
+
+144
+00:15:57,880 --> 00:16:05,240
+medio. Esas pueden ser viables. Y ya que os pongo, ya empecé con lo más complejo.
+
+145
+00:16:05,240 --> 00:16:11,320
+Lo más complejo es que podamos tener conversaciones con la tecnología acerca de quiénes son
+
+146
+00:16:11,320 --> 00:16:17,120
+nuestros mejores amigos, cuáles son nuestros intereses, qué películas mi favorita y cómo
+
+147
+00:16:17,120 --> 00:16:25,320
+está el tema de la guerra. Este tipo de conversaciones mucho más abiertas, pues ya son un poco más
+
+148
+00:16:25,320 --> 00:16:31,560
+complejas de gestión. Y, por supuesto, si son de dominio abierto. Ese multidominio que
+
+149
+00:16:31,560 --> 00:16:35,760
+podemos estar cambiando de tema con la tecnología en cualquier momento. Ahí ya no explota la
+
+150
+00:16:35,760 --> 00:16:44,760
+cabeza. Además, o generalizo, ahora vamos a ver cómo podemos construir este tipo de
+
+151
+00:16:44,760 --> 00:16:50,840
+conversaciones en base a las piezas de la arquitectura que tenemos. Si nos vamos a las conversaciones
+
+152
+00:16:50,840 --> 00:16:58,160
+más facilitas, podemos utilizar una arquitectura más modular, clásica que la llaman. Tenemos
+
+153
+00:16:58,160 --> 00:17:03,520
+una serie de piezas que conectamos entre sí y nos sirven para montar esa conversación.
+
+154
+00:17:03,520 --> 00:17:14,680
+Y, además, tenemos el enfoque en tuén, que es yo tengo un modelo, lo entreno con una
+
+155
+00:17:14,680 --> 00:17:19,520
+serie de datos y este modelo, en principio, es capaz de agroutine todas estas piezas que
+
+156
+00:17:19,520 --> 00:17:25,040
+os voy a contar y darme respuesta. Por eso ese tipo de enfoque es más útil para la
+
+157
+00:17:25,040 --> 00:17:28,880
+parte más compleja, para la parte de multidominio y sociedad.
+
+158
+00:17:28,880 --> 00:17:39,040
+Entonces, vamos a empezar con la arquitectura modular o clásica. Voy a empezar con la interfaz
+
+159
+00:17:39,040 --> 00:17:45,240
+de voz, porque al final son las que más piezas tienen. He puesto un ejemplo, ¿no? ¿Qué
+
+160
+00:17:45,240 --> 00:17:52,120
+pasaría si decimos algo así como Alexa pon Rosalía en Spotify? Y he puesto los dispositivos
+
+161
+00:17:52,120 --> 00:17:57,160
+para que entendáis un poco más cómo funcionarían. Cuando hablamos de interfaz de voz, tenemos
+
+162
+00:17:57,160 --> 00:18:07,080
+cinco piezas, cinco módulos, cinco fases. La primera, la que reconoce mi voz y hace
+
+163
+00:18:07,080 --> 00:18:15,720
+de esa voz hace una transcripción a texto. ¿Vale? ¿Fácil o no? Aquí influyen un montón
+
+164
+00:18:15,720 --> 00:18:26,040
+de cosas entre qué idioma hablo, si soy nativa o no, me acento, el andalú, si incluso si
+
+165
+00:18:26,040 --> 00:18:34,280
+ese ASR, ese reconocedor de voz, está entrenado con los suficientes datos en mi idioma o diálecto.
+
+166
+00:18:34,280 --> 00:18:40,400
+Realmente supercomplejo, pero es la parte más importante, es la primera parte que necesitamos
+
+167
+00:18:40,400 --> 00:18:48,880
+para encajar las piezas. La siguiente es el NLU, Natural Language and Standing. No es
+
+168
+00:18:48,880 --> 00:18:54,800
+exactamente NLP, pero bueno, más o menos. El objetivo de esta pieza es de ese texto que
+
+169
+00:18:54,800 --> 00:19:02,160
+me acaban de pasar, extraer el significado, extraer lo que realmente quiere decir la persona
+
+170
+00:19:02,160 --> 00:19:11,600
+que me está hablando, lo que tiene en la cabeza. La tercera, una vez que sabemos qué
+
+171
+00:19:11,600 --> 00:19:17,200
+quería decir esa persona, pues entonces tendremos que gestionar la conversación. El dialogue
+
+172
+00:19:17,200 --> 00:19:24,080
+manayer, el CDM, lo que hace es, con toda la información que tiene, decide qué hacer,
+
+173
+00:19:24,080 --> 00:19:28,680
+decide si tiene que ir a buscar información a través de una API, a buscar en base de datos
+
+174
+00:19:28,680 --> 00:19:33,720
+lo que sea, buscar información, decir, vale, pues le puedo dar una respuesta a otra persona
+
+175
+00:19:33,720 --> 00:19:40,640
+y preparar esa respuesta, o a lo mejor decirle, mira, perdona, no te he entendido, vale,
+
+176
+00:19:40,640 --> 00:19:47,360
+esto se resuelve aquí. Una vez que tenemos claro que vamos a responder,
+
+177
+00:19:47,360 --> 00:19:54,640
+vamos a la cuarta pieza, que es la generación de respuesta. Aquí normalmente buscamos crear
+
+178
+00:19:54,640 --> 00:20:00,720
+una respuesta textual en texto para pasarlo a la siguiente pieza y aquí normalmente los
+
+179
+00:20:00,720 --> 00:20:07,000
+enfoques son bastante sencillitos, tratamos de plantillas de texto y alguna otra cosita.
+
+180
+00:20:07,000 --> 00:20:13,440
+Esta es, de hecho, casi no la voy a mencionar hoy, es la más sencilla ahora mismo. Y la
+
+181
+00:20:13,440 --> 00:20:21,040
+quinta pieza es la síntesis de voz o el texto speech, TTS, ya que tenemos el texto, lo que
+
+182
+00:20:21,040 --> 00:20:26,560
+ahora tenemos que responderle a la persona de la misma manera como ha empezado a hablar,
+
+183
+00:20:26,560 --> 00:20:32,800
+no, por voz. Así que esta es la pieza que va a hacer esa generación de audio en base
+
+184
+00:20:32,800 --> 00:20:39,240
+a unas características de una voz. Y así, de fácil, nuestras interfaz nos entiende y
+
+185
+00:20:39,240 --> 00:20:46,960
+nos responde en cinco simples pasos, ¿qué os parece? Detrás de cada una de estas piezas
+
+186
+00:20:46,960 --> 00:20:55,880
+hay una infinidad de tecnología, modelos y enfoques diferentes para optimizar, vale,
+
+187
+00:20:55,880 --> 00:21:02,160
+cada uno de los objetivos de las piezas. Por cierto, si trabajamos con chatbots, en
+
+188
+00:21:02,160 --> 00:21:07,720
+realidad nos quitamos las piezas que tienen que ver con la voz y nos quedamos con las
+
+189
+00:21:07,720 --> 00:21:12,320
+tres piezas que tienen que ver con el texto, el NLU, la gestión del diálogo, ¿vale?,
+
+190
+00:21:12,320 --> 00:21:21,360
+y la generación de respuesta. Fácil. Voy a adentrarme un poquito en alguna de las
+
+191
+00:21:21,360 --> 00:21:30,400
+piezas para dar esa pincelada y esas tecnologías que podéis utilizar. El NLU, como decía en
+
+192
+00:21:30,400 --> 00:21:40,640
+la pieza, que realmente se enfoca en entendernos. Es una pieza importante. Además, su efectividad
+
+193
+00:21:40,640 --> 00:21:44,640
+depende de lo bien que le haya hecho la pieza anterior, que es el reconocimiento de voz,
+
+194
+00:21:44,640 --> 00:21:52,120
+esta pieza está presente en todas las plataformas de voz y texto, bueno, en casi todas, ¿vale?
+
+195
+00:21:52,120 --> 00:21:56,440
+Entonces, si os ponéis con alguna de estas plataformas, ya veréis que esto es lo primero
+
+196
+00:21:56,440 --> 00:22:04,040
+que vaya a tener que trabajar. El NLU es un modelo del lenguaje que lo que tiene, lo
+
+197
+00:22:04,040 --> 00:22:11,480
+que contiene, es una serie de intenciones que han sido entrenadas por nosotros con una
+
+198
+00:22:11,480 --> 00:22:17,400
+serie de frases de ejemplo. Es decir, si en mi caso de uso alguien me puede preguntar
+
+199
+00:22:17,400 --> 00:22:24,760
+por que quiere escuchar a un artista determinado, pues yo habré entrenado mi intención con
+
+200
+00:22:24,760 --> 00:22:32,080
+una frase que significa eso. Por ejemplo, quiero escuchar a un artista, ponme a un artista
+
+201
+00:22:32,080 --> 00:22:38,160
+y cosas similares, ¿vale? Igual tendremos intenciones según las cosas que la persona
+
+202
+00:22:38,160 --> 00:22:42,120
+pueda decirnos a nuestra aplicación. Si nos dice que sí en algún momento, pues habrá
+
+203
+00:22:42,120 --> 00:22:49,920
+una intención que tenga que entender ese sí, ¿vale? Además, os estoy hablando de
+
+204
+00:22:49,920 --> 00:22:55,800
+las cosas. Seguramente necesitemos saber qué artista nos está diciendo, ¿no? La persona.
+
+205
+00:22:55,800 --> 00:23:03,360
+Entonces, mi modelo NLU también tendré una parte en la que entiendo esas palabras importantes,
+
+206
+00:23:03,360 --> 00:23:09,720
+esas keywords, esas entidades, como lo queramos llamar, pues Bob Dylan, los Beatles, Rosalía,
+
+207
+00:23:09,720 --> 00:23:15,960
+eso jugará con la intención para conseguir extraer esa información relevante, de tal
+
+208
+00:23:15,960 --> 00:23:21,240
+manera que al siguiente paso le podamos decir, oye, que esta persona quiere escuchar a un
+
+209
+00:23:21,240 --> 00:23:29,280
+artista y ese artista es Rosalía. Y no necesitamos texto ni nada más, ¿vale?
+
+210
+00:23:29,280 --> 00:23:38,640
+Entonces, la mayoría de los enfoques por debajo además buscan ayudarnos en esa extracción
+
+211
+00:23:38,640 --> 00:23:45,840
+de entidades con otras técnicas de procesamiento y lenguaje natural. Os traigo un par de herramientas
+
+212
+00:23:45,840 --> 00:23:51,360
+como decía, todas las plataformas tienen SNLU, luego veremos las plataformas. Pero
+
+213
+00:23:51,360 --> 00:23:56,400
+para esa mejora de extracción de entidades os traigo dos herramientas. La primera es
+
+214
+00:23:56,400 --> 00:24:03,840
+Spacey, que tiene un curso muy chulo en muchos idiomas, entre ellos el español, para aprender
+
+215
+00:24:03,840 --> 00:24:12,240
+NLP avanzado. A través de la web es súper fácil aprender cómo podemos con Spacey hacer
+
+216
+00:24:12,240 --> 00:24:19,120
+ese reconocimiento de palabra importante. Por otro lado, también está Wit.i, que es
+
+217
+00:24:19,120 --> 00:24:26,360
+una plataforma de Facebook que lleva ahí un montón de tiempo, pero lo interesante es
+
+218
+00:24:26,360 --> 00:24:31,840
+que tienen una librería que se llama Dackling, que hace la extracción de entre otras cosas
+
+219
+00:24:31,840 --> 00:24:39,920
+entidades como fechas de una manera maravillosa. O sea, no hay que pelearse con si esto es
+
+220
+00:24:39,920 --> 00:24:45,760
+en qué formato, con el time zone, no sé cuánto, pero de qué año, nada, olvidaros.
+
+221
+00:24:45,760 --> 00:24:57,000
+Dackling en la hostia. Paso a la síntesis de voz. Y aquí os pongo de loquendo a las
+
+222
+00:24:57,000 --> 00:25:01,880
+voces neurales. No sé cuántos de vosotros conocéis loquendo, pero vamos. Da igual,
+
+223
+00:25:01,880 --> 00:25:07,760
+de la voz de Renfe a voces neurales. En realidad, la mayoría de las voces que escucháis
+
+224
+00:25:07,760 --> 00:25:17,640
+sintéticas están generadas con métodos más antiguos, que eran muy complejos y no tenían
+
+225
+00:25:17,640 --> 00:25:23,480
+una naturalidad suficiente. Entonces, lo que provocaba es que este tipo de experiencias
+
+226
+00:25:23,480 --> 00:25:30,720
+de voz fueran un poco complejas de consumir, vamos a decirlo así. Entonces, las voces
+
+227
+00:25:30,720 --> 00:25:37,080
+neurales están haciendo que haya muchos más casos de uso donde podamos aplicar esta
+
+228
+00:25:37,080 --> 00:25:45,440
+tecnología. O explico cómo funciona. Nosotros, a esta síntesis de voz, lo que hacemos es
+
+229
+00:25:45,440 --> 00:25:52,000
+pasarle un texto. Ese modelo que os decía que ha estado entrenado, ese modelo, hay que
+
+230
+00:25:52,000 --> 00:25:57,120
+entrenarlo con infinidad de grabaciones. Bueno, depende un poco del enfoque, pero con un montón
+
+231
+00:25:57,120 --> 00:26:01,520
+de grabaciones de voz para que aprendan las características de cada una de las voces.
+
+232
+00:26:01,520 --> 00:26:07,480
+Ahora explico las diferencias. Entonces, ese modelo que ha aprendido las características
+
+233
+00:26:07,480 --> 00:26:14,480
+de una voz determinada, ese texto lo habla. Os traigo el ejemplo con la voz de Alexa.
+
+234
+00:26:14,480 --> 00:26:38,720
+Bueno, lo pongo de nuevo. Vale, la voz de Alexa es una voz sintética, no es una grabación.
+
+235
+00:26:38,720 --> 00:26:45,240
+Esta voz está muy bien, no es una de las voces antiguas. Decidos que podáis utilizar
+
+236
+00:26:45,240 --> 00:26:53,560
+APIs que os permiten hacer uso de este ttts. La API de Microsoft tiene unas voces tanto
+
+237
+00:26:53,560 --> 00:26:59,360
+antiguas como neurales muy buenas, la de IBM también, Amazon Poly también tiene muy
+
+238
+00:26:59,360 --> 00:27:06,760
+buenas voces en diferentes idiomas y con diferentes características. Pero decía al principio,
+
+239
+00:27:06,760 --> 00:27:12,920
+las redes neuronales están cambiando un poco la regla del juego. Nosotros, en Mono Zero,
+
+240
+00:27:12,920 --> 00:27:16,960
+estamos trabajando entre otras cosas con este tipo de tecnología. Estamos trabajando en
+
+241
+00:27:16,960 --> 00:27:23,360
+crear síntesis de voz que aprenda de las características de una voz como la mía, a eso llamamos clonación
+
+242
+00:27:23,360 --> 00:27:30,720
+de voces, y también con más grabaciones de voces diferentes podemos conseguir voces
+
+243
+00:27:30,720 --> 00:27:36,840
+que no identifican a nadie, voces que podríamos decir que no existen. Os pongo dos ejemplos
+
+244
+00:27:36,840 --> 00:27:40,840
+para que veáis lo que somos capaces de hacer con esta tecnología.
+
+245
+00:27:40,840 --> 00:27:48,520
+Hace años pensaba que el error que cometían muchos proyectos era no tener en cuenta al
+
+246
+00:27:48,520 --> 00:27:53,600
+usuario, poner al usuario en el centro como manera de resolver problemas que importan
+
+247
+00:27:53,600 --> 00:27:59,120
+de encontrar soluciones viables de negocio. Pues creo que ahora, además, fallamos en
+
+248
+00:27:59,120 --> 00:28:03,520
+la pata tecnológica. Va tan rápido esto de las tecnologías basadas en inteligencia
+
+249
+00:28:03,520 --> 00:28:09,240
+artificial, que no se lleva a entender qué hace ni cómo influye en el producto. Es una
+
+250
+00:28:09,240 --> 00:28:11,440
+pata igual de importante que usuaria en negocio.
+
+251
+00:28:11,440 --> 00:28:23,240
+Vale, esto es mi voz sintética. Hablan Andaluz. En este caso, para la clonación de voces,
+
+252
+00:28:23,240 --> 00:28:30,600
+la tecnología nos permite que no necesitemos la infinidad de grabaciones que necesitábamos
+
+253
+00:28:30,600 --> 00:28:41,480
+antes. Yo tengo un ejemplo con mi voz clonada con solo diez minutos de audio mío, tal
+
+254
+00:28:41,480 --> 00:28:49,680
+cual. No voy a hablar de, obviamente, cuantas más grabaciones, más calidad y para diferentes
+
+255
+00:28:49,680 --> 00:28:55,280
+casos de uso, pues hace falta tener un poco más de datos. Pero está muy bien. La tecnología
+
+256
+00:28:55,280 --> 00:28:59,120
+ya nos permite hacer este tipo de cosas. Y ahora os pongo un ejemplo de una voz que
+
+257
+00:28:59,120 --> 00:29:00,120
+no existe.
+
+258
+00:29:00,120 --> 00:29:19,040
+Escucha atentamente. Esta voz no existe. Bueno, sí existe porque la estás escuchando,
+
+259
+00:29:19,040 --> 00:29:24,480
+pero no pertenece ni identifica a ninguna persona. Esta voz digital, también llamada
+
+260
+00:29:24,480 --> 00:29:29,120
+voz sintética, es fruto de una mezcla de otras muchas voces y de tecnología basada
+
+261
+00:29:29,120 --> 00:29:34,600
+en inteligencia artificial. Una tecnología que ha aprendido patrones, características
+
+262
+00:29:34,600 --> 00:29:39,440
+fonéticas y de prosodia de las voces con las que ha sido entrenada y que es capaz de
+
+263
+00:29:39,440 --> 00:29:44,440
+leer cualquier texto con el estilo que le pedimos. Además, cada voz ha sido diseñada
+
+264
+00:29:44,440 --> 00:29:50,200
+por personas que cuidadosamente han seleccionado y ajustado dentro de las posibilidades algunas
+
+265
+00:29:50,200 --> 00:29:55,800
+de las mencionadas características. Vale.
+
+266
+00:29:55,800 --> 00:30:09,720
+Y como veis, lo interesante de esto también, es que, o decía en el entorno conversacional,
+
+267
+00:30:09,720 --> 00:30:19,560
+ha mejorado mucho. O sea, nos permite tener aplicaciones web con síntesis de voz, pues
+
+268
+00:30:19,560 --> 00:30:26,040
+que sean más fáciles de consumir. Pero no es solo eso. La síntesis de voz como pieza
+
+269
+00:30:26,040 --> 00:30:34,200
+individual ya nos ayuda mucho. Nos ayuda a que, si yo pierdo la voz, puedo tener esta
+
+270
+00:30:34,200 --> 00:30:41,600
+herramienta que me ayude a hablar con mi propia identidad. Y hablando de identidad, este tipo
+
+271
+00:30:41,600 --> 00:30:47,920
+de tecnología antes no dejaba de estar un poco sesgada a una voz de género masculino
+
+272
+00:30:47,920 --> 00:30:52,760
+y a una voz de género femenino. Ahora, con las nuevas tecnologías, podemos incluso
+
+273
+00:30:52,760 --> 00:31:02,520
+conseguir voces sin género. Voces que permitan a cualquier persona sentirse identificada con
+
+274
+00:31:02,520 --> 00:31:09,680
+este tipo de voz con unas características determinadas. Esto es, un Q fue lanzado hace
+
+275
+00:31:09,680 --> 00:31:17,000
+unos años por Accenture y un grupo muy potente. Os paso, os dejaré el enlace. Os voy a poner
+
+276
+00:31:17,000 --> 00:31:26,680
+un trocito solo de vídeo para que entendáis la diversidad de las voces generadas. La problemática,
+
+277
+00:31:26,680 --> 00:31:33,800
+bueno, antes de eso, una línea. La problemática que intentaban resolver, como entendéis,
+
+278
+00:31:33,800 --> 00:31:43,720
+darle a personas de género no binario una herramienta. Hicieron grabaciones con personas
+
+279
+00:31:43,720 --> 00:31:50,720
+con diferentes tonos, diferentes frecuencias, diferentes características y consiguieron esto.
+
+280
+00:32:13,720 --> 00:32:42,720
+Y esa es Q o es es Q. Así que, o hace una idea, ¿no?
+
+281
+00:32:42,720 --> 00:32:48,480
+¿Cómo la tecnología realmente nos puede ayudar en diferentes situaciones?
+
+282
+00:32:48,480 --> 00:32:53,400
+Paso a otra pieza. La pieza que decía que era la primera, la del reconocimiento de voz.
+
+283
+00:32:53,400 --> 00:33:00,440
+Os decía que su objetivo era transcribir de voz a texto. Por cierto, también se le
+
+284
+00:33:00,440 --> 00:33:07,600
+llama Speech to Text. Uno de los problemas que ha tenido siempre esta tecnología es
+
+285
+00:33:07,600 --> 00:33:15,520
+que el ruido es su talón de aquí. Esta tecnología funciona muy mal en general en un entorno
+
+286
+00:33:15,520 --> 00:33:23,760
+donde no es capaz de identificar o distinguir la voz de lo que no es voz. Desde hace tiempo
+
+287
+00:33:23,760 --> 00:33:30,280
+se lleva investigando en esto que se llama el Cocktail Party Problem. Imaginad, estamos
+
+288
+00:33:30,280 --> 00:33:36,480
+en una fiesta. Nosotros como personas somos superáviles en poner el oído y hacer foco
+
+289
+00:33:36,480 --> 00:33:43,200
+y aislarnos del ruido y entender perfectamente a la persona. Pero la tecnología no era capaz.
+
+290
+00:33:43,200 --> 00:33:49,040
+Ahora ya se están haciendo unos avances abismales en este entorno y somos capaces de incluso
+
+291
+00:33:49,040 --> 00:33:55,480
+quitar el ruido de ciertos audios y de empezar a identificar hablantes. Pero aún así, todavía
+
+292
+00:33:55,480 --> 00:34:03,840
+no es perfecta. Deciros, no sé si conocéis esto, salió hace tres días, Open AI, entre
+
+293
+00:34:03,840 --> 00:34:09,560
+otras cosas ya sabéis que avanza mucho en modelos de lenguaje. Lanza un modelo de lenguaje
+
+294
+00:34:09,560 --> 00:34:25,040
+que era capaz de transcribir en segundos cualquier tipo de audio con una cura así, con una eficiencia
+
+295
+00:34:25,040 --> 00:34:30,280
+brutal. De hecho, el español, luego baila lista de idiomas en los que mejor funciona
+
+296
+00:34:30,280 --> 00:34:35,600
+a Wisper y el español, sorprendentemente, está en los idiomas en los que mejor entiende.
+
+297
+00:34:35,600 --> 00:34:41,120
+Para eso, o he traído un ejemplo, he cogido un audio de mi voz sintética hablando en
+
+298
+00:34:41,120 --> 00:34:46,080
+Andaluz y he decidido pasárselo a Wisper a ver cómo lo transcribe.
+
+299
+00:34:46,080 --> 00:34:52,160
+Es hora de crear conversaciones. Somos monoceros, un estudio de innovación especializada en
+
+300
+00:34:52,160 --> 00:34:58,200
+estrategia diseño conversacional y tecnologías de la habla. Creamos aplicaciones de voz para
+
+301
+00:34:58,200 --> 00:35:04,360
+asistentes como Amazon Alexa y Google Assistant. Además, tenemos un proyecto de investigación
+
+302
+00:35:04,360 --> 00:35:10,720
+tecnológica para crear voces sintéticas más naturales y expresivas en español. El producto
+
+303
+00:35:10,720 --> 00:35:17,680
+se llamará voces.ai y lo publicaremos este año 2022. Esta voz que escuchas está generada
+
+304
+00:35:17,680 --> 00:35:23,200
+con esta tecnología. Para conseguir este resultado, solo hemos necesitado 200 frases
+
+305
+00:35:23,200 --> 00:35:24,200
+de nieve.
+
+306
+00:35:24,200 --> 00:35:31,920
+Bueno, no sé si veis, nieve es lo único que no ha transcrito bien. Google Assistant lo
+
+307
+00:35:31,920 --> 00:35:38,400
+ha pronunciado mal, amigo, sintética, lo ha transcrito bien. Es una maravilla. Pues
+
+308
+00:35:38,400 --> 00:35:41,400
+a ese ritmo va la tecnología.
+
+309
+00:35:41,400 --> 00:35:48,320
+Y ya paso a una vez que hemos visto las piezas y cómo interactúan entre ellas y qué tecnologías
+
+310
+00:35:48,320 --> 00:35:52,680
+interesantes pueda haber detrás. Voy a hablar de asistentes y plataformas. Os traigo algunos
+
+311
+00:35:52,680 --> 00:35:58,240
+ejemplos de plataformas propietarias para construir aplicaciones y otras open source.
+
+312
+00:35:58,240 --> 00:36:03,680
+Dentro de las propietarias, seguramente conozcáis a Alexa, a Google Assistant, que por cierta
+
+313
+00:36:03,680 --> 00:36:10,080
+ahora está pasándose a las App Actions. O sea, como para una App de Android podemos
+
+314
+00:36:10,080 --> 00:36:16,160
+con voz activar ciertas funcionalidades directamente. Y no tanto como aplicación de voz. Por eso
+
+315
+00:36:16,160 --> 00:36:18,160
+lo puesto ahí así.
+
+316
+00:36:18,160 --> 00:36:27,600
+Y seguramente conozcáis alguna como Dialogflow o Microsoft Voice Framework. Todas estas plataformas
+
+317
+00:36:27,600 --> 00:36:33,080
+ya os digo nos permiten construir tanto chatbots como aplicaciones de voz de una manera muy
+
+318
+00:36:33,080 --> 00:36:37,880
+sencillita. Su NLU, su reconocimiento de voz se aplica, etcétera.
+
+319
+00:36:37,880 --> 00:36:42,840
+Y luego están las open source. Que a mí estas, o las traigo, me parece muy interesante que
+
+320
+00:36:42,840 --> 00:36:47,080
+tengamos tecnología que podamos instalar y que al final seamos propietarios de los
+
+321
+00:36:47,080 --> 00:36:50,880
+datos realmente. Y no lo se han estado otras plataformas.
+
+322
+00:36:50,880 --> 00:36:57,360
+Aquí os traigo a Rasa, en Microsoft también es muy potente y Home Assistant, que por cierto
+
+323
+00:36:57,360 --> 00:37:05,000
+no podéis perderlas, charlas de Irene mañana a las 10.50 que va a hablar de Home Assistant.
+
+324
+00:37:05,000 --> 00:37:12,160
+Alexa, os traigo dos ejemplos de una propietaria y de otra open source. Os traigo el ejemplo
+
+325
+00:37:12,160 --> 00:37:18,080
+de Alexa. Podéis montar una aplicación de voz en Python, incluso si ni siquiera montar
+
+326
+00:37:18,080 --> 00:37:23,520
+infraestructura porque tiene lo que se llama host of skills. Nos permite crear una Alexa
+
+327
+00:37:23,520 --> 00:37:31,280
+skill directamente desde la consola. Y se vería como algo así. Tenemos ahí directamente
+
+328
+00:37:31,280 --> 00:37:35,800
+incrustado donde podemos introducir nuestro código. Tienen bastante template, bastante
+
+329
+00:37:35,800 --> 00:37:41,480
+plantillas, así que sin saber mucho realmente no, yo animo a que cacha reis porque os va
+
+330
+00:37:41,480 --> 00:37:49,280
+a permitir crear algún ejemplito interesante. Si sí que queréis montar vuestra arquitectura,
+
+331
+00:37:49,280 --> 00:37:56,520
+pues sería algo parecido a esto. Al final podréis tirar de tecnología de la Nube,
+
+332
+00:37:56,520 --> 00:38:03,360
+por ejemplo, de AWS, para la parte de esa gestión del diálogo, conectar con API y todo, que
+
+333
+00:38:03,360 --> 00:38:09,240
+esté directamente en algo como Lambda o en una EC2 y tirar de alguna base de datos para
+
+334
+00:38:09,240 --> 00:38:14,520
+guardar y persistir en memoria los datos que tenemos de la conversación con el usuario.
+
+335
+00:38:14,520 --> 00:38:18,720
+Porque decía que era importante lo de la memoria y el contexto. Se vería algo así.
+
+336
+00:38:18,720 --> 00:38:24,000
+El NLU es el de Alexa y el reconocimiento de voz y la síntesis de voz… Bueno, sobre
+
+337
+00:38:24,000 --> 00:38:28,840
+el reconocimiento de voz no podemos tocarlo, es propietario de Alexa y ahí no vemos nada.
+
+338
+00:38:28,840 --> 00:38:33,840
+Y en la síntesis de voz sí que podemos tunear algo y hacer algún cambio de voz.
+
+339
+00:38:33,840 --> 00:38:40,840
+Y luego está Rasa. Rasa está pensada, sobre todo para chatbots. Pero la verdad es que
+
+340
+00:38:40,840 --> 00:38:48,440
+yo la recomiendo porque tiene unos modelos del estado de la arte y una tecnología espectacular.
+
+341
+00:38:48,440 --> 00:38:55,600
+Además, la van actualizando. Os dejo aquí un ejemplo, un link donde podéis cacha rear
+
+342
+00:38:55,600 --> 00:39:00,400
+también el Rasa Playground. Tenéis como un tutorial para entender estas fases que os
+
+343
+00:39:00,400 --> 00:39:05,560
+acabo de mencionar, estas piezas las vais a ver en el tutorial y podréis ir entrenando
+
+344
+00:39:05,560 --> 00:39:12,760
+vuestro primer chatbot. Y la arquitectura se vería como algo así.
+
+345
+00:39:12,760 --> 00:39:18,000
+Pero bueno. Y luego tenemos la arquitectura en tu bem.
+
+346
+00:39:18,000 --> 00:39:23,040
+Os decía antes que eran las que se encargaron de gestionar esas conversaciones más complejas,
+
+347
+00:39:23,040 --> 00:39:29,760
+esas conversaciones de dominio abierto y que pues pueden ser… O sea, nosotros no explotan
+
+348
+00:39:29,760 --> 00:39:36,280
+la cabeza, la tecnología. Normalmente dentro de este tipo de arquitectura se utilizan modelos
+
+349
+00:39:36,280 --> 00:39:43,400
+del lenguaje. GPT3. GPT3 es un modelo del lenguaje que entre otras habilidades tiene
+
+350
+00:39:43,400 --> 00:39:51,320
+el poder de conversar con nosotros. Si le hacemos preguntas, no responde. Lambda, que
+
+351
+00:39:51,320 --> 00:39:56,040
+es la primera convención a ver mi charla, también es una arquitectura en tu bem. Cada
+
+352
+00:39:56,040 --> 00:40:00,720
+modelo del lenguaje está enfocado y está entrenado con un acés de datos diferentes
+
+353
+00:40:00,720 --> 00:40:06,080
+y enfocado con una habilidad diferente. Pero bueno. Este ejemplo, los créditos son de
+
+354
+00:40:06,080 --> 00:40:12,500
+Carlos Santana, 12SV. Está buscando algún ejemplo con GPT3 y se le ocurrió poner un
+
+355
+00:40:12,500 --> 00:40:19,240
+tweet y decirle, responde como si fuera su gater al tweet anterior. GPT3 respondió,
+
+356
+00:40:19,240 --> 00:40:24,880
+GPT3 es una mierda, no sirve para nada. Permiso, me ha hecho gracia, lo traigo aquí. Al final,
+
+357
+00:40:24,880 --> 00:40:29,680
+como veis con esta tecnología, podemos tener este tipo de conversaciones. Otra cosa es
+
+358
+00:40:29,680 --> 00:40:37,760
+que la información sea más o menos fiable. Si quisiéramos pasar del modo texto a que
+
+359
+00:40:37,760 --> 00:40:42,760
+GPT3 nos hablara, pues solo tendríamos que añadir la pieza que hoy mencionaba antes del
+
+360
+00:40:42,760 --> 00:40:48,160
+reconocimiento de voz para que nos entienda lo que nosotros le decimos y lo metan el input
+
+361
+00:40:48,160 --> 00:40:52,480
+y luego la sintesi de voz que nos diga eso por voz, que GPT3 es una mierda y no sirve
+
+362
+00:40:52,480 --> 00:40:56,320
+para nada. Pero bueno, hay muchos más modelos del
+
+363
+00:40:56,320 --> 00:41:03,640
+lenguaje. Vamos, si tenéis interés en esta parte, preguntadme luego porque os puedo dar
+
+364
+00:41:03,640 --> 00:41:10,240
+alguna recomendación más. Pero bueno, voy a lo que vendrá. ¿Qué más cosas se están
+
+365
+00:41:10,240 --> 00:41:16,040
+empezando a hacer dentro de esto de la Inteligencia Artificial Conversacional? Pues ya empezamos
+
+366
+00:41:16,040 --> 00:41:21,320
+a ser capaces de entender múltiples intenciones dentro de una misma frase. Yo antes hablaba
+
+367
+00:41:21,320 --> 00:41:25,440
+de un íntem, de que quiero escuchar a un artista, pero como le digamos dos cosas a este tipo
+
+368
+00:41:25,440 --> 00:41:30,840
+de tecnología no nos entienden. ¿Por qué? Pues es que es complejo, en realidad. Pues
+
+369
+00:41:30,840 --> 00:41:38,680
+ya hay iniciativas que ya empezan a entender esto. Lo de entender el contexto y ser capaces
+
+370
+00:41:38,680 --> 00:41:44,160
+de entender preguntas encadenadas. Si yo le digo quién fue Leonardo Da Vinci y luego
+
+371
+00:41:44,160 --> 00:41:48,400
+le pregunto qué es dónde nació, que me pueda responder sin decirle de nuevo Leonardo Da
+
+372
+00:41:48,400 --> 00:41:54,840
+Vinci. Esto Google lleva años haciéndolo y la verdad es que es espectacular. Luego,
+
+373
+00:41:54,840 --> 00:41:59,820
+en la parte de síntesis de voz, efectos en la voz. Ya habéis visto lo que se puede
+
+374
+00:41:59,820 --> 00:42:06,320
+hacer con clonación de voces o tal, pero además están experimentando en cómo poder
+
+375
+00:42:06,320 --> 00:42:12,640
+expresar emociones positivas o más negativas dentro de simplemente con etiquetas en los
+
+376
+00:42:12,640 --> 00:42:21,440
+aspectos. Y por último, la parte de personalizar la experiencia. Os decía que al final buscamos
+
+377
+00:42:21,440 --> 00:42:27,000
+que se acuerde de nosotros la tecnología, que sepa quiénes somos y además, si estamos
+
+378
+00:42:27,000 --> 00:42:31,920
+utilizando un asistente como Google o Alexa, esperamos que ya que están en esa plataforma
+
+379
+00:42:31,920 --> 00:42:37,480
+los datos que le hemos dado, que lo usen para algo, esta parte de personalización y de
+
+380
+00:42:37,480 --> 00:42:46,120
+vínculo con datos también se está llevando a cabo. En general, y ya por ir acabando,
+
+381
+00:42:46,120 --> 00:42:50,880
+estos son los retos que tienen la inteligencia artificial conversacional. La parte de entender
+
+382
+00:42:50,880 --> 00:42:58,640
+el contexto y mantenerlo. Esto es, se están haciendo muchas iniciativas como decía antes,
+
+383
+00:42:58,640 --> 00:43:03,560
+pero la verdad yo creo que esto es lo menos resulubble todavía, sobre todo porque esperemos
+
+384
+00:43:03,560 --> 00:43:09,280
+que nos dé información fiable. Luego, la parte de aprendizaje. Que creemos
+
+385
+00:43:09,280 --> 00:43:15,000
+tecnología que sea proactiva, que nos hable de manera proactiva y que sea capaz de ir
+
+386
+00:43:15,000 --> 00:43:20,600
+aprendiendo a largo plazo. Además, que trabaje, que sea multimodal, es decir, que no solo
+
+387
+00:43:20,600 --> 00:43:26,560
+trabaje con la voz, sino que podamos apuntar, hacer gestos, tocar y que todo eso se integre
+
+388
+00:43:26,560 --> 00:43:32,440
+dentro de la misma conversación. Y que además puede hacer multitarea. Y, por supuesto, las
+
+389
+00:43:32,440 --> 00:43:41,120
+conversaciones de dominio abiertos. Entonces, estos avances tecnológicos son apasionantes.
+
+390
+00:43:41,120 --> 00:43:47,000
+Estamos en un punto en el que la tecnología va tan rápido que dice que lo que hace un
+
+391
+00:43:47,000 --> 00:43:52,560
+mes decía yo que no se podía hacer, es que ahora ya se puede hacer. Y esto es lo que
+
+392
+00:43:52,560 --> 00:43:59,640
+es mi día a día más mellena. Ver cómo avanza de rápido la tecnología. Lo que sí
+
+393
+00:43:59,640 --> 00:44:04,760
+quiero recalcar es que hay cualidades no humanas de la idea conversacional que nos dan
+
+394
+00:44:04,760 --> 00:44:12,000
+valor y no son humanas. Tecnología que nos ayuda. Tecnología que nos hace la vida más
+
+395
+00:44:12,000 --> 00:44:24,760
+fácil. No nos distraigamos antropomorfizando. Es decir, dando cualidades humanas a la tecnología.
+
+396
+00:44:24,760 --> 00:44:31,480
+No hagamos un le muang haciendo que la tecnología esté en boca de todos porque decimos o no
+
+397
+00:44:31,480 --> 00:44:37,120
+que es consciente de sí misma. Centrémonos en el valor que nos puede aportar.
+
+398
+00:44:37,120 --> 00:44:49,400
+Los aviones son probados según su habilidad para volar, no comparándolos con aves. Y esto
+
+399
+00:44:49,400 --> 00:44:57,320
+viene en el libro de Rosely Norby y esto es lo que deberíamos tatuarnos. Así que nada,
+
+400
+00:44:57,320 --> 00:45:02,440
+espero que os haya gustado las charlas. Muchas gracias por vuestra atención y aquí estoy
+
+401
+00:45:02,440 --> 00:45:24,920
+para lo que necesite en todos estos temas. Muchas gracias.
+
+402
+00:45:24,920 --> 00:45:28,920
+Muchas gracias por la presentación. Ha estado súper interesante y ha mostrado como un tema
+
+403
+00:45:28,920 --> 00:45:34,280
+tan complejo como en los sistemas conversacionales. Se pueden explicar de forma fácil para todo
+
+404
+00:45:34,280 --> 00:45:35,480
+el mundo. Muchas gracias.
+
+405
+00:45:35,480 --> 00:45:38,760
+Bueno, vamos a abrir el turno de… No se escucha, dicen.
+
+406
+00:45:38,760 --> 00:45:46,360
+¿No se escucha? Sí. Vamos a abrir el turno de preguntas. Tenemos unos cinco minutillos.
+
+407
+00:45:46,360 --> 00:45:52,880
+Tenemos por aquí a nuestra compañera Paula con el micrófono. Si quieres preguntar levantar
+
+408
+00:45:52,880 --> 00:45:57,600
+la mano y si no puedes también usar el Discord y las preguntas aquí directamente.
+
+409
+00:45:57,600 --> 00:46:01,800
+¿Alguna pregunta? Alíaz Anima.
+
+410
+00:46:01,800 --> 00:46:07,120
+Nosotros también no vemos mucho la verdad porque la luz es en el tapón pero por ahí
+
+411
+00:46:07,120 --> 00:46:08,280
+parece que hay uno.
+
+412
+00:46:08,280 --> 00:46:17,280
+Hola, Nieves. Muchas gracias por la charla que ha estado súper bien. Te quería hacer
+
+413
+00:46:17,280 --> 00:46:25,280
+una pregunta. A ver cómo lo ves tú. O sea, yo cuando estoy en casa y le digo, Alexa,
+
+414
+00:46:25,280 --> 00:46:28,600
+paga a mí la música y onciéndeme la tele. Es incapaz de hacerlo.
+
+415
+00:46:28,600 --> 00:46:32,120
+Claro. Entonces, quería entender un poco cuál es
+
+416
+00:46:32,120 --> 00:46:38,720
+el reto ahí. Si es algo que se puede alcanzar a lo mejor el próximo mes, si es un tema
+
+417
+00:46:38,720 --> 00:46:42,160
+de desarrollo o por entender un poco más.
+
+418
+00:46:42,160 --> 00:46:47,680
+Como decía antes, hay algunos papers que ya han estado avanzando en este tipo de cosas.
+
+419
+00:46:47,680 --> 00:46:53,040
+El principal problema es la ambigüedad del lenguaje. Para nosotros está súper claro.
+
+420
+00:46:53,040 --> 00:46:57,920
+Utilizamos la palabra I para concatenar dos cosas que queremos decir, pero en otros contextos
+
+421
+00:46:57,920 --> 00:47:04,920
+eso no está tan claro. Podemos usar otro tipo de conector. Al final no es todo tan sencillo.
+
+422
+00:47:04,920 --> 00:47:12,560
+Y para eso hace falta que haya modelos que sean capaces de terminar de manera eficiente
+
+423
+00:47:12,560 --> 00:47:20,040
+cuantas de las frases hay en lo que le decimos y luego pensar que o hablar de modelos que
+
+424
+00:47:20,040 --> 00:47:25,200
+clasifican una frase en una caja determinada, pensar cómo tendríamos que cambiar la tecnología
+
+425
+00:47:25,200 --> 00:47:30,600
+porque ahora vendrían como dos frases, que tendríamos que encajar en caja.
+
+426
+00:47:30,600 --> 00:47:36,000
+Y entender también si alguna lo mejor es negativa frente a la otra, porque eso también
+
+427
+00:47:36,000 --> 00:47:44,240
+nosotros... Enciende la tele, pero no la luz. Entonces, entre la complejidad del lenguaje
+
+428
+00:47:44,240 --> 00:47:50,360
+y la complejidad técnica, no va a estar mañana en Alexa, ya te digo, ni dentro de un mes.
+
+429
+00:47:50,360 --> 00:47:56,560
+Ha sido en corto. Pero te animo a echar un vistacillo a algún paper al respecto que
+
+430
+00:47:56,560 --> 00:47:58,120
+merece la pena.
+
+431
+00:47:58,120 --> 00:48:15,160
+Genial, muchísimas gracias. Hola, Níaz. Hola, Níaz.
+
+432
+00:48:15,160 --> 00:48:17,240
+Muchas gracias. Ah, vale. Perdona que no la estaba viendo,
+
+433
+00:48:17,240 --> 00:48:23,960
+como está súper oscuro. Gracias, Félachela. Y yo como traductora estoy muy interesada en
+
+434
+00:48:23,960 --> 00:48:28,560
+temas de las tecnologías relacionadas con el lenguaje, como los chatbots.
+
+435
+00:48:28,560 --> 00:48:33,600
+Se me voy ahora mejor. Sí, sí.
+
+436
+00:48:33,600 --> 00:48:39,720
+Que soy traductora y me interesa en las tecnologías del lenguaje como los chatbots y demás.
+
+437
+00:48:39,720 --> 00:48:46,800
+Y te quería preguntar si las empresas suelen buscar también a gente, vamos a decir, lingüista,
+
+438
+00:48:46,800 --> 00:48:50,480
+que conozca ese ámbito del lenguaje que se le escapa todavía a los modelos.
+
+439
+00:48:50,480 --> 00:48:54,720
+O si directamente prefería programadores e ingenieros que sepan un poquito de eso, pero
+
+440
+00:48:54,720 --> 00:48:58,280
+que manejen mucho lo que es la parte técnica.
+
+441
+00:48:58,280 --> 00:49:02,560
+Pues me encanta tu pregunta. La respuesta es que necesitamos a los lingüistas, necesitamos
+
+442
+00:49:02,560 --> 00:49:10,680
+a los traductors. 100%. O sea, por muchos personas que seamos los ingenieros no tenemos
+
+443
+00:49:10,680 --> 00:49:16,240
+porque saber de la lengua, ¿no? En concreto está el perfil de lingüista computacional,
+
+444
+00:49:16,240 --> 00:49:20,840
+es clave y se está revalorizando muchísimo en todo este tipo de proyectos.
+
+445
+00:49:20,840 --> 00:49:25,280
+Nosotros en concreto en Monozeros, en Monozeros Last tenemos una lingüista computacional que
+
+446
+00:49:25,280 --> 00:49:31,160
+nos ayuda en toda esta parte fonética de las voces sintéticas, entre otras cosas,
+
+447
+00:49:31,160 --> 00:49:35,880
+creaticionarios, entender que una palabra no es sustantivo y no es un verbo, ¿no? Y
+
+448
+00:49:35,880 --> 00:49:42,400
+este tipo de cosas. Así que qué guay tu carrera, tu profesión, ¿no? Y te animo si te gusta
+
+449
+00:49:42,400 --> 00:49:47,080
+todo esto a que profundices porque ahí tiene el futuro si te interesa.
+
+450
+00:49:47,080 --> 00:49:57,920
+Y creo que por aquí había otra pregunta, ¿no?
+
+451
+00:49:57,920 --> 00:50:14,600
+Yo me dedico a la identidad de usuario y entonces uno de los principales problemas que tenemos
+
+452
+00:50:14,600 --> 00:50:16,960
+para proteger la identidad de usuario es la impersonalización. Yo haciéndome pasar por
+
+453
+00:50:16,960 --> 00:50:23,000
+ti. Entonces cuando has dicho que se puede sintetizar una voz con 10 minutos de speech,
+
+454
+00:50:23,000 --> 00:50:28,040
+¿cómo de precisa están ahora mismo los modelos para poder hacer esa impersonalización?
+
+455
+00:50:28,040 --> 00:50:33,360
+Es decir, si ahora grabo tu charla, sintetizo una voz. ¿Tuya puedo hacerme pasar de forma
+
+456
+00:50:33,360 --> 00:50:35,640
+realista por ti?
+
+457
+00:50:35,640 --> 00:50:40,320
+Te he escuchado regular, pero voy a intentar. O sea, estoy entendiendo que cómo de realista
+
+458
+00:50:40,320 --> 00:50:45,880
+es para, por ejemplo, si se podrían hacer deepfakes con mi voz, ¿no? Va un poco por
+
+459
+00:50:45,880 --> 00:50:52,120
+ahí tu pregunta. En realidad ese es uno de los problemas, las cuestiones, ¿no? Que también
+
+460
+00:50:52,120 --> 00:50:58,000
+se están trabajando con este tipo de tecnología. Y es cómo podemos a la vez crear modelo o
+
+461
+00:50:58,000 --> 00:51:04,000
+crear algo que sea capaz de identificar que esa voz está generada de manera sintética.
+
+462
+00:51:04,000 --> 00:51:10,760
+¿Vale? Hay una serie de iniciativas, hay conferencias, hay challenges que buscan crear
+
+463
+00:51:10,760 --> 00:51:16,320
+modelos de machine learning, pero algunos de ellos son supervisados y no son, bueno,
+
+464
+00:51:16,320 --> 00:51:22,680
+están mucho trabajos, son muy para una voz, bueno, es un pifostio, pero que no funciona
+
+465
+00:51:22,680 --> 00:51:27,400
+todavía, esa parte todavía está muy empañada y se está trabajando en ello. De hecho, aquí
+
+466
+00:51:27,400 --> 00:51:33,200
+en la Universidad de Granada acaba de iniciarse una cátedra que cuyo objetivo tiene, investigar
+
+467
+00:51:33,200 --> 00:51:41,520
+en cómo tratar esta parte del deepfake de audio. ¿Vale? Entonces, lo que sí, con lo
+
+468
+00:51:41,520 --> 00:51:47,560
+que sí, te diría que, es que, claro, tu pregunta, con diez minutos se puede hacer esto, es
+
+469
+00:51:47,560 --> 00:51:52,040
+que a lo mejor ahora, con diez minutos tú dices, vale, es que no es cien por cien tú,
+
+470
+00:51:52,040 --> 00:51:58,600
+pero es que a lo mejor mañana con un minuto ya si lo es. Y ese es el problema un poco,
+
+471
+00:51:58,600 --> 00:52:07,600
+¿no? Entonces, nosotros buscamos crear tecnologías responsables, por eso no hemos abierto esto
+
+472
+00:52:07,600 --> 00:52:11,480
+como API para que cualquiera pueda clonar la voz de cualquiera, aunque los modelos están
+
+473
+00:52:11,480 --> 00:52:15,960
+disponibles y cualquiera, no nosotros, sino que hay papers que replican modelos, cualquiera
+
+474
+00:52:15,960 --> 00:52:19,520
+podría hacer esto. Pero sí que creo que deberíamos abogar por una tecnología más
+
+475
+00:52:19,520 --> 00:52:25,680
+responsable y avisar cuando estamos hablando con una voz sintética y cuando no, o igual
+
+476
+00:52:25,680 --> 00:52:32,880
+que cuando vemos una imagen generada, saber qué generada o no, y así que las personas,
+
+477
+00:52:32,880 --> 00:52:38,040
+el problema es que las personas no sean conscientes de que lo están engañando, ¿no? Así nosotros,
+
+478
+00:52:38,040 --> 00:52:42,720
+que seamos conscientes que hay tecnología que ya puede hacer este tipo de cosas y que
+
+479
+00:52:42,720 --> 00:52:48,160
+seamos capaces de jugarla como tal, ¿no? Me he ido un poco, pero si tiene interés te
+
+480
+00:52:48,160 --> 00:52:52,440
+puede contar esos challenges y demás luego. ¿Cuál es eso?
+
+481
+00:52:52,440 --> 00:52:57,560
+Te voy a preguntar una buena pregunta por Discord y ya cerramos el turno porque nos
+
+482
+00:52:57,560 --> 00:52:59,520
+tenemos que ir a… A comer al café.
+
+483
+00:52:59,520 --> 00:53:05,920
+Ya me nos pregunta, ¿por qué parece tan difícil reproducir la prosoría humana en
+
+484
+00:53:05,920 --> 00:53:10,400
+TSM, por ejemplo, efecto Girea a la derecha de Google Maps?
+
+485
+00:53:10,400 --> 00:53:17,800
+Es que es muy complicado los modelos antiguos lo que hacían era de alguna manera concatenar
+
+486
+00:53:17,800 --> 00:53:23,760
+sonidos. Entonces la prosoría no es la misma prosoría todo el rato, entonces la prosoría
+
+487
+00:53:23,760 --> 00:53:29,200
+quedaba como muy natural. La prosoría depende del contexto. Una misma frase la podemos
+
+488
+00:53:29,200 --> 00:53:33,920
+decir con una entonación o con otra. ¿Cómo la tecnología es capaz de identificar cómo
+
+489
+00:53:33,920 --> 00:53:39,000
+la tiene que decir? Pues estos modelos de redes neuronales en realidad sí que aprenden
+
+490
+00:53:39,000 --> 00:53:46,160
+un poco de cómo es esa prosodia. Aprenden patrones en base a un montón de datos y saben
+
+491
+00:53:46,160 --> 00:53:52,160
+qué fonema aplicamos en qué contexto y con qué curva entonativa. De hecho, son tan
+
+492
+00:53:52,160 --> 00:53:59,040
+listas las redes neuronales que incluso en ese espacio latente nos permiten ajustarlo
+
+493
+00:53:59,040 --> 00:54:04,720
+para medio, cambiar incluso esa prosodia. Eso es lo que se viene. Antes ese gira a la
+
+494
+00:54:04,720 --> 00:54:09,960
+derecha yo digo que era más por las limitaciones que tenía la tecnología, pero se viene en
+
+495
+00:54:09,960 --> 00:54:10,960
+cosa guay.
+
+496
+00:54:10,960 --> 00:54:16,960
+De acuerdo, muchas gracias. La última pregunta de Mo. ¿Hay desarrollo relevantes o proyectos
+
+497
+00:54:16,960 --> 00:54:20,960
+relacionados con la compresión de personas con problemas de la habla, como por ejemplo
+
+498
+00:54:20,960 --> 00:54:21,960
+a Fasia?
+
+499
+00:54:21,960 --> 00:54:26,800
+Sí. Google y Microsoft. Google tiene el proyecto a Fasia, de hecho diría que se
+
+500
+00:54:26,800 --> 00:54:33,320
+animó a buscarlo en YouTube. Hay un montón de vídeos y explican el proyecto de puta
+
+501
+00:54:33,320 --> 00:54:39,080
+madre. Y Microsoft también tiene iniciativas para personas con diversidad en el habla,
+
+502
+00:54:39,080 --> 00:54:43,200
+que tengan tecnologías y herramientas que les puedan ayudar a integrarse en la sociedad
+
+503
+00:54:43,200 --> 00:54:48,040
+y que no les suponga una barrera, que no puedan comunicarse con este tipo de tecnología.
+
+504
+00:54:48,040 --> 00:54:50,080
+Y eso es muy guay. Una herramienta más.
+
+505
+00:54:50,080 --> 00:54:54,680
+Qué guay. Te acuerdo, muchas gracias. Si tenéis más preguntas, luego la podéis buscar
+
+506
+00:54:54,680 --> 00:55:00,040
+por la causa del café o preguntar en Discord también que está ahí disponible. Y muchas
+
+507
+00:55:00,040 --> 00:55:06,120
+gracias de nuevo a Nieve por la excelente charla y nos vemos en la siguiente charla.
+
+508
+00:55:06,120 --> 00:55:07,120
+Gracias.
+
+509
+00:55:07,120 --> 00:55:26,780
+Gracias.
+

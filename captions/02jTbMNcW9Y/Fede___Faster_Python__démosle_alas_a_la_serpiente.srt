@@ -1,0 +1,992 @@
+1
+00:00:00,000 --> 00:00:24,320
+Y bueno vamos y empezando, Fede que trabaja en Data.org nos va a hablar de cómo hacer
+
+2
+00:00:24,320 --> 00:00:30,640
+el Python más rápido. Bueno, te dejo para no rebastir más tiempo. Muchas gracias.
+
+3
+00:00:30,640 --> 00:00:42,560
+Gracias. Bueno, bienvenidos a faster Python. Tenéis ahí el QR de las diapositivas por
+
+4
+00:00:42,560 --> 00:00:50,280
+si se ve pequeño. No sabía que me van a poner aquí. Espero que no sea pequeño. Ahí abajo
+
+5
+00:00:50,280 --> 00:00:55,800
+tenéis el repositorio. Todavía tengo que actualizar con algún comid más. Pero bueno, está abierto,
+
+6
+00:00:55,800 --> 00:00:59,640
+creo, si queréis ver todo lo que he hecho está en este repositorio.
+
+7
+00:01:03,440 --> 00:01:10,120
+Bueno, como me han introducido, soy Fede. Trabajo en Data.org con ese crack de allí que se llama
+
+8
+00:01:10,120 --> 00:01:17,840
+Alberto, que va a hablar luego sobre los segmentation fault y las penas que hemos pasado en este último
+
+9
+00:01:17,840 --> 00:01:25,760
+año más o menos. Bueno, por contar un poco sobre mí, me gusta mucho Python, me gusta mucho el
+
+10
+00:01:25,760 --> 00:01:31,800
+software libre. Antes de que nacieran mis hijos y cuando tenía tiempo libre me usaba mucho trastear
+
+11
+00:01:31,800 --> 00:01:45,640
+con la Raspberry. Bueno, y poco más. Un poco por qué estamos dando esta charla, no? Creo que estáis
+
+12
+00:01:45,640 --> 00:01:52,280
+de acuerdo conmigo en que la velocidad es importante casi siempre. Los que no están
+
+13
+00:01:52,280 --> 00:01:58,880
+en esta charla pueden ver un ejemplo de por qué a veces no. Bueno, pues hay ejemplos,
+
+14
+00:01:58,880 --> 00:02:06,000
+hay bastantes, los coches de carreras. Cuando eres una empresa, porque es importante llegar
+
+15
+00:02:06,000 --> 00:02:13,000
+al mercado antes que de tus competidores, la velocidad importa en muchísimos aspectos de
+
+16
+00:02:13,000 --> 00:02:22,600
+nuestras vidas. Bueno, por poner un poco de contexto, yo vengo del desarrollo web. Entonces,
+
+17
+00:02:22,600 --> 00:02:30,560
+he tratado de buscar un ejemplo más o menos adecuado con el desarrollo web donde podemos
+
+18
+00:02:30,560 --> 00:02:38,120
+ir más rápido. Entonces, bueno, lo que tenemos aquí es un diccionario de headers que llega a
+
+19
+00:02:38,120 --> 00:02:45,360
+Django en concreto. Cuando lanzamos el servidor y hacemos una petición, en la petición hay unos
+
+20
+00:02:45,360 --> 00:02:54,280
+headers y nos llegan de esta manera en una aplicación Django. En concreto, quiero que nos
+
+21
+00:02:54,280 --> 00:03:02,400
+centremos en el antepnúltimo que es el user agent. La idea es tratar de encontrar, como este
+
+22
+00:03:02,400 --> 00:03:07,640
+header llega desde el cliente, desde el navegador, pues puede llegar de distintas formas y vamos a
+
+23
+00:03:07,640 --> 00:03:18,560
+tener interesados en capturarlo de alguna manera. Entonces, la idea sería tener distintos patrones
+
+24
+00:03:18,560 --> 00:03:26,560
+de cómo podría ser la key del user agent. Vamos a querer normalizarlo y vamos a tener unos user
+
+25
+00:03:26,560 --> 00:03:33,080
+agents válidos para aquí, y lo que queremos es obtener el valor de esta entrada del diccionario.
+
+26
+00:03:33,080 --> 00:03:41,680
+Entonces, tenemos esta función cita relativamente sencilla de vamos a recorrer en nuestro diccionario
+
+27
+00:03:41,680 --> 00:03:51,760
+de headers y a buscar si alguno machea contra nuestra lista, nuestro set de user agents válidos.
+
+28
+00:03:51,760 --> 00:04:00,560
+Vamos a tener un pequeño paso de normalizarlo y cambiar los guiones bajos por guiones normales,
+
+29
+00:04:00,560 --> 00:04:10,000
+pasarlo a minúsculas y comprar. Creo que es un problema más o menos habitual,
+
+30
+00:04:10,000 --> 00:04:15,240
+le pasó a Alberto hace algo más de un mes que tuvo que hacer una función parecida a esta.
+
+31
+00:04:17,760 --> 00:04:23,920
+Y bueno, por integrarlo un poco en Django, lo que he hecho ha sido escribir un middleware que
+
+32
+00:04:23,920 --> 00:04:31,960
+llama esta función. Como veis, importamos la función y le ponemos un middleware donde la
+
+33
+00:04:31,960 --> 00:04:37,600
+llamamos y le pasamos request.meta que es este diccionario de headers. El diccionario de headers
+
+34
+00:04:37,600 --> 00:04:42,640
+que os mostré, quería hacer la letra grande, así que borré unos cuantos pero eran unos 50 lo que
+
+35
+00:04:42,640 --> 00:04:57,160
+tenía en local. No es una lista gigante, pero es una lista decente, de datos. Entonces, ¿qué es lo que
+
+36
+00:04:57,160 --> 00:05:04,600
+pasa? Cuando queremos mejorar algo, creo que siempre tenemos que primero analizarlo y medir
+
+37
+00:05:04,600 --> 00:05:14,720
+para poder mejorar y saber cuánto estamos mejorando. De acuerdo, tener un baseline contra el que comparar.
+
+38
+00:05:17,440 --> 00:05:22,960
+Vale, para esto vamos a usar timet, que es un módulo que está en las pilas de Python,
+
+39
+00:05:22,960 --> 00:05:29,040
+que nos sirve para correr una función un montón de veces. Creo que por defectos son 100.000 veces.
+
+40
+00:05:29,040 --> 00:05:35,440
+Vamos a llamar nuestra función, le vamos a pasar los headers y le vamos a pasar los globales que
+
+41
+00:05:35,440 --> 00:05:41,440
+tenemos en este ámbito donde no lo puesto en este ejemplo, pero habríamos importado la función
+
+42
+00:05:41,440 --> 00:05:52,160
+y la lista de headers de ejemplo. Como baseline, he tomado Python 3.9, que supongo que es el Python
+
+43
+00:05:52,160 --> 00:05:57,920
+que la mayoría estará usando en producción. A lo mejor hay gente usando 3.10. Ya hay gente que
+
+44
+00:05:57,920 --> 00:06:06,680
+se presione los anteriores. El skip, básicamente el que veis aquí, llama a la función de timing y ya está.
+
+45
+00:06:08,760 --> 00:06:15,640
+Este sería nuestro resultado al lanzar nuestro lo que imprimimos el header, lo imprimimos simplemente
+
+46
+00:06:15,640 --> 00:06:23,240
+para ver que lo estamos cogiendo bien en todos los ejemplos que vamos a hacer. Con Python 3.9,
+
+47
+00:06:23,240 --> 00:06:31,400
+nuestro tiempo es 50 milisogundos. Que a los que nos tenemos no lo voy a repetir.
+
+48
+00:06:33,640 --> 00:06:38,280
+Entonces, ¿qué queremos? Queremos que Python vaya más rápido y cómo lo vamos a hacer
+
+49
+00:06:38,280 --> 00:06:43,560
+sin tocar nada de Python. Bueno, intentando no hacerlo.
+
+50
+00:06:43,560 --> 00:06:53,240
+¿Cómo vamos a definir el éxito? ¿Cómo vamos a decir, vale, esto está bien o esto no está bien?
+
+51
+00:06:53,240 --> 00:07:00,000
+Vamos a medir la expidad de la función. Vamos a comparar el viejo con el nuevo, dividiéndolos.
+
+52
+00:07:00,000 --> 00:07:09,520
+Si comparáramos el 50 con 80 con sigo mismo, pues es uno, ¿vale? Es lo mismo. Si conseguimos un número
+
+53
+00:07:09,520 --> 00:07:17,480
+menor que 50 con 80, dividirlo va a ser mayor que uno. Si tenemos un 2, significa que es dos veces más
+
+54
+00:07:17,480 --> 00:07:24,400
+rápido nuestro código. ¿Y qué es lo que vamos a mirar? Vamos a tener un montón de alternativas
+
+55
+00:07:24,400 --> 00:07:29,840
+para hacer nuestro código más rápido. Vamos a probar la próxima versión de Python, que se está
+
+56
+00:07:29,840 --> 00:07:37,160
+cocinando, que es la 3.11. Vamos a probar PyPy. Vamos a probar Nuitka, Sighton y PyVin. Más adelante
+
+57
+00:07:37,160 --> 00:07:45,800
+os cuento qué hace cada uno. Y tenemos otro montón de ideas, otro montón de alternativas que
+
+58
+00:07:45,800 --> 00:07:51,360
+podríamos probar dependiendo de qué le interesa cada uno. Tenemos Yighton, hay un Python tras
+
+59
+00:07:51,360 --> 00:07:56,800
+Python y Stackless, que son como PyTons alternativos que corren sobre la máquina virtual de Java,
+
+60
+00:07:56,800 --> 00:08:06,720
+con.NET, sobre Rust y otra versión del Python diferente que Stackless. Y tenemos otras
+
+61
+00:08:06,720 --> 00:08:12,520
+tecnologías también que nos ayudan a correr esto un poco más rápido, compirando otros lenguajes,
+
+62
+00:08:12,520 --> 00:08:23,920
+como puede ser PyO3, que es escribir funciones en Rust. Bueno, pues esta es la URL, si queréis ver
+
+63
+00:08:23,920 --> 00:08:29,680
+cuáles son las cosas nuevas que hay en Python 3.11, pero hay un foco bastante importante en velocidad.
+
+64
+00:08:29,680 --> 00:08:38,000
+Podéis, al final, creo que es la última charla de la Python, o la última, la charla de Pablo
+
+65
+00:08:38,000 --> 00:08:46,320
+ganando sobre la versión de Python os recomiendo que vayáis. Bien, este es el docker que he puesto,
+
+66
+00:08:46,320 --> 00:08:52,480
+no he tocado nada de Python, solo he cambiado docker, vale. La única línea que cambia es la primera.
+
+67
+00:08:52,480 --> 00:09:02,520
+Cosas a tener en cuenta de Python 3.11. Para poder correrlo, tenemos que ser los dueños de las,
+
+68
+00:09:02,520 --> 00:09:09,000
+tenemos que tener control sobre las máquinas que lo van a correr. A nosotros nos pasa en nuestra
+
+69
+00:09:09,000 --> 00:09:13,280
+diaria con Alberto que nosotros hacemos código Python, pero no corren nuestras máquinas,
+
+70
+00:09:13,280 --> 00:09:18,960
+corren las máquinas de nuestros clientes. Entonces, la versión de Python que ellos corran es la que hay,
+
+71
+00:09:18,960 --> 00:09:25,640
+no podemos inferir sobre eso, no podemos hacer nada. Y otra cosa que tener en cuenta sobre Python 3.11
+
+72
+00:09:25,640 --> 00:09:31,560
+es que todavía no ha salido la versión estable, digamos, entonces podéis encontraros algún
+
+73
+00:09:31,560 --> 00:09:38,640
+problema. Espero que no sea nada importante todavía, pues aquí ya esté todo rodado, pero a tener en cuenta.
+
+74
+00:09:40,480 --> 00:09:47,880
+Bien, ¿cuál es nuestro resultado? Pues 32.000 segundos, no está nada mal, baja bastante de los 50,
+
+75
+00:09:47,880 --> 00:09:58,720
+¿no? Otra alternativa que podemos probar es PyPy. PyPy es una implementación alternativa de Python,
+
+76
+00:09:58,720 --> 00:10:05,080
+en cuanto a, digamos, la máquina virtual que va a correr, ¿de acuerdo? El lenguaje es el mismo,
+
+77
+00:10:05,080 --> 00:10:12,640
+pero no todo el código que funciona en Python, si tienes cosas específicas echadas en C,
+
+78
+00:10:12,640 --> 00:10:20,120
+a lo mejor no funciona. Bien, ¿cómo lo vamos a probar? Simplemente cambiando otra vez la primera
+
+79
+00:10:20,120 --> 00:10:29,320
+línea por PyPy y corremos nuestro docker y ya está. Tenemos un tiempo de 12.000 segundos, nada mal.
+
+80
+00:10:31,240 --> 00:10:36,920
+Cosas a tener en cuenta, lo mismo de antes, si no las máquinas no son nuestras, no les podemos poner
+
+81
+00:10:36,920 --> 00:10:48,120
+PyPy. Y lo que comentaba no es 100% compatible con Cpyton. Nuitka es un compilador de Python,
+
+82
+00:10:48,120 --> 00:10:55,680
+donde sabemos que le vamos a compilar nuestro código y vamos a hacerlo correr contra Cpyton. Es
+
+83
+00:10:55,680 --> 00:11:00,160
+una tecnología que usamos con Averton el pasado y que nos funcionó bastante bien.
+
+84
+00:11:00,160 --> 00:11:13,040
+La idea sería instalar Nuitka y orden set, bueno, es opcional, pero bueno, yo lo hice. Tiene distintas
+
+85
+00:11:13,040 --> 00:11:18,920
+maneras de compilar. Yo que hice fue compilar nuestro find headers como módulo, pero puedes
+
+86
+00:11:18,920 --> 00:11:28,320
+compilar todo el proyecto, pues hay distintas opciones. Y bueno, nuestro resultado es de 65. En
+
+87
+00:11:28,320 --> 00:11:38,040
+este caso no ha sido más rápido que el que Cpyton normal. Bien, cosas a tener en cuenta. Nuitka hay
+
+88
+00:11:38,040 --> 00:11:44,760
+que compilarlo y eso lleva tiempo, es un tiempo que hay que tener en cuenta. Algunas partes se
+
+89
+00:11:44,760 --> 00:11:50,480
+optimizan y no están disponibles, por ejemplo, el stack trace. O sea, no podemos ir recorriendo los
+
+90
+00:11:50,480 --> 00:12:01,360
+stacks una vez que hemos compilado con Nuitka. Y sólo funciona con Cpyton. Scyton. Scyton es una
+
+91
+00:12:01,360 --> 00:12:07,320
+tecnología que bueno, si queréis ver más en profundidad de lo que voy a contar, podéis ir a
+
+92
+00:12:07,320 --> 00:12:15,840
+la charla de Alberto que va a hablar un poquito sobre eso, sobre nuestras penas con él. Scyton tiene
+
+93
+00:12:15,840 --> 00:12:23,720
+dos maneras de funcionar. Una es con un lenguaje que ha evolucionado de Pyrex, que se llama ahora
+
+94
+00:12:23,720 --> 00:12:34,560
+el lenguaje Scyton. Y también con C++ haciendo bindings con Python, ¿de acuerdo? Yo voy a mostrar
+
+95
+00:12:34,560 --> 00:12:42,560
+las dos, espero que no sea confuso, pero bueno, ahora lo vamos viendo. La manera de cambiar el
+
+96
+00:12:42,560 --> 00:12:51,440
+número es instalarle Scyton y vamos a hacer este paso del setup.py build text. El script de Python,
+
+97
+00:12:51,440 --> 00:12:58,360
+o sea, el script que vamos a acuerdir es más o menos el mismo, pero bueno, ahora lo vemos.
+
+98
+00:13:01,320 --> 00:13:07,200
+Vale, este sería el setup.py que necesitamos. En este setup.py vamos a importar la función
+
+99
+00:13:07,200 --> 00:13:18,560
+Scytonize y vamos a pasarle el código en Pyx, que es de Pyrex, ¿de acuerdo? Y el Pyxd son, digamos,
+
+100
+00:13:18,560 --> 00:13:26,080
+los archivos donde tenemos que ejecutar, escribir el código Pyrex o los bindings con Python.
+
+101
+00:13:26,080 --> 00:13:38,120
+Vale, entonces el código Pyrex o Scyton cambia un poquito con respecto a Python normal. Aquí,
+
+102
+00:13:38,120 --> 00:13:44,560
+bueno, pues es básicamente la misma función que hicimos antes en Python, la he traducido a
+
+103
+00:13:44,560 --> 00:13:50,040
+Scyton, ¿de acuerdo? Este sería la versión, pues puesto Scyton 1 porque es la versión con el
+
+104
+00:13:50,040 --> 00:14:00,600
+lenguaje de Scyton. Y bueno, al correrlo nos da 40 milisegundos, que no está mal.
+
+105
+00:14:04,320 --> 00:14:10,440
+Vale, y este sería el ejemplo con CMOS MASS, ¿vale? Sería el Scyton 2 haciendo los bindings
+
+106
+00:14:10,440 --> 00:14:21,640
+con CMOS MASS. Tenemos que, de alguna manera, recubrir la función nativa de CMOS MASS con esta de
+
+107
+00:14:21,640 --> 00:14:30,120
+Scyton, no podemos llamarla directamente, entonces vamos a exponer esta otra función FindUserLegend,
+
+108
+00:14:30,120 --> 00:14:34,120
+va a llamar a C FindUserLegend, ¿de acuerdo? Y ya está, y devolver el resultado.
+
+109
+00:14:34,120 --> 00:14:45,760
+Tenemos, aparte de que definir este otro fichero PXD que nos va a permitir importar las funciones
+
+110
+00:14:45,760 --> 00:14:54,920
+que tenemos en nuestro código CMOS MASS. Y por último tendríamos el propio código CMOS MASS,
+
+111
+00:14:54,920 --> 00:15:02,560
+bueno, que tampoco quiero que os liáis mucho al leer o tratar de entender esto, pero sería
+
+112
+00:15:02,560 --> 00:15:10,480
+como una traducción de lo que hemos hecho en Python. Simplemente he extraído una función para
+
+113
+00:15:10,480 --> 00:15:21,040
+hacer el lowercase y sustituir los guiones, y ya está, esa función no la pongo por reducir la
+
+114
+00:15:21,040 --> 00:15:28,920
+verposidad de idiomas, pero habría otras alternativas, por supuesto, usando otras funciones de CMOS MASS.
+
+115
+00:15:28,920 --> 00:15:38,520
+Y bueno, el resultado de Scyton con CMOS MASS sería 18, nada mal tampoco, ¿no?
+
+116
+00:15:40,800 --> 00:15:48,520
+Cosas a tener en cuenta de Scyton, requiere compilación también, el código que se genera
+
+117
+00:15:48,520 --> 00:15:55,520
+al compilar es, a veces, difícil de depurar porque va a traducir lo hace más más y
+
+118
+00:15:55,520 --> 00:16:01,640
+automáticamente y los errores que van a salir son de estos últimos de CMOS MASS. Hay que tener
+
+119
+00:16:01,640 --> 00:16:09,160
+en cuenta también que hay como un paje de conversión que lo llamamos nosotros ya que todos los datos
+
+120
+00:16:09,160 --> 00:16:17,560
+que vamos a ir pasando de Python a CMOS MASS o de Python a Scyton requieren cierta conversión de
+
+121
+00:16:17,560 --> 00:16:25,960
+tipos y esa copia de datos, de acuerdo, de manera que si lo que vamos a llamar del lado de CMOS MASS es
+
+122
+00:16:25,960 --> 00:16:33,040
+muy rápido, pero vamos a pasar muchos datos, puede no compensar. Y por último, bueno, que solo funciona
+
+123
+00:16:33,040 --> 00:16:42,680
+con Scyton, ¿no? Por último, vamos a ver PyBind 11, que es otra librería que simplemente son
+
+124
+00:16:42,680 --> 00:16:51,560
+bindings de CMOS MASS. El código de CMOS MASS sería el mismo, el mismo que hemos hecho con Scyton
+
+125
+00:16:51,560 --> 00:16:56,280
+nos funcionaría, pero bueno, obtuve distintos resultados utilizando unas funciones y otras.
+
+126
+00:16:58,480 --> 00:17:06,040
+Básicamente los cambios en Docker que tenemos que hacer es instalar PyBind 11 y compilar el
+
+127
+00:17:06,040 --> 00:17:17,680
+nuestro fichelo de CMOS MASS. Este sería, digamos, la definición de los bindings que vamos a utilizar.
+
+128
+00:17:19,680 --> 00:17:27,560
+Esto es necesario, digamos, es como la parte de Scyton donde lo recubrimos la función de CMOS MASS,
+
+129
+00:17:27,560 --> 00:17:39,560
+es algo así. Y bueno, por último el resultado, también son 18, nada mal. Cosas a tener en cuenta,
+
+130
+00:17:39,560 --> 00:17:47,520
+requiere compilación, volvemos a tener el mismo problema de peaje de conversión y en este caso
+
+131
+00:17:47,520 --> 00:17:56,480
+PyBind 11 funciona con Scyton y con PyPy también. Bien, entonces, ¿cómo queda, digamos, la foto de
+
+132
+00:17:56,480 --> 00:18:07,200
+todos los competidores? Bueno, pues esta es la salida, digamos, del Docker Compose con todos. Ya
+
+133
+00:18:07,200 --> 00:18:14,320
+hemos visto los números de cada uno. Os lo pongo aquí un poco más bonito y con el speedup de cada uno.
+
+134
+00:18:16,320 --> 00:18:23,440
+Bueno, como veis, PyPy en nuestro caso ha funcionado muy bien. No, y no funciona tan bien. En su favor,
+
+135
+00:18:23,440 --> 00:18:29,040
+tengo que decir que, o sea, y en general con todos, ¿vale? Dependiendo de cómo sea nuestro código,
+
+136
+00:18:29,040 --> 00:18:35,680
+nos van a funcionar algunos mejores que otros. A nosotros, Nuitkan, el pasado nos daba un speedup
+
+137
+00:18:35,680 --> 00:18:44,360
+alrededor de dos. ¿Vale? En este caso es menos de uno y bueno, y los siguientes que mejor resultan
+
+138
+00:18:44,360 --> 00:18:54,200
+tenido han sido extraer las funciones hace más más. Ya sea con Scyton o con PyBind están muy cerca. Bien,
+
+139
+00:18:54,200 --> 00:19:03,920
+si tuviéramos, si las cogías vemos, pues, cuál era el más rápido, PyBind 11. Nuestro código corre
+
+140
+00:19:03,920 --> 00:19:10,800
+casi tres veces más rápido, ¿no? O sea, es un éxito, ¿no? Es lo que queríamos. Este sería el caso,
+
+141
+00:19:10,800 --> 00:19:15,280
+digamos, si nosotros quisieramos empaquetar nuestro middleware y exponerlo para que lo pueda utilizar
+
+142
+00:19:15,280 --> 00:19:22,560
+cualquiera en sus servidores. ¿Vale? Obviamente, si los servidores son nuestros y podemos controlar
+
+143
+00:19:22,560 --> 00:19:30,760
+la versión de Python, a lo mejor pondríamos PyPy, que nos daba cuatro. Y hay que tener en cuenta que
+
+144
+00:19:30,760 --> 00:19:37,000
+PyPy probablemente acelerará otras partes de la request y no solo nuestro código, ya que en este
+
+145
+00:19:37,000 --> 00:19:44,640
+caso, solo estamos compiéndolo el middleware concreto. Entonces, hablando de esto, si volvemos un poco a la
+
+146
+00:19:44,640 --> 00:19:52,640
+request y quisieramos analizarla entera, ¿no? Yo lo que he hecho ha sido quitar todos los otros
+
+147
+00:19:52,640 --> 00:20:00,040
+middleware que Django pone por defecto y dejarlo lo más limpito posible. Yo he utilizado estas
+
+148
+00:20:00,040 --> 00:20:09,920
+herramientas que son PyPy y SpeakScope para hacer como un profile de toda la request y poder verla
+
+149
+00:20:09,920 --> 00:20:18,000
+visualmente, ¿de acuerdo? He hecho una captura, digamos, de esto. La verdad es que SpeakScope es una
+
+150
+00:20:18,000 --> 00:20:23,720
+web interactiva. Es muy útil, muy interesante. Me recuerdo un poquito al nuestro producto de
+
+151
+00:20:23,720 --> 00:20:34,720
+APM de datador. Aquí podemos ver, pues, en rojo he recuadrado la request entera y en azul tenéis
+
+152
+00:20:34,720 --> 00:20:42,720
+solo el trocito que es llamada la llamada a nuestro middleware. Entonces, bueno, podéis ver que son
+
+153
+00:20:42,720 --> 00:20:54,720
+11.000 segundos la request entera y nuestro middleware son 357 microsegundos. Entonces, si lo ponemos ahora en
+
+154
+00:20:54,720 --> 00:21:07,120
+perspectiva, utilizando la ley de Andal, lo que nos dice es que si el improvement de performa
+
+155
+00:21:07,120 --> 00:21:15,120
+es la mejora que vamos a tener en todo el proceso, viene limitado por el tiempo que se llama la parte
+
+156
+00:21:15,120 --> 00:21:22,120
+que estamos optimizando. Es decir, por ponerlo en un ejemplo poco más visual, si tenemos una hoja de
+
+157
+00:21:22,120 --> 00:21:30,120
+papel y estamos optimizando esa parte de centro y la plegáramos, por ejemplo, hasta infinito, no? O sea,
+
+158
+00:21:30,120 --> 00:21:38,120
+la plegáramos completamente, la hoja de papel que queda en la mesa no es infinitamente más rápido,
+
+159
+00:21:38,120 --> 00:21:43,120
+esas otras partes que habían los costados siguen siendo igual de lentas, ¿de acuerdo?
+
+160
+00:21:43,120 --> 00:21:54,120
+Entonces, ¿cuál es la mejora en total de nuestra request o de nuestro proceso? Bueno, pues es con esta
+
+161
+00:21:54,120 --> 00:22:02,120
+función, la matemática, en donde P es la proporción del tiempo que se va a nuestra función y la S es el
+
+162
+00:22:02,120 --> 00:22:08,120
+speedup que hemos conseguido en nuestra función. Por llevarlo a nuestro caso, el total de la
+
+163
+00:22:08,120 --> 00:22:17,120
+request son 19.000 segundos, 0,357 milisegundos son la llamada de nuestra función, la proporción sería
+
+164
+00:22:17,120 --> 00:22:26,120
+0,033. El speedup de 2,78, pues el número que nos sale en total, el speedup de toda la request, sería
+
+165
+00:22:26,120 --> 00:22:38,120
+1,021. Bueno, pues nuestro código no es tan rápido al final. Pero bueno, por poner también las cosas
+
+166
+00:22:38,120 --> 00:22:43,120
+en perspectiva, os quería mostrar un ejemplo de si conseguíamos un speedup de un millón, ¿vale?,
+
+167
+00:22:43,120 --> 00:22:52,120
+si nuestro código fuera un millón de veces más rápido, aún así nuestra mejora sería de 1,034.
+
+168
+00:22:52,120 --> 00:23:00,120
+Así que, bueno, viendo así, 1,021 no está tan mal. Y bueno, simplemente como anécdota, quería que
+
+169
+00:23:00,120 --> 00:23:06,120
+supieras por si no sabíais que un millón, si lo escribimos así en Python con guiones bajos, funciona
+
+170
+00:23:06,120 --> 00:23:12,120
+bien también. Para números grandes se le dé mucho mejor.
+
+171
+00:23:12,120 --> 00:23:20,120
+Bueno, pues pasamos a las conclusiones. El ecosistema de Python es increíble, tienes un montón de librerías
+
+172
+00:23:20,120 --> 00:23:27,120
+para hacer de todo, ¿no? Podemos hacerse más más, podemos integrar patents de contrast, podemos cambiar
+
+173
+00:23:27,120 --> 00:23:32,120
+por completo nuestra máquina virtual de Python por otra más rápida, cuatro veces más rápida.
+
+174
+00:23:32,120 --> 00:23:42,120
+Tenemos que tener en cuenta cuando empezamos a optimizar y pararnos un poco a pensar cuál va a ser el impacto
+
+175
+00:23:42,120 --> 00:23:49,120
+de nuestra utilización, ¿vale?, hay que evitar ponernos como locos y decir, esto es lento, no vamos a primero
+
+176
+00:23:49,120 --> 00:24:00,120
+analizar y pensar y después a utilizar. Otra de las cosas que hemos aprendido es que tenemos que medirlo todo,
+
+177
+00:24:00,120 --> 00:24:05,120
+de acuerdo, cuando más información tengamos, mejores decisiones vamos a poder tomar.
+
+178
+00:24:08,120 --> 00:24:14,120
+Y por último, el otro aprendizaje es que no podemos mejorar lo que no podemos controlar, ¿no?
+
+179
+00:24:14,120 --> 00:24:23,120
+Por ejemplo, no tiene sentido tratar de hacer que la gente use PyPy si tenemos una librería que se puede usar
+
+180
+00:24:23,120 --> 00:24:29,120
+o que debería poder usarse por todo el mundo, ¿no? Tenemos que centrarnos y decir, bueno,
+
+181
+00:24:29,120 --> 00:24:34,120
+que está nuestra mano, ¿de acuerdo?, y que podemos hacer de nuestro lado para que a todo el mundo
+
+182
+00:24:34,120 --> 00:24:39,120
+le funcione nuestro código más rápido, ¿no?
+
+183
+00:24:40,120 --> 00:24:44,120
+Bien, y eso es todo, amigos.
+
+184
+00:24:44,120 --> 00:25:00,120
+Aplausos.
+
+185
+00:25:00,120 --> 00:25:03,120
+Muchas gracias, Fer, que me ha hecho la guay, así que tenemos un código mucho más rápido entre todos.
+
+186
+00:25:03,120 --> 00:25:15,120
+Una pregunta, en el que hace una pregunta.
+
+187
+00:25:15,120 --> 00:25:25,120
+Hola, rápidamente. ¿Por qué crees que el experimento con NUISCA no ha dado el resultado que te esperaba?
+
+188
+00:25:25,120 --> 00:25:30,120
+Porque decías que normalmente te daba como un do y tal, y esto ha salido menos que piensa que puede ser el problema.
+
+189
+00:25:30,120 --> 00:25:39,120
+Lo cierto es que depende mucho de cómo sea el profil, digamos, de tu aplicación.
+
+190
+00:25:39,120 --> 00:25:47,120
+O sea, puede ser que tu aplicación haga un montón de cuentas de multiplicaciones, divisiones con números.
+
+191
+00:25:47,120 --> 00:25:53,120
+Puede ser que tu aplicación trabaje más con strings, como era este caso, ¿no?, o con diccionarios.
+
+192
+00:25:53,120 --> 00:25:59,120
+Puede ser que hagas muchas operaciones muy pequeñas o una operación que te abra un montón.
+
+193
+00:25:59,120 --> 00:26:10,120
+Un poco de cómo sea tu programa va a cambiar, dependiendo de qué tecnologías uses o en qué negocio estés.
+
+194
+00:26:10,120 --> 00:26:19,120
+En este caso, yo estaba tratando de optimizar un código muy pequeñito, que trabaja con strings y condicionarios.
+
+195
+00:26:19,120 --> 00:26:23,120
+Cuando nosotros lo hemos usado ya ha funcionado mucho mejor.
+
+196
+00:26:23,120 --> 00:26:29,120
+También trabajábamos con strings, pero hacíamos otro tipo de operaciones y hacíamos muchísimas operaciones.
+
+197
+00:26:29,120 --> 00:26:35,120
+Y ahí sí nos daba una mejora mayor.
+
+198
+00:26:35,120 --> 00:26:38,120
+No sé decir exactamente por qué no ha funcionado.
+
+199
+00:26:38,120 --> 00:26:45,120
+Si que puedo decirte que probé otros ejemplos antes de llegar a este y no me funcionaba bien,
+
+200
+00:26:45,120 --> 00:26:48,120
+o no me funcionaba bien cualquier otro.
+
+201
+00:26:48,120 --> 00:26:55,120
+O sea, mucha disparidad. Si trabajas mucho con números, Pai Pai puede funcionar super bien.
+
+202
+00:26:55,120 --> 00:27:02,120
+Pero si trabajas con listas o cosas mezcladas, a lo mejor no tanto.
+
+203
+00:27:02,120 --> 00:27:10,120
+Realmente lo de Nuitka es, o sea, tenéis que tomar todo esto con mucha perspectiva, porque va a depender mucho de cómo sea vuestro programa.
+
+204
+00:27:10,120 --> 00:27:19,120
+Vale, gracias.
+
+205
+00:27:30,120 --> 00:27:39,120
+Bueno, no sé si lo habrás dicho, pero las medidas temporales las tomas tras una ejecución o tras varias y haces una media o…
+
+206
+00:27:39,120 --> 00:27:50,120
+Sí, las medidas temporales, por aquí las hago con Timeit, que es un módulo de Python, que está en las pilas de Python,
+
+207
+00:27:50,120 --> 00:28:01,120
+y que nos permite ejecutar en un código, en este caso la función con los datos lo ejecuto 100.000 veces, con todos los hechos así.
+
+208
+00:28:01,120 --> 00:28:10,120
+Entonces, digamos que ahí se normaliza un poco las diferencias. O sea, obviamente lo he hecho en mi máquina,
+
+209
+00:28:10,120 --> 00:28:16,120
+que había navegador, estaba abierto, cambiaban los números cada vez, estar en una de las fotos,
+
+210
+00:28:16,120 --> 00:28:20,120
+pero había otras donde cambiaba ligeramente los números.
+
+211
+00:28:20,120 --> 00:28:22,120
+Gracias.
+
+212
+00:28:29,120 --> 00:28:41,120
+En general, has hecho una cosa muy interesante, sobre asegurarte que no estás empezando a optimizar antes de meterte a algo.
+
+213
+00:28:41,120 --> 00:28:50,120
+Normalmente, no es tanto sobre este ejemplo, pero a cuánto sueles empezar a optimizar, cuando empiezas a ver que hay un problema.
+
+214
+00:28:50,120 --> 00:28:55,120
+O sea, cuando algo te toma el 20% del tiempo, 50% o como lo sueles.
+
+215
+00:28:55,120 --> 00:29:01,120
+Es una buena pregunta. La verdad es que yo lo que suelo hacer es, al contrario de lo que he hecho aquí,
+
+216
+00:29:01,120 --> 00:29:07,120
+porque queríamos mostraros el error, yo suelo empezar cogiendo la foto.
+
+217
+00:29:07,120 --> 00:29:13,120
+Esta herramienta que os he mostrado, bueno, os he mostrado la foto, pero también puedes ordenar por tiempo,
+
+218
+00:29:13,120 --> 00:29:20,120
+de forma extendente todas las funciones y saber dónde se están yendo los tiempos, y cuántas llamadas tiene cada función.
+
+219
+00:29:20,120 --> 00:29:26,120
+Entonces, cuando tienes una función que se llama mucho, a lo mejor pues optimizar ahí,
+
+220
+00:29:26,120 --> 00:29:30,120
+aunque optimices un poquito, te va a afectar bastante porque se llama mucho.
+
+221
+00:29:30,120 --> 00:29:38,120
+A veces tienes una función que se llama poco y puedes rascar un poco menos. Lo mejor es irse al tiempo total,
+
+222
+00:29:38,120 --> 00:29:45,120
+a cuántas veces se llama y cuánto tiempo toma, y tratar de analizar si puedes optimizar ahí.
+
+223
+00:29:45,120 --> 00:30:01,120
+Y luego puedes ir bajando a la siguiente función más llamada y con más tiempo consume.
+
+224
+00:30:01,120 --> 00:30:17,120
+¿Cuál diría de las herramientas que has mostrado que es la más escalable?
+
+225
+00:30:17,120 --> 00:30:22,120
+¿Cuál diría que se podría aplicar en un proyecto que tenga ya una envergadura,
+
+226
+00:30:22,120 --> 00:30:26,120
+como puede ser una integración con TensorFlow o demás?
+
+227
+00:30:26,120 --> 00:30:34,120
+Pues depende, digamos, si lo corres en tus propios servidores, yo lo más probable es que empezaría probando PyPy,
+
+228
+00:30:34,120 --> 00:30:44,120
+simplemente porque obtienen muy buenos números, pero tiene algunos problemas con ciertas dependencias.
+
+229
+00:30:44,120 --> 00:30:50,120
+Al mejor TensorFlow, puedes mirarlo primero a ver si funciona y si funciona probarlo.
+
+230
+00:30:50,120 --> 00:30:58,120
+Muchas de estas librerías tienen también la versión que funciona con PyPy, así que puedes empezar investigando ahí.
+
+231
+00:30:58,120 --> 00:31:04,120
+También la siguiente que probaría probablemente sea el Python 3.11, que va a salir en breve.
+
+232
+00:31:04,120 --> 00:31:11,120
+Al mejor puedes ponerte las pilas para ir actualizando tus dependencias y que funciona todo bien con Python 3.11.
+
+233
+00:31:11,120 --> 00:31:21,120
+Y obviamente si tienes mucho código que es tuyo y donde no se llama a TensorFlow, pues iría con la alternativa de migrar hace más más.
+
+234
+00:31:21,120 --> 00:31:27,120
+O migrar a RAST o migrar a otro lenguaje más rápido, pero para cosas concretas.
+
+235
+00:31:27,120 --> 00:31:29,120
+Gracias.
+
+236
+00:31:29,120 --> 00:31:32,120
+Bueno, sirvimos justo por lo que acabas de decir ahora.
+
+237
+00:31:32,120 --> 00:31:39,120
+Me ha faltado, enhorabuena, por la ponencia, me ha faltado un experimento que sería, ya que te han metido con generadores de código en C,
+
+238
+00:31:39,120 --> 00:31:44,120
+compilar una librería en C++ y con ZEPS importarla con los punteros de la memoria.
+
+239
+00:31:44,120 --> 00:31:48,120
+Habéis planteado esa solución y habéis planteado probarla?
+
+240
+00:31:48,120 --> 00:31:55,120
+Pues no lo he probado, pero lo tengo pendiente para charla otro experimento, digamos.
+
+241
+00:31:55,120 --> 00:31:57,120
+O justo encaja lo que hice tú.
+
+242
+00:31:57,120 --> 00:32:05,120
+No extraes una pequeña función, generas una librería y importas solo esa librería específica para no compilar el código completo, pero sí pequeñas.
+
+243
+00:32:05,120 --> 00:32:09,120
+O sea, tú te refieres a no usar PiBind, sino llamar a C directamente.
+
+244
+00:32:09,120 --> 00:32:16,120
+Directamente codificas C, porque lo que acabas de presentar ahora era C++, entonces acabo de dibujar eso que con los C++,
+
+245
+00:32:16,120 --> 00:32:23,120
+compilas una librería de C y le importas con ZEPS, te importas la función específica, tienes que exportar con tipo standard de C,
+
+246
+00:32:23,120 --> 00:32:30,120
+pero te permite jugar con un montón de cosas y directamente ejecutas en el compilado. Es interesante.
+
+247
+00:32:30,120 --> 00:32:35,120
+Sí, sí, sí, desde luego. Eso lo tengo pendiente para otra.
+
+248
+00:32:35,120 --> 00:33:01,120
+Me acuerdo. Muchas gracias, Bruno.
+

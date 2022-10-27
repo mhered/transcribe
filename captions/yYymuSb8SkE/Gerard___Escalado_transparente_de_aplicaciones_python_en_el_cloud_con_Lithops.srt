@@ -1,0 +1,1080 @@
+1
+00:00:00,000 --> 00:00:19,000
+Y bueno, sin más, le damos la bienvenida entonces ayer.
+
+2
+00:00:19,000 --> 00:00:30,000
+Muchas gracias. Y bueno, gracias por venir a todos a mi charla.
+
+3
+00:00:30,000 --> 00:00:38,000
+Sé que es la última del día, sé que ya hemos un día de conferencia y sé que ya empieza a cansar y todo el mundo está cansado, pero espero que sea ligera.
+
+4
+00:00:38,000 --> 00:00:42,000
+He preparado bastantes demos, pocas y positivas, pero que os guste.
+
+5
+00:00:42,000 --> 00:00:52,000
+La principal idea de la charla básicamente es introduciros el framework, el framework Lythops.
+
+6
+00:00:52,000 --> 00:00:59,000
+Espero que veáis lo que puede hacer, que entendáis un poco la idea que hay detrás y veáis el potencial que tiene.
+
+7
+00:00:59,000 --> 00:01:09,000
+Antes de presentaros el framework, explicaré un par de conceptos previos sobre serverless, que espero que algunos ya lo conozcáis, pero por si hay alguien que va un poco perdido.
+
+8
+00:01:09,000 --> 00:01:21,000
+Y luego veremos casos de uso de Lythops, para haremos un análisis de datos geospaciales y veremos cómo conseguir transparencia en aplicaciones multiprocesin con Lythops.
+
+9
+00:01:21,000 --> 00:01:26,000
+Antes de nada, me presento, soy Gerard Finol, soy doctor Ando en la Universidad de Robire Virgili.
+
+10
+00:01:26,000 --> 00:01:34,000
+Mi campo de investigaciones son los sistemas distribuidos y el cloud computing y de formación matemático y ingenio informático.
+
+11
+00:01:34,000 --> 00:01:44,000
+Y si las presentaciones pasemos a explicar que es Lythops. Lythops es un framework multicloud de computación serverless en Python.
+
+12
+00:01:44,000 --> 00:01:54,000
+Multicloud me refiero a que suporta todo tipo de cloud providers, como RIVM, Amazon, Microsoft, Google, incluso Alibaba.
+
+13
+00:01:54,000 --> 00:01:57,000
+Y también tiene suporte para cubernetes.
+
+14
+00:01:57,000 --> 00:02:05,000
+La principal ventaja que tiene Lythops es que le permite ejecutar código Python local, funciones normales y corrientes que tenemos en nuestro ordenador,
+
+15
+00:02:05,000 --> 00:02:14,000
+a gran escala en la nube, cuando digo gran escala digo 500 mil, 2 mil funciones a la vez.
+
+16
+00:02:14,000 --> 00:02:22,000
+Lythops sale de un proyecto europeo llamado CloudBudden, en el cual la universidad en la que trabajo en la universidad Robire Virgili,
+
+17
+00:02:22,000 --> 00:02:31,000
+juntamente con un equipo de ingenios de IBM, desarrollamos este framework dentro del programa Horizon 2020.
+
+18
+00:02:31,000 --> 00:02:35,000
+Como conceptos previos, básicamente explicaré dos.
+
+19
+00:02:35,000 --> 00:02:41,000
+El primero es ObjectStorage, que no sé quién conoce y sabe que es ObjectStorage, por favor.
+
+20
+00:02:41,000 --> 00:02:44,000
+Casi me das alto.
+
+21
+00:02:44,000 --> 00:02:50,000
+Básicamente, ObjectStorage es un servicio de más demento en la nube, en el que tratamos de los datos o los ficheros como objetos.
+
+22
+00:02:50,000 --> 00:02:54,000
+Es decir, que la nube no sabe qué arquitectura tiene por dentro.
+
+23
+00:02:54,000 --> 00:02:57,000
+Y eso nos permite hacer lecturas y escrituras paralelas.
+
+24
+00:02:57,000 --> 00:03:03,000
+Podemos leer un fichero desde varios puntos y hacer escrituras de distintos ficheros de forma simultánea también.
+
+25
+00:03:03,000 --> 00:03:15,000
+Todo esto se accede al través de un API por HTTP y todos los cloud providers tienen su implementación, Amazon S3, Google Cloud Storage, etc.
+
+26
+00:03:15,000 --> 00:03:21,000
+Y el segundo concepto son las Cloud Functions, es decir, todo en torno al serverles.
+
+27
+00:03:28,000 --> 00:03:33,000
+Las Cloud Functions son un servicio de ejecución de código en la nube,
+
+28
+00:03:33,000 --> 00:03:38,000
+en el cual no tenemos necesidad ni de administrar servidores ni de alocarlos previamente,
+
+29
+00:03:38,000 --> 00:03:42,000
+y que se invoca también por HTTP con un API.
+
+30
+00:03:42,000 --> 00:03:45,000
+Las principales ventajas que tienen son que se paga solo por el tiempo usado,
+
+31
+00:03:45,000 --> 00:03:49,000
+más un extra por hacer la invocación, muy pequeño,
+
+32
+00:03:49,000 --> 00:03:53,000
+y solo pagas por el tiempo que se utiliza ese recurso.
+
+33
+00:03:53,000 --> 00:04:00,000
+Al igual que con el ObjectStorage, todos los providers de cloud tienen su propia implementación,
+
+34
+00:04:00,000 --> 00:04:02,000
+que prácticamente son todas iguales.
+
+35
+00:04:02,000 --> 00:04:08,000
+Tienes Lambda, Amazon, tiene SIVM Cloud Functions, Google Cloud Functions, etc.
+
+36
+00:04:08,000 --> 00:04:12,000
+Una vez visto un poco estos dos conceptos de sobre serverles,
+
+37
+00:04:12,000 --> 00:04:16,000
+pasemos a explicar un poco la arquitectura de Lysops.
+
+38
+00:04:16,000 --> 00:04:23,000
+La arquitectura de Lysops consta de un API de alto nivel basado en futuros,
+
+39
+00:04:23,000 --> 00:04:28,000
+en el cual nosotros, que presentamos aquí con el ordenador y el símbolo de la Python,
+
+40
+00:04:28,000 --> 00:04:35,000
+invocamos funciones con código local de Python, funciones normales.
+
+41
+00:04:35,000 --> 00:04:40,000
+Luego Lysops tiene dos módulos principales, el ejecutor y el invocador.
+
+42
+00:04:40,000 --> 00:04:47,000
+El ejecutor coge la función que estamos invocando, coge sus módulos, sus dependencias,
+
+43
+00:04:47,000 --> 00:04:55,000
+y las se realiza junto con el input de la función, los parámetros que le pasamos como input.
+
+44
+00:04:55,000 --> 00:05:00,000
+Todo esto se se realiza y se sube a ObjectStorage o un StorageVacient.
+
+45
+00:05:00,000 --> 00:05:06,000
+Tenemos aquí las funciones con sus módulos y los datos de la función con los que se van a invocar.
+
+46
+00:05:06,000 --> 00:05:11,000
+Luego tenemos el invocador que se encarga de invocar tantas funciones como sean necesarias.
+
+47
+00:05:11,000 --> 00:05:17,000
+Estas funciones cogen los datos y las funciones con sus módulos ser realizados.
+
+48
+00:05:17,000 --> 00:05:25,000
+El Storage lo cargan en su runtime, ejecutan el código y retornan el resultado al Storage.
+
+49
+00:05:25,000 --> 00:05:31,000
+Luego el ejecutor coge el resultado de Storage y lo retorna al API de futuros.
+
+50
+00:05:31,000 --> 00:05:36,000
+Y entonces hay programadores de donde obtiene el resultado de las funciones.
+
+51
+00:05:36,000 --> 00:05:44,000
+En la charla de hoy, lo que veremos hoy, básicamente el StorageVacient va a ser Amazon S3
+
+52
+00:05:44,000 --> 00:05:46,000
+y el ComputeVacient va a ser Hlanda.
+
+53
+00:05:46,000 --> 00:05:48,000
+Para que tengáis una idea.
+
+54
+00:05:48,000 --> 00:05:56,000
+Una vez visto esto, pasemos a la primera demo. No sé si creo que sí, se ve bien.
+
+55
+00:05:56,000 --> 00:06:06,000
+Básicamente importamos LitOps y definimos una función, que hace un Slip y aX le suma 4
+
+56
+00:06:06,000 --> 00:06:10,000
+y lo ejecutamos para que veamos cómo.
+
+57
+00:06:10,000 --> 00:06:23,000
+Ahora hemos ejecutado esta función en local.
+
+58
+00:06:23,000 --> 00:06:26,000
+Vamos a ejecutar la obra en el Cloud.
+
+59
+00:06:26,000 --> 00:06:32,000
+Creamos un ejecutor de LitOps, llevamos a la función CalAsync,
+
+60
+00:06:32,000 --> 00:06:37,000
+en el cual le pasamos la función que queremos ejecutar y a la derecha los parámetros.
+
+61
+00:06:37,000 --> 00:06:42,000
+Ejecutamos y imprimimos el resultado.
+
+62
+00:06:42,000 --> 00:06:45,000
+Aquí está invocando.
+
+63
+00:06:45,000 --> 00:06:48,000
+Estos son todos los que de información se pueden quitar.
+
+64
+00:06:48,000 --> 00:06:54,000
+Ya que tenemos invocado una función, ya que tenemos el resultado.
+
+65
+00:06:54,000 --> 00:07:00,000
+Como he dicho antes, esto está basado en futuros, por lo tanto es asíncrono y no bloquea el flujo de ejecución.
+
+66
+00:07:00,000 --> 00:07:06,000
+Vamos a simularlo, simularemos una ejecución en para, mientras se ejecuta la función en el Cloud.
+
+67
+00:07:06,000 --> 00:07:08,000
+Tenemos aquí lo mismo de antes.
+
+68
+00:07:08,000 --> 00:07:12,000
+Con el parámetro de entrada hacemos un print y un for con un Slip de un segundo,
+
+69
+00:07:12,000 --> 00:07:17,000
+en el que vamos a imprimir un puntito simulando un flujo de ejecución.
+
+70
+00:07:17,000 --> 00:07:22,000
+Y aquí tenemos...
+
+71
+00:07:22,000 --> 00:07:25,000
+De forma paralela se está ejecutando la función en el Cloud.
+
+72
+00:07:25,000 --> 00:07:29,000
+Y nosotros cuando terminamos aquí hacemos el que te resulta,
+
+73
+00:07:29,000 --> 00:07:35,000
+y imprimimos el resultado de la función.
+
+74
+00:07:35,000 --> 00:07:39,000
+Ahora lo trabajaremos sobre más datos.
+
+75
+00:07:39,000 --> 00:07:44,000
+Definimos una lista con el 1 al 4 y hacemos un map.
+
+76
+00:07:44,000 --> 00:07:49,000
+Aplicaremos la función que hemos definido antes sobre todo el preto de la lista.
+
+77
+00:07:49,000 --> 00:07:53,000
+Esto es otra de las opciones que tiene el e-Sops.
+
+78
+00:07:53,000 --> 00:07:57,000
+Aquí lo que hace es invocar una función para cada uno de los datos.
+
+79
+00:07:57,000 --> 00:08:00,000
+Ya que tenemos el resultado.
+
+80
+00:08:00,000 --> 00:08:05,000
+Ha invocado cuatro funciones, uno para cada uno y retorna el resultado.
+
+81
+00:08:05,000 --> 00:08:08,000
+Como he dicho antes, es multi-Cloud,
+
+82
+00:08:08,000 --> 00:08:13,000
+significa que podemos ejecutar el mismo código en otro Cloud, de forma instantánea.
+
+83
+00:08:13,000 --> 00:08:16,000
+Vamos a reproducir el ejemplo de antes.
+
+84
+00:08:16,000 --> 00:08:21,000
+Tenemos los mismos datos, la única diferencia es que le decimos que el ejecutor
+
+85
+00:08:21,000 --> 00:08:29,000
+que trabaje sobre IBM Cloud Functions y que el esto de HST en IBM Cos.
+
+86
+00:08:29,000 --> 00:08:35,000
+Ejecutamos y esto se está ejecutando en el Cloud de IBM,
+
+87
+00:08:35,000 --> 00:08:38,000
+en el cual se invoca cuatro funciones en el Cloud de IBM,
+
+88
+00:08:38,000 --> 00:08:43,000
+se espera su resultado y aquí tenemos otra vez.
+
+89
+00:08:43,000 --> 00:08:47,000
+Ahora, visto estos ejemplos un poco sencillos,
+
+90
+00:08:47,000 --> 00:08:51,000
+vamos a poner un poco más de complejidad, haremos el típico ejemplo de número P
+
+91
+00:08:51,000 --> 00:08:55,000
+por métodos de Monte Carlo y una explicación.
+
+92
+00:08:55,000 --> 00:09:02,000
+En resumen, la idea es que samplaremos puntos aleatorios con distintos workers.
+
+93
+00:09:02,000 --> 00:09:09,000
+Los puntos van a estar dentro de este cuadrado, de uno por uno, que creo que no se ve entero.
+
+94
+00:09:09,000 --> 00:09:13,000
+Utilizando la relación, miraremos si los puntos caen dentro de Círculo Unidad,
+
+95
+00:09:13,000 --> 00:09:16,000
+si caen dentro los contamos y que en fueranos los contamos
+
+96
+00:09:16,000 --> 00:09:19,000
+y siguiendo esta fórmula de los puntos que caen dentro, divididos entre el total,
+
+97
+00:09:19,000 --> 00:09:22,000
+multiplicado por cuadro, aproximados en número P.
+
+98
+00:09:22,000 --> 00:09:27,000
+Lo que haremos será invocar varios workers, cada worker samplará un número de puntos,
+
+99
+00:09:27,000 --> 00:09:34,000
+un millón de puntos, mirará si cae dentro o no, contará cuántos han caído dentro,
+
+100
+00:09:34,000 --> 00:09:42,000
+en su trabajo lo retornará y luego contaremos el total de puntos.
+
+101
+00:09:42,000 --> 00:09:44,000
+Esta es la función que ejecutará cada uno de los workers,
+
+102
+00:09:44,000 --> 00:09:49,000
+le pasamos un sit para el random distinto para que cada worker haga un trabajo aleatorio distinto
+
+103
+00:09:49,000 --> 00:09:53,000
+y miramos si cae dentro del Círculo Unidad,
+
+104
+00:09:53,000 --> 00:09:58,000
+es decir, si tiene un radio menor que uno, contamos y retornamos el número de puntos.
+
+105
+00:09:58,000 --> 00:10:01,000
+Ahora que definimos cuántos workers tendremos
+
+106
+00:10:01,000 --> 00:10:06,000
+y el input data para cada uno de los workers será del 0 a 9, todas sit distintas
+
+107
+00:10:06,000 --> 00:10:11,000
+y hacemos un map con la función de contar puntos y el iter data y gojemos el resultado.
+
+108
+00:10:11,000 --> 00:10:15,000
+Y aquí, cojemos la suma de todos los contadores
+
+109
+00:10:15,000 --> 00:10:21,000
+y calculamos el número P con la fórmula de antes.
+
+110
+00:10:21,000 --> 00:10:25,000
+Ahora, le hicimos invocar 10 funciones, cada una con su sit,
+
+111
+00:10:25,000 --> 00:10:33,000
+cada una ejecuta un millón de sampleados y retorna el resultado y calculamos el número P.
+
+112
+00:10:33,000 --> 00:10:38,000
+Esta última parte de aquí de contar todos los puntos se puede entender como un radius típico,
+
+113
+00:10:38,000 --> 00:10:41,000
+como radius Spark, etc.
+
+114
+00:10:41,000 --> 00:10:48,000
+Después, podemos definir una función que sea aproximar P, que a partir de los resultados del map calcule P.
+
+115
+00:10:48,000 --> 00:10:52,000
+Lo que queremos será utilizar la función map radius del ejecutor del ethops,
+
+116
+00:10:52,000 --> 00:11:00,000
+en el cual le pasamos la función de contar puntos, los datos del sit y la función del radius
+
+117
+00:11:00,000 --> 00:11:05,000
+y ejecutamos la ceda.
+
+118
+00:11:05,000 --> 00:11:14,000
+Aquí lo que hacemos al invocar un radius será invocar las 10 funciones del map y una función extra para el radius
+
+119
+00:11:14,000 --> 00:11:18,000
+y se espera que un 20% de las funciones hayan terminado para invocar la función del radius
+
+120
+00:11:18,000 --> 00:11:21,000
+para que no esté ejecutándose esperando resultados.
+
+121
+00:11:21,000 --> 00:11:24,000
+Y volvemos a tener aquí el resultado de P.
+
+122
+00:11:24,000 --> 00:11:28,000
+Una vez tenemos esto, vamos a hacerlo con más funciones.
+
+123
+00:11:28,000 --> 00:11:38,000
+Definimos aquí el randomSit con 100, es decir, tendremos una lista de 100, listOps invocará 100 funciones
+
+124
+00:11:38,000 --> 00:11:43,000
+de forma instantánea.
+
+125
+00:11:43,000 --> 00:11:46,000
+Aquí lo ponen 100 funciones.
+
+126
+00:11:46,000 --> 00:11:52,000
+Esperamos a que un 20% haya acabado para invocar la última función que será la del radius.
+
+127
+00:11:52,000 --> 00:11:57,000
+Ya están acabando.
+
+128
+00:11:57,000 --> 00:11:59,000
+Aquí han acabado.
+
+129
+00:11:59,000 --> 00:12:05,000
+Eso tenemos 100 funciones, es decir, 100 CPUs trabajando instantáneamente.
+
+130
+00:12:05,000 --> 00:12:10,000
+Podemos seguir ampliando esto, 1000 podríamos seguir subiendo hasta los límites que impone Amazon,
+
+131
+00:12:10,000 --> 00:12:15,000
+pero con 1000 ya creo que se demuestra lo que queríamos.
+
+132
+00:12:15,000 --> 00:12:18,000
+Invocamos 1000 funciones de golpe, esperamos a que el 20% haya acabado.
+
+133
+00:12:18,000 --> 00:12:32,000
+Y acabamos invocando la del radius y retornamos.
+
+134
+00:12:32,000 --> 00:12:37,000
+Hay algunas que tardan un poco más porque como hemos ajustado ejemplos anteriores ya están en warm state,
+
+135
+00:12:37,000 --> 00:12:44,000
+es decir, ya están alocadas y las últimas tardan un poco más en alocarse, pero ya está.
+
+136
+00:12:44,000 --> 00:12:50,000
+Una vez visto esta parte que es básicamente puramente computacional, no prácticamente no hay datos,
+
+137
+00:12:50,000 --> 00:12:56,000
+haremos el típico ejemplo del conteo de palabras, contar cuántas palabras hay en un conjunto de textos.
+
+138
+00:12:56,000 --> 00:13:01,000
+Utilizaremos las obras de teatro de Federico García Lorca.
+
+139
+00:13:01,000 --> 00:13:12,000
+Aquí utilizando la API de storage de Leithobs, veremos cuántos ficheros tenemos dentro de este bucket de Amazon
+
+140
+00:13:12,000 --> 00:13:20,000
+bajo este prefijo y imprimimos el listado, esto es el data que tenemos.
+
+141
+00:13:20,000 --> 00:13:24,000
+Si no me equivoco, ahí ve a 13 o 14 ficheros.
+
+142
+00:13:24,000 --> 00:13:31,000
+Aquí definimos una función que hará el conteo de palabras, recibirá el objeto de ese 3,
+
+143
+00:13:31,000 --> 00:13:37,000
+hará el split de las líneas, lo decodifica hace otra vez el split,
+
+144
+00:13:37,000 --> 00:13:45,000
+cuenta las palabras, si la palabra no la ha visto en el diccionario le pone un 1 y si no aumenta su valor.
+
+145
+00:13:45,000 --> 00:13:51,000
+Y aquí haremos la parte del reduce que será juntar todos los diccionarios de cada uno de los ficheros,
+
+146
+00:13:51,000 --> 00:13:57,000
+de forma similar, contamos los resultados para cada palabra en cada conteo,
+
+147
+00:13:57,000 --> 00:14:03,000
+si la palabra no está vista, se ha asignado el valor por defecto y si no se suma al que ya había en el diccionario.
+
+148
+00:14:03,000 --> 00:14:12,000
+Y aquí invocamos el MapReduce con la función del Map, la función del reduce
+
+149
+00:14:12,000 --> 00:14:22,000
+y solo el nombre de el bucket donde creemos que se ejecute, le pasamos el prefijo, el bucket y su prefijo
+
+150
+00:14:22,000 --> 00:14:28,000
+y Leithobs invocará una función para cada uno de los ficheros que haya en ese prefijo,
+
+151
+00:14:28,000 --> 00:14:33,000
+lo cogerá y ejecutará la función del MapReduce, igual que antes,
+
+152
+00:14:33,000 --> 00:14:39,000
+espera que el 20% de funciones hayan acabado para lanzar el job y aquí ya vemos que ha terminado,
+
+153
+00:14:39,000 --> 00:14:45,000
+los ficheros no son muy grandes y aquí hacemos el print de resultado,
+
+154
+00:14:45,000 --> 00:14:50,000
+imprimimos los 10 más repetidos, creemos todo.
+
+155
+00:14:50,000 --> 00:14:56,000
+Ahora usaremos en cambio de múltiples ficheros pequeños, usaremos un fichero grande,
+
+156
+00:14:56,000 --> 00:15:03,000
+es un fichero de el Quijote, en realidad no es solo Quijote, es el Quijote y 40 copias del Quijote
+
+157
+00:15:03,000 --> 00:15:07,000
+porque si no no era suficiente grande.
+
+158
+00:15:07,000 --> 00:15:15,000
+Aquí tenemos otra vez usando la API de Storats, cogemos los metadatos del fichero
+
+159
+00:15:15,000 --> 00:15:23,000
+y vemos que el fichero tiene un tamaño de 42 megabytes, tampoco se llama Big Data pero era un ejemplo.
+
+160
+00:15:23,000 --> 00:15:31,000
+Aquí definimos un tamaño de chunk de 4 megas y usando las mismas funciones de antes,
+
+161
+00:15:31,000 --> 00:15:41,000
+le añadimos el chunk size y le decimos que parta cada 4 megabytes,
+
+162
+00:15:41,000 --> 00:15:46,000
+entonces lo que hará LizOps será invocar para cada chunk de 4 megabytes una función,
+
+163
+00:15:46,000 --> 00:15:52,000
+esa función cogerá solo esa parte, lo alejera, la trabajará y la retornará el resultado del Map
+
+164
+00:15:52,000 --> 00:16:03,000
+y luego se encenderá al Reduce y aquí tenemos otra vez el resultado de las 40 copias del Quijote.
+
+165
+00:16:03,000 --> 00:16:11,000
+Una vez visto un poco que puede hacer LizOps, pasemos a un caso de análisis de datos geospaciales,
+
+166
+00:16:11,000 --> 00:16:18,000
+en particular veremos análisis de datos del Sentinel-2, que son una pareja de satélites que orbitan la tierra,
+
+167
+00:16:18,000 --> 00:16:23,000
+que van tomando fotografías como la que vemos aquí a la derecha, en particular utilizaremos
+
+168
+00:16:23,000 --> 00:16:28,000
+una versión reducida de esas fotografías optimizadas para el cloud, que son de menor tamaño,
+
+169
+00:16:28,000 --> 00:16:37,000
+se particionen las imágenes en 121 sub-imágenes, se almacenan en un baquet de S3 y esto nos facilitará el procesador paralelo.
+
+170
+00:16:37,000 --> 00:16:43,000
+Con esas imágenes lo que haremos será calcular el índice de vegetación de diferencia normalizada,
+
+171
+00:16:43,000 --> 00:16:50,000
+es un índice que se calcula sobre la vegetación de un terreno para determinar el estado de salud de la vegetación.
+
+172
+00:16:50,000 --> 00:16:57,000
+Lo que hacemos es coger la banda roja de la imagen y la banda cercana al infrarrojo y ver esta relación,
+
+173
+00:16:57,000 --> 00:17:05,000
+siguiendo la formula de aquí a la derecha, si resumen si la banda roja es muy pequeña en comparación
+
+174
+00:17:05,000 --> 00:17:10,000
+con el infrarrojo, quiere decir que la planta está más sana, si la banda roja crece,
+
+175
+00:17:10,000 --> 00:17:17,000
+quiere decir que la planta está de más marrón, quiere decir que está más estresada, le falta agua o está muerta.
+
+176
+00:17:17,000 --> 00:17:28,000
+Vamos con la demo, hacemos los imports. En esta demo no me voy a parar tanto en explicar las partes del código
+
+177
+00:17:28,000 --> 00:17:36,000
+porque hay bastantes cosas. Aquí definimos los parámetros de input, aquí lo que haremos en la demo será comparar
+
+178
+00:17:36,000 --> 00:17:43,000
+el estado de la vegetación en un momento del año, la primera mitad del año y en un momento de la segunda mitad del año.
+
+179
+00:17:43,000 --> 00:17:49,000
+Como los satélites no pasan todos los días por encima de toda la tierra y van tomando fotos,
+
+180
+00:17:49,000 --> 00:17:56,000
+cuando pasan solo por encima hay que buscar, le doy una horquilla de seis meses para que encuentren una imagen
+
+181
+00:17:56,000 --> 00:18:05,000
+y aquí le doy otra horquilla de seis meses de la segunda mitad del año y cogeremos un dato de una primera mitad y un dato de la segunda.
+
+182
+00:18:05,000 --> 00:18:11,000
+Y aquí otra cosa a tener en cuenta es cuántas nubes habían cuando se te pasó por encima,
+
+183
+00:18:11,000 --> 00:18:20,000
+entonces tenemos un porcentaje máximo de nubes que le pongo un 15% y aquí seleccionamos el área en el que queremos trabajar,
+
+184
+00:18:20,000 --> 00:18:31,000
+cogeremos algo así, esta parte de aquí, y cogiendo toda esta parte que es bastante verde.
+
+185
+00:18:31,000 --> 00:18:44,000
+Aquí es una función auxiliar para coger las latitudes de estos puntos y otra para calcular las distancias que nos quede bien todo bien cuadrado.
+
+186
+00:18:44,000 --> 00:18:54,000
+Ahora buscamos dentro del baquet de ese tres los datos de estos momentos,
+
+187
+00:18:54,000 --> 00:19:08,000
+esto tarda un pelín porque hay que buscar en seis meses de datos y ahora haremos la visualización de los cuadrantes que usaremos
+
+188
+00:19:08,000 --> 00:19:19,000
+para que veáis que partes de datos utilizan, para visualizarlos primero cojemos los metadatos y hacemos el plot aquí abajo.
+
+189
+00:19:19,000 --> 00:19:27,000
+Los metadatos cojemos con los listops también, venimos aquí, busca los metadatos en el baquet,
+
+190
+00:19:27,000 --> 00:19:31,000
+uno de los retornas, hacemos aquí el plot.
+
+191
+00:19:31,000 --> 00:19:48,000
+Cogé de todas las subparticiones que tenemos disponibles, cogiera esta subpartición y la justo de abajo para coger toda esta parte que es la que hemos dicho que queríamos analizar.
+
+192
+00:19:48,000 --> 00:19:59,000
+Aquí definimos dos funciones, una que calcula el índice NDVI para cada uno de los momentos, la primera mitad del año y la segunda mitad.
+
+193
+00:19:59,000 --> 00:20:09,000
+Y más abajo tenemos una función en la cual calculamos la diferencia de estos índices.
+
+194
+00:20:09,000 --> 00:20:26,000
+Y ahora definimos de estas cuadrículas lo que haremos será particionar la cuadrícula para que se distribuya la tarea en distintas funciones.
+
+195
+00:20:26,000 --> 00:20:44,000
+Básicamente esto lo tenemos hecho aquí, básicamente queríamos una lista con los metadatos de cada una de las, lo que tiene que trabajar con las funciones y aquí invocamos con un map la función sobre las particiones.
+
+196
+00:20:44,000 --> 00:20:56,000
+Aquí está invocando unas 363 funciones, cada una de ellas analizará una subparte de esa imagen.
+
+197
+00:20:56,000 --> 00:21:15,000
+Esto tarda un pelín pero es bastante rápido.
+
+198
+00:21:15,000 --> 00:21:35,000
+Aquí generamos una función para generar el plot de los datos que hemos procesado y aquí generamos las imágenes.
+
+199
+00:21:35,000 --> 00:21:58,000
+Aquí vemos que tenemos la de la izquierda que corresponde a marzo, tenemos el NDVI para cada punto, cuanto más verde más vegetación, aquí tenemos el de la segunda mitad ya que tenemos la diferencia en el que vemos los puntos donde más ha variado la vegetación.
+
+200
+00:21:58,000 --> 00:22:14,000
+Vista este ejemplo lo hacemos hablar de transparencia, la definición formal teórica de transparencia significa, es decir, se ha definido como ocultar al usuario y al programador de la aplicación la separación de los componentes en un sistema distribuido,
+
+201
+00:22:14,000 --> 00:22:30,000
+de modo que el sistema se perciba común todo y no como una colección de componentes independientes, ¿qué quiere decir? Quiere decir que el programador accede a recursos locales o remotos usando las mismas operaciones,
+
+202
+00:22:30,000 --> 00:22:46,000
+es decir, la misma API o las mismas instrucciones de si está operativo o el mismo network. Nosotros conseguimos transparencia sobre la librería de multiprocesing de Python,
+
+203
+00:22:46,000 --> 00:22:59,000
+nosotros hemos implementado la API de multiprocesing sobre Lithops, es decir, toda la parte de procesos y la púl de procesos está implementada sobre Lithops, se ajustará en este caso sobre Lambda,
+
+204
+00:22:59,000 --> 00:23:12,000
+y tenemos toda la parte de comunicación, signalización, estado compartido, colas sobre una base de datos Redis, tiene que ser sobre Redis, usamos Redis porque las funciones no se pueden comunicar entre ellas,
+
+205
+00:23:12,000 --> 00:23:28,000
+entonces nos ha faltado una tercera parte para comunicarse. Entonces, ¿cómo conseguimos la transparencia? La transparencia lo que haremos será cambiar el import de una aplicación que ya use multiprocesing por
+
+206
+00:23:28,000 --> 00:23:42,000
+Lithops.multiprocesing, esa aplicación pasará a ejecutarse en la nube. Primero veamos un poco cómo funciona esta API de multiprocesing, luego veremos una demo utilizando esta API.
+
+207
+00:23:42,000 --> 00:23:58,000
+Tenemos aquí la API de multiprocesing, hacemos el import de la púl, definimos una función que calcula el cuadrado de un número y con esta púl hacemos un map sobre una lista, eso se ha ejecutado en local.
+
+208
+00:23:58,000 --> 00:24:14,000
+Ahora vemos cómo con lo mismo tenemos Lithops.multiprocesing en el import, importamos la púl y hacemos el mismo código, se ejecuta en pocas las tres funciones y retorna el resultado.
+
+209
+00:24:14,000 --> 00:24:32,000
+Pero Lithops.multiprocesing tiene más afracciones, tiene colas, procesos, etc. Tenemos una función que coge una cola como parámetro, hace un put de la string cola y esta.
+
+210
+00:24:32,000 --> 00:24:52,000
+Definimos una cola, decimos un proceso que llamará esta función y como parámetro le ponemos una cola, hacemos el estar del proceso y mientras tanto nuestro proceso principal hará el get esperando a que el otro proceso meta la string en la cola,
+
+211
+00:24:52,000 --> 00:25:12,000
+eso se ejecuta en local y aquí tenemos la ejecución, la misma ejecución con Lithops, mismo código, aquí tenemos la cola que ha cogido nuestro programa principal y esta parte de este proceso se ha ejecutado en la nube.
+
+212
+00:25:12,000 --> 00:25:28,000
+Ahora vemos un ejemplo con listas y diccionarios, de forma similar tenemos una función que coge un diccionario de y le pone estos valores y una lista l en la cual la invierte a hacer reverse.
+
+213
+00:25:28,000 --> 00:25:46,000
+Creamos la lista, creamos el diccionario, creamos un proceso que coge la función f y nosotros aquí en el proceso principal hacemos el print. Hacemos lo mismo con Lithops, tenemos la misma código, ejecutamos,
+
+214
+00:25:46,000 --> 00:26:08,000
+invoca una función que hará las tareas exactas y nuestro proceso principal coge el resultado y para acabar, también vemos otro ejemplo con values, también bastante similar, un value es un valor compartido en el cual tenemos una función, lo que hará será hacer un range de 10 un 4,
+
+215
+00:26:08,000 --> 00:26:33,000
+cogerá el log de ese valor y aumentará su valor por 1. Aquí lo haremos un map con 4 procesos y invocaremos y al final imprimimos el valor final, 4 procesos, 10 procesos cada 10 force, es decir 40 de final y con Lithops tenemos lo mismo que vemos que
+
+216
+00:26:33,000 --> 00:26:54,000
+valor inicial 0 y el valor final es 40, es decir que la consistencia de 2 se mantiene. Una vez vista que la API de multiprocesis funciona y funciona bien, hagamos el último ejemplo en el que haremos un análisis de sentimientos, cogemos un dataset de 1,6 millones de tweets
+
+217
+00:26:54,000 --> 00:27:16,000
+y con una extensión de pandas haremos un proceso de un paralelo en local y en la nube. Lo que haremos será clasificar los tweets, se inconscien positivos, neutrales o negativos, veamos ahora esta demo, utilizaremos pandarrelel que es una extensión de pandas, lo que hace es añadir
+
+218
+00:27:16,000 --> 00:27:35,000
+gracias a multiprocessing, transformación de datos en paralelo, tenemos de normal con pandas, los apples son con un solo proceso y con la paralización de pandarrelel gracias a multiprocessing puedes hacerlo con tantos CPUs como tenga tu ordenador.
+
+219
+00:27:35,000 --> 00:27:59,000
+Una vez dicho esto hacemos el importe de las librerías y cargamos el dataset del CSV, aquí tenemos dataset con 1,6 millones de filas y un par de funciones sencillas donde limpiamos un poco los tweets, les quitamos menciones, los hashtags, etc.
+
+220
+00:27:59,000 --> 00:28:06,000
+Y luego otra función que utilizando la librería textblob, coge la polaridad del texto.
+
+221
+00:28:06,000 --> 00:28:29,000
+Este podemos realizar esto en local y utilizamos la extensión de pandarrelel que lo que hace es añadirle a los dataframes las funciones de paralelo y aquí vemos que trabajará sobre 8 works que son los que tiene el ordenador y utilizará las pipes de multiprocessing para enviar los datos.
+
+222
+00:28:29,000 --> 00:28:39,000
+Esto está de aproximadamente un minuto, lo voy a dejar, lo voy a parar.
+
+223
+00:28:39,000 --> 00:28:58,000
+Una vez parado me vengo al fichero de pandarrelel que tengo aquí abierto, copio esto, cambio el import, cambio el import de multiprocessing por el delizops, guardo a cuál resta del kernel porque si no lo coge.
+
+224
+00:28:58,000 --> 00:29:10,000
+Y cargo otra vez dependencias, dataset, función de limpiar, función de procesado.
+
+225
+00:29:10,000 --> 00:29:19,000
+Vale, ya está parado, me vengo, esta es la función que hemos matado antes que se ejecutaban local y ahora usando el mismo código y inicializamos el pandarrel.
+
+226
+00:29:19,000 --> 00:29:36,000
+Vemos aquí, va a trabajar ya con 100 workers y hacemos la ejecución del paralelo apply de pandarrelel que utiliza ya el isops como podemos ver aquí.
+
+227
+00:29:36,000 --> 00:29:54,000
+Ahora lo que hace es dividir el dataset entre los 100 workers, les manda por pipes cada uno los datos con los que tiene que trabajar, las funciones o los procesos, los cogen, los transforman y los retornan.
+
+228
+00:29:54,000 --> 00:30:09,000
+Aquí vemos que ya invocado las 100 funciones, todas se ejecutan y retorna y ya acabado.
+
+229
+00:30:09,000 --> 00:30:21,000
+Aquí tenemos la serie que retorna de todas las posibilidades y aquí añadimos al dataset que tenemos aquí en la columna de derecha la polaridad de cada tuite calculada.
+
+230
+00:30:21,000 --> 00:30:38,000
+Una vez visto esto ya vamos acabando aquí como comentarios finales, comentar que el isops se usa en metaspace y que es un programa de análisis genómico de datos genómicos y también se usa en producción dentro de IBM.
+
+231
+00:30:38,000 --> 00:30:50,000
+Tenemos el repositorio bastante activo, mantenido, bienvenidos a colaborar si grays, más de 3.400 commits, 33 contributores, se aceptan contributores.
+
+232
+00:30:50,000 --> 00:31:02,000
+Y bueno, se parece que estamos contratando, hemos recibido financiación para seguir desarrollando el isops a tener investigación con el isops, así que si estés interesados trabajamos en remoto también si queréis.
+
+233
+00:31:02,000 --> 00:31:10,000
+Aquí tenéis el código, las demos, tenéis aquí también el QR con el link, nos subió todavía cuando acabe la charla, luego lo subo.
+
+234
+00:31:10,000 --> 00:31:14,000
+Y muchas gracias por su atención.
+
+235
+00:31:14,000 --> 00:31:24,000
+Bueno, preguntas ahora. Tenemos un par que levanten la mano, uno, dos, perfecto.
+
+236
+00:31:24,000 --> 00:31:29,000
+Solamente un anuncio, hubieron unos problemas técnicos en la sala al lado.
+
+237
+00:31:29,000 --> 00:31:32,000
+Y nomás me quedo aquí, ¿qué pasó?
+
+238
+00:31:32,000 --> 00:31:34,000
+¿Alguien se ha dado?
+
+239
+00:31:34,000 --> 00:31:35,000
+¿Qué pasó?
+
+240
+00:31:35,000 --> 00:31:44,000
+Se ha trazado las charlas, así que la charla de Relámpago van a empezar a las 6.35, no ahora se ven, para que no tengan que salir corriendo si tienen que perderse eso.
+
+241
+00:31:44,000 --> 00:31:52,000
+Así que ahora nos relajamos un poquito y hacemos un par de preguntas y luego nos vamos tranquilamente, nos tomamos un café y nos vamos a la charla de Relámpago.
+
+242
+00:31:52,000 --> 00:31:53,000
+Vale.
+
+243
+00:31:53,000 --> 00:31:56,000
+Gracias.
+
+244
+00:31:56,000 --> 00:31:58,000
+Muy interesante.
+
+245
+00:31:58,000 --> 00:32:15,000
+Y nada más me da la duda de si hay alguna forma de traquear o de dar seguimiento a los errores en los múltiples worker y procesos funcionales.
+
+246
+00:32:15,000 --> 00:32:35,000
+Sí, hay una, tiene un, es decir, si falla, te da el error, te lo retorno y te lo printe a, como si hubiese fallado en local y obtienes el error, no tienes que ir a mirar los logs de las landas en la consola de Amazon o del Club Provider, sí, te lo re.
+
+247
+00:32:35,000 --> 00:32:57,000
+Todos los errores, todo lo que se imprimen pantalla se sube a storage como resultado de la ejecución aunque falle, luego el ejecutor de LeadOps coge ese resultado y te lo printe a ti dentro y te puede extraquear que es lo que ha fallado sin tener que ir a los logs del provider.
+
+248
+00:32:57,000 --> 00:33:15,000
+Y acá tenemos otra pregunta. Gracias. Así, echando un vistazo rápido, estaba, o sea, ahora dependiendo de lo que me digas, una cosa u otra, estaba intentando hacerme un poco la idea de que diferencia entre LeadOps y algo parecido como podría ser parecido, como podría ser Celery o algo así.
+
+249
+00:33:15,000 --> 00:33:39,000
+Entonces entiendo que en vez de hacer tareas a Dock como se hacen Celery para cada uno de los cálculos, lo que estáis haciendo es suplantar o sustituir multiprocessing para que el programador o el investigador le sea un poco transparente en ese sentido que no sabe de tras dónde se está ejecutando y detrás de LeadOps se encarga de coordinar y lanzar cosas.
+
+250
+00:33:39,000 --> 00:33:52,000
+Entonces imagino que si por la comunicación y por lo que supongo que espera el programa que estás ejecutando o el desarrollador imagino que será más adecuado para determinados tipos de tareas que otras.
+
+251
+00:33:52,000 --> 00:34:01,000
+Por ejemplo, para tareas muy cortas y muy rápidas si necesitas recibir el feedback de todos los procesos, a lo mejor no es lo más adecuado.
+
+252
+00:34:01,000 --> 00:34:19,000
+Aquí hay dos detalles. El primero es LeadOps tiene su API de futuros que es la que ha explicado al principio que no tiene nada que ver con la de multiprocessing y puedes trabajar y programar tu código solo con la de futuros que es la más estable.
+
+253
+00:34:19,000 --> 00:34:32,000
+Luego tenemos un API más en desarrollo y más experimental que es la de multiprocessing, en la cual es como un experimento en el que cogíamos código multiprocessing.
+
+254
+00:34:32,000 --> 00:34:36,000
+Tenemos varios ejemplos, no solo este, de migrar aplicaciones y existentes al cloud.
+
+255
+00:34:36,000 --> 00:34:52,000
+Entonces dicho esto, obviamente el ejecutar código en el cloud tiene un overhead un poco importante, depende de qué tipo de aplicaciones se utilizan, si tienes que hacer muchas funciones a la vez el overhead se te va acumulando.
+
+256
+00:34:52,000 --> 00:35:07,000
+Es mejor trabajar con unas funciones que duran por lo menos unos cuantos segundos para compensar este overhead. Puedes tener funciones que duran hasta 10, 15 minutos.
+
+257
+00:35:07,000 --> 00:35:15,000
+Cuanto más duren menos proportion de overhead tienes en la ejecución de tus work.
+
+258
+00:35:15,000 --> 00:35:24,000
+Tenemos tiempo para una pregunta más.
+
+259
+00:35:24,000 --> 00:35:42,000
+En la demostración que has hecho antes, visto que has puesto Redis para la comunicación entre las diferentes funciones, este setup necesita modificar el código de las funciones que estás escribiendo para que hablen con Redis o de alguna forma es transparente.
+
+260
+00:35:42,000 --> 00:35:55,000
+El Redis, las abstracciones de los pipes, los semáforos, las barreras, las colas, todo esto está implementado en la librería de multiprocessing.
+
+261
+00:35:55,000 --> 00:36:01,000
+Lo único que tienes que tener es un Redis disponible y decirle a Lizos, este es mi Redis con esta contraseña.
+
+262
+00:36:01,000 --> 00:36:13,000
+Claro, todas estas abstracciones están dentro de la API de multiprocessing y nosotros las tenemos implementadas.
+
+263
+00:36:13,000 --> 00:36:22,000
+Unas invocan directamente funciones, otras ejecutan cosas sobre la API de Redis, pero todo eso ya está hecho.
+
+264
+00:36:22,000 --> 00:36:43,000
+Por ejemplo, este mismo, cuando haces un manager DIC importando lo del manager desde Lizos, esto ya sabe que tiene que ir a la Redis que tú tienes montada con la contraseña.
+
+265
+00:36:43,000 --> 00:36:53,000
+Básicamente lo único que tienes que configurar es el IP de la Redis con la contraseña.
+
+266
+00:36:53,000 --> 00:36:55,000
+¿Y ese Redis?
+
+267
+00:36:55,000 --> 00:37:02,000
+Lo puedes tener donde quieras. Cuanto más cerca lo tengas de las funciones, menos latencia tendrás y mejor funcionará.
+
+268
+00:37:02,000 --> 00:37:07,000
+Pero puedes tenerlo en tu propio ordenador si tienes IP público.
+
+269
+00:37:07,000 --> 00:37:13,000
+Bueno, y si tienen alguna otra pregunta quizás de seguro van a poder encontrar.
+
+270
+00:37:13,000 --> 00:37:38,000
+Le damos la gracia una vez más.
+

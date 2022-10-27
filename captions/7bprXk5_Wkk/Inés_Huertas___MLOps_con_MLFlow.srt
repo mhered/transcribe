@@ -1,0 +1,2052 @@
+1
+00:00:00,000 --> 00:00:21,000
+Vamos a comenzar con la siguiente charla.
+
+2
+00:00:21,000 --> 00:00:31,000
+Por lo que nos presento Ines Huertas, ella es Head de Data y Entregién Certificial en Cairo, y forma parte de Uide Hume,
+
+3
+00:00:31,000 --> 00:00:36,000
+que es un think tank que trabaja en la ética dentro del mundo de la entregién certificial.
+
+4
+00:00:36,000 --> 00:00:47,000
+También es coordinadora de RLiDis Madrid, la competencia, y forma parte del programa Open Data Notes de la NASA.
+
+5
+00:00:47,000 --> 00:00:53,000
+Ella nos va a hablar sobre ML Ops en MLflow, y no os robo más tiempo porque vamos justo ahí. Muchas gracias.
+
+6
+00:00:53,000 --> 00:00:59,000
+Muchas gracias.
+
+7
+00:00:59,000 --> 00:01:09,000
+Muchas gracias por venir e interrumpir el café. Sé que es tentador quedarse en un paseo fuera, así que gracias por estar aquí hoy.
+
+8
+00:01:09,000 --> 00:01:12,000
+Muchas gracias a la organización por invitarme.
+
+9
+00:01:12,000 --> 00:01:22,000
+Voy a explicar un poco un software que en Cairo se utilizamos para la parte sobre todo de tracking de modelos, que se llama MLflow.
+
+10
+00:01:22,000 --> 00:01:33,000
+Es Open Source y creo que tiene muchas bondades y cosas curiosas que son importantes que conozcamos, la gente que nos dedicamos a la parte de datos.
+
+11
+00:01:33,000 --> 00:01:42,000
+Y sobre todo esa gente que está entre el puente del Data Science y el Data Engineer, porque los Data Science desarrollamos en un Jupyter Notebook,
+
+12
+00:01:42,000 --> 00:01:50,000
+y luego nos llega y nos dice, bueno, y esto como lo productivizamos, y tú coges y le mandas el Jupyter Notebook, y el Data Engineer te mira con cara de bueno,
+
+13
+00:01:50,000 --> 00:01:52,000
+y esto como lo empujo en un job de Spark.
+
+14
+00:01:52,000 --> 00:01:55,000
+O sea, ¿qué tiene que pasar para que esto lo podamos productivizar?
+
+15
+00:01:55,000 --> 00:01:59,000
+Y creo que es una herramienta interesante que todos deberíamos conocer.
+
+16
+00:01:59,000 --> 00:02:03,000
+Bueno, primero presentarme, ya me han presentado Andres, pero bueno.
+
+17
+00:02:03,000 --> 00:02:11,000
+Recalco la parte de la de la de Lady Madrid, si algunos de los hay interesados en hacer algo en R, sé que en la competencia,
+
+18
+00:02:11,000 --> 00:02:14,000
+pero bueno, a mí me gusta pensar que todos colaboramos.
+
+19
+00:02:14,000 --> 00:02:20,000
+Soy gente de Data y inteligencia artificial entre los de Cairo, y formo parte de un Cintan que se llama We The Human,
+
+20
+00:02:20,000 --> 00:02:26,000
+donde tratamos temas de la ética de los algoritmos, de cómo impactan en la sociedad.
+
+21
+00:02:26,000 --> 00:02:32,000
+En fin, si estáis interesados en alguna cosa de este estilo, luego si queréis me cogéis en un momentito y lo hablamos.
+
+22
+00:02:32,000 --> 00:02:38,000
+Pero bueno, hemos venido aquí a hablar del ciclo de vida, bueno, voy a empezar a hablar del ciclo de vida del software, ¿no?
+
+23
+00:02:38,000 --> 00:02:42,000
+Todos tenemos muy claro que cuando desarrollamos software,
+
+24
+00:02:42,000 --> 00:02:49,000
+tenemos una parte que es de planificación, de construcción, de entrega continua, de despliegue, de operación,
+
+25
+00:02:49,000 --> 00:02:53,000
+y todo eso luego se vuelve a retroalimentar, y volvemos otra vez al backlog,
+
+26
+00:02:53,000 --> 00:02:58,000
+donde volvemos a coger las tareas para que las construyamos, las desarrollamos, etcétera, ¿no?
+
+27
+00:02:58,000 --> 00:03:07,000
+Esto queda muy claro, pero para la parte de Machine Learning, tenemos un poco ahí
+
+28
+00:03:07,000 --> 00:03:10,000
+un problemilla, ¿no?, de que hay algunas piezas que no nos encajan, ¿no?
+
+29
+00:03:10,000 --> 00:03:16,000
+Porque cuando nosotros desarrollamos el algoritmo, primero no es lineal,
+
+30
+00:03:16,000 --> 00:03:22,000
+es decir, tú empiezas con la definición de un caso de uso, que te lo puede dar negocio,
+
+31
+00:03:22,000 --> 00:03:26,000
+entonces negocio, pues puede no tener ni idea de qué fuentes ya son las que hay que tratar,
+
+32
+00:03:26,000 --> 00:03:31,000
+la calidad de esos datos, si existen, si se están recogiendo, si quiera,
+
+33
+00:03:31,000 --> 00:03:36,000
+y muchas veces nos metemos en bucles, ya que hay que volver otra vez a la definición del caso,
+
+34
+00:03:36,000 --> 00:03:39,000
+habiendo dado el primer paso de ir a buscar las fuentes, ¿no?
+
+35
+00:03:39,000 --> 00:03:43,000
+Luego también, bueno, tenemos las fuentes ya, entonces empezamos a procesar esos datos,
+
+36
+00:03:43,000 --> 00:03:48,000
+empezamos a sacar incluso variables derivadas de los mismos,
+
+37
+00:03:48,000 --> 00:03:53,000
+evaluamos la importancia de esas variables y en ocasiones también tenemos que volver a decir los tras,
+
+38
+00:03:53,000 --> 00:03:59,000
+pues volvemos a trazar las fuentes porque, al mejor, nos estamos dejando algún dato que queríamos incluir,
+
+39
+00:03:59,000 --> 00:04:06,000
+o al mejor tenemos un dataset que es bastante malo y hay que volver otra vez a la que sí hay que salir la definición del caso,
+
+40
+00:04:06,000 --> 00:04:11,000
+y si todo eso va bien, podemos llegar a la creación del modelo, que puede ser un churro,
+
+41
+00:04:11,000 --> 00:04:15,000
+es decir, puedes llegar, que te apliques un modelo y que tengas una probabilidad de acierto,
+
+42
+00:04:15,000 --> 00:04:19,000
+pues más o menos igual de tirar una moneda, ¿no? Y aun así tendrías que volver a fase 7 previas
+
+43
+00:04:19,000 --> 00:04:22,000
+para intentar corregir o mejorar tu algoritmo, ¿no?
+
+44
+00:04:22,000 --> 00:04:27,000
+Hasta que llega a un punto en el que tienes una validación y dices, wow, este algoritmo que he desarrollado
+
+45
+00:04:27,000 --> 00:04:33,000
+con la librería de café o de pie torch o de lo que sea, me va genial,
+
+46
+00:04:33,000 --> 00:04:36,000
+y ahora esto ¿cómo lo ponemos en producción?
+
+47
+00:04:36,000 --> 00:04:44,000
+Dices, vale, yo tengo un maravilloso Jupyter Node, un maravilloso.py, un maravilloso script de R,
+
+48
+00:04:44,000 --> 00:04:47,000
+y ¿qué? ¿Cómo se operativiza?
+
+49
+00:04:47,000 --> 00:04:52,000
+Entonces aquí es donde llega el encaje de bolillos de la gente de ingeniería y te empieza a decir
+
+50
+00:04:52,000 --> 00:04:56,000
+no, lo metemos en un docker, le montamos un punto de API, lo integramos de esa forma
+
+51
+00:04:56,000 --> 00:04:59,000
+y cada uno de ellos tiene una forma súper dedicada, ¿vale?
+
+52
+00:04:59,000 --> 00:05:04,000
+Mantener eso cuando es muy, muy grande, es una locura, y el extremo contrario es decir
+
+53
+00:05:04,000 --> 00:05:08,000
+oye chicos, todos vamos a trabajar con la misma herramienta y vamos a trabajar de la misma forma,
+
+54
+00:05:08,000 --> 00:05:16,000
+lo cual también pues oye, es poco flexible y bueno, en general, nosotros lo entiendemos y lo gusta, ¿no?
+
+55
+00:05:16,000 --> 00:05:21,000
+Entonces bueno, cuando desarrollamos modelos de algoritmos de machine learning entre ejemplos artificial,
+
+56
+00:05:21,000 --> 00:05:25,000
+tenemos en cuenta tres fases, ¿no? Diseño, desarrollo y operación.
+
+57
+00:05:25,000 --> 00:05:31,000
+Lo que nos enseñan en la universidad y lo que casi todo el mundo hacemos es la parte de diseño y desarrollo,
+
+58
+00:05:31,000 --> 00:05:37,000
+pero la parte de operativizar no es tan solo ponerlo en producción, es también que esa integración sea correcta,
+
+59
+00:05:37,000 --> 00:05:40,000
+que sea la monitorización, bueno, vamos sirviendo.
+
+60
+00:05:40,000 --> 00:05:47,000
+Para la parte del diseño, aquí tenemos requisitos de ingeniería priorizando los casos de machine learning,
+
+61
+00:05:47,000 --> 00:05:51,000
+no todos los casos son iguales, todos los casos de uso, probablemente eso sea negocio que nos lo diga,
+
+62
+00:05:51,000 --> 00:05:56,000
+y luego también la disponibilidad de los datos, o sea, hay datos que, ah, vale, sí, tenemos este dato,
+
+63
+00:05:56,000 --> 00:06:02,000
+sí, lo tenemos guardado en un histórico, en un RAW que está en estado H dentro de Amazon,
+
+64
+00:06:02,000 --> 00:06:07,000
+que recuperarlo, tendríamos que hacer un reprocesado y, ostras, pues hay que pensarlo,
+
+65
+00:06:07,000 --> 00:06:11,000
+frente a lo mejor un dato que ya tienes en el dato más fresco y que el caso de uso puede ir mucho más rápido,
+
+66
+00:06:11,000 --> 00:06:19,000
+no, a lo mejor son dos semanas o una semana que te tiras intentando reacertos esos datos, ¿no?
+
+67
+00:06:19,000 --> 00:06:26,000
+Luego la parte de desarrollo, pues aquí entra la parte de ingeniería de datos y la parte más de data science,
+
+68
+00:06:26,000 --> 00:06:31,000
+de creación y validación de los modelos, y finalmente tenemos una parte que es la del despliegue del modelo,
+
+69
+00:06:31,000 --> 00:06:39,000
+intentar crear unos pipelines de integración continua y despliegue automático, que sería ideal,
+
+70
+00:06:39,000 --> 00:06:45,000
+pero que son bastante complicados, y la parte de la monitorización, porque claro, tú puedes desarrollar un modelo
+
+71
+00:06:45,000 --> 00:06:55,000
+y ese modelo, con el tiempo, puede ir perdiendo precisión, o ese modelo puede ser que tengas que re-entrenarlo cada tres días
+
+72
+00:06:55,000 --> 00:07:02,000
+porque se te dispara mucho la tasa de error que tienes, todo eso no tienes que monitorizar,
+
+73
+00:07:02,000 --> 00:07:04,000
+masaliz está funcionando correctamente.
+
+74
+00:07:04,000 --> 00:07:11,000
+Además, por otro lado, aquí, esto es un slide de la gente de Databricks, que la verdad es que lo explica bastante bien,
+
+75
+00:07:11,000 --> 00:07:17,000
+resumimos un poco las otras fases que se han visto, se han propuesto del ciclo de vida,
+
+76
+00:07:17,000 --> 00:07:21,000
+en el que vamos desde el Datarao hasta la parte de Ploy, ¿no?
+
+77
+00:07:21,000 --> 00:07:26,000
+Y como veis, el ecosistema de herramientas que estamos trabajando es muy diversos,
+
+78
+00:07:26,000 --> 00:07:31,000
+es decir, puedes estar trabajando con una fuente de datos que puede ser un Hado,
+
+79
+00:07:31,000 --> 00:07:36,000
+que está haciendo la preparación de los datos en Spark, que luego desarrolla su modelo en Tensor
+
+80
+00:07:36,000 --> 00:07:40,000
+y que luego lo quieras desplegar en Kubernetes, ¿vale?
+
+81
+00:07:40,000 --> 00:07:46,000
+Es decir, intentar estandarizar todos esos procesos para que la gente sepa cómo trabajar,
+
+82
+00:07:46,000 --> 00:07:54,000
+sepa cómo debe entregar los datos, cómo debe generar el modelo, por qué que ocurre esta hora.
+
+83
+00:07:54,000 --> 00:08:01,000
+Tú, como datasayan y desarrollas a lo mejor un modelo con Scarlett en un Jupyter Notebook,
+
+84
+00:08:01,000 --> 00:08:08,000
+se lo das al datanjianir y el datanjianir tiene que rehacer ese código para adaptarlo, por ejemplo, a Spark,
+
+85
+00:08:08,000 --> 00:08:13,000
+o para adaptarlo a la herramienta donde se vaya a desplegar ese algoritmo, ¿no?
+
+86
+00:08:13,000 --> 00:08:18,000
+Y, claro, ahí ya entran un montón de errores humanos,
+
+87
+00:08:18,000 --> 00:08:22,000
+errores de cálculo frente a lo que te he dado, lo que ha ocurrido.
+
+88
+00:08:22,000 --> 00:08:28,000
+Y también porque los datanjianir no tienen por qué entender qué es lo que se está haciendo a nivel de algoritmo.
+
+89
+00:08:28,000 --> 00:08:36,000
+Únicamente tienen que intentar adaptar lo máximo posible ese código para que en su pipeline vaya lo más rápido posible.
+
+90
+00:08:36,000 --> 00:08:39,000
+Y es que es una pena, ¿no?
+
+91
+00:08:39,000 --> 00:08:47,000
+Porque tardamos mucho tiempo en no prohibir estos modelos, en adaptarlos frente a la cantidad de modelos que nosotros estamos desarrollando,
+
+92
+00:08:47,000 --> 00:08:58,000
+pues tan solo creo que pasan un 10% a producción, es decir, cuesta tanto que en realidad estamos perdiendo cierta eficiencia a la hora de probar.
+
+93
+00:08:58,000 --> 00:09:03,000
+¿Qué retos tenemos? Bueno, pues tenemos el reto de compartición de los modelos.
+
+94
+00:09:03,000 --> 00:09:11,000
+Claro, yo desarrollo en mi máquina, yo desarrollo en una GPU, tengo un código que lanzo con unos parámetros que me apunto en algún lado,
+
+95
+00:09:11,000 --> 00:09:21,000
+lo puedo tener más o menos organizado en un repositorio, pero ¿cómo puedo compartir ese modelo con otra persona?
+
+96
+00:09:21,000 --> 00:09:24,000
+Sí, le puedo pasar el Jupyter Nobook, pero a lo mejor me dice, tía,
+
+97
+00:09:24,000 --> 00:09:27,000
+pero las variables de entorno que estás utilizando, ¿cuáles son?
+
+98
+00:09:27,000 --> 00:09:32,000
+¿Qué contextos estás usando? ¿Qué librerías con qué versiones tienes instaladas?
+
+99
+00:09:32,000 --> 00:09:39,000
+Esto hace que sea muy difícil de reproducir el código, incluso si ha sido muy meticuloso, es decir,
+
+100
+00:09:39,000 --> 00:09:47,000
+aquí en el pasado que ha hecho un algoritmo con un conjunto de datos, han pasado 6 meses,
+
+101
+00:09:47,000 --> 00:09:52,000
+ha intentado volver a rehacerlo y te ha dado fallo, o no os cuadraban las versiones de lo que hubiera,
+
+102
+00:09:52,000 --> 00:09:57,000
+o los datos habían cambiado, a mí me ha pasado organizar y gestionar todo ese conocimiento,
+
+103
+00:09:57,000 --> 00:10:04,000
+es importante porque necesitamos poder reproducir algunas casuísticas que hemos obtenido.
+
+104
+00:10:04,000 --> 00:10:07,000
+Y luego no existe una forma estándar de empaquetar los modelos a implementar,
+
+105
+00:10:07,000 --> 00:10:11,000
+aquí cada compañía o cada uno tiene su libreriano, pues yo tengo un directorio,
+
+106
+00:10:11,000 --> 00:10:16,000
+Barriasource, donde meto todas las fuentes de datos, y luego tengo otro que Semberimen,
+
+107
+00:10:16,000 --> 00:10:21,000
+donde meto, ya bueno, está muy bien para ti o está muy bien para un equipo dedicado,
+
+108
+00:10:21,000 --> 00:10:26,000
+pero ¿por qué no existe una estándar? ¿Por qué no hay una estándar para empaquetar modelos?
+
+109
+00:10:26,000 --> 00:10:31,000
+Y luego no hay una tienda o un repositorio central para administrar estos modelos y las versiones.
+
+110
+00:10:31,000 --> 00:10:36,000
+Claro, tú puedes tener un repositorio y en ese repositorio vas empujando
+
+111
+00:10:36,000 --> 00:10:39,000
+cada uno de los modelos que consideras que son versiones estables,
+
+112
+00:10:39,000 --> 00:10:42,000
+pero eso es bastante incómodo de trabajar a la hora de intentar comparar modelos,
+
+113
+00:10:42,000 --> 00:10:45,000
+e incluso a la hora de intentar comparar métricas.
+
+114
+00:10:47,000 --> 00:10:54,000
+Para todas estas cosas, creo que Mellyflow es una de las mejores herramientas que actualmente hay,
+
+115
+00:10:54,000 --> 00:10:57,000
+bueno, también porque yo soy muy amante de Open Source,
+
+116
+00:10:57,000 --> 00:11:01,000
+entonces me parece maravilloso el poder contar con una herramienta de este estilo,
+
+117
+00:11:01,000 --> 00:11:06,000
+que se emplea para el ciclo de vida de modelos de proyectos de Machine Learning,
+
+118
+00:11:06,000 --> 00:11:11,000
+es capaz de interactuar con diferentes librerías de Machine Learning y lenguajes,
+
+119
+00:11:11,000 --> 00:11:14,000
+de tal forma que tiene diferentes módulos que ahora veremos,
+
+120
+00:11:14,000 --> 00:11:18,000
+que tienen funcionales que te permiten desde hacer un tracking de tus modelos,
+
+121
+00:11:18,000 --> 00:11:24,000
+registrar métricas, comparar modelos, hasta incluso tener modelos implementados
+
+122
+00:11:24,000 --> 00:11:27,000
+en diferentes lenguajes o en diferentes librerías,
+
+123
+00:11:27,000 --> 00:11:31,000
+y crear entre ellos una interfaz común para que sean consumidos de la misma forma,
+
+124
+00:11:31,000 --> 00:11:36,000
+de tal forma que creas como una especie de amplificación y estandarización
+
+125
+00:11:36,000 --> 00:11:39,000
+de cómo un modelo debe ser compartido.
+
+126
+00:11:39,000 --> 00:11:43,000
+Y eso es algo bastante positivo porque quita muchos estos dolores de cabeza
+
+127
+00:11:43,000 --> 00:11:46,000
+independientemente de lo que estés utilizando,
+
+128
+00:11:46,000 --> 00:11:49,000
+la persona que lo va a desplegar lo va a desplegar de la misma forma,
+
+129
+00:11:49,000 --> 00:11:54,000
+y no solo eso, sino que va a ser mucho más compatible de integración con otras herramientas.
+
+130
+00:11:54,000 --> 00:11:59,000
+Además también es muy potente en la parte de escalabilidad
+
+131
+00:11:59,000 --> 00:12:02,000
+y tiene un montón de, corre son un montón de infraestructuras,
+
+132
+00:12:02,000 --> 00:12:06,000
+o sea, lo puedes lanzar en local, tiene integración con casi todos los cláus actuales,
+
+133
+00:12:06,000 --> 00:12:10,000
+puedes trabajar también con un Kubernetes y es bastante sencillo.
+
+134
+00:12:11,000 --> 00:12:13,000
+¿Qué componentes tiene Meleeflow?
+
+135
+00:12:13,000 --> 00:12:18,000
+Bueno, pues tiene el módulo de tracking que permite registrar los experimentos,
+
+136
+00:12:18,000 --> 00:12:22,000
+toda la parte de métricas, te permite almacenar los datos
+
+137
+00:12:22,000 --> 00:12:27,000
+y el código asociado a un experimento, que un experimento al final es una ejecución,
+
+138
+00:12:27,000 --> 00:12:31,000
+y te permite prever cada una de las ejecuciones realizadas,
+
+139
+00:12:31,000 --> 00:12:35,000
+lo cual está guay porque si hay un equipo de personas que están trabajando
+
+140
+00:12:35,000 --> 00:12:38,000
+en resolver un problema y están empleando diferentes modelos,
+
+141
+00:12:38,000 --> 00:12:41,000
+están empleando diferentes parametrizaciones,
+
+142
+00:12:41,000 --> 00:12:44,000
+te va a permitir ir haciendo el tracking de cada uno de ellos,
+
+143
+00:12:44,000 --> 00:12:47,000
+de una forma centralizada, aunque cada uno de ellos esté trabajando en su ordenador local,
+
+144
+00:12:47,000 --> 00:12:49,000
+en una GPU o donde sea.
+
+145
+00:12:49,000 --> 00:12:53,000
+Luego tiene otra parte también que es muy chula, que es la parte de Meleeflow Models,
+
+146
+00:12:53,000 --> 00:12:57,000
+que lo que permite es estandarizar el formato de los modelos.
+
+147
+00:12:57,000 --> 00:13:00,000
+Claro, tú puedes crear un modelo en TensorFlow,
+
+148
+00:13:00,000 --> 00:13:05,000
+o puedes crear un modelo con PySpar, o puedes crear un modelo con lo que sea.
+
+149
+00:13:05,000 --> 00:13:10,000
+Si tú al final es capaz de traducir cualquiera de esos lenguajes a un estándar,
+
+150
+00:13:10,000 --> 00:13:17,000
+que sea capaz de interpretar cualquiera, tienes ahí un puente de comunicación brutal
+
+151
+00:13:17,000 --> 00:13:21,000
+para poder acceder a todos ellos de forma simultánea y tener variedad,
+
+152
+00:13:21,000 --> 00:13:26,000
+variedad de lenguajes y de fringos con los que trabajas.
+
+153
+00:13:26,000 --> 00:13:29,000
+Luego hay otro modelo, que es el Meleeflow Project,
+
+154
+00:13:29,000 --> 00:13:33,000
+que permiten paquetar el código de machine learning en un formato muy reutilizable.
+
+155
+00:13:33,000 --> 00:13:38,000
+De hecho, puedes hacer cosas como empujar directamente a Meleeflow,
+
+156
+00:13:38,000 --> 00:13:41,000
+un trabajo que tiene ese en un repositorio de Git.
+
+157
+00:13:41,000 --> 00:13:43,000
+Y eso para la parte de productivización está genial.
+
+158
+00:13:43,000 --> 00:13:47,000
+Y luego la parte de Model Registry, que es para la parte de almacenamiento
+
+159
+00:13:47,000 --> 00:13:49,000
+y registro de modelos.
+
+160
+00:13:49,000 --> 00:13:52,000
+Yo la charla voy a hablar principalmente del detracking y del de models
+
+161
+00:13:52,000 --> 00:13:58,000
+porque creo que son los más interesantes, o al menos los que nosotros hemos trabajado más.
+
+162
+00:13:58,000 --> 00:14:01,000
+Primero, conceptos generales.
+
+163
+00:14:01,000 --> 00:14:03,000
+¿Qué es un experimento? O sea, a lo largo de...
+
+164
+00:14:03,000 --> 00:14:05,000
+Ahora voy a empezar a enseñar un poquito la herramienta.
+
+165
+00:14:05,000 --> 00:14:08,000
+Tiene una parte de interfaz gráfica que veremos.
+
+166
+00:14:08,000 --> 00:14:11,000
+Y tienen algunos conceptos que son propios.
+
+167
+00:14:11,000 --> 00:14:15,000
+Por ejemplo, los experimentos, que son un conjunto de entrenamientos de diferentes algoritmos.
+
+168
+00:14:15,000 --> 00:14:18,000
+Tú tienes un modelo, por otro parte,
+
+169
+00:14:18,000 --> 00:14:22,000
+y esos modelos van teniendo versiones y van teniendo ejecuciones.
+
+170
+00:14:22,000 --> 00:14:27,000
+Entonces tú quieres, por un lado, tener registrado todos los modelos que has ejecutado
+
+171
+00:14:27,000 --> 00:14:30,000
+y por otro lado también quieres tener todos los experimentos
+
+172
+00:14:30,000 --> 00:14:33,000
+que has llevado a cabo sobre una determinada temática.
+
+173
+00:14:33,000 --> 00:14:38,000
+Imaginaros, pues quiero saber, todos los experimentos asociados al proyecto de NLP
+
+174
+00:14:38,000 --> 00:14:40,000
+de la empresa X.
+
+175
+00:14:40,000 --> 00:14:44,000
+O quiero saber, todos los modelos que estamos empleando
+
+176
+00:14:44,000 --> 00:14:51,000
+para el experimento de deteciento en plan de fallos en piezas de trenes.
+
+177
+00:14:51,000 --> 00:14:53,000
+Entonces, tenemos por un lado los experimentos,
+
+178
+00:14:53,000 --> 00:14:55,000
+que son conjuntos de ejecuciones.
+
+179
+00:14:55,000 --> 00:15:00,000
+Dentro de Melee Flow, cada vez que ejecutamos un entrenamiento, se le denomina RAM.
+
+180
+00:15:00,000 --> 00:15:07,000
+Un RAM tiene un identificador a partir del cual el es capaz de hacer todo el tracking dentro de Melee Flow.
+
+181
+00:15:07,000 --> 00:15:14,000
+Para la instalación es súper sencillo, es un pipi install, también lo podéis hacer con Conda.
+
+182
+00:15:14,000 --> 00:15:17,000
+Y la verdad es que esta parte no tiene mucho quebradero de cabeza.
+
+183
+00:15:17,000 --> 00:15:21,000
+Vamos a ver cómo sería un primer modelo en Melee Flow, ¿vale?
+
+184
+00:15:21,000 --> 00:15:28,000
+Como veis aquí tenemos un modelo que está utilizando ese caler
+
+185
+00:15:28,000 --> 00:15:34,000
+y es una regresión logística en el cual estamos utilizando el dataset clásico de Iris.
+
+186
+00:15:34,000 --> 00:15:40,000
+Soy súper básica, pero creo que para las cosas sencillas, mejor empezar con cosas sencillas.
+
+187
+00:15:40,000 --> 00:15:44,000
+Entonces, lo único que teníamos que hacer adicional a lo que normalmente hacemos
+
+188
+00:15:44,000 --> 00:15:52,000
+para hacer una regresión con el dataset de Iris sería importar primero el módulo de Melee Flow dentro de Python
+
+189
+00:15:52,000 --> 00:15:55,000
+y luego teníamos que utilizar la parte de Autolow.
+
+190
+00:15:55,000 --> 00:16:01,000
+Con la parte del comando Melee Flow, ese caler Autolow lo que va a hacer es registrar todos los logs
+
+191
+00:16:01,000 --> 00:16:05,000
+que normalmente descubriría el algoritmo, esa librería en concreto,
+
+192
+00:16:05,000 --> 00:16:09,000
+en un formato que Melee Flow, ahora veremos cómo lo hace,
+
+193
+00:16:09,000 --> 00:16:13,000
+inicialmente lo va a dejar dentro del sistema de ficheros, ¿vale?
+
+194
+00:16:13,000 --> 00:16:16,000
+Luego veremos cómo eso se va complejizando.
+
+195
+00:16:16,000 --> 00:16:21,000
+Me acabo de invertar la palabra, creo, pero bueno, se pone más complejo.
+
+196
+00:16:21,000 --> 00:16:26,000
+Y podemos centralizar todo eso en un servidor, entonces vamos a ir poquito a poco, ¿vale?
+
+197
+00:16:26,000 --> 00:16:30,000
+Pero como veis, no tiene mucha chicha, únicamente añadiríamos la parte del Autolow.
+
+198
+00:16:30,000 --> 00:16:36,000
+Y luego, y eso principal, el withMeleeFlow está RAM.
+
+199
+00:16:36,000 --> 00:16:41,000
+Antes he dicho que cuando cada una de las ejecución es un algoritmo, era un RAM dentro de Melee Flow
+
+200
+00:16:41,000 --> 00:16:49,000
+y es porque empiezan por esta sección, vale, del RAM, que crea el contexto de Melee Flow dentro del código.
+
+201
+00:16:49,000 --> 00:16:54,000
+Entonces, vamos a ver un ejemplito rápido.
+
+202
+00:17:05,000 --> 00:17:10,000
+Aquí veis que es el mismo código que el que tenía en las slides, ¿vale?
+
+203
+00:17:10,000 --> 00:17:19,000
+Vamos a ejecutarlo, a ver qué pasa.
+
+204
+00:17:25,000 --> 00:17:33,000
+Vale, antes, bueno, lo voy a volver a hacer porque no quiero que penséis.
+
+205
+00:17:33,000 --> 00:17:41,000
+Veis que no hay ningún directorio dentro de esta carpeta y si lo ejecuto...
+
+206
+00:17:44,000 --> 00:17:51,000
+Vale, ha creado una carpeta, vamos a ver, ha creado una carpeta que es el MLRAM, ¿vale?
+
+207
+00:17:51,000 --> 00:17:55,000
+Os he dicho antes que hemos dicho a Melee Flow que lo que tiene que hacer es escribir y volcar
+
+208
+00:17:55,000 --> 00:17:59,000
+todo lo que es culpa al algoritmo dentro del sistema de ficheros.
+
+209
+00:17:59,000 --> 00:18:07,000
+Lo meto en toda nuestra carpeta, ¿vale? Que se llama MLRAM, en la que aparece, digamos,
+
+210
+00:18:07,000 --> 00:18:11,000
+que la estructura es IDE de experimento, IDE del RAM, ¿vale?
+
+211
+00:18:11,000 --> 00:18:16,000
+Entonces, como nosotros era el primer experimento que lanzábamos, el de por defecto ha puesto la carpeta 0
+
+212
+00:18:16,000 --> 00:18:23,000
+y este codiguito que veis aquí es el identificador del RAM, ¿vale? Esta carpeta.
+
+213
+00:18:23,000 --> 00:18:29,000
+Ahí, entramos dentro y aquí vemos que hay otro sistema de carpetas que incluye el Artifacts,
+
+214
+00:18:29,000 --> 00:18:35,000
+un YAML con información, métricas, params y tags.
+
+215
+00:18:35,000 --> 00:18:41,000
+Todas estas carpetas contienen información, por ejemplo, en métricas, de las métricas
+
+216
+00:18:41,000 --> 00:18:46,000
+que ha generado el algoritmo. Por ejemplo, esta...
+
+217
+00:18:46,000 --> 00:18:52,000
+Ahí. Si lo volcamos, vemos que va registrando en un sistema de ficheros
+
+218
+00:18:52,000 --> 00:18:57,000
+toda la información necesaria para hacer ese seguimiento.
+
+219
+00:18:57,000 --> 00:19:01,000
+Entonces, hasta aquí está guay porque hemos conseguido que con una librería de Melee Flow
+
+220
+00:19:01,000 --> 00:19:06,000
+seamos capaces de traducir la salida de un algoritmo, una registración logística de ese caler
+
+221
+00:19:06,000 --> 00:19:10,000
+y lo escupa en un formato que sea un estándar.
+
+222
+00:19:10,000 --> 00:19:14,000
+Si yo consigo hacer esto, no solo con ese caler, sino con Tensorflow, con R,
+
+223
+00:19:14,000 --> 00:19:18,000
+con cualquier librería de Melee que pueda trabajar, ya estoy generando un estándar
+
+224
+00:19:18,000 --> 00:19:23,000
+porque todos ellos están generando el mismo sistema de archivos con los mismos documentos
+
+225
+00:19:23,000 --> 00:19:26,000
+con los variables que a mí me interesan, ¿no?
+
+226
+00:19:26,000 --> 00:19:30,000
+Vale, guay. Y si yo ahora, en vez de dejarlo en un sistema de ficheros,
+
+227
+00:19:30,000 --> 00:19:37,000
+me lo llevo a un servidor de tracking y empiezo a centralizar no solamente lo que estoy haciendo yo,
+
+228
+00:19:37,000 --> 00:19:41,000
+sino lo que están haciendo todos, podría centralizar todo el desarrollo y las métricas
+
+229
+00:19:41,000 --> 00:19:45,000
+de todos mis algoritmos, ¿no? Eso es lo que vamos a ver ahora.
+
+230
+00:19:45,000 --> 00:19:51,000
+Ay, perdón. Vale.
+
+231
+00:19:54,000 --> 00:19:59,000
+Ok. Aquí he dibujado... A ver, hay muchas arquitecturas de Melee Flow, ¿vale?
+
+232
+00:19:59,000 --> 00:20:02,000
+Pero digamos que esta es la que me ha parecido a mí que es la más estándar
+
+233
+00:20:02,000 --> 00:20:05,000
+y la que mejor se puede comprender.
+
+234
+00:20:05,000 --> 00:20:10,000
+Tenemos por un lado el localhost, donde vamos a tener el código imaginaros que es mi máquina,
+
+235
+00:20:10,000 --> 00:20:16,000
+la GPU en Google, es tu colap de... No sé, donde desarrolléis, ¿vale?
+
+236
+00:20:16,000 --> 00:20:19,000
+Entonces, yo ahí lo que tengo instalados son mis librerías de Melee Flow.
+
+237
+00:20:19,000 --> 00:20:22,000
+Entonces, yo estoy desarrollando y importo el Melee Flow
+
+238
+00:20:22,000 --> 00:20:25,000
+y cada vez que quiera hacer cosas de login o de métricos o de...
+
+239
+00:20:25,000 --> 00:20:30,000
+que quiera mandar, de, oye, este modelo quiero que se quede registrado a la ejecución,
+
+240
+00:20:30,000 --> 00:20:35,000
+lo incluyo dentro de mi código. Y eso, por un lado, me va a llevar la información
+
+241
+00:20:35,000 --> 00:20:43,000
+a un servidor de tracking, ¿vale? Que es donde se va a centralizar todo lo que necesito saber.
+
+242
+00:20:43,000 --> 00:20:48,000
+Este servidor de tracking lo que va a tener es una base de datos donde va a guardar la información,
+
+243
+00:20:48,000 --> 00:20:55,000
+pues los modelos, el identificador del modelo, identificador del RAM, las métricas, los parámetros, etcétera.
+
+244
+00:20:55,000 --> 00:20:59,000
+Y por otro lado, vamos a tener otro sistema de almacenamiento de los artefactos,
+
+245
+00:20:59,000 --> 00:21:06,000
+que es lo que contienen los modelos en sí y los datos y el código y todo lo pesado,
+
+246
+00:21:06,000 --> 00:21:11,000
+que puede ser en... no, no es un sistema de ficheros externo,
+
+247
+00:21:11,000 --> 00:21:18,000
+viene en un S3, pero integra con un montón de herramientas, puede ser de Google, puede ser de Azure, puede ser de Amazon.
+
+248
+00:21:18,000 --> 00:21:21,000
+Y bueno, arrancarlo es tan sencillo como aparece abajo,
+
+249
+00:21:21,000 --> 00:21:27,000
+y luego creo que ahora os voy a hacer una demo de cómo hacerlo en local.
+
+250
+00:21:27,000 --> 00:21:33,000
+Así que principalmente se tendríamos en localhost, el servidor de tracking,
+
+251
+00:21:33,000 --> 00:21:39,000
+el almacenamiento de los artefactos y el almacenamiento de la base de datos para el metadata.
+
+252
+00:21:39,000 --> 00:21:43,000
+Ahora os voy a enseñar cómo lo arranco yo en local, ¿vale?
+
+253
+00:21:43,000 --> 00:21:46,000
+Esto es un ejemplo local, ¿vale?
+
+254
+00:21:46,000 --> 00:21:50,000
+Que igual luego lo ponéis en producción y me dices, tía, en una castaña, ¿vale?
+
+255
+00:21:50,000 --> 00:21:52,000
+Que veáis que está en local, que no...
+
+256
+00:21:52,000 --> 00:21:57,000
+¿Qué es lo que vamos a hacer? Pues yo tengo instalado una base de datos de BSQL
+
+257
+00:21:57,000 --> 00:22:00,000
+donde vamos a guardar toda la parte del metadata.
+
+258
+00:22:00,000 --> 00:22:05,000
+Necesito un repositorio para los artefactos y me he montado un Minio, ¿vale?
+
+259
+00:22:05,000 --> 00:22:08,000
+Que es un sistema que temula como una especie de S3.
+
+260
+00:22:08,000 --> 00:22:13,000
+Luego veremos la carga de... luego veremos los varioles de entorno que tenemos que configurar,
+
+261
+00:22:13,000 --> 00:22:17,000
+porque esto es súper importante y siempre que os falle el problema de la variola de entorno,
+
+262
+00:22:17,000 --> 00:22:22,000
+digo así, o sea, pues no hay otro problema, solamente que no hayis cargado la variola de entorno.
+
+263
+00:22:22,000 --> 00:22:27,000
+Que en este caso serían los endpoint de el Minio, las claves de acceso al Minio
+
+264
+00:22:27,000 --> 00:22:31,000
+y la URL de tracking, ¿vale? Que hayis utilizar por defecto.
+
+265
+00:22:31,000 --> 00:22:34,000
+Y finalmente arrancaremos el... ¿qué dices? 10 minutos.
+
+266
+00:22:34,000 --> 00:22:37,000
+Madre mía, ¿vale? Arrancaren.
+
+267
+00:22:37,000 --> 00:22:41,000
+Las preguntas las hacemos por la tarde, si queréis.
+
+268
+00:22:41,000 --> 00:22:47,000
+Vamos a arrancarlo. Vamos a arrancar el Minio Server.
+
+269
+00:22:54,000 --> 00:22:58,000
+El Minio. Aquí ya tengo la instalación.
+
+270
+00:22:58,000 --> 00:23:01,000
+Vale, y en el Explo.
+
+271
+00:23:01,000 --> 00:23:04,000
+Vale.
+
+272
+00:23:05,000 --> 00:23:07,000
+¡Uh!
+
+273
+00:23:07,000 --> 00:23:10,000
+¿Qué va a hacer?
+
+274
+00:23:12,000 --> 00:23:17,000
+Ay, que lo tengo ya levantado. Perdona. Ah, locura.
+
+275
+00:23:19,000 --> 00:23:23,000
+¿Sabes cómo me sobra tiempo para ir cagando?
+
+276
+00:23:23,000 --> 00:23:28,000
+Es genial. Vale, que lo tenía levantado por aquí.
+
+277
+00:23:28,000 --> 00:23:31,000
+No, este no es.
+
+278
+00:23:31,000 --> 00:23:33,000
+Este.
+
+279
+00:23:33,000 --> 00:23:37,000
+Lo voy a arrancar para que lo veáis.
+
+280
+00:23:37,000 --> 00:23:43,000
+Vale, lo arrancamos y nos dice que está escuchando aquí.
+
+281
+00:23:47,000 --> 00:23:50,000
+Para que podáis ver a uno de esta parte.
+
+282
+00:23:50,000 --> 00:23:53,000
+Vale.
+
+283
+00:23:53,000 --> 00:23:57,000
+Todo puede salir mal, ¿eh? Puedo meter la clave mal 7 veces.
+
+284
+00:23:57,000 --> 00:23:59,000
+A ver.
+
+285
+00:23:59,000 --> 00:24:02,000
+Minio admina al revés. ¿También nos pasa esto?
+
+286
+00:24:02,000 --> 00:24:05,000
+Vale, gracias.
+
+287
+00:24:11,000 --> 00:24:14,000
+Vale, y aquí tenemos el bucket que he creado para MLflow.
+
+288
+00:24:14,000 --> 00:24:18,000
+Ok, la siguiente sería hacer la carga de las variables dentro.
+
+289
+00:24:18,000 --> 00:24:23,000
+Aquí tengo un ficherito con las variables que he enseñado antes.
+
+290
+00:24:23,000 --> 00:24:26,000
+Directamente lo voy a cargar.
+
+291
+00:24:26,000 --> 00:24:29,000
+Vale, para que lo veáis.
+
+292
+00:24:29,000 --> 00:24:31,000
+Es como lo que teníamos antes.
+
+293
+00:24:31,000 --> 00:24:35,000
+Y ahora lo que vamos a terminar de hacer es arrancar el servidor.
+
+294
+00:24:35,000 --> 00:24:39,000
+Que en este caso utilizamos el comando en MLflow Server.
+
+295
+00:24:39,000 --> 00:24:42,000
+Le indicimos que el bucket en Store, ¿vale?
+
+296
+00:24:42,000 --> 00:24:46,000
+Donde va a guardar el metadata, es el postres que se va a dar.
+
+297
+00:24:46,000 --> 00:24:50,000
+Y además le decimos que por defecto el artefacto que debe coger
+
+298
+00:24:50,000 --> 00:24:54,000
+es el S3 que he montado en Minio, que se llamaba MLflow Artifact.
+
+299
+00:24:54,000 --> 00:24:57,000
+Vale.
+
+300
+00:25:03,000 --> 00:25:06,000
+Entonces, la arrancamos.
+
+301
+00:25:06,000 --> 00:25:09,000
+No me lo coge bien.
+
+302
+00:25:09,000 --> 00:25:12,000
+No me lo creo.
+
+303
+00:25:12,000 --> 00:25:16,000
+Pero porque lo está pillando raro, ¿no?
+
+304
+00:25:22,000 --> 00:25:25,000
+Vale.
+
+305
+00:25:32,000 --> 00:25:35,000
+Vale.
+
+306
+00:25:35,000 --> 00:25:38,000
+Ah.
+
+307
+00:25:43,000 --> 00:25:45,000
+Vale.
+
+308
+00:25:45,000 --> 00:25:47,000
+Y lo estamos arrancando.
+
+309
+00:25:47,000 --> 00:25:51,000
+Nos dice que está en el cuarto cinco mil.
+
+310
+00:25:51,000 --> 00:25:55,000
+Vale.
+
+311
+00:26:02,000 --> 00:26:05,000
+No, gracias, no va a funcionar.
+
+312
+00:26:14,000 --> 00:26:16,000
+Vale.
+
+313
+00:26:16,000 --> 00:26:20,000
+Y aquí tenemos levantado lo que sería la interfaz de MLflow.
+
+314
+00:26:20,000 --> 00:26:23,000
+Y aquí tenemos que hacer la parte de los experimentos.
+
+315
+00:26:23,000 --> 00:26:26,000
+Yo tengo creado un experimento que es el de ApaiCon 2022
+
+316
+00:26:26,000 --> 00:26:30,000
+en el que tengo un montón de modelos, modelos en R, modelos en Python.
+
+317
+00:26:30,000 --> 00:26:33,000
+En fin, en los que hemos ido registrando
+
+318
+00:26:33,000 --> 00:26:38,000
+pues desde variables de parámetros hasta parte de las métricas, ¿vale?
+
+319
+00:26:38,000 --> 00:26:41,000
+Aquí arriba la parte de los modelos.
+
+320
+00:26:41,000 --> 00:26:44,000
+Podéis ver de todas esas ejecuciones
+
+321
+00:26:44,000 --> 00:26:48,000
+a cuántos modelos corresponden y cuántas versiones hay de cada uno de ellos.
+
+322
+00:26:48,000 --> 00:26:52,000
+Por ejemplo, del ApaiCon demo, por ejemplo, tenemos cuatro versiones
+
+323
+00:26:52,000 --> 00:26:54,000
+y podríais ir accediendo a cada uno de ellos.
+
+324
+00:26:54,000 --> 00:26:57,000
+Y bueno, si tuviéramos alguna descripción o algún tajo asociado
+
+325
+00:26:57,000 --> 00:26:59,000
+podríamos acceder esa información.
+
+326
+00:26:59,000 --> 00:27:02,000
+No solamente eso, sino que desde la parte de experimentos
+
+327
+00:27:02,000 --> 00:27:04,000
+se pueden hacer comparaciones.
+
+328
+00:27:04,000 --> 00:27:08,000
+Por ejemplo, vamos a comparar este con este,
+
+329
+00:27:08,000 --> 00:27:11,000
+con este y con este.
+
+330
+00:27:11,000 --> 00:27:14,000
+Vale, le das a compare.
+
+331
+00:27:14,000 --> 00:27:17,000
+Entonces, empiezan a sacar la comparativa de los diferentes parámetros
+
+332
+00:27:17,000 --> 00:27:20,000
+y de las diferentes métricas que te he sido registrando, ¿vale?
+
+333
+00:27:20,000 --> 00:27:25,000
+Puedes hacer desde gráficas lo que te interese comparar,
+
+334
+00:27:25,000 --> 00:27:28,000
+la parte de parámetros, con eso los parámetros que se han ido utilizando
+
+335
+00:27:28,000 --> 00:27:30,000
+en cada uno de los modelos, las parte de las métricas
+
+336
+00:27:30,000 --> 00:27:33,000
+que se han ido calculando también para cada uno de ellos.
+
+337
+00:27:33,000 --> 00:27:36,000
+Esto va a depender ya mucho también de lo que tú vayas buscando.
+
+338
+00:27:36,000 --> 00:27:38,000
+Es decir, vas a comparar modelos que tienen el mismo caso de uso,
+
+339
+00:27:38,000 --> 00:27:40,000
+no vas a comparar modelos que no...
+
+340
+00:27:40,000 --> 00:27:43,000
+Quiero tal nada que ver entre sí, porque no tiene mucho sentido.
+
+341
+00:27:43,000 --> 00:27:45,000
+Pero si quieres ver una métrica en concreto,
+
+342
+00:27:45,000 --> 00:27:47,000
+si quieres evaluar un parámetro en concreto,
+
+343
+00:27:47,000 --> 00:27:51,000
+esto es fantástico, esto te sirve súper para poder hacerlo.
+
+344
+00:27:51,000 --> 00:27:54,000
+Vale, continuamos.
+
+345
+00:27:54,000 --> 00:27:56,000
+Ah, bueno, sí.
+
+346
+00:27:56,000 --> 00:27:58,000
+Vamos a la siguiente.
+
+347
+00:27:58,000 --> 00:28:00,000
+Conceptos clave.
+
+348
+00:28:00,000 --> 00:28:04,000
+Antes hemos visto que teníamos el comando Meleeflow,
+
+349
+00:28:04,000 --> 00:28:06,000
+ESECALER, LOG, ¿vale?
+
+350
+00:28:06,000 --> 00:28:09,000
+Que te hacía el LOG de todas las lo que estaba ocurriendo
+
+351
+00:28:09,000 --> 00:28:14,000
+en la librería de tu regresión lineal sobre el sistema de archivos.
+
+352
+00:28:14,000 --> 00:28:18,000
+¿Qué cosas podemos logar o qué cosas podemos registrar
+
+353
+00:28:18,000 --> 00:28:20,000
+dentro de Meleeflow Tracking?
+
+354
+00:28:20,000 --> 00:28:23,000
+Pues parámetros, todos los parámetros, por ejemplo,
+
+355
+00:28:23,000 --> 00:28:27,000
+el alfa con el que quieres comerger el nivel de prune,
+
+356
+00:28:27,000 --> 00:28:30,000
+que quieres tener dentro de un random favorez, no sé,
+
+357
+00:28:30,000 --> 00:28:32,000
+cosas de ese estilo.
+
+358
+00:28:32,000 --> 00:28:34,000
+Métricas, valores luméricos, es decir,
+
+359
+00:28:34,000 --> 00:28:36,000
+pues yo que sé el error cuadrático y comedio, la cura,
+
+360
+00:28:36,000 --> 00:28:38,000
+así lo que te interese comparar al largo del tiempo.
+
+361
+00:28:38,000 --> 00:28:41,000
+Los artefactos, que son ficheros y modelos de datos adicionales
+
+362
+00:28:41,000 --> 00:28:44,000
+que tú quieras utilizar, pues yo que sé, imaginaros que tenéis
+
+363
+00:28:44,000 --> 00:28:47,000
+que queréis utilizar algún tipo de diccionario o alguna cosa
+
+364
+00:28:47,000 --> 00:28:50,000
+que os ayuda a traducir o a comprender mejor o analizar
+
+365
+00:28:50,000 --> 00:28:53,000
+mejor el propio algoritmo.
+
+366
+00:28:53,000 --> 00:28:57,000
+SOURCE indica con qué código se ha ejecutado,
+
+367
+00:28:57,000 --> 00:28:59,000
+las versiones del código también,
+
+368
+00:28:59,000 --> 00:29:01,000
+lo podéis tocar desde el fichero,
+
+369
+00:29:01,000 --> 00:29:03,000
+pero yo se recomiendo que se lo hagáis de forma automática
+
+370
+00:29:03,000 --> 00:29:05,000
+porque interesa más que este el auto registra,
+
+371
+00:29:05,000 --> 00:29:08,000
+que está siempre sobre escribiendo la versión.
+
+372
+00:29:08,000 --> 00:29:11,000
+Y luego podéis meter también táxicos y metas adicionales
+
+373
+00:29:11,000 --> 00:29:13,000
+en plan de, pues yo que sé, con este modelo
+
+374
+00:29:13,000 --> 00:29:16,000
+estoy probando solamente la mitad de mi data seto,
+
+375
+00:29:16,000 --> 00:29:18,000
+con este lo que sea.
+
+376
+00:29:18,000 --> 00:29:21,000
+¿Cómo sería el código?
+
+377
+00:29:21,000 --> 00:29:24,000
+Bueno, pues empezaríamos por importar las librerías,
+
+378
+00:29:24,000 --> 00:29:26,000
+leeríamos los datos, transformamos los datos,
+
+379
+00:29:26,000 --> 00:29:29,000
+lo clásico, vale, o sea, hasta aquí lo de siempre.
+
+380
+00:29:29,000 --> 00:29:33,000
+Y arrancaríamos con el WID, MLflow está rar, vale,
+
+381
+00:29:33,000 --> 00:29:35,000
+y ahí empezamos a construir el modelo, lo entrenamos
+
+382
+00:29:35,000 --> 00:29:39,000
+y definimos las opciones de predicción.
+
+383
+00:29:39,000 --> 00:29:43,000
+Al final añadimos otra pequeña parte,
+
+384
+00:29:43,000 --> 00:29:47,000
+con otro Start Run en el que incluimos
+
+385
+00:29:47,000 --> 00:29:49,000
+todo lo que tenga que ver con login.
+
+386
+00:29:49,000 --> 00:29:51,000
+Y como veis, es muy sencillo, MLflow.log,
+
+387
+00:29:51,000 --> 00:29:55,000
+barra baja para, MLflow.log, barra baja metrics,
+
+388
+00:29:55,000 --> 00:29:57,000
+o sea, es que es súper sencillo.
+
+389
+00:29:57,000 --> 00:29:59,000
+Al final vosotros podíais seguir haciendo el mismo desarrollo
+
+390
+00:29:59,000 --> 00:30:01,000
+de más y el learning que hubiérais hecho,
+
+391
+00:30:01,000 --> 00:30:04,000
+si no tuvíais que hacerlo con MLflow,
+
+392
+00:30:04,000 --> 00:30:06,000
+pero al final incluís la parte del tracking.
+
+393
+00:30:06,000 --> 00:30:10,000
+Os voy a poner un ejemplo, porque he hecho un montón de ejemplos
+
+394
+00:30:10,000 --> 00:30:16,000
+y aunque me queden dos minutos, vale.
+
+395
+00:30:16,000 --> 00:30:20,000
+Vale, voy de ahí con demo.
+
+396
+00:30:20,000 --> 00:30:25,000
+Aquí tenemos el ficherito, vale, que es muy sencillo,
+
+397
+00:30:25,000 --> 00:30:27,000
+la parte de arriba lo que hacemos es incluir
+
+398
+00:30:27,000 --> 00:30:31,000
+todas las librerías que necesitamos para hacer un análisis.
+
+399
+00:30:31,000 --> 00:30:36,000
+En este caso creo que era una red,
+
+400
+00:30:36,000 --> 00:30:39,000
+creo una elastic net, sí.
+
+401
+00:30:39,000 --> 00:30:41,000
+Que lo estamos haciendo con un conjunto de datos,
+
+402
+00:30:41,000 --> 00:30:44,000
+que es para definir la calidad del vino.
+
+403
+00:30:44,000 --> 00:30:47,000
+Entonces, bueno, aquí añadimos, importamos las dos librerías
+
+404
+00:30:47,000 --> 00:30:51,000
+de MLflow y de MLflow es Google, que es la que vamos a utilizar.
+
+405
+00:30:51,000 --> 00:30:54,000
+Y empezamos a trabajar, lo que os digo, de forma sencilla,
+
+406
+00:30:54,000 --> 00:30:56,000
+como siempre vamos haciendo, leemos los datos,
+
+407
+00:30:56,000 --> 00:30:59,000
+hacemos el split, lo dejamos el training y el set.
+
+408
+00:30:59,000 --> 00:31:02,000
+Definimos un alpha y un LTRadio, que en este caso,
+
+409
+00:31:02,000 --> 00:31:05,000
+para nuestro algoritmo que vamos a utilizar es importante,
+
+410
+00:31:05,000 --> 00:31:08,000
+es decir, de hecho, veis que posteriormente,
+
+411
+00:31:08,000 --> 00:31:13,000
+yo sí que lo veo el parámetro de alpha y también el de LTRadio.
+
+412
+00:31:13,000 --> 00:31:16,000
+¿Por qué? Porque eso lo voy a querer comparar con el tiempo.
+
+413
+00:31:16,000 --> 00:31:19,000
+Imaginaos que yo hará un automelé y me lo voy recorriendo entero.
+
+414
+00:31:19,000 --> 00:31:21,000
+Voy a poder tener las métricas directamente
+
+415
+00:31:21,000 --> 00:31:24,000
+sincronizadas con el MLflow tracking.
+
+416
+00:31:24,000 --> 00:31:28,000
+Y bueno, reseñable también indicar,
+
+417
+00:31:28,000 --> 00:31:31,000
+tenemos que meter cuál es el experimento
+
+418
+00:31:31,000 --> 00:31:34,000
+al que queremos empujarlo, más que nada,
+
+419
+00:31:34,000 --> 00:31:36,000
+por tenerlo organizado y ya está.
+
+420
+00:31:36,000 --> 00:31:38,000
+Vamos a lanzarlo.
+
+421
+00:31:47,000 --> 00:31:49,000
+No me lo creo.
+
+422
+00:31:49,000 --> 00:31:55,000
+Ah, vale, es que no hemos cargado las variables
+
+423
+00:31:55,000 --> 00:31:57,000
+en torno a lo dicho antes.
+
+424
+00:31:57,000 --> 00:32:02,000
+No me lo creo.
+
+425
+00:32:28,000 --> 00:32:32,000
+Miren esto, igual es por la versión.
+
+426
+00:32:35,000 --> 00:32:38,000
+No, porque es el local.
+
+427
+00:32:38,000 --> 00:32:41,000
+Sí, le puedo echar la bronca a eso, pero...
+
+428
+00:32:41,000 --> 00:32:43,000
+No sé por qué, chicos,
+
+429
+00:32:43,000 --> 00:32:46,000
+se tiene algún problema que no consigo resolución.
+
+430
+00:32:46,000 --> 00:32:50,000
+Vamos a probar con el otro que tengo en R,
+
+431
+00:32:50,000 --> 00:32:53,000
+que vais a decir, vale, tía, me parece genial,
+
+432
+00:32:53,000 --> 00:32:56,000
+pero quiero que veáis como un poco modelo.
+
+433
+00:32:56,000 --> 00:32:59,000
+Aquí directamente lo tenemos también en R,
+
+434
+00:32:59,000 --> 00:33:01,000
+que es el train.
+
+435
+00:33:03,000 --> 00:33:05,000
+Este creo que era con sí, también,
+
+436
+00:33:05,000 --> 00:33:07,000
+con el de la calidad del vino.
+
+437
+00:33:12,000 --> 00:33:15,000
+Vale, veis que le acabo de empujar.
+
+438
+00:33:15,000 --> 00:33:18,000
+Dentro del código le digo que me imprima parte de las métricas
+
+439
+00:33:18,000 --> 00:33:22,000
+y luego me dice donde lo deja dentro del artefacto,
+
+440
+00:33:22,000 --> 00:33:26,000
+pero si yo me voy ahora a mi UI de Meleflow
+
+441
+00:33:26,000 --> 00:33:29,000
+y hago un refresco, veremos que hace 10 segundos
+
+442
+00:33:29,000 --> 00:33:31,000
+se acaba de entrenar un nuevo modelo,
+
+443
+00:33:31,000 --> 00:33:33,000
+que es el de que acabamos de sacar, vale,
+
+444
+00:33:33,000 --> 00:33:35,000
+y que incluye las mismas métricas
+
+445
+00:33:35,000 --> 00:33:40,000
+que hemos ido sacando por pantalla.
+
+446
+00:33:40,000 --> 00:33:44,000
+Y creo que me voy a callar porque me voy a plavatar.
+
+447
+00:33:44,000 --> 00:33:46,000
+Lo siento mucho, espero que os haya gustado
+
+448
+00:33:46,000 --> 00:33:50,000
+y que hayáis tenido una pequeña visualización
+
+449
+00:33:50,000 --> 00:33:52,000
+y introducción a lo que es Meleflow
+
+450
+00:33:52,000 --> 00:33:55,000
+y si tenéis más curiosidad, luego podemos seguir hablando.
+
+451
+00:34:05,000 --> 00:34:07,000
+Muchas gracias por la charla y por la demo,
+
+452
+00:34:07,000 --> 00:34:10,000
+que siempre tenemos los programillas de efecto de Emonu.
+
+453
+00:34:10,000 --> 00:34:14,000
+No, luego la colgar era a un lado, de verdad, no sé qué ha pasado.
+
+454
+00:34:14,000 --> 00:34:17,000
+Era una variable que se me habría quedado por alpillas, segurísimo.
+
+455
+00:34:17,000 --> 00:34:20,000
+Pero ya funciona con R al final, qué clase.
+
+456
+00:34:20,000 --> 00:34:23,000
+Bueno, tenemos tiempo para un par de preguntas
+
+457
+00:34:23,000 --> 00:34:25,000
+y si tenéis alguna pregunta en la sala,
+
+458
+00:34:25,000 --> 00:34:30,000
+creo que tenemos un par de compañeros por aquí con el metrófono.
+
+459
+00:34:30,000 --> 00:34:33,000
+Bueno, tenemos una por aquí y otra por aquí.
+
+460
+00:34:33,000 --> 00:34:35,000
+Los micros están por ahí.
+
+461
+00:34:41,000 --> 00:34:43,000
+Si no, si queréis, nos vamos fuera.
+
+462
+00:34:43,000 --> 00:34:46,000
+Bueno, perdonad que parezca un imígito si queréis.
+
+463
+00:34:46,000 --> 00:34:48,000
+Grita ahí.
+
+464
+00:34:51,000 --> 00:34:53,000
+Bueno, como vas a salir ahora.
+
+465
+00:34:53,000 --> 00:34:55,000
+Ya viene, ya viene.
+
+466
+00:34:59,000 --> 00:35:01,000
+Siempre se habla que los modelos Machine Learning
+
+467
+00:35:01,000 --> 00:35:03,000
+son muy difíciles de explicar y tal.
+
+468
+00:35:03,000 --> 00:35:04,000
+Estas métricas que veo, mola.
+
+469
+00:35:04,000 --> 00:35:08,000
+Pero yo quería preguntar sobre la observabilidad del sistema entero.
+
+470
+00:35:08,000 --> 00:35:10,000
+Es decir, lo que tienes aquí es un pipeline
+
+471
+00:35:10,000 --> 00:35:12,000
+que puedes ver en el video.
+
+472
+00:35:12,000 --> 00:35:14,000
+Un pipeline que puede ser relativamente complejo
+
+473
+00:35:14,000 --> 00:35:16,000
+con muchos storage, muchos diferentes modelos,
+
+474
+00:35:16,000 --> 00:35:19,000
+runs, experimentos, puedes compararlos.
+
+475
+00:35:19,000 --> 00:35:24,000
+¿Cómo resolveis la observabilidad para que ese sistema esté funcionando?
+
+476
+00:35:24,000 --> 00:35:26,000
+Correctamente.
+
+477
+00:35:27,000 --> 00:35:29,000
+¿Te refieres a la monitorización si...?
+
+478
+00:35:29,000 --> 00:35:33,000
+Monitorizar no lo que sería las variables intrínsecas del modelo,
+
+479
+00:35:33,000 --> 00:35:36,000
+sino lo que sería el sistema del MLflow.
+
+480
+00:35:36,000 --> 00:35:38,000
+En esa parte todavía no hemos llegado.
+
+481
+00:35:38,000 --> 00:35:42,000
+O sea, de hecho, entendemos que si el servicio está levantado y está funcionando,
+
+482
+00:35:42,000 --> 00:35:46,000
+o sea, tú cuando lo ejecutas, al final compruebas y ha entregado o no ha entregado.
+
+483
+00:35:46,000 --> 00:35:48,000
+O sea, te da error si no es capaz de conectarse.
+
+484
+00:35:48,000 --> 00:35:52,000
+Pero es verdad que todavía no hemos hecho todavía ese pipeline, digamos.
+
+485
+00:35:52,000 --> 00:35:55,000
+De hecho, parte de lo chulo es integrar esto con Alflow
+
+486
+00:35:55,000 --> 00:36:00,000
+para que, de tal forma, aquí estamos hablando ya de la parte del entrenamiento del modelo,
+
+487
+00:36:00,000 --> 00:36:04,000
+pero hay una parte previa, que es la parte de cómo consigues que hubiese conjunto de datos
+
+488
+00:36:04,000 --> 00:36:06,000
+que sea lo más apropiado posible.
+
+489
+00:36:06,000 --> 00:36:10,000
+Y parte de lo que estamos trabajando es pasar de un flujo de datos en iFlow
+
+490
+00:36:10,000 --> 00:36:12,000
+para que terminen en MLflow.
+
+491
+00:36:12,000 --> 00:36:15,000
+Y está siendo un poquito reto.
+
+492
+00:36:22,000 --> 00:36:24,000
+¿Le podéis pasar el micro...?
+
+493
+00:36:27,000 --> 00:36:30,000
+Hola, buenas. Bueno, primero, no, la buena por la charla que es muy buena.
+
+494
+00:36:30,000 --> 00:36:34,000
+No he cubierto la parte de lo que sería el despliegue a Kubernetes.
+
+495
+00:36:34,000 --> 00:36:37,000
+¿Cómo se tiene el encasulado del modelo y el despliegue a Kubernetes?
+
+496
+00:36:37,000 --> 00:36:40,000
+Porque es una parte muy interesante, ha mostrado la mobilización.
+
+497
+00:36:40,000 --> 00:36:43,000
+No he llegado a la parte de modelos y de proyectos.
+
+498
+00:36:43,000 --> 00:36:45,000
+O sea, hemos hablado solamente de la parte de tracking,
+
+499
+00:36:45,000 --> 00:36:48,000
+pero otro de los módulos de MLflow te permite, digamos...
+
+500
+00:36:48,000 --> 00:36:50,000
+O sea, lo que te haces es...
+
+501
+00:36:50,000 --> 00:36:51,000
+Perdón.
+
+502
+00:36:51,000 --> 00:36:55,000
+Te permite estandarizar la forma en la que tú describes un modelo.
+
+503
+00:36:55,000 --> 00:36:58,000
+Entonces, tú en esa descripción de modelo, le puedes decir,
+
+504
+00:36:58,000 --> 00:37:01,000
+yo es que esto lo lanzo en un entorno de Conda,
+
+505
+00:37:01,000 --> 00:37:05,000
+lo lanzo en un entorno de Docker, en un entorno de Kubernetes.
+
+506
+00:37:05,000 --> 00:37:08,000
+Entonces, al final, eres capaz de estandarizar esa fase.
+
+507
+00:37:08,000 --> 00:37:10,000
+Yo no lo he hecho con Kubernetes, vale.
+
+508
+00:37:10,000 --> 00:37:16,000
+Yo lo he hecho en los modelos a pelo, o sea, no lo hemos encasulado,
+
+509
+00:37:16,000 --> 00:37:18,000
+pero sé que se puede hacer.
+
+510
+00:37:18,000 --> 00:37:21,000
+Y lo que te digo es a donde ya he visto son ficheros de configuración.
+
+511
+00:37:23,000 --> 00:37:25,000
+En cuanto a lucha, gracias.
+
+512
+00:37:25,000 --> 00:37:27,000
+Un aplauso por favor por ahí.
+
+513
+00:37:27,000 --> 00:37:31,000
+Gracias.
+

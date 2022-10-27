@@ -1,0 +1,1236 @@
+1
+00:00:00,000 --> 00:00:23,800
+¿Qué tal? ¿Cómo estamos? Gracias por estar aquí. Supongo que más o menos intentaré
+
+2
+00:00:23,800 --> 00:00:37,400
+no dormir demasiado. Me presento. No podía fallar todo. Mi nombre es Tony, o abierta, pero
+
+3
+00:00:37,400 --> 00:00:43,640
+como parece que no hay manera de que la gente la haga, pues es Tony, Tony, Tony Aloy. Vengo
+
+4
+00:00:43,640 --> 00:00:49,600
+de APSL y me podéis encontrar en las redes como a Aloy, más o menos en Twitter y unas
+
+5
+00:00:49,600 --> 00:00:56,120
+cuantas más que estoy, me encontraréis por ahí. Soy la persona que en este momento está
+
+6
+00:00:56,120 --> 00:01:00,560
+llevando a la agrencia o yo diría que estoy al servicio de, a mí me gusta decir que estoy
+
+7
+00:01:00,560 --> 00:01:06,440
+al servicio de unas 105 personas en estos momentos y básicamente yo que diría que
+
+8
+00:01:06,440 --> 00:01:13,400
+somos 105 personas muy buenas, pero sobre todo muy buena gente, que es lo que intentamos.
+
+9
+00:01:13,400 --> 00:01:19,640
+Entonces, ¿por qué? ¿Por qué esta charla? Lo primero de todo, pues bueno, parece que
+
+10
+00:01:19,640 --> 00:01:24,320
+hay bastante interés en la charla que en principio no es de Python, que es de gestión
+
+11
+00:01:24,320 --> 00:01:32,360
+de proyectos muy básica. Y yo la planté porque como no sé si la has visto en otras charlas
+
+12
+00:01:32,360 --> 00:01:38,280
+nuestras, tenemos un proceso que llamamos de Académie, de incorporación de gente junior
+
+13
+00:01:38,280 --> 00:01:43,520
+y me encontré que hay un problema común que es que la gente a la hora de decirle,
+
+14
+00:01:43,520 --> 00:01:49,320
+oye, ¿cuánto tardarás? ¿Cuánto crees que podrías tener esto listo? ¿Cuánto crees
+
+15
+00:01:49,320 --> 00:01:57,560
+que la gente se estresa mucho? ¿O nos estresamos mucho todos? ¿Por qué? ¿Por qué nos estamos
+
+16
+00:01:57,560 --> 00:02:04,120
+estresando? No es que es una estimación y una estimación de software. Pues os voy
+
+17
+00:02:04,120 --> 00:02:11,120
+a decir una cosa, ya sabéis estimar. O sea, cuando habéis venido aquí, os habéis levantado,
+
+18
+00:02:11,120 --> 00:02:15,680
+habéis hecho una previsión de me voy a levantar más o menos si voy en taxi y tardaré cinco
+
+19
+00:02:15,680 --> 00:02:22,280
+minutos, si voy directamente andando, pues tardaré 15, 20 en nuestro día a día, estamos
+
+20
+00:02:22,280 --> 00:02:27,760
+haciendo siempre estimaciones. Y estamos controlando qué tiempos, cuándo voy a llevar ahí, cuándo
+
+21
+00:02:27,760 --> 00:02:32,800
+llevar ahí, oye, si me voy de juega hoy, si me despertaré, no me despertaré. Entonces,
+
+22
+00:02:32,800 --> 00:02:38,440
+estamos haciendo previsiones y estamos haciendo, previdiendo el futuro en base a unos conocimientos
+
+23
+00:02:38,440 --> 00:02:46,120
+que tenemos. ¿Qué nos pasa? Que cuando hablamos de software, parece que todo eso que estamos
+
+24
+00:02:46,120 --> 00:02:52,180
+haciendo en día a día se nos olvida y la pregunta que parece que tenemos que contestar
+
+25
+00:02:52,180 --> 00:02:59,760
+es ¿cuánto tiempo tardarás? Y eso significa si voy a tardar 10,5 minutos o 20 o 25, pero
+
+26
+00:02:59,760 --> 00:03:03,560
+tenemos que dar el número exacto, porque parece que si no estamos capaces de dar el
+
+27
+00:03:03,560 --> 00:03:08,160
+número exacto, estamos diciendo una mentira, estamos estimando a la persona que nos está
+
+28
+00:03:08,160 --> 00:03:15,880
+diciendo eso. No. Lo primero que tenemos que tener claro es que una estimación es, estamos
+
+29
+00:03:15,880 --> 00:03:20,720
+haciendo una adivinación razonable, basado en lo que sabemos, pero es la misma tipo de
+
+30
+00:03:20,720 --> 00:03:25,720
+estimación de software que hacemos cuando venimos o cuando planificamos algo de nuestra
+
+31
+00:03:25,720 --> 00:03:32,320
+vida real. Pero cuando estimar, no significa que tenemos que dar un número exacto, estimar
+
+32
+00:03:32,320 --> 00:03:39,480
+significa que vamos a decir lo posible a partir de la información que tenemos. Otra cosa
+
+33
+00:03:39,480 --> 00:03:44,120
+que a veces nos están diciendo es, bueno, estimar está muy bien, pero como esto es
+
+34
+00:03:44,120 --> 00:03:51,480
+muy complicado, yo lo que voy a hacer es no hacer estimaciones. No hacer estimaciones,
+
+35
+00:03:51,480 --> 00:03:57,480
+no es un movimiento que podéis ver ahí, está el movimiento no estimates que dice, no, mira,
+
+36
+00:03:57,480 --> 00:04:03,720
+yo en mi trabajo no voy a hacer ninguna estimación, porque sencillamente no se puede o no quiero
+
+37
+00:04:03,720 --> 00:04:10,080
+o ya me voy a dar así. Realmente el movimiento no estimates lo que está diciendo es no
+
+38
+00:04:10,080 --> 00:04:15,160
+te voy a decir una estimación, pero te voy a entregar valor cada día o te voy a entregar
+
+39
+00:04:15,160 --> 00:04:23,840
+valor cada semana. Al final también está llegando a un compromiso, a qué voy a entregar, porque
+
+40
+00:04:23,840 --> 00:04:30,080
+si no todo eso, si tú a un pintor le dices, ¿cuándo estará la casa? ¿Cuándo vais a
+
+41
+00:04:30,080 --> 00:04:36,560
+pintar la casa? A mañana ¿cuánto tiempo estarás? Ah, cuando esté. Eso no estamos acostumbrados,
+
+42
+00:04:36,560 --> 00:04:40,880
+por lo tanto nuestros clientes, la gente que nos pide estimaciones, tampoco está acostumbrada
+
+43
+00:04:40,880 --> 00:04:46,320
+que digamos estará cuando esté. Siempre la idea es que dices, bueno, si no quiero
+
+44
+00:04:46,320 --> 00:04:51,800
+hacer estimaciones, tendré que ir dando valor cada semana, cada 15 días, procesos de scram,
+
+45
+00:04:51,800 --> 00:04:56,400
+no hay problema, pero al final sí que estás haciendo estimaciones. No estás diciendo,
+
+46
+00:04:56,400 --> 00:05:01,400
+oye, te voy a entregar valor dentro de 15 días. Al final igual no estás haciendo una
+
+47
+00:05:01,400 --> 00:05:05,880
+estimación numérica, no estás haciendo tres días o cuatro, pero es que esto es lo que
+
+48
+00:05:05,880 --> 00:05:10,840
+estamos diciendo que no es correcto. Me da igual si son cuatro horas o cinco, 27. Lo
+
+49
+00:05:10,840 --> 00:05:15,080
+importante es hacer una pequeña previsión de qué te voy a entregar, de cuándo te voy
+
+50
+00:05:15,080 --> 00:05:21,680
+a entregar y eso, insisto, ya lo estamos haciendo en nuestra vida diaria. El software es un proceso
+
+51
+00:05:21,680 --> 00:05:29,560
+más que no estamos acostumbrados, pero realmente es así. ¿Qué tenemos que tener en cuenta?
+
+52
+00:05:29,560 --> 00:05:37,800
+Al final lo importante, como en todo, es nuestro contexto. Dices, ¿para qué? O sea, tengo
+
+53
+00:05:37,800 --> 00:05:42,880
+que hacer una estimación de software, entonces lo primero que pensar es, bueno, ¿para quién?
+
+54
+00:05:42,880 --> 00:05:49,880
+Perdón, la tengo que hacer. Segunda cosa, ¿qué uso le voy a dar a la estimación? ¿Y
+
+55
+00:05:49,880 --> 00:05:54,280
+de cuándo tiempo discongo? Básicamente estas tres cosas es lo primero que tenemos que preguntar
+
+56
+00:05:54,280 --> 00:06:01,280
+cuando alguien nos pregunta, ¿cuándo estará? ¿Qué me puedes entregar? Empecemos y dices,
+
+57
+00:06:01,280 --> 00:06:07,000
+¿quién? No es lo mismo que te pregunte un cliente, dices, ¿cuándo estará? ¿Qué me
+
+58
+00:06:07,000 --> 00:06:13,720
+costará? Claro, esto es un cliente. El cliente espera que le digas una cifra monetaria o
+
+59
+00:06:13,720 --> 00:06:20,880
+una cifra de tiempo. Entonces, ahí estas estimaciones muchas veces se toman como un compromiso.
+
+60
+00:06:20,880 --> 00:06:24,640
+Y si se las tomas como un compromiso hay que ir con bastante ojo, que es lo que nos da
+
+61
+00:06:24,640 --> 00:06:29,400
+miedo. Pues en este caso, cuando el quién gestiona las expectativas, cuando ese es
+
+62
+00:06:29,400 --> 00:06:34,440
+el cliente, pues ahí tendremos que ir dando rangos de estimaciones o gestionando nuestra
+
+63
+00:06:34,440 --> 00:06:40,040
+incertidumbre. Pero lo primero que tenemos a ver es eso. Si no sabemos el quién, la
+
+64
+00:06:40,040 --> 00:06:47,400
+estimación tampoco va a tener demasiado sentido. ¿De qué costará? Es lo que nos pide el cliente.
+
+65
+00:06:47,400 --> 00:06:51,880
+Perfecto. Entonces, quieres que sea lo más ajustada posible. El cliente pretende que
+
+66
+00:06:51,880 --> 00:06:57,280
+sea lo más ajustada posible. Tú intentas dar un rango. Perfecto. Un rango de arco razonable
+
+67
+00:06:57,280 --> 00:07:01,320
+y ya estaría bien. Pero hay veces que te dicen, oye, yo necesito una pedrada. Estoy
+
+68
+00:07:01,320 --> 00:07:07,720
+haciendo un presupuesto y necesito saber si esto van a ser 20 o van a ser 200. Entonces,
+
+69
+00:07:07,720 --> 00:07:12,760
+este tipo de estimación tiene un rango mucho más amplio y podemos jugar con eso. O la
+
+70
+00:07:12,760 --> 00:07:18,600
+típica estimación que es, dice, ostras, podremos entregar, tenemos un deadline. Tenemos
+
+71
+00:07:18,600 --> 00:07:25,040
+que entregar esto, esta pi con. O se hace estos días o no se hace. Entonces, tendremos
+
+72
+00:07:25,040 --> 00:07:29,520
+el sobre apunto barado a pi con. Dices, la final de estimación se retira en un sí o
+
+73
+00:07:29,520 --> 00:07:35,160
+no. No se interesa el tiempo que te daremos. Nos interesa, sobre todo, si vamos a llegar
+
+74
+00:07:35,160 --> 00:07:45,840
+a ese tiempo. El tercer punto es de cuánto tiempo disponemos para hacer la estimación.
+
+75
+00:07:45,840 --> 00:07:50,320
+Proyecto grande, pequeño, tarea. O sea, al final le dices, no, no. El tiempo tiene que
+
+76
+00:07:50,320 --> 00:07:55,080
+ser lo suficientemente pequeño para que la estimación tenga sentido. Porque, bien,
+
+77
+00:07:55,080 --> 00:07:59,720
+si me dices, no, un proyecto pequeñito, si me va a llevar más tiempo a hacer la estimación,
+
+78
+00:07:59,720 --> 00:08:05,360
+para hacer el proyecto, tampoco tiene demasiado sentido. Entonces, te hago el proyecto y te
+
+79
+00:08:05,360 --> 00:08:10,840
+digo, han sido tres días. Esto a veces nos encontramos esta, este miedo de hacer una
+
+80
+00:08:10,840 --> 00:08:14,760
+estimación y dices, no, no, lo tengo que encontrar todo exactamente. Dices, no pasa
+
+81
+00:08:14,760 --> 00:08:19,920
+nada. O sea, pongámonos un tiempo para hacer la estimación y a partir de ahí intentemos
+
+82
+00:08:19,920 --> 00:08:24,360
+ajustarnos ese tiempo. Y ese tiempo tiene ser lo suficientemente pequeño para que la estimación
+
+83
+00:08:24,360 --> 00:08:31,200
+tenga ese sentido económico en este caso. ¿Qué empezaremos? Dices, bueno, pues ya
+
+84
+00:08:31,200 --> 00:08:35,840
+se ha convencido de el quién, el para qué y el tiempo que tenemos. Ya lo tenemos en
+
+85
+00:08:35,840 --> 00:08:43,520
+cuenta y el segundo es, vale, no hay estimaciones nunca. Pues la mejor manera de empezar a hacer
+
+86
+00:08:43,520 --> 00:08:49,720
+estimaciones es empezar trabajando con tareas. Tenemos que ir de lo pequeño a grande. Es
+
+87
+00:08:49,720 --> 00:08:54,440
+la parte de los informáticos, estábamos muy acostumbrados a eso. Es decir, ¿qué hacemos?
+
+88
+00:08:54,440 --> 00:08:59,760
+Dividimos nuestros proyectos en trozos más pequeñitos. Pues la parte de estimaciones
+
+89
+00:08:59,760 --> 00:09:05,280
+se hace exactamente igual. No empezar y dice, bueno, vayas a comir un proyecto de un año
+
+90
+00:09:05,280 --> 00:09:10,600
+y dices, ostras, pues si no has hecho nunca, yo entiendo que esto, a cierto reparo, de
+
+91
+00:09:10,600 --> 00:09:15,000
+hecho, da mucho reparo y no deberíais hacerlo, que es otra historia. Pero, al principio,
+
+92
+00:09:15,000 --> 00:09:21,400
+lo que tenemos que empezar es a estimar tareas. El típico ticket. El ticket que está diciendo,
+
+93
+00:09:21,400 --> 00:09:27,240
+uy, ¿qué me llevará esto? La gente está muy en contra de poner horas a los tickets,
+
+94
+00:09:27,240 --> 00:09:33,440
+de, bueno, pues yo ahí lo que os aconsejo es que empecéis en los tickets, en las tareas,
+
+95
+00:09:33,440 --> 00:09:39,200
+es empezar a poner la previsión de lo que creéis que os llevará. Y luego a partir de
+
+96
+00:09:39,200 --> 00:09:46,040
+ahí, empezar a registrar el tiempo que efectivamente os ha llevado. Porque ahí lo importante que
+
+97
+00:09:46,040 --> 00:09:52,160
+nos vamos a encontrar es que cada uno de nosotros tiene un viaje diferente. Es decir, hay gente
+
+98
+00:09:52,160 --> 00:09:57,880
+que estima siempre para arriba y siempre para abajo, que están en el medio, pues sí,
+
+99
+00:09:57,880 --> 00:10:02,160
+también nos hay. Pero al final lo primero que tenemos que hacer, a la hora de ser estimadores,
+
+100
+00:10:02,160 --> 00:10:13,720
+es hacia dónde coramos. Nos tenemos que calibrar. Pregunta, si ya os digo, ¿qué creéis que
+
+101
+00:10:13,720 --> 00:10:19,040
+llevaría cambiar un botón de rojo a azul en una aplicación web en funcionamiento?
+
+102
+00:10:19,040 --> 00:10:32,560
+De rojo a azul, la mayoría, 15 segundos, 30, ¿alguien me compra 30? Si, 30, vale, pues
+
+103
+00:10:32,560 --> 00:10:39,320
+depende. O sea, ahí entramos lo que se llama el tiempo programador, ¿vale? Que es otra
+
+104
+00:10:39,320 --> 00:10:44,840
+cosa que tenemos que ser conscientes de que nos pasa. El tiempo programador es, oye, no
+
+105
+00:10:44,840 --> 00:10:51,960
+hay nada que lleve 30 segundos. No hay nada que lleve 15 segundos. No siento. Y nosotros,
+
+106
+00:10:51,960 --> 00:10:56,800
+cuando empezamos a pensar así, tenemos que empezar a definir, oye, estoy diciendo 30
+
+107
+00:10:56,800 --> 00:11:01,880
+segundos. Realmente va a ser una hora. O sea, hacer ese pequeño cambio significa cambiar,
+
+108
+00:11:01,880 --> 00:11:05,800
+subir a producción, a ver si está funcionando, a ver cuando tendré la parada, todo esto
+
+109
+00:11:05,800 --> 00:11:10,480
+lo que debemos tener ahí. Cinco minutos tampoco no es realista. Cinco minutos es poner la
+
+110
+00:11:10,480 --> 00:11:16,440
+máquina en marcha, abrir el ticket, pasar los tests. ¿Qué es lo realista en estos casos?
+
+111
+00:11:16,440 --> 00:11:20,120
+O sea, cuando empezáis a pensar y dices, no, esto yo creo que más o menos me llevará
+
+112
+00:11:20,120 --> 00:11:27,320
+a medio día, va muy bien. Entonces, hemos reducido, dices, hemos sementado las tareas
+
+113
+00:11:27,320 --> 00:11:34,160
+en un punto que es más o menos razonable. Y por qué no 8 horas? Y si me da 8 horas,
+
+114
+00:11:34,160 --> 00:11:39,680
+reísaló, porque está 8 horas normalmente significan que vas a llevar dos días y tienes
+
+115
+00:11:39,680 --> 00:11:47,160
+que saberlo. Tienes que saber que puede estar entre 8 horas y 2 días. ¿Qué pasa si dices
+
+116
+00:11:47,160 --> 00:11:53,320
+dos días? Mal. Entonces, si os da dos días, quiere decir que la tarea es demasiado grande.
+
+117
+00:11:53,320 --> 00:11:58,100
+Seguramente os llevará más de una semana, porque la tarea ya inconscientemente está
+
+118
+00:11:58,100 --> 00:12:04,560
+escribiendo que es demasiado compleja y que os llevará un tiempo que para nosotros, cuando
+
+119
+00:12:04,560 --> 00:12:08,960
+estamos pensando y estamos metiéndose en la tarea, creemos que dos días será razonable.
+
+120
+00:12:08,960 --> 00:12:15,360
+La realidad es que va a ser 5 o más. Y cuando creemos que estamos una semana, pues ya os
+
+121
+00:12:15,360 --> 00:12:21,520
+digo, la semana significa que mentalmente está diciendo, sí, sí, esto es muy complejo
+
+122
+00:12:21,520 --> 00:12:26,120
+y pero voy a decir una semana porque creo que en una semana puedo sacar cualquier cosa.
+
+123
+00:12:26,120 --> 00:12:29,760
+O la típica que ya no la pongo aquí, que es el tiempo por excelencia. ¿Qué me llevará
+
+124
+00:12:29,760 --> 00:12:36,800
+esto? Un mes. O sea, cuando se vamos a decir, hacemos un mes. Ostras, pues eso es lo primero
+
+125
+00:12:36,800 --> 00:12:42,560
+que tenemos que descartar. Sabemos que una estimación razonable, tareas razonables,
+
+126
+00:12:42,560 --> 00:12:46,840
+si las inventamos en cuatro horas, esto está bien. Lo otro, tenemos que hacer trocitos
+
+127
+00:12:46,840 --> 00:12:54,640
+más pequeños. Tampoco pasa nada. Y tenemos que empezar cuanto antes. Si no empezamos
+
+128
+00:12:54,640 --> 00:12:59,480
+cuanto antes, si no empezamos a estimar de esta manera, a estimar tareas, cuando tengamos
+
+129
+00:12:59,480 --> 00:13:03,800
+que estimar un proyecto, no tendremos la experiencia, no sabremos si estamos sistémoso siempre
+
+130
+00:13:03,800 --> 00:13:07,680
+hacia arriba o siempre hacia abajo. Por lo antes, estimar cuanto antes es fundamental.
+
+131
+00:13:07,680 --> 00:13:13,080
+Yo aquí os animo que no más allá de que esta empresa os ponga la gestión de horas
+
+132
+00:13:13,080 --> 00:13:19,040
+o no la ponga, que empecéis a hacer este ejercicio. Prever cuánto tiempo os va a llevar y luego
+
+133
+00:13:19,040 --> 00:13:25,880
+registrar el tiempo que efectivamente os ha llevado. El otro vías o el otro que nos
+
+134
+00:13:25,880 --> 00:13:34,360
+queremos que quitar es el terminado o programado versus terminado. El ejemplo del botoncito
+
+135
+00:13:34,360 --> 00:13:41,120
+de color rojo que pasa verde. Realmente cuando tengamos todo hecho, cambiar el CCS o cambiar
+
+136
+00:13:41,120 --> 00:13:48,360
+aquello, pues sí, efectivamente son 15 segundos. Nos están pidiendo realmente cuando alguien
+
+137
+00:13:48,360 --> 00:13:55,160
+nos pide en estimación el tiempo que necesitemos para programar. Lo normal es que no. La gente
+
+138
+00:13:55,160 --> 00:14:01,120
+nos pide el tiempo que necesitaremos para tener eso para que la persona que te lo está pidiendo
+
+139
+00:14:01,120 --> 00:14:07,240
+lo tenga en su entorno de producción. Entonces, ahí es donde fallan la mayoría de estimaciones.
+
+140
+00:14:07,240 --> 00:14:12,120
+Dice, oye, si yo he hecho en 15 segundos y el cliente no está contento o qué pasa aquí
+
+141
+00:14:12,120 --> 00:14:17,680
+o realmente cuando tengo el tiempo de proyecto han sido 4 horas efectivamente porque estamos
+
+142
+00:14:17,680 --> 00:14:22,800
+confundiendo, programando con terminado. Y lo que normalmente nos van a pedir es la parte
+
+143
+00:14:22,800 --> 00:14:32,160
+de terminado. Ya sabemos estimar tareas. Hay sido las 6 y de vídeo entre 4 en 4 horitas,
+
+144
+00:14:32,160 --> 00:14:39,120
+4, 8, una cosa así. Y vamos a estimar proyectos. Pues estimar proyectos es básicamente lo mismo,
+
+145
+00:14:39,120 --> 00:14:46,080
+pero repetir. ¿Qué tenemos que hacer? Dices, lo primero de todo, encontrarnos, saber en
+
+146
+00:14:46,080 --> 00:14:51,160
+qué contexto nos movemos. Hablaremos un poquito de eso. Hemos dicho que podemos dividir en
+
+147
+00:14:51,160 --> 00:14:56,360
+tareas. Si yo soy capaz de dividir en tareas de 4 horas, pues será sumar las 4 horas. ¿Cuántas
+
+148
+00:14:56,360 --> 00:15:02,960
+4 horas o 2 horas o 8 horas que me va diciendo? Si no puedo porque el proyecto es muy grande,
+
+149
+00:15:02,960 --> 00:15:08,000
+igual puedo contar otras cosas. Puedo contar base de datos, número de APIs, número de
+
+150
+00:15:08,000 --> 00:15:14,720
+endpoints y clasificarlos de tal manera que puedo ir a definir si son 4 horas o no. Puedo
+
+151
+00:15:14,720 --> 00:15:21,680
+considerar rangos amplios. Yo creo que sí pueden ser 4 días o pueden ser 27. En este
+
+152
+00:15:21,680 --> 00:15:26,680
+caso la media geométrica es vuestra amiga. No hagamos medias arimétricas, hagamos medias
+
+153
+00:15:26,680 --> 00:15:33,520
+geométricas para adredar con rangos. Pero sobre todo, lo que también otro tipo de conteo
+
+154
+00:15:33,520 --> 00:15:38,600
+que nos va muy bien es ¿Qué pasa con proyectos similares? He registrado todo eso. Tengo proyectos
+
+155
+00:15:38,600 --> 00:15:44,840
+similares de los que tirar. Si haces eso, la tenéis el histórico de proyectos, por una
+
+156
+00:15:44,840 --> 00:15:49,040
+parte, la estimación que habéis hecho por tareas y la estimación que habéis hecho por
+
+157
+00:15:49,040 --> 00:15:56,960
+rangos. Bien. Entonces ya tenéis 3 inputs de los que tirar. Si dan más o menos lo mismo
+
+158
+00:15:56,960 --> 00:16:03,400
+dices, bueno, la estimación voy bien, convergen. Si no convergen, significa que se os ha escapado
+
+159
+00:16:03,400 --> 00:16:07,760
+algo o que no hay suficiente tareas, que no hay divididos lo suficiente de bien de bien
+
+160
+00:16:07,760 --> 00:16:12,200
+o bien que ese proyecto no hay suficiente información para estimarlo. Entonces no pasa
+
+161
+00:16:12,200 --> 00:16:18,880
+nada, busquemos más información. La media geométrica, como os decía, es lo que os ayudará
+
+162
+00:16:18,880 --> 00:16:24,240
+cuando hagáis rangos a definir por dónde tiraré, pues de 4 a 100 días, los razonables
+
+163
+00:16:24,240 --> 00:16:31,640
+serán unos 63. Entiendo que a partir de aquí, pues evitemos también estas estimaciones
+
+164
+00:16:31,640 --> 00:16:38,040
+de media geométrica. Pero de media arimétrica. Estimemos parte de proyecto. Ya tenemos los
+
+165
+00:16:38,040 --> 00:16:44,160
+rangos y después, pues, respecto, ya sé el tiempo que me llevará. Proyectos no es el
+
+166
+00:16:44,160 --> 00:16:49,440
+tiempo que te vaya, es el tiempo en el que el proyecto tendrá que estar terminado. Y
+
+167
+00:16:49,440 --> 00:16:55,920
+ahí hay una regla fundamental, que es la regla del 2X. Entonces, ¿qué significa? Que
+
+168
+00:16:55,920 --> 00:17:01,600
+la regla de estimaciones, la primera cosa que os pediré plantear es este proyecto me está
+
+169
+00:17:01,600 --> 00:17:08,360
+dando del orden de actitud menor que el doble del proyecto más grande que estimado. Si
+
+170
+00:17:08,360 --> 00:17:14,200
+os dice que sí, adelante, sigamos, podemos seguir con el proceso. Si la estimación que
+
+171
+00:17:14,200 --> 00:17:18,200
+estáis haciendo es más del doble, os está dando más del doble del cualquiera de los
+
+172
+00:17:18,200 --> 00:17:23,120
+proyectos que habéis estimado antes, ojo, tenéis peligro, riesgo, la estimación tiene
+
+173
+00:17:23,120 --> 00:17:28,400
+muchas posibilidades de no ser correcta. Entonces, ya tenéis otro punto de control.
+
+174
+00:17:28,400 --> 00:17:36,120
+Tareas, proyectos pequeños y vamos multiplicando el tamaño de los proyectos, pero con mucho
+
+175
+00:17:36,120 --> 00:17:42,000
+ojo. Si no podéis pasarte un proyecto pequeñito, un proyecto de dos años de trabajo sin pasar
+
+176
+00:17:42,000 --> 00:17:48,040
+por ahí. Entonces, en el proyecto, cuando ya tenemos esto y lo tenemos claro, empezaremos
+
+177
+00:17:48,040 --> 00:17:54,200
+a trabajar con el alcance. ¿Quién realizará el proyecto? ¿Cómo se gestiona importante
+
+178
+00:17:54,200 --> 00:17:58,000
+en los proyectos ahí? Cuando estimamos también, aunque no lo sepamos, es muy útil saber en
+
+179
+00:17:58,000 --> 00:18:03,840
+quién gestionará el alcance para saber cómo estimar ese proyecto. No es lo mismo un alcance
+
+180
+00:18:03,840 --> 00:18:08,960
+cerrado de un contrato, por ejemplo, público o un alcance que está mucho más abierto.
+
+181
+00:18:08,960 --> 00:18:13,640
+Ahí, la estimación del alcance abierto es complicado. Y sobre todo, también siempre
+
+182
+00:18:13,640 --> 00:18:19,520
+nos quedará la sensación de hemos estimado todo si o no, no. Pero no pasa nada, a final
+
+183
+00:18:19,520 --> 00:18:25,920
+es una estimación. El alcance, como sabéis, es el que entra. Entonces, el que entra cuando
+
+184
+00:18:25,920 --> 00:18:30,080
+tienes un documento que tienes que estimar, un proyecto que tienes que estimar, empieza
+
+185
+00:18:30,080 --> 00:18:37,880
+a leer, no, y etcétera. Y por el estilo y varios, eso no es estimable por definición.
+
+186
+00:18:37,880 --> 00:18:42,800
+En este caso, tenemos que decir, no, no, tendrán que entrar hasta un máximo de, hasta el máximo
+
+187
+00:18:42,800 --> 00:18:50,200
+de cuatro pantallas, de 15 conexiones a API. Lo primero que tenemos que eliminar es este
+
+188
+00:18:50,200 --> 00:18:57,760
+lenguaje. Si no hay un lenguaje explícito, no hay realmente alcance. A partir de ahí,
+
+189
+00:18:57,760 --> 00:19:03,720
+la definición del cliente nos va a decir, si lo conozco, puedo saber qué capacidades
+
+190
+00:19:03,720 --> 00:19:08,720
+creo que va a tener de variabilidad. Eso es nuestro buffer. El buffer es el margen error
+
+191
+00:19:08,720 --> 00:19:13,960
+que nosotros nos permitimos en la estimación. Y en la estimación un margen aconsejable
+
+192
+00:19:13,960 --> 00:19:19,000
+es del orden del 15%. Entonces, estamos diciendo, hemos hecho nuestras tareas, las estamos sumando,
+
+193
+00:19:19,000 --> 00:19:25,240
+nos ha dado un número, pues a partir de ahí, un 15% nos permitirá tener este rango de variabilidad
+
+194
+00:19:25,240 --> 00:19:32,640
+para las cosas que nos estamos dejando. Y es un margen global. No hacemos, va a hacer,
+
+195
+00:19:32,640 --> 00:19:37,960
+primero voy ajustando, y dices, no, no voy a añadir, de manera global a todo. El equipo
+
+196
+00:19:37,960 --> 00:19:42,960
+también es fundamental. Tenemos que pensar que el proyecto no vamos a hacer nosotros,
+
+197
+00:19:42,960 --> 00:19:47,160
+por tanto, tenemos que extraernos y decir, tengo un equipo genérico que será más o
+
+198
+00:19:47,160 --> 00:19:52,400
+menos importante ahí y lo vamos a hacer. Y considerar qué tecnología y qué experiencia
+
+199
+00:19:52,400 --> 00:20:00,000
+va a tener ese equipo. Los extras, hay que considerarlo, un proyecto típico va a tener
+
+200
+00:20:00,000 --> 00:20:07,880
+del orden de un 2, 2,5% de variaciones cada mes, más o menos. Entonces, ¿quién gestionó
+
+201
+00:20:07,880 --> 00:20:13,760
+las extras? ¿Cómo se distribuyen? Eso es fundamental. Lo podéis poner. Si no lo ponéis,
+
+202
+00:20:13,760 --> 00:20:18,960
+lo tendréis que gestionar. Y ponerlo ya cuando hacéis la estimación, definir cómo se facturan
+
+203
+00:20:18,960 --> 00:20:25,360
+o cómo se gestiona, ahí os ayudará siempre a que vuestro proyecto llegue al final y llegue
+
+204
+00:20:25,360 --> 00:20:32,200
+en tiempo y forma. Tenemos que considerar el tiempo de un boarding. En boarding es, ¿qué
+
+205
+00:20:32,200 --> 00:20:37,120
+tiempo voy a necesitar para establecer la UPN, las operaciones, el sistema de pre, de pro,
+
+206
+00:20:37,120 --> 00:20:41,040
+la integración continua? Eso es forma parte también la estimación. Esto hay que añadirlo
+
+207
+00:20:41,040 --> 00:20:46,640
+a ese tiempo que decíamos de suma de tareas. Si no, no lo hemos dejado. Pero también hay
+
+208
+00:20:46,640 --> 00:20:50,520
+que añadir los gastos de gestión. Los dajos de gestión no son los de administración
+
+209
+00:20:50,520 --> 00:20:55,120
+de hacer la factura, que también. Pero también son todas estas reuniones que tenemos que
+
+210
+00:20:55,120 --> 00:20:59,600
+hacer, la gestión de equipo, reuniones con cliente, eso también se puede estimar. Ahí
+
+211
+00:20:59,600 --> 00:21:03,520
+hay que conocer al cliente y hay que conocer cómo la hacemos. Nos podemos encontrar que
+
+212
+00:21:03,520 --> 00:21:09,440
+pueden ser un 15, un 20% del coste global del proyecto. Dependerá del cliente y es lo
+
+213
+00:21:09,440 --> 00:21:16,520
+que tenéis que saber. Saber cómo se gestiona ese proyecto. La estimación en lo que es
+
+214
+00:21:16,520 --> 00:21:22,040
+nuestro trabajo nos hace evolucionar. ¿Qué significa eso? Que cuando yo estimo un proyecto
+
+215
+00:21:22,040 --> 00:21:26,760
+y considero todo eso, estoy considerando el proyecto en global o la tarea en global.
+
+216
+00:21:26,760 --> 00:21:32,600
+Entonces nos da, nos permite tener la visión no de la tarea en sí, sino la visión de
+
+217
+00:21:32,600 --> 00:21:36,080
+todo lo que estoy haciendo y el por qué está haciendo y a quién va dirigido y que cuáles
+
+218
+00:21:36,080 --> 00:21:41,720
+son las expectativas del cliente ahí. Entonces estimar nos hace evolucionar. Y para hacer
+
+219
+00:21:41,720 --> 00:21:47,920
+eso, tenemos que empezar primero de tareas a proyecto. Sabiendo tareas pequeñitas, cuatro
+
+220
+00:21:47,920 --> 00:21:54,480
+horas empezando, nos empezamos a calibrar y conocemos nuestras estimaciones. Siguiente
+
+221
+00:21:54,480 --> 00:22:00,440
+proyecto, vamos a hacer esta diferenciación entre programar y entregar entre mi tarea
+
+222
+00:22:00,440 --> 00:22:06,360
+y lo que es la estimación que estoy haciendo. Y hoy en día no quedarnos ahí. Tenemos todo
+
+223
+00:22:06,360 --> 00:22:12,040
+esto que estamos diciendo, todo este entorno de onboarding, todo este entorno de reuniones,
+
+224
+00:22:12,040 --> 00:22:16,120
+todo este entorno que tenemos que tener controlado y que también tenemos que añadir las estimaciones
+
+225
+00:22:16,120 --> 00:22:30,280
+para que nos den lo más realistas posible. Muchas gracias.
+
+226
+00:22:30,280 --> 00:22:39,000
+Muy bien, muchas gracias por esta magnífica charla y por la velocidad también. Si queréis,
+
+227
+00:22:39,000 --> 00:22:44,480
+vamos a retrasar un pelín las charlas, así que tenemos tiempo para cuatro preguntas, levantar
+
+228
+00:22:44,480 --> 00:22:50,920
+la mano y ver a alguien a daros un micrófono. Por allí hay una. Si hay alguna por aquí,
+
+229
+00:22:50,920 --> 00:22:52,440
+os doy este micrófono.
+
+230
+00:22:52,440 --> 00:23:00,880
+Hola, muchas gracias por la charla, estoy acá. La verdad es que se me hizo súper útil
+
+231
+00:23:00,880 --> 00:23:06,920
+porque desde que leí la descripción dije me pasa, me identifico completamente con lo
+
+232
+00:23:06,920 --> 00:23:11,440
+de estimar, no tiene porque es una sentencia y que puedes ir trabajando en hacerlo. Mi
+
+233
+00:23:11,440 --> 00:23:18,360
+pregunta es ¿cómo lidias con que el cliente no está feliz con la estimación?
+
+234
+00:23:18,360 --> 00:23:25,360
+Cuando dices me voy a tardar para este proyecto un mes y te dicen no, lo necesito en dos semanas.
+
+235
+00:23:25,360 --> 00:23:32,080
+¿Ha hecho la estimación correcta? Si. Entonces supone que tú has hecho la estimación correcta
+
+236
+00:23:32,080 --> 00:23:35,080
+y la pregunta es no te lo hago.
+
+237
+00:23:35,080 --> 00:23:40,360
+Contagráfico de pedir está la virtud de no dar. Si tú has hecho una estimación y tu
+
+238
+00:23:40,360 --> 00:23:45,160
+estimación es razonable y la puedes explicar, entonces no te lo hago.
+
+239
+00:23:45,160 --> 00:23:52,160
+Lo que hace en dos semanas, eso es lo que se llama un death march. De march hay una clasificación
+
+240
+00:23:52,160 --> 00:23:58,360
+muy bonita que son épicos o son de la muerte, muerte a muerte. A final no sale bien. Entonces
+
+241
+00:23:58,360 --> 00:24:03,160
+si una estimación que tú has presupuestado por dos semanas o por cuatro, el cliente dice
+
+242
+00:24:03,160 --> 00:24:08,520
+dos, es mejor no meterse porque al final vas a que me haga que van a tú, el cliente no
+
+243
+00:24:08,520 --> 00:24:12,960
+tendrá lo que necesita y nadie gana. Entonces no te lo hago.
+
+244
+00:24:12,960 --> 00:24:15,360
+Si no lo hagas, no lo hagas.
+
+245
+00:24:15,360 --> 00:24:20,360
+Entonces mejor reducir fricción inicial. Yo, en este caso, no lo cogería.
+
+246
+00:24:20,360 --> 00:24:29,760
+Yo, a la respuesta de ella, lo que diría es, no sé si has visto la típica imagen de
+
+247
+00:24:29,760 --> 00:24:34,160
+te dibujó un Spiderman en 10 segundos, te lo dibujo en un minuto, te lo dibujo en 10
+
+248
+00:24:34,160 --> 00:24:39,480
+minutos. Se lo entrega al cliente y le dice, si lo quieres bien, de tardo un mes y lo quieres
+
+249
+00:24:39,480 --> 00:24:45,280
+en dos semanas, pues te va a salir un Spiderman de mierda. Entonces básicamente eso lo utilizo
+
+250
+00:24:45,280 --> 00:24:46,760
+mucho para los clientes.
+
+251
+00:24:46,760 --> 00:24:53,280
+Sí, no pasa que normalmente lo quieren todo perfecto en los 10 segundos. Entonces no.
+
+252
+00:24:53,280 --> 00:24:57,760
+Yo digo, mi consejo es no nos metamos. No podemos ganar.
+
+253
+00:24:57,760 --> 00:25:06,920
+Primero, gracias por la charla. Reflejas una gran experiencia y compartirlo aquí. Bueno,
+
+254
+00:25:06,920 --> 00:25:14,360
+gracias. La pregunta es, ¿cómo estimas o cómo metes dentro de la fecha de entrega
+
+255
+00:25:14,360 --> 00:25:20,560
+trabajos que no dependen de vosotros, como puede ser el diseño, como puede ser el copywriter,
+
+256
+00:25:20,560 --> 00:25:25,360
+todo eso que gira alrededor que lo necesitáis para entregar una fecha cerrada?
+
+257
+00:25:25,360 --> 00:25:32,320
+Correcto. Ahí depende si lo tienes que considerar o no. Si tú estás estimando todo el proyecto,
+
+258
+00:25:32,320 --> 00:25:36,160
+ahí ya no es la estimación de entrega, es una gestión de riesgos. ¿Qué es diferente
+
+259
+00:25:36,160 --> 00:25:37,160
+de una estimación?
+
+260
+00:25:37,160 --> 00:25:41,760
+Tú, cuando estás estimando, estás estimando tu trabajo. Cuando ya dependes de factures
+
+261
+00:25:41,760 --> 00:25:48,320
+externos, lo que tienes que hacer si tú llevas el proyecto es la gestión de riesgos. Porque
+
+262
+00:25:48,320 --> 00:25:53,440
+los otros habrán hecho sus propias estimaciones. Entonces tú dices, ah, pues el de copywriter
+
+263
+00:25:53,440 --> 00:26:00,960
+me dice que si le entrego el 27, el 30 lo tengo. Vale, perfecto. Entonces tú gestionas,
+
+264
+00:26:00,960 --> 00:26:05,880
+tú haces tu estimación de entrega pensando en eso. ¿Qué pasa? Que como gestor de proyectos
+
+265
+00:26:05,880 --> 00:26:09,320
+ahí tendrás que pensar, ¿qué pasa si no me lo entrega? ¿Cuál es el del line si no
+
+266
+00:26:09,320 --> 00:26:13,920
+me lo entrega? Tengo plan B, pero claro, eso ya no es parte de la estimación. Es parte
+
+267
+00:26:13,920 --> 00:26:20,320
+de tu gestión diaria de proyecto y de informar al cliente de, oye, esa persona que no depende
+
+268
+00:26:20,320 --> 00:26:24,960
+de nosotros se está retrasando, no se está retrasando, el proyecto se retrasará.
+
+269
+00:26:24,960 --> 00:26:30,520
+Entonces, al final, también es una gestión, la estimación para mí es diferente de la
+
+270
+00:26:30,520 --> 00:26:35,200
+gestión del proyecto en sí. La gestión del proyecto implica más cosas, implica gestión
+
+271
+00:26:35,200 --> 00:26:38,720
+de riesgo, implica comunicación con el cliente.
+
+272
+00:26:38,720 --> 00:26:52,720
+¿Alguna pregunta más? Por ahí hay una que abajo. Si puede llevarle el micro.
+
+273
+00:26:52,720 --> 00:27:06,480
+Muchas gracias por la charla. Yo es que trabajo con clientes, entonces lo que significa es que
+
+274
+00:27:06,480 --> 00:27:11,040
+en mi empresa, yo cuando me piden estimar un proyecto para mi equipo, no hay ni clientes
+
+275
+00:27:11,040 --> 00:27:15,600
+externos, hay clientes internos y no hay proyectos similares, porque son proyectos muy. Vamos
+
+276
+00:27:15,600 --> 00:27:22,040
+a investigar esta implementación en la que pasan dos cosas, la incertidumbre brutal y
+
+277
+00:27:22,040 --> 00:27:27,920
+el trabajo de estimar las tareas es muy similar a hacer el proyecto en sí mismo, porque no
+
+278
+00:27:27,920 --> 00:27:32,240
+sabes qué camino vas a tomar, ni qué cosas vas a encontrar. Entonces, qué recomiendas
+
+279
+00:27:32,240 --> 00:27:36,560
+tú porque yo siempre tengo problemas a la hora de estimar eso, porque no sé muchas
+
+280
+00:27:36,560 --> 00:27:41,040
+cosas que son totalmente unknown, ¿no? ¿Cómo estimáis vosotros?
+
+281
+00:27:41,040 --> 00:27:45,480
+Ahí tienes proyectos de investigaciones de desarrollo, que es lo típico que te puedes
+
+282
+00:27:45,480 --> 00:27:50,880
+encontrar y dices, no he hecho nada similar. En software también pasa. Entonces, ahí puedes
+
+283
+00:27:50,880 --> 00:27:55,440
+hacer una suposición razonable. ¿Qué pasa? Que el rango de variación de esta suposición
+
+284
+00:27:55,440 --> 00:28:01,000
+razonable va a ser muy amplio. Díselo al cliente, dice al cliente interno, ¿qué
+
+285
+00:28:01,000 --> 00:28:05,160
+me llevará? Me dice, perdón, esto es un proyecto de investigación y desarrollo. Si funciona
+
+286
+00:28:05,160 --> 00:28:10,280
+como los anteriores que hemos hecho, el término medio de entrega de uno tipo de proyectos
+
+287
+00:28:10,280 --> 00:28:15,560
+es tres días, tres semanas, lo que os dé típicamente, pero eso sí que lo tendrás. Entonces, le
+
+288
+00:28:15,560 --> 00:28:21,040
+puedes hablar de tiempos de entrega típicos. Luego tienes que hacer la parte pedagógica
+
+289
+00:28:21,040 --> 00:28:25,160
+de, esto es un proyecto de investigación de desarrollo. Si todo va bien, por aquí tendría
+
+290
+00:28:25,160 --> 00:28:32,400
+que ir los tiros. Pero bien, si todo va mal, puede ser mucho más amplio o no poder entregar.
+
+291
+00:28:32,400 --> 00:28:36,640
+¿Qué pasa? Que cuanto antes lo sepa, ahí otra vez, gestión de cliente. Lo que no
+
+292
+00:28:36,640 --> 00:28:41,800
+puedes decirle es, no sé cuánto te entregaré, ni tampoco te mantengo informado. Ahí es
+
+293
+00:28:41,800 --> 00:28:47,720
+una labor que tenemos que hacer de pedagogía, es un proyecto de IMSD. En término medio,
+
+294
+00:28:47,720 --> 00:28:53,680
+pues nos llevará tres meses y cada semana te voy diciendo por dónde voy y las posibilidades
+
+295
+00:28:53,680 --> 00:28:59,400
+que creo que tenemos de llegar a buen fin. A partir de eso, jugar todo. Una estimación
+
+296
+00:28:59,400 --> 00:29:04,720
+no es un compromiso firmado a fuego. Y si hay veces que hay proyectos que no son estimables
+
+297
+00:29:04,720 --> 00:29:09,800
+directamente. O sea, te puedes dar un rango amplio. ¿Cuánto rango, cuánto, cuánto
+
+298
+00:29:09,800 --> 00:29:15,840
+amplio tiene que ser? Pues imaginaos si os sentís 90% seguros de que el rango amplio
+
+299
+00:29:15,840 --> 00:29:21,840
+se puede cumplir. Perfecto. Si no, para mí el proyecto no debería ser estimable o deberíamos
+
+300
+00:29:21,840 --> 00:29:26,360
+necesitar mucho más tiempo para hacerlo. La estimación también, y hacer una buena estimación,
+
+301
+00:29:26,360 --> 00:29:30,800
+también cuesta dinero. Es decir, a veces decides hacer una investigación previa para
+
+302
+00:29:30,800 --> 00:29:36,760
+saber si el proyecto se puede hacer. Eso es parte de, también parte del trabajo inicial.
+
+303
+00:29:36,760 --> 00:29:40,960
+El descubrir, el saber lo que no sabes, también cuesta dinero.
+
+304
+00:29:40,960 --> 00:29:47,760
+Vale, pues... Perdón. Pues si os parece, muchas gracias.
+
+305
+00:29:47,760 --> 00:29:48,760
+Un aplauso.
+
+306
+00:29:48,760 --> 00:29:49,760
+Muchas gracias.
+
+307
+00:29:49,760 --> 00:29:50,760
+Buenas.
+
+308
+00:29:50,760 --> 00:29:51,760
+Buenas.
+
+309
+00:29:51,760 --> 00:30:06,680
+Gracias.
+

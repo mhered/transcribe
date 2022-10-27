@@ -1,0 +1,1416 @@
+1
+00:00:00,000 --> 00:00:26,200
+Bueno, yo soy Pani Góla, es mi alter ego en internet, tengo Twitter, escribo un blog
+
+2
+00:00:26,200 --> 00:00:32,520
+y trabajo en Aitical Always y hoy os quiero hablar de inyección de dependencias.
+
+3
+00:00:32,520 --> 00:00:35,920
+La primera pregunta la motivación es por qué hacer inyección de dependencias, porque queremos
+
+4
+00:00:35,920 --> 00:00:40,560
+tener un código mantenible y testeable. Por código mantenible se entiende código en el
+
+5
+00:00:40,560 --> 00:00:45,040
+que podemos añadir o cambiar funcionalidad de forma más o menos sencilla y por código
+
+6
+00:00:45,040 --> 00:00:50,320
+testeable y código podemos testear de forma automática, sin morir en el intento. Y esa
+
+7
+00:00:50,320 --> 00:00:53,840
+es ahí donde entra de ahí un patrón, uno de muchos que nos va a ayudar a conseguir
+
+8
+00:00:53,840 --> 00:00:58,960
+esto. ¿Puedo conseguirlo solo haciendo de ahí? No, pero no va a ayudar bastante y hace
+
+9
+00:00:58,960 --> 00:01:02,760
+pegamento con todo. Para mí es la puerta de entrada, otra serie de buenas prácticas
+
+10
+00:01:02,760 --> 00:01:08,120
+que de un modo u otro están relacionadas con inyección de dependencias. Pero claro,
+
+11
+00:01:08,120 --> 00:01:12,600
+ante hablar de ahí, que es el patrón, hay que hablar de DIP, que es la de de SOLID
+
+12
+00:01:12,600 --> 00:01:18,600
+del principio. Y ahí nos encontramos con este enunciado para que nega lo que es durito
+
+13
+00:01:18,600 --> 00:01:24,800
+y cuesta masticarlo. Para mí es claro entender, bueno, pregun disclaimer, en este principio
+
+14
+00:01:24,800 --> 00:01:28,080
+habla de módulos, pero módulo no es sino ni modo de un módulo de paiso, no es fichero
+
+15
+00:01:28,080 --> 00:01:33,000
+PI, módulo es una palabra como DIN para hacer inyección a cualquier componente del sistema
+
+16
+00:01:33,000 --> 00:01:39,520
+y yo creo que es claro entender por separado que es alto, que es bajo, astración y dependencia.
+
+17
+00:01:39,520 --> 00:01:44,160
+Alto es negocio, el correo de tu aplicación, el mundo real, lo que le interesa a tu cliente,
+
+18
+00:01:44,160 --> 00:01:50,720
+por ejemplo enviar un pedido. Bajo es infraestructura, detalles de implementación, lo que no le
+
+19
+00:01:50,720 --> 00:01:59,120
+interesa a tu cliente, por ejemplo, persistencia, llamadas a APIS, acceso a disco, que es una
+
+20
+00:01:59,120 --> 00:02:03,520
+astración, bueno, pues seguramente a todos nos venga la cabeza una clase extracta del
+
+21
+00:02:03,520 --> 00:02:07,680
+módulo a veces de Python. Y está bien, pero en el contexto de DIP es algo un poco más
+
+22
+00:02:07,680 --> 00:02:14,800
+genérico e independiente del lenguaje. Sería algo así como yo, el consumidor alias módulo
+
+23
+00:02:14,800 --> 00:02:21,480
+de alto nivel, necesito esto para trabajar y esto es la astración, el contrato en forma
+
+24
+00:02:21,480 --> 00:02:25,960
+de dependencia, así que alguien por debajo mío, me da igual como lo haga, sinceramente
+
+25
+00:02:25,960 --> 00:02:30,680
+no me importa, debería satisfacer mi necesidad. Y ese alguien por debajo mío es el módulo
+
+26
+00:02:30,680 --> 00:02:34,240
+de bajo nivel. Y acá ya, tienden sus otros conceptos en
+
+27
+00:02:34,240 --> 00:02:37,760
+mente porque los módulos de alto nivel no deberían depender de los módulos de bajo
+
+28
+00:02:37,760 --> 00:02:43,080
+nivel, porque queremos desacoplar al módulo alto nivel del de bajo nivel, es decir, queremos
+
+29
+00:02:43,080 --> 00:02:48,480
+que un cambio en un detalle de implementación no se propague al correo de nuestro negocio,
+
+30
+00:02:48,480 --> 00:02:50,400
+recordemos que era lo que le interesaba a nuestro cliente.
+
+31
+00:02:50,400 --> 00:02:56,960
+Y la segunda parte del enunciado, lo que viene a decir es que las extracciones mandan, mandan
+
+32
+00:02:56,960 --> 00:03:01,400
+las extracciones, no las implementaciones, es decir, la implementación tiene que ser
+
+33
+00:03:01,400 --> 00:03:07,440
+conforme a la extracción, no vale que la implementación de turno se ponga súper exquisita y no quiera
+
+34
+00:03:07,440 --> 00:03:12,820
+o no pueda cumplir el contrato, no tiene que cumplir y punto. Esto significa que nunca
+
+35
+00:03:12,820 --> 00:03:18,600
+pueden empujar cambios en la extracción, las implementaciones. Es justamente lo contrario,
+
+36
+00:03:18,600 --> 00:03:21,960
+son las extracciones en las que si cambian hacen que todas las implementaciones que tiene
+
+37
+00:03:21,960 --> 00:03:27,560
+por debajo cambien. En la práctica dip, te dice algo como esto,
+
+38
+00:03:27,560 --> 00:03:30,560
+oye, si te encuentras una dependencia entre el módulo A y el módulo B, que aunque antes
+
+39
+00:03:30,560 --> 00:03:36,320
+haya dicho alto negocio, bajo, igual a infraestructura, esto se aplicable a cualquier relación entre
+
+40
+00:03:36,320 --> 00:03:41,440
+dos módulos con la independencia de la etiqueta que le queramos poner. Lo que te dice es,
+
+41
+00:03:41,440 --> 00:03:46,480
+mete la famosa capa extra en dirección con una extracción y que ahora A y B, en vez
+
+42
+00:03:46,480 --> 00:03:50,960
+de depender entre ellos, pasen a depender de un tercero, un mediador, una extracción.
+
+43
+00:03:50,960 --> 00:04:01,720
+Entonces, si queréis, vamos a ver un ejemplo de no haciendo dip y haciendo dip y no haciendo
+
+44
+00:04:01,720 --> 00:04:08,000
+dip, un código sencillo, aquí lo vemos, ¿sabe bien el código? Si no. Tenemos un módulo
+
+45
+00:04:08,000 --> 00:04:10,760
+de bajo nivel que sería un repositorio de pedidos y un módulo de alto nivel que es
+
+46
+00:04:10,760 --> 00:04:15,440
+un servicio del carrito de la compra. Y el problema está donde se produce el acoplamiento
+
+47
+00:04:15,440 --> 00:04:25,080
+es en la línea 14. ¿Para hacer dip qué tenemos que hacer? Volvemos a la diapositiva anterior,
+
+48
+00:04:25,080 --> 00:04:29,840
+la extracción, el método preferido y el que usamos habitualmente es una clase extracta
+
+49
+00:04:29,840 --> 00:04:36,320
+de paison con un método extracto y después hay una implementación que le da de la extracción
+
+50
+00:04:36,320 --> 00:04:42,560
+e implementa el método requerido. Y el carrito de la compra ahora depende de la extracción,
+
+51
+00:04:42,560 --> 00:04:49,760
+ya no sabe nada de divior de repositori. Y, claro, es muy fácil de repentatrizar la
+
+52
+00:04:49,760 --> 00:04:53,760
+discusión de dependencia porque ahora si ya no lo creo, fijaros en el caso anterior,
+
+53
+00:04:53,760 --> 00:04:59,680
+que precisamente estaba grabando la dependencia, ahora sí, dependo del astracio, línea 14,
+
+54
+00:04:59,680 --> 00:05:04,480
+ahora lo más fácil es con de ahí llevar a la práctica, recibir la dependencia y depender
+
+55
+00:05:04,480 --> 00:05:11,360
+de la extracción. Y como hay que hacer algo que no hay renunciado primero, porque yo
+
+56
+00:05:11,360 --> 00:05:15,520
+es que soy incapaz de recordar, no lo quiero traducir porque solo hablar de un conotación
+
+57
+00:05:15,520 --> 00:05:20,640
+de problema y me parecía que era un rollo, yo voy a resumirlo y me gusta esta otra versión,
+
+58
+00:05:20,640 --> 00:05:25,280
+que es dependiendo de las tracciones. Me ha sido más fácil recordar y sobre todo
+
+59
+00:05:25,280 --> 00:05:30,240
+se alinea muy bien con la famosa frase del libro Design Patterns del Gano Ford, programa
+
+60
+00:05:30,240 --> 00:05:35,600
+control interface, no control una implementación. Así que prefiero recordar esto que no el otro
+
+61
+00:05:35,600 --> 00:05:41,720
+encho que me cuesta. Y la extracción, voy a ver si… Perdón.
+
+62
+00:05:41,720 --> 00:05:48,400
+Y si la extracción está tan importante que mecanismo, cartefactos tenemos en país,
+
+63
+00:05:48,400 --> 00:05:54,120
+vamos a trabajar con las tracciones. Primero, al módulo a veces, poco más que decir que
+
+64
+00:05:54,120 --> 00:05:58,680
+si ahora alguno va a buscar extracciones en internet, seguramente se va a haber desbordado
+
+65
+00:05:58,680 --> 00:06:02,720
+por un montón de pocos de otros lenguajes como Java o Cesar, donde la verdad es de interfaces,
+
+66
+00:06:02,720 --> 00:06:05,960
+que una interfaz sería equivalente a una clase abstracta con todos los métodos abstractos.
+
+67
+00:06:05,960 --> 00:06:12,120
+Así que con el módulo ABC, bien. Hay una segunda pata que es el ductipin, ya lo sabéis,
+
+68
+00:06:12,120 --> 00:06:15,600
+si empezó un pato, un pato, un rano, un pato, parecerá un pato.
+
+69
+00:06:15,600 --> 00:06:20,720
+Caracitística súper útil del lenguaje, no renego de ella, por supuesto, y no podría,
+
+70
+00:06:20,720 --> 00:06:28,560
+estoy en el país. Pero yo creo que tiene ciertos peligros y puede jugarnos una mala pasada.
+
+71
+00:06:28,560 --> 00:06:37,320
+Si queréis, vamos a ver un ejemplo de ductipin. Ah, debería estar aquí. En el que esto debía
+
+72
+00:06:37,320 --> 00:06:43,480
+estar colapsado. En el que fijaros que ahora el servicio depende de, de pendencia de acuerdo,
+
+73
+00:06:43,480 --> 00:06:49,400
+pero el tipado es cualquier tipo, porque realmente lo que me importa es la forma del
+
+74
+00:06:49,400 --> 00:06:53,680
+objeto, no me importa que sea de un tipo en concreto, sino que parte de su interfaz pública,
+
+75
+00:06:53,680 --> 00:06:58,400
+interfaz es una palabra sobreloada que vale para 200 cosas, que parte se conforma a lo
+
+76
+00:06:58,400 --> 00:07:04,600
+que yo quiero al contrato. Entonces, yo aquí lo llamo con safe, está bien, pero esto es
+
+77
+00:07:04,600 --> 00:07:08,280
+mucho suponer, ahí me puede entrar cualquier cosa, no tengo ninguna certeza de que tenga
+
+78
+00:07:08,280 --> 00:07:13,240
+un método safe, ni de crecer un parámetro de tipo orden. Entonces, bueno, posible walk
+
+79
+00:07:13,240 --> 00:07:17,720
+arounds, que seguro que nadie hace, pero que se me ocurrieron intentando rizar el rizo,
+
+80
+00:07:17,720 --> 00:07:24,080
+pues oye, un try and step, preguntar si tienen atributo, bueno, es que a lo mejor que no
+
+81
+00:07:24,080 --> 00:07:27,440
+se hace ductipin, pero que vamos a hacerlo de otra forma, lo que yo podría llamar como
+
+82
+00:07:27,440 --> 00:07:35,120
+ductipin plus plus, que es el typing protocol. Esto lo metieron en el PP, el 544, y esto lo
+
+83
+00:07:35,120 --> 00:07:42,840
+que hace es hacer explícito el contrato en términos de tipado estructural. Fijaros,
+
+84
+00:07:42,840 --> 00:07:45,800
+cuando usamos una clase, estamos usando un tipado nominal, este tipo tiene que ser de
+
+85
+00:07:45,800 --> 00:07:49,720
+esta clase o cualquiera que sea derivada o que sea en el árbol de la generalidad de
+
+86
+00:07:49,720 --> 00:07:55,080
+clases. Con los protocolos decimos, tipado estructural, solo parte de ti me interesa
+
+87
+00:07:55,080 --> 00:07:58,080
+que sea de esta forma, pero qué voy a hacer, en vez de confiar cienamente en cualquiera
+
+88
+00:07:58,080 --> 00:08:03,440
+que entre mi código, voy a ponerlo por explícito, así tú tienes que cumplirlo, y esto, lógicamente,
+
+89
+00:08:03,440 --> 00:08:09,440
+ha apoyado en herramientas como MIPI que te hacen en el archistático de código, bueno,
+
+90
+00:08:09,440 --> 00:08:16,720
+en las subgras de tipos, pues ahora es interesante. Vamos a ver, protocolo, hace el mismo ejemplo
+
+91
+00:08:16,720 --> 00:08:23,040
+de antes, solo que ahora digo, si yo realmente quería un safe, oye, acte la clase safe y
+
+92
+00:08:23,040 --> 00:08:26,400
+declara aquí la forma que quieras, es un protocolo explícito, bueno, de hecho, en el propio
+
+93
+00:08:26,400 --> 00:08:31,560
+PES pone satik ductipin. A partir de ahí deber de repositor y implementar
+
+94
+00:08:31,560 --> 00:08:37,480
+el safe, además, con paisentrenosidencia múltiples, va por seredad de 18 protocolos, y el carrito
+
+95
+00:08:37,480 --> 00:08:43,840
+ahora puedo tipar repositorio a safe, y aquí tranquilos, va a haber un safe con un parámetro
+
+96
+00:08:43,840 --> 00:08:47,680
+orden, es seguro que lo tiene. Lógicamente todo esto pasa en tiempo de desarrollo, porque
+
+97
+00:08:47,680 --> 00:08:56,480
+es el módulo typing, en tiempo de ejecución, la verdad es que es de igual uno que otro.
+
+98
+00:08:56,480 --> 00:09:00,680
+Beneficios, y ¿por qué quiero hacer yo todo esto? Lo quiero hacer porque, bueno, seguro
+
+99
+00:09:00,680 --> 00:09:03,960
+que hay muchos más, pero eso es lo que se me ocurre en a mí. Primero, que el módulo
+
+100
+00:09:03,960 --> 00:09:07,320
+de bajo nivel lo puedo cambiar sin impactar al de alto nivel, y eso es bien, porque que
+
+101
+00:09:07,320 --> 00:09:12,520
+yo estoy jugueteando con el repositorio, con lo que yo quiera, no quiero cambiar el
+
+102
+00:09:12,520 --> 00:09:18,440
+estado de negocio que me ha costado su do, sangre y lágrimas, poner de acuerdo con el
+
+103
+00:09:18,440 --> 00:09:20,280
+cliente. Luego puedo reutilizar los módulos de alto nivel, es decir, si yo me tuviera
+
+104
+00:09:20,280 --> 00:09:26,160
+que llevar el correo de mi negocio a otra aplicación, no haría una mochila muy pesada
+
+105
+00:09:26,160 --> 00:09:31,280
+de dependencia, sólo me llevaría las extracciones, porque en ese otro proyecto las implementaciones
+
+106
+00:09:31,280 --> 00:09:37,120
+podrían ser distintas. Puedo cambiar el comportamiento del sistema, según la implementación que
+
+107
+00:09:37,120 --> 00:09:41,520
+inyecte del módulo de bajo nivel. Puedo escribir en más datos o puedo escribir en
+
+108
+00:09:41,520 --> 00:09:46,040
+ficheros, de igual que el módulo de alto nivel dice a mi plín, si es que no quiero saberlo.
+
+109
+00:09:46,040 --> 00:09:51,000
+Y esto se alinea mucho con el principio de OpenClose, también de Solit. Puedo hacer
+
+110
+00:09:51,000 --> 00:09:55,240
+para el development, ¿qué es para el development? Bueno, se llama en paralelo, pero al final
+
+111
+00:09:55,240 --> 00:10:00,080
+toda esa rúcedad estoy trabajando en el módulo de alto nivel, pero por el motivo que sea,
+
+112
+00:10:00,080 --> 00:10:04,360
+todavía no tengo el módulo de bajo nivel. Puede ser porque está trabajando en equipo
+
+113
+00:10:04,360 --> 00:10:09,000
+y la persona que tiene la señal a la tarea aún no lo tiene, puede ser un corner case
+
+114
+00:10:09,000 --> 00:10:12,680
+que es improbable, pero porque te ha que estar algún componente y no tenga licencia o no
+
+115
+00:10:12,680 --> 00:10:18,400
+pueda necesitar operativo. Y si haces este idea, por ejemplo, Ud.Siding de fuera adentro,
+
+116
+00:10:18,400 --> 00:10:23,040
+pues básicamente es que el propio flujo de trabajo te lleva a ello. Haces primero lo
+
+117
+00:10:23,040 --> 00:10:28,840
+de fuera y luego vas metiote sucesivamente dentro. Además, la inyección de dependencia
+
+118
+00:10:28,840 --> 00:10:33,440
+me da un código más claro. Esto es, como estoy inyectando por constructor toda la dependencia
+
+119
+00:10:33,440 --> 00:10:37,320
+de la clase, ahora las veo del tirón. Voy al constructor, aunque esté colapsado y las
+
+120
+00:10:37,320 --> 00:10:42,960
+veo. Esto lo he forzado yo. Digo, esto está guay porque esto es lo que hice el send de
+
+121
+00:10:42,960 --> 00:10:48,480
+Python. Explícito es mejor que implícito. Va bien ahí. Y no sabía de testar a Codesmells.
+
+122
+00:10:48,480 --> 00:10:53,040
+¿Por qué? Porque si ese mismo constructor, veo que tiene 20 cosas, que se inyectan 20
+
+123
+00:10:53,040 --> 00:10:59,120
+cosas, pues hombre, ya me está dando un tufillo de que el SRP, que es la S de Solid, lo mismo
+
+124
+00:10:59,120 --> 00:11:00,560
+se hace de demasiadas cosas.
+
+125
+00:11:00,560 --> 00:11:08,600
+Ravidamente, por poner un ejemplo yo, benefits, benefits, benefits, pues bueno, esto es el
+
+126
+00:11:08,600 --> 00:11:14,840
+ejemplo que os ponía, subcar service grabando en base de datos o grabando en fichero, dependiendo
+
+127
+00:11:14,840 --> 00:11:19,640
+de la extracción el módulo de alto nivel. Aquí abajo estos dos códigos son equivalentes,
+
+128
+00:11:19,640 --> 00:11:28,680
+de igual. Le va bien al módulo alto nivel. Y Codesmell, pues fijaros en estos dos. Yo,
+
+129
+00:11:28,680 --> 00:11:33,120
+primero, el orden alocator, veo alocate, veo el in, ya lo que he dicho y digo, yo es que
+
+130
+00:11:33,120 --> 00:11:38,840
+no sé lo que tiene dentro eso. Voy a tener que desplegar alocate y bueno, aquí está
+
+131
+00:11:38,840 --> 00:11:43,080
+claro, aquí tiene eso, pero me dejamos que esto es un código largo y esto lo estoy estanciando
+
+132
+00:11:43,080 --> 00:11:47,360
+en la última línea en mano izquierda. Me gusta un montón, un montón de carga cognitiva,
+
+133
+00:11:47,360 --> 00:11:51,720
+reconocer que dependencia es tiene. Sin embargo, en el segundo caso, es que ni voy a abrir
+
+134
+00:11:51,720 --> 00:11:55,760
+el constructor. Digo, joder, depende de todo esto. Pues hombre, yo no sé qué hace el
+
+135
+00:11:55,760 --> 00:12:02,000
+alocator ahí hablando del custom, el escort checker y el mail sender. Deja directamente,
+
+136
+00:12:02,000 --> 00:12:10,480
+mi cabeza me dice hace demasiadas cosas. Testing, súper importante, al principio de la charla
+
+137
+00:12:10,480 --> 00:12:15,800
+queremos código mantenible, código testable, código testable. Ahora puedo aislar el su,
+
+138
+00:12:15,800 --> 00:12:20,160
+el sistema under test, lo que estoy probando y puedo moquear las dependencias. Y aquí
+
+139
+00:12:20,160 --> 00:12:24,320
+de nuevo buscando el suyo de confirmación digo, pues este señor que es Michael Ford,
+
+140
+00:12:24,320 --> 00:12:29,120
+que parece que es el, que creó la librería UNICEX MOC en la standard library, te dice,
+
+141
+00:12:29,120 --> 00:12:33,520
+oye, asignación de dependencias, es chupipandi, no dejes de hacerla, ya es la mucho. Así
+
+142
+00:12:33,520 --> 00:12:39,120
+que si lo dice él, no lo digo yo. Y aquí viene algo que es un poco, bueno, en mi opinión,
+
+143
+00:12:39,120 --> 00:12:44,640
+siempre nos queda el monkey patching, hacer patch en Python, versus el mocking. Yo, personalmente,
+
+144
+00:12:44,640 --> 00:12:50,160
+no soy enamorado de hacer monkey patching. Por ejemplo, hay algo que es con un mantra
+
+145
+00:12:50,160 --> 00:12:54,760
+que deberíamos imprimir, no sé, dejarlo ahí al lado de nosotros, que es el patch se hace
+
+146
+00:12:54,760 --> 00:12:59,680
+de la implementación y el mock de la extracción. Es decir, cuando yo estoy haciendo patch,
+
+147
+00:12:59,680 --> 00:13:06,800
+estoy parcheando de tres internos de una implementación, con lo cual el tema se muy frágil, porque
+
+148
+00:13:06,800 --> 00:13:11,360
+si cambia la implementación se me va a romper el test. Si, bueno, bueno, estoy moqueando,
+
+149
+00:13:11,360 --> 00:13:16,760
+estoy moqueando una extracción, estoy dando como una caja negra, al revelo era una caja
+
+150
+00:13:16,760 --> 00:13:20,280
+blanca, yo tengo que saber lo que pasa dentro de la implementación. En nuestra extracción,
+
+151
+00:13:20,280 --> 00:13:27,960
+caja negra. De hecho, para mí, si hago mucho patch, yo me la hago mirar porque creo que
+
+152
+00:13:27,960 --> 00:13:34,680
+es algo que me está diciendo que tengo un mal diseño con franqueza. Quedan fuera de
+
+153
+00:13:34,680 --> 00:13:39,680
+esta discusión librerías como responses, freegan, sobre Python FFS, porque también
+
+154
+00:13:39,680 --> 00:13:42,880
+hacen patch, pero hace... La verdad es que hace un tercero. Yo cuando hace un tercero
+
+155
+00:13:42,880 --> 00:13:48,040
+me quedo más tranquilo. Sé que es bastante racional, pero está testeada, me puedo ahorrar
+
+156
+00:13:48,040 --> 00:13:52,160
+alguna extracción que otra y se le vería excusa a todo el mundo, súper testadas,
+
+157
+00:13:52,160 --> 00:13:58,080
+bien, con alguna documentación. Además, creo que también parchear, bien mi opinión,
+
+158
+00:13:58,080 --> 00:14:07,120
+es más difícil que moquear. Vamos a ver un par de ejemplos. Por ejemplo, en este caso,
+
+159
+00:14:07,120 --> 00:14:16,000
+lo que queremos es parchear esta línea, la 16, donde se crea la extracción, donde se
+
+160
+00:14:16,000 --> 00:14:21,880
+crea la clase perdón. Entonces aquí, hombre, si me lo quiero currar, tengo que hacer autospecking
+
+161
+00:14:21,880 --> 00:14:28,640
+para que el moque no se trague todo y no responda a todo. Primero tengo que crear el moque y
+
+162
+00:14:28,640 --> 00:14:33,400
+después parchear una ruta concreta, por Dios que no me he cambiado dónde está porque
+
+163
+00:14:33,400 --> 00:14:39,120
+se me esmovaron para el test y después decirle que cuando realmente llaman a crear el tipo
+
+164
+00:14:39,120 --> 00:14:44,360
+usa mi moque que te he creado antes. Me parece complicado, yo no quería saber eso de esa
+
+165
+00:14:44,360 --> 00:14:54,240
+clase. Sin embargo, haciéndolo con moquín, me parece que queda bastante más sencillo.
+
+166
+00:14:54,240 --> 00:14:59,880
+Igualmente me creo un moque como Dios manda con autospecking y tal, pero luego en subservice
+
+167
+00:14:59,880 --> 00:15:04,200
+se lo paso. Es que queda muy claro porque es que si uno no me va a dejar ni crear el objeto.
+
+168
+00:15:04,200 --> 00:15:14,400
+Así que no tengo que saber nada, no se puede romper. Vale, aceptamos barco, queremos la
+
+169
+00:15:14,400 --> 00:15:19,000
+incidencia de dependencias, pero como lo hago? Para aclarar, yo trabajo en el contexto de
+
+170
+00:15:19,000 --> 00:15:23,680
+aplicaciones de consola, por así decirlo, procesos batch que se tiran son muchas horas,
+
+171
+00:15:23,680 --> 00:15:27,080
+entonces no trabajo con framework webs, pero en la primera recomendación de independencia
+
+172
+00:15:27,080 --> 00:15:31,400
+inyecto viene a comentar algo con Django, con Flash, con Fashapi, etcétera. Yo aquí
+
+173
+00:15:31,400 --> 00:15:37,040
+he elegido esta librería que tiene una excelente documentación, tiene un montón de gente
+
+174
+00:15:37,040 --> 00:15:41,000
+colaborando, los purécois se aprueban, me parece que está muy bien la librería. De
+
+175
+00:15:41,000 --> 00:15:46,400
+que lo importante es entender dos conceptos. Como yo ya no creo la dependencia, alguien
+
+176
+00:15:46,400 --> 00:15:49,920
+les tenía que crear por mí, donde aparece el contenedor de Inyección de Dependencias,
+
+177
+00:15:49,920 --> 00:15:55,400
+que es el cuadro de la izquierda. Y el contenedor puede ser de dos tipos, declarativo o dinámico.
+
+178
+00:15:55,400 --> 00:15:59,680
+Lo básicamente declarativo es, yo sé en tiempo de diseño que cuando te pida la que
+
+179
+00:15:59,680 --> 00:16:04,040
+me resuelvas, la extracción A, me tienes que dar la implementación B y dinámico es por
+
+180
+00:16:04,040 --> 00:16:08,040
+el motivo que se da, me da igual, necesitas resolverlo en tiempo de ejecución, así que
+
+181
+00:16:08,040 --> 00:16:11,320
+ahí usas el dinámico, pero la práctica es solo mismo.
+
+182
+00:16:11,320 --> 00:16:15,640
+Es importante los providers, los providers son los que saben encargar finalmente de crear
+
+183
+00:16:15,640 --> 00:16:21,200
+los objetos, están un poco atados al ciclo de vida de la dependencia. Factory, si no hay
+
+184
+00:16:21,200 --> 00:16:26,520
+un método de transient, es cada vez que yo te pida este objeto, tú me das un nuevo. Singleton,
+
+185
+00:16:26,520 --> 00:16:31,440
+cada vez que te pida un objeto, me das siempre el mismo. Y a partir de ahí, a lo mejor hay
+
+186
+00:16:31,440 --> 00:16:37,520
+12 o 14 proveedores. A tener ahí no muy típico, es perrequest, es decir, durante todo el tiempo
+
+187
+00:16:37,520 --> 00:16:42,120
+de la requer, de la petición, dame siempre el mismo, es como un factory perrequest.
+
+188
+00:16:42,120 --> 00:16:48,600
+Entonces, vamos a ver un ejemplo un poco más complejo, donde hago pure day, bueno, como
+
+189
+00:16:48,600 --> 00:16:52,120
+la llamo al autor, que es hacer de ahí a mano, para ver un poco por qué queremos el
+
+190
+00:16:52,120 --> 00:16:53,120
+contenedor.
+
+191
+00:16:53,120 --> 00:17:04,240
+Ah, pure day, está en el método. Aquí realmente intenta complicarlo un poco, tengo el main,
+
+192
+00:17:04,240 --> 00:17:08,720
+que sería como el módulo alto nivel, que depende de una extracción, que es reader, ya le da
+
+193
+00:17:08,720 --> 00:17:13,880
+igual, él trabaja sobre read, read, la extracción, lo que es lo que es read, read. Está aquí,
+
+194
+00:17:13,880 --> 00:17:19,480
+no, no lo veo, perdón, sí. Y debo una lista de par clave de valor. A partir de aquí,
+
+195
+00:17:19,480 --> 00:17:25,040
+poder el loading jammel o poder el loading json. Y el json a su vez también quiere validar
+
+196
+00:17:25,040 --> 00:17:32,680
+el esquema del json, así que tiene una dependencia de json, esquema file validator. Y lo veo aquí,
+
+197
+00:17:32,680 --> 00:17:39,240
+me da trolleado eso. Lo veo aquí. Pero es que a su vez el esquema se carga desde los
+
+198
+00:17:39,240 --> 00:17:45,040
+recursos de la aplicación, así que hay un result loader. Entonces, todo este ejemplo,
+
+199
+00:17:45,040 --> 00:17:48,760
+si realmente lo voy a ejecutar, bueno, aquí lo voy a ejecutar, main, le llamo con jammel
+
+200
+00:17:48,760 --> 00:17:54,240
+es lo fácil, le llamo con jammel, tiene que funcionar. Jammel tiene 456 json modus3, para
+
+201
+00:17:54,240 --> 00:18:06,960
+ver qué funciona. Si le llamo con json, bueno, pues ya, a mí me da pereza ya eso, porque
+
+202
+00:18:06,960 --> 00:18:11,000
+tengo que crear el main, que son file reader y son cabellos de su loader, depende de cómo
+
+203
+00:18:11,000 --> 00:18:19,760
+se agraza los objetos, eso puede ser bastante más tedioso. A viajecutar, vale, uno de tres,
+
+204
+00:18:19,760 --> 00:18:24,600
+ok. Perdón, que voy en orden, vale. Entonces ahora metemos la librería, dependencia injector,
+
+205
+00:18:24,600 --> 00:18:31,280
+library. El nombre la verdad que no me ha acertado. Aquí realmente lo que hay que
+
+206
+00:18:31,280 --> 00:18:34,280
+entender es que hay que crear el contenedor. Primero, el código la verdad que sigue igual,
+
+207
+00:18:34,280 --> 00:18:38,740
+o sea, está todo, es lo mismo. Main serie de vendedor reader, pero ahora yo no quiero
+
+208
+00:18:38,740 --> 00:18:43,400
+hacer la inición de dependencia esa mano porque me aburre y puede ser muy complicado.
+
+209
+00:18:43,400 --> 00:18:51,360
+Entonces, tengo que crear el contenedor. El contenedor, fijaros que es un lugar centralizado
+
+210
+00:18:51,360 --> 00:18:56,560
+donde yo registro toda la dependencia de mi sistema, donde yo digo que cuando yo te pida
+
+211
+00:18:56,560 --> 00:19:01,840
+un json schema validator, tú me vas a crear con el ciclo de vida de factory, es decir,
+
+212
+00:19:01,840 --> 00:19:05,840
+cada vez uno nuevo, que es una instancia del tipo json schema validator y además como
+
+213
+00:19:05,840 --> 00:19:11,040
+asubeste una dependencia del subloader, vas a agoger lo que hay aquí. Y que hay aquí,
+
+214
+00:19:11,040 --> 00:19:15,440
+por el subloader es cada vez que te lo pidan, me creas un factory de la clase del subloader
+
+215
+00:19:15,440 --> 00:19:19,080
+y este como pedía una stream, es un ejemplo forzado para ver que también puedes inyectar
+
+216
+00:19:19,080 --> 00:19:24,120
+valores así tal cual. Lógicamente el contenedor puede leer configuración de ficheros JSON
+
+217
+00:19:24,120 --> 00:19:29,800
+y AML, que puede usar internamente, lo puedes poner o no afuera. Y aquí otro ejemplo un
+
+218
+00:19:29,800 --> 00:19:35,840
+poco forzado que es, bueno, es la vida real, al final, el reader en función de un valor
+
+219
+00:19:35,840 --> 00:19:41,280
+de configuración, voy a leer un json, voy a leer un jame, es decir, dependiendo de lo
+
+220
+00:19:41,280 --> 00:19:51,800
+que hay aquí, voy a leer json, voy a leer. Ahora mismo está llamen, perdón no estaba
+
+221
+00:19:51,800 --> 00:19:56,360
+estaba aquí, bueno, me ha llegado. Entonces que lo contenedor, a partir de ahí lo que
+
+222
+00:19:56,360 --> 00:20:01,120
+estoy haciendo aquí es en el punto de entrada, en el entripo de la aplicación, le estoy
+
+223
+00:20:01,120 --> 00:20:05,440
+resolviendo las dependencias que tiene. Ahora vamos a ver que puedo ahorrarme esto también,
+
+224
+00:20:05,440 --> 00:20:09,480
+¿vale? Y le digo, oye, me he impido dos parámetros, oye, lo que está en reader, la verdad es
+
+225
+00:20:09,480 --> 00:20:13,720
+que me da igual, lo único que sé es que tiene que ser del tipo reader, un tipo derivado y
+
+226
+00:20:13,720 --> 00:20:22,680
+lo que hay en paz que es un str. Le voy a dar, okey funciona, quiero volver aquí porque
+
+227
+00:20:22,680 --> 00:20:27,760
+como me ha venido antes este ejemplo, este selector realmente es un shortcut, esto ya
+
+228
+00:20:27,760 --> 00:20:32,080
+es lo que me da de valor, el contenedor, porque haces un contenedor lo mismo, parece un arduo
+
+229
+00:20:32,080 --> 00:20:41,440
+a tarea, esto es equivalente a esto otro, donde yo a mano, me estoy llamando un método,
+
+230
+00:20:41,440 --> 00:20:44,880
+le estoy pasando la configuración y yo aquí lo hago un poco a mano, pero por lo que deje
+
+231
+00:20:44,880 --> 00:20:49,240
+que queda todo escondido en el contenedor, no lo importa a main como funciona, de hecho
+
+232
+00:20:49,240 --> 00:20:56,240
+lo que voy a hacer es cambiar, por confirmar que funciona, así como aquí Jason, okey,
+
+233
+00:20:56,240 --> 00:21:05,240
+no magic, no sé si está jugado o no, va a tener que salir uno de los tres, hasta donde
+
+234
+00:21:05,240 --> 00:21:10,360
+sé, vale, uno de los tres, perfecto, he cambiado, o sea, mi palicación hace otra cosa,
+
+235
+00:21:10,360 --> 00:21:14,800
+tocando un fichero Jason y delegando un contenedor, el resto, estoy dependiendo de una extracción,
+
+236
+00:21:14,800 --> 00:21:19,520
+no voy a poner un interfaz, no voy a poner implementación, nada cambia. Ahora bien,
+
+237
+00:21:19,520 --> 00:21:23,200
+esta línea mola, pero no mola, porque estamos inyectando y de repente aquí tengo que hacer
+
+238
+00:21:23,200 --> 00:21:26,760
+como una especie de service locator, tengo que resolver ahí en vivo y en directo dependencias,
+
+239
+00:21:26,760 --> 00:21:31,400
+vale, lo que te dice el autor, además se deja que el enlace un poco para el estado de la
+
+240
+00:21:31,400 --> 00:21:35,240
+tuve, y eso son producciones, ahora nosotros utilizamos en código en producción y eso
+
+241
+00:21:35,240 --> 00:21:40,520
+ha testado, lo que te dices, oye, usa esa parte de magia que ponía aquí, que era opcional,
+
+242
+00:21:40,520 --> 00:21:45,800
+que era wiring, para aquí incluso te ahorres ese punto de entrada, entonces lo que voy
+
+243
+00:21:45,800 --> 00:21:51,080
+a hacer yo es, tú pasame que módulos, incluso que paquetes, llegado el caso, quieres que
+
+244
+00:21:51,080 --> 00:21:58,360
+yo vea y si me ayudas con los markers, si me pones esto, yo voy a pasar, voy a pasear
+
+245
+00:21:58,360 --> 00:22:02,800
+todo eso y lo que voy a hacer es resolverlo directamente haciendo patch a lo que tengas
+
+246
+00:22:02,800 --> 00:22:06,440
+en el contenedor. Lógicamente a mí sólo me gusta hacerlo en el punto de entrada, porque
+
+247
+00:22:06,440 --> 00:22:10,640
+si yo no quiero manchar todas mis clases, todo lo que está detrás con cosas de una
+
+248
+00:22:10,640 --> 00:22:14,240
+librería de terceros, porque mañana me quitan este contenedor, tengo que poner otro y tengo
+
+249
+00:22:14,240 --> 00:22:18,400
+un problema, ahora en el main, pues no me importa, ya que esta es la zona lento de alguien que
+
+250
+00:22:18,400 --> 00:22:24,440
+dice, mira, yo creo que la idea inicialmente saldría para usarlas así, pues esto debería
+
+251
+00:22:24,440 --> 00:22:29,400
+funcionar igual, fijaros que en main ahora lo puedo llamar sin parámetros, ¿por qué?
+
+252
+00:22:29,400 --> 00:22:32,560
+Porque este parámetro por defecto ya está resuelto al valor del contenedor, no obstante
+
+253
+00:22:32,560 --> 00:22:36,760
+si quiero puedo sobrecribirlo aquí, decirlo lleno de concreto, reader, quiero que sea
+
+254
+00:22:36,760 --> 00:22:41,640
+así. Y quiero ver del testing, ¿podrías usar el contenedor en el testing? Yo diría
+
+255
+00:22:41,640 --> 00:22:46,520
+sí, si no son tres unitarios, a mí no me gusta ser el contenedor si son tres unitarios,
+
+256
+00:22:46,520 --> 00:22:51,240
+por los tres unitarios, yo quiero saber que estoy inyectando y que doble de test estoy
+
+257
+00:22:51,240 --> 00:22:54,800
+usando, etcétera. Al entero, la integración es bastante cómodo, porque yo tengo un registro
+
+258
+00:22:54,800 --> 00:22:59,240
+de todas las dependencias y quiero que funcione igual, solo que en vez de escribir en base
+
+259
+00:22:59,240 --> 00:23:03,280
+de datos o en vez de enviar el millsender, en vez de enviar de verdad un correo al cliente,
+
+260
+00:23:03,280 --> 00:23:10,920
+bueno que lo envíe ahí a cualquier sitio fake que yo no me quiero enterar. Entonces,
+
+261
+00:23:10,920 --> 00:23:17,840
+vamos a ver aquí el test usando el contenedor, bastante fácil, porque tiene esta capacidad
+
+262
+00:23:17,840 --> 00:23:23,840
+de sobre escribir, creo el contenedor, pero sobre escribo en concreto esta dependencia
+
+263
+00:23:23,840 --> 00:23:28,240
+para que me resuelvas a un mod que yo te he creado, incluso con un context manager, incluso
+
+264
+00:23:28,240 --> 00:23:32,320
+puedes crear un contenedor que eres del contenedor y ahí sobre escribas, tengo un montón de
+
+265
+00:23:32,320 --> 00:23:37,560
+opciones. Y estos tres deberían pasar y lo vea de la pobresidad, no estoy robando
+
+266
+00:23:37,560 --> 00:23:46,400
+y segundos al tiempo que no procedes. Una cosa importante, intercepción, tenemos un contenedor,
+
+267
+00:23:46,400 --> 00:23:50,560
+no va a resolver por nosotros los tipos, hoy es Composition, que puede ser un grafo pequeñito
+
+268
+00:23:50,560 --> 00:23:56,000
+o un grafo que te mueres, me administra el ciclo de vida, eso está guay, además, lógicamente,
+
+269
+00:23:56,000 --> 00:23:59,480
+cuando me llega la dependencia, me la inyecta, si yo no la creo tampoco la destruyo, ¿por
+
+270
+00:23:59,480 --> 00:24:02,560
+qué? Porque no tengo la certeza, no lo sé, si otro la está usando, pues es una instancia
+
+271
+00:24:02,560 --> 00:24:06,080
+compartida, ¿vale? La verdad es una cosa que te quitas también.
+
+272
+00:24:06,080 --> 00:24:10,720
+Hay una tercera pata que la intercepción es, joder, si tú estás en casa con Rieder
+
+273
+00:24:10,720 --> 00:24:16,640
+y te vale File Rieder o URL Rieder, yo esto lo veo como a Mortadiel y Flemón, cuando
+
+274
+00:24:16,640 --> 00:24:20,320
+ve con los ajas fuertes y le ponían un jamón, es como, mientras que te pasa algo que parezca
+
+275
+00:24:20,320 --> 00:24:24,080
+eso, yo te puedo ir al cambiazo. Y está muy bien porque vamos a hacer en el punto de
+
+276
+00:24:24,080 --> 00:24:29,160
+entrar a la aplicación en el contenedor y esto para implementar conceptos del tipo
+
+277
+00:24:29,160 --> 00:24:35,200
+cross-cutting como login, seguridad, cache, pues es bastante útil. Por ejemplo, nos piden
+
+278
+00:24:35,200 --> 00:24:44,040
+medir el tiempo de ejecución de un método. Pues, hombre, probablemente lo primero que
+
+279
+00:24:44,040 --> 00:24:48,600
+me pediría al cuerpo es hacer algo así, o sea, pues creen un decorador de Python, esta
+
+280
+00:24:48,600 --> 00:24:55,720
+implementación es una, podrá ver otras muchas. Y luego decorar el método con Timer, pues
+
+281
+00:24:55,720 --> 00:25:01,240
+funciona. Voy a ejecutar. He procurado todo el repo, se puede ejecutar, que esté ahí
+
+282
+00:25:01,240 --> 00:25:05,800
+todo indicado, o sea que, ok, tres segundos. Ahora bien, esto va a hacer un mogollón de
+
+283
+00:25:05,800 --> 00:25:10,560
+clases, yo no quiero cambiar todos los servicios, todos los modos en general de alto nivel,
+
+284
+00:25:10,560 --> 00:25:16,640
+bueno, de bajo me da igual, no quiero modificarlos. Así que usando el patrón decorador, bueno,
+
+285
+00:25:16,640 --> 00:25:21,240
+cualquiera, que anya funciona en tiempo de ejecución, etcétera, lo que digo es, oye,
+
+286
+00:25:21,240 --> 00:25:27,240
+si inicialmente tú querías esto, te voy a controlar, te voy a controlar, ¿qué es esto?
+
+287
+00:25:27,240 --> 00:25:32,240
+Básicamente, ok, Provider factory subcar service, cuando piden subcar service, aquí
+
+288
+00:25:32,240 --> 00:25:39,080
+los tienes solviendo a mano, ejecuta el checkout, ok, voy, le doy. Esos tres segundos, teniendo
+
+289
+00:25:39,080 --> 00:25:42,680
+el puesto dos ahí, que lo roba un poco. Ahí no lo hace, pero le digo, vale, mira,
+
+290
+00:25:42,680 --> 00:25:47,480
+donde dije digo, digo, digo, lo que hago es que te voy a pasar una clase que quería subcar
+
+291
+00:25:47,480 --> 00:25:50,840
+service, con lo cual tú no te vas a enterar, y esta clase internamente, usando el patrón
+
+292
+00:25:50,840 --> 00:25:54,800
+decorador, no el decorador de páez, sino el patrón decorador, pues al final termina
+
+293
+00:25:54,800 --> 00:26:00,200
+el mando checkout, pero lo hacer grab dentro del método. Y ninguno de los consumidores
+
+294
+00:26:00,200 --> 00:26:07,280
+de esto debería notar diferencias, espero que salga ahí, el app se está en sí. Porque
+
+295
+00:26:07,280 --> 00:26:12,080
+fijaros que yo he tipado a subcar service. Ahora, si te paso eso, o algo que le da, perfecto,
+
+296
+00:26:12,080 --> 00:26:18,920
+es Liskof, y es que es la L de Solid, ya que es. Vale, ahora que hay que inyectar, joder,
+
+297
+00:26:18,920 --> 00:26:22,520
+cómo va la inyección de dependencia, voy a inyectar todo, no, todo, no, ojo, hay que
+
+298
+00:26:22,520 --> 00:26:26,640
+diferenciar, necesitamos algunas reglas, yo tengo estas, pero seguro que hay otras, dependencias
+
+299
+00:26:26,640 --> 00:26:31,960
+estables o volátiles, y ya estamos a las volátiles, y una dependencia estable, hasta
+
+300
+00:26:31,960 --> 00:26:36,200
+que se demuestre lo contrario. Entonces, deje de tener buenas series de preguntas, porque
+
+301
+00:26:36,200 --> 00:26:42,720
+programar con esa extracción te da mucha flexibilidad, pero también tiene un coste. Entonces, ¿quien
+
+302
+00:26:42,720 --> 00:26:46,840
+les inyecta las implementaciones? ¿Quiere moquear la dependencia? ¿Le necesitas para
+
+303
+00:26:46,840 --> 00:26:52,040
+hacer para el development? Sí, entonces es una volátil, inyectala y trabaja con la extracción.
+
+304
+00:26:52,040 --> 00:26:55,840
+Me gusta mucho la metáfora que usa el autor en ese libro, aunque sea donnet, vale para
+
+305
+00:26:55,840 --> 00:27:01,560
+cualquiera, en la que dice que cada vez que haces, trajo la extracción y inyecta la dependencia,
+
+306
+00:27:01,560 --> 00:27:06,000
+está escrande una costura, un SIM. Entonces, es un sitio donde tú puedes abrir ahí, desensamblar
+
+307
+00:27:06,000 --> 00:27:10,880
+el pantalón, abrirlo, ver que hay dentro, juntar y hacer cosas. Imaginaros que tuviéramos
+
+308
+00:27:10,880 --> 00:27:15,520
+algo liso, no puedes hacer nada, lo único que puedes hacer es decir, ostras, solo me
+
+309
+00:27:15,520 --> 00:27:19,040
+queda el patch, porque realmente no puedo hacer otra cosa, no puedo cambiar el comportamiento.
+
+310
+00:27:19,040 --> 00:27:24,040
+¿Has que hacer siempre de ahí? Depende, fantástica, hasta hace fantástica, porque vale para
+
+311
+00:27:24,040 --> 00:27:28,840
+todo, depende, así no me mojo. Pues yo que sé, pues si haces un script sencillo, pues
+
+312
+00:27:28,840 --> 00:27:33,880
+a lo mejor no lo haces, pero lo que sí sé es que, en mi opinión, el beneficio directamente
+
+313
+00:27:33,880 --> 00:27:37,640
+es proporcional al tamaño y complejidad del proyecto. Cuanto la gran es el proyecto,
+
+314
+00:27:37,640 --> 00:27:44,280
+más la agradeces. Y luego, según tú se esquíres y si lo haces, va a ser complejidad accidental,
+
+315
+00:27:44,280 --> 00:27:48,000
+en vez de la complejidad, en el ental problema, pues tampoco lo hagas, porque luego esto hay
+
+316
+00:27:48,000 --> 00:27:55,400
+que mantenerlo. Y ya está, amigos, ahí tenéis el repo y muchísimas gracias a todos.
+
+317
+00:27:55,400 --> 00:28:14,800
+Bueno, pues tenemos unos minutitos para el turno de preguntas. Manos levantados, por
+
+318
+00:28:14,800 --> 00:28:25,800
+favor. Me se dejan muertos. No, hay pregunta, hay pregunta.
+
+319
+00:28:25,800 --> 00:28:32,760
+Hola, hola. Vale. Bueno, primero, muchas gracias por la charla, me gustan mucho este tipo de
+
+320
+00:28:32,760 --> 00:28:40,560
+charlas y ojalá fuese todo así. Yo me confieso que estoy un poco en contra de esta librería.
+
+321
+00:28:40,560 --> 00:28:48,880
+He visto en un producto que trabajo hoy internamente de Víquita también, pero lo hemos usado extensamente.
+
+322
+00:28:48,880 --> 00:28:53,880
+Y después de mucho conversación con mis compañeros, hemos llegado a la conclusión
+
+323
+00:28:53,880 --> 00:28:59,440
+donde, por ahorrarnos unas líneas donde simplemente está hacíamos ciertas clases y luego la
+
+324
+00:28:59,440 --> 00:29:06,080
+inyectamos haciendo QDI, estamos inyectando una dependencia a nivel de un módulo que
+
+325
+00:29:06,080 --> 00:29:15,200
+tenemos que instalar. Hablas de responces. Contenedores, un archivo que tenemos que crear,
+
+326
+00:29:15,200 --> 00:29:19,120
+más clases que tenemos que crear para evitar que a lo mejor en una parte de nuestro código
+
+327
+00:29:19,120 --> 00:29:24,320
+no sea tan bonito o elegante, o incluso una dificultad que no hemos encontrado últimamente
+
+328
+00:29:24,320 --> 00:29:29,680
+es que en nuestro caso nuestro equipo de trabajo muy multidisciplinar, tenemos data science,
+
+329
+00:29:29,680 --> 00:29:34,520
+tenemos gente de más cierre, tenemos data engineering. Y me ha pasado que en muchas situaciones
+
+330
+00:29:34,520 --> 00:29:41,120
+hemos tenido, bueno, compañeros que han tenido que extender ciertas partes de nuestra aplicación
+
+331
+00:29:41,120 --> 00:29:46,920
+y han tenido una grave dificultad en entender qué leches es esto. Y yo he tenido que estar
+
+332
+00:29:46,920 --> 00:29:52,360
+teniendo charlas explicando lo que tú has explicado desde el principio, porque hay muchos
+
+333
+00:29:52,360 --> 00:29:57,560
+data science, muchos data engineers y mucha gente que son muy buenos en su trabajo, pero
+
+334
+00:29:57,560 --> 00:30:01,880
+a lo mejor en esto que es más software engineering no manejan tanto.
+
+335
+00:30:01,880 --> 00:30:07,040
+A ver, yo, en mi opinión, bueno, primero gracias por preguntar y no déjame colgaros
+
+336
+00:30:07,040 --> 00:30:14,560
+sin preguntas. Y luego que se acuerdo contigo, yo creo que depende de cómo estés diseñando
+
+337
+00:30:14,560 --> 00:30:17,960
+el software, esto aplica o no aplica. Yo, un data scientist, convenciante de la compañera
+
+338
+00:30:17,960 --> 00:30:22,120
+que está haciendo un notebook, yo creo que esto no aplica, con franqueza. Pero creo
+
+339
+00:30:22,120 --> 00:30:25,640
+que se está haciendo una aplicación empresarial y aquí hoy todos tenemos que haber ido en
+
+340
+00:30:25,640 --> 00:30:30,160
+un congreso tan diverso. Yo creo que esto es una buena práctica y yo al menos se me
+
+341
+00:30:30,160 --> 00:30:37,160
+hace difícil renunciar a ella. Perfectamente, depende de la persona, no forzaría en el
+
+342
+00:30:37,160 --> 00:30:42,960
+exceso. Porque esto, si lo entiendes, yo de hecho ahora, he dicho antes, depende. Yo
+
+343
+00:30:42,960 --> 00:30:47,360
+prácticamente cualquier cosa que hago lo hago ya sí. Me cuesta ir al otro lado. Pero
+
+344
+00:30:47,360 --> 00:30:50,320
+entiendo que hay gente que hace un notebook y no tiene ningún sentido que se ponga a
+
+345
+00:30:50,320 --> 00:30:55,240
+trabajar con las tracciones y ahora bien, cuando el data engineer vaya, pues se tendrá
+
+346
+00:30:55,240 --> 00:30:58,840
+que calcular. Quiero un código mantenido y testeable. Es que a lo mejor no lo quieres,
+
+347
+00:30:58,840 --> 00:31:04,000
+porque a lo mejor lo vas a lanzar en el proyecto y va muriendo días o el ritmo de la frecuencia
+
+348
+00:31:04,000 --> 00:31:09,080
+con la que se cambia es poco. Bueno, pues no lo hagas, pero a largo plazo, yo creo que
+
+349
+00:31:09,080 --> 00:31:13,640
+todo esto te da beneficios. Muchas gracias.
+
+350
+00:31:13,640 --> 00:31:22,040
+¿Alguien más? Oja, deja o caja, o en la charla todo.
+
+351
+00:31:22,040 --> 00:31:37,200
+Bueno, pues como son ni 20, de verdad, que terminamos ya no se pregunta más. Hay media
+
+352
+00:31:37,200 --> 00:31:43,600
+empieza la charla Relámpago, nos quedan 10 minutos para descansar y dijera y esto que
+
+353
+00:31:43,600 --> 00:31:45,280
+no es que sea maravilloso.
+
+354
+00:31:45,280 --> 00:31:54,920
+99 percentes total소리.
+

@@ -1,0 +1,1788 @@
+1
+00:00:00,000 --> 00:00:23,560
+Bueno, buenas tardes. Llegamos a la última charla de la Pico en este auditorio de Paranifu.
+
+2
+00:00:23,560 --> 00:00:32,160
+Tengo el honor de presentar a Pablo Galindo, aparte de doctora en física por la Universidad de Granada,
+
+3
+00:00:32,160 --> 00:00:38,600
+pero no lo conocéis por eso. Miembro del steering council de Python, también se ha encargado del
+
+4
+00:00:38,600 --> 00:00:45,160
+release manager de Python 3.10 y 3.11 y un porrón de cosas más que no me acuerdo porque tiene un
+
+5
+00:00:45,160 --> 00:00:57,280
+slide. Se auto presenta. Así que dale un fuerte aplauso.
+
+6
+00:00:57,280 --> 00:01:05,280
+Hola, agárrense a la silla que vienen curvas. Bueno, una slide de presentación que si no parece que
+
+7
+00:01:05,280 --> 00:01:11,680
+no has dado una charla. Bueno, yo soy Pablo Galindo para los que no me conozcan. Trabajó, soy parte del
+
+8
+00:01:11,680 --> 00:01:16,000
+core developer team de Python, que somos los que hacemos el lenguaje. Este año y el pasado,
+
+9
+00:01:16,000 --> 00:01:21,240
+además estoy siguiendo el steering council, que es un grupo de cinco personas que son los que
+
+10
+00:01:21,240 --> 00:01:27,480
+sustituyen Aguido. Básicamente decidimos que hay nuevo en el lenguaje y decimos entre las
+
+11
+00:01:27,480 --> 00:01:33,040
+distintas propuestas. Y además tengo la otra, es primer typo, en realidad es 3.10 y 3.11. Bueno,
+
+12
+00:01:33,040 --> 00:01:37,960
+soy el release manager de 3.10 y 3.11, que es básicamente una forma muy bonita de decir que
+
+13
+00:01:37,960 --> 00:01:43,080
+soy el pringado que hace la release. Por cierto, me han preguntado antes, oye Pablo, he oído que
+
+14
+00:01:43,080 --> 00:01:48,240
+la release de 3.11 está siendo bastante chunga. ¿Cómo está yendo? Y bueno, como una imagen,
+
+15
+00:01:48,240 --> 00:01:54,840
+vale más que mil palabras, voy a poner esa imagen que más o menos explica. Bueno,
+
+16
+00:01:54,840 --> 00:02:01,160
+en fin, está yendo bien. Sí, una gran release. Bueno, pero yo he venido aquí a hablar de un
+
+17
+00:02:01,160 --> 00:02:05,960
+proyecto que estamos empezando aquí, que es el Fasters y Python. Y quería hablar un poco de qué
+
+18
+00:02:05,960 --> 00:02:10,480
+cosas estamos haciendo, empezando en Python 3.11 en el core developer team y un poco hablar de la
+
+19
+00:02:10,480 --> 00:02:15,600
+colaboración para hacer Python más rápido. Entonces, bueno, una de las primeras preguntas es
+
+20
+00:02:15,600 --> 00:02:21,000
+por qué ahora y por qué esto no se ha hecho antes. Entonces, vamos a responder a esa pregunta.
+
+21
+00:02:21,000 --> 00:02:28,280
+Imaginemos unos ejes. Vamos a poner este eje vertical, entonces más para arriba significa que algo es
+
+22
+00:02:28,280 --> 00:02:33,080
+más difícil y hacia abajo significa que algo es fácil. Lo que vamos a poner aquí son dos ejes
+
+23
+00:02:33,080 --> 00:02:39,000
+que nos van a permitir ver distintas optimizaciones. Entonces, vamos a poner otro eje que nos va a
+
+24
+00:02:39,000 --> 00:02:43,960
+decir hacia la derecha algo que es una optimización que es muy rápida y hacia la izquierda es una
+
+25
+00:02:43,960 --> 00:02:48,600
+optimización que es muy lenda. Entonces, por ejemplo, lo mejor del mundo es algo muy difícil,
+
+26
+00:02:48,600 --> 00:02:53,440
+pero luego te da mucha velocidad. Estaría ahí. Pero claro, eso es lo mejor del mundo. La
+
+27
+00:02:53,440 --> 00:02:57,160
+investigación normalmente en optimizaciones en lenguajes de programación estaría más o menos
+
+28
+00:02:57,160 --> 00:03:01,240
+por ahí. Claro, tú podrías decir, bueno, que haya abajo a la derecha, bueno, más o menos películas
+
+29
+00:03:01,240 --> 00:03:06,320
+y cosas así, porque en fin, no hay nada que sea muy rápido y muy fácil. Así es el mundo. El
+
+30
+00:03:06,320 --> 00:03:09,440
+Pringao que dice que se ha de dar en la vuelta una Lincoln lease está más o menos por ahí,
+
+31
+00:03:09,440 --> 00:03:16,240
+que tú sabes, lento y fácil. Y bueno, pues Python está ahí. El problema de Python es que
+
+32
+00:03:16,240 --> 00:03:19,880
+Python es un lenguaje que tiene 30 años. Entonces, hacer optimizaciones para un lenguaje que tiene
+
+33
+00:03:19,880 --> 00:03:24,640
+30 años sin romper a todo el mundo resulta que es bastante difícil. Y también resulta,
+
+34
+00:03:24,640 --> 00:03:29,360
+fíjate tú, que la gente que está haciendo research no le interesa hacer investigación en
+
+35
+00:03:29,360 --> 00:03:33,480
+cómo hacer que un lenguaje todo viejo funcione más rápido. Lo que les importa es hacer
+
+36
+00:03:33,480 --> 00:03:38,200
+investigaciones de cuál es el mejor algoritmo. Y claro, pues eso no es tan guay. Bueno, por
+
+37
+00:03:38,200 --> 00:03:51,960
+completitud vamos a poner a Java por ahí. Que nadie me pegue después de eso. Bueno, en fin.
+
+38
+00:03:51,960 --> 00:03:57,280
+Entonces, Fastys y Python es una colaboración que hemos empezado entre la empresa en la que yo
+
+39
+00:03:57,280 --> 00:04:02,840
+trabajo y Microsoft. La empresa en la que yo trabajo es Bloomberg. Y básicamente la idea es
+
+40
+00:04:02,840 --> 00:04:06,680
+que somos un grupo de core developers y algunos empleados de Microsoft que estamos trabajando.
+
+41
+00:04:06,680 --> 00:04:11,960
+Yo particularmente la mitad de mi tiempo de trabajo y los de Microsoft todo su tiempo de
+
+42
+00:04:11,960 --> 00:04:16,680
+trabajo. Es un equipo lidado por Guido Van Rossum, que por cierto, me echa la bronca siempre que le digo
+
+43
+00:04:16,680 --> 00:04:23,200
+así, se pronuncia Guido Van Rossum al parecer. Pero bueno, ya lo sabéis. Bueno, liderados por Guido
+
+44
+00:04:23,200 --> 00:04:29,600
+y que estamos intentando buscar formas de hacer Python más rápido. Bueno, estos son todos los
+
+45
+00:04:29,600 --> 00:04:35,920
+miembros del equipo hasta ahora. De izquierda a derecha es Eric Snow, Irith, Brand, Mark Shannon,
+
+46
+00:04:35,920 --> 00:04:41,480
+que es el líder técnico, él, Guido y este pringado. Y bueno, pues la idea es que todos
+
+47
+00:04:41,480 --> 00:04:45,400
+estas personas aquí y más en el futuro que Microsoft está contratando porque al parecer tienen
+
+48
+00:04:45,400 --> 00:04:53,480
+pasta infinita. Sí, así es. Al parecer, Xbox va muy bien. Pues están metiendo dinero para hacer
+
+49
+00:04:53,480 --> 00:04:58,520
+Python más rápido, que al final se traduce en que podamos comer. Bueno, en fin. Bueno,
+
+50
+00:04:58,520 --> 00:05:03,000
+cuánto más rápido es 311? Por resulta que 311 es hasta un 60% más rápido.
+
+51
+00:05:03,000 --> 00:05:15,000
+Nice. Esto es como los megabytes, ¿no? Up to, ¿no? A hasta 20 megas. Luego es uno. En fin,
+
+52
+00:05:15,000 --> 00:05:19,760
+los números son un poco raros y los humanos nos gustan los graficitos guays. Entonces,
+
+53
+00:05:19,760 --> 00:05:24,480
+por comparar, digamos, qué salto de velocidad ha habido entre versiones anteriores y 311,
+
+54
+00:05:24,480 --> 00:05:29,880
+pues esto es las distintas versiones. Esto es la velocidad que había de 39 a 310 y esto es
+
+55
+00:05:29,880 --> 00:05:35,440
+de 310 a 311. En fin, yo diría que nos merecemos un aumento, ¿no? Porque esta barra es muy grande.
+
+56
+00:05:35,440 --> 00:05:40,120
+Por clarificar, el proyecto se llama Faster C Python, lo que quiere decir que trabajamos con
+
+57
+00:05:40,120 --> 00:05:44,800
+Python. Esto es muy importante porque Python, muchas de las librías que vosotros usáis,
+
+58
+00:05:44,800 --> 00:05:50,000
+en plan TensorFlow, NumPy, Pandas, etc., son cosas que tienen aparte de Python,
+
+59
+00:05:50,000 --> 00:05:54,880
+de código en Python tienen otros lenguajes de bajo. Por ejemplo, tienen C o C sharp o mejor
+
+60
+00:05:54,880 --> 00:06:03,120
+hace más más o el cangrejo este. Pero este código es código que nosotros no podemos optimizar,
+
+61
+00:06:03,120 --> 00:06:07,000
+porque es código que está compilado o que es yo que sé o lo hace un cangrejo. Entonces,
+
+62
+00:06:07,000 --> 00:06:10,760
+el caso es que todo esto va a seguir corriendo rápido, pero no vamos a poder acelerar ese
+
+63
+00:06:10,760 --> 00:06:16,160
+código. Nosotros solo aceleramos código que está escrito exclusivamente en Python. Eso es lo que
+
+64
+00:06:16,160 --> 00:06:20,720
+va a ir más rápido. Eso es importante porque quiere decir que si tu aplicación utiliza un 80%
+
+65
+00:06:20,720 --> 00:06:27,000
+de código compilado, no vas a notar ese 60%, porque solo vas a ver ese 60% sobre el código en Python,
+
+66
+00:06:27,000 --> 00:06:32,840
+que a lo mejor no es tan importante. Disclaimer. En fin, bueno, el caso es que en 3.11 hemos metido
+
+67
+00:06:32,840 --> 00:06:37,640
+un montón de optimizaciones que tienen nombres muy chuchis. Entonces, en esta charla vamos a hablar
+
+68
+00:06:37,640 --> 00:06:44,320
+de todas esas. Tenemos un intérprete especializado que se llama, Imports que están congelados,
+
+69
+00:06:44,320 --> 00:06:48,920
+tenemos Frames Lazy. Bueno, voy a decir un montón de anglicismos porque mi cerebro está totalmente
+
+70
+00:06:48,920 --> 00:06:54,200
+destruido, que ya quería perrecer. Entonces, perdonadme si digo un montón de anglicismos. Bueno,
+
+71
+00:06:54,200 --> 00:07:02,120
+tenemos Frames que están enlineados, Diccionarios Lazy también y Cash Friendly Evaluation Frames.
+
+72
+00:07:02,120 --> 00:07:07,000
+Bueno, vamos a ir uno por uno y vamos a intentar explicar. Estos conceptos son conceptos bastante
+
+73
+00:07:07,000 --> 00:07:10,840
+avanzados. Voy a hacer todo lo posible para simplificarlos. Me dejaré algunos detalles,
+
+74
+00:07:10,840 --> 00:07:14,800
+pero si tenéis dudas, por luego podemos hablaros por toda la charla. La primera utilización que hemos
+
+75
+00:07:14,800 --> 00:07:19,840
+hecho se llama Frushing Modules. Entonces, ¿qué es esto? Cuando uno ejecuta el intérprete, el
+
+76
+00:07:19,840 --> 00:07:24,480
+intérprete tiene que cargar unas cuantas cosas de la librería estándar para funcionar. En
+
+77
+00:07:24,480 --> 00:07:30,240
+particular, primero tiene que evaluar cierto código, es decir, tiene que interpretar el texto del
+
+78
+00:07:30,240 --> 00:07:35,360
+archivo que contiene el código. Normalmente eso lo hace yendo a un archivo que a lo mejor lo habéis
+
+79
+00:07:35,360 --> 00:07:39,840
+visto por ahí que se llaman Pick Files, que es la caché de Python, que es código que está
+
+80
+00:07:39,840 --> 00:07:43,520
+precompilado para no tener que compilarlo cada vez que el intérprete empieza. Pero claro,
+
+81
+00:07:43,520 --> 00:07:47,680
+estos son archivos que están ahí y tienes que buscarlos y leerlos. Una vez que los lee,
+
+82
+00:07:47,680 --> 00:07:51,520
+el intérprete tiene que hacer un proceso que se llama Marshall, que es que esos son bytes que
+
+83
+00:07:52,160 --> 00:07:55,760
+en principio no tienen significado y tiene que darle significado. Esto es lo que se llama
+
+84
+00:07:55,760 --> 00:08:00,720
+Parcel Divinary File. Básicamente escoger un montón de bytes random y decir, esto en
+
+85
+00:08:00,720 --> 00:08:06,160
+realidad es una string que pone culo. Bueno, pues ahí está. Y luego al final tiene que reservar
+
+86
+00:08:06,160 --> 00:08:10,120
+memoria para todos los objetos que están ahí dentro. Este proceso es muy lento. Todo lo que
+
+87
+00:08:10,120 --> 00:08:15,000
+hemos hecho en Python 3.11 es simplificar todo eso y simplemente que lo tenga que evaluar.
+
+88
+00:08:15,000 --> 00:08:18,480
+Esto es como en las películas de acción, cuando el científico dice, sí claro,
+
+89
+00:08:18,480 --> 00:08:21,640
+hay que hacer este plan muy complicado. Y luego está el secundario cómico que dice,
+
+90
+00:08:21,640 --> 00:08:25,440
+Jimmy, es como si coges un balón muy grande y lo desinflas. Entonces vamos a hacer la versión
+
+91
+00:08:25,440 --> 00:08:30,160
+simplificada que dice Jimmy. Es como si tienes el intérprete y un montón de archivos chungos y
+
+92
+00:08:30,160 --> 00:08:34,640
+lo que coges es todos esos archivos y los metes dentro. Eso es lo que hemos hecho. Entonces,
+
+93
+00:08:34,640 --> 00:08:38,760
+ciertos archivos de la librería estándar que se usan solo para empezar el intérprete,
+
+94
+00:08:38,760 --> 00:08:42,880
+es decir, no es toda la librería estándar, solo parte de ella. Pues en vez de tener que
+
+95
+00:08:42,880 --> 00:08:47,400
+ponerlo en el sistema de archivos para que pase todo eso, pues lo hemos metido dentro del ejecutable
+
+96
+00:08:47,400 --> 00:08:51,640
+de Python. Entonces, cuando Python empieza, ya tiene todo eso dentro y no tiene que ir a buscarlo.
+
+97
+00:08:51,640 --> 00:08:56,560
+Si sabéis un poco de linos, podéis usar el programa Strace que te dice todas las llamadas
+
+98
+00:08:56,560 --> 00:09:02,320
+a sistema y cuánto han tardado. Esta imagen de la izquierda es a 3.10 y como podéis ver,
+
+99
+00:09:02,320 --> 00:09:08,960
+si esto funcionase, bueno, como podéis ver, la llamada que le cosas es read, pero también está
+
+100
+00:09:08,960 --> 00:09:13,480
+fstat que te dice si el archivo existe o no. Y estas llamadas pues ocupan un montón, que bueno,
+
+101
+00:09:13,480 --> 00:09:18,680
+puede no parecer mucho, pero si solo es para empezar el intérprete, mal vamos. Y en 3.12,
+
+102
+00:09:18,680 --> 00:09:21,920
+pues esas llamadas no solo han desaparecido mucho, sino que si comprobáis el tiempo total,
+
+103
+00:09:21,920 --> 00:09:28,440
+esto es 0.1 segundo, en 3.12 es 0.07 segundos, que es bastante diferencia. Entonces, esto que
+
+104
+00:09:28,440 --> 00:09:32,760
+quiere decir que si tenéis una aplicación de línea de comandos que está en Python, pues solo
+
+105
+00:09:32,760 --> 00:09:37,440
+mostrar la ayuda va a tardar menos, que es muy importante, porque si alguien pone help y
+
+106
+00:09:37,440 --> 00:09:42,000
+tarda un segundo, pues como que no. Entonces, bueno, pues eso era importante y ahora Python
+
+107
+00:09:42,000 --> 00:09:46,040
+empieza más rápido, que es bastante importante para bastante gente. Bueno, lo siguiente,
+
+108
+00:09:46,040 --> 00:09:51,840
+hemos hecho que los frames sean más baratos. Vamos a explicar qué es esto. Cuando tú llamas a una
+
+109
+00:09:51,840 --> 00:09:56,120
+función en Python, Python tiene que reservar memoria para una cosa que se llama un frame. No tengo
+
+110
+00:09:56,120 --> 00:10:00,040
+idea de cómo se dice esto en español, así que lo vamos a llamar un frame. Entonces, qué es esto?
+
+111
+00:10:00,040 --> 00:10:05,120
+Esto es un cacho de memoria que tiene información sobre ciertas cosas que son necesarias para ejecutar
+
+112
+00:10:05,120 --> 00:10:09,880
+tu función. Por ejemplo, el valor de las variables locales en tu función. Si cambias el valor de
+
+113
+00:10:09,880 --> 00:10:14,000
+x dentro de la función, pues alguien tiene que saber que ahora x vale 5 en vez de 24. En los
+
+114
+00:10:14,000 --> 00:10:19,400
+argumentos que le pasas, si es un generador o no, si la función se ama de esta manera o de la otra,
+
+115
+00:10:19,400 --> 00:10:24,400
+si las líneas que van. Entonces, eso se llama un frame. Entonces, hay un problema. En anteriores
+
+116
+00:10:24,400 --> 00:10:28,680
+versiones de Python, resulta que si aquí tienes un frame, pues la barra horizontal esa que tenemos
+
+117
+00:10:28,680 --> 00:10:35,000
+ahí es la memoria. Y esta pequeña cajita con este símbolo tan guapo va a ser un frame. Entonces,
+
+118
+00:10:35,000 --> 00:10:39,840
+resulta que en Python 3.10, cuando tú llamas a una función, vamos a suponer que estamos en esa
+
+119
+00:10:39,840 --> 00:10:45,480
+función y llamamos a otra. Pues cuando vamos a pedir un nuevo frame, Python se va a top all y se
+
+120
+00:10:45,480 --> 00:10:49,760
+crea otro frame muy lejos del primero. Y cuando llamas a otra función, pues se va a otro lado
+
+121
+00:10:49,760 --> 00:10:54,720
+aleatorio de la memoria y crea otro. Y cuando vas al siguiente, se crea otro. Entonces, esto es un
+
+122
+00:10:54,720 --> 00:10:58,560
+problema porque cada vez que tienes que ir a distintos sitios de la memoria, esto no solo te
+
+123
+00:10:58,560 --> 00:11:03,440
+tira las caches de la CPU y otras implementaciones que no vamos a entrar, sino que además esto
+
+124
+00:11:03,440 --> 00:11:07,440
+fragmenta la memoria un montón. Porque si ahora quiero liberar toda esa memoria, pues si me he
+
+125
+00:11:07,440 --> 00:11:11,480
+cargado un frame, pues ahora no puedo liberarla toda porque hay otros dos por ahí. Y eso es un jaleo.
+
+126
+00:11:11,480 --> 00:11:17,760
+Entonces, en vez de eso, lo que hemos hecho es que en vez de este patrón extraño para reservar
+
+127
+00:11:17,760 --> 00:11:20,800
+frames en memoria, lo que hemos hecho es que si tú ahora llamas a una función y estás ahí,
+
+128
+00:11:20,800 --> 00:11:25,640
+pues el siguiente frame aparece ahí y el siguiente aparece ahí y el siguiente aparece ahí y el
+
+129
+00:11:25,640 --> 00:11:30,720
+siguiente aparece ahí. Y si ahora devuelves la función un valor, pues quitamos ese y quitamos
+
+130
+00:11:30,720 --> 00:11:36,200
+ese. Esto es muy importante porque quiere decir que todos esos frames caben en la memoria en una
+
+131
+00:11:36,200 --> 00:11:40,800
+línea de caché. De manera que eso quiere decir que en vez de tener que leer una dirección de memoria
+
+132
+00:11:40,800 --> 00:11:46,600
+por cada frame, la CPU puede leer solo una vez todos de golpe. Y si llamas a una función y la vuelves
+
+133
+00:11:46,600 --> 00:11:51,200
+a poner, no tiene que leer de nuevo nuevamente de la RAM porque ya estaba todo cargado. Es decir,
+
+134
+00:11:51,200 --> 00:11:56,600
+toda la línea horizontal cabe en la caché. Esto es muy importante y acelera mucho todo el proceso
+
+135
+00:11:56,600 --> 00:12:00,760
+de creación. Esto es lo que se llaman contiguous memory frames. La otra cosa que nos hemos dado
+
+136
+00:12:00,760 --> 00:12:05,320
+cuenta es que si analizamos lo que hay dentro de un frame, pues tienes cosas como el linkage
+
+137
+00:12:05,320 --> 00:12:10,760
+information, que es esta historia que tiene como las labones. Eso es lo que engancha un frame con
+
+138
+00:12:10,760 --> 00:12:14,680
+el siguiente y el siguiente. Pero hay otro serie de cosas que en realidad no se usan todo el rato.
+
+139
+00:12:14,680 --> 00:12:18,880
+Por ejemplo, ahí de debugging information, en caso de que tires una excepción, pues te podemos
+
+140
+00:12:18,880 --> 00:12:23,680
+señalar que línea de código es la que te ha explotado. Suponiendo que tu programa no está
+
+141
+00:12:23,680 --> 00:12:30,080
+explotando continuamente, pues esa cosa no hace falta todo el rato. También hay otra serie de
+
+142
+00:12:30,080 --> 00:12:33,920
+información como metagatos dentro del frame o por ejemplo, si es un generador o no, que no hace
+
+143
+00:12:33,920 --> 00:12:39,040
+falta todo el rato. Lo que hemos hecho es que en realidad el frame solo es lo básiquito y lo que
+
+144
+00:12:39,040 --> 00:12:44,680
+lanza un frame con el siguiente. Y solo cuando pides debugging information porque te ha explotado tu
+
+145
+00:12:44,680 --> 00:12:50,560
+programa, entonces de golpe creamos el resto de cosas en ese momento. Y esto lo que nos permite,
+
+146
+00:12:50,560 --> 00:12:54,680
+no solo es tener frames más pequeñitos, sino que además podemos hacer más y más rápido. Lo que
+
+147
+00:12:54,680 --> 00:12:59,760
+te permite llamar a funciones más y más rápido. Toda esta optimización junta te da un 7% más rápido.
+
+148
+00:12:59,760 --> 00:13:05,520
+Bueno, no parece mucho, pero vamos a ir acumulando uno detrás de otro y vamos a llegar a 60%. Bueno,
+
+149
+00:13:05,520 --> 00:13:10,720
+lo siguiente. Esto es una que he trabajado yo bastante y se llama en line frames. Entonces,
+
+150
+00:13:10,720 --> 00:13:16,080
+vamos a ver qué es esto. Bueno, pues resulta que si tú tienes una función en Python, vamos a suponer
+
+151
+00:13:16,080 --> 00:13:20,920
+que tienes una función que se llama sum que añade dos números. Bueno, pues tú lo puedes decir,
+
+152
+00:13:20,920 --> 00:13:24,800
+vamos a ver Python, ensegame las tripas de esta función, qué es lo que estás haciendo,
+
+153
+00:13:24,800 --> 00:13:29,440
+es lo que se llama el bytecode. Esto lo haces con la función dis y aquí te dice que esta función
+
+154
+00:13:29,440 --> 00:13:34,280
+sum en realidad son cuatro instrucciones, que una es, se llama loadfask, que es cargar el valor de la
+
+155
+00:13:34,280 --> 00:13:39,080
+variable x en memoria, otro se llama loadfask para y, luego otro se llama binaryad, que ya de hecho
+
+156
+00:13:39,080 --> 00:13:42,600
+ya no se llama así, pero bueno, ahora lo veremos porque, y luego devuelve esa función,
+
+157
+00:13:42,600 --> 00:13:47,080
+Python en realidad la lee con estas cuatro instrucciones. Vale, ¿quién ejecuta estas cuatro
+
+158
+00:13:47,080 --> 00:13:51,400
+instrucciones? Pues la ejecuta una función en c muy fea que se llama pybylivalframedefault,
+
+159
+00:13:51,400 --> 00:13:55,640
+que en realidad es tofea, así que la vamos a llamar cariñosamente evaluation loop. Entonces,
+
+160
+00:13:55,640 --> 00:14:00,320
+lo vamos a representar por esta cajita. Vale, muy bien, pues esa es la idea. Python son instrucciones y
+
+161
+00:14:00,320 --> 00:14:04,160
+tenemos una función muy fea que va a instrucción a instrucción y la va ejecutando y eso es lo
+
+162
+00:14:04,160 --> 00:14:09,040
+que se llama evaluation loop. Vale, ¿qué pasa cuando tenemos tres funciones? foo varivad,
+
+163
+00:14:09,040 --> 00:14:15,160
+una se llama la otra. Bueno, pues que si vemos el código en c que está a la derecha que se
+
+164
+00:14:15,160 --> 00:14:20,760
+corresponde a ese código en Python, pues vemos que el llamar a la función foo es un montónazo de
+
+165
+00:14:20,760 --> 00:14:24,680
+código en c hasta que llegas a la función, porque tiene que ir preparando un montón de jaleos.
+
+166
+00:14:24,680 --> 00:14:29,280
+Cuando llamas a var es otro montónazo de llamadas a funciones en c, es decir,
+
+167
+00:14:29,280 --> 00:14:35,800
+una función en Python equivale a 1, 2, 3, 4, 5, 6, 7 funciones en c, mala cosa. Y la tercera,
+
+168
+00:14:35,800 --> 00:14:38,800
+pues más de lo mismo. Entonces, esto es un problema muy grande porque no sólo tienes que
+
+169
+00:14:38,800 --> 00:14:43,400
+consumir un montón del stack en c, sino que además una sola llamada a Python equivale en
+
+170
+00:14:43,400 --> 00:14:48,120
+realidad así te llamadas a funciones y eso, pues como te puedes imaginar, es lento. Si ya os
+
+171
+00:14:48,120 --> 00:14:52,160
+parece una movida a enseñar con un c en una conferencia en Python, agarráos a la silla porque
+
+172
+00:14:52,160 --> 00:14:58,240
+va a ser assembly. Vale, ¿por qué esto es feo? Esto es el código de una de esas funciones,
+
+173
+00:14:58,240 --> 00:15:02,440
+no hace falta entender nada. Vamos a ver qué es lo que importa. Resulta que cada vez que llamas a
+
+174
+00:15:02,440 --> 00:15:06,440
+una función en ensamblador, aunque la función no haga nada, tienes que ejecutar una serie de
+
+175
+00:15:06,440 --> 00:15:11,240
+instrucciones, en este particular son esas tres de arriba y una de abajo. Esas instrucciones son
+
+176
+00:15:11,240 --> 00:15:16,280
+los que se llama el preámbulo y bueno, lo que viene después, no me sé la palabra. Y básicamente
+
+177
+00:15:16,280 --> 00:15:20,320
+eso lo que te permite es enganchar los frames en c. No hace falta entender muy bien qué pasa,
+
+178
+00:15:20,320 --> 00:15:25,720
+pero digamos que llamar a una función, aunque la función no haga nada, cuesta tiempo, es intuitivo,
+
+179
+00:15:25,720 --> 00:15:30,400
+no hace nada, es más barato que hacer algo. ¿Quién lo iba a decir? Bueno, pues resulta que,
+
+180
+00:15:30,400 --> 00:15:36,200
+claro, llamar a siete cosas es bastante caro, aunque las cosas no hagan nada. Entonces, eso está mal.
+
+181
+00:15:36,200 --> 00:15:44,080
+Entonces, en Python 3.11, lo que hemos hecho es que en vez de hacer esto, lo que tenemos ahora
+
+182
+00:15:44,080 --> 00:15:48,400
+mismo en 3D sería lo siguiente. Tenemos un evaluation loop de estos, este evaluation loop tiene un frame
+
+183
+00:15:48,400 --> 00:15:52,400
+y además tiene que saber qué código tiene que ejecutar. Eso es lo que vamos a representar.
+
+184
+00:15:52,400 --> 00:15:57,000
+Entonces, si ahora llamas a otra función, pues necesitamos otra copia de esta cosa que tiene
+
+185
+00:15:57,000 --> 00:16:00,960
+su código y su frame y si llamas a otra, pues otra más. Entonces, cada vez que llamas a una
+
+186
+00:16:00,960 --> 00:16:05,880
+de estas, cuesta un montón. Entonces, en 3.11, en vez de hacer eso, lo que tenemos es un solo de
+
+187
+00:16:05,880 --> 00:16:11,120
+estos bichos y entonces cuando ejecutas una función, pues le decimos, ah, aquí tiene usted el código
+
+188
+00:16:11,120 --> 00:16:15,800
+que tiene que ejecutar, creamos un frame para esa cosa. Y cuando llamas a una nueva función, en vez
+
+189
+00:16:15,800 --> 00:16:21,320
+de crear otro de estos bichos, lo que hacemos es que linkamos el código nuevo a la anterior y le
+
+190
+00:16:21,320 --> 00:16:26,480
+decimos, ah, aquí tienes el código nuevo y otro frame. Y entonces, en vez de tener que crear otro
+
+191
+00:16:26,480 --> 00:16:30,920
+contexto nuevo, simplemente sustituimos lo que está usando el contexto, es como si en tu función le
+
+192
+00:16:30,920 --> 00:16:37,480
+cambias el valor en la variable x, solo que en vez de x está escrito en c y es horrible y en particular
+
+193
+00:16:37,480 --> 00:16:41,920
+pues el código que está ejecutando es el bytecode. Esto lo que hace es que no tengamos que llamar
+
+194
+00:16:41,920 --> 00:16:48,040
+a funciones en c cada vez que más hay una función en python y eso te da hasta un 170% de más velocidad,
+
+195
+00:16:48,040 --> 00:16:51,880
+especialmente cuando tienes funciones recursivas, por ejemplo, porque una función recursiva está
+
+196
+00:16:51,880 --> 00:16:55,920
+llamando todo el rato a sí misma y por lo tanto está consumiendo un montón de funciones en c,
+
+197
+00:16:55,920 --> 00:17:00,760
+pero claro, en vez de hacer eso, ahora no te consumimos ni siquiera una y en esos casos ves hasta
+
+198
+00:17:00,760 --> 00:17:06,200
+un 170%. Obviamente, tu código no está hecho solo de funciones recursivas, salvo que seas un flipado
+
+199
+00:17:06,200 --> 00:17:14,360
+de programación funcional. Fuera aquí, ve a hacer haskell. Entonces, claro, en ese caso, pues,
+
+200
+00:17:14,360 --> 00:17:18,360
+bueno, pero si no, pues puedes decirle a tus amigos que abandonen haskell y que vengan al país porque
+
+201
+00:17:18,360 --> 00:17:25,080
+ahora es un 170% más rápido, que no está nada malo. La otra cosa se llama quickename, que vamos
+
+202
+00:17:25,080 --> 00:17:31,120
+a ver si puedo hacerlo el live demo para que todo salga mal, pero si no, pues hay backup, no se
+
+203
+00:17:31,120 --> 00:17:38,360
+preocupen. Vamos a poner aquí esta terminal bonita. Muy bien, se puede ver ¿no? Pues imagino que tenemos
+
+204
+00:17:38,360 --> 00:17:44,560
+una función fu que se come... ostia, no, no estoy escribiendo fortram. Imagina si tenemos una
+
+205
+00:17:44,560 --> 00:17:51,080
+función fu que se come dos numeritos y devuelve x más y. Vale, entonces podemos decir a Python,
+
+206
+00:17:51,080 --> 00:17:57,640
+oye, Python, dime que hay dentro de esa función fu. Y entonces vemos que esta función tiene un
+
+207
+00:17:57,640 --> 00:18:04,520
+backup, lo que hemos visto, ¿no? Dos cargas y una ad. Vale, fijaos que el binary op es genérico, cada vez
+
+208
+00:18:04,520 --> 00:18:09,200
+que se ejecuta un binary op, Python tiene que decir, ah, que es el elemento de la izquierda, ah, es un
+
+209
+00:18:09,200 --> 00:18:13,920
+entero, ah, y que es el elemento de la derecha, es un entero y que es un coñazo. Entonces, claro,
+
+210
+00:18:13,920 --> 00:18:17,640
+ese proceso es un rollo porque en realidad tú solo quieres sumar enteros, pero cada vez que sumas
+
+211
+00:18:17,640 --> 00:18:22,120
+esos enteros, Python tiene que comprobar que son enteros o no son cabras. Entonces eso está feo.
+
+212
+00:18:22,120 --> 00:18:29,720
+Entonces, ¿qué pasa? Que si resulta que ahora voy yo y ejecuto esta función un montón de veces,
+
+213
+00:18:29,720 --> 00:18:36,560
+vamos a ponerle aquí un valor para que no me la llame con enteros y ahora le digo, ole, Python,
+
+214
+00:18:36,560 --> 00:18:44,640
+enséñame de qué está hecho, pero voy a pasar esta flag secreta que no habéis visto y esto es lo
+
+215
+00:18:44,640 --> 00:18:49,000
+que me dice, enséñame lo que va a ocurrir de verdad y ahora, wow, ¿qué es eso? Eso es un código
+
+216
+00:18:49,000 --> 00:18:55,720
+nuevo que solo está en 311 y si os particularizó, fijaos, ahora en vez de binary op se llama binary
+
+217
+00:18:55,720 --> 00:19:00,720
+op add inter. Eso qué quiere decir? Que Python se ha dado cuenta y le estás pasando enteros todo el
+
+218
+00:19:00,720 --> 00:19:07,360
+rato y ha dicho, aha, he visto un patrón y entonces en vez de usar esa cosa que va preguntando
+
+219
+00:19:07,360 --> 00:19:13,040
+todo el rato, es esto un entero, pues en vez de eso, suma enteros directamente y lo suma a velocidad
+
+220
+00:19:13,040 --> 00:19:20,400
+de c y entonces dices, pero Pablo, ¿qué pasa si en vez de eso ahora voy y ejecuto floats con la misma
+
+221
+00:19:20,400 --> 00:19:30,480
+función? Va a explotar y entonces yo diré, pero persona hipotética. En realidad no, en realidad se
+
+222
+00:19:30,480 --> 00:19:38,560
+dará cuenta de tus tretas y añadará aquí binary op add float, increíble tecnología, bueno, fantásticos.
+
+223
+00:19:38,560 --> 00:19:49,240
+Vale, bien, esto es lo que se llama quickening an adaptive interpreter, se llama
+
+224
+00:19:49,240 --> 00:19:54,040
+interpreter adaptativo porque se va dando cuenta de lo que vas ejecutando y sustituye
+
+225
+00:19:54,040 --> 00:19:59,040
+instrucciones generales como añadir cosas por añadir enteros. Entonces hemos implementado,
+
+226
+00:19:59,040 --> 00:20:03,800
+claro, esto le tienes que enseñar a reconocer los patrones porque no usamos machine learning en
+
+227
+00:20:03,800 --> 00:20:09,120
+Python, sería muy chungo, no? Y hay problemas, al parecer todas las charlas nos dicen que hay
+
+228
+00:20:09,120 --> 00:20:13,440
+problemas, no queremos problemas. Entonces, pues bueno, hemos implementado unas cuantas,
+
+229
+00:20:13,440 --> 00:20:17,440
+aquí hay unas cuantas de las que hemos implementado, Python se va a dar cuenta, por ejemplo, de cuando
+
+230
+00:20:17,440 --> 00:20:22,240
+añades acachos de estrinolistas, cuando llamas a métodos, cuando haces un packing de secuencias,
+
+231
+00:20:22,240 --> 00:20:27,400
+cuando cargas un atributo de una clase, cuando añades cosas y sumas cosas que no son cabras,
+
+232
+00:20:27,400 --> 00:20:31,960
+normalmente enteros está bien, los enteros está bien, cuando cargas globales, pues todas estas
+
+233
+00:20:31,960 --> 00:20:35,240
+cosas parecen ser dando cuenta de que las estás haciendo muchas veces y los va a sustituir por
+
+234
+00:20:35,240 --> 00:20:39,880
+instrucciones mucho más especializadas a tu código. Si tu código está borracho y ahora empieza a
+
+235
+00:20:39,880 --> 00:20:43,480
+llamar a otras cosas, pues va a ir lento, un poquito, hasta que se dé cuenta de que estás haciendo
+
+236
+00:20:43,480 --> 00:20:48,240
+otra cosa que no es lo que se esperaba y va a volver a especializar para lo que estás haciendo.
+
+237
+00:20:48,240 --> 00:20:55,520
+Esto es extremadamente complicado, pero idealmente lo he hecho sonar muy fácil. Y esto te da,
+
+238
+00:20:55,520 --> 00:20:59,800
+lo que hemos visto es que esto es hasta un 25% más rápido, en todas cosas porque sólo hemos
+
+239
+00:20:59,800 --> 00:21:04,720
+podido implementar cinco o seis de estas. En 3.12 tenemos la idea de implementar otras 20 o 30,
+
+240
+00:21:04,720 --> 00:21:08,520
+o sea que en teoría sería como mucho más, pero bueno no está mal, no está mal para empezar.
+
+241
+00:21:10,520 --> 00:21:16,440
+Bien, la otra cosa que hemos hecho se llaman lazy dictionaries, entonces qué es esto? Bueno,
+
+242
+00:21:16,440 --> 00:21:22,600
+vamos a poner este código súper sencillo, tienes una instancia y dices, ah, voy a acceder a este
+
+243
+00:21:22,600 --> 00:21:27,000
+atributo de mi instancia, seguramente es muy sencillo, bueno pues no, es todo este diagrama
+
+244
+00:21:27,000 --> 00:21:30,840
+chiflado que seguramente habéis visto, muy complejo, no? Pues a lo mejor le tiene que preguntar
+
+245
+00:21:30,840 --> 00:21:35,320
+la clase y de la clase a la metaclase, es un pifostio, esto de hecho es una pregunta de
+
+246
+00:21:35,320 --> 00:21:40,440
+entrevista por cierto. Bueno, pues resulta que, si incluso si uno pasa del diagrama este estúpido
+
+247
+00:21:40,440 --> 00:21:45,600
+y asume que no ocurre y que lo único que hace este código de aquí es ir al diccionario que está
+
+248
+00:21:45,600 --> 00:21:49,320
+dentro de la instancia, para los que no lo sepan, sorpresa, las instancias tienen un diccionario
+
+249
+00:21:49,320 --> 00:21:56,840
+dentro, magia. Y entonces pues, aunque no tengamos en cuenta este diagrama y sólo supongamos que lo
+
+250
+00:21:56,840 --> 00:22:01,520
+que hace es ir al diccionario, resulta que si uno hace zoom en ese diccionario, vamos a ver qué
+
+251
+00:22:01,520 --> 00:22:06,600
+pasa. Bueno, empezamos con nuestro objeto que va a ser este paquete, entonces lo primero que dices,
+
+252
+00:22:06,600 --> 00:22:10,160
+ah, necesito acceder al diccionario pero no sé dónde está el diccionario y memoria,
+
+253
+00:22:10,160 --> 00:22:16,160
+así que me tengo que ir a la clase, vale, ya estamos en la clase, la clase si de referencia,
+
+254
+00:22:16,160 --> 00:22:20,560
+otro puntero me va a decir el offset del diccionario que es un número, te dice la distancia de la
+
+255
+00:22:20,560 --> 00:22:27,120
+instancia, a la instancia, soy Federico García Lorca al parecer, a la que está el diccionario y
+
+256
+00:22:27,120 --> 00:22:31,360
+entonces dice, vale, ya sea la distancia de la instancia donde está el diccionario, entonces se va
+
+257
+00:22:31,360 --> 00:22:36,320
+a esa dirección de memoria y encuentra un diccionario, pero el diccionario no es lo que quieres,
+
+258
+00:22:36,320 --> 00:22:40,080
+lo que quieres es el valor, entonces como el diccionario es una tabla Has, tiene que ir a las
+
+259
+00:22:40,080 --> 00:22:44,280
+keys, ver que el valor está dentro y después de las keys se va a los valores, vaya Jaleo,
+
+260
+00:22:44,280 --> 00:22:50,280
+cada flechita de estas es un puntero, que es una indirección nueva, es un Jaleo, esto no es bueno,
+
+261
+00:22:50,280 --> 00:22:55,000
+hay un montón de ellas, entonces en país entre 11 hemos dicho, no, fuera todo eso, vamos a hacerlo
+
+262
+00:22:55,000 --> 00:23:02,040
+así, entonces qué pasa, nos hemos dado cuenta de que si tú tienes una clase y creas objetos de esa
+
+263
+00:23:02,040 --> 00:23:07,120
+clase, casi todos los objetos o todos los objetos normalmente de esa clase van a tener los mismos
+
+264
+00:23:07,120 --> 00:23:12,320
+atributos, es posible, país donde te deja hacerlo, que tú tengas un objeto de una clase y le metas
+
+265
+00:23:12,320 --> 00:23:16,440
+atributos nuevos que el resto de objetos no tiene, no deberías hacerlo, probablemente no va a pasar
+
+266
+00:23:16,440 --> 00:23:21,160
+tu code review, pero bueno, es posible y hay que dejarlo hacer, pero nos hemos dado cuenta de que eso
+
+267
+00:23:21,160 --> 00:23:25,240
+normalmente no ocurre y que normalmente casi todos los objetos tienen el mismo número de claves
+
+268
+00:23:25,240 --> 00:23:30,960
+en el diccionario o el número de atributos y se llaman igual, todo lo que hemos dicho es, vamos
+
+269
+00:23:30,960 --> 00:23:36,640
+a poner esos nombres directamente en la clase y entonces todos los objetos en vez de tener un
+
+270
+00:23:36,640 --> 00:23:42,040
+diccionario único con unas claves únicas que ocupa un montón de espacio y es talento, pues la
+
+271
+00:23:42,040 --> 00:23:47,440
+propia clase del objeto va a saber cuáles son los atributos normalmente usados y entonces en ese
+
+272
+00:23:47,440 --> 00:23:51,920
+punto ya no necesitamos el diccionario para nada, podemos coger los valores y los metemos directamente
+
+273
+00:23:51,920 --> 00:23:56,600
+en el objeto, esto es muy importante porque si os fijáis no hay que jasear casi nada y no sólo
+
+274
+00:23:56,600 --> 00:24:02,040
+eso, sino que además aunque no sepas qué significa cada box de estas, en la slide anterior había
+
+275
+00:24:02,040 --> 00:24:10,000
+más boxes y ahora hay menos boxes, menos es mejor que más, entonces bien, claro alguien listo podría
+
+276
+00:24:10,000 --> 00:24:14,400
+decir, pero Pablo, pero que pasa si ahora quiero hacer el diccionario, persona hipotética, hemos
+
+277
+00:24:14,400 --> 00:24:18,720
+pensado en eso y si eres tonto y accedes al diccionario directamente, en verdad acceder
+
+278
+00:24:18,720 --> 00:24:23,680
+como las personas normales, pues en ese momento creamos un diccionario en medio, enganchamos
+
+279
+00:24:23,680 --> 00:24:27,280
+las cosas que hay que enganchar y decimos, aquí tienes tonto pollo a tu diccionario.
+
+280
+00:24:27,280 --> 00:24:39,960
+Pero ahora podría decir el mismo tipo, pero Pablo, pero que pases entonces le meto claves nuevas a
+
+281
+00:24:39,960 --> 00:24:43,680
+ese diccionario que se hubiese creado y no hacía falta, pues le pondremos las claves también
+
+282
+00:24:43,680 --> 00:24:48,640
+ahí y más memoria, tonto, bueno, en fin, ya no se puede hacer más complicado, eso es todo
+
+283
+00:24:48,640 --> 00:24:53,080
+complicado que se puede hacer, si os fijáis aunque no puedo poner la slide anterior el número de boxes
+
+284
+00:24:53,080 --> 00:24:58,520
+aquí es igual al del primer caso, así que ningún caso se va a volver más lento, pero el caso más
+
+285
+00:24:58,520 --> 00:25:03,120
+genérico se va a volver bastante más rápido, en particular esto te da objetos que son un 35%
+
+286
+00:25:03,120 --> 00:25:09,800
+más pequeñitos, es decir que paisan 3-11 en cuanto a objetos va a consumir un 35% menos y además es
+
+287
+00:25:09,800 --> 00:25:16,440
+más rápido, ¿por qué? porque no tiene que acceder a todas esas flechitas y por lo tanto no tiene que
+
+288
+00:25:16,440 --> 00:25:21,800
+hacer todas esas indirecciones. Alguien me ha preguntado anteriormente y esta persona no es hipotética,
+
+289
+00:25:21,800 --> 00:25:28,880
+es de verdad de carnivueso. Pablo, ¿dónde está el yagentine compiler? Para los que no sepáis
+
+290
+00:25:28,880 --> 00:25:34,360
+que es un git, un git en los lenguajes dinámicos como python, o sea los que no son compilados como
+
+291
+00:25:34,360 --> 00:25:39,920
+se hace más más, lo que hace un git es que cuando tú estás ejecutando una función, ¿cómo se dice?
+
+292
+00:25:39,920 --> 00:25:45,280
+ah, voy a compilar on the fly esta función y entonces la compila muy rápidamente y la sustituyo
+
+293
+00:25:45,280 --> 00:25:50,600
+por código máquina que se ejecuta muy rápido, el problema es que esto suena muy bien, pero eso de
+
+294
+00:25:50,600 --> 00:25:55,400
+compilar en realidad suena bastante complicado y es lento y aparte resulta que aunque mucha gente crea
+
+295
+00:25:55,400 --> 00:25:59,840
+que esto es la panacea, es bastante complejo. Pero para aquella persona que me pregunta dónde está
+
+296
+00:25:59,840 --> 00:26:09,520
+el git, tengo una imagen muy buena de dónde está el git, es esta. No hay git, la razón de que no hay
+
+297
+00:26:09,520 --> 00:26:15,080
+git, esto quiero aclararlo, es porque un git es una pieza muy complicada de tecnología, es muy muy
+
+298
+00:26:15,080 --> 00:26:20,000
+complejo. La razón de que sea muy complejo es porque es una pieza que es distinta en cada
+
+299
+00:26:20,000 --> 00:26:24,680
+sistema operativo, eso quiere decir que si quieres implementar un git para Python o para cualquier
+
+300
+00:26:24,680 --> 00:26:29,280
+lenguaje, tienes que implementar al menos un git por sistema operativo que soportes, como soportamos
+
+301
+00:26:29,280 --> 00:26:34,280
+todos los sistemas operativos, incluso tu tostadora, pues entonces también habrá que, sí hay Python
+
+302
+00:26:34,280 --> 00:26:39,400
+en tostadoras, de verdad y entonces habrá que implementar un git distinto para al menos MacOS,
+
+303
+00:26:39,400 --> 00:26:45,160
+Linux y Windows y yo no quiero tocar Windows ni con un palo, entonces eso está mal y luego aparte
+
+304
+00:26:45,160 --> 00:26:50,080
+resulta y esto es muy importante que tener un git no te hace inmediatamente más rápido, de hecho te
+
+305
+00:26:50,080 --> 00:26:54,440
+hace inmediatamente más lento, ¿por qué? Porque ahora tienes que compilar, es verdad que tienes que
+
+306
+00:26:54,440 --> 00:26:59,920
+compilar solo una vez, pero eso solo es cierto si tu código se jocuta siempre igual, pero como hemos
+
+307
+00:26:59,920 --> 00:27:04,520
+visto en el primer caso con la hipersona hipotética número uno, podría empezar a pasar enteros y
+
+308
+00:27:04,520 --> 00:27:09,920
+de repente pasar floats, a la gente que hace TensorFlow y cosas así puede tirarle matrices de
+
+309
+00:27:09,920 --> 00:27:14,960
+tamaño 3, 4 y ahora le pasa tan matrices de tamaño 6 trillones por 6 trillones y eso no es lo
+
+310
+00:27:14,960 --> 00:27:20,480
+mismo, ¿no? Los números son distintos, entonces claro el git tiene que cambiar y compilar cada vez
+
+311
+00:27:20,480 --> 00:27:26,000
+que llamas a tu función de forma distinta, ¿qué pasa? Python es un lenguaje dinámico y de hecho
+
+312
+00:27:26,000 --> 00:27:31,360
+muy dinámico, la gente le gusta, es lo que hace que tengamos cosas como PyTest, que a todo el mundo
+
+313
+00:27:31,360 --> 00:27:35,420
+le gusta, pero PyTest solo es posible porque la gente de PyTest puede hacer cosas muy chungas con
+
+314
+00:27:35,420 --> 00:27:40,360
+Python que me hacen llorar, pero que a todo el mundo le mola porque es dinámico y un git se carga
+
+315
+00:27:40,360 --> 00:27:45,840
+todo eso y a que la gente le gusta PyTest, que sí, a mí no, pero bueno, yo lo uso igualmente,
+
+316
+00:27:45,840 --> 00:27:51,400
+pero un git se cargaría eso, entonces hemos dejado el git para el final, eso que quiere decir que
+
+317
+00:27:51,400 --> 00:27:58,120
+al mojó el git aparece en 312 o 313 o 314 porque hay que tener en cuenta todos estos casos y al final
+
+318
+00:27:58,120 --> 00:28:03,400
+es como girar un montón de platos y que no se caigan, así que si alguien nos ha dicho que el
+
+319
+00:28:03,400 --> 00:28:09,400
+git lo va a hacer todo muy rápido, enseñarles esta imagen, bueno, entonces cogemos todo esto junto y
+
+320
+00:28:09,400 --> 00:28:15,640
+hemos dicho hasta un 60%, pero ¿cómo lo hemos medido? Bueno, pues Python, tenemos una cosa que
+
+321
+00:28:15,640 --> 00:28:20,680
+se llama la benchmark suite y básicamente son un montón de programas de distintos ámbitos, algunos
+
+322
+00:28:20,680 --> 00:28:25,400
+son tan tontos como human strings, pero ahora tenemos cosas complicadas como algunos ejemplos de
+
+323
+00:28:25,400 --> 00:28:31,000
+machine learning o pandas o un pi o por ejemplo tenemos servidores en web en Django, lo que hacemos
+
+324
+00:28:31,000 --> 00:28:37,160
+es que cada commit que hacemos en Cpython, corremos todo y tarda días en correr y entonces vamos
+
+325
+00:28:37,160 --> 00:28:42,200
+mirando cómo eso va cambiando con el tiempo, esto nos da unas tablas que no vamos a entrar, pero vamos
+
+326
+00:28:42,200 --> 00:28:48,680
+viendo que si hago zoom pues salen números muy bonitos como 60, 96% más rápido en que Delta Blue,
+
+327
+00:28:48,680 --> 00:28:54,360
+bueno no sé qué es eso, pero es muy rápido y bueno hay gráficas guays que van haciendo,
+
+328
+00:28:54,360 --> 00:29:00,440
+hui, van cayendo hacia abajo, entonces ¿qué pasa? Que sí, todo es más rápido, pero si os fijáis hay
+
+329
+00:29:00,440 --> 00:29:07,080
+cosas que son un 96% más rápida y hay otras por aquí que tapado que no lo son, pero para
+
+330
+00:29:07,080 --> 00:29:12,640
+ejemplo, SimPy que es una movida de hacer ecuaciones, pues esto es un 10% más rápido, ¿por qué? Porque
+
+331
+00:29:12,640 --> 00:29:16,680
+SimPy usa un montón de código compilado, claro tiene sentido, no hay mucho país en que optimizar,
+
+332
+00:29:16,680 --> 00:29:22,160
+pero hay algo de país en que optimizar, entonces es un 10% más rápido, eso está bien, ¿qué quiere
+
+333
+00:29:22,160 --> 00:29:26,520
+decir? Que si ahora vais a vuestra aplicación la corés con 311 y no es un 60% más rápido, pues no
+
+334
+00:29:26,520 --> 00:29:32,000
+me vengáis a llorar al correo por favor, simplemente que depende un poco de lo que vais a ver, pero en
+
+335
+00:29:32,000 --> 00:29:37,480
+principio va a ser más rápido y nos ha costo mucho. Y bueno aquí se acaba la charla, espero que os
+
+336
+00:29:37,480 --> 00:30:03,240
+haya gustado y que tengáis un montón de preguntas. Muchas gracias Pablo, muy chulas. Tenemos preguntas por aquí.
+
+337
+00:30:03,240 --> 00:30:10,200
+Hola, bueno primero me encanta la charla y segundo, mi primera pregunta es, bueno tengo
+
+338
+00:30:10,200 --> 00:30:15,400
+dos preguntas, una es ¿cómo habéis decidido el tamaño de los buffers, el tamaño de los
+
+339
+00:30:15,400 --> 00:30:21,800
+buffers que reserváis en hip para en concatenar los frames? Porque supongo que veis como trozos de la
+
+340
+00:30:21,800 --> 00:30:30,040
+hip y después para en concatenando. ¿Cómo lo hemos escrito? O sea que como es de mi decidido,
+
+341
+00:30:30,040 --> 00:30:35,920
+el tamaño de los buffers creo que no te he pillado la segunda parte. Para los frames? Ah,
+
+342
+00:30:35,920 --> 00:30:40,920
+para los frames, déjame contestar eso primero. El tamaño de los buffers para los frames es, o sea,
+
+343
+00:30:40,920 --> 00:30:45,880
+del todo el buffer. Eso lo hemos decidido con un patrón muy similar a como crecen las listas.
+
+344
+00:30:45,880 --> 00:30:50,080
+Cuando tú agañas ese elemento a una lista, en principio necesitas más memoria para el nuevo
+
+345
+00:30:50,080 --> 00:30:55,280
+elemento, pero claro pedirle memoria al sistema cada vez es muy caro, entonces lo que se hace es que
+
+346
+00:30:55,280 --> 00:31:00,120
+se va haciendo cada vez más y más grande y vas pidiendo cada vez más tamaño extra. El patrón
+
+347
+00:31:00,120 --> 00:31:04,720
+crece exponencialmente, empezamos pidiendo el doble, lo cuatro veces, lo diez veces, cuando
+
+348
+00:31:04,720 --> 00:31:09,080
+empiezas en muy grande hacemos una cosa que se llama congruencia, que es una función matemática que
+
+349
+00:31:09,080 --> 00:31:12,800
+te da ciertos números que tienen unas propiedades que hace que no se repiten y además sean divisibles
+
+350
+00:31:12,800 --> 00:31:17,760
+entre cosas, particularmente entre potencias de dos. Y eso lo que nos permite es no pedir
+
+351
+00:31:17,760 --> 00:31:21,600
+demasiada memoria, pero a lo mejor no empiezas a llamar funciones, pero no tenemos que estar
+
+352
+00:31:21,600 --> 00:31:27,360
+pidiendo constantemente. Y en cuanto al tamaño inicial, el primer buffer que pedimos es tan grande
+
+353
+00:31:27,360 --> 00:31:32,200
+como para ejecutar toda la libre estándar al menos una vez, que suena como mucho, pero no lo es,
+
+354
+00:31:32,200 --> 00:31:37,520
+es muy poquito, es al mejor creo que son 512 kilómetros solo así de la primera vez. Pero bueno,
+
+355
+00:31:37,520 --> 00:31:41,200
+esto lo iremos viendo, si vemos que en realidad es insuficiente probablemente lo hagamos más grande,
+
+356
+00:31:41,200 --> 00:31:46,040
+pero lo que hemos visto es que cambiar el tamaño no cambia demasiado la velocidad porque enseguida
+
+357
+00:31:46,040 --> 00:31:51,440
+sería mucho más grande. O sea, el primer incremento es el doble. Bueno, esa es la primera pregunta,
+
+358
+00:31:51,440 --> 00:31:56,080
+¿cuál es la segunda pregunta? La segunda era el linkado de los frames. ¿Cómo habéis,
+
+359
+00:31:57,520 --> 00:32:02,960
+cuando preparáis la stack para llamar una sola vez que habéis hecho, inyectar todos los frames
+
+360
+00:32:02,960 --> 00:32:07,480
+en la misma llamada de evaluación? Porque eso no me había quedado claro. Claro, claro, porque me
+
+361
+00:32:07,480 --> 00:32:12,840
+has dado bastante detalles por tiempo y tal. Lo que hacemos es que cuando tú llamas a una función,
+
+362
+00:32:12,840 --> 00:32:19,360
+ahí en realidad no hay un... Antes había un solo tipo de frame que se llamaba PyFrame, que de hecho
+
+363
+00:32:19,360 --> 00:32:25,000
+lo podías ver desde Python. De hecho, muchos de los buggers lo leían para ver las locales y poner
+
+364
+00:32:25,000 --> 00:32:29,440
+breakpoints. Ahora hay tres tipos de frames. Están los PyFrames estos que los creamos lazy,
+
+365
+00:32:29,440 --> 00:32:33,440
+están lo que llamamos InterpreterFrames y lo que llamamos CFrames. La primera vez que llamas a
+
+366
+00:32:33,440 --> 00:32:39,760
+una función, creamos una estructura en el stack de C que linquea todo demás y tiene una información
+
+367
+00:32:39,760 --> 00:32:45,520
+de si un frame es el primero o no. Esa estructura es súper pequeñita, creo que son 8 bytes y entonces
+
+368
+00:32:45,520 --> 00:32:51,000
+no ocupa nada. Y además está calocated, entonces no tienes que llamar a sistema para pedirle memoria.
+
+369
+00:32:51,000 --> 00:32:55,520
+Si solo ejecutas un frame, solo necesitamos eso. Si empiezas a ejecutar más o generadores que no
+
+370
+00:32:55,520 --> 00:33:02,360
+entra a cómo se usan los generadores aquí, empezamos a usar toda la estructura esta grande que
+
+371
+00:33:02,360 --> 00:33:06,720
+te he enseñado con un montón de linkage information. He respondido a tu pregunta. Sí,
+
+372
+00:33:06,720 --> 00:33:16,360
+muchas gracias. Mi pregunta era la misma. Soy bastante eficiente al parecer.
+
+373
+00:33:16,360 --> 00:33:24,160
+La reserva continua en memoria de los frames, pero la amplío con qué pasa cuando se agota y
+
+374
+00:33:24,160 --> 00:33:30,080
+alojáis un nuevo buffer. Realojáis el buffer entero o asumís las pérdidas porque el nuevo
+
+375
+00:33:30,080 --> 00:33:34,160
+alojamiento no estará continua en memoria, puede no estarlo. Es lo mismo que una lista,
+
+376
+00:33:34,160 --> 00:33:39,320
+el buffer no es especial. ¿Qué pasa cuando una lista se te agota la memoria? Pides más memoria y
+
+377
+00:33:39,320 --> 00:33:45,760
+copier la anterior al nuevo cacho. Solo que aquí no hace falta, porque lo que puedes hacer es que
+
+378
+00:33:45,760 --> 00:33:52,160
+pides el nuevo cacho y linkeas el cacho anterior con el nuevo. No hace falta que copies. Ese salto
+
+379
+00:33:52,160 --> 00:33:57,720
+va a ser más ineficiente, pero solo es uno entre mil. Claro, porque si se te acaba el primero es que
+
+380
+00:33:57,720 --> 00:34:02,160
+al menos tienes tantos frames como caben en el primer cacho. Si tienes ahora otro igual,
+
+381
+00:34:02,160 --> 00:34:05,240
+pues sí, va a haber un salto que va a ser un poco lento, pero es uno entre un montón.
+
+382
+00:34:05,240 --> 00:34:08,160
+Entonces está bastante amortizado. Genial, muchas gracias.
+
+383
+00:34:09,640 --> 00:34:15,480
+Hola, gracias por la charla. Mi pregunta es un poco más personal y está relacionada con,
+
+384
+00:34:17,000 --> 00:34:20,400
+porque entiendo que esto te ha dado mucho olor desde que a veces trabajar en esto y demás por la
+
+385
+00:34:20,400 --> 00:34:25,360
+complicidad. Unos cuantos, sí. Entonces, ¿cuál es la motivación personal verdad que te hace
+
+386
+00:34:25,360 --> 00:34:31,080
+trabajar en estas cosas tan complejas? Esto personalmente. Y luego en el ecosistema de Python,
+
+387
+00:34:31,080 --> 00:34:37,040
+¿cuál es la motivación del ecosistema? A ser de que Python sea más rápido. Si es una cuestión que
+
+388
+00:34:37,040 --> 00:34:43,320
+la comunidad lo viene pidiendo hace mucho. Si es una cuestión empresarial. En ese sentido.
+
+389
+00:34:43,320 --> 00:34:48,320
+Pues, repreendiendo tu primera pregunta, creo que de hecho tengo un buen ejemplo. Hace poco
+
+390
+00:34:48,320 --> 00:34:54,200
+estaba dando por ahí una vuelta en la Python y habría alguna charla, creo, no, ayer fue ayer.
+
+391
+00:34:54,200 --> 00:34:59,520
+Y en una charla comentaban un poco la diferencia entre versiones de Python 3.10 y 3.12. Y había
+
+392
+00:34:59,520 --> 00:35:03,480
+un montón de chavales que estaban comentando que tenían con mucha ganas de convencer a sus
+
+393
+00:35:03,480 --> 00:35:08,080
+jefes de usar 3.11 porque iba a ser con mucho más rápido y tenían ganas de usar esos features.
+
+394
+00:35:08,080 --> 00:35:13,160
+Esa es entusiasmo que tenía a esa gente es lo que a mí me hace querer contribuir. De hecho,
+
+395
+00:35:13,160 --> 00:35:18,660
+cuando estaba estudiando física, los papers que yo escribía los leía un gato o dos gatos. Ahora
+
+396
+00:35:18,660 --> 00:35:33,600
+tengo una sala entera de gente que le importa lo que digo. Eso está guay. Puedes pasar el
+
+397
+00:35:33,600 --> 00:35:39,760
+micrófono para abajo por favor, que estaba este muchacho esperando. Vale, aquella pregunta
+
+398
+00:35:39,760 --> 00:35:47,360
+elu esta que estaba aquí pedida antes. Gracias. Cuando ha explicado lo de los frames que quitaba
+
+399
+00:35:47,360 --> 00:35:52,700
+la información de los errores, yo no entiendo muy bien cómo funciona la frima de un poco de miedo.
+
+400
+00:35:52,700 --> 00:35:58,340
+Porque qué él decide si está o no está el error. Porque yo me imagino que cuando lo ejecuto
+
+401
+00:35:58,340 --> 00:36:05,220
+en producción el código y pasa un error, si toda esa información no está, entonces no sé en qué
+
+402
+00:36:05,220 --> 00:36:12,260
+línea ha pasado y no tengo el stack trace o tengo que decirlo yo sí cogemelo o ya lo gestionáis
+
+403
+00:36:12,260 --> 00:36:16,980
+vosotros. Eso es una muy buena pregunta. Tú no tienes que decir nada. De hecho, una cosa muy
+
+404
+00:36:16,980 --> 00:36:21,860
+importante de todas estas optimizaciones que los hacen de hecho muy difíciles es que la gracia
+
+405
+00:36:21,860 --> 00:36:26,860
+es que no notes ningún cambio desde 3.10 a 3.11. Tú en teoría no tienes que tocar nada y simplemente
+
+406
+00:36:26,860 --> 00:36:32,740
+es más rápido. Lo que pasa es que esa información no está pero es reconstruible. Entonces, cuando
+
+407
+00:36:32,740 --> 00:36:37,780
+hay un error y país donde tiene que enseñar dónde en tu código está el error, cuando te
+
+408
+00:36:37,780 --> 00:36:42,660
+tiene una excepción, lo que pasa es que le intérpretes antes ya tenías información por ahí. Pero,
+
+409
+00:36:42,660 --> 00:36:47,180
+claro, tenía esa información para todo el código de todas las cosas, incluso las que no has importado.
+
+410
+00:36:47,180 --> 00:36:52,680
+Claro, eso es demasiado y no hace falta. Entonces, ahora lo único, la única diferencia ahora es que
+
+411
+00:36:52,680 --> 00:36:58,100
+cuando hay un error, solo en ese momento, entonces país donde dice, voy a reconstruir ahora automáticamente
+
+412
+00:36:58,100 --> 00:37:01,900
+toda esa información y la voy a usar para enseñarte dónde está el error. Desde tu silla mirando la
+
+413
+00:37:01,900 --> 00:37:06,220
+pantalla no vas a ver nada de diferencia, simplemente a lo mejor tarda un milisegundo en
+
+414
+00:37:06,220 --> 00:37:10,780
+enseñarte el error. ¿Por qué ese milisegundo es aceptable? Porque si te está enseñando un error
+
+415
+00:37:10,780 --> 00:37:17,580
+es que ya se acaba la fiesta. Entonces, no pasa nada si tardas un poquito más en recoger. De hecho,
+
+416
+00:37:17,580 --> 00:37:22,780
+esa es la misma filosofía que tenemos con los mensajes de error mejores que estuve trabajando
+
+417
+00:37:22,780 --> 00:37:29,020
+en la versión antigua. Ahora, por ejemplo, cuando pones un typo y en vez de poner pagar impuestos,
+
+418
+00:37:29,020 --> 00:37:34,100
+pones pagar impuestos, pues el país donde dice, no querrás decir pagar impuestos y tú dices,
+
+419
+00:37:34,100 --> 00:37:41,100
+no, no, quita, quita. Entonces, ese mensaje de error se tiene que computar y tarda un poquito, pero es
+
+420
+00:37:41,100 --> 00:37:45,580
+aceptable porque en realidad ya tu programa se va a terminar. Entonces, pues porque tarde un milisegundo
+
+421
+00:37:45,580 --> 00:37:50,580
+más, pero tú no lo vas a notar, no tienes que hacer nada nuevo y simplemente pues tu programa es el más
+
+422
+00:37:50,580 --> 00:37:54,260
+pequeño, esa es la ventaja. Pero era una muy buena pregunta, no lo explica. Muchas gracias.
+
+423
+00:37:54,260 --> 00:38:00,940
+Última pregunta por aquí y ya cortemos para la pausa de café.
+
+424
+00:38:06,140 --> 00:38:10,220
+Hola, bueno, mi pregunta era un poco la línea de la que ha dicho la compañera anterior,
+
+425
+00:38:10,220 --> 00:38:14,580
+pero era sobre todo cuando tienes que reconstruir la información de Devogue en el frame,
+
+426
+00:38:14,580 --> 00:38:23,060
+se expande el frame pudiendo incurrir en colisiones o se mueve toda la información en un lugar
+
+427
+00:38:23,060 --> 00:38:31,060
+aparte y ya se reconstruye allí. La información, la forma en la que existe está comprimida. Por
+
+428
+00:38:31,060 --> 00:38:38,060
+ejemplo, una de las cosas que es importante ver que la de Devogue Information es el bytecode de ese
+
+429
+00:38:38,060 --> 00:38:44,620
+que hemos enseñado, no, el low files, suma números. Una cosa que te permite saber dónde está el
+
+430
+00:38:44,620 --> 00:38:48,940
+código que está fallando es que tú tienes que saber qué línea de código produce cada instrucción,
+
+431
+00:38:48,940 --> 00:38:53,900
+porque si esa instrucción falla tienes que decir, ah, era esta línea y no esta otra. Entonces,
+
+432
+00:38:53,900 --> 00:38:59,020
+al final lo que tú tienes es un offset en la instrucción, la instrucción 1 a 6, la 25,
+
+433
+00:38:59,020 --> 00:39:04,380
+y un offset en las líneas, la 1, la 3, la 5. Pero resulta que las líneas van siempre hacia abajo
+
+434
+00:39:04,380 --> 00:39:09,260
+e incrementándose, nunca van para atrás y las instrucciones igual. Entonces eso lo podemos
+
+435
+00:39:09,260 --> 00:39:12,540
+utilizar para comprimir esa información mucho. Esa información está comprimida en C,
+
+436
+00:39:12,540 --> 00:39:17,460
+en un charrarray, es una rara de charts. Además es un jaleo, es un súper complicado,
+
+437
+00:39:17,460 --> 00:39:21,780
+es un dolor de cabeza. Y lo que se hace cuando se pide es que se expande. Primero se expande en C,
+
+438
+00:39:21,780 --> 00:39:25,380
+pero esta información además la puedes pillar desde Python. Entonces si la pillas desde Python,
+
+439
+00:39:25,380 --> 00:39:29,620
+primero se expande en C, se construye en objetos en Python y luego te lo damos. Eso es tremendamente
+
+440
+00:39:29,620 --> 00:39:34,740
+caro, pero primero las pensiones en C. Si solo tiras un error, no necesitamos esas versiones en
+
+441
+00:39:34,740 --> 00:39:38,940
+Python que son muy caras. Entonces primero lo expandimos en C y luego el propio intérprete que
+
+442
+00:39:38,940 --> 00:39:43,460
+también está escrito en C las usa para enseñarte la línea. Pero todas las pensiones ocurren solo a
+
+443
+00:39:43,460 --> 00:39:47,980
+nivel de intérprete que es codido en C. Además es muy eficiente por una cosa llamada casco de
+
+444
+00:39:47,980 --> 00:39:52,740
+hearings que es que te permite coger los números y reinterpretarlos como otros bits.
+
+445
+00:39:52,740 --> 00:40:00,620
+Entonces más reinterpretcast en C es YOLOCAST y eso te permite simplemente verlo de golpe. Pero
+
+446
+00:40:00,620 --> 00:40:10,020
+sí, se hacen C. Pues de acuerdo, muchas gracias Pablo. A la vuelta del café tenemos aquí la
+
+447
+00:40:10,020 --> 00:40:13,260
+chala de cierre y mucho sorteo. Así que no la perdáis.
+

@@ -1,0 +1,924 @@
+1
+00:00:00,000 --> 00:00:27,840
+Bueno, pues lo primero, hola, buenos días, yo soy Iris, como os ha dicho, y bueno, si
+
+2
+00:00:27,840 --> 00:00:33,240
+estáis aquí, imagino, y si no tengo una mala noticia y es que os va a pasar, que habéis
+
+3
+00:00:33,240 --> 00:00:37,840
+tratado con DataFrames y os habéis encontrado ese típico DataFrame que vos es muy grande
+
+4
+00:00:37,840 --> 00:00:44,400
+o es muy liado o lo que sea, pero cuando te pones a hacer cualquier cosa, digamos, seleccionar
+
+5
+00:00:44,400 --> 00:00:52,800
+datos, cambiar datos, cosicas, tardas la vida, has acabado ya todo lo que querías hacer
+
+6
+00:00:52,800 --> 00:00:59,120
+con él y te dan ganas de mirar si sigues en el mismo año. Bueno, lo mismo que os he
+
+7
+00:00:59,120 --> 00:01:07,520
+dado una mala noticia y es que eso es irremediable, tengo una buena noticia, Pandas tiene índices
+
+8
+00:01:07,520 --> 00:01:13,480
+y pues van a ser nuestros amigos porque nos van a ayudar a que todo esto sea mucho más
+
+9
+00:01:13,480 --> 00:01:22,080
+rápido. Vale, ¿qué vamos a ver en esta charla? 4 puntos. Primero, vamos a establecer
+
+10
+00:01:22,080 --> 00:01:27,040
+un índice, vamos a saber cómo podemos establecerlo y alguna cosilla que tenemos que tener en
+
+11
+00:01:27,040 --> 00:01:34,600
+cuenta. Después, empezamos con los ejemplos. Aquí, teoría, poquita. Vamos a hablar primero
+
+12
+00:01:34,600 --> 00:01:39,800
+con un índice simple, os voy a demostrar como un único índice os va a mejorar muchísimo
+
+13
+00:01:39,800 --> 00:01:45,400
+la optimización del código. Luego, hablaremos de un ejemplo que a lo mejor no es tan típico,
+
+14
+00:01:45,400 --> 00:01:51,240
+pero es la unión de dos DataFrames, que también puede llevarlo suyo, pues también lo vamos
+
+15
+00:01:51,240 --> 00:02:00,680
+a mejorar con índices. Y ya por último, hablaremos de índices múltiples, multiindex. Ahí es
+
+16
+00:02:00,680 --> 00:02:09,720
+otro mundo. Vale, estableciendo un índice. Ya hemos pensado que queremos poner un índice,
+
+17
+00:02:09,720 --> 00:02:18,000
+pues tenemos dos opciones. Podemos hacerlo a leer el DataFrame o transcrear el DataFrame.
+
+18
+00:02:18,000 --> 00:02:23,520
+Cuando elegimos uno y cuando elegimos otro, depende lo que queráis. Si vais a poner un
+
+19
+00:02:23,520 --> 00:02:31,240
+único índice y os da lo mismo toda la panda de parámetros que ahora veremos, pues podéis
+
+20
+00:02:31,240 --> 00:02:38,000
+hacerlo a leer el DataFrame y os estáis evitando otra línea de código. Que queréis poner
+
+21
+00:02:38,000 --> 00:02:44,720
+varios índices de una, que queréis personalizar cómo trabajan esos índices, tenéis que
+
+22
+00:02:44,720 --> 00:02:51,760
+crear primero el DataFrame y luego utilizar al amigo SetIndex. Cositas a la hora de poner
+
+23
+00:02:51,760 --> 00:02:57,920
+un índice. ¿Qué valores tiene que tener la columna? Puede ser Integers, puede ser
+
+24
+00:02:57,920 --> 00:03:05,800
+Strings o pueden ser Booleanos. Y además, esto no es una base de datos relacional. La columna
+
+25
+00:03:05,800 --> 00:03:15,840
+no necesita que todos los valores sean únicos, pueden repetirse. Parámetros de SetIndex,
+
+26
+00:03:15,840 --> 00:03:23,240
+lo que pueden algún momento condicionar, ¿qué queréis utilizar? Pues tenemos cuadro.
+
+27
+00:03:23,240 --> 00:03:29,880
+Tenemos Drop, una cosa que pasa al utilizar una columna y sacarla como un índice, es
+
+28
+00:03:29,880 --> 00:03:35,880
+que esa columna sale del DataFrame. ¿Qué pasa? ¿Podéis querer que esa columna siga
+
+29
+00:03:35,880 --> 00:03:42,720
+ahí? Pues ahí tenéis que poner Drop. Apen, lo que va a hacer es que si ya tenéis algún
+
+30
+00:03:42,720 --> 00:03:51,600
+tipo de índice, de entrada, Apen, si no lo ponéis a True, va a coger ese índice que
+
+31
+00:03:51,600 --> 00:03:59,720
+ya existe y lo va a reemplazar. Pero vosotros podéis querer que siga ahí. Pues ahí, SetIndex,
+
+32
+00:03:59,720 --> 00:04:06,280
+con Apen, Inplace. ¿Queréis modificar el DataFrame que ya tenéis? ¿O queréis que
+
+33
+00:04:06,280 --> 00:04:14,640
+se cree una copia del mismo con el índice? Cositas. Verify Integrity. Os he dicho que
+
+34
+00:04:14,640 --> 00:04:21,880
+no necesitáis que sea de valores únicos, que puede haber duplicidades, pero vosotros
+
+35
+00:04:21,880 --> 00:04:31,400
+por lo que sea podéis querer que eso no suceda. Y aquí tenéis este parámetro. Vale. Pues
+
+36
+00:04:31,400 --> 00:04:38,320
+ya está. Ya con esto decidís cómo ponéis el índice. Y ahora os voy a presentar a
+
+37
+00:04:38,320 --> 00:04:43,800
+nuestra víctima de hoy. Quedados con este DataFrame porque todos los ejemplos van a
+
+38
+00:04:43,800 --> 00:04:51,960
+ir con él. Es un DataFrame, como podéis ver, chiquitín, de perretes, 23 filas, raza,
+
+39
+00:04:51,960 --> 00:05:01,400
+típolo, longevidad, tamaño y peso. Es chiquitín, es recogidico, es manejable, pero nos va a
+
+40
+00:05:01,400 --> 00:05:09,000
+servir para probarlo que queremos probar. En este caso, lo que vamos a hacer es esto.
+
+41
+00:05:09,000 --> 00:05:15,720
+Cogeremos todos los perros de tamaño medio. Los agruparemos por su tipo y sacaremos la
+
+42
+00:05:15,720 --> 00:05:23,960
+media. Ahí tenéis el ejemplo de cómo quedaría esto. Y aprovecho para presentaros al buen
+
+43
+00:05:23,960 --> 00:05:31,920
+amigo que nos ha sacado esta foto con color inches, con flechitas, que visual. Esto es
+
+44
+00:05:31,920 --> 00:05:40,360
+Pandas Tutor. Es una web en la que tú pones tu CSV, pones tu pandas y él te va mostrando
+
+45
+00:05:40,360 --> 00:05:46,640
+pasito por pasito lo que va haciendo. Tiene sus cosillas y es que el CSV no puede ser
+
+46
+00:05:46,640 --> 00:05:53,960
+muy grande. Otra de las cosas por la que he cogido un CSV de 23 filas. Pero para visualizar
+
+47
+00:05:53,960 --> 00:05:59,600
+vienen muy bien. Y por ejemplo, todo este tema de parámetros que os comentaba os va a ayudar
+
+48
+00:05:59,600 --> 00:06:07,720
+a ver qué hace, cómo lo hace y quedaros muy claro cómo va a funcionar todo esto.
+
+49
+00:06:07,720 --> 00:06:14,200
+Vale. Pues si nos pusieramos índices, el dataframe quedaría tal que así. No tiene
+
+50
+00:06:14,200 --> 00:06:23,640
+mucho más. Pero pongamos un índice. Como mi índice es 1, como no me interesa nada
+
+51
+00:06:23,640 --> 00:06:29,880
+de cambiar parámetros, pues lo puesto mientras crea el dataframe. Como podéis ver en este
+
+52
+00:06:29,880 --> 00:06:42,000
+caso, he puesto type. No tiene nada más. Un parámetro en el CSV. El ejemplo de la izquierda
+
+53
+00:06:42,000 --> 00:06:48,640
+es si no tuviera índice. Y podéis ver que tiene índice. Resulta que Pandas ha estado
+
+54
+00:06:48,640 --> 00:06:55,680
+todo el tiempo poniendo un índice. Lo que pasa es que como no le especificábamos nada,
+
+55
+00:06:55,680 --> 00:07:04,120
+era unos integres autoincrementales. Pero en el ejemplo de la derecha hemos puesto raza
+
+56
+00:07:04,120 --> 00:07:14,720
+como el índice. Y veis que lo ha sacado del dataframe. Bueno, pues esto es el tiempo
+
+57
+00:07:14,720 --> 00:07:23,360
+de ejecución que ha tenido. Sin índice, tarda 91 milisegundos. Con un índice simple,
+
+58
+00:07:23,360 --> 00:07:32,320
+33 milisegundos. Estamos ganando un 64%. Ahí es nada, ¿no? Obviamente vamos a ver.
+
+59
+00:07:32,320 --> 00:07:36,800
+Estos valores no los toméis como... Quiero decir, pequeño aviso, es mi ordenador. El
+
+60
+00:07:36,800 --> 00:07:42,480
+vuestro daría otros tiempos. Pero podéis imaginar que esto no va a cambiar. Va a seguir
+
+61
+00:07:42,480 --> 00:07:51,520
+habiendo una mejora sustanciosa. Pero hemos puesto un índice. No hemos hecho más. Podemos
+
+62
+00:07:51,520 --> 00:07:56,520
+jugar con ese índice. Podemos pararnos y decir, vamos a hacer... Oye, ya que tengo un índice
+
+63
+00:07:56,520 --> 00:08:03,240
+voy a usarlo, ¿no? Pues esto es un ejemplo. Y seguro que si os ponéis vosotros sacáis
+
+64
+00:08:03,240 --> 00:08:10,680
+alguna cosilla más que se puede arreglar. Yo estaba ordenando por tipo. Pero tipo es
+
+65
+00:08:10,680 --> 00:08:18,880
+mi índice. Por tanto, cambio el short values por un short index. Tiene pinta de que va
+
+66
+00:08:18,880 --> 00:08:28,120
+a ayudarnos. Ya no son 33 milisegundos. Ahora son 11. Ya no es un 64% de ganancia. Es un
+
+67
+00:08:28,120 --> 00:08:40,160
+87%. Nada mal, ¿no? Vale. Pues ahora vamos a unir otro dataframe, al nuestro dataframe
+
+68
+00:08:40,160 --> 00:08:49,400
+de perretes. Tenemos un dataframe de dueños de perretes que dice la raza del perro, el
+
+69
+00:08:49,400 --> 00:08:59,640
+nombre del dueño, su apellido, su edad y su teléfono. Podemos unirlo así como así.
+
+70
+00:08:59,640 --> 00:09:08,200
+Y nos quedaría este final. Lo haríamos así. Podíamos hacer un merje. Podíamos hacer
+
+71
+00:09:08,200 --> 00:09:15,880
+más cosas. Un join. ¿Vale? Veis que creo los dos dataframes, el de perretes y el de
+
+72
+00:09:15,880 --> 00:09:26,040
+dueños. Y hago el join de tipo left. Los dataframes que va a unir tienen esta cara. ¿Veis que
+
+73
+00:09:26,040 --> 00:09:32,200
+tiene sus índices autoincrementales? Eso no lo va a perder nunca si no le decimos lo
+
+74
+00:09:32,200 --> 00:09:42,560
+contrario. Pues vamos a poner índices. De entrada los pongo dentro del join. Y lo uno
+
+75
+00:09:42,560 --> 00:09:50,720
+por las razas porque a ver, es lo que tiene en en común. ¿Vale? Veamos si esto mejora.
+
+76
+00:09:50,720 --> 00:10:00,160
+Bueno, el ejemplo donde veis los dataframes con los índices y la mejora de tiempo. Hemos
+
+77
+00:10:00,160 --> 00:10:09,280
+pasado de un 66 milisegundos sin tener índices a 36 milisegundos teniendo un índice. Es
+
+78
+00:10:09,280 --> 00:10:20,720
+una mejora del 49%. Pero podemos hacerlo mejor. Si en vez de añadir los índices dentro de
+
+79
+00:10:20,720 --> 00:10:30,720
+ejecución del join, los añadimos previamente. Volvemos a ganar tiempos. Ya no son 36, son
+
+80
+00:10:30,720 --> 00:10:39,120
+34. No es lo anterior que nos hemos puesto en 87. No es un 20 tantos por ciento de ganancia.
+
+81
+00:10:39,120 --> 00:10:46,560
+Pero nos hemos quedado en 53. Hemos reducido la ejecución más de la mitad. Así con un
+
+82
+00:10:46,560 --> 00:10:56,200
+índice a lo loco. Y pues vamos a hablar de índices múltiples. Vale. Volvemos al ejemplo
+
+83
+00:10:56,200 --> 00:11:02,600
+anterior. Teníamos nuestro índice de era el type y teníamos nuestra ordenación por
+
+84
+00:11:02,600 --> 00:11:13,080
+índice. Ya estaría. Pues vamos a poner dos índices. Como os he dicho anteriormente,
+
+85
+00:11:13,080 --> 00:11:18,600
+al querer poner dos índices obligatoriamente tengo que usar set index. Porque index call
+
+86
+00:11:18,600 --> 00:11:28,560
+solo me coge uno. Este le puedo meter una red. Vale. Fijaos que la selección de valores
+
+87
+00:11:28,560 --> 00:11:37,400
+ahora es punto lock. ¿Qué nos están dando los multi índices de index? Nos están dando
+
+88
+00:11:37,400 --> 00:11:45,960
+toda una nueva capa de riqueza para el análisis de nuestro pandas. No sé de nuestro dafrem.
+
+89
+00:11:45,960 --> 00:11:53,480
+Nos está dando la opción de utilizar unos métodos que solo funcionan en estos casos.
+
+90
+00:11:53,480 --> 00:11:59,320
+Como es punto lock que va a seleccionar por los valores de las labels, es decir de las
+
+91
+00:11:59,320 --> 00:12:07,360
+columnas. Podríamos utilizar ilock que nos selecciona por posiciones y podríamos utilizar
+
+92
+00:12:07,360 --> 00:12:15,120
+xs que nos hace secciones cruzadas de datos. Lo que pasa es que no voy a hablar mucho más
+
+93
+00:12:15,120 --> 00:12:22,040
+de estos métodos porque me da para otra charla. Así de simple. Entonces yo desde aquí lo
+
+94
+00:12:22,040 --> 00:12:29,000
+que sí os dejo es la tarea de poneros vosotros a mirar, a juguetear con ellos y a cacharrear.
+
+95
+00:12:29,000 --> 00:12:38,560
+Vale. En este caso como lo que me interesa son valores uso punto lock. Pero no necesito
+
+96
+00:12:38,560 --> 00:12:48,360
+ninguna cosa del type. Me valen todos. Vale. Pues entonces usáis slice known. Sliced known
+
+97
+00:12:48,360 --> 00:12:57,960
+es básicamente la forma de escoger todos los valores que hay. Luego hay más cosas. Estaría
+
+98
+00:12:57,960 --> 00:13:07,480
+los dos puntitos, etcétera. Vuelvo a decir por favor mirad cacharrear y probad vosotros.
+
+99
+00:13:07,480 --> 00:13:13,120
+Otra cosa que veis que ha cambiado es que ahora cuando añado el índice le hago un
+
+100
+00:13:13,120 --> 00:13:22,440
+short index. Esto es obligatorio? No. Pero pandas en su documentación nos dice que está
+
+101
+00:13:22,440 --> 00:13:32,520
+bien. Que va a ayudarnos a que todo esto funcione mejor. Nos va a dar menos tiempos de ejecuciones.
+
+102
+00:13:32,520 --> 00:13:41,200
+Pero claro ahora ya no tengo que ordenar por el tipo porque lo estoy haciendo allá arriba.
+
+103
+00:13:41,200 --> 00:13:49,640
+Lo demás como podéis ver sigue más o menos igual. Bueno pues esto es un ejemplo de nuestros
+
+104
+00:13:49,640 --> 00:13:56,480
+perretes con dos índices. Veis que ya no está ninguno en el data frame. Están los dos en
+
+105
+00:13:56,480 --> 00:14:10,880
+la izquierda. Y esto es el tiempo. Uno pensaría que oye si un índice nos ha dado una mejora
+
+106
+00:14:10,880 --> 00:14:21,360
+tan grande dos índices y van a ser mejor. Pero no. Uno es bueno, veinte no tiene por
+
+107
+00:14:21,360 --> 00:14:26,840
+qué serlo. A los índices los carga el diablo. Si alguno ha tratado con base de datos lo
+
+108
+00:14:26,840 --> 00:14:34,560
+sabe. Una indexación tiene que estar bien pensada y que trate lo que tiene que tratar.
+
+109
+00:14:34,560 --> 00:14:43,280
+Si nos pasamos de vueltas metemos índices por meter la cosa va a ir a peor. Sigue mejorando
+
+110
+00:14:43,280 --> 00:14:50,960
+lo que era sin índice. Sigue yendo mejor que con un único índice así a lo loco. Pero
+
+111
+00:14:50,960 --> 00:14:57,960
+cuando hemos usado un índice bien pensado y hemos tratado el índice con cabeza nos
+
+112
+00:14:57,960 --> 00:15:07,400
+ha ido mejor. Así que bueno ya vemos que a lo mejor ahora nos interesa quitar un índice
+
+113
+00:15:07,400 --> 00:15:16,800
+y volver a dejarlo el type. Ya está. Podemos. No tenemos que empezar de cero. No tenemos
+
+114
+00:15:16,800 --> 00:15:23,880
+que rehacer. Si en un momento dado yo he necesitado dos índices y luego para otro paso necesito
+
+115
+00:15:23,880 --> 00:15:34,120
+un único índice. Puedo quitar el que me sobra porque tengo reset index. Y ahí tengo todos
+
+116
+00:15:34,120 --> 00:15:40,600
+los parámetros. Puedo poner un reset index sin poner ningún parámetro. Sí. ¿Qué me
+
+117
+00:15:40,600 --> 00:15:46,280
+va a hacer? Quitármelo todo. Ya está. Lo que tenéis de índices ha desaparecido. No
+
+118
+00:15:46,280 --> 00:15:52,960
+vuelven al data frame. No existen. Se han perdido en la nada.
+
+119
+00:15:52,960 --> 00:16:00,960
+No. En este caso quiero quitar uno. Lebe. Especifica el nombre del índice que quieres quitarte
+
+120
+00:16:00,960 --> 00:16:08,880
+de medio. Y vuelvo a tener drop. Pero ahora funciona un poquito al revés. Ahora drop
+
+121
+00:16:08,880 --> 00:16:17,840
+lo que me va a decir es si quiero que ese índice vuelva al data frame o no. Vale. In
+
+122
+00:16:17,840 --> 00:16:26,480
+place. Igual. Me haces una copia o me vuelves el mismo. Call level. Por defecto veis que
+
+123
+00:16:26,480 --> 00:16:33,000
+es un cero. Eso lo que significa es que si ese índice vuelve a nuestra columna de entrada
+
+124
+00:16:33,000 --> 00:16:39,680
+y por defecto va a estar en el primer sitio. Va a ser el primero. Podemos especificar la
+
+125
+00:16:39,680 --> 00:16:46,520
+posición que queramos siempre que esté en el rango. Obviamente. Call fill. Esto es
+
+126
+00:16:46,520 --> 00:16:52,560
+si tenéis varios niveles dentro de la columna que podéis elegir cómo queréis nombrarlo.
+
+127
+00:16:52,560 --> 00:17:00,240
+No confundirse con names. Porque names lo que hace es decir cómo queréis nombrar la columna.
+
+128
+00:17:00,240 --> 00:17:07,160
+La columna antes se llamaba type. Size. En este caso. Si yo la devuelvo. Pero ya no
+
+129
+00:17:07,160 --> 00:17:14,920
+quiero que se llame size. Quiero llamarla pepito. Pues en names pongo pepito. Y a partir
+
+130
+00:17:14,920 --> 00:17:19,800
+de ese momento tengo una columna que se llama pepito. Con los valores que tenía cuando
+
+131
+00:17:19,800 --> 00:17:27,800
+se llamaba size. No pasa nada. Y al auto-applicates. Pues básicamente es lo mismo. Yo os he dicho
+
+132
+00:17:27,800 --> 00:17:34,440
+que no tiene que estar la cosa duplicada en el tema de los índices. Vale. Pero y si yo
+
+133
+00:17:34,440 --> 00:17:41,280
+cuando he creado el índice. Le he dicho que se quedase en el data frame. Y ahora lo quito.
+
+134
+00:17:41,280 --> 00:17:46,920
+Y le digo que vuelva el data frame. Porque sí. Porque él me interesa. O porque me he
+
+135
+00:17:46,920 --> 00:17:54,000
+equivocado. Quién sabe. Vale. En ese caso tengo al auto-applicates. Lo que va a hacer
+
+136
+00:17:54,000 --> 00:18:02,320
+es comprobar que cuando entra la columna de vuelta al data frame. No existe una que sea
+
+137
+00:18:02,320 --> 00:18:10,840
+igual. O sí. Dependerá totalmente del valor que vosotros le estéis dando. Por tanto.
+
+138
+00:18:10,840 --> 00:18:21,200
+Ya sabemos. Que podemos poner índices. Que los índices van a ser nuestros amigos.
+
+139
+00:18:21,200 --> 00:18:28,720
+Sabemos. Que un índice tiene que estar pensado. Tiene que llevar una lógica y tiene que tener
+
+140
+00:18:28,720 --> 00:18:37,640
+un proceso previamente. Un índice al lo loco no nos sirve. O sí. Sabemos. Que podemos
+
+141
+00:18:37,640 --> 00:18:43,440
+poner más de uno. Si lo hacemos bien. Y si lo necesitamos en nuestro caso. Nos va a
+
+142
+00:18:43,440 --> 00:18:51,440
+mejorar el rendimiento. O nos va a permitir hacer. Virguerías. Pero oye. Que en un momento
+
+143
+00:18:51,440 --> 00:19:01,720
+dado no me sirve. Que esto es un lío. Que ahora necesito una cosa diferente. Puedo eliminarlo.
+
+144
+00:19:01,720 --> 00:19:16,520
+Así que señores. Esto es todo amigos. Muy bien. Enhorabuena por las charlas. Muy
+
+145
+00:19:16,520 --> 00:19:23,040
+chula. A mí me sirve. Ahora sí hay tiempo de alguna pregunta. Pero antes a gente del
+
+146
+00:19:23,040 --> 00:19:29,080
+público si queréis levantar la mano. Quien tenga una pregunta ve una por allí. Y ir
+
+147
+00:19:29,080 --> 00:19:35,640
+levantando más y vamos pasando el micro. Gracias.
+
+148
+00:19:35,640 --> 00:19:48,120
+Bueno lo primero de todo muchísimas gracias por la charla. Tenía una pregunta un poco
+
+149
+00:19:48,120 --> 00:19:54,920
+en plan. ¿Se pueden crear índices nuevos a partir de índices que ya existen juntándolos?
+
+150
+00:19:54,920 --> 00:20:00,920
+Por ejemplo podrías crear un índice que fuera una tupla a partir de dos índices que ya
+
+151
+00:20:00,920 --> 00:20:08,040
+existen. A partir de dos índices preexistentes. Si los has mantenido en el data frame. Si
+
+152
+00:20:08,040 --> 00:20:13,000
+tienes un índice x, un índice y quieres crear un índice punto. Sí podrías. También
+
+153
+00:20:13,000 --> 00:20:20,160
+te digo. Yo se estoy hablando de data frames. Todo el tema de índices y tal. Para series,
+
+154
+00:20:20,160 --> 00:20:25,240
+para tuplas también funciona. Lo que pasa es que vamos a ver. A el tiempo es el que
+
+155
+00:20:25,240 --> 00:20:32,040
+es y me he enfocado en lo que me he enfocado. O vuelvo a decir de verdad miraros la documentación
+
+156
+00:20:32,040 --> 00:20:39,040
+que está muy bien muy clarita en pandas. Y ir tocando porque es que ellos os digo.
+
+157
+00:20:39,040 --> 00:20:44,080
+Vais a aprender unas cosas que dices ¿cómo no lo he estado haciendo antes? Y además
+
+158
+00:20:44,080 --> 00:20:51,120
+con pandas tutor que no me han pagado ¿vale? Pero bueno es muy útil por lo que os he comentado.
+
+159
+00:20:51,120 --> 00:20:54,840
+Es muy visual. Muchísimas gracias.
+
+160
+00:20:54,840 --> 00:20:59,840
+Nada. Hola. Gracias por la chala me ha encantado.
+
+161
+00:20:59,840 --> 00:21:00,840
+Ahí.
+
+162
+00:21:00,840 --> 00:21:01,840
+Hola.
+
+163
+00:21:01,840 --> 00:21:08,000
+Creo que comentaba si lo he entendido correctamente que puedes establecer el índice cuando creas
+
+164
+00:21:08,000 --> 00:21:11,840
+el dataset o posteriormente. Creo que ha hecho la comparación y quedaban como unos
+
+165
+00:21:11,840 --> 00:21:19,040
+2 milisegundos de diferencia. A ver a la hora de crear antes o después simplemente
+
+166
+00:21:19,040 --> 00:21:26,040
+te estás evitando una línea de código. Y la lógica nos dice que si nos quitamos una
+
+167
+00:21:26,040 --> 00:21:32,360
+línea de código nos estamos quitando un poquito de tiempos de ejecución. Yo personalmente
+
+168
+00:21:32,360 --> 00:21:39,160
+si puedo hacerlo en el RedCSB lo voy a hacer ahí por eso. También yo soy muy file6queen
+
+169
+00:21:39,160 --> 00:21:46,000
+¿vale? Yo lo admito. Pero es lo que os he comentado al final usad un poco que queréis
+
+170
+00:21:46,000 --> 00:21:47,000
+lograr.
+
+171
+00:21:47,000 --> 00:21:51,800
+Vale entonces en cuanto a diferencia de rendimiento de esos milisegundos no consideras que es
+
+172
+00:21:51,800 --> 00:21:52,800
+un índice.
+
+173
+00:21:52,800 --> 00:21:58,320
+La diferencia no es mucha. Por ejemplo si os ponéis con un multi índice ahí a lo mejor
+
+174
+00:21:58,320 --> 00:22:02,240
+tienes un poquito más de diferencias pero es que tampoco lo que más te va a dar es
+
+175
+00:22:02,240 --> 00:22:08,880
+el short que le hagas del índice. Yo personalmente no lo considero relevante. Es más tamaño
+
+176
+00:22:08,880 --> 00:22:12,440
+si manías. No sé si te he contestado.
+
+177
+00:22:12,440 --> 00:22:19,280
+Sí y una última sí. ¿Hagó una de ventaja de lo índice que considera importante?
+
+178
+00:22:19,280 --> 00:22:23,720
+Desventaja del índice. A ver el índice lo única desventaja que puedes tener es que
+
+179
+00:22:23,720 --> 00:22:30,040
+lo hagas sin pensar ya lo loco. Es lo que comentaba. Si tú pones demasiados índices
+
+180
+00:22:30,040 --> 00:22:36,360
+o pones índices que no vienen a cuento te puede repercutir negativamente. Te puede
+
+181
+00:22:36,360 --> 00:22:43,360
+decir que de repente tu tiempo de ejecución aumente y el problema es los índices. Esto
+
+182
+00:22:43,360 --> 00:22:47,640
+lo que decía en bases de datos por ejemplo es lo mismo. Si tú pones un índice bien
+
+183
+00:22:47,640 --> 00:22:54,400
+pensado mejoras. Si coges y dices todas las columnas van a ser un índice las liao.
+
+184
+00:22:54,400 --> 00:23:10,040
+Bueno gracias por la charla. Quería preguntarte. No te veo. Aquí. Gracias por la charla. Es
+
+185
+00:23:10,040 --> 00:23:15,960
+interesante. Tengo varias preguntas. Pero bueno miraré el álbum como edición y tal. Quería
+
+186
+00:23:15,960 --> 00:23:21,560
+preguntarte un poco cómo le utilicéis vosotros. Porque claro al crear un índice también tiene
+
+187
+00:23:21,560 --> 00:23:27,240
+cierto sobrecoste en tiempo de inserción sobre todo cuando tienen muchísimos datos o por
+
+188
+00:23:27,240 --> 00:23:34,200
+lo menos en SQL en base de datos relacionales. Entonces me pregunto cómo lo usáis vosotros
+
+189
+00:23:34,200 --> 00:23:40,560
+y qué ventajas os da en vez de tenerlo en un modelo relacional tenerlo en un data frame
+
+190
+00:23:40,560 --> 00:23:50,480
+de panas. Gracias. Pues bueno el caso por ejemplo el que yo tengo en mi trabajo tratamos
+
+191
+00:23:50,480 --> 00:23:57,880
+data frames enormes. Entonces nos vale mucho la pena porque se nos puede ir muy de madre
+
+192
+00:23:57,880 --> 00:24:05,200
+lo que son los tiempos y no queremos tampoco unos time outs ni queremos este tipo de situaciones.
+
+193
+00:24:05,200 --> 00:24:11,560
+Es lo que estoy diciendo. O sea los índices hay que pensarlos. Lo utilizáis en producción.
+
+194
+00:24:11,560 --> 00:24:19,440
+Lo utilizamos en todas las etapas sí. Vale entiendo. Ok. Y podrías tener varios índices.
+
+195
+00:24:19,440 --> 00:24:22,920
+O sea porque has explicado que puedes tener un índice de varias columnas pero no es lo
+
+196
+00:24:22,920 --> 00:24:29,360
+mismo que tengas varios índices. No sé si se puede tener varios índices. Por ejemplo
+
+197
+00:24:29,360 --> 00:24:36,520
+tú te refieres a tener niveles. Yo me refiero a tener varios índices. Bueno hasta el índice
+
+198
+00:24:36,520 --> 00:24:42,120
+automático que es por ID y luego un índice por una columna que filtre mucho y luego el
+
+199
+00:24:42,120 --> 00:24:47,640
+índice automático es el que os digo que lo pone por defecto. Normalmente cuando tú
+
+200
+00:24:47,640 --> 00:24:53,480
+pones otro índice lo va a sustituir a menos que tú le digas lo contrario y el índice
+
+201
+00:24:53,480 --> 00:24:59,120
+por defecto no te hace mucho. Vale. Bueno eso era todo. Muchas gracias.
+
+202
+00:24:59,120 --> 00:25:03,320
+Nada si de todo modo si tienes algún ejemplo me tienes en Discord.
+
+203
+00:25:03,320 --> 00:25:21,520
+Hola. Hola. Ha estado súper bien. Lo que no sé si he echado menos o no sé si utilizáis
+
+204
+00:25:21,520 --> 00:25:29,880
+vosotros o utilizáis tú. O sea igual que puedes tener un índice o un multi índice
+
+205
+00:25:29,880 --> 00:25:35,520
+puedes tener un multicolumn. ¿Qué perdona? Puedes tener niveles en columnas. Sí.
+
+206
+00:25:35,520 --> 00:25:41,040
+También ves la misma mejoría en cuanto a performance si tienes varios niveles en las
+
+207
+00:25:41,040 --> 00:25:47,200
+columnas también. Los índices en columnas lo que tú comentas es más lo que yo decía
+
+208
+00:25:47,200 --> 00:25:54,280
+de la capa de enriquecimiento que te da a la hora del análisis. A nivel de performance
+
+209
+00:25:54,280 --> 00:26:01,600
+yo no lo veo tan relevante. O sea que simplemente hablas del índice por filas y no del índice
+
+210
+00:26:01,600 --> 00:26:07,600
+por columnas. Exacto. Y he tenido otra pregunta pero se me ha olvidado. Bueno luego te la
+
+211
+00:26:07,600 --> 00:26:25,200
+digo. Sí, sí, sí me tenéis ahí. Por eso digo que... ¿Alguna más?
+
+212
+00:26:25,200 --> 00:26:41,320
+Con lo que has comentado, a partir de que momento o de que tamaño dirías que está
+
+213
+00:26:41,320 --> 00:26:46,720
+el límite para seguir usando pandas y empezar a usar otra herramienta como Pallis Park.
+
+214
+00:26:46,720 --> 00:26:56,640
+Si no, por el tema de tiempos. Porque tú puedes tener un dataframe que sea chiquitito, pero que estén redado de tal manera que te la lia.
+
+215
+00:26:56,640 --> 00:27:03,320
+O que lo que tú quieras hacer con él sea tan enrevesado que tengas muchos pasos y mucho
+
+216
+00:27:03,320 --> 00:27:09,800
+tiempo de ejecución por lo tanto. Entonces no lo veo tanto como orientarlo al tamaño,
+
+217
+00:27:09,800 --> 00:27:12,920
+sino a los tiempos que te está dando. En el momento en que los tiempos que te está
+
+218
+00:27:12,920 --> 00:27:20,720
+dando lo veas y digas... Uy, ya está. Ya te puedes poner a intentar mejorar eso de alguna manera.
+
+219
+00:27:20,720 --> 00:27:26,400
+No sé si te he contestado. Te refieres, por ejemplo, cuando te den un dataframe que requiere una
+
+220
+00:27:26,400 --> 00:27:32,720
+pivotación o una reordenación muy compleja. Exactamente. Que puedes ser chiquitito. Por eso te digo.
+
+221
+00:27:32,720 --> 00:27:46,840
+Que es más de tiempos. ¿Alguien? Ya te has acordado. Me acuerdo.
+
+222
+00:27:46,840 --> 00:27:52,560
+El tema es que lo que estáis hablando antes. Igual que cuando tú pones un índice en nuevas
+
+223
+00:27:52,560 --> 00:27:59,040
+datos, te ocupas más memoria, como estamos utilizando pandas, estás en ramp todo el rato.
+
+224
+00:27:59,040 --> 00:28:06,160
+Entonces, yo entiendo que a la hora de hacer operaciones y notas mejoría, porque obviamente
+
+225
+00:28:06,160 --> 00:28:17,120
+solo opera sobre el contenido y no el contenedor, pero como notas o no sé si sabes o no sé
+
+226
+00:28:17,120 --> 00:28:24,280
+si lo has notado, si hay mucha diferencia de que ese panda sea mucho más pesado a la
+
+227
+00:28:24,280 --> 00:28:34,760
+hora de memoria con índices o sin ellos. No es mucho más pesado. O sea, te aumenta
+
+228
+00:28:34,760 --> 00:28:40,560
+el peso sobre todo si empiezas a multindexar. O lo que tú decías. Muchos niveles en una
+
+229
+00:28:40,560 --> 00:28:46,960
+misma columna todo esto al final incrementa, obviamente. Pero poner un índice dos índices,
+
+230
+00:28:46,960 --> 00:28:56,160
+una cosa así más manejera, no te incrementa prácticamente. Nada.
+
+231
+00:28:56,160 --> 00:29:18,080
+Muchas gracias a vosotros por me acudir.
+

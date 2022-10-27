@@ -1,0 +1,1176 @@
+1
+00:00:00,000 --> 00:00:18,920
+So, welcome everyone back.
+
+2
+00:00:18,920 --> 00:00:24,480
+I hope you are full of energy and not really sleepy after the huge amount of food that I
+
+3
+00:00:24,480 --> 00:00:29,440
+can team with delivering. We have a really nice talk now. I am personally interested
+
+4
+00:00:29,440 --> 00:00:35,920
+in this because the topic I think it might be close to many people here. So, yeah, without
+
+5
+00:00:35,920 --> 00:00:47,320
+further ado, let's introduce Juan Aragon and maybe we can give it a hand.
+
+6
+00:00:47,320 --> 00:00:54,080
+Hello everyone. Thank you very much for coming. My name is Juan Aragon and I'm a software
+
+7
+00:00:54,080 --> 00:01:01,160
+engineer. I'm a software engineer. Is that okay? Cool. I'm a software engineer working
+
+8
+00:01:01,160 --> 00:01:08,200
+for a company called Bloomberg. I work for the document discovery group and my team,
+
+9
+00:01:08,200 --> 00:01:13,880
+we offer is a personal document platform that allows other application teams to build on
+
+10
+00:01:13,880 --> 00:01:19,280
+top of the features that we offer. We offer features like search, classification, storage,
+
+11
+00:01:19,280 --> 00:01:23,920
+and things like this, very generic. I've been working on that company for seven and a half
+
+12
+00:01:23,920 --> 00:01:29,800
+years and probably what is most relevant for this presentation is up until April this
+
+13
+00:01:29,800 --> 00:01:35,800
+year I was an engineer manager. I did that role for around three and a half years but
+
+14
+00:01:35,800 --> 00:01:42,040
+in April I decided to step down. So, today I'm here to talk to all of you about my own
+
+15
+00:01:42,040 --> 00:01:46,560
+career path, my own journey. I would like to illustrate that career in software can
+
+16
+00:01:46,560 --> 00:01:52,040
+be dynamic and flexible and hopefully I can show you that it's full of interesting avenues
+
+17
+00:01:52,040 --> 00:01:57,920
+to explore throughout your career. I would like, before I start, I would like to thank
+
+18
+00:01:57,920 --> 00:02:10,120
+all the organizers for giving me the opportunity to be here. Right. As I said, I work for a
+
+19
+00:02:10,120 --> 00:02:16,600
+company called Bloomberg and for those who don't know what we do, this will be a picture
+
+20
+00:02:16,600 --> 00:02:21,160
+of the Bloomberg terminal. Unfortunately, it's not very clear and what we offer is kind
+
+21
+00:02:21,160 --> 00:02:28,480
+of a software solution for investment for people who work in the markets that provides
+
+22
+00:02:28,480 --> 00:02:36,880
+real time market data, news, and analytics. The terminal is composed for different functions
+
+23
+00:02:36,880 --> 00:02:42,680
+or applications and if you could see the picture you will see different boxes. But in a way
+
+24
+00:02:42,680 --> 00:02:48,040
+they work independent. The people who are subscribed to the Bloomberg terminal are people
+
+25
+00:02:48,040 --> 00:02:52,240
+who are interested in real time market data from the stock exchange, you know, prices
+
+26
+00:02:52,240 --> 00:02:57,880
+from trade, prices from commodities, prices from bonds, anything that you can price in
+
+27
+00:02:57,880 --> 00:03:02,520
+the financial systems, you will get it from the Bloomberg terminal. You will also get
+
+28
+00:03:02,520 --> 00:03:08,600
+real time news as well as communication opportunities with all the people who use the Bloomberg
+
+29
+00:03:08,600 --> 00:03:14,920
+terminal. And just to finish with this, the subscribers that we have vary a lot. It can
+
+30
+00:03:14,920 --> 00:03:22,280
+be investment banks, it can be central banks, it can be regulators, governments. In all
+
+31
+00:03:22,280 --> 00:03:26,760
+broad is anything who has an interest on the financial capital markets. If you want to
+
+32
+00:03:26,760 --> 00:03:33,640
+know more about that, just let me know after the talk. Right, but going back to our agenda,
+
+33
+00:03:33,640 --> 00:03:37,880
+I divided the presentation in four different sections. The first one I would like to make
+
+34
+00:03:37,880 --> 00:03:44,080
+a disclaimer. Then we will talk about a common career path in software engineering and then
+
+35
+00:03:44,080 --> 00:03:50,880
+I will use my own career to deconstruct it in different stages, hopefully so that a career
+
+36
+00:03:50,880 --> 00:03:57,000
+can be flexible and dynamic. And then I will close with some conclusions. If you haven't
+
+37
+00:03:57,000 --> 00:04:00,400
+had your coffee, you can disconnect now and then I will wake you up when the conclusions
+
+38
+00:04:00,400 --> 00:04:07,320
+come. Right, so as a disclaimer, I wanted to say that this is not a career at buy stock.
+
+39
+00:04:07,320 --> 00:04:11,520
+Careers are way too personal. You know, they are very dependent on the individuals. There
+
+40
+00:04:11,520 --> 00:04:16,400
+are so many factors that can affect your career, your company, where you work, your culture,
+
+41
+00:04:16,400 --> 00:04:20,360
+the culture, your company, the opportunities that they might offer. So I cannot come here
+
+42
+00:04:20,360 --> 00:04:26,200
+and say, do these five things to have a successful career in software engineering. It's impossible
+
+43
+00:04:26,200 --> 00:04:32,400
+for me to give kind of a broad career advice that is applicable for all of you. Today I'm
+
+44
+00:04:32,400 --> 00:04:38,480
+going to talk about my own experience. You know, I don't really know if I have a successful
+
+45
+00:04:38,480 --> 00:04:42,840
+career. What I can tell you is I'm proud about the career I'm having and hopefully you will
+
+46
+00:04:42,840 --> 00:04:48,320
+find some of my experience inspiring or motivational for you in your careers.
+
+47
+00:04:48,320 --> 00:04:54,680
+Right, so talking about kind of the common career progression in the software industry,
+
+48
+00:04:54,680 --> 00:04:59,480
+I would like to introduce a topic that probably you are familiar with, but it's the career
+
+49
+00:04:59,480 --> 00:05:05,920
+ladder. It's very simple. It's a metaphor for job promotion. You start every step of
+
+50
+00:05:05,920 --> 00:05:11,960
+the ladder. It's a new job. It's a new promotion. It has different responsibilities, obligations,
+
+51
+00:05:11,960 --> 00:05:15,960
+different salary probably, but it's a singular track that will take you to the top. And in
+
+52
+00:05:15,960 --> 00:05:22,560
+theory, at the top, they are the greatest benefits as well as the greatest responsibilities,
+
+53
+00:05:22,560 --> 00:05:28,360
+obligations, authority, all these things. This concept is used in a lot of industries.
+
+54
+00:05:28,360 --> 00:05:33,360
+You might think about, for example, the Army, right? They implemented as a rank system.
+
+55
+00:05:33,360 --> 00:05:39,200
+It can be used as well in medicine, in nursing, in law, in law enforcement. And now I would
+
+56
+00:05:39,200 --> 00:05:45,000
+like to ask you something. Do you think that we use it in our industry, in software, hands
+
+57
+00:05:45,000 --> 00:05:53,440
+up food? Right? Maybe one third. This is my personal opinion. I think we use it, right?
+
+58
+00:05:53,440 --> 00:05:58,840
+When we talk about levels in our industry, it's basically the career ladder, right? You
+
+59
+00:05:58,840 --> 00:06:05,400
+go from one level to another. So why do we use it? It's because it gives a very well
+
+60
+00:06:05,400 --> 00:06:10,760
+structure for career progression, right? It defines the behaviors and the responsibilities
+
+61
+00:06:10,760 --> 00:06:16,320
+of every role. It simplifies a lot a career conversation. What should I do next? Well,
+
+62
+00:06:16,320 --> 00:06:21,920
+you just need to go to the next level, right? So it also defines very well what is required
+
+63
+00:06:21,920 --> 00:06:26,360
+to get to the next level and what is required for that level to stay in that level. And
+
+64
+00:06:26,360 --> 00:06:31,880
+here I would like to spend a little bit of time talking about performance review. Maybe
+
+65
+00:06:31,880 --> 00:06:37,000
+some of you in your companies do it differently, but most commonly, you know, big tech companies,
+
+66
+00:06:37,000 --> 00:06:41,880
+what they do is they go through performance cycles sometimes twice a year, sometimes once
+
+67
+00:06:41,880 --> 00:06:47,360
+a year. And if you are willing or if you would like to go to the next level, what you will
+
+68
+00:06:47,360 --> 00:06:54,560
+need to do is propose yourself for a career, for a promotion. You will get, you will evaluate
+
+69
+00:06:54,560 --> 00:06:59,640
+yourself. You will get your people in your team to evaluate you. So it will be peers
+
+70
+00:06:59,640 --> 00:07:06,560
+evaluation and you will be also evaluated by your manager. Then there will be a calibration
+
+71
+00:07:06,560 --> 00:07:12,080
+process that will check whether, you know, you satisfy the requirements to go to the
+
+72
+00:07:12,080 --> 00:07:16,200
+next level. And in that calibration, it will be depending by the, you know, the size of
+
+73
+00:07:16,200 --> 00:07:21,240
+the company and the different, you know, trees on the organization. And they will make sure
+
+74
+00:07:21,240 --> 00:07:25,680
+that all the promotion are coherent and there is no one group that they are promoting a
+
+75
+00:07:25,680 --> 00:07:32,960
+lot of people and another group is lagging behind. But enough about that. Now I would
+
+76
+00:07:32,960 --> 00:07:38,080
+like to talk about my own career in software. As you can see, there is, you can see, there
+
+77
+00:07:38,080 --> 00:07:44,160
+is an illustration of my career in software and as, yeah, you can see, as you can see,
+
+78
+00:07:44,160 --> 00:07:49,720
+it hasn't been always going linear as sending up, right? There will be moments that go down,
+
+79
+00:07:49,720 --> 00:07:53,840
+there will be moments that I will be going through more progression. But what is clear
+
+80
+00:07:53,840 --> 00:07:59,040
+is like, at least for me, every time I make a decision, there were multiple paths. So
+
+81
+00:07:59,040 --> 00:08:03,800
+what I would like to do now is go through different stages of this career and trying
+
+82
+00:08:03,800 --> 00:08:10,880
+to deconstruct it. I would like to introduce you to little Juan, he's the blue person there
+
+83
+00:08:10,880 --> 00:08:16,600
+and now he's going to go through the early stages of his career. Right. So at the very
+
+84
+00:08:16,600 --> 00:08:21,360
+beginning, there is always, you know, where does your career start? And pretty sure if
+
+85
+00:08:21,360 --> 00:08:28,720
+I ask you, like, when your career started, I will get the diverse answers, right? One
+
+86
+00:08:28,720 --> 00:08:33,840
+can be, my career started the first time I joined this company. Someone might say the
+
+87
+00:08:33,840 --> 00:08:38,480
+first time I started university, I decided I wanted to study computer science. Someone
+
+88
+00:08:38,480 --> 00:08:43,800
+can be like, I was working a completely different industry, I moved to this industry because
+
+89
+00:08:43,800 --> 00:08:49,040
+I did a bootcamp and in that day, you know, I think that my career started. In my case,
+
+90
+00:08:49,040 --> 00:08:54,920
+it was when I decided to study abroad. That year, I was, I went through a cultural exchange,
+
+91
+00:08:54,920 --> 00:08:59,640
+I was influenced by new people, you know, I met a lot of people and that day, I mean,
+
+92
+00:08:59,640 --> 00:09:05,640
+that year I decided that I wanted to work abroad. Probably if I would have come back
+
+93
+00:09:05,640 --> 00:09:11,080
+to Spain, my country, my country of origin, my career would have been completely different.
+
+94
+00:09:11,080 --> 00:09:18,640
+So that's why I think that moment in time, it was what it completely influenced my career.
+
+95
+00:09:18,640 --> 00:09:23,440
+Also at the beginning, to know if there are a lot of people who are at the various stage
+
+96
+00:09:23,440 --> 00:09:28,120
+of their career, but we worry a lot about our CV and how we are portrayed on our CV.
+
+97
+00:09:28,120 --> 00:09:33,000
+What I wanted to say is that sometimes we give too much importance to the CV and what
+
+98
+00:09:33,000 --> 00:09:37,040
+is most important is, you know, the CV can be something that will open, give you the
+
+99
+00:09:37,040 --> 00:09:40,840
+chance to do an interview, but at the end of the day, it depends on your skills and
+
+100
+00:09:40,840 --> 00:09:44,920
+whether, you know, you are a good fit for that company. And probably what is most important
+
+101
+00:09:44,920 --> 00:09:51,120
+is if that company is a good fit for you, sometimes we forget about that. Then I joined
+
+102
+00:09:51,120 --> 00:09:58,560
+a small company. They were doing embedded software for pagers. Maybe some people don't
+
+103
+00:09:58,560 --> 00:10:04,880
+know what is a pager. But, yeah, in that company, you know, we were a few engineers.
+
+104
+00:10:04,880 --> 00:10:09,520
+And, you know, I went through a process of exploration and discovery. I didn't really
+
+105
+00:10:09,520 --> 00:10:13,160
+know what I liked, but, you know, they gave me the opportunity and I wanted to start my
+
+106
+00:10:13,160 --> 00:10:17,280
+career. But quickly, you know, I discovered that that was in the place for me. I wanted
+
+107
+00:10:17,280 --> 00:10:23,400
+to try something different and I was kind of head-handed to a startup in London. In
+
+108
+00:10:23,400 --> 00:10:28,160
+that startup, some of you might have worked in a startup, you know, you get a lot of kind
+
+109
+00:10:28,160 --> 00:10:31,720
+of an exponential growth, right? You do a lot of things, you can learn a lot of things
+
+110
+00:10:31,720 --> 00:10:37,200
+and you can, you know, grow very quickly. And that will lead to the first time I stepped
+
+111
+00:10:37,200 --> 00:10:50,960
+down. So I was working in that startup. I'm going to drink a little bit of water. Right.
+
+112
+00:10:50,960 --> 00:10:57,400
+So I was working for that startup for around two years. And then, again, I decided that
+
+113
+00:10:57,400 --> 00:11:03,760
+I wanted to do something different. I wanted to work for maybe a company who will offer
+
+114
+00:11:03,760 --> 00:11:09,080
+more structure, you know, different processes where I will, you know, be involved with different
+
+115
+00:11:09,080 --> 00:11:20,200
+people. And I decided to apply to Bloomberg, senior software engineer position. And, you
+
+116
+00:11:20,200 --> 00:11:26,240
+know, at that time I was a lead developer. I was leading a team of two. And, you know,
+
+117
+00:11:26,240 --> 00:11:32,320
+I was the lead developer of the BlackBerry application. Again, you know, that time BlackBerry
+
+118
+00:11:32,320 --> 00:11:41,440
+was market lead. Again, I'm old. But anyway, you know, I interviewed with them and I didn't
+
+119
+00:11:41,440 --> 00:11:45,480
+go prepared, right? I was thinking like, you know, I'm having a very good career, exponential
+
+120
+00:11:45,480 --> 00:11:50,200
+growth, you know, I will do amazing. But that wasn't the reality. I completely, that was
+
+121
+00:11:50,200 --> 00:11:55,240
+a terrible interview. I feel shame on it. But that showed me a few things. First thing
+
+122
+00:11:55,240 --> 00:11:59,560
+it was like, I really like how they treat me, even though, you know, it was a completely
+
+123
+00:11:59,560 --> 00:12:04,200
+terrible interview. They treat me with a lot of respect. I really like what I saw, you
+
+124
+00:12:04,200 --> 00:12:10,000
+know, so that kind of lead me to, okay, maybe I want to work for this company. These values,
+
+125
+00:12:10,000 --> 00:12:14,600
+I like them. They can be a good fit. So also that helped me to be a little bit more humble,
+
+126
+00:12:14,600 --> 00:12:19,560
+right? If I want to get a career move, if I want to do something, also it's on me, you
+
+127
+00:12:19,560 --> 00:12:26,560
+know, to deliver it. So a few months later, I applied again, but this time I applied for
+
+128
+00:12:26,560 --> 00:12:32,080
+the graduate position, for the junior position. I got the job, and I was very happy. But,
+
+129
+00:12:32,080 --> 00:12:36,160
+you know, that kind of kind of be seen like a stepping down, right? I went from being
+
+130
+00:12:36,160 --> 00:12:41,400
+a lead developer to be a junior developer, right? I started at the same time as people
+
+131
+00:12:41,400 --> 00:12:45,760
+who graduated in university and things like this. But in my case, and throughout my career,
+
+132
+00:12:45,760 --> 00:12:50,160
+I've been doing this. I analyzed the risk and the opportunity. That time, you know, the
+
+133
+00:12:50,160 --> 00:12:54,280
+risk, what was the risk? Like, moving to that company, if I don't like it, maybe I can find
+
+134
+00:12:54,280 --> 00:12:57,920
+something else. But I saw, you know, and the opportunity is that I saw, it's like, okay,
+
+135
+00:12:57,920 --> 00:13:02,960
+it's a big corporation, probably will give me better job security, better career paths,
+
+136
+00:13:02,960 --> 00:13:09,880
+and then I decided to give it a go. And that's what leads Little Juan to the next stage on
+
+137
+00:13:09,880 --> 00:13:18,280
+his career, that is the path to becoming an experience engineer. So when I started Bloomberg,
+
+138
+00:13:18,280 --> 00:13:24,440
+I, I mean, through my whole career, I always liked to explore, you know, to try to find
+
+139
+00:13:24,440 --> 00:13:30,120
+different things, pushing myself into this comfort zone. And this is something that I
+
+140
+00:13:30,120 --> 00:13:35,000
+like to do, but considering like a achievable challenge, right? I will not push myself into
+
+141
+00:13:35,000 --> 00:13:41,160
+a position where I think I'm not going to be able to succeed. Today's a good example.
+
+142
+00:13:41,160 --> 00:13:46,720
+It's the first time I'm presenting in a conference, right? I'm completely out of my comfort zone.
+
+143
+00:13:46,720 --> 00:13:51,360
+I don't like speaking in public. So, but again, you know, I think that this will provide me
+
+144
+00:13:51,360 --> 00:13:56,280
+certain skills that can be useful for the future and will let me to grow and learn. Another
+
+145
+00:13:56,280 --> 00:14:01,000
+thing that I've done during this phase of becoming an experience engineer, it was role
+
+146
+00:14:01,000 --> 00:14:07,480
+switching. But role switching, I don't mean moving from job to job. I mean, like, you know,
+
+147
+00:14:07,480 --> 00:14:11,960
+in engineering, we have different roles. You might be doing a little bit more front end,
+
+148
+00:14:11,960 --> 00:14:16,880
+more back end, more DevOps. So during my career, I've been always trying different things,
+
+149
+00:14:16,880 --> 00:14:21,760
+right? Also, you know, being like kind of a just person. When my manager came to me and
+
+150
+00:14:21,760 --> 00:14:26,600
+told me, well, this thing has a closed deadline, will you mind going there and spend a few months
+
+151
+00:14:26,600 --> 00:14:30,800
+and helping them meet in that deadline? I was always super keen to do those things because
+
+152
+00:14:30,800 --> 00:14:35,960
+I could always see the opportunity meeting new people, meeting, I mean, working in a different
+
+153
+00:14:35,960 --> 00:14:41,960
+stack, meeting new managers, spending my network and things like this. So that helped me to learn
+
+154
+00:14:41,960 --> 00:14:49,960
+and grow and do small steps towards maturity or experience engineer. So during that path,
+
+155
+00:14:49,960 --> 00:14:56,480
+you will do mistakes, you will fail, that's guaranteed. But what is not guaranteed is we
+
+156
+00:14:56,480 --> 00:15:03,040
+learn from that failure, right? It's very important to experience something even if you fail. Next
+
+157
+00:15:03,040 --> 00:15:07,840
+time when you will have something, you will experience something similar, probably you will
+
+158
+00:15:07,840 --> 00:15:11,960
+do something different and that will not guarantee that you will succeed, but at least you are not
+
+159
+00:15:11,960 --> 00:15:17,640
+going to make the same mistake that you made before. And that's how you grow. You will also be
+
+160
+00:15:17,640 --> 00:15:22,280
+gaining more responsibility, you know, you will be an ally of your manager. What you are going to
+
+161
+00:15:22,280 --> 00:15:29,360
+do is like taking away job or work from them and you will be mentoring people, you will be kind
+
+162
+00:15:29,360 --> 00:15:34,880
+of the reference when they are not around and you will increase your impact, right? You will
+
+163
+00:15:34,880 --> 00:15:40,480
+proactively think better. You will identify areas of your team that can be improved, could be in
+
+164
+00:15:40,480 --> 00:15:45,240
+the tech side, it could be in communication, it could be in anything. And probably you will be the
+
+165
+00:15:45,240 --> 00:15:50,680
+person to go when large projects has to be delivered, you know, that have dependencies in
+
+166
+00:15:50,680 --> 00:15:57,080
+other teams and things like this. I think that moment is when you are experienced of where
+
+167
+00:15:57,080 --> 00:16:04,080
+you are an engineer, a mature software engineer. The next stage is when I became an engineer
+
+168
+00:16:04,080 --> 00:16:09,640
+manager. So there is something that I haven't mentioned during the whole presentation and it's
+
+169
+00:16:09,640 --> 00:16:14,480
+like, you know, I'm portraying that your career is just owned by you. That's not true, that's
+
+170
+00:16:14,480 --> 00:16:20,960
+completely true. There is always, you know, the other side, the company that you work for, the
+
+171
+00:16:20,960 --> 00:16:25,680
+people that has to rent you, your career partners, right? And that's something that you have less
+
+172
+00:16:25,680 --> 00:16:29,840
+control over. You can make changes but you don't know what you are going to encounter in the next
+
+173
+00:16:29,840 --> 00:16:36,960
+step. So your career partners, I like to define it as your support network. This support network
+
+174
+00:16:36,960 --> 00:16:42,000
+will be friends, family, you know, people who you talk to them about your career, who might be in
+
+175
+00:16:42,000 --> 00:16:49,280
+similar case to you and you can receive advice. Very important as well are your career and coaches.
+
+176
+00:16:49,280 --> 00:16:57,320
+These are the people around you, close to you, at your company that can give you advice, that can,
+
+177
+00:16:57,320 --> 00:17:03,320
+you know, put you in a situation that will make you grow your skills. And some of them in the
+
+178
+00:17:03,320 --> 00:17:08,480
+future will become your own sponsors, you know. Your sponsors will be the people who trust you
+
+179
+00:17:08,480 --> 00:17:16,360
+100%. They know that you can deliver and they will directly put you in opportunities. Something I
+
+180
+00:17:16,360 --> 00:17:22,360
+want to mention as well is once you think about a career move, you have to be very honest with
+
+181
+00:17:22,360 --> 00:17:29,320
+yourself. First, receive honest feedback from your career partners but also think whether, you
+
+182
+00:17:29,320 --> 00:17:34,520
+know, that move is going to be good for you and whether you have the skill set that is needed
+
+183
+00:17:34,520 --> 00:17:41,280
+for that career move. Sometimes we can get to focus on, I want to become this but look at yourself,
+
+184
+00:17:41,280 --> 00:17:45,800
+reflect, are you really ready to do that step? Maybe you have to look at some skills that you
+
+185
+00:17:45,800 --> 00:17:51,720
+have to build before you make that step. And linking with that skill set, I wanted to talk about
+
+186
+00:17:51,720 --> 00:17:57,520
+the skill set that I had to develop and I still developed what I was an engineering manager to
+
+187
+00:17:57,520 --> 00:18:02,720
+be a good engineering manager. And this might differ from company to company. Probably you will
+
+188
+00:18:02,720 --> 00:18:08,720
+see some commonalities with your companies. But one of the things is to understand the tech domain
+
+189
+00:18:08,720 --> 00:18:14,440
+and the business domain. You will be dealing with stakeholders on the tech side, you will be dealing
+
+190
+00:18:14,440 --> 00:18:19,360
+with stakeholders on the product and you will need to communicate very well with them. You know,
+
+191
+00:18:19,360 --> 00:18:24,000
+there will be people who are not technically strong that you have to explain very complicated
+
+192
+00:18:24,000 --> 00:18:29,280
+technical issues, you know, in a way that they can understand. At the same time, you will be the
+
+193
+00:18:29,280 --> 00:18:34,040
+leader of the team. So you will be the one who needs to dominate different communication styles.
+
+194
+00:18:34,040 --> 00:18:38,760
+There might be people that, you know, they are more introverted and you will need to know how to
+
+195
+00:18:38,760 --> 00:18:42,960
+talk to them. There might be people who are more extroverted and things like this or people who
+
+196
+00:18:42,960 --> 00:18:51,080
+directly prefer just to talk by mail or things like that. So at the same, what I wanted to say is
+
+197
+00:18:51,080 --> 00:18:59,800
+like you as a manager are the person who has to adapt their communication style. Oops. You will
+
+198
+00:18:59,800 --> 00:19:03,920
+also continue being a mentor. Probably if you became an engineering manager, you have been a
+
+199
+00:19:03,920 --> 00:19:09,360
+mentor throughout career based on something that you will continue fostering in your team. You must
+
+200
+00:19:09,360 --> 00:19:14,640
+have a growth mindset. You need to think what is next for your team all the time. You need to be
+
+201
+00:19:14,640 --> 00:19:20,080
+seeking opportunities for your team all the time and having a strong vision on how, you know,
+
+202
+00:19:20,080 --> 00:19:25,240
+your team is going to go in the next few years. It should be very good at giving feedback and also
+
+203
+00:19:25,240 --> 00:19:33,840
+receiving feedback. It's very important to be, to give direct constructive and sometimes negative
+
+204
+00:19:33,840 --> 00:19:39,720
+feedback to the people of your team. You know, it's part of the trust process and they will, you
+
+205
+00:19:39,720 --> 00:19:43,720
+know, if you build that kind of feedback loop with them, you know, they will appreciate it a lot.
+
+206
+00:19:43,720 --> 00:19:51,480
+Right. So the next thing will be, you know, sometimes when you are an engineering manager,
+
+207
+00:19:51,480 --> 00:19:58,320
+you might have an impact greater than your team. So you might contribute some initiatives that
+
+208
+00:19:58,320 --> 00:20:02,920
+they are in the department, company-wide, things like this. But probably what is the most important
+
+209
+00:20:02,920 --> 00:20:09,720
+one of the core roles of an engineering manager will be embracing change. It is guaranteed that
+
+210
+00:20:09,720 --> 00:20:15,160
+there will be uncertain times for your team. It can be that the project that the whole team is
+
+211
+00:20:15,160 --> 00:20:20,840
+working is cancelled. You know, it can be that you have been moved to another company, another
+
+212
+00:20:20,840 --> 00:20:25,520
+company has acquired you and your department is gone. But you will need to be the shield that will
+
+213
+00:20:25,520 --> 00:20:30,480
+protect your whole team for that. You will need to show them that there is opportunity ahead of them.
+
+214
+00:20:30,480 --> 00:20:36,480
+And you know, and if we keep together, we can go through this uncertain time. Last thing is to
+
+215
+00:20:36,480 --> 00:20:42,360
+foster trust, right? It's very important not only that the team can trust you, but the team members
+
+216
+00:20:42,360 --> 00:20:46,680
+between each other can trust each other. That will make them much more effective and efficient.
+
+217
+00:20:46,680 --> 00:20:52,680
+And last thing, sorry, is to demonstrate good judgment. There will be moments, no matter how you
+
+218
+00:20:52,680 --> 00:20:57,120
+set up your team, that consensus is not going to be built. And you are going to be the person who
+
+219
+00:20:57,120 --> 00:21:05,920
+will need to make the decision. Cool. And that will lead me to Little Juan to be in the stage
+
+220
+00:21:05,920 --> 00:21:12,920
+where I am now that is returning to being an individual contributor. As I said during the
+
+221
+00:21:12,920 --> 00:21:19,800
+introduction, right, I was an engineering manager and in April I became a remote individual
+
+222
+00:21:19,800 --> 00:21:27,640
+contributor. And we have been looking at these kind of paths during the whole presentation.
+
+223
+00:21:27,640 --> 00:21:34,240
+This looks to me like two axes, right? The Y is kind of your position and the X is kind of time.
+
+224
+00:21:34,240 --> 00:21:41,200
+But you know, there are so many factors that can influence your career. It's not only what
+
+225
+00:21:41,200 --> 00:21:46,280
+position you hold. It's also your family, your friends, where you live, your commute to work,
+
+226
+00:21:46,280 --> 00:21:51,560
+you know, like the hours that you put in the office, whether you like your manager or not,
+
+227
+00:21:51,560 --> 00:21:56,840
+all these things. So if we think about all these things and combine them together, you know,
+
+228
+00:21:56,840 --> 00:22:01,840
+and I put all these things, my career will look something like this, right? So that blue line
+
+229
+00:22:01,840 --> 00:22:06,800
+will be a combination of all the factors that affect my career. So if we go back, you know,
+
+230
+00:22:06,800 --> 00:22:13,000
+I started, was working for that as a small company doing embedded software. And then, you know,
+
+231
+00:22:13,000 --> 00:22:18,520
+it felt like a little bit small for me, so that will kind of affect my motivation. Then I moved
+
+232
+00:22:18,520 --> 00:22:24,240
+to another startup, to a startup, and then I went through an exponential phase. I was very happy,
+
+233
+00:22:24,240 --> 00:22:28,960
+but you know, I wanted more job security. I wanted to experience something different. And then it
+
+234
+00:22:28,960 --> 00:22:34,480
+was when, you know, I went to Bloomberg and that kind of steady build, you know, my path to
+
+235
+00:22:34,480 --> 00:22:38,560
+engineering manager. But as you can see, when I became an engineering manager, things started
+
+236
+00:22:38,560 --> 00:22:46,680
+going down. You know, I was, me and my family, we were affected by the pandemic. And it was tough
+
+237
+00:22:46,680 --> 00:22:52,280
+years, right? Even though my performance at work didn't, wasn't affected. But, you know,
+
+238
+00:22:52,280 --> 00:22:57,840
+my mental health, my family, you know, it was very hard for us to live abroad and having people,
+
+239
+00:22:57,840 --> 00:23:03,920
+the people that were very important for us, you know, very far. So then I started to affect my,
+
+240
+00:23:03,920 --> 00:23:09,960
+my personal life and, you know, in general, my career. So that's the deep that you see. At that
+
+241
+00:23:09,960 --> 00:23:14,720
+point, you know, I decided to talk to my manager and told them, like, you know, I would like to
+
+242
+00:23:14,720 --> 00:23:18,960
+move back to my country. I would like to move back to Spain. They were very supportive and they
+
+243
+00:23:18,960 --> 00:23:23,800
+gave me the opportunity to work from here remotely. The only thing is I cannot be an engineering
+
+244
+00:23:23,800 --> 00:23:28,640
+manager while my whole team is located in London and go to the office and all these things. So I
+
+245
+00:23:28,640 --> 00:23:36,080
+took the opportunity. But obviously, this is not going to make this last stage to step up that
+
+246
+00:23:36,080 --> 00:23:43,960
+quickly, right? So as every career moved, when this happened, I was very motivated because it was a
+
+247
+00:23:43,960 --> 00:23:50,160
+new set of opportunities for me. Why? Because I will be able to pioneer change, right? We are only,
+
+248
+00:23:50,160 --> 00:23:55,880
+I don't know, like a hundred people in the whole company who are working remotely. So I will be
+
+249
+00:23:55,880 --> 00:24:01,640
+able to influence a cultural change inside a company that predominantly work, you know,
+
+250
+00:24:01,640 --> 00:24:07,200
+co-located to show them that we can be, you know, effective working remotely from different
+
+251
+00:24:07,200 --> 00:24:13,120
+locations. I can use my experience as an engineering manager to be a better individual
+
+252
+00:24:13,120 --> 00:24:18,840
+contributor. And I will try to, you know, influence that culture change in the company. It's a big
+
+253
+00:24:18,840 --> 00:24:26,400
+challenge, but I like it. Some conclusions for those who, you know, were sleeping until now. Wake
+
+254
+00:24:26,400 --> 00:24:33,560
+up, please. So I would like to say that, you know, career-side dynamic and flexible. You always
+
+255
+00:24:33,560 --> 00:24:39,120
+have a lot of different paths, opportunities to do. We, I think we are all very lucky to be in such a
+
+256
+00:24:39,120 --> 00:24:48,120
+dynamic industry. And we have to take advantage of that. The next thing is stepping down or career
+
+257
+00:24:48,120 --> 00:24:54,160
+moves can boost your career. Every time I stepped down, it was a big motivational factor for me
+
+258
+00:24:54,160 --> 00:25:02,280
+that helped me to grow and learn more. Next thing is if we put things into perspective, your career
+
+259
+00:25:02,280 --> 00:25:06,560
+is one-eighth of your life. It's an important part of it, but there are so many things that can
+
+260
+00:25:06,560 --> 00:25:13,440
+affect your career. So not everything can be your career. And last thing is be honest about yourself
+
+261
+00:25:13,440 --> 00:25:18,800
+and what you value the most. In my case, there were these two little goals that have made me be at
+
+262
+00:25:18,800 --> 00:25:24,840
+the top of my career. Thank you very much. And if you have any questions, I will gladly answer them.
+
+263
+00:25:24,840 --> 00:25:33,440
+Thank you very much, Juan. That was a really, really cool talk. We have time for some questions.
+
+264
+00:25:33,440 --> 00:25:40,760
+Do you have one? Okay. Thank you very much. That was an excellent talk. I was wondering whether
+
+265
+00:25:40,760 --> 00:25:47,160
+you faced any negative judgments or negative perceptions about what can be perceived as a step
+
+266
+00:25:47,160 --> 00:25:56,960
+down within your career? I think it's a little bit more personal, not from outside. I remember when
+
+267
+00:25:56,960 --> 00:26:05,000
+I joined Bloomberg, at the same time, I was feeling like, is this the right move? Everyone around me
+
+268
+00:26:05,000 --> 00:26:12,400
+is much younger than me. And I was feeling at the beginning a little bit out of place. So it was more
+
+269
+00:26:12,400 --> 00:26:19,400
+like personal misconceptions rather than from the outside. And I think those are hard to fix.
+
+270
+00:26:19,400 --> 00:26:34,680
+Thank you. I'm curious that you presented like going from an engineer manager to IC as a
+
+271
+00:26:34,680 --> 00:26:41,600
+stepping down. Whereas I think this can be demotivating for some people saying, okay, I go to a
+
+272
+00:26:41,600 --> 00:26:47,280
+lower level. Also the pay perhaps can be lower. So it can be difficult for people. What I'm seeing
+
+273
+00:26:47,280 --> 00:26:55,360
+more often is having two tracks, an engineer manager and IC, and being able to be useful for the
+
+274
+00:26:55,360 --> 00:27:02,920
+company at the same level, but in a different way. So what do you think about this split? This is
+
+275
+00:27:02,920 --> 00:27:09,800
+something that you think can be useful for helping people, not seeing changing roles as something
+
+276
+00:27:09,800 --> 00:27:20,120
+bad like you're getting worse? Yeah, that's the whole point of the presentation. This is not such a
+
+277
+00:27:20,120 --> 00:27:27,080
+thing like stepping down. It's your own perception. For me, going to being an IC now, I see a career
+
+278
+00:27:27,080 --> 00:27:32,840
+promotion to be honest. I'm much more happy. I'm going to do things that I haven't been doing in the
+
+279
+00:27:32,840 --> 00:27:37,200
+last few years. I will be in an environment that will help me to continue learning and growing.
+
+280
+00:27:37,200 --> 00:27:43,720
+You put all these things into balance and then you make your own decision. Maybe for some people
+
+281
+00:27:43,720 --> 00:28:09,200
+it might be like stepping down. For me, it wasn't. And we have another question here. What advice could you give to somebody that has changed of career that comes from a different area?
+
+282
+00:28:09,200 --> 00:28:38,200
+How do you manage the reaction from looking at a job? So I think when someone, I don't know, like doing a bootcamp and change career and go to engineering, they come with a lot of value. Sometimes for the teams to diversify them, it's very important to have someone who has changed their job.
+
+283
+00:28:38,200 --> 00:28:57,200
+It's important to have someone who thinks a little bit different or who can have a different opinion. So I think you can find the advantage for that. With rejection, I think when you go through a career change or an industry change, you need to target very well where you want to work.
+
+284
+00:28:57,200 --> 00:29:13,200
+Because there will be companies that value a lot what you bring, but there will be other companies that they will be much more focused on, I just want this technology. So try to do your research and select those companies who really value what you can bring to them.
+
+285
+00:29:13,200 --> 00:29:34,200
+And we have another question here. Hello. I want to ask you, what do you think you step down in part of your life? I think you never step down because every day you stay learning and going up and growth and...
+
+286
+00:29:34,200 --> 00:29:53,200
+I think you never step down. Thank you. That's the point of the presentation, right? You think as me, but there might be people who think otherwise. There are some industries that are so focused on where you are at, what is your job position.
+
+287
+00:29:53,200 --> 00:30:07,200
+Actually, Pablo was helping me with the presentation and we kind of have a joke with these new career titles that there are like software craftsman level 35 and he's like, okay, what does that mean? At the end of the day, we are all software engineers.
+
+288
+00:30:07,200 --> 00:30:13,200
+The fact that you have that job title doesn't mean much to me. Maybe for them they do.
+
+289
+00:30:13,200 --> 00:30:29,200
+I miss one part, the money part, because the title is like, yeah, this is my badge and something that you could be defined by that, but the reality is most of us, or at least if not all, we work for money.
+
+290
+00:30:29,200 --> 00:30:47,200
+That's another step if you step up or step down and you could get to a lead engineer in a small company and jump to a big company and the wages are pretty different. What are more or less the question is, can you get more context about it?
+
+291
+00:30:47,200 --> 00:31:07,200
+Money is one of the values that you will combine for the blue light. I can tell you that both times I step down, my salary was cut and that's something that you are willing to do. If you think that that will help you to continue going up, that's your own decision.
+
+292
+00:31:07,200 --> 00:31:18,200
+But yeah, it's what you value. If you value money the most, you know.
+
+293
+00:31:18,200 --> 00:31:41,200
+Yeah, we didn't money. That's the conclusion. I think that we are running out of time. I'm pretty sure that many of you already have maybe most questions, so maybe you want to catch one around the conference and maybe ask other questions that maybe you were too afraid to ask. So thank you very much.
+
+294
+00:31:48,200 --> 00:31:53,200
+.
+

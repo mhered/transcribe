@@ -1,0 +1,1088 @@
+1
+00:00:00,000 --> 00:00:22,300
+Vamos a hablar de cómo optimizar un API que estén de RF cuando eso empieza a darnos
+
+2
+00:00:22,300 --> 00:00:23,980
+por el problema de rendimiento.
+
+3
+00:00:23,980 --> 00:00:29,040
+Podemos hacer un proyecto que no tenga mucha demanda, no sea muy complejo y demás y puede
+
+4
+00:00:29,040 --> 00:00:35,200
+vivir perfectamente tal cual sale por defecto de RF que nos ayuda un montón.
+
+5
+00:00:35,200 --> 00:00:39,840
+Pero, claro, cuando la cosa va a mayores o la complejidad de la API crece y demás
+
+6
+00:00:39,840 --> 00:00:42,960
+podemos encontrarnos ciertos cuello de botella.
+
+7
+00:00:42,960 --> 00:00:44,960
+La charla se va a estructurar.
+
+8
+00:00:44,960 --> 00:00:52,120
+He traído como 10 casos de posible problema y posible solución que me he ido encontrando
+
+9
+00:00:52,120 --> 00:00:57,200
+a lo largo de muchos años trabajando en proyectos de mayor o menor tamaño.
+
+10
+00:00:57,200 --> 00:01:00,320
+Entonces, vamos a empezar por el primero.
+
+11
+00:01:00,320 --> 00:01:05,800
+El primero sería cuando podemos tener un empoin de un uso masivo, un solo empoin, vamos a
+
+12
+00:01:05,800 --> 00:01:08,080
+pensar y me voy a poner un caso concretito.
+
+13
+00:01:08,080 --> 00:01:13,440
+Un empoin que sea muy básico con poco cálculo que nos devuelve unas pocas columnas de la
+
+14
+00:01:13,440 --> 00:01:14,440
+base de datos.
+
+15
+00:01:14,440 --> 00:01:19,080
+Imaginamos que es simplemente un empoin que consulta cómo está el estado de un evento
+
+16
+00:01:19,080 --> 00:01:24,200
+o el estado de la caja que, vamos a ver si se lo devuelve, si está en un estado y la
+
+17
+00:01:24,200 --> 00:01:27,760
+fecha de última actualidad, no sé, tres, cuatro cosas fáciles.
+
+18
+00:01:27,760 --> 00:01:34,080
+Una cosa que tú la desarrollas, la prueba si te tarda 130 milisegundos, 140, algo que
+
+19
+00:01:34,080 --> 00:01:36,760
+a nivel usuario es imperceptible.
+
+20
+00:01:36,760 --> 00:01:42,960
+Entonces sería un empoin que a priori no tiene porque dar mucho problema, pero de buena
+
+21
+00:01:42,960 --> 00:01:47,000
+suerte primera, veas cómo el uso de ese empoin va creciendo de forma muy bestial porque
+
+22
+00:01:47,000 --> 00:01:52,320
+todos los usuarios lo usan continuamente y por tonto que parezca la infraestructura
+
+23
+00:01:52,320 --> 00:01:53,320
+se resiente.
+
+24
+00:01:53,320 --> 00:01:58,400
+Para el usuario va rápido a priori hasta que la infraestructura se resiente y puede
+
+25
+00:01:58,400 --> 00:01:59,400
+morir.
+
+26
+00:01:59,400 --> 00:02:04,000
+Soluciones que pueden darse ante este caso.
+
+27
+00:02:04,000 --> 00:02:09,520
+Por una parte, sería en las cuériset previas a ese serializador usar el only, porque puede
+
+28
+00:02:09,520 --> 00:02:13,400
+ser que estemos devolviendo solo dos, tres campos de un modelo, pero ese modelo tenga
+
+29
+00:02:13,400 --> 00:02:18,640
+muchas columnas o columnas con binarios, columnas con textfield que tienen muchos datos y por
+
+30
+00:02:18,640 --> 00:02:23,520
+defecto los cuériset de Django que hacen una select de todas las columnas de la tabla,
+
+31
+00:02:23,520 --> 00:02:27,920
+con lo cual a lo mejor nos estamos trayendo para pintar eso un montón de información
+
+32
+00:02:27,920 --> 00:02:33,760
+de base de datos hacia Python y desde Python solo cogemos dos de esos datos y es lo que
+
+33
+00:02:33,760 --> 00:02:35,520
+devolvemos al serializador.
+
+34
+00:02:35,520 --> 00:02:40,680
+Oye pues, usemos el only para asegurarnos que desde la base de datos solo vienen esos dos
+
+35
+00:02:40,680 --> 00:02:42,560
+campos, no viene el resto.
+
+36
+00:02:42,560 --> 00:02:49,680
+Y por otra parte, a nivel del serializer podríamos poner un rillonly fields igual a fields.
+
+37
+00:02:49,680 --> 00:02:51,560
+¿Qué conseguimos con esto?
+
+38
+00:02:51,560 --> 00:02:59,200
+Esto es una especie de optimización que se ve rara vez, pero básicamente si el sésil
+
+39
+00:02:59,200 --> 00:03:03,840
+elizador es de solo lectura, porque estamos usándolo para consultar eso, cuando tú los
+
+40
+00:03:03,840 --> 00:03:09,920
+campos no los tienes ridonly, por defecto Django, serializer y demás ejecutas un método de
+
+41
+00:03:09,920 --> 00:03:10,920
+validación.
+
+42
+00:03:10,920 --> 00:03:14,840
+Y entonces estamos validando campos que ya de por si vienen de la base de datos, que
+
+43
+00:03:14,840 --> 00:03:20,120
+ya están validados, ya se guardaron validados, pero el serializer por defecto los valida.
+
+44
+00:03:20,120 --> 00:03:25,080
+Sobre unos cuantos ciclos de CPU como aquel que dice, pero cuando vamos a un uso masivo
+
+45
+00:03:25,080 --> 00:03:26,720
+esos ciclos se notan.
+
+46
+00:03:26,720 --> 00:03:30,720
+Nosotros el quitar, el poner el ridonly fields igual a fields a lo mejor te baja el tiempo
+
+47
+00:03:30,720 --> 00:03:35,200
+de cómputo de serialización, ya no te digo flujo completo del stack desde que entra a
+
+48
+00:03:35,200 --> 00:03:38,680
+petición hasta que sale, sino lo que es la etapa de serialización, al mejor pasa de
+
+49
+00:03:38,680 --> 00:03:45,440
+ser 10 a ser 2, porque te acaba de quitar un montón de validación.
+
+50
+00:03:45,440 --> 00:03:49,840
+Vamos a suponer ahora un serializador que se realiza un montón de información, un montón
+
+51
+00:03:49,840 --> 00:03:54,360
+de información con serializadores sanidados con la raíz que cada posición vuelve a serializar
+
+52
+00:03:54,360 --> 00:03:58,920
+es decir, al final algo que se realiza pues 3, 4 megas de información porque se vuelve
+
+53
+00:03:58,920 --> 00:04:01,200
+mucha información que es necesaria serializar.
+
+54
+00:04:01,200 --> 00:04:08,120
+Entonces vamos a ver que una sola ejecución, mejor son un par de segundos de endpoint con
+
+55
+00:04:08,120 --> 00:04:11,400
+lo cual es un endpoint pesado.
+
+56
+00:04:11,400 --> 00:04:16,960
+Si estamos en esa situación lo primero es tirar, bueno de lo básico que todos conocemos,
+
+57
+00:04:16,960 --> 00:04:22,160
+que es tirar de select related y prefetch related, vale para que no lo sepa que busque
+
+58
+00:04:22,160 --> 00:04:26,520
+lo que es esto, lo que intenta esto es ir mucho menos a base dato y traerse de golpe
+
+59
+00:04:26,520 --> 00:04:28,160
+muchas cosas.
+
+60
+00:04:28,160 --> 00:04:32,920
+Si tengo que pintar una raíz de 200 posiciones, cada posición tenga un modelo de serialización
+
+61
+00:04:32,920 --> 00:04:40,680
+por defecto Django Resfringor iría uno a uno leyendo ese modelo pintándole cosas así,
+
+62
+00:04:40,680 --> 00:04:41,920
+siempre uno a uno.
+
+63
+00:04:41,920 --> 00:04:45,600
+Con este tipo de cosas nos traemos de golpe en base de datos mucha más información y
+
+64
+00:04:45,600 --> 00:04:48,600
+entonces pues optimizamos los accesos a datos.
+
+65
+00:04:48,600 --> 00:04:54,280
+Y también esto de buena primera te multiplica o te divide mejor dicho por 10 muchos tiempos
+
+66
+00:04:54,280 --> 00:04:56,040
+en un nodo.
+
+67
+00:04:56,040 --> 00:05:00,640
+De nuevo podemos hacer los ridos li files igual a files para que eso funcione y he llegado
+
+68
+00:05:00,640 --> 00:05:04,480
+a tener que hacer incluso caché en memoria para ciertos nodos.
+
+69
+00:05:04,480 --> 00:05:09,000
+A lo mejor tenemos modelos serializadores que son pequeños pero son la típica tabla
+
+70
+00:05:09,000 --> 00:05:13,160
+auxiliar que te dice imagínate no, pues el IDE del estado, el nombre del estado, pero
+
+71
+00:05:13,160 --> 00:05:18,680
+que eso está vinculado a muchos serializadores que llevan como su estado y su estado y su
+
+72
+00:05:18,680 --> 00:05:23,340
+estado y al final el estado ok es como que se está yendo a la base de datos y serializando
+
+73
+00:05:23,340 --> 00:05:29,080
+la misma cosa 3.000 veces cuando el resultado de serialización es el que es para el estado
+
+74
+00:05:29,080 --> 00:05:32,640
+y de 3 el string de serialización es el que es.
+
+75
+00:05:32,640 --> 00:05:37,200
+Entonces ahí lo que te puede hacer es cacharte en memoria para esos serializadores, se usan
+
+76
+00:05:37,200 --> 00:05:43,000
+mucho decir bueno he serializado el IDE 3 por el resultado me lo guardo aquí en memoria
+
+77
+00:05:43,000 --> 00:05:47,400
+y si me piden reserializar otra vez el modelo IDE 3 de esta misma cosa lo devuelvo directamente
+
+78
+00:05:47,400 --> 00:05:48,400
+y no se realizo nada.
+
+79
+00:05:48,400 --> 00:05:52,040
+Pues eso de buena primera también empieza a ganar.
+
+80
+00:05:52,040 --> 00:05:56,520
+Vamos a suponer que tenemos un serializador que tiene muchos usos, muchos usos me refiero
+
+81
+00:05:56,520 --> 00:06:00,600
+que es un mismo serializador se usa desde diferentes en points para diferentes cosas por ejemplo
+
+82
+00:06:00,600 --> 00:06:06,400
+quiero saber el curren user quiero saber si este usuario está activo quiero saber diferentes
+
+83
+00:06:06,400 --> 00:06:11,760
+cosas que usamos al final pues en point parecidos pero que al final el serializador es el serializador
+
+84
+00:06:11,760 --> 00:06:13,400
+y user vale.
+
+85
+00:06:13,400 --> 00:06:19,120
+En ese caso fijaos que tenemos en points que al final me está renderizando un montón
+
+86
+00:06:19,120 --> 00:06:23,120
+de información de un usuario y a lo mejor yo en este caso concreto solo necesitaba el
+
+87
+00:06:23,120 --> 00:06:27,840
+nombre y el mail para pintarlo en la cabecera pero como ese en point devuelven ese serializador
+
+88
+00:06:27,840 --> 00:06:28,840
+pues no se realiza todo.
+
+89
+00:06:28,840 --> 00:06:33,800
+Pues bueno posibles soluciones si eso no está dando ya problema de rendimiento pues
+
+90
+00:06:33,800 --> 00:06:37,320
+primero de doblarlo en varios serializadores oye pues si este en point tengo en point
+
+91
+00:06:37,320 --> 00:06:41,520
+para pedir el nombre y el mail pues creas un en point para eso con un serializador para
+
+92
+00:06:41,520 --> 00:06:47,040
+eso que devuelva dos datos y no te genera un serializador de 500k cuando el uso que se
+
+93
+00:06:47,040 --> 00:06:49,560
+hace de la pie es ese ¿no?
+
+94
+00:06:49,560 --> 00:06:55,360
+Si usted se puede usar serializadores dinámicos existe este concepto en el que quien usa la
+
+95
+00:06:55,360 --> 00:06:59,680
+API puede decir vale yo sé que eso puede devolver toda esta información pero quiero
+
+96
+00:06:59,680 --> 00:07:02,920
+ejecutar ese en point pero te voy a pasar por el parámetro que solo quiero estos dos
+
+97
+00:07:02,920 --> 00:07:07,840
+campos para que internamente no se le lice todo no vayas a datos a por todo beso solo
+
+98
+00:07:07,840 --> 00:07:13,440
+a por eso y existe bueno hay librerías que te hacen los dynamics serializer para conseguir
+
+99
+00:07:13,440 --> 00:07:18,420
+que desde front o desde la consumidor API pueda especificar que necesitas y no se le
+
+100
+00:07:18,420 --> 00:07:25,880
+le lice todo tenemos serializadores de lectura escritura aquí lo que lo que puede ocurrir
+
+101
+00:07:25,880 --> 00:07:31,960
+es que cada vez que vamos a crear algo por defecto yango resfraing what lo que hace es
+
+102
+00:07:31,960 --> 00:07:39,040
+lo creas el resultado lo serializa y lo devuelve ese es el flujo habitual imaginamos que ese
+
+103
+00:07:39,040 --> 00:07:42,320
+serializado que devuelve pues un serializado también pesado que a más o tal un segundo
+
+104
+00:07:42,320 --> 00:07:46,960
+en serializar porque lleva mucha información y es yo cuando creo yo con que me des el ID
+
+105
+00:07:46,960 --> 00:07:53,040
+me vale para yo con ese idea hacer algo no pues ahí una opción puede ser tener un serializador
+
+106
+00:07:53,040 --> 00:07:57,320
+de escritura y un serializador de lectura de forma que el de escritura por defecto te
+
+107
+00:07:57,320 --> 00:08:00,880
+devuelve solo lidé que con eso ya tienes y después ya si quiero yo toda información
+
+108
+00:08:00,880 --> 00:08:08,480
+ya ejecutar el de lectura no sería esa solución de forma que en escritura tenemos los write
+
+109
+00:08:08,480 --> 00:08:12,280
+only devolviendo el ID y en lectura pues la solución que habíamos visto en el punto
+
+110
+00:08:12,280 --> 00:08:17,040
+2 o de nuevo usar los dinámicos serializer para poder escribir y después de decidir
+
+111
+00:08:17,040 --> 00:08:22,760
+mi solo lidé de vuelta no menos de esto vamos a suponer ahora que tenemos en point con
+
+112
+00:08:22,760 --> 00:08:27,960
+con cálculo intenso vale que antes de llegar ni siquiera a serializar pues algunos datos
+
+113
+00:08:27,960 --> 00:08:32,840
+provienen de unas ápices externas con lo cual se tarda tiempo en conseguirlo hay que realizar
+
+114
+00:08:32,840 --> 00:08:37,240
+cuélis complejas que también tardan tiempo después hay que calcular datos con todo eso
+
+115
+00:08:37,240 --> 00:08:41,400
+y al final eso acumulas tiempo acumulas tiempo y lo mejor y bueno después estariendo 6 7
+
+116
+00:08:41,400 --> 00:08:47,640
+segundos pues bueno es un empo y lento pero si te vas a 40 50 60 segundos porque que
+
+117
+00:08:47,640 --> 00:08:52,280
+se llamadas externas con esa llamada hacer algo ahí empieza a correr riesgo de entrar
+
+118
+00:08:52,280 --> 00:08:58,040
+en las políticas de time out de los servidores de los frontales y demás con lo cual ante
+
+119
+00:08:58,040 --> 00:09:03,040
+este tipo de situaciones y también para no tener un usuario esperando ahí a ver si se
+
+120
+00:09:03,040 --> 00:09:08,600
+ejecuta o no lo que habría que hacer es por una parte pues lo que se pueda cachear en
+
+121
+00:09:08,600 --> 00:09:13,640
+memoria o en un redis o algo así pues hagas en lo que se pueda lo que tenga sentido pero
+
+122
+00:09:13,640 --> 00:09:17,760
+si no habría que estructurar ese proceso contaré de segundo plano y a mejor de doblar un empo
+
+123
+00:09:17,760 --> 00:09:23,640
+en dos para decir bueno un en point para que me des la solicitud de géneramente información
+
+124
+00:09:23,640 --> 00:09:27,960
+y otro en point para oye cómo va eso de forma que al usuario se le pueda decir bueno pues
+
+125
+00:09:27,960 --> 00:09:32,200
+esto está trabajando se hace la comprobación y ya no caes en el problema de que te pueda
+
+126
+00:09:32,200 --> 00:09:39,240
+tener un time out es en point o cualquier dato de esto tenemos en point masivos pero
+
+127
+00:09:39,240 --> 00:09:45,360
+de uso común o de o que el resultado no depende de la sesión por decirlo de de alguna forma
+
+128
+00:09:45,360 --> 00:09:51,880
+es como que todos los usuarios o todos los clientes que usan el en point independiente
+
+129
+00:09:51,880 --> 00:09:57,000
+de que sea lo que devuelve en lo mismo vale puede ser por ejemplo si es simplemente oye
+
+130
+00:09:57,000 --> 00:10:01,760
+cómo está el estado de carga de tal cosa y bueno sea quien sea el estado es el que es
+
+131
+00:10:01,760 --> 00:10:08,080
+no hay más bueno si es un en point de uso masivo resulta que hay muchos usuarios o muchos
+
+132
+00:10:08,080 --> 00:10:12,800
+clientes a p consumiendo en point que devuelve sistemáticamente lo mismo hasta que el estado
+
+133
+00:10:12,800 --> 00:10:19,520
+del servidor cambia con lo cual ante ante ese tipo de en point cuando vemos que no depende
+
+134
+00:10:19,520 --> 00:10:23,880
+de sesión no depende de su usuario y se está usando de forma masiva lo ideal usar la caché
+
+135
+00:10:23,880 --> 00:10:27,480
+del del propio servidor o sea ya ni si que no entra ni siquiera lo que doble se jello
+
+136
+00:10:27,480 --> 00:10:32,960
+que no entra ni siquiera a toda la pila de yango que se quede directamente en la pache
+
+137
+00:10:32,960 --> 00:10:38,280
+en el en jinx o en el frontal que tengamos para eso por su uso sería usar el método
+
+138
+00:10:38,280 --> 00:10:43,400
+decorator que es el caché page dentro de yango en el que podemos decir oye lo que devuelve
+
+139
+00:10:43,400 --> 00:10:48,240
+aquí que hachámele un minuto algo así o 30 segundos como si son 10 segundos al final
+
+140
+00:10:48,240 --> 00:10:53,200
+si cachéas 10 segundos y te lo están machacando pues cada 10 segundos haces un solo cálculo
+
+141
+00:10:53,200 --> 00:10:58,080
+el resto se lo comerá el frontal que el que está atendiendo a todos los a todos los la
+
+142
+00:10:58,080 --> 00:11:03,040
+llamadas a pi o bueno otra opción sería en una caché raris pero ahí ya si estaríamos
+
+143
+00:11:03,040 --> 00:11:09,960
+entrando dentro de la pila de yango vale el primer el primer caso sería el mejor si tenemos
+
+144
+00:11:09,960 --> 00:11:14,680
+cueris a columnas sin índices bueno aquí ya sabemos la solución hay que crear índices
+
+145
+00:11:14,680 --> 00:11:18,200
+vale porque esto es muy típico por defecto yango no te crea índices te crea los índices
+
+146
+00:11:18,200 --> 00:11:23,080
+de las primarias poco más y claro como todo te lo hace tan fácil pues tú vas tirando
+
+147
+00:11:23,080 --> 00:11:28,400
+modelos creados realizadores metas las vistas a que yo funciona para adelante cuando empieza
+
+148
+00:11:28,400 --> 00:11:32,320
+a usarse aquello las puestos filter fiel se las puesto cosas lo solo empieza a usarlo y
+
+149
+00:11:32,320 --> 00:11:38,680
+oye pues que yo no va mal pero que está tardando 800 milis para un empuín que tampoco es gran
+
+150
+00:11:38,680 --> 00:11:43,480
+cosa y bueno lo que pasa es que el verdad que nos podemos acomodar a que parece que yango
+
+151
+00:11:43,480 --> 00:11:49,560
+te lo hace todo pero bueno lo hace todo medianamente bien pero después hay que afinar con lo cual
+
+152
+00:11:49,560 --> 00:11:53,440
+le puede estar bien repasarse bien los filter fías que tenemos por dónde se están atacando
+
+153
+00:11:53,440 --> 00:11:58,320
+por dónde se están haciendo cueris para poder un poco optimizar la creación de esos índices
+
+154
+00:11:58,320 --> 00:12:03,240
+y crear índices porque bueno primera los tiempos se dividen por 100 o sea y esto suele
+
+155
+00:12:03,240 --> 00:12:07,480
+pasar gracias cuando hay problema de rendimiento es que cueris están haciendo y cuáles son
+
+156
+00:12:07,480 --> 00:12:14,440
+los índices no tenemos cueris muy compleja que va a depender un poco de la base de datos
+
+157
+00:12:14,440 --> 00:12:18,200
+del motor de base datos que tengamos detrás no pero cuando hablamos de tener un gran número
+
+158
+00:12:18,200 --> 00:12:21,720
+de tablas es decir la típica cueri que empezamos a poner el nombre de un modelo que un bajo
+
+159
+00:12:21,720 --> 00:12:25,560
+que un bajo otro modelo que un bajo y un bajo otro que un bajo porque oye hay que comprobar
+
+160
+00:12:25,560 --> 00:12:30,600
+cosas a diferentes niveles acabas de unir con los sinlo con los exclúde los filter y no
+
+161
+00:12:30,600 --> 00:12:35,760
+sé qué pues en total llevas ahí 10 tablas dentro de lo que sean en inner joints y de
+
+162
+00:12:35,760 --> 00:12:40,880
+la casualidad que tres o cuatro de esas tablas son más todontes de tablas por resulta que
+
+163
+00:12:40,880 --> 00:12:45,360
+le están lanzando una cueri al motor de base datos pues que le puede hacer daño en mi
+
+164
+00:12:45,360 --> 00:12:53,320
+caso concreto he visto muchas ocasiones como un mayescuel o un posgre se quedan muertos
+
+165
+00:12:53,320 --> 00:12:56,080
+se han muertos porque empieza a saturar un poquito la memoria es verdad que van tirando
+
+166
+00:12:56,080 --> 00:13:04,560
+pero ves como a que yo darda un montón en resolver la cueri y a veces la solución que
+
+167
+00:13:04,560 --> 00:13:09,600
+ha sido funcional es dividir la cueri en etapas simplificar un poco el trabajo a lanzar una
+
+168
+00:13:09,600 --> 00:13:13,400
+consulta tan gorda a lo mejor a un motor de base de datos que no está tirando de eso y
+
+169
+00:13:13,400 --> 00:13:16,920
+a lo mejor lo dividimos en varias etapas de cada etapa sacamos los ideas que nos sirven
+
+170
+00:13:16,920 --> 00:13:21,560
+para filtrar en la siguiente y es como así a priori bueno tengamos en cuenta siempre
+
+171
+00:13:21,560 --> 00:13:26,440
+que la optimización y la mantenibilidad nunca van de la mano o sea cuando optimizamos
+
+172
+00:13:26,440 --> 00:13:31,880
+perdemos algo en este caso pues mantenibilidad claro aquí es como que queda mucho más pro
+
+173
+00:13:31,880 --> 00:13:36,480
+pues tener una cueri bonita aunque sea grande y es una sola cueri en este caso lo de dobla
+
+174
+00:13:36,480 --> 00:13:41,600
+en tres etapas es menos bonito pero a mejor algo que se temoría porque te da incluso
+
+175
+00:13:41,600 --> 00:13:46,680
+time a otro la ram se te iba de una primera pues bueno oye pues la cosa anda y en segundo
+
+176
+00:13:46,680 --> 00:13:55,360
+segundo y medio pues ha resuelto y funciona después podemos tener tablas con columnas
+
+177
+00:13:55,360 --> 00:14:01,600
+muy pesadas vale y nosotros no estamos realizando dichas columnas por qué mejor tenemos oye
+
+178
+00:14:01,600 --> 00:14:06,040
+por el modelo arquitectónico que se ha hemos decidido que dentro de la propia tabla vamos
+
+179
+00:14:06,040 --> 00:14:11,480
+a tener la tabla de alumnos tenemos un blog con su foto ahí metida no usamos el media
+
+180
+00:14:11,480 --> 00:14:16,040
+ni nada por cualquier decisión no con lo cual bueno si tenemos la tabla de alumnos
+
+181
+00:14:16,040 --> 00:14:21,080
+y tenemos ahí el blog metido claro que ocurre aquí que si no hacemos nada por defecto como
+
+182
+00:14:21,080 --> 00:14:26,480
+he dicho al principio ya ango ante una cueri hace una select de todas sus columnas y ahora
+
+183
+00:14:26,480 --> 00:14:29,560
+yo estoy haciendo un empuente devuelve una lista de alumnos y solo devuelve su nombre
+
+184
+00:14:29,560 --> 00:14:34,360
+y su y su email podemos estar en un caso como el primero de todos no el primero que todo
+
+185
+00:14:34,360 --> 00:14:38,800
+dije que era un serializador sencillo pero uso masivo y por eso nos está penalizando
+
+186
+00:14:38,800 --> 00:14:42,400
+este caso no uso masivo es un serializador que devuelve dos campos de un modelo y poco
+
+187
+00:14:42,400 --> 00:14:47,760
+más y lo ejecutamos y aquí lo tarda una barbaridad que está pasando que nos estamos
+
+188
+00:14:47,760 --> 00:14:52,920
+trayendo de la base de datos todas las fotos binarias de todos los alumnos porque por defecto
+
+189
+00:14:52,920 --> 00:14:58,040
+se lo trae todo y después ya te se realizo estos dos campos que será lo ideal que cada
+
+190
+00:14:58,040 --> 00:15:04,000
+vez que creemos en un modelo un campo de tipo textfield un campo de tipo blog en general
+
+191
+00:15:04,000 --> 00:15:10,840
+o sea campos grandes siempre tengamos la precaución de usar el defer cada vez que hagamos queries
+
+192
+00:15:10,840 --> 00:15:15,200
+a esto ya podemos guardarnos el defer por defecto dentro del modelo para que quien lo
+
+193
+00:15:15,200 --> 00:15:20,280
+use lo aplique o cambiamos el el el manager que lleva el modelo para que se encargue de
+
+194
+00:15:20,280 --> 00:15:25,640
+esto ocurra con el defer lo que nos vamos a encargar es quitarnos esos campos de las
+
+195
+00:15:25,640 --> 00:15:31,520
+queries por defecto lo cual provoca que si los quiero usar vamos a provocar dos llamadas
+
+196
+00:15:31,520 --> 00:15:35,440
+no porque la primera llamada se traerá los campos que no son los dieters y después si
+
+197
+00:15:35,440 --> 00:15:41,280
+yo quiero usar la foto va a hacer otra llamada base de datos pero preferible eso que cuando
+
+198
+00:15:41,280 --> 00:15:44,560
+vayamos a traer un listado se traigan la foto de todos los alumnos entonces con el
+
+199
+00:15:44,560 --> 00:15:49,000
+defer solo se trae esto sería como le he puesto al only no son dos son dos cosas que hace
+
+200
+00:15:49,000 --> 00:15:52,960
+lo mismo pero al revés el only dice cuáles te traes y el defer dice cuáles no entonces
+
+201
+00:15:52,960 --> 00:15:57,960
+usas una o usas la otra cuando lo que queremos es excluir pocas cosas mejor dieters y lo que
+
+202
+00:15:57,960 --> 00:16:06,280
+queremos es incluir pocas cosas mejor el only cuando vamos a serializar id desde tablas
+
+203
+00:16:06,280 --> 00:16:10,560
+foránea esto es como que lo ves en el día a día siempre lo está viendo alguien pues
+
+204
+00:16:10,560 --> 00:16:15,440
+quiere pintar el id de la tabla foránea que a lo que está vinculado y siempre pone pues
+
+205
+00:16:15,440 --> 00:16:22,400
+el campo que sea y un bajo y un bajo y de para referirme a la columna id del modelo foráneo
+
+206
+00:16:22,400 --> 00:16:28,680
+realmente esto lo que provoca es un inner join entre una tabla y la otra hacer inner join
+
+207
+00:16:28,680 --> 00:16:33,880
+para sacar la columna id pero pensamos que la columna id ya la tengo en el modelo original
+
+208
+00:16:33,880 --> 00:16:39,280
+porque tengo la referencia tengo tengo ese puntero por decirlo así al final es usar
+
+209
+00:16:39,280 --> 00:16:44,000
+fiel id con un solo guión bajo que ese es el nombre de la variable que tiene la clave
+
+210
+00:16:44,000 --> 00:16:47,960
+foráneo en lugar del fiel guión bajo y un bajo id que lo que va a hacer un inner join
+
+211
+00:16:47,960 --> 00:16:54,400
+para tener mi id de la otra tabla que es el mismo que es y bueno todos son los 10 tips
+
+212
+00:16:54,400 --> 00:16:58,900
+que he traído y que os podía encontrar en algunos casos y si alguno se ha encontrado
+
+213
+00:16:58,900 --> 00:17:02,040
+alguna otra situación o tiene alguna duda sobre algo de lo que hemos visto le puede
+
+214
+00:17:02,040 --> 00:17:03,160
+ayudar aquí me tenéis
+
+215
+00:17:03,160 --> 00:17:33,120
+hay preguntas solo tenéis que levantar la mano
+
+216
+00:17:33,120 --> 00:17:38,680
+es el joven carlo muy buenas muchas gracias me llama la atención porque creo que no
+
+217
+00:17:38,680 --> 00:17:45,680
+lo he entendido bien en uno que habla una query en descomponerla como en dos pasos distinto
+
+218
+00:17:45,680 --> 00:17:52,280
+no sé si sé si te he seguido la lógica porque bueno mi mi intuición sería si tiene
+
+219
+00:17:52,280 --> 00:18:10,040
+una computación difícil de hacer que se cubra
+
+220
+00:18:10,040 --> 00:18:15,360
+si eso eso es lo que decían aunque queda mucho más pro hacer eso es decir yo yo soy muy de
+
+221
+00:18:15,360 --> 00:18:24,360
+que la base de datos gestión en los datos es decir todo lo que pueda hacer el motor de
+
+222
+00:18:24,360 --> 00:18:28,840
+base de datos y no tengas comunicación base de datos aplicación para mover datos o sea
+
+223
+00:18:28,840 --> 00:18:33,160
+cuando ves ese tipo de cosas ya te llama la atención porque dice esto no no va bien no
+
+224
+00:18:33,160 --> 00:18:37,080
+pero también ha encontrado muchas situaciones donde la query que le pasa a las bases de
+
+225
+00:18:37,080 --> 00:18:42,680
+datos es tan compleja y une tantas tablas que se le va de se le va de de ram al motor de
+
+226
+00:18:42,680 --> 00:18:48,200
+base de datos empieza a colapsarse y he llegado a ver eso que le lanzan la query y aquello
+
+227
+00:18:48,200 --> 00:18:53,520
+muere la base de datos muere no a mejor va tan atascada que va saliendo a duras penas
+
+228
+00:18:53,520 --> 00:18:58,880
+y a veces la solución ha pasado por sobre todo cuando hay tablas tan grandes a hacerlo
+
+229
+00:18:58,880 --> 00:19:03,160
+iner empieza a que yo a crecer y la solución ha tenido que pasar por decir bueno aunque
+
+230
+00:19:03,160 --> 00:19:08,320
+no sea la mejor decisión arquitectónica voy a lanzarle primero una sub query que me traiga
+
+231
+00:19:08,320 --> 00:19:11,960
+un conjunto de ideas que forman parte de la iner pero para ir quitándoles a complejidad
+
+232
+00:19:11,960 --> 00:19:15,720
+y al mejor la divide en dos etapas o entre etapas si es que demasiado compleja y de
+
+233
+00:19:15,720 --> 00:19:21,400
+buena primera eso echando porque ya las queries al motor de base de datos no son tan pesadas
+
+234
+00:19:21,400 --> 00:19:25,600
+por decirlo así a nivel de arquitectura software obviamente no es la solución que te diría
+
+235
+00:19:25,600 --> 00:19:31,080
+tú suele hacer esto así que lo ideal no no lo hagas así pero es verdad que por lo menos
+
+236
+00:19:31,080 --> 00:19:39,480
+a lo largo de los 8 o 10 años que he podido estar con Python este problema me lo he encontrado
+
+237
+00:19:39,480 --> 00:19:45,560
+de forma arbitraria como en cuatro proyectos diferentes y siempre ha sido cuando las queries
+
+238
+00:19:45,560 --> 00:19:50,840
+empezan a hacer iner yo en de 8 o 10 12 tablas con excludes con condiciones también extrañas
+
+239
+00:19:50,840 --> 00:19:55,440
+y cuando hay tablas de cierto volumen por medio es cuando empezan a quedarse fritos
+
+240
+00:19:55,440 --> 00:19:59,640
+la primera vez que te lo encuentras te cuesta como ingeniero llegar a la solución de decir
+
+241
+00:19:59,640 --> 00:20:04,120
+voy a partir esto es como parece que estoy matando un gatito por hacerlo pero es verdad
+
+242
+00:20:04,120 --> 00:20:09,840
+que fue partirlo y funcionar a la siguiente que ocurrió por yo siempre tengo problemas
+
+243
+00:20:09,840 --> 00:20:14,400
+con con tiemas de rendimiento siempre me cojo el punto query me sacó el SQL me lo llevo
+
+244
+00:20:14,400 --> 00:20:18,160
+el motor de base de datos vamos a depurar esto a ver qué le pasa esta query a ver a analizarla
+
+245
+00:20:18,160 --> 00:20:22,560
+y si le faltan índices vamos a ver por dónde por dónde le metemos a esto un poquito pero
+
+246
+00:20:22,560 --> 00:20:26,200
+verdad que algunas queries que son muy puñeteras porque a poco empiezan a tener ores o empiezan
+
+247
+00:20:26,200 --> 00:20:32,480
+a tener cosas así que ya no filtran tanto son filtran menos es cuando empiezan a sufrir
+
+248
+00:20:32,480 --> 00:20:38,560
+o ya te digo son momentos puntuales y cuando la query es compleja de más
+
+249
+00:20:48,240 --> 00:20:52,080
+si es que cuando se enciende ese este va a pagar
+
+250
+00:20:52,080 --> 00:21:03,720
+vale yo quería simplemente hacer bueno si vale yo quería hacer simplemente un
+
+251
+00:21:03,720 --> 00:21:11,560
+pequeño apunte y es que cuando se usan los serializer hay que tener en cuenta que el hecho
+
+252
+00:21:11,560 --> 00:21:20,520
+de usar el model serializer ya se pierda una performance brutal o sea si tienes que hacer
+
+253
+00:21:20,520 --> 00:21:26,880
+será el ser del ridon li casi que conviene más hacer serializer normales y definirlo campo a
+
+254
+00:21:26,880 --> 00:21:34,880
+campo como ridon li o incluso hacer un método a mano hay un artículo de haki venita que es un
+
+255
+00:21:34,880 --> 00:21:41,000
+un blogger de yang o súper famoso que tiene un artículo súper bueno que habla de cómo mejorar
+
+256
+00:21:41,000 --> 00:21:45,360
+casi en un 90 por ciento la performance sólo de la parte de serializer
+
+257
+00:21:45,360 --> 00:21:55,360
+reto si el model serializer es lo que dice al principio el yang te lo da todo todo va muy
+
+258
+00:21:55,360 --> 00:22:00,440
+fácil y a priori todo funciona hasta que te vas a entornos productivos y la cosa empieza a escalar
+
+259
+00:22:00,440 --> 00:22:05,480
+un poco y hay puntos de dolor y tienes que solucionarlo y ahí donde dice bueno no me vale solo el
+
+260
+00:22:05,480 --> 00:22:09,920
+estándar ya tienes que empezar según el caso a final para un sitio para otro y ya una mala
+
+261
+00:22:09,920 --> 00:22:14,920
+incluso devuelvo un Jason y ni lo uso ningún serializador pero bueno sea la mantenibilidad
+
+262
+00:22:14,920 --> 00:22:17,440
+como esto no va para un lado para el otro
+
+263
+00:22:25,720 --> 00:22:32,640
+buenas por aportar otra idea extra que me que se me dio el caso
+
+264
+00:22:34,040 --> 00:22:42,440
+si las escrituras tiene problemas de bloqueos porque muchas veces hay lox en las escrituras eso a
+
+265
+00:22:42,440 --> 00:22:48,880
+final te rientiza todo por lo tanto muchas veces conviene también tener una réplica de la base
+
+266
+00:22:48,880 --> 00:22:57,840
+de datos sólo lectura y enrutar las las llamadas a la pi de lectura por esa otra réplica y te
+
+267
+00:22:57,840 --> 00:22:59,840
+evita eso de los bloqueos
+
+268
+00:23:02,960 --> 00:23:09,640
+lo que eso se ha parecido también a tener a base de datos en modo réplica y demás o algo así
+
+269
+00:23:09,640 --> 00:23:14,160
+pero sí a finales que optimizar
+
+270
+00:23:16,760 --> 00:23:21,360
+alguien tiene alguna pregunta más que no sean comentarios mientras vamos a evitarlo y después
+
+271
+00:23:21,360 --> 00:23:25,520
+si no fuera lo que sea por el tema del tiempo alguien tiene alguna pregunta más
+
+272
+00:23:25,520 --> 00:23:40,080
+bien
+

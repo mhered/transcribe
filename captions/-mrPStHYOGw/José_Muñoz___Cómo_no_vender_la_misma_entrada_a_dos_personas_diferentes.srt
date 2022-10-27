@@ -1,0 +1,1444 @@
+1
+00:00:00,000 --> 00:00:20,060
+Buenas tardes y gracias por venir, sobre todo después de la comida que apetece echarse
+
+2
+00:00:20,060 --> 00:00:26,600
+un asistecito. Y bueno, os presento a José María Muñoz que os va a contar cómo nos
+
+3
+00:00:26,600 --> 00:00:29,880
+vendes la misma entrada de dos personas distintas. Vamos a darle un aplauso.
+
+4
+00:00:37,800 --> 00:00:40,680
+Bueno, muchas gracias por venir. Se me ayuden.
+
+5
+00:00:43,200 --> 00:00:45,880
+Por no soplar encima. Ahora mejor.
+
+6
+00:00:45,880 --> 00:00:53,640
+Ay, que parezca monica naranjo. Habla. Ahora se muere un poco mejor.
+
+7
+00:00:53,640 --> 00:01:03,680
+Bienvenido, muchas gracias por venir. Pues voy a contar un poco qué cosas pueden pasar para que
+
+8
+00:01:03,680 --> 00:01:07,560
+ocurran situaciones con la vender la misma entrada a dos personas diferentes.
+
+9
+00:01:07,560 --> 00:01:16,560
+Soy José María y trabajo como software engineer en TinyBert. Me podéis encontrar como
+
+10
+00:01:16,560 --> 00:01:22,720
+a robar colegías en Twitter. Cualquier pregunta o cualquier duda, no cortas en cualquier momento.
+
+11
+00:01:22,720 --> 00:01:28,320
+Y cualquier feedback que tengáis, si os ha gustado, si no os ha gustado, por favor ponenme en
+
+12
+00:01:28,320 --> 00:01:39,160
+la caja de Twitter. Por introducir un poco la charla, quiero hablar de este problema,
+
+13
+00:01:39,160 --> 00:01:45,080
+de las posibilidades que se puedan vender dos tiques a la misma persona. Entonces en este
+
+14
+00:01:45,080 --> 00:01:50,280
+contexto, voy a hablar un poco de la situación o voy a poner un poco en materia de lo que estamos
+
+15
+00:01:50,280 --> 00:01:54,840
+hablando. Vamos a hablar un poco sobre las transacciones en la base de datos, que en realidad es la
+
+16
+00:01:54,840 --> 00:02:02,240
+solución a este problema. Pero voy a pasar un poco por encima para pasar ya a los problemas y a
+
+17
+00:02:02,240 --> 00:02:06,680
+las soluciones, para no tanto largo de, oye, usar transacciones para esto, sino para hablaros un
+
+18
+00:02:06,680 --> 00:02:11,520
+poco de estas situaciones se pueden dar. Y justo por todas estas situaciones, o por las que podemos
+
+19
+00:02:11,520 --> 00:02:17,880
+llegar a necesitar transacciones. Y por último, comentaros un poco algunas soluciones que propone,
+
+20
+00:02:17,880 --> 00:02:22,240
+algunas base de datos, para que los problemas que os voy a exponer no ocurran, sino que podáis
+
+21
+00:02:22,240 --> 00:02:28,880
+solucionarlos a través de estas soluciones. Bueno, pues hablando del problema en cuestión de vender
+
+22
+00:02:28,880 --> 00:02:36,960
+tiquets, ya estamos listos, tenemos nuestra aplicación, estamos ya en ese punto, tenemos nuestro server
+
+23
+00:02:36,960 --> 00:02:43,200
+corriendo súper potente con Fastapi o el frango que queramos, tenemos la mejor base de datos que hay,
+
+24
+00:02:43,200 --> 00:02:47,960
+o la que está de moda, porque bueno, depende del momento, se coge uno, se coge otra, pero bueno,
+
+25
+00:02:47,960 --> 00:02:53,800
+tenemos nuestra base de datos, que es lo importante, una aplicación con un diseño mucho y por supuesto
+
+26
+00:02:53,800 --> 00:02:57,960
+tenemos los tiquets de los mejores eventos que hay, los tiquets que realmente la gente busca y por lo
+
+27
+00:02:57,960 --> 00:03:05,320
+que la gente va a nuestra aplicación. Bueno, pues, deberíamos empezar ya a usarla, ¿no? Tenemos que
+
+28
+00:03:05,320 --> 00:03:10,240
+tener en cuenta que pueden surgir problemas en nuestra aplicación, pueden pasar como cosas
+
+29
+00:03:10,240 --> 00:03:15,840
+relacionadas con que el hardware falle y los servidores se caigan, cosas como que la propia
+
+30
+00:03:15,840 --> 00:03:21,720
+aplicación falle en mitad del proceso y tengamos que tener en cuenta eso, la red se puede caer y se
+
+31
+00:03:21,720 --> 00:03:27,840
+puede cortar las operaciones en mitad del camino y por supuesto pueden ocurrir muchos problemas en
+
+32
+00:03:27,840 --> 00:03:32,960
+el momento en que tengamos muchos usuarios manipulando los datos de nuestra aplicación de forma
+
+33
+00:03:32,960 --> 00:03:37,000
+concurrente, a la vez, que son un solo usuario que haga muchas operaciones, podemos tener problemas,
+
+34
+00:03:37,000 --> 00:03:42,480
+entonces son cosas que tenemos que tener en cuenta ahora de abrir nuestra aplicación. También podemos
+
+35
+00:03:42,480 --> 00:03:47,680
+tener problemas en entornos distribuidos, ese es un mundo aparte y creo que lo dejaré para otra
+
+36
+00:03:47,680 --> 00:03:53,920
+charla porque no iba a ser posible atender a tantos problemas, pero que se veis que son problemas
+
+37
+00:03:53,920 --> 00:03:57,280
+muy interesantes también, pero que no lo vamos a atacar en esta charla, en esta charla vamos a
+
+38
+00:03:57,280 --> 00:04:01,280
+centrar un poquito más en problemas que se pueden dar en una solistancia, aunque estos mismos
+
+39
+00:04:01,280 --> 00:04:04,680
+problemas también se pueden dar en distribuidos, pero por no hablar de todo ese campo.
+
+40
+00:04:04,680 --> 00:04:12,160
+Centramos un poco en el tema de qué puede pasar cuando los datos son manipulados por muchos
+
+41
+00:04:12,160 --> 00:04:16,760
+usuarios, tenemos que tener en cuenta que en una aplicación de este tipo a lo mejor no,
+
+42
+00:04:16,760 --> 00:04:20,920
+a veces funcionar es muy loca, pero solo ya le he dicho que tengas congruentemente gente
+
+43
+00:04:20,920 --> 00:04:27,120
+chequeando tus eventos, gente chequeando sus tickets o los tickets que están libres, gente comprando
+
+44
+00:04:27,120 --> 00:04:31,520
+esos tickets o gente devolviendo esos tickets, tenemos que tener en cuenta que son aplicaciones
+
+45
+00:04:31,520 --> 00:04:35,720
+en torno en los que vamos a sufrir de muchas operaciones que pueden ocurrir a la vez.
+
+46
+00:04:35,720 --> 00:04:41,880
+Entonces, ¿cómo nos protegemos estas operaciones para que ocurran sin problemas?
+
+47
+00:04:41,880 --> 00:04:46,640
+Justo, transacciones. Voy a pasar un poco en las transacciones, por lo que comentaba antes,
+
+48
+00:04:46,640 --> 00:04:52,040
+quiero centrarme en los problemas que justifican el por qué puedes o no necesitar transacciones,
+
+49
+00:04:52,040 --> 00:04:56,680
+pero bueno, por refrescaros un poco el concepto de transacción y que nos aportan
+
+50
+00:04:56,680 --> 00:05:02,640
+justo en el problema que exponemos, van a ser utilidades que nos provean la base de datos
+
+51
+00:05:02,640 --> 00:05:06,400
+para proteger las operaciones que ocurren sobre los datos, de tal forma que nosotros desde las
+
+52
+00:05:06,400 --> 00:05:10,640
+aplicaciones no tengamos por qué preocuparnos de esos internals, de cómo van a ocurrir,
+
+53
+00:05:10,640 --> 00:05:14,440
+de cómo suelen proteger, sino de indicar la base de datos. Oye, ¿esto va a ocurrir?
+
+54
+00:05:14,440 --> 00:05:20,720
+Protégemene, que no ocurra nada malo entre otras operaciones que estén ocurriendo en esa base de datos.
+
+55
+00:05:20,720 --> 00:05:27,040
+Nos van a proveer herramientas de control de concurrencia para que, si hay muchos usuarios,
+
+56
+00:05:27,040 --> 00:05:34,400
+no se, o sea, puedan usarlas sin ningún problema entre todos, nos van a proveer herramientas
+
+57
+00:05:34,400 --> 00:05:39,640
+para que las operaciones ocurran por separados, aisladas, de tal forma que operaciones intermedias
+
+58
+00:05:39,640 --> 00:05:44,480
+que están haciendo un usuario a lo largo de un proceso no interfieran en justo en otros usuarios,
+
+59
+00:05:44,480 --> 00:05:48,240
+que se den como si fuese por separados, o ocurriesen una debajo de la otra.
+
+60
+00:05:48,240 --> 00:05:55,040
+Incluso herramientas para que, si algo queda mal de nuestras cinco operaciones que hemos realizado,
+
+61
+00:05:55,040 --> 00:05:58,600
+alguna de ellas no funciona, se estropeja o pasa algún problema, que podamos abortar sin que haya
+
+62
+00:05:58,600 --> 00:06:04,600
+pasado nada, sin que dejemos detrás un rastro de cadáveres con los problemas que hemos podido encontrar.
+
+63
+00:06:04,600 --> 00:06:09,240
+Y como contrapuntos, y esto lo veremos también un poquito más adelante, tenemos que tener en cuenta
+
+64
+00:06:09,240 --> 00:06:15,080
+siempre que es una herramienta muy cara, a nivel de performance afectan mucho las bases de datos
+
+65
+00:06:15,080 --> 00:06:21,480
+y condiciona mucho cómo se diseña en base de datos, y que cuando decimos transacción es un poco relativo,
+
+66
+00:06:21,480 --> 00:06:29,040
+es un poco relativo en muchos sentidos. Cuando se extendió un poco la clasificación en esta base de datos SQL
+
+67
+00:06:29,040 --> 00:06:35,040
+y no SQLs, se hablaron de muchas cosas, que diferenciaban en SQL y se estrenó muy popular,
+
+68
+00:06:35,040 --> 00:06:39,960
+y que rendían muy bien y tenían muchas cosas buenas, pero por ejemplo, hablando de transacciones,
+
+69
+00:06:39,960 --> 00:06:45,560
+una de las cosas que no suelen tener o que suelen estar muy limitadas es este concepto de transacción,
+
+70
+00:06:45,560 --> 00:06:51,760
+suele ser castrístico de las 9 SQLs, no provee muchas herramientas para esto, por el mismo tema que contamos antes,
+
+71
+00:06:51,760 --> 00:07:00,200
+son muy caras, entonces hacen que todo se identice, si no tienes transacciones o si por tu caso de uso
+
+72
+00:07:00,200 --> 00:07:05,960
+puedes permitirte que ocurran ciertas cosas, puedes ganar toda esa potencia de todos esos sentimientos.
+
+73
+00:07:05,960 --> 00:07:14,520
+Y ya no solo entre SQL y no SQL, sino también entre otras SQLs, entre bases de datos relacionales clásicas,
+
+74
+00:07:14,520 --> 00:07:19,800
+también el concepto de transacción es diferente, no aplica de la misma forma, se definen de formas distintas,
+
+75
+00:07:19,800 --> 00:07:25,960
+y no tienen por qué proveer de la misma seguridad, entonces tenemos que tener siempre cuidado ahora de hacer este tipo de herramientas.
+
+76
+00:07:28,440 --> 00:07:33,640
+Al final, supongo que la Brismay 2 mil veces, el tema de las siglas ácid,
+
+77
+00:07:33,640 --> 00:07:39,000
+pero era una buena forma también de condensar un poco la explicación de que nos van a proveer las transacciones,
+
+78
+00:07:39,000 --> 00:07:43,480
+que nos van a ayudar a que no suframos los problemas que quiero comentar ahora.
+
+79
+00:07:43,480 --> 00:07:50,040
+En Atomicity, en resumidas cuentas, que si tenemos que hacer 15 operaciones que se le dicen las 15,
+
+80
+00:07:50,040 --> 00:07:54,440
+o no se le dicen las 15, pero que no queden rastros de operaciones intermedias que se hayan podido realizar,
+
+81
+00:07:54,440 --> 00:07:59,880
+consisten sin el sentido de que nos van a ayudar a que la aplicación se mantenga consistente en cuanto a
+
+82
+00:07:59,880 --> 00:08:06,600
+que se hagan las operaciones que realmente nosotros queremos que se realifen y que no haya problemas porque otras operaciones interfinal entre sí.
+
+83
+00:08:06,600 --> 00:08:13,480
+Isolation, en el sentido de que las operaciones que ocurran son nuestras bases de datos, ocurran de forma aislada,
+
+84
+00:08:13,480 --> 00:08:20,200
+sin que unas se pisen a otras, que es justo del problema que vamos a ver, principalmente son fallos de isolation porque se acaban pisando.
+
+85
+00:08:20,200 --> 00:08:27,000
+Y durability en el sentido de que queremos que una transacción cuando se acabe y se dé por completada,
+
+86
+00:08:27,000 --> 00:08:31,000
+no se pierda ni bajo ningún concepto.
+
+87
+00:08:31,000 --> 00:08:39,560
+Entonces, vamos a meternos en la parte un poco principal de la charla, que son los problemas que se pueden dar cuando,
+
+88
+00:08:39,560 --> 00:08:47,160
+o no usamos transacciones, o cuando no la usamos bien, o estamos asumiendo por ejemplo que la base de datos
+
+89
+00:08:47,160 --> 00:08:52,520
+está por nosotros en una seguridad que realmente no tiene esa base de datos.
+
+90
+00:08:52,520 --> 00:08:59,080
+Si ponéis en indagar, hay muchas situaciones en las que hay base de datos que asumimos que nos van a proteger de que una escritura no interfiera
+
+91
+00:08:59,080 --> 00:09:07,880
+en la lectura que estamos haciendo y por ejemplo hay base de datos que no nos provenen eso siquiera, que podemos ver cosas intermedias en el proceso de lectura.
+
+92
+00:09:07,880 --> 00:09:11,320
+Entonces, vamos a empezar a vender tickets.
+
+93
+00:09:11,320 --> 00:09:15,880
+Para contaros los problemas, todos los problemas los he dividido en tres puntos.
+
+94
+00:09:15,880 --> 00:09:19,640
+En el primer punto, voy a hablar un poco de un esquema de base de datos, es un esquema muy sencillo,
+
+95
+00:09:19,640 --> 00:09:23,000
+como muchos van a hacer dos tablas con cuatro con unas cadenas, más o menos.
+
+96
+00:09:23,000 --> 00:09:29,160
+Con la idea un poco de comentar, oye, esto va a ser donde estamos jugando el caso de uso.
+
+97
+00:09:29,160 --> 00:09:35,560
+Vas a ver que tenemos zonas para emails y contadores, no penséis mucho en si tiene sentido tener un contador ahí,
+
+98
+00:09:35,560 --> 00:09:43,320
+lo he hecho así un poco para que encaje el pregusto del problema, pero no son tampoco cosas muy estrictamente correctas,
+
+99
+00:09:43,320 --> 00:09:46,200
+pero daban juego para explicar lo que puede pasar.
+
+100
+00:09:46,200 --> 00:09:50,840
+Una vez que os comenté la estructura de este data set, de esta base de datos,
+
+101
+00:09:50,840 --> 00:09:56,680
+os voy a comentar sobre las operaciones que pueden ocurrir de forma concurrente sobre ese data set, como puede ser la compra de un ticket,
+
+102
+00:09:56,680 --> 00:10:01,080
+que esa compra causa una operación en una tabla y otra operación en una segunda tabla.
+
+103
+00:10:01,080 --> 00:10:06,280
+Entonces, os voy a comentar esas operaciones que pueden ocurrir y una vez que os ocurran,
+
+104
+00:10:06,280 --> 00:10:11,000
+os voy a comentar un poco los problemas que se pueden dar y que nombre tienen,
+
+105
+00:10:11,000 --> 00:10:16,040
+porque hay una pequeña clasificación de estos problemas para atacarlos.
+
+106
+00:10:16,040 --> 00:10:22,680
+En el primer ejemplo, es un ejemplo muy sencillo,
+
+107
+00:10:22,680 --> 00:10:27,400
+vamos a tener dos tablas, una de tickets y la otra de eventos.
+
+108
+00:10:27,400 --> 00:10:31,000
+Una tabla de tickets en la que están los tickets que tenemos,
+
+109
+00:10:31,000 --> 00:10:37,320
+que están creados por efectos como su número de asientos y justo si no están asignados a nadie, tienen el email vacío.
+
+110
+00:10:37,320 --> 00:10:44,120
+Es un ejemplo. Pueden obtener sentido, puede que un email no, y son ideas, pero bueno, justo por atacar el problema,
+
+111
+00:10:44,120 --> 00:10:49,080
+supongamos que una vez que pones aquí tu email ya se te asignate el ticket a la persona que seas.
+
+112
+00:10:49,080 --> 00:10:52,760
+Y una tabla de eventos en la que aparte de aparecer el nombre del evento,
+
+113
+00:10:52,760 --> 00:10:57,960
+tenemos dos contadores, uno para indicar todos los tiques que los máximos que se pueden vender
+
+114
+00:10:57,960 --> 00:11:02,680
+y otro para indicar los tiques que ya se han vendido, lo mismo de antes.
+
+115
+00:11:02,680 --> 00:11:07,000
+A lo mejor no hace falta tener un contador si puedes hacer un count, pero supongamos que por algunos címiles de bien,
+
+116
+00:11:07,000 --> 00:11:09,640
+ya tenemos ese contador puesto abajo.
+
+117
+00:11:09,640 --> 00:11:14,440
+Un proceso de compra, como podría funcionar en este ejemplo, podría ser, primero,
+
+118
+00:11:14,440 --> 00:11:20,680
+en la tabla de tickets asignamos el email, o sea, esto ocurre una vez que el usuario clica en el botón de compra,
+
+119
+00:11:20,680 --> 00:11:25,560
+internamente va a llegar nuestro programa, vais a ir a la tabla de tickets, pero,
+
+120
+00:11:25,560 --> 00:11:30,760
+vais a ir a la tabla de tickets y va a poner el email del usuario y lo segundo que va a hacer, la segunda operación,
+
+121
+00:11:30,760 --> 00:11:34,280
+es irse a la tabla de eventos y actualizar el contador.
+
+122
+00:11:34,280 --> 00:11:39,560
+En este caso si alguien compra un ticket, pues aparecería el email arriba y el contador 10 de 10.
+
+123
+00:11:39,560 --> 00:11:46,040
+Entonces, ¿qué pasa si un usuario A quiere comprar el último ticket?
+
+124
+00:11:46,040 --> 00:11:48,840
+De tal forma que quiere hacer las dos operaciones que hemos comentado.
+
+125
+00:11:48,840 --> 00:11:53,240
+Y un usuario B está mirando simplemente, está refrescando la web para ver qué tickets hay.
+
+126
+00:11:53,240 --> 00:11:58,120
+Puede ocurrir que llegue el usuario A, le dé al botón de comprar,
+
+127
+00:11:58,120 --> 00:12:02,920
+lo primero que haga sea actualizar la tabla de tickets para poner su email en la tabla de tickets
+
+128
+00:12:02,920 --> 00:12:07,800
+y puede que justo lo siguiente que tendría que hacer esa operación es actualizar el contador,
+
+129
+00:12:07,800 --> 00:12:14,040
+pero ¿qué pasa si justo entre esas dos operaciones llega un usuario B y lista las dos tablas?
+
+130
+00:12:14,040 --> 00:12:19,720
+¿Qué puede ocurrir? Puede que pase milisegundos entre la estructuración del ticket y la estructuración del contador,
+
+131
+00:12:19,720 --> 00:12:23,800
+pero en esos milisegundos puede ocurrir alguien que refresca la web y justo le hace a dos tablas.
+
+132
+00:12:23,800 --> 00:12:32,120
+Lo que va a ver B es que todos los asientos están cogidos porque justo ha podido detectar que la tabla de tickets
+
+133
+00:12:32,120 --> 00:12:34,920
+ya no quedaba ningún ticket con el email vacío.
+
+134
+00:12:34,920 --> 00:12:41,640
+Y además B ha visto que igualmente el contador estaba a 9 de 10 cuando no tiene sentido porque no quedaba ningún ticket.
+
+135
+00:12:41,640 --> 00:12:48,040
+Este es el primer problema que quería comentar, que se le suele llamar DIRT y RED.
+
+136
+00:12:48,040 --> 00:12:53,080
+En el sentido de un usuario empezó a hacer una operación, pero no estaba esa operación aislada,
+
+137
+00:12:53,080 --> 00:12:59,240
+esa operación costaba dos cambios en dos tablas, pero una persona se ha podido llegar puesto en media,
+
+138
+00:12:59,240 --> 00:13:05,240
+ha dado justo en ese momento y ha podido ver un estado intermedio de la operación.
+
+139
+00:13:05,240 --> 00:13:10,280
+Por tanto la persona ha visto un sistema inconsistente como si hubiese podido haber hecho un error.
+
+140
+00:13:10,280 --> 00:13:15,240
+Este es un ejemplo un poco más pequeño, porque si hablamos de temas de dinero o cosas así,
+
+141
+00:13:15,240 --> 00:13:20,200
+o justo una operación que ha ocurrido en ese momento y ha listado eso para hacer un reporte o algo así,
+
+142
+00:13:20,200 --> 00:13:29,480
+tenemos el reporte inconsistente, tenemos problemas más serios que una persona una vez haya visto un contador que nos cuara.
+
+143
+00:13:29,480 --> 00:13:31,800
+DIRT y RED, ese es el primer problema.
+
+144
+00:13:31,800 --> 00:13:39,960
+El segundo problema que se llama DIRT y RED, puede ocurrir y este justo encaja con la descripción de la presentación de la charla.
+
+145
+00:13:39,960 --> 00:13:45,640
+Comentamos que eran dos operaciones para hacer la compra, cambiar el ticket y cambiar el contador.
+
+146
+00:13:45,640 --> 00:13:50,680
+Si por alguna razón llegan dos usuarios a la vez y justo a la vez ven que está disponible el ticket
+
+147
+00:13:50,680 --> 00:13:56,120
+y justo a la vez le dan al botón de comprar, lo que nos puede ocurrir es que justo el usuario A
+
+148
+00:13:56,120 --> 00:14:03,640
+llega a la tabla de ticket, pone su email en el ticket, llega al usuario OPE que por alguna razón es más rápido,
+
+149
+00:14:03,640 --> 00:14:09,720
+porque su aplicación era más rápida, porque es justo la instancia que tocaba esta dama más libre de otras operaciones
+
+150
+00:14:09,720 --> 00:14:15,240
+y el usuario OPE justo actualiza el mismo email, por lo tanto le ha quitado el ticket al anterior,
+
+151
+00:14:15,240 --> 00:14:22,360
+actualiza el contador que lo pone de 9 a 10 y llega A de nuevo y A acaba su operación,
+
+152
+00:14:22,360 --> 00:14:26,840
+A al último que tenía que hacer es actualizar el contador, pero A cuando se metió a hacer la operación,
+
+153
+00:14:26,840 --> 00:14:32,280
+dios que el contador estaba a 9, por lo tanto el que hace A lo pone a 10.
+
+154
+00:14:32,280 --> 00:14:36,280
+Entonces, ¿qué ha pasado en esta operación?
+
+155
+00:14:36,280 --> 00:14:42,840
+Perdón, pues resulta que tanto A como B han hecho la operación sin problemas, ambos vieron que se podía hacer,
+
+156
+00:14:42,840 --> 00:14:46,120
+ambos pusieron el continuo de comprar y el proceso acabó para ambos.
+
+157
+00:14:46,120 --> 00:14:51,560
+Y este proceso, al final, no solo interviene en las tablas, sino que a lo mejor justo después de cada una de las obligaciones
+
+158
+00:14:51,560 --> 00:14:58,680
+envió el email de turno de, oye, tu ticket se ha confirmado y envió todas las operaciones de cobrar al usuario,
+
+159
+00:14:58,680 --> 00:15:03,720
+porque justo puede ocurrir en ese momento o, al final, puede que pasen muchas más cosas,
+
+160
+00:15:03,720 --> 00:15:07,880
+no solo el hecho de que te ha pisado el ticket, uno se ha pisado al otro.
+
+161
+00:15:07,880 --> 00:15:13,560
+Bueno, vamos a tener otro problema de aislamiento de operaciones, si estas operaciones no hubiesen ocurrido a la vez,
+
+162
+00:15:13,560 --> 00:15:19,960
+si no hubiesen estado aisladas, la segunda operación hubiese fallado, porque a su vez la segunda operación habría visto
+
+163
+00:15:19,960 --> 00:15:23,800
+que ya ese ticket estaba cogido.
+
+164
+00:15:23,800 --> 00:15:30,680
+Y el problema aquí, claro, no solo el ticket, no solo es que el usuario haya pisado el ticket de otro, sino que
+
+165
+00:15:30,680 --> 00:15:36,840
+cosas como el contador que hemos visto antes también se ha actualizado raro, porque aunque ha ocurrido dos veces la operación de compra,
+
+166
+00:15:36,840 --> 00:15:46,120
+como ambos usuarios, vieron el 9 en el contador del ticket, porque justo quedaba ese ticket disponible hasta 10 tickets,
+
+167
+00:15:46,120 --> 00:15:53,160
+ambos vieron el 9, ambos vieron que ya habían hecho la compra, y ambos iban a actualizar el contador,
+
+168
+00:15:53,160 --> 00:15:58,520
+ambos que estuvieron el 9, 9 más 1, 10, 9 más 1, 10, y ambos escribieron los valores en la base de datos.
+
+169
+00:15:58,520 --> 00:16:03,240
+En este caso, ese es un problema que se considera un poco diferente y se llama Last Update,
+
+170
+00:16:03,240 --> 00:16:09,400
+en el sentido de que han ocurrido dos operaciones, dos incrementos, pero solo uno realmente se ha mantenido.
+
+171
+00:16:12,040 --> 00:16:17,480
+Otro problema interesante que se puede dar, el que se llamamos ReadSkue,
+
+172
+00:16:19,960 --> 00:16:26,200
+en el problema en particular es ligeramente diferente a los otros, en este no interviene una compra extra,
+
+173
+00:16:26,200 --> 00:16:30,200
+pero se intervienen operaciones que se pueden dar en esta tabla de eventos y tickets.
+
+174
+00:16:30,200 --> 00:16:36,920
+Supongamos que tenemos nuestra tabla de eventos, si os fijáis, el primer evento son el mismo evento,
+
+175
+00:16:36,920 --> 00:16:42,280
+pero pueden ser de días distintos, el primer está lleno ya, 50-50, y el segundo tiene 50-80,
+
+176
+00:16:42,280 --> 00:16:47,560
+entonces parece que alguien diga, vale, pues vamos a mover a personas del primer evento al segundo,
+
+177
+00:16:47,560 --> 00:16:51,880
+porque ya lo hemos solicitado y se ha aceptado y está todo bien para liberar el primero.
+
+178
+00:16:54,520 --> 00:16:59,960
+Entonces esa es la operación que queremos hacerlo, y a la vez que queremos mover esos 20 de uno a otro,
+
+179
+00:16:59,960 --> 00:17:06,360
+puede ocurrir que alguien esté haciendo un reporte de, oye, mis eventos, cuántos, cuántos tienen enviados.
+
+180
+00:17:06,360 --> 00:17:10,440
+Supongamos que este reporte es muy costoso y lo que va haciendo es, internamente el código,
+
+181
+00:17:10,440 --> 00:17:17,480
+va leyendo eventos por eventos de forma separada, primero el evento 1 se queda con información y luego ve el evento 2.
+
+182
+00:17:17,480 --> 00:17:20,440
+Entonces, bajo este concepto de que podemos ocurrir estas dos operaciones a la vez,
+
+183
+00:17:21,720 --> 00:17:25,080
+puede pasar que el usuario, a que es el que está mirando para hacer el reporte,
+
+184
+00:17:25,080 --> 00:17:30,760
+lea el primer evento, ve que tienen 50 tickets vendidos y se la apunte, 50.
+
+185
+00:17:30,760 --> 00:17:37,480
+Justo en ese momento llega a ver que el que quiere mover los eventos de uno a otro, los tickets, perdón, de un evento a otro,
+
+186
+00:17:37,480 --> 00:17:48,120
+y claro, coge 20 tickets de uno y se los pasa al 2, dejando arriba 30 y abajo 70, de 20, 50 menos 20 y los 50 más 20.
+
+187
+00:17:48,120 --> 00:17:51,880
+Y ahora creo, a sigue con su reporte, a sigue haciendo sus cosas,
+
+188
+00:17:51,880 --> 00:17:57,960
+y claro, llega a y le dice, vale, pues leo, evento número 2, pero claro, en este momento, el evento número 2,
+
+189
+00:17:57,960 --> 00:18:05,480
+ya tiene 70 tickets, justo porque ha ocurrido esa operación intermedio entre las lecturas y la prevención de cambios.
+
+190
+00:18:05,480 --> 00:18:09,480
+Entonces, justo lo que ha pasado, claro, ah, cuando quiere echar cuentas de todos los tickets que ha vendido,
+
+191
+00:18:09,480 --> 00:18:15,240
+te preguntó a la parece que han vendido 120 tickets, no ha vendido 120 tickets, pero justo las operaciones no han ocurrido de forma aislada,
+
+192
+00:18:15,240 --> 00:18:18,040
+sino que una operación ha pisado lo que estaba leyendo la otra,
+
+193
+00:18:18,040 --> 00:18:23,640
+y en este caso, el programa se define como un read-sq, como se considera este tipo de problemas,
+
+194
+00:18:23,640 --> 00:18:27,560
+en los que tú estás leyendo, pero alguien llega por dentro y te actualiza las filas que estaba leyendo.
+
+195
+00:18:30,280 --> 00:18:36,760
+Y el último problema es el read-sq, que esta también puede causar una venta extra de un ticket.
+
+196
+00:18:36,760 --> 00:18:43,080
+En este caso, cambiamos un poco el modelo de datos, seguimos con, o sea, en este caso, tenemos una sola tabla de tickets,
+
+197
+00:18:43,080 --> 00:18:48,200
+y supongamos que aquí, a la hora de comprar un ticket, lo que hace nuestro programa son dos cosas.
+
+198
+00:18:48,200 --> 00:18:55,560
+Primero, a sabiendo de que el evento son máximos 10 tickets, se va a echar esta tabla, va a hacer un count de esta tabla,
+
+199
+00:18:55,560 --> 00:19:01,720
+va a ver cuántos tickets le quedan, y si hay tickets disponibles, porque eran, como vimos antes,
+
+200
+00:19:01,720 --> 00:19:09,800
+había 10 de máximo y le van por 9, pues hace su inserción, que pasa así dos usuarios a la vez le dan un botón de comprar.
+
+201
+00:19:09,800 --> 00:19:15,560
+Ambos usuarios han visto que quedaba, o sea, ambos ya han visto que quedaba uno disponible,
+
+202
+00:19:15,560 --> 00:19:20,520
+ambos van a pulsar el botón, internamente cuando ocurre la operación,
+
+203
+00:19:20,520 --> 00:19:27,400
+las operaciones independientes van a hacer el count, ambas van a ver que queda una entrada disponible,
+
+204
+00:19:27,400 --> 00:19:30,600
+y claro que van a hacer ambas operaciones, porque si han visto que hay una entrada disponible,
+
+205
+00:19:30,600 --> 00:19:37,560
+pues hacen dos inserts hasta la datos. Entonces nos ha vuelto a pasar que hemos vendido un ticket extra
+
+206
+00:19:37,560 --> 00:19:42,760
+para nuestro evento, justo porque no hemos controlado que estas operaciones ocurran de forma aislada,
+
+207
+00:19:42,760 --> 00:19:47,880
+ocurran por separado. Justo este problema, si nos da un write is cute.
+
+208
+00:19:47,880 --> 00:19:50,120
+Dime esto bien, su nombrecito.
+
+209
+00:19:50,120 --> 00:19:54,600
+Entonces, como hemos visto, cuando hablamos de transacciones no sólo nos referimos a problemas en los que
+
+210
+00:19:54,600 --> 00:20:01,000
+podemos sobreescribir datos de otras personas, sino tenemos situaciones en las que las lecturas que estamos haciendo
+
+211
+00:20:01,000 --> 00:20:06,520
+son inconsistentes, no tienen sentido, como el caso de leer que ver la tabla que está llena
+
+212
+00:20:06,520 --> 00:20:12,360
+y un contador que todavía no se ha completado, o situaciones como la de estar contando tickets
+
+213
+00:20:12,360 --> 00:20:16,360
+y de pronto ver que tienes más tickets de los que debes tener. Si esto ocurre de forma congruente,
+
+214
+00:20:16,360 --> 00:20:20,520
+el número de se puede estar variando constantemente como vaya refrescando cuando no tiene sentido.
+
+215
+00:20:20,520 --> 00:20:27,000
+También se pueden dar situaciones de sobreescribir datos de otras personas, como sobreescribir el ticket
+
+216
+00:20:27,000 --> 00:20:34,360
+que ya a otra persona se ve asignado, o perder una actualización como el contador, o justo como el
+
+217
+00:20:34,360 --> 00:20:41,000
+último problema que hemos visto en el que la operación tiene una operación de lectura
+
+218
+00:20:41,000 --> 00:20:47,320
+y en base a esa operación de lectura escribe. Pero claro, si ocurren a la vez, realmente la escritura de una
+
+219
+00:20:47,320 --> 00:20:53,800
+modifica la operación de lectura de otro. Técnicamente no se pisan, pero sí están pisando las precondiciones
+
+220
+00:20:53,800 --> 00:20:59,560
+en las que se basa una de las operaciones para realizarse. No debería haber ocurrido.
+
+221
+00:20:59,560 --> 00:21:05,240
+Entonces, en base a todos estos problemas que se pueden dar y todo tipo de situaciones,
+
+222
+00:21:05,240 --> 00:21:10,520
+tenemos que usar transacciones, pero ¿cómo hacen las bases de datos por dentro para poder dar nuestras
+
+223
+00:21:10,520 --> 00:21:18,120
+acciones que las permitan que estas operaciones se puedan realizar? Pues hay alguna base de datos
+
+224
+00:21:18,120 --> 00:21:22,040
+que lo que hacen es directamente provernos de aceptas operaciones para que se puedan realizarles
+
+225
+00:21:22,040 --> 00:21:27,640
+formatómicas. La operación que teníamos antes del contador, oye, leo el contador está a 9,
+
+226
+00:21:27,640 --> 00:21:32,760
+incremento a 1, 10 y lo de un insertar, pues hay operaciones que permiten tener este tipo de operaciones
+
+227
+00:21:32,760 --> 00:21:38,840
+automíquicas directamente en bebidas dentro de la base de datos. De hecho, solo en este tipo de operaciones
+
+228
+00:21:38,840 --> 00:21:42,360
+están disponibles en muchos bases de datos, en muchos sistemas diorgentes, pero sí que son muy
+
+229
+00:21:42,360 --> 00:21:46,760
+característicos de aquellas bases de datos que tienen un soporte muy limitado para las transacciones,
+
+230
+00:21:46,760 --> 00:21:49,880
+que no permiten hacer mucha brigaría, pero que por lo menos nos dan estas herramientas para seguir
+
+231
+00:21:49,880 --> 00:21:55,160
+del paso con ciertos casos de uso, como en el caso de Redis, en el que Redis ya te provee dos comandos
+
+232
+00:21:55,160 --> 00:22:02,600
+para que ocurren. Y además tienen otra peculiaridad, que es que dan la impresión de que se puedan
+
+233
+00:22:02,600 --> 00:22:07,720
+ejecutar en paralelo, dan la impresión. Y con esto quiero decir que podemos tener varios usuarios
+
+234
+00:22:07,720 --> 00:22:11,160
+haciendo incrementos, que sabemos que el resultado va a ser consistente y no se van a avisar entre ellos,
+
+235
+00:22:11,160 --> 00:22:15,480
+porque la base de datos se va a encargar de gestionarlo. Entonces, está la impresión de que está ocurriendo
+
+236
+00:22:15,480 --> 00:22:19,480
+en paralelo, pero, por ejemplo, en caso de Redis, no ocurre en paralelo, ocurre de forma secuencial,
+
+237
+00:22:19,480 --> 00:22:23,640
+porque Redis, todas las operaciones, la hacen en un solo hilo. Pero es tan rápido que la impresión
+
+238
+00:22:23,640 --> 00:22:27,400
+que dan hacia afuera, es que está ocurriendo todo en paralelo, y sin que haya problemas de concurrencia,
+
+239
+00:22:27,400 --> 00:22:32,840
+ni pisarnos, ni cosas así. Otra de las herramientas que nos probleman, como en este caso,
+
+240
+00:22:32,840 --> 00:22:36,760
+en Multi-Version, Concurrence y Control, que es una de las técnicas que por ejemplo,
+
+241
+00:22:36,760 --> 00:22:43,480
+Bogue implementa, lo que nos va a hacer es que cuando nosotros empecemos a hacer una operación,
+
+242
+00:22:43,480 --> 00:22:48,440
+o una transición, cuando volvemos a transarcción, solo veamos aquellos cambios que ya están
+
+243
+00:22:48,440 --> 00:22:54,280
+producidos en la base de datos. Si hay cambios nuevos en la base de datos, como el caso este de los 50 tickets
+
+244
+00:22:54,280 --> 00:22:59,320
+que un usuario coge de ticket de un lado y los insertan en otro, este tipo de operaciones,
+
+245
+00:22:59,320 --> 00:23:02,280
+van a ser transparentes para nosotros, no van a ocurrir. Lo que vamos a ver nosotros mientras
+
+246
+00:23:02,280 --> 00:23:07,080
+que tengamos nuestra transición abierta, es una snapshot por completo de la base de datos.
+
+247
+00:23:07,080 --> 00:23:10,600
+Entonces, no va a haber momento en el que nos pisemos, o que otra operación pueda inferir en
+
+248
+00:23:10,600 --> 00:23:19,960
+nuestros datos, pueda intervenir en nuestros datos. Internamente, la forma que tiene de operar Bogue
+
+249
+00:23:19,960 --> 00:23:24,840
+con esto, es todas las filas de nuestra base de datos tienen asignado la transacción, el IDE de
+
+250
+00:23:24,840 --> 00:23:29,160
+la transacción que la modificó, y todas las transacciones tienen ese IDE, entonces siempre
+
+251
+00:23:29,160 --> 00:23:34,360
+vas cuando inipias una transacción, todas las filas que estén modificadas con IDE posterior al mío,
+
+252
+00:23:34,360 --> 00:23:41,720
+anterior al mío, las voy a ver. Todas aquellas filas que estén con un IDE de transacción superior
+
+253
+00:23:41,720 --> 00:23:45,480
+al mío, no las voy a ver. Independientemente de ese superior, implique que son filas creadas,
+
+254
+00:23:45,480 --> 00:23:52,360
+o filas modificadas, o filas borradas. Todo ese tipo de filas modificadas o borradas van a seguir estando
+
+255
+00:23:52,360 --> 00:23:56,360
+con sus ocultos, pero con su transición antigua, para que yo pueda leerlos, para seguir trabajando con ellas.
+
+256
+00:23:56,360 --> 00:24:03,400
+Este tipo de sistema de solución, no es muy útil para todo lo que se aprende de lectura,
+
+257
+00:24:03,400 --> 00:24:07,160
+necesitemos que la lectura sea consistente, como en el caso de los tickets que modificaban,
+
+258
+00:24:07,160 --> 00:24:12,520
+o el que podría haber sido útil para la operación inicial en la que todos los tickets veíamos que
+
+259
+00:24:12,520 --> 00:24:16,280
+todos estaban cogidos, pero que el contado no se vea actualizado. Justo esta herramienta nos puede ayudar.
+
+260
+00:24:16,280 --> 00:24:21,480
+Otra herramienta que nos provee en la base de datos, como Royo MassiQL o SQL Server,
+
+261
+00:24:23,480 --> 00:24:29,360
+se llama Chufface Locking, y en este caso es directamente coger los típicos locks que
+
+262
+00:24:29,360 --> 00:24:34,560
+conocemos y aplicarlos sobre filas de las bases de datos. No lo veo de alguna forma, o sea,
+
+263
+00:24:34,560 --> 00:24:38,720
+de la forma que podemos bloquear esa fila para nosotros, para que en la que haga la cocurra
+
+264
+00:24:38,720 --> 00:24:42,800
+de la transacción solo veamos con todos nosotros. Hay distintos tipos de locks, seguro que queramos
+
+265
+00:24:42,800 --> 00:24:47,200
+hacer, unos más resistivos, unos menos resistivos, para que al final tampoco entorpecer al resto de
+
+266
+00:24:47,200 --> 00:24:51,520
+operaciones, que tenemos que tener en cuenta que al ser locks vamos a bloquear otras operaciones. Entonces,
+
+267
+00:24:51,520 --> 00:24:56,280
+hay locks que nos permiten que otras operaciones sigan ocurriendo, pero hay locks que directamente nos van a decir
+
+268
+00:24:56,280 --> 00:25:00,160
+que estas filas son mías y hasta que yo no acabe de usarlas, los demás no pueden operar con ellas.
+
+269
+00:25:01,640 --> 00:25:06,120
+Suelen ser bastante... Este en particular tiene mucho impacto en el performance, porque
+
+270
+00:25:06,120 --> 00:25:09,720
+es que tienes que poner locks por delante y revisar los locks y jugártela a que otro usuario
+
+271
+00:25:09,720 --> 00:25:13,800
+quiere intervenir y no pasa nada porque tienes el lock. Pero bueno, en ciertos entornos de alta
+
+272
+00:25:13,800 --> 00:25:20,640
+concurrencia bajo el mismo número de filas, pueden ser muy útiles tenerlas. Y en este caso,
+
+273
+00:25:20,640 --> 00:25:26,040
+pues, dar Dirty Rights o RitSq, que era lo problema que yo podía pisar las operaciones de otros,
+
+274
+00:25:26,040 --> 00:25:32,440
+o la operación de otros modificaba mi precondición, pues, puede ser muy útil para solucionarlos.
+
+275
+00:25:33,720 --> 00:25:41,600
+Y el último problema, la última solución que podemos tener en base de datos,
+
+276
+00:25:41,600 --> 00:25:50,840
+otra que implementa Pocre, llegó el momento. Bueno, os lo voy contando. Justo, es muy similar
+
+277
+00:25:50,840 --> 00:25:56,840
+a la anterior en cuanto a que los locks van a ocurrir sobre los datos, también se van a
+
+278
+00:25:56,840 --> 00:26:01,040
+bloquear filas, pero en esta otra solución, en vez de bloquear desde un principio, en
+
+279
+00:26:01,040 --> 00:26:03,880
+la forma que llevan a ser bloqueados nuestros recursos, es decir, el primer momento, lo que
+
+280
+00:26:03,880 --> 00:26:08,120
+va a ocurrir es que el sistema va a ser tan inteligente como para esos locks que ocurran,
+
+281
+00:26:08,120 --> 00:26:11,640
+pero ocurran como un soldado plano. Y justo ya, cuando confirmemos nuestra transacción,
+
+282
+00:26:11,640 --> 00:26:15,560
+es cuando la base de datos va a chequear que todo ha ido bien. Se va a asegurar de que todo
+
+283
+00:26:15,560 --> 00:26:21,320
+ha ido bien, de que no ha habido ningún problema. En otra forma de verlo, optimistics concurso
+
+284
+00:26:21,320 --> 00:26:26,800
+y control. En el sentido de van a ocurrirlo en... voy a agrupar mis operaciones y cuando
+
+285
+00:26:26,800 --> 00:26:30,160
+realmente las quiera aplicar, es cuando voy a chequear que todo está bien y que no ha
+
+286
+00:26:30,160 --> 00:26:37,520
+habido ningún problema. En este caso, funciona muy bien, son cómodas, también tienen su
+
+287
+00:26:37,520 --> 00:26:43,840
+coste de procesamiento. Pero, por ejemplo, no son muy buenas pasaciones en las que haya
+
+288
+00:26:43,840 --> 00:26:48,040
+mucha cardinalidad, o sea, muchas transacciones sobre muy poquitas filas, pero claro, como
+
+289
+00:26:48,040 --> 00:26:53,360
+es optimista, en el sentido de que espera que todo ocurra, va a fallar todo mucho más.
+
+290
+00:26:53,360 --> 00:26:56,280
+Siempre estás detestando tarde qué cosas están ocurriendo.
+
+291
+00:26:56,280 --> 00:27:02,600
+¿Qué estás diciendo? Va a fallar mucho más, claro, y el tiempo de todas.
+
+292
+00:27:02,600 --> 00:27:05,800
+Bueno, estaba acabando ya, Tosmeira. Bueno, al final, son un montón de soluciones que
+
+293
+00:27:05,800 --> 00:27:10,040
+nos proveen base de datos que tenemos que, por la grafía, tenemos que tenerlas en cuenta
+
+294
+00:27:10,040 --> 00:27:14,320
+a la hora de trabajar con transacciones, pero tenemos que saber si la base de datos realmente
+
+295
+00:27:14,320 --> 00:27:19,320
+implementa este tipo de herramientas o similares para trabajar con otros datos para que no
+
+296
+00:27:19,320 --> 00:27:22,560
+tengamos nuestros problemas, porque tenemos que realmente saber si la base de datos lo
+
+297
+00:27:22,560 --> 00:27:29,600
+va a cubrir. Un poco por concluir, son muy útiles las transacciones, nos permiten tener
+
+298
+00:27:29,600 --> 00:27:33,720
+operativas como que podamos vender tickets en el tono de altísima concurrencia y que
+
+299
+00:27:33,720 --> 00:27:40,000
+no ocurre nada, que todo vaya bien. Pueden llegar a ser muy caras en temas de performance,
+
+300
+00:27:40,000 --> 00:27:44,600
+y tenemos que tener mucho cuidado de cuando las implementamos y cuando no, porque de hecho
+
+301
+00:27:44,600 --> 00:27:51,360
+no siempre son necesarias. El caso del inicial que proponíamos de que un usuario leyes
+
+302
+00:27:51,360 --> 00:27:55,480
+el estado de las tablas y que viese que la tabla de tickets estaba llena pero que el contador
+
+303
+00:27:55,480 --> 00:28:00,320
+nos había actualizado, la mayor parte de las veces no es un problema, porque eventualmente
+
+304
+00:28:00,320 --> 00:28:04,600
+el otro usuario ha actualizado al contador y todo estará bien. O sea, que en ese caso,
+
+305
+00:28:04,600 --> 00:28:08,400
+por ejemplo, no es necesario en el fondo tener otra sesión y podemos aliviarnos de ese problema.
+
+306
+00:28:08,400 --> 00:28:12,120
+Ocurría de vez en cuando que un usuario ve un contador raro, pero en este usuario,
+
+307
+00:28:12,120 --> 00:28:17,400
+en cuanto a todo dice, lo va a ver todo bien. No siempre son necesarias, aunque se den estos
+
+308
+00:28:17,400 --> 00:28:22,760
+problemas. Y bueno, y si aprendemos a usar las bienes, pues se pueden construir cosas
+
+309
+00:28:22,760 --> 00:28:32,680
+realmente divertidas y chulas. La típica depositiva de siempre, por si acaso, alguien se anima,
+
+310
+00:28:32,680 --> 00:28:38,560
+estamos tratando, bueno, estamos como si estuviese yo tratando. En Tainía me he encontrado.
+
+311
+00:28:38,560 --> 00:28:42,120
+El personal programa es muy chulo, hemos tenido problemas en este estilo para hacer ciertas
+
+312
+00:28:42,120 --> 00:28:45,640
+cosas, pero bueno, a parte de estos problemas realmente en lo que se hace Tainía Veres han
+
+313
+00:28:45,640 --> 00:28:49,240
+entigados, productos han entigados muy chulos. Entonces, bueno, si queréis resolver este
+
+314
+00:28:49,240 --> 00:28:55,960
+tipo de problemas, o volvamos mucho más interesantes que estos, que sepáis que hay sitio. Y ahora,
+
+315
+00:28:55,960 --> 00:29:02,960
+muchas gracias.
+
+316
+00:29:02,960 --> 00:29:11,960
+¿Alguna pregunta?
+
+317
+00:29:11,960 --> 00:29:25,840
+Bueno, primero gracias por la charla. Creo que la pregunta realmente la ha respondido ya
+
+318
+00:29:25,840 --> 00:29:30,440
+al final, pero básicamente que estaba pensando cuando estabas empezando la charla, que el
+
+319
+00:29:30,440 --> 00:29:35,800
+Dirty Red es como súper común precisamente en todo el tema de compra de, vamos de cualquier
+
+320
+00:29:35,800 --> 00:29:40,320
+entrada, lo más normal del mundo, ¿no? Porque si no lo que tendrás que estar es actualizando
+
+321
+00:29:40,320 --> 00:29:44,160
+la página con Javascript o algo así todo el tiempo para que la persona tenga actualizado
+
+322
+00:29:44,160 --> 00:29:48,240
+el valor de la base de datos y eso es una movida, ¿no? Yo imagino que es muy común y para ese
+
+323
+00:29:48,240 --> 00:29:56,080
+tipo de solución, por ejemplo, es un poco verquil ponerse a usar transacciones, ¿no?
+
+324
+00:29:56,080 --> 00:30:00,760
+Completamente. O sea, por eso quería mencionar el problema por mencionar, oye, este problema
+
+325
+00:30:00,760 --> 00:30:04,720
+existe, que lo sepáis y tiene un nombre, pero en la práctica la mayor parte de los problemas
+
+326
+00:30:04,720 --> 00:30:10,040
+de RoutesQ son muy tolerables. En realidad no nos hace falta que todo sea hiperconsistente
+
+327
+00:30:10,040 --> 00:30:14,600
+para que un usuario pueda funcionar. Y este tipo de operaciones en base a datos no es
+
+328
+00:30:14,600 --> 00:30:18,880
+SQL, que eso es lo típico en este caso, donde más se suele dar, porque como no tenemos
+
+329
+00:30:18,880 --> 00:30:24,560
+transacciones a muchas veces a ese nivel, lo que las caracterizan son el tema de que
+
+330
+00:30:24,560 --> 00:30:29,120
+son, eventualmente van a ser consistentes por mil razones, pero también una de ellas es
+
+331
+00:30:29,120 --> 00:30:32,960
+este tipo de operaciones también. Eventualmente ese contador se va a solucionar y todo va a
+
+332
+00:30:32,960 --> 00:30:36,480
+seguir bien, mientras que nos aseguremos de que el contador se actualiza cuando se tiene
+
+333
+00:30:36,480 --> 00:30:40,960
+que actualizar. Y que el ticket se compra solo por una persona, realmente una operación
+
+334
+00:30:40,960 --> 00:30:44,840
+de lectura no es relevante. Te ahorras una transacción y te ahorras tener ese coste
+
+335
+00:30:44,840 --> 00:30:46,480
+completamente.
+
+336
+00:30:46,480 --> 00:30:47,480
+Gracias.
+
+337
+00:30:47,480 --> 00:30:48,480
+A ti.
+
+338
+00:30:48,480 --> 00:30:52,480
+A quien se daba preguntas.
+
+339
+00:30:52,480 --> 00:30:59,760
+Primero, gracias por la charla, ha sido muy interesante y he aprendido mucho. Quería
+
+340
+00:30:59,760 --> 00:31:04,480
+preguntarte qué pasaría si no pudieras tocar la base de datos, si necesitaras poner algún
+
+341
+00:31:04,480 --> 00:31:08,080
+intermedio para solucionar este problema.
+
+342
+00:31:08,080 --> 00:31:12,800
+Se te complica mucho, porque igualmente de alguna forma tienes que conseguir que se garantías
+
+343
+00:31:12,800 --> 00:31:21,800
+las cenas. Entonces todo el sistema que hemos comentado de proponer este tipo de soluciones,
+
+344
+00:31:21,800 --> 00:31:26,200
+de alguna forma tienes que implementarlas tú en la capa de aplicación. Y se vuelve
+
+345
+00:31:26,200 --> 00:31:30,120
+un problema mucho más gordo, porque en la base de datos, una de las cosas más importantes
+
+346
+00:31:30,120 --> 00:31:34,520
+es que la base de datos donde se producen estas transacciones es una única base de datos.
+
+347
+00:31:34,520 --> 00:31:38,640
+O mejor tienes réplicas, pero las escrituras se hacen sobre una base de datos. Por lo general,
+
+348
+00:31:38,640 --> 00:31:42,720
+por no meterme mucho en cosas para los particulares. Pero cuando tienes aplicaciones, tienes aplicaciones
+
+349
+00:31:42,720 --> 00:31:48,960
+que están funcionando en distintas máquinas, con distintas casuísticas. Entonces puede
+
+350
+00:31:48,960 --> 00:31:53,040
+ser realmente un problema muy gordo, tener que implementar locks, tener que suerte de
+
+351
+00:31:53,040 --> 00:31:59,520
+que ninguna máquina toca justo las filas que no tienen que tocar.
+
+352
+00:31:59,520 --> 00:32:03,440
+El problema de todas estas cosas tan interesantes que tienes que implementar va a ser mucho
+
+353
+00:32:03,440 --> 00:32:07,120
+más complicado de implementar en la capa de aplicación. O sea que lo tienes en la base
+
+354
+00:32:07,120 --> 00:32:11,880
+de datos, o realmente tienes un problema muy importante. A lo mejor puedes solucionarlo
+
+355
+00:32:11,880 --> 00:32:15,200
+con el caso de uso, como comentábamos antes, a lo mejor no es necesario. O puedes lidiar
+
+356
+00:32:15,200 --> 00:32:20,400
+con Territus Q, y con un contador consistente durante un tiempo. Pero si no puedes lidiar
+
+357
+00:32:20,400 --> 00:32:22,880
+con eso, es muy difícil solucionarlo.
+
+358
+00:32:22,880 --> 00:32:31,560
+Por último, la pregunta.
+
+359
+00:32:31,560 --> 00:32:32,560
+Muchas gracias.
+
+360
+00:32:32,560 --> 00:32:33,560
+Muchas gracias.
+
+361
+00:32:33,560 --> 00:32:52,560
+Muchas gracias.
+

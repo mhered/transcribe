@@ -1,0 +1,1304 @@
+1
+00:00:00,000 --> 00:00:23,000
+Hola, buenas. Vamos a continuar con la siguiente sesión. Pamela es un estudiante de doctorado
+
+2
+00:00:23,000 --> 00:00:28,160
+en ciencia de la ingeniería de la Universidad Católica de Chile y actualmente se encuentra
+
+3
+00:00:28,160 --> 00:00:33,920
+haciendo una estancia en el Centro de Investigación de Inria en Francia y su tesis se centra en
+
+4
+00:00:33,920 --> 00:00:37,920
+la teoría de juego y la optimización. Y hoy nos va a hablar sobre optimización matemática
+
+5
+00:00:37,920 --> 00:00:40,160
+con Paizón. Dale un fuerte aplauso.
+
+6
+00:00:40,160 --> 00:00:54,000
+Bueno, gracias por el... ¿no se escucha o si? Gracias por el aplauso. Mi nombre es Pamela
+
+7
+00:00:54,000 --> 00:00:59,000
+Gustamante y les voy a presentar esta charla que se llama optimización matemática con Paizón.
+
+8
+00:00:59,000 --> 00:01:03,000
+Bueno, ya me presentaron pero igual...
+
+9
+00:01:03,000 --> 00:01:14,000
+Ay, aló, ya. Ya me presentaron pero igual me presento un poquito más. Soy alumna de doctorado,
+
+10
+00:01:14,000 --> 00:01:17,720
+estoy en último año doctorado en ciencia de ingeniería en la Universidad Católica en Chile.
+
+11
+00:01:17,720 --> 00:01:23,000
+Yo soy chilena, previamente hice un magistro en ingeniería industrial y estudié en
+
+12
+00:01:23,000 --> 00:01:29,000
+ingeniería civil industrial en la Universidad de BIObio que es mi ciudad natal. Actualmente,
+
+13
+00:01:29,000 --> 00:01:36,000
+como bien decía, estoy haciendo una pasantía en Inria, Francia, específicamente en el Team
+
+14
+00:01:36,000 --> 00:01:43,000
+INOX, así que estoy aquí cerca y por eso viene a Paicon España. Les dejo aquí mis redes sociales,
+
+15
+00:01:43,000 --> 00:01:50,000
+mi página web, mi github y mi correo por si es que quieren contactarme de alguna manera o igual para ver
+
+16
+00:01:50,000 --> 00:01:58,000
+la presentación está en el github. Bueno, entonces a mí me encanta Paicon, esta conferencia de Paicon,
+
+17
+00:01:58,000 --> 00:02:05,000
+pero anteriormente yo programaba en Julia y en Zemah Mah. En Julia en particular fui,
+
+18
+00:02:05,000 --> 00:02:12,000
+participé de una de las primeras traducciones de uno de los libros de Julia en español,
+
+19
+00:02:12,000 --> 00:02:17,000
+este uno de los primeros libros en español que se realizó y yo participé en la traducción a español
+
+20
+00:02:17,000 --> 00:02:23,000
+porque está en inglés, así que si es que en algún momento quisieran aprender Julia, podría meterse
+
+21
+00:02:23,000 --> 00:02:32,000
+esa página, es un material que le pusimos mucho empeño, así que por favor metanse en la página.
+
+22
+00:02:32,000 --> 00:02:38,000
+Entonces les dejo aquí la presentación de idea, está en ese repositorio, si se meten en mi github
+
+23
+00:02:38,000 --> 00:02:42,000
+como que lo tengo opiniado así que debería estar fácil de llegar.
+
+24
+00:02:42,000 --> 00:02:47,000
+Bueno, entonces le voy a hablar un poquito de lo que es investigación operativa
+
+25
+00:02:47,000 --> 00:02:54,000
+o optimización matemática o Operations Research. Voy a usar estos términos como quizás de manera
+
+26
+00:02:54,000 --> 00:02:59,000
+como en realidad cualquiera de ellos, voy a usarla de la misma manera, o sea va a significar lo mismo me refiero
+
+27
+00:02:59,000 --> 00:03:06,000
+y posteriormente vamos a quizá ver un poquito de teoría de juego que es el tema de mi tesis
+
+28
+00:03:06,000 --> 00:03:13,000
+que está muy relacionado con la optimización. Bueno, entonces, primeramente ¿qué es investigación operativa
+
+29
+00:03:13,000 --> 00:03:19,000
+o optimización matemática? Es un enfoque científico que nos va a permitir tomar decisiones de una mejor manera
+
+30
+00:03:19,000 --> 00:03:23,000
+o de una manera más fácil y esto lo hacemos a través de modelos matemáticos.
+
+31
+00:03:23,000 --> 00:03:30,000
+Nosotros asumimos que en la vida real siempre nos vamos a enfrentar a problemas en donde los recursos son escasos
+
+32
+00:03:30,000 --> 00:03:36,000
+entonces tenemos que hacer un buen uso de los recursos o un uso eficiente para poder tomar decisiones de la mejor manera.
+
+33
+00:03:36,000 --> 00:03:40,000
+Entonces eso es lo que nos permita hacer investigación de operaciones.
+
+34
+00:03:40,000 --> 00:03:46,000
+Entonces este concepto quizá está un poco como abstracto y quizá no se entiende mucho
+
+35
+00:03:46,000 --> 00:03:52,000
+así que vamos a ver un problema quizá aplicado con el fin de que se entienda un poquito mejor.
+
+36
+00:03:52,000 --> 00:04:01,000
+Bueno, entonces asumamos que nosotros somos parte de la organización de Paicon España y queremos decidir
+
+37
+00:04:01,000 --> 00:04:06,000
+dónde vamos a hacer la siguiente Paicon o la Paicon siguiente es la que es la Paicon España 2024.
+
+38
+00:04:06,000 --> 00:04:12,000
+Bueno, entonces tenemos esta mapa de España, ustedes lo conocen bien mejor que yo,
+
+39
+00:04:12,000 --> 00:04:18,000
+está separada en diferentes provincias y nosotros lo que queremos hacer es definir en qué provincia
+
+40
+00:04:18,000 --> 00:04:26,000
+vamos a realizar Paicon España y nos gustaría que este evento fuera como lo más accesible posible a toda la gente.
+
+41
+00:04:26,000 --> 00:04:34,000
+Por lo tanto lo que queremos hacer es que la gente de diferentes provincias pueda llegar como de la manera más rápida posible
+
+42
+00:04:34,000 --> 00:04:36,000
+o recorriendo la menor distancia posible.
+
+43
+00:04:36,000 --> 00:04:43,000
+Entonces eso es lo que queremos, queremos minimizar la distancia, recorrer por los asistentes de la conferencia
+
+44
+00:04:43,000 --> 00:04:47,000
+y vamos a definir un modelo de optimización para este problema.
+
+45
+00:04:47,000 --> 00:04:51,000
+Bueno, entonces qué significa un modelo de optimización?
+
+46
+00:04:51,000 --> 00:04:57,000
+Un modelo de optimización por lo general o bueno en realidad siempre consta de tres cosas.
+
+47
+00:04:57,000 --> 00:05:05,000
+Primeramente variables de decisión que son aquellas cosas que queremos determinar.
+
+48
+00:05:05,000 --> 00:05:09,000
+Por ejemplo en este caso nosotros queremos determinar dónde realizar la Paicon España,
+
+49
+00:05:09,000 --> 00:05:15,000
+entonces vamos a tener variables asociadas a cada provincia, cada provincia va a ser una variable.
+
+50
+00:05:15,000 --> 00:05:22,000
+También necesitamos una función objetivo, una función objetivo es lo que expresa lo que nosotros queremos con este problema.
+
+51
+00:05:22,000 --> 00:05:28,000
+En este caso nosotros queremos minimizar la distancia a recorrer por lo asistente a la Paicon España.
+
+52
+00:05:28,000 --> 00:05:35,000
+Y por último nos quedan las restricciones, las restricciones son limitantes que tienen nuestro problema,
+
+53
+00:05:35,000 --> 00:05:41,000
+todo problema tiene limitantes como toda la vida como todo tiene límite, nuestro problema nos va a hacer la excepción
+
+54
+00:05:41,000 --> 00:05:48,000
+y tenemos una restricción que es que nosotros solamente queremos elegir un lugar para hacer nuestra Paicon España,
+
+55
+00:05:48,000 --> 00:05:52,000
+queremos un lugar para hacer el evento, esa es una restricción.
+
+56
+00:05:52,000 --> 00:06:01,000
+Entonces el modelo matemático se ve así, este modelo matemático quizás simple, simplificado,
+
+57
+00:06:01,000 --> 00:06:07,000
+podría ser mucho más complejo si uno quisiera, pero al menos yo siento que como siendo la base yo creo que está bien.
+
+58
+00:06:07,000 --> 00:06:14,000
+Entonces como bien decía antes tenemos variables asociadas a cada provincia, estas son variables binarias,
+
+59
+00:06:14,000 --> 00:06:19,000
+es decir que tenemos una variable asociada a una provincia y esta variable va a tomar valor 1,
+
+60
+00:06:19,000 --> 00:06:27,000
+si es que realmente hacemos el evento Paicon España ahí o va a tomar valor 0, si es que no vamos a hacer el evento ahí.
+
+61
+00:06:27,000 --> 00:06:31,000
+Entonces son variables binarias asociadas a cada provincia.
+
+62
+00:06:31,000 --> 00:06:40,000
+Y ahora también tenemos el modelo, el modelo lo que estamos tratando de hacer es minimizar la distancia
+
+63
+00:06:40,000 --> 00:06:47,000
+y lo que estamos haciendo es como minimizar la distancia al punto en donde nosotros vamos a hacer la conferencia.
+
+64
+00:06:47,000 --> 00:06:53,000
+Entonces por eso estamos multiplicados por la variable y como restricción tenemos la siguiente,
+
+65
+00:06:53,000 --> 00:06:59,000
+que sería la sumatoria de equí igual a 1, porque nosotros solamente queremos un lugar para hacer la Paicon España.
+
+66
+00:06:59,000 --> 00:07:05,000
+Bueno, entonces igual tenemos unos parámetros, pero que no son tan importantes, quizá el parámetro I
+
+67
+00:07:05,000 --> 00:07:12,000
+significa el conjunto de todas las provincias candidatas para realizar Paicon España y el conjunto J del conjunto de todas las provincias, en total.
+
+68
+00:07:12,000 --> 00:07:15,000
+Pero en realidad entendiendo el modelo no hace falta.
+
+69
+00:07:15,000 --> 00:07:21,000
+Bueno, entonces antes lo tenía como con índice así como más generalizado,
+
+70
+00:07:21,000 --> 00:07:36,000
+pero como el modelo ya como se ve al final se va a ver algo así, por ejemplo, en donde tenemos no sé, 400 kilómetros por la variable de Granada, no sé, Barcelona por ejemplo.
+
+71
+00:07:36,000 --> 00:07:45,000
+Entonces la primera parte, el primer término significaría que nosotros tenemos 400 kilómetros entre Granada y Madrid.
+
+72
+00:07:45,000 --> 00:07:50,000
+Ahí me falta una cosita de Madrid, pero bueno, ahí se me imagino.
+
+73
+00:07:50,000 --> 00:07:55,000
+Entonces lo que estamos haciendo es que la función objetivo es que estamos minimizando la distancia al evento
+
+74
+00:07:55,000 --> 00:08:01,000
+y la restricción ahí está de que en realidad queremos un solo evento, así que igual a 1.
+
+75
+00:08:01,000 --> 00:08:08,000
+Bueno, entonces ya tenemos este modelo, lo tenemos escrito, todo bien, y ahora necesitamos resolverlo porque claramente así no nos sirve.
+
+76
+00:08:08,000 --> 00:08:13,000
+Entonces lo que tenemos que hacer es elegir cómo resolverlo.
+
+77
+00:08:13,000 --> 00:08:21,000
+Y la primera es utilizando Simplex, que es como la versión a mano de esta solución.
+
+78
+00:08:21,000 --> 00:08:27,000
+Simplex en un proceso muy tedioso, hay que hacer mucha iteración, hay que escribir mucho, en realidad como que no hace falta.
+
+79
+00:08:27,000 --> 00:08:35,000
+Otra forma de hacerla es como una forma visual en donde nosotros hacemos como una especie de dibujo y ahí como que obtenemos la solución,
+
+80
+00:08:35,000 --> 00:08:41,000
+pero eso cuando uno empieza a trabajar con más variables es imposible porque estamos trabajando con más de tres dimensiones.
+
+81
+00:08:41,000 --> 00:08:44,000
+Entonces ya no se puede.
+
+82
+00:08:44,000 --> 00:08:49,000
+Entonces lo que nosotros vamos a hacer es trabajar con solvers.
+
+83
+00:08:49,000 --> 00:08:58,000
+Y un solver es una librería de Python en este caso que nos va a permitir resolver este problema de una manera súper simple.
+
+84
+00:08:58,000 --> 00:09:03,000
+Entonces entre los solvers están Skip, Simplex, Groovy, Pulp y otro.
+
+85
+00:09:03,000 --> 00:09:11,000
+Yo por lo general a mí me gusta usar Skip, lo que tiene de bueno es que uno puede ver el código fuente, Open Source,
+
+86
+00:09:11,000 --> 00:09:15,000
+entonces uno se puede meter al código y cambiar cosas súper súper súper flexibles.
+
+87
+00:09:15,000 --> 00:09:19,000
+Simplex y Groovy son las opciones comerciales más importantes las que se usan más.
+
+88
+00:09:19,000 --> 00:09:28,000
+Y Pulp lo que tiene de bueno es que permite hacer uso de esta librería sin la necesidad de licencias para fines comerciales.
+
+89
+00:09:28,000 --> 00:09:34,000
+Es decir que yo podría lucrar con esta librería sin la necesidad de pagar una licencia.
+
+90
+00:09:34,000 --> 00:09:37,000
+Y los otros solvers en realidad sí piden licencias.
+
+91
+00:09:37,000 --> 00:09:46,000
+Bueno entonces yo meto todo este modelo a mi Python con Skip, o lo que sea,
+
+92
+00:09:46,000 --> 00:09:49,000
+y obtengo esta solución que es Madrid.
+
+93
+00:09:49,000 --> 00:10:00,000
+Entonces yo les quiero mostrar cómo correr el código.
+
+94
+00:10:00,000 --> 00:10:02,000
+Y entonces esto siempre falla, así que no se ve.
+
+95
+00:10:02,000 --> 00:10:04,000
+Ay no, no falló.
+
+96
+00:10:04,000 --> 00:10:11,000
+Bueno entonces aquí nosotros estamos utilizando Skip, no mentira,
+
+97
+00:10:11,000 --> 00:10:17,000
+estamos utilizando Pulp y lo que estamos haciendo aquí es escribiendo el modelo que teníamos,
+
+98
+00:10:17,000 --> 00:10:20,000
+así como en pantalla lo estamos escribiendo acá.
+
+99
+00:10:20,000 --> 00:10:26,000
+Tenemos matrices de distancia entre ciudades que sería importante para hacer el modelo.
+
+100
+00:10:26,000 --> 00:10:32,000
+También tenemos la cantidad de población por ciudad que es igual a importante posteriormente, lo vamos a ver.
+
+101
+00:10:32,000 --> 00:10:37,000
+Y así escribimos el modelo de una manera quizás como bien directa, no es tan difícil.
+
+102
+00:10:37,000 --> 00:10:45,000
+Y lo resolvemos y aquí nos sale que en realidad el lugar óptimo es Madrid.
+
+103
+00:10:45,000 --> 00:10:51,000
+Esto es obviamente un modelo súper, súper simplificado, se pueden hacer otras cosas más.
+
+104
+00:10:51,000 --> 00:10:59,000
+Por ejemplo si yo en vez de considerar solamente la distancia entre ciudades también considerar a la población que tiene cada ciudad,
+
+105
+00:10:59,000 --> 00:11:07,000
+si yo hiciera eso quizás podríamos obtener una solución un poco mejor porque estamos ponderando la población.
+
+106
+00:11:07,000 --> 00:11:14,000
+Entonces en ese caso por ejemplo nosotros diríamos que hay ciudades que hasta cierto punto son más importantes
+
+107
+00:11:14,000 --> 00:11:16,000
+porque tienen más población.
+
+108
+00:11:16,000 --> 00:11:22,000
+Entonces si nosotros hacemos eso, aquí nosotros estamos multiplicando por el ponderador que es la población,
+
+109
+00:11:22,000 --> 00:11:24,000
+ahí nos sale Zoria.
+
+110
+00:11:24,000 --> 00:11:27,000
+Yo no conozco de España pero digamos que está bien.
+
+111
+00:11:27,000 --> 00:11:32,000
+Y por ejemplo nosotros igual podríamos considerar otras cosas.
+
+112
+00:11:32,000 --> 00:11:36,000
+Por ejemplo previamente se han hecho otros PAI con España,
+
+113
+00:11:36,000 --> 00:11:41,000
+entonces posiblemente no queremos que el evento sea realizado en los mismos eventos anteriores.
+
+114
+00:11:41,000 --> 00:11:47,000
+Entonces por ejemplo si nosotros quisiéramos hacer eso, tendríamos que descomentar esto.
+
+115
+00:11:50,000 --> 00:11:54,000
+Y igual sale Zoria, eso no lo sabía.
+
+116
+00:11:54,000 --> 00:12:02,000
+Si nosotros como que ponemos como ciudades prohibidas, Madrid, Zaragoza, Valencia, Almeria y toda esa en donde se ha realizado la PAI con,
+
+117
+00:12:02,000 --> 00:12:06,000
+nosotros igual lo obtenemos en la misma solución.
+
+118
+00:12:06,000 --> 00:12:14,000
+Y por ejemplo si solamente consideramos, si dijéramos que ya nosotros queremos hacer un evento en donde haya,
+
+119
+00:12:14,000 --> 00:12:18,000
+ya haya una comunidad de PAI con, o sea de PAI ton ahí.
+
+120
+00:12:18,000 --> 00:12:21,000
+Si nosotros hiciéramos eso, nos sale Pamplona.
+
+121
+00:12:21,000 --> 00:12:23,000
+Ya, no sé.
+
+122
+00:12:23,000 --> 00:12:27,000
+Pero esas son como opciones posibles de lo que uno puede hacer con este modelo.
+
+123
+00:12:27,000 --> 00:12:32,000
+Obviamente uno puede complejizar mucho más este modelo, uno lo puede enriquecer de cierta manera,
+
+124
+00:12:32,000 --> 00:12:38,000
+no solamente considerando la distancia ni la población, quizá otras cosas más, posiblemente el costo que sale,
+
+125
+00:12:38,000 --> 00:12:45,000
+quizás arrendar un beño en estas ciudades, eso igual se puede considerar y se puede tomar en consideración para este modelo.
+
+126
+00:12:45,000 --> 00:12:48,000
+Entonces...
+
+127
+00:12:54,000 --> 00:12:58,000
+Bueno, ya entonces aquí ya son las opciones que les mostré antes.
+
+128
+00:12:58,000 --> 00:13:04,000
+Por ejemplo si consideramos la población de la provincia, si consideramos que no queremos realizar el evento donde ya se ha realizado,
+
+129
+00:13:04,000 --> 00:13:10,000
+y si es que queremos considerar que ahí solamente, o sea que se haga evento solamente donde hay comunidad,
+
+130
+00:13:10,000 --> 00:13:12,000
+esas son las opciones.
+
+131
+00:13:12,000 --> 00:13:18,000
+Pero por ejemplo igual hay otro tipo de modelos que podemos utilizar en este mismo contexto de PAI con España.
+
+132
+00:13:18,000 --> 00:13:25,000
+Por ejemplo si nosotros ya tenemos el beño, tenemos el lugar como definido y queremos decir ya,
+
+133
+00:13:25,000 --> 00:13:32,000
+si necesito o quiero empezar a asignar tareas, quiero que hagamos un equipo y empecemos a asignar tareas,
+
+134
+00:13:32,000 --> 00:13:39,000
+eso igual se puede quizás optimizar un poco con optimización matemática.
+
+135
+00:13:41,000 --> 00:13:43,000
+Bueno, ya no importa.
+
+136
+00:13:43,000 --> 00:13:51,000
+Entonces lo que sería aquí es que por ejemplo ya nosotros imagínense que tenemos un grupo de voluntarios posible
+
+137
+00:13:51,000 --> 00:13:56,000
+y les preguntamos ya, José, ¿qué quiere hacer tú? Tenemos estas tareas disponibles.
+
+138
+00:13:56,000 --> 00:14:00,000
+Tenemos redes sociales, encargarse del catering y encargarse de los sponsor.
+
+139
+00:14:00,000 --> 00:14:01,000
+¿Cuál quiere hacer tú?
+
+140
+00:14:01,000 --> 00:14:06,000
+Entonces ahí la persona puede ir poniendo como su preferencia del uno al treo o del uno a lo que sea
+
+141
+00:14:06,000 --> 00:14:08,000
+y cada persona va a hacer lo mismo.
+
+142
+00:14:08,000 --> 00:14:13,000
+Después finalmente tenemos una tabla que va a albergar toda esta preferencia e interés.
+
+143
+00:14:13,000 --> 00:14:21,000
+Y nosotros igual podemos hacer un modelo que nos va a permitir maximizar, digamos, que el bienestar social
+
+144
+00:14:21,000 --> 00:14:25,000
+o maximizar el interés, que todos queden contentos con lo que van a hacer.
+
+145
+00:14:25,000 --> 00:14:29,000
+Entonces igual nosotros podemos tener como condiciones adicionales claramente,
+
+146
+00:14:29,000 --> 00:14:35,000
+por ejemplo que haya un número mínimo y máximo de personas acerca de la tarea, entre otras cosas.
+
+147
+00:14:35,000 --> 00:14:39,000
+Entonces aquí tenemos como un modelo para eso.
+
+148
+00:14:39,000 --> 00:14:45,000
+El modelo es muy parecido a lo anterior, tenemos variables binarias en donde x y j significa
+
+149
+00:14:45,000 --> 00:14:50,000
+o va a valer uno si es que se asignara la tarea y a la persona j y cero en otro caso,
+
+150
+00:14:50,000 --> 00:14:52,000
+o sea, si no se asignara la tarea.
+
+151
+00:14:52,000 --> 00:14:58,000
+Bueno y ahí nosotros estamos como pasando el modelo de ideas a ecuaciones
+
+152
+00:14:58,000 --> 00:15:03,000
+en un modelo relativamente simple y ahí nosotros podemos obtener una solución
+
+153
+00:15:03,000 --> 00:15:09,000
+a nuestro problema de asignación de tarea en donde todos quedan relativamente contentos.
+
+154
+00:15:09,000 --> 00:15:15,000
+Bueno entonces, yo aquí hice este problema de voluntario y por ejemplo ya,
+
+155
+00:15:15,000 --> 00:15:18,000
+yo lo hice con más personas para que se note que en realidad sí sirve.
+
+156
+00:15:18,000 --> 00:15:22,000
+Por ejemplo ya tenemos a Anna, a David, el Cathy, Daniel y que sé yo.
+
+157
+00:15:22,000 --> 00:15:28,000
+Y aquí nosotros decimos ya, a Ana se le va a asignar la tarea a 10, a Bill se le va a asignar la tarea a 12.
+
+158
+00:15:28,000 --> 00:15:29,000
+Y así y así.
+
+159
+00:15:29,000 --> 00:15:33,000
+Y esta solución es óptima de acuerdo a lo que nosotros consideramos que era que
+
+160
+00:15:33,000 --> 00:15:39,000
+se maximizara el interés de la gente en lo que va a hacer.
+
+161
+00:15:39,000 --> 00:15:41,000
+O sea, nosotros queremos que todos queden contentos.
+
+162
+00:15:48,000 --> 00:15:53,000
+Bueno, ya entonces, ahora vamos a pasar a otro tema quizá un poco más de concepto
+
+163
+00:15:53,000 --> 00:15:56,000
+en investigación de operaciones.
+
+164
+00:15:56,000 --> 00:16:01,000
+Nosotros tenemos un par de conceptos importantes entre ellos, solución factible.
+
+165
+00:16:01,000 --> 00:16:05,000
+Una solución factible es una solución que cumple con todas las restricciones,
+
+166
+00:16:05,000 --> 00:16:07,000
+pero que no necesariamente es la mejor.
+
+167
+00:16:07,000 --> 00:16:11,000
+O sea, es una solución que existe y que puede ser, pero no necesariamente es la mejor.
+
+168
+00:16:11,000 --> 00:16:14,000
+También tenemos soluciones óptimas que son las mejores.
+
+169
+00:16:14,000 --> 00:16:18,000
+Y también tenemos regiones factibles que es como lo que se produce
+
+170
+00:16:18,000 --> 00:16:20,000
+cuando nosotros juntamos todas las soluciones factibles.
+
+171
+00:16:20,000 --> 00:16:24,000
+Por ejemplo, si nosotros vieramos como la solución gráfica de algún modelo de optimización,
+
+172
+00:16:24,000 --> 00:16:26,000
+podríamos tener eso.
+
+173
+00:16:26,000 --> 00:16:28,000
+Y lo que está en azul sería la región factible.
+
+174
+00:16:28,000 --> 00:16:31,000
+Quizá algún vértice puede ser la solución óptima.
+
+175
+00:16:31,000 --> 00:16:37,000
+Y el conjunto de cada solución posible es una solución factible.
+
+176
+00:16:37,000 --> 00:16:43,000
+Bueno, entonces, esos son métodos exactos para resolver este tipo de problemas.
+
+177
+00:16:43,000 --> 00:16:46,000
+Y también hay método heurístico.
+
+178
+00:16:46,000 --> 00:16:50,000
+Eso quiere decir que no solamente nosotros podemos resolver las cosas de manera óptima,
+
+179
+00:16:50,000 --> 00:16:54,000
+sino que también podemos resolverlo de manera aproximada.
+
+180
+00:16:54,000 --> 00:16:58,000
+Y esto se usa mucho cuando el problema es como bien difícil de resolver.
+
+181
+00:16:58,000 --> 00:17:01,000
+Entonces, cuando es difícil de resolver, posiblemente nos va a tardar mucho tiempo.
+
+182
+00:17:01,000 --> 00:17:04,000
+Nosotros no queremos gastar tanto tiempo en eso.
+
+183
+00:17:04,000 --> 00:17:07,000
+Así que vamos a utilizar, en este caso, heurísticas, por ejemplo.
+
+184
+00:17:07,000 --> 00:17:11,000
+Y eso se puede hacer y está súper, súper bien visto, por ejemplo,
+
+185
+00:17:11,000 --> 00:17:15,000
+utilizar heurística como solución inicial para, por ejemplo,
+
+186
+00:17:15,000 --> 00:17:17,000
+hacer que las cosas se muevan más rápido.
+
+187
+00:17:17,000 --> 00:17:20,000
+Bueno, entonces, ahora es lo que queda de tiempo, que yo creo que no es mucho.
+
+188
+00:17:20,000 --> 00:17:25,000
+Voy a hablarle un poquito de mi tesis de doctorao, que es de teoría de juegos.
+
+189
+00:17:25,000 --> 00:17:27,000
+Teoría de juegos está súper, súper conectado con la optimización.
+
+190
+00:17:27,000 --> 00:17:29,000
+Así que les voy a contar un poquito de eso.
+
+191
+00:17:29,000 --> 00:17:31,000
+Bueno, entonces, ¿qué es teoría de juegos?
+
+192
+00:17:31,000 --> 00:17:36,000
+Teoría de juegos estudia a través de modelos matemáticos, competencia,
+
+193
+00:17:36,000 --> 00:17:39,000
+y en realidad interacción entre diferentes agentes.
+
+194
+00:17:39,000 --> 00:17:41,000
+Entonces, ¿eso qué quiere decir?
+
+195
+00:17:41,000 --> 00:17:46,000
+Por ejemplo, si yo estoy con una persona y yo estoy jugando, no sé,
+
+196
+00:17:46,000 --> 00:17:50,000
+agendres, por ejemplo, si yo hago un movimiento y la otra persona me responde,
+
+197
+00:17:50,000 --> 00:17:53,000
+eso se podría ver quizás como una especie de teoría de juegos,
+
+198
+00:17:53,000 --> 00:17:55,000
+porque estamos viendo interacciones.
+
+199
+00:17:55,000 --> 00:17:57,000
+Y eso se puede optimizar también.
+
+200
+00:17:57,000 --> 00:18:03,000
+Bueno, entonces, les voy a contar un ejemplo bien clásico del dilema del prisionero,
+
+201
+00:18:03,000 --> 00:18:06,000
+o sea, de teoría de juegos, que se llama dilema del prisionero.
+
+202
+00:18:06,000 --> 00:18:10,000
+En este caso, nosotros tenemos la siguiente situación.
+
+203
+00:18:10,000 --> 00:18:14,000
+Y, por ejemplo, yo estoy con mi amiga y cometemos un crimen,
+
+204
+00:18:14,000 --> 00:18:19,000
+y nos llevan de tenías a una estación de policía y nos hacen confesar.
+
+205
+00:18:19,000 --> 00:18:24,000
+Entonces, en esta confesión nos hacen confesar de manera separada.
+
+206
+00:18:24,000 --> 00:18:29,000
+Entonces, como estamos de manera separada, no nos podemos poner de acuerdo en lo que decir.
+
+207
+00:18:29,000 --> 00:18:34,000
+Entonces, una opción es que yo delate a mi amiga y que yo diga, no, yo no hice nada.
+
+208
+00:18:34,000 --> 00:18:38,000
+En ese caso, a mi amiga la mete en presa y a mí no.
+
+209
+00:18:38,000 --> 00:18:42,000
+También puede estar el otro caso posible, que a mi amiga la mete en presa,
+
+210
+00:18:42,000 --> 00:18:45,000
+o sea, a mí me mete en presa y a mi amiga no.
+
+211
+00:18:45,000 --> 00:18:50,000
+Está el caso en el que ninguna de las dos se delata entre sí,
+
+212
+00:18:50,000 --> 00:18:54,000
+y en ese caso lo llamamos cooperación, porque las dos como que nos ayudaban entre sí.
+
+213
+00:18:54,000 --> 00:18:59,000
+Y también está el caso en el que las dos nos delatamos entre sí, y ese es como el peor caso.
+
+214
+00:18:59,000 --> 00:19:04,000
+Bueno, entonces, este tipo de situaciones estudia teoría de juegos.
+
+215
+00:19:04,000 --> 00:19:07,000
+Teoría de juegos estudia situaciones en las que tenemos interacciones
+
+216
+00:19:07,000 --> 00:19:12,000
+y en las que tenemos que saber o queremos determinar cómo actuar de la mejor manera posible
+
+217
+00:19:12,000 --> 00:19:16,000
+y siempre hay dos o más agentes que están interactuando entre sí.
+
+218
+00:19:16,000 --> 00:19:22,000
+Bueno, entonces, lo que haría teoría de juegos en este caso sería como decir,
+
+219
+00:19:22,000 --> 00:19:30,000
+ah, bueno, quizá cooperar en la mejor opción posible, o dependiendo de los parámetros que tenga.
+
+220
+00:19:30,000 --> 00:19:38,000
+Bueno, entonces, teoría de juegos está muy relacionada con la optimización, porque nosotros vamos a utilizar
+
+221
+00:19:38,000 --> 00:19:41,000
+optimización para resolver este tipo de problemas.
+
+222
+00:19:41,000 --> 00:19:45,000
+Y este tipo de problemas, además, se divide en dos,
+
+223
+00:19:45,000 --> 00:19:49,000
+que son teoría, o sea, juegos de Nach y juegos de Stackelberg.
+
+224
+00:19:49,000 --> 00:19:55,000
+Los juegos de Nach son aquellas situaciones en que ambos agentes actúan de manera simultánea.
+
+225
+00:19:55,000 --> 00:19:59,000
+Por ejemplo, estamos jugando a las cartas y tenemos que tirar toda una carta al mismo momento,
+
+226
+00:19:59,000 --> 00:20:01,000
+ya ese es un juego de Nach.
+
+227
+00:20:01,000 --> 00:20:08,000
+Un juego de Stackelberg es un juego en el que todos los jugadores o agentes actúan de manera secuencial.
+
+228
+00:20:08,000 --> 00:20:12,000
+Es decir, que yo hago algo, tú me respondes, después yo te respondo.
+
+229
+00:20:12,000 --> 00:20:15,000
+Entonces, así y así, es un juego de Stackelberg.
+
+230
+00:20:15,000 --> 00:20:20,000
+Y yo emité si estudié juegos de Stackelberg, así que por eso me vas a entrar en eso.
+
+231
+00:20:20,000 --> 00:20:25,000
+Por ejemplo, un juego de Stackelberg sería un caso en el que tenemos una empresa en una ciudad.
+
+232
+00:20:25,000 --> 00:20:29,000
+Y esta empresa es como casi un monopolio, porque abarca a todos los clientes.
+
+233
+00:20:29,000 --> 00:20:34,000
+Y de repente llega otra empresa y obviamente quiere hacer lo mismo.
+
+234
+00:20:34,000 --> 00:20:41,000
+Entonces, como quiere hacer lo mismo, por ejemplo, se va a colocar al lado de mi empresa inicial.
+
+235
+00:20:41,000 --> 00:20:46,000
+Entonces, ¿qué debería haber hecho yo como empresa inicial?
+
+236
+00:20:46,000 --> 00:20:56,000
+Yo, el punto verde, empresa verde, lo que debería haber hecho es considerar que eventualmente un competidor iba a llegar a mi ciudad
+
+237
+00:20:56,000 --> 00:20:59,000
+y que me iba a tratar de robar a los clientes.
+
+238
+00:20:59,000 --> 00:21:02,000
+Porque eso claramente puede pasar, eso va a pasar.
+
+239
+00:21:02,000 --> 00:21:07,000
+Entonces, yo como primera empresa siempre debo considerar a una empresa competidora.
+
+240
+00:21:07,000 --> 00:21:10,000
+O al menos eso es lo que se debería hacer.
+
+241
+00:21:10,000 --> 00:21:20,000
+Entonces, juego de Stackelberg lo que me permitiría es hacer una estrategia competitiva de dónde ubicarme,
+
+242
+00:21:20,000 --> 00:21:25,000
+considerando que además hay otras empresas que podrían llegar a futuro.
+
+243
+00:21:25,000 --> 00:21:32,000
+Entonces, en este caso, teoría de juego lo que me permita hacer es tener una ventaja competitiva en relación a la otra empresa.
+
+244
+00:21:32,000 --> 00:21:39,000
+Pero, teoría de juego no solamente se utiliza para eso, también se utiliza para muchas otras cosas.
+
+245
+00:21:39,000 --> 00:21:42,000
+En particular, se utiliza mucho en seguridad.
+
+246
+00:21:42,000 --> 00:21:51,000
+Por ejemplo, en aeropuertos para poner como unidades caninas, como los perritos que uno ve de repente en el aeropuerto,
+
+247
+00:21:51,000 --> 00:21:59,000
+esas unidades caninas no se ponen ahí o no se colocan ahí como de manera aleatoria, sino que debería haber un estudio detrás.
+
+248
+00:21:59,000 --> 00:22:01,000
+Y de hecho, en algunos aeropuertos hay.
+
+249
+00:22:01,000 --> 00:22:13,000
+Entonces, vamos a colocar unidades caninas en donde, por ejemplo, sea más probable encontrar crimen, o en donde sea más probable encontrar cierto tipo de crimen que quizás no importa más.
+
+250
+00:22:13,000 --> 00:22:24,000
+Por ejemplo, no sé, cuando las personas van con sustancias ilícitas u otro tipo de cosas, incluso con trata de personas,
+
+251
+00:22:24,000 --> 00:22:30,000
+ahí, por ejemplo, podríamos poner como unidades caninas o recursos de seguridad, por ejemplo, policía.
+
+252
+00:22:30,000 --> 00:22:35,000
+También, por ejemplo, nos sirve para evitar la casa ilegal de animales.
+
+253
+00:22:35,000 --> 00:22:43,000
+Obviamente, por ejemplo, si estamos hablando de alguna selva o algo así, es un espacio muy, muy grande, los recursos son escasos.
+
+254
+00:22:43,000 --> 00:22:45,000
+Entonces, no podemos proteger todo al mismo tiempo.
+
+255
+00:22:45,000 --> 00:22:50,000
+Esa es como la clave inicial, o sea, la clave en realidad, que los recursos siempre son escasos.
+
+256
+00:22:50,000 --> 00:22:58,000
+Entonces, en este caso como de casa ilegal, nosotros tenemos que saber bien dónde poner como guardias para evitar esta casa ilegal.
+
+257
+00:22:58,000 --> 00:23:06,000
+Y eso lo vamos a hacer, por ejemplo, con el historial de crímenes de este tipo, que están asociados a cada punto en específico.
+
+258
+00:23:06,000 --> 00:23:12,000
+También el caso, así como superobvio, es, por ejemplo, en ciudades para ubicar policía.
+
+259
+00:23:12,000 --> 00:23:21,000
+Obviamente, ahí lugar de la ciudad en donde es mucho más probable encontrar crimen, quizás se debería aplicar más recursos de seguridad en estos puntos.
+
+260
+00:23:21,000 --> 00:23:28,000
+Y por último, en ciberseguridad también se ocupa artes teorías de juego, de repente se ocupa más teorías de Nach en todo caso.
+
+261
+00:23:28,000 --> 00:23:32,000
+Esto es como para evitar posibles ataques de hackers.
+
+262
+00:23:32,000 --> 00:23:47,000
+Entonces uno podría saber qué proteger o saber qué vale más la pena proteger, de acuerdo a quizás ataques anteriores o ataques de otras empresas que nosotros podemos aprovechar como información.
+
+263
+00:23:47,000 --> 00:23:59,000
+Bueno, entonces, en resumen, un juego de Estacolver es una situación en donde tenemos dos personas o dos agentes.
+
+264
+00:23:59,000 --> 00:24:02,000
+Estos agentes como que interactúan entre sí.
+
+265
+00:24:02,000 --> 00:24:11,000
+Y lo que siempre se trata de hacer en un juego de Estacolver de seguridad es que hay una persona que defiende y otro que ataca.
+
+266
+00:24:11,000 --> 00:24:13,000
+Eso es lo que nosotros siempre asumimos.
+
+267
+00:24:13,000 --> 00:24:18,000
+Al que defiende le llamamos defensor claramente y al que ataque le llamamos atacante.
+
+268
+00:24:18,000 --> 00:24:31,000
+Y nosotros lo que vamos a tratar de hacer es encontrar lo que llamamos un equilibrio, que es una situación en la que ambas partes están más o menos contentos porque han tomado la mejor decisión posible.
+
+269
+00:24:31,000 --> 00:24:43,000
+Nosotros aquí lo que hacemos o lo que asumimos es que todos los agentes son racionales. Es decir que todos son inteligentes, todos van a tomar las mejores decisiones posibles y eso en realidad igual tiene sentido.
+
+270
+00:24:43,000 --> 00:24:46,000
+Al final, como que uno siempre trata de sacar provecho en la situación.
+
+271
+00:24:46,000 --> 00:24:58,000
+Entonces, por ejemplo, un caso hipotético sería el siguiente en el que nosotros tenemos dos recursos de seguridad, policía verde y policía azul.
+
+272
+00:24:58,000 --> 00:25:05,000
+Y tenemos un atacante ahí que está corriendo y que quiere atacar uno de nuestros territorios ABCDOE.
+
+273
+00:25:05,000 --> 00:25:11,000
+Entonces, lo que nosotros vamos a hacer es que vamos a poner recursos de seguridad en ciertos lugares.
+
+274
+00:25:11,000 --> 00:25:16,000
+Y para ello, para determinar qué lugares vamos a utilizar optimización.
+
+275
+00:25:16,000 --> 00:25:32,000
+Entonces, digamos que ingresamos este modelo a nuestro modelo escritulo, ingresamos a nuestro modelo de optimización en Python, tenemos ya el modelo listo y nos dice que ya que la solución óptima es proteger ABCD.
+
+276
+00:25:32,000 --> 00:25:38,000
+Aquí nosotros estamos asumiendo que los policías protegen cada uno dos territorios.
+
+277
+00:25:38,000 --> 00:25:46,000
+Pero, claramente ustedes se harán cuenta de que esta es una de las soluciones posibles y hay muchas más.
+
+278
+00:25:46,000 --> 00:25:50,000
+Y cada una de estas estrategias son estrategias puras, le vamos a llamar.
+
+279
+00:25:50,000 --> 00:25:58,000
+Pero, aquí que nosotros estamos trabajando solamente con 5 territorios y eso es como súper pocos territorios en realidad.
+
+280
+00:25:58,000 --> 00:26:05,000
+Si nosotros empezáramos a aumentar el número de territorios y el número de atacantes o el número de jugadores en realidad.
+
+281
+00:26:05,000 --> 00:26:16,000
+Esto escala mucho, es decir que tenemos muchas combinaciones posibles y ya resolver esto con optimización empieza a ser muy lento, empieza a ser muy difícil.
+
+282
+00:26:16,000 --> 00:26:23,000
+Entonces, es nuestro primer problema que en realidad estos problemas son difíciles, son muchas las combinaciones posibles.
+
+283
+00:26:23,000 --> 00:26:31,000
+Y igual nosotros lo que queremos hacer es como ser lo más impredecible posible.
+
+284
+00:26:31,000 --> 00:26:37,000
+El defensor siempre va a querer ser impredecible, no queremos que el atacante sepa donde nosotros vamos a defender.
+
+285
+00:26:37,000 --> 00:26:46,000
+Entonces, en vez de utilizar estrategias puras, es decir que utilizar siempre siempre la misma estrategia de defensa, nosotros vamos a ir variando.
+
+286
+00:26:46,000 --> 00:26:53,000
+Así como ya el lunes, el día lunes voy a utilizar la estrategia pura 1, que sería esa forma como de proteger.
+
+287
+00:26:53,000 --> 00:26:58,000
+El martes voy a utilizar la estrategia pura 2, el miércoles, las 3 y así y así.
+
+288
+00:26:58,000 --> 00:27:05,000
+Entonces nosotros vamos a tratar de confundir al atacante para que el atacante no sepa que estamos defendiendo.
+
+289
+00:27:05,000 --> 00:27:11,000
+Y así el atacante no puede aprovechar como nuestro espacio va a ser donde no estamos defendiendo.
+
+290
+00:27:11,000 --> 00:27:18,000
+Entonces nosotros decimos ya el atacante eligió atacarse, esa es una opción posible y para él era la mejor.
+
+291
+00:27:18,000 --> 00:27:31,000
+Entonces claro, lo que nosotros queremos hacer es encontrar un equilibrio y un equilibrio se define como una situación en la que ambos agentes actúan de la mejor manera posible
+
+292
+00:27:31,000 --> 00:27:39,000
+y que todos asumen que la otra persona es racional, es decir que estamos asumiendo que todos son inteligentes.
+
+293
+00:27:39,000 --> 00:27:45,000
+Igual hay otras cosas, por ejemplo si hay empates, como que se hacen diferentes cosas, pero eso es como un extra.
+
+294
+00:27:45,000 --> 00:27:51,000
+Así que bueno, eso les quería presentar hoy día, espero que se haya entendido.
+
+295
+00:27:51,000 --> 00:27:53,000
+Así que muchas gracias.
+
+296
+00:28:00,000 --> 00:28:02,000
+Es súper interesante la charla.
+
+297
+00:28:02,000 --> 00:28:06,000
+Tenemos tiempo para pregunta al Quinsarima.
+
+298
+00:28:06,000 --> 00:28:15,000
+Muchas gracias por la charla, ha sido bastante interesante.
+
+299
+00:28:15,000 --> 00:28:27,000
+En la última parte cuando decías que se asume que son inteligentes y que el otro también es inteligente, por ejemplo si tienes tres recursos y que cubrir dos,
+
+300
+00:28:27,000 --> 00:28:41,000
+igual puedes decir que voy a cubrir los dos recursos más valiosos, pero si piensas que el otro va a hacer lo mismo y va a atacar el débil, igual te interesa dejar uno libre y cubrir el débil porque así lo pillas.
+
+301
+00:28:41,000 --> 00:28:43,000
+Claro, claro, esa...
+
+302
+00:28:43,000 --> 00:28:48,000
+¿Cómo trabajas con esto? Porque al final depende de quién haya pensado un paso más lejos.
+
+303
+00:28:48,000 --> 00:28:59,000
+Sí, nosotros asumimos que estos juegos son de dos etapas, es decir que el defensor hace algo y el atacante responde, y solamente eso no asumimos que haya más etapas.
+
+304
+00:28:59,000 --> 00:29:11,000
+Entonces si nosotros asumimos eso, el defensor lo que tiene que asumir es que el atacante es inteligente y para ello va a decidir como qué atacar,
+
+305
+00:29:11,000 --> 00:29:27,000
+considerando lo que tú decías, como que quizás hay recursos que son más valiosos y por lo tanto quizás lo que a mí me convendría es proteger esos lugares, pero...
+
+306
+00:29:27,000 --> 00:29:43,000
+pero posiblemente estos lugares como que el atacante sepa que yo voy a hacer eso, entonces puede ser que ataque los otros puntos. Entonces claro, como que para enfrentar ese tipo de situaciones en la que yo te quiero pillar y tú me quieres pillar,
+
+307
+00:29:43,000 --> 00:29:57,000
+para enfrentar ese tipo de situaciones lo que yo hago como defensor es como hacer este tema de aleatoriedad, que es como que yo de repente voy a proteger esto y de repente esto otro y de repente quizás otros lugares,
+
+308
+00:29:57,000 --> 00:30:10,000
+y así el atacante hasta cierto punto digamos que se confunde, como que no está tan claro de que estoy defendiendo yo, pero igual el atacante inteligente posiblemente igual no está observando.
+
+309
+00:30:10,000 --> 00:30:23,000
+Eso quiere decir que por ejemplo ya yo puedo proteger durante toda la semana con mi estrategia que elegí, el atacante puede estar mirándonos todo el tiempo y ahí decidir qué atacar, si eso igual se puede hacer,
+
+310
+00:30:23,000 --> 00:30:35,000
+pero aun así yo hice mi mejor trabajo como defensor, el atacante también hizo su mejor trabajo y en realidad como que no hay mejor estado que siempre se puede perder, pero se va a tratar de perder lo menos posible.
+
+311
+00:30:35,000 --> 00:30:41,000
+Sí.
+
+312
+00:30:46,000 --> 00:30:49,000
+Bueno, muchas gracias por la presentación.
+
+313
+00:30:49,000 --> 00:30:56,000
+Una pregunta sobre el tema de las partecas, que hay en, mostrarte que hay muchos solvers en Paetón.
+
+314
+00:30:56,000 --> 00:31:08,000
+¿Cuál será la estrategia para elegir uno? O sea, qué cuestiones tendrías que tener en cuenta para alguien que no sabe sobre la optimización matemática y quiere introducirse en ese tema en Paetón.
+
+315
+00:31:08,000 --> 00:31:11,000
+Bueno, gracias por la pregunta.
+
+316
+00:31:11,000 --> 00:31:22,000
+Lo primero es que generalmente Gurovi y Ciplex son los que más se usan como a nivel académico y todo.
+
+317
+00:31:22,000 --> 00:31:38,000
+Entonces Gurovi y Ciplex son los que más se usan como a nivel académico, entonces posiblemente se hacían buenas opciones porque hay más documentación, es más fácil saber cómo resolver este tipo de problemas con Gurovi y Ciplex.
+
+318
+00:31:38,000 --> 00:31:51,000
+Pero por ejemplo, si ya estoy un poco más metido en este tipo de problemas y quiero hacer un poco de cosas más complejas, en ese caso Skip es una muy buena opción porque permite quizás como meterse más al código
+
+319
+00:31:51,000 --> 00:31:53,000
+para algunas cosas que están como por detrás.
+
+320
+00:31:53,000 --> 00:32:02,000
+PULP es una muy buena opción si es que yo soy parte de una empresa y quiero utilizar este tipo de herramientas para mejorar algún proceso en mi empresa
+
+321
+00:32:02,000 --> 00:32:06,000
+y estoy lucrando con ese tipo de herramienta, con este tipo de herramientas.
+
+322
+00:32:06,000 --> 00:32:10,000
+En ese caso PULP es una súper buena opción porque no tengo que pagar licencias.
+
+323
+00:32:10,000 --> 00:32:21,000
+Así que depende de lo que uno quiera, yo creo que Ciplex y Gurovi, si es que uno no es parte de la empresa, Ciplex y Gurovi es un súper buen inicio como resolver.
+
+324
+00:32:21,000 --> 00:32:22,000
+Así que eso.
+
+325
+00:32:25,000 --> 00:32:26,000
+Una pregunta.
+
+326
+00:32:26,000 --> 00:32:38,000
+Bueno, un aplauso para Pamela por favor.
+

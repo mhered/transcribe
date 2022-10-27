@@ -1,0 +1,1708 @@
+1
+00:00:00,000 --> 00:00:21,760
+Thank you very much.
+
+2
+00:00:21,760 --> 00:00:23,800
+First of all, thank you for having me here.
+
+3
+00:00:23,800 --> 00:00:28,240
+It's a pleasure to be able to share my experience with everybody about the project.
+
+4
+00:00:28,240 --> 00:00:32,240
+So I'm going to be talking about the ups and downs of deploying AI in the wild.
+
+5
+00:00:32,240 --> 00:00:38,640
+If anybody has any machine learning experience, you might know that this is not always a very smooth journey.
+
+6
+00:00:38,640 --> 00:00:39,840
+So let's see what happened.
+
+7
+00:00:39,840 --> 00:00:41,840
+I have three parts today.
+
+8
+00:00:41,840 --> 00:00:46,240
+So first I'll present the AI solution, then I'll let you know how that launch went,
+
+9
+00:00:46,240 --> 00:00:49,040
+and then what happens after the deployment.
+
+10
+00:00:49,040 --> 00:00:51,640
+First of all, the solution.
+
+11
+00:00:51,640 --> 00:00:54,440
+There is no solution without a team, obviously.
+
+12
+00:00:54,440 --> 00:01:00,640
+Let me quickly introduce the team that worked on this project, even though they are endonymized.
+
+13
+00:01:00,640 --> 00:01:02,840
+So I'm the data scientist on this project.
+
+14
+00:01:02,840 --> 00:01:05,440
+I have another data scientist working with me.
+
+15
+00:01:05,440 --> 00:01:09,840
+We're working in a tech consulting company at GFT.
+
+16
+00:01:09,840 --> 00:01:13,440
+And this was a big project that we did for a bank.
+
+17
+00:01:13,440 --> 00:01:18,240
+We had a couple of functional analysts, a small army of data engineers, project lead,
+
+18
+00:01:18,240 --> 00:01:22,640
+and then we had the client that we were developing the solution for.
+
+19
+00:01:22,640 --> 00:01:25,640
+And the client tech leads as well.
+
+20
+00:01:25,640 --> 00:01:30,440
+We worked on different document processing solutions with custom neural networks.
+
+21
+00:01:30,440 --> 00:01:35,640
+And we've also worked on a model ensemble solution for insurance companies as well.
+
+22
+00:01:35,640 --> 00:01:37,440
+But let's get to the point.
+
+23
+00:01:37,440 --> 00:01:43,240
+Let's get to this project, the one that was the most interesting so far in my data scientist career.
+
+24
+00:01:43,240 --> 00:01:44,040
+And what did we do?
+
+25
+00:01:44,040 --> 00:01:49,640
+We did a categorization of bank transactions.
+
+26
+00:01:49,640 --> 00:01:58,640
+To solve this problem, we used NLP to categorize them using the text that describes the bank transactions.
+
+27
+00:01:58,640 --> 00:02:02,040
+Usually the input is defined by the business.
+
+28
+00:02:02,040 --> 00:02:09,040
+So when you use a credit card, the transaction that you find on your phone is defined by the business
+
+29
+00:02:09,040 --> 00:02:10,640
+where you used your credit card.
+
+30
+00:02:10,640 --> 00:02:14,640
+But there are other transactions that are the input is put in by the user.
+
+31
+00:02:14,640 --> 00:02:19,440
+So when you do a transference or a Bithum, those are inputs that you put in yourself.
+
+32
+00:02:19,440 --> 00:02:25,440
+So we had quite a variety of inputs and texts to categorize.
+
+33
+00:02:25,440 --> 00:02:28,440
+Let's get to the model.
+
+34
+00:02:28,440 --> 00:02:30,440
+This is what we all came here for, right?
+
+35
+00:02:30,440 --> 00:02:31,440
+Show me the model.
+
+36
+00:02:31,440 --> 00:02:35,440
+So let's take a look at the inference pipeline.
+
+37
+00:02:35,440 --> 00:02:40,440
+I've reduced the complexity a little bit just to get us nice and cozy with the model
+
+38
+00:02:40,440 --> 00:02:43,440
+because we'll be seeing this guy a lot in the next couple of minutes.
+
+39
+00:02:43,440 --> 00:02:51,440
+So first we have a database and we have a pre-processing pipeline that takes in all of the transactions, different types of transactions.
+
+40
+00:02:51,440 --> 00:02:55,440
+At the end of the day, what we are most interested in is the text.
+
+41
+00:02:55,440 --> 00:03:00,440
+So we have to manipulate the inputs a little bit just to isolate that text part that we want.
+
+42
+00:03:00,440 --> 00:03:07,440
+And then we used a sentence transformer pre-trained model to convert that text into a series of numbers.
+
+43
+00:03:07,440 --> 00:03:12,440
+So we vectorized the input text because obviously the, of course,
+
+44
+00:03:12,440 --> 00:03:15,440
+machine learning algorithm can't understand text.
+
+45
+00:03:15,440 --> 00:03:17,440
+We need to convert that into numbers.
+
+46
+00:03:17,440 --> 00:03:20,440
+And we used the universal sentence encoder for that.
+
+47
+00:03:20,440 --> 00:03:27,440
+So what that does basically is convert vectors into 512 dimensional space.
+
+48
+00:03:27,440 --> 00:03:37,440
+All of the text that is similar is coded more or less into like the same area of the n-dimensional space.
+
+49
+00:03:37,440 --> 00:03:42,440
+And then text that is a little bit different is coded farther away in that space.
+
+50
+00:03:42,440 --> 00:03:44,440
+And so then we train the categorizer.
+
+51
+00:03:44,440 --> 00:03:46,440
+This is the star of the show.
+
+52
+00:03:46,440 --> 00:03:56,440
+And they use these vectors, the numbers that we have, and they divide that n-dimensional space and thereby assigning the different categories to the transactions.
+
+53
+00:03:56,440 --> 00:04:05,440
+If we look at a really quick example, so if we have gasolina, we convert gasolina into text and then we assign that to vehicles as a category.
+
+54
+00:04:05,440 --> 00:04:10,440
+And for example, as well, we have the Apple bill, the one that comes every month.
+
+55
+00:04:10,440 --> 00:04:14,440
+We convert that into vectors as well.
+
+56
+00:04:14,440 --> 00:04:17,440
+And that will be mapped into a different part of the vector space.
+
+57
+00:04:17,440 --> 00:04:20,440
+And thus we'll get a different category.
+
+58
+00:04:20,440 --> 00:04:22,440
+So that's all nice.
+
+59
+00:04:22,440 --> 00:04:24,440
+Looks pretty simple, you know, right?
+
+60
+00:04:24,440 --> 00:04:26,440
+Text, vector, category.
+
+61
+00:04:26,440 --> 00:04:29,440
+But the real world solutions usually are not this nice.
+
+62
+00:04:29,440 --> 00:04:31,440
+The real world solution looks a little bit more like this.
+
+63
+00:04:31,440 --> 00:04:34,440
+We have multiple data sets, multiple types of texts.
+
+64
+00:04:34,440 --> 00:04:42,440
+We needed to do a couple of different types of models to be able to capture the differences in the inputs that we were getting.
+
+65
+00:04:42,440 --> 00:04:50,440
+So let's take a look a little bit piece by piece of this real world ML solution.
+
+66
+00:04:50,440 --> 00:04:52,440
+First of all, we had different types of data.
+
+67
+00:04:52,440 --> 00:04:58,440
+Most of them were transactions, but actually we also had other types of operations that were not transactions.
+
+68
+00:04:58,440 --> 00:05:03,440
+So we needed to have a clear definition on exactly what it was we were categorizing.
+
+69
+00:05:03,440 --> 00:05:07,440
+We had to define the scope of our models and the scope of our universe.
+
+70
+00:05:07,440 --> 00:05:11,440
+What is the model going to be predicting on?
+
+71
+00:05:11,440 --> 00:05:17,440
+And then we also had other transactions with different types of properties.
+
+72
+00:05:17,440 --> 00:05:19,440
+We did an exploratory data analysis.
+
+73
+00:05:19,440 --> 00:05:23,440
+I just turned it down to the coolest plots that we saw.
+
+74
+00:05:23,440 --> 00:05:28,440
+And these are the ones that are distributed over time to see the volume of transactions over time
+
+75
+00:05:28,440 --> 00:05:32,440
+and see how that may impact the categorization.
+
+76
+00:05:32,440 --> 00:05:37,440
+We found that time was not a feature that helped the model, so we didn't end up using it.
+
+77
+00:05:37,440 --> 00:05:44,440
+But I think that the plots turned out really cool and they give you a good intuition and they tell you,
+
+78
+00:05:44,440 --> 00:05:45,440
+okay, yeah, this data is real.
+
+79
+00:05:45,440 --> 00:05:49,440
+This data makes sense and we can actually do some work with it.
+
+80
+00:05:49,440 --> 00:05:55,440
+So you can see the first one is the one with the number of transactions per day of the month.
+
+81
+00:05:55,440 --> 00:06:01,440
+So in Mexico, this is from a bank in Mexico, you get paid twice a month.
+
+82
+00:06:01,440 --> 00:06:06,440
+And so you can see that there are more transactions at the middle of the month than at the end of the month.
+
+83
+00:06:06,440 --> 00:06:11,440
+And then you can see on weekdays that we have more transactions on Fridays
+
+84
+00:06:11,440 --> 00:06:14,440
+and less transactions on the weekend on Saturdays and Sundays.
+
+85
+00:06:14,440 --> 00:06:17,440
+And finally, this one, I think this is a really beautiful wave.
+
+86
+00:06:17,440 --> 00:06:23,440
+And this is the hour of the day, so we can see that overnight from like 0 to 6 o'clock,
+
+87
+00:06:23,440 --> 00:06:30,440
+we don't have that much volume of transactions and then most of the transactions are at around like 11, 12 o'clock during the day.
+
+88
+00:06:30,440 --> 00:06:36,440
+So okay, so now we've gathered nice intuition about the data set, so let's keep going.
+
+89
+00:06:36,440 --> 00:06:42,440
+And we start doing our different inference pipelines for the different use cases that we have.
+
+90
+00:06:42,440 --> 00:06:46,440
+So most transactions are actually going to go through a pretty simple pipeline,
+
+91
+00:06:46,440 --> 00:06:48,440
+the same one that we saw earlier before.
+
+92
+00:06:48,440 --> 00:06:53,440
+So we have the text of the transaction, the sentence transformer,
+
+93
+00:06:53,440 --> 00:06:56,440
+and a first classifier with the categories.
+
+94
+00:06:56,440 --> 00:07:01,440
+And then we have other operations, these ones had no money transfer involved,
+
+95
+00:07:01,440 --> 00:07:06,440
+and so we deemed these not categorizable because they weren't part of our universe.
+
+96
+00:07:06,440 --> 00:07:10,440
+And we had to deal with these guys as well because they are going to be part of our incoming data.
+
+97
+00:07:10,440 --> 00:07:15,440
+And so for these ones, we did some simple rules and heuristics to assign them to another category of their own,
+
+98
+00:07:15,440 --> 00:07:19,440
+like not categorizable, so that we know what happened to these guys.
+
+99
+00:07:19,440 --> 00:07:24,440
+And then we had other transactions, like I said before, that had different characteristics.
+
+100
+00:07:24,440 --> 00:07:26,440
+They both had more ambiguous text.
+
+101
+00:07:26,440 --> 00:07:29,440
+They had a lot of acronyms.
+
+102
+00:07:29,440 --> 00:07:33,440
+That natural language processing wasn't quite able to pick that up.
+
+103
+00:07:33,440 --> 00:07:38,440
+So we actually did a different model for these guys, for most of the guys,
+
+104
+00:07:38,440 --> 00:07:41,440
+to be able to capture these differences.
+
+105
+00:07:41,440 --> 00:07:47,440
+They were in a different universe, so we found that it was a better solution to create a second classifier for this case.
+
+106
+00:07:47,440 --> 00:07:52,440
+And for another case, the ones that were easily captured by patterns, like the acronyms,
+
+107
+00:07:52,440 --> 00:07:59,440
+we actually solved that more complicated case with rules and heuristics with regular expressions.
+
+108
+00:07:59,440 --> 00:08:03,440
+We also add external enrichment to the text.
+
+109
+00:08:03,440 --> 00:08:10,440
+This is the one where you know when you pay by card at a store,
+
+110
+00:08:10,440 --> 00:08:18,440
+the shops and the commerce actually are already assigning a kind of category to your transaction.
+
+111
+00:08:18,440 --> 00:08:22,440
+These are called the merchant category codes, and every time you open a business,
+
+112
+00:08:22,440 --> 00:08:26,440
+you put your business under some kind of merchant category code.
+
+113
+00:08:26,440 --> 00:08:29,440
+That's actually, there's a lot of codes.
+
+114
+00:08:29,440 --> 00:08:33,440
+I think there's almost 100 or 200 different categories under this list.
+
+115
+00:08:33,440 --> 00:08:35,440
+So it's too many for our use case.
+
+116
+00:08:35,440 --> 00:08:39,440
+So we tried mapping them, rules and heuristics as well,
+
+117
+00:08:39,440 --> 00:08:43,440
+but we found that that was not maintainable to do that kind of manual mapping.
+
+118
+00:08:43,440 --> 00:08:50,440
+So we actually included the MCC, the merchant category code, as a feature to the second model.
+
+119
+00:08:50,440 --> 00:08:52,440
+That's why we have two models.
+
+120
+00:08:52,440 --> 00:08:58,440
+When you do a manual transaction, you put like manually the concept of your bethum.
+
+121
+00:08:58,440 --> 00:09:00,440
+Those ones don't get an MCC.
+
+122
+00:09:00,440 --> 00:09:04,440
+So that was the biggest reason why we needed two models as well.
+
+123
+00:09:04,440 --> 00:09:08,440
+So going back to our example, how does that MCC appear?
+
+124
+00:09:08,440 --> 00:09:12,440
+Well, we have a grocery store.
+
+125
+00:09:12,440 --> 00:09:16,440
+We've got the vectorization of the text with the sentence transformer,
+
+126
+00:09:16,440 --> 00:09:23,440
+but in this case, we've also added an extra feature vector that encodes the MCC.
+
+127
+00:09:23,440 --> 00:09:27,440
+And then we get our category.
+
+128
+00:09:27,440 --> 00:09:28,440
+Great.
+
+129
+00:09:28,440 --> 00:09:32,440
+So now we have our real world solution.
+
+130
+00:09:32,440 --> 00:09:35,440
+It's a lot messier than the one that we had before,
+
+131
+00:09:35,440 --> 00:09:41,440
+but for the deployment, now that we're ready after the client validation and all the tests,
+
+132
+00:09:41,440 --> 00:09:43,440
+we're ready to deploy.
+
+133
+00:09:43,440 --> 00:09:46,440
+And this is where it gets a little bit messy.
+
+134
+00:09:46,440 --> 00:09:53,440
+So let's trap in because we're going to get ready to launch this model into the client platform.
+
+135
+00:09:53,440 --> 00:09:56,440
+What does that look like and where are we going?
+
+136
+00:09:56,440 --> 00:09:59,440
+We're going into a cloud data data lake.
+
+137
+00:09:59,440 --> 00:10:08,440
+This is basically a platform where that offers a UI, a graphic interface for different components of technical solutions.
+
+138
+00:10:08,440 --> 00:10:14,440
+So we will have different technical components of the solutions that we will discover bit by bit as we go along.
+
+139
+00:10:14,440 --> 00:10:20,440
+But the first step that we needed to do was to convert our pipeline into a Spark application
+
+140
+00:10:20,440 --> 00:10:24,440
+because it turns out that in cloud data, the client does everything with Spark.
+
+141
+00:10:24,440 --> 00:10:30,440
+And so we had to translate all of our Jupyter notebooks and our codes and wrap it up into a nice Spark app.
+
+142
+00:10:30,440 --> 00:10:32,440
+That was new for me.
+
+143
+00:10:32,440 --> 00:10:35,440
+I hadn't done Spark before.
+
+144
+00:10:35,440 --> 00:10:46,440
+Spark is actually mostly built in Java and Scala, but Python does offer like a wrapper around this application
+
+145
+00:10:46,440 --> 00:10:49,440
+to help us use this technology.
+
+146
+00:10:49,440 --> 00:10:54,440
+So let's see what happened when we start learning what Spark is.
+
+147
+00:10:54,440 --> 00:10:56,440
+So Spark 101.
+
+148
+00:10:56,440 --> 00:10:59,440
+We can consider Spark actually like a company.
+
+149
+00:10:59,440 --> 00:11:02,440
+It's a contributed computing system, but we'll consider that a company.
+
+150
+00:11:02,440 --> 00:11:04,440
+And like every company, there's a boss.
+
+151
+00:11:04,440 --> 00:11:07,440
+So we have a CEO and that is the Spark driver.
+
+152
+00:11:07,440 --> 00:11:13,440
+This is the one that receives the principal Python code and that's going to tell the worker nodes what to do.
+
+153
+00:11:13,440 --> 00:11:18,440
+So it's going to distribute the computation across different workers.
+
+154
+00:11:18,440 --> 00:11:21,440
+The workers are in an office space.
+
+155
+00:11:21,440 --> 00:11:23,440
+So those are the nodes.
+
+156
+00:11:23,440 --> 00:11:26,440
+And then inside each office space, we have the employee.
+
+157
+00:11:26,440 --> 00:11:28,440
+And so these are the executors.
+
+158
+00:11:28,440 --> 00:11:31,440
+It's also important to note the broadcasted variable.
+
+159
+00:11:31,440 --> 00:11:34,440
+So this is a very important example of how Spark works.
+
+160
+00:11:34,440 --> 00:11:37,440
+So I'm going to give me a headache for a couple of days.
+
+161
+00:11:37,440 --> 00:11:42,440
+The model takes up a lot of memory.
+
+162
+00:11:42,440 --> 00:11:45,440
+The model takes up a lot of memory.
+
+163
+00:11:45,440 --> 00:11:56,440
+And so when the driver program, so when the CEO tells the workers what to do, they had to offer the workers the materials that they needed to perform the categorization task.
+
+164
+00:11:56,440 --> 00:11:58,440
+What happened?
+
+165
+00:11:58,440 --> 00:12:01,440
+I was getting a heap space error in Java and I was like, I don't speak Java.
+
+166
+00:12:01,440 --> 00:12:03,440
+What is going on?
+
+167
+00:12:03,440 --> 00:12:07,440
+And the solution to that, the godsend was the broadcasted variable.
+
+168
+00:12:07,440 --> 00:12:14,440
+What that does is that it stores the office supplies inside the office already.
+
+169
+00:12:14,440 --> 00:12:25,440
+So it caches our model in the little office spaces so that the workers can access it without having to constantly transfer the model between the driver and the workers.
+
+170
+00:12:25,440 --> 00:12:29,440
+That was nice to find the solution for that one.
+
+171
+00:12:29,440 --> 00:12:38,440
+Since we are at the Python conference, I thought I'd put in a couple of lines of codes that we can see what this Spark application looks like.
+
+172
+00:12:38,440 --> 00:12:41,440
+So first we start a Spark session.
+
+173
+00:12:41,440 --> 00:12:45,440
+We enable support for a databases.
+
+174
+00:12:45,440 --> 00:12:47,440
+That's the Hive support.
+
+175
+00:12:47,440 --> 00:12:49,440
+And then we create the session.
+
+176
+00:12:49,440 --> 00:12:54,440
+We create the Spark context and the Hive context because in Hive is where we had all of the data.
+
+177
+00:12:54,440 --> 00:12:56,440
+We'll see it in a little bit.
+
+178
+00:12:56,440 --> 00:12:58,440
+And then we gather all of our data.
+
+179
+00:12:58,440 --> 00:13:01,440
+This is the coolest part for us, the data scientist.
+
+180
+00:13:01,440 --> 00:13:03,440
+It was the query.
+
+181
+00:13:03,440 --> 00:13:05,440
+I can't show the query.
+
+182
+00:13:05,440 --> 00:13:10,440
+But it was the query to get the data from Hive, loaded it up into a data frame.
+
+183
+00:13:10,440 --> 00:13:13,440
+And then this is where the magic happens.
+
+184
+00:13:13,440 --> 00:13:17,440
+We have the categorization function here on line 18.
+
+185
+00:13:17,440 --> 00:13:21,440
+So as you see, so I have the categorizer broadcasted.
+
+186
+00:13:21,440 --> 00:13:26,440
+So I put the model that's been loaded into memory inside this broadcasted variable,
+
+187
+00:13:26,440 --> 00:13:31,440
+which means that it's already available for all of the workers at the company.
+
+188
+00:13:31,440 --> 00:13:34,440
+And then we categorize the data frame.
+
+189
+00:13:34,440 --> 00:13:38,440
+And we have the category here.
+
+190
+00:13:38,440 --> 00:13:39,440
+Okay.
+
+191
+00:13:39,440 --> 00:13:43,440
+So we have the inference pipeline wrapped up in Spark.
+
+192
+00:13:43,440 --> 00:13:46,440
+And now we're ready to put it into the data lake.
+
+193
+00:13:46,440 --> 00:13:48,440
+What's going on in the data lake?
+
+194
+00:13:48,440 --> 00:13:51,440
+We have Uzi enter a new component.
+
+195
+00:13:51,440 --> 00:13:53,440
+I was like, hi, Uzi, nice to meet you.
+
+196
+00:13:53,440 --> 00:13:55,440
+Let's see what's going to happen here.
+
+197
+00:13:55,440 --> 00:13:57,440
+Uzi, what he does is he's an orchestrator.
+
+198
+00:13:57,440 --> 00:14:03,440
+So an orchestrator that manages the workload between the executors of the company,
+
+199
+00:14:03,440 --> 00:14:05,440
+the different worker nodes.
+
+200
+00:14:05,440 --> 00:14:11,440
+We define some of the workflows, some properties of Uzi so that he knows what to do.
+
+201
+00:14:11,440 --> 00:14:15,440
+And we have the launcher.py file.
+
+202
+00:14:15,440 --> 00:14:18,440
+And that's the code that we saw earlier in the previous slide.
+
+203
+00:14:18,440 --> 00:14:20,440
+Okay.
+
+204
+00:14:20,440 --> 00:14:28,440
+As we saw again in the previous slide, now we have the, we have to import the data from an HDFS
+
+205
+00:14:28,440 --> 00:14:31,440
+highly distributed file system using an SQL query.
+
+206
+00:14:31,440 --> 00:14:34,440
+So now we have the data available for categorization.
+
+207
+00:14:34,440 --> 00:14:36,440
+And what was the next step?
+
+208
+00:14:36,440 --> 00:14:38,440
+Inference pipeline.
+
+209
+00:14:38,440 --> 00:14:42,440
+But how do we read the inference pipeline once we're inside the launcher.py?
+
+210
+00:14:42,440 --> 00:14:47,440
+We have to upload this code into the Cloud Data Data Lake.
+
+211
+00:14:47,440 --> 00:14:49,440
+And to do that, we use Maven.
+
+212
+00:14:49,440 --> 00:14:51,440
+It packages into a jar.
+
+213
+00:14:51,440 --> 00:14:55,440
+And that has to be uploaded into the data lake.
+
+214
+00:14:55,440 --> 00:15:05,440
+And so from here, the point was to be able to import our functions and import our class to be able to do the predictions.
+
+215
+00:15:05,440 --> 00:15:07,440
+That was nice.
+
+216
+00:15:07,440 --> 00:15:08,440
+That was theoretical.
+
+217
+00:15:08,440 --> 00:15:10,440
+And then this happened.
+
+218
+00:15:10,440 --> 00:15:13,440
+You can't find your module, can't find the module, no import.
+
+219
+00:15:13,440 --> 00:15:15,440
+Like two days.
+
+220
+00:15:15,440 --> 00:15:17,440
+I spent two days with this error.
+
+221
+00:15:17,440 --> 00:15:20,440
+And you guys can't believe, like I was dreaming about Spark.
+
+222
+00:15:20,440 --> 00:15:22,440
+I was dreaming about Uzi.
+
+223
+00:15:22,440 --> 00:15:30,440
+And it was becoming quite the headache to try and put the jar somewhere where my launcher.py could see it.
+
+224
+00:15:30,440 --> 00:15:32,440
+I spent two days working on this.
+
+225
+00:15:32,440 --> 00:15:38,440
+And then, you know, that feeling that you get where, you know, you try one thing, you get an error, and it's a different error that you got before.
+
+226
+00:15:38,440 --> 00:15:40,440
+And you're like, oh, yeah, progress.
+
+227
+00:15:40,440 --> 00:15:43,440
+And in the end, I said, OK, you know, you start escalating the problem.
+
+228
+00:15:43,440 --> 00:15:46,440
+You talk to your colleagues, you talk to your boss, you talk to the client.
+
+229
+00:15:46,440 --> 00:15:50,440
+And you're like, it's time to make the call.
+
+230
+00:15:50,440 --> 00:15:54,440
+And so I had a call with a tech lead from the client.
+
+231
+00:15:54,440 --> 00:16:01,440
+And two days of my work and frustration, and he solved it in literally the first four minutes of the call.
+
+232
+00:16:01,440 --> 00:16:07,440
+I was on the call and I was like, oh, yeah, no, you just have to put the package inside a limb folder.
+
+233
+00:16:07,440 --> 00:16:11,440
+Like, just create a folder, put the jar there, and that's it.
+
+234
+00:16:11,440 --> 00:16:14,440
+And so I looked at the time on the call and it was four minutes.
+
+235
+00:16:14,440 --> 00:16:20,440
+And I was like, I can't believe that two days of my headache was solved this easily.
+
+236
+00:16:20,440 --> 00:16:28,440
+So it turns out that Uzi, whatever is inside the lib folder, it'll copy it and it'll put it into all of the executors.
+
+237
+00:16:28,440 --> 00:16:32,440
+To all of the office space is kind of like the broadcasted variable.
+
+238
+00:16:32,440 --> 00:16:42,440
+So that we could import our functions and our classes and all of our work in the inference pipeline in the data lake.
+
+239
+00:16:42,440 --> 00:16:53,440
+So what do I want you guys to end up with, you know, all of this Uzi's and SQL and like, I'm not a data engineer, not an expert.
+
+240
+00:16:53,440 --> 00:16:58,440
+At the end of the day, what we have to know as data scientists is to know when to make the call.
+
+241
+00:16:58,440 --> 00:17:08,440
+At GFD, we have different, like, we have a lot of different teams across the world and everybody has their expertise in what they know how to do and what they love to do.
+
+242
+00:17:08,440 --> 00:17:12,440
+And they're happy to get that call from you and say, hey, can you fix this for me or can you give me a hand?
+
+243
+00:17:12,440 --> 00:17:18,440
+And we can check this out together and we can work out these kinks and keep working forward with the solution.
+
+244
+00:17:18,440 --> 00:17:25,440
+So knowing when to make the call was really the key and being able to participate in these collaborative international teams.
+
+245
+00:17:25,440 --> 00:17:31,440
+But that's not all.
+
+246
+00:17:31,440 --> 00:17:45,440
+So now that we have our Spark application with our broadcasted variables working in the data lake and inferring on some sample queries that we were working on, this is all still POC,
+
+247
+00:17:45,440 --> 00:17:57,440
+we had to start asking the questions of what's next, right, besides deploying the other models as well because we looked at the first use case of the simplest inference pipeline.
+
+248
+00:17:57,440 --> 00:18:05,440
+So you know, you deploy the other pipelines, but that's not the end of the life cycle of the model.
+
+249
+00:18:05,440 --> 00:18:14,440
+So if we go back to the beginning, we see this inference pipeline and there's still work to be done here.
+
+250
+00:18:14,440 --> 00:18:23,440
+Like we all think that machine learning is quite, you know, just, you know, you have some data, you split it into train and test, you do some code,
+
+251
+00:18:23,440 --> 00:18:28,440
+and you do some parameter tuning, and then you have a model and that's the end of the test.
+
+252
+00:18:28,440 --> 00:18:33,440
+But that's, as I think we're all learning bit by bit, that's not the end of the story.
+
+253
+00:18:33,440 --> 00:18:34,440
+That's not all there is.
+
+254
+00:18:34,440 --> 00:18:43,440
+As we saw in the previous talk, there's a lot more code going on when you're producing and when you're putting models into production.
+
+255
+00:18:43,440 --> 00:18:50,440
+You've got to have the code is split into three different parts, mainly.
+
+256
+00:18:50,440 --> 00:18:53,440
+So we have a data preprocessing pipeline.
+
+257
+00:18:53,440 --> 00:19:04,440
+So all of that transformation that we did to get the text from the transactions, that has to be like a versionable pipeline, a pipeline where we can,
+
+258
+00:19:04,440 --> 00:19:12,440
+that we can use in our laptops when we're developing and in the data lake when we are inferring in production.
+
+259
+00:19:12,440 --> 00:19:15,440
+The second part of the code is that machine learning pipeline.
+
+260
+00:19:15,440 --> 00:19:25,440
+This is, you know, what we came here for, the good stuff, the train test, hyper parameter tuning and getting new models and experiments and keeping track of your experiments.
+
+261
+00:19:25,440 --> 00:19:39,440
+And then we have this new part that I'm becoming quite fan of, this is the deployment phase and thinking of all of the details of what it takes to put a model into production and see if your model really is production grade
+
+262
+00:19:39,440 --> 00:19:47,440
+and how you can handle all of the petitions that you might get.
+
+263
+00:19:47,440 --> 00:19:50,440
+So what do we have left to do for us?
+
+264
+00:19:50,440 --> 00:19:56,440
+So we do a little bit of introspection and we can identify some main steps that we need to add.
+
+265
+00:19:56,440 --> 00:20:04,440
+Just to get it started, because we could spend a long time working out on some next steps and some improvements.
+
+266
+00:20:04,440 --> 00:20:09,440
+So just to get us started, the first thing that we need to do is do established tracing and data versioning.
+
+267
+00:20:09,440 --> 00:20:20,440
+Every time a transaction comes in, as we saw before, it goes into different pipelines and it goes into different models and it has different rules applied to it and it gets to their categories.
+
+268
+00:20:20,440 --> 00:20:31,440
+So knowing which pipeline and which, yeah, which pipeline the data flow through is extremely important so that you can back test all of your, so you can test all of the kinks that happen.
+
+269
+00:20:31,440 --> 00:20:40,440
+So if there's any issue, any error, you need to know exactly what happened to that original piece of data and how it ended up being at a problem spot.
+
+270
+00:20:40,440 --> 00:20:45,440
+Then an extremely important part is the monitoring.
+
+271
+00:20:45,440 --> 00:20:54,440
+You need to keep track of the distribution of your inputs, the distribution of your outputs, make sure that they're meeting your expectations,
+
+272
+00:20:54,440 --> 00:21:02,440
+make sure that your performance and that your metrics are still working out correctly and that everything is working at a correct pace
+
+273
+00:21:02,440 --> 00:21:07,440
+and that everything is, you know, you're delivering exactly what your client asked you to deliver.
+
+274
+00:21:07,440 --> 00:21:15,440
+So some kind of monitoring is extremely important, a dashboard, anything that manages, you know, your hardware requirements, like the software requirements
+
+275
+00:21:15,440 --> 00:21:22,440
+and all of the memory in the RAM that you're using and all the distribution of the categories that are being predicted.
+
+276
+00:21:22,440 --> 00:21:30,440
+And to keep track of those, why? Because things happen and you need to correct your errors and we have to be humble to say this is not the final version,
+
+277
+00:21:30,440 --> 00:21:33,440
+never is the first version the final version.
+
+278
+00:21:33,440 --> 00:21:39,440
+And so for that speaking of versioning, we have the CI CD, right?
+
+279
+00:21:39,440 --> 00:21:45,440
+So that's a, let's already very known in DevOps, but now we're adding a CT.
+
+280
+00:21:45,440 --> 00:21:56,440
+We also have integration, continuous deployment and we also have continuous testing to work out and to integrate into this solution.
+
+281
+00:21:56,440 --> 00:22:05,440
+So that basically means that we continuously need to, while monitoring the health of our solution, we need to be able to be able to quickly react
+
+282
+00:22:05,440 --> 00:22:07,440
+to any kind of problems that could happen.
+
+283
+00:22:07,440 --> 00:22:16,440
+Whenever the monitoring says there's a problem here, not only is detecting the problem in your first step, but you also need to be able to respond to it
+
+284
+00:22:16,440 --> 00:22:25,440
+and be able to react and retrain a new model if people's behaviors change and be able to redeploy a new model.
+
+285
+00:22:25,440 --> 00:22:29,440
+Redeploying is easy the first time, but how do you automate that deployment?
+
+286
+00:22:29,440 --> 00:22:38,440
+So when you want to iterate quickly, like we heard before in fail fast, that's the whole point of implementing these kinds of monitoring,
+
+287
+00:22:38,440 --> 00:22:45,440
+versioning and redeployment additional components to the solution.
+
+288
+00:22:45,440 --> 00:22:47,440
+And that's it.
+
+289
+00:22:47,440 --> 00:22:49,440
+That's all we have for now.
+
+290
+00:22:49,440 --> 00:22:54,440
+Thank you so much for listening to our solution, listening to my headache.
+
+291
+00:22:54,440 --> 00:22:57,440
+If you have any questions, I'll be very happy to take them.
+
+292
+00:22:57,440 --> 00:23:01,440
+And thank you for listening to me.
+
+293
+00:23:01,440 --> 00:23:07,440
+We still have some...
+
+294
+00:23:07,440 --> 00:23:09,440
+Okay, hold your voices.
+
+295
+00:23:09,440 --> 00:23:11,440
+First one here.
+
+296
+00:23:11,440 --> 00:23:16,440
+We still have some time.
+
+297
+00:23:16,440 --> 00:23:18,440
+Hi.
+
+298
+00:23:18,440 --> 00:23:21,440
+Thanks for the talk.
+
+299
+00:23:21,440 --> 00:23:23,440
+It was very interesting.
+
+300
+00:23:23,440 --> 00:23:34,440
+I'm not super into data science, but I'm curious about the part of testing your models and the behavior.
+
+301
+00:23:34,440 --> 00:23:44,440
+How do you test, like, do you do any kind of unit testing or, I don't know, do you have a dashboard and stakeholders,
+
+302
+00:23:44,440 --> 00:23:49,440
+like, see something goes wrong and you have to make another model?
+
+303
+00:23:49,440 --> 00:23:51,440
+I don't know how it works.
+
+304
+00:23:51,440 --> 00:23:53,440
+You can explain.
+
+305
+00:23:53,440 --> 00:23:55,440
+Okay.
+
+306
+00:23:55,440 --> 00:23:58,440
+So from in your question, I immediately thought of three different testing scenarios.
+
+307
+00:23:58,440 --> 00:24:00,440
+So I'll quickly go over all of them.
+
+308
+00:24:00,440 --> 00:24:02,440
+Okay.
+
+309
+00:24:02,440 --> 00:24:05,440
+So first we have the traditional train test part of data science.
+
+310
+00:24:05,440 --> 00:24:12,440
+So first you train the model with your training data set, and then you have to test it on data that you know,
+
+311
+00:24:12,440 --> 00:24:15,440
+but the model doesn't know about.
+
+312
+00:24:15,440 --> 00:24:17,440
+So that's the first part of testing a model.
+
+313
+00:24:17,440 --> 00:24:22,440
+And so you see how it reacts in a very controlled environment on samples that it had never seen before.
+
+314
+00:24:22,440 --> 00:24:24,440
+And so you get metrics out of that.
+
+315
+00:24:24,440 --> 00:24:26,440
+You get accuracies, precision and recalls.
+
+316
+00:24:26,440 --> 00:24:28,440
+And so you know how good your model is doing.
+
+317
+00:24:28,440 --> 00:24:30,440
+If it's overfitted, underfitted, et cetera.
+
+318
+00:24:30,440 --> 00:24:38,440
+Then there's the other part of testing that I think that you alluded to is the monitoring part,
+
+319
+00:24:38,440 --> 00:24:41,440
+where you test to see if your model is healthy or not.
+
+320
+00:24:41,440 --> 00:24:46,440
+And that's basically, that would be like a distribution type of monitoring.
+
+321
+00:24:46,440 --> 00:24:53,440
+So if you're expecting a certain amount of grocery store category and a certain amount of vehicle category,
+
+322
+00:24:53,440 --> 00:24:55,440
+and suddenly you see that those categories are flipped,
+
+323
+00:24:55,440 --> 00:24:58,440
+then nobody's going to the grocery store anymore, nobody's driving anymore.
+
+324
+00:24:58,440 --> 00:25:03,440
+And so these volumes are now zero, or that distribution is now super low.
+
+325
+00:25:03,440 --> 00:25:07,440
+Then you can identify that by testing that you can detect those problems.
+
+326
+00:25:07,440 --> 00:25:10,440
+And that would be great to have in a dashboard.
+
+327
+00:25:10,440 --> 00:25:17,440
+And to see that the inputs are also, like if you expect a thousand categories from this database,
+
+328
+00:25:17,440 --> 00:25:20,440
+and a hundred transactions from this database,
+
+329
+00:25:20,440 --> 00:25:23,440
+and to make sure that those volumes are also being maintained over time.
+
+330
+00:25:23,440 --> 00:25:26,440
+There's that testing, so that would be great to have in a dashboard.
+
+331
+00:25:26,440 --> 00:25:29,440
+And I think that the stakeholders would like that one very much.
+
+332
+00:25:29,440 --> 00:25:31,440
+And then finally there was the unit testing.
+
+333
+00:25:31,440 --> 00:25:34,440
+I did my first unit test on this project,
+
+334
+00:25:34,440 --> 00:25:37,440
+because that was very important for the client.
+
+335
+00:25:37,440 --> 00:25:42,440
+Because this was at the end of the day a pre-production environment.
+
+336
+00:25:42,440 --> 00:25:47,440
+So yes, we did do unit testing, Python unit testing with PyTest.
+
+337
+00:25:47,440 --> 00:25:50,440
+I actually really liked that when I first started doing the test.
+
+338
+00:25:50,440 --> 00:25:53,440
+I was like, oh my god, I'm going to have to rewrite all of my code.
+
+339
+00:25:53,440 --> 00:25:55,440
+But no, it's actually a lot more fun than that.
+
+340
+00:25:55,440 --> 00:26:00,440
+And I would do that in further projects as well.
+
+341
+00:26:00,440 --> 00:26:05,440
+I would definitely implement testing if, like, and keep it part of our solutions,
+
+342
+00:26:05,440 --> 00:26:09,440
+because when you deploy models and you upload models to the cloud,
+
+343
+00:26:09,440 --> 00:26:12,440
+and you redeploy cloud functions, something like that,
+
+344
+00:26:12,440 --> 00:26:16,440
+that takes time, that takes like 10 or 15 minutes to redeploy sometimes.
+
+345
+00:26:16,440 --> 00:26:21,440
+And being able to quickly test if you have a bug in local with a simple unit test,
+
+346
+00:26:21,440 --> 00:26:25,440
+that would be extremely beneficial just to keep everything more agile.
+
+347
+00:26:25,440 --> 00:26:28,440
+So those are the three tests that I could think of that you asked.
+
+348
+00:26:28,440 --> 00:26:31,440
+I hope I answered your question.
+
+349
+00:26:31,440 --> 00:26:41,440
+Yeah, remember that there was another question here?
+
+350
+00:26:41,440 --> 00:26:45,440
+Hello, yeah, firstly, thank you for the talk, which was really interesting.
+
+351
+00:26:45,440 --> 00:26:50,440
+I'm really curious about the pain points between mixing PySparc
+
+352
+00:26:50,440 --> 00:26:56,440
+and something like a high-end phase model and scikit-learn.
+
+353
+00:26:56,440 --> 00:27:03,440
+I can relate to the pain of working with Spark and the pain of working with scikit-learn and high-end phase.
+
+354
+00:27:03,440 --> 00:27:09,440
+So are things like having to configure the Spark workers with a given amount of memory
+
+355
+00:27:09,440 --> 00:27:13,440
+to make sure that both things fit in memory, how was the process?
+
+356
+00:27:13,440 --> 00:27:16,440
+Pain. Pain in the butt.
+
+357
+00:27:16,440 --> 00:27:21,440
+I would be more in pain, but in Serbia.
+
+358
+00:27:21,440 --> 00:27:23,440
+Okay, various pieces here.
+
+359
+00:27:23,440 --> 00:27:30,440
+The first pain part was that heap space error that we got, that we resolved with the broadcasting variable.
+
+360
+00:27:30,440 --> 00:27:32,440
+That was all resolved in local.
+
+361
+00:27:32,440 --> 00:27:37,440
+And then so then we had to bring that up into the claudera environment.
+
+362
+00:27:37,440 --> 00:27:40,440
+That environment, we had very little control over.
+
+363
+00:27:40,440 --> 00:27:44,440
+We couldn't touch that many pieces and parts because it was the client's environment.
+
+364
+00:27:44,440 --> 00:27:51,440
+So we tried to resolve everything as much in-house and optimizing some of the operations
+
+365
+00:27:51,440 --> 00:27:55,440
+before having to ask the client to reconfigure their Spark cluster.
+
+366
+00:27:55,440 --> 00:27:59,440
+I think that was the very last case resort and we didn't actually have to end up doing that.
+
+367
+00:27:59,440 --> 00:28:06,440
+We did get a memory issue for a long time over an over memory error.
+
+368
+00:28:06,440 --> 00:28:10,440
+And it turns out that the NumPy version had changed.
+
+369
+00:28:10,440 --> 00:28:13,440
+So then we started getting a different error.
+
+370
+00:28:13,440 --> 00:28:17,440
+We found that the NumPy versions were no longer aligned.
+
+371
+00:28:17,440 --> 00:28:23,440
+We aligned the versions and then somehow the memory error disappeared.
+
+372
+00:28:23,440 --> 00:28:26,440
+So painful, very, but we ended up solving it.
+
+373
+00:28:26,440 --> 00:28:29,440
+I'm not entirely sure how, but we had some weird things happening with NumPy.
+
+374
+00:28:29,440 --> 00:28:36,440
+And what really, really saved us was having a pip freeze of the client's environment.
+
+375
+00:28:36,440 --> 00:28:42,440
+Always have a pip freeze because we could detect that that was an incongruency and fix that.
+
+376
+00:28:42,440 --> 00:28:44,440
+So that was a real life saver.
+
+377
+00:28:44,440 --> 00:28:50,440
+So you didn't have the power to speak?
+
+378
+00:28:50,440 --> 00:28:56,440
+We did have the power, we did have the opportunity to ask for the libraries that we needed.
+
+379
+00:28:56,440 --> 00:29:00,440
+So for example, they didn't have a hugging face in the Cloud Data Data Lake.
+
+380
+00:29:00,440 --> 00:29:02,440
+So we asked them to install that.
+
+381
+00:29:02,440 --> 00:29:05,440
+They installed the wrong version and they installed the correct version.
+
+382
+00:29:05,440 --> 00:29:06,440
+And that went well.
+
+383
+00:29:06,440 --> 00:29:09,440
+But it was a hugely bureaucratic process.
+
+384
+00:29:09,440 --> 00:29:12,440
+So anything that had to be configured from the Cloud Data side was like,
+
+385
+00:29:12,440 --> 00:29:16,440
+let's see if we can fix that from our side before having to request any kind of change.
+
+386
+00:29:16,440 --> 00:29:25,440
+Because in banks, we know that the response time is quite long.
+
+387
+00:29:25,440 --> 00:29:26,440
+Okay. Hello.
+
+388
+00:29:26,440 --> 00:29:34,440
+Well, just wanted to ask you that I'm guessing that the things that the features that you showed us in the model are for like demonstration.
+
+389
+00:29:34,440 --> 00:29:39,440
+And I'm guessing that the final model of course uses like GPS coordinates and a lot of other features for the model, right?
+
+390
+00:29:39,440 --> 00:29:43,440
+Actually, no, the GPS coordinates are an excellent idea.
+
+391
+00:29:43,440 --> 00:29:48,440
+We did test with, like I said, date features and date time.
+
+392
+00:29:48,440 --> 00:29:52,440
+We encoded date into like a cyclical feature with X and Y coordinates.
+
+393
+00:29:52,440 --> 00:29:53,440
+That was cool.
+
+394
+00:29:53,440 --> 00:29:59,440
+But the transactions didn't actually have a geolocation associated with them.
+
+395
+00:29:59,440 --> 00:30:02,440
+So we were also limited to the original format of the transaction.
+
+396
+00:30:02,440 --> 00:30:05,440
+And geolocation does in fact sound like a really interesting idea.
+
+397
+00:30:05,440 --> 00:30:08,440
+I would have loved to try that out.
+
+398
+00:30:08,440 --> 00:30:11,440
+But it wasn't available for the transactions that we had.
+
+399
+00:30:11,440 --> 00:30:12,440
+All right. Thank you.
+
+400
+00:30:12,440 --> 00:30:14,440
+And we ended up using just text.
+
+401
+00:30:14,440 --> 00:30:22,440
+It worked pretty well because the universal sentence encoder was powerful enough to capture the information that we needed based on the text.
+
+402
+00:30:22,440 --> 00:30:24,440
+Thank you.
+
+403
+00:30:24,440 --> 00:30:26,440
+And we had the last, you had a question, right?
+
+404
+00:30:26,440 --> 00:30:27,440
+Yeah.
+
+405
+00:30:27,440 --> 00:30:29,440
+Last question.
+
+406
+00:30:29,440 --> 00:30:31,440
+Hello, Isabella. Thanks for the talk, firstly.
+
+407
+00:30:31,440 --> 00:30:35,440
+And it's glad to see that there is some distributed programming session going on.
+
+408
+00:30:35,440 --> 00:30:37,440
+So thank you so much.
+
+409
+00:30:37,440 --> 00:30:55,440
+But a question came to my mind related to the performance because we are talking about PySpark, which adds an extra layer over Spark, which on its own, usually it could be even as low because, you know, Java and VM and all this crappy thing.
+
+410
+00:30:55,440 --> 00:31:09,440
+So I don't know, I don't know, do you have time enough to test the performance of what's going on because when you are working usually with data, you are working with plenty of data, a lot of volume.
+
+411
+00:31:09,440 --> 00:31:16,440
+So do you have enough time to measure the performance and see how it goes with Python and Spark and everything like that?
+
+412
+00:31:16,440 --> 00:31:22,440
+Well, you're totally right that working with PySpark over Spark is a big deal.
+
+413
+00:31:22,440 --> 00:31:26,440
+And actually, I know that they create like two Spark contexts.
+
+414
+00:31:26,440 --> 00:31:30,440
+There's like the original Java context and then they put another context on top of that.
+
+415
+00:31:30,440 --> 00:31:33,440
+So you're right that that's a pain point.
+
+416
+00:31:33,440 --> 00:31:41,440
+And I like the way you framed your question about whether we had time to test the performance because that's exactly what happened.
+
+417
+00:31:41,440 --> 00:31:44,440
+The project did run out of time.
+
+418
+00:31:44,440 --> 00:31:55,440
+And the deployment part of our models was passed to a different team, so I wasn't personally able to get into deep into the testing of the performance.
+
+419
+00:31:55,440 --> 00:32:00,440
+But there were definitely things that I would have liked to do.
+
+420
+00:32:00,440 --> 00:32:11,440
+For example, when you apply using the Spark RDD maps, you apply the categorization function one row at a time to your data frame.
+
+421
+00:32:11,440 --> 00:32:20,440
+When we know that you can batch process encodings, but we couldn't batch process them because of the way Spark was applying the function to Python.
+
+422
+00:32:20,440 --> 00:32:29,440
+So there's a lot of room for improvement with respect to optimization in terms of using the resources and memory and things like that.
+
+423
+00:32:29,440 --> 00:32:37,440
+So they will have to go for another iteration whenever we get re-plugged into the project again.
+
+424
+00:32:37,440 --> 00:32:39,440
+Good question.
+
+425
+00:32:39,440 --> 00:32:42,440
+So that was the last question. So let's thank you.
+
+426
+00:32:42,440 --> 00:32:45,440
+Thank you.
+
+427
+00:32:45,440 --> 00:33:10,440
+Thank you very much. Thank you.
+

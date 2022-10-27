@@ -1,0 +1,1996 @@
+1
+00:00:00,000 --> 00:00:23,880
+Pues estamos aquí, creo que ya a todos. Hemos traído a extracarla aquí porque la salida
+
+2
+00:00:23,880 --> 00:00:29,240
+de País XIII está muy próxima, va a salir ya este mismo mes, por lo que hemos venido
+
+3
+00:00:29,240 --> 00:00:34,000
+a comentar las novedades que trae, las cosas más importantes que trae.
+
+4
+00:00:34,000 --> 00:00:37,160
+Prueba de todo, nos vamos a presentar lo primero.
+
+5
+00:00:37,160 --> 00:00:40,160
+Yo soy Juan José, conocido en redes como NECMO.
+
+6
+00:00:40,160 --> 00:00:45,360
+Yo soy Víctor, en redes de Viraco.
+
+7
+00:00:45,360 --> 00:00:51,680
+Y los dos nos conocemos de País XIII España, las cuales celebramos cada martes unas tertulias
+
+8
+00:00:51,680 --> 00:00:56,880
+en las que discutimos, igual que aquí que vamos a estar discutiendo en el día de hoy.
+
+9
+00:00:56,880 --> 00:01:02,760
+Entonces, vamos a, durante estas tertulias, comentamos novedades y cosas que nos surgen
+
+10
+00:01:02,760 --> 00:01:07,560
+del lenguaje. Podéis apuntaros a las listas de correo oficiales, el correo general de
+
+11
+00:01:07,560 --> 00:01:13,080
+País en España para más información, donde lanzamos los correos de cuáles van a ser
+
+12
+00:01:13,080 --> 00:01:19,440
+las próximas charlas que se dan, charlas como tertulias y semasilación, vamos a hablar
+
+13
+00:01:19,440 --> 00:01:23,520
+de País XIII. Entre todo, pues avisar eso sí, que en cualquier momento también podéis
+
+14
+00:01:23,520 --> 00:01:28,680
+cortar, igualmente vamos a dejar también entre cada sección, pues un rato para que
+
+15
+00:01:28,680 --> 00:01:31,480
+todo el mundo que hable.
+
+16
+00:01:31,480 --> 00:01:37,040
+La primera de las novedades que trae esta País XIII, pues solo es excepción grope y
+
+17
+00:01:37,040 --> 00:01:44,160
+lo que sería el nuevo SCEP con asterisco, lo que se conoce como el PEV-654.
+
+18
+00:01:44,160 --> 00:01:48,680
+Aquí tendríamos lo que sería una excepción tradicional de País XIII, lo cual lo normal
+
+19
+00:01:48,680 --> 00:01:55,160
+es lanzar una NK excepción y luego capturarla. Podéis ver que dentro del valide name, pues
+
+20
+00:01:55,160 --> 00:02:00,040
+tenéis un instáite que se llega a verificar, que sea la primera mayúscula del dato de
+
+21
+00:02:00,040 --> 00:02:06,560
+entrada y si no, pues se lanza una excepción. Y luego en el trae SCEP, como digo, se captura
+
+22
+00:02:06,560 --> 00:02:13,000
+y pues el error que se ha llegado a recibir se muestra por pantalla utilizando un print.
+
+23
+00:02:13,000 --> 00:02:16,400
+No utilicéis eso superiéndole en producción, solamente esto se ha mudado de ejemplo aquí
+
+24
+00:02:16,400 --> 00:02:24,640
+para la demostración. Pero bueno, no obstante, pues es algo muy habitual, pues que necesitemos,
+
+25
+00:02:24,640 --> 00:02:28,280
+ya ha fallado el micro lo típico.
+
+26
+00:02:28,280 --> 00:02:38,120
+No obstante, pues en ocasiones necesitamos validar varios valores que nos traen de entrada,
+
+27
+00:02:38,120 --> 00:02:42,760
+como puede ser por ejemplo, dentro de un JSON porque hay varios valores que se llegan a
+
+28
+00:02:42,760 --> 00:02:47,640
+introducir, por ejemplo un formulario, porque dentro del formulario pues nos llega todo
+
+29
+00:02:47,640 --> 00:02:53,680
+de golpe y luego pues eso necesitamos pues hacerle una validación en conjunto, no parte
+
+30
+00:02:53,680 --> 00:02:59,240
+por parte. Para eso es lo que se ha creado el nuevo excepción GROUP. Aquí muy en resumidas
+
+31
+00:02:59,240 --> 00:03:02,960
+cuentas, lo que tenemos al final, la última línea, el read inputs, pues que hayan a poner
+
+32
+00:03:02,960 --> 00:03:09,920
+los inputs que tienen que comprobar y dentro de la función de read inputs se van leyendo,
+
+33
+00:03:09,920 --> 00:03:15,120
+se van a dar uno de los valores que te van entrando y se llegan a añadir a un listado.
+
+34
+00:03:15,120 --> 00:03:20,240
+Y si todas las excepciones que llegan a suceder dentro de lo que es la línea del ifexceptions,
+
+35
+00:03:20,240 --> 00:03:24,440
+a ver un momento si esto si funciona, esta línea de aquí de los errores que se han
+
+36
+00:03:24,440 --> 00:03:28,600
+llegado a producir pues se lanza la excepción GROUP de todo lo que se ha llegado a ir capturando
+
+37
+00:03:28,600 --> 00:03:34,320
+por aquí, sino hay errores pues se devuelven tal cual.
+
+38
+00:03:34,320 --> 00:03:38,400
+Pero bueno hasta aquí pues todo parece bastante normalito porque solamente pues se ha añadido
+
+39
+00:03:38,400 --> 00:03:42,280
+una nueva clase, un nuevo tipo de excepción que es la excepción GROUP y es algo que podría
+
+40
+00:03:42,280 --> 00:03:47,080
+hacer cada uno por su cuenta, no es algo realmente nuevo en el lenguaje que así que parezca.
+
+41
+00:03:47,080 --> 00:03:54,080
+Entonces la verdadera novedad que se trae con este PEP es que se ha hecho un try step
+
+42
+00:03:54,080 --> 00:03:59,120
+con asterisco el cual te permite capturar todo un conjunto de excepciones, hacer como
+
+43
+00:03:59,120 --> 00:04:03,680
+un filtro de excepciones. Entonces de todas las excepciones que te entran de este tipo,
+
+44
+00:04:03,680 --> 00:04:10,560
+por ejemplo aquí tenemos el name error pues se llegará a recibir aquí todo el listado
+
+45
+00:04:10,560 --> 00:04:14,080
+y de los number error pues aquí todo el listado en los que son de este tipo.
+
+46
+00:04:14,080 --> 00:04:19,680
+Y lo verdaderamente interesante de todo esto ya digo es que a diferencia de lo que sería
+
+47
+00:04:19,680 --> 00:04:27,400
+el try step habitual pues se llega a seguir ejecutando en el código después de haberse
+
+48
+00:04:27,400 --> 00:04:33,000
+sucibido la primera excepción. Si recordáis pues lo habitual dentro de un try step es
+
+49
+00:04:33,000 --> 00:04:37,760
+que si tenéis varios step se pare en el primero. Puedes tener por ejemplo un try step con un
+
+50
+00:04:37,760 --> 00:04:42,800
+import error y luego si tenéis otro step con un exception como si ya falló ya en el anterior
+
+51
+00:04:42,800 --> 00:04:49,000
+no continúa hacia adelante. Pues aquí pues te aseguras de que igualmente siempre se va
+
+52
+00:04:49,000 --> 00:04:54,560
+a seguir ejecutando la siguiente línea de código que es necesaria. Se ejecutarían
+
+53
+00:04:54,560 --> 00:05:00,600
+estos dos ejemplos de aquí. Y por si pues se poco pues también pues podéis agrupar
+
+54
+00:05:00,600 --> 00:05:06,960
+los podéis agruparlos para tener como varios niveles dentro de los exception groov. Esto
+
+55
+00:05:06,960 --> 00:05:11,280
+es sobre todo muy útil dentro de lo que serían por ejemplo un JSON de que te viene de entrada
+
+56
+00:05:11,280 --> 00:05:17,720
+porque tienes varios niveles de de indentación. Aquí pues tenéis por ejemplo pues el primer
+
+57
+00:05:17,720 --> 00:05:23,280
+nivel y con el segundo nivel con otro exception groov. También pues esto es muy útil dentro de
+
+58
+00:05:23,280 --> 00:05:27,680
+lo que es la programación asincrona porque puedes tener una función que a su vez llama varias
+
+59
+00:05:27,680 --> 00:05:33,320
+funciones que lanzan varias excepciones y cada una pues a varios niveles de error de errores.
+
+60
+00:05:33,320 --> 00:05:37,600
+Pues con esto pues se mantiene lo que sería una coherencia de cuáles son los niveles de
+
+61
+00:05:37,600 --> 00:05:43,160
+indentación en los cuales se han producido las excepciones y es más comprensible. Justamente
+
+62
+00:05:43,160 --> 00:05:48,000
+algo similar a todo esto pues ya existía dentro de lo que es Trio que es una biblioteca
+
+63
+00:05:48,000 --> 00:05:53,600
+asincrona no sé si alguno pues lo conoce ahora lo comentamos que era lo que se llamaba
+
+64
+00:05:53,600 --> 00:05:58,800
+el multierro que es justamente para la programación asincrona para permitir el tener varias excepciones
+
+65
+00:05:58,800 --> 00:06:05,280
+a varios niveles de indentación y todas por por separado. Pero ahora pues lo tenemos de serie y
+
+66
+00:06:05,280 --> 00:06:11,960
+además pues ya en el core y está mejor implementado gracias al trae step con con asterisco. Y bueno
+
+67
+00:06:11,960 --> 00:06:18,680
+esta era la parte de eso sí más larga porque es como la novedad más importante las siguientes
+
+68
+00:06:18,680 --> 00:06:24,000
+pues eran un poquito más cortitas no sé así de alguna duda por ejemplo de que lo vais a utilizar
+
+69
+00:06:24,000 --> 00:06:28,400
+no lo vais a emplear. Bueno entonces como ya habíamos dicho esto es un open space una charla
+
+70
+00:06:28,400 --> 00:06:33,080
+así que quien de aquí ha tenido experiencia por ejemplo con esto al momento alguien ha
+
+71
+00:06:33,080 --> 00:06:37,440
+probado 3 11 no pero tienen que participar más.
+
+72
+00:06:37,440 --> 00:06:49,680
+Uuuuuh!
+
+73
+00:06:49,680 --> 00:06:51,720
+Ahora lo comentamos y tenemos...
+
+74
+00:06:51,720 --> 00:06:57,640
+Esto es sobre la excepción ¿Qué pensáis sobre este cambio que se han hecho de la excepción?
+
+75
+00:06:57,640 --> 00:07:20,600
+Por ejemplo si usted ha anunzado hay un comentario ha anunzado a Asynchronous Computing por
+
+76
+00:07:20,600 --> 00:07:25,800
+ejemplo este PEP nuevo viene de ahí justamente la motivación principal de esto porque necesitamos
+
+77
+00:07:25,800 --> 00:07:31,200
+tener un bloque de código en el cual van a pasar recepciones en la cual quizás queremos
+
+78
+00:07:31,200 --> 00:07:35,640
+capturar más de una o un par. Ahí teníamos un comentario te paso el micrófono por si
+
+79
+00:07:35,640 --> 00:07:37,200
+para que la gente te pueda escuchar.
+
+80
+00:07:37,200 --> 00:07:41,320
+Por eso les decía que se sentaran acá adelante pero tengo que estar...
+
+81
+00:07:41,320 --> 00:07:47,920
+Yo o sea el problema que tengo con estos cambios de sintaxis realmente es que hasta que todas
+
+82
+00:07:47,920 --> 00:07:52,280
+las librerías dejen de mantener las creaciones anteriores de Python esto no se puede meter
+
+83
+00:07:52,280 --> 00:07:56,040
+porque si no rompes todas las compatibilidades. Entonces por ejemplo ahora estamos empezando
+
+84
+00:07:56,040 --> 00:08:03,120
+a ver los f-strings en las librerías generales porque ya el 3.6 se ha ido por ahí entonces
+
+85
+00:08:03,120 --> 00:08:09,240
+está muy guay pero de aquí a que se lo podamos usar pues eso vamos a tener que esperar realmente
+
+86
+00:08:09,240 --> 00:08:13,440
+entonces también hay que pensar en casos de uso ahora mismo a mí no se me ocurre.
+
+87
+00:08:13,440 --> 00:08:19,160
+A ver bueno esto por supuesto a ver tiene sumitaciones de que hay bibliotecas que todavía no lo van
+
+88
+00:08:19,160 --> 00:08:25,000
+a poder introducir pero tú por ejemplo cuando vayas a desarrollar un nuevo proyecto seguramente
+
+89
+00:08:25,000 --> 00:08:29,800
+vas a coger la última versión disponible de Python la 3.11 seguramente dentro de unas
+
+90
+00:08:29,800 --> 00:08:34,920
+semanas entonces pues ya dentro de ese nuevo proyecto vas a poder introducir ese nuevo
+
+91
+00:08:34,920 --> 00:08:41,600
+cambio porque es algo para ti seguramente o para tu empresa pero sí pues hay bibliotecas
+
+92
+00:08:41,600 --> 00:08:46,040
+que todavía no ha llegado por ejemplo a los f-strings. A los f-strings pues llegaron con
+
+93
+00:08:46,040 --> 00:08:53,680
+la 3.6 la 3.6 pues puso como deprecated pues a finales del año pasado en diciembre creo
+
+94
+00:08:53,680 --> 00:08:58,920
+que fue. Y después a parte otra cosa también la mayoría de los cambios que se están haciendo
+
+95
+00:08:58,920 --> 00:09:05,480
+en Python últimamente e intentan o sea intentan permitir usar todas estas novedades desde la
+
+96
+00:09:05,480 --> 00:09:11,720
+3.6 utilizando el future la notación entonces a lo mejor te coge la versión 3.6 y te puede
+
+97
+00:09:11,720 --> 00:09:16,520
+utilizar estos cambios es verdad que tienes que hacer el import future pero bueno ya puedes
+
+98
+00:09:16,520 --> 00:09:21,080
+utilizar unas novedades que a lo mejor te vienen bien para algo que tú estés haciendo una versión
+
+99
+00:09:21,080 --> 00:09:26,200
+activa entonces lo único que vas a tener que hacer es la versión antigua es hacer corta de esa línea de future
+
+100
+00:09:26,200 --> 00:09:34,280
+entonces bueno la verdad que mucho de los cambios cuando leamos la PEP nos viene como usar la 3.6
+
+101
+00:09:34,280 --> 00:09:40,520
+usar la 3.10 porque tienen ciertos cambios que sí y ciertos cambios.
+
+102
+00:09:40,520 --> 00:09:50,200
+Por cierto de acá quién está usando algo que no sea 3.7 o sea de 3.6 abajo hay aquí no usando 2.7
+
+103
+00:09:50,200 --> 00:10:04,080
+y todo lo que BFX también midaron hace un par de años ya reciente
+
+104
+00:10:04,080 --> 00:10:19,880
+y tenemos personas acá que desarrollan bibliotecas que están a cargo de una biblioteca
+
+105
+00:10:19,880 --> 00:10:24,400
+igual es el mínimo de la versión de Python que está soportada.
+
+106
+00:10:24,400 --> 00:10:29,760
+Yo realmente con algunas en la Python 2 todavía 2.4 no 2.4 tampoco.
+
+107
+00:10:29,760 --> 00:10:38,440
+Y el resto de personas gustaría saber qué versión de Python están usando si pudieran gritar versiones para saber.
+
+108
+00:10:38,440 --> 00:10:45,120
+8 o 9 y cuál es la limitante que por ejemplo por qué no están usando 3.10.
+
+109
+00:10:45,120 --> 00:10:49,120
+Alguien quiere compartir por qué no puede estar usando la última estábula disponible y tiene que estar usando 3.9.
+
+110
+00:10:49,120 --> 00:10:55,560
+Normalmente siempre por culpa de la empresa.
+
+111
+00:10:55,560 --> 00:11:00,160
+Acabamos con las empresas entonces.
+
+112
+00:11:00,160 --> 00:11:02,160
+Perfecto.
+
+113
+00:11:02,160 --> 00:11:10,760
+Por un momento estará autorizada la última versión que pueda pero si tiene algún proyecto de hace 5 años
+
+114
+00:11:10,760 --> 00:11:15,360
+no tiene que seguir manteniendo pues trabaja con la tecnología de base en la que esté.
+
+115
+00:11:15,360 --> 00:11:21,560
+No es viable hacer una refactorización de todo el código y adaptar las versiones más modernas
+
+116
+00:11:21,560 --> 00:11:25,760
+por una cuestión de tiempo, recursos, dinero, etc.
+
+117
+00:11:25,760 --> 00:11:29,560
+Yo creo que todo el mundo que lleve trabajando con Python y este proyecto de largo recorrido
+
+118
+00:11:29,560 --> 00:11:31,560
+tiene que tocar todas las versiones.
+
+119
+00:11:31,560 --> 00:11:33,560
+A fin de cuentas.
+
+120
+00:11:33,560 --> 00:11:36,560
+Ahora partimos de 2.7.
+
+121
+00:11:36,560 --> 00:11:40,560
+Tenemos que tomar esa decisión y estamos migrando una...
+
+122
+00:11:40,560 --> 00:11:45,560
+Eso que nosotros en Skydan, justo ahora hemos podido empezar un proyecto
+
+123
+00:11:45,560 --> 00:11:54,560
+que ya parte de la BFX platform 2020 y estamos justo en ese proceso y tenemos una cantidad de cosas que migrar
+
+124
+00:11:54,560 --> 00:11:59,560
+que no se hace en un proyecto de 2 meses ni de 3.
+
+125
+00:11:59,560 --> 00:12:03,560
+Puede que tardemos un año en migrarlo todo.
+
+126
+00:12:03,560 --> 00:12:05,560
+Sí, sí, es complicado.
+
+127
+00:12:05,560 --> 00:12:08,560
+Y nosotros ahora mismo podemos saltar a 3.7.
+
+128
+00:12:08,560 --> 00:12:10,560
+Porque es el mínimo que tenemos.
+
+129
+00:12:10,560 --> 00:12:16,560
+El máximo que nos deja ahora mismo las aplicaciones con las que interactuamos.
+
+130
+00:12:16,560 --> 00:12:18,560
+Es complicado.
+
+131
+00:12:18,560 --> 00:12:23,560
+Bueno, si quieren pueden presentarles la siguiente idea, así saber un poquito más la discusión.
+
+132
+00:12:23,560 --> 00:12:29,560
+No, por ejemplo, como ha comentado el tema de los tipe-d, nos podemos mover al tema de los tipe-d.
+
+133
+00:12:29,560 --> 00:12:30,560
+Venga.
+
+134
+00:12:30,560 --> 00:12:33,560
+Moviendo conforme la necesidad de la gente.
+
+135
+00:12:33,560 --> 00:12:38,560
+Esto es lo que comentaste antes, que han añadido el require, el no require.
+
+136
+00:12:38,560 --> 00:12:43,560
+Claro, y eso es peor, porque tenía que tener todos...
+
+137
+00:12:43,560 --> 00:12:45,560
+En dos clases, ¿no?
+
+138
+00:12:45,560 --> 00:12:51,560
+No, con el type-d, para que los type-hints no te hicieran problema,
+
+139
+00:12:51,560 --> 00:12:56,560
+no tenías la opción de no tener un key en tu diccionario.
+
+140
+00:12:56,560 --> 00:13:05,560
+Entonces, o sea, la única forma que encontré era con un tipo especial, lo agregaré en mi código
+
+141
+00:13:05,560 --> 00:13:10,560
+y decía, ah, este tipo no existe.
+
+142
+00:13:10,560 --> 00:13:15,560
+Y después me di cuenta que era la versión 3.11 y yo estaba en la 3.10.
+
+143
+00:13:15,560 --> 00:13:18,560
+Y dije, oh, necesito esto.
+
+144
+00:13:18,560 --> 00:13:25,560
+La opción que hablas de lo opcional, lo que pasa es que lo que tiene es que no.
+
+145
+00:13:25,560 --> 00:13:29,560
+Entonces, no tiene ninguna equivacía.
+
+146
+00:13:29,560 --> 00:13:31,560
+Pero bueno.
+
+147
+00:13:31,560 --> 00:13:36,560
+La verdad que es bien movida. Te dejas un diccionario más bonito,
+
+148
+00:13:36,560 --> 00:13:40,560
+te dejas un diccionario final sin la que...
+
+149
+00:13:40,560 --> 00:13:46,560
+La alternativa, sino hasta ahora, para poder hacer que no estén definidas las propiedades,
+
+150
+00:13:46,560 --> 00:13:47,560
+pues era hacer...
+
+151
+00:13:47,560 --> 00:13:51,560
+Esto lo hemos comentado en una de las certullas que justamente que comentaba antes,
+
+152
+00:13:51,560 --> 00:13:55,560
+al comienzo de la charla, tener como dos clases separadas,
+
+153
+00:13:55,560 --> 00:14:00,560
+porque el type-d sé que permite definir si las propiedades van a ser obligatorias o no,
+
+154
+00:14:00,560 --> 00:14:04,560
+y es una forma general para todo lo que se define dentro de la clase.
+
+155
+00:14:04,560 --> 00:14:08,560
+Entonces, pues tener una clase de la que parte, es que todo es obligatorio,
+
+156
+00:14:08,560 --> 00:14:12,560
+luego heredar de esa, decir, todo lo que pongas ahora no es obligatorio
+
+157
+00:14:12,560 --> 00:14:16,560
+y utilizar esa última clase que has llegado a utilizar.
+
+158
+00:14:16,560 --> 00:14:19,560
+Pero el código te lo ensucia mucho, no es nada claro.
+
+159
+00:14:19,560 --> 00:14:25,560
+Entonces, esta nueva forma con el no required, pues,
+
+160
+00:14:25,560 --> 00:14:30,560
+para mí es mucho más entendible y fácil de entender porque lo tienes así directamente.
+
+161
+00:14:30,560 --> 00:14:35,560
+Aquí sí que entra un poco el debate, que eso sé que lo hemos llegado a comentar en alguna ocasión,
+
+162
+00:14:35,560 --> 00:14:39,560
+en las certullas es que no sabemos si tampoco, es lo mejor, sabes, dentro de...
+
+163
+00:14:39,560 --> 00:14:40,560
+¿Qué se haya utilizado?
+
+164
+00:14:40,560 --> 00:14:44,560
+Esta opción del no required y del required,
+
+165
+00:14:44,560 --> 00:14:47,560
+porque en realidad no es un tipo lo que se está cambiando.
+
+166
+00:14:47,560 --> 00:14:51,560
+El optional, por ejemplo, lo que hace es decir que algo es que puede ser non-e,
+
+167
+00:14:51,560 --> 00:14:58,560
+pero aquí en realidad no es un tipo en sí para esa propiedad que estás haciendo
+
+168
+00:14:58,560 --> 00:15:02,560
+en el valor, en el tipo, sino que es a nivel de la clase.
+
+169
+00:15:02,560 --> 00:15:07,560
+Tiene ahí un poco esa discusión, pero bueno, dentro de lo malo de lo posible
+
+170
+00:15:07,560 --> 00:15:10,560
+me parece lo más elegante, lo mejor que se puede hacer.
+
+171
+00:15:15,560 --> 00:15:19,560
+En ese caso, el required y el string sería...
+
+172
+00:15:19,560 --> 00:15:22,560
+Bueno, el string por defecto es required.
+
+173
+00:15:22,560 --> 00:15:27,560
+Sí, se pone eso simplemente porque lo han añadido para que tú lo puedas definir todo de forma en quícita.
+
+174
+00:15:27,560 --> 00:15:28,560
+Vale, vale.
+
+175
+00:15:28,560 --> 00:15:34,560
+Pero que no es necesario. Lo he puesto ahí a posta, pero para decir eso que no es necesaria.
+
+176
+00:15:34,560 --> 00:15:38,560
+Oye, y solo por curiosidad, ¿quién de aquí no está usando typing?
+
+177
+00:15:41,560 --> 00:15:42,560
+Con valentía.
+
+178
+00:15:44,560 --> 00:15:45,560
+Bueno, vale, prensa.
+
+179
+00:15:45,560 --> 00:15:49,560
+¿Alguien quiere compartir por ejemplo por qué aún no está usando typing?
+
+180
+00:15:49,560 --> 00:15:51,560
+¿Por qué no se da porque la versión no lo soporta?
+
+181
+00:15:51,560 --> 00:15:55,560
+¿Por qué hay tantos cambios que vienen en la última versión relacionadas a esto?
+
+182
+00:15:55,560 --> 00:15:57,560
+¿Qué sería guay?
+
+183
+00:15:57,560 --> 00:15:59,560
+¿Alguien?
+
+184
+00:15:59,560 --> 00:16:01,560
+Tú quieres?
+
+185
+00:16:05,560 --> 00:16:08,560
+Ven, qué útil era que todos se sentaran abajo.
+
+186
+00:16:08,560 --> 00:16:10,560
+Pero nada.
+
+187
+00:16:10,560 --> 00:16:15,560
+Realmente no nos lo hemos planteado.
+
+188
+00:16:15,560 --> 00:16:20,560
+Sí que es verdad que a veces pues ponemos un poco una función nueva y tal,
+
+189
+00:16:20,560 --> 00:16:25,560
+pero no lo hemos dicho, vamos a poner los types en todas partes.
+
+190
+00:16:25,560 --> 00:16:31,560
+Cuando empiezas a poner, te das cuenta cómo leer la clase y la entienden mejor.
+
+191
+00:16:31,560 --> 00:16:33,560
+¿Sabes lo que va de vuelta?
+
+192
+00:16:33,560 --> 00:16:34,560
+Sí, sí.
+
+193
+00:16:34,560 --> 00:16:36,560
+Te le dices todo con fiesta más.
+
+194
+00:16:36,560 --> 00:16:40,560
+Parece una tontería, pero creo que no lo es.
+
+195
+00:16:40,560 --> 00:16:49,560
+Si le pasa a Mikey, créeme que puedes detectar muchísimos errores, pero muchísimos.
+
+196
+00:16:49,560 --> 00:16:54,560
+Luego a nivel de los tipos, también te ayuda en cuanto a temas de velocidad,
+
+197
+00:16:54,560 --> 00:16:57,560
+cuando llegas a utilizar Numba o también este...
+
+198
+00:16:57,560 --> 00:16:59,560
+Nuitka me parece.
+
+199
+00:16:59,560 --> 00:17:04,560
+Sí, pues te llega a hacer una mejor optimización.
+
+200
+00:17:04,560 --> 00:17:08,560
+Por lo que ya de por si añadiendo los tipos, también estás consiguiendo eso,
+
+201
+00:17:08,560 --> 00:17:11,560
+un mejor rendimiento cuando utilizas estas tecnologías.
+
+202
+00:17:11,560 --> 00:17:18,560
+De forma habitual no, pero igualmente para cuando lo utilicéis ya os ayudará.
+
+203
+00:17:18,560 --> 00:17:22,560
+De hecho, había un proyecto del MyPike, que era el compilador que se basaba en MyPike,
+
+204
+00:17:22,560 --> 00:17:26,560
+y justamente basado en eso, podían compilar un poquito el código y eso.
+
+205
+00:17:26,560 --> 00:17:28,560
+¿Quieren mostrar otro quizá algo?
+
+206
+00:17:28,560 --> 00:17:30,560
+Sí.
+
+207
+00:17:30,560 --> 00:17:34,560
+¿Pasamos por ejemplo, si queréis, del tipo self?
+
+208
+00:17:34,560 --> 00:17:38,560
+Uy, se... que mal que lo agregaron en esto, porque ya...
+
+209
+00:17:38,560 --> 00:17:40,560
+¿Por qué menos mal?
+
+210
+00:17:40,560 --> 00:17:42,560
+Porque si no, el tema de la depend...
+
+211
+00:17:42,560 --> 00:17:46,560
+A mí no me gustaba para nada, cuando tenía que poner con la misma referencia la misma clase.
+
+212
+00:17:46,560 --> 00:17:49,560
+Era como una... a veces tenía cosas circulares y era como...
+
+213
+00:17:49,560 --> 00:17:52,560
+Lo dejaba helado, no le denotaba eso.
+
+214
+00:17:52,560 --> 00:17:56,560
+Que era más bonita, ahí está lo del tema circular, es una de las cosas que creo que es más molesta,
+
+215
+00:17:56,560 --> 00:18:01,560
+porque tiene que dar de tax checking, tiene que añadir para editarlo circular.
+
+216
+00:18:01,560 --> 00:18:03,560
+Entonces el self ayuda mucho.
+
+217
+00:18:03,560 --> 00:18:08,560
+Pero me gustaría comentar una cosa que he visto, ¿vale?
+
+218
+00:18:08,560 --> 00:18:12,560
+Que me ha resultado un poco amor odio.
+
+219
+00:18:12,560 --> 00:18:18,560
+A ver, aquí estamos utilizando los self, ¿vale?
+
+220
+00:18:18,560 --> 00:18:20,560
+Y estamos devolviendo self.
+
+221
+00:18:20,560 --> 00:18:26,560
+Una función que se supone que lo que está editando está devolviendo algo.
+
+222
+00:18:26,560 --> 00:18:30,560
+Eso va en contra de lo que se supone que debe de hacer.
+
+223
+00:18:30,560 --> 00:18:32,560
+¿Qué tensáis de eso?
+
+224
+00:18:35,560 --> 00:18:37,560
+¿Quién hay que hacerlo?
+
+225
+00:18:37,560 --> 00:18:39,560
+Que no hay que hacerlo, ¿vale?
+
+226
+00:18:39,560 --> 00:18:42,560
+Porque es que la línea debajo de X es 9 y ahora es 7X.
+
+227
+00:18:42,560 --> 00:18:47,560
+Son dos, se entiende, pero luego te puedes ver líneas catástroficas.
+
+228
+00:18:47,560 --> 00:18:51,560
+Vale, entonces lo veis una aberración, ¿no?
+
+229
+00:18:51,560 --> 00:18:54,560
+¿Quién está aquí usando yango?
+
+230
+00:18:54,560 --> 00:18:57,560
+¿Como funciona?
+
+231
+00:19:00,560 --> 00:19:05,560
+En los pariset puede ser que tenga sentido, porque al final estamos aplicando un filter,
+
+232
+00:19:05,560 --> 00:19:08,560
+estamos aplicando un order by, estamos aplicando un listing,
+
+233
+00:19:08,560 --> 00:19:15,560
+podemos aplicar como varios filtros a ese código y siempre nos está devolviendo el set.
+
+234
+00:19:15,560 --> 00:19:18,560
+Entonces ahí tiene sentido.
+
+235
+00:19:18,560 --> 00:19:24,560
+Aquí a mí me parece una aberración, entiendo que algunos cambian, pero bueno, es eso.
+
+236
+00:19:24,560 --> 00:19:29,560
+Por eso es una causa de amor odio, porque en yango me encanta el de los pariset,
+
+237
+00:19:29,560 --> 00:19:37,560
+pero si yo veo la última línea, ya solo con esas dos cosas, a mí me causa alternación.
+
+238
+00:19:37,560 --> 00:19:44,560
+Y el problema es que si añaden que esto se pueda hacer, que es mejor.
+
+239
+00:19:46,560 --> 00:19:50,560
+No sé si tienen el código del PEP que muestra el problema que esto resuelva,
+
+240
+00:19:50,560 --> 00:19:54,560
+quizás se le hace que la gente el tema de devolverla hay más clases o algo así, ¿no?
+
+241
+00:19:54,560 --> 00:19:56,560
+El problema dice es ¿cómo se haría de forma habitual?
+
+242
+00:19:56,560 --> 00:19:57,560
+No, bueno, no.
+
+243
+00:19:57,560 --> 00:19:59,560
+De forma habitual, como para compararlo.
+
+244
+00:19:59,560 --> 00:20:05,560
+Como para que tiene el género y T, y ahora devuelves el T, entonces ya no sabes el tipo,
+
+245
+00:20:05,560 --> 00:20:10,560
+y lo otro es lo más comentable, que la dependencia particular es que era mucho más feo.
+
+246
+00:20:13,560 --> 00:20:18,560
+No sé si hay alguna otra charla, algún otro tipo de preguntas,
+
+247
+00:20:18,560 --> 00:20:24,560
+sino pues podemos volver un poquito hacia atrás sobre algunas de las otras cosas que se han llegado a introducir.
+
+248
+00:20:24,560 --> 00:20:29,560
+Una cosa así muy sencillita que se ha llegado a meter, que es que ahora se permiten
+
+249
+00:20:29,560 --> 00:20:37,560
+enriquecer las excepciones con notas, el PEP-678, y eso es simplemente el modo de aclaración,
+
+250
+00:20:37,560 --> 00:20:42,560
+pues tenemos un nuevo método que es el add note dentro de la excepción,
+
+251
+00:20:42,560 --> 00:20:48,560
+aquí lo tenéis en el ejemplo, que es cuando se hace el rise, pues capturamos la excepción
+
+252
+00:20:48,560 --> 00:20:52,560
+y se añade una nota y luego se vuelve a lanzar con la misma excepción,
+
+253
+00:20:52,560 --> 00:20:58,560
+y ahora pues de imprimirlo por pantalla, pues se puede ver la nota que se ha introducido previamente.
+
+254
+00:20:58,560 --> 00:21:06,560
+Aquí lo que era el add note previo, el add sum information, pues lo tenemos aquí en la línea de comandos.
+
+255
+00:21:06,560 --> 00:21:13,560
+Vamos, a mí por lo menos sí que me parece interesante para dar como aclaraciones extras
+
+256
+00:21:13,560 --> 00:21:18,560
+sobre por dónde ha ocurrido la excepción, y aquí pues entra un poco a colación también
+
+257
+00:21:18,560 --> 00:21:22,560
+a lo de la excepción group, lo que había comentado al principio,
+
+258
+00:21:22,560 --> 00:21:27,560
+porque se pueden poner también estos comentarios para la excepción group
+
+259
+00:21:27,560 --> 00:21:35,560
+y es muy útil para llegar a saber en qué parte de todo el árbol de excepciones
+
+260
+00:21:35,560 --> 00:21:39,560
+que haya ocurrido, dónde ha ocurrido el error, como una aclaración de vale,
+
+261
+00:21:39,560 --> 00:21:42,560
+de en todo mi anidación dónde ha ocurrido específicamente.
+
+262
+00:21:42,560 --> 00:21:47,560
+Entonces pues yo personalmente creo que es algo útil, sí que se podría poner directamente
+
+263
+00:21:47,560 --> 00:21:52,560
+como un texto dentro de la excepción, pero ponerlo como una nota, pues no sé,
+
+264
+00:21:52,560 --> 00:21:57,560
+a mí por lo menos me creo que me ayudará y creo que sí que lo utilizaré.
+
+265
+00:21:57,560 --> 00:22:01,560
+No sé si a algún otro esto le viene bien, lo echaban falta.
+
+266
+00:22:12,560 --> 00:22:16,560
+Que meterte ahí, poner algún print o algo por poder verlo,
+
+267
+00:22:16,560 --> 00:22:19,560
+pero puedes anotarlo, quieras que no acumule hacia arriba y te llevas contexto
+
+268
+00:22:19,560 --> 00:22:22,560
+y no solo ves la línea en la que ocurre las cosas, sino algo más.
+
+269
+00:22:22,560 --> 00:22:25,560
+Sí, a mí muchas veces me ha ocurrido eso, de tener excepciones
+
+270
+00:22:25,560 --> 00:22:29,560
+en el que el mensaje de error pues que casi me ocupe varias líneas
+
+271
+00:22:29,560 --> 00:22:34,560
+dentro del 3-Back y no se entiende bien y esto es como simplemente una aclaración.
+
+272
+00:22:34,560 --> 00:22:39,560
+Yo quiero saber cuál es la excepción, pero los detalles pues tal vez no,
+
+273
+00:22:39,560 --> 00:22:42,560
+sabes, me son opcionales aquí pues te aparece una nueva línea
+
+274
+00:22:42,560 --> 00:22:49,560
+y se puede identificar de forma distinta.
+
+275
+00:22:49,560 --> 00:22:53,560
+Otro se está bueno que muchas veces...
+
+276
+00:22:53,560 --> 00:22:59,560
+Por favor, está en distintos niveles de abstracción, entonces tú como...
+
+277
+00:22:59,560 --> 00:23:07,560
+Gracias, tú como usuario te interesa tener los detalles de la capa de abstracción más alta,
+
+278
+00:23:07,560 --> 00:23:12,560
+entonces quieres tener un error que refleje la capa de abstracción donde estás,
+
+279
+00:23:12,560 --> 00:23:15,560
+en la que estás trabajando, pero muchas veces hay muchas cosas abajo,
+
+280
+00:23:15,560 --> 00:23:20,560
+entonces tal vez hay una excepción en la capa 0 y luego la capa 1,
+
+281
+00:23:20,560 --> 00:23:25,560
+que entiende la 0, transforma esa excepción y luego la capa 2,
+
+282
+00:23:25,560 --> 00:23:28,560
+que entiende la 1 y así sucesivamente.
+
+283
+00:23:28,560 --> 00:23:32,560
+Entonces en vez de estar tirando muchas excepciones distintas
+
+284
+00:23:32,560 --> 00:23:39,560
+que son de una capa en particular, puedes simplemente ir agregando mensajes,
+
+285
+00:23:39,560 --> 00:23:43,560
+mensajes, mensajes y tal vez es más informativo también.
+
+286
+00:23:43,560 --> 00:23:47,560
+Sí, creo que es justamente uno de los casos de ejemplo aquí
+
+287
+00:23:47,560 --> 00:23:52,560
+cuando tienes varios niveles de excepciones no en un nivel de ejecución,
+
+288
+00:23:52,560 --> 00:23:55,560
+pero sí que por ejemplo cuando tienes programación asíncrona
+
+289
+00:23:55,560 --> 00:23:57,560
+porque tienes una función que llama de otra función, de otra función
+
+290
+00:23:57,560 --> 00:24:00,560
+y cada una pues tiene sus excepciones, pues hay una aclaración
+
+291
+00:24:00,560 --> 00:24:05,560
+de dónde te ha venido esta excepción y cuál ha sido todo el árbol
+
+292
+00:24:05,560 --> 00:24:09,560
+que ha habido de ejecución es, de por qué ha producido eso.
+
+293
+00:24:11,560 --> 00:24:15,560
+No sé si hay alguna otra pregunta, si queréis pues podemos pasar
+
+294
+00:24:15,560 --> 00:24:19,560
+pues a lo que serían las mejoras en las indicaciones
+
+295
+00:24:19,560 --> 00:24:22,560
+que hay en los Tracebacks, en los mensajes de error,
+
+296
+00:24:22,560 --> 00:24:25,560
+algo que la verdad pues creo que sí me va a ayudar bastante,
+
+297
+00:24:25,560 --> 00:24:28,560
+que es que bueno, hasta ahora en Python pues recordaréis
+
+298
+00:24:28,560 --> 00:24:32,560
+que lo habitual es que cuando ocurre un error de que una variable es none
+
+299
+00:24:32,560 --> 00:24:35,560
+en una línea determinada pues lo único que te decía,
+
+300
+00:24:35,560 --> 00:24:38,560
+hay un non en esta línea pues tener varias variables,
+
+301
+00:24:38,560 --> 00:24:41,560
+pero no sabes cuál de todas esas variables era la que estaba fallando,
+
+302
+00:24:41,560 --> 00:24:46,560
+no lo sabes simplemente te dice que hay un none ahí y ya está.
+
+303
+00:24:46,560 --> 00:24:49,560
+Pues ahora lo que se ha llegado a incluir es que te indica,
+
+304
+00:24:49,560 --> 00:24:51,560
+además con flechitas como podéis ver aquí,
+
+305
+00:24:51,560 --> 00:24:55,560
+cuál de todas estas variables pues es la que ha provocado que sea none,
+
+306
+00:24:55,560 --> 00:24:58,560
+lo cual pues a mí personalmente creo que me va a ayudar mucho
+
+307
+00:24:58,560 --> 00:25:04,560
+porque es que tenías que empezar a depurar, era un Cristo eso.
+
+308
+00:25:04,560 --> 00:25:09,560
+Lo que es más, lo que me suele suceder todavía más frecuentemente
+
+309
+00:25:09,560 --> 00:25:13,560
+es tener un diccionario a varios niveles, uno dentro de otro, dentro de otro,
+
+310
+00:25:13,560 --> 00:25:16,560
+y a partir de cierto nivel pues es un none,
+
+311
+00:25:16,560 --> 00:25:18,560
+es un none porque no ha entrado a la entrada, lo que sea
+
+312
+00:25:18,560 --> 00:25:22,560
+y no sabes dentro de toda esa cadena cuando se convierte en none,
+
+313
+00:25:22,560 --> 00:25:27,560
+no te lo decía esta día de hoy, pues ahora pues te lo indica claramente,
+
+314
+00:25:27,560 --> 00:25:32,560
+aquí lo podéis ver, cuál en qué nivel se llega a pasar a ser none,
+
+315
+00:25:32,560 --> 00:25:35,560
+y esto la verdad me va a dar la vida, creo que es una mejora,
+
+316
+00:25:35,560 --> 00:25:41,560
+no digo que sea imprescindible, pero que a mí al menos me va a dar bastante agilidad
+
+317
+00:25:41,560 --> 00:25:43,560
+y bastante más tiempo a la hora de desarrollar,
+
+318
+00:25:43,560 --> 00:25:46,560
+no voy a tener que hacer tantas ejecuciones de nuevo.
+
+319
+00:25:46,560 --> 00:25:51,560
+Tenemos cuenta esta mejora, qué mejora creación falla más en Paito del Tremont.
+
+320
+00:25:51,560 --> 00:25:56,560
+¿Esta para programas más rápido o la que dice en Paito del Tremont se va más rápido?
+
+321
+00:26:00,560 --> 00:26:03,560
+Pues eso creo que es lo más importante,
+
+322
+00:26:03,560 --> 00:26:07,560
+que también que se nos ayude pues a la hora de programar.
+
+323
+00:26:07,560 --> 00:26:10,560
+¿Qué dicen que realmente no va más rápido?
+
+324
+00:26:10,560 --> 00:26:12,560
+Va más rápido.
+
+325
+00:26:12,560 --> 00:26:18,560
+Va más rápido pero no sé si en tu programa lo mismo en concreto te ayudará más.
+
+326
+00:26:18,560 --> 00:26:23,560
+¿Esta rápida o esta rápida para ti es mejor?
+
+327
+00:26:23,560 --> 00:26:31,560
+Depende de lo que trabajes, puedes decir que vaya más rápido a mí me da igual que a mí me sirve ahora mismo.
+
+328
+00:26:31,560 --> 00:26:36,560
+¿Y sabe por qué quizás no va a ser más rápido en tu programa?
+
+329
+00:26:36,560 --> 00:26:39,560
+Porque no le dijiste al Steering Council.
+
+330
+00:26:39,560 --> 00:26:41,560
+Este es mi programa, haganlo más rápido,
+
+331
+00:26:41,560 --> 00:26:44,560
+porque el Steering Council desde que comenzaron el PEP de eso,
+
+332
+00:26:44,560 --> 00:26:48,560
+y le dije a la gente, por favor díganos cómo usan Python para hacerlo más rápido en las situaciones.
+
+333
+00:26:48,560 --> 00:26:53,560
+Entonces casi todos los test que se han hecho ahora son test que ya son parte de Python o cosas que se inventan.
+
+334
+00:26:53,560 --> 00:27:00,560
+No sé si usted es como desarrollador a veces de una biblioteca, uno pierde como los casos de uso de una biblioteca.
+
+335
+00:27:00,560 --> 00:27:05,560
+Uno se preocupa de tener clase, métodos y todo, pero no sabe qué está haciendo la gente.
+
+336
+00:27:05,560 --> 00:27:07,560
+Cuánta vez está llamando los métodos.
+
+337
+00:27:07,560 --> 00:27:14,560
+Y lo que pasa es que el plan de hacer fases y Python son varias versiones, y si ustedes algún día tienen un programa y dicen,
+
+338
+00:27:14,560 --> 00:27:21,560
+esto va muy lento, acercan a las comunidades, hablen con la gente y vean algún caso específico que los core developers pueden empezar a ver.
+
+339
+00:27:21,560 --> 00:27:25,560
+Ah, mira, pues esto se nos olvidó, hay que hacer aquí un arreglo y eso.
+
+340
+00:27:25,560 --> 00:27:30,560
+Justamente pasaba, de hecho lo han dicho en toda la charla y ya, pues era como, está aburrido con el tema,
+
+341
+00:27:30,560 --> 00:27:34,560
+pero siempre lo dicen, por favor necesitamos casos de uso para saber cómo hacerlo más rápido.
+
+342
+00:27:34,560 --> 00:27:37,560
+Eso les animo a decir cuáles son sus casos de uso.
+
+343
+00:27:37,560 --> 00:27:45,560
+Bueno, añadir a esto, pues que en principio lo que es con esta nueva versión, tu programa debería ser más rápido en teoría.
+
+344
+00:27:45,560 --> 00:27:50,560
+Lo que te asegura es que sea entre un 10% a un 60% más rápido respecto a Python 3.10%,
+
+345
+00:27:50,560 --> 00:27:57,560
+así que algo de velocidad, pues vas a ganar y añadir justamente a lo que se ha comentado,
+
+346
+00:27:57,560 --> 00:28:02,560
+algo muy importante dentro de lo que es, a la hora de meter mayor rendimiento, mayor velocidad,
+
+347
+00:28:02,560 --> 00:28:07,560
+es que siempre está la polémica de que, vale, podemos conseguir mejor rendimiento y mayor velocidad
+
+348
+00:28:07,560 --> 00:28:11,560
+en ciertas cosas, pero en ocasiones algunos cambios que se realizan, ralentizan otras.
+
+349
+00:28:11,560 --> 00:28:16,560
+Que esto, por ejemplo, aquí nos podríamos meter en el tema del GIL, que esto no sería una charla,
+
+350
+00:28:16,560 --> 00:28:23,560
+esto sería directamente una conferencia entera sobre el GIL, sabes, discutiendo y matándonos todos entre nosotros,
+
+351
+00:28:23,560 --> 00:28:28,560
+los juegos del hambre para si lo quitamos o no, pero en el caso del GIL,
+
+352
+00:28:28,560 --> 00:28:34,560
+justamente una de las propuestas que hay a la hora de quitarlo, pues llega a provocar que se ralentice
+
+353
+00:28:34,560 --> 00:28:41,560
+el rendimiento en algunos casos, sobre todo cuando es a un único hilo, que son casos de uso pues muy necesarios,
+
+354
+00:28:41,560 --> 00:28:46,560
+que igualmente pues agiliza un montón en otros, pero ya digo, como esto es una cosa casi de una conferencia,
+
+355
+00:28:46,560 --> 00:28:50,560
+pues tampoco lo podemos comentar, pero lo que es a día de hoy, al menos con Python 3.11,
+
+356
+00:28:50,560 --> 00:28:55,560
+pues se te asegura de eso, de que va a ser de un 10% a un 60% más rápido, porque eso,
+
+357
+00:28:55,560 --> 00:29:00,560
+porque si no, como hagas cosas que ralentizan a otro, pues ese otro se te empieza a quejar, te empieza a gritar,
+
+358
+00:29:00,560 --> 00:29:06,560
+o sea, oye, me ha ralentizado lo mío y no se va a permitir que ahí continúe.
+
+359
+00:29:08,560 --> 00:29:13,560
+Por cierto usted, bueno, usted debe pensar, pero alguien de acá sabe por qué o cómo comenzó
+
+360
+00:29:13,560 --> 00:29:17,560
+de que hicieran Python más rápido en la 3.11 y la 3.12, alguien se sabe la historia,
+
+361
+00:29:17,560 --> 00:29:23,560
+sí como dato rosa, ¿no? Usted debe estar suscrito en la lista de correos, así que vieron el code.
+
+362
+00:29:23,560 --> 00:29:27,560
+Una persona apareció y dijo, hola, este es mi plan para hacer Python más rápido,
+
+363
+00:29:27,560 --> 00:29:31,560
+si alguien me paga full time, lo hacemos en un par de años.
+
+364
+00:29:32,560 --> 00:29:37,560
+Lígero un bueno, me apareció uno de los sponsors, le pagaron y ahora está trabajando con el equipo
+
+365
+00:29:37,560 --> 00:29:46,560
+de core developers en Microsoft, haciéndolo más rápido, así que si tienen ideas, ya ven lo fácil.
+
+366
+00:29:46,560 --> 00:29:56,560
+Claro, dos millones, creo que era, ¿no? No sé, no. Igualmente también de lo que indicaba,
+
+367
+00:29:56,560 --> 00:30:02,560
+también vosotros podéis proponer vuestros propios PEP, ahí en las listas de correos oficiales,
+
+368
+00:30:02,560 --> 00:30:08,560
+cada uno puede también, sin necesidad de ser un core developer, proponer vuestras propias ideas.
+
+369
+00:30:08,560 --> 00:30:13,560
+Pues muchas las echas en atrás, hay discusiones, pero es que si tenéis una idea, se puede proponer
+
+370
+00:30:13,560 --> 00:30:17,560
+y llegan a añadir cosas muy locas.
+
+371
+00:30:17,560 --> 00:30:24,560
+Se puede proponer, pero por favor, tener cabeza cuando las provocáis, porque algunas veces han aceptado cosas.
+
+372
+00:30:24,560 --> 00:30:32,560
+No, no volvamos al Walrus, por favor. No, no, no, no, no, no volvamos al Walrus.
+
+373
+00:30:32,560 --> 00:30:38,560
+Si quieres mencionar una última cosa, ya estamos en tiempo de descuento.
+
+374
+00:30:38,560 --> 00:30:45,560
+A ver, no sé, así, si, la parte sino del final, así por comentar.
+
+375
+00:30:45,560 --> 00:30:51,560
+Bueno, pues no nos da tiempo tampoco a comentar muchas otras cosas, hay alguna otra que también que tenemos puesta,
+
+376
+00:30:51,560 --> 00:30:58,560
+que no nos da tiempo, pero pues aquí tenéis un listado de todas las cosas que se llegan a incluir,
+
+377
+00:30:58,560 --> 00:31:07,560
+además de otras más, como por ejemplo, el argumento Yonpet, para llegar a permitir que código
+
+378
+00:31:07,560 --> 00:31:11,560
+no seguro pues se llegue a ejecutar, porque se ha denidido a través del Python pad,
+
+379
+00:31:11,560 --> 00:31:17,560
+de los Python pad como del pad del sistema, se puede haber de cualquier cosa por ahí,
+
+380
+00:31:17,560 --> 00:31:22,560
+pues puede ser que haya código pues que se dé otra cosa, código que no esté comprobado,
+
+381
+00:31:22,560 --> 00:31:28,560
+pues aquí con el Python 6 pad, usando Yonpet, se puede poner un pad específico,
+
+382
+00:31:28,560 --> 00:31:35,560
+que se sabe que son los que son seguros para ejecutar, los valedades yeneris,
+
+383
+00:31:35,560 --> 00:31:40,560
+luego pues se ha hecho muy limpieza, etcétera, pues muchos otros cambios así,
+
+384
+00:31:40,560 --> 00:31:45,560
+pues que también vemos importante, además de claro el tema de la velocidad que ya hemos comentado.
+
+385
+00:31:45,560 --> 00:31:51,560
+Y dentro de lo que es esta charla, esto justamente a la velocidad, pues también recomendar,
+
+386
+00:31:51,560 --> 00:31:56,560
+que va a dar Pablo Galindo el día de mañana, pues una charla sobre cómo se está haciendo Python más rápido,
+
+387
+00:31:56,560 --> 00:31:59,560
+así que os animo encarecidamente a que vayáis a verla,
+
+388
+00:31:59,560 --> 00:32:03,560
+yo por lo menos creo que es lo que más ganas tengo, porque tengo mucho interés,
+
+389
+00:32:03,560 --> 00:32:08,560
+ya que es uno de los corebelopers y los que más se están haciendo para que esto sea posible.
+
+390
+00:32:08,560 --> 00:32:14,560
+Y bueno, la parte de esto, este listado que hemos puesto, pues podéis copiar esta dirección de aquí,
+
+391
+00:32:14,560 --> 00:32:18,560
+que igualmente pues lo encontraréis fácil, ponéis novedades dentro de Python 3.11,
+
+392
+00:32:18,560 --> 00:32:29,560
+yo os aparece rápido, y si queréis probarlo vosotros, porque a día de hoy pues todavía no se ha llegado a lanzar la versión 3.11,
+
+393
+00:32:29,560 --> 00:32:34,560
+pues lo que podéis hacer es esperar simplemente la salida, que es el día 24 de octubre,
+
+394
+00:32:34,560 --> 00:32:37,560
+bueno, lo que es este mismo mes, que es solamente unas semanas,
+
+395
+00:32:37,560 --> 00:32:44,560
+o lo que yo recomendaría, que sería compilarlo vosotros mismos, es bastante fácil,
+
+396
+00:32:44,560 --> 00:32:50,560
+la versión actual es la ReleaseCandidate2, lo cual significa que no debería introducir nuevos cambios,
+
+397
+00:32:50,560 --> 00:32:55,560
+porque es solamente para hacer testeo, para comprobar que esté todo bien, y que ya lo podéis comprobar.
+
+398
+00:32:55,560 --> 00:32:59,560
+O un docker que es más fácil, y lo tienes ahí también.
+
+399
+00:32:59,560 --> 00:33:03,560
+También es otra opción, pero bueno, yo la de compilar la veo más divertida, yo personalmente,
+
+400
+00:33:03,560 --> 00:33:07,560
+y también puedes modificar ahí las opciones, y haces tus propias cosas.
+
+401
+00:33:07,560 --> 00:33:13,560
+Si alguno nunca ha compilado desde cero Python, que también puedes hacerlo de docker,
+
+402
+00:33:13,560 --> 00:33:18,560
+pues ahí está web de aquí, no os voy a mentir, yo lo he encontrado buscando para la conferencia,
+
+403
+00:33:18,560 --> 00:33:25,560
+que es simplemente una guía para copiar y pegar, de cómo se compila, ponéis la versión que queréis,
+
+404
+00:33:25,560 --> 00:33:31,560
+parece simplemente para ponerlo en el terminal, y no hace falta ni tener conocimientos técnicos,
+
+405
+00:33:31,560 --> 00:33:36,560
+ni nada como para hacerlo, y con eso podéis compilar ya de la versión ReleaseCandidate2,
+
+406
+00:33:36,560 --> 00:33:39,560
+desde el día de hoy, aunque no haya salido todavía.
+
+407
+00:33:39,560 --> 00:33:46,560
+Bueno, pues ante todo, pues agradeceros a todos los que habéis tenido aquí,
+
+408
+00:33:46,560 --> 00:33:51,560
+a todos los que hacéis Python 3.11 posible, y os recomiendo,
+
+409
+00:33:51,560 --> 00:33:56,560
+encarecidamente, que vayáis probando ya la nueva versión de Python, no solamente la 3.11,
+
+410
+00:33:56,560 --> 00:34:01,560
+sino las futuras, desde antes de la salida, porque es gracias a vosotros,
+
+411
+00:34:01,560 --> 00:34:05,560
+que probándolas desde el inicio, pues se llegan a detectar fallos,
+
+412
+00:34:05,560 --> 00:34:09,560
+errores que se llegan a encontrar, que puedan ser importantes, y que si no se detectan para la salida,
+
+413
+00:34:09,560 --> 00:34:15,560
+pues se quedan ahí, y pues es un problema, así que tanto probándolos con vosotros,
+
+414
+00:34:15,560 --> 00:34:18,560
+por juego, como por ejemplo, probándolo con vuestras bibliotecas,
+
+415
+00:34:18,560 --> 00:34:24,560
+podéis darle ya el soporte desde el día de hoy, y verificar que todo funcione como tendría que funcionar.
+
+416
+00:34:24,560 --> 00:34:30,560
+Así que muchas gracias, aquí creo que llega hasta aquí la conferencia,
+
+417
+00:34:30,560 --> 00:34:34,560
+no sé si hay alguna otra pregunta, alguna cosa que queramos así comentar.
+
+418
+00:34:34,560 --> 00:34:46,560
+Una palabra, si alguien quiere decir.
+
+419
+00:34:49,560 --> 00:34:53,560
+No sólo una recomendación a lo que nosotros hicimos hace una semana,
+
+420
+00:34:53,560 --> 00:34:58,560
+el tema de las, no sé cómo las llaman en español, las dead batteries,
+
+421
+00:34:58,560 --> 00:35:02,560
+van a tirar unas cuantas cosas a la basura, y bueno,
+
+422
+00:35:02,560 --> 00:35:07,560
+creo que inicialmente sale warning, luego de prequeted warning, pero se va a ir a la basura,
+
+423
+00:35:07,560 --> 00:35:11,560
+así que luego, si no, no queréis hacer una migración de meses,
+
+424
+00:35:11,560 --> 00:35:14,560
+cuando sale una nueva versión de Python, porque descubrí que algo,
+
+425
+00:35:14,560 --> 00:35:19,560
+en lo que os pasabais, porque hay librerías de sincronización, librerías de imágenes,
+
+426
+00:35:19,560 --> 00:35:22,560
+que si tenéis un poco de mala suerte, podéis estar utilizando,
+
+427
+00:35:22,560 --> 00:35:26,560
+imagino que se van a sacar aparte, se van a sacar fuera, pero seguirán existiendo,
+
+428
+00:35:26,560 --> 00:35:30,560
+echale un vistacito, así no encontrar esa sorpresa.
+
+429
+00:35:30,560 --> 00:35:35,560
+Justamente al respecto, vamos, recomiendo exactamente lo mismo,
+
+430
+00:35:35,560 --> 00:35:39,560
+avisar que de los módulos que se llegan a considerar muertos,
+
+431
+00:35:39,560 --> 00:35:44,560
+como que ya no tienen soporte, primero se van a marcar como de prequeted en la 311,
+
+432
+00:35:44,560 --> 00:35:48,560
+no directamente se van a borrar aquí, pues hacen las cosas poco a poco.
+
+433
+00:35:48,560 --> 00:35:52,560
+Primero van a ser como de prequeted, y luego la 313 está previsto,
+
+434
+00:35:52,560 --> 00:35:54,560
+que se eliminen ya definitivamente.
+
+435
+00:35:54,560 --> 00:35:58,560
+Entonces, todos esos warnings que aparecen, no ignorarlos tal cual,
+
+436
+00:35:58,560 --> 00:36:02,560
+sino pues ya desde el principio, empezar a atenderlos e ir cambiando código.
+
+437
+00:36:02,560 --> 00:36:06,560
+A esto añadir que hay una opción a través de la línea de comandos,
+
+438
+00:36:06,560 --> 00:36:09,560
+de que los warnings en vuestros programas no sean warnings,
+
+439
+00:36:09,560 --> 00:36:12,560
+sino que sean ya directamente errores, excepciones.
+
+440
+00:36:12,560 --> 00:36:15,560
+Así que si queréis de verdad hacer que vuestro código
+
+441
+00:36:15,560 --> 00:36:20,560
+pues que sea seguro, podéis habilitar esta opción a la hora de probarlo,
+
+442
+00:36:20,560 --> 00:36:23,560
+por ejemplo con el CI, a la hora de ejecutar los tests,
+
+443
+00:36:23,560 --> 00:36:28,560
+y aseguraros que no tenéis cosas pendientes de que se lleguen a verificar.
+
+444
+00:36:28,560 --> 00:36:31,560
+Bueno, entonces le damos gracias a la per...
+
+445
+00:36:31,560 --> 00:36:33,560
+¡Valerie, pero!
+
+446
+00:36:35,560 --> 00:36:37,560
+Último comentario, Valeria.
+
+447
+00:36:37,560 --> 00:36:39,560
+Día palabras.
+
+448
+00:36:41,560 --> 00:36:47,560
+Ahora que estaban hablando de las versiones y de lo difícil que esa vez es de migrarse,
+
+449
+00:36:47,560 --> 00:36:53,560
+estaba pensando a lo mejor alguien conoce alguna herramienta,
+
+450
+00:36:53,560 --> 00:36:56,560
+o si no, a lo mejor hay que crearla.
+
+451
+00:36:56,560 --> 00:37:01,560
+Un lint que te deje saber qué cosas van a ser incompatibles
+
+452
+00:37:01,560 --> 00:37:03,560
+con una nueva versión que haya en el código.
+
+453
+00:37:03,560 --> 00:37:06,560
+¿Existe? ¿Sabe alguien si existe?
+
+454
+00:37:07,560 --> 00:37:09,560
+En principio con los de PreQuit,
+
+455
+00:37:09,560 --> 00:37:11,560
+lo normal es que ya deposite, David,
+
+456
+00:37:11,560 --> 00:37:13,560
+no sé si hay alguna cosa en específico,
+
+457
+00:37:13,560 --> 00:37:19,560
+pero lo normal suele ser poner un warning de que algo se va a pasar como de PreQuit,
+
+458
+00:37:19,560 --> 00:37:21,560
+eso ya lo sabes de que lo tienes que cambiar,
+
+459
+00:37:21,560 --> 00:37:24,560
+que modificar o que ese módulo ya no va a ser disponible.
+
+460
+00:37:24,560 --> 00:37:26,560
+Es más, supongo la idea de, por ejemplo,
+
+461
+00:37:26,560 --> 00:37:29,560
+con estos módulos que van a estar como de PreQuit de la 311,
+
+462
+00:37:29,560 --> 00:37:31,560
+que toda la gente que empieza a ejecutar ya su código
+
+463
+00:37:31,560 --> 00:37:36,560
+le aparece un aviso de que eso tiene que cambiarlo porque ya no está soportado.
+
+464
+00:37:36,560 --> 00:37:41,560
+Ya desde previo a eso, pues no sé tampoco si existe,
+
+465
+00:37:41,560 --> 00:37:43,560
+si hay algún proyecto respecto,
+
+466
+00:37:43,560 --> 00:37:47,560
+pero eso es una medida normalmente lo bastante segura como para ello.
+
+467
+00:37:47,560 --> 00:37:49,560
+Por ejemplo, si...
+
+468
+00:37:49,560 --> 00:37:52,560
+Aunque no tenga nada que ver, si tu código tiene test
+
+469
+00:37:52,560 --> 00:37:55,560
+y está completamente testeadado, lo puedes ejecutar
+
+470
+00:37:55,560 --> 00:37:58,560
+y entonces te leerá en el código donde están todos esos warnings
+
+471
+00:37:58,560 --> 00:38:00,560
+y lo vas a hacer en una versión otra.
+
+472
+00:38:00,560 --> 00:38:02,560
+Pero eso es decir en un mundo ideal...
+
+473
+00:38:02,560 --> 00:38:05,560
+¿El que el problema es ese que Coverage 100%...
+
+474
+00:38:05,560 --> 00:38:06,560
+Claro.
+
+475
+00:38:06,560 --> 00:38:08,560
+...de venderlo también.
+
+476
+00:38:08,560 --> 00:38:10,560
+Yo añadir respecto al tema del pailín,
+
+477
+00:38:10,560 --> 00:38:13,560
+yo personalmente utilizo PayChamp, me encanta como IDE,
+
+478
+00:38:13,560 --> 00:38:15,560
+no me pagan por ello.
+
+479
+00:38:15,560 --> 00:38:18,560
+PayChamp, cuando pones un warning dentro de un método,
+
+480
+00:38:18,560 --> 00:38:23,560
+un warning de que está de PreQuit, te llega a poner en las llamadas
+
+481
+00:38:23,560 --> 00:38:27,560
+a ese método un aviso de que ese método ya está como de PreQuit.
+
+482
+00:38:27,560 --> 00:38:30,560
+El propio PayChamp lo detecta y te aparece como tachado
+
+483
+00:38:30,560 --> 00:38:33,560
+y te avisa, oye, esto está de PreQuit.
+
+484
+00:38:33,560 --> 00:38:36,560
+Así que yo personalmente pongo los warnings también por eso
+
+485
+00:38:36,560 --> 00:38:38,560
+porque me viene muy bien.
+
+486
+00:38:38,560 --> 00:38:41,560
+Es como un aspecte de la line de lo justamente lo que comentas.
+
+487
+00:38:41,560 --> 00:38:42,560
+Claro.
+
+488
+00:38:42,560 --> 00:38:45,560
+Creo que, bueno, si ya PayChamp no está haciendo estaría bueno
+
+489
+00:38:45,560 --> 00:38:47,560
+que hubiera algo como un...
+
+490
+00:38:47,560 --> 00:38:49,560
+Pues es un link, simplemente que lo corre,
+
+491
+00:38:49,560 --> 00:38:51,560
+no necesitas tener test, no necesitas...
+
+492
+00:38:51,560 --> 00:38:54,560
+Claro, es bueno tener test, no, por favor, hagan test.
+
+493
+00:38:54,560 --> 00:38:58,560
+Pero en un mundo no ideal,
+
+494
+00:38:58,560 --> 00:39:00,560
+sin tener que tener 100% de Coverage,
+
+495
+00:39:00,560 --> 00:39:03,560
+poder saber dónde va a ser compatible y no,
+
+496
+00:39:03,560 --> 00:39:06,560
+para saber, quizás, lo puedo implementar muy rápido
+
+497
+00:39:06,560 --> 00:39:09,560
+en la subida de versión.
+
+498
+00:39:09,560 --> 00:39:11,560
+Bueno, ahora sí.
+
+499
+00:39:11,560 --> 00:39:37,560
+Me agradecemos a la ponente.
+

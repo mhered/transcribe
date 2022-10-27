@@ -1,0 +1,2136 @@
+1
+00:00:00,000 --> 00:00:27,000
+Vamos a empezar con la charla. ¿Qué tal? ¿Habéis comido bien? ¿Venís con energía? ¿Un café? ¿Quién se toma un café? Bien, bien, bien, he hecho los demás. ¡Ánimo!
+
+2
+00:00:27,000 --> 00:00:30,000
+Y nos dejo con Elena. Un aplauso, por favor.
+
+3
+00:00:35,000 --> 00:00:37,000
+Hola, ¿me habéis?
+
+4
+00:00:37,000 --> 00:00:38,000
+Más o menos bien.
+
+5
+00:00:38,000 --> 00:00:44,000
+A ver si conseguimos hacerlas sin demasiados problemas técnicos que está saltando.
+
+6
+00:00:44,000 --> 00:00:51,000
+Y bueno, bienvenidos a todos. ¿Cuántos de vosotros conocéis un poco que es el Green Computing?
+
+7
+00:00:51,000 --> 00:01:02,000
+Bueno, pocos. Bien, porque al final mi idea es hacer una introducción que sepáis un poco de que va y que se puede hacer.
+
+8
+00:01:02,000 --> 00:01:10,000
+Me empiezo presentando. Yo soy Elena Guidi. Soy italiana. ¿Por quién? Estaban preguntando por el acento.
+
+9
+00:01:10,000 --> 00:01:14,000
+¿Veis bien el cambio? No.
+
+10
+00:01:14,000 --> 00:01:21,000
+A ver. Perdona que estoy entrando.
+
+11
+00:01:21,000 --> 00:01:25,000
+Si no, acuelis.
+
+12
+00:01:25,000 --> 00:01:29,000
+Bueno, voy presentándome mientras tanto.
+
+13
+00:01:29,000 --> 00:01:31,000
+Mientras en tanto.
+
+14
+00:01:31,000 --> 00:01:45,000
+Así me oyes mejor. Vale. Que no me está toliendo aquí.
+
+15
+00:01:45,000 --> 00:02:01,000
+Vale. Bien, los problemas técnicos de Lieto.
+
+16
+00:02:01,000 --> 00:02:16,000
+A ver si me voy a meter aquí. A ver. A ver aquí. Me intento compartir el tema.
+
+17
+00:02:19,000 --> 00:02:25,000
+A ver si ve. Vale. Un segundo.
+
+18
+00:02:25,000 --> 00:02:30,000
+No se cambió.
+
+19
+00:02:35,000 --> 00:02:40,000
+Espera, un tanto. Se ha cambiado. No sé por qué.
+
+20
+00:02:40,000 --> 00:02:47,000
+Vale. Bueno, pues a ver si conseguimos hacer con las transparencias que están haciendo un poco lo que quieren.
+
+21
+00:02:47,000 --> 00:02:56,000
+Ya tenéis spoiler. Que no quería decirlo. Voy a presentarme. Soy Elena. Trabajo como software engineer en TopLuz.
+
+22
+00:02:56,000 --> 00:02:59,000
+Y realmente no trabajo mucho con Python.
+
+23
+00:02:59,000 --> 00:03:06,000
+Entonces, un poco una infiltrada aquí. Y por eso ya sabéis que esta charla va a ser un poco más cultural.
+
+24
+00:03:06,000 --> 00:03:11,000
+Y vamos a tocar también un poquito lo que descubierto que se puede hacer en Python.
+
+25
+00:03:11,000 --> 00:03:18,000
+Pero bueno. Os pido justo 15-20 minutitos de atención. Y al final vamos a tener un cajuz.
+
+26
+00:03:18,000 --> 00:03:23,000
+Aquí tenemos un poquito de merchandising que nos ha dado TopLuz.
+
+27
+00:03:23,000 --> 00:03:28,000
+Y que vamos a utilizar como regalo para los tres primeros.
+
+28
+00:03:28,000 --> 00:03:31,000
+Las tres primeras personas que salen en el cajuz.
+
+29
+00:03:31,000 --> 00:03:38,000
+Y también vamos a tener un sorteo. No sé si habéis visto en Twitter. Aquí tengo el libro.
+
+30
+00:03:38,000 --> 00:03:42,000
+Le he traído también la bolsita por el jacado para que no se estrubeara. Vale.
+
+31
+00:03:42,000 --> 00:03:48,000
+Y para ganar el libro. Ah, no me ha soltado tampoco.
+
+32
+00:03:48,000 --> 00:04:05,000
+Perdona que ahí esto es la acuidad de las referencias.
+
+33
+00:04:05,000 --> 00:04:15,000
+Voy a poder compartirme de nuevo a ver si este se ha tenido pillado.
+
+34
+00:04:15,000 --> 00:04:27,000
+Bueno, el comportamiento.
+
+35
+00:04:27,000 --> 00:04:38,000
+Vale. Intentamos así. Ahora se ve.
+
+36
+00:04:38,000 --> 00:04:41,000
+Perdona todo el día.
+
+37
+00:04:41,000 --> 00:04:43,000
+Para ganar el libro.
+
+38
+00:04:43,000 --> 00:04:46,000
+Hay un sorteo que pienso que voy a hacer en Twitter.
+
+39
+00:04:46,000 --> 00:04:52,000
+Entonces lo único que tienes que hacer es poner un tweet con el hashtag sorteo green computing.
+
+40
+00:04:52,000 --> 00:04:57,000
+Y luego al final de la charla vamos a hacer el sorteo.
+
+41
+00:04:57,000 --> 00:05:00,000
+Me podéis etiquetar a mí también. Me llamo Elena Pandino.
+
+42
+00:05:00,000 --> 00:05:08,000
+Y si queréis podéis poner también los de la conferencia que también tienen sorteo para el uso del hashtag.
+
+43
+00:05:08,000 --> 00:05:11,000
+Pero vamos. Vamos un poco al dios.
+
+44
+00:05:11,000 --> 00:05:17,000
+Empezamos diciendo que es un poco el green computing.
+
+45
+00:05:17,000 --> 00:05:22,000
+¿Para esto estamos aquí? ¿Meoís más o menos bien? Sí.
+
+46
+00:05:22,000 --> 00:05:27,000
+Green computing es un poco un área de estudio de la informática.
+
+47
+00:05:27,000 --> 00:05:31,000
+Y se puede decir que es un conjunto de buenas prácticas.
+
+48
+00:05:31,000 --> 00:05:40,000
+Y su objetivo final es lo de intentar minimizar el impacto medioambiental de lo que hacemos.
+
+49
+00:05:40,000 --> 00:05:43,000
+El impacto en el objetivo.
+
+50
+00:05:43,000 --> 00:05:48,000
+Y estamos hablando un poco de lo que se puede decir que es el tema de la sostenibilidad.
+
+51
+00:05:48,000 --> 00:05:52,000
+Yo creo que el tema de sostenibilidad lo conocemos un poco todo.
+
+52
+00:05:52,000 --> 00:05:56,000
+Y se ha hablado mucho de cambio climático y de todo esto.
+
+53
+00:05:56,000 --> 00:06:03,000
+Y lo que quiero ver un poco hoy es qué podemos hacer y en qué modo se puede hablar de sostenibilidad en tecnología.
+
+54
+00:06:03,000 --> 00:06:08,000
+Entonces es nuestro día a día como programadores.
+
+55
+00:06:08,000 --> 00:06:15,000
+El concepto, uno de los conceptos que seguro hemos un poco oído todo es lo de la huella de carbono.
+
+56
+00:06:15,000 --> 00:06:18,000
+¿Cuántos sabéis que es la huella de carbono?
+
+57
+00:06:18,000 --> 00:06:20,000
+Varios.
+
+58
+00:06:20,000 --> 00:06:24,000
+Vamos a decirlo por si acaso para todos.
+
+59
+00:06:24,000 --> 00:06:30,000
+Es el volumen total de los gases de efecto invernadero que se produce por una actividad.
+
+60
+00:06:30,000 --> 00:06:35,000
+Entonces por ejemplo se puede calcular la huella de carbono de una empresa.
+
+61
+00:06:35,000 --> 00:06:42,000
+Porque es todo el volumen de los gases que se producen para la actividad de esta empresa.
+
+62
+00:06:42,000 --> 00:06:46,000
+O también puedes hablar de huella de carbono de una persona.
+
+63
+00:06:46,000 --> 00:06:53,000
+Entonces calculas los gases de esta persona por ejemplo durante un día o agua y agua.
+
+64
+00:06:53,000 --> 00:06:56,000
+¿Cuáles son un poco los gases envernadero?
+
+65
+00:06:56,000 --> 00:07:03,000
+Lo que conocemos más y que a lo mejor vamos a ver también un poco es seguramente el dióxido de carbono, la CO2.
+
+66
+00:07:03,000 --> 00:07:08,000
+Hay agua, metano y hemos perdido.
+
+67
+00:07:08,000 --> 00:07:13,000
+Porque hablamos un poco de efecto invernadero.
+
+68
+00:07:13,000 --> 00:07:17,000
+Creo que también todos conocemos un poco qué es el efecto invernadero.
+
+69
+00:07:17,000 --> 00:07:23,000
+Lo que es importante recordar es que el efecto envernadero es algo positivo.
+
+70
+00:07:23,000 --> 00:07:25,000
+Es algo súper importante.
+
+71
+00:07:25,000 --> 00:07:30,000
+Porque estos gases en prácticamente lo que hacen es una pequeña capa.
+
+72
+00:07:30,000 --> 00:07:35,000
+Y esto hace que parte de las radiaciones solares se queden en la tierra.
+
+73
+00:07:35,000 --> 00:07:40,000
+Y quedándose en la tierra mantienen una temperatura constante en la tierra.
+
+74
+00:07:40,000 --> 00:07:44,000
+Entonces la temperatura que tenemos ahora que nos permite vivir en este planeta
+
+75
+00:07:44,000 --> 00:07:48,000
+la tenemos gracias a este efecto invernadero natural.
+
+76
+00:07:48,000 --> 00:07:50,000
+El problema cuál es?
+
+77
+00:07:50,000 --> 00:07:53,000
+Que si nosotros empezamos a producir demasiados gases,
+
+78
+00:07:53,000 --> 00:07:56,000
+demasiado de estos gases, pues esta capita de gas
+
+79
+00:07:56,000 --> 00:08:02,000
+va a ser cada vez más grande y deja salir mucho menos radiación
+
+80
+00:08:02,000 --> 00:08:04,000
+respecto a la que naturalmente saldría.
+
+81
+00:08:04,000 --> 00:08:05,000
+Pues qué pasa?
+
+82
+00:08:05,000 --> 00:08:09,000
+Que más radiaciones se quedan dentro de la tierra
+
+83
+00:08:09,000 --> 00:08:12,000
+y así pues sube la temperatura.
+
+84
+00:08:12,000 --> 00:08:14,000
+Y tenemos el fenómeno de calentamiento global
+
+85
+00:08:14,000 --> 00:08:20,000
+que lo que realmente es un problema para nosotros y para el cambio climático.
+
+86
+00:08:20,000 --> 00:08:25,000
+Pero bien, aparte esto que es un poco una introducción
+
+87
+00:08:25,000 --> 00:08:27,000
+porque estamos aquí hablando de esto.
+
+88
+00:08:27,000 --> 00:08:30,000
+Me ha gustado mucho esta frase que es
+
+89
+00:08:30,000 --> 00:08:35,000
+software sitting the world, que yo creo que explica bien el hecho
+
+90
+00:08:35,000 --> 00:08:39,000
+que el software tiene bastante importancia realmente al día de hoy.
+
+91
+00:08:39,000 --> 00:08:44,000
+Quiero decir, en general al día de hoy pues la mayoría de nosotros
+
+92
+00:08:44,000 --> 00:08:48,000
+tenemos hasta nevera con software dentro.
+
+93
+00:08:48,000 --> 00:08:51,000
+Quiero decir que está presente en toda nuestra vida
+
+94
+00:08:51,000 --> 00:08:55,000
+y esto yo creo que nos da bastante responsabilidad.
+
+95
+00:08:55,000 --> 00:09:00,000
+Está tomada reciente que encontré que esté 2019
+
+96
+00:09:00,000 --> 00:09:04,000
+y un 7% del consumo global de la ettricidad
+
+97
+00:09:04,000 --> 00:09:07,000
+ha sido hecho por el sector de tecnología.
+
+98
+00:09:07,000 --> 00:09:11,000
+Entonces pues tenemos bastante impacto, un 7%.
+
+99
+00:09:11,000 --> 00:09:15,000
+Y sobre todo dentro de unos menos de 10 años
+
+100
+00:09:15,000 --> 00:09:19,000
+se espera que este 7% aumente mucho
+
+101
+00:09:19,000 --> 00:09:25,000
+se espera un aumento del 70% de la demanda de energía
+
+102
+00:09:25,000 --> 00:09:28,000
+solo para el sector tecnológico, vale.
+
+103
+00:09:28,000 --> 00:09:32,000
+Entonces tenemos bastante impacto en lo que es el consumo de energía
+
+104
+00:09:32,000 --> 00:09:36,000
+y entonces también en el impacto global que esto tiene, vale.
+
+105
+00:09:40,000 --> 00:09:43,000
+Y bueno, otro dato que me ha parecido súper interesante
+
+106
+00:09:43,000 --> 00:09:47,000
+aunque no estemos súper cerca porque es un dato de China
+
+107
+00:09:47,000 --> 00:09:52,000
+son un aumento que se prevé, estoy dentro de más o menos 15 años, vale,
+
+108
+00:09:52,000 --> 00:09:57,000
+para 2035 del consumo de energía para los datacenters
+
+109
+00:09:57,000 --> 00:10:03,000
+que se prevé un aumento del 222% que son datos bastantes,
+
+110
+00:10:03,000 --> 00:10:05,000
+son números que en mi opinión han sido bastante altos,
+
+111
+00:10:05,000 --> 00:10:09,000
+no sé qué opináis a mí, vamos, que un poco me preocupa,
+
+112
+00:10:09,000 --> 00:10:13,000
+estoy bastante preocupada por el impacto que esto puede tener
+
+113
+00:10:13,000 --> 00:10:15,000
+también el ambiente.
+
+114
+00:10:15,000 --> 00:10:19,000
+Y también he querido traer este dato porque habla de datacenter
+
+115
+00:10:19,000 --> 00:10:24,000
+y es cierto evidentemente que el impacto mayor dentro de tecnología
+
+116
+00:10:24,000 --> 00:10:29,000
+pues no lo tenemos nosotros que estamos trabajando en nuestro ordenador cada día,
+
+117
+00:10:29,000 --> 00:10:35,000
+lo tienen los datacenter, los datacenter es lo que dentro del campo de tecnología
+
+118
+00:10:35,000 --> 00:10:38,000
+más demanda energética tiene, vale.
+
+119
+00:10:38,000 --> 00:10:44,000
+Y bueno, y podemos ver un poco, estos datacenter
+
+120
+00:10:44,000 --> 00:10:48,000
+¿cómo consumen esta energía? ¿para qué le sirve esta energía?
+
+121
+00:10:48,000 --> 00:10:54,000
+Y vemos que un 10% de esta energía hace falta para almacenar datos
+
+122
+00:10:54,000 --> 00:10:58,000
+y un 90% usualmente se usa para enfriarlos,
+
+123
+00:10:58,000 --> 00:11:00,000
+que me parece un número bastante grande,
+
+124
+00:11:00,000 --> 00:11:03,000
+pero creo que es algo positivo yo, ¿por qué?
+
+125
+00:11:03,000 --> 00:11:07,000
+Porque el almacenamiento de datos no es algo que depende de nosotros,
+
+126
+00:11:07,000 --> 00:11:09,000
+nosotros que tenemos el datacenter,
+
+127
+00:11:09,000 --> 00:11:13,000
+es algo que depende del usuario final, el usuario decide que datos almacenar
+
+128
+00:11:13,000 --> 00:11:17,000
+y punto, y depende de él, enfriar los cervez
+
+129
+00:11:17,000 --> 00:11:21,000
+sí es algo que depende de cómo está hecho el datacenter,
+
+130
+00:11:21,000 --> 00:11:26,000
+esto pues mucha gente lo ha pensado y han nacido un concepto que es lo de green datacenter
+
+131
+00:11:26,000 --> 00:11:32,000
+que si lo vais a leer recuerda la definición de green computing que hemos visto antes,
+
+132
+00:11:32,000 --> 00:11:37,000
+lo de intentar diseñar estos datacenter de manera que sean utilizadas
+
+133
+00:11:37,000 --> 00:11:42,000
+entonces este 90% de energía que hace falta sea lo menor posible,
+
+134
+00:11:42,000 --> 00:11:45,000
+intentar diseñar también la cantidad de energía
+
+135
+00:11:45,000 --> 00:11:49,000
+y esto se puede hacer diseñando de cierta manera el datacenter
+
+136
+00:11:49,000 --> 00:11:54,000
+a personas que lo hacen de trabajo y han tenido varias ideas
+
+137
+00:11:54,000 --> 00:11:57,000
+Os voy a traer dos que me han parecido un poco más particulares
+
+138
+00:11:57,000 --> 00:12:00,000
+que pueden llamar a lo mejor la atención,
+
+139
+00:12:00,000 --> 00:12:05,000
+el primero es projectnapic, no sé algunos de vosotros ya lo ha oído,
+
+140
+00:12:05,000 --> 00:12:11,000
+uno, bien, pues lo que han pensado hacer es pillar los datacenter
+
+141
+00:12:11,000 --> 00:12:16,000
+y ponerlos en el fondo oscánico, y hay dos motivos,
+
+142
+00:12:16,000 --> 00:12:20,000
+el primero es que lo que mueve el mundo económico,
+
+143
+00:12:20,000 --> 00:12:24,000
+evidentemente pues un alquiler despacio en el centro de Madrid
+
+144
+00:12:24,000 --> 00:12:30,000
+cuesta más que un alquiler despacio en el fondo del océano,
+
+145
+00:12:30,000 --> 00:12:33,000
+entonces pues le salía bastante rentable,
+
+146
+00:12:33,000 --> 00:12:37,000
+pero también se intenta hacer un diseño de los datacenter
+
+147
+00:12:37,000 --> 00:12:41,000
+de modo que se aproveche la naturaleza para intentar gastar
+
+148
+00:12:41,000 --> 00:12:44,000
+menos posible para inferior,
+
+149
+00:12:44,000 --> 00:12:49,000
+y en este caso se juega con el tema de la temperatura del agua,
+
+150
+00:12:49,000 --> 00:12:54,000
+la temperatura en el fondo del océano es bastante fría, naturalmente.
+
+151
+00:12:56,000 --> 00:12:57,000
+¡Hola!
+
+152
+00:12:57,000 --> 00:12:58,000
+¡Oh!
+
+153
+00:12:58,000 --> 00:12:59,000
+¡Perdona!
+
+154
+00:12:59,000 --> 00:13:00,000
+¡Ahora me veis!
+
+155
+00:13:00,000 --> 00:13:01,000
+¡Perdonad!
+
+156
+00:13:01,000 --> 00:13:02,000
+¡Hola!
+
+157
+00:13:02,000 --> 00:13:03,000
+¡Sí!
+
+158
+00:13:03,000 --> 00:13:07,000
+¡Perdonad todos los problemas técnicos que estamos teniendo hoy!
+
+159
+00:13:07,000 --> 00:13:09,000
+¡Pues juro que no es culpa mía!
+
+160
+00:13:09,000 --> 00:13:13,000
+Ni de ninguno de nosotros que ayer también ha dado problemas.
+
+161
+00:13:13,000 --> 00:13:15,000
+Y bueno, volvemos a nosotros,
+
+162
+00:13:15,000 --> 00:13:21,000
+lo que estaba contando, que han decidido poner esto todo a centrar en el fondo del océano, ¿vale?
+
+163
+00:13:21,000 --> 00:13:22,000
+¿Y por qué?
+
+164
+00:13:22,000 --> 00:13:27,000
+Para aprovechar de la temperatura que hay en el agua, en el fondo del océano,
+
+165
+00:13:27,000 --> 00:13:28,000
+que es bastante fría,
+
+166
+00:13:28,000 --> 00:13:36,000
+y entonces simplemente poner estos servidores a contacto con el agua hace desenfrién,
+
+167
+00:13:36,000 --> 00:13:42,000
+ok, entonces luego tienen que consumir menos energía para hacer este enfriamiento.
+
+168
+00:13:42,000 --> 00:13:47,000
+También otra idea que han tenido, que esta mía ha parecido súper bonita,
+
+169
+00:13:47,000 --> 00:13:51,000
+es la antenida en Finlandia, en el Sinkin Particular.
+
+170
+00:13:51,000 --> 00:13:59,000
+Debajo de la catedral tenían un espacio que había sido creado como refugio anti aéreo en la Segunda Guerra Mundial,
+
+171
+00:13:59,000 --> 00:14:01,000
+y que se quedaba vacío.
+
+172
+00:14:01,000 --> 00:14:05,000
+Esto, pues, es una cosa de hace varios años,
+
+173
+00:14:05,000 --> 00:14:08,000
+se han ganado de más un premio en 2010,
+
+174
+00:14:08,000 --> 00:14:12,000
+y en 2010 pues no se esperaban otra guerra, ¿vale?
+
+175
+00:14:12,000 --> 00:14:17,000
+Entonces ha dicho, pues tenemos un espacio, no hay guerras, y podemos reutilizarlo.
+
+176
+00:14:17,000 --> 00:14:23,000
+Y no sé si algunos de vosotros habéis estado en un búnker o en algún espacio bajo tierra,
+
+177
+00:14:23,000 --> 00:14:28,000
+sino sabéis que hace frío, usualmente hace bastante fresquete también.
+
+178
+00:14:28,000 --> 00:14:34,000
+Entonces han utilizado un poco el mismo concepto de aprovechar de un sitio que está naturalmente fío
+
+179
+00:14:34,000 --> 00:14:39,000
+y poner allí unos tatacinter y hacer que simplemente el contato con el aire más frío
+
+180
+00:14:39,000 --> 00:14:45,000
+haga que haya menos necesidad de energía para luego enfriarlo.
+
+181
+00:14:45,000 --> 00:14:47,000
+Y han hecho algo más.
+
+182
+00:14:47,000 --> 00:14:50,000
+Como podéis ver, ahí al lado, ahí el mar,
+
+183
+00:14:50,000 --> 00:14:52,000
+y están súper cerca del mar Báltico,
+
+184
+00:14:52,000 --> 00:14:55,000
+y que está también bastante fresqueta, ¿no? en Finlandia,
+
+185
+00:14:55,000 --> 00:15:01,000
+y han decidido de coger el agua del mar y llevarla los tatacinter,
+
+186
+00:15:01,000 --> 00:15:06,000
+y simplemente como hemos visto antes, pasar el agua cerca de los tatacinter
+
+187
+00:15:06,000 --> 00:15:10,000
+hace que el agua sea caliente, y los tatacinter se enfrien.
+
+188
+00:15:10,000 --> 00:15:15,000
+Entonces así han utilizado una técnica natural para poder enfriar estos tatacinter,
+
+189
+00:15:15,000 --> 00:15:24,000
+y además han aprovechado el agua caliente para calentar un alrededor de 500 casas en la ciudad.
+
+190
+00:15:24,000 --> 00:15:26,000
+Pues tenemos agua caliente que hacemos, ¿no?
+
+191
+00:15:26,000 --> 00:15:30,000
+La desaprovechamos, la tiramos, no, la han utilizada para calentar.
+
+192
+00:15:30,000 --> 00:15:34,000
+Y ahora, no, han ganado un premio para esa idea,
+
+193
+00:15:34,000 --> 00:15:36,000
+que ha sido bastante buena.
+
+194
+00:15:36,000 --> 00:15:42,000
+Pero bueno, vamos también a ver un poco qué podemos hacer nosotros.
+
+195
+00:15:42,000 --> 00:15:46,000
+Evidentemente, lo primero que yo creo que es importante saber
+
+196
+00:15:46,000 --> 00:15:49,000
+es un poco cuál es nuestro impacto medioambiental.
+
+197
+00:15:49,000 --> 00:15:52,000
+Hay varias maneras de hacerlo, y aquí os traigo una idea,
+
+198
+00:15:52,000 --> 00:15:55,000
+que es esta web que se llama Green Algorithm.
+
+199
+00:15:55,000 --> 00:15:57,000
+Esto me gusta porque es código abierto,
+
+200
+00:15:57,000 --> 00:16:01,000
+en el que está podéis ver un poco cómo hace todos los cálculos, etc.
+
+201
+00:16:01,000 --> 00:16:05,000
+Entonces así podéis tener un poco una idea de cuál es vuestro impacto,
+
+202
+00:16:05,000 --> 00:16:09,000
+y de dónde podemos ir, podéis ir también a trabajar esto.
+
+203
+00:16:09,000 --> 00:16:15,000
+También, obviamente, una idea en la medida de lo posible es usar tatacinter que sea green.
+
+204
+00:16:15,000 --> 00:16:18,000
+Entonces a la hora de tener que utilizar un tatacinter,
+
+205
+00:16:18,000 --> 00:16:23,000
+intentar ir a leer un poco y entender cómo está trabajando.
+
+206
+00:16:23,000 --> 00:16:27,000
+Y si efectivamente se han preocupado de este tema, a la hora de diseñarlo,
+
+207
+00:16:27,000 --> 00:16:32,000
+cuál es su impacto medioambiental, en general se puede encontrar bastante.
+
+208
+00:16:32,000 --> 00:16:38,000
+Amazon, por ejemplo, está en su página, quiere ser casi que totalmente green
+
+209
+00:16:38,000 --> 00:16:43,000
+dentro de dos años, pero en su página está explicado todo.
+
+210
+00:16:43,000 --> 00:16:46,000
+También hay varias cositas que sí podemos hacer como usuario.
+
+211
+00:16:46,000 --> 00:16:51,000
+Nos acordamos que hemos dicho que un 10% es almacenamiento de datos.
+
+212
+00:16:51,000 --> 00:16:55,000
+Vale, como diseñador este tatacinter no podemos cambiarlo,
+
+213
+00:16:55,000 --> 00:17:00,000
+pero como usuario del tatacinter sí podemos hacer lo que viene llamado.
+
+214
+00:17:00,000 --> 00:17:05,000
+Podéis buscar si os interesa, green programming o green coding,
+
+215
+00:17:05,000 --> 00:17:10,000
+y es intentar hacer que nuestro código, nuestra programación sea un poco más green.
+
+216
+00:17:10,000 --> 00:17:14,000
+Por ejemplo, intentando no guardar datos que no son necesarios,
+
+217
+00:17:14,000 --> 00:17:20,000
+también optimizar el código un poco como tiempo, tiempo y también como memoria.
+
+218
+00:17:20,000 --> 00:17:23,000
+Entonces, intentar también no alocar, por ejemplo,
+
+219
+00:17:23,000 --> 00:17:25,000
+estructural de datos que no son necesarias.
+
+220
+00:17:25,000 --> 00:17:31,000
+Y otra idea que podemos hacer es intentar reparar y reutilizar.
+
+221
+00:17:31,000 --> 00:17:37,000
+Eso porque lo digo, porque usualmente el consumo mayor de electricidad
+
+222
+00:17:37,000 --> 00:17:41,000
+hace falta para crear un objeto nuevo, desde cero,
+
+223
+00:17:41,000 --> 00:17:43,000
+entonces crear el nuevo iPhone, lo que sea.
+
+224
+00:17:43,000 --> 00:17:47,000
+En general, reparar no tiene muchísimo gasto.
+
+225
+00:17:47,000 --> 00:17:52,000
+Entonces es importante intentar disminuir la cantidad de nuevos productos que se van a crear.
+
+226
+00:17:52,000 --> 00:17:56,000
+Y si, por ejemplo, nosotros, a lo mejor trabajando en IT,
+
+227
+00:17:56,000 --> 00:18:00,000
+lo que nos hace falta es un ordenador más nuevo de última generación,
+
+228
+00:18:00,000 --> 00:18:06,000
+lo que podemos hacer es también vender de segunda mano el viejo que no utilizamos,
+
+229
+00:18:06,000 --> 00:18:09,000
+porque hay muchas otras personas que sí podría valerle.
+
+230
+00:18:09,000 --> 00:18:14,000
+Además, al día de hoy, pues hay muchos programas que te permiten de trabajar en el cloud.
+
+231
+00:18:14,000 --> 00:18:20,000
+Entonces, que no hace realmente falta tener mucha potencia en el ordenador para poder utilizarlos.
+
+232
+00:18:20,000 --> 00:18:24,000
+Y además, pues si los vendéis, es bueno para el bolsillo.
+
+233
+00:18:24,000 --> 00:18:27,000
+Y no sé si habéis visto esta publicidad,
+
+234
+00:18:27,000 --> 00:18:31,000
+que me ha gustado llevarla porque creo que está bastante condensada con este tema.
+
+235
+00:18:31,000 --> 00:18:36,000
+Es de Wallapop de hace unos meses y se entra justo en ese tema.
+
+236
+00:18:36,000 --> 00:18:38,000
+Lo hecho, hecho está.
+
+237
+00:18:38,000 --> 00:18:40,000
+Entonces, bueno, ellos también trabajan en esto,
+
+238
+00:18:40,000 --> 00:18:45,000
+pero la idea es que el servicio Sescそうですね,
+
+239
+00:18:45,000 --> 00:18:48,680
+sino que laốtica dice que altid performing
+
+240
+00:18:48,680 --> 00:18:54,900
+es muyDonaldia Boomchat,
+
+241
+00:18:54,900 --> 00:18:59,220
+lo que esanica es mucho.
+
+242
+00:18:59,220 --> 00:19:04,000
+Este NHSN awards es el símbolo publicado
+
+243
+00:19:04,000 --> 00:19:09,380
+y se foilan a vé 건� likewise.
+
+244
+00:19:39,380 --> 00:19:43,940
+línea de comando, luste algo así. Te dice cuánta es la
+
+245
+00:19:43,940 --> 00:19:48,320
+cantidad en kilovat de energía que has utilizado para un
+
+246
+00:19:48,320 --> 00:19:50,380
+determinado acción.
+
+247
+00:19:50,380 --> 00:19:53,180
+Pues lo que tienes que hacer simplemente es importar su
+
+248
+00:19:53,180 --> 00:19:56,260
+librería y tiene dos opciones.
+
+249
+00:19:56,260 --> 00:20:01,580
+La primera es el decorador, que tiene simplemente que poner
+
+250
+00:20:01,580 --> 00:20:07,420
+ahí el track emission, se llama así, y te traquea todo lo
+
+251
+00:20:07,420 --> 00:20:09,140
+que está dentro de esta función.
+
+252
+00:20:09,140 --> 00:20:13,380
+O en este caso, pues yo he hecho mi ejemplo con una API,
+
+253
+00:20:13,380 --> 00:20:15,980
+entonces me traquea todo el método.
+
+254
+00:20:15,980 --> 00:20:20,380
+Tiene dos maneras de trabajar, una es offline y una online,
+
+255
+00:20:20,380 --> 00:20:22,580
+la que vemos en el ejemplo es online,
+
+256
+00:20:22,580 --> 00:20:24,940
+y la que vemos abajo es offline.
+
+257
+00:20:24,940 --> 00:20:27,380
+Entonces, si queréis también tener el tracking de algo,
+
+258
+00:20:27,380 --> 00:20:30,460
+sin tener internet, puedes utilizar esta opción.
+
+259
+00:20:30,460 --> 00:20:33,180
+Lo que sí es importante es que en la versión offline hace
+
+260
+00:20:33,180 --> 00:20:36,340
+falta poner el ISO, ¿vale?
+
+261
+00:20:36,340 --> 00:20:39,100
+Entonces, decir en qué país os encontráis.
+
+262
+00:20:39,100 --> 00:20:40,660
+¿Esto por qué?
+
+263
+00:20:40,660 --> 00:20:44,820
+Porque realmente la cantidad de emisiones por cada kilovatio
+
+264
+00:20:44,820 --> 00:20:47,460
+de energía cambia muchísimo dependiendo de qué tipo de
+
+265
+00:20:47,460 --> 00:20:51,020
+energía es, si la energía es más limpia o menos.
+
+266
+00:20:51,020 --> 00:20:54,020
+Entonces, si tú encuentras, por ejemplo, en Islandia,
+
+267
+00:20:54,020 --> 00:20:57,180
+que es el primero, pues puedes consumir un kilovatio de
+
+268
+00:20:57,180 --> 00:21:01,860
+energía y los gramos de CO2 que produce son prácticamente 0.
+
+269
+00:21:01,860 --> 00:21:04,100
+Si tú consumes un kilovatio, entonces,
+
+270
+00:21:04,100 --> 00:21:07,500
+la misma cantidad de energía y te encuentras en Suráfrica,
+
+271
+00:21:07,500 --> 00:21:10,340
+que es el último, realmente la cantidad de CO2 que estás
+
+272
+00:21:10,340 --> 00:21:13,260
+produciendo es bastante más alta, bastante más elevada,
+
+273
+00:21:13,260 --> 00:21:17,060
+casi, pues, casi que diría 1,000 o algo así.
+
+274
+00:21:17,060 --> 00:21:19,140
+¿Vale?
+
+275
+00:21:19,140 --> 00:21:21,020
+Para daros una idea, España está allí,
+
+276
+00:21:21,020 --> 00:21:22,780
+lo es decir, no llego, ¿vale?
+
+277
+00:21:22,780 --> 00:21:27,700
+No puedo indicarlo, pero ahí está más o menos a mí.
+
+278
+00:21:27,700 --> 00:21:32,140
+La otra opción, aparte del decorator, hay un objeto.
+
+279
+00:21:32,140 --> 00:21:35,500
+Aquí tienes un ejemplo de Emission Tracker y lo que
+
+280
+00:21:35,500 --> 00:21:39,380
+hace es traquear lo que tienes dentro del width, en este caso.
+
+281
+00:21:39,380 --> 00:21:41,140
+Está muy bien si pensáis, por ejemplo,
+
+282
+00:21:41,140 --> 00:21:44,540
+que hay una parte de código que pueda consumir más y entonces
+
+283
+00:21:44,540 --> 00:21:47,500
+quería traquear solo esta parte.
+
+284
+00:21:47,500 --> 00:21:50,940
+También el objeto lo hay de forma offline y, pues,
+
+285
+00:21:50,940 --> 00:21:54,460
+luce algo así y también tienes que pasarle el ISOCod.
+
+286
+00:21:54,460 --> 00:21:56,060
+¿Vale?
+
+287
+00:21:56,060 --> 00:22:00,260
+Y mi ejemplo, lo que os he enseñado, lo tengo en GitHub.
+
+288
+00:22:00,260 --> 00:22:02,580
+Y aquí podéis sustanear si queréis verlo,
+
+289
+00:22:02,580 --> 00:22:05,140
+si no podéis, si eres simplemente a MakeItApp,
+
+290
+00:22:05,140 --> 00:22:09,540
+el Epan, y poner a Green Computing, Python, o REST API.
+
+291
+00:22:09,540 --> 00:22:11,020
+Pues os cuento la verdad.
+
+292
+00:22:11,020 --> 00:22:12,740
+La API no es mía.
+
+293
+00:22:12,740 --> 00:22:16,620
+He hecho un fork de una API que ya existía, super sencilla.
+
+294
+00:22:16,620 --> 00:22:21,580
+Y lo que he hecho es añadirle el code Carbon y intentar poner
+
+295
+00:22:21,580 --> 00:22:24,260
+algo más de chicha en esta API para que pudiera consumar
+
+296
+00:22:24,260 --> 00:22:24,780
+energía.
+
+297
+00:22:24,780 --> 00:22:25,380
+¿Vale?
+
+298
+00:22:25,380 --> 00:22:28,140
+Pero por si queréis verla y probarla tranquilamente,
+
+299
+00:22:28,140 --> 00:22:30,220
+aquí la tenéis.
+
+300
+00:22:30,220 --> 00:22:32,940
+Nosotros lo estamos empezando a pensar de poner también
+
+301
+00:22:32,940 --> 00:22:33,700
+dentro de la empresa.
+
+302
+00:22:33,700 --> 00:22:35,540
+No lo tenemos en producción.
+
+303
+00:22:35,540 --> 00:22:37,860
+Esto, entonces, no hemos trabajado con Code Carbon en
+
+304
+00:22:37,860 --> 00:22:41,940
+producción, pero, pues, tenemos la idea de implementarlo y
+
+305
+00:22:41,940 --> 00:22:46,780
+intentar entender mejor lo que estamos consumiendo bien de
+
+306
+00:22:46,780 --> 00:22:49,540
+código y qué se puede mejorar.
+
+307
+00:22:49,540 --> 00:22:52,260
+Y, bueno, casi hemos acabado.
+
+308
+00:22:52,260 --> 00:22:53,700
+Lo prometo.
+
+309
+00:22:53,700 --> 00:22:58,300
+Un concepto que me gustaría que os llevaréis hoy es que hecho
+
+310
+00:22:58,300 --> 00:22:59,740
+es mejor que perfecto.
+
+311
+00:22:59,740 --> 00:23:02,940
+Porque muchas veces, pues, la gente me dice que no quiere
+
+312
+00:23:02,940 --> 00:23:07,500
+hacer nada para ser un poco más sostenible porque tanto no
+
+313
+00:23:07,500 --> 00:23:08,660
+va a ser muy sostenible.
+
+314
+00:23:08,660 --> 00:23:11,740
+Porque hay cosas que no pueden mejorar.
+
+315
+00:23:11,740 --> 00:23:17,420
+Pues si podemos mejorar una pequeña parte de nuestra vida o
+
+316
+00:23:17,420 --> 00:23:20,140
+de nuestro trabajo, ya estamos haciendo algo.
+
+317
+00:23:20,140 --> 00:23:24,860
+En mejor hacer poco que no hacer absolutamente nada.
+
+318
+00:23:24,860 --> 00:23:27,940
+Y es cierto que, al final, pues, mucho depende de las empresas
+
+319
+00:23:27,940 --> 00:23:30,420
+que son más grandes, no de nosotros.
+
+320
+00:23:30,420 --> 00:23:33,420
+Pero también algo que sí podemos hacer es interesarnos al
+
+321
+00:23:33,420 --> 00:23:34,300
+tema.
+
+322
+00:23:34,300 --> 00:23:37,700
+Entonces, poner un poco presión para que las empresas,
+
+323
+00:23:37,700 --> 00:23:40,620
+por ejemplo, dices, pues, yo si no eres un poquito más
+
+324
+00:23:40,620 --> 00:23:42,260
+sostenible, no compro.
+
+325
+00:23:42,260 --> 00:23:46,140
+Pues entonces, ellas sí verán que hay interés por ese tema y
+
+326
+00:23:46,140 --> 00:23:47,700
+intentarán hacer algún cambio.
+
+327
+00:23:47,700 --> 00:23:51,020
+Y es lo único que creo que podemos hacer.
+
+328
+00:23:51,020 --> 00:23:54,020
+Y hasta aquí llega la charla.
+
+329
+00:23:54,020 --> 00:23:55,340
+Espero que os haya gustado.
+
+330
+00:23:55,340 --> 00:23:58,940
+Ahora vamos a ver también si hay preguntas.
+
+331
+00:23:58,940 --> 00:24:01,780
+¿Se necesitan todavía tiempo para poner el tuit si os
+
+332
+00:24:01,780 --> 00:24:04,500
+interesa para ganar el libro?
+
+333
+00:24:04,500 --> 00:24:08,300
+Y que os acuerdo, es esto de aquí.
+
+334
+00:24:08,300 --> 00:24:11,420
+El hashtag es sorteo green computing.
+
+335
+00:24:11,420 --> 00:24:17,020
+Y ahora vamos a hacer el cajote y luego vamos a ver quién ha
+
+336
+00:24:17,020 --> 00:24:27,700
+ganado.
+
+337
+00:24:27,700 --> 00:24:30,180
+No, bajate el tuit.
+
+338
+00:24:30,180 --> 00:24:32,180
+Si lo ven sentando.
+
+339
+00:24:32,180 --> 00:24:34,180
+No, no te entiendo.
+
+340
+00:24:34,180 --> 00:24:37,180
+Si me traes, ¿sí?
+
+341
+00:24:37,180 --> 00:24:38,180
+¿Pero ahí sí?
+
+342
+00:24:38,180 --> 00:24:39,540
+Vale.
+
+343
+00:24:39,540 --> 00:24:43,100
+Pues podéis entrar en la web de cajote y poner este pin o
+
+344
+00:24:43,100 --> 00:24:56,300
+sanar directamente el código para poder participar.
+
+345
+00:24:56,300 --> 00:24:59,420
+Pues tenemos cinco minutos, entonces os tengo que pedir
+
+346
+00:24:59,420 --> 00:25:13,820
+de entrar bien rápido.
+
+347
+00:25:13,820 --> 00:25:16,340
+¿Alguien que todavía no haya entrado y que queremos
+
+348
+00:25:16,340 --> 00:25:18,020
+esperar?
+
+349
+00:25:18,020 --> 00:25:35,060
+Oye, oye, oye, esperamos entonces.
+
+350
+00:25:35,060 --> 00:25:36,820
+¿Tres segundos más?
+
+351
+00:25:36,820 --> 00:25:40,420
+Uno, dos, si alguien no quiere, hable.
+
+352
+00:25:40,420 --> 00:25:41,100
+Un momento.
+
+353
+00:25:41,100 --> 00:25:48,340
+Vale.
+
+354
+00:25:48,340 --> 00:25:51,780
+Venga, empezamos ya.
+
+355
+00:25:51,780 --> 00:25:53,620
+50.
+
+356
+00:25:53,620 --> 00:25:56,180
+Empresamos.
+
+357
+00:25:56,180 --> 00:25:58,820
+Que si no, la persona que está después me viene a matar.
+
+358
+00:25:58,820 --> 00:25:59,300
+¿Sabes?
+
+359
+00:25:59,300 --> 00:26:02,220
+Yo quiero vivir hasta mañana, gente.
+
+360
+00:26:02,220 --> 00:26:04,100
+Entenderme.
+
+361
+00:26:04,100 --> 00:26:07,260
+Vale, empezamos con la primera pregunta.
+
+362
+00:26:07,260 --> 00:26:13,580
+El consumo de datacenter que se espera en 2035,
+
+363
+00:26:13,580 --> 00:26:16,140
+dentro de 15 años.
+
+364
+00:26:16,140 --> 00:26:17,540
+Bueno, 15 años ya no.
+
+365
+00:26:21,220 --> 00:26:22,420
+Sí.
+
+366
+00:26:22,420 --> 00:26:23,460
+Sí, sí, perdona.
+
+367
+00:26:23,460 --> 00:26:25,580
+Es un porcentaje que he olvidado poner el símbolo.
+
+368
+00:26:30,620 --> 00:26:31,340
+10 segundos.
+
+369
+00:26:31,340 --> 00:26:40,100
+5, 3, 2, ah, bien, ya estamos.
+
+370
+00:26:40,100 --> 00:26:42,620
+Pues bien, la mayoría lo he hecho bien.
+
+371
+00:26:42,620 --> 00:26:44,060
+¿Alguien ha puesto 111?
+
+372
+00:26:44,060 --> 00:26:46,820
+Creo que os acordáis que eran tres números iguales,
+
+373
+00:26:46,820 --> 00:26:50,900
+pero no era 2, 2, 2 y no 1, 1, 1.
+
+374
+00:26:50,900 --> 00:26:51,940
+Vamos a la siguiente.
+
+375
+00:26:51,940 --> 00:26:53,820
+Son solo tres preguntas.
+
+376
+00:26:53,820 --> 00:26:56,460
+Entonces, puede cambiar todo en cada pregunta.
+
+377
+00:26:56,460 --> 00:26:57,100
+Vale.
+
+378
+00:26:57,100 --> 00:27:00,660
+¿Qué porcentaje de energía se usa para enfriar los datacenter?
+
+379
+00:27:00,660 --> 00:27:02,940
+Aquí sí que me he acordado de poner el símbolo.
+
+380
+00:27:02,940 --> 00:27:04,860
+Perdona por el anterior.
+
+381
+00:27:07,780 --> 00:27:09,420
+Bueno, no es cierto.
+
+382
+00:27:09,420 --> 00:27:11,100
+Se me ha acordado un end.
+
+383
+00:27:11,100 --> 00:27:12,540
+En el segundo.
+
+384
+00:27:12,540 --> 00:27:14,660
+Que ni en uno me conseguí hacerlo bien.
+
+385
+00:27:14,660 --> 00:27:15,160
+Vale.
+
+386
+00:27:18,940 --> 00:27:20,740
+Para enfriar los datacenter.
+
+387
+00:27:20,740 --> 00:27:22,460
+Vale, os acordáis, había dos datos.
+
+388
+00:27:22,460 --> 00:27:25,980
+Uno para enfriar y uno para guardar datos.
+
+389
+00:27:25,980 --> 00:27:26,940
+Pues, ay, qué bien.
+
+390
+00:27:26,940 --> 00:27:29,460
+Casi todo lo hemos hecho bien.
+
+391
+00:27:29,460 --> 00:27:31,300
+Y el 111, a ver.
+
+392
+00:27:31,300 --> 00:27:33,420
+¿Lo habéis puesto por el end, verdad?
+
+393
+00:27:33,420 --> 00:27:35,180
+Creo que os gustaba.
+
+394
+00:27:35,180 --> 00:27:36,100
+Vale.
+
+395
+00:27:36,100 --> 00:27:39,820
+Pues bien, vamos a ver ahora cómo vais.
+
+396
+00:27:39,820 --> 00:27:42,180
+Pues, Ángel va primero.
+
+397
+00:27:42,180 --> 00:27:45,380
+A ver si ganas esto y también el dron en el otro.
+
+398
+00:27:45,380 --> 00:27:46,860
+¿Vale?
+
+399
+00:27:46,860 --> 00:27:48,020
+Vale, va.
+
+400
+00:27:48,020 --> 00:27:51,460
+María y Juan.
+
+401
+00:27:51,460 --> 00:27:52,740
+Última pregunta.
+
+402
+00:27:52,740 --> 00:27:54,140
+Esto puede cambiar el podio.
+
+403
+00:27:54,140 --> 00:27:56,100
+Entonces, a ver, ¿qué tal?
+
+404
+00:27:56,100 --> 00:27:59,420
+El decorator de Codekarbón que hemos visto hace,
+
+405
+00:27:59,420 --> 00:27:59,980
+¿no?
+
+406
+00:27:59,980 --> 00:28:00,480
+Poco.
+
+407
+00:28:07,420 --> 00:28:09,060
+A ver, ¿cuál es?
+
+408
+00:28:09,060 --> 00:28:11,540
+Uno era el objeto y uno el decorator que tiene,
+
+409
+00:28:11,540 --> 00:28:12,980
+no me número parecido.
+
+410
+00:28:12,980 --> 00:28:14,140
+A ver.
+
+411
+00:28:14,140 --> 00:28:16,860
+Uy, aquí hemos caído más.
+
+412
+00:28:16,860 --> 00:28:21,100
+Es a roba track emission con guión bajito.
+
+413
+00:28:21,100 --> 00:28:24,540
+A ver, entonces, ¿quién se lleva las bolsitas?
+
+414
+00:28:27,540 --> 00:28:29,220
+Yeah.
+
+415
+00:28:29,220 --> 00:28:31,020
+Por aquí, por aquí, venid.
+
+416
+00:28:31,020 --> 00:28:35,340
+María y el ganador.
+
+417
+00:28:35,340 --> 00:28:36,740
+Ángel.
+
+418
+00:28:36,740 --> 00:28:40,340
+Bueno, hay cual menos ganado ahí, mira.
+
+419
+00:28:40,340 --> 00:28:45,980
+Y vamos a hacer también el sorteo que lo tenía aquí
+
+420
+00:28:45,980 --> 00:28:48,940
+preparado.
+
+421
+00:28:48,940 --> 00:28:51,460
+Cuidado.
+
+422
+00:28:51,460 --> 00:28:53,860
+Enhorabuena.
+
+423
+00:28:53,860 --> 00:28:57,700
+Voy a hacer esto, que si no no nos da tiempo.
+
+424
+00:28:57,700 --> 00:28:59,820
+Maravilloso.
+
+425
+00:28:59,820 --> 00:29:01,260
+No ha funcionado el sorteo.
+
+426
+00:29:01,260 --> 00:29:02,580
+Ahora sí.
+
+427
+00:29:02,580 --> 00:29:03,060
+Sofía.
+
+428
+00:29:05,700 --> 00:29:07,140
+Enhorabuena también.
+
+429
+00:29:13,580 --> 00:29:14,820
+Sofía.
+
+430
+00:29:14,820 --> 00:29:16,740
+A ti de los que hay libro.
+
+431
+00:29:16,740 --> 00:29:19,660
+Si quieres, te dejo también la bolsita para que no se estrope.
+
+432
+00:29:19,660 --> 00:29:23,260
+Muy, muy Q3 de Amazon, pero eso teníamos.
+
+433
+00:29:23,260 --> 00:29:26,220
+Y me falta que vengan los otros ganadores.
+
+434
+00:29:26,220 --> 00:29:28,580
+Avenido Ángel, aquí quién tenemos?
+
+435
+00:29:32,420 --> 00:29:33,300
+Nada.
+
+436
+00:29:33,300 --> 00:29:35,060
+María, ¿quién es María?
+
+437
+00:29:35,060 --> 00:29:36,900
+Vale, que estás liable.
+
+438
+00:29:36,900 --> 00:29:38,340
+Esperamos, María.
+
+439
+00:29:38,340 --> 00:29:41,180
+Y cuánto tiempo tenemos para preguntas?
+
+440
+00:29:41,180 --> 00:29:41,980
+Vale.
+
+441
+00:29:41,980 --> 00:29:43,580
+Pues se la lleva.
+
+442
+00:29:43,580 --> 00:29:46,700
+Muchas gracias.
+
+443
+00:29:46,700 --> 00:29:47,380
+Vale.
+
+444
+00:29:47,380 --> 00:29:48,980
+Entonces, sí.
+
+445
+00:29:48,980 --> 00:29:51,220
+A ver, no sé cómo hacerlo para dar el micrófono.
+
+446
+00:29:51,220 --> 00:29:52,180
+Me voy a poner el otro.
+
+447
+00:29:52,180 --> 00:29:55,580
+Y eso me voy a poner un fre.
+
+448
+00:29:55,580 --> 00:29:56,580
+¿Alguna pregunta?
+
+449
+00:29:56,580 --> 00:29:59,020
+¿Quién, si queréis levantar la mano y vamos pasando el
+
+450
+00:29:59,020 --> 00:30:00,020
+micrófono?
+
+451
+00:30:02,300 --> 00:30:04,700
+Por ahí, la primera siempre.
+
+452
+00:30:04,700 --> 00:30:07,380
+Hay que romper el hielo.
+
+453
+00:30:07,380 --> 00:30:08,740
+Green computing, por ahí.
+
+454
+00:30:20,140 --> 00:30:20,980
+Hola.
+
+455
+00:30:20,980 --> 00:30:21,980
+Hola.
+
+456
+00:30:21,980 --> 00:30:23,980
+Bueno.
+
+457
+00:30:23,980 --> 00:30:25,340
+Espera, espera que no me vuelve.
+
+458
+00:30:25,340 --> 00:30:26,140
+Hola.
+
+459
+00:30:26,140 --> 00:30:27,140
+Hola.
+
+460
+00:30:27,140 --> 00:30:28,260
+Muchas gracias por la charla.
+
+461
+00:30:28,260 --> 00:30:29,860
+Me parece muy interesante.
+
+462
+00:30:29,860 --> 00:30:32,940
+¿Conocer alguna iniciativa o movimiento en España de repente
+
+463
+00:30:32,940 --> 00:30:34,380
+que está apoyando un poco más?
+
+464
+00:30:34,380 --> 00:30:38,140
+Esto, bueno, estas buenas prácticas.
+
+465
+00:30:38,140 --> 00:30:39,700
+No, en realidad no.
+
+466
+00:30:39,700 --> 00:30:42,460
+Lo que he visto es que es un campo que todavía no sé
+
+467
+00:30:42,460 --> 00:30:44,140
+conocer mucho.
+
+468
+00:30:44,140 --> 00:30:47,100
+Por eso también he pensado de llevar la charla para que un
+
+469
+00:30:47,100 --> 00:30:48,660
+poco la gente se interese.
+
+470
+00:30:48,660 --> 00:30:51,940
+Y a lo mejor, si nos interesamos, sí, puede crear algo.
+
+471
+00:30:51,940 --> 00:30:54,060
+Sí, es un ámbito que se está estudiando.
+
+472
+00:30:54,060 --> 00:30:57,820
+Pero lo que he visto es que al momento es mucho más académico.
+
+473
+00:30:57,820 --> 00:31:00,060
+De hecho, tiene también mucha matemática detrás,
+
+474
+00:31:00,060 --> 00:31:01,220
+pero así decirlo.
+
+475
+00:31:01,220 --> 00:31:04,060
+Entonces, puedes encontrar sí, paper.
+
+476
+00:31:04,060 --> 00:31:05,860
+Pero buenas prácticas como tal.
+
+477
+00:31:05,860 --> 00:31:09,740
+La verdad es que yo no he encontrado nada aquí en España.
+
+478
+00:31:09,740 --> 00:31:11,540
+Y hoy estudié en Italia.
+
+479
+00:31:11,540 --> 00:31:15,980
+Y nosotros lo teníamos en la UNI como optativa de poder dar
+
+480
+00:31:15,980 --> 00:31:18,420
+green computing como asignatura.
+
+481
+00:31:18,420 --> 00:31:20,980
+Pero lo que he visto aquí es que mucha gente no sabe bien
+
+482
+00:31:20,980 --> 00:31:21,500
+qué es.
+
+483
+00:31:21,500 --> 00:31:24,860
+Y realmente no conozco, es aportenamente nadie que lo
+
+484
+00:31:24,860 --> 00:31:26,620
+haga.
+
+485
+00:31:26,620 --> 00:31:28,020
+Aunque sería bien, se puede crear.
+
+486
+00:31:36,820 --> 00:31:37,820
+¿Más preguntas?
+
+487
+00:31:42,540 --> 00:31:43,140
+Yo tengo una.
+
+488
+00:31:43,140 --> 00:31:45,300
+Sí.
+
+489
+00:31:45,300 --> 00:31:49,980
+Si crees que es esto de meter los datos entero en sitios
+
+490
+00:31:49,980 --> 00:31:52,540
+fresquitos, cerca de un mar, cerca de un río,
+
+491
+00:31:52,540 --> 00:31:54,900
+puede ser una solución a largo plazo.
+
+492
+00:31:54,900 --> 00:32:01,660
+Si va a incrementar tanto un 200% y no sabemos cuánto más de
+
+493
+00:32:01,660 --> 00:32:06,980
+aquí a 100 años, si no vamos a llenar todos los lechos de los
+
+494
+00:32:06,980 --> 00:32:11,260
+ríos y tal de data center, por ejemplo,
+
+495
+00:32:11,260 --> 00:32:14,180
+como lo ves, ¿crees que puede ser una solución de verdad o una
+
+496
+00:32:14,180 --> 00:32:15,940
+solución a corto plazo?
+
+497
+00:32:15,940 --> 00:32:18,820
+Yo creo que es más una solución a corto plazo,
+
+498
+00:32:18,820 --> 00:32:19,940
+realmente.
+
+499
+00:32:19,940 --> 00:32:24,740
+Y hay también un tema que aquí estamos hablando de mejora de
+
+500
+00:32:24,740 --> 00:32:27,020
+consumo de electricidad.
+
+501
+00:32:27,020 --> 00:32:30,100
+Pero a lo mejor empeoramos otras cosas,
+
+502
+00:32:30,100 --> 00:32:34,220
+porque también hay que considerar que para enfriar algo,
+
+503
+00:32:34,220 --> 00:32:35,380
+calientas otro.
+
+504
+00:32:35,380 --> 00:32:37,500
+Es decir, que para enfriar los datos a center,
+
+505
+00:32:37,500 --> 00:32:38,980
+estás calentando el agua.
+
+506
+00:32:38,980 --> 00:32:41,900
+Entonces, podría, si pones muchísimo,
+
+507
+00:32:41,900 --> 00:32:44,980
+empezar a tener un problema cambiando la temperatura del
+
+508
+00:32:44,980 --> 00:32:45,620
+agua.
+
+509
+00:32:45,620 --> 00:32:48,420
+Y esto crea evidentemente un problema en la flora y la fauna
+
+510
+00:32:48,420 --> 00:32:50,620
+del lugar.
+
+511
+00:32:50,620 --> 00:32:55,580
+Si hay uno en un océano, pues tampoco consigue realmente
+
+512
+00:32:55,580 --> 00:32:58,420
+modificar la temperatura del agua y es algo que entonces sí es
+
+513
+00:32:58,420 --> 00:32:59,300
+gestionable.
+
+514
+00:32:59,300 --> 00:33:02,500
+Pero poner muchísimo no, porque yo creo que iría a crear otro
+
+515
+00:33:02,500 --> 00:33:03,540
+problema.
+
+516
+00:33:03,540 --> 00:33:06,420
+Y también hay que considerar una cosa,
+
+517
+00:33:06,420 --> 00:33:09,220
+que la solución perfecta no existe de momento.
+
+518
+00:33:09,220 --> 00:33:11,700
+Porque si no lo harían todos, ¿no?
+
+519
+00:33:11,700 --> 00:33:15,820
+Si hubiera una solución genial que funciona fenomenal y que el
+
+520
+00:33:15,820 --> 00:33:19,300
+mejor ni cuesta mucho, pues lo habrían hecho todas las grandes
+
+521
+00:33:19,300 --> 00:33:20,180
+empresas.
+
+522
+00:33:20,180 --> 00:33:24,660
+Mientras ahora aún no están todas intentando experimentar y es
+
+523
+00:33:24,660 --> 00:33:27,700
+que todavía no se ha encontrado nada que sea absolutamente
+
+524
+00:33:27,700 --> 00:33:28,460
+óptimo.
+
+525
+00:33:28,460 --> 00:33:30,700
+Esto, por ejemplo, pues a corto plazo,
+
+526
+00:33:30,700 --> 00:33:34,420
+sí, disminuyes el enfriamiento.
+
+527
+00:33:34,420 --> 00:33:37,420
+Pero como decía, tampoco puedes poner muchísimos,
+
+528
+00:33:37,420 --> 00:33:40,500
+porque si no vas a crear otro tipo de problema ambiental
+
+529
+00:33:40,500 --> 00:33:42,660
+también.
+
+530
+00:33:42,660 --> 00:33:43,700
+Perfecto, gracias.
+
+531
+00:33:43,700 --> 00:33:46,500
+¿Alguna pregunta más?
+
+532
+00:33:46,500 --> 00:33:48,340
+Bueno, pues un aplauso, por favor.
+
+533
+00:33:48,340 --> 00:33:49,580
+Vale, muchas gracias.
+
+534
+00:33:49,580 --> 00:34:05,880
+Narita.
+

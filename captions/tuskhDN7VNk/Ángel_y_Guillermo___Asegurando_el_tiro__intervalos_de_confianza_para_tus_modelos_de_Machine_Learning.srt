@@ -1,0 +1,1616 @@
+1
+00:00:00,000 --> 00:00:21,680
+Vamos a presentar la siguiente sesión, que era la vanada de Ángel y Guillermo, de
+
+2
+00:00:21,680 --> 00:00:29,000
+En Decide, Fóre y Hay, y pasa sobre Intervalo de Confianza, usando Paizo y Michelle René.
+
+3
+00:00:29,000 --> 00:00:34,600
+Muy buenas a todos, gracias por venir aquí. Como han presentado, vamos a contaros un poco
+
+4
+00:00:34,600 --> 00:00:40,720
+de que son los Intervalos de Confianza, vamos a contaros cómo usar Machine Learning,
+
+5
+00:00:40,720 --> 00:00:44,920
+y Paizo concretamente, ya que estamos en una Paicon S, así que se va a hablar de Paizo,
+
+6
+00:00:44,920 --> 00:00:54,080
+para asegurar el tiro. Básicamente vamos a entrar en cómo predecir distribuciones o
+
+7
+00:00:54,080 --> 00:01:00,640
+Intervalos de Predicción, para asegurarnos de que la predicción que damos no la alíamos.
+
+8
+00:01:00,640 --> 00:01:06,640
+Básicamente es un poco la idea que os queremos comentar, ahora entraremos un poco más en detalle.
+
+9
+00:01:06,640 --> 00:01:11,200
+Quienes somos nosotros? Pues como bien nos han comentado, pues somos, yo soy Ángel,
+
+10
+00:01:11,200 --> 00:01:16,600
+este es mi compañero Guillermo, que hemos venido aquí de Decide, Fóre y Hay. Decide,
+
+11
+00:01:16,600 --> 00:01:22,680
+Fóre y Hay es una compañía líder en el desarrollo e implementación de soluciones
+
+12
+00:01:22,680 --> 00:01:28,280
+de analítica avanzada, aquí en España. Aquí ahora os voy a poner un montón de ideas positivas
+
+13
+00:01:28,280 --> 00:01:32,840
+sobre lo genial que es trabajar en Decide, típico de, oye, que estamos contando a gente,
+
+14
+00:01:32,840 --> 00:01:40,040
+que aquí se vive muy feliz, todo es amor y felicidad en Decide, pero bueno, no queremos que
+
+15
+00:01:40,040 --> 00:01:45,000
+aquí la Paicon S nos bane por spam y nos diga que nos vayamos a nuestra casa, así que vamos a dejar
+
+16
+00:01:45,000 --> 00:01:51,920
+lo aquí y voy a seguir con la charla. Básicamente, bueno, yo trabajo en Decide y soy actualmente
+
+17
+00:01:51,920 --> 00:01:58,280
+líder en el área de Data Science, pero soy de formación ingeniería de telecomunicaciones,
+
+18
+00:01:58,280 --> 00:02:02,120
+¿qué significa esto? O sea, que hay algún desarrollador de software o algún programador,
+
+19
+00:02:02,120 --> 00:02:08,280
+yo ante la mano desarrolladores software, veo manos, veo manos. ¿Hay alguien, algún matemático
+
+20
+00:02:08,280 --> 00:02:15,760
+estadístico? Por ahí, hay mucho, hay mucho, vale. ¿Por qué digo esto? Porque significa que yo como
+
+21
+00:02:15,760 --> 00:02:21,000
+ingeniería de telecomunicaciones me puedo presentar como el peor programador, una serie de programadores
+
+22
+00:02:21,000 --> 00:02:26,360
+y el peor matemático, una serie de matemáticos, vale, entonces eso significa que bueno, que ha
+
+23
+00:02:26,360 --> 00:02:30,760
+venido aquí conmigo mi compañero Guillermo, que él sí que es matemático y profe, así que bueno,
+
+24
+00:02:30,760 --> 00:02:35,200
+ya sabéis que todas las preguntas las más difíciles que tengáis, decís, oye, esté para Guillermo,
+
+25
+00:02:35,200 --> 00:02:39,080
+tengo una pregunta que hacerle. Si quiere presentarte un poco, decía algo más de ti,
+
+26
+00:02:39,080 --> 00:02:48,840
+¿cuál favorito? Perfecto, muy bien. Vale, y poco más que contaros, la charla va a ser corpita,
+
+27
+00:02:48,840 --> 00:02:54,120
+eso es bueno porque no me da tiempo a daros mucho la chapa y así nadie se aburre, os aburre
+
+28
+00:02:54,120 --> 00:03:00,240
+lo mínimo posible. Y por otra parte, es un poco, para los que somos más pesados como ellos,
+
+29
+00:03:00,240 --> 00:03:05,440
+es un poco rollo porque no os voy a poder entrar en el detalle que me gustaría, típico de bueno,
+
+30
+00:03:05,440 --> 00:03:10,320
+pues diferencia entre intervalo de predicción, credibilidad, todos estos temas más teóricos,
+
+31
+00:03:10,320 --> 00:03:17,440
+no los entra en detalle, pero si entrais en la URL de la charla podéis ver que están todo
+
+32
+00:03:17,440 --> 00:03:23,480
+documentado y ahí podéis leerlo los detalles y también tenéis nuestro LinkedIn para escribirnos
+
+33
+00:03:23,480 --> 00:03:29,080
+o preguntar lo que queráis. Vale, cuál es mi idea de esta charla, nuestra idea de esta charla,
+
+34
+00:03:29,080 --> 00:03:37,000
+la idea es que os convenceros de que predecir intervalos tiene un valor inmenso, a nivel de,
+
+35
+00:03:37,000 --> 00:03:41,920
+sobre todo a nivel de negocio, y bueno, pues ver con Python cómo se hace estas historias.
+
+36
+00:03:41,920 --> 00:03:48,280
+Vale, volvemos al punto de antes, asegurando el tiro, ¿qué es esto de asegurar el tiro?
+
+37
+00:03:48,280 --> 00:03:54,640
+No sé si aquí, si alguien estuvo en la charla del viernes de María, que está aquí con nosotros,
+
+38
+00:03:54,640 --> 00:04:00,960
+alguien estuvo en la charla, pues si os acordáis, se comentaron un montón de cosas muy interesantes,
+
+39
+00:04:00,960 --> 00:04:06,840
+se hablo de explicabilidad, de cómo cuantificar la incertidumbre, la idea de esta charla es
+
+40
+00:04:06,840 --> 00:04:13,760
+hacer hincapié en una parte que comento, que es cómo cuantifico yo mi incertidumbre en un modelo
+
+41
+00:04:13,760 --> 00:04:19,200
+y por qué es importante esto. O sea, hablo bastante de los conformal predictors que dijo, oye,
+
+42
+00:04:19,200 --> 00:04:25,600
+a mí si estoy prediciendo, veis que esto es un perro en gato, el típico ejemplo que hemos visto
+
+43
+00:04:25,600 --> 00:04:32,320
+todos, yo si es un pájaro, yo quiero que me diga al modelo, oye, no tengo ni idea, y eso no es tan
+
+44
+00:04:32,320 --> 00:04:37,400
+fácil, no todo el mundo, o sea, no es entre un clasificador y ya está, o sea, tienes que hacer
+
+45
+00:04:37,400 --> 00:04:42,560
+algo más para que el modelo sea capaz de decirte, no tengo ni idea. Y esto, esta tontería, que
+
+46
+00:04:42,560 --> 00:04:46,440
+parece una tontería superimportante en el mundo de machine learning, su charla era un poco más
+
+47
+00:04:46,440 --> 00:04:53,440
+orientada a clasificación, esta la orientamos más a la creación y esta va a estar muy centrada en
+
+48
+00:04:53,440 --> 00:04:59,680
+problemas reales que nos enfrentamos diariamente en decide. Entonces va a ser un poco más práctica de,
+
+49
+00:04:59,680 --> 00:05:04,920
+mira, este es el modelo que se usa, lo explicamos por encima, os pasamos, tenéis las librerías que
+
+50
+00:05:04,920 --> 00:05:11,640
+hemos utilizado, tenéis los datos que hemos empleado y todo está subido, entonces ahí podéis leerlo
+
+51
+00:05:11,640 --> 00:05:17,320
+con más calma. Y volvemos a lo que íbamos contando, que a mí se equivan un poco chapas,
+
+52
+00:05:17,320 --> 00:05:24,800
+asegurando el tiro. Por poner un ejemplo práctico, al final lo que queremos es, a día de hoy nosotros
+
+53
+00:05:24,800 --> 00:05:31,560
+nos encontramos en intervados de predicción, intervados de confianza en todos lados. Es una
+
+54
+00:05:31,560 --> 00:05:38,800
+forma de representar un resultado, una estimación, un dato. Pongamos un ejemplo, a ver aquí en
+
+55
+00:05:38,800 --> 00:05:44,760
+primera o segunda fila, ¿cómo te llamas? Tengo aquí el bolí para que nadie se está... No funciona esto.
+
+56
+00:05:44,760 --> 00:05:52,480
+Uy, vale, estoy liando pardo aquí. Spoiler, aquí, aquí, aquí. No, no, no, está controladísimo,
+
+57
+00:05:52,480 --> 00:05:57,640
+solo la mesa, solo la mesa aquí, aquí a la mesa. Tengo un pulso malísimo, pero haré lo que pueda.
+
+58
+00:05:57,640 --> 00:06:07,560
+¿Cómo te llamas? Carlos, podéis decirnos a todos qué da tienes, 28 años, siento la intrusión,
+
+59
+00:06:07,560 --> 00:06:11,280
+¿y qué da tengo yo? Está más complicada.
+
+60
+00:06:11,280 --> 00:06:18,160
+No lo puedo atrajear.
+
+61
+00:06:25,840 --> 00:06:31,760
+Vale, perfecto. Os habéis acuento lo que ha pasado aquí, ¿no? Carlos tiene muy claro que
+
+62
+00:06:31,760 --> 00:06:38,120
+da tiene, yo tengo 28 años, pero le digo y cuando tengo yo, dice, un minuto apretó, me acaban de
+
+63
+00:06:38,120 --> 00:06:44,360
+meter aquí delante de todo el mundo a ver qué le digo yo a este pavo, y dice, bueno, pues si digo así más
+
+64
+00:06:44,360 --> 00:06:52,960
+o menos un intervalo seguramente no la lié, y dice, pues voy a decir de 25 a 31 y así aseguro el
+
+65
+00:06:52,960 --> 00:06:58,600
+tiro, joder, aseguro el tiro, estoy poniendo a la vez, no vi ni una, aseguro el tiro. ¿Qué ha pasado
+
+66
+00:06:58,600 --> 00:07:09,280
+la cabeza de Carlos? Pues ha dicho, oye, este tío tiene menos de 20 años, no, seguramente no, voy a ver si
+
+67
+00:07:09,280 --> 00:07:14,760
+aquí puedo pintarlo. No, esto tengo un pulso horrible, lo ha avisado, pero ya no voy a apuntar a
+
+68
+00:07:14,760 --> 00:07:20,240
+nadie con el laser, ¿vale? He visto este pulso que tengo. Vale, dice 20, no, algo más tendrá,
+
+69
+00:07:20,240 --> 00:07:26,440
+23, esto perdona, esto es probabilidad, ¿vale? Que no lo he explicado. Probabilidad y edad, básicamente,
+
+70
+00:07:26,440 --> 00:07:34,440
+bueno, eso realmente es una función de sanidad, pero no voy a soltar la chapa. En 23, 25, 28,
+
+71
+00:07:34,440 --> 00:07:41,880
+sí, sí, seguramente 28, por ahí 30, 35, 40, más de 40, no es demasiado atractivo para, o sea,
+
+72
+00:07:41,880 --> 00:07:47,840
+conserva demasiado bien para ser más de 40. Entonces dice, no, este tenea más o menos va a tener,
+
+73
+00:07:47,840 --> 00:07:52,800
+yo creo que tiene esta distribución, va a ver, pero dame un dato, entonces podría haber dicho,
+
+74
+00:07:52,800 --> 00:07:58,800
+pues de 20 a 40, pero nos habríamos reído todos de Carlos, entonces dice, bueno, tampoco quiero
+
+75
+00:07:58,800 --> 00:08:05,640
+que se regallan de mí, entonces voy a ver cómo consigo coger el mayor área posible con el mínimo
+
+76
+00:08:05,640 --> 00:08:12,840
+intervalo. Entonces dice, algo así, de 5, 30, algo, yo creo que a cierto, más o menos. Vale,
+
+77
+00:08:12,840 --> 00:08:20,480
+esta es la idea que os quiero comentar. La idea es, bueno, antes de nada, lo que ha dicho es un
+
+78
+00:08:20,480 --> 00:08:28,320
+intervalo. Ha dicho, ¿cómo me aseguro yo en base a una distribución de que estoy cubriendo la mayor
+
+79
+00:08:28,320 --> 00:08:33,400
+parte del área posible en el mínimo intervalo? Y que ha dicho, vale, esto que es intervalo de
+
+80
+00:08:33,400 --> 00:08:39,360
+confianza. Aquí un disclaimer antes de nada. Hay varios tipos de intervalos que, como he avisado,
+
+81
+00:08:39,360 --> 00:08:43,560
+no voy a soltar el rollo más de lo que lo estoy soltando ya. Tenemos intervalos de predicción,
+
+82
+00:08:43,560 --> 00:08:51,320
+que es con qué probabilidad va a caer en un hueco, por si decirlo, una parte más que lo veremos
+
+83
+00:08:51,320 --> 00:08:55,400
+luego, además con más detalle. Tenemos también intervalos de credibilidad, que suele sobre
+
+84
+00:08:55,400 --> 00:09:00,800
+todo en tema vallesiano, que vamos a pasar muy por encima y no vamos a entrar al detalle. Y luego
+
+85
+00:09:00,800 --> 00:09:06,040
+el intervalo de confianza, que es lo que acabo de contar. Entonces, están las definiciones,
+
+86
+00:09:06,040 --> 00:09:14,920
+también todo explicado en más detalle en la URL. Entonces, la idea es, ¿cómo lo que he dicho? ¿Cómo
+
+87
+00:09:14,920 --> 00:09:20,680
+garantizo que está el 95% del área de toda la distribución que tengo en la cabeza? ¿Cómo
+
+88
+00:09:20,680 --> 00:09:25,920
+garantizo que cojo ese área con el mínimo intervalo posible? Pues, cuando cojo yo el área del 95%
+
+89
+00:09:25,920 --> 00:09:30,440
+del área, ¿te vale confianza? El 95%, pues básicamente es un poco la idea para que os sona
+
+90
+00:09:30,440 --> 00:09:36,080
+de esto que vamos a hablar. Lo dicho, la literatura, este tipo de intervalos, predicción, confianza,
+
+91
+00:09:36,080 --> 00:09:40,800
+credibilidad, seguro que hay más. Aquí, María, que se dedica a eso, pues igual tiene 25 que contarnos,
+
+92
+00:09:40,800 --> 00:09:47,720
+pero aquí lo vamos a dejar. Vale, esto lo veis en vuestro día a día, no únicamente preguntando
+
+93
+00:09:47,720 --> 00:09:51,840
+al pobre Carlos, aquí en el lado de todo el mundo, que la tengo, ya no te pregunto nada más.
+
+94
+00:09:51,840 --> 00:10:02,160
+Si no, por ejemplo, pedís un globo, o mejor, pedís en Amazon, para ahí decís, oye, una camiseta de
+
+95
+00:10:02,160 --> 00:10:09,400
+tal, ¿cuándo me va a llegar? Y te dicen, te va a llegar del martes, el martes 15 de enero,
+
+96
+00:10:09,400 --> 00:10:15,720
+entre las 7 y las 9 de la tarde. Pues, lo tienen súper fino esto, ¿no? Tienen muy poca incertidumbre.
+
+97
+00:10:15,720 --> 00:10:20,240
+Y entonces, lo que te dicen es, vamos a asegurarle al tío, bueno, esto es un ejemplo de blogos
+
+98
+00:10:20,240 --> 00:10:24,120
+de globo, de que, de que, ¿cuándo te va a llegar la cena? ¿No? Si lo tienes muy claro, pues,
+
+99
+00:10:24,120 --> 00:10:29,840
+el intervalo, para cubrir el área, necesitar un intervalo más, más chico. Si ponemos el otro
+
+100
+00:10:29,840 --> 00:10:35,200
+caso, realmente lo tenía pensado Pablo, pero de igual se entiende igual, ¿no? Decimos, vale,
+
+101
+00:10:35,200 --> 00:10:39,480
+ya no pedimos a Amazon, pedimos a una empresa eslovena que hace una camiseta súper chula en
+
+102
+00:10:39,480 --> 00:10:44,080
+su tienda. Mira, tiene que enviar a España. Y dice, pues, sependo del avión o del barco,
+
+103
+00:10:44,080 --> 00:10:51,400
+hay un montón de incertidumbre. Entonces, para asegurarte que en su predicción o en su función
+
+104
+00:10:51,400 --> 00:10:57,800
+de densidad, pasigase de que el dato que te dicen es cierto, te voy a decir, de que van a acertar
+
+105
+00:10:57,800 --> 00:11:03,920
+el tiro, el intervalo que te den, cuanta más incertidumbre el área se distribuye más separada
+
+106
+00:11:03,920 --> 00:11:09,720
+y tienes para cubrir el 95% pues, tienes que estirarlo. Entonces, por eso, en Amazon le dice,
+
+107
+00:11:09,720 --> 00:11:15,000
+oye, mañana, oye, ¿cuándo me va a llegar la camiseta? Lo tiene en to' clarísimo, súper bien montado,
+
+108
+00:11:15,000 --> 00:11:21,480
+van a no estar en mi distribución pues, yo creo que te va a llegar entre el martes de 5 a 8 y la
+
+109
+00:11:21,480 --> 00:11:25,160
+empresa está eslovena que depende de un montón de variables que no puede contar, dice, pues,
+
+110
+00:11:25,160 --> 00:11:31,440
+entre el 3 de agosto y el 7 de noviembre más o menos, apáñate. Y no es porque sigue a reír de
+
+111
+00:11:31,440 --> 00:11:36,160
+vosotros, es porque no tiene ni idea. Entonces, ¿cómo le doy un dato? Sin jugármela, básicamente es esto.
+
+112
+00:11:36,160 --> 00:11:42,560
+Pongamos otro ejemplo y ya le dejo a Nadíye que les cuente más la práctica, en el que esto nos
+
+113
+00:11:42,560 --> 00:11:48,720
+lo encontramos con mucha frecuencia en decide, ¿vale? Es un, de varios proyectos relacionados con
+
+114
+00:11:48,720 --> 00:11:56,000
+tema de trading y energía y el cliente dice, oye, yo hago compramente energía, los distintos mercados
+
+115
+00:11:56,000 --> 00:12:00,360
+intradiarios, que de nuevo no voy a contar la chapa de cómo funciona esto, pero básicamente pensar
+
+116
+00:12:00,360 --> 00:12:03,160
+que es un poco de trading. Yo compro energía en un mercado, lo venden otro, compro en uno,
+
+117
+00:12:03,160 --> 00:12:09,640
+lo venden. Y yo quiero ver cuánto a cuánto se va, cuánto va la energía en cada mercado. Y yo puedo
+
+118
+00:12:09,640 --> 00:12:13,920
+coger, hacer un modelo más írlano y decirle, esto es el precio que va a ver el kilovatio,
+
+119
+00:12:13,920 --> 00:12:18,760
+ahora, a la 9 de la mañana, pues, 95 del día, ahí hay 27, pero para no marear a Nadíye,
+
+120
+00:12:18,760 --> 00:12:25,600
+ponemos dos. Y esto, pues, bueno, está bien, da información, pero si la empresa realmente le
+
+121
+00:12:25,600 --> 00:12:30,680
+provee en esta información al cliente, le va a ser útil. Pero si vamos nosotros y aquí le decimos,
+
+122
+00:12:30,680 --> 00:12:38,360
+oye, es que no te voy a decir que son 120 euros, te voy a decir 120 euros y esta es la distribución
+
+123
+00:12:38,360 --> 00:12:44,720
+que he predicho con de mi probabilidad de qué precio vas a tener. Si te fijas en este ejemplo,
+
+124
+00:12:44,720 --> 00:12:49,240
+120 euros, versus 120 euros, a las 10 de la mañana, va a ser lo mismo, ¿no? Pues 120 euros,
+
+125
+00:12:49,240 --> 00:12:55,920
+es lo que va a valer, pero si lográramos predecir realmente la incertidumbre que nuestro modelo
+
+126
+00:12:55,920 --> 00:13:06,000
+tiene, 120 euros, ya no es lo mismo. O sea, el diario, por ejemplo, pues, claramente va a ser
+
+127
+00:13:06,000 --> 00:13:12,320
+cerca de 120 euros, 110, 110, 125, como con la edad, más o menos, ha dicho, oye, pues, podemos sacar
+
+128
+00:13:12,320 --> 00:13:16,920
+un intervalo de confianza de si tuvieran esta distribución que decimos que está por aquí,
+
+129
+00:13:16,920 --> 00:13:22,280
+pero luego en el interdiario no tenemos ni idea, tan pronto, pues, es 70, como son 150,
+
+130
+00:13:22,280 --> 00:13:25,960
+yo no tengo ni idea de lo que va a salir. Y si le diramos esta información, realmente es lo mismo,
+
+131
+00:13:25,960 --> 00:13:30,120
+es lo mismo, son 120, el valor que te va a dar a un modelo, pero si pudiéramos sacar esto,
+
+132
+00:13:30,120 --> 00:13:34,160
+es una información bestial, porque yo si se equivocan pierden pasta. Entonces, igual pueden decir,
+
+133
+00:13:34,160 --> 00:13:40,080
+yo solamente me la juego cuando lo tengo muy seguro. Esto se hace literal en muchos proyectos
+
+134
+00:13:40,080 --> 00:13:47,000
+de este estilo. Entonces, bueno, pues, eso sería si pereciamos la distribución, también podemos
+
+135
+00:13:47,000 --> 00:13:50,800
+predecir, pereciar una distribución es bastante complicado, como comentará ahora a Guilleb,
+
+136
+00:13:50,800 --> 00:13:54,520
+pero también podemos predecir directamente un intervalo, un intervalo de predicción,
+
+137
+00:13:54,520 --> 00:14:00,760
+y decimos, pues, o damos la distribución, o damos estos números, es más fácil dar esto,
+
+138
+00:14:00,760 --> 00:14:05,520
+lo más fácil es dar esto, después dar esto y después dar la distribución. Luego contamos un poco
+
+139
+00:14:05,520 --> 00:14:13,160
+más de eso. Pero si ya le estás dando que es de 83 a 121 y de 71 a 154 mis intervalos,
+
+140
+00:14:13,160 --> 00:14:18,240
+pues, cuando más grande, dice, este mono no tiene nada, claro, y eso al cliente es súper clave,
+
+141
+00:14:18,240 --> 00:14:24,640
+porque es que se va a meter su dinero y genera una seguridad así. En un cliente es crítico para
+
+142
+00:14:24,640 --> 00:14:28,840
+ganar confianza y para que luego, cuando la LIA no me diga, oye, el modelo ha dicho que,
+
+143
+00:14:28,840 --> 00:14:35,680
+tú dices, yo aseguro el tiro, he dicho que va a ser de 71 a 154 y ahí te lavas las manos,
+
+144
+00:14:35,680 --> 00:14:42,320
+es más iluminable para vagos. Vale, entonces, esto está muy bonito, la gente dice,
+
+145
+00:14:42,320 --> 00:14:46,080
+esto tiene sentido, no? Esto está guay, el cliente le puede gustar, puedo ganar dinero con eso,
+
+146
+00:14:46,080 --> 00:14:52,280
+genial. Ahora esto, como lo hacemos, no es tan fácil, bueno, depende. Podemos hacerlo de muchas formas,
+
+147
+00:14:52,280 --> 00:14:58,000
+formas más sencillas, más cutres, que ahora lo van a contar, guille, fijándonos,
+
+148
+00:14:58,000 --> 00:15:02,800
+asumiendo que lo que ha pasado mis residuos del pasado van a ser exactamente iguales que los del
+
+149
+00:15:02,800 --> 00:15:10,280
+futuro, que es lo bueno, que es súper rápido, pero es doloroso de tragar. Luego tienes modelo un
+
+150
+00:15:10,280 --> 00:15:14,680
+poco más complejos y luego, si te vas a la magia negra, puedes hacer redes vallesianas,
+
+151
+00:15:14,680 --> 00:15:23,000
+que no vamos a entrar en eso, porque no tenemos ni idea, no es broma, porque realmente es un,
+
+152
+00:15:23,000 --> 00:15:27,320
+nos podemos tirar dos horas hablando de esto. Básicamente hay muchos métodos. Y guille,
+
+153
+00:15:27,320 --> 00:15:30,280
+aquí es el que nos va a contar más detalles.
+
+154
+00:15:30,280 --> 00:15:44,000
+Bueno, perdonad la voz a todos que estoy con la garganta, ¿se me llevé bien o no?
+
+155
+00:15:47,720 --> 00:15:53,080
+Vale, como ha dicho Ángel, vamos a intentar ver formas de conseguir que cuando le damos al
+
+156
+00:15:53,080 --> 00:15:56,960
+cliente una solución, no le digamos simplemente, pues vas a tener un cinco, si no le digamos,
+
+157
+00:15:56,960 --> 00:16:04,240
+más o menos un intervalo que nosotros consideremos importante o suficientemente claro para que
+
+158
+00:16:04,240 --> 00:16:10,040
+él pueda tomar una decisión final. Entonces, la solución más fácil, imaginemos que tenemos
+
+159
+00:16:10,040 --> 00:16:14,320
+nuestro conjunto de datos. Bueno, vamos a trabajar, los ejemplos que ya por eso son consejos temporales,
+
+160
+00:16:14,320 --> 00:16:19,680
+pero bueno, nuestro conjunto de datos, un modelo ya entrenado y consideramos para cada uno de
+
+161
+00:16:19,680 --> 00:16:27,600
+los datos que tenemos, el residuo o el erroca cometido por nuestro modelo, no? El residuo
+
+162
+00:16:27,600 --> 00:16:33,440
+que genera nuestro modelo y porque es solidario del destino, la distribución de este residuo es
+
+163
+00:16:33,440 --> 00:16:39,280
+una distribución normal, perfecto, ¿no? Aquí que podríamos decir, consideramos un intervalo de
+
+164
+00:16:39,280 --> 00:16:46,960
+longitud zeta, como ha dicho Ángel ante lo que estábamos buscando, es que el área que cubríamos
+
+165
+00:16:46,960 --> 00:16:54,360
+de esta distribución fuera es el longitud zeta y tomaríamos desde la mediana, pues zeta media
+
+166
+00:16:54,360 --> 00:16:58,640
+para arriba y zeta media para abajo. La idea aquí ya vais viendo que sería como ese intervalo superior
+
+167
+00:16:58,640 --> 00:17:04,920
+inferior, como lo vamos a dar, perfecto, tomaríamos así y que podremos conseguir para cada punto de
+
+168
+00:17:04,920 --> 00:17:09,520
+nuestra serie de nuestra predicción, le diríamos, vale, pues yo te he dicho este valor, pues sumale
+
+169
+00:17:09,520 --> 00:17:16,240
+por arriba, zeta media, ese valor de error que se sitúan en zeta media y por abajo igual, perfecto,
+
+170
+00:17:16,240 --> 00:17:21,520
+parece que tenemos ya una banda, ¿no? A todo esto, bueno, no sé si será correcto, no, yo lo entiendo,
+
+171
+00:17:21,520 --> 00:17:27,600
+yo lo veo como una banda, que se mueve alrededor de nuestra serie. Vale, fácil, sencillo,
+
+172
+00:17:27,600 --> 00:17:33,120
+esto parece que no tiene problemas. ¿Qué le pasa a esta banda? Esta banda nos está informando de
+
+173
+00:17:33,120 --> 00:17:41,880
+realmente de lo que el modelo está diciendo y si está seguro o no, no, esto es como si te llega a tu
+
+174
+00:17:41,880 --> 00:17:46,560
+padre y te pregunta la nota y tú dices, pues papá, voy a sacar un 5 más menos 4 en todas,
+
+175
+00:17:46,560 --> 00:17:51,920
+y dices, bueno, pues vale, te lo compro, ¿no? Porque eso es verdad, porque no vas a sacar ni un 0,
+
+176
+00:17:51,920 --> 00:17:57,920
+ni un 10. Pues a negocio igual, si tú llegas a un cliente y le dices, todas mis predicciones,
+
+177
+00:17:57,920 --> 00:18:03,480
+tú le das ya la tabla final, una tabla muy bonita, un dashboard o lo que sea muy montado y en todas
+
+178
+00:18:03,480 --> 00:18:10,920
+ve que tiene un punto de predicción, digamos, del modelo y una ventana, pero se fija un poco y dice,
+
+179
+00:18:10,920 --> 00:18:15,560
+está son unos 91 que me están diciendo a todos, le han sumado más menos dos y se han quedado como
+
+180
+00:18:15,560 --> 00:18:21,080
+señores aquí. Pues ahí ya vemos que hay limitaciones. Entonces, ¿qué podemos hacer con esto? Esto lo
+
+181
+00:18:21,080 --> 00:18:25,040
+podemos considerar como una primera aproximación, que sería sencilla, lo que podemos llamar un
+
+182
+00:18:25,040 --> 00:18:31,560
+baseline, una solución que nosotros vamos a querer superar o que queremos que si conseguimos hacer
+
+183
+00:18:31,560 --> 00:18:39,440
+algo peor que esto apaga y mete a otro cliente, porque no vale para esto. Entonces, ¿qué suele
+
+184
+00:18:39,440 --> 00:18:44,520
+pasar? Que nuestro residuo no más de la distribución que teníamos antes, no es una distribución que
+
+185
+00:18:44,520 --> 00:18:52,280
+para nada va a aparecer eso en la distribución normal. Aquí, si tomáramos ahora ese intervalo z y
+
+186
+00:18:52,280 --> 00:18:56,560
+el z medio para arriba, el z medio para abajo, pues claramente no estamos representando lo que
+
+187
+00:18:56,560 --> 00:19:00,720
+buscamos, ¿no? Para aplicar este razonamiento debemos trabajar con una distribución, o sea,
+
+188
+00:19:00,720 --> 00:19:07,720
+con una distribución de residuos normal. Vamos a ver, bueno, como ponemos aquí, no podemos asumir
+
+189
+00:19:07,720 --> 00:19:13,000
+que está institucion normal. Vamos a ver una manera de conseguir que sea cual sea nuestra distribución
+
+190
+00:19:13,000 --> 00:19:17,960
+de residuos, consigamos llegar a una distribución normal y poder aplicar un poquito esta magia,
+
+191
+00:19:17,960 --> 00:19:24,440
+¿no? Esta idea sencilla con un poquito más de curiosidad. Entonces, ¿cómo lo vamos a hacer con lo
+
+192
+00:19:24,440 --> 00:19:28,920
+que se llama bus trapping, que al final es un remuestreo? ¿Qué consideramos? Imaginamos que
+
+193
+00:19:28,920 --> 00:19:34,880
+tenemos nuestro conjunto de datos, la serie temporal o bueno, lo que fuera. ¿Qué vamos a hacer? Vamos a
+
+194
+00:19:34,880 --> 00:19:42,200
+tomar diferentes muestras aleatorias con reemplazamiento, esto es importante, de nuestro conjunto de datos
+
+195
+00:19:42,200 --> 00:19:48,160
+inicial. Para cada una de estas muestras independientes que hemos tomado de manera aleatoria, lo que
+
+196
+00:19:48,160 --> 00:19:54,800
+vamos a hacer es coger nuestro modelo, entrenarlo para cada una de ellas y sacar unas predicciones
+
+197
+00:19:54,800 --> 00:20:00,120
+y el residuo correspondiente a cada una de esas predicciones. Si consideramos la distribución
+
+198
+00:20:00,120 --> 00:20:05,080
+de los residuos de cada una de las muestras que hemos tomado, obviamente, van a seguir
+
+199
+00:20:05,080 --> 00:20:10,960
+siendo sin ser una distribución normal. ¿Qué es lo que vamos a hacer? Si consideramos la media de
+
+200
+00:20:10,960 --> 00:20:17,880
+estas distribuciones, lo que vamos a tener es una distribución normal. Ahí están mirando
+
+201
+00:20:17,880 --> 00:20:22,680
+raro, pero bueno, una distribución normal. Vale. Esto que nos lo garantiza, el terema del
+
+202
+00:20:22,680 --> 00:20:28,360
+límite central. ¿Qué nos dice este terema? Lo veremos aquí. Quedamos una muestratoria
+
+203
+00:20:28,360 --> 00:20:32,000
+suficientemente grande de la población. La distribución de las medias muestrales seguirá
+
+204
+00:20:32,000 --> 00:20:37,800
+una distribución normal. Esto no lo queremos y sale. O sea que, así. Obviamente, si coges
+
+205
+00:20:37,800 --> 00:20:43,960
+dos, pues no, pero si haces este proceso varias veces, te va a funcionar. Ya en este momento,
+
+206
+00:20:43,960 --> 00:20:48,320
+yo estoy diciendo varias veces este proceso y entreme, ya se hemos dicho, entrenar un
+
+207
+00:20:48,320 --> 00:20:51,520
+modelo y hacer una predicción y calcular errores, ya sabemos que por aquí algo va a
+
+208
+00:20:51,520 --> 00:20:57,000
+palmar porque vamos a tardar mucho tiempo y el ordenador va a llorar. Entonces, con esta
+
+209
+00:20:57,000 --> 00:21:01,040
+distribución que tenemos, ya podemos trabajar con lo que teníamos antes. Si cogiéramos
+
+210
+00:21:01,040 --> 00:21:05,200
+ahora esta distribución, ya podríamos aplicar directamente lo que teníamos antes. ¿Qué
+
+211
+00:21:05,200 --> 00:21:11,120
+vamos a hacer? Vamos a darle... Bueno, el tigre que ya podemos hacerlo. Vamos a darle
+
+212
+00:21:11,120 --> 00:21:16,600
+una vuelta. ¿Qué vamos a hacer? Vamos a considerar esta imaginación que tomamos esta serie
+
+213
+00:21:16,600 --> 00:21:20,720
+temporal, que conocemos en el punto se ha pasado. Ahí sí suena mejor, sí. En el punto se ha
+
+214
+00:21:20,720 --> 00:21:27,800
+pasado y queremos sacar los cuatro siguientes términos de la serie. ¿Qué vamos a hacer?
+
+215
+00:21:27,800 --> 00:21:30,960
+Vamos a considerar la ventana para atrás que tengamos. En este caso, estamos considerados
+
+216
+00:21:30,960 --> 00:21:35,320
+tres puntos ha pasado. Le vamos a decir a nuestro modelo que realiza una predicción.
+
+217
+00:21:35,320 --> 00:21:38,720
+Por esta predicción, nosotros sabemos que va a tener un error, va a tener cierto residuo
+
+218
+00:21:38,720 --> 00:21:42,120
+que ya hemos visto antes. Entonces, lo que hacemos es cogemos de la distribución normal
+
+219
+00:21:42,120 --> 00:21:47,880
+que teníamos antes un error, de manera aleatoria, o sea, una muestra de esa distribución y se
+
+220
+00:21:47,880 --> 00:21:52,000
+lo vamos a sumar a nuestro término que ha hecho la predicción del modelo. Así digamos
+
+221
+00:21:52,000 --> 00:21:56,040
+que podemos tener como un término una predicción corregida, que está más cerca de lo que
+
+222
+00:21:56,040 --> 00:22:01,360
+en teoría va a pasar en la realidad. Si hacemos esto otra vez, considerando el término que
+
+223
+00:22:01,360 --> 00:22:06,000
+teníamos antes, conseguimos el siguiente término de la serie y lo corregimos. Aquí
+
+224
+00:22:06,000 --> 00:22:09,320
+ya vemos que lo que estamos haciendo en verdad ya va teniendo lagunas porque está propagando
+
+225
+00:22:09,320 --> 00:22:16,040
+el error hacia adelante. Está considerando un residuo en cada lado con otro residuo.
+
+226
+00:22:16,040 --> 00:22:21,000
+Si hacemos esto hasta llegar al cuarto término, pues ya teníamos lo que queríamos, una serie
+
+227
+00:22:21,000 --> 00:22:26,160
+hasta el cuarto término. ¿Qué podemos hacer ahora? Como los errores que hemos considerado
+
+228
+00:22:26,160 --> 00:22:30,760
+los residuos, estas es, las hemos tomado en manera aleatoria. Si repetimos este proceso
+
+229
+00:22:30,760 --> 00:22:36,960
+tantas veces como queramos, vamos a tener, pues, imagino que hemos hecho esto aquí cinco
+
+230
+00:22:36,960 --> 00:22:41,760
+veces, tenemos cinco series con cinco predicciones a futuro de los cuatro términos siguientes.
+
+231
+00:22:41,760 --> 00:22:48,760
+Cada uno de estos términos, con el T más uno más E1 o el error, considerando cada
+
+232
+00:22:48,760 --> 00:22:52,000
+uno de los términos para cada uno de los términos a futuro, podemos considerar la distribución
+
+233
+00:22:52,000 --> 00:22:58,960
+que generamos con estas estimaciones y ahí calcular nuestra primera, nuestra banda de
+
+234
+00:22:58,960 --> 00:23:06,040
+predicción. Importante, hemos tenido un ejemplo para trabajar que no es un caso real nuestro,
+
+235
+00:23:06,040 --> 00:23:13,320
+sino que es un dataset que nos proporciona en Python, que en este caso es del volumen
+
+236
+00:23:13,320 --> 00:23:20,360
+de acciones vendidas en Yahoo. Vamos a hacer una previsión a futuro de veinte días y teníamos
+
+237
+00:23:20,360 --> 00:23:23,240
+un histórico de tres años. Esto es para bajarnos histórico, pero bueno, con tres años hemos
+
+238
+00:23:23,240 --> 00:23:29,200
+tirado. Y la previsión va a ser de día en día. Aquí tenéis el enlace, pues, si quisiera
+
+239
+00:23:29,200 --> 00:23:36,200
+mirarlo. Entonces, ya hemos hecho este proceso y generamos esta banda. Ahora bien, hasta
+
+240
+00:23:36,200 --> 00:23:41,760
+aquí a nivel matemático, teórico, nos diríamos, bueno, tenemos una banda, pero esto hay que
+
+241
+00:23:41,760 --> 00:23:45,520
+saber en el día a día en el negocio tienes que evaluar la calidad de lo que estás dando,
+
+242
+00:23:45,520 --> 00:23:49,800
+de la solución que le estás entregando. Tenemos que saber si esta banda es suficientemente
+
+243
+00:23:49,800 --> 00:23:54,440
+buena para nosotros o no, de cara a entregarla. Entonces, para ello tenemos que definir una
+
+244
+00:23:54,440 --> 00:24:01,440
+serie KPI, sometricas que nos indiquen esa bondad. Vamos a contar aquí algunas que no
+
+245
+00:24:01,440 --> 00:24:06,360
+tienen porque ser las mejores, pero bueno, algunas que nosotros planteamos y utilizamos.
+
+246
+00:24:06,360 --> 00:24:11,200
+Por ejemplo, ¿qué nos interesaría primero conocer este ancho de la banda? ¿Qué nos
+
+247
+00:24:11,200 --> 00:24:16,280
+va a interesar que cuando el modelo esté seguro, el ancho de la banda en ese punto
+
+248
+00:24:16,280 --> 00:24:20,080
+sea más pequeño que cuando esté inseguro que sea más grande? ¿Por qué digo esto?
+
+249
+00:24:20,080 --> 00:24:23,800
+Porque, a final, si pones una banda enorme y que hay uniforme hacianante, pues seguramente
+
+250
+00:24:23,800 --> 00:24:27,480
+no falle, porque siempre tu sería acá adentro, pero eso no es lo que buscamos realmente,
+
+251
+00:24:27,480 --> 00:24:31,320
+eso es lo que decía antes. A final, el cliente te va a decir, pues es que para esto te lo
+
+252
+00:24:31,320 --> 00:24:38,840
+digo yo. Entonces, por ejemplo, podríamos mirar la distribución del ancho de la banda
+
+253
+00:24:38,840 --> 00:24:43,680
+para cada punto de la serie, calcularíamos este ancho y veremos la distribución y aquí
+
+254
+00:24:43,680 --> 00:24:47,920
+ya, pues dependiendo, pues te puedes fijar, por mi interesa que la media sea la más pequeña
+
+255
+00:24:47,920 --> 00:24:53,720
+posible, aquí ya lo que cada uno quiera mirar. Otro aspecto que podemos ser interesante,
+
+256
+00:24:53,720 --> 00:25:00,680
+es conocer el número de puntos de la serie real que quedan fuera. Para esto podríamos
+
+257
+00:25:00,680 --> 00:25:05,360
+mirar, por ejemplo, el porcentaje de puntos que quedan dentro. Esta métrica, por ejemplo,
+
+258
+00:25:05,360 --> 00:25:10,240
+tiene la laguna o tiene el problema de que, al final, si tú consigas una banda tan encha
+
+259
+00:25:10,240 --> 00:25:13,600
+como quieras o te puedas imaginar, seguramente todos los puntos caigan dentro, pero no es
+
+260
+00:25:13,600 --> 00:25:18,920
+lo que queremos. Entonces, esta métrica te puede servir como apoyo para hacer un desempate
+
+261
+00:25:18,920 --> 00:25:25,520
+entre dos bandas o dos aproximaciones que te parezcan buenas. Otra idea que puedo mirar,
+
+262
+00:25:25,520 --> 00:25:31,000
+el error que cometes en cada uno de los valores que estás dando, al final al cliente le vamos
+
+263
+00:25:31,000 --> 00:25:36,160
+a entregar la previsión de la banda superior, o sea, del límite superior de la banda, el
+
+264
+00:25:36,160 --> 00:25:41,320
+límite inferior y el del medio. Pues aquí, por ejemplo, simplemente podríamos dar algún
+
+265
+00:25:41,320 --> 00:25:48,440
+tipo de error como el mapa para conocer si, al final, las estimaciones que estás dando
+
+266
+00:25:48,440 --> 00:25:52,840
+son buenas o no. El cliente, seguramente, puede directamente decir, pues considera el
+
+267
+00:25:52,840 --> 00:25:59,640
+límite superior y hago la predicción. Vale. O la correlación. Por ejemplo, tenemos la
+
+268
+00:25:59,640 --> 00:26:07,160
+correlación que nos puede informar de cómo se están moviendo las bandas. Bueno, esta
+
+269
+00:26:07,160 --> 00:26:11,080
+es una aproximación bastante sencilla que tiene sus inconvenientes. Ahora sí no lo
+
+270
+00:26:11,080 --> 00:26:15,000
+cuento, porque hoy es rápido que sí no me da tiempo a todo. La aproximación que venimos
+
+271
+00:26:15,000 --> 00:26:18,840
+a contar con más detalle, que es la que nosotros más utilizamos, es la regresión cuantílica.
+
+272
+00:26:18,840 --> 00:26:24,760
+Este tipo de regresión es que consiste. Vamos a intentar estimar con el modelo, gracias
+
+273
+00:26:24,760 --> 00:26:28,200
+a la función que vamos a ver ahora, vamos a intentar estimar un cuantil de la distribución
+
+274
+00:26:28,200 --> 00:26:33,400
+de la variable objetivo, de la variable de salida. Estamos más acostumbrados a cuando
+
+275
+00:26:33,400 --> 00:26:37,480
+trabajamos con temas de optimización, intentar minimizar el error cuático medio que tendría
+
+276
+00:26:37,480 --> 00:26:42,680
+aquí, que sería intentar minimizar esta función que, encontrando el parámetro beta,
+
+277
+00:26:42,680 --> 00:26:48,480
+sería el peso de la red o la conferencia del modelo, que minimice esta función. En la
+
+278
+00:26:48,480 --> 00:26:52,120
+regresión cuantílica, la función que minimizamos es esta, que es una función que depende de
+
+279
+00:26:52,120 --> 00:26:58,040
+una función rho, que depende de tau, donde tau es nuestro cuantil que queremos optimizar.
+
+280
+00:26:58,040 --> 00:27:02,200
+Entonces, un poquito más rápido, esta función rho es una función escarnada que tiene un
+
+281
+00:27:02,200 --> 00:27:06,240
+mínimo, se va a encontrar su mínimo cuando valga a cero, porque la forma que te huirá
+
+282
+00:27:06,240 --> 00:27:10,400
+esta función sería así como un pico, que esto lo podéis ver, y la puedes encontrar
+
+283
+00:27:10,400 --> 00:27:14,760
+así más en la literatura de manera desplegada. Pero bueno, os tenía que dar con la idea
+
+284
+00:27:14,760 --> 00:27:18,840
+de que lo que estamos intentando minimizar es los pesos de la red de una función que
+
+285
+00:27:18,840 --> 00:27:24,120
+va a depender de ese cuantil, nos va a guiar hacia ese cuantil. Entonces, por meter un
+
+286
+00:27:24,120 --> 00:27:32,960
+poco en Python, voy a contar ahora tres funciones en Python que nos permiten hacerlo. Por ejemplo,
+
+287
+00:27:32,960 --> 00:27:37,000
+que nadie en Boost tiende ese caler, simplemente podríamos cambiar la función de pérdida,
+
+288
+00:27:37,000 --> 00:27:42,200
+poniéndole que fuera cuantil, y con el alfa le diríamos el cuantil que queremos que nos
+
+289
+00:27:42,200 --> 00:27:47,320
+busque. Para un lighbm también lo permite, aquí tenemos que cambiar el objetivo de la
+
+290
+00:27:47,320 --> 00:27:55,480
+métrica y el parámetro alfa. Pareciendo un cal Boost, cambiaríamos la función de pérdida,
+
+291
+00:27:55,480 --> 00:28:02,920
+y aquí le meteríamos como un string, como una cadena, el pecentil también. Estoy más
+
+292
+00:28:02,920 --> 00:28:08,000
+rápido porque se me ha ido un poco el tiempo. Y bueno, como ha dicho Angelantes, hay otras
+
+293
+00:28:08,000 --> 00:28:14,560
+alternativas, también hay como modelos basados en teoría de Valle, también hay aproximaciones
+
+294
+00:28:14,560 --> 00:28:23,880
+para calcular estos intervalos. Nosotros aquí hemos traído como otra opción el g Boost,
+
+295
+00:28:23,880 --> 00:28:27,240
+que al final este te permite la salida, te devuelve una distribución y tú ahí podrías
+
+296
+00:28:27,240 --> 00:28:33,560
+sacar esos cuantiles. Entonces una pequeña comparación de los resultados que hemos obtenido.
+
+297
+00:28:33,560 --> 00:28:37,040
+Bueno, ya vemos aquí que esta banda, a diferencia de la que tenemos antes, se comporta un poco
+
+298
+00:28:37,040 --> 00:28:40,800
+más como lo que hemos dicho, que queremos que sea más fina de los puntos que está
+
+299
+00:28:40,800 --> 00:28:45,440
+más seguro y más gruesa en aquellos que no está tan seguro. Entonces, un poco así por
+
+300
+00:28:45,440 --> 00:28:51,120
+encima, en función del mapa, pues aquí diríamos si buscáramos el que comete menos error en
+
+301
+00:28:51,120 --> 00:28:56,520
+cada uno de los tres puntos, pues el ng Boost parece que ha funcionado mejor. A nivel de
+
+302
+00:28:56,520 --> 00:29:01,080
+distribución, como he dicho antes, si miramos la media que fuera más pequeña, pues el ng
+
+303
+00:29:01,080 --> 00:29:05,640
+Boost también parece que es el que funciona mejor. Por ejemplo, en la correlación aquí
+
+304
+00:29:05,640 --> 00:29:09,120
+no, aquí los dos de arriba parece que funcionan mejor. Por eso digo que la métrica al final
+
+305
+00:29:09,120 --> 00:29:13,400
+es la interpretación que tú le das como científico de datos o como persona que trabajan esto
+
+306
+00:29:13,400 --> 00:29:17,120
+a los resultados que estás obteniendo y tu criterio para determinar que solución es
+
+307
+00:29:17,120 --> 00:29:22,520
+mejor. Y lo que decía antes, que ya le había avisado el porcentaje de la curva, pues aquí
+
+308
+00:29:22,520 --> 00:29:26,840
+no te diría nada porque casi todos funcionan igual. Entonces, en general, y es lo que nosotros
+
+309
+00:29:26,840 --> 00:29:31,240
+esperaríamos, parece que nos ha funcionado mejor esta versión. Y ahora ya Ángel, dale
+
+310
+00:29:31,240 --> 00:29:32,240
+y...
+
+311
+00:29:32,240 --> 00:29:37,720
+Sí, termino ya. Sí, bueno, como habéis visto, el que nos ha tirado mejor en esta... bueno,
+
+312
+00:29:37,720 --> 00:29:41,680
+primero de todo, os he engañado un poco, pues he dicho, eso es un caso real está y
+
+313
+00:29:41,680 --> 00:29:46,600
+luego lo primero que ha dicho es, no, esto es un caso de un DHS público. A ver, el algoritmo
+
+314
+00:29:46,600 --> 00:29:50,080
+sí que lo usamos en casos reales, ¿vale? El tema está en que no podemos aquí poner
+
+315
+00:29:50,080 --> 00:29:55,720
+la compañía tal, igual nos la alianparda. Entonces, pues hemos puesto ese data set porque
+
+316
+00:29:55,720 --> 00:30:00,120
+además podéis acceder a él y hacer estas pruebas. Otro tema también que quería mencionar,
+
+317
+00:30:00,120 --> 00:30:03,920
+hemos dicho, aquí vamos a hablar de detalle de la revisión cuantílica, todo esto, pues
+
+318
+00:30:03,920 --> 00:30:08,080
+luego decimos, no, lo que mejor nos funciona es en EGBUS, ahí lo tenéis. Claro, esto es
+
+319
+00:30:08,080 --> 00:30:11,280
+un poco ahí para que luego nos llave en el apai con el año que viene y explicarnos
+
+320
+00:30:11,280 --> 00:30:17,960
+en EGBUS y aquí estamos. Así que, si funciona, era la idea. La cuantílica funciona bastante
+
+321
+00:30:17,960 --> 00:30:21,480
+bien, en EGBUS es un poco más complejo, pues mostrarnos una hora hablando de él, pero
+
+322
+00:30:21,480 --> 00:30:26,880
+te permite, tú asumes con una distribución final entusis, en base a todas las ISPs que
+
+323
+00:30:26,880 --> 00:30:32,160
+tienes y luego hace unas movidas del Maximulae Lee's Testimator, que seguro que los matemáticos
+
+324
+00:30:32,160 --> 00:30:36,080
+que hay levantado la mano, sabéis de qué estoy hablando y va iterando de forma que
+
+325
+00:30:36,080 --> 00:30:39,280
+tienes una distribución infinitares como los parámetros de cada distribución de tu
+
+326
+00:30:39,280 --> 00:30:44,760
+I. Y bueno, tenéis el paper, por cierto, y la librería también ahí puesta. Así que,
+
+327
+00:30:44,760 --> 00:30:51,920
+no hay excusa a estudiar luego esta tarde. Y luego, estudiándole atrás como hago siempre,
+
+328
+00:30:51,920 --> 00:30:56,640
+estudiando para adelante, guay, ya está, preferezco. Entonces, por cerrar un poco, ¿con qué nos
+
+329
+00:30:56,640 --> 00:31:01,560
+gustaría que os quedáráis? Básicamente, preciera intervalos e distribuciones, intervalos
+
+330
+00:31:01,560 --> 00:31:05,680
+de preicción o distribuciones con las que saca los intervalos de confianza o lo que queráis,
+
+331
+00:31:05,680 --> 00:31:10,760
+es clave. Es clave. Los que más allá del mundo teórico, en la práctica a un cliente
+
+332
+00:31:10,760 --> 00:31:16,000
+esto le da un valor inmenso. Y ahora me callo, que ya sé que me estoy el tiempo ahí, juego
+
+333
+00:31:16,000 --> 00:31:21,040
+a mi contra. Y eso espero que os haya convencido, ¿no? Eso es clave. O sea, ¿he convencido
+
+334
+00:31:21,040 --> 00:31:25,440
+alguno o no? Por nadie levantar la mano aquí, esto es horrible, me voy a llorando. Vale,
+
+335
+00:31:25,440 --> 00:31:32,120
+vale, sí, sí. Vale, vale, bien, bien. Y luego, ¿cómo hacerlo? Si pereces distribuciones,
+
+336
+00:31:32,120 --> 00:31:36,120
+computacionalmente es un dolor, es un dolor. Entonces, a veces, con la cuantilica vas tirando
+
+337
+00:31:36,120 --> 00:31:40,440
+y también va bastante bien. Existen un montón de librerías de Python que te permiten implementar
+
+338
+00:31:40,440 --> 00:31:45,400
+esto, pues las que hemos dicho. Python C3, ahí lo dejo, para que lo veáis. Esa es más,
+
+339
+00:31:45,400 --> 00:31:50,600
+es para valles. NGB una mezcla, Scalar y molos de boosting, que son los que mejor suelen
+
+340
+00:31:50,600 --> 00:31:56,160
+funcionar, dependen de varios criterios, pero ya he echado el piso. Y nada, y terminar diciendo
+
+341
+00:31:56,160 --> 00:32:00,400
+que muchas gracias a vosotros, bueno, a Python es por permitir hacer este tipo de eventos.
+
+342
+00:32:00,400 --> 00:32:05,400
+Y bueno, para nosotros es un placer estar aquí. Es importante para la comunidad que
+
+343
+00:32:05,400 --> 00:32:09,800
+se hagan este tipo de cosas. Y aportar aquí nuestro pequeño granito de arena para nosotros
+
+344
+00:32:09,800 --> 00:32:14,480
+nos hace mucha ilusión. Y sobre todo gracias a vosotros por haber querido estar aquí un
+
+345
+00:32:14,480 --> 00:32:19,680
+domingo a las 12 de la mañana escuchando a dos paus, ahora no es de la reserva cuantílica,
+
+346
+00:32:19,680 --> 00:32:25,720
+¿no? Que eso se hace creer más en la comunidad. Entonces, pues muchas gracias. Uy, bueno,
+
+347
+00:32:25,720 --> 00:32:37,600
+me han puesto aquí. Y no sé si queréis alguna, si tenéis alguna duda para el guñezauro.
+
+348
+00:32:37,600 --> 00:32:43,480
+Pero tenemos tiempo para un par de minutillas cortas. Si queréis preguntar, levanta la
+
+349
+00:32:43,480 --> 00:32:50,720
+mano. Está clarísimo todo, ¿eh? Ah, no. Hay una duda por ahí. Toma guille.
+
+350
+00:32:50,720 --> 00:32:54,480
+Muchas gracias por la charla. No conocía lo de regresión cuantílica. No sé si me
+
+351
+00:32:54,480 --> 00:33:01,560
+ha quedado claro, o sea, cuando usas un ng-boost o cualquiera de Pustín, cuando haces inferencia
+
+352
+00:33:01,560 --> 00:33:07,480
+lo haces en cuanto a un récord, ¿no? A una observación. Tú lo que estás preciendo es,
+
+353
+00:33:07,480 --> 00:33:14,560
+estoy un 90% seguro de que el valor estimado en Meli o lo que sea es este, o como estabas
+
+354
+00:33:14,560 --> 00:33:20,400
+hablando de cuartiles, de cuantiles, que el 90% de la población va a estar, va a ser
+
+355
+00:33:20,400 --> 00:33:24,680
+menos de este valor. O sea, afirma, como que buscan la función de distribución y lo buscan
+
+356
+00:33:24,680 --> 00:33:29,360
+como el cuantí, que sea que el 90% de los casos te quedan a la izquierda del...
+
+357
+00:33:29,360 --> 00:33:33,960
+Pero cuando haces inferencia es una sola observación. Sí, pero al final, o sea, te
+
+358
+00:33:33,960 --> 00:33:37,280
+refieres con una sola observación de que tú le metes solo un parámetro. Tú haces un predict
+
+359
+00:33:37,280 --> 00:33:41,240
+y le das un elemento. Claro, pero al final, la función que está
+
+360
+00:33:41,240 --> 00:33:45,160
+minimizando, la función que está minimizando es lo minimizas, o sea, al final apliques
+
+361
+00:33:45,160 --> 00:33:48,800
+igual un gradient y lo haces con todos los puntos de la muestra, del entrenamiento. Entonces,
+
+362
+00:33:48,800 --> 00:33:52,360
+te ajusta con todos, te encuentra el valor beta que te minimiza, o sea, que te permite
+
+363
+00:33:52,360 --> 00:33:56,440
+estar más cerca de... para todos los casos. Luego, no haces el récord en el medio y no
+
+364
+00:33:56,440 --> 00:34:01,400
+intenta minimizar ese error, directamente en el recuádrico. Aquí intenta minimizar
+
+365
+00:34:01,400 --> 00:34:05,360
+esa función que obtiene el mínimo cuando estás justo en el punto bajo.
+
+366
+00:34:05,360 --> 00:34:09,360
+¿Qué está haciendo así? Porque la función hace así. Entonces, por eso te tiro por abajo.
+
+367
+00:34:09,360 --> 00:34:11,360
+Es por cada punto. Y depende.
+
+368
+00:34:11,360 --> 00:34:15,880
+Y por cada punto, cada punto, y si estás creyendo tu... no es un general con todo, o sea, se
+
+369
+00:34:15,880 --> 00:34:20,360
+engan con todo, pero le das esa presentación por cada punto que tú crees.
+
+370
+00:34:20,360 --> 00:34:23,160
+Creo que me da igual igual más por él. Claro, claro, yo quería saber, a la hora de
+
+371
+00:34:23,160 --> 00:34:27,520
+inferir cómo le pillas al cliente, este vale, esto es un cinco, pero ¿qué significa ese
+
+372
+00:34:27,520 --> 00:34:31,680
+cinco para esta intradía, a la hora? Es que es el valor cinco.
+
+373
+00:34:31,680 --> 00:34:36,040
+Lo que me está diciendo sería, sería el valor... cuando tú volas de la similición
+
+374
+00:34:36,040 --> 00:34:40,080
+normal, por ejemplo, usa la mediana, ¿no? Que sea como si por ese percentil 50 te sale
+
+375
+00:34:40,080 --> 00:34:45,680
+de la mediana. Y cuando calculas el del 90 y el 10, le estás diciendo como si fuera la
+
+376
+00:34:45,680 --> 00:34:51,040
+solución más óptima y la más pesimista, ¿no? Y tú lo puedes entender así como,
+
+377
+00:34:51,040 --> 00:34:58,040
+a un 90 por ciento estarías en este valor y a un 10 por abajo. O sea, sería como un
+
+378
+00:34:58,040 --> 00:35:08,040
+tiento. ¿Por qué tenemos? ¿Otra plantilla?
+
+379
+00:35:08,040 --> 00:35:25,800
+¿Cómo es el valor? Eso es tipo para nada. Gracias por la presentación. ¿Cómo depende
+
+380
+00:35:25,800 --> 00:35:34,960
+el resultado de... ¿Qué se escucha? ¿Regula? ¿De la cantidad de datos que tengas? Porque,
+
+381
+00:35:34,960 --> 00:35:39,960
+creo, estáis calculando las distribuciones de las Y, pero para eso, para que la distribución
+
+382
+00:35:39,960 --> 00:35:43,960
+sea correcta, hará falta muchos datos, ¿no? Porque si no...
+
+383
+00:35:43,960 --> 00:35:49,160
+Sí, bueno, realmente en la relación cuantílica no calculas la distribución, sino que precisamente
+
+384
+00:35:49,160 --> 00:35:55,240
+ante el intervalo de predicción. Efectivamente, tu histórico va a depender... o sea, el
+
+385
+00:35:55,240 --> 00:36:00,040
+histórico que necesitas va a depender sobre todo de lo complicado que sea para decir tu
+
+386
+00:36:00,040 --> 00:36:06,480
+historia. Es decir, de lo explicable que sean tus variables. Cuanto más complicado
+
+387
+00:36:06,480 --> 00:36:09,040
+sea lo que quieres decir, por ejemplo, en telemán y energía necesitas un histórico
+
+388
+00:36:09,040 --> 00:36:13,880
+bestial para que puedas ser capaz de aprender los patrones. Porque, al final, una red es
+
+389
+00:36:13,880 --> 00:36:17,880
+fácil que se acaba aprendiendo los datos, cuantos más datos tiene es más fácil que
+
+390
+00:36:17,880 --> 00:36:23,240
+pille el patrón y no los datos. Es una red... No te puedo dar respuesta clara, porque no
+
+391
+00:36:23,240 --> 00:36:27,640
+te puedo decir tres años de histórico. Lo que te puedo decir es que depende muchísimo
+
+392
+00:36:27,640 --> 00:36:32,720
+del problema que estés modelando. Si tú estás modelando ventas de un... de una gran...
+
+393
+00:36:32,720 --> 00:36:38,400
+ventas del corte inglés son más estacionales, ves las temporales, tienes variables muy explicativas
+
+394
+00:36:38,400 --> 00:36:44,040
+que te van a decir cómo se relacionan con el tarif. Va a ser más sencillo. No necesitarías
+
+395
+00:36:44,040 --> 00:36:47,000
+mucho histórico. Con un par de años, más o menos, me estoy tirando un triple, pero en
+
+396
+00:36:47,000 --> 00:36:53,680
+nuestra experiencia con eso te puede tirar bien. Y cuanto más complejo sea, como pareciera
+
+397
+00:36:53,680 --> 00:36:58,480
+el precio de energía, pues necesitas muchas varias explicativas y mucho histórico, mucho
+
+398
+00:36:58,480 --> 00:37:03,320
+más para que seas capaz de pille el patrón. Esto es independiente de los intervalos de
+
+399
+00:37:03,320 --> 00:37:09,560
+predicción y de las instituciones que vais a predecir, el caso de NG Bust. Esto es más
+
+400
+00:37:09,560 --> 00:37:15,680
+en todo más sirvenuengue, te pasa lo mismo. Y lo mismo y se propaga a este tipo de soluciones.
+
+401
+00:37:15,680 --> 00:37:21,360
+Entonces mi respuesta es, dependiendo de lo explicables que sean tus variables con el
+
+402
+00:37:21,360 --> 00:37:28,360
+tarif que quieres predecir. Tanto para predecir la media, como para predecir tus bandas.
+
+403
+00:37:28,360 --> 00:37:29,360
+Gracias.
+
+404
+00:37:29,360 --> 00:37:53,360
+Muchas gracias de nuevo. Vamos gracias a los ponentes.
+

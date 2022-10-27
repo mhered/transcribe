@@ -1,0 +1,920 @@
+1
+00:00:00,000 --> 00:00:29,940
+I am going to try to tell you why, when you see it or discuss it or
+
+2
+00:00:29,940 --> 00:00:37,720
+whatever. Well, the different sections are what are feature flags, why, the
+
+3
+00:00:37,720 --> 00:00:41,320
+problem, the antecedent, face approach, how, improve the
+
+4
+00:00:41,320 --> 00:00:47,040
+approach, the properties, the difference between feature flags and blue
+
+5
+00:00:47,040 --> 00:00:55,000
+green or configuration managing, good principles and issues, risk or why don't
+
+6
+00:00:55,000 --> 00:01:05,240
+use feature flags. Don't expect hype. I'm going to provide a full set of reasons
+
+7
+00:01:05,240 --> 00:01:12,040
+for not using them but also they provide good, is a good tool for in many
+
+8
+00:01:12,040 --> 00:01:19,360
+circumstances. Okay, what are feature flags? That's for me it's the
+
+9
+00:01:19,360 --> 00:01:24,680
+definition of feature flag is a process that allows you to modify the
+
+10
+00:01:24,680 --> 00:01:36,800
+behavior of your system but or without deploying code or any don't time just on
+
+11
+00:01:36,800 --> 00:01:48,520
+the fly. At the end, it's an if in your code. You can say time, it's only that but
+
+12
+00:01:48,520 --> 00:01:55,360
+there are more, when you dig into the feature flags, there are more things
+
+13
+00:01:55,360 --> 00:02:02,360
+probably you need to know. That's what I want to tell you. For me, it's not only
+
+14
+00:02:02,360 --> 00:02:12,360
+don't time, it's about being able to monitorize the changes you do. The couple,
+
+15
+00:02:12,360 --> 00:02:22,400
+these changes in the code from the on the code and also keeping that changes or
+
+16
+00:02:22,400 --> 00:02:29,640
+keeping that ability, that tool totally out of your architecture or your system
+
+17
+00:02:29,640 --> 00:02:41,880
+being totally flexible. Yeah, why or what do you expect to get if you use
+
+18
+00:02:41,880 --> 00:02:49,840
+feature flag? Well, probably you are going to find or you are going to improve
+
+19
+00:02:49,840 --> 00:02:53,040
+your continuous delivery.
+
+20
+00:02:54,200 --> 00:02:59,680
+Probably you will be able to study or you should be able to study or prevent
+
+21
+00:02:59,680 --> 00:03:07,480
+any performance issues in the new release before that they happen. You should
+
+22
+00:03:07,480 --> 00:03:13,240
+be able to do rollbacks or avoid rollbacks because you prevent the issues
+
+23
+00:03:13,240 --> 00:03:19,040
+before the release but just in case you will be able to do it. People love
+
+24
+00:03:19,040 --> 00:03:28,000
+microservices. Some people when we talk about feature flags say don't use
+
+25
+00:03:28,000 --> 00:03:34,520
+microservices with feature flags because it's well you know many times using
+
+26
+00:03:34,520 --> 00:03:41,440
+microservices, following the tracking the what time running exactly is hard.
+
+27
+00:03:41,440 --> 00:03:50,840
+So if you have more logical path as feature flag does, it's
+
+28
+00:03:50,840 --> 00:03:58,200
+harder but it's a way to use microservices. You can use them with
+
+29
+00:03:58,200 --> 00:04:09,400
+feature flag too. Many people say thanks to feature flags you can decrease the
+
+30
+00:04:09,400 --> 00:04:16,880
+code lead time. Since the beginning you start to code a feature until the moment
+
+31
+00:04:16,880 --> 00:04:24,280
+you release that feature. Decrease the failure rate, being able to do AB
+
+32
+00:04:24,280 --> 00:04:29,760
+deploys. So you can study you have two different features at the same time and
+
+33
+00:04:29,760 --> 00:04:36,760
+you can study two different sets of uses and how they do what they do.
+
+34
+00:04:36,760 --> 00:04:44,560
+Validation of the code can be improved. I told about the resized
+
+35
+00:04:44,560 --> 00:04:51,480
+decreases and one of the most important thing for the people is you can modify
+
+36
+00:04:51,480 --> 00:05:00,200
+the behavior of your system but no disruptions. Well there are four types of
+
+37
+00:05:00,200 --> 00:05:06,720
+feature flags. It's those related to the release. Imagine you have a
+
+38
+00:05:06,720 --> 00:05:09,840
+migration.
+
+39
+00:05:09,840 --> 00:05:24,000
+When people talk about migration with no downtime, people used to say okay put the
+
+40
+00:05:24,000 --> 00:05:30,240
+logic of the migration but don't run the migration or later put the logic
+
+41
+00:05:30,240 --> 00:05:37,200
+related to the new structure and so on. Well feature flags allows you to deploy a
+
+42
+00:05:37,200 --> 00:05:43,640
+code but not active that code until the moment you active that feature flag. I
+
+43
+00:05:43,640 --> 00:05:51,080
+told about the AB deploys, being able to experiment different
+
+44
+00:05:51,080 --> 00:06:00,400
+features with different sets of uses. Operational, that kind of feature
+
+45
+00:06:00,400 --> 00:06:11,080
+flags are related to allowing to capture more resources or to create more
+
+46
+00:06:11,080 --> 00:06:18,400
+cues without... it's like okay don't disturb the DevOps or system administrator.
+
+47
+00:06:18,400 --> 00:06:24,680
+Create changing the behavior of the system to prepare you for for different
+
+48
+00:06:24,680 --> 00:06:31,400
+moments with spikes of users or whatever and the last one is related to
+
+49
+00:06:31,400 --> 00:06:39,000
+permissions. Different users, different groups, imagine this
+
+50
+00:06:39,000 --> 00:06:45,080
+this place, the PyCon. There are people who is part of the organization, people
+
+51
+00:06:45,080 --> 00:06:55,120
+who is visiting so all us, sorry, we can go into Eventbrite. Some of us just
+
+52
+00:06:55,120 --> 00:07:03,040
+we just can take our ticket or the user they can check if the
+
+53
+00:07:03,040 --> 00:07:08,960
+ticket is related to the PyCon or not. Different information is shown.
+
+54
+00:07:08,960 --> 00:07:19,280
+Okay that kind of thing. One of the issues about feature flags is
+
+55
+00:07:20,280 --> 00:07:28,360
+as I say every time you create a feature flag you split your logic in
+
+56
+00:07:28,360 --> 00:07:36,480
+two different ways. More you do that, either to follow the structure or the
+
+57
+00:07:36,480 --> 00:07:43,640
+path the code is running. So when you create a feature flag, when you design a
+
+58
+00:07:43,640 --> 00:07:49,440
+feature flag, you should take into account that feature flag should die
+
+59
+00:07:49,440 --> 00:07:56,800
+eventually. You will create, you will deploy the feature flag into production,
+
+60
+00:07:56,800 --> 00:08:03,360
+you will activate it in... on the pending later we will see different ways to
+
+61
+00:08:03,360 --> 00:08:11,640
+manage the feature flags and at the end you need to remove to retire the feature flag.
+
+62
+00:08:11,640 --> 00:08:20,080
+I told about the four types. Those are the timelines, the
+
+63
+00:08:20,080 --> 00:08:25,040
+expiration, the usual expiration for them.
+
+64
+00:08:25,040 --> 00:08:35,760
+Once you do a release, you need to do a new branch just to remove the feature
+
+65
+00:08:35,760 --> 00:08:40,360
+flag related to the release because it's working. You don't need a permanent
+
+66
+00:08:40,360 --> 00:08:45,760
+shield. If you need a permanent shield for a release you did a couple of weeks
+
+67
+00:08:45,760 --> 00:08:50,800
+ago, probably you don't trust in your code and you have another issues related
+
+68
+00:08:50,800 --> 00:08:56,520
+with that new code and you need to ask yourself why I don't trust in my code.
+
+69
+00:08:56,520 --> 00:09:03,760
+Experiment again is for a season to take some data when you finish that, remove it.
+
+70
+00:09:03,760 --> 00:09:10,000
+Operational, if you have a problem about your resources you need to regulate
+
+71
+00:09:10,000 --> 00:09:21,280
+schedule or to have a panic button to solve. Imagine, I don't know, let's use a
+
+72
+00:09:21,280 --> 00:09:27,800
+comparison. Imagine you have a highway to the direction.
+
+73
+00:09:27,800 --> 00:09:35,440
+Regularly you need to steal part of the one side and give that side to the other
+
+74
+00:09:35,440 --> 00:09:39,360
+direction because you have more cars in one direction and you need to steal more
+
+75
+00:09:39,360 --> 00:09:44,400
+resources. If you need it regularly for years you have a problem. You need to fix
+
+76
+00:09:44,400 --> 00:09:52,720
+that. Stop that patch, fix the problem you have in your system and remove the
+
+77
+00:09:52,720 --> 00:09:59,520
+operational feature flags. Well, probably the mission feature flags can live
+
+78
+00:09:59,520 --> 00:10:07,680
+eternally because it's a way to handle the how users use the system and well
+
+79
+00:10:07,680 --> 00:10:18,000
+the user level you don't modify dramatically the user levels in the
+
+80
+00:10:18,000 --> 00:10:27,320
+system normally. Disadvantages there but I prefer to try to tell you the good
+
+81
+00:10:27,320 --> 00:10:34,520
+one things and at the end I will tell you a lot of things that can be bad.
+
+82
+00:10:34,520 --> 00:10:49,600
+Why feature flags? Okay, for the rest, I like to rest at night. It's like they are a
+
+83
+00:10:49,600 --> 00:10:55,840
+shield, they reduce risk, we say that they are rollback, okay, it's a problem.
+
+84
+00:10:55,840 --> 00:11:02,000
+Okay, and do, sorry, and do the let's switch the feature flag of the last
+
+85
+00:11:02,000 --> 00:11:07,600
+release and do the changes. Well, not undo the changes logically and do the
+
+86
+00:11:07,600 --> 00:11:16,040
+changes. You are not modifying the code. We don't want that. The problem
+
+87
+00:11:16,040 --> 00:11:24,160
+antecedent. Okay, do you know the play I never? It's a drinking game. Every time I
+
+88
+00:11:24,160 --> 00:11:31,680
+never you drink, okay. I don't want you drink but just think about that. I never
+
+89
+00:11:31,680 --> 00:11:38,320
+work without preprode environment. Okay, probably that was a good moment to use
+
+90
+00:11:38,320 --> 00:11:47,240
+feature flags. I never release a project we have code for months or one year
+
+91
+00:11:47,240 --> 00:11:55,160
+at once at the end totally. Yeah, a lot of QA, a lot of unit test and to end test
+
+92
+00:11:55,160 --> 00:12:07,760
+but not real in production. I never deploy refactor a feature I don't trust
+
+93
+00:12:07,760 --> 00:12:15,880
+totally. I have done all of them don't worry.
+
+94
+00:12:15,880 --> 00:12:26,320
+Deploy without performance test, without test. Keep the old code and use a new one.
+
+95
+00:12:26,320 --> 00:12:42,400
+I remember my first position. I was down, but developer. Sorry. Yeah, now it's
+
+96
+00:12:42,400 --> 00:13:00,800
+hype. You are waiting for the... I had a complex query. I remember it was done
+
+97
+00:13:00,800 --> 00:13:10,320
+SQL, directly SQL or RM and it was very, very slow. I was able to do a better one
+
+98
+00:13:10,320 --> 00:13:19,120
+but sometimes the better one fails. So I had to try the better one, catch the bad
+
+99
+00:13:19,120 --> 00:13:28,680
+one. I mean the solution is to fix the thing but if you need to deploy that,
+
+100
+00:13:28,680 --> 00:13:36,560
+okay, use a feature flags. Try the good one and again try to fix that cheat code
+
+101
+00:13:36,560 --> 00:13:43,160
+you have developed. Probably you can imagine another hattie pattern action
+
+102
+00:13:43,160 --> 00:13:52,080
+you have done. Well, all those scenarios are good scenarios. You can improve, you
+
+103
+00:13:52,080 --> 00:13:59,560
+can feel better, you can do better work if you use feature flags. Okay, the first
+
+104
+00:13:59,560 --> 00:14:07,920
+approach, the setting file. In the intuition, when intuitively, sorry,
+
+105
+00:14:07,920 --> 00:14:14,640
+that's the intuition says when you don't know about feature flags is, okay, I need
+
+106
+00:14:14,640 --> 00:14:25,560
+to modify how my system works. So sometimes constant file, variable
+
+107
+00:14:25,560 --> 00:14:36,120
+file is created. It works. I need to test something in production so I create a
+
+108
+00:14:36,120 --> 00:14:41,960
+user or a company in production so we can simulate whether...
+
+109
+00:14:45,160 --> 00:14:51,600
+and you work for a while with that or you can, anytime you develop something new
+
+110
+00:14:51,600 --> 00:15:01,440
+you have the new feature variable and you pack your new code around and if my
+
+111
+00:15:01,440 --> 00:15:08,440
+new freighter do the new logic of the case, the old logic.
+
+112
+00:15:10,440 --> 00:15:16,320
+Talking again about the four-object if I set for myself at the beginning, this
+
+113
+00:15:16,320 --> 00:15:22,640
+solution doesn't solve the downtime. You need to deploy every time you want to
+
+114
+00:15:22,640 --> 00:15:28,320
+change anything. Unless you have another tool you are going to have some
+
+115
+00:15:28,320 --> 00:15:34,760
+downtime. You probably can monitor the changes because probably you will have
+
+116
+00:15:34,760 --> 00:15:41,760
+your monitoring tool and will work. It's not the couple. This logic
+
+117
+00:15:41,760 --> 00:15:49,400
+effect is inside, fully inside in the code. So you didn't decode the code and
+
+118
+00:15:49,400 --> 00:15:54,240
+you are limited to Python. You are doing the changes in Python. Okay, the
+
+119
+00:15:54,240 --> 00:16:00,680
+first improving or the first way that people improve this approach, when
+
+120
+00:16:00,680 --> 00:16:04,840
+people discover feature flags, it's people start to use some of those
+
+121
+00:16:04,840 --> 00:16:18,160
+libraries. I find, but limited to. For me the most important limit is sometimes
+
+122
+00:16:18,160 --> 00:16:23,520
+you are deploying a new feature and you want to double check the performance
+
+123
+00:16:23,520 --> 00:16:33,360
+issues. You want first day just 10% of the user use the new feature. Those
+
+124
+00:16:33,360 --> 00:16:40,920
+libraries and that's saying I said that. Well, where for it does. They have
+
+125
+00:16:40,920 --> 00:16:46,280
+another limit. The code, the logic, keep being into the code or in the
+
+126
+00:16:46,280 --> 00:16:53,520
+Django admin. I will show you. Everybody in the company has access to all the
+
+127
+00:16:53,520 --> 00:17:01,600
+features. So if you are in a big company, people, they don't understand totally.
+
+128
+00:17:01,600 --> 00:17:05,800
+They don't have the expertise of a part of the application can do
+
+129
+00:17:05,800 --> 00:17:13,400
+modification in some feature flags. Django catch, the different ways we have to, the
+
+130
+00:17:13,400 --> 00:17:24,000
+different catch we have can affect if you have a, if you are catching users, for
+
+131
+00:17:24,000 --> 00:17:33,560
+example, you have a feature flag that check the user, you can have problem
+
+132
+00:17:33,560 --> 00:17:40,920
+between the real because it was a recent update or between the behavior in your
+
+133
+00:17:40,920 --> 00:17:49,040
+local and in your remote because the distributed catch. Well, how it was
+
+134
+00:17:49,040 --> 00:18:00,160
+Django flash. Hello. You set a lot of a set of flags. Also, you put in the
+
+135
+00:18:00,160 --> 00:18:07,360
+template, you put the check and if the check is true, it shows that part of
+
+136
+00:18:07,360 --> 00:18:15,640
+the code. Also, admit a modification in URLs. If you have a get, you can put in
+
+137
+00:18:15,640 --> 00:18:21,760
+the parameter of the get feature flags and set the value through our files and
+
+138
+00:18:21,760 --> 00:18:29,240
+you will receive the information on the pending the true or false value. You can
+
+139
+00:18:29,240 --> 00:18:34,280
+manage it into your Django admin. You can define a lot.
+
+140
+00:18:34,280 --> 00:18:40,000
+Enticonditions, with condition, multiple conditions required, dictionaries. There
+
+141
+00:18:40,000 --> 00:18:45,560
+are some combinations that it allows but probably are not a good idea because if
+
+142
+00:18:45,560 --> 00:18:52,040
+you have a dictionary but also are required, take care. When you have complex
+
+143
+00:18:52,040 --> 00:19:01,680
+feature flags, maybe you will take a look in the logic and split the class or the
+
+144
+00:19:01,680 --> 00:19:10,880
+feature because, well, you know, keep it simple. Those are the pros. Yeah, you can
+
+145
+00:19:10,880 --> 00:19:16,400
+use flags. You can put a flag, sorry, you can use decorator. You can put a
+
+146
+00:19:16,400 --> 00:19:22,600
+feature flag as a decorator and all the code run will accept that value for the
+
+147
+00:19:22,600 --> 00:19:31,480
+flag, dearly, without asking. You can get all the features, status at once. We have
+
+148
+00:19:31,480 --> 00:19:40,400
+some improvements but the co-play, not yet. The only front thing we can use with
+
+149
+00:19:40,400 --> 00:19:48,440
+this is the Django template. Waffles is better because it's simple. Just one
+
+150
+00:19:48,440 --> 00:19:58,120
+fraction. Hello to customize the class. Hello groups. You say,
+
+151
+00:19:58,120 --> 00:20:06,880
+present as you use. It allowed to use Waffle. Yes. So it's wider, the scope of
+
+152
+00:20:06,880 --> 00:20:13,480
+where you can use that. It has simple feature flags, switch, just all or
+
+153
+00:20:13,480 --> 00:20:26,520
+nothing. Yeah, the summary. Guy Goyle, for me, is not much better than Django
+
+154
+00:20:26,520 --> 00:20:35,520
+Flash. Also, it's deprecated but, well, probably the best thing that it does is
+
+155
+00:20:35,520 --> 00:20:43,440
+testing. It's better for testing. It has a good system of decorator for testing.
+
+156
+00:20:43,440 --> 00:20:48,440
+We will see one of the good things or one of the good habits we should have
+
+157
+00:20:48,440 --> 00:20:55,880
+with feature flags is do test. Test when the feature flag is true and when it falls.
+
+158
+00:20:55,880 --> 00:21:07,040
+Guy Goyle does. Yeah, on the limits. Well, third parties. Those third parties I have
+
+159
+00:21:07,040 --> 00:21:14,920
+used, they are very, very, very complete. It's full of features. They allow
+
+160
+00:21:14,920 --> 00:21:21,440
+percentages, allow set of uses, allow a lot of parameters to define. They allow
+
+161
+00:21:21,440 --> 00:21:28,320
+things that some software consider anti-patterns. They put as feature. Oh, yeah.
+
+162
+00:21:28,320 --> 00:21:35,800
+Sorry. Amen. We are able to do this. No, that's a good thing. A bad thing. They have
+
+163
+00:21:35,800 --> 00:21:43,680
+multi-language. You can do with mobile, frontend, bucket languages, whatever. They
+
+164
+00:21:43,680 --> 00:21:48,920
+allow kill switch. We will talk later. They deploy multivariant, a lot of things.
+
+165
+00:21:48,920 --> 00:21:58,160
+Now, you will have the if with all. If feature flag. But you don't know in your code what
+
+166
+00:21:58,160 --> 00:22:03,720
+does that feature flag. The definition, all the behavior of the feature flag is on a
+
+167
+00:22:03,720 --> 00:22:12,080
+board out of your system. It's like calling an API and, hey, this variable, what means
+
+168
+00:22:12,080 --> 00:22:19,160
+this variable? They allow to have domains of variables. So imagine you are in a big
+
+169
+00:22:19,160 --> 00:22:29,960
+company. You are on charge of seeing new uses. That your team just is on charge of that.
+
+170
+00:22:29,960 --> 00:22:33,880
+You have the feature flags related to that. You don't know which feature flag has other
+
+171
+00:22:33,880 --> 00:22:40,400
+people. Nothing like that. And they don't know. And they can't modify your system without
+
+172
+00:22:40,400 --> 00:22:48,920
+your knowledge. They solve, they obey kill everything you need. You can take whatever
+
+173
+00:22:48,920 --> 00:22:59,600
+you want off of those if you want to do whatever. And what I should do? Buy a third party, sorry,
+
+174
+00:22:59,600 --> 00:23:15,840
+or build a library. Take a look at the prost on each and choose. For me, my advice is you
+
+175
+00:23:15,840 --> 00:23:26,160
+can take a library, but do an effort to pack it as much the logic as much as you can into
+
+176
+00:23:26,160 --> 00:23:35,360
+a pattern or a larger or whatever. So for the regular developer, they will feel they are
+
+177
+00:23:35,360 --> 00:23:42,560
+using a third party. That will allow you to migrate just in case you need a third party
+
+178
+00:23:42,560 --> 00:23:54,120
+with more functionalities and so on. Okay. Feature Flags versus Blue Green. Blue Green
+
+179
+00:23:54,120 --> 00:24:02,160
+is a way to deploy. Feature Flags is able to do more things than just deploying. Those
+
+180
+00:24:02,160 --> 00:24:08,880
+are the, for me, the most important difference is related with the environments. You need
+
+181
+00:24:08,880 --> 00:24:22,080
+less environment with Feature Flags, sorry, in case of a rollback. Blue Green is, you
+
+182
+00:24:22,080 --> 00:24:31,800
+need to return to the other environment. In Feature Flags, you just switch a bottom. Yeah,
+
+183
+00:24:31,800 --> 00:24:43,560
+from the Feature Flags perspective. This is configuration manager. Well, this is the
+
+184
+00:24:43,560 --> 00:24:54,520
+difference. Feature Flags should die. That means you need to do two things or you duplicate
+
+185
+00:24:54,520 --> 00:25:01,840
+the work. One is to create and the other one is to remove it. More you keep, more Feature
+
+186
+00:25:01,840 --> 00:25:14,320
+Flags you keep in your code. More combat your system into a net. Good principle of Feature
+
+187
+00:25:14,320 --> 00:25:25,200
+Flags. Some people try to use what people call the Feature Flags pattern. It's Feature
+
+188
+00:25:25,200 --> 00:25:37,080
+Flags tutorial. I tried to code it for Python, but I just found it in Java and I hadn't time
+
+189
+00:25:37,080 --> 00:25:48,720
+enough to bring that here. Good principle is great test. Both cases active on or off,
+
+190
+00:25:48,720 --> 00:25:54,680
+but great test for both cases. You need to ensure what happened in both cases. Keeping
+
+191
+00:25:54,680 --> 00:26:01,360
+it to mind, remove the flag. Keep a high level of communication. This is very important.
+
+192
+00:26:01,360 --> 00:26:07,560
+You should tell everybody in the company you know you are going to do something in the
+
+193
+00:26:07,560 --> 00:26:12,120
+logic. Something that can affect. I mean, I don't know. I don't know. I don't say everybody
+
+194
+00:26:12,120 --> 00:26:17,760
+in the company. Committee, responsibility person in each team, but communication should happen.
+
+195
+00:26:17,760 --> 00:26:23,200
+Hey, we are in payment and we are going to modify the default payment system or whatever,
+
+196
+00:26:23,200 --> 00:26:32,320
+so if people detect something happens, they can think, okay, this is because we have something
+
+197
+00:26:32,320 --> 00:26:37,360
+or this is because they had something one hour ago. Communication is needed. Nobody
+
+198
+00:26:37,360 --> 00:26:45,320
+want to become crazy in a big company because someone in other, anyone in any place, modify
+
+199
+00:26:45,320 --> 00:26:56,320
+something and say nothing. Deploy small features. Again, small pieces managed by Fitoo Flags.
+
+200
+00:26:56,320 --> 00:27:05,720
+Naming conversation for deploy, for operation Fitoo Flags, use it. Keep the logic simple.
+
+201
+00:27:05,720 --> 00:27:19,600
+Long chain Fitoo Flags and the hider is tried to be able to backwire always. We don't want
+
+202
+00:27:19,600 --> 00:27:35,600
+that. We don't want that. Really. And those are the last screens. The risk. There are
+
+203
+00:27:35,600 --> 00:27:41,160
+a lot of things. Well, I just showed you in the previous one what happened if you abuse
+
+204
+00:27:41,160 --> 00:27:50,560
+the lag communication, the lag compatibility. We have talked about most of them. What happened,
+
+205
+00:27:50,560 --> 00:27:54,960
+yeah, when you have a synchronous task and you change the logic or you change the logic
+
+206
+00:27:54,960 --> 00:28:00,880
+for 10% of the user and they stop calling some asynchronous task. What happened with
+
+207
+00:28:00,880 --> 00:28:10,600
+them? With some processes pending. Automatic test is hided to keep them working. Complexity
+
+208
+00:28:10,600 --> 00:28:18,440
+is increasing. There is a standard source of true. You have a board out of your system.
+
+209
+00:28:18,440 --> 00:28:24,640
+If you use a third party, you have a board. That was says when the Fitoo Flag is running
+
+210
+00:28:24,640 --> 00:28:31,640
+and that is not in your code. You have your hider open, your idea open. Also you have
+
+211
+00:28:31,640 --> 00:28:41,520
+your web browser in the other side. You need to keep checking. Confusions, people modifying.
+
+212
+00:28:41,520 --> 00:28:50,360
+Different behavior between preproduction, production, testing local and the catches.
+
+213
+00:28:50,360 --> 00:28:58,880
+Some basis people acquire or embrace with Fitoo Flags. It's okay. I have a Fitoo Flag
+
+214
+00:28:58,880 --> 00:29:09,280
+to rescue me. I can test in production. Release and monolithic release. Leaving the date,
+
+215
+00:29:09,280 --> 00:29:15,480
+imagine, I don't know, you have an API version one. You create the version two and you say,
+
+216
+00:29:15,480 --> 00:29:21,640
+10% of my user they are using version one. I'm going to keep the version one. No, I mean
+
+217
+00:29:21,640 --> 00:29:29,200
+two microservices but no Fitoo Flags, please. And force your user to move to the second
+
+218
+00:29:29,200 --> 00:29:36,160
+version, please. Tolerance to inefficient code. I told my experience many years ago
+
+219
+00:29:36,160 --> 00:29:47,600
+that this is a sheet but used to work and I have the rescue plan in the ELSE. Yeah, allow
+
+220
+00:29:47,600 --> 00:30:01,120
+bad deploy processes. Finishing, I swear. Other things I saw and I read, people sharing
+
+221
+00:30:01,120 --> 00:30:10,760
+code. I'm going to pass this code. I'm going to involve in a Fitoo Flag and I'm going
+
+222
+00:30:10,760 --> 00:30:17,880
+to tell to my college, hey, my working code, my web code is there but there is a Fitoo
+
+223
+00:30:17,880 --> 00:30:26,320
+Flag. Hey, don't worry, it's not going to be run. Related with testing production,
+
+224
+00:30:26,320 --> 00:30:33,400
+binding to production, something is not ready. Deploying everything at the end. The version
+
+225
+00:30:33,400 --> 00:30:42,000
+in things, the version in APIs, I told. And the kill switches. We know we can switch off
+
+226
+00:30:42,000 --> 00:30:50,280
+a Fitoo Flag in production but don't rely on that. Try to avoid it. It's like a panic
+
+227
+00:30:50,280 --> 00:31:00,400
+button and nobody wants to press panic button every day. That is part of the bibliography.
+
+228
+00:31:00,400 --> 00:31:09,440
+There is a lot of. Yeah, I work in Singular. They love to hire people. Please, I lost an
+
+229
+00:31:09,440 --> 00:31:16,480
+opportunity to put my social networks there because if you go there by me, I get money
+
+230
+00:31:16,480 --> 00:31:23,480
+but you can find me, please. Thanks a lot.
+

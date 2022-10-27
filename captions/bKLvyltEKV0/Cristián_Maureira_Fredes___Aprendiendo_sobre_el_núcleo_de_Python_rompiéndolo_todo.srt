@@ -1,0 +1,1236 @@
+1
+00:00:00,000 --> 00:00:22,260
+Hola. Tuve un problemita con la pantalla, pero por lo menos la vamos a poner ahí en
+
+2
+00:00:22,260 --> 00:00:28,040
+el amelador. Ojalá que puedan ver todo el contenido de la diapositiva. Bueno, no puedo
+
+3
+00:00:28,040 --> 00:00:32,560
+ver a nadie cuando hagan preguntas si pueden levantar la mano también. Me gustaría saber
+
+4
+00:00:32,560 --> 00:00:38,200
+solo por curiosidad si el año pasado alguien, por esas cosas de la vida, pudo ver una charla
+
+5
+00:00:38,200 --> 00:00:45,240
+que hice en la versión online de la Pag.con.es. ¿Podría levantar la mano si la vieron? Perfecto.
+
+6
+00:00:45,240 --> 00:00:50,820
+Porque es una copia de las... No, no, no, no, no se preocupen. Intente hacer un poco
+
+7
+00:00:50,820 --> 00:00:58,160
+de cosas nuevas. Bueno, primero que todo, si no me conocen, me llamo Cristian. Yo actualmente
+
+8
+00:00:58,160 --> 00:01:02,760
+también estuve la suerte de ayudar con el equipo de organización y organizar una conferencia
+
+9
+00:01:02,760 --> 00:01:06,980
+y hacer una charla es una mala idea, no se lo recomiendo a nadie, porque hasta hace poco
+
+10
+00:01:06,980 --> 00:01:13,820
+ya estaba terminando las slides. Me pueden encontrar las redes con ese tag. Actualmente
+
+11
+00:01:13,820 --> 00:01:19,340
+trabajo en The Cute Company, quizás alguna de ustedes conoce Cuté o Cute, como quieran
+
+12
+00:01:19,340 --> 00:01:24,500
+llamarle. Y bueno, pero la charla no sobre mí, ahí pueden encontrar más información,
+
+13
+00:01:24,500 --> 00:01:30,400
+es sobre... Aprendamos un poquito más de cómo funciona Python dentro. Primero que
+
+14
+00:01:30,400 --> 00:01:35,220
+todo, ¿quién conoce esa imagen? ¿A quién le haces como... Ah, mira, sí, yo sé que eso,
+
+15
+00:01:35,220 --> 00:01:38,340
+levantemos la mano. Esta va a ser una charla bien dinámica, porque si no nos vamos a morir
+
+16
+00:01:38,340 --> 00:01:43,540
+de... Perfecto, mucho mal. A muchas personas quizás acá le pasa de que cuando eran pequeños,
+
+17
+00:01:43,540 --> 00:01:48,140
+o quizás no tan pequeños, tuvieron algún juguete o algo y querían saber cómo funcionaba.
+
+18
+00:01:48,140 --> 00:01:52,020
+Entonces se les pasó. Pero a mí me pasó y bueno, rompí un par de cosas con tus pequeños
+
+19
+00:01:52,020 --> 00:01:57,260
+y me di cuenta que ese tipo de curiosidad siempre la iba aplicando en diferentes áreas.
+
+20
+00:01:57,260 --> 00:02:02,740
+Entonces este motorcito para mí es importante, porque claro, es justamente saber cómo funcionan
+
+21
+00:02:02,740 --> 00:02:06,820
+las cosas por dentro. Sin siquiera saber. O sea, yo cuando abrí eso y vi ese motorcito
+
+22
+00:02:06,820 --> 00:02:11,660
+que funcionaba con una batería, no tenía ni idea qué era. Y cuando terminé de estudiar
+
+23
+00:02:11,660 --> 00:02:20,380
+y ingresar a trabajar a Qt, me encontré con la API de C de Python. ¿Quién acá conoce
+
+24
+00:02:20,380 --> 00:02:26,220
+y ha usado la API de C de Python? Muy bien. Perfecto, porque ahora van a poder aprender
+
+25
+00:02:26,220 --> 00:02:32,220
+un poquito más de ella. Y no tenía ni idea cómo era. Y principalmente a mí se me da
+
+26
+00:02:32,220 --> 00:02:38,780
+muy mal comprarme libros. O sea, me puedo comprar libros, pero no los leo. Tengo marcadores
+
+27
+00:02:38,780 --> 00:02:43,780
+los navegadores llenos de cómo aprender tal cosa, nuevo lenguaje. Nunca los leo. Y la
+
+28
+00:02:43,780 --> 00:02:47,860
+única forma que se me da bien, por lo menos, de empezar en cosas, es empezar a romper
+
+29
+00:02:47,860 --> 00:02:52,980
+cosas. Si borro esto, ¿qué pasa? Sí, cambio acá, ¿qué pasa? Y no lo recomiendo, porque
+
+30
+00:02:52,980 --> 00:02:58,660
+bueno, por algo hay libro y tutoriales, pero si les gusta ese acercamiento, lo pueden probar.
+
+31
+00:02:58,660 --> 00:03:01,180
+Una de las cosas que me llamó la atención es saber de dónde venía Python. Alguien
+
+32
+00:03:01,180 --> 00:03:06,300
+conoce cómo se llama este lenguaje de programación. La persona entusiasta de arriba no puede responder.
+
+33
+00:03:06,300 --> 00:03:13,260
+No? Bueno, ese lenguaje de programación se llama ABC. Uno de los cuales, por ejemplo,
+
+34
+00:03:13,260 --> 00:03:17,780
+Python le está inspirado. Si pueden ver el código con su conocimiento de Python, pueden
+
+35
+00:03:17,780 --> 00:03:21,100
+entender un poco más o menos lo que está ahí. Porque yo no tenía ni idea de dónde
+
+36
+00:03:21,100 --> 00:03:26,220
+venía Python cuando lo empezó a utilizar. Yo venía como de Bash, de Peril y era de dónde
+
+37
+00:03:26,220 --> 00:03:30,340
+viene Python. Y me llamó la atención, bueno, creo que no sé si todavía se podrá compilar
+
+38
+00:03:30,340 --> 00:03:34,220
+esto, pero me llamó la atención y fue un lenguaje que, bueno, si se dan cuenta es
+
+39
+00:03:34,220 --> 00:03:41,860
+casi Python. Pero cuando hablamos de Python, siempre me pasa. ¿Quién me puede decir cuál
+
+40
+00:03:41,860 --> 00:03:47,700
+de esas terminales es el Python que están utilizando ustedes en sus ordenadores, por
+
+41
+00:03:47,700 --> 00:03:53,540
+ejemplo, ahora o en la conferencia? ¿Cuál de todos es Python? Pueden ser todos, pueden
+
+42
+00:03:53,540 --> 00:04:00,900
+ser ninguno. Esto es igual, ¿no? Pero si se dan cuenta, cada uno de esos son diferentes
+
+43
+00:04:00,900 --> 00:04:05,100
+implementaciones de Python. Python, como sí, tenemos un lenguaje, pero que lo pueden implementar.
+
+44
+00:04:05,100 --> 00:04:09,060
+Por ejemplo, gente de microcontrolladores, MicroPython, que es una versión mucho más
+
+45
+00:04:09,060 --> 00:04:14,620
+diminuida. PyPyke está Python escrito en Python. Jython en Java, bueno, tienen también
+
+46
+00:04:14,620 --> 00:04:19,660
+una versión en Rust. Piston también una nueva muy nueva. Y el último es el Python que espero
+
+47
+00:04:19,660 --> 00:04:25,460
+que todos ustedes van y la Python, implementación estándar, como quieran llamarlo. Entonces,
+
+48
+00:04:25,460 --> 00:04:29,940
+no quiero aburrirles con la estructura. Hay mucha teoría que tenemos que ver acá. Pero
+
+49
+00:04:29,940 --> 00:04:34,260
+si se van al repositorio principal, hay un par de directorios que ustedes podrían empezar
+
+50
+00:04:34,260 --> 00:04:39,260
+a mirar que les pueden llamar la atención. Bueno, documentación, eso es fácil. Include
+
+51
+00:04:39,260 --> 00:04:44,100
+todo lo que son los archivos de cadecedra del intérprete, la gramática, todo lo que es
+
+52
+00:04:44,100 --> 00:04:50,220
+la biblioteca estándar de Python, en Python, la biblioteca estándar de Python, en C, y
+
+53
+00:04:50,220 --> 00:04:54,620
+los built-in type o tipos incorporados, no sé si se traduce bien así, que tiene Python,
+
+54
+00:04:54,620 --> 00:05:00,020
+el list adicionario, string, todo lo que ustedes quieran. Ah, bueno, obviamente Python
+
+55
+00:05:00,020 --> 00:05:05,340
+trata todo lo que es el runtime de eso. Entonces, ¿cómo se construye Python desde cero? ¿Había
+
+56
+00:05:05,340 --> 00:05:08,220
+una charla alguien que estaba hablando? No me acuerdo, creo que fue un OpenSpace que
+
+57
+00:05:08,220 --> 00:05:13,340
+dijeron que era más complicado. Son tres pasos. Cronan el repo, se van, pueden configurarlo
+
+58
+00:05:13,340 --> 00:05:17,940
+y mismo dentro de la, lo compilan, lo ejecutan y ya. Tienen su propio Python. Bueno, no
+
+59
+00:05:17,940 --> 00:05:23,260
+han modificado nada, pero tienen la última versión del repositorio. Entonces, partimos
+
+60
+00:05:23,260 --> 00:05:27,860
+esta charla, bueno, ya más cinco minutos, pero partimos esta charla pensando ¿qué pasa
+
+61
+00:05:27,860 --> 00:05:34,940
+ahí? Entre que yo escribo Python, punto, de main.py y se imprimero al mundo, ¿cierto?
+
+62
+00:05:34,940 --> 00:05:41,500
+Entonces, vamos a ello. Vamos a poner acá la terminal. De hecho, pero tenía acá, lo
+
+63
+00:05:41,500 --> 00:05:48,900
+voy a mover. ¿Puede leer bien, ¿cierto? Sí. Bueno. Entonces, ¿qué pasa ahí? Un
+
+64
+00:05:48,900 --> 00:05:56,020
+truquito que si no saben, ¿quién de acá sabe C o se llama más? Uu, o sea, yo venía
+
+65
+00:05:56,020 --> 00:06:00,540
+a enseñarle C. Bueno, si me dan cinco minutos voy a modificar las slides. No, no. Lo damos
+
+66
+00:06:00,540 --> 00:06:05,500
+igual, lo igual. Entonces, vamos por ejemplo una manera fácil, confíen en mí, obviamente,
+
+67
+00:06:05,500 --> 00:06:11,460
+es que si nosotros ejecutamos un Python con gdb, pensan en gdb una herramienta mágica
+
+68
+00:06:11,460 --> 00:06:19,620
+para ver cosas adentro. Vamos adentro y vamos a poder, vamos a poder decir, yo sé que hay
+
+69
+00:06:19,620 --> 00:06:26,660
+una función, vamos a hacer un break que se llama built-in, uy, print. Y mira, encontro
+
+70
+00:06:26,660 --> 00:06:33,900
+algo, ¿vale? Entonces, vamos a ejecutar Python, un Python nada fuera lo normal y vamos a imprimir
+
+71
+00:06:33,900 --> 00:06:41,900
+un error. Pum, y llegó un lugar extraño. Entonces, yo con la L, de seguro hay millones
+
+72
+00:06:41,900 --> 00:06:44,780
+de formas de hacer esto, pero con la L voy listando el contenido de eso y veo que empiezan
+
+73
+00:06:44,780 --> 00:06:48,180
+a salir un montón de cosas raras. Si no saben nada de C, no se preocupen, en esta
+
+74
+00:06:48,180 --> 00:06:53,340
+charla la van a aprender. Le mienten si les dicen que necesitan un semestre o algo así.
+
+75
+00:06:53,340 --> 00:06:57,060
+Y hay un montón de cosas que para mí, si yo no tuviera un conocimiento de C, no tienen
+
+76
+00:06:57,060 --> 00:07:02,660
+sentido de nada. Así que vamos a intentar dar un poquito, un pasito atrás. De hecho,
+
+77
+00:07:02,660 --> 00:07:07,380
+a mucha gente que sabe C, me gustaría saber primero cuál es el nivel de Python que tenemos
+
+78
+00:07:07,380 --> 00:07:13,500
+acá en la audiencia. Alguien me puede decir si tengo una lista cómo agregar un elemento
+
+79
+00:07:13,500 --> 00:07:22,460
+a una lista. ¿Bona apenda? ¿Escucha por ahí? Muy bien. Sí, es el error. Alguien me puede
+
+80
+00:07:22,460 --> 00:07:30,300
+decir cómo agregar dos veces un elemento a una lista. Dos veces, dije, no, pero ahí.
+
+81
+00:07:30,300 --> 00:07:34,180
+Muy bien. Así que tenemos una persona. A ver, vamos a hacer esto de nuevo con tu número,
+
+82
+00:07:34,180 --> 00:07:42,380
+¿no? Porque si no. Alguien sabe cómo agregar un elemento a una lista al comienzo, pero
+
+83
+00:07:42,380 --> 00:07:52,420
+sin utilizar la función insert. Saben C y no saben lo más básico de Python. ¿Tienes
+
+84
+00:07:52,420 --> 00:07:59,060
+que escribir apenas el red? Bueno, vamos a bajar entonces un poco el nivel de la charla,
+
+85
+00:07:59,060 --> 00:08:02,460
+porque no están al tanto de esas evaluaciones básicas de lista que todas las personas deberían
+
+86
+00:08:02,460 --> 00:08:12,820
+saber. Pero bueno, vamos entonces a la diapositiva. Volver más. Entonces, teoría, lo siento mucho.
+
+87
+00:08:12,820 --> 00:08:17,100
+Ustedes lo, yo no quería hacer esta parte, la me le iba a saltar, de hecho, pero bueno.
+
+88
+00:08:17,100 --> 00:08:21,300
+¿Qué pasa desde que vamos desde el print hasta tenemos el resultado? Hay cinco pasos, bueno,
+
+89
+00:08:21,300 --> 00:08:25,060
+hay muchos detalles en cada uno de estos. Esta charla podría ser varias charlas, pero
+
+90
+00:08:25,060 --> 00:08:29,260
+vamos a hacer todo lo posible. El primero podemos hacer la decodificación, pasar los bytes
+
+91
+00:08:29,260 --> 00:08:32,660
+a textos. Ustedes deben estar familiarizados con, por ejemplo, ese tipo de comentarios que
+
+92
+00:08:32,660 --> 00:08:37,220
+a veces están en los códigos. Hay un par de PEPs que la definen. En teoría, ahora están
+
+93
+00:08:37,220 --> 00:08:42,260
+todas en un test f8, así que no debería haber ningún problema. Primero paso, ok.
+
+94
+00:08:42,260 --> 00:08:47,020
+Segundo, sacar el texto y convertirlo en palabra. Hay un modo lo que se llama tokenize. Ustedes
+
+95
+00:08:47,020 --> 00:08:51,740
+lo pueden ejecutar con su línea de disimple de Python. Y que le retorna, le dice, mira,
+
+96
+00:08:51,740 --> 00:08:56,500
+hay un nombre, hay una operación, un número, otra operación, un número. Vamos entendiendo
+
+97
+00:08:56,500 --> 00:09:01,700
+un poco lo que es la línea. Texto a palabra. Ahí tenemos más información. Tercero, el
+
+98
+00:09:01,700 --> 00:09:05,500
+parsing con lo que es palabras asamáticas. Y aquí viene una cosa súper interesante,
+
+99
+00:09:05,500 --> 00:09:09,060
+que es la gramática. Hace poco cambió la gramática. No, voy a entrar en gramática,
+
+100
+00:09:09,060 --> 00:09:12,260
+porque si también podría hacer una hecha en la parte. Pueden mirar los enlaces ahí.
+
+101
+00:09:12,260 --> 00:09:14,940
+La diapositiva van a estar después del lado y no se preocupen en copiar los códigos
+
+102
+00:09:14,940 --> 00:09:19,780
+ni más. Se den algo así, por ejemplo, para las cosas de import, son cosas bien raras
+
+103
+00:09:19,780 --> 00:09:25,340
+con Python. La gente que escribe la gramática debe tener mucho tiempo libre. Y ahí hay un
+
+104
+00:09:25,340 --> 00:09:29,900
+par de links y cosas para vestirlo. El abstract syntax tree. Si hay gente que sabe C, quizás
+
+105
+00:09:29,900 --> 00:09:35,500
+saben un poquito de esto, ¿cómo es la estructura de esta semántica? Bueno, basada en C, F,
+
+106
+00:09:35,500 --> 00:09:40,860
+A, S, D, L, bueno, tenemos un módulo, AST, muy fácil, usted importa ST. Parse dan algo
+
+107
+00:09:40,860 --> 00:09:45,580
+y les da un output que tiene como donde están los módulos. Si no les queda claro que es
+
+108
+00:09:45,580 --> 00:09:50,820
+un abstract syntax tree, dibujito. Queda primero en este caso, la multiplicación, después
+
+109
+00:09:50,820 --> 00:09:55,140
+la suma, ¿cierto? Entonces, ¿este tipo de árbol qué te dice? Primero 5 por 8, después
+
+110
+00:09:55,140 --> 00:10:01,020
+el resultado más 2 y vamos teniendo el resultado. ¿Vale? Hasta ahí vamos bien, espero. Y el
+
+111
+00:10:01,020 --> 00:10:06,860
+último, uno de los más interesantes es la compilación final. Es decir, tenemos una función
+
+112
+00:10:06,860 --> 00:10:11,420
+y vamos a compilar esto para que Python lo entienda con su máquina virtual. Pueden imaginarse
+
+113
+00:10:11,420 --> 00:10:15,700
+como instrucciones allá, la gente que sabe C, debe estar muy familiarizada con un tipo
+
+114
+00:10:15,700 --> 00:10:20,100
+de instrucciones así. Pueden ver que esa función lo que hace primero es cargar una constante,
+
+115
+00:10:20,100 --> 00:10:23,980
+guardarla en una variable A y así, así, así. Hay una operación al final, por ejemplo,
+
+116
+00:10:23,980 --> 00:10:28,740
+que hace poco cambió, que antes era binary app, ahora es binary op, con la opción del
+
+117
+00:10:28,740 --> 00:10:34,820
+más. Y ahí pueden encontrar la información. Entonces, ahora todo usted está diciendo
+
+118
+00:10:34,820 --> 00:10:41,820
+por qué viene esta charla. Si esto lo podría haber leído más adelante, ¿cierto? Pero
+
+119
+00:10:41,820 --> 00:10:44,460
+no se preocupen. Ahora sí vamos a empezar a hacerla como más interesante. Entonces,
+
+120
+00:10:44,460 --> 00:10:50,260
+¿cuál es lo que yo había pensado? El estado actual de Python, de toda la gente que estamos
+
+121
+00:10:50,260 --> 00:10:55,100
+acá, por lo general hispanoparlante, bueno, ya sabemos cómo funciona. Obviamente ya
+
+122
+00:10:55,100 --> 00:10:58,900
+aprendieron ya dos, cinco pasos de memoria. Tenemos comunidades de Python gigantescas,
+
+123
+00:10:58,900 --> 00:11:02,220
+bien eso que si la sumamos toda siempre, yo he pensado que eso va mucho más grande,
+
+124
+00:11:02,220 --> 00:11:07,380
+eso es lo que la comunidad de Estados Unidos. Tenemos la traducción de la documentación
+
+125
+00:11:07,380 --> 00:11:12,820
+oficial. Si alguien se anima a unirse, pueden entrar ahí abajo del equipo. Ahí, de hecho,
+
+126
+00:11:12,820 --> 00:11:16,460
+él lo de acá son todos los nombres de las personas que han contribuido. O sea, cuando
+
+127
+00:11:16,460 --> 00:11:20,700
+encuentran algo mal traducido, quizás es nuestra culpa, pero si encuentran algo bueno traducido,
+
+128
+00:11:20,700 --> 00:11:25,340
+también es nuestra culpa. Es súper interesante y bonita esta experiencia. Pueden encontrar
+
+129
+00:11:25,340 --> 00:11:30,020
+páginas escritas en chileno, en argentino, en español de España, pero por lo menos van
+
+130
+00:11:30,020 --> 00:11:37,380
+a tener consistencia por páginas. Así que, paciencia. Así que si quieren sumar a la que
+
+131
+00:11:37,380 --> 00:11:42,020
+aparezca 3, 11 en los servidores oficiales, nos volcamos todo y empezamos a traducir.
+
+132
+00:11:42,020 --> 00:11:45,900
+Y siempre necesitamos manos. Hay mucha gente que comenzó esto sin ni siquiera saber usar
+
+133
+00:11:45,900 --> 00:11:53,300
+Git y empezaron a contribuir en Zephython. ¿Cuántas gente que ha contribuido a Zephython?
+
+134
+00:11:53,300 --> 00:11:57,180
+¿Ven? Y con traducciones, hubiéramos tenido todas las manos arriba. Pero bueno, eso lo
+
+135
+00:11:57,180 --> 00:12:04,180
+es, entonces, ¿qué más falta? Entonces, me puse a mirar la última versión de repositorio,
+
+136
+00:12:04,180 --> 00:12:11,940
+como yo decía. Y me empezó a dar cuenta de que no sé si hubiera un problema. Después
+
+137
+00:12:11,940 --> 00:12:16,020
+le voy a preguntar qué Pablo tiene una chatla más adelante si tuviera un problema de prioridad.
+
+138
+00:12:16,020 --> 00:12:21,820
+Y tiene una rama que se llama 4.0. Y dije, ¿qué hay dentro de la 4.0? O sea, hay un
+
+139
+00:12:21,820 --> 00:12:25,020
+montón de cosas dentro que vamos a mirar. Pero la primera y la más interesante que me
+
+140
+00:12:25,020 --> 00:12:45,100
+di cuenta es que hay una función que se llama Ablemos Python. Entonces, parece que todo
+
+141
+00:12:45,100 --> 00:12:51,220
+está bien, no hay ningún problema con eso. Y imaginémon, nosotros cuando aprendemos
+
+142
+00:12:51,220 --> 00:12:56,300
+a programar, tenemos que aprender inglés. Si nosotros no tuviéramos que aprender inglés,
+
+143
+00:12:56,300 --> 00:13:03,180
+¿cómo sería Python? Bueno, empecemos por lo bajo. Si yo quiero ver si un elemento está,
+
+144
+00:13:03,180 --> 00:13:16,380
+por ejemplo, en esta lista, ¿qué utilizaríamos? Aquí. Eh. Cierto? Bien. Si no, si no, están
+
+145
+00:13:16,380 --> 00:13:22,820
+en esa lista. Que no, en tanto. Cierto? Todo bien. Otro algo muy que me costó a mí mucho
+
+146
+00:13:22,820 --> 00:13:28,140
+cuando empecé a programar lo que son los bucles, ¿cierto? Entonces, si yo quiero hacer un bucle
+
+147
+00:13:28,140 --> 00:13:40,580
+simple, puedo decir que mientras A sea mayor que 0, imprime A y A menor que 1. ¿Saben por
+
+148
+00:13:40,580 --> 00:13:51,260
+qué no funcionó? Porque el español es difícil. Es imprimir. Bueno, entonces, que una de las
+
+149
+00:13:51,260 --> 00:13:57,220
+cosas que me gusta de Python, los bucles, ¿for? Entonces, no solo tenemos para I, en
+
+150
+00:13:57,220 --> 00:14:06,780
+rango de 10, imprimir y fácil, ¿no? Entonces, obviamente yo no les quiero, yo sé que ustedes
+
+151
+00:14:06,780 --> 00:14:12,380
+deben saber mucho más de Python incluso que yo. Si queremos saber si un número es par,
+
+152
+00:14:12,380 --> 00:14:22,700
+nosotros decimos imprimir y es par. Y ya está. Está en 4.0. Así que, solamente nos va a
+
+153
+00:14:22,700 --> 00:14:28,820
+tocar esperar a la 4.0 y vamos a tener la posibilidad de tener el lenguaje totalmente en español.
+
+154
+00:14:28,820 --> 00:14:34,140
+Y si tenéis que preocuparnos absolutamente de nada. Entonces, motivación, meterse al
+
+155
+00:14:34,140 --> 00:14:40,860
+repositor y de Python, hacer eso. Entonces, ustedes van a empezar a decir qué acaba de
+
+156
+00:14:40,860 --> 00:14:46,820
+pasar. Por si se quedaron cuenta, o sea, este era un Python normal, no hay ningún problema
+
+157
+00:14:46,820 --> 00:14:50,740
+con ello. Entonces, vamos a ver un poquito de C. Aquí la gente de C tiene el permiso
+
+158
+00:14:50,740 --> 00:14:55,540
+de poder quedarse a dormir. Vamos a empezar. Esto es muy importante para la gente que no
+
+159
+00:14:55,540 --> 00:15:00,860
+sabe nada de C. Si le dijeron que era difícil, le mentieron. Vamos a empezar. Un comentario.
+
+160
+00:15:00,860 --> 00:15:04,980
+Lo siento mucho. Quizás se va a ver muy pequeño. Espero que después cuando lo hace, se va a
+
+161
+00:15:04,980 --> 00:15:10,300
+poder ver. Un módulo en el equivalente. Queremos definir la función. Mira, acá tenemos que
+
+162
+00:15:10,300 --> 00:15:15,820
+poner el tipo de inmediato en vez de def. Queremos hacer el main. Alguna persona le gusta
+
+163
+00:15:15,820 --> 00:15:23,540
+hacer el main. Deberían hacer un main. Un string, un número entero, un flotante, una
+
+164
+00:15:23,540 --> 00:15:31,620
+suma, imprimir, salud. Y todo eso. Se ve complicado, ¿no? Algunas de ustedes van a decir, no,
+
+165
+00:15:31,620 --> 00:15:35,620
+esa cosa es muy rara. Pero muchas personas ahora estamos abocando para que la gente
+
+166
+00:15:35,620 --> 00:15:40,820
+empiece a utilizar type hints, ¿cierto? Entonces, yo lo sumo type hints. Realmente me van a
+
+167
+00:15:40,820 --> 00:15:47,100
+decir que eso es tan distinto. Es tan difícil. Yo sé que hay muchas cosas, detalles que
+
+168
+00:15:47,100 --> 00:15:50,900
+hay en C que van a ser lo más complicado, pero también hay detalles en Python que
+
+169
+00:15:50,900 --> 00:15:58,580
+pueden ser complicados. ¿Cierto? Sí. Ahora, las personas que saben Python. Lenguaje
+
+170
+00:15:58,580 --> 00:16:05,780
+fácil. No, no se preocupen. ¿Qué me puede decir que hace ese código? Tú no puedes decir
+
+171
+00:16:05,780 --> 00:16:12,340
+porque tú sabes esta chata. Pero si Python es sencillo, ¿esto es código válido Python?
+
+172
+00:16:12,340 --> 00:16:21,060
+Bueno, una es fácil. ¿Qué hace ese código en Python? Pero si es Python, alguien no
+
+173
+00:16:21,060 --> 00:16:25,580
+está hablando de C, ni cosas raras de memoria. Ustedes abren ahora sus terminales, si les
+
+174
+00:16:25,580 --> 00:16:31,060
+quieren eso. Ponen a n, dar un valor, escriben ese número y no pasas a pasar que hace algo.
+
+175
+00:16:31,060 --> 00:16:38,420
+Entonces, durante el primer inicio, como estábamos haciendo esta cosa rara de GDB, abrieron
+
+176
+00:16:38,420 --> 00:16:44,060
+cosas de PyObject. PyObject es esencialísimo, por si quieren intentar entender porque todo
+
+177
+00:16:44,060 --> 00:16:48,300
+en el código, sino que van a haber PyObjects por todos lados. Entonces, ¿qué es esto que
+
+178
+00:16:48,300 --> 00:16:54,060
+se llama PyObject? Es una estructura muy sencilla. Una estructura puede verlo como una clase.
+
+179
+00:16:54,060 --> 00:17:01,420
+Tres elementos. Yo, cuando vi esta definición, dije, ¿cómo pasa toda la magia dentro? Me
+
+180
+00:17:01,420 --> 00:17:05,820
+di cuenta que dentro de esa estructura, hay otra estructura. Entonces, fui a la definición
+
+181
+00:17:05,820 --> 00:17:11,060
+y dije, voy a ver qué el contenido es esa estructura. Y ese es el contenido de esa estructura.
+
+182
+00:17:11,060 --> 00:17:16,420
+Y dije, bueno, nunca voy a poder aprender lo que va a ver dentro. Pero lo importante
+
+183
+00:17:16,420 --> 00:17:20,780
+de esto es que no tienen que aprenderse todo de memoria. Se lo pueden imaginar como si
+
+184
+00:17:20,780 --> 00:17:24,100
+esto fuera una caja que solamente la van a llenar con las cosas que ustedes quieren
+
+185
+00:17:24,100 --> 00:17:27,940
+y ya está. Se les olvidan de eso. No es una caja especial para números enteros, una caja
+
+186
+00:17:27,940 --> 00:17:32,100
+especial para listas. No. Entonces, si hacemos un pequeño... Yo sé que aquí voy a ver un
+
+187
+00:17:32,100 --> 00:17:35,140
+poquito de código, pero ojalá que no se preocupen. Si queremos trabajar con elementos
+
+188
+00:17:35,140 --> 00:17:41,740
+numéricos, tenemos que tener ciertas funciones, por ejemplo, en la APDC, pi number. O la cual
+
+189
+00:17:41,740 --> 00:17:46,220
+van a poder verificar. Es esto un número o las operaciones, por ejemplo, están definidas
+
+190
+00:17:46,220 --> 00:17:51,300
+para saber cuando podemos agregar dos elementos normales. Lo mismo si tenemos una secuencia,
+
+191
+00:17:51,300 --> 00:17:56,420
+toda la secuencia listas. Ustedes pueden definir lo mismo en la forma de mirarlo y también
+
+192
+00:17:56,420 --> 00:18:01,540
+cómo obtener un elemento que es el equivalente a eso. Simple. No es tan complejo. Si se
+
+193
+00:18:01,540 --> 00:18:05,300
+dan cuenta, hay una logica que sigue todo eso. Por lo menos siempre van a poder tener
+
+194
+00:18:05,300 --> 00:18:11,380
+pi type underscore check y el van a poder tener el tema. Perfecto. Entonces, otra cosa que
+
+195
+00:18:11,380 --> 00:18:18,820
+me di cuenta en esta nueva versión, la 4.0, es que hay un par de features nuevos. Por
+
+196
+00:18:18,820 --> 00:18:23,500
+ejemplo, vamos a partir con la más obvia, que es una que la ha anunciado bastante en
+
+197
+00:18:23,500 --> 00:18:28,980
+varias conferencias. No sé si Pablo la va a mencionar. ¿Qué es cuando se mejoraron
+
+198
+00:18:28,980 --> 00:18:35,100
+los mensajes de error cuando ahora tenemos errores? Yo lo encuentro muy útil. Pero,
+
+199
+00:18:35,100 --> 00:18:41,020
+no sé, por ejemplo, si dedimos por cero. Nosotros tenemos ahora, ¿cómo nos va a decir
+
+200
+00:18:41,020 --> 00:18:46,620
+cómo empezar la división por cero? Por cierto, alguien sabe qué error hay cuando cero se
+
+201
+00:18:46,620 --> 00:19:01,220
+dedíe por cero en Python. ¿Es el mismo? ¿Uno es otro? ¿Qué es cero de dedío por cero?
+
+202
+00:19:01,220 --> 00:19:06,220
+Y ahí se dan cuenta que se rompe todo en realidad. Deben ser features, supongo. No
+
+203
+00:19:06,220 --> 00:19:10,700
+sé. Pero otra cosa interesante era el tema de que ahora parece que hay más funciones
+
+204
+00:19:10,700 --> 00:19:14,060
+a los strings. A mí personalmente me gusta mucho de algo que no puedo superar de usar
+
+205
+00:19:14,060 --> 00:19:18,660
+otro lenguaje los strings. Y me di cuenta que había una función para poder obtener
+
+206
+00:19:18,660 --> 00:19:32,180
+el audio de los strings. Entonces, yo pongo speak. ¡Hola! Y tenemos audio. Pero algo
+
+207
+00:19:32,180 --> 00:19:37,700
+que... ¡Adiós! Bastante incómodo, ¿no? Entonces, si yo... ¿Qué pasa si nosotros
+
+208
+00:19:37,700 --> 00:19:41,620
+quiero motivar a niños pequeños, por ejemplo, a aprender la VCR y cosas así? Este tipo de
+
+209
+00:19:41,620 --> 00:19:55,580
+todo sinceramente asusta. Y me di cuenta que los strings tenían una función. Yo no sé
+
+210
+00:19:55,580 --> 00:19:59,060
+si es por el tema de las modas, pero bueno.
+
+211
+00:19:59,060 --> 00:20:27,260
+Y yo dije ¿qué? Empecé. Y lo último. Y si dan, no sé, algunos core developers siempre
+
+212
+00:20:27,260 --> 00:20:31,380
+traen en conferencia les pueden preguntar. Yo creo que son Easter eggs de cosas así.
+
+213
+00:20:31,380 --> 00:20:38,820
+Porque me di cuenta que por lo menos si tengo una lista, por ejemplo, y agrego una palabra
+
+214
+00:20:38,820 --> 00:20:39,820
+y quiero agregar ahora...
+
+215
+00:20:39,820 --> 00:21:05,860
+Y no se agrega. Entonces, no sé qué tan beneficioso voy a hacer poner esto en producción. Yo
+
+216
+00:21:05,860 --> 00:21:13,180
+no sé cómo se va a comportar, ¿qué está en acción? Si empezamos a probar este tipo
+
+217
+00:21:13,180 --> 00:21:21,220
+de features. Hay muchos detalles extras que hay que estudiar para aprender más cómo
+
+218
+00:21:21,220 --> 00:21:25,300
+funciona Cipaidon. Como siempre, no tienen que saberse todo de memoria, hacer personas
+
+219
+00:21:25,300 --> 00:21:29,300
+expertas en el tema para empezar a jugar y hacer este tipo de cosas. Yo sé que quizás
+
+220
+00:21:29,300 --> 00:21:36,300
+ahora con este par de tonterías van a tener mucha curiosidad de cómo se hace eso por
+
+221
+00:21:36,300 --> 00:21:44,260
+dentro. Con lo que de verdad le invito luego. Pídanme el parche, te lo mando y ustedes
+
+222
+00:21:44,260 --> 00:21:49,940
+pueden ver todo eso. No es nada del otro mundo. Todo lo que hice fue literalmente cortar y
+
+223
+00:21:49,940 --> 00:21:54,220
+pegar en diferentes lugares. Dijo, ¿oh, qué lo hacer esto? Trocito el código, trocito
+
+224
+00:21:54,220 --> 00:21:58,460
+el código. Y a mí, por lo menos, una de las mejores maneras que me está funcionando para
+
+225
+00:21:58,460 --> 00:22:03,060
+poder aprender. Entonces, otros detalles que son muy importantes que se van a encontrar
+
+226
+00:22:03,060 --> 00:22:09,020
+hay que charlas espectaculares que pueden mirar. Por ejemplo, el primero, el conteo
+
+227
+00:22:09,020 --> 00:22:13,700
+de la referencia. Si ustedes quieren saber más sobre qué determina que un objeto en
+
+228
+00:22:13,700 --> 00:22:22,220
+Python está vivo, ¿cierto? No solo tenemos que ver cuántas veces se utiliza uno. Entonces,
+
+229
+00:22:22,220 --> 00:22:25,780
+ese es un tema muy difícil también si lo quieren mirar. Las funciones que definen,
+
+230
+00:22:25,780 --> 00:22:30,820
+los macros que definen el aumentar y diminuir referencias de objetos son complicados a
+
+231
+00:22:30,820 --> 00:22:41,300
+alguno. Y hay otro, a ver, por ejemplo, deja ver si... No me acuerdo de la función.
+
+232
+00:22:41,300 --> 00:22:48,140
+¿Cómo era? Si escribo, ah, por ejemplo... Uy, ahora se van a esperar un cheat y no hay
+
+233
+00:22:48,140 --> 00:22:56,940
+que verlo. Por ejemplo, si hago esto y era cheat get ref count, creo que era así la
+
+234
+00:22:56,940 --> 00:23:07,660
+función. ¿Cuántas referencias cree que tiene A? ¿Cuántas veces ha usado? Dos. Fallaste.
+
+235
+00:23:07,660 --> 00:23:10,660
+Porque hay otro tema, porque claro, si yo estoy usando una función también se quiere una
+
+236
+00:23:10,660 --> 00:23:14,860
+referencia a ese objeto. Entonces, en cuenta, hay cosas que van a ser como, ah, a veces es
+
+237
+00:23:14,860 --> 00:23:19,060
+como un poquito de dificultad mirarlo. Otro tema que yo pienso que da para conferencias
+
+238
+00:23:19,060 --> 00:23:24,900
+completas y ahora habíamos comentado con alguien es el tema del Gil. Han habido muchas charlas
+
+239
+00:23:24,900 --> 00:23:28,940
+sobre por qué es bueno, por qué es malo, antes y de sentido, no es tan malo después
+
+240
+00:23:28,940 --> 00:23:35,180
+de todo, no es que quitarlo, no es que cambiarlo. Pongan en YouTube. Python, Gil, millones de
+
+241
+00:23:35,180 --> 00:23:42,060
+charlas. Y una última que también da también para una charla completa es, ustedes deben,
+
+242
+00:23:42,060 --> 00:23:49,740
+por ejemplo, acá, quien conoce Nampaay. Pandas. Bueno, TensorFlow, PyTorch. Todos estos módulos
+
+243
+00:23:49,740 --> 00:23:54,860
+siempre tienen por debajo, por ejemplo, API en otras lenguajes. Puede ser Fortran, C,
+
+244
+00:23:54,860 --> 00:23:59,380
+semas más que van a estar llamando. La API, a mí me parece muy sencilla de cómo poder
+
+245
+00:23:59,380 --> 00:24:03,140
+interactuar con eso. Y que ustedes puedan crear mañana, por ejemplo, sabiendo eso, el
+
+246
+00:24:03,140 --> 00:24:07,700
+siguiente Nampaay, Pandas, lo que sea, utilizando ese tipo de lenguaje, porque de verdad para
+
+247
+00:24:07,700 --> 00:24:12,260
+crear un, por ejemplo, en C, o dos y más más, un programa que llame código Python, son
+
+248
+00:24:12,260 --> 00:24:16,060
+tres líneas. Se inicializa, se finaliza, se llama el código Python, bueno, hay que
+
+249
+00:24:16,060 --> 00:24:21,460
+hacer un include arriba y ya está. Y nada más. Entonces, a mí me, por eso, intento,
+
+250
+00:24:21,460 --> 00:24:25,180
+ojalá que ahora tengan un poquito más de motivación de mirar el código fuente de
+
+251
+00:24:25,180 --> 00:24:29,780
+Python, que no es nada del otro mundo. De hecho, sin demerecer, obviamente, el trabajo
+
+252
+00:24:29,780 --> 00:24:34,380
+de todas las personas que están trabajando en ello. Pero solamente acercarle y decir,
+
+253
+00:24:34,380 --> 00:24:45,820
+por ejemplo, si yo busco, no sé, una carita triste. Hay un montón de partes en el código
+
+254
+00:24:45,820 --> 00:24:52,660
+que hay caritas tristes. Y saben, entonces, si se dan cuenta, por ejemplo, yo pongo todo,
+
+255
+00:24:52,660 --> 00:24:58,140
+mira. Entonces, no digo que el código sea malo, porque el código espectacular a todos
+
+256
+00:24:58,140 --> 00:25:02,540
+los gustos, todos estamos acá, pero es un proyecto hecho por personas igual que ustedes.
+
+257
+00:25:02,540 --> 00:25:06,220
+Cuando hay ninguna persona encerrada en un lugar, así que solamente lanza versiones,
+
+258
+00:25:06,220 --> 00:25:10,900
+bueno, no sé si la persona que hace los releases está encerrada cuando hace los releases, pero
+
+259
+00:25:10,900 --> 00:25:15,180
+no hay ninguna persona con compartimientos secretos haciendo estas cosas extrañas que
+
+260
+00:25:15,180 --> 00:25:19,060
+nadie entiende. Es personas como cualquiera de las personas que está acá y tienen que
+
+261
+00:25:19,060 --> 00:25:25,620
+motivarse a mirar todo este contenido y ver si se hace motivar un poquito de mirar y empezar
+
+262
+00:25:25,620 --> 00:25:29,940
+a ver todo lo que es el core. Entonces, ahora que ya sé que no tienen ninguna duda después
+
+263
+00:25:29,940 --> 00:25:33,620
+de todo el contenido que vieron acá en la charla, solamente decirle que no tengan miedo
+
+264
+00:25:33,620 --> 00:25:35,980
+de empezar a romperlo todo. Muchas gracias.
+
+265
+00:25:35,980 --> 00:25:55,980
+Hola. En una buena cristiana espectacular las charlas y seguro que va a haber un montón
+
+266
+00:25:55,980 --> 00:26:01,620
+de preguntas, así que levantad la mano y os llega un micrófono.
+
+267
+00:26:01,620 --> 00:26:05,940
+Si no tienen preguntas ahora, me pueden encontrar luego quizás el mesón de registro también
+
+268
+00:26:05,940 --> 00:26:10,820
+en caso que quieran ir para allá. Si alguien está levantando la mano no vea nada.
+
+269
+00:26:10,820 --> 00:26:11,820
+Primero personal.
+
+270
+00:26:11,820 --> 00:26:15,780
+Entonces, no. Bueno, entonces realmente no quedaron ninguna duda.
+
+271
+00:26:15,780 --> 00:26:29,900
+Que no se ve nada de verdad. Estar aquí es como una pesadilla.
+
+272
+00:26:29,900 --> 00:26:49,340
+Estar así como un luce así como ¡ah! Eso me cae los pantalones.
+
+273
+00:26:49,340 --> 00:26:50,340
+Hola. Cristian.
+
+274
+00:26:50,340 --> 00:26:51,340
+Ah, hasta ahí.
+
+275
+00:26:51,340 --> 00:26:58,380
+Cristian, primero agradecerte muy divertida a tu charla y muy interesante. Quería preguntarte,
+
+276
+00:26:58,380 --> 00:27:03,660
+bueno, una curiosidad. ¿Cuánto tiempo estuviste traduciendo Python a español?
+
+277
+00:27:03,660 --> 00:27:09,300
+Si te soy sincero, lo que más me costó fue entender. Fue literalmente yo estaba en mi
+
+278
+00:27:09,300 --> 00:27:14,180
+casa y había hecho un par de charlas de si Python, bueno, en las redes que se dan en
+
+279
+00:27:14,180 --> 00:27:18,540
+mi página pueden mirarlas y dije, ¿se podrá traducir el lenguaje?
+
+280
+00:27:18,540 --> 00:27:23,260
+Y un día, si estuve, creo que fue la otra una tarde, de ver cómo pude usar n en vez
+
+281
+00:27:23,260 --> 00:27:27,540
+de n, porque no tenía idea de dónde estaba. Entonces, literalmente empezó a hacer greps
+
+282
+00:27:27,540 --> 00:27:33,900
+dentro de n entre comillas simples. Empecé a mirar todo lo... Porque claro, yo ya sabía
+
+283
+00:27:33,900 --> 00:27:37,740
+que estaba la gramática, pero como no me enteraba, no sabía que solamente tenía que
+
+284
+00:27:37,740 --> 00:27:44,300
+cambiar la gramática y luego regenerar todo y compilarlo. De hecho, el coi boca, como
+
+285
+00:27:44,300 --> 00:27:51,020
+yo le decía, es literalmente yo estaba copiando y pegando. Si se van acá la gramática y
+
+286
+00:27:51,020 --> 00:28:00,540
+vemos, por ejemplo, el para. Yo hice esta línea, la copié abajo y en vez del for statement,
+
+287
+00:28:00,540 --> 00:28:07,300
+pus un para statement y empecé a definirlo abajo una vez con eso. Y aquí ni siquiera
+
+288
+00:28:07,300 --> 00:28:12,180
+del volvema, ni siquiera así se hace. Volví y me di cuenta que había un comando especial,
+
+289
+00:28:12,180 --> 00:28:17,300
+que era make regen all, no sé qué cosa, menos no sé qué, y dije, bueno, lo uso, se regeneraba
+
+290
+00:28:17,300 --> 00:28:22,580
+todo, se generaba los tokens con para y lo use y cuando lo use, dije, tengo que hacer
+
+291
+00:28:22,580 --> 00:28:27,860
+una charla. Y fue de ahí cuando... Porque modifique eso y me di cuenta que era tan fácil,
+
+292
+00:28:27,860 --> 00:28:31,140
+fue hacer la charla, por ejemplo, estuve hace poco en la paella con el lovacia y modifique
+
+293
+00:28:31,140 --> 00:28:36,260
+paella con el lovaco, que fue un chel... Sí, y fue subir difícil porque los caracteres
+
+294
+00:28:36,260 --> 00:28:41,580
+no los tengo. Entonces, tenía que tener el clipboard, la sí como el caracter para...
+
+295
+00:28:41,580 --> 00:28:46,580
+¡Oh! Mira, y aquí se pone el print. Y una idea similar, ya la mostré en la paella donde
+
+296
+00:28:46,580 --> 00:28:49,260
+he estado en Estados Unidos, porque claro, es algo que a mí me gusta mucho, aquí no me
+
+297
+00:28:49,260 --> 00:28:54,580
+quiero poner así, abajo el inglés, pero para la gente que habla inglés es como, ¡ah!
+
+298
+00:28:54,580 --> 00:28:58,340
+aprendo a programar, ya. Y para mí, por lo menos yo donde vengo, de Chile, el aprender
+
+299
+00:28:58,340 --> 00:29:03,140
+inglés igual es un paso importante. Entonces, la gente toma por sentados que sabemos top.
+
+300
+00:29:03,140 --> 00:29:06,340
+Y de hecho, está la isa ya en una Lighting Talk en la Python US y también la gente,
+
+301
+00:29:06,340 --> 00:29:09,220
+claro, era como, ¡ah, ah, ah! No tengo ni idea de qué escribiste en la pantalla porque
+
+302
+00:29:09,220 --> 00:29:14,380
+no es español. Pero... Pero fue para eso. Pero después, las palabras son todas super
+
+303
+00:29:14,380 --> 00:29:20,100
+sencillas, las funciones, los built-in, también, literalmente, por ejemplo, copiar una, ver
+
+304
+00:29:20,100 --> 00:29:24,100
+cómo funciona el estructural de la función y adaptarle un poquito y jugar con eso.
+
+305
+00:29:24,100 --> 00:29:30,140
+Pero la charla la termina de hacer a veinte y media horas antes de venir acá, pero había
+
+306
+00:29:30,140 --> 00:29:33,980
+comenzado a hacer la estructura y reutilizar cosas de la otra, de la charla.
+
+307
+00:29:33,980 --> 00:29:44,420
+Bueno, y literalmente, en Guam, así que no se preocupe. No digamos que es guam. Bueno,
+
+308
+00:29:44,420 --> 00:29:45,420
+muchas gracias.
+
+309
+00:29:45,420 --> 00:30:04,420
+didntentino
+

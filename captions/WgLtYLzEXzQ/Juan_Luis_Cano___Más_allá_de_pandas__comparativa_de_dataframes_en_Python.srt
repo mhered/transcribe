@@ -1,0 +1,1708 @@
+1
+00:00:00,000 --> 00:00:16,000
+Música
+
+2
+00:00:16,000 --> 00:00:36,000
+Mientras va llegando la gente publicidad, no sé, self-plug, no sé cómo se dice esto en español, publico un noticiero de País en Científico todos los viernes donde cuento versiones nuevas de paquetes, cosas que me he encontrado, noticias, etc.
+
+3
+00:00:36,000 --> 00:00:48,000
+Así que bueno, por si alguien se quiere apuntar, es astrojuanlu.substack.com, que creo que para la gente que está aquí puede ser de interés por si no lo conocíais.
+
+4
+00:00:48,000 --> 00:01:02,000
+Bueno, pues vamos a empezar, lo primero pido disculpas porque normalmente suele ser un poco más efusivo, pero como veis mi voz no está en su mejor momento, pero por suerte la micrófonia veo que funciona bien.
+
+5
+00:01:02,000 --> 00:01:15,000
+Así que vamos a empezar, la charla se llama más allá de pandas y vamos a hablar de pandas un poquito, pero vamos a hablar más que nada de las alternativas modernas a pandas.
+
+6
+00:01:15,000 --> 00:01:19,000
+Veo que me vas a avisar si me quedan 15 minutos, ¿no? Perfecto.
+
+7
+00:01:19,000 --> 00:01:32,000
+Bueno, pues voy a hacer una pequeña introducción, voy a hablar un poco de pandas, que es para quienes no lo conozcan, pero muy brevemente vamos a hablar de cuáles han sido sus éxitos y cuáles son sus limitaciones.
+
+8
+00:01:32,000 --> 00:01:42,000
+Vamos a hablar un poco de cuáles son las alternativas que existen hoy en día, mapa conceptual que he hecho, un poco para aclararme yo y espero que a vosotras también.
+
+9
+00:01:42,000 --> 00:01:52,000
+Y después voy a invertir unos los minutos que me queden en hacer una pequeña demo de cada uno de estos paquetes, si acaso enfocándonos un poco más en el último que se llama Polars.
+
+10
+00:01:52,000 --> 00:01:57,000
+Y vamos a terminar con unas conclusiones y espero que quede tiempo para preguntas.
+
+11
+00:01:57,000 --> 00:02:06,000
+Antes que nada me presento, soy ingeniero aeronáutico de formación, pero bueno, digamos que soy un renegado de la industria.
+
+12
+00:02:06,000 --> 00:02:18,000
+Aeronáutica, hoy en día soy paitonista, autoidacta y ahora mismo tengo un foco o una idea de ver cómo la tecnología puede acelerar la economía social y solidaria.
+
+13
+00:02:18,000 --> 00:02:22,000
+Pero bueno, la charla no va de esto, es simplemente para que quede claro.
+
+14
+00:02:22,000 --> 00:02:33,000
+Ahora mismo trabajo como Data Scientist Advocate en Orquest, que es una empresa que crea un producto open source para orquestar pipelines de datos y lo vamos a ver muy rápidamente en la demo.
+
+15
+00:02:33,000 --> 00:02:43,000
+Actualmente organizó los meetups mensuales de Paidata Madrid, que ocurre en tercero, cuarto, jueves de mes y además aquí algunas personas del meetup que han venido, así que estoy muy contento.
+
+16
+00:02:43,000 --> 00:02:56,000
+Si alguien está en Madrid y le interesa paizando los datos y hacer mucho networking que hable con nosotros y bueno, he contribuido a varios paquetes del ecosistema Sci-Fi, Paidata, etc.
+
+17
+00:02:56,000 --> 00:03:00,000
+Me podéis seguir en GitHub o como decía en esta publicación en la semana.
+
+18
+00:03:00,000 --> 00:03:04,000
+Entonces vamos a hablar de Pandas.
+
+19
+00:03:04,000 --> 00:03:07,000
+¿Quién de aquí ha utilizado Pandas?
+
+20
+00:03:07,000 --> 00:03:14,000
+Y lo sigue utilizando regularmente más o menos, bueno, casi todo el mundo o todo el mundo perfecto.
+
+21
+00:03:14,000 --> 00:03:21,000
+Bueno, Pandas está en todas partes, está en todas partes y de hecho, este es un artículo ya un poco viejo de hace cinco años de esta cover flow,
+
+22
+00:03:21,000 --> 00:03:29,000
+que es la segunda parte de un análisis que hicieron de cómo es posible que Paidata Madrid haya crecido tanto en los últimos años.
+
+23
+00:03:29,000 --> 00:03:37,000
+Entonces, en la primera gráfica que no está aquí, se veía como Python, básicamente había pasado de ser un lenguaje cualquiera a ser el primer lenguaje por mucho,
+
+24
+00:03:37,000 --> 00:03:40,000
+en cuanto a número de preguntas en esta cover flow.
+
+25
+00:03:40,000 --> 00:03:50,000
+Y cuando se desagregaba un poco las etiquetas de esas preguntas, se veía que bueno, Django y Flask habían ido subiendo más o menos paulatinamente,
+
+26
+00:03:50,000 --> 00:03:58,000
+o Django a lo mejor estaba un poco estancado, pero lo que estaba causando este crecimiento desmesurado de Python era Pandas NumPy,
+
+27
+00:03:58,000 --> 00:04:03,000
+MatLedlib, es decir, todo el ecosistema de datos para Python.
+
+28
+00:04:03,000 --> 00:04:12,000
+Pero Pandas ya tiene unos añitos y se creo con una hipótesis en mente que hoy en día ya no se sostienen más,
+
+29
+00:04:12,000 --> 00:04:20,000
+y aquí hay un artículo que es de donde he sacado esto de Wes Makinny, que es el autor de Pandas, que se titula Las 10 cosas que odio de Pandas.
+
+30
+00:04:20,000 --> 00:04:23,000
+Y cómo las he arreglado con Apachi Arro, ¿no?
+
+31
+00:04:23,000 --> 00:04:31,000
+Entonces es muy recomendable el artículo, las diapositivas están online con este enlace, y yo de alguna forma las he resumido en dos.
+
+32
+00:04:31,000 --> 00:04:38,000
+Por un lado, hay muchas operaciones de Pandas que no aprovechan todos los cores de la CPU,
+
+33
+00:04:38,000 --> 00:04:43,000
+o que no hacen una optimización del query planning, que se llama, es decir, la secuencia de operaciones,
+
+34
+00:04:43,000 --> 00:04:46,000
+como se puede hacer de una manera más eficiente.
+
+35
+00:04:46,000 --> 00:04:54,000
+Y esto al final es una consecuencia de que cada una de las operaciones de Pandas son de evaluación,
+
+36
+00:04:54,000 --> 00:05:01,000
+IGRE Evaluation, no sé cómo se traduciría esto, egoísta o no lo sé, no perezosa, evaluación inmediata, podríamos decir.
+
+37
+00:05:01,000 --> 00:05:07,000
+Y entonces, si uno hace la típica cadena de métodos en Pandas, hace un Group By y una agregación,
+
+38
+00:05:07,000 --> 00:05:11,000
+y luego no se filtra otra cosa, etcétera, etcétera, cada una de esas operaciones intermedias,
+
+39
+00:05:11,000 --> 00:05:16,000
+crea un objeto de Pandas en memoria, que se tiene que almacenar, etcétera,
+
+40
+00:05:16,000 --> 00:05:21,000
+y eso dificulta que se puedan hacer ciertas optimizaciones.
+
+41
+00:05:21,000 --> 00:05:29,000
+Además, muchas de estas operaciones están intentando paralelizar en multíhilo,
+
+42
+00:05:29,000 --> 00:05:34,000
+pero como sabéis, en Python no puede haber más de una CPU al mismo tiempo,
+
+43
+00:05:34,000 --> 00:05:38,000
+siendo utilizada por el global Interpreter Lock,
+
+44
+00:05:38,000 --> 00:05:44,000
+si uno baja a más bajo nivel, sí que se puede evitar el global Interpreter Lock,
+
+45
+00:05:44,000 --> 00:05:50,000
+pero aunque ha habido cierto éxito paralelizando algunas operaciones, no ha sido completo.
+
+46
+00:05:50,000 --> 00:05:54,000
+Y luego, por otro lado, hay muchas cuestiones de cómo maneja Pandas la memoria,
+
+47
+00:05:54,000 --> 00:05:57,000
+que no están 100% bien conseguidas.
+
+48
+00:05:57,000 --> 00:06:02,000
+Por un lado, la forma en la que se manejan los datos faltantes, los NANDs, NANDs, etcétera,
+
+49
+00:06:02,000 --> 00:06:06,000
+es inconsistente, hay básicamente dos formas de hacerlo,
+
+50
+00:06:06,000 --> 00:06:13,000
+teniendo lo que llaman un sentinel value, que es un not a date, not a time, not a number, lo que sea,
+
+51
+00:06:13,000 --> 00:06:19,000
+y la otra es utilizando máscaras, que es decir, bueno, estos son los valores válidos,
+
+52
+00:06:19,000 --> 00:06:23,000
+con una máscara buleana, y estos son los valores reales, ¿no?
+
+53
+00:06:23,000 --> 00:06:27,000
+Entonces, lo que se intentó fue el primer método con Pandas,
+
+54
+00:06:27,000 --> 00:06:31,000
+porque se pensó que se iba a utilizar menos memoria, y de hecho, así es,
+
+55
+00:06:31,000 --> 00:06:36,000
+entonces lo que pasa es que te cargas todas las optimizaciones que puede hacer la CPU
+
+56
+00:06:36,000 --> 00:06:39,000
+al intentar recorrer esos valores de la manera más rápida posible.
+
+57
+00:06:39,000 --> 00:06:45,000
+Y luego, además, con enteros no se podía, ahora hay así, pero no está así por defecto, etcétera, etcétera.
+
+58
+00:06:45,000 --> 00:06:49,000
+Y luego, más cosas, como se almacenan los strings,
+
+59
+00:06:49,000 --> 00:06:53,000
+que no se puede hacer memory mapping, y más cosas.
+
+60
+00:06:53,000 --> 00:06:59,000
+Entonces, yo estaba investigando todas estas alternativas,
+
+61
+00:06:59,000 --> 00:07:07,000
+y yo no sé si os pasa a vosotros, que seguro que habéis oído hablar de modding, ray, dash, etcétera, etcétera.
+
+62
+00:07:07,000 --> 00:07:12,000
+Y si estáis como yo, hace unos meses, pues tenéis una idea de que existen,
+
+63
+00:07:12,000 --> 00:07:16,000
+pero no os queda claro cuál es la que valdría para vuestro proyecto,
+
+64
+00:07:16,000 --> 00:07:18,000
+si es muy difícil migrar desde Pandas o no, etcétera.
+
+65
+00:07:18,000 --> 00:07:25,000
+Así que, inspirado en el cuadrado mágico de Garner, me dice el DataFrames Charming Quadrangle,
+
+66
+00:07:25,000 --> 00:07:32,000
+en marcas registradas, mentiras, no la he registrado, pero bueno, está aquí Creative Commons Attribution.
+
+67
+00:07:32,000 --> 00:07:36,000
+Y he dividido las alternativas como en estos cuatro cuadrantes,
+
+68
+00:07:36,000 --> 00:07:42,000
+en el eje horizontal, cuánto se parecen a Pandas hacia la derecha, mucho más diferentes,
+
+69
+00:07:42,000 --> 00:07:46,000
+y en el eje vertical, cuál sería el tamaño de data set que podríamos manejar.
+
+70
+00:07:46,000 --> 00:07:50,000
+Entonces, en la esquina inferior izquierda está Pandas, y además está Rapids,
+
+71
+00:07:50,000 --> 00:07:57,000
+que es un proyecto muy interesante que toma la API de Pandas y te permite aprovechar la GPU, básicamente.
+
+72
+00:07:57,000 --> 00:08:00,000
+Entonces, hay algunas operaciones que son muchísimo más rápidas.
+
+73
+00:08:00,000 --> 00:08:06,000
+Luego, en el eje vertical, están Dask y Modding, en realidad Modding utiliza Dask,
+
+74
+00:08:06,000 --> 00:08:16,000
+y lo que hacen estos proyectos es que toman la API de Pandas y leen conjuntos de datos muy grandes,
+
+75
+00:08:16,000 --> 00:08:18,000
+troceándolos en partes más pequeñas, básicamente.
+
+76
+00:08:18,000 --> 00:08:24,000
+Entonces, lo que te aporta Dask y Modding es que si tú quisieres leer un archivo muy grande
+
+77
+00:08:24,000 --> 00:08:29,000
+y hacer una operación de agregación, tú tendrías que leerlo poco a poco,
+
+78
+00:08:29,000 --> 00:08:36,000
+ir almacenando los resultados intermedios, etcétera, pues ellos te hacen todo esto de manera más o menos transparente.
+
+79
+00:08:36,000 --> 00:08:43,000
+Bajo a la derecha están las alternativas que a mí me interesan, porque se desvían un poco de la API de Pandas,
+
+80
+00:08:43,000 --> 00:08:47,000
+y por tanto, no están sujetas a estas limitaciones de las que he hablado en la diapositiva anterior.
+
+81
+00:08:47,000 --> 00:08:49,000
+Y en ellas nos vamos a fijar un poco más.
+
+82
+00:08:49,000 --> 00:08:54,000
+Y arriba a la derecha he puesto este cuadrante que lo he llamado Recovery in Hadoopers,
+
+83
+00:08:54,000 --> 00:08:59,000
+porque no tengo ni idea de Spark, y tuve muy malas experiencias con Spark 1.6 y no lo he tocado nunca más,
+
+84
+00:08:59,000 --> 00:09:06,000
+así que si sois expertos o amantes de Spark, pues seguramente tendréis mucho que aportar,
+
+85
+00:09:06,000 --> 00:09:08,000
+pero yo no tengo nada que aportar en este cuadrante.
+
+86
+00:09:08,000 --> 00:09:13,000
+Y además no está muy alineado con el stackPaidata en general,
+
+87
+00:09:13,000 --> 00:09:18,000
+no es como que Dask, Modin están mucho más integrados que los demás, que es por lo que me interesa.
+
+88
+00:09:18,000 --> 00:09:24,000
+Entonces vamos a hablar un poco más en profundidad de las alternativas a Pandas,
+
+89
+00:09:24,000 --> 00:09:27,000
+o sea las que no se parecen, pero que tratan de aportar algo diferente.
+
+90
+00:09:27,000 --> 00:09:34,000
+Y la primera y la más importante es Apache Arrow, no sé quién estuvo el viernes en el taller de Guillen Borrell,
+
+91
+00:09:34,000 --> 00:09:39,000
+pues se mencionó mucho Arrow, también en el contexto de DacDB,
+
+92
+00:09:39,000 --> 00:09:46,000
+que es un proyecto que no está mencionado aquí, pero que utiliza Arrow por debajo para acelerar mucho las operaciones.
+
+93
+00:09:46,000 --> 00:09:53,000
+Entonces Arrow realmente es un formato en memoria para procesar los datos,
+
+94
+00:09:53,000 --> 00:09:59,000
+que tiene una correspondencia con un par de formatos en disco, que son Apache Parked,
+
+95
+00:09:59,000 --> 00:10:04,000
+que es el más famoso, y Fidder, que es un formato nativo de Arrow,
+
+96
+00:10:04,000 --> 00:10:09,000
+pero bueno, que básicamente es lo mismo que Parked, así que podemos ignorarlo de momento.
+
+97
+00:10:09,000 --> 00:10:15,000
+Arrow está pensado para dos tipos de procesamiento, uno que lo llaman Random Access,
+
+98
+00:10:15,000 --> 00:10:22,000
+o sea que tú tengas un conjunto finito de datos y en cualquier momento quieres poder acceder a cualquier parte de ellos,
+
+99
+00:10:22,000 --> 00:10:30,000
+y luego tiene otro formato que es el Streaming, que es muy interesante porque te permite tener un chorro de datos,
+
+100
+00:10:30,000 --> 00:10:37,000
+que en principio no se termina nunca, y entonces para aplicaciones, tiempo real, etc. podría ser interesante.
+
+101
+00:10:37,000 --> 00:10:42,000
+Utiliza memory mapping para hacer un proceso de memoria mucho más rápido,
+
+102
+00:10:42,000 --> 00:10:47,000
+es decir que para la gente que sepa Linux y tal, ellos saben la definición,
+
+103
+00:10:47,000 --> 00:10:54,000
+pero mi definición de andar por casa es que mapea una región de la memoria de forma que es muy transparente acceder a esos datos.
+
+104
+00:10:54,000 --> 00:11:00,000
+Se puede utilizar desde Python, los bindings de Python utilizan la implementación en C++,
+
+105
+00:11:00,000 --> 00:11:06,000
+y luego hay implementaciones en un montón de lenguajes en Rust y en muchos más.
+
+106
+00:11:06,000 --> 00:11:10,000
+No es exactamente una alternativa, espero si tengo tiempo el ademo, lo vamos a ver,
+
+107
+00:11:10,000 --> 00:11:17,000
+pero yo lo considero una capa básica para construir alternativas a pandas, etc.
+
+108
+00:11:17,000 --> 00:11:28,000
+Luego está Vex, aquí alguien conoce Vex, los astrónomos conocen Vex, tiene mucho sentido,
+
+109
+00:11:28,000 --> 00:11:37,000
+es una biblioteca Python que no es muy conocida, que se pensó para analizar los datos del experimento Gaia,
+
+110
+00:11:37,000 --> 00:11:43,000
+que son unos telescopios que bajan una cantidad de fotografías del firmamento inmensa,
+
+111
+00:11:43,000 --> 00:11:48,000
+y está pensado para lo que se llama out of core processing,
+
+112
+00:11:48,000 --> 00:11:54,000
+es decir, que tú puedes procesar un archivo que es mucho más grande que lo que te cabe en memoria,
+
+113
+00:11:54,000 --> 00:11:59,000
+de nuevo como trayendo cachos, etc.
+
+114
+00:11:59,000 --> 00:12:03,000
+Y Vex se encarga de hacer todo esto de manera transparente.
+
+115
+00:12:03,000 --> 00:12:08,000
+Inicialmente se construyó sobre HDF5, que es un formato muy científico
+
+116
+00:12:08,000 --> 00:12:14,000
+y con un estándar un poco infumable de leer, por lo cual se está intentando evolucionar hacia otras cosas,
+
+117
+00:12:14,000 --> 00:12:18,000
+pero hoy en día tiene soporte para parquet también.
+
+118
+00:12:18,000 --> 00:12:24,000
+Y tiene muchas cosas de visualización muy chulas para nubes de puntos masivas y demás,
+
+119
+00:12:24,000 --> 00:12:27,000
+que están bastante bien hechos, se parece mucho a Data Shader,
+
+120
+00:12:27,000 --> 00:12:33,000
+y tiene una apis similar a pandas, pero se desvía bastante.
+
+121
+00:12:33,000 --> 00:12:39,000
+Tiene una cosa interesante que es que tiene un sistema de expresiones de computación perezosas,
+
+122
+00:12:39,000 --> 00:12:44,000
+pero a mi gusto menos potencia que la de Polars.
+
+123
+00:12:44,000 --> 00:12:51,000
+Y ahora llegamos a Polars, que esta charla de hecho está pensada como para hablar de las alternativas y tal,
+
+124
+00:12:51,000 --> 00:12:53,000
+y no la quiero dar más porque estoy enamorado de Polars,
+
+125
+00:12:53,000 --> 00:12:57,000
+entonces ya a partir de hoy quiero hablar de dar charlas de Polars,
+
+126
+00:12:57,000 --> 00:13:03,000
+porque es una biblioteca de Data Frames que no se parece mucho a pandas,
+
+127
+00:13:03,000 --> 00:13:06,000
+la API puede recordar un poco más a Spark, etc.
+
+128
+00:13:06,000 --> 00:13:14,000
+Pero se siente muy natural en vez de tener un montón de métodos cada Data Frame,
+
+129
+00:13:14,000 --> 00:13:17,000
+que no sé si os pasa a vosotros, pero yo cuando quiero hacer algo en pandas
+
+130
+00:13:17,000 --> 00:13:22,000
+me paso un rato en la documentación mirando a ver cuál es el método que hace exactamente lo que quiero,
+
+131
+00:13:22,000 --> 00:13:28,000
+sino por supuesto siempre alguien en esta Coverflow que ha hecho 300 líneas de código para hacer eso,
+
+132
+00:13:28,000 --> 00:13:33,000
+y bueno, como que la curva de aprendizaje a veces se aplara un poco,
+
+133
+00:13:33,000 --> 00:13:39,000
+pero en Polars tiene menos métodos con la idea de que tú los puedas combinar de una manera más expresiva.
+
+134
+00:13:39,000 --> 00:13:45,000
+Tiene un modo egoísta y otro modo perezoso,
+
+135
+00:13:45,000 --> 00:13:51,000
+que sirve para que las operaciones sean mucho más optimizables,
+
+136
+00:13:51,000 --> 00:13:56,000
+y tiene un sistema de expresiones que me parece súper interesante y que ahora lo voy a enseñar en la demo.
+
+137
+00:13:56,000 --> 00:14:02,000
+El proyecto es muy joven, o sea, lo creó un señor holandés que se aburría en la pandemia,
+
+138
+00:14:02,000 --> 00:14:10,000
+o sea, hace dos años, en mayo de 2020, y bueno, y si tenemos tiempo podemos hablar un poco más de ello.
+
+139
+00:14:10,000 --> 00:14:13,000
+Más alternativas de las que no vamos a hablar,
+
+140
+00:14:13,000 --> 00:14:18,000
+QDF, que depende del proyecto RAPIDS, como decía, para usar pandas sobre la GPU,
+
+141
+00:14:18,000 --> 00:14:23,000
+y MODIN, que son el Spark de pandas, por así decir, un poco,
+
+142
+00:14:23,000 --> 00:14:26,000
+que permiten utilizar pandas para conjuntos muy grandes,
+
+143
+00:14:26,000 --> 00:14:32,000
+y luego está Spark propiamente dicho que tiene su ecosistema separado, más basado en escala y demás.
+
+144
+00:14:32,000 --> 00:14:40,000
+Entonces, hasta aquí la introducción son las y ocho, o sea, que llevo 20 minutos,
+
+145
+00:14:40,000 --> 00:14:44,000
+así que voy a hacer una pequeña demo.
+
+146
+00:14:44,000 --> 00:14:49,000
+Estamos bien, sí.
+
+147
+00:14:57,000 --> 00:15:00,000
+Yo no le veo.
+
+148
+00:15:00,000 --> 00:15:03,000
+Pero, ¿y por lo que dice esta bayer?
+
+149
+00:15:03,000 --> 00:15:07,000
+Bueno, yo qué sé, es que por la noche ayer pasaron cosas.
+
+150
+00:15:07,000 --> 00:15:10,000
+Bueno, esto es...
+
+151
+00:15:10,000 --> 00:15:14,000
+A lo mejor, a pura, hasta el último minuto, no te obvies.
+
+152
+00:15:14,000 --> 00:15:20,000
+Esto es unos scripts y unos notebooks que tengo en Orquest,
+
+153
+00:15:20,000 --> 00:15:28,000
+que no está muy pensado para una resolución así tan pequeña, perdón.
+
+154
+00:15:33,000 --> 00:15:39,000
+Entonces, me voy a bajar tres conjuntos de datos, no supermasivos,
+
+155
+00:15:39,000 --> 00:15:44,000
+más grandes que la RAM, digamos, de nuevo para los que estaban en el taller de Guillem Borrell,
+
+156
+00:15:44,000 --> 00:15:47,000
+pues mi definición no hubiera sido lo que no cabe en la RAM.
+
+157
+00:15:47,000 --> 00:15:52,000
+Entonces, me he bajado tres dataset,
+
+158
+00:15:52,000 --> 00:15:57,000
+uno muy típico que es el de los taxis de Nueva York, que lo habréis visto además,
+
+159
+00:15:57,000 --> 00:16:01,000
+porque si visualizas la nube de puntos de los taxis y tal,
+
+160
+00:16:01,000 --> 00:16:04,000
+pues sale la silueta de Manhattan y Brooklyn y no sé qué, y es muy chulo.
+
+161
+00:16:04,000 --> 00:16:09,000
+Me he bajado otro de retrasos de aerolíneas, que como soy aeronáutico encima,
+
+162
+00:16:09,000 --> 00:16:16,000
+pues me llega a la patata, y otro de un muestre o de un 1% de está cover flow,
+
+163
+00:16:16,000 --> 00:16:21,000
+de preguntas y respuestas de las que se pueden estrear cosas bastante chulas también.
+
+164
+00:16:21,000 --> 00:16:24,000
+Entonces, vamos a empezar por ARROW.
+
+165
+00:16:24,000 --> 00:16:29,000
+Y he preparado aquí un pequeño notebook para que se vea un poco qué es ARROW que pinta tiene.
+
+166
+00:16:29,000 --> 00:16:33,000
+Entonces, voy a pasar un poco rápido por las dipositivas, por las celdas, perdón.
+
+167
+00:16:33,000 --> 00:16:35,000
+¿Se ve bien así o lo amplí un poquito más?
+
+168
+00:16:35,000 --> 00:16:38,000
+Un poquito más, así o más.
+
+169
+00:16:38,000 --> 00:16:40,000
+Así.
+
+170
+00:16:40,000 --> 00:16:45,000
+Vale, pues aquí estoy utilizando la versión 7.0, que no es la última,
+
+171
+00:16:45,000 --> 00:16:48,000
+si no recuerdo mal, llevar por la 9.0.
+
+172
+00:16:48,000 --> 00:16:53,000
+Además, hay un chico catalán que trabaja en Voltron, la empresa que hace ARROW,
+
+173
+00:16:53,000 --> 00:16:57,000
+Raúl Cumplido, y él nos mantiene un poco al tanto de lo que pasa.
+
+174
+00:16:57,000 --> 00:17:03,000
+Entonces, aquí voy a leer de momento uno de los archivos del conjunto de datos
+
+175
+00:17:03,000 --> 00:17:06,000
+de los taxis de Nueva York.
+
+176
+00:17:06,000 --> 00:17:14,000
+Y como veis, hay una función RIT-CSV, que me lee el CSV, ¿no?
+
+177
+00:17:14,000 --> 00:17:19,000
+Entonces, esto me va a devolver en un momento dado una tabla de ARROW
+
+178
+00:17:19,000 --> 00:17:22,000
+que tiene 12 millones de filas.
+
+179
+00:17:22,000 --> 00:17:28,000
+Esto me da el esquema, que es los tipos de las columnas, ¿no?
+
+180
+00:17:28,000 --> 00:17:34,000
+Entonces, sé que el vendor ID es un entero, que hay fecha de recogida
+
+181
+00:17:34,000 --> 00:17:38,000
+y fecha de suelta, que son timestamps, etcétera, etcétera.
+
+182
+00:17:38,000 --> 00:17:44,000
+Esto, a mí me está ocupando 1.8 gigas, más o menos, en memoria.
+
+183
+00:17:44,000 --> 00:17:48,000
+Y con este tipo de sintaxis, parecida un poco a pandas,
+
+184
+00:17:48,000 --> 00:17:50,000
+podría acceder a una columna concreta, ¿no?
+
+185
+00:17:50,000 --> 00:17:53,000
+Me da una vista de los datos, ¿no?
+
+186
+00:17:53,000 --> 00:17:57,000
+Y estos puntos suspensivos están ocultando muchas cosas,
+
+187
+00:17:57,000 --> 00:18:01,000
+pero, bueno, me muestra, no sé, los 10 primeros valores y los últimos, ¿no?
+
+188
+00:18:01,000 --> 00:18:06,000
+Puedo seleccionar varias columnas que se hacen con el método SELECT.
+
+189
+00:18:06,000 --> 00:18:10,000
+Entonces, aquí estoy seleccionando solo 2.
+
+190
+00:18:10,000 --> 00:18:16,000
+Me puedo quedar con las filas a 100, 101 y 102.
+
+191
+00:18:16,000 --> 00:18:22,000
+Lo puedo convertir a pandas y me puedo quedar también con una lista concreta de filas.
+
+192
+00:18:22,000 --> 00:18:26,000
+Pero, bueno, hasta aquí, digamos, nada espectacular.
+
+193
+00:18:26,000 --> 00:18:29,000
+O sea, seleccionar filas y columnas de un data frame,
+
+194
+00:18:29,000 --> 00:18:34,000
+tampoco tiene mucha enjundia, pero lo interesante es lo que viene ahora.
+
+195
+00:18:34,000 --> 00:18:37,000
+Esto lo voy a apagar.
+
+196
+00:18:37,000 --> 00:18:47,000
+Y vamos a ver el otro notebook, que es como hacer un memory mapping con Payarro,
+
+197
+00:18:47,000 --> 00:18:49,000
+porque esto es mucho más interesante.
+
+198
+00:18:49,000 --> 00:18:52,000
+Ahora, cuando se cargue el kernel.
+
+199
+00:18:52,000 --> 00:18:58,000
+Vale, pues de nuevo importo Payarro y ahora, como veis,
+
+200
+00:18:58,000 --> 00:19:03,000
+la celda número 2 se ha ejecutado de una manera prácticamente inmediata
+
+201
+00:19:03,000 --> 00:19:06,000
+y esto ocupa 0 mbps en memoria, es decir, que realmente no he cargado los datos,
+
+202
+00:19:06,000 --> 00:19:09,000
+sino que estoy haciendo lo que comentaba antes, un memory mapping.
+
+203
+00:19:09,000 --> 00:19:13,000
+Este memory map tiene una interfaz de tipo fichero,
+
+204
+00:19:13,000 --> 00:19:17,000
+con lo cual puedo decir dónde está el punto de interno del fichero
+
+205
+00:19:17,000 --> 00:19:20,000
+y veo que está en la posición 0, o sea, al principio del todo.
+
+206
+00:19:20,000 --> 00:19:27,000
+Y puedo utilizar la función opencsv, que no es readcsv,
+
+207
+00:19:27,000 --> 00:19:32,000
+y esto lo que va a hacer es crear un lector de Payarro
+
+208
+00:19:32,000 --> 00:19:37,000
+que puede utilizar este memory mapping para ahora sí darme los datos.
+
+209
+00:19:37,000 --> 00:19:44,000
+En el momento que yo creo el lector csv, ya el punto interno del fichero avanza.
+
+210
+00:19:44,000 --> 00:19:48,000
+¿Por qué? Porque está mirando cuáles son los tipos de las columnas
+
+211
+00:19:48,000 --> 00:19:51,000
+y para eso se mira unas cuantas filas y dice,
+
+212
+00:19:51,000 --> 00:19:53,000
+esto tiene pinta de entero.
+
+213
+00:19:53,000 --> 00:19:57,000
+Entonces, ya esto me da el esquema, si no lo podría tener.
+
+214
+00:19:57,000 --> 00:20:02,000
+Y ahora lo que voy a hacer es, vale, esto está bien,
+
+215
+00:20:02,000 --> 00:20:04,000
+porque el fichero o el lector yo existe,
+
+216
+00:20:04,000 --> 00:20:11,000
+voy a convertir este fichero, que recuerdo, era un csv, a un formato parquet.
+
+217
+00:20:11,000 --> 00:20:15,000
+Entonces lo que estoy haciendo aquí lo explico mientras va es,
+
+218
+00:20:15,000 --> 00:20:17,000
+me he importado payarro.parquet.
+
+219
+00:20:17,000 --> 00:20:19,000
+He creado un parquet writer,
+
+220
+00:20:19,000 --> 00:20:21,000
+donde le estoy diciendo la ruta del archivo que quiero escribir,
+
+221
+00:20:21,000 --> 00:20:26,000
+y el esquema, es decir, que los tipos de datos de las columnas
+
+222
+00:20:26,000 --> 00:20:29,000
+inferidas de csv van a ser las mismas que va a tener el archivo arro.
+
+223
+00:20:29,000 --> 00:20:33,000
+Y estoy iterando aquí sobre bloques.
+
+224
+00:20:33,000 --> 00:20:39,000
+Entonces, leo un bloque de csv, lo escribo, incremento en 1,
+
+225
+00:20:39,000 --> 00:20:42,000
+aquí por cada 100 digo, cuánta memoria estás usando,
+
+226
+00:20:42,000 --> 00:20:44,000
+y está usando 4 megas, o sea, ridículo,
+
+227
+00:20:44,000 --> 00:20:46,000
+ridículamente pequeño.
+
+228
+00:20:46,000 --> 00:20:50,000
+Y después de un tiempo prudencial,
+
+229
+00:20:50,000 --> 00:20:52,000
+que espero que esté llegando ya su fin,
+
+230
+00:20:52,000 --> 00:20:56,000
+esto va a terminar de escribir el archivo parquet,
+
+231
+00:20:56,000 --> 00:20:58,000
+entonces estaría pasando las 12 millones de filas de csv
+
+232
+00:20:58,000 --> 00:21:02,000
+al archivo parquet, ya está, ya terminó,
+
+233
+00:21:02,000 --> 00:21:05,000
+no sé, 30 segundos, 60 segundos, algo así.
+
+234
+00:21:05,000 --> 00:21:08,000
+Y no sé si esta es la forma más eficiente de hacerlo,
+
+235
+00:21:08,000 --> 00:21:11,000
+pero me posibilita hacerlo,
+
+236
+00:21:11,000 --> 00:21:15,000
+porque yo no puedo leer el archivo entero en memoria posiblemente,
+
+237
+00:21:15,000 --> 00:21:18,000
+y luego escribirlo, con lo cual esto es mucho más eficiente.
+
+238
+00:21:18,000 --> 00:21:24,000
+Y además, hay una diferencia notable del tamaño del archivo,
+
+239
+00:21:24,000 --> 00:21:27,000
+porque si veis el original csv eran casi dos gigas,
+
+240
+00:21:27,000 --> 00:21:30,000
+y el parquet que tiene exactamente los mismos datos,
+
+241
+00:21:30,000 --> 00:21:36,000
+ocupa menos de 500 megas, moralje de la historia, usar parquet,
+
+242
+00:21:36,000 --> 00:21:39,000
+que además no tiene los problemas de csv,
+
+243
+00:21:39,000 --> 00:21:42,000
+que los tipos de datos no se saben, etcétera.
+
+244
+00:21:42,000 --> 00:21:46,000
+Y ahora lo que estoy haciendo aquí es recargar el parquet,
+
+245
+00:21:46,000 --> 00:21:49,000
+me quedo con el esquema, que veo que, bueno,
+
+246
+00:21:49,000 --> 00:21:51,000
+no lo voy a inspeccionar uno a uno, pero se parece,
+
+247
+00:21:51,000 --> 00:21:56,000
+y voy a hacer otro ejemplo, que es escribir estos datos
+
+248
+00:21:56,000 --> 00:21:58,000
+en un buffer de Python,
+
+249
+00:21:58,000 --> 00:22:00,000
+entonces me voy a crear un archivo bytes.io,
+
+250
+00:22:00,000 --> 00:22:05,000
+y entonces voy a crear un nuevo stream de datos,
+
+251
+00:22:05,000 --> 00:22:11,000
+y ahí me voy a escribir los cinco primeros bloques del archivo parquet, ¿no?
+
+252
+00:22:11,000 --> 00:22:17,000
+Ahora, con este punto seek, revovino el buffer al principio del todo,
+
+253
+00:22:17,000 --> 00:22:21,000
+me leo los bloques que he escrito,
+
+254
+00:22:21,000 --> 00:22:25,000
+y ahora me puedo crear una tabla de payarro, desde estos baches.
+
+255
+00:22:25,000 --> 00:22:29,000
+Entonces, he pasado de un parquet en disco a un objeto que estaba en memoria,
+
+256
+00:22:29,000 --> 00:22:32,000
+y de ese objeto que estaba en memoria me he creado una tabla,
+
+257
+00:22:32,000 --> 00:22:36,000
+no, con lo cual, esto me sirve para pasar datos por la red,
+
+258
+00:22:36,000 --> 00:22:39,000
+para un montón de cosas.
+
+259
+00:22:39,000 --> 00:22:42,000
+Y esta parte de la demo ya está.
+
+260
+00:22:48,000 --> 00:22:51,000
+Con mucho dolor de mi corazón, el notebook de Vex,
+
+261
+00:22:51,000 --> 00:22:54,000
+me lo voy a saltar, porque encima nadie ha levantado la mano,
+
+262
+00:22:54,000 --> 00:22:57,000
+salvo los astrónomos, perdón,
+
+263
+00:22:57,000 --> 00:23:01,000
+y así me puedo detener un poquito más por las que es más interesante,
+
+264
+00:23:01,000 --> 00:23:05,000
+igual todo esto está online, le podéis echar un vistazo.
+
+265
+00:23:05,000 --> 00:23:11,000
+Lo voy a mirar muy rápido para que se vea, pero no me voy a detener mucho.
+
+266
+00:23:11,000 --> 00:23:16,000
+Aquí he estado utilizando el conjunto de datos de los retrasos de las aerolíneas,
+
+267
+00:23:16,000 --> 00:23:20,000
+no lo voy a ir ejecutando porque hay algunas cosas que tardan un poquito de tiempo.
+
+268
+00:23:20,000 --> 00:23:24,000
+Entonces, bueno, de nuevo me he pucado con unas columnas,
+
+269
+00:23:24,000 --> 00:23:26,000
+puedo filtrar las filas, etcétera.
+
+270
+00:23:26,000 --> 00:23:31,000
+Aquí lo interesante es que cuando yo hago operaciones con las columnas,
+
+271
+00:23:31,000 --> 00:23:36,000
+esto realmente no ejecuta las operaciones, sino que crea una expresión al vuelo,
+
+272
+00:23:36,000 --> 00:23:41,000
+que es una representación de esa operación, pero que no está ejecutada todavía.
+
+273
+00:23:41,000 --> 00:23:44,000
+Entonces, por ejemplo, si quiero calcular el retraso,
+
+274
+00:23:44,000 --> 00:23:50,000
+pues puedo restar el tiempo real transcurrido,
+
+275
+00:23:50,000 --> 00:23:56,000
+menos el tiempo transcurrido programado, y eso me da el retraso.
+
+276
+00:23:56,000 --> 00:24:00,000
+Además, como veis, puedo meter la operación dentro del índice,
+
+277
+00:24:00,000 --> 00:24:03,000
+esto es un poco raro para los que habíamos usado NumEx,
+
+278
+00:24:03,000 --> 00:24:08,000
+les sonará y me crea el mismo tipo de objeto,
+
+279
+00:24:08,000 --> 00:24:13,000
+aquí de nuevo puedo meter la raíz cuadrada dentro de eso.
+
+280
+00:24:13,000 --> 00:24:18,000
+Lo interesante es que yo, en el momento que ejecuto una agregación,
+
+281
+00:24:18,000 --> 00:24:22,000
+es decir, dame la suma, dame la media, dame el primero, etcétera, etcétera,
+
+282
+00:24:22,000 --> 00:24:25,000
+eso ya sí que ejecuta la operación,
+
+283
+00:24:25,000 --> 00:24:30,000
+y ya va barriendo todas las filas del conjunto de datos original,
+
+284
+00:24:30,000 --> 00:24:36,000
+y me da el numerito, que será lo que sea, que el retraso medio es menos 4,
+
+285
+00:24:36,000 --> 00:24:40,000
+es decir, que media a las aerolíneas llegan antes de tiempo,
+
+286
+00:24:40,000 --> 00:24:45,000
+esto está bien, pero, por ejemplo, si yo quise medir retrasos, tendría que filtrar.
+
+287
+00:24:45,000 --> 00:24:51,000
+Dame los vuelos que no estén cancelados y cuyo retraso sea mayor que cero,
+
+288
+00:24:51,000 --> 00:24:58,000
+y esto ya me posibilitaría hacer ese análisis.
+
+289
+00:24:58,000 --> 00:25:02,000
+Hay una cosa que me fastidió un montón de Bex,
+
+290
+00:25:02,000 --> 00:25:06,000
+que es que como estaba basado en HTT5, yo de primera,
+
+291
+00:25:06,000 --> 00:25:11,000
+si intenté leer los datos en CSV, y se me tostó el ordenador completamente,
+
+292
+00:25:11,000 --> 00:25:15,000
+y yo no entendía que estaba pasando, porque digo esto si es out of core,
+
+293
+00:25:15,000 --> 00:25:18,000
+pues no entiendo por qué me está explotando el ordenador,
+
+294
+00:25:18,000 --> 00:25:22,000
+pero lo que pasa es que a leer esos CSVs por debajo sin decirme nada,
+
+295
+00:25:22,000 --> 00:25:25,000
+lo estaba convirtiendo a HTT5, o sea, sin decirme nada,
+
+296
+00:25:25,000 --> 00:25:30,000
+hay que leer la documentación, pero me pilló desprevenido,
+
+297
+00:25:30,000 --> 00:25:35,000
+me trabajaba en RITDox, por cierto, el año pasado.
+
+298
+00:25:35,000 --> 00:25:39,000
+Y entonces, como que me llenó el disco, fue un problema,
+
+299
+00:25:39,000 --> 00:25:46,000
+y por eso antes de hacer esto he convertido los CSVs originales a parquet,
+
+300
+00:25:46,000 --> 00:25:48,000
+y ahí ya funcionó todo mucho mejor.
+
+301
+00:25:48,000 --> 00:25:51,000
+Pero me estoy quedando un poquito corto de tiempo,
+
+302
+00:25:51,000 --> 00:25:54,000
+así que vamos a pasar.
+
+303
+00:25:54,000 --> 00:25:59,000
+Victor todavía no le veo, pero ya vendrá.
+
+304
+00:25:59,000 --> 00:26:04,000
+Y nada, os voy a enseñar el de Polars.
+
+305
+00:26:07,000 --> 00:26:12,000
+Y aquí para... venga, un poquito de brillo.
+
+306
+00:26:12,000 --> 00:26:17,000
+Voy a leer estos datos, que como digo son una muestra de esta coverflow,
+
+307
+00:26:17,000 --> 00:26:23,000
+y tengo 1,8 gigas de preguntas, y se centrarían 3 megas de etiquetas.
+
+308
+00:26:23,000 --> 00:26:27,000
+Entonces, de alguna forma, el objetivo final de este notebook en concreto
+
+309
+00:26:27,000 --> 00:26:31,000
+es saber cuántas preguntas de país son había, etcétera, etcétera,
+
+310
+00:26:31,000 --> 00:26:35,000
+y para hacer eso no es tan directo como uno pudiera pensar.
+
+311
+00:26:35,000 --> 00:26:38,000
+Entonces, aquí he importado Polars.
+
+312
+00:26:38,000 --> 00:26:43,000
+Polars tiene una función RICSV, que lee CSVs.
+
+313
+00:26:43,000 --> 00:26:46,000
+Entonces, aquí me está devolviendo un objeto también,
+
+314
+00:26:46,000 --> 00:26:50,000
+que se llama DataFrame, igual que en Pandas, aunque es un objeto distinto,
+
+315
+00:26:50,000 --> 00:26:54,000
+y algo que es muy importante tener en cuenta...
+
+316
+00:26:54,000 --> 00:26:57,000
+Esto está andando todavía, ¿no?
+
+317
+00:26:57,000 --> 00:27:01,000
+Algo que es muy importante tener en cuenta...
+
+318
+00:27:01,000 --> 00:27:04,000
+Es que este que en él se me ha muerto, ¿no?
+
+319
+00:27:04,000 --> 00:27:09,000
+Un momento.
+
+320
+00:27:09,000 --> 00:27:14,000
+A ver, vamos de nuevo.
+
+321
+00:27:14,000 --> 00:27:20,000
+Vale, a ver.
+
+322
+00:27:20,000 --> 00:27:24,000
+Intento número 2.
+
+323
+00:27:24,000 --> 00:27:28,000
+Algo que es muy importante tener en cuenta es que Polars
+
+324
+00:27:28,000 --> 00:27:31,000
+es una biblioteca para in-memory datasets.
+
+325
+00:27:31,000 --> 00:27:36,000
+Es decir, que no es como el cuadrante superior izquierdo,
+
+326
+00:27:36,000 --> 00:27:41,000
+que me da para analizar conjuntos de datos masivos, etcétera.
+
+327
+00:27:41,000 --> 00:27:45,000
+Si utilizo el modo no pereceso de Polars, lo que sea que vaya a leer,
+
+328
+00:27:45,000 --> 00:27:48,000
+me tiene que caer en memoria, y por eso está tardando tanto,
+
+329
+00:27:48,000 --> 00:27:50,000
+porque está leyendo todo.
+
+330
+00:27:50,000 --> 00:27:55,000
+Entonces, bueno, me trae aquí un DataFrame,
+
+331
+00:27:55,000 --> 00:27:58,000
+también con su representación así en HTML, para poder verla bien.
+
+332
+00:27:58,000 --> 00:28:02,000
+Me he leído las etiquetas, que ha tardado menos porque son más pequeños.
+
+333
+00:28:02,000 --> 00:28:06,000
+Y bueno, simplemente para que quede, las preguntas es un millón,
+
+334
+00:28:06,000 --> 00:28:10,000
+200 mil, y hay tres millones de filas de etiquetas.
+
+335
+00:28:10,000 --> 00:28:15,000
+Aquí me puedo quedar como con el esquema, más o menos,
+
+336
+00:28:15,000 --> 00:28:17,000
+los tipos de las columnas y tal.
+
+337
+00:28:17,000 --> 00:28:19,000
+De nuevo esto ocupa 1,8 gigas en memoria,
+
+338
+00:28:19,000 --> 00:28:23,000
+y tiene una cosa muy chula que es que tiene esta representación
+
+339
+00:28:23,000 --> 00:28:26,000
+tipo ASCII, que para copiar y pegar está mejor.
+
+340
+00:28:26,000 --> 00:28:28,000
+Entonces, voy a pasar aquí un poquito rápido,
+
+341
+00:28:28,000 --> 00:28:31,000
+Describe Value Counts, esto es muy parecido a Pandas,
+
+342
+00:28:31,000 --> 00:28:35,000
+pero ¿qué es lo fundamental de Polars?
+
+343
+00:28:35,000 --> 00:28:39,000
+Lo fundamental es que la expresión que yo quiero hacer,
+
+344
+00:28:39,000 --> 00:28:42,000
+y los datos que yo tengo, están desacoplados totalmente.
+
+345
+00:28:42,000 --> 00:28:48,000
+Entonces, si yo quiero calcular la puntuación de votos de la pregunta mediana,
+
+346
+00:28:48,000 --> 00:28:53,000
+entonces eso se expresa así, de la columna Score, dame la mediana.
+
+347
+00:28:53,000 --> 00:28:57,000
+Y yo aquí no le estoy diciendo, usa el DataFrame, no sé cuántitos,
+
+348
+00:28:57,000 --> 00:29:03,000
+sino que es un objeto expresión, que lo puedo evaluar sobre cualquier DataFrame,
+
+349
+00:29:03,000 --> 00:29:05,000
+y esto me parece muy interesante.
+
+350
+00:29:05,000 --> 00:29:09,000
+Esto de la CELDA 12, se lo paso a la función Select,
+
+351
+00:29:09,000 --> 00:29:13,000
+ya que es un método del DataFrame, y ahí sí,
+
+352
+00:29:13,000 --> 00:29:17,000
+ejecuta esa agregación que yo le he pedido sobre ese DataFrame.
+
+353
+00:29:17,000 --> 00:29:22,000
+Y además, como yo le puedo pasar una lista de expresiones,
+
+354
+00:29:22,000 --> 00:29:25,000
+esto lo paraleleza en todos los cores, porque claro, al final,
+
+355
+00:29:25,000 --> 00:29:31,000
+si yo quiero sacar el número de AIDs únicos, o la puntuación media,
+
+356
+00:29:31,000 --> 00:29:38,000
+o la máxima longitud de los títulos, todas esas operaciones son independientes entre sí.
+
+357
+00:29:38,000 --> 00:29:41,000
+Me hace falta esperar a que termine una para calcular la siguiente.
+
+358
+00:29:41,000 --> 00:29:46,000
+Con lo cual, yo, pasando esta lista de expresiones, las va a calcular todas en paralelo,
+
+359
+00:29:46,000 --> 00:29:49,000
+y esto va a ser rapidísimo, como veis.
+
+360
+00:29:49,000 --> 00:29:53,000
+Esto se está comiendo un millón de filas, así, en menos de un segundo.
+
+361
+00:29:53,000 --> 00:30:00,000
+Otra cosa que tiene muy interesante es que si yo intentase, por ejemplo,
+
+362
+00:30:00,000 --> 00:30:04,000
+yo tengo las etiquetas en un DataFrame, y tengo las columnas en otro DataFrame.
+
+363
+00:30:04,000 --> 00:30:06,000
+Si yo quiero saber cuáles son las preguntas de Python,
+
+364
+00:30:06,000 --> 00:30:08,000
+tengo que hacer un join entre los dos.
+
+365
+00:30:08,000 --> 00:30:12,000
+Y si yo intento hacer DataFrame.joinTags, me va a explotar,
+
+366
+00:30:12,000 --> 00:30:16,000
+porque esta máquina no tiene aquí gigas y gigas de memoria.
+
+367
+00:30:16,000 --> 00:30:21,000
+Entonces, la forma de evitar eso es, pones un punto lazy aquí,
+
+368
+00:30:21,000 --> 00:30:24,000
+y a partir de este momento, y a todas las operaciones que hace después,
+
+369
+00:30:24,000 --> 00:30:28,000
+no se valúan al momento, sino que se van acumulando.
+
+370
+00:30:28,000 --> 00:30:31,000
+Y el único momento en el que se valúan es cuando haces punto collect,
+
+371
+00:30:31,000 --> 00:30:35,000
+aquí, que es parecido a Dask, en realidad.
+
+372
+00:30:35,000 --> 00:30:39,000
+Y entonces, en ese momento, ahí ya se ejecuta la operación.
+
+373
+00:30:39,000 --> 00:30:44,000
+Yo aquí estoy haciendo un join con la interfaz lazy de las etiquetas también.
+
+374
+00:30:44,000 --> 00:30:49,000
+Le estoy diciendo, filtrame aquellas en las que la etiqueta en minúsculas
+
+375
+00:30:49,000 --> 00:30:55,000
+contenga Python, o sea, se lee súper bien, y que me las ordene por ID.
+
+376
+00:30:55,000 --> 00:31:00,000
+Y entonces, esto me da, en este caso, las tres primeras preguntas etiquetadas con Python.
+
+377
+00:31:00,000 --> 00:31:07,000
+Y ya, para la gente que le molan estas cosas,
+
+378
+00:31:07,000 --> 00:31:12,000
+tú puedes guardar esa operación antes de llamar al collect,
+
+379
+00:31:12,000 --> 00:31:19,000
+y eso te muestra todo esto de aquí, que es un poco matemático,
+
+380
+00:31:19,000 --> 00:31:22,000
+y no sé muy bien qué es este pi y este sigma y demás,
+
+381
+00:31:22,000 --> 00:31:25,000
+pero seguro que tiene mucho sentido, estoy empezando con polas, ¿vale?
+
+382
+00:31:25,000 --> 00:31:30,000
+Pero lo que te está diciendo es que yo estoy haciendo un escándeo, un CSV,
+
+383
+00:31:30,000 --> 00:31:33,000
+es decir, que no lo estoy leyendo, sino que lo estoy leyendo por trozos,
+
+384
+00:31:33,000 --> 00:31:36,000
+que voy a hacer un join entre estas dos tablas,
+
+385
+00:31:36,000 --> 00:31:40,000
+que voy a filtrar, que voy a ordenar, etcétera, etcétera, etcétera.
+
+386
+00:31:40,000 --> 00:31:44,000
+Esto está tardando un poco porque le he pedido que me haga un escándeo en CSV otra vez,
+
+387
+00:31:44,000 --> 00:31:48,000
+y de hecho he cometido el grave error de no limpiar la memoria de antes,
+
+388
+00:31:48,000 --> 00:31:53,000
+y me acaba de morir el, espero bueno, las demos en directo son así.
+
+389
+00:31:53,000 --> 00:31:59,000
+Voy a ir terminando, simplemente lo muestro muy rápido.
+
+390
+00:31:59,000 --> 00:32:03,000
+No sé si habéis tratado con columnas en pandas que tienen listas de números,
+
+391
+00:32:03,000 --> 00:32:05,000
+lo típico que te sale después de un JSON y tal.
+
+392
+00:32:05,000 --> 00:32:09,000
+He escuchado algún resoplido ya, y sí, es un dolor,
+
+393
+00:32:09,000 --> 00:32:13,000
+pues en Polar es como muy fácil, están los métodos de string por un lado,
+
+394
+00:32:13,000 --> 00:32:17,000
+y hay métodos de array por otro lado, o sea, no tienes que usar los métodos de string
+
+395
+00:32:17,000 --> 00:32:21,000
+para tratar una lista de números en pandas que a mí se me hace siempre como rarísimo.
+
+396
+00:32:21,000 --> 00:32:26,000
+Entonces, hay métodos de string, lowercase, contains, no sé qué,
+
+397
+00:32:26,000 --> 00:32:31,000
+pero además puedes evaluar cada uno de estos operaciones de strings,
+
+398
+00:32:31,000 --> 00:32:34,000
+perdón, que está un poco pequeño, sobre cada uno de los elementos de la array,
+
+399
+00:32:34,000 --> 00:32:38,000
+y esto yo ya cada vez que me encuentro con un CSV que tiene esto,
+
+400
+00:32:38,000 --> 00:32:41,000
+ya directamente me paso a Polar, aunque me cueste un poco más,
+
+401
+00:32:41,000 --> 00:32:44,000
+porque no estoy habituado, pero es que es muy fácil.
+
+402
+00:32:44,000 --> 00:32:50,000
+Y ya está, entonces al final la expresión es esta, tenéis el notebook subido,
+
+403
+00:32:50,000 --> 00:32:56,000
+así que voy a terminar aquí la demo, porque ha salido el 90% bien.
+
+404
+00:32:56,000 --> 00:32:59,000
+No sé si está volviendo antes o no.
+
+405
+00:32:59,000 --> 00:33:02,000
+No, he que preguntar a usted en micrófono, simplemente para comentar
+
+406
+00:33:02,000 --> 00:33:06,000
+que estamos en el tiempo justo, pero como la conferencia es que es súper interesante,
+
+407
+00:33:06,000 --> 00:33:09,000
+supongo que si tenéis muchas preguntas al respecto,
+
+408
+00:33:09,000 --> 00:33:12,000
+tal vez las podéis hacer por el canal de Discord
+
+409
+00:33:12,000 --> 00:33:16,000
+o preguntársela a Juan Lí directamente a lo mejor al terminar.
+
+410
+00:33:16,000 --> 00:33:20,000
+Yo voy a estar aquí, perdón, voy a estar aquí todo el resto del día,
+
+411
+00:33:20,000 --> 00:33:22,000
+me voy a leer el Discord luego con la...
+
+412
+00:33:22,000 --> 00:33:26,000
+A ver, si hay una pregunta o dos muy rápidas las podemos hacer,
+
+413
+00:33:26,000 --> 00:33:31,000
+pero tal vez dado el gran interés que tiene esta charla,
+
+414
+00:33:31,000 --> 00:33:36,000
+¿puedes preguntar directamente a él?
+
+415
+00:33:36,000 --> 00:33:41,000
+Bueno, muy rápido para terminar, en Polars nadie ha visto el índice, el index.
+
+416
+00:33:41,000 --> 00:33:44,000
+Que en pandas el index es como... el index.
+
+417
+00:33:44,000 --> 00:33:49,000
+Pues entonces hay gente que se las duda en los índices,
+
+418
+00:33:49,000 --> 00:33:52,000
+de hecho en la documentación de Polars pone...
+
+419
+00:33:52,000 --> 00:33:56,000
+No hace falta los índices, coméntenos de lo contrario.
+
+420
+00:33:56,000 --> 00:34:02,000
+Y James Powell está muy enfadado, no porque dice que los índices son la operación fundamental de pandas,
+
+421
+00:34:02,000 --> 00:34:07,000
+entonces a lo mejor estas nuevas alternativas a pandas
+
+422
+00:34:07,000 --> 00:34:11,000
+nos estamos perdiendo cosas por el camino y tal vez nos importan o tal vez no.
+
+423
+00:34:11,000 --> 00:34:14,000
+Conclusiones, pandas, so-so y Polars, mola.
+
+424
+00:34:14,000 --> 00:34:20,000
+Aquí el Charming Quadrangle, me podéis seguir en Twitter, soy Juan Luis Bach,
+
+425
+00:34:20,000 --> 00:34:26,000
+gracias a Kevin de Fugue, James Powell, Cameron y Richie, que es el autor de Polars,
+
+426
+00:34:26,000 --> 00:34:30,000
+por la inspiración y por ayudarme con la charla esta.
+
+427
+00:34:30,000 --> 00:34:51,000
+Y ya está, muchas gracias.
+

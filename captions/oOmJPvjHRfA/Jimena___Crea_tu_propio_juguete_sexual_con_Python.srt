@@ -1,0 +1,2156 @@
+1
+00:00:00,000 --> 00:00:22,000
+Bueno, recuerda que no solo vamos a hablar de jueces sexuales, es una charla de hardware,
+
+2
+00:00:22,000 --> 00:00:35,000
+por si acaso, pero vamos a empezar. Esta soy yo, soy mamá de muchos peques, de Win, de Maz, de Alpine, de Susse y de Debian,
+
+3
+00:00:35,000 --> 00:00:45,000
+que es el angelito ese. Ya no podéis hacer una idea de cómo soy, además de meterme en marrones de rescatar a todos los animalillos que encuentro,
+
+4
+00:00:45,000 --> 00:00:54,000
+también me gustan otros marrones, como esta charla por ejemplo, que podéis ver, como meterme en presidenta de país en España.
+
+5
+00:00:54,000 --> 00:01:02,000
+También hemos inaugurado, que os lo contaste a mañana, el grupo de PayLayDice España y que organizo PayLayDice en español,
+
+6
+00:01:02,000 --> 00:01:09,000
+que dentro un poquito también empezaremos a trabajar en ello. Me podéis encontrar en LinkedIn, en Twitter y en Notions,
+
+7
+00:01:09,000 --> 00:01:17,000
+donde de verdad tengo muchas cositas de otras charlas que he hecho, cosas que escribo y demás. Entonces os lo dejaron QR, porque si no es un rollo,
+
+8
+00:01:17,000 --> 00:01:25,000
+y los pasaré de las días positivas, sino también. Y nada, yo estoy de ingeniería informática, los que habéis de ingeniería informática,
+
+9
+00:01:25,000 --> 00:01:31,000
+sabéis que no estudiamos hardware, en verdad, nadie hace nada de soldar, y esto es un poco, pues, porque me nace a mí,
+
+10
+00:01:31,000 --> 00:01:39,000
+porque creo que es una barrera que existe y queremos, quiero romper y quiero compartir con vosotras esa ruptura de la barrera.
+
+11
+00:01:39,000 --> 00:01:49,000
+Entonces, vamos a empezar, ¿vale? por el estado del arte. ¿Cómo está el panorama tecnológico-sexual en el sector?
+
+12
+00:01:49,000 --> 00:01:57,000
+Este de aquí tiene unos años, ¿vale? el developer kit del hilo, de la marca, que además venía con unos cuantos y todas, y de carreras.
+
+13
+00:01:57,000 --> 00:02:02,000
+No sé si es lo más apropiado de las carreras, pero bueno, ese era el marketing.
+
+14
+00:02:02,000 --> 00:02:10,000
+Y esto, ¡uh! eso nos ha ido, no la gusta, la censura, ¿vale? la censura, ¿vale?
+
+15
+00:02:10,000 --> 00:02:19,000
+¿vale? o esto es un masturbador masculino, ¿vale? con su aplicación, y esto tú te lo podías programar,
+
+16
+00:02:19,000 --> 00:02:29,000
+pero, o sea, nivel estas cosas, ¿vale? o sea, velocidad, el motor, que es la vibración, la presión, la temperatura, el counter,
+
+17
+00:02:29,000 --> 00:02:36,000
+pues me quiero imaginar lo que es, pero bueno, o sea, este es el nivel de detalle, y no es de este año,
+
+18
+00:02:36,000 --> 00:02:42,000
+de verdad, esto es anterior a pandemia, tiene tiempo, y luego además, al mercado más penino, le sumamos,
+
+19
+00:02:42,000 --> 00:02:51,000
+¡Hola! por favor, no me censures, las óculos y cualquier tipo de realidad aumentada, realidad virtual que tengamos,
+
+20
+00:02:51,000 --> 00:03:01,000
+hay muchísimas juegos y otras cosas enfocados al terreno sexuales, así, pero con una visión muy masculina,
+
+21
+00:03:01,000 --> 00:03:11,000
+muy masculina, y no os voy a mentir, y muy furri, ¿vale? he visto cosas, pero en general, es muy masculina.
+
+22
+00:03:11,000 --> 00:03:17,000
+Entonces, claro, vamos a ver ahora cómo está el lado femenino, ¿vale? lo que nos venden a nosotras.
+
+23
+00:03:17,000 --> 00:03:24,000
+Por un lado, tenemos el típico vibrador, ¿vale? la vibradora, que va con una aplicación,
+
+24
+00:03:24,000 --> 00:03:30,000
+antes iba con un mandito, pues nos hemos modernizado, y ahora va desde el móvil, pero al final esto es,
+
+25
+00:03:30,000 --> 00:03:37,000
+tú te metes tu cosita, le das a otra persona al mando, y esa persona hace zapping contigo, ¿no? digamos.
+
+26
+00:03:37,000 --> 00:03:45,000
+Entonces, esta pensación por cien en nosotras, no lo sé, a lo mejor estamos pensados en la gracia y el disfrute
+
+27
+00:03:45,000 --> 00:03:51,000
+de la persona que tenemos en frente, que es la de, ¿vale? y toda la modernización que ha habido en esto,
+
+28
+00:03:51,000 --> 00:03:54,000
+es que hemos pasado de un mando a una aplicación de móvil, ya está.
+
+29
+00:03:54,000 --> 00:04:02,000
+Y luego ya la fantasía, esto es lo más que tenemos en el lado tecnológico, son estas cosas, ¿vale?
+
+30
+00:04:02,000 --> 00:04:08,000
+Os voy a explicar. No, no es lo que pensáis, no es lo que pensáis.
+
+31
+00:04:08,000 --> 00:04:15,000
+Esto queridas, es para entrenar el suelo pélvico, tú te lo metes y vas apretando, ¿vale? con tus músculos
+
+32
+00:04:15,000 --> 00:04:23,000
+para ir atravesando todas las tuberías con el pajarito, ¿vale? va de eso.
+
+33
+00:04:23,000 --> 00:04:30,000
+Entonces, un poco en conclusión, lo que tenemos es que el sector masculino tiene una fantasía a 360 grados
+
+34
+00:04:30,000 --> 00:04:38,000
+inmersiva de sexo y a nosotras lo mejor que tenemos es algo para que no nos meemos encima.
+
+35
+00:04:38,000 --> 00:04:47,000
+Así que, vamos a cambiar un poquito las cosas, ¿vale? aunque nos lo tengamos que hacer en casa, no pasa nada.
+
+36
+00:04:47,000 --> 00:04:52,000
+Y cómo cambiamos las cosas, ¿no? yo, cuando entro en el mundo del hardware, ¿vale? la primera pregunta es
+
+37
+00:04:52,000 --> 00:04:57,000
+¿dónde empiezo? ¿dónde se compran estas cosas? en AliExpress.
+
+38
+00:04:57,000 --> 00:05:05,000
+Pero prometido, no es todo el meme de lo que pedí y lo que me llegó, ¿vale? esto de verdad funciona en AliExpress.
+
+39
+00:05:05,000 --> 00:05:12,000
+¿Por qué? porque al final en China se ha estado desarrollando toda la tecnología, todos los microprocesadores,
+
+40
+00:05:12,000 --> 00:05:20,000
+todo el cableado, todas estas cosas de empresas extranjeras. Han adquirido muchísimo conocimiento durante décadas
+
+41
+00:05:20,000 --> 00:05:27,000
+y ese conocimiento de las empresas propias de China lo tienen, lo usan y crean sus componentes son muy buenos
+
+42
+00:05:27,000 --> 00:05:35,000
+y muchísimo más baratos. Entonces, o sea, weh, no pasa de ellas. Bueno, que si hablamos de precios, ya no es un problema,
+
+43
+00:05:35,000 --> 00:05:40,000
+sé que se ven pequeñitos porque querías sacar varias cosas, pero no es un problema, o sea, 15 dólares una placa,
+
+44
+00:05:40,000 --> 00:05:45,000
+7 dólares, una con pantalla, 20 dólares, no está mal, no está nada mal.
+
+45
+00:05:45,000 --> 00:05:51,000
+Realmente a lo mejor una cosa que nos podía dar miedo es, ostras, si me inició en esto y rompo lo que compro.
+
+46
+00:05:51,000 --> 00:06:00,000
+Bueno, es que cuando vas a hacer cualquier cosa, no sé, imagínate, cerámica, ¿no? que te pones a hacer tú, tus jarrones y cosas.
+
+47
+00:06:00,000 --> 00:06:05,000
+Entre el tiempo que tardas, lo que cuesta en las clases y si luego te va mal y te explotan el horno,
+
+48
+00:06:05,000 --> 00:06:12,000
+ya has gastado más dinero y tiempo que en esto. O en cocina, si quieres hacer un plato súper guay y se me quema,
+
+49
+00:06:12,000 --> 00:06:18,000
+es que es lo mismo, gasta más dinero que en esto, entonces, todo es intentarlo y ahora el precio no es un problema.
+
+50
+00:06:18,000 --> 00:06:27,000
+Entonces, contamos, ¿qué es lo primero por lo que empiezo? Lo primero que necesito es una PCB,
+
+51
+00:06:27,000 --> 00:06:33,000
+que es una Printed Circuit Boat, que es más o menos las plaquitas que vemos, las típicas planas, ¿vale?
+
+52
+00:06:33,000 --> 00:06:38,000
+Hay muchos tipos. Aquí hay una lista de tipos, he sacado una lista de tipos, sé que no se ven muy bien,
+
+53
+00:06:38,000 --> 00:06:43,000
+pero aquí hay una lista de tipos, los que en MicroPython, ya que estamos hablando de Python,
+
+54
+00:06:43,000 --> 00:06:47,000
+tiene compatibilidades, ¿vale? Te da ejemplos y te cuenta.
+
+55
+00:06:47,000 --> 00:06:52,000
+Y, claro, y aquí me dicen, bueno, pero si vamos a empezar con esto, ¿vale?
+
+56
+00:06:52,000 --> 00:06:56,000
+¿Por qué no usar una conocida como puede ser una Raspberry?
+
+57
+00:06:56,000 --> 00:07:03,000
+Una Raspberry es esto, ¿vale? Más o menos la mayoría tiene este tamaño. O sea...
+
+58
+00:07:03,000 --> 00:07:11,000
+Amiga, dame cuenta, no podemos empezar con esto. Necesitamos algo más manejable, o sea, habrá alguna que sí,
+
+59
+00:07:11,000 --> 00:07:15,000
+felicidades, pero no es lo normal.
+
+60
+00:07:15,000 --> 00:07:20,000
+Entonces, empezamos con plaquitas más pequeñas, ¿vale? Esta es una de las que la tengo aquí,
+
+61
+00:07:20,000 --> 00:07:26,000
+que es la que he usado, es esto chiquitito y este ya es grande para lo que vamos a hacer.
+
+62
+00:07:26,000 --> 00:07:30,000
+Lo que pasa es que yo he venido con muchos módulitos, me permití hacer muchas cosas
+
+63
+00:07:30,000 --> 00:07:35,000
+y, bueno, pues, hago este experimento hoy, pero puedo usarla para otro experimento mañana.
+
+64
+00:07:35,000 --> 00:07:40,000
+Y una cosa buena que tiene, que me gusta mucho, es que viene ya con la batería incorporada, ¿vale?
+
+65
+00:07:40,000 --> 00:07:46,000
+Detrás, le metes una pilita, son pilas especiales, no es una pila normal, son de este tipo, ¿vale?
+
+66
+00:07:46,000 --> 00:07:51,000
+Y ya no tengo que encargarme yo de también programar y configurar el consumo de batería.
+
+67
+00:07:51,000 --> 00:07:57,000
+Entonces, ésta me gustó, era barata, y ésta es la que he usado para este proyecto.
+
+68
+00:07:57,000 --> 00:08:00,000
+Vale, pues esto es lo primero que necesito.
+
+69
+00:08:00,000 --> 00:08:05,000
+Luego, segunda cosa que necesito, un driver.
+
+70
+00:08:05,000 --> 00:08:12,000
+Quizá la palabra suene a las personas que usáis linos y tenéis una envidia, seguro que habéis peleado con esto.
+
+71
+00:08:12,000 --> 00:08:15,000
+Esta es la parte física, ¿vale? No es lo mismo.
+
+72
+00:08:15,000 --> 00:08:20,000
+Al final, es algo que hace de puente, un puente en apso, en concreto, es el nombre técnico.
+
+73
+00:08:20,000 --> 00:08:29,000
+Esto lo ponemos entre la plaquita y el motor, para que si hay picos de electricidad, del motor, de las revoluciones, no nos funda la placa.
+
+74
+00:08:29,000 --> 00:08:32,000
+Vale, es el que los va a disipar, digamos.
+
+75
+00:08:32,000 --> 00:08:39,000
+Entonces, por eso lo usamos en medio, como hace un poco de mediador entre la placa y el motor.
+
+76
+00:08:39,000 --> 00:08:43,000
+Y luego, por supuesto, tenemos los motores.
+
+77
+00:08:43,000 --> 00:08:46,000
+Hay muchos tipos de motores, ¿vale?
+
+78
+00:08:46,000 --> 00:08:51,000
+El de C es el más sencillo, el que más se usa también es el más rápido.
+
+79
+00:08:51,000 --> 00:08:54,000
+Aguanta muchas revoluciones por minuto.
+
+80
+00:08:54,000 --> 00:08:59,000
+Tenemos el servo, que el servo está igual porque lo puedes mover como por ángulos, los brazos.
+
+81
+00:08:59,000 --> 00:09:03,000
+Es como la saquira de los motores, para que nos entendamos.
+
+82
+00:09:03,000 --> 00:09:07,000
+Y luego tenemos el estéper, que va pasitos a ticks.
+
+83
+00:09:07,000 --> 00:09:10,000
+Estos ticks los pone el fabricante, ¿no?
+
+84
+00:09:10,000 --> 00:09:16,000
+Pues a lo mejor un tick, no sé, es un grado o puede ser dos grados, dependiendo.
+
+85
+00:09:16,000 --> 00:09:18,000
+Y eso a priori yo no puedo cambiarlo.
+
+86
+00:09:18,000 --> 00:09:21,000
+Está fijo, yo sí le puedo decir, muevete cinco ticks.
+
+87
+00:09:21,000 --> 00:09:25,000
+Pero no le puedo decir, muevete medio tick o el tick te lo cambio de un grado a otro.
+
+88
+00:09:25,000 --> 00:09:27,000
+¿Vale? Esto viene por el fabricante.
+
+89
+00:09:27,000 --> 00:09:30,000
+Entonces, esto es un poco lo que tenemos para nuestro proyecto.
+
+90
+00:09:30,000 --> 00:09:33,000
+Vamos a usar el más sencillo.
+
+91
+00:09:33,000 --> 00:09:35,000
+Hola.
+
+92
+00:09:35,000 --> 00:09:38,000
+Vale, que es este.
+
+93
+00:09:38,000 --> 00:09:41,000
+Y este lo habéis tenido ya en las manos.
+
+94
+00:09:41,000 --> 00:09:43,000
+Vale.
+
+95
+00:09:43,000 --> 00:09:48,000
+Dسبbound vadera analytics.
+
+96
+00:09:59,000 --> 00:10:02,000
+¿Qué?
+
+97
+00:10:06,000 --> 00:10:08,000
+Pondrán.
+
+98
+00:10:08,000 --> 00:10:09,880
+O sea, es algo pequeñito, ¿vale?
+
+99
+00:10:09,880 --> 00:10:11,880
+Quedan como así todo unido.
+
+100
+00:10:11,880 --> 00:10:14,760
+Ahora se explico cómo se unen las cosas.
+
+101
+00:10:14,760 --> 00:10:15,440
+Vale.
+
+102
+00:10:15,440 --> 00:10:17,560
+Pues ahora que ya tenemos en mente las tres piezas que
+
+103
+00:10:17,560 --> 00:10:20,680
+necesitamos, pasamos a ensamblarlas.
+
+104
+00:10:20,680 --> 00:10:22,800
+¿Cómo se junta todo esto?
+
+105
+00:10:22,800 --> 00:10:24,520
+Pues hay que soldar.
+
+106
+00:10:24,520 --> 00:10:27,920
+El soldador, al final, uno bueno tendría que tener una base y
+
+107
+00:10:27,920 --> 00:10:30,160
+una esponjita, por lo menos, ¿vale?
+
+108
+00:10:30,160 --> 00:10:33,280
+Para que se vea un poco y demás no hace falta tampoco que sea
+
+109
+00:10:33,280 --> 00:10:34,760
+tan pro con la esta.
+
+110
+00:10:34,760 --> 00:10:36,680
+Pero con eso nos vale.
+
+111
+00:10:36,680 --> 00:10:40,440
+Creo que el primer miedo que nos centra es escuchar la palabra
+
+112
+00:10:40,440 --> 00:10:42,640
+soldad, porque muy pocas hemos soldado cosas.
+
+113
+00:10:42,640 --> 00:10:45,480
+Nos han dado la oportunidad de arreglar algo en casa.
+
+114
+00:10:45,480 --> 00:10:48,920
+Entonces, os voy a quitar ese miedo de un plumazo, ¿vale?
+
+115
+00:10:48,920 --> 00:10:52,400
+Quema mucho más la plancha que el soldador os lo prometo,
+
+116
+00:10:52,400 --> 00:10:53,720
+de verdad.
+
+117
+00:10:53,720 --> 00:10:56,480
+Y si no me creéis, pensad una cosa.
+
+118
+00:10:56,480 --> 00:11:00,320
+¿Qué público suele usar los soldadores, el masculino, ¿no?
+
+119
+00:11:00,320 --> 00:11:03,520
+¿Y quiénes usamos las planchas, el femenino?
+
+120
+00:11:03,520 --> 00:11:06,400
+¿En qué creéis que se ha invertido más en seguridad e
+
+121
+00:11:06,400 --> 00:11:08,280
+investigación?
+
+122
+00:11:08,280 --> 00:11:09,320
+A lo masculino, ¿no?
+
+123
+00:11:09,320 --> 00:11:10,680
+Como siempre.
+
+124
+00:11:10,680 --> 00:11:13,680
+Entonces, ya os digo, no hay que tener miedo a quemarse con un
+
+125
+00:11:13,680 --> 00:11:15,760
+soldador.
+
+126
+00:11:15,760 --> 00:11:18,960
+Y para todos, como si haces un deporte, si te rompes un hueso,
+
+127
+00:11:18,960 --> 00:11:21,800
+pues, por mala suerte, tampoco vas a dejar de moverte para
+
+128
+00:11:21,800 --> 00:11:24,160
+siempre ni hacer ningún deporte.
+
+129
+00:11:24,160 --> 00:11:26,720
+Lo siguiente que necesitamos es estaño, que lo conoceis.
+
+130
+00:11:26,720 --> 00:11:31,120
+Es muy maleable, funde mucho antes cualquier otro metal.
+
+131
+00:11:31,120 --> 00:11:35,160
+Entonces, lo típico que se usa para unir cualquier componente.
+
+132
+00:11:35,160 --> 00:11:38,320
+Y luego el flux este, que yo la recomendación es que lo
+
+133
+00:11:38,320 --> 00:11:40,360
+compráis en tipo pintabuñas.
+
+134
+00:11:40,360 --> 00:11:42,720
+Lo que venden mucho en cera, pero pintabuñas es el mejor
+
+135
+00:11:42,720 --> 00:11:43,800
+para mí.
+
+136
+00:11:43,800 --> 00:11:46,080
+Que lo que haces es un catalizador.
+
+137
+00:11:46,080 --> 00:11:49,120
+Nos mejora la soldadura, que las hagamos un poco mejor,
+
+138
+00:11:49,120 --> 00:11:52,160
+mejora la temperatura de transmisión.
+
+139
+00:11:52,160 --> 00:11:53,200
+Nos facilita la tarea.
+
+140
+00:11:53,200 --> 00:11:56,720
+Y si somos nuevas, pues, oye, nos viene bien.
+
+141
+00:11:56,720 --> 00:11:57,400
+¿Cómo se disuelda?
+
+142
+00:11:57,400 --> 00:11:58,760
+Esto nadie os lo cuenta.
+
+143
+00:11:58,760 --> 00:12:00,000
+Yo os lo voy a contar.
+
+144
+00:12:00,000 --> 00:12:01,840
+Pues voy a poner un vídeo mío.
+
+145
+00:12:01,840 --> 00:12:03,280
+¿Vale?
+
+146
+00:12:03,280 --> 00:12:04,640
+Es muy despacito.
+
+147
+00:12:04,640 --> 00:12:07,760
+¿Cómo se va a aplicar la punta del soldador a la base donde
+
+148
+00:12:07,760 --> 00:12:08,920
+está el pin?
+
+149
+00:12:08,920 --> 00:12:11,960
+Y si veis, luego acerco el estaño y tiro para arriba.
+
+150
+00:12:11,960 --> 00:12:13,880
+¿Cómo tiene que quedar esto sobre el pin?
+
+151
+00:12:13,880 --> 00:12:17,120
+Pues tiene que ser como un gorro de estos de la gente que no
+
+152
+00:12:17,120 --> 00:12:18,680
+quiere que el gobierno les espiece,
+
+153
+00:12:18,680 --> 00:12:20,440
+de estos de papel al bal.
+
+154
+00:12:20,440 --> 00:12:21,600
+Pues eso es el aspecto.
+
+155
+00:12:21,600 --> 00:12:24,640
+Si tienes aspecto, es que lo habéis hecho bien.
+
+156
+00:12:24,640 --> 00:12:27,600
+Y con el flux ya digo, fluye muy bien y es muy fácil.
+
+157
+00:12:27,600 --> 00:12:30,680
+No tengáis miedo de quemar la placa,
+
+158
+00:12:30,680 --> 00:12:33,320
+porque aguantan mucha temperatura.
+
+159
+00:12:33,320 --> 00:12:35,120
+O sea, no tiráis un minuto con el soldador, por favor.
+
+160
+00:12:35,120 --> 00:12:37,560
+Es como dos segundos y pongo el estaño.
+
+161
+00:12:37,560 --> 00:12:39,000
+Pero aguantan muy bien la temperatura.
+
+162
+00:12:39,000 --> 00:12:39,760
+Están esos para eso.
+
+163
+00:12:39,760 --> 00:12:43,320
+Son de cerámicas especiales con esmaltados especiales que
+
+164
+00:12:43,320 --> 00:12:44,920
+hacen que aguanten.
+
+165
+00:12:44,920 --> 00:12:47,040
+Si lo soldáis mal, no pasa nada al estaño.
+
+166
+00:12:47,040 --> 00:12:49,120
+Lo vuelves a calentar y lo mueves.
+
+167
+00:12:49,120 --> 00:12:52,720
+Entonces, no tengamos miedo a lo del tema soldaduras.
+
+168
+00:12:52,720 --> 00:12:55,160
+Es más, estas placas para soldar los componentes que llevan
+
+169
+00:12:55,160 --> 00:12:59,040
+encima van al horno a 200 grados durante bastante tiempo para
+
+170
+00:12:59,040 --> 00:13:01,240
+poder soldar todas las piecitas.
+
+171
+00:13:01,240 --> 00:13:04,360
+Así que, creo que con todo esto, veis que soldar no es un
+
+172
+00:13:04,360 --> 00:13:07,240
+problema, no es algo que diga, uy, lo voy a liar a la primera
+
+173
+00:13:07,240 --> 00:13:09,040
+ni nada.
+
+174
+00:13:09,040 --> 00:13:12,200
+Siguiente cosa, ya sabemos un poquito cómo se suelda.
+
+175
+00:13:12,200 --> 00:13:15,520
+Vamos a ver cómo unimos estas tres piezas.
+
+176
+00:13:15,520 --> 00:13:19,000
+Al final tenemos los agujerillos estos que son los pines y los
+
+177
+00:13:19,000 --> 00:13:21,000
+tenemos que conectar entre sí.
+
+178
+00:13:21,000 --> 00:13:24,240
+Conectamos, como hemos dicho, la placa al driver y el driver al
+
+179
+00:13:24,240 --> 00:13:25,120
+motor.
+
+180
+00:13:25,120 --> 00:13:26,240
+¿Cómo va esto?
+
+181
+00:13:26,240 --> 00:13:28,560
+Pues aquí tenemos un esquema.
+
+182
+00:13:28,560 --> 00:13:29,400
+Os cuento.
+
+183
+00:13:29,400 --> 00:13:33,680
+Tenemos por ahí uno, no sé si lo leéis, que pone GND en el
+
+184
+00:13:33,680 --> 00:13:34,360
+driver.
+
+185
+00:13:34,360 --> 00:13:35,560
+¿Lo veis?
+
+186
+00:13:35,560 --> 00:13:38,760
+Esa es la masa.
+
+187
+00:13:38,760 --> 00:13:42,320
+Llamo tierra, pero no sé exactamente, tierra es la masa.
+
+188
+00:13:42,320 --> 00:13:46,520
+Luego tenemos, si os fijáis, tenemos el agujerito de 5 voltios
+
+189
+00:13:46,520 --> 00:13:48,040
+y el de 3 voltios.
+
+190
+00:13:48,040 --> 00:13:49,800
+Lo conectamos al de 5.
+
+191
+00:13:49,800 --> 00:13:50,920
+¿Por qué?
+
+192
+00:13:50,920 --> 00:13:53,480
+Porque queremos potencia, ¿verdad, en el motor?
+
+193
+00:13:53,480 --> 00:13:56,280
+El otro de 3 lo vamos a usar para añadir un botón,
+
+194
+00:13:56,280 --> 00:13:58,720
+por ejemplo, si lo queremos conectar a un botón para darle
+
+195
+00:13:58,720 --> 00:13:59,720
+corriente.
+
+196
+00:13:59,720 --> 00:14:02,200
+Lo podéis hacer al revés, pero no tiene sentido que el botón
+
+197
+00:14:02,200 --> 00:14:05,800
+tenga más tif para que el motor.
+
+198
+00:14:05,800 --> 00:14:08,240
+Luego los pines, ¿vale?
+
+199
+00:14:08,240 --> 00:14:10,960
+Que veis que estamos usando el 7 y el 10, porque así.
+
+200
+00:14:10,960 --> 00:14:13,080
+Y esto cada fabricante los nombra de una forma.
+
+201
+00:14:13,080 --> 00:14:14,840
+Lo importante es que a la hora de programarlos,
+
+202
+00:14:14,840 --> 00:14:17,200
+los mapeemos bien los nombres.
+
+203
+00:14:17,200 --> 00:14:19,160
+Los conectamos pues a las entradas,
+
+204
+00:14:19,160 --> 00:14:22,920
+me da igual en 1, en 2, que en 3, en 4.
+
+205
+00:14:22,920 --> 00:14:24,840
+Y luego, igual que tenemos 2 entradas,
+
+206
+00:14:24,840 --> 00:14:27,920
+pues tenemos 2 salidas hacia el motor que van a los cables.
+
+207
+00:14:27,920 --> 00:14:30,400
+Y así se junta todo.
+
+208
+00:14:30,400 --> 00:14:33,400
+Una vez que está junto, que es como os lo he enseñado,
+
+209
+00:14:33,400 --> 00:14:35,560
+además, estas cosas se pueden probar, ¿vale?
+
+210
+00:14:35,560 --> 00:14:37,880
+Si estén estas plaquitas, ¿vale?
+
+211
+00:14:37,880 --> 00:14:38,720
+Que tú lo vas pinchar.
+
+212
+00:14:38,720 --> 00:14:40,000
+Uy, que se me esbalbo todo.
+
+213
+00:14:40,000 --> 00:14:42,360
+Lo vas pinchar aquí y lo puedes probar antes de soldar,
+
+214
+00:14:42,360 --> 00:14:43,560
+si os da miedo.
+
+215
+00:14:43,560 --> 00:14:47,000
+Yo no tengo ni siquiera todas las piezas soldadas.
+
+216
+00:14:47,000 --> 00:14:48,400
+Estos lo puedo quitar, ¿vale?
+
+217
+00:14:48,400 --> 00:14:51,520
+No he soldado los cables, le están con unas cabecitas que se
+
+218
+00:14:51,520 --> 00:14:52,440
+pinchan.
+
+219
+00:14:52,440 --> 00:14:55,320
+Y si quiero las quito y ya está.
+
+220
+00:14:55,320 --> 00:14:58,840
+Entonces, este sería el diseño.
+
+221
+00:14:58,840 --> 00:15:01,560
+¿Es el diseño estándar de los vibradores y demás?
+
+222
+00:15:01,560 --> 00:15:02,680
+No.
+
+223
+00:15:02,680 --> 00:15:06,880
+Esta es una bala vibradora normal, corriente, nada fancy.
+
+224
+00:15:06,880 --> 00:15:13,640
+Y si la abrimos, dentro tiene también su plaquita, ¿vale?
+
+225
+00:15:13,640 --> 00:15:15,160
+Que es esta chiquitita.
+
+226
+00:15:15,160 --> 00:15:16,120
+No tiene un driver.
+
+227
+00:15:16,120 --> 00:15:17,680
+Imagino por qué lo tendrá incorporado,
+
+228
+00:15:17,680 --> 00:15:21,400
+porque a lo mejor no lo han puesto para abratar.
+
+229
+00:15:21,400 --> 00:15:25,240
+Y claro, aquí está la gracia, ¿no?
+
+230
+00:15:25,240 --> 00:15:29,160
+Este es nuestro motor y este es el motor de esa balita.
+
+231
+00:15:29,160 --> 00:15:34,360
+Entonces, creo que vamos a mejor.
+
+232
+00:15:34,360 --> 00:15:38,280
+Vale, una vez que ya hemos montado esto,
+
+233
+00:15:38,280 --> 00:15:41,640
+pues pasamos a la siguiente fase, que es la de micropaizón.
+
+234
+00:15:41,640 --> 00:15:42,140
+¿Vale?
+
+235
+00:15:42,140 --> 00:15:43,360
+Vamos a programarlo.
+
+236
+00:15:43,360 --> 00:15:44,360
+¿Qué es micropaizón?
+
+237
+00:15:44,360 --> 00:15:49,040
+Es un paizón adaptado para herramientas de estas enbebidas,
+
+238
+00:15:49,040 --> 00:15:54,160
+para plaquitas, para programar cosillas de estas de
+
+239
+00:15:54,160 --> 00:15:55,560
+electrónica.
+
+240
+00:15:55,560 --> 00:15:57,000
+Es muy parecida a paizón, ¿vale?
+
+241
+00:15:57,000 --> 00:16:00,640
+Solo hay que entender algunas especificaciones técnicas de
+
+242
+00:16:00,640 --> 00:16:02,800
+hardware que os voy a contar.
+
+243
+00:16:02,800 --> 00:16:06,600
+Lo primero es conectar la placa a nuestro ordenador y
+
+244
+00:16:06,600 --> 00:16:07,360
+flasearla.
+
+245
+00:16:07,360 --> 00:16:07,600
+¿Vale?
+
+246
+00:16:07,600 --> 00:16:09,400
+Borrar lo que hay dentro e instalarle paizón,
+
+247
+00:16:09,400 --> 00:16:11,640
+que se hace con esos comandos que te lo pone en la
+
+248
+00:16:11,640 --> 00:16:13,200
+documentación.
+
+249
+00:16:13,200 --> 00:16:17,240
+Fijaros que yo estoy usando un chip 32, ¿vale?
+
+250
+00:16:17,240 --> 00:16:18,240
+Que están bien.
+
+251
+00:16:18,240 --> 00:16:22,360
+Pero podríamos usar cualquier otro chip de la lista que había.
+
+252
+00:16:22,360 --> 00:16:25,160
+Cambia, lo de abajo cambia un poquito la instalación, ¿vale?
+
+253
+00:16:25,160 --> 00:16:26,920
+Y un pelín cambia en las instrucciones.
+
+254
+00:16:26,920 --> 00:16:28,120
+Eso sí.
+
+255
+00:16:28,120 --> 00:16:30,240
+Pero lo demás es todo igual.
+
+256
+00:16:30,240 --> 00:16:33,440
+Y lo siguiente es esto.
+
+257
+00:16:33,440 --> 00:16:35,480
+Es que no hay más código para hacerlo.
+
+258
+00:16:35,480 --> 00:16:37,440
+Pero podríamos añadirle cosas fancies, ¿vale?
+
+259
+00:16:37,440 --> 00:16:39,760
+Pero para hacer algo muy sencillo,
+
+260
+00:16:39,760 --> 00:16:41,960
+la jeda de vergüenza que esto sea todo el código que os voy a
+
+261
+00:16:41,960 --> 00:16:43,560
+enseñar en una conferencia de paizón,
+
+262
+00:16:43,560 --> 00:16:44,840
+pero ya está.
+
+263
+00:16:44,840 --> 00:16:48,320
+Con estas líneas, ya hacéis de todo.
+
+264
+00:16:48,320 --> 00:16:52,800
+Simplemente entender que tenemos los pines que os he contado
+
+265
+00:16:52,800 --> 00:16:56,760
+de la plaquita que los tenemos que programar,
+
+266
+00:16:56,760 --> 00:17:01,040
+que son los que salen luego al driver y luego van al motor.
+
+267
+00:17:01,040 --> 00:17:04,760
+Esos pines, cuando vuelva, le tenemos que decir una cosa que
+
+268
+00:17:04,760 --> 00:17:06,720
+es el PWM.
+
+269
+00:17:06,720 --> 00:17:07,220
+¿Vale?
+
+270
+00:17:07,220 --> 00:17:10,320
+Que esto me afunta el nombre porque no se me iba a acordar.
+
+271
+00:17:10,320 --> 00:17:13,480
+¿Qué es el PUSWIFE moduleto?
+
+272
+00:17:13,480 --> 00:17:15,760
+¿Qué significa esto?
+
+273
+00:17:15,760 --> 00:17:18,560
+La electricidad y sobre todo informática, lo sabemos.
+
+274
+00:17:18,560 --> 00:17:22,360
+Tenemos unos y ceros que se traduce en encendido y apagado,
+
+275
+00:17:22,360 --> 00:17:23,560
+¿verdad?
+
+276
+00:17:23,560 --> 00:17:27,480
+Claro, yo no quiero que mi chisme solo esté o encendido o
+
+277
+00:17:27,480 --> 00:17:28,480
+apagado.
+
+278
+00:17:28,480 --> 00:17:31,480
+Quiero poder tener cosas entre medias.
+
+279
+00:17:31,480 --> 00:17:33,640
+Ahí no tenemos más estados intermedios.
+
+280
+00:17:33,640 --> 00:17:36,600
+Los de cuántica os dirán que sí, pero aún no han hecho
+
+281
+00:17:36,600 --> 00:17:37,560
+ni dos cuánticos.
+
+282
+00:17:37,560 --> 00:17:40,760
+Entonces, de momento, tenemos esto.
+
+283
+00:17:40,760 --> 00:17:43,240
+Y cómo hacemos lo trampeamos, ¿no?
+
+284
+00:17:43,240 --> 00:17:46,360
+Para que no esté o a máxima potencia, que es el 1 o a
+
+285
+00:17:46,360 --> 00:17:51,400
+mínima, que es el 0, lo que hacemos es encenderlo y apagarlo
+
+286
+00:17:51,400 --> 00:17:56,880
+muy deprisa para que parezca que estamos modulando la velocidad
+
+287
+00:17:56,880 --> 00:17:58,840
+a la que va y la potencia que tiene.
+
+288
+00:17:58,840 --> 00:18:02,680
+Pero realmente son pequeños encendidos y apagados que hacen
+
+289
+00:18:02,680 --> 00:18:07,400
+que parezca que va más flojito o más fuerte.
+
+290
+00:18:07,400 --> 00:18:08,640
+Aquí lo tenemos puesto.
+
+291
+00:18:08,640 --> 00:18:11,720
+Pues el número del pin le decimos que son pines de salida.
+
+292
+00:18:11,720 --> 00:18:13,640
+Luego, si le metemos un botón, pues lo mismo.
+
+293
+00:18:13,640 --> 00:18:17,120
+Decimos en qué pin es, que en este caso no pinde entrada.
+
+294
+00:18:17,120 --> 00:18:18,360
+Adiós.
+
+295
+00:18:18,360 --> 00:18:19,880
+No me lo sé, me voy a ir.
+
+296
+00:18:19,880 --> 00:18:22,560
+Y luego le decimos, lo iniciamos el ciclo, ¿vale?
+
+297
+00:18:22,560 --> 00:18:26,200
+Lo iniciamos a 0 por iniciarlo a un valor.
+
+298
+00:18:26,200 --> 00:18:27,080
+Y ya es un bucle.
+
+299
+00:18:27,080 --> 00:18:29,240
+O sea, una vez que lo enciendo, pues mientras estés
+
+300
+00:18:29,240 --> 00:18:31,240
+encendido, funciona.
+
+301
+00:18:31,240 --> 00:18:33,360
+Y cuando le da apagado, pues te apagas.
+
+302
+00:18:33,360 --> 00:18:34,920
+Aquí en medio podríamos hacer de todo.
+
+303
+00:18:34,920 --> 00:18:37,280
+Podríamos hacer que al darle dos veces,
+
+304
+00:18:37,280 --> 00:18:39,600
+subiese la velocidad o la bajase,
+
+305
+00:18:39,600 --> 00:18:44,080
+que hiciese como mini slips, de subo, paradita, subo,
+
+306
+00:18:44,080 --> 00:18:45,080
+vuelvo a subir.
+
+307
+00:18:45,080 --> 00:18:47,320
+Aquí nos la llamamos a nuestro gusto.
+
+308
+00:18:47,320 --> 00:18:48,760
+Pero más sencillito es esto.
+
+309
+00:18:48,760 --> 00:18:50,760
+Ah, adiós.
+
+310
+00:18:50,760 --> 00:18:51,800
+Vale, vale.
+
+311
+00:18:51,800 --> 00:18:58,120
+Entonces, tiene una cosilla rara y que es la del 0,3 Feste.
+
+312
+00:18:58,120 --> 00:19:01,280
+Vale, es de 1.023 por 0.60, es lo que le estamos indicando
+
+313
+00:19:01,280 --> 00:19:02,520
+de potencia.
+
+314
+00:19:02,520 --> 00:19:06,840
+Son como los 1.024, o sea, lo máximo que puede ir este motor.
+
+315
+00:19:06,840 --> 00:19:09,720
+Y lo estamos poniendo al 60%.
+
+316
+00:19:09,720 --> 00:19:10,960
+Vale.
+
+317
+00:19:10,960 --> 00:19:13,200
+Y ya está, el otro de ls es, pues cuando le das a Bogotá,
+
+318
+00:19:13,200 --> 00:19:15,960
+un papagá se apaga.
+
+319
+00:19:15,960 --> 00:19:17,280
+¿Por qué al 60%?
+
+320
+00:19:17,280 --> 00:19:18,720
+Bueno, para poder enseñaros uno aquí,
+
+321
+00:19:18,720 --> 00:19:20,400
+porque también pasan cosas.
+
+322
+00:19:20,400 --> 00:19:25,680
+Si lo ponemos ultra tope, al final el driver tiene que hacerlo
+
+323
+00:19:25,680 --> 00:19:26,240
+suyo.
+
+324
+00:19:26,240 --> 00:19:30,200
+Pero sí que me ha pasado de que consumía tanta electricidad
+
+325
+00:19:30,200 --> 00:19:32,960
+que la placa se quedaba sin y se apagaba.
+
+326
+00:19:32,960 --> 00:19:35,800
+Entonces, era como superviberación, se apagaba la
+
+327
+00:19:35,800 --> 00:19:39,240
+palaca, se apagaba el motor, vuelve a encenderse y entrábamos
+
+328
+00:19:39,240 --> 00:19:43,760
+en un ciclo infinito que, o sea, no habría control sobre ello.
+
+329
+00:19:43,760 --> 00:19:45,920
+Ya no seguía tu gusto.
+
+330
+00:19:45,920 --> 00:19:49,440
+Y la otra cosilla que os iba a decir, bueno, claro,
+
+331
+00:19:49,440 --> 00:19:52,680
+si lo pongo muy fuerte aquí, a lo mejor como está soldado,
+
+332
+00:19:52,680 --> 00:19:55,920
+pero está flojito, no quiero que se me vaya.
+
+333
+00:19:55,920 --> 00:19:58,040
+A ver, lo quiero enseñar vibrando.
+
+334
+00:19:58,040 --> 00:20:00,720
+Entonces, por eso, ahora medida que funciona.
+
+335
+00:20:00,720 --> 00:20:02,800
+Y está bien, ahora lo veréis, que tiene potencia.
+
+336
+00:20:02,800 --> 00:20:06,200
+No os vais a quejar de 60%.
+
+337
+00:20:06,200 --> 00:20:09,160
+Pues esto es el código.
+
+338
+00:20:09,160 --> 00:20:10,600
+Ya nos queda el diseño, ¿vale?
+
+339
+00:20:10,600 --> 00:20:12,960
+¿Cómo se diseñan estas cosas?
+
+340
+00:20:12,960 --> 00:20:14,640
+Pues tenemos varias formas.
+
+341
+00:20:14,640 --> 00:20:17,840
+O se traen las formas desde nivel superamater,
+
+342
+00:20:17,840 --> 00:20:20,280
+que sería esta, que os la quiero enseñar.
+
+343
+00:20:20,280 --> 00:20:22,640
+Os la voy a enseñar en la propia página.
+
+344
+00:20:22,640 --> 00:20:24,600
+Porque, por suerte, y páginas para esto, para gente,
+
+345
+00:20:24,600 --> 00:20:28,240
+pues, que no es mucho día a día diseñar en 3D.
+
+346
+00:20:28,240 --> 00:20:30,160
+Entonces, ¿a qué la puesto?
+
+347
+00:20:30,160 --> 00:20:31,760
+A ver, que puedo manejarme.
+
+348
+00:20:31,760 --> 00:20:33,440
+¿Qué es esta?
+
+349
+00:20:33,440 --> 00:20:34,800
+La podéis liar un poco, ¿vale?
+
+350
+00:20:34,800 --> 00:20:37,920
+Las medidas están en milímetros.
+
+351
+00:20:37,920 --> 00:20:39,560
+Entonces, cuidado con lo que ponéis,
+
+352
+00:20:39,560 --> 00:20:42,000
+porque no son pígeles, no son tan.
+
+353
+00:20:42,000 --> 00:20:43,000
+Se está viendo.
+
+354
+00:20:43,000 --> 00:20:43,920
+Que empieza la magia.
+
+355
+00:20:43,920 --> 00:20:46,680
+Tienes que hacer que no esté maximizado, ¿vale?
+
+356
+00:20:46,680 --> 00:20:48,240
+Y hay que ir reduciendo la pantalla,
+
+357
+00:20:48,240 --> 00:20:50,480
+hasta que eso deje de hacer pupupupupupup.
+
+358
+00:20:50,480 --> 00:20:51,440
+¿Ah, sí?
+
+359
+00:20:51,440 --> 00:20:52,480
+Pero quieren cosas grandes.
+
+360
+00:20:52,480 --> 00:20:54,480
+No sé si lo puedo seguir minimizando.
+
+361
+00:20:54,480 --> 00:20:56,840
+Ya, pero tampoco creo que quieran ese ritmo.
+
+362
+00:20:56,840 --> 00:20:58,640
+Vale, vale.
+
+363
+00:20:58,640 --> 00:21:01,360
+Bueno, pues, este, por suerte, es ir moviendo los puntos,
+
+364
+00:21:01,360 --> 00:21:04,480
+con una bajito, más tal, que si quiero mover la curvatura,
+
+365
+00:21:04,480 --> 00:21:07,320
+que si me gustan muy ancho, menos ancho.
+
+366
+00:21:07,320 --> 00:21:08,760
+Lo único importante, ¿vale?
+
+367
+00:21:08,760 --> 00:21:11,600
+Siempre que vamos a hacer juguetes anales,
+
+368
+00:21:11,600 --> 00:21:13,120
+hay que hacerles una base, ¿vale?
+
+369
+00:21:13,120 --> 00:21:14,840
+Como esta, que hay hasta aquí, ¿vale?
+
+370
+00:21:14,840 --> 00:21:15,880
+Esto tiene que ir junto.
+
+371
+00:21:15,880 --> 00:21:17,560
+Esto es más roto por el camino.
+
+372
+00:21:17,560 --> 00:21:20,680
+Uno, en este caso, para que nos quepa la placa, ¿vale?
+
+373
+00:21:20,680 --> 00:21:24,760
+Y dos, si no le ponemos una base que haga tope a un juguet de
+
+374
+00:21:24,760 --> 00:21:31,200
+anal, eso empieza a vibrar y a trepar, ¿vale?
+
+375
+00:21:31,200 --> 00:21:34,320
+Y si, claro, si cogemos este motorcillo,
+
+376
+00:21:34,320 --> 00:21:36,320
+a lo mejor lo atrapáis.
+
+377
+00:21:36,320 --> 00:21:41,640
+Pero con el del joystick, no me gustaría que fuese disorgencia
+
+378
+00:21:41,640 --> 00:21:43,440
+echándola los 10 minutos por la boca, ¿vale?
+
+379
+00:21:43,440 --> 00:21:45,800
+Porque ha ido subiendo y ha salido.
+
+380
+00:21:45,800 --> 00:21:46,440
+¿Sabías feo?
+
+381
+00:21:46,440 --> 00:21:50,960
+Sí, he visto un video tutorial de Jimena que dice que esto va
+
+382
+00:21:50,960 --> 00:21:53,920
+así y acabáis en urgencias por mi culpa, ¿no?
+
+383
+00:21:53,920 --> 00:21:54,880
+Ponésles base, ¿vale?
+
+384
+00:21:54,880 --> 00:21:58,640
+Los juguetes anales, por favor.
+
+385
+00:21:58,640 --> 00:22:01,120
+Esta es la versión fácil.
+
+386
+00:22:01,120 --> 00:22:03,680
+Luego que otras versiones tenemos.
+
+387
+00:22:03,680 --> 00:22:06,280
+¿Lo guay del mundo Maker?
+
+388
+00:22:06,280 --> 00:22:08,360
+¿Lo puedo volver a poner a pantalla completo o no?
+
+389
+00:22:08,360 --> 00:22:08,840
+Ah, vale.
+
+390
+00:22:08,840 --> 00:22:09,340
+Sí, sí.
+
+391
+00:22:09,340 --> 00:22:10,680
+¿Y otro no?
+
+392
+00:22:10,680 --> 00:22:12,880
+No me vuelvo a salir.
+
+393
+00:22:12,880 --> 00:22:15,280
+Luego, ¿lo guay del mundo Maker es que hay muchas páginas
+
+394
+00:22:15,280 --> 00:22:17,280
+donde podemos comprar diseños?
+
+395
+00:22:17,280 --> 00:22:19,560
+Esto es va a llamar la atención.
+
+396
+00:22:19,560 --> 00:22:21,760
+Si habéis estado en el barrio rojo de Ansterdán,
+
+397
+00:22:21,760 --> 00:22:24,240
+hay un monumento que os hable más por ese barrio,
+
+398
+00:22:24,240 --> 00:22:28,720
+los Escaparates, que es la Torreife.
+
+399
+00:22:28,720 --> 00:22:31,000
+Entonces, no sé.
+
+400
+00:22:31,000 --> 00:22:32,040
+¿Por qué?
+
+401
+00:22:32,040 --> 00:22:34,160
+Y esto es un dildo de la Torreife.
+
+402
+00:22:34,160 --> 00:22:36,760
+Él cuesta un euro y lo podéis comprar a una persona que ya lo
+
+403
+00:22:36,760 --> 00:22:39,760
+ha diseñado bien, ya lo ha hecho y le podrías meter dentro
+
+404
+00:22:39,760 --> 00:22:40,880
+lo que tenemos, ¿vale?
+
+405
+00:22:40,880 --> 00:22:43,880
+Otra opción fácil de hacerlo.
+
+406
+00:22:43,880 --> 00:22:47,720
+Y ya la última opción para gente pro y que es la buena.
+
+407
+00:22:47,720 --> 00:22:50,560
+Porque yo creo que este monumento, a ver, bueno,
+
+408
+00:22:50,560 --> 00:22:53,520
+vale, o sea, los paisinos, pues sabemos cómo son los paisinos.
+
+409
+00:22:53,520 --> 00:22:58,640
+Pero el monumento que deberías de un dildo lo tenemos en
+
+410
+00:22:58,640 --> 00:23:01,520
+España, ¿vale?
+
+411
+00:23:01,520 --> 00:23:02,960
+O sea, está ahí.
+
+412
+00:23:07,600 --> 00:23:11,360
+Entonces, al final, este es pasarlo a Blender.
+
+413
+00:23:11,360 --> 00:23:13,200
+Blender es complicadillo, ¿vale?
+
+414
+00:23:13,200 --> 00:23:16,400
+La gente que sabe vectorizar lo tiene un poquito más fácil.
+
+415
+00:23:16,400 --> 00:23:17,880
+Ya tenemos la mitad ganada.
+
+416
+00:23:17,880 --> 00:23:19,960
+Pero hay que hacerlo en 3D.
+
+417
+00:23:19,960 --> 00:23:22,240
+Claro, no hacemos planos, hacemos 3D.
+
+418
+00:23:22,240 --> 00:23:23,280
+Y esto es practicar.
+
+419
+00:23:23,280 --> 00:23:24,680
+Hay muchísimos tutoriales de Blender.
+
+420
+00:23:24,680 --> 00:23:26,920
+Se pueden hacer fantasías.
+
+421
+00:23:26,920 --> 00:23:30,280
+Y bueno, deciros que el empresa es en PLA, ¿vale?
+
+422
+00:23:30,280 --> 00:23:32,480
+Que es el plástico normal que utilizo.
+
+423
+00:23:35,160 --> 00:23:35,640
+¿Qué más?
+
+424
+00:23:35,640 --> 00:23:38,360
+Así, hay gente que me dice, esto con acetona,
+
+425
+00:23:38,360 --> 00:23:39,000
+lo limas.
+
+426
+00:23:39,000 --> 00:23:41,840
+No, la acetona no lima el PLA, un público de internet,
+
+427
+00:23:41,840 --> 00:23:42,560
+¿de acuerdo?
+
+428
+00:23:42,560 --> 00:23:45,760
+Y lo que hemos estriado, supongo, ¿vale?
+
+429
+00:23:45,760 --> 00:23:47,880
+Entonces, una vez que tenemos esto,
+
+430
+00:23:47,880 --> 00:23:51,520
+podríamos usarlo con un preservativo no de los finos,
+
+431
+00:23:51,520 --> 00:23:51,760
+¿vale?
+
+432
+00:23:51,760 --> 00:23:54,720
+Por favor, un gordito, no se vaya a romper.
+
+433
+00:23:54,720 --> 00:23:57,800
+Pero si queremos acabar el proyecto,
+
+434
+00:23:57,800 --> 00:24:00,880
+lo suyo es que le pongamos silicona médica.
+
+435
+00:24:00,880 --> 00:24:02,800
+Bueno, lo tenemos que cubrir.
+
+436
+00:24:02,800 --> 00:24:04,400
+¿Cómo lo haríamos?
+
+437
+00:24:04,400 --> 00:24:08,040
+Pues le haríamos el negativo al diseño que hemos hecho, ¿vale?
+
+438
+00:24:08,040 --> 00:24:09,720
+Algo importante al hacer negativos,
+
+439
+00:24:09,720 --> 00:24:11,960
+al hacer este tipo de moldes, es hacer las llaves,
+
+440
+00:24:11,960 --> 00:24:13,520
+que son esos agujeritos que veis,
+
+441
+00:24:13,520 --> 00:24:15,720
+que es para que encaje todo bien.
+
+442
+00:24:15,720 --> 00:24:20,920
+Y lo dejamos así cerradito, una vez que así es como encajaría.
+
+443
+00:24:20,920 --> 00:24:23,120
+Luego, para aplicar la silicona bien,
+
+444
+00:24:23,120 --> 00:24:25,840
+tenemos primero que darla con un pincel,
+
+445
+00:24:25,840 --> 00:24:28,520
+para que encajen todos los huequitos, ¿vale?
+
+446
+00:24:28,520 --> 00:24:30,480
+Y una vez que ya la hemos dejado así,
+
+447
+00:24:30,480 --> 00:24:32,800
+que encajan todos los huequitos, que está bien impregnado,
+
+448
+00:24:32,800 --> 00:24:33,960
+ya lo podemos rellenar.
+
+449
+00:24:33,960 --> 00:24:37,240
+Nos ponemos en un budito, le ponemos unas gomitas o algo
+
+450
+00:24:37,240 --> 00:24:41,720
+para que no se separe, y lo rellenamos de silicona.
+
+451
+00:24:41,720 --> 00:24:44,960
+Me habría encantado traeros el modelo ya con silicona,
+
+452
+00:24:44,960 --> 00:24:46,720
+pero es que nos ha acabado de curar bien,
+
+453
+00:24:46,720 --> 00:24:49,600
+porque la verdad es que la tenía pasada.
+
+454
+00:24:49,600 --> 00:24:54,160
+Y no creo que quisiérais ver una forma fálica,
+
+455
+00:24:54,160 --> 00:24:55,800
+flácida, goteando.
+
+456
+00:24:55,800 --> 00:24:58,960
+No, le quita todas las partes sexy a mi charla.
+
+457
+00:24:58,960 --> 00:25:02,240
+Entonces, en un momento, estamos bien.
+
+458
+00:25:02,240 --> 00:25:08,040
+Y nada, ya os queda ver si esto funciona o no.
+
+459
+00:25:08,040 --> 00:25:13,480
+Como es un trocito de plástico rígido,
+
+460
+00:25:13,480 --> 00:25:17,480
+a lo mejor no lo vemos mucho vibrar, pero por lo menos.
+
+461
+00:25:17,480 --> 00:25:20,480
+Bueno, no me he puesto el micro. Bueno, lo vais a oír.
+
+462
+00:25:20,480 --> 00:25:22,080
+Es seguro.
+
+463
+00:25:22,080 --> 00:25:23,200
+Lo mantendremos dentro, ¿vale?
+
+464
+00:25:23,200 --> 00:25:24,960
+Esto cabe todo dentro, ¿de acuerdo?
+
+465
+00:25:24,960 --> 00:25:28,040
+Pero necesito el botoncito para que lo veáis.
+
+466
+00:25:28,040 --> 00:25:30,160
+Entonces, todo ahora va.
+
+467
+00:25:30,160 --> 00:25:31,440
+No lo soportes si queréis.
+
+468
+00:25:31,440 --> 00:25:33,280
+Le vas a poner un micro al dildo.
+
+469
+00:25:33,280 --> 00:25:34,680
+Me parece bien.
+
+470
+00:25:34,680 --> 00:25:37,840
+Entonces, encendimos la plaquita, viene con sus botones, ¿vale?
+
+471
+00:25:37,840 --> 00:25:39,920
+Aunque le hayamos programado el otro.
+
+472
+00:25:39,920 --> 00:25:43,320
+Y cuando le damos al botoncito, que vea yo, no,
+
+473
+00:25:43,320 --> 00:25:47,680
+si le doy este de aquí, no estés pitando, no pites.
+
+474
+00:25:47,680 --> 00:25:48,840
+Ahora, ¿vale?
+
+475
+00:25:48,840 --> 00:25:49,840
+Lo oíste.
+
+476
+00:25:52,960 --> 00:25:56,080
+Este es el 60% o algo.
+
+477
+00:25:56,080 --> 00:25:56,840
+Entonces, eso.
+
+478
+00:25:56,840 --> 00:26:01,440
+Y aquí hasta, bueno, hasta que ya acabéis.
+
+479
+00:26:01,440 --> 00:26:02,040
+Por favor.
+
+480
+00:26:02,040 --> 00:26:03,040
+Exacto.
+
+481
+00:26:03,040 --> 00:26:20,640
+Y nada que muchísimas gracias, creo.
+
+482
+00:26:20,640 --> 00:26:24,800
+Aquí ya es la fantasía de cada una, el probar y jugar con el
+
+483
+00:26:24,800 --> 00:26:27,680
+código todo lo que queráis.
+
+484
+00:26:27,680 --> 00:26:28,640
+Acende todo.
+
+485
+00:26:28,640 --> 00:26:31,080
+O sea, este mundo también es nuestro.
+
+486
+00:26:31,080 --> 00:26:34,160
+Y, en fin, que es divertido.
+
+487
+00:26:34,160 --> 00:26:36,200
+Ahora es muy asequible hacer estas cosas.
+
+488
+00:26:36,200 --> 00:26:37,520
+Hay de todo hecho.
+
+489
+00:26:37,520 --> 00:26:39,840
+Y nada más que espero que os haya gustado la charla y os
+
+490
+00:26:39,840 --> 00:26:41,840
+inspiro un poco a empezar en esto.
+
+491
+00:26:41,840 --> 00:26:54,840
+Preguntas.
+
+492
+00:26:54,840 --> 00:27:07,480
+A ver, ¿qué preguntas más, C?
+
+493
+00:27:07,480 --> 00:27:13,320
+Pues, primero, muchas gracias por la charla.
+
+494
+00:27:13,320 --> 00:27:15,880
+Lo hemos disfrutado mucho, muchas gracias.
+
+495
+00:27:15,880 --> 00:27:20,440
+Cuando lo van a hacer en casa, lo vas a disfrutar más.
+
+496
+00:27:20,440 --> 00:27:25,600
+Y tengo una pregunta sobre la elección del motor,
+
+497
+00:27:25,600 --> 00:27:30,640
+porque a veces he elegido el de joystick de los consolas.
+
+498
+00:27:30,640 --> 00:27:36,600
+Y mi pregunta es que, ¿por qué no has elegido los motor de
+
+499
+00:27:36,600 --> 00:27:38,000
+vibración de los móviles?
+
+500
+00:27:38,000 --> 00:27:41,800
+Porque sabemos, por ejemplo, hay muchos móviles de ahora,
+
+501
+00:27:41,800 --> 00:27:47,880
+usa el motor que es la axis X, que vibra así.
+
+502
+00:27:47,880 --> 00:27:52,840
+Es decir, en lugar de girar, ataca.
+
+503
+00:27:52,840 --> 00:27:57,160
+Y hay alguna razón en concreto, porque...
+
+504
+00:27:57,160 --> 00:28:00,320
+El motor del joystick es súper fácil de conseguir.
+
+505
+00:28:00,320 --> 00:28:02,280
+Todo el mundo vende recambios.
+
+506
+00:28:02,280 --> 00:28:03,160
+Esa es una razón.
+
+507
+00:28:03,160 --> 00:28:04,760
+Es muy barato.
+
+508
+00:28:04,760 --> 00:28:07,560
+Y también es muy fácil de implementar.
+
+509
+00:28:07,560 --> 00:28:10,160
+Es que es un botón de los básicos básicos.
+
+510
+00:28:10,160 --> 00:28:13,360
+O sea, eso va, adelante, adelante, adelante, y ya está.
+
+511
+00:28:13,360 --> 00:28:15,000
+Pues, de arrastro, le he cogido.
+
+512
+00:28:15,000 --> 00:28:16,400
+A todo esto siempre se le puede poner.
+
+513
+00:28:16,400 --> 00:28:17,680
+Mucha más fantasía.
+
+514
+00:28:17,680 --> 00:28:19,920
+Otro tipo de motores.
+
+515
+00:28:19,920 --> 00:28:23,040
+Meter bolas de estas imantadas para que haga cambios de peso.
+
+516
+00:28:23,040 --> 00:28:24,800
+O sea, toda la fantasía que queráis.
+
+517
+00:28:24,800 --> 00:28:28,040
+Pero el motivo de este motor es eso, que es que es muy fácil,
+
+518
+00:28:28,040 --> 00:28:33,000
+muy asequible, y que todo el mundo lo conocía ya.
+
+519
+00:28:33,000 --> 00:28:34,000
+Gracias.
+
+520
+00:28:34,000 --> 00:28:34,600
+A pregunta.
+
+521
+00:28:39,040 --> 00:28:41,640
+Por saber, ¿cuánto tiempo te ha llevado más o menos montar
+
+522
+00:28:41,640 --> 00:28:44,000
+todo esto?
+
+523
+00:28:44,000 --> 00:28:47,120
+Soy una persona muy desorganizada.
+
+524
+00:28:47,120 --> 00:28:50,440
+A ver, lo el máximo de tiempo son los tiempos de impresión.
+
+525
+00:28:50,440 --> 00:28:53,840
+Vale, eso siempre limita en la impresión a 3D.
+
+526
+00:28:53,840 --> 00:28:56,200
+Por suerte, pues somos un poco friques en casa.
+
+527
+00:28:56,200 --> 00:28:58,600
+Y tenemos más de una.
+
+528
+00:28:58,600 --> 00:29:03,480
+Pero al final son horas de impresión, lo que más te limita.
+
+529
+00:29:03,480 --> 00:29:05,200
+Y lo de, por ejemplo, la silicona.
+
+530
+00:29:05,200 --> 00:29:09,160
+Que los tiempos de curar la silicona son un varian mucho.
+
+531
+00:29:09,160 --> 00:29:11,640
+Al final, es lo que te dice el fabricante más las
+
+532
+00:29:11,640 --> 00:29:14,760
+consecuencias o el clima o tal.
+
+533
+00:29:14,760 --> 00:29:20,320
+Pero lo que es montar, lo que es programarlo y hacer las
+
+534
+00:29:20,320 --> 00:29:26,600
+soldaduras y demás, es que en menos de un fin lo hacéis.
+
+535
+00:29:26,600 --> 00:29:28,840
+Ya digo, no lleva mucho tiempo.
+
+536
+00:29:30,840 --> 00:29:33,840
+¿Alguna un poco?
+
+537
+00:29:33,840 --> 00:29:35,320
+Bueno, muchas gracias.
+
+538
+00:29:35,320 --> 00:29:36,320
+A vosotros también.
+
+539
+00:29:36,320 --> 00:29:53,920
+Muchísimas gracias.
+
