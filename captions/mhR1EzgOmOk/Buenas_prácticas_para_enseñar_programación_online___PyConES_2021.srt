@@ -1,0 +1,1248 @@
+1
+00:00:00,000 --> 00:00:16,400
+Hola, buenos días. Hola, buenos días, Sergio. ¿Cómo está? Bueno, pues nada, estamos aquí en el segundo día de la
+
+2
+00:00:16,400 --> 00:00:22,800
+Picon S. Muchas gracias por venir, como ha dicho Clara, tan prontito. Y bueno, vamos a empezar ya con la primera
+
+3
+00:00:22,800 --> 00:00:29,520
+charla del día, que me parece súper interesante, es sobre buenas fábricas para enseñar programación online.
+
+4
+00:00:29,520 --> 00:00:36,920
+Y creo que está muy guay, porque, seguro que no hemos visto muchos profesores que se han visto forzados y forzadas a pasar
+
+5
+00:00:36,920 --> 00:00:42,560
+a la versión online de muchas de las cosas, han visto que el formato no es igual, a lo mejor es un poco más
+
+6
+00:00:42,560 --> 00:00:51,280
+aburrido y todo esto. Y creo que puede ser muy interesante aprender sobre esto. Hacérsela sobre un grupo que se ha
+
+7
+00:00:51,280 --> 00:00:57,600
+metado océntrica, que precisamente no hace la necesidad de aprender cómo transformar las clases y las...
+
+8
+00:00:57,600 --> 00:01:05,520
+y en parte, el conocimiento online. Así que, bueno, Sergio, ¿puedes contar algo más sobre los ponentes?
+
+9
+00:01:05,520 --> 00:01:13,520
+Sí, van a ser tres, Patricia Lotto, Nicolás Palopoli y Irene Basano. Patricia es licenciada en sistemas de información,
+
+10
+00:01:13,520 --> 00:01:18,320
+actualmente forma parte de la accesibilidad de metadoocencia, que es este grupo que comentaba.
+
+11
+00:01:18,320 --> 00:01:24,280
+Ahí trabaja haciendo talleres. Nicolás Palopoli es docente y miembro organizador también de metadoocencia.
+
+12
+00:01:24,280 --> 00:01:31,120
+Es instructor y entrenador de The Carpentries y es docente en la Universidad de Quilmes, investigador
+
+13
+00:01:31,120 --> 00:01:38,640
+adjunto de Connyset, Argentina. Y luego Irene Basano es estudiante, está en la carrera de bibliotecnología
+
+14
+00:01:38,640 --> 00:01:43,160
+y trabaja en una biblioteca académica y estructura certificada de The Carpentries.
+
+15
+00:01:43,160 --> 00:01:47,000
+Así que estas son las tres personas y esperamos que disfruten de la charla.
+
+16
+00:01:47,000 --> 00:01:53,000
+La apogulló.
+
+17
+00:02:01,760 --> 00:02:03,240
+Hola, soy Patricia.
+
+18
+00:02:04,840 --> 00:02:05,960
+Yo soy Nicolás.
+
+19
+00:02:05,960 --> 00:02:19,760
+Y yo soy Irene. Somos parte del equipo de metadoocencia que nació en marzo del 2020 por la necesidad de llevar la educación en tornos virtuales con urgencia.
+
+20
+00:02:19,760 --> 00:02:26,800
+Hoy queremos contarles un poco de nuestra experiencia compartiendo con nuestros estudiantes, que también son docentes,
+
+21
+00:02:26,800 --> 00:02:30,400
+algunos recursos para enseñar programación de formas más efectivas.
+
+22
+00:02:30,400 --> 00:02:38,600
+Nuestra intención es acompañar a las personas que se dedican a la docencia, entendiendo que los contextos de aislamiento durante la pandemia
+
+23
+00:02:38,600 --> 00:02:43,160
+intensificaron problemas de accesibilidad e inclusión tanto para estudiantes como para docentes.
+
+24
+00:02:43,160 --> 00:02:57,480
+En metadoocencia empezamos siendo unas pocas personas en el equipo y hoy 21 personas hacen posible metadoocencia junto a un gran equipo asesor
+
+25
+00:02:57,480 --> 00:03:04,920
+formado por especialistas en educación y comunidades. Venimos de distintos lugares, algunos de mundo ERR, otros de Python,
+
+26
+00:03:04,920 --> 00:03:08,000
+varios docentes e interesades en educación.
+
+27
+00:03:08,000 --> 00:03:11,320
+Nos une la diversidad, las ganas de enseñar y de aprender en comunidad.
+
+28
+00:03:11,320 --> 00:03:26,680
+Con nuestros cursos llegamos a más de 1200 educadores y enseñamos más de 70 talleres en los que participaron 870 estudiantes, docentes de 30 países.
+
+29
+00:03:26,680 --> 00:03:32,720
+Quienes participan de los cursos no solo escuchan nuestros consejos sino que los viven en carne propia.
+
+30
+00:03:32,720 --> 00:03:39,320
+Por ejemplo, en cada encuentro discutimos sobre la importancia de dar y recibir buen feedback como una manera de mejorar las clases.
+
+31
+00:03:39,320 --> 00:03:47,720
+No solo invitamos a los participantes a escuchar lo que enseñamos sino también a prestar atención a cómo lo enseñamos y discutir sobre la mejor manera de hacerlo.
+
+32
+00:03:50,720 --> 00:03:57,120
+Hasta acá les contamos un poquito que es metadoocencia y ahora vamos a ver algunos conceptos que vemos en nuestros cursos.
+
+33
+00:03:57,120 --> 00:04:14,920
+Una de las de los consejos que nos acompañan desde el principio es no asumir sino preguntar, no asumir que nuestros participantes tienen acceso a una buena conexión a Internet o que saben una determinada herramienta.
+
+34
+00:04:14,920 --> 00:04:23,320
+Desde el primer día la experiencia de quienes están interesades en participar de nuestros cursos empieza con un formulario que nos permite conocerles.
+
+35
+00:04:23,320 --> 00:04:29,520
+Cuál es su experiencia como docentes, de qué tamaño son sus clases y si tienen experiencia usando Zoom, por ejemplo.
+
+36
+00:04:32,120 --> 00:04:39,720
+Otra recomendación interesante es empezar mostrando el mapa, es decir, dando detalles de qué y cómo será tu curso o evento.
+
+37
+00:04:39,720 --> 00:04:44,320
+También explicando cómo funcionan todas las herramientas que se utilizarán.
+
+38
+00:04:44,320 --> 00:04:51,320
+Para clases online, muchas características de las herramientas de videoconferencias no serán obvias para tus participantes.
+
+39
+00:04:51,320 --> 00:04:56,320
+Mostrar el mapa logra que arranquen los cursos con otra predisposición y otras ganas.
+
+40
+00:05:01,320 --> 00:05:04,320
+Un siguiente consejo es utilizar las salas de trabajo.
+
+41
+00:05:04,320 --> 00:05:08,320
+En la virtualidad las salas de trabajo emulan un poquito la presencialidad.
+
+42
+00:05:08,320 --> 00:05:14,320
+Las salas de trabajo para grupo existen tanto en Zoom como en Meet, incluso en sus versiones gratuitas.
+
+43
+00:05:14,320 --> 00:05:21,320
+La instrucción y la instrucción entre pares es la práctica de enseñanza escalable más efectiva que conocemos.
+
+44
+00:05:21,320 --> 00:05:29,320
+Se basa en que los estudiantes debatan sus respuestas a una pregunta motivadora durante dos o tres minutos dentro de las salas para grupo.
+
+45
+00:05:29,320 --> 00:05:34,320
+Estas salas hacen que esto sea relativamente fácil de ejecutar en línea.
+
+46
+00:05:34,320 --> 00:05:44,320
+Toma entre 15 y 30 segundos llevar a todos a las salas y hace mucho para mantener la motivación y la atención de tus estudiantes.
+
+47
+00:05:48,320 --> 00:05:57,320
+Por último, por mi parte, un último consejo. No enseñes sola o solo. Cada gran cirujana tiene una gran enfermera a su lado.
+
+48
+00:05:57,320 --> 00:06:05,320
+Cuando enseñes en línea por primera vez, hace que alguien más monitoree el chat para preguntas, averiguad quién llamar después y así sucesivamente.
+
+49
+00:06:05,320 --> 00:06:13,320
+Si ninguno de tus colegas puede hacer esto, porque probablemente también estén con poco tiempo, podes pedirle a alguno de tus estudiantes más avanzados que te ayuden.
+
+50
+00:06:13,320 --> 00:06:18,320
+Sea quien sea, asegúrate de presentarle al comienzo de la clase y darle el crédito.
+
+51
+00:06:18,320 --> 00:06:25,320
+Veamos ahora algunos consejos útiles durante la clase.
+
+52
+00:06:25,320 --> 00:06:36,320
+Algo muy importante a considerar es cómo motivas a tus estudiantes para no perderlos en el camino.
+
+53
+00:06:36,320 --> 00:06:44,320
+Minechettingkaya Rondel nos explica que primero debemos dejar que prueben el poste.
+
+54
+00:06:44,320 --> 00:06:57,320
+Tus estudiantes sin suficientes antecedentes en programación no pueden llenar los espacios mentales y quedan vacíos entre las líneas de código de aquello que ven y el producto final que pretendes lograr.
+
+55
+00:06:57,320 --> 00:07:07,320
+Empezando por contar el final de la historia, da una imagen más clara de cuál es ese producto final y eso motiva a tus estudiantes a perseguir el resultado.
+
+56
+00:07:07,320 --> 00:07:16,320
+Se puede comenzar a enseñar un poco de lenguaje de programación, no como un lenguaje en sí, sino como una herramienta útil.
+
+57
+00:07:16,320 --> 00:07:24,320
+No es necesario comenzar instalando todos los programas y todos los paquetes que se van a necesitar a lo largo del curso.
+
+58
+00:07:24,320 --> 00:07:34,320
+En cambio, empezamos por la parte visual o directamente ejecutando código en un entorno online compartido para hacer alguna tarea que sea útil,
+
+59
+00:07:34,320 --> 00:07:44,320
+pero no por eso menos divertida y vistosa. Es algo que los entusiasmo y los convenza de que vale la pena de quedarse en el curso y pasar por esos momentos no tan emocionantes de la programación.
+
+60
+00:07:44,320 --> 00:08:01,320
+Por ejemplo, en vez de hacerlos definir variables, identificar sus tipos o crear código para imprimir los números primos del 1 al 10, hacerles cambiar el tamaño de un conjunto de imágenes o hacer que obtengan una serie de gráficos cambiando un solo parámetro de forma automática.
+
+61
+00:08:01,320 --> 00:08:06,320
+En estos dos ejemplos en pantalla, ¿cuál te parece más motivador?
+
+62
+00:08:06,320 --> 00:08:20,320
+Posiblemente la imagen de la derecha, donde vemos el resultado final, unas cuantas líneas de código con la que los estudiantes pueden jugar, sí los compartiste por colab, por ejemplo, y allí ejecutando distintas variantes de código en vivo.
+
+63
+00:08:20,320 --> 00:08:24,320
+Seguramente tus estudiantes también van a preferir esa variante.
+
+64
+00:08:24,320 --> 00:08:35,320
+Con tus estudiantes ya participando activamente en tu clase, llega un momento en que debes pensar si aprendieron o se alcanzaran esos objetivos planteados.
+
+65
+00:08:35,320 --> 00:08:40,320
+Si simplemente preguntamos, ¿se entendió? Es posible que nos perdamos gran parte de la historia.
+
+66
+00:08:40,320 --> 00:08:46,320
+No somos buenos evaluando cuánto aprendimos mientras menos sepamos sobre un tema específico.
+
+67
+00:08:46,320 --> 00:08:58,320
+Entonces entren en juego las evaluaciones formativas, son unos ejercicios rápidos y la respuesta inequívoca que sin perder el ritmo de la enseñanza nos permiten diagnosticar qué está pasando.
+
+68
+00:08:58,320 --> 00:09:04,320
+Nos dan una idea de las cosas que no han funcionado como nosotros, los docentes queríamos.
+
+69
+00:09:04,320 --> 00:09:12,320
+Pero a la vez a los estudiantes les da una forma de verificar que realmente están entendiendo el tema que se les presentó.
+
+70
+00:09:12,320 --> 00:09:19,320
+Porque hasta que no lo ponen en práctica es difícil saber si verdaderamente lo entiendan.
+
+71
+00:09:19,320 --> 00:09:30,320
+Otra recomendación para que apliques durante el dictado de tu clase es la de hacer ejercicios de tipo opción múltipla.
+
+72
+00:09:30,320 --> 00:09:39,320
+Estos ejercicios también conocidos como multiple choice, plantean algunas opciones entre las cuales hay opciones incorrectas.
+
+73
+00:09:39,320 --> 00:09:44,320
+Y es importante que esas opciones incorrectas sean útiles para nosotros.
+
+74
+00:09:44,320 --> 00:09:54,320
+De tal forma que si un estudiante da alguna de esas respuestas incorrectas nosotros rápidamente podamos comprender cuál fue el error que cometió.
+
+75
+00:09:54,320 --> 00:10:01,320
+Y por lo tanto volver a retomar la explicación del concepto, pero trabajando específicamente de esos errores.
+
+76
+00:10:01,320 --> 00:10:12,320
+Otro tipo de ejercicio útil como evaluación formativa es el de completar los espacios o feeling of blanks.
+
+77
+00:10:12,320 --> 00:10:19,320
+Que es lo que propone al momento en que uno va a explicar un nuevo tema, por ejemplo con un ejercicio que está planteado en la pantalla.
+
+78
+00:10:19,320 --> 00:10:38,320
+Donde queremos definir una función que tenga dentro un loop, bueno, como primer ejercicio de completar los espacios hacemos uno donde conjuntamente vamos resolviendo este ejercicio y mostramos el código completo en pantalla.
+
+79
+00:10:38,320 --> 00:10:47,320
+Pero luego planteamos ejercicios consecutivos con un enfoque progresivo que exija mayor complejidad para la resolución.
+
+80
+00:10:47,320 --> 00:10:59,320
+Pasando este ejercicio más sencillo inicial cada problema sucesivo le va a ir dando el estudiante menor andamiaje hasta que se le pida resolver el problema completo desde cero.
+
+81
+00:10:59,320 --> 00:11:21,320
+El segundo ejercicio podría ser de mismo tipo, con el mismo objetivo de hacer una función completando un loop, pero en este caso con espacios en blanco que directamente los estudiantes tengan que ir completando con los nombres de las variables o de los parámetros necesarios.
+
+82
+00:11:21,320 --> 00:11:37,320
+Así puedes ir avanzando en forma gradual, teniendo cada vez más mayor número de espacios, hasta que luego se termine como último ejercicio teniendo que hacer el programa o código desde cero.
+
+83
+00:11:37,320 --> 00:11:52,320
+Así entonces los estudiantes van a poder ir resolviendo problemas pequeños paso a paso sin enfrentarse a la frustración de arrancarlo desde cero en blanco y quizás con cero conocimiento de cómo arrancar.
+
+84
+00:11:52,320 --> 00:12:07,320
+Hay un tipo de ejercicio más que resulta útil para evaluación formativa que son los problemas de parces. En estos casos se propone un problema resolver con un objetivo claro, por ejemplo, queremos que se aprenda a resolver un loop o que se aprenda a resolver un for.
+
+85
+00:12:07,320 --> 00:12:31,320
+Y se puede dar este código en forma desordenada y sin intentar. Entonces el estudiante que lo quiera resolver se va a poder concentrar en la dependencia de las variables o en el flujo del ejercicio, en el código en sí, sin tener que pensar en la sintaxis exacta de nuestro lenguaje o en los nombres que usemos para las variables.
+
+86
+00:12:31,320 --> 00:12:41,320
+Dejando de lado un poco los ejercicios y pasando una práctica útil quizás ustedes como docentes o como estudiantes ya hayan experimentado el live coding o la programación en vivo.
+
+87
+00:12:41,320 --> 00:12:50,320
+Esta es una estrategia en la cual docentes y estudiantes comienzan con un script y van programando y el docente comparte su pantalla mientras programas.
+
+88
+00:12:50,320 --> 00:13:03,320
+Esta manera mantiene la audiencia motivada porque puede ir siguiendo los pasos de trabajo en sus computadoras y a la vez lo hace más interactivo, más de ida y vuelta.
+
+89
+00:13:03,320 --> 00:13:14,320
+Lo que está bueno desde el punto de vista de docentes es que si bien exige cierta preparación para programar sin saber lo que viene en algunos casos,
+
+90
+00:13:14,320 --> 00:13:23,320
+le va a bajar el ritmo que suele ser rápido cuando uno se limita a exponer lo que dice en la presentación que esté como soporte.
+
+91
+00:13:23,320 --> 00:13:41,320
+Además, se expone a que ocurren errores y esos errores son la base en un buen aprendizaje porque las podemos retomar para explicar por qué cometimos el error y normalizarlo en el ámbito pedagógico.
+
+92
+00:13:41,320 --> 00:13:48,320
+Habiendo hecho todo esto, es muy importante tanto para docentes como para estudiantes tener una devolución sobre el trabajo.
+
+93
+00:13:48,320 --> 00:13:55,320
+El feedback que nos puedan dar los estudiantes durante la cursada nos puede ayudar a mejorar la propia cursada de esos estudiantes.
+
+94
+00:13:55,320 --> 00:13:58,320
+No hay que esperar una encuesta de fin de curso.
+
+95
+00:13:58,320 --> 00:14:01,320
+Hay distintas formas de implementar este feedback.
+
+96
+00:14:01,320 --> 00:14:13,320
+Uno puede ser a través de notitas de colores, podemos tener un color para respuestas positivas y otros para negativas y pedir a nuestros estudiantes que lo pongan en sus computadoras una nota adhesiva del color correcto,
+
+97
+00:14:13,320 --> 00:14:15,320
+según puedan o no resolver un ejercicio.
+
+98
+00:14:15,320 --> 00:14:21,320
+Entonces vos como docentes, podés mirar a tu aula y saber qué está ocurriendo.
+
+99
+00:14:21,320 --> 00:14:25,320
+En entornos virtuales, esto puede ser por ejemplo una manita para arriba o una manita para abajo.
+
+100
+00:14:25,320 --> 00:14:35,320
+También podemos usar esas notas para pedir a nuestros estudiantes que dejen comentarios al terminar un bloque pedagógico y salir al recreo.
+
+101
+00:14:35,320 --> 00:14:41,320
+Una buena forma de pedir feedback es la de uno arriba a uno abajo.
+
+102
+00:14:41,320 --> 00:14:45,320
+En clases numerosas donde no todas las personas llegarían a dar su feedback,
+
+103
+00:14:45,320 --> 00:14:54,320
+podemos ir pidiendo a cada uno una respuesta positiva o negativa a la pregunta que les hagamos acerca de la clase y las vamos alternando.
+
+104
+00:14:54,320 --> 00:15:05,320
+Pero más allá de cómo implementamos ese feedback, algo esencial, además de pedir y dar instancias para hacer críticas,
+
+105
+00:15:05,320 --> 00:15:08,320
+es enseñar a hacerlo en forma constructiva.
+
+106
+00:15:08,320 --> 00:15:17,320
+Una buena crítica constructiva debe tener algunos criterios que nosotros como docentes debemos informar y enseñar para que ocurra.
+
+107
+00:15:17,320 --> 00:15:23,320
+Es decir, la crítica debe ser siempre positiva, debe basarse en elementos concretos
+
+108
+00:15:23,320 --> 00:15:28,320
+y dentro de lo posible ofrecer pasos a seguir para mejorar esa experiencia.
+
+109
+00:15:35,320 --> 00:15:41,320
+Ahora vamos a hablar de accesibilidad para que puedas incluir a más personas y nos dejar a nadie afuera.
+
+110
+00:15:41,320 --> 00:15:51,320
+La accesibilidad es algo universal, que implica planear, proyectar, construir y conservar nuestros cursos en modo que tengan en cuenta la diversidad funcional.
+
+111
+00:15:51,320 --> 00:15:59,320
+Es decir, que tengan en cuenta las necesidades y los requerimientos de todas las personas, sea cual sea su edad, condición o capacidad.
+
+112
+00:15:59,320 --> 00:16:04,320
+Por lo tanto, es necesario enseñar el material pensando diferentes tipos de estudiantes.
+
+113
+00:16:07,320 --> 00:16:14,320
+La accesibilidad se debe tener en cuenta desde el principio, incluso en la planeación y en la selección de tus herramientas.
+
+114
+00:16:14,320 --> 00:16:26,320
+Recordá que al momento de elegir la plataforma de videoconferencia donde se llevará a cabo la reunión, te sugerimos que elijas una herramienta que cumpla con la mayor cantidad de características posibles.
+
+115
+00:16:26,320 --> 00:16:28,320
+¿Cuáles son las características?
+
+116
+00:16:28,320 --> 00:16:38,320
+Que se pueda operar solo mediante comandos del teclado o mediante el usuario habla, que tenga subtítulos sincrónicos, que soporta a los lectores de pantalla,
+
+117
+00:16:38,320 --> 00:16:48,320
+que permita la utilización de lupa y esto les va a permitir a las personas usuarias, a las personas asistentes de tu curso, aunque el texto en la pantalla si lo necesitan.
+
+118
+00:16:48,320 --> 00:17:00,320
+Y también que permita que las personas que asistan a la reunión utilicen su vida preferida para realizar consultas o participar, ya sea video, audio o chat.
+
+119
+00:17:00,320 --> 00:17:06,320
+Respecto al contenido accesible, ¿por qué generar recursos accesibles?
+
+120
+00:17:06,320 --> 00:17:12,320
+Para facilitar la participación y la inclusión de una mayor cantidad de personas a tu curso.
+
+121
+00:17:12,320 --> 00:17:14,320
+Pero ¿cómo lo hacemos?
+
+122
+00:17:14,320 --> 00:17:22,320
+Lo hacemos definiendo pautas bases, perdón que tengan en cuenta las necesidades de una gran parte de las personas.
+
+123
+00:17:22,320 --> 00:17:36,320
+¿Y cuáles son estas pautas bases para hacerlo? A continuación, en las próximas diapositivas, disaremos sobre cuáles son las pautas para que tu contenido, el contenido que genere, sea accesible.
+
+124
+00:17:38,320 --> 00:17:49,320
+Bueno, ahora hablaremos en las siguientes diapositivas de algunas pautas que te permitirán que pienses al desarrollar tu contenido en la accesibilidad.
+
+125
+00:17:49,320 --> 00:17:53,320
+Uno de los puntos a tener en cuenta es utilizar fuentes accesibles.
+
+126
+00:17:53,320 --> 00:17:58,320
+Recordad que no todas las fuentes a las que tenemos acceso son leídas por lectores de pantalla.
+
+127
+00:17:58,320 --> 00:18:04,320
+Esto limita automáticamente la cantidad de usuarios que puedan revisar el contenido que has desarrollado.
+
+128
+00:18:04,320 --> 00:18:11,320
+Por lo tanto, para que el material sea más fácilmente elegible, las fuentes recomendadas son las que se muestran en la diapositiva.
+
+129
+00:18:11,320 --> 00:18:22,320
+También te den cuenta que es importante el tamaño y que al utilizar letra grande, facilitarás el acceso a tu material.
+
+130
+00:18:22,320 --> 00:18:28,320
+Es recomendable 12 puntos para el texto como mínimo y 14 puntos para los títulos.
+
+131
+00:18:28,320 --> 00:18:33,320
+Recordad que nunca nadie se ha quejado de que la letra sea demasiado grande.
+
+132
+00:18:33,320 --> 00:18:40,320
+La siguiente pauta es utilizar contraste de color apropiado entre las letras y el fondo.
+
+133
+00:18:40,320 --> 00:18:46,320
+Asegúrate que las combinaciones de colores que use sean accesibles y tengan suficiente contraste.
+
+134
+00:18:46,320 --> 00:18:52,320
+Recordad que den tener al menos un ratio de 4.5 y que cumpliendo este ítem,
+
+135
+00:18:52,320 --> 00:18:55,320
+mejoras las experiencias de las personas que tengan de alto a mismo.
+
+136
+00:18:55,320 --> 00:19:04,320
+Otra pauta es proporcionar una descripción escrita para las imágenes.
+
+137
+00:19:04,320 --> 00:19:09,320
+Las personas con baja visión suelen utilizar lectores de pantalla para escuchar la web.
+
+138
+00:19:09,320 --> 00:19:15,320
+Estas herramientas convierten el texto en voz para que la persona pueda escuchar las palabras de un sitio.
+
+139
+00:19:15,320 --> 00:19:21,320
+Entonces, tratas de escribir lo que está haciendo la imagen y cómo es importante para la historia.
+
+140
+00:19:21,320 --> 00:19:27,320
+En lugar de simplemente decir algo como imagen, recordad que el contexto lo es todo.
+
+141
+00:19:27,320 --> 00:19:33,320
+Y si la imagen es puramente decorativa o si crea redundancia, no es necesario comentarla.
+
+142
+00:19:33,320 --> 00:19:38,320
+También hay que tener en cuenta que si no se escribe ningún texto alternativo,
+
+143
+00:19:38,320 --> 00:19:46,320
+algunos lectores de pantalla le dan el nombre del archivo de la persona y será una mala experiencia para tu estudiante.
+
+144
+00:19:46,320 --> 00:19:56,320
+La siguiente pauta trata sobre no usar solamente el color para comunicar la información crítica.
+
+145
+00:19:56,320 --> 00:20:01,320
+Cuando comuniques algo importante, muestras una acción o solicites una respuesta,
+
+146
+00:20:01,320 --> 00:20:04,320
+no utilices el color como única señal visual.
+
+147
+00:20:04,320 --> 00:20:11,320
+Las personas con poca budeza visual o de alto a mismo tendrán dificultades para comprender el contenido.
+
+148
+00:20:11,320 --> 00:20:19,320
+Entonces, intenta utilizar un indicador que no sea el color, sino etiquetas de texto o patrones.
+
+149
+00:20:19,320 --> 00:20:22,320
+Cuando muestras errores en la pantalla, no confíes solo en el texto,
+
+150
+00:20:22,320 --> 00:20:26,320
+en color haría un ícono e incluí un título al mensaje.
+
+151
+00:20:29,320 --> 00:20:36,320
+Y por último, la última pauta, la última recomendación es que utilices subtítulos.
+
+152
+00:20:36,320 --> 00:20:41,320
+Cuando los vídeos tienen subtítulos, las personas con problemas de audición obtienen la información.
+
+153
+00:20:41,320 --> 00:20:45,320
+Los subtítulos también ayudan a quienes no pueden reproducir sonidos,
+
+154
+00:20:45,320 --> 00:20:50,320
+como los que se encuentran en una oficina getreada o en situaciones en las que no se puede escuchar el sonido.
+
+155
+00:20:50,320 --> 00:20:54,320
+Por lo tanto, como ya lo dijimos anteriormente,
+
+156
+00:20:54,320 --> 00:20:59,320
+incluso cuando elijas herramientas o plataformas de videoconferencia,
+
+157
+00:20:59,320 --> 00:21:10,320
+pueden ser muy importantes para la información.
+
+158
+00:21:10,320 --> 00:21:15,320
+Bueno, les dejamos algunas referencias respecto del material que estuvimos presentando hoy.
+
+159
+00:21:15,320 --> 00:21:18,320
+Nosotros no inventamos nada de todo esto,
+
+160
+00:21:18,320 --> 00:21:22,320
+reunimos nuestra experiencia a partir de participar en otras comunidades,
+
+161
+00:21:22,320 --> 00:21:24,320
+como por ejemplo de Carpentries,
+
+162
+00:21:24,320 --> 00:21:27,320
+o todo el material compartido por Greg Wilson,
+
+163
+00:21:27,320 --> 00:21:29,320
+como gratuita en internet.
+
+164
+00:21:29,320 --> 00:21:32,320
+Pueden chequear aquí también contenido sobre accesibilidad,
+
+165
+00:21:32,320 --> 00:21:40,320
+que encontramos útiles y fáciles de implementar en sus clases.
+
+166
+00:21:40,320 --> 00:21:43,320
+Nosotros somos parte de Metaocencia,
+
+167
+00:21:43,320 --> 00:21:47,320
+pueden acceder a nuestra página web metadoocencia.org.
+
+168
+00:21:47,320 --> 00:21:51,320
+También nos pueden encontrar en todas las redes con el usuario Metadoocencia,
+
+169
+00:21:51,320 --> 00:21:58,320
+incluyendo nuestro canal de Slack que tiene alrededor de 600 docentes que participan activamente allí.
+
+170
+00:21:58,320 --> 00:22:08,320
+Metadoocencia es una organización apoyada por el Instituto Nacional de Tecnología Autocopuaria de Argentina.
+
+171
+00:22:08,320 --> 00:22:13,320
+Y también, aunque el trabajo es principalmente voluntario,
+
+172
+00:22:13,320 --> 00:22:16,320
+podemos cubrir algunos fondos para nuestro financiamiento
+
+173
+00:22:16,320 --> 00:22:20,320
+gracias a la Code for Science & Society y la Borda Nametimune Foundation.
+
+174
+00:22:20,320 --> 00:22:24,320
+Entre las principales actividades que llevamos a cabo,
+
+175
+00:22:24,320 --> 00:22:30,320
+tenemos los talleres, todos talleres de 3 horas gratuitos y online,
+
+176
+00:22:30,320 --> 00:22:34,320
+que les invitamos a tomar a través de la inscripción en nuestra página web.
+
+177
+00:22:34,320 --> 00:22:39,320
+Y pueden encontrar allí el taller de introducción en el ABC para enseñar online,
+
+178
+00:22:39,320 --> 00:22:50,320
+que reúne un grupo de herramientas de aplicación rápida y efectiva en el aula, tanto virtual como presencial.
+
+179
+00:22:50,320 --> 00:22:55,320
+O quizás tengan mayor interés por cómo enseñar a programar,
+
+180
+00:22:55,320 --> 00:22:59,320
+en curso donde visitamos herramientas específicas para enseñar programación
+
+181
+00:22:59,320 --> 00:23:03,320
+y que hemos visto en parte en los contenidos de hoy.
+
+182
+00:23:03,320 --> 00:23:10,320
+También tenemos un taller de Zoom y un taller de Generación de Imperiales Interactivos con Learner.
+
+183
+00:23:10,320 --> 00:23:15,320
+Esto fue todo para la charla de hoy.
+
+184
+00:23:15,320 --> 00:23:20,320
+Gracias por la invitación y quedamos disponibles para las preguntas que quieren.
+
+185
+00:23:20,320 --> 00:23:31,320
+Hola, estamos aquí.
+
+186
+00:23:31,320 --> 00:23:36,320
+Hola, estamos aquí en Nicolás, que es una de las personas que hoy estoy hablando.
+
+187
+00:23:36,320 --> 00:23:43,320
+Bueno, a mi aparición, buenos días, a mi aparición es súper interesante.
+
+188
+00:23:43,320 --> 00:23:52,320
+La verdad es que no conocí a el grupo y creo que la gran parte de las cosas que decís, no solo valen para clases online,
+
+189
+00:23:52,320 --> 00:23:59,320
+sino para clases también directo, a parte inicial, sobre todo, de comprobar que la gente vaya aprendiendo,
+
+190
+00:23:59,320 --> 00:24:01,320
+es súper guay.
+
+191
+00:24:01,320 --> 00:24:05,320
+¿Cómo os juntasteis mi pregunta y decís,
+
+192
+00:24:05,320 --> 00:24:09,320
+ah, mira, vamos a mi asuelto, ¿dónde salióis conocida y antes?
+
+193
+00:24:09,320 --> 00:24:17,320
+Bueno, en el core team de Meta-DoCencia somos cinco personas que ya nos conocíamos de interactuar en otras comunidades.
+
+194
+00:24:17,320 --> 00:24:24,320
+Hay muchas de las chicas que son programadoras en R y se conocían de AR-Ladies o R en Buenos Aires,
+
+195
+00:24:24,320 --> 00:24:29,320
+distintos grupos de usuarios que las traía de ahí.
+
+196
+00:24:29,320 --> 00:24:37,320
+Y en mi caso conocían algunas de ellas a la oración, por ejemplo, a Guayanina a través de Carpentries,
+
+197
+00:24:37,320 --> 00:24:44,320
+que es esta organización internacional que se encarga de enseñar herramientas de software a investigadores.
+
+198
+00:24:44,320 --> 00:24:50,320
+Y yo soy instructor y entrenador, también gente que se hace instructora para Carpentries,
+
+199
+00:24:50,320 --> 00:24:53,320
+que comparte materiales online.
+
+200
+00:24:53,320 --> 00:24:56,320
+Bueno, con toda esa experiencia que teníamos,
+
+201
+00:24:56,320 --> 00:25:01,320
+llegó un momento en marzo del año pasado en que nos dijeron, bueno, a partir de ahora van a dar clases desde sus casas,
+
+202
+00:25:01,320 --> 00:25:10,320
+y dijimos, bueno, Laura sobre todo se le ocurrió esta idea de si traslademos todo el material que fuimos aprendiendo
+
+203
+00:25:10,320 --> 00:25:18,320
+acerca de cómo dar talleres con una base online, pero con también fuerte presencia en la clase tradicional, en el aula tradicional.
+
+204
+00:25:18,320 --> 00:25:25,320
+Para armar algún curso rápido que nos permita a la gente ayudarlas en este camino difícil
+
+205
+00:25:25,320 --> 00:25:28,320
+y lleno de estrés que empieza de un día para el otro.
+
+206
+00:25:28,320 --> 00:25:34,320
+Yo me uní enseguida de ese grupo, después se fueron uniendo más colaboradoras como Ira y Patry,
+
+207
+00:25:34,320 --> 00:25:37,320
+entonces ese grupo que presentamos al principio,
+
+208
+00:25:37,320 --> 00:25:43,320
+y entonces la idea fue reunir la experiencia que teníamos de talleres de Carpentries,
+
+209
+00:25:43,320 --> 00:25:48,320
+de las distintas comunidades las participábamos con base online,
+
+210
+00:25:48,320 --> 00:25:55,320
+pero en un curso contenido en tres horas de herramientas prácticas y rápidas para virtualizar las clases.
+
+211
+00:25:55,320 --> 00:25:59,320
+Pero que también se aplican como bien decís, a la aula tradicional,
+
+212
+00:25:59,320 --> 00:26:03,320
+porque no son cosas demasiado avanzadas ni que requieren una tecnología específica,
+
+213
+00:26:03,320 --> 00:26:09,320
+son simplemente formas de hacer las cosas que sabemos porque la mayoría de estos conceptos están basados en evidencia,
+
+214
+00:26:09,320 --> 00:26:15,320
+que funcionan y que funcionan mejor que otros acercamientos que se podrían hacer al tema.
+
+215
+00:26:15,320 --> 00:26:22,320
+Y así surge metadocesencia y siguió desarrollándose con nuevos cursos a lo largo de este año y medio, un poquito más que ya llevamos.
+
+216
+00:26:22,320 --> 00:26:29,320
+Sí, yo Nicolás, felicitarte y a tus compañeras también, que me da pena que no estén por aquí,
+
+217
+00:26:29,320 --> 00:26:32,320
+pero es demasiado temprano en Argentina ahora.
+
+218
+00:26:32,320 --> 00:26:39,320
+Yo soy profesor de formación profesional aquí en España, en Teredif,
+
+219
+00:26:39,320 --> 00:26:46,320
+y bueno, me ha parecido muy interesante porque van dando consejos que parecen obvios,
+
+220
+00:26:46,320 --> 00:26:51,320
+pero cuando una persona los ve en una presentación es como muy claro.
+
+221
+00:26:51,320 --> 00:26:59,320
+Entonces, me ha gustado en ese sentido y creo que muchas de las cosas que dicen las podemos aprovechar para las clases,
+
+222
+00:26:59,320 --> 00:27:03,320
+que nada, no era buena por lo que han presentado.
+
+223
+00:27:03,320 --> 00:27:04,320
+Muchas gracias, Sergio.
+
+224
+00:27:04,320 --> 00:27:09,320
+Sí, agrego eso por la... en el curso, los cursos están pensados en ese sentido,
+
+225
+00:27:09,320 --> 00:27:15,320
+en ser cosas fáciles de incorporar, que se pueden hacer gradualmente, vos de una clase para la otra,
+
+226
+00:27:15,320 --> 00:27:23,320
+y bueno, esta vez voy a poner una evaluación para saber si la última media hora que estuve enseñando
+
+227
+00:27:23,320 --> 00:27:25,320
+se incorporó bien o no.
+
+228
+00:27:25,320 --> 00:27:30,320
+Y hay un montón de herramientas que pueden ser incluso en el papel o en un documento de Google compartido
+
+229
+00:27:30,320 --> 00:27:33,320
+que les da a ser el link a tus estudiantes y lo usan ahí,
+
+230
+00:27:33,320 --> 00:27:38,320
+donde con una pregunta bien dirigida vos podés saber eso, si funciona o no.
+
+231
+00:27:38,320 --> 00:27:44,320
+Y no hay que ser ningún programador experto ni tener experiencia docente más allá de haber usado una computadora para poder hacer eso.
+
+232
+00:27:44,320 --> 00:27:50,320
+Entonces lo que vos decís son consejos que muchas veces son evidentes, que están en alcance, pero que nunca te lo pusiste a pensar.
+
+233
+00:27:50,320 --> 00:27:57,320
+Y en el contexto de tener que salir a dar clases en una modalidad y con un entorno que no es tan amigable,
+
+234
+00:27:57,320 --> 00:28:02,320
+ese tipo de herramientas ya, digamos, para nosotros es un placer ver cómo se incorporan
+
+235
+00:28:02,320 --> 00:28:07,320
+por la gente que nosotros le enseñamos y que después va a ir a sus clases implementándolas
+
+236
+00:28:07,320 --> 00:28:13,320
+y viene diciendo, oye, gracias, esto era muy fácil y esto me resolvió la vida de una manera que nos esperaba.
+
+237
+00:28:13,320 --> 00:28:18,320
+Sí, totalmente. Yo no sé si has tenido la misma experiencia,
+
+238
+00:28:18,320 --> 00:28:24,320
+pero en este tiempo que hemos pasado de presencia a la online, a mí me resulta bastante duro,
+
+239
+00:28:24,320 --> 00:28:32,320
+el no tener el contato con el alumnado y como que, claro, a veces simplemente ves las miniaturas
+
+240
+00:28:32,320 --> 00:28:35,320
+o ni siquiera porque hay gente que no les gusta ponerse la cámara,
+
+241
+00:28:35,320 --> 00:28:40,320
+entonces es como muy frío y es muy difícil de conectar cuando tú no estás viendo,
+
+242
+00:28:40,320 --> 00:28:45,320
+estás ahí metiéndote un rollo delante de la pantalla y no hay ese feedback.
+
+243
+00:28:45,320 --> 00:28:48,320
+No sé qué sensaciones tienes tú con eso.
+
+244
+00:28:48,320 --> 00:28:54,320
+Bueno, sobre eso tratamos en el curso, en el intro de la ABC para enseñar online.
+
+245
+00:28:54,320 --> 00:28:59,320
+La pantalla negra, ¿no? La pantalla negra, la videoconferencia,
+
+246
+00:28:59,320 --> 00:29:04,320
+cuando son uno a dos no pasa nada, cuando son todas pantallas negras no sabemos a quién hablar.
+
+247
+00:29:04,320 --> 00:29:07,320
+Entonces, nuestro consejo es no enseñe esas sillas vacías,
+
+248
+00:29:07,320 --> 00:29:10,320
+porque es prácticamente lo mismo que ir a una aula presencial,
+
+249
+00:29:10,320 --> 00:29:14,320
+que no vaya a ningún estudiante y que vos le estés hablando a la nada.
+
+250
+00:29:14,320 --> 00:29:21,320
+No tenés el tipo de retroalimentación que vos tenés acá ya limitada porque sólo es visual y quizás auditiva,
+
+251
+00:29:21,320 --> 00:29:25,320
+pero que en el aula sabés el que se quede dormido, porque está roncando,
+
+252
+00:29:25,320 --> 00:29:28,320
+o porque está hablando con el compañero de al lado, bueno,
+
+253
+00:29:28,320 --> 00:29:31,320
+vos ya sabes que estás teniendo la atención, es más difícil hacerlo.
+
+254
+00:29:31,320 --> 00:29:35,320
+Entonces, un consejo práctico es si todas son pantallas negras
+
+255
+00:29:35,320 --> 00:29:38,320
+enfocaten por cada clase en cuatro o cinco alumnos,
+
+256
+00:29:38,320 --> 00:29:43,320
+pedíles expresamente a esas personas, avisándoles antes que les vas a pedir que estén atentas,
+
+257
+00:29:43,320 --> 00:29:47,320
+y entonces dirigir tus consultas y la participación a esas personas.
+
+258
+00:29:47,320 --> 00:29:50,320
+La clase que viene agradeceles y cambia a otras.
+
+259
+00:29:50,320 --> 00:29:54,320
+Entonces vos vas rotando, siempre lográs que las personas estén atentas,
+
+260
+00:29:54,320 --> 00:30:01,320
+porque les puede tocar, no sos tan invasivo como para pedirle a la persona que todo el tiempo prendo su cámara,
+
+261
+00:30:01,320 --> 00:30:06,320
+y a la vez respetás en el caso de que alguien te diga, mirá, estoy en un contexto de favorable,
+
+262
+00:30:06,320 --> 00:30:10,320
+no quiero que mi casa con mis líos de mi casa se esté transmitiendo,
+
+263
+00:30:10,320 --> 00:30:14,320
+bueno, le permitís eso, pero sabés que va a haber otras personas que te van a poder acompañar.
+
+264
+00:30:14,320 --> 00:30:17,320
+Es muy interesante. Gracias, Nicolás.
+
+265
+00:30:17,320 --> 00:30:21,320
+Tenemos una pregunta que habían hecho en el canal y ya acabamos.
+
+266
+00:30:21,320 --> 00:30:27,320
+Qué comenta Cristian, si pudías elegir un elemento que es clave para mantener el interés de las personas
+
+267
+00:30:27,320 --> 00:30:31,320
+que así están en el curso, cuál sería?
+
+268
+00:30:31,320 --> 00:30:40,320
+Bueno, es tanto online como presencial, pero creo que online se intensifica más.
+
+269
+00:30:40,320 --> 00:30:44,320
+Hay dos elementos, uno es desde lo personal la empatía.
+
+270
+00:30:44,320 --> 00:30:51,320
+Si vos demostras que la persona que está accediendo a tus clases,
+
+271
+00:30:51,320 --> 00:30:54,320
+a vos te importa como docente que estén tus clases,
+
+272
+00:30:54,320 --> 00:30:57,320
+esa persona va a seguir estando motivada por estarlo.
+
+273
+00:30:57,320 --> 00:31:01,320
+Eso que implica que cuando no puedes estar comprendas que no puedes estar
+
+274
+00:31:01,320 --> 00:31:06,320
+y no le exigas la presencialidad completa en un entorno que no es favorable,
+
+275
+00:31:06,320 --> 00:31:12,320
+pero que si después te hace una consulta también estés disponible para responderla fuera de la clase.
+
+276
+00:31:12,320 --> 00:31:16,320
+La disposición, en el sentido de dirigirte a la persona, mirar la cámara,
+
+277
+00:31:16,320 --> 00:31:20,320
+no estés dando clases allá,
+
+278
+00:31:20,320 --> 00:31:26,320
+si quieren pueden visitar entre los links que tenemos ahí disponibles en la página,
+
+279
+00:31:26,320 --> 00:31:33,320
+hay un par de videos de hacer live coding bueno y hacer live coding malo.
+
+280
+00:31:33,320 --> 00:31:38,320
+Y la diferencia está en la disposición de la persona que es docente.
+
+281
+00:31:38,320 --> 00:31:43,320
+Si maltratan la persona porque interrumpió cuando estaba hablando,
+
+282
+00:31:43,320 --> 00:31:45,320
+eso ya te baja la motivación.
+
+283
+00:31:45,320 --> 00:31:53,320
+Entonces, desde la empatía, en todo sentido, eso se baja en concreto a un montón de prácticas
+
+284
+00:31:53,320 --> 00:31:56,320
+que favorecen que la persona siga motivada.
+
+285
+00:31:56,320 --> 00:32:01,320
+Y otra cosa importante es esto de los feedbacks.
+
+286
+00:32:01,320 --> 00:32:05,320
+Para nosotros hacer un feedback cada 20, 30 minutos,
+
+287
+00:32:05,320 --> 00:32:09,320
+por no es que parezca demasiado, pero lo que hace es que la persona conecte
+
+288
+00:32:09,320 --> 00:32:14,320
+y que si en algún momento, y esto es la principal razón de desmotivación,
+
+289
+00:32:14,320 --> 00:32:19,320
+si en algún momento la persona se queda atrás o pierde el hilo de aquello que vos estás enseñando,
+
+290
+00:32:19,320 --> 00:32:24,320
+al hacer ese feedback sirve para que vos sepas que esa persona necesita ayuda,
+
+291
+00:32:24,320 --> 00:32:28,320
+entonces vos o algún ayudante lo pueden recibir en alguna sala pequeña
+
+292
+00:32:28,320 --> 00:32:30,320
+y trabajar en particular con eso.
+
+293
+00:32:30,320 --> 00:32:33,320
+Pero a la vez la propia persona se da cuenta de que algo no quedó claro,
+
+294
+00:32:33,320 --> 00:32:36,320
+entonces al momento de tener que implementarlo ya no es tarde,
+
+295
+00:32:36,320 --> 00:32:38,320
+porque tuvo una instancia anterior de decir,
+
+296
+00:32:38,320 --> 00:32:42,320
+ah, pero necesito reforzar esto un poquito antes de seguir.
+
+297
+00:32:42,320 --> 00:32:48,320
+Así que empatía y devoluciones constantes nos parecen esenciales.
+
+298
+00:32:48,320 --> 00:32:51,320
+Genial, me volverá a ver la charla y me tomaré apuntes
+
+299
+00:32:51,320 --> 00:32:55,320
+por cuando hay que explicar cosas a mis compañeros también.
+
+300
+00:32:55,320 --> 00:33:01,320
+Y que he hecho la invitación para ustedes Israel, Sergio
+
+301
+00:33:01,320 --> 00:33:03,320
+y quien quiera para acceder a los cursos son gratuitos,
+
+302
+00:33:03,320 --> 00:33:06,320
+se pueden escribir y van a seguir siendo siempre gratuitos
+
+303
+00:33:06,320 --> 00:33:10,320
+porque la idea es que lo tomen la mayor cantidad de gente posible.
+
+304
+00:33:10,320 --> 00:33:12,320
+Nos parece verdaderamente útil y una intención nuestra
+
+305
+00:33:12,320 --> 00:33:15,320
+es ayudar a la mayor cantidad de gente posible,
+
+306
+00:33:15,320 --> 00:33:19,320
+así que difunden, utilicen y con gusto estaremos.
+
+307
+00:33:19,320 --> 00:33:21,320
+Muy bien, estufeldo.
+
+308
+00:33:21,320 --> 00:33:22,320
+Bueno, muchas gracias Nicolás.
+
+309
+00:33:22,320 --> 00:33:26,320
+Nada más. Saludos para Patricio y para Irene cuando vean esto.
+
+310
+00:33:26,320 --> 00:33:29,320
+Fulpe en la hora, era muy tarde, pero...
+
+311
+00:33:29,320 --> 00:33:31,320
+Sí, está bien.
+
+312
+00:33:31,320 --> 00:33:41,320
+Vale.
+

@@ -1,0 +1,880 @@
+1
+00:00:00,000 --> 00:00:11,580
+Bueno, ya estamos de vuelta. ¿Qué tal? Espero que estéis pasando una buena mañana, que os
+
+2
+00:00:11,580 --> 00:00:17,380
+hayan gustado las charlas que hemos tenido hasta ahora. Bueno, por aquí yo estoy en
+
+3
+00:00:17,380 --> 00:00:23,280
+Madrid. Hace un día horrible hoy. Está lloviendo muchísimo, así que es un día genial para
+
+4
+00:00:23,280 --> 00:00:28,140
+pasar el domingo aquí en casa viendo a gente maravillosa que nos tiene que contar un montón
+
+5
+00:00:28,140 --> 00:00:36,440
+de cosas súper interesantes. Y ahora nos toca escuchar una charla de Laya Auset que ella hizo
+
+6
+00:00:36,440 --> 00:00:41,800
+Computer Science y trabaja en el sector de la seguridad. Así que seguro que lo que nos va a contar
+
+7
+00:00:41,800 --> 00:00:49,840
+es interesantísimo. Además, las charlas relacionadas con la seguridad son bastante escasas, así que es
+
+8
+00:00:49,840 --> 00:00:56,160
+un placer escucharla. Y voy a unir a Pablo, compañero, para que presente un poco su charla.
+
+9
+00:00:56,160 --> 00:01:04,160
+Hola Pablo. Bueno, hemos decidido ahora mismo, en vez de repartirnos las charlas, por el sector de
+
+10
+00:01:04,160 --> 00:01:14,160
+charlas lo vamos a hacer entre los dos para que sea más dinámico y más... Eso es. Bueno, la charla de
+
+11
+00:01:16,160 --> 00:01:23,080
+Laya pues trata del tema de la privacidad a la hora de compartir los datos. No sé si habéis trabajado
+
+12
+00:01:23,080 --> 00:01:28,840
+con cederaciones, claro, tenemos datos de una empresa y otra empresa, entonces tenemos que,
+
+13
+00:01:28,840 --> 00:01:34,720
+a seguro, nos quedamos compartimos entre esas empresas, entre coordinados bien por una empresa y
+
+14
+00:01:34,720 --> 00:01:44,000
+por la otra. Entonces hay que estudiar, analizar todo ese intercambio de datos entre distintas
+
+15
+00:01:44,000 --> 00:01:48,440
+cederaciones. Hay datos que nos habéis hablado de que estos datos son un tema súper importante.
+
+16
+00:01:48,440 --> 00:02:01,440
+Pero también es importante conocer esos datos, para obtener datos sociales o lo que sea.
+
+17
+00:02:01,440 --> 00:02:08,920
+Entonces ahí entra la criptografía. Allá nos va a contar un tipo esteticitivo de criptografía,
+
+18
+00:02:08,920 --> 00:02:19,400
+para criptografía homomórfica, y nos va a contar cómo viene de una aceleración existente en
+
+19
+00:02:19,400 --> 00:02:26,640
+Cataluña, que vamos a poder ver cómo se comunican esas empresas. Nos va a contar cómo
+
+20
+00:02:26,640 --> 00:02:34,080
+ha utilizado el paquete Python for homomórfica encryption, Python, que repita a hacer un montón
+
+21
+00:02:34,080 --> 00:02:40,280
+de cosas de criptografía, consumo, multiplicaciones y tal. Entonces podemos tener los datos sin tener
+
+22
+00:02:40,280 --> 00:02:45,280
+que conocer, pues podemos tener los resultados, mejor en la media del sexo, sin conocer exactamente
+
+23
+00:02:45,280 --> 00:02:51,760
+los datos. Por eso es muy importante que sigamos la actualidad de los datos y no hay problemas
+
+24
+00:02:51,760 --> 00:03:00,160
+de que cumplamos esa propuesta de datos. ¿Verdad que estoy deseando esa charla, si queramos
+
+25
+00:03:00,160 --> 00:03:08,120
+a dar paso a Laya, para que empiece? Bueno, Laya, ya estás online.
+
+26
+00:03:08,120 --> 00:03:15,960
+Hola, buenos días. También puedo ver tu transparencia, ya estás tan amigo online.
+
+27
+00:03:15,960 --> 00:03:21,080
+Vale, ¿se puede ver bien? Sí, perfecto, ya te dejamos.
+
+28
+00:03:21,080 --> 00:03:27,480
+Bueno, pues buenos días, soy Laya Ozerrizo y bienvenidos a mi conferencia de Helping
+
+29
+00:03:27,480 --> 00:03:33,360
+Social Entities to share private information using homomorphic encryption.
+
+30
+00:03:33,360 --> 00:03:38,960
+Entonces, para que me conozcáis un poquito, este año me gradué en ingeniería informática
+
+31
+00:03:38,960 --> 00:03:44,480
+en la Universidad Pumpeo Favra y llevo ya dos años en el departamento de IT de la
+
+32
+00:03:44,480 --> 00:03:50,240
+empresa de cuatro casas, donde ahora formo parte del Departamento de Seguridad de la
+
+33
+00:03:50,240 --> 00:03:56,120
+Información. Entonces este proyecto forma parte de mi trabajo de final de grado, que
+
+34
+00:03:56,120 --> 00:04:01,800
+se llama Fulium Homomorphic Encryption for Privacy Preserving Data Analytics.
+
+35
+00:04:01,800 --> 00:04:08,760
+Entonces, el proyecto nace de la necesidad de Down Cataluña, que es la coordinadora
+
+36
+00:04:08,760 --> 00:04:15,280
+que reúne a diferentes asociaciones y fundaciones que trabajan en Cataluña con personas con
+
+37
+00:04:15,280 --> 00:04:21,960
+síndrome de Down y otras diversidades funcionales de conocer indicadores sobre el impacto de
+
+38
+00:04:21,960 --> 00:04:30,640
+las bueno, de estas entidades, que son asociaciones y fundaciones al servicio de personas con necesidades
+
+39
+00:04:30,640 --> 00:04:35,120
+especiales, sus familias y profesionales y voluntarios que los ayudan.
+
+40
+00:04:35,120 --> 00:04:43,000
+Entonces, hasta hace unos meses Down Cataluña desconocía el número total de personas a
+
+41
+00:04:43,000 --> 00:04:48,960
+las que daba asistencia y gracias a este proyecto se pueden transferir datos de forma
+
+42
+00:04:48,960 --> 00:04:57,000
+segura para luego agregarlos y calcular los indicadores de interés. Esto permite conocer
+
+43
+00:04:57,000 --> 00:05:04,720
+mejor cuál es el alcance de estas entidades asegurando la privacidad de los datos gracias
+
+44
+00:05:04,720 --> 00:05:08,120
+a una solución basada en criptografía homomórfica.
+
+45
+00:05:08,120 --> 00:05:14,520
+Entonces, con todo esto hemos contado con la gran ayuda de Data for Good Barcelona, que
+
+46
+00:05:14,520 --> 00:05:23,160
+es una asociación de voluntarios que usan sus habilidades para ayudar a ONGs a aprovechar
+
+47
+00:05:23,160 --> 00:05:30,160
+el poder de sus datos. Y también hemos contado con la Universidad Pompeu Fabra, en especial
+
+48
+00:05:30,160 --> 00:05:34,200
+el departamento de tecnologías de la información y las comunicaciones.
+
+49
+00:05:34,200 --> 00:05:40,240
+Entonces, el papel principal de la Universidad Pompeu Fabra ha sido hacer el desarrollo de
+
+50
+00:05:40,240 --> 00:05:46,800
+la arquitectura que os enseñaré más adelante y también el actor puente entre Down Cataluña
+
+51
+00:05:46,800 --> 00:05:54,040
+y las entidades para poder obtener las estadísticas. Este último punto es necesario ya que las
+
+52
+00:05:54,040 --> 00:06:02,040
+entidades no tienen la capacidad computacional o recursos que la Universidad Pompeu Fabra
+
+53
+00:06:02,040 --> 00:06:05,160
+puede ofrecer y que son necesarios para la arquitectura.
+
+54
+00:06:05,160 --> 00:06:11,920
+A continuación os voy a mostrar algunos de los indicadores que Down Cataluña nos propuso.
+
+55
+00:06:11,920 --> 00:06:20,800
+La coordinadora definió una propuesta de diferentes preguntas a las que responder con los datos
+
+56
+00:06:20,800 --> 00:06:28,520
+de las entidades, utilizando fully homomorphic encryption, ya que la ambición del proyecto
+
+57
+00:06:28,520 --> 00:06:34,160
+no era sólo distinguir a los individuos únicos, sino también contabilizarlos por rasgos
+
+58
+00:06:34,160 --> 00:06:40,200
+sociales como la edad, el sexo o incluso la zona de residencia, pero manteniendo siempre
+
+59
+00:06:40,200 --> 00:06:46,800
+su identidad anónima. Entonces, la transferencia de datos protegidos
+
+60
+00:06:46,800 --> 00:06:53,000
+como el sexo y la edad es relevante entre otros para representar a la población impactada.
+
+61
+00:06:53,000 --> 00:06:59,640
+Algunos ejemplos son cuántas personas con discapacidad intelectual trabajamos o con cuántas
+
+62
+00:06:59,640 --> 00:07:07,640
+personas sin discapacidad intelectual trabajamos, con cuántas personas de un rango de edad participan
+
+63
+00:07:07,640 --> 00:07:14,160
+en una de estas organizaciones, cuál es el número de hombres y mujeres que participan
+
+64
+00:07:14,160 --> 00:07:19,960
+en alguna de estas organizaciones o en general cuántas personas participan en cada programa.
+
+65
+00:07:19,960 --> 00:07:27,960
+Entonces, una vez definido, el objetivo principal del proyecto era muy claro, pues
+
+66
+00:07:27,960 --> 00:07:33,920
+se basa en la creación de un programa que utiliza fully homomorphic encryption para ayudar
+
+67
+00:07:33,920 --> 00:07:38,640
+a las organizaciones que apoyan a personas con síndrome de Down y otras diversidades
+
+68
+00:07:38,640 --> 00:07:43,720
+funcionales y a sus familias a compartir información privada.
+
+69
+00:07:43,720 --> 00:07:49,480
+Entonces, muestra un caso de uso, un caso de uso práctico encargado por la coordinadora
+
+70
+00:07:49,480 --> 00:07:57,440
+Down Cataluña que pretende obtener información sobre las personas de estas organizaciones.
+
+71
+00:07:57,440 --> 00:08:03,760
+Down Cataluña definió una propuesta de diferentes preguntas para responder con los datos de
+
+72
+00:08:03,760 --> 00:08:09,280
+diferentes entidades utilizando fully homomorphic encryption como se ha mostrado anteriormente.
+
+73
+00:08:09,280 --> 00:08:15,960
+Entonces, el proyecto se ha implementado en Python utilizando el paquete de Python for
+
+74
+00:08:15,960 --> 00:08:22,680
+homomorphic encryption libraries que se llama PyFel que nos permite realizar sumas, multiplicaciones,
+
+75
+00:08:22,680 --> 00:08:27,720
+exponencias y productos de escalares sobre datos cifrados.
+
+76
+00:08:27,720 --> 00:08:33,880
+Entonces con esta herramienta hemos diseñado y construido una infraestructura que garantiza
+
+77
+00:08:33,880 --> 00:08:39,880
+la privacidad de los datos desde el momento en que se procesan y se encryptan por primera
+
+78
+00:08:39,880 --> 00:08:47,240
+vez hasta que la Federación Social de Down Cataluña obtener los resultados deseados.
+
+79
+00:08:47,240 --> 00:08:53,760
+Como podemos ver aquí el programa consiste en la participación de Down Cataluña, las
+
+80
+00:08:53,760 --> 00:08:58,720
+diferentes asociaciones y fundaciones y la Universidad Pumpeo Fabra.
+
+81
+00:08:58,720 --> 00:09:07,440
+A partir de aquí la criptografía ha surgido con eficacia para proteger los datos ya que
+
+82
+00:09:07,440 --> 00:09:14,440
+proporciona tanto a los propietarios como a los usuarios medios eficaces para garantizar
+
+83
+00:09:14,440 --> 00:09:16,680
+la seguridad de sus datos.
+
+84
+00:09:16,680 --> 00:09:23,040
+Entonces es que más de cifrado ampliamente utilizados como RSA y El Gamal sirven para
+
+85
+00:09:23,040 --> 00:09:29,560
+almacenar y acceder a los datos de forma segura pero los datos no pueden utilizarse para cálculos
+
+86
+00:09:29,560 --> 00:09:36,880
+genéricos sin descifrarlos previamente, lo que podría dar lugar a ataques informáticos.
+
+87
+00:09:36,880 --> 00:09:41,880
+Entonces aquí es donde la encryptación homomórfica tiene un papel importante.
+
+88
+00:09:41,880 --> 00:09:48,960
+El estudio de las técnicas de encryptación homomórfica permite realizar importantes avances
+
+89
+00:09:48,960 --> 00:09:57,200
+en todo el ámbito informático ya que proporciona un medio para transmitir y almacenar de forma
+
+90
+00:09:57,200 --> 00:10:01,200
+segura la información confidencial en un sistema informático.
+
+91
+00:10:01,200 --> 00:10:08,560
+Entonces el cifrado homomórfico lo que permite es realizar determinados tipos de cálculos
+
+92
+00:10:08,560 --> 00:10:13,640
+sobre textos cifrados que producen un resultado cifrado.
+
+93
+00:10:13,640 --> 00:10:19,760
+Este resultado cifrado está también en un texto cifrado y el resultado final es el resultado
+
+94
+00:10:19,760 --> 00:10:24,360
+de las operaciones realizadas sobre un texto plano.
+
+95
+00:10:24,360 --> 00:10:30,200
+Así imaginemos que un usuario desea procesar datos confidenciales en el ordenador de otra
+
+96
+00:10:30,200 --> 00:10:32,120
+persona.
+
+97
+00:10:32,120 --> 00:10:38,080
+Esta información pasa por un servidor en la nube y el usuario quiere asegurarse de
+
+98
+00:10:38,080 --> 00:10:45,800
+que nadie más tenga acceso a esos datos, incluidos el propietario del ordenador y ese servidor
+
+99
+00:10:45,800 --> 00:10:47,520
+en la nube.
+
+100
+00:10:47,520 --> 00:10:53,040
+Entonces el cifrado homomórfico proporciona esta seguridad a la información del usuario
+
+101
+00:10:53,040 --> 00:10:58,280
+desde el momento en el que el flujo de datos sale de su ordenador.
+
+102
+00:10:58,280 --> 00:11:05,880
+Esto no ocurriría con los métodos convencionales que he mentado anteriormente porque protegerían
+
+103
+00:11:05,880 --> 00:11:11,560
+sus datos mientras están en tránsito pero no mientras el cálculo está en curso.
+
+104
+00:11:11,560 --> 00:11:18,960
+Por lo tanto el objetivo principal de homomórfico encryption es permitir el cálculo sobre datos
+
+105
+00:11:18,960 --> 00:11:20,400
+cifrados.
+
+106
+00:11:20,400 --> 00:11:27,080
+Su funcionalidad principal es especialmente evidente ya que los datos pueden ser encriptados
+
+107
+00:11:27,080 --> 00:11:34,000
+en un nivel clasificado procesados por un contratista externo y luego el resultado puede
+
+108
+00:11:34,000 --> 00:11:38,040
+ser descifrado por el nivel clasificado de nuevo.
+
+109
+00:11:38,040 --> 00:11:44,760
+Fully homomorphic encryption permite aplicar operaciones arbitrias sobre el mensaje cifrado
+
+110
+00:11:44,760 --> 00:11:49,920
+un número ilimitado de veces manteniendo siempre la validez de las operaciones sobre
+
+111
+00:11:49,920 --> 00:11:52,680
+los textos cifrados.
+
+112
+00:11:52,680 --> 00:11:59,120
+El objetivo de fully homomorphic encryption es permitir que cualquiera puede utilizar los
+
+113
+00:11:59,120 --> 00:12:08,560
+datos cifrados para realizar operaciones útiles sin tener acceso a la clave de cifrado.
+
+114
+00:12:08,560 --> 00:12:14,640
+Con todo esto estamos de acuerdo en que fully homomorphic encryption es demasiado costoso
+
+115
+00:12:14,640 --> 00:12:21,480
+en términos de computación pero al mismo tiempo tiene un gran potencial para hacer que
+
+116
+00:12:21,480 --> 00:12:27,240
+la funcionalidad sea coherente con la privacidad ayudando siempre a mantener la información
+
+117
+00:12:27,240 --> 00:12:29,760
+segura y accesible al mismo tiempo.
+
+118
+00:12:29,760 --> 00:12:37,200
+Entonces por ejemplo es posible descargar de forma segura todos los cálculos sin comprometer
+
+119
+00:12:37,200 --> 00:12:39,360
+un solo bit de datos.
+
+120
+00:12:39,360 --> 00:12:45,760
+También permite realizar consultas privadas a un motor de búsqueda.
+
+121
+00:12:45,760 --> 00:12:51,080
+Lo que significa que el usuario envía una consulta encriptada y el motor de búsqueda
+
+122
+00:12:51,080 --> 00:12:57,200
+calcula una respuesta encriptada sustinta sin ver nunca la consulta en claro.
+
+123
+00:12:57,200 --> 00:13:04,320
+Además también permite buscar en datos cifrados, es decir, si un usuario almacena archivos cifrados
+
+124
+00:13:04,320 --> 00:13:09,920
+en un servidor de archivos remoto y luego quiere hacer que el servidor recupere solo
+
+125
+00:13:09,920 --> 00:13:16,000
+los archivos que cuando se descifren satisfacen alguna restricción booleana pues aunque el
+
+126
+00:13:16,000 --> 00:13:22,840
+servidor no pueda descifrar los archivos por sí mismo el usuario los obtendrá.
+
+127
+00:13:22,840 --> 00:13:28,520
+Por otra parte es verdad que Fully Omomorphic Encryption no puede realizar por sí misma
+
+128
+00:13:28,520 --> 00:13:34,360
+una evaluación omomórfica de los datos encriptados de forma independiente, es decir, la Fully
+
+129
+00:13:34,360 --> 00:13:37,000
+Omomorphic Multi-Key.
+
+130
+00:13:37,000 --> 00:13:42,600
+Pero los investigadores ya han identificado varias aplicaciones prácticas para Fully
+
+131
+00:13:42,600 --> 00:13:48,240
+Omomorphic Encryption pero es verdad que las implementaciones realizadas hasta el momento
+
+132
+00:13:48,240 --> 00:13:58,440
+demuestran que aún debe mejorarse significativamente para que sea práctica en todas las plataformas.
+
+133
+00:13:58,440 --> 00:14:04,360
+Ahora hablaremos del software que he utilizado para la realización del proyecto.
+
+134
+00:14:04,360 --> 00:14:10,320
+Bueno pues Python for Omomorphic Encryption Libraries, SPYFEL, es una librería que implementa
+
+135
+00:14:10,320 --> 00:14:16,400
+funcionalidades de diferentes bibliotecas de Omomorphic Encryption como la suma, la
+
+136
+00:14:16,400 --> 00:14:23,200
+aplicación, es decir, utilizando una sintaxis similar a la aritmética.
+
+137
+00:14:23,200 --> 00:14:29,240
+Esta librería es su pil tanto para simples demostraciones de encriptación omomórfica
+
+138
+00:14:29,240 --> 00:14:34,160
+como para problemas más complejos como algoritmos de machine learning.
+
+139
+00:14:34,160 --> 00:14:40,120
+Entonces para mí fue la mejor opción para instalar y configurar este framework y además
+
+140
+00:14:40,120 --> 00:14:49,880
+quería programar en Python ya que fue el lenguaje principal que utilizamos en la universidad.
+
+141
+00:14:49,880 --> 00:14:57,360
+Ahora empezaremos con la parte más importante del proyecto que es donde explicó la arquitectura
+
+142
+00:14:57,360 --> 00:14:58,360
+del proyecto.
+
+143
+00:14:58,360 --> 00:15:03,920
+Entonces como el proyecto consiste en la creación de un escenario para ayudar a las entidades
+
+144
+00:15:03,920 --> 00:15:10,100
+a compartir información privada con la coordinadora de Cataluña, Down Cataluña, pues hemos
+
+145
+00:15:10,100 --> 00:15:17,880
+proporcionado un sistema que se ajusta a la propuesta que Down Cataluña nos hizo
+
+146
+00:15:17,880 --> 00:15:21,920
+utilizando Fuliumomorfic Encryption.
+
+147
+00:15:21,920 --> 00:15:28,920
+El programa como podéis ver consta de 8 pasos y comienza con Down Cataluña que se encarga
+
+148
+00:15:28,920 --> 00:15:34,360
+de generar los pares de claves secretas y públicas.
+
+149
+00:15:34,360 --> 00:15:40,520
+Estas dos últimas claves, esta última clave la clave pública se envía a las entidades
+
+150
+00:15:40,520 --> 00:15:48,280
+y a la UPF mientras que la clave secreta permanece privado en Down Cataluña.
+
+151
+00:15:48,280 --> 00:15:53,720
+En la parte inferior de la derecha podemos ver las funciones de Python para implementar
+
+152
+00:15:53,720 --> 00:15:57,160
+las funciones de generación de llaves.
+
+153
+00:15:57,160 --> 00:16:04,960
+Tentamente con arriba a la izquierda las principales funciones de encriptación y desencriptación
+
+154
+00:16:04,960 --> 00:16:06,760
+con Fuliumomorfic Encryption.
+
+155
+00:16:06,760 --> 00:16:14,520
+A partir de aquí el problema más importante que teníamos que resolver en este proyecto
+
+156
+00:16:14,520 --> 00:16:20,520
+era cómo identificar el número total de personas con síndrome de Down y otras diversidades
+
+157
+00:16:20,520 --> 00:16:23,360
+funcionales en dichas organizaciones.
+
+158
+00:16:23,360 --> 00:16:32,280
+Entonces el programa comienza por identificar, por identificar primero cada entidad introduciendo
+
+159
+00:16:32,280 --> 00:16:38,520
+su correspondiente número de institución que aparece en un menú básico que es este
+
+160
+00:16:38,520 --> 00:16:39,520
+de aquí.
+
+161
+00:16:39,520 --> 00:16:45,520
+Y a continuación el programa comienza a formatear todos los datos de cada archivo de entidades,
+
+162
+00:16:45,520 --> 00:16:51,400
+es decir pues quitar ecentos, o todo de mayúscula o por ejemplo verificar que el formato de
+
+163
+00:16:51,400 --> 00:16:54,520
+la fecha de nacimiento se ha igual para todos.
+
+164
+00:16:54,520 --> 00:17:00,640
+Por ejemplo aquí podéis ver el menú muy básico donde cada entidad tenía que introducir
+
+165
+00:17:00,640 --> 00:17:06,360
+a qué número del menú pertenecía y la otra función forma parte de una de las funciones
+
+166
+00:17:06,360 --> 00:17:12,080
+del archivo de formatear que en este caso pues si la fecha de nacimiento no cumple con
+
+167
+00:17:12,080 --> 00:17:18,480
+el formato de día barra mes, barra año, saltaba un error notificando el usuario conforme
+
+168
+00:17:18,480 --> 00:17:23,920
+la fecha de nacimiento no estaba en el formato correspondiente.
+
+169
+00:17:23,920 --> 00:17:31,600
+A partir de aquí saltamos a la identificación de las personas, utilizamos dos identificadores
+
+170
+00:17:31,600 --> 00:17:38,360
+diferentes para cada persona, su DNI y otra identificación generada mediante la concretenación
+
+171
+00:17:38,360 --> 00:17:44,120
+de diferentes valores del usuario y la posterior aplicación de una función de hash.
+
+172
+00:17:44,120 --> 00:17:49,440
+Aquí utilizamos dos funciones, primero la función de valida y DNI que su función es
+
+173
+00:17:49,440 --> 00:17:55,600
+validar que los nueve dígitos que contienen todos nuestros DNI sean válidos y esta función
+
+174
+00:17:55,600 --> 00:18:01,760
+se llama para la principal función de identificación de las personas para simplemente validar que
+
+175
+00:18:01,760 --> 00:18:03,080
+el DNI es válido.
+
+176
+00:18:03,080 --> 00:18:12,040
+A partir de aquí todos los datos de cada entidad ya están formateados y también se eliminan
+
+177
+00:18:12,040 --> 00:18:17,920
+los duplicados dentro de cada archivo para prepararlos para el cifrado.
+
+178
+00:18:17,920 --> 00:18:26,680
+Considerando las diferentes capas la decisión final fue encriptar únicamente el nombre,
+
+179
+00:18:26,680 --> 00:18:34,240
+los apellidos, el DNI, la fecha de nacimiento y el código postal ya que esa fue la información
+
+180
+00:18:34,240 --> 00:18:38,560
+suficiente para identificar a una persona.
+
+181
+00:18:38,560 --> 00:18:43,200
+Entonces el programa procede a encriptar estos datos mediante Fulium and Morphic Encryption
+
+182
+00:18:43,200 --> 00:18:49,160
+como os he mostrado en las primeras funciones y los guarda en archivos diferentes para
+
+183
+00:18:49,160 --> 00:18:50,160
+cada entidad.
+
+184
+00:18:50,160 --> 00:18:59,600
+Los siguientes pasos son que la Universidad Pompa o Fabra reciben todos esos archivos
+
+185
+00:18:59,600 --> 00:19:06,080
+de las entidades encriptados de cada entidad y los concatena en un solo documento.
+
+186
+00:19:06,080 --> 00:19:12,440
+A partir de aquí el programa inicia las primeras operaciones como la identificación de duplicados
+
+187
+00:19:12,440 --> 00:19:18,480
+con datos encriptados y las respuestas a la propuesta definida por Dan Cataluña como
+
+188
+00:19:18,480 --> 00:19:22,640
+hemos visto o como os he enseñado anteriormente.
+
+189
+00:19:22,640 --> 00:19:31,680
+El último paso es almacenar estos resultados encriptados de las previas operaciones y enviarlos
+
+190
+00:19:31,680 --> 00:19:37,160
+a Dan Cataluña porque es el único socio que tiene la clave secreta para obtener los datos
+
+191
+00:19:37,160 --> 00:19:39,320
+desencriptados.
+
+192
+00:19:39,320 --> 00:19:45,640
+Una vez que Dan Cataluña descifra este fichero ya que no contiene ningún dato sensible puede
+
+193
+00:19:45,640 --> 00:19:54,880
+ver solo los resultados de las operaciones, es decir, de su propuesta.
+
+194
+00:19:54,880 --> 00:20:01,480
+Para concluir, este proyecto ha consistido en la creación de un programa en Python utilizando
+
+195
+00:20:01,480 --> 00:20:07,720
+Fuliumomorphic Encryption más concretamente utilizando el software de la librería de
+
+196
+00:20:07,720 --> 00:20:14,360
+PyFel que encripta los datos de diferentes entidades presentadas para resolver problemas
+
+197
+00:20:14,360 --> 00:20:20,520
+operativos a través de una infraestructura que garantiza la privacidad de los datos desde
+
+198
+00:20:20,520 --> 00:20:25,400
+el momento en que son procesados y encriptados por primera vez hasta que la coordinadora
+
+199
+00:20:25,400 --> 00:20:33,640
+Dan Cataluña obtiene los resultados deseados. Gracias a este proyecto Dan Cataluña ahora
+
+200
+00:20:33,640 --> 00:20:40,600
+sí que conoce el impacto de todas las asociaciones y fundaciones y fundaciones socias.
+
+201
+00:20:40,600 --> 00:20:47,840
+Así ahora no solo se conoce el número de personas a las que dan soporte sino también
+
+202
+00:20:47,840 --> 00:20:53,680
+valores agregados según el tipo de servicio ofertado, así como en función de algunas
+
+203
+00:20:53,680 --> 00:21:00,640
+características demográficas como islaedad por ejemplo. Entonces por fin saben el número
+
+204
+00:21:00,640 --> 00:21:07,840
+estimado de personas con síndrome de Dan en Cataluña. Este proyecto también ha pasado
+
+205
+00:21:07,840 --> 00:21:14,920
+por una fase de testing y bueno está claro que hemos conseguido los objetivos de preservar
+
+206
+00:21:14,920 --> 00:21:22,680
+la privacidad de los datos y responder a todas las preguntas propuestas por Dan Cataluña
+
+207
+00:21:22,680 --> 00:21:28,640
+y ahora mismo ya hemos empezado a realizar las pruebas piloto con todos sus participantes
+
+208
+00:21:28,640 --> 00:21:35,480
+la universidad Pompeo Fabra y la asociación de Data for Good Barcelona para implementar
+
+209
+00:21:35,480 --> 00:21:42,360
+la propuesta en un escenario real y siempre intentando mejorar el programa en base de
+
+210
+00:21:42,360 --> 00:21:50,560
+optimización en cuanto a tiempo y sobre todo tamaños. Y bueno para concluir gracias a
+
+211
+00:21:50,560 --> 00:21:57,440
+Fulio Mumer Thick Encryption podemos abordar los problemas de privacidad cifrando los
+
+212
+00:21:57,440 --> 00:22:02,440
+datos y realizando cálculos sobre los textos cifrados sin descifrarlos.
+
+213
+00:22:02,440 --> 00:22:10,680
+Muchas gracias y para más información o cualquier pregunta pues no os deis en ponerse en contacto.
+
+214
+00:22:10,680 --> 00:22:18,600
+Muchísimas gracias Laya, la verdad es que me ha encantado tucharla, la he escuchado con
+
+215
+00:22:18,600 --> 00:22:24,560
+muchísima atención porque me encantan estos temas, me encanta que cada vez haya más organizaciones
+
+216
+00:22:24,560 --> 00:22:30,560
+que se preocupen por estos temas tan sociales y que den esta visibilidad que es importantísima
+
+217
+00:22:30,560 --> 00:22:36,960
+y muchas veces pues no se tienen en cuenta la verdad. Así que muchísimas gracias, ya
+
+218
+00:22:36,960 --> 00:22:42,400
+sabéis que cualquier pregunta que le queráis hacer ella va a estar disponible en el canal
+
+219
+00:22:42,400 --> 00:22:49,160
+de Discord así que nada, si no quieres añadir nada más lo dejamos aquí.
+
+220
+00:22:49,160 --> 00:23:16,160
+Muchas gracias a ti.
+

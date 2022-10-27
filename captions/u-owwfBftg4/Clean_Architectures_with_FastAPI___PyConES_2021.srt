@@ -1,0 +1,1524 @@
+1
+00:00:00,000 --> 00:00:17,400
+Bueno, a todos y a todas seguimos con este bloque de charlas de la Python 2021 y vamos
+
+2
+00:00:17,400 --> 00:00:25,280
+a continuar con la siguiente charla que se llama Clean Architecture with Fast APA por
+
+3
+00:00:25,280 --> 00:00:28,080
+Álvaro del Castillo.
+
+4
+00:00:28,080 --> 00:00:32,280
+Bueno, damos paso Álvaro, le presento antes de entrar.
+
+5
+00:00:32,280 --> 00:00:37,080
+Voy a comentar un poco la charla que va a dar.
+
+6
+00:00:37,080 --> 00:00:41,280
+Bueno, os he mencionado ya el nombre, nos va a hablar sobre arquitecturas con Fast
+
+7
+00:00:41,280 --> 00:00:46,840
+APA y la verdad es que estamos viendo ahora mismo en el canal de Discord bastante actividad,
+
+8
+00:00:46,840 --> 00:00:52,680
+parece que está ahí súper espectantes por esta charla y es cierto que es un tema que
+
+9
+00:00:52,680 --> 00:00:58,560
+cada vez está en OG, el uso de Fast APA y ahora se está poniendo muy de moda y es
+
+10
+00:00:58,560 --> 00:01:05,240
+genial tener a alguien que nos hable desde un enfoque más práctico, así que genial,
+
+11
+00:01:05,240 --> 00:01:10,440
+vamos ya a darle paso efectivamente a Álvaro que nos va a contar su charla.
+
+12
+00:01:10,440 --> 00:01:13,080
+Hola Álvaro, estás por aquí.
+
+13
+00:01:13,080 --> 00:01:15,040
+Hola, qué tal, buenos días.
+
+14
+00:01:15,040 --> 00:01:22,400
+Bueno, Álvaro viene de Madrid, corrijeme si me equivoco, trabaja en una empresa que se
+
+15
+00:01:22,400 --> 00:01:28,000
+llama Smart Protection y la verdad es que eres un gran defensor del software libre porque
+
+16
+00:01:28,000 --> 00:01:33,720
+podemos ver que en tu GitHub tienes un montón de contribuciones, haces cosas en Godot, cosas
+
+17
+00:01:33,720 --> 00:01:43,120
+de hacking, tienes un montón de código ahí listo para que lo veamos y compartamos y aprendamos
+
+18
+00:01:43,120 --> 00:01:44,120
+todos y todas juntas.
+
+19
+00:01:44,120 --> 00:01:48,720
+Sí, la verdad que me he pasado media vida con ese software libre desde el principio de
+
+20
+00:01:48,720 --> 00:01:53,320
+los orígenes con RISC, el Están Maní, compañía, entonces pues lo llevo como muy dentro y entonces
+
+21
+00:01:53,320 --> 00:01:56,320
+allí donde voy siempre procuro, siempre ponlo a lo que fíjense en el software libre
+
+22
+00:01:56,320 --> 00:01:59,680
+de Open Source y por otro lado pues da un poco de difusión de las tecnologías principales
+
+23
+00:01:59,680 --> 00:02:04,320
+que hay para vamos a que están basadas con él.
+
+24
+00:02:04,320 --> 00:02:11,800
+Genial, genial, pues te damos paso ya Clara y yo a que empieces tu charla que seguro que
+
+25
+00:02:11,800 --> 00:02:15,960
+es una pasada porque ya dice Clara que ya hay mucho movimiento ya en el Discord, ¿eh?
+
+26
+00:02:15,960 --> 00:02:19,720
+En el Discord, pues a ver si me he deflado todo amor.
+
+27
+00:02:19,720 --> 00:02:20,720
+Mucha suerte.
+
+28
+00:02:20,720 --> 00:02:21,720
+Gracias.
+
+29
+00:02:21,720 --> 00:02:29,160
+Venga pues vamos a arrancar ya, voy a poner en modo presentación la pantalla, espero
+
+30
+00:02:29,160 --> 00:02:34,520
+que se esté viendo bien, la pantalla completa, vale y lo primero de todo es agradeceros el
+
+31
+00:02:34,520 --> 00:02:39,000
+que estéis haciendo esta charla, es una charla que me hace especial ilusión por el tema
+
+32
+00:02:39,000 --> 00:02:43,040
+de hablar de arquitecturas en el software que es un tema que creo que es apasionante
+
+33
+00:02:43,040 --> 00:02:47,000
+y por otro lado pues tecnología nueva como fase PI que realmente pues siempre a los que
+
+34
+00:02:47,000 --> 00:02:52,400
+nos gusta mucho la tecnología y el hacking y demás pues siempre nos divierte mucho creer
+
+35
+00:02:52,400 --> 00:02:57,480
+tecnología nueva como fase PI y las posibilidades que ofrecen y hablar un poco de ellas, ¿no?
+
+36
+00:02:57,480 --> 00:02:59,800
+Entonces agradecer al Congreso también, ¿no?
+
+37
+00:02:59,800 --> 00:03:05,360
+A la conferencia de PyConness que nos sabe que les gusta la charla y nada, arrancamos.
+
+38
+00:03:05,360 --> 00:03:09,600
+Entonces lo primero de comentaros pues eso que sí a día de hoy estoy trabajando en
+
+39
+00:03:09,600 --> 00:03:13,680
+una empresa de Smart Protection que esta mañana ya vale y también os comento un poquito lo
+
+40
+00:03:13,680 --> 00:03:19,240
+que hacemos a grandes rasgos, que es la parte de intentar que en internet pues hay una,
+
+41
+00:03:19,240 --> 00:03:23,520
+se sigan una serie de normas a la hora de compartir los contenidos y que en una de las
+
+42
+00:03:23,520 --> 00:03:26,440
+falsificaciones en general lo que nos gusta decir es que intentamos que internet sea un
+
+43
+00:03:26,440 --> 00:03:28,520
+sitio más seguro para todos, ¿no?
+
+44
+00:03:28,520 --> 00:03:35,320
+Para compartir contenidos, para vender nuestros productos y utilizamos muchas técnicas.
+
+45
+00:03:35,320 --> 00:03:39,760
+A día de hoy estamos buscando perfiles Python o sea que si algunos hayan se interesados en
+
+46
+00:03:39,760 --> 00:03:43,040
+hablar con nosotros pues ahí os he dejado un enlace, ¿vale?
+
+47
+00:03:43,040 --> 00:03:44,720
+Y pasamos ya un poco a la presentación.
+
+48
+00:03:44,720 --> 00:03:49,920
+Entonces para ponerse en contexto, dentro de, dentro de lo que es la plataforma que
+
+49
+00:03:49,920 --> 00:03:53,360
+tenemos en el Smart Protection yo estoy trabajando en una parte de User Portal.
+
+50
+00:03:53,360 --> 00:03:59,200
+Entonces User Portal, el objetivo que tiene es visualizar para nuestros clientes pues
+
+51
+00:03:59,200 --> 00:04:00,360
+todo lo que hacemos por ellos.
+
+52
+00:04:00,360 --> 00:04:03,360
+Entonces hacemos un montón de cosas y cuando hacemos un montón de cosas hacemos un montón
+
+53
+00:04:03,360 --> 00:04:09,760
+de servicios trabajando para detectar posibles infracciones y falsificaciones para analizar
+
+54
+00:04:09,760 --> 00:04:14,680
+si de verdad lo son para pedir que se le inminen por ejemplo internet, contenidos,
+
+55
+00:04:14,680 --> 00:04:19,320
+falsificaciones de marcas o contenidos ilegales para implementar estas funcionalidades hay
+
+56
+00:04:19,320 --> 00:04:22,560
+un montón de cosas por atrás que tenemos que hacer para que todo eso funcione.
+
+57
+00:04:22,560 --> 00:04:27,040
+Entonces lo que queremos es visualizar a través de User Portal todo eso que estamos haciendo
+
+58
+00:04:27,040 --> 00:04:32,320
+de una forma que sea entendible por el, por el usuario final de nuestros servicios y que
+
+59
+00:04:32,320 --> 00:04:35,360
+de alguna forma pues le contemos la historia de lo que está ocurriendo.
+
+60
+00:04:35,360 --> 00:04:40,000
+Entonces para ello, User Portal tiene que hablar con todo tipo de sistemas por abajo
+
+61
+00:04:40,000 --> 00:04:41,880
+y tiene que utilizar muchas tecnologías diferentes.
+
+62
+00:04:41,880 --> 00:04:47,400
+Entonces por ello veremos que hemos decidido apostar por utilizar el tema de hacer alguna
+
+63
+00:04:47,400 --> 00:04:52,240
+arquitectura que nos permita precisamente podernos enganchar a todos esos servicios.
+
+64
+00:04:52,240 --> 00:04:56,280
+Vale, entonces el equipo de, que estamos en la parte de User Portal es un equipo pues
+
+65
+00:04:56,280 --> 00:04:59,800
+que está necesitando escalar porque al final tenemos un montón de servicios cada vez más,
+
+66
+00:04:59,800 --> 00:05:03,320
+cada vez más exigencias por parte de las cosas que tiene que hacer User Portal y tenemos
+
+67
+00:05:03,320 --> 00:05:07,160
+que reaccionar muy rápido a las peticiones, cambios de requisitos y demás, o sea cambia
+
+68
+00:05:07,160 --> 00:05:08,160
+bastante todo todavía.
+
+69
+00:05:08,160 --> 00:05:12,680
+Entonces es muy exigente en ese sentido y las tecnologías que utilizemos y los diseños
+
+70
+00:05:12,680 --> 00:05:16,080
+pues tienen que estar preparados justamente para eso.
+
+71
+00:05:16,080 --> 00:05:19,840
+Entonces yo hoy que estoy aquí comentándose todo esto, mi nombre es El Prado del Castillo
+
+72
+00:05:19,840 --> 00:05:24,120
+y bueno, pues como ya se ha comentado, vamos, llevo toda mi vida en tema de OpenSource software
+
+73
+00:05:24,120 --> 00:05:29,020
+libre, empeores como genómicos, quizá ese que tengo más cariño porque estoy mucho
+
+74
+00:05:29,020 --> 00:05:30,020
+allá y estoy trabajando en él.
+
+75
+00:05:30,020 --> 00:05:35,080
+Y nada, vamos al medio yo.
+
+76
+00:05:35,080 --> 00:05:38,140
+Arrancamos con la parte de Clean Architectures que va a ser la parte menos práctica, la
+
+77
+00:05:38,140 --> 00:05:42,520
+charla vale, la fase PI va a ser mucho más práctica, pero queríamos enmarcarlo porque
+
+78
+00:05:42,520 --> 00:05:46,760
+la fase PI de por sí solo pues no deja de ser una tecnología más que como veremos
+
+79
+00:05:46,760 --> 00:05:51,760
+lo que nos lo va a hacer es un mecanismo que nos sirve para ofrecer API Rest.
+
+80
+00:05:51,760 --> 00:05:55,760
+Pero realmente nosotros queremos ir más allá, o sea realmente para nosotros es ofrecer la
+
+81
+00:05:55,760 --> 00:06:01,560
+lógica, API Rest es un medio para cocir un fin y el fin realmente está recogido en lo
+
+82
+00:06:01,560 --> 00:06:04,480
+que es el arquitectura que estamos diseñando.
+
+83
+00:06:04,480 --> 00:06:07,560
+Entonces ahora lo diseñar las arquitecturas, intentaré no enrollaven mucho en esta parte
+
+84
+00:06:07,560 --> 00:06:10,720
+porque vamos, esto podemos hablar horas y horas ¿no?
+
+85
+00:06:10,720 --> 00:06:16,720
+Pues para nosotros una arquitectura de software pues no deja de ser el cómo contar esos
+
+86
+00:06:16,720 --> 00:06:22,160
+grandes elementos que forman nuestro sistema, lo que son y conservación entre ellos.
+
+87
+00:06:22,160 --> 00:06:29,160
+Vale, entonces hay muchas formas de definir las arquitecturas, de diseñarlas y yo creo
+
+88
+00:06:29,160 --> 00:06:32,960
+que lo que fundamentalmente diferencia a la arquitectura de software con respecto a las
+
+89
+00:06:32,960 --> 00:06:36,760
+arquitecturas más adicionales como de edificios, de puentes, de carreteras es que tienen que
+
+90
+00:06:36,760 --> 00:06:40,240
+estar diseñadas para el cambio, o sea nosotros vivimos en el cambio constante y no podemos
+
+91
+00:06:40,240 --> 00:06:44,040
+hacer cosas que no puedan cambiar, porque si haces eso pues vas a encontrar un sistema
+
+92
+00:06:44,040 --> 00:06:48,280
+que van a dejar de ser útiles rápidamente y el mantenimiento va a ser horrible.
+
+93
+00:06:48,280 --> 00:06:52,840
+Entonces uno de los objetivos de las arquitecturas tiene que ser minimizar los costes de mantenimiento
+
+94
+00:06:52,840 --> 00:06:58,160
+que tenga software luego en producción y esos costes pues vienen desde costes de las personas
+
+95
+00:06:58,160 --> 00:07:03,640
+que hacen falta, que están involucradas, el tiempo que hace falta.
+
+96
+00:07:03,640 --> 00:07:08,360
+Tradicionalmente en el mundo de las arquitecturas pues supongo que vamos a todos a su cenar
+
+97
+00:07:08,360 --> 00:07:12,960
+que se suelen dividir como en tres capas, fundamentalmente la capa de datos, la capa
+
+98
+00:07:12,960 --> 00:07:15,160
+de dominio y la capa de presentación.
+
+99
+00:07:15,160 --> 00:07:18,520
+Esto ha sido así durante muchos años y yo bueno yo casi todo el tiempo que he estado
+
+100
+00:07:18,520 --> 00:07:21,960
+desarrollando software siempre pues tiene en mente las arquitecturas software pues si
+
+101
+00:07:21,960 --> 00:07:27,240
+la arquitectura pasas en capas, en capas desde aquella arquitectura que en TCP y P no
+
+102
+00:07:27,240 --> 00:07:31,640
+contaba bueno la arquitectura está o si de todas las capas que había a la hora de
+
+103
+00:07:31,640 --> 00:07:35,880
+afrontar, implementar una aplicación con toda la capa de red y demás hasta cualquier
+
+104
+00:07:35,880 --> 00:07:39,320
+tipo de arquitectura que te enfrentas a principio de los proyectos pues siempre la ponés en
+
+105
+00:07:39,320 --> 00:07:44,160
+capas y tenemos la capa de datos, la capa de dominio, lógica de negocio y la capa de presentación.
+
+106
+00:07:44,160 --> 00:07:48,240
+Entonces esta arquitectura funciona bastante bien en hacerlas así, se entiende muy bien,
+
+107
+00:07:48,240 --> 00:07:51,720
+la idea es que cada capa esté aislada del resto de capas y que puedas cambiar una capa
+
+108
+00:07:51,720 --> 00:07:53,840
+tranquilamente sin que afecte al resto.
+
+109
+00:07:53,840 --> 00:07:58,400
+Vale pues esto es más o menos modular y parece que permite uno de los objetivos que tenemos
+
+110
+00:07:58,400 --> 00:08:02,440
+que es que las arquitecturas puedan cambiar, podemos cambiar las capas y no debería tener
+
+111
+00:08:02,440 --> 00:08:03,440
+mucho impacto.
+
+112
+00:08:03,440 --> 00:08:07,000
+Lo que ocurre a este tipo de arquitecturas es que al final la capa de los datos que es
+
+113
+00:08:07,000 --> 00:08:11,240
+la que está más abajo de la arquitectura pues acaba teniendo demasiado peso porque al
+
+114
+00:08:11,240 --> 00:08:17,360
+final acaba fijando demasiado como tiene que ser el resto de capas y eso lo que provoca
+
+115
+00:08:17,360 --> 00:08:21,680
+es que la lógica de negocio, el dominio, en vez de ser el dominio la lógica de negocio
+
+116
+00:08:21,680 --> 00:08:26,640
+el que lleve un poco el rol principal dentro de la arquitectura pasa a ser la capa de datos.
+
+117
+00:08:26,640 --> 00:08:29,640
+Entonces por ejemplo si tomamos una decisión tecnológica para utilizar una base de datos
+
+118
+00:08:29,640 --> 00:08:33,680
+concreta y luego la queremos cambiar que eso debería ser tribiel hacerlo, debería ser quitar
+
+119
+00:08:33,680 --> 00:08:38,320
+una tecnología de base de datos, poner otra pues no es tan sencillo porque nuestra arquitectura
+
+120
+00:08:38,320 --> 00:08:42,520
+acaba demasiado atada a la parte de datos. Y por otro lado con este tipo de arquitecturas
+
+121
+00:08:42,520 --> 00:08:46,160
+lo que ocurre es que los cambios aunque en principio solo debo afectar una capa hay
+
+122
+00:08:46,160 --> 00:08:50,480
+efectos de propagación de ondas entonces cambias una capa y por lo que sea afecta un
+
+123
+00:08:50,480 --> 00:08:54,720
+poquito la capa siguiente que por lo que sea afecta un poquito la capa siguiente y ese
+
+124
+00:08:54,720 --> 00:08:58,720
+elamino entre capas hay veces que no están fuerte como nos gustaría.
+
+125
+00:08:58,720 --> 00:09:04,520
+Entonces como respuesta a este tipo de problemáticas empezaron a surgir unas arquitecturas por
+
+126
+00:09:04,520 --> 00:09:08,520
+ejemplo la arquitectura de Cebolla y la arquitectura sagonaria que vamos a hablar luego que en un
+
+127
+00:09:08,520 --> 00:09:13,560
+poco compartían todos un poco lo mismo que es que el corazón de la arquitectura en
+
+128
+00:09:13,560 --> 00:09:19,920
+vez de ser la parte de los datos debería ser la parte que si queréis en más estratégica
+
+129
+00:09:19,920 --> 00:09:23,840
+cambia menos y es la parte del dominio o sea el dominio con lo que estamos trabajando.
+
+130
+00:09:23,840 --> 00:09:27,880
+Por ejemplo en el repositorio que hemos puesto de ejemplo estamos trabajando con la parte
+
+131
+00:09:27,880 --> 00:09:33,000
+de ventas de coches entonces dice vale si trabajamos con una aplicación de ventas de coches esa
+
+132
+00:09:33,000 --> 00:09:36,400
+aplicación puede evolucionar a lo largo del tiempo imagino que esa aplicación va a ser
+
+133
+00:09:36,400 --> 00:09:39,920
+la misma durante 20 años que es lo que no va a cambiar no va a cambiar el concepto de
+
+134
+00:09:39,920 --> 00:09:43,960
+coche no va a cambiar el concepto de que hay ventas no va a cambiar el concepto de que
+
+135
+00:09:43,960 --> 00:09:47,400
+hay una tienda donde se venden entonces tenemos una serie de conceptos que son conceptos
+
+136
+00:09:47,400 --> 00:09:53,800
+relacionados con el dominio que probablemente no van a cambiar entonces esos conceptos y
+
+137
+00:09:53,800 --> 00:10:00,080
+la relación y la lógica que hay aquí entre ellos esa lógica y esas entidades del dominio
+
+138
+00:10:00,080 --> 00:10:06,800
+pues lo que queremos es mantenerlas muy autocontenidas porque eso no va a cambiar lo más poder
+
+139
+00:10:06,800 --> 00:10:08,360
+utilizar a lo largo del tiempo.
+
+140
+00:10:08,360 --> 00:10:12,600
+Entonces esa parte de la arquitectura es clave y muy importante porque es realmente donde
+
+141
+00:10:12,600 --> 00:10:18,000
+está la lógica de verdad de nuestro dominio y se va a cambiar poco por lo cual la metemos
+
+142
+00:10:18,000 --> 00:10:22,320
+en el corazón de la arquitectura y hacemos que esa lógica no puede depender de nada
+
+143
+00:10:22,320 --> 00:10:23,320
+externo.
+
+144
+00:10:23,320 --> 00:10:27,000
+Esa lógica no puede depender de que utilicemos por ejemplo el Fice Piai no puede depender
+
+145
+00:10:27,000 --> 00:10:33,520
+de que utilicemos un sistema de colas o no puede no puede depender de que utilicemos
+
+146
+00:10:33,520 --> 00:10:35,520
+cualquier tipo de tecnología.
+
+147
+00:10:35,520 --> 00:10:42,800
+Entonces entorno a ese corazón de la arquitectura pues empezamos a poner capas que son capas
+
+148
+00:10:42,800 --> 00:10:47,920
+que la clave es que las capas una capa nunca puede depender de capas más externas.
+
+149
+00:10:47,920 --> 00:10:53,960
+Entonces si queréis la capa más interna es lo que se le suele denominar políticas que
+
+150
+00:10:53,960 --> 00:10:57,960
+son más estratégicas que son las políticas de tu aplicación y las capas más externas
+
+151
+00:10:57,960 --> 00:11:01,280
+son mecanismos que son mecanismos que nos sirven para cumplir lo que queremos hacer
+
+152
+00:11:01,280 --> 00:11:05,200
+con esa aplicación en un momento dado pero que esos mecanismos pueden cambiar.
+
+153
+00:11:05,200 --> 00:11:09,040
+Entonces un ejemplo de ese tipo de arquitecturas es la arquitectura hexagonal que tenemos en
+
+154
+00:11:09,040 --> 00:11:14,720
+el centro lo que será la lógica de negocio de nuestra de nuestra aplicación y luego
+
+155
+00:11:14,720 --> 00:11:20,640
+lo que hacemos es ofrecer puertos para que se pueden enganchar los mecanismos.
+
+156
+00:11:20,640 --> 00:11:24,360
+Entonces en nuestro caso pues ofrecemos puertos por ejemplo para que se puedan enganchar base
+
+157
+00:11:24,360 --> 00:11:25,360
+de datos.
+
+158
+00:11:25,360 --> 00:11:29,960
+Ofrecemos puertos para que puedan entrar la parte de invocaciones por un framework de
+
+159
+00:11:29,960 --> 00:11:33,240
+APIs como es FASE API.
+
+160
+00:11:33,240 --> 00:11:36,320
+Ofrecemos puertos para que se puedan enganchar por ejemplo el sistema de eventos y poder tener
+
+161
+00:11:36,320 --> 00:11:38,120
+arquitecturas basadas en eventos.
+
+162
+00:11:38,120 --> 00:11:41,640
+Este tipo de arquitecturas hexagonales ha empezado a hablarse mucho de ellas también con el tema
+
+163
+00:11:41,640 --> 00:11:46,840
+de los microservicios porque los microservicios se adapten muy bien a este tipo de arquitecturas.
+
+164
+00:11:46,840 --> 00:11:51,960
+Entonces a mejor algunos habéis empezado a oír hablar de ellas por la lluvia de los
+
+165
+00:11:51,960 --> 00:11:52,960
+microservicios.
+
+166
+00:11:52,960 --> 00:12:00,360
+Entonces pasamos ya un poco al tema de FASE API y vamos a ir un poco más a la parte más
+
+167
+00:12:00,360 --> 00:12:01,360
+concreta de la charla.
+
+168
+00:12:01,360 --> 00:12:05,120
+Entonces en la parte de FASE API lo que quería era comentaros un poco lo que es FASE API
+
+169
+00:12:05,120 --> 00:12:09,320
+y nuestra experiencia con FASE API y por otro lado engancharlo con todo este diseño que
+
+170
+00:12:09,320 --> 00:12:12,440
+hemos hecho de la parte de arquitecturas hexagonales.
+
+171
+00:12:12,440 --> 00:12:17,480
+Entonces como enganchamos nuestra aplicación y como FASE API realmente es un mecanismo
+
+172
+00:12:17,480 --> 00:12:18,880
+es un rinconcito de nuestra aplicación.
+
+173
+00:12:18,880 --> 00:12:24,880
+O sea realmente nuestra aplicación tiene un correo fuerte que son las entidades dominio,
+
+174
+00:12:24,880 --> 00:12:31,120
+logica de negocio y tenemos una forma de utilizarlas que es utilizando FASE API por la parte de
+
+175
+00:12:31,120 --> 00:12:34,440
+interfaces REST.
+
+176
+00:12:34,440 --> 00:12:38,320
+Entonces para arrancar que es FASE API supongo que ya muchos de los que ustedes aquí lo
+
+177
+00:12:38,320 --> 00:12:42,520
+conoceréis porque es un framework que a pesar de que es bastante reciente pues se va a hablar
+
+178
+00:12:42,520 --> 00:12:44,040
+mucho de él.
+
+179
+00:12:44,040 --> 00:12:49,360
+Entonces yo yo voy trabajando con él porque entré en el MAP protection ahora a ocho meses
+
+180
+00:12:49,360 --> 00:12:55,520
+y realmente para nosotros pues tiene una serie de cosas básicas que realmente nos han huyado
+
+181
+00:12:55,520 --> 00:13:00,640
+un montón a la hora de la aplicación y nos asegura un poco para dedicar al futuro que
+
+182
+00:13:00,640 --> 00:13:02,200
+ha sido una lección adecuada.
+
+183
+00:13:02,200 --> 00:13:10,880
+Por un lado lo que hace FASE API es basar en tecnologías maduras y recientes.
+
+184
+00:13:10,880 --> 00:13:16,680
+O sea son tecnologías por ejemplo como Starlet que lo que hace es vale FASE API cuando tienes
+
+185
+00:13:16,680 --> 00:13:23,720
+una aplicación basada en FASE API se ve que es una aplicación ASGI que es lo de ASGI
+
+186
+00:13:23,720 --> 00:13:29,640
+pues que permite que nuestra aplicación se integre con los servidores Python que soporten
+
+187
+00:13:29,640 --> 00:13:33,320
+ASGI como protocolo de comunicación entre servidores web y la aplicación.
+
+188
+00:13:33,320 --> 00:13:39,480
+Vale entonces estos servidores ha sido una evolución de lo que eran los servidores anteriores
+
+189
+00:13:39,480 --> 00:13:44,840
+que no explotaban toda la parte de concurrencia que ha venido con la nueva S&P.
+
+190
+00:13:44,840 --> 00:13:49,360
+A partir de P3.6 se empezó a meter toda la parte de concurrencia y asignoría dentro
+
+191
+00:13:49,360 --> 00:13:54,720
+de las bibliotecas de Python y ese tipo de servidores nuevos basados en ASGI pues hacen
+
+192
+00:13:54,720 --> 00:13:58,040
+uso de esa posibilidad de nueva de Python de concurrencia por lo cual el rendimiento veremos
+
+193
+00:13:58,040 --> 00:13:59,680
+que es mucho mejor.
+
+194
+00:13:59,680 --> 00:14:04,360
+Tenemos una parte de validación de datos que está basada en PyDantic que permite que
+
+195
+00:14:04,360 --> 00:14:09,320
+la seleccion de seleccion de datos que nos vienen por nuestras APIs y tenemos que enviar
+
+196
+00:14:09,320 --> 00:14:13,400
+a través de nuestras APIs pues es mucho más sencilla y que estructuras de datos complejas
+
+197
+00:14:13,400 --> 00:14:18,400
+podamos manejarlas y lo que comenté un poquito antes que puede trabajar con cualquier servidor
+
+198
+00:14:18,400 --> 00:14:23,400
+de ASGI o sea que puede trabajar con cualquier servidor de web que tenga su port de ASGI
+
+199
+00:14:23,400 --> 00:14:28,000
+por ejemplo como Ubicor que se utilizamos nosotros actualmente.
+
+200
+00:14:28,000 --> 00:14:34,480
+Entonces realmente la parte de cómo se definen las rutas de entrada los endpoints a los cuales
+
+201
+00:14:34,480 --> 00:14:39,200
+se van a poder conectar clientes para acceder a nuestra aplicación pues yo creo es similar
+
+202
+00:14:39,200 --> 00:14:42,840
+a como se hacen los fringos vale se definen una serie de rutas y las rutas las enganchamos
+
+203
+00:14:42,840 --> 00:14:47,320
+con los métodos que implementan la lógica que queremos que queremos ofrecer vía las
+
+204
+00:14:47,320 --> 00:14:48,320
+APIs.
+
+205
+00:14:48,320 --> 00:14:54,680
+Vale entonces entrando un poquito más en detalle cuando hablamos de la parte de ASGI pues ASGI
+
+206
+00:14:54,680 --> 00:15:01,680
+es la especificación evolución que ha sido evolución de AWSGI que viene a parte de
+
+207
+00:15:01,680 --> 00:15:06,680
+definir la interfaz de comunicación entre la aplicación y el servidor de web vale entonces
+
+208
+00:15:06,680 --> 00:15:10,600
+al utilizar ASGI pues como comentaba antes se explota toda la parte que tiene pacionadora
+
+209
+00:15:10,600 --> 00:15:16,040
+de concurrencia y podemos hacer el uso de llamadas asignoradas dentro de la parte del
+
+210
+00:15:16,040 --> 00:15:20,160
+servidor web y dentro de nuestra aplicación y entonces eso permite que el rendimiento
+
+211
+00:15:20,160 --> 00:15:23,880
+que tiene el servidor web y que pueda tener nuestra aplicación sea muy superior a la que
+
+212
+00:15:23,880 --> 00:15:30,000
+tenemos antes por ejemplo con soluciones basadas en AWSGI que no permiten que pacion por
+
+213
+00:15:30,000 --> 00:15:34,120
+ejemplo los fringos de web de pacion pudieran competir con pues como internos como no de
+
+214
+00:15:34,120 --> 00:15:35,120
+js.
+
+215
+00:15:35,120 --> 00:15:41,440
+A día de hoy aquí hay un ejemplo no que es de tech en power los backmars que tienen ellos
+
+216
+00:15:41,440 --> 00:15:47,720
+allí y vemos que Starlet que es lo que está basado en fice API pues tiene un rendimiento
+
+217
+00:15:47,720 --> 00:15:53,840
+que es superior por ejemplo a este caso a no ggs vale entonces realmente esto realmente
+
+218
+00:15:53,840 --> 00:15:57,360
+los rendimientos no hayan a ser comparables a lo que son otro tipo de lenguajes por ejemplo
+
+219
+00:15:57,360 --> 00:16:02,560
+como fringos basados en java y demás pero para lo que son los entornos basados en lenguajes
+
+220
+00:16:02,560 --> 00:16:07,840
+dinámicos como python, javascript, ruby, psp, bell pues ahora ahora con python estamos en
+
+221
+00:16:07,840 --> 00:16:13,880
+el si queréis en la franja alta de rendimiento gracias a este tipo de de soluciones vale
+
+222
+00:16:13,880 --> 00:16:18,600
+luego aparte a la utilizada ASGI pues tiene cosas por ejemplo la implementación de los
+
+223
+00:16:18,600 --> 00:16:22,240
+websocks ahora es natural hacerla o sea no hay problema con implementar websocks utilizando
+
+224
+00:16:22,240 --> 00:16:29,560
+fice pi o la parte graphql ejecutar tareas de fondo hay muchos distintos de cosas que
+
+225
+00:16:29,560 --> 00:16:35,040
+las tenemos por utilizar ASGI vale hay una parte a mi que me gusta especialmente que
+
+226
+00:16:35,040 --> 00:16:40,040
+es la de hacer toda la parte valida de datos porque esta parte suele ser bastante compleja
+
+227
+00:16:40,040 --> 00:16:44,280
+en cuanto la aplicación va evolucionando y los datos de entrada y salida son más complejos
+
+228
+00:16:44,280 --> 00:16:48,440
+los diccionarios por ejemplo si pensáis en el JSON el payload que enviamos en nuestras
+
+229
+00:16:48,440 --> 00:16:55,280
+APIs ese JSON a principio de las APIs pues es sencillito se va complicando se va complicando
+
+230
+00:16:55,280 --> 00:16:59,840
+y al final pues acaba siendo pues uno JSON o sea unos diccionarios complejos que tienen
+
+231
+00:16:59,840 --> 00:17:04,720
+sus diccionarios tienen lisa, tienen srryche y demás entonces lo que es la el cómo gestionar
+
+232
+00:17:04,720 --> 00:17:09,320
+el tratamiento de esos datos y la validación pues acaba siendo complejo es una tarea compleja
+
+233
+00:17:09,320 --> 00:17:12,360
+que esto es la parte pues siempre hablamos de la parte de serializar y de serializar los
+
+234
+00:17:12,360 --> 00:17:18,120
+datos que nos vienen desde la API REST que no lo envíe pues que no lo envíe vale entonces
+
+235
+00:17:18,120 --> 00:17:23,480
+el creador de fase PA decidió basarse en pidantic para hacer toda esa parte y lo cual es bastante
+
+236
+00:17:23,480 --> 00:17:29,960
+maravilloso porque uno de los que tiene es utilizando pidantic el funcionamiento es nosotros
+
+237
+00:17:29,960 --> 00:17:35,200
+por ejemplo reciben los datos en formato JSON vale entonces ese formato JSON cómo hacemos
+
+238
+00:17:35,200 --> 00:17:41,200
+para convertirlo en modelo de datos en Python que podemos utilizar después pues pidantis
+
+239
+00:17:41,200 --> 00:17:44,400
+se encarga de hacerlo el solito entonces tú define por ejemplo en ese caso en ese ejemplo
+
+240
+00:17:44,400 --> 00:17:50,680
+que vemos aquí pues definimos una clase usuario el modelo de datos de un usuario con una serie
+
+241
+00:17:50,680 --> 00:17:57,440
+de campos vale entonces ves que en los campos utilizamos tipos vale entonces la clave pidantic
+
+242
+00:17:57,440 --> 00:18:02,400
+es que utilizamos los stephins de python para definir el modelo de datos y eso es y en el
+
+243
+00:18:02,400 --> 00:18:10,240
+sequeo si utilices información de los tipos para ser capaz de validar los datos entonces creamos
+
+244
+00:18:10,240 --> 00:18:14,560
+una clase le dice vale puede ser uno sobre tener un identificador si o si porque es que
+
+245
+00:18:14,560 --> 00:18:18,720
+eso es opcional puede tener un nombre que si no viene el nombre el valor por defecto es
+
+246
+00:18:18,720 --> 00:18:26,120
+lisaperez luego puede tener un campo opcional de tipo de time y por último puede tener una
+
+247
+00:18:26,120 --> 00:18:30,480
+lista que puede venir vacía o no vacía de amigos entonces vea que es importante esto
+
+248
+00:18:30,480 --> 00:18:35,360
+cuando decimos de valor por defecto el tipo es opcional no es opcional todos estos tipos
+
+249
+00:18:35,360 --> 00:18:39,600
+son conceptos que luego se van a validar cuando venga los datos en el en la JSON y luego
+
+250
+00:18:39,600 --> 00:18:43,440
+se van a ver muy importantes en cuanto la aplicación se empieza a complicar entonces
+
+251
+00:18:43,440 --> 00:18:49,240
+dentro de los modelos de datos de pidantic podemos especificar ciertas configuraciones por
+
+252
+00:18:49,240 --> 00:18:56,120
+ejemplo que no permitimos que nos vengan campos adicionales dentro de modelos de datos vale o
+
+253
+00:18:56,120 --> 00:19:00,240
+si entonces pues directamente nos va a llegar un diccionario de datos y pidantic con ese diccionario
+
+254
+00:19:00,240 --> 00:19:05,320
+de datos que no llega va a intentar extraer y construir un usuario a partir de él en ese
+
+255
+00:19:05,320 --> 00:19:09,920
+ejemplo por ejemplo nos vendría que los datos que nos vienen imaginó que esto fuera un JSON que
+
+256
+00:19:09,920 --> 00:19:15,000
+nos ha venido vía de una invigación por el API REST pues tienes un identificador que es el uno
+
+257
+00:19:15,000 --> 00:19:19,800
+dice vale pues esto es correcto porque es obligatorio luego el nombre no viene en el external data no
+
+258
+00:19:19,800 --> 00:19:22,800
+viene nombre bueno no pasa nada porque el nombre tenemos un valor por defecto que lo podríamos
+
+259
+00:19:22,800 --> 00:19:28,440
+rellenar se va a disaperecer luego viene el sign up time stamp que era opcional podría venir
+
+260
+00:19:28,440 --> 00:19:32,640
+a no venir como viene pues perfecto y luego viene el campo de friends que tiene que venir y en eso
+
+261
+00:19:32,640 --> 00:19:39,440
+viene vacío entonces a partir de esta información seríamos capaces de crear un user a partir de
+
+262
+00:19:39,440 --> 00:19:43,600
+un objeto que ves aquí es un diccionario pero podría ser un payload que nos venga por la por la
+
+263
+00:19:43,600 --> 00:19:48,280
+pires entonces toda esa validación hacia forma automática y aparte cuando la convierte si hay
+
+264
+00:19:48,280 --> 00:19:53,320
+problemas en la validación pues nos da mensajes de error muy amigables para poder entender por qué
+
+265
+00:19:53,320 --> 00:19:59,040
+narices los datos que nos vienen no cuadran con los modelos de datos vale entonces aparte
+
+266
+00:19:59,040 --> 00:20:06,560
+fase pi utiliza también toda esa información de païdantic de los tipos y demás para generar de
+
+267
+00:20:06,560 --> 00:20:11,360
+forma automática documentación de la p entonces ya sabéis todos que os habéis enfrentado con
+
+268
+00:20:11,360 --> 00:20:16,520
+a p rest o con avise en general de acceso remoto que la parte de recomendaciones crítica porque
+
+269
+00:20:16,520 --> 00:20:21,240
+queremos que terceros accedan a nuestra p y lo utilicen de la forma lo más como posible entonces
+
+270
+00:20:21,240 --> 00:20:24,800
+la documentación es crítica y la documentación que hay que tener actualizada o sea no vale nada
+
+271
+00:20:24,800 --> 00:20:29,560
+tener la documentación muy buena si cuando la p o evolucionando no actualizamos igual entonces la
+
+272
+00:20:29,560 --> 00:20:34,720
+documentación mantener actualizada con respecto al código no es algo que sea tribir hacerlo y hay
+
+273
+00:20:34,720 --> 00:20:39,480
+una forma muy buena hacerla en ese caso que es con esa documentación automática entonces aquí
+
+274
+00:20:39,480 --> 00:20:44,400
+tenemos una p definida con fase pi que bueno si quieres este es el nuevo como primer ejemplo de
+
+275
+00:20:45,520 --> 00:20:50,160
+cómo se trabaja con fase pi pues aquí dice vale tenemos una aplicación basada en fase pi va a
+
+276
+00:20:50,160 --> 00:20:59,360
+utilizar el frango de fase pi en el caso de que a nuestra aplicación le llegue un un get del raíz
+
+277
+00:20:59,360 --> 00:21:05,000
+eso sería que llega una petición http un get del raíz recordar que esto esto es realmente el que
+
+278
+00:21:05,000 --> 00:21:10,640
+lo recoge ese video de web y el sebril de web que sería ubicon utilizando asgi se lo pasaría
+
+279
+00:21:10,640 --> 00:21:14,280
+aplicación y la aplicación lo que llegaría de le llegaría a decir ha habido invocación de tipo
+
+280
+00:21:14,280 --> 00:21:20,240
+get y tiene ese paz esto llegaría no llegaría aquí a nosotros a fase pi y diremos vale pues en el caso
+
+281
+00:21:20,240 --> 00:21:26,120
+que ocurra esto ejecutaríamos esto de aquí aquí tenemos otro método diferente que es en el caso
+
+282
+00:21:26,120 --> 00:21:30,320
+de que el empoint que invocan en vez de ser el raíz pues fuera barra itens barra un identificador de
+
+283
+00:21:30,320 --> 00:21:40,360
+item vale aquí tenemos otro método y aquí lo que lo que queremos traeros es como de forma automática
+
+284
+00:21:40,360 --> 00:21:45,960
+fase pi y basado en esto te genera la acompensación que veis a la derecha que es una es una documentación
+
+285
+00:21:45,960 --> 00:21:52,360
+o penapi genera de forma automática veis que ofrece los dos en points y el segundo en point que es
+
+286
+00:21:52,360 --> 00:21:57,040
+un poquito más elaborado vemos que nos ofrece información que vemos que es bastante detallada
+
+287
+00:21:57,040 --> 00:22:02,320
+aquí por ejemplo decimos vale ese es un en point necesitamos que cuando lo invoques nos pases un
+
+288
+00:22:02,320 --> 00:22:08,840
+id y ojo que es un parámetro requerido porque requerido porque es parte del paz que tenemos aquí y
+
+289
+00:22:08,840 --> 00:22:15,800
+no podemos invocar ese en point si no lo pasamos aquí un id y además te dice vale además tiene
+
+290
+00:22:15,800 --> 00:22:19,960
+que ser un entero porque se que se un entero porque el método que lo recoge no dice que este
+
+291
+00:22:19,960 --> 00:22:25,040
+parámetro de tipo entero y además podemos añadir la documentación adicional como por ejemplo decirle
+
+292
+00:22:25,040 --> 00:22:32,040
+aquí un ejemplo de cómo podría ser ese valor vale entonces jugando con esto podemos generar
+
+293
+00:22:32,040 --> 00:22:37,560
+documentación bastante rica que puede ser explotable por ejemplo como con herramientas de
+
+294
+00:22:37,560 --> 00:22:44,680
+generación automática de automática de las de las apis vale entonces no sé no sé conocéis de
+
+295
+00:22:44,680 --> 00:22:50,920
+red que es una que es un toolkit para probar de forma automática las apis utilizando esta documentación
+
+296
+00:22:50,920 --> 00:22:57,560
+es capaz de probar de lápiz de forma automática vale luego en fase p y tenemos conceptos como
+
+297
+00:22:57,560 --> 00:23:02,280
+la inyección de dependencias que es muy útil para evitar acomplamientos y que viene muy bien por
+
+298
+00:23:02,280 --> 00:23:07,440
+ejemplo para temas de autenticación entonces por ejemplo vamos a hacer en ese caso de aquí el data
+
+299
+00:23:07,440 --> 00:23:13,120
+esta ruta antes de invocar esta ruta siempre tiene que resolver esas dependencias y que lo que
+
+300
+00:23:13,120 --> 00:23:19,400
+tiene que hacer pues tiene que verificar que los tokens que nos han enviado sean correctos entonces
+
+301
+00:23:19,400 --> 00:23:23,720
+esta dependencia falla no sigue a invocar la lógica social de ese en point entonces si esta
+
+302
+00:23:23,720 --> 00:23:29,520
+dependencia se jodan todas antes de que se invoca el en point vale luego se pueden ejecutar tareas
+
+303
+00:23:29,520 --> 00:23:33,800
+de fondo también tu lanzas una petición y por ejemplo es una petición que tiene que enviar una
+
+304
+00:23:33,800 --> 00:23:38,960
+notificación al final vía correr el trónico tú el que te llama el en point no quieres que se
+
+305
+00:23:38,960 --> 00:23:42,960
+que esperando a que te envía la notificación tú lo que haces es decirle vale eres yo correto
+
+306
+00:23:42,960 --> 00:23:49,280
+la petición y la estoy procesando y devuelvo ya y y de fondo lanzas una una tarea de fondo que es
+
+307
+00:23:49,280 --> 00:23:56,320
+para notificar de que sea de que sea recibido esa invocación y lo que haga falta vale entonces
+
+308
+00:23:56,320 --> 00:24:03,480
+nosotros lo que hacemos es para enganchar fase pi con nuestra arquitectura de sa goneal lo que
+
+309
+00:24:03,480 --> 00:24:09,000
+hacemos es definimos la parte del dominio con su lógica de negocios los casos de uso y demás y
+
+310
+00:24:09,000 --> 00:24:13,840
+desde fase pi cuando implementamos los métodos que nos llegan las llamadas a los en point esos
+
+311
+00:24:13,840 --> 00:24:20,200
+métodos acaban llevando a los casos de uso que tenemos en la lógica de la aplicación es decir
+
+312
+00:24:20,200 --> 00:24:25,800
+que nosotros implementamos nuestra api utilizando la lógica de la aplicación que en ese caso si
+
+313
+00:24:25,800 --> 00:24:31,520
+utilizas de fase pi pero se podría utilizar de cualquier otro tipo de entrada a sistema vale
+
+314
+00:24:31,520 --> 00:24:37,920
+entonces ya para cerrar comentaros que en el caso de usel portal que es un poco el caso en el que
+
+315
+00:24:37,920 --> 00:24:45,560
+en el que más se está trabajando pues arrancamos la edición inicial utilizando doma entre venta
+
+316
+00:24:45,560 --> 00:24:50,440
+y sein entonces definimos una serie de dominios por eso en ese caso fueron de identificamos que
+
+317
+00:24:50,440 --> 00:24:55,760
+había ripos que tenemos activos los ases y tenemos contenidos entonces esto era lo dominio que detectamos
+
+318
+00:24:55,760 --> 00:25:02,560
+dentro de dentro de usel portal y a partir de ahí empezamos a construir nuestra arquitectura
+
+319
+00:25:02,560 --> 00:25:07,040
+saual entonces en la que se ha salido al pues tenemos los dominios en el centro la aplicación
+
+320
+00:25:07,040 --> 00:25:11,040
+que se llama caso de uso entonces tanto dominio como aplicación no dependen para nada de la
+
+321
+00:25:11,040 --> 00:25:15,800
+parte infraestructura y la parte infraestructura por ejemplo en el caso de fase pi que la tenemos aquí
+
+322
+00:25:15,800 --> 00:25:21,280
+en la parte de usuario con fase pi es esta parte de aquí la que invoca la lógica de negocio que
+
+323
+00:25:21,280 --> 00:25:27,200
+está dentro o sea la implementación de fase pi depende de la aplicación del dominio no al revés
+
+324
+00:25:27,200 --> 00:25:31,960
+vale entonces ese concierto también se va por un plátema de la fase de datos que utilizamos
+
+325
+00:25:31,960 --> 00:25:38,360
+en secuelar que nosotros dentro de la aplicación y ahí lo que hacemos es ofrecemos unas interfaces
+
+326
+00:25:38,360 --> 00:25:44,040
+a implementar por la capa de por el adaptador que quiere trabajar a lo represistir los datos vale
+
+327
+00:25:44,040 --> 00:25:48,480
+tampoco me quiero enrollar mucho más por ahí porque si no no tenemos tiempo suficiente y los
+
+328
+00:25:48,480 --> 00:25:54,360
+beneficios que hemos tenido de utilizar aquí otros agroenales y fase pi ha sido que tenemos una
+
+329
+00:25:54,360 --> 00:25:59,280
+una escalabilidad bastante importante en el equipo y en el producto o sea somos capaces de escalar y
+
+330
+00:25:59,280 --> 00:26:04,560
+afrontar retos a ve mayores estamos muy preparados para el cambio y somos muy muy independientes de
+
+331
+00:26:04,560 --> 00:26:07,440
+la tecnología o sea podemos cambiar de tecnología fácilmente por ejemplo ahora no tenemos que
+
+332
+00:26:07,440 --> 00:26:11,720
+migrar de que estamos utilizando base de datos basadas en polgres y ahora no vamos a migrar al
+
+333
+00:26:11,720 --> 00:26:15,780
+lago que estamos usando en el más protección y no va a llevar a utilizar tecnología diferente para
+
+334
+00:26:15,780 --> 00:26:20,000
+acceder a los datos en su caso no nos dan no no no no da miedo el cambio porque estamos preparados
+
+335
+00:26:20,000 --> 00:26:26,400
+precisamente para para ello vale y ya como resumen final puedes comentar que las arquitecturas
+
+336
+00:26:26,400 --> 00:26:32,960
+limpias y en este caso las secuelares la clave es te lleva a los negocios el dominio los casos de uso
+
+337
+00:26:32,960 --> 00:26:39,480
+la aplicación todo al al core al centro de la arquitectura y luego de darse acceso a ese a ese
+
+338
+00:26:39,480 --> 00:26:45,400
+core utilizando diferentes puntos de entrada que que no genera ninguna dependencia de ese core vale
+
+339
+00:26:45,400 --> 00:26:50,600
+todo el core tiene que ser independiente de cualquier tipo de capa exterior que haga uso de él con
+
+340
+00:26:50,600 --> 00:26:55,080
+respecto a fase pi pues estamos tranquilos por ejemplo de punto de vista rendimiento a día de hoy
+
+341
+00:26:55,080 --> 00:26:59,280
+todavía no nos no tenemos exigente muy fuerte muy fuerte de rendimiento pero sabemos que es un
+
+342
+00:26:59,280 --> 00:27:04,480
+framework preparado para poder escalar fácilmente con los repeticiones de buen rendimiento y el uso
+
+343
+00:27:04,480 --> 00:27:07,880
+de pide de pideante nos encanta o sea la parte de generación automática de datos la parte de
+
+344
+00:27:07,880 --> 00:27:13,640
+actualización es la verdad que es que es una gozada y con esto un poco por cerrada la presentación
+
+345
+00:27:13,640 --> 00:27:18,040
+entonces si tenéis preguntas yo creo que se han quedado ahí cuatro cinco minutillos que podemos
+
+346
+00:27:18,040 --> 00:27:22,920
+utilizar para las preguntas perdonar que que afinal se deja menos tiempo que debería genial
+
+347
+00:27:25,080 --> 00:27:33,600
+pleta la verdad las he explicado todo muy bien así que de momento no han escrito las preguntas pero
+
+348
+00:27:33,600 --> 00:27:40,000
+bueno en cualquier caso como estamos en el canal de discord si van surgiendo dudas las puedes
+
+349
+00:27:40,000 --> 00:27:45,840
+contestar por ahí yo te comento que a mí la parte de documentación también es la que más me gusta
+
+350
+00:27:45,840 --> 00:27:50,880
+se me parece súper útil que eso exista por sobre todo para la gente que está aprendiendo porque
+
+351
+00:27:50,880 --> 00:27:58,480
+puedes ver rápidamente un método que acabas de preparar lo puedes probar en el momento y y viene
+
+352
+00:27:58,480 --> 00:28:02,760
+súper bien y también la parte de validación no lo que comentaba saldrán poco más al principio
+
+353
+00:28:02,760 --> 00:28:08,280
+que te obliga a hacer un código más limpio desde el principio te obliga a generar esas estructuras
+
+354
+00:28:08,280 --> 00:28:13,880
+de datos y evitar que cualquier que entre cualquier cosa entonces a veces es un poco más quizás
+
+355
+00:28:13,880 --> 00:28:18,920
+tedioso porque tienes que estar muy pendiente de lo que lo vas pasando los métodos en fastapi pero
+
+356
+00:28:18,920 --> 00:28:25,840
+pero genera que tu que tu código ya desde el principio esté más trabajado así que por esa
+
+357
+00:28:25,840 --> 00:28:33,520
+parte a mí también me parece súper genial fastapi nos comentan por discord que cómo se llama la
+
+358
+00:28:33,520 --> 00:28:39,360
+herramienta para testar automáticamente la utilizando la documentación es más de red de
+
+359
+00:28:39,360 --> 00:28:53,640
+de derecha o que y voy a meter a paulo por aquí no sé si quieres comentar algo paulo bueno yo que no
+
+360
+00:28:53,640 --> 00:29:00,280
+no trabajo totalmente en desarrollo yo trabajo más en investigación pero coinciden con ti precisamente
+
+361
+00:29:00,280 --> 00:29:05,520
+lo que lo único no te ha tomado y los documentación automática me parece de especial interés la
+
+362
+00:29:05,520 --> 00:29:11,320
+única nota que tomado yo y el tema de la arquitectura hexagonal yo por ejemplo no las conocía así que
+
+363
+00:29:11,320 --> 00:29:17,320
+me la apunto también para para aunque no sea mi tema seguir aprendiendo mucho porque al final la
+
+364
+00:29:17,320 --> 00:29:21,720
+país consigue para eso para aprender no sólo de tu tema sino de las cientos de miles de temas que
+
+365
+00:29:21,720 --> 00:29:27,720
+estamos viendo en esta solo esta mañana es que hemos visto de todo y la verdad por lo que más
+
+366
+00:29:27,720 --> 00:29:32,200
+quiere decir simplemente decir también alvaro la gracia por participar tanto en esa comunidad de
+
+367
+00:29:32,200 --> 00:29:38,280
+software libre porque país es software libre casi todos los paquetes son software libre y si no hay
+
+368
+00:29:38,280 --> 00:29:44,880
+software libre no no hay comunidad si hay en ese sentido paulo tanto en la parte de arquitecturas yo
+
+369
+00:29:44,880 --> 00:29:51,240
+creo que al final cuando trabaja un sistema complejos en la clave entre que sea un efecto
+
+370
+00:29:51,240 --> 00:29:54,760
+fracasó entonces de la final que pasa que mucho vivimos ya la parte cuando están en salas
+
+371
+00:29:54,760 --> 00:29:58,880
+arquitecturas y desarrollamos sobre cosas que ya están hechas pero si no está bien diseñado o sea
+
+372
+00:29:58,880 --> 00:30:02,520
+realmente los proyectos no escalan y al final los proyectos serios o está obtener aquí de toda
+
+373
+00:30:02,520 --> 00:30:07,400
+fuerte detrás o realmente al final haremos un problema de hecho por eso a mí esa parte es una
+
+374
+00:30:07,400 --> 00:30:16,480
+parte me atrae bastante pero la verdad que una charla muy muy interesante y bueno de hecho clara
+
+375
+00:30:16,480 --> 00:30:23,240
+ha puesto el disco no lo ha dicho pero ha puesto el team team flask ya puesto aplausos que como una
+
+376
+00:30:23,240 --> 00:30:28,200
+especie de debate por aquí entre que si quitar yango y sustituir por fastapi eso no puede ser
+
+377
+00:30:28,200 --> 00:30:40,200
+pero luego no tiene aquí de flask hay mucho bus acerca de tu presentación y en los guay de
+
+378
+00:30:40,200 --> 00:30:44,360
+esta conversa con con fereces que no terminan aquí que ahora nos metemos todo en el discord
+
+379
+00:30:44,360 --> 00:30:53,640
+y hablamos hablando y discutimos y tal es genial estupendo pues nada muchísimas gracias a lo que
+
+380
+00:30:53,640 --> 00:30:58,600
+vamos a ir dando paso en cinco minutillos a la siguiente ponente muchas gracias genial un saludo
+
+381
+00:30:58,600 --> 00:31:14,760
+hasta pronto a la hora.
+
