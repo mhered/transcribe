@@ -1,0 +1,2120 @@
+1
+00:00:00,000 --> 00:00:18,480
+Bueno pues empezamos la charla de los principios Solid con Python, lo primero es que os voy a
+
+2
+00:00:18,480 --> 00:00:33,560
+echar una foto, ayer se me olvidó y luego me echaron la bronca, nadie tiene derechos así de imagen, bueno vamos a
+
+3
+00:00:33,560 --> 00:00:42,400
+empezar presentándonos, ¿cuántos estuvieron en la charla que dimos ayer? Bueno trabajamos en
+
+4
+00:00:42,400 --> 00:00:48,720
+alea soluciones, somos el equipo que nos llamamos internamente Bifer, somos todo el equipo de desarrollo y
+
+5
+00:00:48,720 --> 00:00:57,040
+somos cuatro, somos pues Alberto Pérez que está aquí en primera fila, Néstor Salceda, Guillermo que
+
+6
+00:00:57,040 --> 00:01:02,260
+está viniendo en tren que parece ser que ayer salga un poco el tema y yo mismo Eduardo, Eduardo
+
+7
+00:01:02,260 --> 00:01:10,240
+Ferrocamo perdiendo, estamos haciendo extreme programing y hacemos sobre todo es importante
+
+8
+00:01:10,240 --> 00:01:15,000
+saber que hacemos producto y que usamos pues todas las prácticas técnicas que vamos evolucionando
+
+9
+00:01:15,000 --> 00:01:25,600
+y que hacemos desarrollo ágil. Entonces bueno una de las cosas que nos solemos encontrar en los
+
+10
+00:01:25,600 --> 00:01:31,240
+sistemas lo más normal es que sean rígidos, que sean frágiles, que sean inmóviles y que sean
+
+11
+00:01:31,240 --> 00:01:39,840
+viscosos, un sistema por ejemplo se puede considerar que es rígido cuando apenas puedes tocar en
+
+12
+00:01:39,840 --> 00:01:43,880
+cualquier sitio, entonces tocas en un sitio y de repente tienes que hacer una cadena de cambios
+
+13
+00:01:43,880 --> 00:01:52,720
+por distintos sitios de la aplicación, eso es un sistema rígido, otro frágil realmente es que
+
+14
+00:01:52,720 --> 00:01:56,760
+casi es verdad que tienes que hacer una cadena de cambios pero ni siquiera sabes dónde, o sea
+
+15
+00:01:56,760 --> 00:02:02,320
+porque parece que está, que no está todo relacionado pero tocas en un sitio y misteriosamente pues se
+
+16
+00:02:02,320 --> 00:02:09,960
+rompe en cualquier otro sitio. También puede ser inmóvil, inmóvil suele ser cuando realmente cada
+
+17
+00:02:09,960 --> 00:02:13,840
+una de las funcionalidades es funcionalidad que te viene te echas las manos a la cabeza pero cómo
+
+18
+00:02:13,840 --> 00:02:18,560
+voy a meter esto en mi aplicación, entonces sistemáticamente eso va pasando más cada vez según
+
+19
+00:02:18,560 --> 00:02:24,080
+vas evolucionando la aplicación y bueno la viscosidad pues es algo con lo que nos habremos
+
+20
+00:02:24,080 --> 00:02:28,280
+enfrentado todos que es cuando parece que te estás moviendo en arenas movedizas, os parece
+
+21
+00:02:28,280 --> 00:02:34,200
+que arrastras estás como moviéndote en alquitran, todo cuesta mucho y tal. Evidentemente las aplicaciones
+
+22
+00:02:34,200 --> 00:02:41,560
+no empiezan así, el día cero todos empezamos pues poniendo nuestra mejor voluntad, lo hacemos
+
+23
+00:02:41,560 --> 00:02:48,600
+de la mejor forma posible y siempre pues es con el paso del tiempo realmente cuando se va
+
+24
+00:02:48,600 --> 00:02:55,920
+perdiendo esa velocidad, esa sensación de velocidad del proyecto inicial del greenfield que
+
+25
+00:02:55,920 --> 00:03:02,640
+llaman, todo es bonito, vas metiendo funcionalidad tras funcionalidad con una sonrisa y luego pues
+
+26
+00:03:02,640 --> 00:03:06,880
+normalmente eso va decayendo, decae la fuerza, empiezas ya a sentirte un poco frustrado,
+
+27
+00:03:06,880 --> 00:03:10,480
+lo incómodo, aquello se va poniendo peor y luego de dos, tres años dices me cambio
+
+28
+00:03:10,480 --> 00:03:16,480
+de empresa y que se las arregle. Tienes que beber whisky cada noche también. Eso yo creo que es un
+
+29
+00:03:16,480 --> 00:03:21,680
+clásico, entonces luego alguien tiene que poner la cara y decirle que vamos a tirar la aplicación
+
+30
+00:03:21,680 --> 00:03:27,520
+porque eso es inmantenible, te dice, pues ya me podíais haber avisado. Entonces todo esto va de
+
+31
+00:03:27,520 --> 00:03:33,200
+pasta, todo lo que vamos a decir aquí parece que son principios que van a ser todo el tema de
+
+32
+00:03:33,200 --> 00:03:37,920
+bueno pues es que esto queréis hacer el código bonito, es que queréis que se lea, es todo muy
+
+33
+00:03:37,920 --> 00:03:45,280
+académico, es pasta. No, es pasta, solo va de pasta, lo que da que normalmente a la velocidad que
+
+34
+00:03:45,280 --> 00:03:52,560
+trabajamos, a la evolución que devoluciona los proyectos, pues ni nos damos cuenta, pero yo bueno
+
+35
+00:03:52,560 --> 00:03:59,600
+casi un poco como profesión pues debería avergonzarnos un poquito que nuestro trabajo pues tuviese tanto
+
+36
+00:03:59,600 --> 00:04:05,200
+impacto y que luego se tirase tan pronto, porque eso no es la realidad del problema que solucionamos,
+
+37
+00:04:05,200 --> 00:04:10,480
+el problema del cliente sigue estando ahí y tenemos que tirar una y otra vez las aplicaciones. Si por
+
+38
+00:04:10,480 --> 00:04:18,800
+lo menos las tirasemos por cachos, pues bueno, ya tendríamos ahí un cierto margen, ¿vale?
+
+39
+00:04:18,800 --> 00:04:24,640
+Entonces ¿por qué? ¿Por qué estos principios son? Pues principalmente por lo que hemos visto anteriormente,
+
+40
+00:04:24,640 --> 00:04:29,760
+por esos problemas de fragilidad, esos problemas de viscosidad, todos esos problemas que cuestan
+
+41
+00:04:29,760 --> 00:04:37,200
+dinero, o sea principalmente por pasta, ¿vale? Entonces nuestro objetivo al usar estos principios
+
+42
+00:04:37,200 --> 00:04:45,840
+y otros principios es hacer sistemas de orientación a objetos mantenibles, ¿vale? Sobre todo lo que
+
+43
+00:04:45,840 --> 00:04:50,880
+más el tema del mantenimiento tiene como muy mala prensa porque estamos acostumbrados
+
+44
+00:04:50,880 --> 00:04:55,120
+a que los proyectos les como hago el proyecto y bueno luego el mantenimiento y incluso ya en
+
+45
+00:04:55,120 --> 00:05:00,800
+algunos sistemas aberrantes pues los mantiene otra empresa, o sea es brutal, como no nos
+
+46
+00:05:00,800 --> 00:05:07,600
+comemos ese dolor que hemos generado, pues bueno, otro que a usted preciora que baje ahí.
+
+47
+00:05:07,600 --> 00:05:14,400
+Tengo un premio para ti. Básicamente la mantenibilidad realmente sería nuestro día a día, o sea nuestro
+
+48
+00:05:14,400 --> 00:05:19,440
+día a día no es hacer aplicaciones, las aplicaciones no se hacen y se sueltan, las aplicaciones
+
+49
+00:05:19,440 --> 00:05:24,480
+empiezan poco a poco, van creciendo, van evolucionando, o sea siempre es un crecimiento orgánico,
+
+50
+00:05:24,480 --> 00:05:28,880
+cualquier aplicación mediamente grande, si es una cosa de usar y tirar, pues evidentemente no.
+
+51
+00:05:28,880 --> 00:05:35,200
+Entonces nuestro objetivo es hacer sistemas orientados a objetos mantenibles, se pueden hacer
+
+52
+00:05:35,200 --> 00:05:38,720
+sistemas mantenibles sin usar orientación a objetos, pero bueno, a nosotros coinciden que nos gusta,
+
+53
+00:05:38,720 --> 00:05:43,840
+pues entonces y como además vende pues hemos decidido hacerlo así, pero podrían ser funcionales o
+
+54
+00:05:43,840 --> 00:05:50,160
+podrían ser incluso estructuras y queremos mejorar la reusabilidad y sobre todo el testing.
+
+55
+00:05:50,160 --> 00:05:55,680
+El testing para nosotros es fundamental, o sea hacemos desarrollo ágil, entonces el testing no es
+
+56
+00:05:55,680 --> 00:05:59,920
+algo que nos ayuda a validar si funciona las aplicaciones, no, es la forma con la que diseñamos,
+
+57
+00:05:59,920 --> 00:06:05,520
+es la forma con la que estamos tranquilos, es la forma con la que a las cinco decimos me voy
+
+58
+00:06:05,520 --> 00:06:10,080
+para casa, estoy tranquilo, he dejado un test roto sin subir, mañana continuo por ahí,
+
+59
+00:06:10,080 --> 00:06:14,960
+tan ricamente, sé que lo va a coger otra persona, va a poderlo implementar ese test,
+
+60
+00:06:14,960 --> 00:06:20,400
+no sé, podemos hacer peer programming, yo hago el test, Alberto lo implementa, luego él hace un test,
+
+61
+00:06:20,400 --> 00:06:26,560
+yo lo paso y vamos aprendiendo todos poco a poco y vamos conociendo y haciendo un sistema mantenible.
+
+62
+00:06:28,960 --> 00:06:36,560
+Entonces casi estos principios que vamos a ver ahora se alimentan de la parte de testing y al revés,
+
+63
+00:06:36,560 --> 00:06:42,960
+no, o sea esos principios nos permiten testear bien y además nos ayudan a que sea fácilmente
+
+64
+00:06:42,960 --> 00:06:50,320
+testeable, para hacer desarrollo orientado a objetos de forma ágil no concebimos que se
+
+65
+00:06:50,320 --> 00:06:56,080
+pueda hacer sin prácticas ágiles, prácticas ágiles sobre todo estamos hablando de TDD,
+
+66
+00:06:56,080 --> 00:07:00,880
+estamos hablando de peer programming, estamos hablando de propiedad del código colectivo,
+
+67
+00:07:00,880 --> 00:07:05,120
+estamos hablando de refactorings, o sea no consideramos que sea posible hacerlo sin eso,
+
+68
+00:07:05,120 --> 00:07:11,040
+nos gustaría también ver si alguien nos consigue, nosotros no somos capaces, a veces igual es también
+
+69
+00:07:11,040 --> 00:07:20,400
+por cómo funcionamos. Entonces el objetivo de todo esto es crear clean code, por si alguien no le
+
+70
+00:07:20,400 --> 00:07:29,600
+suena este logo, podéis buscar clean code el libro, clean code la página web, aunque el VOP es uno de los
+
+71
+00:07:29,600 --> 00:07:35,920
+que han estado en este movimiento que también es uno de los farmantes del Miami Fiesto Ágil y que la
+
+72
+00:07:35,920 --> 00:07:45,360
+ha dado mucha importancia a esto y además pues le ha dado el león, el empaque. Y es todo acerca de pasta,
+
+73
+00:07:45,360 --> 00:07:48,800
+o sea lo que intentamos nosotros es que no se nos caiga la cara de vergüenza, que a ver que tenemos
+
+74
+00:07:48,800 --> 00:07:54,480
+una reunión de planificación y que ninguna funcionalidad nos parezca ni demasiado grande,
+
+75
+00:07:54,480 --> 00:08:01,280
+ni demasiado difícil, es muy muy raro que nos echemos las manos a la cabeza, bueno para rascarnos
+
+76
+00:08:01,280 --> 00:08:08,000
+si viene una funcionalidad así fuerte es muy difícil, por ejemplo solemos clasificarlas en
+
+77
+00:08:08,000 --> 00:08:18,080
+pequeñas, medias y grandes, esa es todo el detalle o la granularidad que necesitamos y una pequeña
+
+78
+00:08:18,080 --> 00:08:22,880
+significaría que la puedes hacer un día o menos de un día, una mediana pues la vas a hacer en dos o
+
+79
+00:08:22,880 --> 00:08:27,200
+en tres y las grandes simplemente no las hacemos, las partimos, o sea no consideramos una funcionalidad
+
+80
+00:08:27,200 --> 00:08:33,040
+más grande que eso, entonces de vez en cuando viene algo que abarca más y aun así lo dividimos y
+
+81
+00:08:33,040 --> 00:08:39,200
+seguimos haciendo relíses intermedias, incluso si en algún momento hay que tomar alguna decisión
+
+82
+00:08:39,200 --> 00:08:43,440
+que sea repetir código durante una relíse para que puedan convivir las dos soluciones y luego la
+
+83
+00:08:43,440 --> 00:08:47,760
+siguiente quitarlo pues sí, porque seguimos haciendo relíses continuas y preferimos tenerlo
+
+84
+00:08:47,760 --> 00:08:54,960
+siempre funcionando, nos genera ansiedad de estar fuera del digamos del main, o sea tener mucha
+
+85
+00:08:54,960 --> 00:09:01,680
+distancia entre lo que tenemos en nuestros ordenadores y lo que están produciendo. Vale pues una vez
+
+86
+00:09:01,680 --> 00:09:07,200
+que nos ha quedado todo claro que esto es por la pasta, que está bien, me gustaría que fuese por
+
+87
+00:09:07,200 --> 00:09:14,400
+atrás pues es lo que hay, pues vamos a ver los principios, estos principios son principios de
+
+88
+00:09:14,400 --> 00:09:21,120
+orientación a objetos que nos ayudan al diseño de clases, no son los únicos principios para hacer
+
+89
+00:09:21,120 --> 00:09:26,400
+orientación a objetos, hay muchísimos más y hay otros que no son tan orientados a la parte de
+
+90
+00:09:26,400 --> 00:09:31,280
+clases, o sea que son más orientados pues a las relaciones entre componentes, a que son más orientados
+
+91
+00:09:31,280 --> 00:09:41,040
+a otros niveles, a cómo se evoluciona, pero hoy vamos a tratar estos que son bastante importantes.
+
+92
+00:09:43,360 --> 00:09:50,240
+Me parece que el que le puso el acrónimo como tal fue Michael Fedders, Michael Fedders a partir de los
+
+93
+00:09:50,240 --> 00:09:57,040
+principios que había presentado el K-bop, que algunos son explícitamente suyos o por lo menos la
+
+94
+00:09:57,040 --> 00:10:05,920
+verbalización de ellos y otros pues son de antiguo de orientación a objetos. Entonces bueno pues los
+
+95
+00:10:05,920 --> 00:10:09,840
+han puesto en este orden, les ha quedado un acrónimo perfecto para que no se te olvide, hay otro acrónimo
+
+96
+00:10:09,840 --> 00:10:13,360
+que si lo podéis, si buscáis información sobre Solitz que es Stupid.
+
+97
+00:10:13,360 --> 00:10:23,360
+No, está así que está más subida así. Yo creo que lo hicimos porque…
+
+98
+00:10:23,360 --> 00:10:25,360
+Ah no, no vale sí, perdón.
+
+99
+00:10:25,360 --> 00:10:27,360
+Que luego las de la positiva nos convenía más este orden.
+
+100
+00:10:27,360 --> 00:10:31,360
+Lo hemos puesto en este orden porque al final lo hicieron por hacer el acrónimo pero este orden es
+
+101
+00:10:31,360 --> 00:10:38,000
+el que los que consideramos nosotros en importancia, sobre todo en importancia y también dependiendo
+
+102
+00:10:38,000 --> 00:10:43,360
+del entorno que estamos usando. Entonces en nuestro caso es Python, es un lenguaje dinámico, es
+
+103
+00:10:43,360 --> 00:10:49,200
+Duck Typing, entonces este por ejemplo pues tiene menos importancia de la que tendrían un lenguaje
+
+104
+00:10:49,200 --> 00:10:55,440
+compilado o estático y este pues bueno tiene una importancia relativa. Para nosotros los principales
+
+105
+00:10:55,440 --> 00:11:02,000
+que ya casi con esos es que bueno todos se van a relacionar mucho como vamos a ver, son la inversión
+
+106
+00:11:02,000 --> 00:11:09,280
+de dependencias y el single responsibility. Ahora los vamos a pasar a explicar cada uno un poquito
+
+107
+00:11:09,280 --> 00:11:17,200
+mejor pero bueno, rápidamente el primero pues sería que intentamos que una clase cumpla una sola
+
+108
+00:11:17,200 --> 00:11:22,480
+responsabilidad, luego explicamos bien a que nos referimos con una sola responsabilidad, el segundo
+
+109
+00:11:22,480 --> 00:11:27,760
+es que podemos hacer una inversión de la dependencia en tiempo de ejecución con respecto a la
+
+110
+00:11:27,760 --> 00:11:33,520
+ejecución en o sea con respecto a la dependencia en tiempo de carga y en tiempo de inicialización
+
+111
+00:11:33,520 --> 00:11:39,520
+que luego lo explicamos también. El open close es la forma sencilla de hacer cosas parametrizables,
+
+112
+00:11:39,520 --> 00:11:46,720
+hacer cosas configurables y distintas soluciones en que la idea es que en un módulo siempre tiendas
+
+113
+00:11:46,720 --> 00:11:51,360
+a añadir cosas para añadir funcionalidad, añadas cosas en vez de sustituir la que ya hay, es decir
+
+114
+00:11:51,360 --> 00:11:58,160
+está fácilmente es ampliable sin necesidad de destripar el módulo, el listo de sustituir un
+
+115
+00:11:58,160 --> 00:12:03,360
+principio que te implica cómo hacer la herencia que luego comentaremos también porque igual está un
+
+116
+00:12:03,360 --> 00:12:09,760
+poco sobreutilizada la herencia y el interface de la relación principal que en principio la idea es
+
+117
+00:12:09,760 --> 00:12:18,320
+separar y tener los interfaces pues lo más pequeños posibles para poder re usar en todos, evidentemente
+
+118
+00:12:18,320 --> 00:12:25,040
+este y este se relacionan, este te permite hacer este, o sea todos se relacionan y al final si tú
+
+119
+00:12:25,040 --> 00:12:30,000
+aplicas más o menos sistemáticamente esto hacer testines súper sencillo, desarrollar es súper
+
+120
+00:12:30,000 --> 00:12:37,680
+sencillo y sobre todo mantener el código es muy muy sencillo y al principio si le estás a
+
+121
+00:12:37,680 --> 00:12:44,240
+consumir a hacerlo de otra forma parece no parece intuitivo una vez que te acostumbras ya casi te
+
+122
+00:12:44,240 --> 00:12:50,560
+cuesta hacerlo de otra forma, o sea que si se gana esa barrera de entrada lo una vez que esté
+
+123
+00:12:50,560 --> 00:12:57,280
+interiorizado casi te salen los sistemas así por defecto, digamos. Lo siguiente importante es que son
+
+124
+00:12:57,280 --> 00:13:02,880
+principios no reglas, una regla es algo que puede ser muy tangente que tienes que seguir, o sea los
+
+125
+00:13:02,880 --> 00:13:07,920
+principios es algo que te ayuda, que te guía, en un momento dado a ti no te está ayudando pues bueno
+
+126
+00:13:07,920 --> 00:13:15,840
+tendrás que ir intentando entender mejor o relajar y incluso puedes encontrar algún contexto válido
+
+127
+00:13:15,840 --> 00:13:22,560
+en que uno un principio de estos pues te lo saltas, pero lo tienes que hacer siempre de forma
+
+128
+00:13:22,560 --> 00:13:26,560
+consciente, o sea me lo estoy saltando porque tengo esta otra ventaja, porque tengo este inconveniente
+
+129
+00:13:26,560 --> 00:13:32,960
+por lo que sea a poder ser algo con tu equipo o sea no lo hagas en plan de lo solitario hubo
+
+130
+00:13:32,960 --> 00:13:41,600
+ese encuentro en eso por ahí, pero vamos no son reglas son principios, vamos a pasar un poquito
+
+131
+00:13:41,600 --> 00:13:52,800
+al medio del asunto, vale entonces para definir esto, bueno esto sería la definición aquí es un
+
+132
+00:13:52,800 --> 00:13:56,800
+homenaje esto está hecho con la librería Mamba que creo que hayos presentaste en la ley del talks
+
+133
+00:13:56,800 --> 00:14:02,640
+vale para hacer una sería como el equivalente de respect si alguien lo conoce ruby pues moca de
+
+134
+00:14:02,640 --> 00:14:08,960
+jabasquitos, una cosita así, entonces bueno esto sería simplemente un dominio de problema que
+
+135
+00:14:08,960 --> 00:14:14,720
+queremos trabajar pues es un servicio lavado de coches pues puedes registrar un trabajo de un
+
+136
+00:14:14,720 --> 00:14:22,240
+coche para un cliente, pues el cliente cuando el servicio es completado pues es notificado y se
+
+137
+00:14:22,240 --> 00:14:28,320
+puede hacer un reporting que el cliente te lo puede pedir y el que te reporta es simplemente es para
+
+138
+00:14:28,320 --> 00:14:37,040
+tener algo con lo que trabajar, un ejemplo cualquiera vale lo primero es tenemos una implementación de
+
+139
+00:14:37,040 --> 00:14:42,320
+código esta no hace exactamente la especificación que hemos puesto antes pero trabaja sobre el
+
+140
+00:14:42,320 --> 00:14:49,120
+mismo dominio puedes solicitar un lavado de coche y puedes indicar que el lavado ha sido completo
+
+141
+00:14:49,120 --> 00:14:56,480
+y podéis ver pues que graba aquí tiene una especie de presistencia en el que graba pues un trabajo
+
+142
+00:14:56,480 --> 00:15:07,360
+que se va a hacer de lavado con el coche el cliente y cuando se ha terminado pues se manda un sms
+
+143
+00:15:07,360 --> 00:15:17,200
+al cliente que tenía que tenía el lavado mira aquí hasta se me colabó una inyección de dependencias
+
+144
+00:15:17,200 --> 00:15:22,720
+por el insta tan jarco de aunque ya no puede evitarlo pero bueno podemos ver que tiene la
+
+145
+00:15:22,720 --> 00:15:27,680
+presistencia que tiene toda la especificidad de la notificación y que tiene incluso pues la
+
+146
+00:15:27,680 --> 00:15:36,240
+implementación de la notificación se ve el código bien desde atrás porque lo da abajo un poco mal
+
+147
+00:15:36,240 --> 00:15:42,320
+bueno pues en el último método lo que se hace es que cuando se completa el lavado del coche pues hay
+
+148
+00:15:42,320 --> 00:15:50,880
+un sms sender que manda un sms al móvil del cliente vale entonces bueno tendré en cuenta que no se ve
+
+149
+00:15:50,880 --> 00:15:59,000
+lo último y ya lo iré repitiendo entonces bueno vamos con el primer principio no este sería el
+
+150
+00:15:59,000 --> 00:16:05,320
+equivalente a un objeto a un objeto dios de esos que tiene absolutamente de todo y hace de todo y el
+
+151
+00:16:05,320 --> 00:16:10,240
+hecho de que lo puedas hacer como pone ahí pues no significa que lo debas hacer vale el hecho de
+
+152
+00:16:10,240 --> 00:16:16,040
+poder rehusar las cosas es porque tenemos objetos muchos objetos pequeños que hacen pequeñas cosas
+
+153
+00:16:16,040 --> 00:16:22,920
+que están lo más independiente posible del contexto y que se pueden rehusar vale entonces la
+
+154
+00:16:22,920 --> 00:16:27,560
+navaja suiza vale absolutamente para todo pero evidentemente es difícil que te quepa en el
+
+155
+00:16:27,560 --> 00:16:34,360
+en el sitio por lo menos ésta podían haber encontrado una un poquito más razonable vale entonces
+
+156
+00:16:34,360 --> 00:16:40,160
+pues bueno vamos a verlo un poco con el ejemplo que hemos estado viendo vale entonces aquí tenemos una
+
+157
+00:16:40,160 --> 00:16:48,000
+podemos decir que esta parte es una responsabilidad bueno vamos a hablar poquito primero que es una
+
+158
+00:16:48,000 --> 00:16:55,160
+responsabilidad nos referimos a que una clase debe tener una única responsabilidad sería un único
+
+159
+00:16:55,160 --> 00:17:02,960
+motivo vale para cambiar y en ese único motivo esa única responsabilidad sería el rol del que se
+
+160
+00:17:02,960 --> 00:17:10,280
+lo puede pedir a ver si me explico bien por ejemplo en este servicio que tenemos de coches digamos
+
+161
+00:17:10,280 --> 00:17:16,520
+hay una lógica del servicio que es que alguien viene te entrega un coche te lo deja y que después
+
+162
+00:17:16,520 --> 00:17:22,880
+cuando se termina pues te notifica y demás esa la responsabilidad el que decide cómo funciona eso
+
+163
+00:17:22,880 --> 00:17:28,720
+pues imaginaos que es el CEO de la empresa de lavado de coches ese es el que te va a hacer
+
+164
+00:17:28,720 --> 00:17:34,560
+peticiones que diga oye después de notificarle haz no sé qué o después haz no sé cuánto luego
+
+165
+00:17:34,560 --> 00:17:41,080
+por otro lado igual hay otra gente y es la gente de sistemas de esa empresa que es la que te hace
+
+166
+00:17:41,080 --> 00:17:44,960
+otro tipo de peticiones y te hace por ejemplo en este caso te dice oye que la persistencia la
+
+167
+00:17:44,960 --> 00:17:48,720
+tienes que hacer en maese ql porque tenemos las bases de datos que hacemos un backup no sé qué
+
+168
+00:17:48,720 --> 00:17:54,720
+entonces ellos van a ser los que te pidan cómo funcionan esa persistencia y luego por ejemplo
+
+169
+00:17:54,720 --> 00:18:04,640
+pues la gente de marketing te va a pedir el que cuando les notifiques pues lo hagas por sms o no pongas
+
+170
+00:18:04,640 --> 00:18:10,800
+este mensaje por nosotros que cambia es un poco entonces lo que podríamos ver es que dentro de una
+
+171
+00:18:10,800 --> 00:18:18,400
+clase de la responsabilidad es no es clases que sólo tengan un método no clases que sólo tengan una
+
+172
+00:18:18,400 --> 00:18:25,320
+responsabilidad y una responsabilidad la asignamos a todos aquellos mensajes que tiene ese objeto que
+
+173
+00:18:25,320 --> 00:18:31,480
+sólo tendrían una fuente de cambios sólo tendrían una persona un equipo un rol alguien de la empresa
+
+174
+00:18:31,480 --> 00:18:37,640
+que solicitas esos cambios vale si por ejemplo esto tiene una interfaz web y el diseñador es el que
+
+175
+00:18:37,640 --> 00:18:43,640
+os pide que hagáis unos cambios no puede estar ese código aquí es no debe estar no debe estar lo
+
+176
+00:18:43,640 --> 00:18:50,640
+mismo pues lo que hemos dicho para entonces bueno si eso más o menos ha quedado claro aquí en este
+
+177
+00:18:50,640 --> 00:18:57,040
+ejemplo pues vamos a poner los métodos que están bueno el código que está recuadrado es código que
+
+178
+00:18:57,040 --> 00:19:04,280
+cumple una responsabilidad una única es el que da la persistencia a este servicio esto por ejemplo
+
+179
+00:19:04,280 --> 00:19:09,680
+pues lo va a hacer una persistencia memoria lo va a hacer en un mapa aquí está guardando un trabajo
+
+180
+00:19:09,680 --> 00:19:15,560
+que le han puesto quizás la que la creación del identificador ahí ahí podría estar si
+
+181
+00:19:15,560 --> 00:19:22,400
+vale de recuerdo lo principal y aquí pues volvemos a estamos usando la persistencia estamos haciendo
+
+182
+00:19:22,400 --> 00:19:27,600
+para buscar vale entonces eso parece que es una responsabilidad y parece que no es la misma que
+
+183
+00:19:27,600 --> 00:19:35,840
+ese otro código vale aquí tenemos otra responsabilidad que tenemos que parece que es bastante
+
+184
+00:19:35,840 --> 00:19:41,080
+diferencial porque tenemos algo que notifica al cliente que es un sms además lo va a hacer por sms
+
+185
+00:19:43,160 --> 00:19:49,040
+lo va a hacer pues aquí y le va a mandar un mensaje con concreto vale entonces la gente
+
+186
+00:19:49,040 --> 00:19:53,720
+marketing dice oye no le pongas ese mensaje por le gracias por su lavado no sé qué es distinta
+
+187
+00:19:53,720 --> 00:19:59,000
+gente que el que nos estaba pidiendo cambios para los siguientes entonces esto son dos responsabilidades
+
+188
+00:19:59,000 --> 00:20:07,440
+distintas eso yo creo que sistemáticamente suma las cosas que más fácilmente nos vamos a encontrar
+
+189
+00:20:07,440 --> 00:20:12,160
+las aplicaciones que metemos muchas responsabilidades en los objetos y nos quedan objetos muy grandes y
+
+190
+00:20:12,160 --> 00:20:17,000
+entonces luego cuando alguien nos calienta la cabeza y nos dice un objeto tiene menos de x líneas que
+
+191
+00:20:17,000 --> 00:20:22,640
+eso son reglas y son reglas y no sé cuánto aplican pero al final es porque estás metiendo
+
+192
+00:20:22,640 --> 00:20:29,560
+muchas responsabilidades vale entonces si hay una responsabilidad que es orquestar todo este flujo
+
+193
+00:20:29,560 --> 00:20:34,560
+y esa es una responsabilidad luego otra que hemos visto que es notificar que no es enviar un sms es
+
+194
+00:20:34,560 --> 00:20:44,960
+notificar y luego otra por ejemplo que es que es persistir vale entonces pues bueno después de
+
+195
+00:20:44,960 --> 00:20:50,120
+varios refactos porque no está mal que la primera versión hagamos algo así muy muy rápido tenemos
+
+196
+00:20:50,120 --> 00:20:57,800
+ustedes lo recubrimos y es lo que nos ha salido y continuamos bueno podríamos entrar a así el tipo
+
+197
+00:20:57,800 --> 00:21:05,680
+del td de la escuela el hondre solo conquista o sí creo que vale y podríamos llegar algo así
+
+198
+00:21:05,680 --> 00:21:12,400
+o sea realmente este código hace exactamente lo mismo que hacía el anterior bueno y de y de gratis
+
+199
+00:21:12,400 --> 00:21:18,560
+le añade otra cosa porque da una versión posterior pero vamos básicamente tiene un método en el que
+
+200
+00:21:18,560 --> 00:21:26,480
+alguien mete el coche en el túnel del lavado y este pues genera un trabajo lo persiste y cuando
+
+201
+00:21:26,480 --> 00:21:31,680
+alguien le dice que se ha completado lo notifica vale entonces básicamente hace el mismo esquema
+
+202
+00:21:31,680 --> 00:21:37,480
+pero qué es lo que hace es delega todo el trabajo concreto que son otras responsabilidades en
+
+203
+00:21:37,480 --> 00:21:42,680
+colaboradores vale un colaborador en este caso que es un repositorio y un colaborador que es un
+
+204
+00:21:42,680 --> 00:21:49,320
+notificador vale este notificador además es mucho más agnóstico dice oye el trabajo se ha
+
+205
+00:21:49,320 --> 00:21:56,160
+completado habrá notificadores que lo hagan por sms habrá uno que la habrá uno que envíe las dos
+
+206
+00:21:56,160 --> 00:22:02,400
+cosas lo que sea y el repositorio pues sería el que se encarga de oye guardame este trabajo porque
+
+207
+00:22:02,400 --> 00:22:09,440
+posiblemente luego lo voy a volver a buscar y por ejemplo es oye dame el trabajo que que necesito
+
+208
+00:22:09,440 --> 00:22:15,520
+con ese con ese identificador entonces ya estaría desacoplado y habría aparte de esta clase otras
+
+209
+00:22:15,520 --> 00:22:19,880
+tres clases con el repositorio al tenerlo extraído que es decir si tenemos el problema de que hemos
+
+210
+00:22:19,880 --> 00:22:24,200
+dicho pues ahora lo tenemos en un mapa si lo tenemos el cambio luego a un mayo se cuele pasaría
+
+211
+00:22:24,200 --> 00:22:32,000
+tenemos que tocar solo un objeto esa es si alguien nos dice queremos ahora por ejemplo pues para esto
+
+212
+00:22:32,000 --> 00:22:37,640
+para que escale bien pues bueno podemos cambiar el sistema de persistencia si viene alguien dice oye
+
+213
+00:22:37,640 --> 00:22:42,960
+que la notificación sea con este otro mensaje cambiamos en otro punto de la aplicación con
+
+214
+00:22:42,960 --> 00:22:49,600
+esto vamos a tener aplicaciones que nos va a dar la sensación que tienen muchísimos objetos vale y
+
+215
+00:22:49,600 --> 00:22:54,560
+muy pequeños vale y eso al principio asusta un poco si vienes de programación estructurada o si
+
+216
+00:22:54,560 --> 00:22:59,240
+has hecho pocos objetos porque da la sensación de que cuando tienes un switch de 3.000 líneas no
+
+217
+00:22:59,240 --> 00:23:04,440
+estás perdido mentira estás perdidísimo pasa que no lo reconoces y además si el switch lo has hecho
+
+218
+00:23:04,440 --> 00:23:09,400
+normalmente tú no estás perdido pero todos los de tu equipo se hay un voto está sentir a
+
+219
+00:23:09,400 --> 00:23:16,320
+orgulloso muy muy muy muy perdidos vale entonces sí vamos a crear muchísimos objetos van a ser
+
+220
+00:23:16,320 --> 00:23:22,160
+muy pequeños sí pero también lo que queda es como una especie de de lego que tienes un cajón de
+
+221
+00:23:22,160 --> 00:23:27,360
+lego con un montón de piezas rehusables fuera de contexto que son de tu dominio de problema y cada
+
+222
+00:23:27,360 --> 00:23:33,520
+vez que te piden solucionar algo lo que haces es componer esas piezas de distinta forma vale
+
+223
+00:23:33,520 --> 00:23:38,840
+coges esta misma base y le dices bueno pues me lo pones en una SQL elite y dices oye ojo no podéis
+
+224
+00:23:38,840 --> 00:23:46,480
+hacer un notificador por por twitter y o venga y lo vas lo vas haciendo así vale este es el primer
+
+225
+00:23:46,480 --> 00:23:55,640
+el primer principio vamos a ir al siguiente vale esto es la inversión de dependencias y lo que te
+
+226
+00:23:55,640 --> 00:24:01,360
+indica es que tienes que tener as tracciones a partir de las cuales enchufas tus tus objetos al
+
+227
+00:24:01,360 --> 00:24:07,440
+final se trata de que hagas piezas rehusables y que sean de putle o sea que encajen vale entonces
+
+228
+00:24:07,440 --> 00:24:15,320
+por si alguien no lo tenía bueno podemos hacer una una encuesta que creéis que es lo más importante
+
+229
+00:24:15,320 --> 00:24:21,600
+de la orientación a objetos o que es lo que lo que os han explicado la ventaja que aporta
+
+230
+00:24:21,600 --> 00:24:34,320
+me auto contesto y alguien se lanza a decir que si tuviese que elegir una característica de
+
+231
+00:24:34,320 --> 00:24:40,640
+los lenguajes orientados a objetos que con que me que le aportas en lo que ha sido la ciencia
+
+232
+00:24:41,520 --> 00:24:43,360
+bueno en casualización reutilización
+
+233
+00:24:43,360 --> 00:24:54,320
+bueno eso nos permitiría parte de hacer lo que lo que vamos a comentar ahora es el al final
+
+234
+00:24:54,320 --> 00:24:59,320
+es el control de dependencias o sea por qué podemos re usar porque podemos controlar muy bien qué
+
+235
+00:24:59,320 --> 00:25:04,680
+depende de qué en un programa estructurado tú vas top down y vas haciendo llamadas y llamadas y
+
+236
+00:25:04,680 --> 00:25:10,480
+llamadas y llamadas entonces y al final tu programa notificada con sms tienes que tener esa dependencia
+
+237
+00:25:10,480 --> 00:25:14,840
+metida por los lados o tienes que hacer un esfuerzo muy grande para no tenerla y vas a
+
+238
+00:25:14,840 --> 00:25:20,840
+cobrar teniendo algún ínf de decir si es total pues tienes que llamar esta función entonces lo tienes
+
+239
+00:25:20,840 --> 00:25:25,800
+dentro una de las características más importantes los lenguajes orientados a objetos es que nos
+
+240
+00:25:25,800 --> 00:25:31,680
+permiten que las dependencias de tiempo real no se conozcan vale hasta el hasta tiempo real o
+
+241
+00:25:31,680 --> 00:25:35,560
+sea que estés usando un objeto sin conocer de qué tipo es la tiempo de ejecución tendría que ver con
+
+242
+00:25:35,560 --> 00:25:41,920
+el que han comentado entonces eso como se hace pues se hace siguiendo sistemáticamente este
+
+243
+00:25:41,920 --> 00:25:49,600
+principio vale que es el de inversión de dependencia vale entonces bueno va un poquito de teoría
+
+244
+00:25:50,600 --> 00:25:55,120
+el objetivo es depender siempre de las tracciones no depender nunca de las implementaciones concretas
+
+245
+00:25:55,120 --> 00:26:02,560
+o sea ese código que hemos visto antes que ponía sms sin pues a ese nivel error o sea fatal o
+
+246
+00:26:02,560 --> 00:26:08,360
+eso no puede estar a ese nivel tiene que ser mucho más abstracto vale entonces vamos con
+
+247
+00:26:09,680 --> 00:26:15,760
+cómo llamamos a estas a estas dependencias vale como estamos hablando de python cuando hacemos un
+
+248
+00:26:15,760 --> 00:26:22,120
+from package import model ahí estamos haciendo una dependencia que sería de tiempo de compilación o
+
+249
+00:26:22,120 --> 00:26:28,640
+de arranque de compilación y arranque en el caso en el caso de python si estuviésemos en
+
+250
+00:26:28,640 --> 00:26:36,240
+otros tipos de lenguaje que fuese en fuertemente tipados y tal pues bueno según estaríamos
+
+251
+00:26:36,240 --> 00:26:41,440
+haciendo esto pues se desencadenaría una compilación de todas de todas sus dependencias entonces
+
+252
+00:26:41,440 --> 00:26:47,360
+esto es vamos a llamarla una dependencia de arranque vale no es de runtime sino de arranque vamos
+
+253
+00:26:47,360 --> 00:26:55,520
+a diferenciar así de la siguiente que es una de tiempo de ejecución vale entonces aquí estamos en
+
+254
+00:26:55,520 --> 00:27:00,520
+un objeto que en este caso es el self que está llamando a está con un colaborador suyo y le está
+
+255
+00:27:00,520 --> 00:27:08,440
+enviando un mensaje vale entonces esto sólo es en tiempo de ejecución vale entonces en qué consiste
+
+256
+00:27:08,440 --> 00:27:14,840
+la inversión de dependencias pues básicamente es que normalmente si nosotros no hacemos nada por
+
+257
+00:27:14,840 --> 00:27:22,360
+evitarlo cuando un módulo a llama un módulo b pues normalmente hace una dependencia de código que es
+
+258
+00:27:22,360 --> 00:27:27,520
+con el con el fuente no es el solsco de dependencia y luego cuando le llamamos hacemos un runtime
+
+259
+00:27:27,520 --> 00:27:33,360
+dependencia entonces tenemos que la dirección va siempre de a a b y lo que nos permite los
+
+260
+00:27:33,360 --> 00:27:39,480
+lenguajes orientados a objetos y lo que nos permite python es hacer que la dependencia de runtime es
+
+261
+00:27:39,480 --> 00:27:46,120
+decir que a ya me ave no tenga que ser necesariamente igual que la dependencia de código fuente es
+
+262
+00:27:46,120 --> 00:27:52,720
+decir si metemos en medio una abstracción vale lo he pintado como una y indicando que es un interfaz luego
+
+263
+00:27:52,720 --> 00:27:59,400
+veremos cómo lo podemos implementar eso en python bien esa abstracción nos permite que b
+
+264
+00:27:59,400 --> 00:28:05,840
+dependa de esa abstracción que a dependa de esa abstracción que alguien los una en un momento de
+
+265
+00:28:05,840 --> 00:28:11,080
+arranque de la aplicación y entonces que a ya me ave sin conocer de nada eso es sin conocer de nada
+
+266
+00:28:11,080 --> 00:28:16,680
+a b hemos invertido la dependencia eso es lo que nos permite este principio y este principio
+
+267
+00:28:16,680 --> 00:28:22,200
+es lo que nos va a permitir hacer el open close lo que nos va a permitir hacer polimorfismo lo que nos
+
+268
+00:28:22,200 --> 00:28:27,960
+va a permitir quitar condicionales y los que nos va a permitir configurar con todas esas piezas que
+
+269
+00:28:27,960 --> 00:28:32,700
+tenemos pequeñas porque son con una única responsabilidad hacer distintas aplicaciones
+
+270
+00:28:32,700 --> 00:28:38,000
+usando los objetos simplemente componiéndolos de distinta gente que habla también de este tipo
+
+271
+00:28:38,000 --> 00:28:43,760
+de principio como el principio de hollywood es decir que tú vas a hacer un casting como actor y
+
+272
+00:28:43,760 --> 00:28:51,120
+a te dicen oye no nos llames que ya te llamaremos nosotros hay gente que le resulta pues familiar
+
+273
+00:28:51,120 --> 00:28:54,400
+para para también para encontrarlo pues aquí acaba pasando algo parecido
+
+274
+00:28:57,840 --> 00:29:05,800
+no funciona malo entonces lo que vamos a ver distintos problemas que incumple en este principio
+
+275
+00:29:05,800 --> 00:29:11,640
+y lo sencillo que podría ser pues solucionarlo vale el primer problema que tenemos aquí
+
+276
+00:29:13,800 --> 00:29:21,280
+vale este es de nota vale es un crimen de la humanidad si este es de nota y es aquí hemos
+
+277
+00:29:21,280 --> 00:29:26,080
+dicho antes que queríamos enviar un sms vale entonces vale justo lo parte importante ha quedado
+
+278
+00:29:26,080 --> 00:29:33,640
+en la última línea perfecto vale aquí hay una clase que se llama sms notifier vale que tiene un
+
+279
+00:29:33,640 --> 00:29:40,120
+método de clase un método estático que se llama sent sms vale y le mandas el trabajo de
+
+280
+00:29:40,120 --> 00:29:47,280
+de limpieza del coche y le mandas directamente y eso enviaría un sms entonces errores cometidos
+
+281
+00:29:47,280 --> 00:29:52,840
+aquí bueno para empezar estamos llamando al api concreto a sms o sea esta aplicación ya solo funciona
+
+282
+00:29:52,840 --> 00:29:58,640
+con sms si mañana resulta que telefónica ve que ya no se haga pasta de ahí que es el wasa
+
+283
+00:29:58,640 --> 00:30:04,720
+pues estamos muertos vale además tienes una dependencia implícita o sea es decir tú les por
+
+284
+00:30:04,720 --> 00:30:10,120
+aquí les ves todos los impuestos de esto lo que tiene no tiene aquí ninguna dependencia de repente
+
+285
+00:30:10,120 --> 00:30:16,120
+sorpresa el sms notifier bueno esto como estés acostumbrado a hacerlo acabas con el código de
+
+286
+00:30:16,120 --> 00:30:23,040
+repente aparecen como champiñones o sea dependencias que no ves en el resto del código y luego encima
+
+287
+00:30:23,040 --> 00:30:30,760
+pues bueno vaya para cubrirnos de gloria pues hemos metido estado global del del problema
+
+288
+00:30:30,760 --> 00:30:36,800
+quedaría para una charla en sí el decir si es bueno o malo entendemos todos que que tener un estado
+
+289
+00:30:36,800 --> 00:30:43,000
+global de tu objeto te limita el poder testear te limita el poder cambiar cosas te limita vamos
+
+290
+00:30:46,080 --> 00:30:52,920
+dando clases en la universidad pues si te ponían eso pues es exactamente lo mismo que una variable
+
+291
+00:30:52,920 --> 00:31:00,440
+global y todos sabemos que está muy mal eso como el goto o sea no no aplica y luego parece ser que
+
+292
+00:31:00,440 --> 00:31:06,200
+encima pues se ha institucionalizado en algunos en algunos frameworks y tal incluso tirar mucho
+
+293
+00:31:06,200 --> 00:31:12,240
+de estas soluciones de poner estáticos para crear los objetos y tal y el nombre de la clase
+
+294
+00:31:12,240 --> 00:31:18,680
+te impide bastante testear y te mete ese problema del estado global a luego claro pues que hay veces
+
+295
+00:31:18,680 --> 00:31:22,520
+que te encuentran a jugar pues como testeo esto mi coigo es difícil de testear pues a veces es difícil
+
+296
+00:31:22,520 --> 00:31:26,920
+pero a veces también tú estás ayudando que sea difícil con buena intención que no estás haciendo
+
+297
+00:31:26,920 --> 00:31:37,480
+hoy me levanta o así vamos a ver qué puedo joder pues no entonces vamos a ver otro problema que bueno
+
+298
+00:31:37,480 --> 00:31:42,320
+mejora un poco la implementación anterior pero bueno seguimos teniendo teniendo el problema en este
+
+299
+00:31:42,320 --> 00:31:50,400
+por ejemplo tenemos aquí un notificador y se crea aquí se crea aquí mismo y luego en la última línea
+
+300
+00:31:50,400 --> 00:31:58,320
+que tampoco se ve pues hace un self notifier punto sent sms vale es lo que hace la última línea de aquí
+
+301
+00:31:58,320 --> 00:32:04,040
+entonces problemas que tenemos no hemos quitado el de que sea el api sea concreto sigue siendo
+
+302
+00:32:04,040 --> 00:32:09,040
+sent sms y si queremos enviar un wasp pues no funciona si queremos enviar un twitter pues no funciona
+
+303
+00:32:09,040 --> 00:32:14,120
+y tendríamos que cambiar esta clase para poder meter el wasp que a más potencialmente pues haríamos
+
+304
+00:32:14,120 --> 00:32:21,280
+un switch o sea que ya te limpió vale y por otro lado seguimos teniendo el problema de que de repente
+
+305
+00:32:21,280 --> 00:32:26,280
+aparece esta dependencia o sea mitad de código no tenemos ningún otro sitio no podemos cambiarlo si
+
+306
+00:32:26,280 --> 00:32:31,520
+quieres testear como como simulas esto o sea tú pones esto vas a hacer un test y se envía un sms y si
+
+307
+00:32:31,520 --> 00:32:35,800
+además te cobran pues cada vez que se hace entonces los ejecutamos poco vale soluciona
+
+308
+00:32:35,800 --> 00:32:45,880
+vale entonces no tenemos esa dependencia la tenemos implícita entonces y tener en cuenta
+
+309
+00:32:45,880 --> 00:32:51,520
+también que se está mezclando un poco lo que es quien dónde se está creando los objetos en qué
+
+310
+00:32:51,520 --> 00:32:57,320
+puntos está creando el objeto y en qué puntos se está enganchando la aplicación ahora avanzaremos
+
+311
+00:32:57,320 --> 00:33:03,240
+con eso que eso también sería incluso la parte de responsabilidad porque al final es quien pide que
+
+312
+00:33:03,240 --> 00:33:17,040
+se cree un sms notifier o otra cosa depende depende del vale tendríamos aquí una posible solución
+
+313
+00:33:17,040 --> 00:33:24,880
+que está está probada por por la serpiente vale que sería inyectar todas las todas las dependencias
+
+314
+00:33:24,880 --> 00:33:29,560
+inyectarlas en el constructor o sea ya será el problema de alguien decidir cuál cuál de ella se
+
+315
+00:33:29,560 --> 00:33:38,160
+se va a pasar o que cuál va a ser el notificador y abstraer el código para no usar una pica
+
+316
+00:33:38,160 --> 00:33:43,960
+concreta como no se ve la última línea tampoco pues pone notifier punto job complete es decir no
+
+317
+00:33:43,960 --> 00:33:49,040
+vamos a hacer un sms complete sino lo que vamos a hacer es abstraer un poco el api subirle una capa
+
+318
+00:33:49,040 --> 00:33:56,360
+y decir que se trata de una una pia extract que va a notificar cuando se complete un trabajo y pasamos
+
+319
+00:33:56,360 --> 00:34:03,640
+el trabajo y si por ejemplo el notificador concreto que esté usando pues es uno de email pues usaría
+
+320
+00:34:03,640 --> 00:34:13,440
+el email si fuese uno de sms pues ya vería si tienes puesto el número de teléfono móvil y bueno
+
+321
+00:34:13,440 --> 00:34:23,920
+ya sería trabajo y responsabilidad de esa otra pieza vale para esto pues al final lo que te acaba
+
+322
+00:34:23,920 --> 00:34:29,120
+pasando y lo que tiene más o menos sentido es que hay una gran diferencia una gran división en tus
+
+323
+00:34:29,120 --> 00:34:34,200
+aplicaciones entre la parte que sería lo que podríamos llamar la aplicación en la que tiene pues
+
+324
+00:34:34,200 --> 00:34:41,360
+implementaciones concretas y de dominio y similares y lo que sería el main lo que sería el mecanismo
+
+325
+00:34:41,360 --> 00:34:46,160
+de entrega lo que podría ser pues lo que es el main quizás la factoría quizás la configuración
+
+326
+00:34:46,160 --> 00:34:53,720
+vale y entonces podemos ver que todas las dependencias que hay son en este sentido en runtime
+
+327
+00:34:53,720 --> 00:34:59,760
+vale o sea es decir las implementaciones concretas pues simplemente harían uso de ciertas
+
+328
+00:34:59,760 --> 00:35:05,280
+abstractiones el dominio haber hablaría con distintas implementaciones concretas pero él no
+
+329
+00:35:05,280 --> 00:35:10,200
+lo sabría o sea él nunca tiene una dependencia hacia nada que hay aquí entonces esto sería como
+
+330
+00:35:10,200 --> 00:35:20,320
+piezas de puzzle y esto sería como la parte que pone une toda esa gente no si somos gente de bien
+
+331
+00:35:20,320 --> 00:35:28,160
+bueno si somos gente de un x y tal pues lo más normal es que lo asuma a la composición por
+
+332
+00:35:28,160 --> 00:35:32,680
+ejemplo que puedes hacer en un pipe no o sea esa es una forma muy fácil tienes pequeñas piezas que
+
+333
+00:35:32,680 --> 00:35:38,840
+tienen una única responsabilidad que funciona muy bien y que vas encajando vale donde las encajas en
+
+334
+00:35:38,840 --> 00:35:44,760
+esta parte o sea esta es tu parte que las encaja todas y hace que muy fácilmente si con estas mismas
+
+335
+00:35:44,760 --> 00:35:51,800
+piezas te piden otro problema vale hagas otro puzzle y lo y lo convongas muy bien pues básicamente
+
+336
+00:35:51,800 --> 00:35:56,840
+lo que haces el el guairín no para el caso que teníamos antes pues esto sería un main en el
+
+337
+00:35:56,840 --> 00:36:02,520
+que pedimos el servicio a una factoría y aquí tendríamos una factoría en la que por ejemplo
+
+338
+00:36:02,520 --> 00:36:06,840
+de esos trabajos que hemos visto antes la persistencia pues tendría un repositorio en memoria
+
+339
+00:36:06,840 --> 00:36:11,920
+tendría otro que sería un fichero que te lo grabaría tendría otro quizás que fuese en un
+
+340
+00:36:11,920 --> 00:36:18,440
+SQL elite por ejemplo bueno tiene un notificador que va por consola aquí podría haber otro de sms
+
+341
+00:36:18,440 --> 00:36:23,680
+podría haber otro por email tiene incluso uno que es no notifiques a ningún a ningún lado
+
+342
+00:36:23,680 --> 00:36:29,160
+porque total a nadie le importa si está en término del coche pues bueno es el que hace el guairín
+
+343
+00:36:29,160 --> 00:36:38,480
+vale el que conecta todas las piezas de de tu aplicación vale esto es el principio del open
+
+344
+00:36:38,480 --> 00:36:44,600
+close aquí de lo que se trata es que todos tus módulos si se diseñan bien o se siguen estos
+
+345
+00:36:44,600 --> 00:36:52,080
+principios tienes que conseguir que sean fácilmente modificables un comportamiento sin necesidad de
+
+346
+00:36:52,080 --> 00:36:57,160
+abrirlo o sea si tú cada parte cada vez que haces un trozo de código nuevo para hacer una
+
+347
+00:36:57,160 --> 00:37:02,440
+funcionalidad es totalmente nuevo eso suele traer menos errores lo pruebas separadamente suele
+
+348
+00:37:02,440 --> 00:37:09,560
+traer mucho menos errores que si tienes que modificar uno uno otro entonces esto lo que busca es que
+
+349
+00:37:09,560 --> 00:37:19,320
+se pueda fácilmente ampliar tu programa también es importante una cosa y es importante saber que
+
+350
+00:37:19,320 --> 00:37:25,440
+el seguir este principio que normalmente se implementa con polimorfismo y con inversión de
+
+351
+00:37:25,440 --> 00:37:30,720
+dependencias también tiene un coste o sea es decir cada extracción que hacemos en la aplicación
+
+352
+00:37:30,720 --> 00:37:36,760
+tiene un coste entonces esto no es si hacemos un desarrollo ágil el tema no es sentarnos ahí
+
+353
+00:37:36,760 --> 00:37:42,200
+apretar muy fuerte y pensar muy fuerte a ver cuáles son todas las tracciones posibles para ese
+
+354
+00:37:42,200 --> 00:37:48,800
+dominio que eso es lo que pues lo que algunos incluido hemos hecho muchas veces sobre todo cuando
+
+355
+00:37:48,800 --> 00:37:54,640
+hacíamos sistemas en temas más los que eran mucho más áridos pues el poder ir evolucionando el
+
+356
+00:37:54,640 --> 00:37:59,760
+sistema bueno por eso y porque tampoco lo tenía tan claro en ese momento pero que es eso te sientas
+
+357
+00:37:59,760 --> 00:38:05,360
+y piensas todas las tracciones todos los posibles polimorfismo todas las posibles soluciones que
+
+358
+00:38:05,360 --> 00:38:11,160
+había como el open close cada vez que haces una extracción pues tiene un coste pues lo mejor es primero
+
+359
+00:38:11,160 --> 00:38:16,240
+no hacer nada y en cuanto ves que hay una segunda parte por donde esa aplicación va a necesitar un
+
+360
+00:38:16,240 --> 00:38:21,520
+grado de extensión justo en ese momento es cuando realmente dice si es vale refactorizo
+
+361
+00:38:21,520 --> 00:38:26,760
+astrae un poco lo que había hecho busco que tiene de común con la nueva parte y en ese momento
+
+362
+00:38:26,760 --> 00:38:34,280
+meto el polimorfismo vale que hace el primer día ni mucho menos que no primero lo primero que
+
+363
+00:38:34,280 --> 00:38:38,040
+funciona siempre y cuando sea porque lo estás haciendo dentro un marco de desarrollo ágil
+
+364
+00:38:38,040 --> 00:38:44,160
+siempre y cuando porque sea que lo vas a refactorizar no porque vas a dejar eso toda tu vida puesta ahí
+
+365
+00:38:44,960 --> 00:38:50,880
+vale entonces vamos a ver vamos a ver una posible implementación de cómo hacer
+
+366
+00:38:50,880 --> 00:38:58,000
+implementar ese open close a hacer una extracción intermedia lo que hemos visto para invertir
+
+367
+00:38:58,000 --> 00:39:04,240
+la dependencia entonces pues podríamos hacer esto no podríamos hacer una especie interface podríamos
+
+368
+00:39:04,240 --> 00:39:08,200
+poner un no te implemente terror que esta mañana me enteró un poco de que está el sol esculto tal
+
+369
+00:39:08,200 --> 00:39:16,320
+en python así que bueno esto lo borramos y tendría pues esto es por ejemplo es para hacer un
+
+370
+00:39:16,320 --> 00:39:22,640
+repositorio que guarda nuestros trabajos de lavado de coches entonces tenemos grabar un trabajo
+
+371
+00:39:22,640 --> 00:39:27,960
+tenemos encontrar lo por identificado y tenemos encontrar todos los que sean de un cliente
+
+372
+00:39:27,960 --> 00:39:33,120
+concreto entonces lo que queremos es que distintas implementaciones implementen esta extracción este
+
+373
+00:39:33,120 --> 00:39:38,520
+API extracto que hemos que hemos definido vale entonces pues bueno la podríamos hacer una
+
+374
+00:39:38,520 --> 00:39:45,240
+implementación en que tuviésemos un repositorio por ejemplo en memoria que heredase o fuese a
+
+375
+00:39:45,240 --> 00:39:53,240
+implementar esa extracción y bueno implementarse implementarse de una forma lo más sencilla posible
+
+376
+00:39:53,240 --> 00:39:59,360
+esa esa interfaz en este caso como es en memoria pues bueno pues hemos hecho todo el almacenamiento
+
+377
+00:39:59,360 --> 00:40:05,440
+en un mapa pero si le cambias el nombre y simplemente pues lo implementas por SQL el
+
+378
+00:40:05,440 --> 00:40:11,440
+I pues ya tienes persistente toda tus trabajos de la aplicación vale entonces bueno esta es una
+
+379
+00:40:11,440 --> 00:40:16,760
+forma de hacer el open close o sea podemos ahí con esto podríamos crear distintas implementaciones
+
+380
+00:40:16,760 --> 00:40:24,160
+del repositorio en memoria y luego en la factoría cuando ponemos la configuración de la aplicación
+
+381
+00:40:24,160 --> 00:40:33,200
+pues usar una una u otra vale evidentemente esa no es la versión aprobada para duck typing y en
+
+382
+00:40:33,200 --> 00:40:38,200
+nuestro caso normalmente cuando hacemos una extracción la hacemos directamente no ponemos
+
+383
+00:40:38,200 --> 00:40:44,760
+ninguna nada para definirnos el interfaz porque nosotros mismos confiamos en nosotros mismos y
+
+384
+00:40:44,760 --> 00:40:49,000
+para eso tenemos el testing entonces directamente hacemos la extracción entonces lo que nosotros
+
+385
+00:40:49,000 --> 00:40:54,440
+normalmente haríamos pues sería un in memory y o repositor y lo implementaríamos directamente y
+
+386
+00:40:54,440 --> 00:41:01,600
+simplemente cuando tenemos una segunda extracción que cumpla o sea que queramos que pueda ser pueda
+
+387
+00:41:01,600 --> 00:41:08,840
+sustituir a esta a esta implementación pues simplemente nos fijamos en que cumpla el api
+
+388
+00:41:08,840 --> 00:41:15,160
+y entonces que nos permite esto pues entre otras cosas pues nos facilita un montón pues hacer el
+
+389
+00:41:15,160 --> 00:41:20,440
+testing pues en un momento dado quieres hacer el testing con respecto a una implementación de base de
+
+390
+00:41:20,440 --> 00:41:25,920
+datos de esto pues simplemente moqueas moqueas este porque ya tienes una extracción ya tienes un
+
+391
+00:41:25,920 --> 00:41:31,640
+enchufe lo que hemos visto antes un enchufe donde colocar colocar tu código es importante eso que
+
+392
+00:41:31,640 --> 00:41:37,200
+yo antes también tenía mucho la tendencia de hacer las tracciones porque sí a la venga venga
+
+393
+00:41:37,200 --> 00:41:42,760
+en la megacostrucción no o sea hay que hacerlo solo cuando realmente ves que tu aplicación tiende
+
+394
+00:41:42,760 --> 00:41:47,840
+hacia allí si tu aplicación ves oye jueves ya es la tercera vez que nos piden algo de este tema
+
+395
+00:41:47,840 --> 00:41:54,360
+pues que nadie haga un switch por dios vamos a meter el polimorfismo esto sería la forma que
+
+396
+00:41:54,360 --> 00:42:00,600
+consideramos para para hacerlo vale y esto sería el principio de sustitución del de el isco
+
+397
+00:42:02,200 --> 00:42:08,040
+este en principio lo que quiere es que hagamos buenas abstracciones o sea que que cuando hagamos
+
+398
+00:42:08,040 --> 00:42:17,560
+abstracciones la clase que deriva sustituya perfectamente a la clase base y al revés o
+
+399
+00:42:17,560 --> 00:42:22,640
+sea que no se quede un programa incongruente porque ha cambiado la clase base con respecto a la clase
+
+400
+00:42:22,640 --> 00:42:28,600
+y eso en qué casos puede pasar pues bueno cuando nosotros hacemos una herencia y de repente lo que
+
+401
+00:42:28,600 --> 00:42:36,240
+estamos derivando pues empieza a no implementa todos los todos los métodos de su padre los
+
+402
+00:42:36,240 --> 00:42:40,840
+implementa pero de una forma extraña implementa algunos más con lo cual en alguna parte de tu
+
+403
+00:42:40,840 --> 00:42:46,200
+aplicación ese código va a tener que ser llamado y entonces si no puede ser sustituido por la base
+
+404
+00:42:46,200 --> 00:42:52,520
+significa que vas a tener un de qué instancia es este objeto cosa que huele fatal vale entonces
+
+405
+00:42:52,520 --> 00:42:59,120
+pues bueno es esto si parece un poco o sea un pato y hace cual como como un pato pero necesita
+
+406
+00:42:59,120 --> 00:43:04,760
+baterías dice pues igual no es la extracción la extracción correcta o sea olía bien pero no era
+
+407
+00:43:04,760 --> 00:43:11,760
+eso aquí hay un tema he visto muchas veces cuando se forma con el tema orientación objeto se dice
+
+408
+00:43:11,760 --> 00:43:20,360
+el esto es un vale el hecho de que un cuadrado sea un tipo de rectángulo en la vida real no significa
+
+409
+00:43:20,360 --> 00:43:30,040
+que los representantes o sea el modelo en software de un cuadrado sea un heredero lícito de un
+
+410
+00:43:30,040 --> 00:43:36,000
+rectángulo en la vida o sea en software o sea en hecho que en la vida real sí que tenga sentido no
+
+411
+00:43:36,000 --> 00:43:40,640
+significa que vaya a tener sentido en software porque lo primero que vamos a ver es que vas a
+
+412
+00:43:40,640 --> 00:43:47,440
+tener algo como altura y ancho y de repente ves el cuadrado y dices no me encaja y luego vas a decir
+
+413
+00:43:47,440 --> 00:43:52,080
+en algún momento que le pide ese volumen y no va a ser exactamente igual se calcula diferente vale
+
+414
+00:43:52,080 --> 00:44:01,800
+pues eso está violando el principio de sustitución de el isco vale aquí tenemos un ejemplo y un
+
+415
+00:44:01,800 --> 00:44:06,320
+ejemplo que además que se suele hacer fácil por ejemplo en la implementación del repositorio en
+
+416
+00:44:06,320 --> 00:44:11,020
+memoria pues se nos podría haber ocurrido decir oye pues ya que hay un diccionario y ya que tiene
+
+417
+00:44:11,020 --> 00:44:17,040
+métodos para guardar y métodos para para bueno que lo puede recorrer y así pues podríamos
+
+418
+00:44:17,040 --> 00:44:22,440
+haber implementado el repositorio en memoria a partir del diccionario vale pero eso sea de
+
+419
+00:44:22,440 --> 00:44:27,840
+repente lo que haces es poner el put el find by el find by customer y tu objeto tiene este api no
+
+420
+00:44:27,840 --> 00:44:32,760
+como ha sido el diccionario tiene un api muchísimo mayor que no lo ves y que te puede causar problemas
+
+421
+00:44:32,760 --> 00:44:40,120
+después o sea y realmente esto no te aporta nada con respecto a usar por composición el diccionario
+
+422
+00:44:40,120 --> 00:44:45,440
+es por lo creo yo lo tengo lo uso y no tengo que le dar de él para para tener todo esto
+
+423
+00:44:45,440 --> 00:44:55,200
+esto está violando el principio de sustitución del isco vale y luego por otro lado nota informativa
+
+424
+00:44:55,200 --> 00:44:58,640
+o sea la mayor parte de las cosas que hacemos con herencia no tienen porque hacerse con herencia
+
+425
+00:44:58,640 --> 00:45:03,560
+o sea eso pues ha estado muy de moda ha sido como muy obligatorio pero es que no aporta nada
+
+426
+00:45:03,560 --> 00:45:11,360
+normalmente cuando hacen las cosas por composición tienes mucho más fácil rehusar código en python
+
+427
+00:45:11,360 --> 00:45:17,120
+hay dos tipos de herencia uno es la herencia de tipos no que es cuando heredas de alguien con el
+
+428
+00:45:17,120 --> 00:45:22,600
+objetivo de que de que tu objeto tenga un tipo eso por ejemplo en el caso de las excepciones nos
+
+429
+00:45:22,600 --> 00:45:26,640
+viene bien porque cuando hacemos luego atrapamos las excepciones pues dependiendo el tipo podemos
+
+430
+00:45:26,640 --> 00:45:34,280
+hacer un flujo de del programa u otro y en algún otro caso pues podría venir bien evidentemente
+
+431
+00:45:34,280 --> 00:45:40,040
+eso te vale para luego poder hacer un es mi objeto instancia de este otro que se me ocurren pocos
+
+432
+00:45:40,040 --> 00:45:45,680
+motivos por los que podáis querer hacerlo y sea y sea lícito luego por otro lado se puede usar la
+
+433
+00:45:45,680 --> 00:45:54,040
+herencia para rehusar código vale pero en el 95 por ciento de los casos la herencia te permite
+
+434
+00:45:54,040 --> 00:45:59,840
+rehusar código de pero podrías hacerlo perfectamente igual por composición sin acoplarte directamente
+
+435
+00:45:59,840 --> 00:46:04,760
+simplemente si es algo que necesitas pues que alguien te lo inyecte en el constructor y lo
+
+436
+00:46:04,760 --> 00:46:12,840
+usas por composición entonces vale hemos hablado del principio de la sustitución del iscof pero
+
+437
+00:46:12,840 --> 00:46:20,440
+quería meter la nota de que bueno realmente tal y con lo flexible que es python yo creo que la
+
+438
+00:46:20,440 --> 00:46:28,840
+solución para hacer orientación a objetos aprobada por el pato de la typing sería usar composición
+
+439
+00:46:28,840 --> 00:46:33,240
+siempre que podamos usemos composición hay en algunos casos que no porque igual un tercero
+
+440
+00:46:33,240 --> 00:46:38,800
+espera que tengamos cierto ap y tal pero son los mínimos o sea eso que hacen algunos fringos de
+
+441
+00:46:38,800 --> 00:46:49,280
+te obligo a querer desde mí de modelo sí es un poco intrusivo vale entonces bueno el resumen de
+
+442
+00:46:49,280 --> 00:46:54,760
+este principio es que los tipos derivados deben ser completamente sustituibles por sus base por
+
+443
+00:46:54,760 --> 00:47:04,120
+sus tipos vale vale y luego hemos dejado este último un poco para el final pero bueno bueno es
+
+444
+00:47:04,120 --> 00:47:07,960
+importante no al final tenemos que segregar los interfaces o cuando hacemos un ap y pues
+
+445
+00:47:07,960 --> 00:47:13,600
+cuanto más pequeño es mejor eso también va con el principio de única responsabilidad o
+
+446
+00:47:13,600 --> 00:47:17,520
+sea porque te van a quedar a pis pequeños lo quieras o no entonces prácticamente vas a ir
+
+447
+00:47:17,520 --> 00:47:22,880
+haciendo esto todos los principios se tocan es una persona en unos a otros pero bueno por otro
+
+448
+00:47:22,880 --> 00:47:28,320
+lado en lenguajes dinamicos pues no es realmente tan importante este por ejemplo este principio es
+
+449
+00:47:28,320 --> 00:47:34,280
+fundamental si lo que estuviéramos haciendo es java o c más más vale porque cabe que si
+
+450
+00:47:34,280 --> 00:47:42,480
+tuviésemos un un interfaz enorme en el que cambia mucho vale y del cual dependen muchas
+
+451
+00:47:43,920 --> 00:47:46,240
+pasarías media vida compilando en caso de c más
+
+452
+00:47:46,240 --> 00:48:03,120
+bueno yo creo que esto en principio resume un poquito lo lo que hemos hablado no cuanto más
+
+453
+00:48:03,120 --> 00:48:08,280
+pequeños el interfaz menos normalmente vas a tener más dependencias pero más pequeñas sobre
+
+454
+00:48:08,280 --> 00:48:13,080
+cosas más concretas y no van a ser grandes dependencias que te que te lien el flujo de tu
+
+455
+00:48:13,080 --> 00:48:18,480
+aplicación vale y bueno más o menos por aquí ya estamos llegando al final
+
+456
+00:48:20,480 --> 00:48:25,960
+y esto ya serían las referencias los pósters esos que habéis visto que son bastante divertidos
+
+457
+00:48:25,960 --> 00:48:32,360
+pues bueno vienen de aquí son cratic comons y bueno aquí tenemos hemos dejado en guíjab
+
+458
+00:48:32,360 --> 00:48:38,000
+el ejemplo del código podéis ir tirando palante va atrás un poco con las versiones curiosa
+
+459
+00:48:38,000 --> 00:48:45,080
+y lo que hay pero bueno tal vez bastante sencillote y hemos dejado las referencias pues de de algunos
+
+460
+00:48:45,080 --> 00:48:51,640
+sitios donde ver bastante acerca de sol y demás este vídeo por ejemplo en ruby está bastante bien
+
+461
+00:48:51,640 --> 00:48:57,360
+y bueno por supuesto todas las referencias de ankelbob pues y los vídeos de ankelbob pues
+
+462
+00:48:57,360 --> 00:49:05,560
+están muy bien para para aprenderlo se me ha quedado sin pilas vale estos son los dos libros
+
+463
+00:49:05,560 --> 00:49:12,000
+principales que veis que son de robert c martin más conocido por ahí como ankelbob y en estos
+
+464
+00:49:12,000 --> 00:49:17,760
+pues habla bastante bastante de estos temas entonces bueno preguntas
+
+465
+00:49:17,760 --> 00:49:38,240
+si nos están preguntando a ver si conocemos yo con un contenedor de inversión de pero luego a mano
+
+466
+00:49:38,240 --> 00:49:48,040
+si nosotros lo hacemos a mano porque realmente consideramos que entre elegir poner decoradores
+
+467
+00:49:48,040 --> 00:49:55,320
+por nuestro código ya no suena mal si lo dejamos en un sitio aislado por ejemplo en un fichero
+
+468
+00:49:55,320 --> 00:50:02,400
+bien sea de configuración o tal pues al final entre tener 100 líneas de xml o tener 110 de
+
+469
+00:50:02,400 --> 00:50:06,880
+python pues realmente a nosotros particularmente hasta ahora nos funciona muchísimo mejor tenerlo
+
+470
+00:50:06,880 --> 00:50:14,920
+en python explícito y por una factoría en lugar de más preguntas
+
+471
+00:50:19,880 --> 00:50:27,440
+a ver la charla ha comentado habéis un poco enfriado la charla en el tema del dinero
+
+472
+00:50:27,440 --> 00:50:35,600
+y se me ocurren muchas cosas no porque son útiles para el programador en sí
+
+473
+00:50:35,600 --> 00:50:39,680
+para tu trabajo desde vuestro punto de vista como programadores porque parece el dinero y no
+
+474
+00:50:39,680 --> 00:50:46,480
+más vista empresario desde vuestro punto de vista como programadores que os parece bueno
+
+475
+00:50:46,480 --> 00:50:59,600
+a ver yo me llevo que haces orientación a objetos más o menos como te la contaban o como leías
+
+476
+00:50:59,600 --> 00:51:04,920
+en los libros que luego te parecía de forma real que no podía que no podía ser y sobre todo me llevo
+
+477
+00:51:04,920 --> 00:51:11,080
+que todo es súper fácil de testear y todo es súper re usable porque lo vas usando en distintos
+
+478
+00:51:11,080 --> 00:51:17,800
+en distintos contextos sin ningún tipo de problema entonces en nuestro caso pues el tener
+
+479
+00:51:17,800 --> 00:51:25,320
+test automáticos de todo y que lo podamos lo usamos de forma continua pues a mí lo que me
+
+480
+00:51:25,320 --> 00:51:33,080
+hace es que vive sin ansiedad tienes una vacía pues tener 600 tes y lo ejecutas en menos de un
+
+481
+00:51:33,080 --> 00:51:39,000
+segundo o es que es capaz de saber dónde está fallando rápido y luego siempre a ver errores
+
+482
+00:51:39,000 --> 00:51:42,920
+siempre van a ocurrir por siempre pueden ocurrir pero
+
+483
+00:51:48,440 --> 00:51:50,160
+no eso pensando es
+
+484
+00:51:52,520 --> 00:51:54,720
+es producto y además evoluciona de forma
+
+485
+00:51:58,720 --> 00:52:06,360
+el enfoque el dinero porque es que aunque no nos demos cuenta si lo has escrito esta mañana mañana
+
+486
+00:52:06,360 --> 00:52:10,360
+por la mañana ya te está costando dinero si el diseño es malo pensamos que es dentro de
+
+487
+00:52:10,360 --> 00:52:14,120
+cuatro meses no mañana por la mañana cuando lo coja tu compañero cuando lo lea el otro compañero
+
+488
+00:52:14,120 --> 00:52:19,120
+cuando te pongas a hacer pero cuando falla un test y no sepas porque es que es mañana no es no es
+
+489
+00:52:19,120 --> 00:52:20,280
+en un mes vale
+
+490
+00:52:20,280 --> 00:52:23,720
+la manera de enfocar lo que es
+
+491
+00:52:34,280 --> 00:52:41,120
+pues si me dirías que lo resumiese haciendo orientación a objetos yo sería ser profesional
+
+492
+00:52:41,120 --> 00:52:46,120
+haciendo orientación a objetos ser profesionales no costar de más también ahora de desarrollarlo
+
+493
+00:52:46,120 --> 00:52:49,480
+alguna vez pues te encuentras de joven pues todo esto es muy bonito pero esto en un mundo real
+
+494
+00:52:49,480 --> 00:52:55,840
+teme no funciona así no puede ser tan puro pues quiero decir que sigues pensando las
+
+495
+00:52:55,840 --> 00:53:02,360
+empresas tienen que hacer dinero no hay porque vender armas pero hay que pagar facturas y
+
+496
+00:53:02,360 --> 00:53:08,600
+hay que se puede hacer de modo lítito entonces bueno pues se trata que es que no estamos hablando
+
+497
+00:53:08,600 --> 00:53:13,920
+tampoco de hemos escrito un paper para no sé qué no pues que esto se aplica y esto te puede
+
+498
+00:53:13,920 --> 00:53:20,880
+desde el primer momento lo que mejora sobre todo es el test y poder hacer eso de que no tus
+
+499
+00:53:20,880 --> 00:53:26,400
+aplicaciones no son testables porque no las hacemos testables con esto haces un diseño
+
+500
+00:53:26,400 --> 00:53:30,080
+medianamente bueno casi sin querer y luego una vez de que más o menos lo tienes interiorizado
+
+501
+00:53:30,080 --> 00:53:35,760
+es tu forma de diseñar entonces a partir de que es tu forma de diseñar ni lo notas o sea es que es
+
+502
+00:53:35,760 --> 00:53:41,280
+lo normal o sea ya no consideras poder hacerlo guardreando porque ya ese guardreo ya ni te sale
+
+503
+00:53:41,280 --> 00:53:47,520
+no es natural no y que lo ves incluso pues sería más rápido ahí con lo del dinero si que que
+
+504
+00:53:47,520 --> 00:53:51,720
+comentamos eso lo del open close o sea no es ponerte sentarte y astraer no es hacer un desarrollo
+
+505
+00:53:51,720 --> 00:53:55,960
+ágil y astraer cuando tienes que astraer que para eso vale la orientación a objetos para eso vale
+
+506
+00:53:55,960 --> 00:54:00,240
+el polimorfismo pero solo cuando ya ves que esa parte es la parte de la aplicación que va a tener
+
+507
+00:54:00,240 --> 00:54:06,000
+que ser configurable o que va a tener varias soluciones no antes o sea antes si que la muy
+
+508
+00:54:06,000 --> 00:54:11,000
+está anda no por sentarte y decir a ver qué se me ocurre no cuánto de puro cuánto abstracto cuánto
+
+509
+00:54:11,000 --> 00:54:17,280
+de tal no eso también costaba dinero entonces no queremos costar dinero y queremos ser profesionales
+
+510
+00:54:17,280 --> 00:54:25,760
+que eso es ser eficiente y costar poco de como dos minutos vale creo que nos da tiempo para una
+
+511
+00:54:25,760 --> 00:54:32,200
+pregunta más no hay alguna como resolvéis el tema de los modos en los paquetes
+
+512
+00:54:32,200 --> 00:54:48,400
+para empezar o sea vamos organizando en paquetes y módulos pero sí que tenemos siempre muy muy muy en
+
+513
+00:54:48,400 --> 00:54:53,080
+cuenta que no haya ningún ciclo en las dependencias o sea siempre la gestión de dependencias es
+
+514
+00:54:53,080 --> 00:54:57,760
+fundamental o sea siempre viendo de dónde vas a importar o sea esto puede importar infraestructura
+
+515
+00:54:57,760 --> 00:55:02,400
+pero no puede importar en tal luego lo que sí que tenemos son subsistemas y subdominios que se
+
+516
+00:55:02,400 --> 00:55:09,280
+dedican a un tema entonces ese tema pues están dentro de ese componente también separamos pues la
+
+517
+00:55:09,280 --> 00:55:13,160
+parte de infraestructura también separamos pues el mecanismo entrega este es el mecanismo entrega
+
+518
+00:55:13,160 --> 00:55:21,280
+web y este es el mecanismo entrega de línea interface y todo esto usa otro paquete que es el de ese
+
+519
+00:55:21,280 --> 00:55:28,800
+dominio y ese dominio pues dentro pues está organizado con paquetes y tal hay módulos que
+
+520
+00:55:28,800 --> 00:55:33,040
+tienen varias clases y hay módulos que igual solo tienen una depende un poco la envergadura pero lo
+
+521
+00:55:33,040 --> 00:55:37,760
+que sí es fijándonos siempre en las dependencias y todas maneras como tienes toda la parte automática
+
+522
+00:55:37,760 --> 00:55:43,640
+y tal en cuanto la lia se hay un poco revienta todo por y como son dos minutos o sea es el último
+
+523
+00:55:43,640 --> 00:55:50,760
+cambio no son segundos pues pues el último cambio lo has tenido que hacer ahora si las lia o algo se
+
+524
+00:55:50,760 --> 00:55:57,720
+romperá el de integración continua te avisará que tendrás que poner una corona y ya está y
+
+525
+00:55:57,720 --> 00:56:05,320
+los soluciones y ya está no pasa nada estas son son termina es un poco tratamos de agruparlos a
+
+526
+00:56:05,320 --> 00:56:10,880
+través del bon context para que es un término que ya sé hay un resultado había un poco difuso
+
+527
+00:56:10,880 --> 00:56:17,440
+sí pero sub sistemas y lo ha de similas como subsistemas de lo que más o menos tienen coherencia
+
+528
+00:56:17,440 --> 00:56:26,320
+juntos pues lo separamos juntos y creo que ya no vale bueno pues muchas gracias somos a las
+
+529
+00:56:26,320 --> 00:56:30,560
+soluciones solemos hacer de surfing por si alguien está interesado tal y quiere ver cómo
+
+530
+00:56:30,560 --> 00:56:48,320
+trabajamos y nos puede aportar pues que nos pegue que nos pegue un toque muchas gracias a todos por venir
+
