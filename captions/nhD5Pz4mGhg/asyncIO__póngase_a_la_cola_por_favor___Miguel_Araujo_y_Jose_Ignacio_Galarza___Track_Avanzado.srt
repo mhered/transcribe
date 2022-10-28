@@ -1,0 +1,2668 @@
+1
+00:00:00,000 --> 00:00:02,920
+Imagais o momento a hon glovesar
+
+2
+00:00:08,300 --> 00:00:10,660
+Sum mainly
+
+3
+00:00:11,660 --> 00:00:12,740
+Ion Exili drenen
+
+4
+00:00:12,780 --> 00:00:14,180
+Mหá a jace Presyen
+
+5
+00:00:14,180 --> 00:00:26,860
+Desar
+
+6
+00:00:26,860 --> 00:00:27,860
+Imhaq��
+
+7
+00:00:27,860 --> 00:00:29,940
+Xi
+
+8
+00:00:29,940 --> 00:00:34,940
+E na charla de hoy os queremos presentar unha cola virtual con asín caio.
+
+9
+00:00:37,940 --> 00:00:43,940
+Bueno, nós trabajamos en Ticketa. Ticketa é unha empresa de venta de entradas por internet.
+
+10
+00:00:44,940 --> 00:00:48,940
+Llevamos máso-menos, hemos hecho pocos xeis años de vida.
+
+11
+00:00:49,940 --> 00:00:53,940
+E quando se vende de entras por internet, lo que pasa é este.
+
+12
+00:00:53,940 --> 00:01:03,940
+Hay momentos em que saen eventos a la venta que son muy populares e a gente entra porque quere comprar a sua entrada
+
+13
+00:01:04,940 --> 00:01:08,940
+e o má rápido posible e as entradas se venden en dos minutos, no?
+
+14
+00:01:09,940 --> 00:01:10,940
+Muchas veces.
+
+15
+00:01:11,940 --> 00:01:18,940
+Então, o nosso problema que a veces nos toca é soportar picos de carga prácticamente verticales, vale?
+
+16
+00:01:18,940 --> 00:01:24,940
+E entorno a é, surge a ideia de hacer unha cola virtual.
+
+17
+00:01:25,940 --> 00:01:31,940
+Aunque nós somos capaces de soportar éxas colas de carga, sí que é verdade que é que a gente queda frustrada
+
+18
+00:01:32,940 --> 00:01:37,940
+quando accede a unha evento que se ha vendido en un minuto e medio e un pouco nos consciente de todo o rápido que se ha vendido éso
+
+19
+00:01:38,940 --> 00:01:44,940
+e creen que, bueno, é que hemos hecho algo, que nos podeis dizer a gente, oi, pero como é posible?
+
+20
+00:01:44,940 --> 00:01:47,940
+E no, se ha vendido, non? No hemos hecho trampas, no?
+
+21
+00:01:48,940 --> 00:01:54,940
+Pero sí que é que é que é que o promotor dice, no, pues a mim me gustaría que a gente, se tiene unha plaza que compre sua entrada
+
+22
+00:01:55,940 --> 00:01:58,940
+e o podeis hacer con calma porque se não o que ocurre é que a gente entra e empieza a rellenar o má,
+
+23
+00:01:59,940 --> 00:02:04,940
+o que sea má rápido é o que gana, é como o salvaje do éste e eu quero que, bueno, pues que, pues, quero colocar a cierta gente
+
+24
+00:02:05,940 --> 00:02:08,940
+ou quero darle solo acceso a esta, a la compra de ciertas personas, no?
+
+25
+00:02:08,940 --> 00:02:14,940
+E, entonces, nós estuímos en el Aeropayza, onde é bilbado deste año e estando allí, pues, pensamos,
+
+26
+00:02:15,940 --> 00:02:23,940
+en un rato destos de libre ya de un día, dijimos, oi, e se nos ponemos a trabajar en un software para hacer colas virtuales con Python
+
+27
+00:02:24,940 --> 00:02:28,940
+e nástra cola virtual en realidad, non funciona como ésta de la foto, sino que funciona máis bien como ésta outra,
+
+28
+00:02:29,940 --> 00:02:34,940
+é decir, como éla que estais acostumbrada a ver en negocios como una carnicería, no?
+
+29
+00:02:34,940 --> 00:02:40,940
+Tu coges un papel que te da un turno e te puedes ir a, se estas en un centro comercial,
+
+30
+00:02:41,940 --> 00:02:45,940
+o estás en un supermercado, pues te puedes ir a comprar leche e lo volver e no has perdido tu turno, no?
+
+31
+00:02:46,940 --> 00:02:51,940
+Pois, non é como en ná cola de accederon recinto, accederon a tienda, que se te vas, pues, na,
+
+32
+00:02:51,940 --> 00:03:04,940
+tenes que decirlo, aya me aguardas o site, o que é o que é o sente que dice, no? De onde vienes te sonho, no?
+
+33
+00:03:05,940 --> 00:03:08,940
+E, pues, por exemplo, se tienes problemas de conexión, tú estás con o móvil e se te corta na conexión,
+
+34
+00:03:09,940 --> 00:03:12,940
+has entrado na metro e logo e os haso a salir, tú sigues teniendo tu turno, no pasa nada, oi?
+
+35
+00:03:12,940 --> 00:03:22,940
+Món, então é, e como é o moxito é isto? Pois, a ver, a estrutura ou a arquitectura do software que moxito é o seguinte,
+
+36
+00:03:23,940 --> 00:03:28,940
+nós émos elegido Python 3.5, en este caso já explicaremos por que,
+
+37
+00:03:29,940 --> 00:03:32,940
+então é o que moxito é, nós émos montado, pues, unas serie de servidores que se balancian de forma horizontal
+
+38
+00:03:33,940 --> 00:03:38,940
+com Python 3.5, usando programación asíncrona, unha libraria que se má sin caio, que é estándar, está a libraria estándar de Python 3,
+
+39
+00:03:38,940 --> 00:03:44,940
+e todo o estado que queremos guardar, lo guardamos en Redis, que já vemos que é moxito estado
+
+40
+00:03:45,940 --> 00:03:48,940
+e o estado que queremos guardar é moxímple, por lo cual con Redis nos basta e de hecho nos funciona moxísmo
+
+41
+00:03:49,940 --> 00:03:54,940
+moxito que qualquilo alternativo en ese caso. Por delante de esas máquinas, evidentemente, un balancior de carga
+
+42
+00:03:55,940 --> 00:03:59,940
+para, pues, para poder redirigir os ricos a cada una de las maniqueas que tengamos en cada momento
+
+43
+00:04:00,940 --> 00:04:02,940
+e, pues, nos dos queridos fans abaixo del todo, evidentemente.
+
+44
+00:04:02,940 --> 00:04:08,940
+Então, é, isto está hecho de la seguinte man, para poder soportar evidentemente fallos,
+
+45
+00:04:09,940 --> 00:04:13,940
+e, em cualquier momento, uno dos nódos se cae, queremos que a persona pueda volver a reintentar conectar
+
+46
+00:04:14,940 --> 00:04:19,940
+se contra o sistema e que, primeiro, evidentemente, no pierda a posição e segundo que o sistema funcione
+
+47
+00:04:20,940 --> 00:04:23,940
+exáctamente igual que antes e que tenga rendimento degradado.
+
+48
+00:04:24,940 --> 00:04:30,940
+Então, por que hemos elegido, o xa, porque aqui é varias partes claves, digamos, porque hemos elegido cada una de ellas,
+
+49
+00:04:30,940 --> 00:04:35,940
+o primeiro é porque hemos elegido Python, pues, o primeiro é porque estávamos a ler o Python e a hablar de Python, no?
+
+50
+00:04:36,940 --> 00:04:38,940
+Entonces, depois, por que Python 3?
+
+51
+00:04:39,940 --> 00:04:43,940
+Pues, principalmente porque arregla algunas de las, digamos, de los problemas de concurrencia que tenia Python 2
+
+52
+00:04:44,940 --> 00:04:48,940
+e isto não é que, o sá, sobretodo en cuanto a librerías que tiene ahora, na standard library e que antes no tenia.
+
+53
+00:04:49,940 --> 00:04:54,940
+Después, porque este problema é un problema moxítipico que resolver con programación asíncrona, o sá, con io asíncrona.
+
+54
+00:04:54,940 --> 00:04:59,940
+Ao final, tenen en cuenta que, en una cola virtual, en todo momento queremos poder decirle ao usuario en que posición está,
+
+55
+00:05:00,940 --> 00:05:04,940
+quanta gente tiene por delante, por detrás e incluso moxísimas cosas que se nos ocurren que montar alrededor de sá cola
+
+56
+00:05:05,940 --> 00:05:11,940
+e, para eso, al final, necesitamos un canal de comunicación con o usuario e que ese canal, a maior parte del tiempo, va estar inactivo,
+
+57
+00:05:12,940 --> 00:05:15,940
+por o qual é un caso muy, muy, muy típico de programación de io asíncrona.
+
+58
+00:05:16,940 --> 00:05:21,940
+E, por último, pues, porque esto, tenen en cuenta que é un software que se va usar para nuestros peores eventos en tráfico,
+
+59
+00:05:21,940 --> 00:05:24,940
+o sá, quer dizer, os eventos que máis tráfico van a tener,
+
+60
+00:05:25,940 --> 00:05:29,940
+pero, bueno, aún así, o sá, o Paizo nos va funcionar e sabemos que nos va funcionar perfectamente porque nos está funcionando perfectamente a esta hora.
+
+61
+00:05:30,940 --> 00:05:33,940
+Después, por que a librería de SIN caió?
+
+62
+00:05:34,940 --> 00:05:39,940
+Pues, por várias razones. La primera, como acabo de decir, porque é un programa moxítipico de programación de io asíncrona,
+
+63
+00:05:40,940 --> 00:05:44,940
+e, después, porque está dentro de standard library e é xó, pues, bueno, o sá, o que dicis, al final,
+
+64
+00:05:44,940 --> 00:05:50,940
+hasta Paizo 3, 3-3, se máis no recuerdo, a forma de hacer concurrencia con io asíncrona,
+
+65
+00:05:51,940 --> 00:05:57,940
+pues, había muchas formas de hacerlo, tenemos Twitter, tenemos Tornado, teníamos, bueno, teníamos muxas alternativas, teníamos Givenet.
+
+66
+00:05:58,940 --> 00:06:03,940
+Então, é, pero digamos que é, me tiene esta librería, esta librería en la standard library,
+
+67
+00:06:04,940 --> 00:06:06,940
+digamos que se ha marcado como unha dirección que quere seguir la comunidad a partir de ahora.
+
+68
+00:06:06,940 --> 00:06:13,940
+Entonces, é, tiene unha comunidad muy fuerte detrás de SIN caió e cada día máis fuerte e de hecho podís ver que se están creando
+
+69
+00:06:14,940 --> 00:06:19,940
+moxísimas librerías de 3-3 alrededor de ella e, después, e é, isto é, é unha opinión personal evidentemente nústa,
+
+70
+00:06:20,940 --> 00:06:25,940
+para nosotros nos parece unha de los, digamos, de los paradigmas de programación asíncrona en Paizo más legibles que hai.
+
+71
+00:06:26,940 --> 00:06:30,940
+O sá, porque, al final, se coxís Tornado, coxís Twitter e coxís Asíncayo, vais a ver que as 3 se hacen de forma completamente distinta.
+
+72
+00:06:30,940 --> 00:06:36,940
+O sá, o boón asíncayo para nosotros unha das coxas buenas, é que é muy, muy legible e, al final, el código se escribe unha vez e se le cientos.
+
+73
+00:06:37,940 --> 00:06:39,940
+Por que WebSockets?
+
+74
+00:06:40,940 --> 00:06:43,940
+Pois, bueno, como os he dicho, necesitamos un canal de comunicación con os usuarios que estén en la cola,
+
+75
+00:06:44,940 --> 00:06:46,940
+então, hemos elegido el protocolo de WebSockets por unha sencilla razón e é que, para empezar,
+
+76
+00:06:47,940 --> 00:06:51,940
+é unha via de comunicación en dos direcciones que é algo que queremos porque non só queremos decirle al usuario en que posición está,
+
+77
+00:06:52,940 --> 00:06:54,940
+sino queremos que o usuario nos pueda lançar cerdos comandos a través de él.
+
+78
+00:06:54,940 --> 00:07:03,940
+Despós, nos gusta o nos gustaría que fuese algo muy cercano a comunicación real para que en todo momento sepa realmente en que posición está.
+
+79
+00:07:04,940 --> 00:07:10,940
+O pelo dos mensajes de WebSockets é muy, muy, muy bajo, xe má nos recuerdos de dos bytes por cada paquete que se manda,
+
+80
+00:07:11,940 --> 00:07:16,940
+lo cual, no tiene nada que ver con implementar, por exemplo, un canal mediante HTTP, en el que é que é que mandar as cabeceras cada vez.
+
+81
+00:07:16,940 --> 00:07:24,940
+É é muy fácil actualizar de HTTP a WebSockets e, de hecho, é parte do estándar e é xe que é que sea muy fácil atravesar,
+
+82
+00:07:25,940 --> 00:07:28,940
+digamos, firewalls e qualquer tipo de sistema que nos pueda bloquear de cara ao usuario.
+
+83
+00:07:29,940 --> 00:07:31,940
+Então, é xe estamos dando de que é xe estos para os eventos máis grandes que tenemos,
+
+84
+00:07:32,940 --> 00:07:37,940
+no poder ser que porque tengas un firewall entre tú e nsos servidores, no puedas acceder ao evento.
+
+85
+00:07:38,940 --> 00:07:43,940
+E, por último, por que redis? Al final usamos redis por variar zones.
+
+86
+00:07:43,940 --> 00:07:49,940
+La primera, porque a persistencia que tenemos en este sistema são un par de contadores,
+
+87
+00:07:50,940 --> 00:07:55,940
+hemos intentado hacer, o llevar, digamos, la mínima complejidad posible a la parte servidora
+
+88
+00:07:56,940 --> 00:08:00,940
+para que podés caldar de la manera má sencilla posible e, desde o logo, para simplificar el problema todo o posible,
+
+89
+00:08:01,940 --> 00:08:04,940
+então, ao final, hemos llegado a una solución en la que, simplemente, con un par de contadores podemos montar el sistema entero.
+
+90
+00:08:05,940 --> 00:08:08,940
+Como son un par de contadores, nós necesitamos un motor transaccional enorme que, al final,
+
+91
+00:08:08,940 --> 00:08:12,940
+as bases transaccionales, o que dicis, son máis lentas que é isto, no porque sean peores,
+
+92
+00:08:13,940 --> 00:08:16,940
+sin que, ao final, facem muchísimos máis cozas, cozas que, para este problema en concreto, no necesitamos.
+
+93
+00:08:17,940 --> 00:08:22,940
+E, eso hace que redis en este caso en concreto sea muchísimo má rápido que no va a ser de datos transaccional
+
+94
+00:08:23,940 --> 00:08:27,940
+para manejar contadores, simplemente, e, después, que, bueno, tiene un montón de librerías,
+
+95
+00:08:28,940 --> 00:08:32,940
+que, teno un co-sistema bestial incluido para Sincayo, que é a livridad que estamos usando.
+
+96
+00:08:32,940 --> 00:08:39,940
+Muy bien, pues vamos a ver un pouco como funciona todo esto, agora ya, a la chicha, lo que hay debajo de todo esto.
+
+97
+00:08:40,940 --> 00:08:45,940
+E, bueno, este é un diagrama que, que exemplifica como está montado por dentro,
+
+98
+00:08:46,940 --> 00:08:49,940
+uno de esos nodos que hemos visto antes, en el diagrama anterior,
+
+99
+00:08:50,940 --> 00:08:52,940
+o que é, o que é a gestión de la cola virtual, vale?
+
+100
+00:08:53,940 --> 00:08:56,940
+E, o que ocurre, básicamente, é que llega a unha conexión HTTP, como vemos por aquí,
+
+101
+00:08:56,940 --> 00:09:04,940
+a un servidor que está programado con IHTDP, que é unha librería para desarrollar servidores HTTP con Sincayo, vale?
+
+102
+00:09:05,940 --> 00:09:08,940
+Esa conexión HTTP se promociena a WebSocket e llega a un gestor de WebSocket,
+
+103
+00:09:09,940 --> 00:09:12,940
+que é, básicamente, un adaptador que controla a conexión, vale?
+
+104
+00:09:13,940 --> 00:09:16,940
+A ese WebSocket, o que hemos pasado, é una instancia de un line manager,
+
+105
+00:09:17,940 --> 00:09:23,940
+é unha classe que se va encargar a hacer un pouco a gestión de la lógica de controlar la cola virtual
+
+106
+00:09:23,940 --> 00:09:25,940
+para un resource ID concreto.
+
+107
+00:09:26,940 --> 00:09:29,940
+Portanto, tenemos tantos line managers como resources ID estengamos.
+
+108
+00:09:30,940 --> 00:09:31,940
+Que é o resource ID?
+
+109
+00:09:32,940 --> 00:09:33,940
+O recurso que está protegendo a cola virtual.
+
+110
+00:09:34,940 --> 00:09:40,940
+En el caso de Tiquetea, seria un idea de evento, porque se está protegendo o processo de compra do evento.
+
+111
+00:09:41,940 --> 00:09:45,940
+O que é este adaptador de oeso que se é chamar a este método aquí, que é a añadir conexión,
+
+112
+00:09:46,940 --> 00:09:51,940
+digamos, para que o line manager possa utilizar a conexión en momentos que quiera comunicar a todos os clientes que están conectados.
+
+113
+00:09:51,940 --> 00:09:54,940
+E esperan información de ese ID de evento.
+
+114
+00:09:55,940 --> 00:10:01,940
+Bien, o line manager é, como eu he dicho, o que controla a lógica de la cola virtual
+
+115
+00:10:02,940 --> 00:10:05,940
+e tiene unas serie de métodos que otorgan un turno a una persona que se acaba de conectar
+
+116
+00:10:06,940 --> 00:10:08,940
+e ha solicitado un turno, mantiene aos clientes actualizados
+
+117
+00:10:09,940 --> 00:10:13,940
+ou decide cuándo pode dejar pasar a clientes ao processo de compra que está por detrás.
+
+118
+00:10:14,940 --> 00:10:17,940
+E como vemos, pues pode estar por delante de varios processos de compra, a la vez.
+
+119
+00:10:17,940 --> 00:10:23,940
+E a su vez, todos é ndo utilizan un único adaptador de redis que controla
+
+120
+00:10:24,940 --> 00:10:28,940
+as operaciones que se van a hacer sobre o redis utilizando un pull de conexión.
+
+121
+00:10:29,940 --> 00:10:31,940
+Hasta aquí todo bem? Algún os ha perdido?
+
+122
+00:10:32,940 --> 00:10:33,940
+Vale.
+
+123
+00:10:34,940 --> 00:10:39,940
+Bien, então é o nosso fan llega e le dice a nosso nodo de gestión de colas virtuales
+
+124
+00:10:40,940 --> 00:10:43,940
+e me va a conectar a HTTP, le devuelve un WebSocket
+
+125
+00:10:43,940 --> 00:10:48,940
+e então dice, oi, solicito o turno e ele da o turno firmado, cryptográficamente,
+
+126
+00:10:49,940 --> 00:10:54,940
+para que nós podamos legitimizar, estar seguros de que o turno é legítimo.
+
+127
+00:10:55,940 --> 00:11:03,940
+E aí se actualiza un contador en el redis, mantenemos jases para cada un de esos risos aides,
+
+128
+00:11:04,940 --> 00:11:09,940
+por tanto, o jase correspondiente al evento tal se va a hacer un actualización de acabamos de dar un turno máx.
+
+129
+00:11:09,940 --> 00:11:15,940
+Después cada 10 segundos vamos a mandar actualizaciones de como está o estado de la cola para ese tuisos aidi.
+
+130
+00:11:16,940 --> 00:11:19,940
+E é só o permite que nós, nos xe un cliente, como podeis ser en el navegador,
+
+131
+00:11:20,940 --> 00:11:26,940
+le mostremos ao usuario, oi, pues estáis o 50 de 250, 50 de 1000, o que sea, no?
+
+132
+00:11:27,940 --> 00:11:31,940
+E finalmente, quando llegue o momento adecuado, o que va a hacer
+
+133
+00:11:32,940 --> 00:11:36,940
+é darle acceso ao recurso dándole un token que é firmado de novo
+
+134
+00:11:36,940 --> 00:11:39,940
+con o que ele va poder llegar ao processo de compra, oi?
+
+135
+00:11:40,940 --> 00:11:43,940
+E aí, unha vez máx, actualizamos outro contador, que é o TurnGradTilAxis,
+
+136
+00:11:44,940 --> 00:11:49,940
+que é o que puse anteriormente, o display de la carnicería.
+
+137
+00:11:50,940 --> 00:11:52,940
+Estamos por el turno 25, o que é tener 25?
+
+138
+00:11:53,940 --> 00:11:58,940
+O que ocorre, entonces, que é xe que ese cliente já tiene o turno?
+
+139
+00:11:59,940 --> 00:12:02,940
+Que vai ir dirextamente ao recurso, en este caso, para nós, o processo de compra é o que digo.
+
+140
+00:12:02,940 --> 00:12:05,940
+E o processo de compra, e oi, oi, vai empezar o processo de compra con este toque.
+
+141
+00:12:06,940 --> 00:12:08,940
+Então, se não o dira un toque, o processo de compra, simplemente diría,
+
+142
+00:12:09,940 --> 00:12:10,940
+no sinto, isto não pode ser.
+
+143
+00:12:11,940 --> 00:12:16,940
+En ese momento, o que hace o recurso é llamar a nossa cola virtual,
+
+144
+00:12:17,940 --> 00:12:20,940
+a un end point HTTP que é este aqui, é access resource,
+
+145
+00:12:21,940 --> 00:12:25,940
+en el que ele está dicendo, oi, alguien máx ha accedido a este recurso,
+
+146
+00:12:26,940 --> 00:12:29,940
+porque, al final, o gestor de colas virtuales tiene que tener unha noción
+
+147
+00:12:29,940 --> 00:12:32,940
+de como está, o que está protegendo por detrás dele.
+
+148
+00:12:33,940 --> 00:12:35,940
+Se o recurso está hasta arriba, se pode dejar o no...
+
+149
+00:12:36,940 --> 00:12:37,940
+pode dejar pasar máx gente, vale?
+
+150
+00:12:38,940 --> 00:12:41,940
+Se actualiza, en el redis, ese contador, en el virtual line manager, actualizamos.
+
+151
+00:12:42,940 --> 00:12:44,940
+Oi, pues, un cliente máx, en este momento, en el recurso.
+
+152
+00:12:45,940 --> 00:12:47,940
+E, quando, finalmente, o usuario paga e abandona o processo de compra,
+
+153
+00:12:48,940 --> 00:12:51,940
+ese recurso de novo vai hacer unha llamada a nuestro line manager,
+
+154
+00:12:52,940 --> 00:12:54,940
+notificándole que un cliente acaba de abandonar el recurso
+
+155
+00:12:54,940 --> 00:12:58,940
+e que, por lo tanto, hai un slot libre para dejar pasar.
+
+156
+00:13:02,940 --> 00:13:05,940
+Múi bien, pues nada, como non está siendo densa o hasta hora,
+
+157
+00:13:06,940 --> 00:13:07,940
+vamos a ver un pouco de código.
+
+158
+00:13:08,940 --> 00:13:09,940
+Cuanta gente ha tirado...?
+
+159
+00:13:10,940 --> 00:13:12,940
+Con el proceso decí es que, cuando alguien ha hecho la compra,
+
+160
+00:13:13,940 --> 00:13:15,940
+se dejo un slot libre para, para o proceso de compra,
+
+161
+00:13:16,940 --> 00:13:17,940
+que hai un limite de...
+
+162
+00:13:18,940 --> 00:13:20,940
+De hecho, demos un par de end points de configuración que nós hemos enseñado
+
+163
+00:13:20,940 --> 00:13:23,940
+en el que podemos decir, en cada momento, cuánta gente queremos permitir dentro del recurso.
+
+164
+00:13:24,940 --> 00:13:25,940
+O que?
+
+165
+00:13:26,940 --> 00:13:31,940
+O sábado, al final, dependiendo de tu sistema, pues, admites 50, 50 mil o 5 mil enos de personas al mismo tiempo, exactamente.
+
+166
+00:13:32,940 --> 00:13:33,940
+¿Enquanto?
+
+167
+00:13:34,940 --> 00:13:36,940
+E, sí, tenemos aspiraciones, en los tokens,
+
+168
+00:13:37,940 --> 00:13:41,940
+un inspiración por la que, por encima de eso, no pueden acesar, acesar al recurso.
+
+169
+00:13:41,940 --> 00:13:50,940
+No, no lo pierde, porque o Estado se guarda en el cliente.
+
+170
+00:13:51,940 --> 00:13:54,940
+Vale, entonces, é o que estava dicendo Miguel anteriormente con o tema de la firma criptográfica.
+
+171
+00:13:55,940 --> 00:13:57,940
+O que hacemos é, o Estado lo guarda completamente el cliente
+
+172
+00:13:58,940 --> 00:14:00,940
+para que, si se desconecta, pueda mantener seu turno al volver a conectarse.
+
+173
+00:14:01,940 --> 00:14:02,940
+La cosena es que, con esa firma criptográfica, sabemos que evidentemente,
+
+174
+00:14:03,940 --> 00:14:05,940
+o que ese turno, sólo volvemos a poder agarrar nosotros,
+
+175
+00:14:05,940 --> 00:14:12,940
+por afinal, con a firma criptográfica, o que só podemos generar se toquen nosotros.
+
+176
+00:14:13,940 --> 00:14:16,940
+Vale, pues, tal, e o que va, se nos importa, o final,
+
+177
+00:14:17,940 --> 00:14:19,940
+o que se nos va el tiempo,
+
+178
+00:14:20,940 --> 00:14:23,940
+e, a ver, ¿cuántos de vosotros habéis hecho alguna cosa con a sincayo?
+
+179
+00:14:24,940 --> 00:14:25,940
+Habéis tirado código?
+
+180
+00:14:26,940 --> 00:14:28,940
+Bueno, vale, pues, para o resto, vienen curvas, así que...
+
+181
+00:14:29,940 --> 00:14:30,940
+Atención!
+
+182
+00:14:31,940 --> 00:14:33,940
+A ver, antes de empezar con el código en sí,
+
+183
+00:14:33,940 --> 00:14:35,940
+decir que estamos usando Python 3.5,
+
+184
+00:14:36,940 --> 00:14:37,940
+a sincayo entró en Python 3.3,
+
+185
+00:14:38,940 --> 00:14:39,940
+e, má, no recuerdo, como librería al menos,
+
+186
+00:14:40,940 --> 00:14:41,940
+e creo que en el estándar libre dentro de la 3.4.
+
+187
+00:14:42,940 --> 00:14:44,940
+Entonces, bueno, en 3.5, aparte,
+
+188
+00:14:45,940 --> 00:14:47,940
+hay un pep maravilloso que define dos palabras clave
+
+189
+00:14:48,940 --> 00:14:49,940
+que se añaden al lenguaje de Python, vale,
+
+190
+00:14:50,940 --> 00:14:51,940
+que son a sinc y a wait.
+
+191
+00:14:52,940 --> 00:14:53,940
+Entonces, se non conocíslas de la izquierda,
+
+192
+00:14:54,940 --> 00:14:55,940
+unidas-as délas, acordas-las de la derecha,
+
+193
+00:14:56,940 --> 00:14:57,940
+e, se conocíslas de la izquierda,
+
+194
+00:14:58,940 --> 00:14:59,940
+é xa es la correspondencia entre izquierda e derecha.
+
+195
+00:15:00,940 --> 00:15:01,940
+Vale, entonces,
+
+196
+00:15:01,940 --> 00:15:03,940
+lo que hacemos con async es simplemente definir
+
+197
+00:15:04,940 --> 00:15:05,940
+que esa función va ser asíncrona,
+
+198
+00:15:06,940 --> 00:15:07,940
+es decir, que por dentro va tener iosíncrona,
+
+199
+00:15:08,940 --> 00:15:09,940
+e o que hacemos con a wait,
+
+200
+00:15:10,940 --> 00:15:11,940
+es decir, a unha corrutina que queremos esperar
+
+201
+00:15:12,940 --> 00:15:13,940
+por el resultado de esa corrutina.
+
+202
+00:15:14,940 --> 00:15:15,940
+Entonces, para ver esto,
+
+203
+00:15:16,940 --> 00:15:17,940
+vamos a, primero, ver un pouco el esqueleto
+
+204
+00:15:18,940 --> 00:15:19,940
+que tenemos en cada clase
+
+205
+00:15:20,940 --> 00:15:21,940
+e, después, nos vamos a meter
+
+206
+00:15:22,940 --> 00:15:23,940
+por os métodos que consideramos clave.
+
+207
+00:15:24,940 --> 00:15:25,940
+Entonces, como ha dicho Miguel anteriormente,
+
+208
+00:15:26,940 --> 00:15:27,940
+nuestro punto inicial, nuestro punto clave
+
+209
+00:15:28,940 --> 00:15:29,940
+es el servidor de HTTB,
+
+210
+00:15:29,940 --> 00:15:30,940
+el esqueleto que tienes aproximadamente este,
+
+211
+00:15:31,940 --> 00:15:32,940
+tiene máxxxas, pero, bueno,
+
+212
+00:15:33,940 --> 00:15:34,940
+as importantes son estas.
+
+213
+00:15:35,940 --> 00:15:36,940
+Por una parte, evidentemente,
+
+214
+00:15:37,940 --> 00:15:38,940
+o construtor, en el que definimos
+
+215
+00:15:39,940 --> 00:15:40,940
+onde queremos que escuche,
+
+216
+00:15:41,940 --> 00:15:42,940
+e pasamos a level loop,
+
+217
+00:15:43,940 --> 00:15:44,940
+e, a continuación, tenemos, por una parte,
+
+218
+00:15:45,940 --> 00:15:46,940
+digamos, un par de corrutinas,
+
+219
+00:15:47,940 --> 00:15:48,940
+en las que inicializamos tanto
+
+220
+00:15:49,940 --> 00:15:50,940
+el servidor de HTTB como la conexión
+
+221
+00:15:51,940 --> 00:15:52,940
+con el Redis,
+
+222
+00:15:53,940 --> 00:15:54,940
+e, por outra parte,
+
+223
+00:15:55,940 --> 00:15:56,940
+o tres métodos abaixo que digamos
+
+224
+00:15:56,940 --> 00:15:58,940
+el API HTTB,
+
+225
+00:15:59,940 --> 00:16:00,940
+efectivamente, el API HTTB
+
+226
+00:16:01,940 --> 00:16:02,940
+que tenemos para configurar
+
+227
+00:16:03,940 --> 00:16:04,940
+o recurso que nos comentamos antes
+
+228
+00:16:05,940 --> 00:16:06,940
+o para indicar que alguien ha entrado
+
+229
+00:16:07,940 --> 00:16:08,940
+o ha dejado o recurso,
+
+230
+00:16:09,940 --> 00:16:10,940
+que es o que decía Miguel antes,
+
+231
+00:16:11,940 --> 00:16:12,940
+que hacemos desde o proceso de compra.
+
+232
+00:16:13,940 --> 00:16:14,940
+Ese método upgrade tu boi socket
+
+233
+00:16:15,940 --> 00:16:16,940
+que tenis intermedio, al final,
+
+234
+00:16:17,940 --> 00:16:18,940
+non es máx que un handler
+
+235
+00:16:19,940 --> 00:16:20,940
+que tenemos en nuestro router de IO HTTB
+
+236
+00:16:21,940 --> 00:16:22,940
+que es la librería que usamos
+
+237
+00:16:23,940 --> 00:16:24,940
+para hacer el servidor HTTB con Async.io,
+
+238
+00:16:24,940 --> 00:16:25,940
+para actualizar a conexión de HTTB
+
+239
+00:16:26,940 --> 00:16:27,940
+a workshokets.
+
+240
+00:16:28,940 --> 00:16:29,940
+Entonces, como he dicho,
+
+241
+00:16:30,940 --> 00:16:31,940
+bueno, pues las dos primeras funciones
+
+242
+00:16:32,940 --> 00:16:33,940
+como veis, o único que hacen
+
+243
+00:16:34,940 --> 00:16:35,940
+es inicializar el servidor tanto
+
+244
+00:16:36,940 --> 00:16:37,940
+el de HTTB como hacer la conexión
+
+245
+00:16:38,940 --> 00:16:39,940
+al Redis a cabo del handler
+
+246
+00:16:40,940 --> 00:16:41,940
+que ha comentado Miguel antes,
+
+247
+00:16:42,940 --> 00:16:43,940
+esto llama unha función privada
+
+248
+00:16:44,940 --> 00:16:45,940
+que, se os fijáis, usa o level loop
+
+249
+00:16:46,940 --> 00:16:47,940
+para crear un server,
+
+250
+00:16:48,940 --> 00:16:49,940
+esto é muy típico da Async.io
+
+251
+00:16:50,940 --> 00:16:51,940
+para crear un server, usamos o propio
+
+252
+00:16:51,940 --> 00:16:53,940
+que os guiamos a escuchar para empezar a recibir conexiones.
+
+253
+00:16:54,940 --> 00:16:55,940
+Cada vez que recebemos una conexión,
+
+254
+00:16:56,940 --> 00:16:57,940
+lo emeteis a level loop.
+
+255
+00:16:58,940 --> 00:16:59,940
+A esto se le llama desde
+
+256
+00:17:00,940 --> 00:17:01,940
+nuestro punto principal
+
+257
+00:17:02,940 --> 00:17:03,940
+en el que como veis,
+
+258
+00:17:04,940 --> 00:17:05,940
+lo que hacemos é simplemente cogemos
+
+259
+00:17:06,940 --> 00:17:07,940
+o loop que éramos o servidor,
+
+260
+00:17:08,940 --> 00:17:09,940
+lo primero que hacemos é ejecutar
+
+261
+00:17:10,940 --> 00:17:11,940
+a cor rutina que va a hacer el listen
+
+262
+00:17:12,940 --> 00:17:13,940
+sobre o puerto en el que queremos
+
+263
+00:17:14,940 --> 00:17:15,940
+acertar conexiones,
+
+264
+00:17:16,940 --> 00:17:17,940
+e, por último, lo que hacemos
+
+265
+00:17:18,940 --> 00:17:19,940
+é hacer un run-for-ever,
+
+266
+00:17:19,940 --> 00:17:20,940
+para que o servidor se engancha.
+
+267
+00:17:21,940 --> 00:17:22,940
+E, por último,
+
+268
+00:17:23,940 --> 00:17:23,940
+o método que decíamos de
+
+269
+00:17:24,940 --> 00:17:25,940
+o ubreto voice socket.
+
+270
+00:17:26,940 --> 00:17:27,940
+Esto é o que faz, como veis,
+
+271
+00:17:28,940 --> 00:17:29,940
+nas primeras líneas,
+
+272
+00:17:30,940 --> 00:17:31,940
+é algo da librería,
+
+273
+00:17:32,940 --> 00:17:33,940
+o único que hacemos é
+
+274
+00:17:34,940 --> 00:17:35,940
+que a io HTTP
+
+275
+00:17:36,940 --> 00:17:37,940
+tem esta forma de definir
+
+276
+00:17:38,940 --> 00:17:39,940
+que queremos actualizar
+
+277
+00:17:40,940 --> 00:17:41,940
+un canal HTTP a un canal de voice sockets.
+
+278
+00:17:42,940 --> 00:17:43,940
+A continuación cogemos
+
+279
+00:17:44,940 --> 00:17:45,940
+o resource ID,
+
+280
+00:17:46,940 --> 00:17:47,940
+que é o idé do evento, por exemplo,
+
+281
+00:17:47,940 --> 00:17:48,940
+e, por último, cogemos
+
+282
+00:17:49,940 --> 00:17:50,940
+o virtual line manager,
+
+283
+00:17:51,940 --> 00:17:52,940
+que é o cor rutina
+
+284
+00:17:53,940 --> 00:17:54,940
+por la sencia e razón de que,
+
+285
+00:17:55,940 --> 00:17:56,940
+se já o temos, cogemos,
+
+286
+00:17:57,940 --> 00:17:58,940
+mas se não o temos,
+
+287
+00:17:59,940 --> 00:18:00,940
+temos que fazer un apetición a redis
+
+288
+00:18:01,940 --> 00:18:02,940
+para saber se o virtual line manager
+
+289
+00:18:03,940 --> 00:18:04,940
+é novo, se está creando por primeira vez,
+
+290
+00:18:05,940 --> 00:18:06,940
+ou se sou unha máquina que acaba de levantarse
+
+291
+00:18:07,940 --> 00:18:08,940
+e tenho que ir a coger o estado
+
+292
+00:18:09,940 --> 00:18:10,940
+do virtual line manager,
+
+293
+00:18:11,940 --> 00:18:12,940
+que é outras máquinas que tenho ao redor.
+
+294
+00:18:13,940 --> 00:18:14,940
+E, por último, creamos
+
+295
+00:18:14,940 --> 00:18:16,940
+o que hace é
+
+296
+00:18:17,940 --> 00:18:18,940
+ejecutar un boclin infinito
+
+297
+00:18:19,940 --> 00:18:20,940
+que é o canal de voice sockets
+
+298
+00:18:21,940 --> 00:18:22,940
+que é creado e se vai manejando
+
+299
+00:18:23,940 --> 00:18:24,940
+se vai esperando a que vean
+
+300
+00:18:25,940 --> 00:18:26,940
+que llegan os comandos
+
+301
+00:18:27,940 --> 00:18:28,940
+ou nós mesmos
+
+302
+00:18:29,940 --> 00:18:30,940
+vamos lanzando comandos a través dele.
+
+303
+00:18:31,940 --> 00:18:32,940
+Muy bien,
+
+304
+00:18:33,940 --> 00:18:34,940
+então chegamos un pouco
+
+305
+00:18:35,940 --> 00:18:36,940
+a parte que gestiona o virtual line manager.
+
+306
+00:18:37,940 --> 00:18:38,940
+Este é o esquema da classe,
+
+307
+00:18:39,940 --> 00:18:40,940
+basicamente,
+
+308
+00:18:41,940 --> 00:18:42,940
+o loop como o adaptador de redis
+
+309
+00:18:42,940 --> 00:18:44,940
+o ideal de recurso que se está encargando de gestionar
+
+310
+00:18:45,940 --> 00:18:46,940
+e tiene una corrutina
+
+311
+00:18:47,940 --> 00:18:48,940
+que va a inicializar
+
+312
+00:18:49,940 --> 00:18:50,940
+ese line manager
+
+313
+00:18:51,940 --> 00:18:52,940
+caso de que sea necesario, evidentemente
+
+314
+00:18:53,940 --> 00:18:54,940
+se ya ese nodo, por exemplo,
+
+315
+00:18:55,940 --> 00:18:56,940
+se hubiese levantado e ya hubiese outro
+
+316
+00:18:57,940 --> 00:18:58,940
+que hubiese inicializado en la estacia,
+
+317
+00:18:59,940 --> 00:19:00,940
+por lo tanto, tendría que tener cuidado
+
+318
+00:19:01,940 --> 00:19:02,940
+de non machacar os contadores
+
+319
+00:19:03,940 --> 00:19:04,940
+que ya hay previamente.
+
+320
+00:19:05,940 --> 00:19:06,940
+A partir de ahí tenemos métodos
+
+321
+00:19:07,940 --> 00:19:08,940
+que van a actualizar a información de los clientes,
+
+322
+00:19:09,940 --> 00:19:10,940
+hay una corrutina
+
+323
+00:19:10,940 --> 00:19:11,940
+que es la de keep clients updated,
+
+324
+00:19:12,940 --> 00:19:13,940
+que es la que va a hacer eso
+
+325
+00:19:14,940 --> 00:19:16,940
+e outra que va a decir a los clientes
+
+326
+00:19:17,940 --> 00:19:18,940
+o que tu ya puedes pasar.
+
+327
+00:19:19,940 --> 00:19:20,940
+Finalmente,
+
+328
+00:19:21,940 --> 00:19:22,940
+adñadir conexión es para que o websoque,
+
+329
+00:19:23,940 --> 00:19:24,940
+o adaptador de websoque
+
+330
+00:19:25,940 --> 00:19:26,940
+se pueda suscribir a line manager
+
+331
+00:19:27,940 --> 00:19:28,940
+e operaciones como o take turn
+
+332
+00:19:29,940 --> 00:19:30,940
+nos van a permitir obtener un turno
+
+333
+00:19:31,940 --> 00:19:32,940
+en la cola.
+
+334
+00:19:33,940 --> 00:19:34,940
+Por dentro,
+
+335
+00:19:35,940 --> 00:19:36,940
+o line resource,
+
+336
+00:19:37,940 --> 00:19:38,940
+una das coisas que va a hacer
+
+337
+00:19:38,940 --> 00:19:39,940
+un client inter access,
+
+338
+00:19:40,940 --> 00:19:41,940
+o client in resource
+
+339
+00:19:42,940 --> 00:19:43,940
+o más client in resource.
+
+340
+00:19:45,940 --> 00:19:46,940
+Evidentemente,
+
+341
+00:19:47,940 --> 00:19:48,940
+se os contadores ya están inicializados
+
+342
+00:19:49,940 --> 00:19:49,940
+tiene que tener cuidado con ello,
+
+343
+00:19:50,940 --> 00:19:51,940
+como decí antes
+
+344
+00:19:52,940 --> 00:19:53,940
+e despues,
+
+345
+00:19:54,940 --> 00:19:55,940
+o start update in clients
+
+346
+00:19:56,940 --> 00:19:57,940
+va a crear unha tarea,
+
+347
+00:19:58,940 --> 00:19:59,940
+esto es un concepto de Asin Kayo
+
+348
+00:20:00,940 --> 00:20:01,940
+que se va a encargar
+
+349
+00:20:02,940 --> 00:20:03,940
+de llamar al keep clients updated
+
+350
+00:20:04,940 --> 00:20:05,940
+para que se empiece
+
+351
+00:20:05,940 --> 00:20:07,940
+a dar unha tarea,
+
+352
+00:20:08,940 --> 00:20:09,940
+e o start update
+
+353
+00:20:10,940 --> 00:20:11,940
+e a apesar de que o client
+
+354
+00:20:12,940 --> 00:20:13,940
+in client pass
+
+355
+00:20:14,940 --> 00:20:15,940
+e despues
+
+356
+00:20:16,940 --> 00:20:17,940
+va decidir a quien tiene que dejar pasar
+
+357
+00:20:18,940 --> 00:20:19,940
+passándole evidentemente un mensaje
+
+358
+00:20:20,940 --> 00:20:21,940
+en el que hizo o youtube
+
+359
+00:20:22,940 --> 00:20:23,940
+e esta es tu firma
+
+360
+00:20:24,940 --> 00:20:25,940
+e está evidentemente puesto con un sig
+
+361
+00:20:26,940 --> 00:20:27,940
+para parar un poco de código
+
+362
+00:20:28,940 --> 00:20:29,940
+e que se entienda
+
+363
+00:20:30,940 --> 00:20:31,940
+e despues itera por
+
+364
+00:20:32,940 --> 00:20:33,940
+los gestores de conexión
+
+365
+00:20:33,940 --> 00:20:34,940
+e a dar unha tarea
+
+366
+00:20:35,940 --> 00:20:36,940
+para encargar de mandarles mensajes
+
+367
+00:20:37,940 --> 00:20:38,940
+e sacarlos de la lista de clientes
+
+368
+00:20:39,940 --> 00:20:40,940
+que está controlando
+
+369
+00:20:41,940 --> 00:20:42,940
+es decir, ese señor ya tiene
+
+370
+00:20:43,940 --> 00:20:44,940
+su acceso e eu ya no tengo que tenerle
+
+371
+00:20:45,940 --> 00:20:46,940
+aqui más, no me interesa
+
+372
+00:20:48,940 --> 00:20:49,940
+por último,
+
+373
+00:20:50,940 --> 00:20:51,940
+o siguiente que tiene que hacer
+
+374
+00:20:52,940 --> 00:20:53,940
+es actualizar
+
+375
+00:20:54,940 --> 00:20:55,940
+el estado
+
+376
+00:20:56,940 --> 00:20:57,940
+ao resto de clientes
+
+377
+00:20:58,940 --> 00:20:59,940
+que aun no tiene su turno
+
+378
+00:21:00,940 --> 00:21:01,940
+para que sepan como está en estos momentos
+
+379
+00:21:01,940 --> 00:21:02,940
+es decir, ya hemos actualizado a nostros clientes
+
+380
+00:21:03,940 --> 00:21:04,940
+e quero volver a empezar a actualizar
+
+381
+00:21:05,940 --> 00:21:06,940
+o tráxameis clientes
+
+382
+00:21:09,940 --> 00:21:10,940
+o redis handler
+
+383
+00:21:11,940 --> 00:21:12,940
+e una de las clases máas básicas
+
+384
+00:21:13,940 --> 00:21:14,940
+que tiene o nosso proyecto
+
+385
+00:21:15,940 --> 00:21:16,940
+basicamente son métodos
+
+386
+00:21:17,940 --> 00:21:18,940
+que se van a encargar de operar
+
+387
+00:21:19,940 --> 00:21:20,940
+sobre o redis utilizando
+
+388
+00:21:21,940 --> 00:21:22,940
+a sincayo redis
+
+389
+00:21:23,940 --> 00:21:24,940
+uno de ellos
+
+390
+00:21:25,940 --> 00:21:26,940
+porque se vea como están
+
+391
+00:21:27,940 --> 00:21:28,940
+e os por implementados por dentro
+
+392
+00:21:28,940 --> 00:21:30,940
+estamos esperando a que una cor rutina
+
+393
+00:21:31,940 --> 00:21:32,940
+pueda incrementar
+
+394
+00:21:33,940 --> 00:21:34,940
+o hash correspondiente
+
+395
+00:21:35,940 --> 00:21:36,940
+o last give and turn
+
+396
+00:21:37,940 --> 00:21:38,940
+que seria o nosso contador
+
+397
+00:21:39,940 --> 00:21:40,940
+o clave en uno
+
+398
+00:21:41,940 --> 00:21:42,940
+outras cosas que hace
+
+399
+00:21:43,940 --> 00:21:44,940
+inicializar son getes e setters
+
+400
+00:21:45,940 --> 00:21:46,940
+para tanto setear os valores
+
+401
+00:21:47,940 --> 00:21:48,940
+de os contadores
+
+402
+00:21:49,940 --> 00:21:50,940
+acceder a ellos e iniciarmos
+
+403
+00:21:51,940 --> 00:21:52,940
+e antes de mostrar
+
+404
+00:21:53,940 --> 00:21:54,940
+un pouco como funciona
+
+405
+00:21:55,940 --> 00:21:56,940
+este software que hemos hecho
+
+406
+00:21:56,940 --> 00:21:57,940
+e se os habéis dado cuenta
+
+407
+00:21:58,940 --> 00:21:59,940
+o maior parte de las charlas
+
+408
+00:22:00,940 --> 00:22:01,940
+que hay de sincayo
+
+409
+00:22:02,940 --> 00:22:03,940
+e con esto
+
+410
+00:22:04,940 --> 00:22:05,940
+hemos intentado hacer un proyecto
+
+411
+00:22:06,940 --> 00:22:07,940
+sobre como usar a librería
+
+412
+00:22:08,940 --> 00:22:09,940
+e hemos usado componentes
+
+413
+00:22:10,940 --> 00:22:11,940
+de sincayo
+
+414
+00:22:12,940 --> 00:22:13,940
+e usamos tareas periódicas
+
+415
+00:22:14,940 --> 00:22:15,940
+e usamos cor rutinas
+
+416
+00:22:16,940 --> 00:22:17,940
+e o pocos componentes
+
+417
+00:22:18,940 --> 00:22:19,940
+que nos faltaba por usar
+
+418
+00:22:20,940 --> 00:22:21,940
+de la librería
+
+419
+00:22:22,940 --> 00:22:23,940
+e o transporte e protocolos
+
+420
+00:22:23,940 --> 00:22:25,940
+e usamos de os workers
+
+421
+00:22:26,940 --> 00:22:27,940
+en otros procesos
+
+422
+00:22:28,940 --> 00:22:29,940
+antes de explicar un pocos
+
+423
+00:22:30,940 --> 00:22:31,940
+a problemática
+
+424
+00:22:32,940 --> 00:22:33,940
+a los que vinisteis a llenar a mi charla
+
+425
+00:22:34,940 --> 00:22:35,940
+o sonar este gif animado
+
+426
+00:22:36,940 --> 00:22:37,940
+a los que non es muy bueno
+
+427
+00:22:38,940 --> 00:22:39,940
+al final
+
+428
+00:22:40,940 --> 00:22:41,940
+una sincayo es monocred
+
+429
+00:22:42,940 --> 00:22:43,940
+al final es como redis
+
+430
+00:22:44,940 --> 00:22:45,940
+ejecuta en un único thread
+
+431
+00:22:46,940 --> 00:22:47,940
+e o que haces programación
+
+432
+00:22:48,940 --> 00:22:49,940
+ha sido asinclon en cuanto a que
+
+433
+00:22:50,940 --> 00:22:51,940
+al cliente que está entendiendo
+
+434
+00:22:51,940 --> 00:22:52,940
+algo
+
+435
+00:22:53,940 --> 00:22:54,940
+lo saca de level loop
+
+436
+00:22:55,940 --> 00:22:56,940
+e atiene a outros clientes
+
+437
+00:22:57,940 --> 00:22:58,940
+para nosotros
+
+438
+00:22:59,940 --> 00:23:00,940
+é importante
+
+439
+00:23:01,940 --> 00:23:02,940
+poder atender a máxima cantidad de gente posible
+
+440
+00:23:03,940 --> 00:23:04,940
+e ao final eso é o que implica
+
+441
+00:23:05,940 --> 00:23:06,940
+que tenemos que estar ejecutando
+
+442
+00:23:07,940 --> 00:23:08,940
+nuestro código
+
+443
+00:23:09,940 --> 00:23:10,940
+na mínima cantidad de tiempo posible
+
+444
+00:23:11,940 --> 00:23:12,940
+porque mientras estamos ejecutando código
+
+445
+00:23:13,940 --> 00:23:14,940
+no podemos estar atendiendo clientes
+
+446
+00:23:15,940 --> 00:23:16,940
+e hay unha tarea en concreto
+
+447
+00:23:17,940 --> 00:23:18,940
+de todas as que hemos hablado
+
+448
+00:23:18,940 --> 00:23:21,940
+para que ésa firma de clave criptográfica
+
+449
+00:23:22,940 --> 00:23:23,940
+non haga
+
+450
+00:23:24,940 --> 00:23:25,940
+no bloque durante demasiado tiempo
+
+451
+00:23:26,940 --> 00:23:27,940
+o que hemos decidido
+
+452
+00:23:28,940 --> 00:23:29,940
+é usar outras de las cosas que tiene
+
+453
+00:23:30,940 --> 00:23:31,940
+que ao final o que haces
+
+454
+00:23:32,940 --> 00:23:33,940
+permite levantar un pul de procesos
+
+455
+00:23:34,940 --> 00:23:35,940
+o de threads
+
+456
+00:23:36,940 --> 00:23:37,940
+em paralelo
+
+457
+00:23:38,940 --> 00:23:39,940
+e poder lanzar letareas
+
+458
+00:23:40,940 --> 00:23:41,940
+e o formado de funcionamiento é o seguinte
+
+459
+00:23:42,940 --> 00:23:43,940
+na llamada detectam
+
+460
+00:23:44,940 --> 00:23:45,940
+no, é xo, está mal
+
+461
+00:23:45,940 --> 00:23:47,940
+generamos firmas para o turno e luego para dar a...
+
+462
+00:23:48,940 --> 00:23:49,940
+vale, sí, certo, tenemos en los dos casos
+
+463
+00:23:50,940 --> 00:23:51,940
+bueno, então é xo
+
+464
+00:23:52,940 --> 00:23:53,940
+na llamada detectam que é quando se le va dar
+
+465
+00:23:54,940 --> 00:23:55,940
+a persona o turno
+
+466
+00:23:56,940 --> 00:23:57,940
+como hemos dicho generamos una firma criptográfica
+
+467
+00:23:58,940 --> 00:23:59,940
+para que se vamos que ese turno
+
+468
+00:24:00,940 --> 00:24:01,940
+ha sido generado efectivamente por nosotros
+
+469
+00:24:02,940 --> 00:24:03,940
+o que hacemos é
+
+470
+00:24:04,940 --> 00:24:05,940
+unas de los procesos que temos
+
+471
+00:24:06,940 --> 00:24:07,940
+que é o que teníais marcado como menor que sig mayor que
+
+472
+00:24:08,940 --> 00:24:09,940
+é lanzar una cor rutina
+
+473
+00:24:10,940 --> 00:24:11,940
+a un pul de procesos
+
+474
+00:24:12,940 --> 00:24:13,940
+que é un pul de procesos
+
+475
+00:24:13,940 --> 00:24:14,940
+e o que hacemos é
+
+476
+00:24:15,940 --> 00:24:16,940
+lanzamos una tarea é ese pul de procesos
+
+477
+00:24:17,940 --> 00:24:18,940
+é ese pul de procesos que é ejecutando
+
+478
+00:24:19,940 --> 00:24:20,940
+em cualquiera de os outros procesadores
+
+479
+00:24:21,940 --> 00:24:22,940
+que tenga a máquina genera a firma
+
+480
+00:24:23,940 --> 00:24:24,940
+hace todas as operaciones que tenga que hacer
+
+481
+00:24:25,940 --> 00:24:26,940
+e quando termina
+
+482
+00:24:27,940 --> 00:24:28,940
+devuelve a firma a través de la cor rutina
+
+483
+00:24:29,940 --> 00:24:30,940
+e a cor rutina se resolve
+
+484
+00:24:31,940 --> 00:24:32,940
+por lo cual, digamos que o proceso
+
+485
+00:24:33,940 --> 00:24:34,940
+non queda bloqueado en ningún momento
+
+486
+00:24:35,940 --> 00:24:36,940
+pasa a lever en loop imediatamente
+
+487
+00:24:37,940 --> 00:24:38,940
+hace os cálculos que tenga que hacer
+
+488
+00:24:39,940 --> 00:24:40,940
+mientras nosotros estamos
+
+489
+00:24:40,940 --> 00:24:42,940
+se han tenido máso menos como funciona
+
+490
+00:24:43,940 --> 00:24:44,940
+por lo cual bloqueamos lo mínimo posible
+
+491
+00:24:45,940 --> 00:24:46,940
+e antes casen empezar é esto
+
+492
+00:24:47,940 --> 00:24:48,940
+por que vayas en los tiempos
+
+493
+00:24:49,940 --> 00:24:50,940
+se alguno quere preguntar algo
+
+494
+00:24:51,940 --> 00:24:52,940
+xin
+
+495
+00:24:53,940 --> 00:24:54,940
+xin
+
+496
+00:24:55,940 --> 00:24:56,940
+xin
+
+497
+00:24:57,940 --> 00:24:58,940
+xin
+
+498
+00:24:59,940 --> 00:25:00,940
+xin
+
+499
+00:25:01,940 --> 00:25:02,940
+xin
+
+500
+00:25:03,940 --> 00:25:04,940
+xin
+
+501
+00:25:05,940 --> 00:25:06,940
+xin
+
+502
+00:25:07,940 --> 00:25:08,940
+xin
+
+503
+00:25:08,940 --> 00:25:13,940
+xin
+
+504
+00:25:15,940 --> 00:25:18,940
+xin
+
+505
+00:25:20,940 --> 00:25:22,940
+xin
+
+506
+00:25:23,940 --> 00:25:24,940
+xin
+
+507
+00:25:25,940 --> 00:25:27,240
+xin
+
+508
+00:25:31,440 --> 00:25:35,940
+xin
+
+509
+00:25:35,940 --> 00:25:38,940
+ou xe que non temos ás mesmo que xe que queremos xe.
+
+510
+00:25:44,940 --> 00:25:48,940
+Pois este é un proyeito que todavía non mo se colocado en producción.
+
+511
+00:25:48,940 --> 00:25:52,940
+Nosotros non mo se hecho pras de carga sobre o software.
+
+512
+00:25:52,940 --> 00:25:58,940
+Bueno, se iremos hecho alguno, pero no evidentemente ao nivel que va estar o expuesto en producción.
+
+513
+00:25:58,940 --> 00:26:00,940
+E é xe o seguinte fase que queremos trabajar.
+
+514
+00:26:00,940 --> 00:26:06,940
+É xe que queremos añadirle a la cola virtual gestión de outros temas, como por exemplo a posibilidade de saltar
+
+515
+00:26:06,940 --> 00:26:10,940
+do turno en el que estese, hacía máis adelante, e por exemplo, socialmente colaboras,
+
+516
+00:26:10,940 --> 00:26:13,940
+os usuarios, cosas que nos pide, por exemplo, o departamento de marketing.
+
+517
+00:26:13,940 --> 00:26:18,940
+E evidentemente, nós tenemos que someter á pras de carga e demas nuestra experiencia de todas máis
+
+518
+00:26:18,940 --> 00:26:23,940
+con nores cos que hemos podido hacer con as incayos que estamos convencidos de que no va tener ningún problema.
+
+519
+00:26:23,940 --> 00:26:30,940
+Que me ireis apuntando para tender na idea de...
+
+520
+00:26:30,940 --> 00:26:32,940
+Eu tampoco.
+
+521
+00:26:34,940 --> 00:26:36,940
+A que número é...
+
+522
+00:26:36,940 --> 00:26:37,940
+De clientes.
+
+523
+00:26:37,940 --> 00:26:38,940
+De clientes.
+
+524
+00:26:38,940 --> 00:26:42,940
+Fechos con 10, 50, 5 mil, 50 mil, non xe.
+
+525
+00:26:42,940 --> 00:26:43,940
+E...
+
+526
+00:26:43,940 --> 00:26:44,940
+Muchos.
+
+527
+00:26:44,940 --> 00:26:45,940
+Muchos.
+
+528
+00:26:45,940 --> 00:26:47,940
+E...
+
+529
+00:26:47,940 --> 00:26:48,940
+No, probablemente por...
+
+530
+00:26:48,940 --> 00:26:49,940
+Bueno, non xe.
+
+531
+00:26:49,940 --> 00:26:51,940
+Más de 10 mil sin ningún problema.
+
+532
+00:26:51,940 --> 00:26:53,940
+Xe.
+
+533
+00:26:53,940 --> 00:26:54,940
+Xe.
+
+534
+00:26:54,940 --> 00:26:55,940
+Xe.
+
+535
+00:26:55,940 --> 00:26:56,940
+Xe.
+
+536
+00:26:56,940 --> 00:26:57,940
+Xe.
+
+537
+00:26:57,940 --> 00:26:58,940
+Más que xe.
+
+538
+00:26:58,940 --> 00:27:00,940
+Por estar en rendimiento, xe,
+
+539
+00:27:00,940 --> 00:27:03,940
+o que va yo antes de tornado, o que va ben?
+
+540
+00:27:03,940 --> 00:27:06,940
+Por experiencia, diría, ao mismo nivel.
+
+541
+00:27:06,940 --> 00:27:09,940
+O xe, no, é un son e ben loops, e...
+
+542
+00:27:09,940 --> 00:27:15,940
+Se o overhead pode tener tornado, o twist, o as incayos dependen un pouco de lo que utilices,
+
+543
+00:27:15,940 --> 00:27:17,940
+de como o utilices.
+
+544
+00:27:17,940 --> 00:27:21,940
+Não é porque éste dentro do lenguaje, que éste optimizado de forma diferente,
+
+545
+00:27:21,940 --> 00:27:23,940
+simplemente, unas das coisas positivas que tiene, evidentemente,
+
+546
+00:27:23,940 --> 00:27:25,940
+é que os han cambiado...
+
+547
+00:27:25,940 --> 00:27:28,940
+É xe ha cambiado a gramática de Python, os han cambiado o parcer de Python
+
+548
+00:27:28,940 --> 00:27:31,940
+para poder soportar palabras como o da Waith e o da Async,
+
+549
+00:27:31,940 --> 00:27:34,940
+que, quando comparas code, eu programado en 3, 4,
+
+550
+00:27:34,940 --> 00:27:35,940
+frente a 3, 5,
+
+551
+00:27:35,940 --> 00:27:38,940
+hace muchísimo máis comprensible da vera gente que está ocurriendo.
+
+552
+00:27:38,940 --> 00:27:40,940
+A que, dicir, hai un hilo,
+
+553
+00:27:40,940 --> 00:27:42,940
+está haciendo una operación contra a entrada e salida,
+
+554
+00:27:42,940 --> 00:27:44,940
+tiene que esperar a que esa operación termine,
+
+555
+00:27:44,940 --> 00:27:46,940
+e eu, mientras tanto, estou haciendo outras cosas,
+
+556
+00:27:46,940 --> 00:27:48,940
+e eu sei que estou aquí esperando,
+
+557
+00:27:48,940 --> 00:27:50,940
+e até que tenha a resposta.
+
+558
+00:27:50,940 --> 00:27:52,940
+Se os parece que nos queden 3 minutos,
+
+559
+00:27:52,940 --> 00:27:54,940
+facemos a demo para que nos quede por la metade
+
+560
+00:27:54,940 --> 00:27:56,940
+e facemos rodona de perguntas.
+
+561
+00:27:56,940 --> 00:27:58,940
+Ok, então...
+
+562
+00:27:58,940 --> 00:28:00,940
+Bom, a demo está gravada,
+
+563
+00:28:00,940 --> 00:28:02,940
+para que não haya efecto demo justamente.
+
+564
+00:28:02,940 --> 00:28:04,940
+Então,
+
+565
+00:28:04,940 --> 00:28:06,940
+eu os vou explicar antes de activarla
+
+566
+00:28:06,940 --> 00:28:08,940
+un pouco como...
+
+567
+00:28:08,940 --> 00:28:10,940
+o que é que faz cada pantalla.
+
+568
+00:28:10,940 --> 00:28:12,940
+Tenemos cinco shells, como veis,
+
+569
+00:28:12,940 --> 00:28:14,940
+a shell de arriba a la izquierda,
+
+570
+00:28:14,940 --> 00:28:16,940
+estamos mostrando os contadores que temos en redis
+
+571
+00:28:16,940 --> 00:28:18,940
+para o recurso en concreto, ao que queremos acceder.
+
+572
+00:28:18,940 --> 00:28:20,940
+O primeiro contador,
+
+573
+00:28:20,940 --> 00:28:22,940
+o primeiro e o último,
+
+574
+00:28:22,940 --> 00:28:24,940
+o que é o último, que é o máis importante,
+
+575
+00:28:24,940 --> 00:28:26,940
+diz o quál é o último turno que hemos dado,
+
+576
+00:28:26,940 --> 00:28:28,940
+o primeiro é o último turno
+
+577
+00:28:28,940 --> 00:28:30,940
+ao que hemos deixado acceder o recurso,
+
+578
+00:28:30,940 --> 00:28:32,940
+o primeiro é que han llegado 500 personas
+
+579
+00:28:32,940 --> 00:28:34,940
+a la cola, e o número 100
+
+580
+00:28:34,940 --> 00:28:36,940
+é o último que ha podido entrar.
+
+581
+00:28:36,940 --> 00:28:38,940
+E os dos intermedios son, por una parte,
+
+582
+00:28:38,940 --> 00:28:40,940
+o número máximo de clientes que deixamos permitir dentro do recurso,
+
+583
+00:28:40,940 --> 00:28:42,940
+e o segundo é
+
+584
+00:28:42,940 --> 00:28:44,940
+o número de clientes que há nesse momento no recurso.
+
+585
+00:28:44,940 --> 00:28:46,940
+É decir, como o mucho, dejamos 100 personas comprando
+
+586
+00:28:46,940 --> 00:28:48,940
+e ao mesmo em 50.
+
+587
+00:28:48,940 --> 00:28:50,940
+Mientras haya menos que o máximo,
+
+588
+00:28:50,940 --> 00:28:52,940
+evidentemente vamos a dejar pasar a la gente
+
+589
+00:28:52,940 --> 00:28:54,940
+sin necesidad de esperar.
+
+590
+00:28:54,940 --> 00:28:56,940
+Na situación actual para os que não veis os números desde lejos,
+
+591
+00:28:56,940 --> 00:28:58,940
+no resto do momento o recurso está 100%,
+
+592
+00:28:58,940 --> 00:29:00,940
+por tanto, a cola não deveria deixar pasar a ningún cliente.
+
+593
+00:29:00,940 --> 00:29:02,940
+Depois,
+
+594
+00:29:02,940 --> 00:29:04,940
+a la derecha, na primeira fila igualmente,
+
+595
+00:29:04,940 --> 00:29:06,940
+temos dos clientes que vamos a lanzar,
+
+596
+00:29:06,940 --> 00:29:08,940
+primeiro vamos a lanzar e segundo,
+
+597
+00:29:08,940 --> 00:29:10,940
+e depois ao terceiro, os dos van a coger turno,
+
+598
+00:29:10,940 --> 00:29:12,940
+e então, como actualmente
+
+599
+00:29:12,940 --> 00:29:14,940
+a cola, digamos, o recurso está lleno,
+
+600
+00:29:14,940 --> 00:29:16,940
+ninguno dos dos va a poder acceder.
+
+601
+00:29:16,940 --> 00:29:18,940
+A pantalla intermedia
+
+602
+00:29:18,940 --> 00:29:20,940
+é o servidor que realmente, olvidamos da pantalla,
+
+603
+00:29:20,940 --> 00:29:22,940
+vai soltar texto, pero non se interessa nada do que pone.
+
+604
+00:29:22,940 --> 00:29:24,940
+E a última pantalla da baixo del todo
+
+605
+00:29:24,940 --> 00:29:26,940
+é o, digamos,
+
+606
+00:29:26,940 --> 00:29:28,940
+temos un CURL en el que vamos a lanzar
+
+607
+00:29:28,940 --> 00:29:30,940
+a llamada HTTP que teóricamente lancemos
+
+608
+00:29:30,940 --> 00:29:32,940
+o nosso proceso de compra, quando alguien abandona o recurso.
+
+609
+00:29:32,940 --> 00:29:34,940
+De tal manera, o que vamos a hacer
+
+610
+00:29:34,940 --> 00:29:36,940
+é simular que alguien está abandonando
+
+611
+00:29:36,940 --> 00:29:38,940
+o proceso de compra, en ese momento
+
+612
+00:29:38,940 --> 00:29:40,940
+o primeiro cliente debería, e o hace porque é un vídeo,
+
+613
+00:29:40,940 --> 00:29:42,940
+acceder ao recurso,
+
+614
+00:29:42,940 --> 00:29:44,940
+una vez,
+
+615
+00:29:44,940 --> 00:29:46,940
+ou seja,
+
+616
+00:29:46,940 --> 00:29:48,940
+se mal nos recuerdo,
+
+617
+00:29:48,940 --> 00:29:50,940
+depois volvemos a simular que outra persona
+
+618
+00:29:50,940 --> 00:29:52,940
+deja
+
+619
+00:29:52,940 --> 00:29:54,940
+exatamente, deja o proceso de compra entre
+
+620
+00:29:54,940 --> 00:29:56,940
+o segundo cliente e
+
+621
+00:29:56,940 --> 00:29:58,940
+depois volvemos a
+
+622
+00:29:58,940 --> 00:30:00,940
+simular que outra persona deja o proceso de compra
+
+623
+00:30:00,940 --> 00:30:02,940
+sin na ver ningún cliente ejecutándose
+
+624
+00:30:02,940 --> 00:30:04,940
+e então, quando volvemos a ejecutar o primeiro cliente
+
+625
+00:30:04,940 --> 00:30:06,940
+entre inmediatamente, porque
+
+626
+00:30:06,940 --> 00:30:08,940
+no, osa, hai un hueco por o cual non tiene por que esperar.
+
+627
+00:30:08,940 --> 00:30:10,940
+Igual visto que da máis claro.
+
+628
+00:30:10,940 --> 00:30:12,940
+Si, voy a ir hablando mientras
+
+629
+00:30:12,940 --> 00:30:14,940
+o ocurre. Ok, empezamos.
+
+630
+00:30:14,940 --> 00:30:16,940
+Como veis, o contador da arriba a la izquierda empieza
+
+631
+00:30:16,940 --> 00:30:18,940
+moverse, que significa que
+
+632
+00:30:18,940 --> 00:30:20,940
+o tempo está pasando,
+
+633
+00:30:20,940 --> 00:30:22,940
+então, se os fijais
+
+634
+00:30:22,940 --> 00:30:24,940
+estamos en la shell de arriba e en medio, se ejecuta
+
+635
+00:30:24,940 --> 00:30:26,940
+o cliente, nos dice que nos ha dado o turno 101,
+
+636
+00:30:26,940 --> 00:30:28,940
+ejecutamos o segundo cliente
+
+637
+00:30:28,940 --> 00:30:30,940
+e nos dice que nos ha dado o turno 102.
+
+638
+00:30:30,940 --> 00:30:32,940
+Como veis, o reddit está actualizando
+
+639
+00:30:32,940 --> 00:30:34,940
+e a continuación empezamos a actualizar
+
+640
+00:30:34,940 --> 00:30:36,940
+cada 10 segundos decimos que
+
+641
+00:30:36,940 --> 00:30:38,940
+o último que ha entrado es o 100, por lo cual
+
+642
+00:30:38,940 --> 00:30:40,940
+o primeiro sabe que está na posición 1
+
+643
+00:30:40,940 --> 00:30:42,940
+e o segundo sabe que está na posición 2.
+
+644
+00:30:42,940 --> 00:30:44,940
+Nos vamos a la pantalla de abajo del todo
+
+645
+00:30:44,940 --> 00:30:46,940
+simulamos que unha persona ha abandonado
+
+646
+00:30:46,940 --> 00:30:48,940
+o recurso e como veis, inmediatamente
+
+647
+00:30:48,940 --> 00:30:50,940
+o de arriba e en medio acaba de entrar en el recurso.
+
+648
+00:30:50,940 --> 00:30:52,940
+O outro efectivamente
+
+649
+00:30:52,940 --> 00:30:54,940
+se le ha actualizado e se le ha dicho que
+
+650
+00:30:54,940 --> 00:30:56,940
+o último que ha entrado es o 101, por lo cual
+
+651
+00:30:56,940 --> 00:30:58,940
+está na primera posición. Volvemos a simular
+
+652
+00:30:58,940 --> 00:31:00,940
+que alguien deja o recurso e
+
+653
+00:31:00,940 --> 00:31:02,940
+o cliente da arriba acaba de entrar.
+
+654
+00:31:02,940 --> 00:31:04,940
+O cliente está dentro.
+
+655
+00:31:04,940 --> 00:31:06,940
+Náis mesmo náis ninguha persona esperando en la cola.
+
+656
+00:31:06,940 --> 00:31:08,940
+Volvemos a simular abajo que outra persona
+
+657
+00:31:08,940 --> 00:31:10,940
+abandona o recurso e os fijais,
+
+658
+00:31:10,940 --> 00:31:12,940
+que temos 49 personas, de un máximo de 50
+
+659
+00:31:12,940 --> 00:31:14,940
+por lo cual, quando ejecutamos,
+
+660
+00:31:14,940 --> 00:31:16,940
+o cliente de arriba e en medio
+
+661
+00:31:16,940 --> 00:31:18,940
+o que va a ocurrir es que debería entrar inmediatamente
+
+662
+00:31:18,940 --> 00:31:20,940
+e funciona
+
+663
+00:31:20,940 --> 00:31:22,940
+mágico.
+
+664
+00:31:22,940 --> 00:31:24,940
+Vale, então
+
+665
+00:31:24,940 --> 00:31:26,940
+ésa é o proyecto que hemos hecho
+
+666
+00:31:26,940 --> 00:31:28,940
+esperamos que os guste e
+
+667
+00:31:28,940 --> 00:31:32,940
+gracias.
+

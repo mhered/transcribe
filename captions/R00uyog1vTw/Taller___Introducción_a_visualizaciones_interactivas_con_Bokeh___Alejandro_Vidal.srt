@@ -1,0 +1,6660 @@
+1
+00:00:00,000 --> 00:00:18,000
+Vamos a empezar ya, a ver si conseguimos masillas y si no el suelo, streaming igual.
+
+2
+00:00:18,000 --> 00:00:30,000
+A ver, breve encuesta, aquí le gusta el favescript, a ver si usó lo que hago la vez.
+
+3
+00:00:30,000 --> 00:00:38,000
+Este seminario, de una original seminario de unas 8 horas, según el ritmo y los intereses que vayamos teniendo,
+
+4
+00:00:38,000 --> 00:00:44,000
+vamos poniendo unos ejemplos otros. Le haría un poco aquí, es, Voke es una librería muy reciente,
+
+5
+00:00:44,000 --> 00:00:51,000
+así que voy a invitar los ahorrados todo el tiempo posible cuando os pedís con ella, porque tiene unas cosas ahí un poquito especiales,
+
+6
+00:00:51,000 --> 00:00:58,000
+¿vale? El objetivo es meternos a ello, ponernos a picar códigos, como me han dicho que el internet lo es un poco mal,
+
+7
+00:00:58,000 --> 00:01:05,000
+voy a usar solo los ejemplos de datos que vienen en la librería, y vamos a crear nosotros nuestros propios datos, y todos se pican,
+
+8
+00:01:05,000 --> 00:01:16,000
+no os voy a enviar, todo esto lo voy a colgar en twitter y lo reprité en la gente de paicon, con el resto lo estoy dando.
+
+9
+00:01:16,000 --> 00:01:36,000
+¿Qué es la idea de la presentación? Pues nada, no sé, te va a ver algo. Bueno, si veis moverse el ratón, sin que yo no esté, no es un fantasma,
+
+10
+00:01:36,000 --> 00:01:47,000
+este año en San Tassan y en Beuacanaritics, dentro de ahí, me especifico mis audiciones de datos, una típica demanda que tiene ese en un sitio,
+
+11
+00:01:47,000 --> 00:01:55,000
+cuando tienes muchos datos es, pintame esto, pintame aquello, pero no aguanta, digamos que tenemos demasiada cantidad de datos para utilizar librerías tradicionales,
+
+12
+00:01:55,000 --> 00:02:01,000
+entonces de ahí empezamos a usar Voke, y bueno, todo lo que hay que contar es en parte de la experiencia que hemos tenido ahí,
+
+13
+00:02:01,000 --> 00:02:08,000
+y lo tengo que estar viendo con esto. Bueno, si no lo tengáis estado, si está la boca, el ipiPhone Notebook es porque yo voy a hacer los ejemplos en el ipiPhone Notebook,
+
+14
+00:02:08,000 --> 00:02:15,000
+que ya no es exactamente necesario, y Pandas es porque ayuda a meterle datos a Notebook, pero tampoco es necesario.
+
+15
+00:02:15,000 --> 00:02:35,000
+Bueno, entonces, bueno, así, nos gusta todo el Notebook, no? Pues lo vemos en Notebook. Bien, primero de ellos es,
+
+16
+00:02:35,000 --> 00:02:51,000
+voy a hacer un poquito más, no? Bien, yo usado, alguien ha hecho una solución de datos con D3, Ejplot, Siipon, vale, bien,
+
+17
+00:02:51,000 --> 00:02:57,000
+entonces, la típica demanda es, y no joder, tenés que venderme otra de las 800 librerías que va a haber de solución de aquí a tres años,
+
+18
+00:02:57,000 --> 00:03:05,000
+porque, vamos a decir, Voke, entonces, bueno, en mi opinión, que fue una opinión a partir de una investigación de qué librerías cumplen
+
+19
+00:03:05,000 --> 00:03:13,000
+todos los requisitos que tenemos. No? Tiene bastantes cosas que no tienen ninguna otra librería, y además es de la única mi opinión,
+
+20
+00:03:13,000 --> 00:03:19,000
+que tienen todas esas características en el país. Entonces, las más relevantes de mi opinión es, primero, no tienes que aprender nada mágico,
+
+21
+00:03:19,000 --> 00:03:27,000
+no? No tienes que aprender nada mágico nuevo, habéis leído, habéis leído, eh, Grammar on Graphics, bueno, Grammar on Graphics define como la sintaxis
+
+22
+00:03:27,000 --> 00:03:35,000
+básica de crear cualquier tipo de gráficos, y es la base de Ejplot, es la base de un montón de librerías que han ido ofreciendo al calor de ese estándar,
+
+23
+00:03:35,000 --> 00:03:43,000
+pues, se parece un montón, no hay que aprender nada nuevo, esto es muy grande, esto es, todo el Asset Code que tengas en las librerías
+
+24
+00:03:43,000 --> 00:03:49,000
+que habéis suficientemente, Python, no tienes que tocar nada, absolutamente nada, para pasar la boke. De hecho, hay una función que se llama tu boke,
+
+25
+00:03:49,000 --> 00:03:55,000
+le metes ahí la gráfica de Mathlóldil, la matas el... la gráfica es el necesivo, no lo que sea, y automáticamente te la saca por boke.
+
+26
+00:03:55,000 --> 00:04:01,000
+Vale, y además tienes las ventajas que no te deban esas librerías en boke, por ejemplo, tienes Zoom, tienes, bueno,
+
+27
+00:04:01,000 --> 00:04:07,000
+Zoom, tienes Over, tienes Colbax, tienes algunas cosas que en Mathlóldil, por ejemplo, no tienes que cambiar ni una línea del código,
+
+28
+00:04:07,000 --> 00:04:14,000
+en general todo el código que yo he tocado de Mathlóldil, que es lo que usábamos antes, para pasar la boke no hay que hacer ninguna modificación,
+
+29
+00:04:14,000 --> 00:04:20,000
+en ninguna, y tenemos unas gráficas un tanto chungas, no son la típica gráfica de apita una línea en ropa o en una en azul,
+
+30
+00:04:20,000 --> 00:04:30,000
+o sea que va bastante bien. Luego, esto lo iremos viendo más en detalle porque es muy importante para las ventajas y las ventajas de boke,
+
+31
+00:04:30,000 --> 00:04:37,000
+es que tú defines un gráfico y eso lo puedes exportar a un HTML estático, en el que va todo, incluido los datos,
+
+32
+00:04:37,000 --> 00:05:01,000
+tu indenses HTML de alguien y abre el HTML y ya funciona porque tiene hasta los covers fitness, es una HTML como de los 5M, pero bueno, en caso es que tienes esa opción. Puedes tener una versión mixta,
+
+33
+00:05:01,000 --> 00:05:07,000
+es el servidor cliente que es lo que se va a estar en, que es lo que vamos a dejar para el final, que lo que hace boke es monta un servidor flask,
+
+34
+00:05:07,000 --> 00:05:15,000
+un servidor tornado y ese servidor va respondiendo las llamadas que habla el cliente y lo van viendo en los datos, hay algunas cosas que sólo funcionan en versión cliente
+
+35
+00:05:15,000 --> 00:05:23,000
+de servidor, pero son las que menos, y además va muy bien integrado con log, ahora iremos viendo que todo esto se puede meter en un log fácilmente.
+
+36
+00:05:23,000 --> 00:05:32,000
+Otro de los requisitos que tenías que la gran mayoría de los clientes no les gusta mucho Python, no tienen buen gusto, entonces son más de R.
+
+37
+00:05:32,000 --> 00:05:42,000
+Pero no puedes decirle, oye, cambia de extracten el lógico para pasarse todos a Python, entonces dicen, no pasa nada, porque por la razón que os voy a explicar en el futuro
+
+38
+00:05:42,000 --> 00:05:53,000
+que puedes utilizar boke desde julio y de hecho estoy haciendo wrappers para todos, y desde que me ojo script puros y les hace los haros script porque te gusta las cosas arriesgadas,
+
+39
+00:05:53,000 --> 00:06:08,000
+pues nada, más cosas, otro de los temas, estás subordado por Continuum Analytics que supongo que os sonará, y aunque es un proyecto muy grande y sólo tienen tres personas o no,
+
+40
+00:06:08,000 --> 00:06:17,000
+cuatro desarrolladores del core del Continuum Analytics dedicados al proyecto, va un peli lento para el ritmo que tendría que hacerlo, pero está soportado
+
+41
+00:06:17,000 --> 00:06:23,000
+que hay un saldo como su librería principal de disolución y en ese sentido no va a haberse abandonado a mañana porque lo hacía un tío en su casa,
+
+42
+00:06:23,000 --> 00:06:32,000
+es una razón muy importante para ser utilizado. Bien, esto es lo que dice el spam, dicen que es una librería que funciona bien con streaming y con bindata,
+
+43
+00:06:32,000 --> 00:06:39,000
+bueno, ya veremos, ya les contaré porque no funciona de todo también, pero ha sido una librería que se ha diseñado para gestionar los elementos de datos.
+
+44
+00:06:39,000 --> 00:06:46,000
+No sé si por ejemplo conocéis como funciona de test, muy por encima, básicamente de test lo que haces es generar en tu AlgoDom,
+
+45
+00:06:46,000 --> 00:06:53,000
+del HTML un svg que le va metiendo elementos según lo que tú que las metes antes, si quieres pintar mil puntos te va a crear mil nodos en el AlgoDom,
+
+46
+00:06:53,000 --> 00:07:00,000
+eso está bien porque es como muy flexible, pero en cuanto le metes 25 millones pues como que no lo gestiona bien.
+
+47
+00:07:00,000 --> 00:07:06,000
+Vóqueis pensando en eso y pensando en otras formas que tienen otras librerías, ha dicho venga, vamos a empezar a diseñarla para que se pueda soportar
+
+48
+00:07:06,000 --> 00:07:16,000
+gran cantidad de datos, entonces hay un modo que lo que haces es tu le defines el gráfico, es servidor, hace un prerrendelizado de todo eso y envía el prerrendelizado al cliente,
+
+49
+00:07:16,000 --> 00:07:24,000
+ese cliente es una terminal tonta que no hace computo, digamos, no plotea los dibujos, y que nos trate un montón de tiempo si tienes un buen servidor,
+
+50
+00:07:24,000 --> 00:07:32,000
+puedes tener una tablet, estar pintando a ver 25 millones de datos y de hecho eso es una prueba que hicimos porque lo que haces es enviar un rasterizado ya hecho
+
+51
+00:07:32,000 --> 00:07:39,000
+o sin el rasterizado de los datos clientes, bueno, entonces digamos que desde su origen ha sido pensada para grandes volúmenes de datos de verdad.
+
+52
+00:07:39,000 --> 00:07:45,000
+Bien, otra cosa es que, dos líneas de código y ya tienes interactividad, tienes gráficas, tienes selección, tienes zoom,
+
+53
+00:07:45,000 --> 00:07:55,000
+cosa que en otras librerías para añadirlas es bastante más complicada, y luego, no sé si alguna vez, bueno, aquí es como que habéis visto, habéis intentado hacerlos,
+
+54
+00:07:55,000 --> 00:08:03,000
+habéis, tenés una aplicación con Angular, entonces la lógica del cliente y el servidor, pues como que es dura y esas cosas, entonces,
+
+55
+00:08:03,000 --> 00:08:10,000
+que estás tratando porque es una capa, ahora al fin y a cabo es un framework que no solo pinta, es una librería que pinta, pero por debajo en el paiten lo que está haciendo es
+
+56
+00:08:10,000 --> 00:08:17,000
+encargarse de la negociación cliente servidor sin que tú te interés de absolutamente nada, vale, entonces, todo eso, no sé si tengo que pintar más zoom,
+
+57
+00:08:17,000 --> 00:08:24,000
+ah bueno, esta es la mejor lectura que en el JavaScript, no, esto es mentira, dicen los desabildos que no hay que utilizar JavaScript, pero ya veréis,
+
+58
+00:08:24,000 --> 00:08:30,000
+si llegamos al último de los ejemplos que está bien saber JavaScript para los el apócreas, pero bueno, que cumple todos los requisitos que básicamente
+
+59
+00:08:30,000 --> 00:08:40,000
+eran, no puedo echar a la gente de R, tengo gran cantidad de datos, necesito pintarlos, necesito que sea interactivo, necesito que sea una tecnología web,
+
+60
+00:08:40,000 --> 00:08:48,000
+y necesito que haya versión estática y versión online, pues todo esto lo cumple de boke, para mí es de las únicas de Python que cumple todos estos requisitos
+
+61
+00:08:48,000 --> 00:08:56,000
+y en mi opinión es de las únicas, quitando Saini con GGBs, que no sé la conocéis, que son dos librerías de R, que pueden hacerle frente a la
+
+62
+00:08:56,000 --> 00:09:06,000
+misma boke, en características, no hay madurez porque boke lleva bastante tiempo, abril de 2013, es guapo, bueno, que el fútbol lo promete,
+
+63
+00:09:06,000 --> 00:09:18,000
+se corta pero ya es lo que hace, bien, entonces, boke tiene tres niveles de interfaz, ¿vale? charts, plotting, model, el más, el mayor alto
+
+64
+00:09:18,000 --> 00:09:24,000
+nivel, más sencillo es charts, luego a plotting, luego a model, en la práctica cuando te acostumbras charts casi no te la usan,
+
+65
+00:09:24,000 --> 00:09:30,000
+a charts es lo típico de, quiero poner un ejemplo, wow, como en el día de código, lo pintamos y ya está, pero en la práctica se usa que es
+
+66
+00:09:30,000 --> 00:09:38,000
+siempre plotting y si quieres hacer cosas finas, model. Una de las cosas que me gusta mucho de boke es que los tres niveles, aunque estén uno encima de otro,
+
+67
+00:09:38,000 --> 00:09:46,000
+están muy bien interconectados, entonces un charts, vas a poder usar la interfaz del plot y con él, vas a poder utilizar la interfaz de model con él,
+
+68
+00:09:46,000 --> 00:09:54,000
+y bueno, vamos a empezar con las acciones más sencillas de charts, alguien ha tenido algún problema, está dando, puede hacer un import coma en su,
+
+69
+00:09:54,000 --> 00:10:04,000
+eso impacta un notebook, ¿vale? Bien, otra cosa importante porque ha cambiado mucho el API y ese es un problema de que sea una librería más joven,
+
+70
+00:10:04,000 --> 00:10:17,000
+y esta es la versión justo anterior para el efecto demo, para que sea más interesante, la API ha cambiado un montón, ¿vale? Entonces aseguraos que tienes la versión 010,
+
+71
+00:10:17,000 --> 00:10:32,000
+si no un pipi install o un conda install, yo recomiendo conda porque bueno, mejor y todas esas cosas que ya sabemos, sino porque boke, como implementa un servidor dentro,
+
+72
+00:10:32,000 --> 00:10:39,000
+pues tiene un montón de dependencias que no son triviales, pues a que instala un tornado, así que bueno, qué tarde un latino hay que hablar,
+
+73
+00:10:39,000 --> 00:10:48,000
+bueno, compramos que tenemos la 010, manos arriba quien tiene problemas, está en ello todavía, ¿vale?
+
+74
+00:10:48,000 --> 00:11:13,000
+¿No tienes el conda?
+
+75
+00:11:13,000 --> 00:11:38,000
+¿Cómo se trata el pipi de un notebook?
+
+76
+00:11:38,000 --> 00:11:45,000
+No, pero digo que ahora instala del paquete, ¿no?
+
+77
+00:11:45,000 --> 00:12:14,000
+¿Como se trata el pipi?
+
+78
+00:12:14,000 --> 00:12:43,000
+¿Qué termino?
+
+79
+00:12:43,000 --> 00:12:55,000
+¿Qué termino?
+
+80
+00:12:55,000 --> 00:13:01,000
+Vale, bueno, vamos a empezar.
+
+81
+00:13:01,000 --> 00:13:05,000
+Bien, entonces.
+
+82
+00:13:05,000 --> 00:13:15,000
+Vale, por ahora vamos a importar las cosas que tocan tocar, si no tenéis el pandas omitéis la importación del pandas, si no tenéis el numpy, omitéis la importación del numpy.
+
+83
+00:13:15,000 --> 00:13:22,000
+Entonces, esto es bastante importante para la lógica de boke, vale, lo voy a explicar ahora, pero va a salir varias veces al lado de la charla.
+
+84
+00:13:22,000 --> 00:13:37,000
+Si os fijáis la última lajina es eso, eso porque es, porque boke cuando se inicializa, cuando inicializa una sesión, que es una lógica que tiene boke por detrás, para saber que estás utilizando el mismo agregado de gráficas,
+
+85
+00:13:37,000 --> 00:13:43,000
+ya veremos por qué es necesario esto, le están diciendo si quieres que te lo saque por notebook, si quieres que te lo saque por un html, si quieres que te lo saque por servidor.
+
+86
+00:13:43,000 --> 00:13:54,000
+Entonces existen output server, output notebook, output html, perdón output file, y tú le dices a dónde quieres sacarlo, entonces las mismas intractes podrían ser para sacar html.
+
+87
+00:13:54,000 --> 00:13:58,000
+¿Vale?
+
+88
+00:13:58,000 --> 00:14:04,000
+Intenta poner los ejemplos los más cortos por sí, ¿vale?
+
+89
+00:14:04,000 --> 00:14:11,000
+Pero hay que picar, para eso lo estamos en.
+
+90
+00:14:11,000 --> 00:14:21,000
+Entonces cuando arrancas el output notebook, te sale simplemente un aviso, que es el javascript corriendo en el notebook, diciendo, teo, ya estoy cargado,
+
+91
+00:14:21,000 --> 00:14:27,000
+¿sabeis lo que es require, la teoría de javascript?
+
+92
+00:14:27,000 --> 00:14:36,000
+Vale, pues lo que está haciendo es decir, ya me he cargado con require, ¿vale?
+
+93
+00:14:36,000 --> 00:14:41,000
+O punto, ya está, ¿OK? Todo bien, vamos a empezar con los modos y los.
+
+94
+00:14:41,000 --> 00:14:49,000
+Bien, entonces simplemente para que os habéis una idea de todo lo que hay en charts, no lo pongáis, simplemente para ver qué tenemos dentro de charts.
+
+95
+00:14:49,000 --> 00:14:57,000
+Para que veis cómo son los ejemplos, pues os podéis hacer una idea, barras, llenamos de cazas, la fracción de chart, column data source, ¿vale?
+
+96
+00:14:57,000 --> 00:15:04,000
+Tiene como esta acción, te voy a alto nivel para hacer, quiero hacer una de barras con esta x, esta y, este colo y este degradado, ¿viste?
+
+97
+00:15:04,000 --> 00:15:09,000
+Píntame, uno de ellos lo he puesto porque es muy importante, ¿vale?
+
+98
+00:15:09,000 --> 00:15:13,000
+El column data source es una de las fracciones de bokeh clave.
+
+99
+00:15:13,000 --> 00:15:23,000
+Column data source es el objeto, perdón, es la clase que va a utilizar bokeh para encapsular los datos y mandárselos o estáticamente a un HTML o del servidor afiliente.
+
+100
+00:15:23,000 --> 00:15:27,000
+Todo el que entre comillas pase por bokeh va a ser un column data source.
+
+101
+00:15:27,000 --> 00:15:35,000
+Hay otro tipo de dato que se llama Ajax Data Source, que como podéis imaginar por el nombre, es lo mismo, pero en vez de tirar de algo en local, un bandársel local,
+
+102
+00:15:35,000 --> 00:15:38,000
+va a hacer una petición Ajax para bajarse datos.
+
+103
+00:15:38,000 --> 00:15:45,000
+Esto es lo que nos va a permitir, que no nos va a dar tiempo los ejemplos del final, pero bueno, que sepáis que puedes hacer streaming en vivo mediante peticiones Ajax.
+
+104
+00:15:45,000 --> 00:15:55,000
+¿Vale? Puedes definir una fuente, la edad URL de Ajax, incluso desde país un cambio se le da para ser y en bokeh se encarga de enviarle Ajax
+
+105
+00:15:55,000 --> 00:15:58,000
+y tira de esos datos. ¿Vale?
+
+106
+00:15:58,000 --> 00:16:00,000
+¿What?
+
+107
+00:16:00,000 --> 00:16:04,000
+Perdón.
+
+108
+00:16:04,000 --> 00:16:07,000
+¿Todo esto está?
+
+109
+00:16:07,000 --> 00:16:14,000
+Si no, lo que voy a hacer es mirar. Aquí tenemos dos slides porque si es un punto y tal, pero es mejor que veamos todo el histórico para que cada uno vaya con su gremio.
+
+110
+00:16:14,000 --> 00:16:16,000
+Vale.
+
+111
+00:16:29,000 --> 00:16:31,000
+Vale.
+
+112
+00:16:31,000 --> 00:16:33,000
+Se ve bueno.
+
+113
+00:16:35,000 --> 00:16:37,000
+Vale.
+
+114
+00:16:37,000 --> 00:16:39,000
+Bien.
+
+115
+00:16:39,000 --> 00:16:50,000
+Esto de aquí lo he hecho porque me había avisado de que probablemente algunos de vosotros no tuvisis internet, pero en vez de tirar de CSV ese externo,
+
+116
+00:16:50,000 --> 00:16:56,000
+que es como había de esos ejemplos, la gente de bokeh amablemente nos aposta los ejemplos de datos dentro de la librería.
+
+117
+00:16:56,000 --> 00:17:00,000
+¿Importamos eso para tener un dataframe? Es un dataframe de pandas.
+
+118
+00:17:00,000 --> 00:17:03,000
+Es importante.
+
+119
+00:17:03,000 --> 00:17:10,000
+No me ha raciado un momento porque es el mismo oportuno.
+
+120
+00:17:10,000 --> 00:17:12,000
+Vale.
+
+121
+00:17:12,000 --> 00:17:14,000
+¿Cómo vamos?
+
+122
+00:17:14,000 --> 00:17:16,000
+Bien.
+
+123
+00:17:16,000 --> 00:17:24,000
+Entonces, ya hemos importado el dataframe de ejemplo. No tiene ninguna historia de esto si lo imprimimos.
+
+124
+00:17:24,000 --> 00:17:34,000
+Es el típico ejemplo de prueba de...
+
+125
+00:17:34,000 --> 00:17:41,000
+Vale, de los coches de cilindrada, año, nombre del coche, es el ejemplo típico del dataset.
+
+126
+00:17:41,000 --> 00:17:47,000
+Entonces, está interfacto a este nivel y aquí tengo que hacer una aclaración.
+
+127
+00:17:47,000 --> 00:17:51,000
+Lo que haces es, si habéis usado un input, esto sonará super parecidas.
+
+128
+00:17:51,000 --> 00:17:58,000
+Le metes un dataset, un dataframe en este caso de pandas, le dices qué columnas, el nombre de la columna mapea qué propiedad.
+
+129
+00:17:58,000 --> 00:18:03,000
+Entonces, aquí lo que estamos viendo es que quiero ver en el eje que es la cilindrada y el valor, es decir, la altura de la barra,
+
+130
+00:18:03,000 --> 00:18:05,000
+quiero que sea la variable mpg.
+
+131
+00:18:05,000 --> 00:18:13,000
+Pues, si pintásemos aquí arriba el dataframe, lo que está haciendo es coge internamente el dataframe,
+
+132
+00:18:13,000 --> 00:18:18,000
+dice qué columnas representan qué variables, lo procesa y te lo mete.
+
+133
+00:18:18,000 --> 00:18:27,000
+Hay una cosa que no se aprecia sin revista, pero si usfijáis en el barco en izquierdo, pone suma de mpg.
+
+134
+00:18:27,000 --> 00:18:34,000
+¿Vale? Esto por qué ocurre? Porque hay más de una fila que cumple el quitero de que la cilindrada sea 4 o sea 5 columnas.
+
+135
+00:18:34,000 --> 00:18:41,000
+No existe un registro, una relación 1 a 1 entre registro y columna, existen muchos registros para una misma columna.
+
+136
+00:18:41,000 --> 00:18:48,000
+Entonces, de alguna manera hay que agregarlo, que es automáticamente te lo agrega y por defecto te hace la agregación suma,
+
+137
+00:18:48,000 --> 00:18:53,000
+es decir, te has sumado todos los mpg de la cilindrada 3, la cilindrada 4, la 5, la 6 y la 8.
+
+138
+00:18:53,000 --> 00:18:58,000
+¿Vale? Te has hecho un montón de magia por debajo, que es lo que suele me citar en la tasa de entes y simplas.
+
+139
+00:18:58,000 --> 00:19:00,000
+Quiero pintar esto y quiero pintarlo ya.
+
+140
+00:19:00,000 --> 00:19:02,000
+Ahora, pues, es lo que tienes.
+
+141
+00:19:02,000 --> 00:19:08,000
+Entonces, como os mencioné, tienes bastante interactividad para la línea de código que ha sido que escribir,
+
+142
+00:19:08,000 --> 00:19:13,000
+escribir cosas, ¿vivero? Imaginaos que es un gráfico más complejo, ¿vale? Puedes moverlo, así, pero y además,
+
+143
+00:19:13,000 --> 00:19:18,000
+no es un movimiento como pasa en signing, que eso es una cosa que hay que tener en cuenta.
+
+144
+00:19:18,000 --> 00:19:23,000
+Seguimos en las cosas que ocurre, que es la alternativa en R, a Boque, cuando tú haces algún tipo de interactividad,
+
+145
+00:19:23,000 --> 00:19:26,000
+lo que está pasando es que el cliente le dice, le hace un callback diciendo,
+
+146
+00:19:26,000 --> 00:19:29,000
+oye, se ha movido la gráfica, entonces ese video le responde con otro png,
+
+147
+00:19:29,000 --> 00:19:33,000
+otra imagen, otro lo que sea rasterizado enviando, lo que es gastas a Sanzo de Banda patadas,
+
+148
+00:19:33,000 --> 00:19:37,000
+y además si tienes alta latencia o lo que es atrás de internet, olvídate de que sea bonito.
+
+149
+00:19:37,000 --> 00:19:42,000
+Esto, ya en vez de ver los datos, y en el lado del cliente el JavaScript está floteando,
+
+150
+00:19:42,000 --> 00:19:47,000
+cada cosa que ocurre, por lo cual no hay streaming, no hay la ciencia, y no has tenido que hacer prácticamente nada.
+
+151
+00:19:47,000 --> 00:19:52,000
+Bueno, si me te van a enseñar a lo típico que tiene, bueno, pues tiene zoom de caja, ¿vale?
+
+152
+00:19:52,000 --> 00:19:56,000
+Esto, perdón, no es un poquito.
+
+153
+00:19:56,000 --> 00:20:09,000
+Tengo un plugin de Firefox que casca la interacción del JavaScript,
+
+154
+00:20:09,000 --> 00:20:14,000
+entonces lo voy a poner en Chrome, pero funciona más en ante todo, es algo zoom.
+
+155
+00:20:14,000 --> 00:20:20,000
+Bueno, pues, voy a cargar esto.
+
+156
+00:20:20,000 --> 00:20:26,000
+Bien, entonces tenemos zoom, ¿vale?
+
+157
+00:20:26,000 --> 00:20:29,000
+Podemos volver a la posición inicial, y esto me encanta.
+
+158
+00:20:29,000 --> 00:20:32,000
+En plan, la gráfica es muy pequeña, la gráfica es muy importante, no sé, nos pasa,
+
+159
+00:20:32,000 --> 00:20:36,000
+pero a mí me dice en Google, lo tiro de una foto, una imagen,
+
+160
+00:20:36,000 --> 00:20:38,000
+entonces como sale de 3 kilómetros, o me sale una mierda, así.
+
+161
+00:20:38,000 --> 00:20:42,000
+Si lo haces un resize, el ipython no te lo rescala, te lo deja así, y ya está entre vos.
+
+162
+00:20:42,000 --> 00:20:47,000
+4 cosillas, que si os fijáis, no ha costado nada, hacerles, y lo que estoy aquí.
+
+163
+00:20:47,000 --> 00:20:50,000
+Y luego tiene otra cosa que es bastante útil para el trabajo típico en Data Science Discs,
+
+164
+00:20:50,000 --> 00:20:53,000
+que es que te lo exportas a PNG, tal cual lo tengas.
+
+165
+00:20:53,000 --> 00:20:57,000
+De hecho, si lo mueves, no rompías, lo que te haces es, porque eso es un canvas,
+
+166
+00:20:57,000 --> 00:21:00,000
+por debajo de no si conocéis la tecnología canvas de HTML5,
+
+167
+00:21:00,000 --> 00:21:03,000
+eso es un canvas, de lo que haces, se acabe un PNG, y tú lo guardas,
+
+168
+00:21:03,000 --> 00:21:07,000
+pues copias el portad, y aquí es muy fácil para lo típico, crear informes rápido,
+
+169
+00:21:07,000 --> 00:21:10,000
+o es una presentación fascinante y ese tipo.
+
+170
+00:21:10,000 --> 00:21:12,000
+Pero es jamás difícil ni que está cargado en el cliente.
+
+171
+00:21:12,000 --> 00:21:15,000
+Claro, cuando has hecho el Output Notebook, que sale,
+
+172
+00:21:15,000 --> 00:21:18,000
+pues es que el JTES ha sido cargado, pues ahí se ha cargado en el cliente.
+
+173
+00:21:18,000 --> 00:21:24,000
+Si, pues estás pidiendo una aplicación web standard,
+
+174
+00:21:24,000 --> 00:21:28,000
+o sea, no hubo de Notebook, es una web standard, tú tienes el tono de servidor,
+
+175
+00:21:28,000 --> 00:21:33,000
+y te estás cumpliendo datos, HTML, en este caso.
+
+176
+00:21:33,000 --> 00:21:35,000
+Tienes dos opciones, bueno, sí, claro.
+
+177
+00:21:35,000 --> 00:21:40,000
+No, que necesitas ya en tu aplicación de navegador,
+
+178
+00:21:40,000 --> 00:21:42,000
+y el tenés cargado a escribir.
+
+179
+00:21:42,000 --> 00:21:45,000
+Exacto, si queréis montar esto en un servidor cliente,
+
+180
+00:21:45,000 --> 00:21:47,000
+vamos a ver un ejemplo al final, no nos va a dar tiempo a traer en ello,
+
+181
+00:21:47,000 --> 00:21:49,000
+porque es un poco complicado, pero os quiero contar la lógica.
+
+182
+00:21:49,000 --> 00:21:53,000
+Si montáis un servidor con esto y no queréis algo estático, no, Notebook,
+
+183
+00:21:53,000 --> 00:21:54,000
+hay dos opciones.
+
+184
+00:21:54,000 --> 00:21:57,000
+Primero, usar el Bokeh Server, porque Bokeh ya viene con un servidor
+
+185
+00:21:57,000 --> 00:22:00,000
+preparado para que tú le en sufrir la gráfica y él te la exporte.
+
+186
+00:22:00,000 --> 00:22:04,000
+El Bokeh Server, que es un poco así, dándame la expresión técnica,
+
+187
+00:22:04,000 --> 00:22:07,000
+pero, pero, o sea, no es nada más, simplemente te ponen las gráficas.
+
+188
+00:22:07,000 --> 00:22:09,000
+Gestiona dos cosas bastante bien.
+
+189
+00:22:09,000 --> 00:22:12,000
+Gestiona sesiones multiusuarios, es decir, si estamos dos personas compartiendo,
+
+190
+00:22:12,000 --> 00:22:14,000
+puedes hacer dos cosas, es muy interesante.
+
+191
+00:22:14,000 --> 00:22:17,000
+Compartir datos entre usuarios, es decir, si yo toco a algo mi ordenador,
+
+192
+00:22:17,000 --> 00:22:20,000
+que tu ordenador cambie también, con lo cual puedes tener una sesión interactiva
+
+193
+00:22:20,000 --> 00:22:25,000
+entre dos personas, y también puedes hacer una cierta lógica de lo que hay.
+
+194
+00:22:25,000 --> 00:22:28,000
+Porque gestiona qué sesión está viendo que hay gráfica.
+
+195
+00:22:28,000 --> 00:22:32,000
+Puedes tener el streaming en las dos, o sea, todo eso sin tener que hacer nada,
+
+196
+00:22:32,000 --> 00:22:33,000
+porque ya te lo implementa.
+
+197
+00:22:33,000 --> 00:22:34,000
+Ese es la opción uno.
+
+198
+00:22:34,000 --> 00:22:37,000
+La opción dos es montar con Flash o con Tornado,
+
+199
+00:22:37,000 --> 00:22:41,000
+también puedes usar otra cosa, pero está preparada para usarse con Flash o Tornado.
+
+200
+00:22:41,000 --> 00:22:47,000
+Le puedes meter en tu aplicación web, le puedes incrustar el HTML y el JavaScript
+
+201
+00:22:47,000 --> 00:22:49,000
+que compone esta gráfica.
+
+202
+00:22:49,000 --> 00:22:50,000
+Cómo lo haces?
+
+203
+00:22:50,000 --> 00:22:53,000
+Hay una API de Bokeh que te permite sacar por separado el JavaScript
+
+204
+00:22:53,000 --> 00:22:55,000
+y por separado el HTML y por separado los datos.
+
+205
+00:22:55,000 --> 00:22:59,000
+Y tú decides dónde lo incrustas, en tus templates, en tus archivos,
+
+206
+00:22:59,000 --> 00:23:02,000
+el que tú lo metes para que cuadre todo y ya está.
+
+207
+00:23:02,000 --> 00:23:07,000
+Al final, eso es un dif y un caso de code.
+
+208
+00:23:07,000 --> 00:23:13,000
+Cuando quieres meter una aplicación más complicada, te da Bokeh esa interfaz.
+
+209
+00:23:13,000 --> 00:23:16,000
+Bueno, sencillo para toda la familia.
+
+210
+00:23:16,000 --> 00:23:19,000
+Estamos viendo ahora cosas más avanzadas.
+
+211
+00:23:19,000 --> 00:23:23,000
+Bien, hemos dicho que agrega con SUMA.
+
+212
+00:23:23,000 --> 00:23:26,000
+A los que sabéis, si no lo hiciste, esto será superparecido.
+
+213
+00:23:26,000 --> 00:23:28,000
+Pues quiero usar otra función agregadora que sea MIM.
+
+214
+00:23:28,000 --> 00:23:33,000
+Vale.
+
+215
+00:23:33,000 --> 00:23:35,000
+Así es, ejemplo, son los sencillos.
+
+216
+00:23:35,000 --> 00:23:38,000
+Le puedes pasar tú una función...
+
+217
+00:23:38,000 --> 00:23:42,000
+No, personalizada, perdón, personalizada, gracias.
+
+218
+00:23:42,000 --> 00:23:44,000
+Para decidir qué agregación tienes.
+
+219
+00:23:44,000 --> 00:23:48,000
+Es una función que va a recibir el array de los datos que tiene que agregar
+
+220
+00:23:48,000 --> 00:23:51,000
+y tiene que devolver un valor que va a ser el que está representando.
+
+221
+00:23:51,000 --> 00:23:53,000
+Bueno, más cosas.
+
+222
+00:23:53,000 --> 00:23:55,000
+Venga, a toque.
+
+223
+00:23:55,000 --> 00:23:57,000
+Voy a cambiar el color.
+
+224
+00:23:57,000 --> 00:24:00,000
+Para meter el color, veis la ayuda, veis los 8000 parámetros que hay,
+
+225
+00:24:00,000 --> 00:24:03,000
+simplemente para que veáis que es un gran video.
+
+226
+00:24:03,000 --> 00:24:05,000
+Y ahora...
+
+227
+00:24:05,000 --> 00:24:09,000
+He ido de la oye un poco.
+
+228
+00:24:09,000 --> 00:24:12,000
+Ahora os digo por qué ha visto la botella Vestani.
+
+229
+00:24:12,000 --> 00:24:21,000
+He hecho la biencia ahora para que podáis ver el código.
+
+230
+00:24:21,000 --> 00:24:28,000
+Ahora, luego más tardes entenderéis por qué pasa esto.
+
+231
+00:24:28,000 --> 00:24:32,000
+¿Vocó?
+
+232
+00:24:32,000 --> 00:24:37,000
+¿Dónde vas a ir Vestani?
+
+233
+00:24:37,000 --> 00:24:40,000
+Vale, dejamos en la zur.
+
+234
+00:24:40,000 --> 00:24:42,000
+Vale, vamos a ver.
+
+235
+00:24:42,000 --> 00:24:55,000
+Quiero estaquear por otra variable.
+
+236
+00:24:55,000 --> 00:24:59,000
+Pues en estág le pasas la columna fill y te hace un diagrama estaqueado.
+
+237
+00:24:59,000 --> 00:25:02,000
+Si quieres barras agrupadas, lo pasas al parámetro group.
+
+238
+00:25:02,000 --> 00:25:07,000
+Si quieres barras agrupadas y estaqueadas, le pasas un agrup y le pasas otra estaca.
+
+239
+00:25:07,000 --> 00:25:11,000
+Si quieres un color personalizado, le pasas una función que mape variable.
+
+240
+00:25:11,000 --> 00:25:13,000
+Variable a color.
+
+241
+00:25:13,000 --> 00:25:16,000
+Si quieres un color fijo, le pasas el color fijo.
+
+242
+00:25:16,000 --> 00:25:18,000
+Hay tres formas de meterles datos.
+
+243
+00:25:18,000 --> 00:25:21,000
+Nombre de la columna es el que estamos usando aquí.
+
+244
+00:25:21,000 --> 00:25:24,000
+Un valor constante es mucho con blue.
+
+245
+00:25:24,000 --> 00:25:28,000
+Y tercera opción es meterle un vector directamente a pero.
+
+246
+00:25:28,000 --> 00:25:32,000
+Yo tengo un vector con los colores que quiero ponerle a las cosas y meto el vector.
+
+247
+00:25:32,000 --> 00:25:34,000
+Son las tres cosas que acercan.
+
+248
+00:25:34,000 --> 00:25:37,000
+Mucho cuidado porque en la versión 010,
+
+249
+00:25:37,000 --> 00:25:44,000
+que ha creído un cambio de API bastante importante, aunque ya parece que el API se va a estabilizar a partir de ahora,
+
+250
+00:25:44,000 --> 00:25:51,000
+hay algunas funciones de charts, por ejemplo la función de línea, que todavía no usan este API.
+
+251
+00:25:51,000 --> 00:25:56,000
+¿Por qué? Porque tenían un deadline, han decidido respetar el tiempo de entrega.
+
+252
+00:25:56,000 --> 00:26:03,000
+Ha sacado la 010 pero han transformado todas las primitivas de dibujo de este label.
+
+253
+00:26:03,000 --> 00:26:08,000
+La una de las que no va es de líneas, pero funciona de esta, funciona el diagrama de barras,
+
+254
+00:26:08,000 --> 00:26:14,000
+funciona el diagrama de casas y funciona el diagrama de scatter.
+
+255
+00:26:14,000 --> 00:26:16,000
+Dispensión.
+
+256
+00:26:16,000 --> 00:26:19,000
+Si usáis line, caminigenamente.
+
+257
+00:26:19,000 --> 00:26:22,000
+No puedes hacer esto la más que esta columna en esta columna.
+
+258
+00:26:22,000 --> 00:26:26,000
+Pero la idea es que el chart se quede así para todas las funciones.
+
+259
+00:26:26,000 --> 00:26:31,000
+Más totalmente, el jaque tiene boke, que es yo es freaky de boke, soy yo en la empresa.
+
+260
+00:26:31,000 --> 00:26:35,000
+Cuando alguien tiene que hacer un gráfico que es más complejo,
+
+261
+00:26:35,000 --> 00:26:42,000
+imaginaos que quieren hacer un sumbar, que va creciendo con círculos concéntricos para ver jerarquías.
+
+262
+00:26:42,000 --> 00:26:47,000
+Eso es más complicado hacer, pero yo les creo una interfaz a nivel de charts,
+
+263
+00:26:47,000 --> 00:26:52,000
+hay una clase abstracta para poder hacerlo, en el que ellos no pasan las columnas y yo ya se lo pinto.
+
+264
+00:26:52,000 --> 00:26:56,000
+Yo me encargo de la lógica de dónde está, calcular los ángulos, la geometría,
+
+265
+00:26:56,000 --> 00:26:58,000
+y ellos tienen que usarlo, pues así de sencillo.
+
+266
+00:26:58,000 --> 00:27:02,000
+Es muy útil para que haya desarrolladores especializados en visualización,
+
+267
+00:27:02,000 --> 00:27:05,000
+y hay desarrolladores o no desarrolladores especializados en usarla libre.
+
+268
+00:27:05,000 --> 00:27:09,000
+Está muy bien montado para que todo esto vaya bastante bien.
+
+269
+00:27:09,000 --> 00:27:16,000
+Vale, bueno, esto es cómo se hace.
+
+270
+00:27:16,000 --> 00:27:19,000
+Y aquí ya llega un poco a la madre, pero esto es lo más complicado de entender de boke.
+
+271
+00:27:19,000 --> 00:27:22,000
+Una vez se entiende esto, ya sabes por qué boke falla.
+
+272
+00:27:22,000 --> 00:27:25,000
+Hay dos opciones, como dije, meter todo en línea,
+
+273
+00:27:25,000 --> 00:27:28,000
+crear un HTML de 5 megas y enviar solo al tipo.
+
+274
+00:27:28,000 --> 00:27:33,000
+Es una opción bastante útil, créedme, porque mucha gente no sabe descomprimir un CIP.
+
+275
+00:27:33,000 --> 00:27:35,000
+Mucho.
+
+276
+00:27:35,000 --> 00:27:37,000
+Se toman panca.
+
+277
+00:27:37,000 --> 00:27:41,000
+Bueno, el caso es que puedes meter todo en línea,
+
+278
+00:27:41,000 --> 00:27:45,000
+que lo que va a hacer es un HTML enorme en el cual te mete la librería boke,
+
+279
+00:27:45,000 --> 00:27:47,000
+que no tiene dependencias de una buena librería,
+
+280
+00:27:47,000 --> 00:27:50,000
+lo han hecho de cero para que eso no crezca demasiado.
+
+281
+00:27:50,000 --> 00:27:55,000
+Y un gisor con los datos también, todo metido.
+
+282
+00:27:55,000 --> 00:27:58,000
+Datos, gráfica y dibujo de la gráfica,
+
+283
+00:27:58,000 --> 00:28:01,000
+y librería de las gráficas, todo metido.
+
+284
+00:28:01,000 --> 00:28:04,000
+Y luego tiene la opción cdn.
+
+285
+00:28:04,000 --> 00:28:07,000
+No quiero un HTML de 5 megas a menos de 200k,
+
+286
+00:28:07,000 --> 00:28:10,000
+y que tire la librería por una conexión a 7 megas.
+
+287
+00:28:10,000 --> 00:28:12,000
+Entonces tiran del cdn de PyConTin.
+
+288
+00:28:12,000 --> 00:28:15,000
+Ya estás más o menos haciendo un cdn.
+
+289
+00:28:15,000 --> 00:28:19,000
+Hay un debate de cuál debería ser de modo por respecto.
+
+290
+00:28:19,000 --> 00:28:23,000
+No me voy a meter en el debate, pero que sepáis que si la versión 015 cambia,
+
+291
+00:28:23,000 --> 00:28:27,000
+es mejor especificar la mano siempre, porque es probable que lo cambien en el futuro.
+
+292
+00:28:27,000 --> 00:28:29,000
+O sea, cuando entras en el tizap hay un debate de muerte, pero a muerte,
+
+293
+00:28:29,000 --> 00:28:31,000
+decidió ese enline o ese cdn.
+
+294
+00:28:31,000 --> 00:28:33,000
+Bueno, que sepáis cómo va el del asunto.
+
+295
+00:28:33,000 --> 00:28:37,000
+Y yo siempre lo como por defecto para que no haya problemas.
+
+296
+00:28:37,000 --> 00:28:39,000
+Ahora, la clave de proveerlo, cómo funciona boke por debajo,
+
+297
+00:28:39,000 --> 00:28:42,000
+cómo puede hacer todas estas cosas, esportarlas en HTML,
+
+298
+00:28:42,000 --> 00:28:44,000
+exportarlas en clientes servidores, exportarlas en nodul,
+
+299
+00:28:44,000 --> 00:28:45,000
+que quiera nada casi.
+
+300
+00:28:45,000 --> 00:28:50,000
+Pues es porque desde el principio han implementado una lógica de modelos, ¿vale?
+
+301
+00:28:50,000 --> 00:28:54,000
+Bueno, modelos es el nombre que tiene boke para llamar en lo que hubo
+
+302
+00:28:54,000 --> 00:28:52,000
+muchas otras librerías como
+
+303
+00:28:52,000 --> 00:28:59,000
+Clot o Partidas, se llaman glyphs, ¿vale?
+
+304
+00:28:59,000 --> 00:29:00,000
+Más o menos.
+
+305
+00:29:00,000 --> 00:29:04,000
+Un glyph en otras librerías es una extracción que dice
+
+306
+00:29:04,000 --> 00:29:07,000
+quiero pintar puntos cuyo coordenada mx sea esto,
+
+307
+00:29:07,000 --> 00:29:10,000
+cuya coordenada mx sea esto, cuyo color sea esto.
+
+308
+00:29:10,000 --> 00:29:13,000
+Un glyph, digamos que es la extracción de quiero pintar algo en la...
+
+309
+00:29:13,000 --> 00:29:18,000
+Tráfico. Entonces, todo esto y otras cosas más boke las ha
+
+310
+00:29:18,000 --> 00:29:20,000
+serializado en G-Sons.
+
+311
+00:29:20,000 --> 00:29:23,000
+Ha definido modelos, nos han metido en G-Sons,
+
+312
+00:29:23,000 --> 00:29:25,000
+que es una gráfica más que un cúmulo de modelos,
+
+313
+00:29:25,000 --> 00:29:26,000
+hay uno detrás de otro.
+
+314
+00:29:26,000 --> 00:29:29,000
+Entonces, si tengo una gráfica de barras que tengo un ex, un ex,
+
+315
+00:29:29,000 --> 00:29:33,000
+el glyph de cuadrados, los datos, tengo una sede de cosas,
+
+316
+00:29:33,000 --> 00:29:36,000
+las meto todas y se la envío a la librería de JavaScript
+
+317
+00:29:36,000 --> 00:29:39,000
+que la pinta, le giso y pinta lo que yo le he pedido.
+
+318
+00:29:39,000 --> 00:29:43,000
+Otra cosa importante, si lo fijáis, es que todo tiene un identificador.
+
+319
+00:29:43,000 --> 00:29:46,000
+Se crea un UDID para todos los modelos.
+
+320
+00:29:46,000 --> 00:29:49,000
+Todos los modelos tienen un UDID único.
+
+321
+00:29:49,000 --> 00:29:52,000
+Está muy bien, pero tiene un problema.
+
+322
+00:29:52,000 --> 00:29:55,000
+Que os va a pasar en el logo porque me ha pasado millones de veces.
+
+323
+00:29:55,000 --> 00:29:58,000
+Haces una grafica, gráfica igual a barras,
+
+324
+00:29:58,000 --> 00:30:00,000
+no sé quién es cuánto es ahí, la imprimes.
+
+325
+00:30:00,000 --> 00:30:03,000
+Cinco coordenadas después, le cambias el color o le cambias el color,
+
+326
+00:30:03,000 --> 00:30:05,000
+que la veremos cómo se cambia ese tipo de cosas.
+
+327
+00:30:05,000 --> 00:30:08,000
+Voy a pintar P, el abajo te sale bien, pero P arriba
+
+328
+00:30:08,000 --> 00:30:10,000
+también se cambia. ¿Por qué?
+
+329
+00:30:10,000 --> 00:30:14,000
+Porque para la librería es el mismo identificador de grafica.
+
+330
+00:30:14,000 --> 00:30:17,000
+Este pintado dos veces está relacionando a más.
+
+331
+00:30:17,000 --> 00:30:21,000
+Eso es genial para hacer cosas como, quiero que cuando esta gráfica se mueva,
+
+332
+00:30:21,000 --> 00:30:23,000
+se mueva la de aquí, pero está muy mal.
+
+333
+00:30:23,000 --> 00:30:27,000
+Cuando estás usando la lógica del notebook que es imprimir, imprimir, imprimir, imprimir.
+
+334
+00:30:27,000 --> 00:30:29,000
+Que se veáis que se os casca eso.
+
+335
+00:30:29,000 --> 00:30:31,000
+Lo que tenéis que hacer es de nuevo la gráfica,
+
+336
+00:30:31,000 --> 00:30:34,000
+crear de nuevo la llamada a la clase que os ha creado la gráfica,
+
+337
+00:30:34,000 --> 00:30:36,000
+volverá a crear ese objeto,
+
+338
+00:30:36,000 --> 00:30:39,000
+os va a crear los sub-videos, distintos los anteriores,
+
+339
+00:30:39,000 --> 00:30:41,000
+y podéis cambiar el color sin afectar la primera.
+
+340
+00:30:41,000 --> 00:30:43,000
+¿Vale?
+
+341
+00:30:44,000 --> 00:30:47,000
+Bueno, es parte del precio que tiene todo esto.
+
+342
+00:30:50,000 --> 00:30:52,000
+Otro antes hay que todo tenga,
+
+343
+00:30:52,000 --> 00:30:55,000
+identificador es que hay identificador de documento.
+
+344
+00:30:55,000 --> 00:30:57,000
+Un documento es conjunto de gráficas,
+
+345
+00:30:57,000 --> 00:31:00,000
+porque puedes tener más de una gráfica en un mismo documento con distintos layouts.
+
+346
+00:31:00,000 --> 00:31:02,000
+¿Para qué sirve esto?
+
+347
+00:31:02,000 --> 00:31:04,000
+Porque si yo muevo una gráfica en uno de los documentos
+
+348
+00:31:04,000 --> 00:31:06,000
+y hay los usuarios conectados,
+
+349
+00:31:06,000 --> 00:31:08,000
+él con un documento y el con otro documento,
+
+350
+00:31:08,000 --> 00:31:11,000
+si él mueve su gráfica puedo querer o no que la suya se mueva.
+
+351
+00:31:11,000 --> 00:31:14,000
+Pues tengo que distinguirlas y si quiero relacionarlas,
+
+352
+00:31:14,000 --> 00:31:16,000
+lo utilizo con ese identificador.
+
+353
+00:31:16,000 --> 00:31:18,000
+Le digo, la gráfica número 3 de este sujeto
+
+354
+00:31:18,000 --> 00:31:20,000
+y la gráfica número 3 de este sujeto
+
+355
+00:31:20,000 --> 00:31:22,000
+vienen en el mismo identificador.
+
+356
+00:31:22,000 --> 00:31:24,000
+Por lo cual, cuando cambia algo de una o también la de la pata.
+
+357
+00:31:24,000 --> 00:31:27,000
+¿Todo esto también es aplicable cuando estás usando bokeh server?
+
+358
+00:31:27,000 --> 00:31:30,000
+De hecho, básicamente es aplicable cuando usas bokeh server,
+
+359
+00:31:30,000 --> 00:31:32,000
+porque si ya no usas bokeh server,
+
+360
+00:31:32,000 --> 00:31:34,000
+tienes que hacer muchos hacks para,
+
+361
+00:31:34,000 --> 00:31:38,000
+digamos que no es una prioridad en la librería hacer eso todavía.
+
+362
+00:31:38,000 --> 00:31:40,000
+¿No lo rego, sirve y no diga?
+
+363
+00:31:40,000 --> 00:31:41,000
+Sí.
+
+364
+00:31:41,000 --> 00:31:42,000
+Utilizan eso.
+
+365
+00:31:42,000 --> 00:31:43,000
+Exacto.
+
+366
+00:31:43,000 --> 00:31:44,000
+Le digo eso.
+
+367
+00:31:44,000 --> 00:31:46,000
+Entonces, tener identificadores únicos
+
+368
+00:31:46,000 --> 00:31:49,000
+y que el servidor gestione todos esos identificadores
+
+369
+00:31:49,000 --> 00:31:51,000
+permite conectar las cosas de una forma muy sencilla,
+
+370
+00:31:51,000 --> 00:31:53,000
+pero también te hace ejectos secundarios
+
+371
+00:31:53,000 --> 00:31:55,000
+que hay que tener en cuenta, como eso.
+
+372
+00:31:55,000 --> 00:31:57,000
+Asterisco, asterisco, asterisco, que me ha pasado a mí.
+
+373
+00:31:57,000 --> 00:31:59,000
+No vale un punto copy, ¿vale?
+
+374
+00:31:59,000 --> 00:32:02,000
+Porque eso copia la estructura de Python,
+
+375
+00:32:02,000 --> 00:32:04,000
+pero el identificador sigue siendo un stream de Python
+
+376
+00:32:04,000 --> 00:32:06,000
+que se copia, por lo cual la librería Java Stream
+
+377
+00:32:06,000 --> 00:32:08,000
+sigue usando lo mismo.
+
+378
+00:32:08,000 --> 00:32:11,000
+De hecho, un comid que voy a hacer a bokeh
+
+379
+00:32:11,000 --> 00:32:13,000
+es que cuando hagas un copy, te cambia eso,
+
+380
+00:32:13,000 --> 00:32:17,000
+de manera que tú puedas hacer un copy sin tener que estar haciendo mano.
+
+381
+00:32:17,000 --> 00:32:20,000
+Esto es la clave de bokeh, si entiendes esto,
+
+382
+00:32:20,000 --> 00:32:22,000
+vas a ver por qué falla.
+
+383
+00:32:22,000 --> 00:32:24,000
+Vale, bueno, esto.
+
+384
+00:32:24,000 --> 00:32:27,000
+Blah, blah, blah, blah, blah.
+
+385
+00:32:27,000 --> 00:32:28,000
+Bien.
+
+386
+00:32:28,000 --> 00:32:29,000
+Bueno, documento...
+
+387
+00:32:29,000 --> 00:32:30,000
+Ya está.
+
+388
+00:32:30,000 --> 00:32:32,000
+No hay nada más relevante.
+
+389
+00:32:32,000 --> 00:32:35,000
+Entonces, gracias a ese disón podemos hacer...
+
+390
+00:32:35,000 --> 00:32:40,000
+eTERN, el mismo inline, el status, podemos meter todo.
+
+391
+00:32:40,000 --> 00:32:43,000
+Podemos hacer un documento que es el conjunto de las gráficas
+
+392
+00:32:43,000 --> 00:32:45,000
+y lo que os he comentado antes,
+
+393
+00:32:45,000 --> 00:32:47,000
+tenemos Column Datasaws y tenemos Iax Datasaws.
+
+394
+00:32:47,000 --> 00:32:51,000
+Por ahora existen esas dos orígenes de datos.
+
+395
+00:32:51,000 --> 00:32:58,000
+Estamos trabajando porque si os fijáis, o si, bitlata, bitlata, pero también vean las cosas en Ajax, u que bitlata, todo.
+
+396
+00:32:58,000 --> 00:33:03,000
+El problema es que si envías 25 millones de registros por Ajax, pues la cosa se te va de malo, ¿bien?
+
+397
+00:33:03,000 --> 00:33:09,000
+Entonces, estamos trabajando porque hay niveles de JavaScript que leen que envíe todo esto por algo.
+
+398
+00:33:09,000 --> 00:33:15,000
+Vamos a hacer flujos de algo. Abro es un protocolo de compresión de datos,
+
+399
+00:33:15,000 --> 00:33:22,000
+y un compresión de datos, un empatizamiento de datos con enviado. Vamos a sustituir un Ajax de datos Sol por un Abro de datos Sol.
+
+400
+00:33:22,000 --> 00:33:26,000
+De manera que cuando envíais muchos datos, pues eso vamos a tomar.
+
+401
+00:33:26,000 --> 00:33:31,000
+Bueno, entonces, vamos a hacer un pequeño hack. Tenéis quedado alguna de las gráficas, porque la no sirve, ¿vale?
+
+402
+00:33:31,000 --> 00:33:34,000
+La primera de barras nos va a servir.
+
+403
+00:33:34,000 --> 00:33:36,000
+Eso...
+
+404
+00:33:36,000 --> 00:33:40,000
+Se llama pela mía, ¿sí? Vale, bueno, es un chart.
+
+405
+00:33:40,000 --> 00:33:45,000
+Esto es fantástico.
+
+406
+00:33:45,000 --> 00:33:50,000
+Bueno, perdón. Ya vamos a ver otro operatis.
+
+407
+00:33:50,000 --> 00:33:53,000
+Vale.
+
+408
+00:33:53,000 --> 00:33:58,000
+Tenéis que... son cientos de propiedades, ¿vale?
+
+409
+00:33:58,000 --> 00:34:02,000
+Que están muy bien, ya estén concentradas en un sitio porque estas son propiedades,
+
+410
+00:34:02,000 --> 00:34:07,000
+de las cuales Go que se va a encargar, de si tú la cambias como un objeto normal,
+
+411
+00:34:07,000 --> 00:34:10,000
+se va a encargar de que cambien donde tengas que cambiar.
+
+412
+00:34:10,000 --> 00:34:13,000
+Es decir, si estás teniendo loja de cliente, lógica de cliente servidor, le avisas.
+
+413
+00:34:13,000 --> 00:34:17,000
+He cambiado esto y se va a actualizar magicamente en el lado del cliente.
+
+414
+00:34:17,000 --> 00:34:18,000
+¿Vale?
+
+415
+00:34:18,000 --> 00:34:20,000
+Eso incluye los datos.
+
+416
+00:34:20,000 --> 00:34:23,000
+Eso es lo guay para hacer streaming. Yo estoy recibiendo datos en streaming.
+
+417
+00:34:23,000 --> 00:34:25,000
+Yo los enseño en un ejemplo.
+
+418
+00:34:25,000 --> 00:34:29,000
+Tengo un call of data source creado a un slip de 5 segundos.
+
+419
+00:34:29,000 --> 00:34:31,000
+Cingir el streaming.
+
+420
+00:34:31,000 --> 00:34:34,000
+Cambio el data source, le aviso al servidor de que ha cambiado el data source,
+
+421
+00:34:34,000 --> 00:34:38,000
+y automáticamente se lo envía al tío sin que yo tenga que mirar el data source a la lógica de la text.
+
+422
+00:34:38,000 --> 00:34:42,000
+La agrupación de todo esto es que cualquier de estas propiedades se pueden modificar.
+
+423
+00:34:42,000 --> 00:34:46,000
+Es bueno, tenéis lo típico. Quiero cambiar el logo, quiero cambiar el color, quiero cambiar el tal.
+
+424
+00:34:46,000 --> 00:34:49,000
+Y estas son otras cosas que son geniales porque si tú, esto es un diccionario,
+
+425
+00:34:49,000 --> 00:34:51,000
+esto lo puedes meter como un diccionario.
+
+426
+00:34:51,000 --> 00:34:54,000
+Es lo que hacemos, por ejemplo, en VVA.
+
+427
+00:34:54,000 --> 00:34:58,000
+Tenemos estilos de acasos marizados que son diccionarios.
+
+428
+00:34:58,000 --> 00:35:03,000
+Yo digo, el borde de la izquierda tiene que medir esto, tiene que ser el de color azul,
+
+429
+00:35:03,000 --> 00:35:06,000
+tiene que ser tal. Todo eso ya está maquinizado en un diccionario.
+
+430
+00:35:06,000 --> 00:35:11,000
+Entonces lo que hago es cuando creo que hubo un chat, le meto con un update en ese nuevo diccionario,
+
+431
+00:35:11,000 --> 00:35:14,000
+y entonces ya tengo el estilo que se respete corporativo, el que sea.
+
+432
+00:35:14,000 --> 00:35:16,000
+Es una forma como muy rápida tener estilos.
+
+433
+00:35:16,000 --> 00:35:21,000
+Esto no es una práctica frecuente en boke, pero cuando lo descubrimos, tenemos la misma entidad.
+
+434
+00:35:21,000 --> 00:35:26,000
+Que sepáis que eso te permite hacer una personalización bastante grande.
+
+435
+00:35:26,000 --> 00:35:32,000
+Bueno, pues nada, que eso que puedes bucear un montón de las propiedades, que tenéis aquí un poco de todo,
+
+436
+00:35:32,000 --> 00:35:37,000
+yo voy a poner la grafica esta, de cambiar el fondo de pantalla.
+
+437
+00:35:37,000 --> 00:35:41,000
+O sea, el fondo de la grafica.
+
+438
+00:35:41,000 --> 00:35:46,000
+Ahora os explico cómo está pasando esto.
+
+439
+00:35:49,000 --> 00:35:51,000
+¿Qué pasa aquí?
+
+440
+00:35:51,000 --> 00:35:55,000
+Efectivamente se ha cambiado el fondo a Blizz en la gráfica P,
+
+441
+00:35:55,000 --> 00:36:03,000
+pero como se ha mencionado, por aquí, en donde está mi pie,
+
+442
+00:36:03,000 --> 00:36:07,000
+vale, lo he ejecutado de nuevo, si no hubies hecho eso, lo voy a hacer esto.
+
+443
+00:36:07,000 --> 00:36:11,000
+Voy a explicar por qué me pasa y lo dejamos hacer.
+
+444
+00:36:11,000 --> 00:36:15,000
+Esto pasa porque en uno de los ejemplos de abajo, que está probando, me está esperando afuera,
+
+445
+00:36:15,000 --> 00:36:18,000
+en vez de un notebook he puesto un notebook html,
+
+446
+00:36:18,000 --> 00:36:21,000
+entonces cada vez que hago algo me lo saco un html y me lo abre.
+
+447
+00:36:21,000 --> 00:36:25,000
+¿Qué tengo que hacer? Reiniciar el kernel, digo que se os pasa una vez,
+
+448
+00:36:25,000 --> 00:36:29,000
+reinicio el kernel del Python Server para que me pide una nueva sesión de Python.
+
+449
+00:36:29,000 --> 00:36:34,000
+También se puede cerrar explícitamente, pero no me voy a poner más cerrado explícitamente.
+
+450
+00:36:34,000 --> 00:36:39,000
+Reinicio los outputs y el kernel.
+
+451
+00:36:39,000 --> 00:36:42,000
+Eso significa que dos cosas muy importantes que hay que distinguir,
+
+452
+00:36:42,000 --> 00:36:48,000
+que la consola de Python va hasta la cero, pero que además no va a haber Javascripts en el lado del cliente,
+
+453
+00:36:48,000 --> 00:36:53,000
+porque muchas veces interactúan. Siempre que empeces con un notebook, me empiezas dos cosas
+
+454
+00:36:53,000 --> 00:36:56,000
+y reinicies la página.
+
+455
+00:36:56,000 --> 00:37:00,000
+Así que está limpio, no está cargado el Nibok Js, me está cargado.
+
+456
+00:37:00,000 --> 00:37:06,000
+Así, rápidamente, pude un ap aquí,
+
+457
+00:37:06,000 --> 00:37:19,000
+lo estapé de aquí, me lo bajo el trabajo.
+
+458
+00:37:19,000 --> 00:37:24,000
+Bueno, se llama la fila, perdón, haznos un html.
+
+459
+00:37:24,000 --> 00:37:36,000
+Perfecto, perfecto.
+
+460
+00:37:36,000 --> 00:37:49,000
+Ahí está, nos lo vamos aquí abajo, voy a reducir esto.
+
+461
+00:37:49,000 --> 00:37:54,000
+Ahora, ha cambiado de abajo, os fijáis que es la misma de arriba roja que pintado.
+
+462
+00:37:54,000 --> 00:37:57,000
+Nos vamos arriba, ¿vale? Ha cambiado también.
+
+463
+00:37:57,000 --> 00:38:01,000
+Por la razón que os he explicado, es un efecto secundario porque boke por ahora no tiene muy bien desarrollado
+
+464
+00:38:01,000 --> 00:38:04,000
+evitar los efectos secundarios, los efectos laterales.
+
+465
+00:38:04,000 --> 00:38:07,000
+Bueno, esta es la típica cosa que te rompe la cabeza hasta que alguien te dice,
+
+466
+00:38:07,000 --> 00:38:10,000
+oye, que es simplemente esto y te dice, ah, vale, pues bueno,
+
+467
+00:38:10,000 --> 00:38:15,000
+eso es lo que voy a intentar contarlos aquí arriba, porque la documentación de boke está bastante bien.
+
+468
+00:38:15,000 --> 00:38:20,000
+Ahora os voy a seguir los ejemplos y apriete un montón en dos días, está siendo un experto ya todo día.
+
+469
+00:38:20,000 --> 00:38:24,000
+Bueno, os dije que se pueden meter los datos como nombre y columna,
+
+470
+00:38:24,000 --> 00:38:27,000
+se pueden meter como constantes y se pueden meter como vectores.
+
+471
+00:38:27,000 --> 00:38:31,000
+Es un ejemplo que muestra eso.
+
+472
+00:38:31,000 --> 00:38:35,000
+Ahora os pondré algún ejemplo para que nos detengamos en él y empecéis a codificarlos.
+
+473
+00:38:35,000 --> 00:38:42,000
+Simplemente que os quedeis placo para cómo funciona, pero nada, quiero datos aleatorios.
+
+474
+00:38:42,000 --> 00:38:50,000
+Si os fijáis, los otros conectores son vectores y quiero colores en código X a 10 para HTML,
+
+475
+00:38:50,000 --> 00:38:53,000
+o sea, eso es lo que está haciendo ahí en ese formato.
+
+476
+00:38:53,000 --> 00:38:59,000
+Esto que estoy viendo es un típico simulito de alternativa gráfica 3,
+
+477
+00:38:59,000 --> 00:39:02,000
+código X a 10 para representar un colo en HTML,
+
+478
+00:39:02,000 --> 00:39:08,000
+entonces genero datos de X, genero datos de Y, genero radios, genero colores.
+
+479
+00:39:08,000 --> 00:39:13,000
+Vale, importo lo que tenía que haber importado que está por aquí.
+
+480
+00:39:26,000 --> 00:39:30,000
+Ahora cuando hagamos el ejemplo, ya os digo que cosas tenéis que importar, no os preocupéis.
+
+481
+00:39:30,000 --> 00:39:41,000
+Y... Vale, bien, vale, qué bonita.
+
+482
+00:39:41,000 --> 00:39:47,000
+Distinción respecto al anterior, primero no necesitas pandas porque hay algunos entornos
+
+483
+00:39:47,000 --> 00:39:50,000
+que aunque no lo que es, no tengáis amizado pandas.
+
+484
+00:39:50,000 --> 00:39:53,000
+Te metes un vector que pues es un vector de non-py o cualquier iterable,
+
+485
+00:39:53,000 --> 00:39:56,000
+si tiene una función de X, si tiene la extracción de iteración,
+
+486
+00:39:56,000 --> 00:40:00,000
+puede pintarse en bokeh, ya está, metes un vector.
+
+487
+00:40:00,000 --> 00:40:04,000
+Pero una constante, acá, es un vector de elemento 1 que va repitiendo y todos son azules.
+
+488
+00:40:04,000 --> 00:40:06,000
+Vale, la única que va por debajo es esa.
+
+489
+00:40:06,000 --> 00:40:10,000
+Si pones elementos, depende la opción de bokeh, si pones vectores de distinto,
+
+490
+00:40:10,000 --> 00:40:13,000
+las locentudes, dependen la opción de las cosas.
+
+491
+00:40:13,000 --> 00:40:17,000
+Paya y te da un error o duplica el más corto.
+
+492
+00:40:17,000 --> 00:40:19,000
+Duplicar el más corto, que es una...
+
+493
+00:40:19,000 --> 00:40:22,000
+Es porque la mayoría de la gente que viene de M,
+
+494
+00:40:22,000 --> 00:40:26,000
+si hay un vector de re-vectores, es ese, si hay dos vector de distinto,
+
+495
+00:40:26,000 --> 00:40:30,000
+da longitud y si hay que hacer una opción conjunta, coge el más corto y lo duplica y acorrega.
+
+496
+00:40:30,000 --> 00:40:32,000
+Y aquí, para que lo vean, es...
+
+497
+00:40:32,000 --> 00:40:36,000
+Según la opción que dices, que tengáis en cuenta eso, porque no te avisa,
+
+498
+00:40:36,000 --> 00:40:41,000
+¿cuál es peor todavía? Bueno, bonito, que precioso, y...
+
+499
+00:40:41,000 --> 00:40:46,000
+Por ahora nada, va. Bien, hemos dicho que estaba pensado para Big Data.
+
+500
+00:40:46,000 --> 00:40:49,000
+Ahora sí, de hecho, vamos a hacer una cosa.
+
+501
+00:40:49,000 --> 00:40:53,000
+Y caldo, descortito y vamos a utilizar la sección para un par de cosas.
+
+502
+00:40:53,000 --> 00:40:56,000
+Mientras, voy en contacto...
+
+503
+00:40:56,000 --> 00:40:58,000
+¿No se ve?
+
+504
+00:41:01,000 --> 00:41:03,000
+Ahí. Bien.
+
+505
+00:41:06,000 --> 00:41:09,000
+Tené aquí todo esto para que se vea todo.
+
+506
+00:41:09,000 --> 00:41:15,000
+Ahí lo tenéis. Vale.
+
+507
+00:41:15,000 --> 00:41:19,000
+Con los dos vector, un país está importado como Np, ¿vale?
+
+508
+00:41:19,000 --> 00:41:21,000
+Te doy con eso.
+
+509
+00:41:30,000 --> 00:41:33,000
+Cuando lo tengáis, me vais...
+
+510
+00:41:33,000 --> 00:41:40,000
+No estamos malo cuando esté, ¿vale? No lo tenéis ahí para irme dando yo cuenta de cómo van a hacer.
+
+511
+00:41:40,000 --> 00:41:47,000
+Vale, entonces, este nivel de interfaz ya hemos pasado de echar a plotting, ¿vale?
+
+512
+00:41:47,000 --> 00:41:51,000
+Echar se usa, como veis, para cosas súper básicas, pero cuando quieres hacer algo ligeramente más complejo,
+
+513
+00:41:51,000 --> 00:41:53,000
+es que tienes que ir a plotting.
+
+514
+00:41:53,000 --> 00:41:58,000
+Lo primero que tiene plotting es que funciona muy bien, muy parecido al disciplón o a otras librerías,
+
+515
+00:41:58,000 --> 00:42:03,000
+que es tú creas una figura y le vas añadiendo capas, capas o blips. Quiero estos círculos,
+
+516
+00:42:03,000 --> 00:42:06,000
+y además quiero estos círculos, quiero estas líneas, y además quiero estos textos,
+
+517
+00:42:06,000 --> 00:42:09,000
+y además quiero estas curvas.
+
+518
+00:42:09,000 --> 00:42:12,000
+Pero todo eso junto te va a pintar una gráfica.
+
+519
+00:42:18,000 --> 00:42:20,000
+Eso me lo suporto, ¿cómo pasa el tiempo?
+
+520
+00:42:20,000 --> 00:42:30,000
+A ver, y nos conocemos de hace un año ya.
+
+521
+00:42:51,000 --> 00:42:53,000
+¿Obién se llama una duda?
+
+522
+00:42:53,000 --> 00:42:55,000
+Aquí, ¿no?
+
+523
+00:42:55,000 --> 00:42:56,000
+¿O sea otro?
+
+524
+00:42:56,000 --> 00:42:58,000
+Un profil.
+
+525
+00:42:58,000 --> 00:42:59,000
+¿Eh?
+
+526
+00:42:59,000 --> 00:43:00,000
+Un profil.
+
+527
+00:43:00,000 --> 00:43:01,000
+Ah, sí, sí, sí.
+
+528
+00:43:01,000 --> 00:43:03,000
+Vale.
+
+529
+00:43:07,000 --> 00:43:09,000
+¿Ve a cambiar un segundito esto?
+
+530
+00:43:09,000 --> 00:43:11,000
+Simple.
+
+531
+00:43:13,000 --> 00:43:14,000
+Sí, no sé.
+
+532
+00:43:14,000 --> 00:43:21,000
+Es rápido y el fin es muy rápido.
+
+533
+00:43:29,000 --> 00:43:31,000
+¿Lo dejamos?
+
+534
+00:43:31,000 --> 00:43:33,000
+No.
+
+535
+00:43:33,000 --> 00:43:37,000
+Vale, solo trata que importéis figura y figura.
+
+536
+00:43:37,000 --> 00:43:39,000
+Ya está, ¿vale?
+
+537
+00:43:39,000 --> 00:43:41,000
+¿Qué es esto?
+
+538
+00:43:41,000 --> 00:43:44,000
+De hecho os voy a quitar los restos por ahora.
+
+539
+00:43:44,000 --> 00:43:46,000
+Vale.
+
+540
+00:43:46,000 --> 00:43:49,000
+Estamos usando el nivel plotting, ¿como veis?
+
+541
+00:43:49,000 --> 00:43:51,000
+¿Vale?
+
+542
+00:43:51,000 --> 00:43:55,000
+¿Te acupe a vas a ir circulando?
+
+543
+00:43:55,000 --> 00:43:56,000
+Sí.
+
+544
+00:43:56,000 --> 00:43:57,000
+Por ser un amo.
+
+545
+00:43:57,000 --> 00:44:00,000
+No, sí, perdón, te vas a ir circulando porque no me da cuenta.
+
+546
+00:44:00,000 --> 00:44:02,000
+Porque los dos hemos usado como método de P.
+
+547
+00:44:02,000 --> 00:44:05,000
+Puedes usarlo como método de P o puedes invocarlo aparte y creamos un circulo.
+
+548
+00:44:05,000 --> 00:44:07,000
+Vale.
+
+549
+00:44:07,000 --> 00:44:09,000
+Pero muy bueno.
+
+550
+00:44:12,000 --> 00:44:14,000
+¿Algo que nos instinga el código?
+
+551
+00:44:14,000 --> 00:44:15,000
+Vale.
+
+552
+00:44:15,000 --> 00:44:16,000
+Mientras copies, lo vemos.
+
+553
+00:44:16,000 --> 00:44:18,000
+Creamos un vector rectorio de 1000 elementos.
+
+554
+00:44:18,000 --> 00:44:21,000
+Lo multiplicamos por 100 para que esté en la escala de 0 a 100.
+
+555
+00:44:21,000 --> 00:44:24,000
+Lo multiplicamos por 100 para que esté en la escala de 0 a 100.
+
+556
+00:44:24,000 --> 00:44:29,000
+Creamos radios, que es hacer lo mismo por la escala de 0 a 1,5.
+
+557
+00:44:29,000 --> 00:44:31,000
+Y creamos colores.
+
+558
+00:44:31,000 --> 00:44:37,000
+Lo que tiene gracia es básicamente, estoy haciendo un discompresión de el valor en rojo,
+
+559
+00:44:37,000 --> 00:44:42,000
+en verde y en azul, que es constante de 150,
+
+560
+00:44:42,000 --> 00:44:46,000
+por la posición en X, convertido en una escala distinta,
+
+561
+00:44:46,000 --> 00:44:48,000
+la posición de Y convertido en una escala distinta,
+
+562
+00:44:48,000 --> 00:44:51,000
+y eso va a hacer que a medida que nos muevamos hacia abajo,
+
+563
+00:44:51,000 --> 00:44:53,000
+hacia la derecha, el color de las bolas cambia.
+
+564
+00:44:53,000 --> 00:44:57,000
+Vale, básicamente, estamos usando los valores de X para crear un color.
+
+565
+00:44:57,000 --> 00:45:03,000
+En este formato, 0,2X quiere decir un X a decimal con dos caracteres de tamaño,
+
+566
+00:45:03,000 --> 00:45:08,000
+por lo cual si es el 1 va a poner el 0,1, si es el 255 va a poner el X.
+
+567
+00:45:08,000 --> 00:45:11,000
+Es así como se componen los colores en HTML.
+
+568
+00:45:11,000 --> 00:45:13,000
+Bien.
+
+569
+00:45:13,000 --> 00:45:15,000
+Ya sabéis, está HTML.
+
+570
+00:45:15,000 --> 00:45:16,000
+Bien.
+
+571
+00:45:16,000 --> 00:45:23,000
+Creamos una figura que es el canvas vacío, el canvas más básico,
+
+572
+00:45:23,000 --> 00:45:25,000
+que le puedes dar a bloque.
+
+573
+00:45:25,000 --> 00:45:31,000
+Le metemos los rambos para que los tengas, y sobre ese canvas pintamos círculos.
+
+574
+00:45:31,000 --> 00:45:37,000
+Con el vector X, el vector Y, radios, color de enveneno, opacidad,
+
+575
+00:45:37,000 --> 00:45:42,000
+y si le queremos quitar la línea en la roya, los color de la línea, no.
+
+576
+00:45:42,000 --> 00:45:46,000
+Otra cosa útil cuando empiezas con boques,
+
+577
+00:45:46,000 --> 00:45:48,000
+yo empiezo por el principio de la documentación y dice,
+
+578
+00:45:48,000 --> 00:45:50,000
+no, mira qué ejemplo tan bonito, no sé cuánto,
+
+579
+00:45:50,000 --> 00:45:53,000
+pero si te vas al final del todo en la API,
+
+580
+00:45:53,000 --> 00:46:01,000
+ahí los chat, como los distintos glyphs, los distintos plotting que tienen,
+
+581
+00:46:01,000 --> 00:46:05,000
+tienen propiedades de relleno y propiedades de línea.
+
+582
+00:46:05,000 --> 00:46:07,000
+Vale, todo eso.
+
+583
+00:46:07,000 --> 00:46:11,000
+Fill, guion bajo alpha, fill, guion bajo color, fill, guion bajo pattern,
+
+584
+00:46:11,000 --> 00:46:13,000
+fill, guion bajo, otras cosas.
+
+585
+00:46:13,000 --> 00:46:14,000
+Y de línea.
+
+586
+00:46:14,000 --> 00:46:17,000
+Todos los glyphs que tienen línea, tienen todos los parámetros de línea.
+
+587
+00:46:17,000 --> 00:46:20,000
+Todos los glyphs que tengan relleno, tienen todos los parámetros de fills.
+
+588
+00:46:20,000 --> 00:46:23,000
+Y los especiales como el texto que tienen los suyos propios.
+
+589
+00:46:23,000 --> 00:46:26,000
+Una vez a vez cuáles son, ya lo puedes aplicar prácticamente todo.
+
+590
+00:46:26,000 --> 00:46:28,000
+Entonces, eso yo, si empecéis con boques,
+
+591
+00:46:28,000 --> 00:46:30,000
+recomendaría que después de los ejemplos básicos,
+
+592
+00:46:30,000 --> 00:46:34,000
+el fueseis a la API y viséis para que sonasen todas las propiedades que hay
+
+593
+00:46:34,000 --> 00:46:36,000
+y ya las intercésis a usar.
+
+594
+00:46:36,000 --> 00:46:38,000
+Y cuando quieres eliminar algo, en general,
+
+595
+00:46:38,000 --> 00:46:41,000
+lo opones cadena vacía, opones un NON y te lo elimina.
+
+596
+00:46:41,000 --> 00:46:43,000
+Vale, es bastante intuitiva la API.
+
+597
+00:46:43,000 --> 00:46:45,000
+Lo tenemos todo ya.
+
+598
+00:46:45,000 --> 00:46:47,000
+¿Aguien falta? Vale.
+
+599
+00:46:47,000 --> 00:46:50,000
+Entonces, bueno, lo mostramos.
+
+600
+00:46:53,000 --> 00:46:55,000
+No sale esto. ¿Bien?
+
+601
+00:46:56,000 --> 00:46:58,000
+Ahora, vamos a hacer una súper modificación.
+
+602
+00:46:58,000 --> 00:47:01,000
+Vamos a hacer, en vez de, mira elementos en la 10.000.
+
+603
+00:47:01,000 --> 00:47:03,000
+Vale, esa es la modificación. Es el primer ejercicio.
+
+604
+00:47:03,000 --> 00:47:05,000
+Vale, ahora agarraéis por qué.
+
+605
+00:47:06,000 --> 00:47:10,000
+Pues cambéis el 10.000 en la línea de la ITIS, cambéis el 10.000 en la línea de I,
+
+606
+00:47:10,000 --> 00:47:12,000
+cambéis el 10.000 en la línea de radios.
+
+607
+00:47:12,000 --> 00:47:14,000
+Y ya está.
+
+608
+00:47:14,000 --> 00:47:19,000
+Vale, sí, lo sé, es difícil, pero hay que empezar por lo más rápido.
+
+609
+00:47:20,000 --> 00:47:22,000
+Vale.
+
+610
+00:47:24,000 --> 00:47:26,000
+Oye, mucho más bonito.
+
+611
+00:47:29,000 --> 00:47:31,000
+Esto lo vamos a ver por lo siguiente.
+
+612
+00:47:31,000 --> 00:47:35,000
+Cuando tú quieras hacer interactividad y esto es sobre los conceptos clave de boque,
+
+613
+00:47:35,000 --> 00:47:37,000
+cuando entres meter interactividad en los gráficos,
+
+614
+00:47:37,000 --> 00:47:39,000
+hay unos conceptos que se llaman tools,
+
+615
+00:47:39,000 --> 00:47:43,000
+que son distintos añadidos que le puedes poner a un gráfico.
+
+616
+00:47:43,000 --> 00:47:45,000
+Me pongo ejemplos.
+
+617
+00:47:45,000 --> 00:47:47,000
+Un tool tip cuando pasas el trato por encima.
+
+618
+00:47:47,000 --> 00:47:48,000
+Eso es un tools.
+
+619
+00:47:48,000 --> 00:47:50,000
+Una línea de referencia en el FX,
+
+620
+00:47:50,000 --> 00:47:53,000
+una línea de referencia en el FI.
+
+621
+00:47:53,000 --> 00:47:58,000
+Hacer un zoom, seleccionar por lazo, seleccionar por cuadrado, seleccionar por polígono.
+
+622
+00:47:58,000 --> 00:48:01,000
+Todo eso son tools invoques.
+
+623
+00:48:01,000 --> 00:48:03,000
+Las todas esas herramientas las puedes meter a boque.
+
+624
+00:48:03,000 --> 00:48:04,000
+¿Bien?
+
+625
+00:48:04,000 --> 00:48:05,000
+Concepto ejercicio.
+
+626
+00:48:05,000 --> 00:48:07,000
+Tenemos una figura y le metemos herramienta.
+
+627
+00:48:07,000 --> 00:48:08,000
+Bien.
+
+628
+00:48:08,000 --> 00:48:13,000
+Entonces, como se hace de forma sencilla esta,
+
+629
+00:48:13,000 --> 00:48:16,000
+para empezar a jackear un poquito las gráficas,
+
+630
+00:48:16,000 --> 00:48:19,000
+vamos a bajar del nivel de plotting a nivel de models.
+
+631
+00:48:19,000 --> 00:48:22,000
+Pero como os he dicho antes, podéis intercambiar los dos.
+
+632
+00:48:22,000 --> 00:48:29,000
+Es decir, puedes importar un modelo y usarlo con el lápide de plotting.
+
+633
+00:48:29,000 --> 00:48:37,000
+Entonces, vamos a importar de boque, de models, de pláticos,
+
+634
+00:48:37,000 --> 00:48:38,000
+de models.
+
+635
+00:48:38,000 --> 00:48:44,000
+Entonces, para que os hagáis una idea, las cosas que vienen aquí vienen muchísimas cosas.
+
+636
+00:48:44,000 --> 00:48:47,000
+Porque como os he dicho todo, enfoque en cerre.
+
+637
+00:48:47,000 --> 00:48:52,000
+Entonces, viene desde eje hasta tick hasta tamaño de letra pasando por color.
+
+638
+00:48:52,000 --> 00:48:55,000
+Todo es un modelo y todo esto está implementado en este nivel.
+
+639
+00:48:55,000 --> 00:48:58,000
+Es el nivel más haso de boque.
+
+640
+00:48:58,000 --> 00:49:00,000
+Entonces, vamos a importar,
+
+641
+00:49:00,000 --> 00:49:08,000
+un medio, un túl, todas las tools acaban en tools.
+
+642
+00:49:08,000 --> 00:49:16,000
+Y básicamente es una clase en la que tú lo puedes meter a propiedades
+
+643
+00:49:16,000 --> 00:49:18,000
+para decirle, oye, cuando el tipo pasa el trastón por encima,
+
+644
+00:49:18,000 --> 00:49:19,000
+¿qué ocurra esto?
+
+645
+00:49:19,000 --> 00:49:21,000
+Es la que se va a encargar de cristianar esa lógica.
+
+646
+00:49:21,000 --> 00:49:31,000
+Bueno, la importamos y vamos a hacer nuestro primer tool.
+
+647
+00:49:31,000 --> 00:49:33,000
+Y os voy a poner el ejemplo.
+
+648
+00:49:38,000 --> 00:49:40,000
+El ejemplo es el mismo que arriba, ¿vale?
+
+649
+00:49:40,000 --> 00:49:43,000
+Igual, solo que antes de pintarlo,
+
+650
+00:49:43,000 --> 00:49:58,000
+antes de pintarlo a la figura P, le vamos a añadir la herramienta que hemos instanciado.
+
+651
+00:49:58,000 --> 00:50:01,000
+Es básicamente la herramienta que instanciamos le vamos a pasar
+
+652
+00:50:01,000 --> 00:50:05,000
+en el constructor un parámetro que es full tips, que son listas,
+
+653
+00:50:05,000 --> 00:50:10,000
+tuplas, listas de tuplas, algo bidimensional en el que es.
+
+654
+00:50:10,000 --> 00:50:13,000
+El elemento de la izquierda, ¿sí?
+
+655
+00:50:13,000 --> 00:50:23,000
+¿Qué está haciendo?
+
+656
+00:50:23,000 --> 00:50:32,000
+¿Qué sabe?
+
+657
+00:50:32,000 --> 00:50:36,000
+Cuando se crea los errores, gracias.
+
+658
+00:50:36,000 --> 00:50:47,000
+¿Veis porque no hay que usar el país en dos?
+
+659
+00:50:47,000 --> 00:51:00,000
+¿Para decirle en esta?
+
+660
+00:51:00,000 --> 00:51:01,000
+¿Vale?
+
+661
+00:51:01,000 --> 00:51:06,000
+Bueno, si creamos el tool que le pasa a distintos parámetros,
+
+662
+00:51:06,000 --> 00:51:08,000
+vamos a ver el más sencillo que es full tips,
+
+663
+00:51:08,000 --> 00:51:13,000
+que es manista de listas o un iterable de ideales,
+
+664
+00:51:13,000 --> 00:51:18,000
+que el primer elemento es el título y el segundo elemento es el valor.
+
+665
+00:51:18,000 --> 00:51:21,000
+El segundo elemento es cualquier stream que tú quieras,
+
+666
+00:51:21,000 --> 00:51:26,000
+en el que las cosas que empiecen por dola o las cosas que empiecen por arroba
+
+667
+00:51:26,000 --> 00:51:28,000
+se van a sustituir por valores.
+
+668
+00:51:28,000 --> 00:51:31,000
+Entonces, la x y la y van a ser sustituidas en ese cubierto
+
+669
+00:51:31,000 --> 00:51:35,000
+y cuando el tipo va a ser pronto por encima, va a cambiar con esos valores.
+
+670
+00:51:35,000 --> 00:51:39,000
+Vale, vale.
+
+671
+00:51:43,000 --> 00:51:48,000
+Vale, otro elemento es la misma rata.
+
+672
+00:51:48,000 --> 00:51:49,000
+¿Qué?
+
+673
+00:51:49,000 --> 00:51:50,000
+¡Voala!
+
+674
+00:51:50,000 --> 00:51:57,000
+Por eso se ha dicho que con la y es ni le, no era porque me molase el efecto de devoción.
+
+675
+00:51:57,000 --> 00:51:58,000
+Dos cosas.
+
+676
+00:51:58,000 --> 00:52:00,000
+Hemos dicho que estaba pensado para Vintet,
+
+677
+00:52:00,000 --> 00:52:02,000
+vamos a ver si está un poco pensado para Vintet.
+
+678
+00:52:02,000 --> 00:52:04,000
+Cuando dejamos scroll,
+
+679
+00:52:04,000 --> 00:52:06,000
+¿qué va a pasar?
+
+680
+00:52:06,000 --> 00:52:08,000
+Que va a haber overlapping de círculos.
+
+681
+00:52:08,000 --> 00:52:11,000
+Entonces, vas a tener dos círculos en la misma posición del gratón.
+
+682
+00:52:11,000 --> 00:52:14,000
+Una de las primeras cosas que ocurre cuando intentas visualizar datos
+
+683
+00:52:14,000 --> 00:52:17,000
+en grandes cantidades es que cuando quieres sacar información de un punto en concreto
+
+684
+00:52:17,000 --> 00:52:21,000
+pasa esto y la mayoría de las librerías te ponen que apita por encima.
+
+685
+00:52:21,000 --> 00:52:23,000
+¿Vale?
+
+686
+00:52:23,000 --> 00:52:27,000
+Puedes, usando una interfaz súper sencilla, ¿vale?
+
+687
+00:52:27,000 --> 00:52:29,000
+Has podido hacer un tútil que además es inteligente
+
+688
+00:52:29,000 --> 00:52:32,000
+y te localiza si estás poniendo encima de dos.
+
+689
+00:52:32,000 --> 00:52:35,000
+Incluso podrías mostrarle al tipo que hay otro parámetro que no nos contaré.
+
+690
+00:52:35,000 --> 00:52:37,000
+Una forma de decirle,
+
+691
+00:52:37,000 --> 00:52:39,000
+¿hay tantos glyphs en este punto?
+
+692
+00:52:39,000 --> 00:52:40,000
+Claro, podría aquí.
+
+693
+00:52:40,000 --> 00:52:43,000
+Hay dos círculos, hay tres círculos, hay ocho círculos.
+
+694
+00:52:43,000 --> 00:52:45,000
+Eso va a estar en la puntación de tuverture
+
+695
+00:52:45,000 --> 00:52:47,000
+si podéis ver los dientes para la piscina.
+
+696
+00:52:47,000 --> 00:52:49,000
+Y una mini cosa es,
+
+697
+00:52:49,000 --> 00:52:53,000
+si ahora voy, me voy a zoom de caja
+
+698
+00:52:53,000 --> 00:52:56,000
+y hago un zoom bastante grande,
+
+699
+00:52:56,000 --> 00:52:58,000
+así que me voy a dar la piscina.
+
+700
+00:52:58,000 --> 00:53:00,000
+Bueno, el caso es que, ¿ves?
+
+701
+00:53:00,000 --> 00:53:02,000
+Si te pones en una, ¿qué pasa?
+
+702
+00:53:02,000 --> 00:53:05,000
+Dos cosas que no nos hemos dado cuenta porque no todavía zoom suficiente.
+
+703
+00:53:05,000 --> 00:53:09,000
+Primero de ellos, el tútil se posiciona sobre un elemento,
+
+704
+00:53:09,000 --> 00:53:10,000
+no sobre el ratón.
+
+705
+00:53:10,000 --> 00:53:12,000
+Hay una forma de que se posicione sobre el ratón.
+
+706
+00:53:12,000 --> 00:53:16,000
+Pero segunda de las cosas, si yo muevo el ratón, ¿qué pasa?
+
+707
+00:53:16,000 --> 00:53:22,000
+La X y la Y, lo cual, bueno, hay que ver por qué.
+
+708
+00:53:22,000 --> 00:53:26,000
+Entonces, todos tenemos el ejemplo ya copiado.
+
+709
+00:53:26,000 --> 00:53:31,000
+Pues vamos a cambiar una cosa y vamos a hacer el tútil.
+
+710
+00:53:31,000 --> 00:53:37,000
+Bueno, hazle una cosa, es una forma, voy a enseñar los cosas que pasan con boke.
+
+711
+00:53:37,000 --> 00:53:42,000
+Sobre escribís, a huberture, lo metes ahí
+
+712
+00:53:42,000 --> 00:53:47,000
+y hacerlo en la celda de abajo, creéis ese nuevo huberture?
+
+713
+00:53:47,000 --> 00:53:50,000
+Y se lo analizas al P, ¿vale?
+
+714
+00:53:50,000 --> 00:53:54,000
+Hacéis el azul al P y lo volvís a imprimir.
+
+715
+00:53:54,000 --> 00:53:58,000
+Pero, bueno, lo más importante, vale, en vez de la chorada que he dicho,
+
+716
+00:53:58,000 --> 00:54:01,000
+lo más importante es que en vez del signo del dólar para la Y y la Y,
+
+717
+00:54:01,000 --> 00:54:02,000
+le he puesto una roba.
+
+718
+00:54:02,000 --> 00:54:04,000
+La roba significa dato del elemento.
+
+719
+00:54:04,000 --> 00:54:06,000
+El dólar significa valor especial.
+
+720
+00:54:06,000 --> 00:54:09,000
+Hay varios valores especiales, por ejemplo, lo que he dicho,
+
+721
+00:54:09,000 --> 00:54:13,000
+que es el de Glyphs, posición del ratón en X, posición del ratón en Y,
+
+722
+00:54:13,000 --> 00:54:17,000
+identificador del usuario, o sea, hay varios valores que tú puedes meter ahí.
+
+723
+00:54:17,000 --> 00:54:20,000
+Incluso puedes meter constantes de Python, o sea, perdón,
+
+724
+00:54:20,000 --> 00:54:25,000
+valores que tú tengas en el servidor de Python, o lo más donde sea.
+
+725
+00:54:25,000 --> 00:54:28,000
+De hecho, también si te pones en la hacker, existe la opción.
+
+726
+00:54:28,000 --> 00:54:31,000
+Yo cuento todas estas cosas para que se veáis que se pueda hacer con boke.
+
+727
+00:54:31,000 --> 00:54:36,000
+Puedes hacer un huberture que en el lado del cliente le hace un callback al servidor,
+
+728
+00:54:36,000 --> 00:54:39,000
+y el servidor diga, oye, hay, y te he movido el ratón en esta posición,
+
+729
+00:54:39,000 --> 00:54:43,000
+y el servidor haga lo que tenga que hacer y envíe lo que va al huberture.
+
+730
+00:54:43,000 --> 00:54:45,000
+Vale, solamente eso se puede hacer.
+
+731
+00:54:45,000 --> 00:54:49,000
+Pero eso tiene la latencia de la comunicación del cliente servidor.
+
+732
+00:54:49,000 --> 00:54:52,000
+Entonces, bueno, que sepáis que si ponés la roba,
+
+733
+00:54:52,000 --> 00:54:55,000
+estamos mirando la propiedad X y estamos mirando la propiedad Y.
+
+734
+00:54:55,000 --> 00:54:58,000
+Si ponéis dólar, le estamos poniendo la posición del ratón X
+
+735
+00:54:58,000 --> 00:55:02,000
+y la posición del ratón Y. Vale, sencillo, y para toda la familia.
+
+736
+00:55:02,000 --> 00:55:09,000
+Entonces, aquí pasa, pero cuando yo hago este cambio, lo voy a ejecutar.
+
+737
+00:55:09,000 --> 00:55:13,000
+Ponemos X y Y.
+
+738
+00:55:13,000 --> 00:55:16,000
+Maldito.
+
+739
+00:55:22,000 --> 00:55:28,000
+Ahora, los números, si yo hago un zoom, los números son fijos, vale.
+
+740
+00:55:28,000 --> 00:55:32,000
+Porque he puesto una roba en medio de un dólar.
+
+741
+00:55:32,000 --> 00:55:35,000
+Bueno, lo que os he dicho de añadir la herramienta a la gráfica
+
+742
+00:55:35,000 --> 00:55:39,000
+sin borrarla en la celda de abajo, es si lo haces así, te va a dar un error.
+
+743
+00:55:39,000 --> 00:55:42,000
+Que va a decir que ese gráfico ya tiene un huberture.
+
+744
+00:55:42,000 --> 00:55:45,000
+Porque ese gráfico ya existe antes y es la misma instancia que antes.
+
+745
+00:55:45,000 --> 00:55:49,000
+Vale, o sea, no penséis en la lógica de librería que exporta un PNG
+
+746
+00:55:49,000 --> 00:55:53,000
+porque entonces, para la escartor, a veces, una gráfica,
+
+747
+00:55:53,000 --> 00:55:55,000
+creanla de nuevo, están hacia atrás.
+
+748
+00:55:55,000 --> 00:55:58,000
+Si no hace modificar las anteriores o te da el no les siguen esperados,
+
+749
+00:55:58,000 --> 00:56:01,000
+como ya tiene el huberture o esta huberture ya tiene gráfica.
+
+750
+00:56:01,000 --> 00:56:04,000
+De hecho, si haces tres gráficas y quieres el mismo huberture,
+
+751
+00:56:04,000 --> 00:56:08,000
+tienes que replicar el huberture tres veces y metes otra vez en una de las gráficas.
+
+752
+00:56:08,000 --> 00:56:12,000
+Esto es más consigliante en el video de hoy, pues como, que hay que innovar.
+
+753
+00:56:12,000 --> 00:56:16,000
+Pero bueno, bien, más cosas.
+
+754
+00:56:16,000 --> 00:56:18,000
+Venga, va, a lo pro.
+
+755
+00:56:18,000 --> 00:56:24,000
+Tiene algunas características que podéis ver en la interfaz de huberture, por ejemplo.
+
+756
+00:56:24,000 --> 00:56:28,000
+He puesto las anubas, con lo cual voy a decir el revalor X y el revalor Y.
+
+757
+00:56:28,000 --> 00:56:32,000
+Pero tenemos unas características especiales, como que tú le puedes decir,
+
+758
+00:56:32,000 --> 00:56:34,000
+quiero que me des la variable color,
+
+759
+00:56:34,000 --> 00:56:39,000
+quiero que me des el revalor X a decimal y un muestrario en cuadrado.
+
+760
+00:56:39,000 --> 00:56:42,000
+Un muestrario en cuadrado, que es decir, que te voy a pinzar el color en un cuadrado.
+
+761
+00:56:42,000 --> 00:56:47,000
+Es típico en herramientas de diseño web que cuando estás poniendo CSS
+
+762
+00:56:47,000 --> 00:56:51,000
+y pones el FFF, te sale un cuadrado en blanco para que sepas que eso es blanco.
+
+763
+00:56:51,000 --> 00:56:55,000
+Pues digamos que le han ido dopando un poco a huberture
+
+764
+00:56:55,000 --> 00:56:58,000
+para que tú puedas hacer ciertas cosas entre ellas, poner un color.
+
+765
+00:56:58,000 --> 00:57:00,000
+La de modo de un color.
+
+766
+00:57:00,000 --> 00:57:02,000
+Entonces, si hacemos esto.
+
+767
+00:57:06,000 --> 00:57:10,000
+Vale, pues queda supermolón, porque hay los colores y su muestrario.
+
+768
+00:57:10,000 --> 00:57:14,000
+No es muy útil la variable color, lo sé, pero es uno de los ejemplos que tienen.
+
+769
+00:57:14,000 --> 00:57:16,000
+De hecho, tienen muy poquitos.
+
+770
+00:57:16,000 --> 00:57:18,000
+Vale.
+
+771
+00:57:18,000 --> 00:57:20,000
+Bien.
+
+772
+00:57:22,000 --> 00:57:24,000
+¿Como bien por aquí?
+
+773
+00:57:24,000 --> 00:57:26,000
+Una cosa dudas, cuestiones.
+
+774
+00:57:26,000 --> 00:57:28,000
+Bien.
+
+775
+00:57:28,000 --> 00:57:30,000
+Una última forma, que es la última que vamos a ver.
+
+776
+00:57:30,000 --> 00:57:32,000
+Sí.
+
+777
+00:57:36,000 --> 00:57:38,000
+¿Cómo te escribirás?
+
+778
+00:57:38,000 --> 00:57:44,000
+Ah, si intento volver a escribir la creación de P.
+
+779
+00:57:44,000 --> 00:57:46,000
+Lo que estoy haciendo yo aquí.
+
+780
+00:57:46,000 --> 00:57:48,000
+¿Es la gráfica?
+
+781
+00:57:48,000 --> 00:57:50,000
+No, los jugaré.
+
+782
+00:57:50,000 --> 00:57:52,000
+¿Qué es la gráfica?
+
+783
+00:57:52,000 --> 00:57:54,000
+Ahí va.
+
+784
+00:57:54,000 --> 00:57:56,000
+Volva a crear la figura P.
+
+785
+00:57:56,000 --> 00:57:58,000
+La cuestión es que no recicles la P.
+
+786
+00:57:58,000 --> 00:58:02,000
+Porque si reciclas la P te va a cambiar todos los gráficos que hayas creado con esa P antes.
+
+787
+00:58:02,000 --> 00:58:04,000
+¿No?
+
+788
+00:58:04,000 --> 00:58:07,000
+Y también has un copy y un depth copy porque no funciona.
+
+789
+00:58:07,000 --> 00:58:11,000
+Porque lo que vos que utiliza para identificar objetos es el uubilén.
+
+790
+00:58:11,000 --> 00:58:14,000
+¿Y por qué hace eso si yo podría identificar objetos en paisan?
+
+791
+00:58:14,000 --> 00:58:18,000
+Pero es que vos que se encarga de que el modelo en el servidor y el modelo en el cliente sea equivalente.
+
+792
+00:58:18,000 --> 00:58:21,000
+Y la única manera que tiene que trajear eso es con el uubilén.
+
+793
+00:58:21,000 --> 00:58:23,000
+¿Y en el uubilén te ha escrito el uubilén?
+
+794
+00:58:23,000 --> 00:58:28,000
+No, y uno de los púrtoms dice que el copy se ha solvido escrito de manera que te cambien el uubilén.
+
+795
+00:58:28,000 --> 00:58:30,000
+¿Vale?
+
+796
+00:58:32,000 --> 00:58:35,000
+Es lo que hay. Si, si yo te entiendo y esto hasta que lo descubres dices, pues vale.
+
+797
+00:58:35,000 --> 00:58:38,000
+Pero una vez que lo dijeras, una tontería crear las estancias.
+
+798
+00:58:38,000 --> 00:58:40,000
+Además, pensad que vos que te lo ponen en no-do,
+
+799
+00:58:40,000 --> 00:58:42,000
+pero no está pensado para hacer no-dos bonitos.
+
+800
+00:58:42,000 --> 00:58:46,000
+Está pensado para hacer clientes servidores y está pensado para hacer gráficas que se saquen.
+
+801
+00:58:46,000 --> 00:58:50,000
+Pues en ese contexto no suele darse el reciclado de peso.
+
+802
+00:58:50,000 --> 00:58:52,000
+¿Vale? Bueno.
+
+803
+00:58:53,000 --> 00:58:55,000
+Vale.
+
+804
+00:58:55,000 --> 00:58:57,000
+Bien.
+
+805
+00:58:58,000 --> 00:59:00,000
+¿Se ve bien?
+
+806
+00:59:00,000 --> 00:59:02,000
+Bueno, le voy a dar un poquito más de...
+
+807
+00:59:02,000 --> 00:59:05,000
+Vale. La última dilla es, le puedes meter
+
+808
+00:59:05,000 --> 00:59:08,000
+cualquier código HTML de caquetezca
+
+809
+00:59:08,000 --> 00:59:10,000
+con los mismos criterios de sustitución
+
+810
+00:59:10,000 --> 00:59:12,000
+que eso te lo va a poner en el tuttip.
+
+811
+00:59:12,000 --> 00:59:16,000
+Pues pues, porque a mí sinceramente el tuttip por defecto de boque es el cero.
+
+812
+00:59:16,000 --> 00:59:18,000
+Entonces, me puedes meter en las dillas.
+
+813
+00:59:18,000 --> 00:59:21,000
+Aquí no me lo cubran mucho, sino entiendo que estoy poniendo una cadena en color rojo
+
+814
+00:59:21,000 --> 00:59:25,000
+en el que me pon al valor del elemento de x y el elemento en y.
+
+815
+00:59:25,000 --> 00:59:27,000
+¿Vale?
+
+816
+00:59:27,000 --> 00:59:30,000
+Entonces, una vez que haces eso, te sacas el HTML.
+
+817
+00:59:33,000 --> 00:59:36,000
+En serio. Me voy a tatuar.
+
+818
+00:59:36,000 --> 00:59:38,000
+Vale.
+
+819
+00:59:38,000 --> 00:59:40,000
+Ya está.
+
+820
+00:59:41,000 --> 00:59:44,000
+¿Vale? Tener cuidado con una cosa, porque esto pasa bastante.
+
+821
+00:59:44,000 --> 00:59:47,000
+Si haces un HTML muy complicado para el Hubertool,
+
+822
+00:59:47,000 --> 00:59:54,000
+si ese HTML no está pensado para ser concatenado, va a fallar.
+
+823
+00:59:54,000 --> 00:59:58,000
+Porque lo que está haciendo por debajo de boque es concatenar los HTML.
+
+824
+00:59:58,000 --> 01:00:00,000
+Como esto es un spam, no pasa nada.
+
+825
+01:00:00,000 --> 01:00:03,000
+Si lo hiciera montado, una lógica más complicada podría fallar.
+
+826
+01:00:03,000 --> 01:00:06,000
+Si lo tú haces coger las cadenas, lo vas a concaterar una vez que lo has hecho,
+
+827
+01:00:06,000 --> 01:00:08,000
+pero las vas a poner.
+
+828
+01:00:08,000 --> 01:00:10,000
+Este comportamiento se puede modificar.
+
+829
+01:00:10,000 --> 01:00:16,000
+Vais a la API y hay un parámetro para que no te concatenen los definiciones de los elementos.
+
+830
+01:00:16,000 --> 01:00:19,000
+¿Bien?
+
+831
+01:00:19,000 --> 01:00:21,000
+De hecho, ahora porque estoy poniendo un spam,
+
+832
+01:00:21,000 --> 01:00:24,000
+si le pasas algo en bloque como un div,
+
+833
+01:00:24,000 --> 01:00:26,000
+te sustituye el div que hay alrededor,
+
+834
+01:00:26,000 --> 01:00:28,000
+porque es bueno para los que se empanen HTML,
+
+835
+01:00:28,000 --> 01:00:30,000
+poco HTML para estar echando.
+
+836
+01:00:30,000 --> 01:00:33,000
+Aquí se va a poner los tres spam, que son elementos en línea,
+
+837
+01:00:33,000 --> 01:00:38,000
+y un div que está rodeando los, que es el encuadre de la encuadra.
+
+838
+01:00:38,000 --> 01:00:41,000
+Si te le pasas un div, te vas a sustituir el div entero,
+
+839
+01:00:41,000 --> 01:00:44,000
+para que tú puedas ponerle górdez, manzana y protúquida.
+
+840
+01:00:44,000 --> 01:00:46,000
+¿Deja?
+
+841
+01:00:46,000 --> 01:00:52,000
+No es para arreglarlo, pero se nos augura hacer un shuffle de color.
+
+842
+01:00:52,000 --> 01:00:54,000
+¿Sí?
+
+843
+01:00:54,000 --> 01:01:00,000
+Cuando se acumula no se ve la cajita de color.
+
+844
+01:01:00,000 --> 01:01:03,000
+Hace el shuffle, sustituye el código,
+
+845
+01:01:03,000 --> 01:01:06,000
+vuelve a crear pay, vuelve a mostrarlo.
+
+846
+01:01:06,000 --> 01:01:09,000
+No hagas el shuffle, igual vas a hacer show P.
+
+847
+01:01:09,000 --> 01:01:12,000
+Está copiado el código.
+
+848
+01:01:12,000 --> 01:01:14,000
+¿No es igual?
+
+849
+01:01:14,000 --> 01:01:16,000
+Lo hago por curiosity.
+
+850
+01:01:16,000 --> 01:01:19,000
+Si es así, reportamos el parámetro.
+
+851
+01:01:19,000 --> 01:01:26,000
+Este ejemplo, vamos a ver si funciona.
+
+852
+01:01:26,000 --> 01:01:29,000
+Este, de hecho, si tenéis conexión a internet,
+
+853
+01:01:29,000 --> 01:01:32,000
+podéis copiarlo. Es el ejemplo de crossfilter de boquets.
+
+854
+01:01:32,000 --> 01:01:34,000
+Si lo auguréis, os sale.
+
+855
+01:01:34,000 --> 01:01:37,000
+Yo este ejemplo lo pongo, no porque lo vayamos a usar.
+
+856
+01:01:37,000 --> 01:01:40,000
+De hecho, podéis mohacerlo, lo lo enseño aquí, a modo de demo,
+
+857
+01:01:40,000 --> 01:01:44,000
+y ya está, para que veáis la lógica que hay antes servido.
+
+858
+01:01:44,000 --> 01:01:48,000
+Me gusta mucho porque, aunque boque todavía es inmaduro,
+
+859
+01:01:48,000 --> 01:01:50,000
+ya en un futuro es como empanitar todo,
+
+860
+01:01:50,000 --> 01:01:52,000
+de una manera que un data scientist,
+
+861
+01:01:52,000 --> 01:01:56,000
+en la lista de datos o en español, pueda utilizarlo de forma sencilla.
+
+862
+01:01:56,000 --> 01:01:58,000
+Direis, hay muchos impositalos.
+
+863
+01:01:58,000 --> 01:02:01,000
+Es relativamente fácil meter.
+
+864
+01:02:01,000 --> 01:02:04,000
+Porque al final acabo la madre de todo el porcreo, es esta línea.
+
+865
+01:02:04,000 --> 01:02:08,000
+Está diciendo, crean un crossfilter, que ahora veremos lo que es un crossfilter,
+
+866
+01:02:08,000 --> 01:02:12,000
+con el dataframe auto MQ, que es el dataframe que hemos visto antes,
+
+867
+01:02:12,000 --> 01:02:14,000
+para los coces.
+
+868
+01:02:14,000 --> 01:02:16,000
+Bueno, sí, hay un montón de boilerplate arriba,
+
+869
+01:02:16,000 --> 01:02:18,000
+pero lo que lo que le dices es,
+
+870
+01:02:18,000 --> 01:02:22,000
+quiero tirar el dataframe, ha convertido cilindro de la iolígena a texto,
+
+871
+01:02:22,000 --> 01:02:25,000
+y eso lo ha hecho para que boque lo trate como un factor,
+
+872
+01:02:25,000 --> 01:02:29,000
+no como un número, o como una cualitativa, no como una cualitativa,
+
+873
+01:02:29,000 --> 01:02:32,000
+para que cuando haga el crossfilter,
+
+874
+01:02:32,000 --> 01:02:34,000
+aparece con una cosa que la veis.
+
+875
+01:02:34,000 --> 01:02:37,000
+Bueno, si os fijáis, los que habéis usado flash, o tornado,
+
+876
+01:02:37,000 --> 01:02:39,000
+o un microfrim o este estilo,
+
+877
+01:02:39,000 --> 01:02:42,000
+donde coladores se ponen la ruta que quieres poner.
+
+878
+01:02:42,000 --> 01:02:48,000
+Si no le pones ruta, boque lo mete como una especie de carpeca rando en staff,
+
+879
+01:02:48,000 --> 01:02:52,000
+y ahí va metiendo todo, y tú tienes un menú para decir la que quieres ver.
+
+880
+01:02:52,000 --> 01:02:56,000
+Pero aquí lo han entrutado para que cuando entremos en la ruta boque crossfilter,
+
+881
+01:02:56,000 --> 01:02:58,000
+¿sabes?
+
+882
+01:02:58,000 --> 01:03:00,000
+Bueno, poco más, es decir,
+
+883
+01:03:00,000 --> 01:03:02,000
+no voy a explicar los datos de ejemplo,
+
+884
+01:03:02,000 --> 01:03:04,000
+pero es detallado porque es mejor verlo.
+
+885
+01:03:04,000 --> 01:03:06,000
+¿Cómo funciona el boque server a pelo?
+
+886
+01:03:06,000 --> 01:03:08,000
+Cogéis este texto, o lo bajáis de internet,
+
+887
+01:03:08,000 --> 01:03:10,000
+y lo ponéis en un Python, en una carpeta, sin más,
+
+888
+01:03:10,000 --> 01:03:12,000
+no tiene más historia,
+
+889
+01:03:12,000 --> 01:03:14,000
+entonces, ahora aquí me interminan de hackeo.
+
+890
+01:03:14,000 --> 01:03:16,000
+¿Qué?
+
+891
+01:03:16,000 --> 01:03:20,000
+Ahí tengo crossfilter pegado.
+
+892
+01:03:20,000 --> 01:03:22,000
+¿Vale?
+
+893
+01:03:22,000 --> 01:03:24,000
+Porque quien quieran copiarlo.
+
+894
+01:03:24,000 --> 01:03:26,000
+Entonces,
+
+895
+01:03:26,000 --> 01:03:30,000
+bueno, algunas cosas importantes.
+
+896
+01:03:30,000 --> 01:03:32,000
+Páginas, concepto de páginas.
+
+897
+01:03:32,000 --> 01:03:34,000
+No vamos a entrar mucho en ello, pero tenéis que saberlo,
+
+898
+01:03:34,000 --> 01:03:36,000
+o sea, alguna vez probéis este tipo de cosas.
+
+899
+01:03:36,000 --> 01:03:38,000
+Es importante el objeto página,
+
+900
+01:03:38,000 --> 01:03:40,000
+porque si yo me tomo más de una gráfica,
+
+901
+01:03:40,000 --> 01:03:44,000
+en algo que al visualización, en un DAS, por ejemplo,
+
+902
+01:03:44,000 --> 01:03:46,000
+tengo que tener en cuenta
+
+903
+01:03:46,000 --> 01:03:48,000
+para algunas de las cosas de interacción
+
+904
+01:03:48,000 --> 01:03:50,000
+que esta gráfica, estas lápicas están juntas,
+
+905
+01:03:50,000 --> 01:03:52,000
+porque a lo mejor yo creo que los FSS se incluyen.
+
+906
+01:03:52,000 --> 01:03:54,000
+Entonces, para saber qué es esta y esta,
+
+907
+01:03:54,000 --> 01:03:56,000
+debe estar encabezada en una misma página,
+
+908
+01:03:56,000 --> 01:03:58,000
+que es lo que les envío todo a la usuaria.
+
+909
+01:03:58,000 --> 01:04:00,000
+Entonces, esta lógica,
+
+910
+01:04:00,000 --> 01:04:02,000
+hasta ahora no lo necesitábamos porque estábamos
+
+911
+01:04:02,000 --> 01:04:04,000
+cintando gráficas sin más, pero cuando haces un solo,
+
+912
+01:04:04,000 --> 01:04:06,000
+hay que meterla.
+
+913
+01:04:06,000 --> 01:04:09,000
+La sesión, que es lo que identifica el usuario,
+
+914
+01:04:09,000 --> 01:04:12,000
+y el documento que lo identifica la visualización.
+
+915
+01:04:12,000 --> 01:04:14,000
+Un mismo usuario,
+
+916
+01:04:14,000 --> 01:04:16,000
+esto no lo sé seguro, pero las pruebas que yo he hecho,
+
+917
+01:04:16,000 --> 01:04:18,000
+me dicen que un usuario
+
+918
+01:04:18,000 --> 01:04:20,000
+se ha dado el mismo documento,
+
+919
+01:04:20,000 --> 01:04:24,000
+no se crean dos identificadores de documentos por setada.
+
+920
+01:04:24,000 --> 01:04:26,000
+Pero no lo sé seguro,
+
+921
+01:04:26,000 --> 01:04:28,000
+es una cosa que no viene documentada.
+
+922
+01:04:28,000 --> 01:04:30,000
+Lo curiosaré, pero lo está probando,
+
+923
+01:04:30,000 --> 01:04:32,000
+porque me han pedido justamente eso hace poco.
+
+924
+01:04:32,000 --> 01:04:34,000
+Lo que sí identifica, si los usuarios están separados,
+
+925
+01:04:34,000 --> 01:04:36,000
+son documentos distintos.
+
+926
+01:04:36,000 --> 01:04:39,000
+Pero no sé si el mismo usuario puede abrir dos veces el mismo.
+
+927
+01:04:39,000 --> 01:04:41,000
+Lo montamos,
+
+928
+01:04:41,000 --> 01:04:44,000
+la forma más rápida de hacerlo,
+
+929
+01:04:44,000 --> 01:04:46,000
+es cuando están las boques,
+
+930
+01:04:46,000 --> 01:04:49,000
+te metes un ejecutable,
+
+931
+01:04:49,000 --> 01:04:51,000
+que es boques server,
+
+932
+01:04:51,000 --> 01:04:53,000
+que si lo abris, es un página,
+
+933
+01:04:53,000 --> 01:04:55,000
+lo que hace es encargarse de crear el event loop,
+
+934
+01:04:55,000 --> 01:04:57,000
+y todo eso.
+
+935
+01:04:57,000 --> 01:04:59,000
+Entonces tú le dices al boques server,
+
+936
+01:04:59,000 --> 01:05:01,000
+que metan como script, el cross filter.
+
+937
+01:05:01,000 --> 01:05:03,000
+Si os fijáis el cross filter,
+
+938
+01:05:03,000 --> 01:05:05,000
+lo único que haces es tener un método,
+
+939
+01:05:05,000 --> 01:05:07,000
+que está decorado, pero no hace nada,
+
+940
+01:05:07,000 --> 01:05:09,000
+no tiene main.
+
+941
+01:05:09,000 --> 01:05:11,000
+Eso si lo ejecutas es, sería como un módulo,
+
+942
+01:05:11,000 --> 01:05:13,000
+que no tiene main, no tiraría.
+
+943
+01:05:13,000 --> 01:05:15,000
+Entonces, están diciendo, le diga ahí,
+
+944
+01:05:15,000 --> 01:05:17,000
+le diga los métodos que hay, los que están decorados con boques,
+
+945
+01:05:17,000 --> 01:05:19,000
+por eso hay un decorador que es de boques,
+
+946
+01:05:19,000 --> 01:05:21,000
+que dice, este método es para pintar algo,
+
+947
+01:05:21,000 --> 01:05:23,000
+y con esos métodos,
+
+948
+01:05:23,000 --> 01:05:25,000
+podremos tener más de uno en el mismo módulo,
+
+949
+01:05:25,000 --> 01:05:27,000
+de los métodos y los ms en boques server.
+
+950
+01:05:27,000 --> 01:05:31,000
+Entonces, esta es la forma más rápida de hacerlo.
+
+951
+01:05:31,000 --> 01:05:33,000
+Entonces, si os fijáis, alguna de las cosas que dices,
+
+952
+01:05:33,000 --> 01:05:35,000
+que en punto multiusuario está apagando,
+
+953
+01:05:35,000 --> 01:05:37,000
+que yo hice multiusuario, tendrías que implementar
+
+954
+01:05:37,000 --> 01:05:39,000
+la lógica de lo que hago, y todas estas cosas.
+
+955
+01:05:39,000 --> 01:05:41,000
+Pero que existe la opción de un multiusuario.
+
+956
+01:05:41,000 --> 01:05:43,000
+También tiene para del buguear en JavaScript,
+
+957
+01:05:43,000 --> 01:05:45,000
+que informa las versiones y tal,
+
+958
+01:05:45,000 --> 01:05:47,000
+no diga y lo de paisan.
+
+959
+01:05:47,000 --> 01:05:49,000
+No me hais foto, no.
+
+960
+01:05:49,000 --> 01:05:51,000
+Y el más es que, como te avisa los que he importado,
+
+961
+01:05:51,000 --> 01:05:53,000
+y si pusíais varios, de hecho,
+
+962
+01:05:53,000 --> 01:05:55,000
+lo que hacemos cuando tenemos aplicaciones muy complejas,
+
+963
+01:05:55,000 --> 01:05:57,000
+es tener un módulo que importe los módulos que correspondan,
+
+964
+01:05:57,000 --> 01:05:59,000
+y ya leí tiramos todo.
+
+965
+01:05:59,000 --> 01:06:01,000
+Entonces, se puede hacer así,
+
+966
+01:06:01,000 --> 01:06:03,000
+o puedes arrancar el boque server sin parámetro,
+
+967
+01:06:03,000 --> 01:06:05,000
+se queda un boque server vacío,
+
+968
+01:06:05,000 --> 01:06:07,000
+y puedes hacerle push de visualización.
+
+969
+01:06:07,000 --> 01:06:09,000
+Se puede haber otro script de Python,
+
+970
+01:06:09,000 --> 01:06:11,000
+que se vea que es lo que hacemos,
+
+971
+01:06:11,000 --> 01:06:13,000
+que lanza un push,
+
+972
+01:06:13,000 --> 01:06:15,000
+entonces el boque server se queda a esos datos,
+
+973
+01:06:15,000 --> 01:06:17,000
+o esa información lo emite.
+
+974
+01:06:17,000 --> 01:06:19,000
+Eso es muy difícil cuando hay visualizaciones
+
+975
+01:06:19,000 --> 01:06:21,000
+que se generan bajo demanda.
+
+976
+01:06:21,000 --> 01:06:23,000
+Yo quiero ver este dataset con estos datos,
+
+977
+01:06:23,000 --> 01:06:25,000
+no sé qué hay, lo envías,
+
+978
+01:06:25,000 --> 01:06:27,000
+y el boque server lo recibe,
+
+979
+01:06:27,000 --> 01:06:29,000
+y se encama de servirlo.
+
+980
+01:06:29,000 --> 01:06:31,000
+He hecho un mensaje entre lo que tienes
+
+981
+01:06:31,000 --> 01:06:33,000
+servidor web en dos capas,
+
+982
+01:06:33,000 --> 01:06:35,000
+en el que tiene su página web bonica,
+
+983
+01:06:35,000 --> 01:06:37,000
+con su front, y todas sus cosas, un boque server debajo.
+
+984
+01:06:37,000 --> 01:06:39,000
+Entonces, el front le anja,
+
+985
+01:06:39,000 --> 01:06:41,000
+le dice en esa boca, y el boque es el que sirve,
+
+986
+01:06:41,000 --> 01:06:43,000
+y dejan de los botones.
+
+987
+01:06:43,000 --> 01:06:45,000
+Una opción, te diseño. No me gusta mucho, pero es una opción.
+
+988
+01:06:45,000 --> 01:06:47,000
+Bueno, pues, si te ha visto esto,
+
+989
+01:06:47,000 --> 01:06:49,000
+abrimos en los caljos.
+
+990
+01:06:51,000 --> 01:06:53,000
+Bien, entonces, esto me encanta.
+
+991
+01:06:53,000 --> 01:06:55,000
+Con los filter,
+
+992
+01:06:55,000 --> 01:06:57,000
+a los que ya hayas metido un poco
+
+993
+01:06:57,000 --> 01:06:59,000
+en este mundo de los datos,
+
+994
+01:06:59,000 --> 01:07:01,000
+sonarás que es
+
+995
+01:07:01,000 --> 01:07:03,000
+una técnica de relatividad de datos
+
+996
+01:07:03,000 --> 01:07:05,000
+relativamente multidimensional,
+
+997
+01:07:05,000 --> 01:07:07,000
+en el cual tienes todas las columnas,
+
+998
+01:07:07,000 --> 01:07:09,000
+a la izquierda
+
+999
+01:07:09,000 --> 01:07:11,000
+tenemos todas las columnas,
+
+1000
+01:07:11,000 --> 01:07:13,000
+de las que teníamos en el café,
+
+1001
+01:07:13,000 --> 01:07:15,000
+un análisis taxicobot,
+
+1002
+01:07:15,000 --> 01:07:17,000
+que escribo básico,
+
+1003
+01:07:17,000 --> 01:07:19,000
+en la media, en máximo, y el mismo.
+
+1004
+01:07:19,000 --> 01:07:21,000
+Bueno, vale los únicos,
+
+1005
+01:07:21,000 --> 01:07:23,000
+y lo puedes cambiar, lo que quieres ver.
+
+1006
+01:07:23,000 --> 01:07:25,000
+Casillas, para ir amastrando,
+
+1007
+01:07:25,000 --> 01:07:27,000
+esas variantes.
+
+1008
+01:07:27,000 --> 01:07:29,000
+¿Qué es lo que ocurre?
+
+1009
+01:07:29,000 --> 01:07:31,000
+Si yo cojo
+
+1010
+01:07:31,000 --> 01:07:33,000
+el factor
+
+1011
+01:07:33,000 --> 01:07:35,000
+y lo meto en
+
+1012
+01:07:35,000 --> 01:07:37,000
+filtro,
+
+1013
+01:07:37,000 --> 01:07:39,000
+sale un filtro en el que puedes elegir
+
+1014
+01:07:39,000 --> 01:07:41,000
+cuáles factores que el indábalas quieres ver.
+
+1015
+01:07:45,000 --> 01:07:47,000
+5.000 6, por efectos, el puerto,
+
+1016
+01:07:47,000 --> 01:07:53,000
+es algo que barra crossfiltro.
+
+1017
+01:07:53,000 --> 01:07:55,000
+No, no, es que
+
+1018
+01:07:55,000 --> 01:07:59,000
+no me acuerdo si cascaba o no hacía nada.
+
+1019
+01:07:59,000 --> 01:08:01,000
+No, no, si que me acuerdo si lo desgutas en un barro.
+
+1020
+01:08:01,000 --> 01:08:03,000
+Pues mira, está bien sabroso.
+
+1021
+01:08:03,000 --> 01:08:05,000
+Pues antes de mi lugar,
+
+1022
+01:08:05,000 --> 01:08:07,000
+eso está bien sabroso para las demos.
+
+1023
+01:08:07,000 --> 01:08:09,000
+Bueno, el caso es que
+
+1024
+01:08:09,000 --> 01:08:11,000
+ya ha arrastrado una variable a filtros,
+
+1025
+01:08:11,000 --> 01:08:13,000
+entonces te crea un widget de filtros
+
+1026
+01:08:13,000 --> 01:08:15,000
+para esa variable,
+
+1027
+01:08:15,000 --> 01:08:17,000
+para ver la cualitativa te hace un filtro de tipo cualitativo,
+
+1028
+01:08:17,000 --> 01:08:19,000
+es decir, puedes elegir
+
+1029
+01:08:19,000 --> 01:08:21,000
+cuáles quieres y cuáles no.
+
+1030
+01:08:21,000 --> 01:08:23,000
+Y estamos en filtro,
+
+1031
+01:08:23,000 --> 01:08:25,000
+vamos a poner esta variable,
+
+1032
+01:08:25,000 --> 01:08:27,000
+te sale un pequeño histograma
+
+1033
+01:08:27,000 --> 01:08:29,000
+del cual puedes hacer filtros.
+
+1034
+01:08:29,000 --> 01:08:31,000
+Vale, y cuántas líneas de código nos han llevado,
+
+1035
+01:08:31,000 --> 01:08:33,000
+de hecho si quitas los impons,
+
+1036
+01:08:33,000 --> 01:08:35,000
+no diga, 4 líneas de código.
+
+1037
+01:08:35,000 --> 01:08:37,000
+Entonces la idea de boke en el futuro,
+
+1038
+01:08:37,000 --> 01:08:39,000
+como dentro de un año o la misma,
+
+1039
+01:08:39,000 --> 01:08:41,000
+es tener muchas de estas cosas
+
+1040
+01:08:41,000 --> 01:08:43,000
+paquetizadas ya.
+
+1041
+01:08:43,000 --> 01:08:45,000
+Entonces cuando empiezas a tener más comunidades,
+
+1042
+01:08:45,000 --> 01:08:47,000
+que tiene cierta comunidad,
+
+1043
+01:08:47,000 --> 01:08:49,000
+la gente va a hacer los suyos a los hackers
+
+1044
+01:08:49,000 --> 01:08:51,000
+y vas a tener un montón de visualizaciones
+
+1045
+01:08:51,000 --> 01:08:53,000
+y estás en 5 líneas de código.
+
+1046
+01:08:53,000 --> 01:08:55,000
+Entonces, por eso creo que tiene futuro esta herramienta,
+
+1047
+01:08:55,000 --> 01:08:57,000
+porque tiene una API también montada
+
+1048
+01:08:57,000 --> 01:08:59,000
+que se parará muy bien la lógica de
+
+1049
+01:08:59,000 --> 01:09:01,000
+servidor y de pintado,
+
+1050
+01:09:01,000 --> 01:09:03,000
+de la lógica de uso.
+
+1051
+01:09:03,000 --> 01:09:05,000
+Vale, que eso no pasa en muchas librerías.
+
+1052
+01:09:05,000 --> 01:09:07,000
+Pero bueno, por eso es Timestime,
+
+1053
+01:09:07,000 --> 01:09:09,000
+pues bueno, metes filtros,
+
+1054
+01:09:09,000 --> 01:09:11,000
+pero bueno, puedes hacer mil cosas.
+
+1055
+01:09:11,000 --> 01:09:13,000
+Puedes dividir el s de la x
+
+1056
+01:09:13,000 --> 01:09:15,000
+por la variable.
+
+1057
+01:09:15,000 --> 01:09:17,000
+Puedes dividir el s de i por otra variable.
+
+1058
+01:09:17,000 --> 01:09:19,000
+Puedes hacer, en vez de que esté aquí,
+
+1059
+01:09:19,000 --> 01:09:21,000
+por etiquetas, esa por, perdón,
+
+1060
+01:09:21,000 --> 01:09:23,000
+por pestañas.
+
+1061
+01:09:23,000 --> 01:09:25,000
+Perdóname, me ha ido un poquito.
+
+1062
+01:09:25,000 --> 01:09:27,000
+Pues meternos por tabs.
+
+1063
+01:09:27,000 --> 01:09:29,000
+Entonces te creas etiquetas, cada una por si nada
+
+1064
+01:09:29,000 --> 01:09:31,000
+con los valores. Lo que puedes hacer, lo que se haga
+
+1065
+01:09:31,000 --> 01:09:33,000
+en la lista. Y luego te han puesto aquí 5 despliegables.
+
+1066
+01:09:33,000 --> 01:09:35,000
+Y básicamente es qué tipo de gráfica quieres,
+
+1067
+01:09:35,000 --> 01:09:37,000
+no lo vamos a ver ahora.
+
+1068
+01:09:37,000 --> 01:09:39,000
+¿Cuál es tu variable x? ¿Cuál es tu variable i?
+
+1069
+01:09:39,000 --> 01:09:41,000
+¿Y qué agregador has usado?
+
+1070
+01:09:41,000 --> 01:09:43,000
+Has pintado 2.000 millones de gráficas en nada.
+
+1071
+01:09:43,000 --> 01:09:45,000
+Vale.
+
+1072
+01:09:45,000 --> 01:09:47,000
+¿Qué hay por debajo de esto, simplemente para que lo sepáis?
+
+1073
+01:09:47,000 --> 01:09:49,000
+Pues hay dos cosas de boke que no vamos a ver.
+
+1074
+01:09:49,000 --> 01:09:51,000
+Que son los layouts, porque si os fijáis,
+
+1075
+01:09:51,000 --> 01:09:53,000
+estáis dividido en una rejilla,
+
+1076
+01:09:53,000 --> 01:09:55,000
+para los típicos de vertical, horizontal,
+
+1077
+01:09:55,000 --> 01:09:57,000
+en grid y en rejilla y en tabla.
+
+1078
+01:09:57,000 --> 01:09:59,000
+Con eso ha montado la estructura.
+
+1079
+01:09:59,000 --> 01:10:01,000
+Y luego tiene widgets, tiene widgets de selector,
+
+1080
+01:10:01,000 --> 01:10:03,000
+tiene widgets de drag and drop,
+
+1081
+01:10:03,000 --> 01:10:05,000
+tiene widgets de todo tipo de cosas.
+
+1082
+01:10:05,000 --> 01:10:07,000
+Pues por debajo lo que es haces,
+
+1083
+01:10:07,000 --> 01:10:09,000
+el curso de obtidos en 50 líneas de código,
+
+1084
+01:10:09,000 --> 01:10:11,000
+se ha montado todo esto.
+
+1085
+01:10:11,000 --> 01:10:13,000
+Este es un ejemplo de qué puede ocurrir.
+
+1086
+01:10:13,000 --> 01:10:15,000
+Y una última cosa que quiero ver
+
+1087
+01:10:15,000 --> 01:10:17,000
+antes de continuar,
+
+1088
+01:10:17,000 --> 01:10:19,000
+es
+
+1089
+01:10:19,000 --> 01:10:21,000
+si abrimos
+
+1090
+01:10:21,000 --> 01:10:23,000
+¿Vale?
+
+1091
+01:10:23,000 --> 01:10:25,000
+Lo voy a poner de abajo.
+
+1092
+01:10:25,000 --> 01:10:27,000
+Vale.
+
+1093
+01:10:27,000 --> 01:10:29,000
+Vamos a poner todo y ve a actualidad.
+
+1094
+01:10:29,000 --> 01:10:31,000
+Vamos a poner todo y ve a actualidad.
+
+1095
+01:10:31,000 --> 01:10:33,000
+Vamos a poner todo y ve a actualidad.
+
+1096
+01:10:33,000 --> 01:10:35,000
+Vamos a poner todo y ve a actualidad.
+
+1097
+01:10:35,000 --> 01:10:37,000
+Vamos a poner todo y ve a actualidad.
+
+1098
+01:10:37,000 --> 01:10:39,000
+Con eso
+
+1099
+01:10:39,000 --> 01:10:41,000
+yo pongo esto y se enciltro.
+
+1100
+01:10:41,000 --> 01:10:43,000
+Y con eso
+
+1101
+01:10:43,000 --> 01:10:45,000
+Vamos a entrar en detalles,
+
+1102
+01:10:45,000 --> 01:10:47,000
+pero si os fijáis,
+
+1103
+01:10:47,000 --> 01:10:49,000
+está haciendo peticiones.
+
+1104
+01:10:49,000 --> 01:10:51,000
+Si os observo la petición,
+
+1105
+01:10:51,000 --> 01:10:53,000
+lo que va a ser básicamente el modelo actualizado
+
+1106
+01:10:53,000 --> 01:10:55,000
+que representa eso
+
+1107
+01:10:55,000 --> 01:10:57,000
+y no voy a entrar en detalles porque son 8000 modelos.
+
+1108
+01:10:57,000 --> 01:10:59,000
+Con el nuevo valor
+
+1109
+01:10:59,000 --> 01:11:01,000
+aquí dentro lo va a recibir
+
+1110
+01:11:01,000 --> 01:11:03,000
+vos que se van a encargar de distribuir eso
+
+1111
+01:11:03,000 --> 01:11:05,000
+y los que toquen,
+
+1112
+01:11:05,000 --> 01:11:07,000
+que tú es incrementado y eso se responde
+
+1113
+01:11:07,000 --> 01:11:09,000
+y el servidor,
+
+1114
+01:11:09,000 --> 01:11:11,000
+se vuelve al computador y lo devuelva al cliente.
+
+1115
+01:11:11,000 --> 01:11:13,000
+Eso está bien, está mal,
+
+1116
+01:11:13,000 --> 01:11:15,000
+porque una cosa que se podría implementar
+
+1117
+01:11:15,000 --> 01:11:17,000
+por el lado del cliente, la estamos inventando del lado del servidor.
+
+1118
+01:11:17,000 --> 01:11:19,000
+No sé si yo lo estoy explicando.
+
+1119
+01:11:19,000 --> 01:11:21,000
+Un filtro, que es una putria de filtro
+
+1120
+01:11:21,000 --> 01:11:23,000
+podría hacerlo del lado del cliente y no del servidor
+
+1121
+01:11:23,000 --> 01:11:25,000
+y la está haciendo del lado del servidor.
+
+1122
+01:11:25,000 --> 01:11:27,000
+¿Por qué ocurre esto?
+
+1123
+01:11:27,000 --> 01:11:29,000
+Esto ocurre porque
+
+1124
+01:11:29,000 --> 01:11:31,000
+vos que lleva, pues no sé,
+
+1125
+01:11:31,000 --> 01:11:33,000
+para dos años el que viene no estaba bastante bien.
+
+1126
+01:11:33,000 --> 01:11:35,000
+¿Qué es lo que pretenden hacer en el futuro?
+
+1127
+01:11:35,000 --> 01:11:37,000
+Que tú puedas dentro del país
+
+1128
+01:11:37,000 --> 01:11:39,000
+describir cosas para que ocurran solo
+
+1129
+01:11:39,000 --> 01:11:41,000
+en el lado del cliente.
+
+1130
+01:11:41,000 --> 01:11:43,000
+Puedes decir que este filtro se aplica al lado del cliente
+
+1131
+01:11:43,000 --> 01:11:45,000
+y que este otro filtro se aplica al lado del servidor.
+
+1132
+01:11:45,000 --> 01:11:47,000
+Esto para que veáis entrar en el futuro.
+
+1133
+01:11:47,000 --> 01:11:49,000
+Bueno, una vez visto la lógica del servidor
+
+1134
+01:11:49,000 --> 01:11:51,000
+bien, vamos a empezar
+
+1135
+01:11:51,000 --> 01:11:53,000
+con lo que he comentado. Layout, selección enlazada
+
+1136
+01:11:53,000 --> 01:11:55,000
+y esles enlazados. Con un layout
+
+1137
+01:11:55,000 --> 01:11:57,000
+es básicamente
+
+1138
+01:11:57,000 --> 01:11:59,000
+cómo distribuyes distintos elementos
+
+1139
+01:11:59,000 --> 01:12:01,000
+espacialmente para hacer interfaces gráficas.
+
+1140
+01:12:01,000 --> 01:12:03,000
+Bien.
+
+1141
+01:12:03,000 --> 01:12:05,000
+Selección enlazada es un concepto bastante sencillo
+
+1142
+01:12:05,000 --> 01:12:07,000
+en el que lo típico es
+
+1143
+01:12:07,000 --> 01:12:09,000
+un diálogo de dispersión, pero puede ser
+
+1144
+01:12:09,000 --> 01:12:11,000
+en cualquier otro tipo de diagrama.
+
+1145
+01:12:11,000 --> 01:12:13,000
+Seleccionas unos datos.
+
+1146
+01:12:13,000 --> 01:12:15,000
+Podéis ir copiando el ejemplo porque lo vamos a utilizar.
+
+1147
+01:12:15,000 --> 01:12:17,000
+¿Vale?
+
+1148
+01:12:17,000 --> 01:12:19,000
+Selección enlazada quiere decir
+
+1149
+01:12:19,000 --> 01:12:21,000
+que tú tienes dos gráficas que tienen los mismos datos
+
+1150
+01:12:21,000 --> 01:12:23,000
+eliges una cantidad de datos en uno
+
+1151
+01:12:23,000 --> 01:12:25,000
+y esos mismos datos
+
+1152
+01:12:25,000 --> 01:12:27,000
+¿Los mismos datos de arriba?
+
+1153
+01:12:27,000 --> 01:12:29,000
+Sí.
+
+1154
+01:12:29,000 --> 01:12:31,000
+¿Qué pasa en la selección enlazada?
+
+1155
+01:12:31,000 --> 01:12:33,000
+Que tenemos
+
+1156
+01:12:33,000 --> 01:12:35,000
+la misma fonte de datos
+
+1157
+01:12:35,000 --> 01:12:37,000
+pintada de dos maneras distintas
+
+1158
+01:12:37,000 --> 01:12:39,000
+y cuando tú selecciones en una de ellas
+
+1159
+01:12:39,000 --> 01:12:41,000
+se van a seleccionar de las demás.
+
+1160
+01:12:41,000 --> 01:12:43,000
+Esa es una selección enlazada.
+
+1161
+01:12:43,000 --> 01:12:45,000
+Un eje enlazado es básicamente
+
+1162
+01:12:45,000 --> 01:12:47,000
+que si yo desplazo una de las gráficas
+
+1163
+01:12:47,000 --> 01:12:49,000
+y el eje es compartido
+
+1164
+01:12:49,000 --> 01:12:51,000
+con otra gráfica, las dos gráficas
+
+1165
+01:12:51,000 --> 01:12:53,000
+se mueven a la vez.
+
+1166
+01:12:53,000 --> 01:12:55,000
+Si tú te desplazas
+
+1167
+01:12:55,000 --> 01:12:57,000
+las dos gráficas se mueven a la vez.
+
+1168
+01:12:57,000 --> 01:12:59,000
+¿Vale? Es interactividad básica
+
+1169
+01:12:59,000 --> 01:13:01,000
+pero súper útil. ¿Vale? Muy sencillo.
+
+1170
+01:13:01,000 --> 01:13:03,000
+Entonces
+
+1171
+01:13:03,000 --> 01:13:05,000
+aquí
+
+1172
+01:13:09,000 --> 01:13:11,000
+creó un diccionario
+
+1173
+01:13:11,000 --> 01:13:13,000
+para mapear este dataframe
+
+1174
+01:13:13,000 --> 01:13:15,000
+de flowers
+
+1175
+01:13:15,000 --> 01:13:17,000
+un dataframe de
+
+1176
+01:13:17,000 --> 01:13:19,000
+veintiflores, pero eso no ha quedado muy por final.
+
+1177
+01:13:19,000 --> 01:13:21,000
+De unas veintiflores, una especie de flowers
+
+1178
+01:13:21,000 --> 01:13:23,000
+que tiene los superespecies
+
+1179
+01:13:23,000 --> 01:13:25,000
+de toda la data set para investigar
+
+1180
+01:13:25,000 --> 01:13:27,000
+para al surecear. Son orquídeas.
+
+1181
+01:13:27,000 --> 01:13:29,000
+Orquídeas, gracias.
+
+1182
+01:13:29,000 --> 01:13:31,000
+Tiene el tamaño de sépalo, el anso
+
+1183
+01:13:31,000 --> 01:13:33,000
+del largo de sépalo y el anso del largo del pétalo
+
+1184
+01:13:33,000 --> 01:13:35,000
+y algunos otros variables.
+
+1185
+01:13:35,000 --> 01:13:37,000
+Entonces, es sólo utilizar este ejemplo
+
+1186
+01:13:37,000 --> 01:13:39,000
+para hacer una agrupación.
+
+1187
+01:13:39,000 --> 01:13:41,000
+Es sólo utilizar para clasificar
+
+1188
+01:13:41,000 --> 01:13:43,000
+y por qué? Porque con el tamaño y el anso
+
+1189
+01:13:43,000 --> 01:13:45,000
+el tamaño del sépalo y el pétalo
+
+1190
+01:13:45,000 --> 01:13:47,000
+puedes distinguir o intentar
+
+1191
+01:13:47,000 --> 01:13:49,000
+distinguir cuál es la superespecía.
+
+1192
+01:13:49,000 --> 01:13:51,000
+¿Qué le pudo esperar a hacer?
+
+1193
+01:13:51,000 --> 01:13:53,000
+Es multidimensional.
+
+1194
+01:13:53,000 --> 01:13:55,000
+No es muy multidimensional, pero es multidimensional.
+
+1195
+01:13:55,000 --> 01:13:57,000
+Porque tenemos 4, al menos 4 variables.
+
+1196
+01:13:57,000 --> 01:13:59,000
+Azo y alto, azo y alto de pétalo y sépalo.
+
+1197
+01:14:03,000 --> 01:14:05,000
+Y explorar eso, desde el punto de vista de resolución
+
+1198
+01:14:05,000 --> 01:14:07,000
+tiene cierto reto.
+
+1199
+01:14:07,000 --> 01:14:09,000
+Entonces, vamos a ver cómo lo resolvemos
+
+1200
+01:14:09,000 --> 01:14:11,000
+con estas propiedades.
+
+1201
+01:14:11,000 --> 01:14:13,000
+Bueno, simplemente lo que os he dicho
+
+1202
+01:14:13,000 --> 01:14:15,000
+con Dada Source es la entidad básica
+
+1203
+01:14:15,000 --> 01:14:17,000
+la clase básica en boke
+
+1204
+01:14:17,000 --> 01:14:19,000
+para crear fuentes de datos. Y aquí son datos estáticos.
+
+1205
+01:14:19,000 --> 01:14:21,000
+O sea, le chufamos el diccionario con los datos.
+
+1206
+01:14:21,000 --> 01:14:23,000
+Ya está. Le puedes meter un panda,
+
+1207
+01:14:23,000 --> 01:14:25,000
+le puedes meter un pie, le puedes meter
+
+1208
+01:14:25,000 --> 01:14:27,000
+una lista de listas.
+
+1209
+01:14:27,000 --> 01:14:29,000
+Le puedes meter básicamente cualquier cosa
+
+1210
+01:14:29,000 --> 01:14:31,000
+que tenga forma de tabla.
+
+1211
+01:14:31,000 --> 01:14:33,000
+Cualquier cosa.
+
+1212
+01:14:35,000 --> 01:14:37,000
+Creo un diccionario, la segunda de las líneas
+
+1213
+01:14:37,000 --> 01:14:39,000
+le añado a Flowers una columna
+
+1214
+01:14:39,000 --> 01:14:41,000
+que básicamente lo que ha hecho
+
+1215
+01:14:41,000 --> 01:14:43,000
+es convertirme cada especie en un color.
+
+1216
+01:14:43,000 --> 01:14:45,000
+Esta línea, por qué no la hemos hecho hasta ahora?
+
+1217
+01:14:45,000 --> 01:14:47,000
+Porque la interfaz de chat
+
+1218
+01:14:47,000 --> 01:14:49,000
+te abstraía de esto.
+
+1219
+01:14:49,000 --> 01:14:51,000
+Tú le metías el nombre de la variable
+
+1220
+01:14:51,000 --> 01:14:53,000
+y él automáticamente lo mapeaba colones.
+
+1221
+01:14:53,000 --> 01:14:55,000
+Y esto, como no lo estamos haciendo
+
+1222
+01:14:55,000 --> 01:14:57,000
+con esa interfaz, no sé qué copia.
+
+1223
+01:14:59,000 --> 01:15:01,000
+Le voy a meter un diccionario
+
+1224
+01:15:01,000 --> 01:15:03,000
+en el cual meto cada uno de los vectores
+
+1225
+01:15:03,000 --> 01:15:05,000
+que quiero. Y diréis, por qué no me he metido directamente
+
+1226
+01:15:05,000 --> 01:15:07,000
+en pandas. Es una tazina de pandas
+
+1227
+01:15:07,000 --> 01:15:09,000
+porque quiero mirarme columnas.
+
+1228
+01:15:09,000 --> 01:15:11,000
+¿Vale? Yo tengo solo esas.
+
+1229
+01:15:11,000 --> 01:15:13,000
+Ahora es por pie.
+
+1230
+01:15:15,000 --> 01:15:17,000
+Si tenéis internet, también podéis gustar el ejemplo.
+
+1231
+01:15:17,000 --> 01:15:19,000
+No es igual, pero os vais a hablar
+
+1232
+01:15:19,000 --> 01:15:21,000
+por pie a los andres.
+
+1233
+01:15:23,000 --> 01:15:25,000
+¿Vale?
+
+1234
+01:15:25,000 --> 01:15:27,000
+Bueno, el comentario este es ahora.
+
+1235
+01:15:31,000 --> 01:15:33,000
+¿Qué estoy haciendo?
+
+1236
+01:15:33,000 --> 01:15:35,000
+Estoy creando tres figuras.
+
+1237
+01:15:35,000 --> 01:15:37,000
+¿Por qué creo que tres figuras así, a lo bruto?
+
+1238
+01:15:37,000 --> 01:15:39,000
+Por la razón que os he contado antes,
+
+1239
+01:15:39,000 --> 01:15:41,000
+entre los modelos.
+
+1240
+01:15:43,000 --> 01:15:45,000
+Creo tres figuras que básicamente
+
+1241
+01:15:45,000 --> 01:15:47,000
+son la misma. Lo único que cambia
+
+1242
+01:15:47,000 --> 01:15:49,000
+es el eje X y el eje Y.
+
+1243
+01:15:49,000 --> 01:15:51,000
+En la primera es el eje X, es la longitud
+
+1244
+01:15:51,000 --> 01:15:53,000
+del pétalo y el Y es ancho del pétalo.
+
+1245
+01:15:53,000 --> 01:15:55,000
+Y así voy combinando variables.
+
+1246
+01:15:55,000 --> 01:15:57,000
+Si tuviésemos esto por separado,
+
+1247
+01:15:57,000 --> 01:15:59,000
+¿qué vamos a tener?
+
+1248
+01:15:59,000 --> 01:16:01,000
+Vamos a tener una proyección
+
+1249
+01:16:01,000 --> 01:16:03,000
+en un idioma de dispersión, un ancho y un alto
+
+1250
+01:16:03,000 --> 01:16:05,000
+en otro ancho y otro alto, en otro ancho
+
+1251
+01:16:05,000 --> 01:16:07,000
+y otro alto. Eso me parece bien.
+
+1252
+01:16:07,000 --> 01:16:09,000
+Realmente, sos estás viendo
+
+1253
+01:16:09,000 --> 01:16:11,000
+las distribuciones bivariadas.
+
+1254
+01:16:11,000 --> 01:16:13,000
+Está viendo cómo se distribuye una variable
+
+1255
+01:16:13,000 --> 01:16:15,000
+frente a otra, pero no ves las interacciones
+
+1256
+01:16:15,000 --> 01:16:17,000
+entre tres o más variadas.
+
+1257
+01:16:17,000 --> 01:16:19,000
+Bien, y una cosa muy importante
+
+1258
+01:16:19,000 --> 01:16:21,000
+es que le especificas
+
+1259
+01:16:21,000 --> 01:16:23,000
+la fonte de datos y aquí
+
+1260
+01:16:23,000 --> 01:16:25,000
+esta es la clave.
+
+1261
+01:16:25,000 --> 01:16:27,000
+No estamos
+
+1262
+01:16:27,000 --> 01:16:29,000
+duplicando de nuevos source.
+
+1263
+01:16:29,000 --> 01:16:31,000
+No le estamos instanciando tres veces.
+
+1264
+01:16:31,000 --> 01:16:33,000
+Estamos usando la misma instancia de fonte de datos.
+
+1265
+01:16:33,000 --> 01:16:35,000
+¿Vale? Eso es clave.
+
+1266
+01:16:35,000 --> 01:16:37,000
+Echemos a lo más del cordero
+
+1267
+01:16:37,000 --> 01:16:39,000
+de lo que vamos a ver ahora.
+
+1268
+01:16:39,000 --> 01:16:41,000
+Heramos un source, tres gráficas
+
+1269
+01:16:41,000 --> 01:16:45,000
+y las tres tiran la misma fonte de datos.
+
+1270
+01:16:47,000 --> 01:16:49,000
+Y luego el último punto es
+
+1271
+01:16:49,000 --> 01:16:51,000
+tener un layout en rejilla
+
+1272
+01:16:51,000 --> 01:16:53,000
+que es una arjilla de 4 por 4
+
+1273
+01:16:53,000 --> 01:16:55,000
+en el cual el primer elemento
+
+1274
+01:16:55,000 --> 01:16:57,000
+está vacío, el segundo elemento
+
+1275
+01:16:57,000 --> 01:16:59,000
+es el primer gráfico, el tercer
+
+1276
+01:16:59,000 --> 01:17:01,000
+es el tercer, el tres y el siguiente es el dos.
+
+1277
+01:17:01,000 --> 01:17:03,000
+¿Vale? Ya está distribuido
+
+1278
+01:17:03,000 --> 01:17:05,000
+las películas que tenemos en un 4 por 4.
+
+1279
+01:17:09,000 --> 01:17:11,000
+Perdóname, pero es que pensar que
+
+1280
+01:17:11,000 --> 01:17:13,000
+vamos a tener mis...
+
+1281
+01:17:17,000 --> 01:17:19,000
+De hecho, yo no tengo que ahí.
+
+1282
+01:17:19,000 --> 01:17:21,000
+Para aquí.
+
+1283
+01:17:23,000 --> 01:17:25,000
+Ya os prometo que hay que compro más ejemplo.
+
+1284
+01:17:25,000 --> 01:17:37,000
+Ya es ir modificando esto.
+
+1285
+01:17:37,000 --> 01:17:41,000
+Una duda, una comentario, sugerencia, un show.
+
+1286
+01:17:41,000 --> 01:17:43,000
+Show?
+
+1287
+01:17:43,000 --> 01:17:47,000
+A principios, todo lo que tenemos importado.
+
+1288
+01:17:47,000 --> 01:17:49,000
+Charms.
+
+1289
+01:17:49,000 --> 01:17:51,000
+Están en las dos.
+
+1290
+01:17:51,000 --> 01:17:53,000
+El flow tiene de charts.
+
+1291
+01:17:53,000 --> 01:17:57,000
+¿Usted sabe floating que aquí tienes floating ahí?
+
+1292
+01:18:01,000 --> 01:18:03,000
+Boke.chast tiene el show
+
+1293
+01:18:03,000 --> 01:18:05,000
+y tiene el...
+
+1294
+01:18:05,000 --> 01:18:07,000
+...lo punto.
+
+1295
+01:18:07,000 --> 01:18:09,000
+También la tiene floating.
+
+1296
+01:18:09,000 --> 01:18:11,000
+No sé, no estoy de todos oscuros, la tengo.
+
+1297
+01:18:11,000 --> 01:18:13,000
+Pero no os diría que sí.
+
+1298
+01:18:13,000 --> 01:18:15,000
+¿Vale? ¿Alguna duda o método?
+
+1299
+01:18:15,000 --> 01:18:17,000
+Algo de...
+
+1300
+01:18:17,000 --> 01:18:23,000
+...por parte de...
+
+1301
+01:18:23,000 --> 01:18:25,000
+Sí, ya lo veremos.
+
+1302
+01:18:25,000 --> 01:18:27,000
+Entonces, pensemos como piensa Boke.
+
+1303
+01:18:27,000 --> 01:18:31,000
+Ahí, abstrayendo tres modelos que cada uno es una gráfica
+
+1304
+01:18:31,000 --> 01:18:33,000
+y hay un cuarto modelo que es la fuente de datos.
+
+1305
+01:18:33,000 --> 01:18:35,000
+¿Ajordados que el código de datos shows tiene su identificador?
+
+1306
+01:18:35,000 --> 01:18:37,000
+Está a 7 alífados como un JSON.
+
+1307
+01:18:37,000 --> 01:18:41,000
+Eso se le envía al perdón al cliente o se incrusta en un HTML.
+
+1308
+01:18:41,000 --> 01:18:43,000
+Una vez lo tenemos, lo voy a mostrar.
+
+1309
+01:18:43,000 --> 01:18:47,000
+Ahora os lo pongo para que sigáis copiando.
+
+1310
+01:18:47,000 --> 01:18:49,000
+Cuando lo ensufo...
+
+1311
+01:18:49,000 --> 01:18:51,000
+¿Vale?
+
+1312
+01:18:51,000 --> 01:18:53,000
+Tengo un dataset.
+
+1313
+01:18:53,000 --> 01:18:55,000
+Perdón, tengo una visualización.
+
+1314
+01:18:55,000 --> 01:18:57,000
+Es básicamente lo que queríamos.
+
+1315
+01:18:57,000 --> 01:19:01,000
+El color, representé con el mapeo que hemos hecho.
+
+1316
+01:19:01,000 --> 01:19:05,000
+Bueno, a ver si alguien se me cuenta de una cosa que le falla.
+
+1317
+01:19:05,000 --> 01:19:15,000
+Respecto a la descripción que hemos hecho.
+
+1318
+01:19:15,000 --> 01:19:19,000
+¿No están los colores que hemos dicho?
+
+1319
+01:19:19,000 --> 01:19:21,000
+¿Por qué?
+
+1320
+01:19:21,000 --> 01:19:23,000
+Ya ha pasado.
+
+1321
+01:19:23,000 --> 01:19:31,000
+Debo que la anterior versión, a esta versión, ya los colores ya no se pueden meter como nombres validos del HTML.
+
+1322
+01:19:31,000 --> 01:19:36,000
+No se puede poner red.
+
+1323
+01:19:36,000 --> 01:19:38,000
+Ah, coño, hay tres elementos.
+
+1324
+01:19:38,000 --> 01:19:40,000
+Uno se llama red, otro blue y otro green.
+
+1325
+01:19:40,000 --> 01:19:42,000
+Cada uno le va a asignar un color.
+
+1326
+01:19:42,000 --> 01:19:45,000
+Nos ha usado una paleta para asignar la red aquí.
+
+1327
+01:19:45,000 --> 01:19:47,000
+Por eso se saben otros colores.
+
+1328
+01:19:47,000 --> 01:19:49,000
+Ha habido un cambio de aprieto que le digo.
+
+1329
+01:19:49,000 --> 01:19:52,000
+Esta última es la que se supone la estabilización de la API.
+
+1330
+01:19:52,000 --> 01:19:54,000
+La que ya se puede empezar a aproximar.
+
+1331
+01:19:54,000 --> 01:19:56,000
+¿Por qué he puesto este ejemplo?
+
+1332
+01:19:56,000 --> 01:20:03,000
+Que tú ahora coges.
+
+1333
+01:20:03,000 --> 01:20:05,000
+Vale.
+
+1334
+01:20:05,000 --> 01:20:07,000
+Bien, una última cosa.
+
+1335
+01:20:07,000 --> 01:20:10,000
+Se me ha habido de modelos.
+
+1336
+01:20:10,000 --> 01:20:14,000
+Vamos a importar, bueno, está aquí importada selección de lazo.
+
+1337
+01:20:14,000 --> 01:20:15,000
+¿Vale?
+
+1338
+01:20:15,000 --> 01:20:17,000
+No lo hemos usado.
+
+1339
+01:20:17,000 --> 01:20:19,000
+No lo hemos usado porque se me ha habido de ponerle salina.
+
+1340
+01:20:19,000 --> 01:20:21,000
+Vamos a hacer una cosa.
+
+1341
+01:20:21,000 --> 01:20:28,000
+Vamos a importar, vamos a añadir.
+
+1342
+01:20:28,000 --> 01:20:30,000
+Vale.
+
+1343
+01:20:30,000 --> 01:20:42,000
+API, eso.
+
+1344
+01:20:42,000 --> 01:20:45,000
+Vale, se le añadimos a las tres.
+
+1345
+01:20:45,000 --> 01:20:47,000
+¿Habéis visto el código?
+
+1346
+01:20:47,000 --> 01:20:48,000
+No tiene nada.
+
+1347
+01:20:48,000 --> 01:20:51,000
+¿Como la verdad os es un tool como lo hemos usado antes de Discover Tool?
+
+1348
+01:20:51,000 --> 01:20:53,000
+Hay una selección de lazo.
+
+1349
+01:20:53,000 --> 01:20:55,000
+Lo hemos metido.
+
+1350
+01:20:55,000 --> 01:20:57,000
+Y lo hemos metido por esta razón.
+
+1351
+01:20:57,000 --> 01:20:59,000
+Porque si ahora yo cojo la herramienta de selección de lazo,
+
+1352
+01:20:59,000 --> 01:21:01,000
+que es esta que antes no estaba.
+
+1353
+01:21:01,000 --> 01:21:04,000
+Y yo hago esto.
+
+1354
+01:21:04,000 --> 01:21:07,000
+Podes explorar multidimensionalmente tu data set.
+
+1355
+01:21:07,000 --> 01:21:09,000
+De entre selecciones.
+
+1356
+01:21:09,000 --> 01:21:11,000
+Y he tardado.
+
+1357
+01:21:11,000 --> 01:21:13,000
+Bien.
+
+1358
+01:21:13,000 --> 01:21:15,000
+Simplemente diciéndole que la fuente de datos es la misma.
+
+1359
+01:21:15,000 --> 01:21:17,000
+Tiene dos utilidades porque hasta el respecto.
+
+1360
+01:21:17,000 --> 01:21:20,000
+Que te hace interactividad automágicamente.
+
+1361
+01:21:20,000 --> 01:21:25,000
+Y el segundo de los problemas es que no envían los datos por tres.
+
+1362
+01:21:25,000 --> 01:21:29,000
+Porque en la mayoría, por ejemplo,
+
+1363
+01:21:29,000 --> 01:21:31,000
+hay un mismo problema que tiene.
+
+1364
+01:21:31,000 --> 01:21:33,000
+Que si tú haces tres visual decisions,
+
+1365
+01:21:33,000 --> 01:21:35,000
+con el mismo tipo de datos tendrías las tres.
+
+1366
+01:21:35,000 --> 01:21:39,000
+Porque R no tiene una cosa de R que es más concluida.
+
+1367
+01:21:39,000 --> 01:21:41,000
+Vale.
+
+1368
+01:21:41,000 --> 01:21:43,000
+Está bastante wow.
+
+1369
+01:21:43,000 --> 01:21:45,000
+Para haber no tenido que haber hecho nada, básicamente.
+
+1370
+01:21:45,000 --> 01:21:49,000
+Y ahora vamos a ver la interactividad de selección enlazada.
+
+1371
+01:21:49,000 --> 01:21:52,000
+Aquí he puesto tres scatter plots que tienen sentido.
+
+1372
+01:21:52,000 --> 01:21:55,000
+Pero podría ser uno de barras, uno de scatter y otro,
+
+1373
+01:21:55,000 --> 01:21:57,000
+o sea, puede hacer cualquier cosa que me inventas.
+
+1374
+01:21:57,000 --> 01:22:00,000
+Mientras un glyph está asociado a un registro.
+
+1375
+01:22:00,000 --> 01:22:02,000
+Y yo seleccionó ese registro.
+
+1376
+01:22:02,000 --> 01:22:04,000
+En otras lápitas se va a ser el otro.
+
+1377
+01:22:04,000 --> 01:22:06,000
+De hecho, lo que hace boke es lanzar.
+
+1378
+01:22:06,000 --> 01:22:08,000
+Si ya os metéis mucho en boke,
+
+1379
+01:22:08,000 --> 01:22:11,000
+yo recomendaría que el vísis el API de Javascript también.
+
+1380
+01:22:11,000 --> 01:22:14,000
+Entonces lo que hace por debajo es llamar a un método
+
+1381
+01:22:14,000 --> 01:22:17,000
+y que nos puede modificar en Javascript y que en vez de iluminarlos,
+
+1382
+01:22:17,000 --> 01:22:19,000
+acá lo que sea.
+
+1383
+01:22:19,000 --> 01:22:21,000
+O sea, tú puedes customizar esto hasta el infinito.
+
+1384
+01:22:21,000 --> 01:22:23,000
+Pero tienes que saber el API de Javascript.
+
+1385
+01:22:23,000 --> 01:22:26,000
+Sin saber nada de Javascript y sin saber nada de visualización de datos,
+
+1386
+01:22:26,000 --> 01:22:28,000
+hemos conseguido bastante.
+
+1387
+01:22:28,000 --> 01:22:30,000
+Bien.
+
+1388
+01:22:30,000 --> 01:22:32,000
+Bueno, este era otro ejemplo de juventud,
+
+1389
+01:22:32,000 --> 01:22:34,000
+pero lo vamos a implementar porque es básicamente lo mismo.
+
+1390
+01:22:34,000 --> 01:22:37,000
+Luego, si no sobra tiempo, los ejemplos lo vamos haciendo.
+
+1391
+01:22:37,000 --> 01:22:39,000
+Esto que sería poner index,
+
+1392
+01:22:39,000 --> 01:22:41,000
+que es la única que os quería contar ahora,
+
+1393
+01:22:41,000 --> 01:22:44,000
+que es bastante útil, nosotros lo hicimos bastante,
+
+1394
+01:22:44,000 --> 01:22:46,000
+porque si tenemos un sujeto, no un variable,
+
+1395
+01:22:46,000 --> 01:22:48,000
+un sujeto que se pira por ahí o que no sabe quién es.
+
+1396
+01:22:48,000 --> 01:22:50,000
+Si ponemos una tránsima, te dice que no hay registro.
+
+1397
+01:22:50,000 --> 01:22:52,000
+Te dice registro, tiempo de acento, 33.
+
+1398
+01:22:52,000 --> 01:22:54,000
+Ya está, y lo tienes localizado.
+
+1399
+01:22:54,000 --> 01:22:57,000
+Es útil. Más la tibia de cosas que tenéis que tener en mente.
+
+1400
+01:22:57,000 --> 01:23:00,000
+Hay que estar mostrando la posición de tratamiento en X y Sin E.
+
+1401
+01:23:00,000 --> 01:23:02,000
+Y luego, lo que os decía antes,
+
+1402
+01:23:02,000 --> 01:23:07,000
+puedes poner cualquier valor de cualquiera de las variables
+
+1403
+01:23:07,000 --> 01:23:09,000
+que tienes en la tazer.
+
+1404
+01:23:09,000 --> 01:23:11,000
+Y también, ¿qué es la tazer de las variables
+
+1405
+01:23:11,000 --> 01:23:13,000
+que no estás mostrando en la gráfica de forma directa?
+
+1406
+01:23:13,000 --> 01:23:15,000
+Podrías poner que hay, imaginaos que hubiese una variable
+
+1407
+01:23:15,000 --> 01:23:17,000
+que se llama quebónica es.
+
+1408
+01:23:17,000 --> 01:23:19,000
+Pues quebónica es, se podría poner,
+
+1409
+01:23:19,000 --> 01:23:21,000
+aunque no esté representada en la gráfica.
+
+1410
+01:23:21,000 --> 01:23:23,000
+Bien. Vale.
+
+1411
+01:23:27,000 --> 01:23:29,000
+Bien.
+
+1412
+01:23:29,000 --> 01:23:31,000
+Perdón.
+
+1413
+01:23:32,000 --> 01:23:34,000
+Esto no lo sigáis.
+
+1414
+01:23:34,000 --> 01:23:36,000
+Ahora os paro y copiamos otro ejemplo, lo lo explicamos.
+
+1415
+01:23:36,000 --> 01:23:38,000
+Era un hover.
+
+1416
+01:23:38,000 --> 01:23:42,000
+Se le asigna un U y D, porque la daba distancia.
+
+1417
+01:23:42,000 --> 01:23:44,000
+Era una figura.
+
+1418
+01:23:44,000 --> 01:23:46,000
+Esto es importante.
+
+1419
+01:23:46,000 --> 01:23:48,000
+Crea un círculo.
+
+1420
+01:23:48,000 --> 01:23:50,000
+Esto es distinto a otras generías,
+
+1421
+01:23:50,000 --> 01:23:52,000
+y eso hay que tenerlo en cuenta.
+
+1422
+01:23:52,000 --> 01:23:54,000
+Cuando añades VIFs, muchas generías,
+
+1423
+01:23:54,000 --> 01:23:56,000
+el output de esa función es de la gráfica en sí mismo.
+
+1424
+01:23:56,000 --> 01:23:58,000
+Eso, por ejemplo, lo hace GGplot
+
+1425
+01:23:58,000 --> 01:24:01,000
+para que puedas concatenar VIFs sumando.
+
+1426
+01:24:01,000 --> 01:24:03,000
+Tú pones el círculo más,
+
+1427
+01:24:03,000 --> 01:24:05,000
+P, line, más, P, line,
+
+1428
+01:24:05,000 --> 01:24:07,000
+puedes poner tres VIFs a la vez.
+
+1429
+01:24:07,000 --> 01:24:10,000
+Este en país no ocurre, y es una cosa que tenéis que tener en cuenta.
+
+1430
+01:24:10,000 --> 01:24:13,000
+Este devuelve el objeto que se refiere al Glyph.
+
+1431
+01:24:13,000 --> 01:24:16,000
+Y recordamos que Glyph es simplemente representación de datos gráfica.
+
+1432
+01:24:16,000 --> 01:24:18,000
+De hecho, Glyph es el concepto Glyph gráfico.
+
+1433
+01:24:18,000 --> 01:24:20,000
+Bueno, no vamos a hacer mucho de ello.
+
+1434
+01:24:20,000 --> 01:24:22,000
+Y aquí me voy a bajar ya.
+
+1435
+01:24:22,000 --> 01:24:24,000
+Bien.
+
+1436
+01:24:24,000 --> 01:24:26,000
+Vamos a ver lo que ha ocurrido.
+
+1437
+01:24:26,000 --> 01:24:30,000
+He creado un P2 y le he añadido un clon de Huber.
+
+1438
+01:24:30,000 --> 01:24:33,000
+Este dice, hey, hey, hey, cuidado, que este Huber ya tiene
+
+1439
+01:24:33,000 --> 01:24:36,000
+un asociado navista de identificador tal.
+
+1440
+01:24:36,000 --> 01:24:39,000
+Vale, por eso no se puede usar clon de forma directa.
+
+1441
+01:24:39,000 --> 01:24:44,000
+Porque copia el objeto de Python, pero no le cambia lo que damos.
+
+1442
+01:24:44,000 --> 01:24:46,000
+Vale, entonces, que lo tengáis en cuenta.
+
+1443
+01:24:46,000 --> 01:24:48,000
+Si, obviamente, en vez de usar eso,
+
+1444
+01:24:48,000 --> 01:24:50,000
+¿qué solemos hacer nosotros?
+
+1445
+01:24:50,000 --> 01:24:52,000
+Crear factorías.
+
+1446
+01:24:52,000 --> 01:24:54,000
+Cuando tienes que hacer 25 veces algo,
+
+1447
+01:24:54,000 --> 01:24:56,000
+pues, le haz una factoría,
+
+1448
+01:24:56,000 --> 01:24:58,000
+envuelves ahí la encapsula de la lógica que harás tener
+
+1449
+01:24:58,000 --> 01:25:00,000
+y vas creando distancias con una factoría.
+
+1450
+01:25:00,000 --> 01:25:03,000
+Pero luego lo vas usando y así.
+
+1451
+01:25:03,000 --> 01:25:07,000
+Mites aquí la factoría y todo.
+
+1452
+01:25:07,000 --> 01:25:09,000
+Vale, es bueno.
+
+1453
+01:25:09,000 --> 01:25:12,000
+Esto es simplemente para que vieséis a ver si está aquí el caso.
+
+1454
+01:25:12,000 --> 01:25:14,000
+O de lo verdad.
+
+1455
+01:25:14,000 --> 01:25:16,000
+Cuando hay más de un caso, se junta.
+
+1456
+01:25:16,000 --> 01:25:19,000
+Pero esto no quería meterme mucho en él.
+
+1457
+01:25:19,000 --> 01:25:22,000
+Nos vamos de aquí y ahora.
+
+1458
+01:25:24,000 --> 01:25:27,000
+Ejercicio.
+
+1459
+01:25:27,000 --> 01:25:31,000
+Los ejes enlazados se hacen con la complicada técnica
+
+1460
+01:25:31,000 --> 01:25:33,000
+de coger el eje de una gráfica
+
+1461
+01:25:33,000 --> 01:25:35,000
+e igualarlo al eje de otra gráfica.
+
+1462
+01:25:35,000 --> 01:25:38,000
+O sea, coger la propiedad de uno, coger,
+
+1463
+01:25:38,000 --> 01:25:40,000
+quiero que este x, el rango de este x,
+
+1464
+01:25:40,000 --> 01:25:42,000
+sea igual al rango y de esta gráfica.
+
+1465
+01:25:42,000 --> 01:25:45,000
+Entonces, vais a tener que enlazar tal cual lo tenéis ahora distribuido,
+
+1466
+01:25:45,000 --> 01:25:48,000
+de manera que si yo muevo...
+
+1467
+01:25:48,000 --> 01:25:50,000
+¿Temos algo de mi texto?
+
+1468
+01:25:50,000 --> 01:25:51,000
+Ahí está.
+
+1469
+01:25:51,000 --> 01:25:54,000
+Mi solitizar avanzado.
+
+1470
+01:25:54,000 --> 01:25:56,000
+Tengo tres gráficas.
+
+1471
+01:25:56,000 --> 01:26:01,000
+Lo que voy a hacer es que si yo muevo este, se mueva también este,
+
+1472
+01:26:01,000 --> 01:26:03,000
+se mueva también este.
+
+1473
+01:26:03,000 --> 01:26:05,000
+¿Vamos cinco militillos, que es fácil?
+
+1474
+01:26:05,000 --> 01:26:08,000
+Bueno, si no, se sinfoniza perfectamente porque se que uncae
+
+1475
+01:26:08,000 --> 01:26:10,000
+que este no es el x, este no me importa.
+
+1476
+01:26:10,000 --> 01:26:12,000
+Pero la idea es que veáis cómo funciona.
+
+1477
+01:26:12,000 --> 01:26:16,000
+Antes de hacer eso, hacéis la sustitución de los rangos de x
+
+1478
+01:26:16,000 --> 01:26:18,000
+y los rangos de y, que son los parámetros x
+
+1479
+01:26:18,000 --> 01:26:20,000
+y guión bajo range.
+
+1480
+01:26:20,000 --> 01:26:32,000
+meinerca's
+
+1481
+01:27:02,000 --> 01:27:12,200
+Phyllis, responsable a un buen tipo y mucha molesta, nunca lo ha Barono, anda durante un Quantum
+
+1482
+01:27:12,200 --> 01:27:15,280
+Y le hubo un solución a los racistos, sí.
+
+1483
+01:28:12,200 --> 01:28:41,200
+Vamos a mostrarlo, es muy sencillo, simplemente que al rango del P2 se igual el rango de X del P2 se igual al rango de P, podemos haber hecho al revés, de hecho lo que va a ocurrir si cambias el orden, aunque el efecto va a ser el mismo, lo que estamos haciendo es sustituir el modelo que era un híboco del gráfico 1, sustituirlo por el 2, con lo cual un eje de desambadece entre comillas, digamos a la...
+
+1484
+01:28:42,200 --> 01:28:58,200
+el respecto del árbol de modelos, este objeto ya no existe, ese modelo ya no existe, pero si hacemos al revés el efecto visual va a ser el mismo, los dos ejes se van a sinfonizar, la clave es en vez de tener dos u y despo separado del eje X, vamos a tener sólo uno, tú puedes hacer sobre el que viene este sobre este o este sobre este, da igual,
+
+1485
+01:28:58,200 --> 01:29:16,200
+de hecho por dentro lo que va a ocurrir y lo vamos a poner es el sillón con mp2 X planes, vale, bueno lo vamos a hacer con la dirección de memoria, ahora mismo, porque no hace nada más,
+
+1486
+01:29:16,200 --> 01:29:31,200
+son distintas posiciones de memoria, y además de distinta posiciones de memoria, porque son distintos objetos de Python, van a tener distinto sub-id por dentro porque el constructor, el inicializador, la medida de distinto sub-id,
+
+1487
+01:29:31,200 --> 01:29:46,200
+cuando yo ejecute esto, vamos a hacer solo las variables, lo que va a ocurrir simplemente es que se van a igualar, con lo cual el uid por debajo va a ser igual, y el javascript se va a dar cuenta y cuando mueve el uno va a mover el otro,
+
+1488
+01:29:46,200 --> 01:30:11,200
+mostramos el resultado final, vale, una cosa, digo para no complicaros mucho la vida, quitar el lazo, me quitar todo, el lazo y el cubo y todo,
+
+1489
+01:30:11,200 --> 01:30:31,200
+¿por qué? porque si, y esto es una cosa bueno, tampoco es muy complicado, no tiene mucha historia, si ponéis las tools, lo que va a pasar es que te borran las otras, te borran las que están por defecto y una de las que está por defecto que queremos es la de desplazarnos,
+
+1490
+01:30:31,200 --> 01:30:41,200
+pues si ponemos el lazo y nos quita el desplazamiento, ¿cómo podemos solucionar esto bien? metiéndole todas las tools que queremos, como no vamos a perder el tiempo en almuminar todas las tools, por si no necesito el lazo,
+
+1491
+01:30:41,200 --> 01:31:03,200
+vamos a ponerlo para este ejemplo y tiramos para adelante, vale, entonces, se ha desaparecido el lazo pero ha vuelto a poner las opciones por defecto, como he asignado, bueno perdón todo bien, he asignado los erques,
+
+1492
+01:31:03,200 --> 01:31:29,200
+y lo vuelvo a mostrar, y ahora cuando me muevan, vale, y aquí igual, si queréis que no ocurra el efecto de, se mueve el rango pero no se mueve el eje, además de igualar el rango, que es lo que está ocurriendo ahora, tenéis que igualar el eje, el otro que se llama xx, vale,
+
+1493
+01:31:33,200 --> 01:32:02,200
+vale, bueno, pues, pues, bueno, pues, vale, entonces, hemos conseguido una cosa que es tremendamente útil para explorar,
+
+1494
+01:32:02,200 --> 01:32:13,200
+un dataset multidimensional y lo hemos hecho, si os fijáis, además de hacer la gráfica en la área que se ha sido una línea por cada eje enlazado, y el mismo dataset ni siquiera has tenido que poner líneas,
+
+1495
+01:32:13,200 --> 01:32:28,200
+es cambiar un parámetro y decirle que todos vienen de la misma fuente de datos, lo que te está haciendo es abstraer un montón de lógica por debajo, de todo, porque esta gente se ha curado en la librería bastante trabajada y se ha curado una lógica que se ha vivido bastante normal,
+
+1496
+01:32:28,200 --> 01:32:41,200
+simplemente, os voy a enseñar dos ejemplos más, que no vamos a hacer para que veáis que posibilidades de API tenemos y ya cerramos, porque se nos va el team,
+
+1497
+01:32:41,200 --> 01:32:54,200
+hay un, hay un acceso el API que son los callbacks, que básicamente son eventos que quiero que ocurran en el lado del cliente ejecutados en JavaScript cuando pase algo, vale,
+
+1498
+01:32:54,200 --> 01:33:09,200
+pues ahora mismo en bokehside 2, el avanzadísimo Open URL y un callback de JavaScript al vitrario, de esta, vale, entonces, la idea es hacer más cada vez,
+
+1499
+01:33:09,200 --> 01:33:19,200
+pero la gracia de esto es que con un objeto de Python estoy implementando cosas en JavaScript porque automágicamente una librería me lo convierte a JavaScript, vale,
+
+1500
+01:33:19,200 --> 01:33:27,200
+el Open URL lo que normalmente hace es que cuando se lo había realizado lo que advierte un JavaScript que hace un window.open, la URL que tú quieras,
+
+1501
+01:33:27,200 --> 01:33:37,200
+entonces, lo ponen este, y solo quiero que os fijéis en dos cosas, he metido un código de JavaScript de todo lo que parecen, sí, lo siento, vale,
+
+1502
+01:33:37,200 --> 01:33:49,200
+el código de JavaScript, vale, ¿qué hace? Primero, dos cosas relevantes, es el cuerpo de una función, pero no lo estás envolviendo como una función, no estás preparado en el function ni nada,
+
+1503
+01:33:49,200 --> 01:33:57,200
+pero, bokeh te lo va a meter automágicamente en una función, es decir, va a tener su scope por su cargo, todas esas variables son locales,
+
+1504
+01:33:57,200 --> 01:34:07,200
+no afecta a la ventana, es algo que tú principalmente lo utilices, si no os interesa, para os quime, ignoráis, ya está, y lo que hacemos es,
+
+1505
+01:34:07,200 --> 01:34:15,200
+arranco de X, toma Geromacas y todos los modelos tienen callbacks asociados, que es cuando cambia una de sus propiedades, cualquiera de sus propiedades,
+
+1506
+01:34:15,200 --> 01:34:22,200
+por cual pues simplemente hará aquí lo que quieras, su lg, que ya me alzum, que selecciona algo, que lo mueve, que lo borra, que lo desplaza,
+
+1507
+01:34:22,200 --> 01:34:28,200
+lo que tienes que hacer es, que si quieres ignorar una serie de eventos y solo atender a otros, pues tienes que quitar por el tipo de evento,
+
+1508
+01:34:28,200 --> 01:34:39,200
+entonces, ¿qué hacemos es? le creamos un custom JavaScript que tiene básicamente argumentos, que es genial, le dices el nombre,
+
+1509
+01:34:39,200 --> 01:34:46,200
+lo que quieres y él se lo va a enviar al JavaScript, lo va a meter en una función y la función va a tener de parámetros,
+
+1510
+01:34:46,200 --> 01:34:57,200
+source, range y code, y te lo meto ahí, ¿tienes más gusto? vale, entonces nada, simplemente que todas esas funciones son las que se usan arriba
+
+1511
+01:34:57,200 --> 01:35:04,200
+para hacer lo que sea, bueno, aquí lo que se hace es, cuando lo ejecutamos,
+
+1512
+01:35:04,200 --> 01:35:16,200
+veis, ah, mira, no había partido el movimiento fantasma, un grand leap de cuadrado para tener una residencia en el otro máximo,
+
+1513
+01:35:16,200 --> 01:35:22,200
+vale, y lo has hecho en 6 dinas de código del JavaScript, pues el custom JavaScript es lo que quieras,
+
+1514
+01:35:22,200 --> 01:35:28,200
+puedes ponerse un aler, puedes que haces una petición aler, puedes que añade otra gráfica, puedes hacer infinidad de cosas,
+
+1515
+01:35:28,200 --> 01:35:35,200
+además ahora mismo esto es inmaduro, pero cuando todo esto vaya creciendo te van a crear callbacks, de hecho, pues voy a poner un ejemplo que tiene
+
+1516
+01:35:35,200 --> 01:35:42,200
+bokeh para que veáis este, ¿vale? el último ejemplo son callbacks de que no tiene JavaScript, para la gente que no lo gusta,
+
+1517
+01:35:42,200 --> 01:35:51,200
+básicamente es importo un nuevo modelo que es un callback que es al fin y a cabo una clase hija del callback en general,
+
+1518
+01:35:51,200 --> 01:35:58,200
+que lo que dices cuando atiendas en vez de poner el JavaScript que a mí me sale las no dices, obviamente es un JavaScript que yo ya he diseñado,
+
+1519
+01:35:58,200 --> 01:36:08,200
+que es simplemente abrir una ventana, ¿bien? aquí, perdónadme los imports porque está moviendo, a ver fantasma de la open,
+
+1520
+01:36:08,200 --> 01:36:26,200
+el tabtool es el que se usa al hacer click, es un tool que recoge los elementos de clicks, entonces es unos circulitos,
+
+1521
+01:36:26,200 --> 01:36:34,200
+aquí me mueres, le das y hace una web mnl que como no me va a interesar, pues no se, pero si yo utilizo full stream veis que
+
+1522
+01:36:34,200 --> 01:36:44,200
+te envíe al nuevo en la página web que si os fijáis está en base a datos de el elemento, ¿cómo ha hecho eso? pues con la gracia está de las arrobes,
+
+1523
+01:36:44,200 --> 01:36:53,200
+¿vale? ya está, es fácil, entonces cuando empiezo a ver más de estos seleccionan otra gráfica, mueve esta gráfica,
+
+1524
+01:36:53,200 --> 01:37:01,200
+añade un cuadrado, actualiza los datos, hazme un address, vas a poder hacer JavaScript sin hacer JavaScript, que es el sueño de todo Python, ¿eh?
+
+1525
+01:37:01,200 --> 01:37:10,200
+vale, entonces bueno, esto es todo lo que teníamos en los cubiertos, de verdad os animo a que le deis un distrazo muy profundo a lo que,
+
+1526
+01:37:10,200 --> 01:37:23,200
+porque he visto mil librerías y las he visto morir, referir y reproducirse también incluso y tienen unas características que no tienen ninguna
+
+1527
+01:37:23,200 --> 01:37:36,200
+hasta, si la comunidad lo apoya, esto va a ser la pena que me muere, y si venís a la charla, que dios mi charla, venia mi saludo, vale, la charla de boke,
+
+1528
+01:37:36,200 --> 01:37:44,200
+os presentaré una característica que ahora no está en planeta en boke, pero voy a hacer un full comment de ella que es poder hacer interacción entre
+
+1529
+01:37:44,200 --> 01:37:54,200
+gráficas de boke y gráficas de D3, para pasar a las gráficas de D3 con la lógica cliente servidor del boke, ¿no? vale, la vas a poder hacer todo lo que quieras.
+
+1530
+01:37:54,200 --> 01:38:01,200
+Y lo siguiente que voy a hacer, voy a hacer un full comment de JavaScript entre boke y D3 que haga llamadas cuando recibe y envíenme, entonces ya está,
+
+1531
+01:38:01,200 --> 01:38:09,200
+por el que voy a tener tus gráficas D3 con la lógica de boke, entonces bueno, si os ha gustado, cualquier duda, bueno, así he visto el manual, ¿eh?
+
+1532
+01:38:09,200 --> 01:38:20,200
+Si toda la API está en boke, lo que haces es escribir y es por dentro de JavaScript, o de hecho hay dos opciones, si quieres invitar alguna de estas,
+
+1533
+01:38:20,200 --> 01:38:29,200
+a mano, puedes o hacer un hijo de CustomJays y tú escribir al JavaScript, por cual se va a ejecutar ese JavaScript, esa es la opción más sencilla,
+
+1534
+01:38:29,200 --> 01:38:39,200
+pero lo que hace OpenWrl es implementar un modelo especial que es para OpenWrl y enviar ese modelo, y como ese modelo ya está implementado en el lado del JavaScript,
+
+1535
+01:38:39,200 --> 01:38:46,200
+digamos que quien se encarga de escribir el JavaScript no es el servidor del servidor, vale, pero puedes esperar dos cosas, puedes esperar que un JavaScript
+
+1536
+01:38:46,200 --> 01:38:54,200
+sea enviado por el servidor, pero yo no lo recomiendo por los muchos problemas de seguridad que tiene meter código fuente autogenetado,
+
+1537
+01:38:54,200 --> 01:39:00,200
+el código fuente autogenetado lo puedes inyectar todo tipo de cosas, entonces lo que yo recomiendo es que vas a abrir el JavaScript,
+
+1538
+01:39:00,200 --> 01:39:12,200
+implementas tu en JavaScript un nuevo modelo que no es muy difícil hacerlo, se llame Event Total y mandas ese modelo, es como funciona OpenWrl,
+
+1539
+01:39:12,200 --> 01:39:25,200
+lo que hables es que digo OpenWrl y lo fusidas, lo copias y cambias lo bien. Una cuestión más, sí, lo que yo he comentado es que como se llama el JavaScript de abajo,
+
+1540
+01:39:25,200 --> 01:39:43,200
+lo que a veces es un escenario común es que lo tienes ahora en el enbocer, lo más que lo permite, lo que dice el banco, lo que dice el radio,
+
+1541
+01:39:43,200 --> 01:40:03,200
+también lo has probado, o ahora va a detectar el Pandemicvir logBrHl del spoonjed de abajo, puedes tener600 per mi y声wnuación aún más con todos estos scorings,
+
+1542
+01:40:03,200 --> 01:40:08,200
+O usa requiro, usa cualquiera de las técnicas de modulación de Javascript para que no se interfiere.
+
+1543
+01:40:08,200 --> 01:40:12,200
+Y ya está. No tiene mucha más que.
+
+1544
+01:40:12,200 --> 01:40:16,200
+Pero nadie se ha cubrado un conector angular al bloque.
+
+1545
+01:40:16,200 --> 01:40:22,200
+Pero podía hacerse. No, es un modelo de angular, pero presenté un gráfico.
+
+1546
+01:40:22,200 --> 01:40:26,200
+Pero no ha habido eso. De hecho, no sé si es cuando tenemos...
+
+1547
+01:40:26,200 --> 01:40:32,200
+Lo más raro que tenemos que hacer es enviar algo estático que dispare eventos que lo hayan encontrado en un servidor.
+
+1548
+01:40:32,200 --> 01:40:37,200
+Lo han enviado un HTML, pero cuando haga esta cosa me hago una petición,
+
+1549
+01:40:37,200 --> 01:40:43,200
+con el uso lo que hacemos muchas veces, lo queamos el comportamiento de la gente al ver gráficos.
+
+1550
+01:40:43,200 --> 01:40:48,200
+O va, le meto un custom que hacen que dicen en Sallex y ya está.
+
+1551
+01:40:48,200 --> 01:40:51,200
+Pero nunca hemos tenido que enviar. Cuando lo quieres enterar nada más grande,
+
+1552
+01:40:51,200 --> 01:40:56,200
+es la pregunta que ha sido la de los javascript. Lo más típico es ultralizar una interfaz de boke,
+
+1553
+01:40:56,200 --> 01:41:00,200
+que se llama Components. Lo que te haces, yo creo que las gráficas las defino
+
+1554
+01:41:00,200 --> 01:41:04,200
+y te exporto el HTML y el javascript y los datos necesarios.
+
+1555
+01:41:04,200 --> 01:41:06,200
+Tú lo gustas en tu...
+
+1556
+01:41:06,200 --> 01:41:11,200
+Entonces, metes una vez en la librería del boke, metes el...
+
+1557
+01:41:11,200 --> 01:41:15,200
+En la taseta, al final cago un JSON, y metes la gráfica.
+
+1558
+01:41:15,200 --> 01:41:17,200
+Entonces, tú eso lo colotas y me tiras.
+
+1559
+01:41:17,200 --> 01:41:21,200
+Como te da exactamente el javascript, tú lo puedes poner dentro de otro javascript,
+
+1560
+01:41:21,200 --> 01:41:25,200
+lo puedes poner relativamente sencillo, si ya os un poquito el HTML, no.
+
+1561
+01:41:25,200 --> 01:41:32,200
+Pero no has entrado a hacer conectores y eso sería genial y por eso estoy trabajando en un conector de 3 de boke.
+
+1562
+01:41:32,200 --> 01:41:38,200
+Toda la gente que sabe visualizar datos, el plan fino usa de 3, pero no sabe nada de los fícais de servidor.
+
+1563
+01:41:38,200 --> 01:41:41,200
+Y toda la gente que sabe hacer los fícais de servidor no sabe nada de 3.
+
+1564
+01:41:41,200 --> 01:41:45,200
+Si haces un conector de eso, puedes coger cualquiera de los 8000 ejemplos que hay de 3
+
+1565
+01:41:45,200 --> 01:41:47,200
+y poner una gráfica subterritorial.
+
+1566
+01:41:49,200 --> 01:41:51,200
+¿Aguna cosa que dices? Sí, que tiene.
+
+1567
+01:41:51,200 --> 01:41:53,200
+Perdón, no es que guste...
+
+1568
+01:41:53,200 --> 01:41:55,200
+¿Qué pasa cuando?
+
+1569
+01:41:55,200 --> 01:42:00,200
+Con ese entro, para que se vea que hay que ser, porque tengo 1.000 puntos.
+
+1570
+01:42:00,200 --> 01:42:02,200
+¿Qué pasa con las series?
+
+1571
+01:42:02,200 --> 01:42:04,200
+Hay un entro de mitad de clases.
+
+1572
+01:42:04,200 --> 01:42:06,200
+Sí, ese comportamiento...
+
+1573
+01:42:08,200 --> 01:42:15,200
+Tienes que llegar a un hijo de Cover Tool y hay un método que se encama de concatenarlos.
+
+1574
+01:42:15,200 --> 01:42:17,200
+Sería que te cargases ese conector.
+
+1575
+01:42:17,200 --> 01:42:20,200
+Pero el problema es cuál más elegir de todos.
+
+1576
+01:42:20,200 --> 01:42:29,200
+O puedes decir que lo que yo haría es si hay más de 3, o decir más de 3.
+
+1577
+01:42:29,200 --> 01:42:31,200
+Y ya está, vamos.
+
+1578
+01:42:31,200 --> 01:42:35,200
+Pero es simplemente suscribir en red todo lo que se encarga de la concatenación.
+
+1579
+01:42:41,200 --> 01:42:43,200
+Bueno, no lo sé.
+
+1580
+01:42:43,200 --> 01:42:46,200
+De todos modos, considera que no existe la variable profundidad.
+
+1581
+01:42:46,200 --> 01:42:50,200
+La profundidad es un efecto secundario del orden de pintado.
+
+1582
+01:42:50,200 --> 01:42:52,200
+Pero no hay nada que representa la profundidad.
+
+1583
+01:42:52,200 --> 01:42:54,200
+Con lo cual, realmente ese dato no lo significa nada.
+
+1584
+01:42:54,200 --> 01:42:57,200
+Pero no sé en qué orden lo devuelve.
+
+1585
+01:42:57,200 --> 01:43:00,200
+A ver, no significa nada en términos generales.
+
+1586
+01:43:00,200 --> 01:43:03,200
+Si tu data set está ordenada por una variable, significaría algo.
+
+1587
+01:43:03,200 --> 01:43:05,200
+Pero...
+
+1588
+01:43:05,200 --> 01:43:09,200
+Probablemente no lo sé, pero si yo tuviese que inventar eso en JavaScript,
+
+1589
+01:43:09,200 --> 01:43:11,200
+no me editaría a ordenarlo.
+
+1590
+01:43:11,200 --> 01:43:13,200
+Simplemente lo sacaría en el orden que están.
+
+1591
+01:43:13,200 --> 01:43:16,200
+Como lo cual, probablemente vayan de menos o más.
+
+1592
+01:43:16,200 --> 01:43:18,200
+O sea, ordenado por profundidad.
+
+1593
+01:43:18,200 --> 01:43:19,200
+Probablemente.
+
+1594
+01:43:19,200 --> 01:43:22,200
+Porque al final, esto es un guison y es una lista adicional.
+
+1595
+01:43:22,200 --> 01:43:25,200
+Entonces, para que os hagáis la lista, voy a sacarnos que toquen.
+
+1596
+01:43:25,200 --> 01:43:27,200
+¿Vale?
+
+1597
+01:43:27,200 --> 01:43:29,200
+Recordad que todo esto va por canvas.
+
+1598
+01:43:29,200 --> 01:43:33,200
+No sé si conocéis mucho la tecnología canvas, pero cuando quieres hacer cosas como Cuba y tal en canvas,
+
+1599
+01:43:33,200 --> 01:43:38,200
+la técnica más típica es capturar elementos del ratón,
+
+1600
+01:43:38,200 --> 01:43:45,200
+saber en qué posición estás y calcular si hay una colisión, una intersección entre la posición del punto y la posición de algún blitz.
+
+1601
+01:43:45,200 --> 01:43:52,200
+Realmente no lo estamos haciendo con el algodum del navegador, porque el dum del navegador tú puedes hacer lo típico.
+
+1602
+01:43:52,200 --> 01:43:57,200
+Si encima de este círculo como el ratón disparan este evento, pero aquí no hay nada.
+
+1603
+01:43:57,200 --> 01:44:03,200
+Aquí hay un rasterizado en canvas y la librería se encarga de detectar donde te expuesto.
+
+1604
+01:44:03,200 --> 01:44:10,200
+Como tú te estás encargado de eso, podrías modificar el comportamiento como quieras.
+
+1605
+01:44:10,200 --> 01:44:12,200
+Pero requeriría codificar un poco.
+
+1606
+01:44:12,200 --> 01:44:16,200
+No hay ningún parámetro que te ordene o que te deje elegir eso.
+
+1607
+01:44:16,200 --> 01:44:20,200
+¿Tienes un...
+
+1608
+01:44:20,200 --> 01:44:22,200
+Sí, existo.
+
+1609
+01:44:22,200 --> 01:44:33,200
+¿Cómo se puede integrar o si se puede integrar? Yo hace tiempo que la... ¿hice alguna pregunta?
+
+1610
+01:44:33,200 --> 01:44:39,200
+¿Cómo se puede integrar con sistemas de publicación o si haces tres tiendas plásticas?
+
+1611
+01:44:39,200 --> 01:44:41,200
+PNG, redimension...
+
+1612
+01:44:41,200 --> 01:44:43,200
+¿Con sistemas de publicación?
+
+1613
+01:44:43,200 --> 01:44:45,200
+Para.
+
+1614
+01:44:45,200 --> 01:44:47,200
+¿Claro?
+
+1615
+01:44:47,200 --> 01:44:49,200
+Esto claro, esto claro.
+
+1616
+01:44:49,200 --> 01:44:53,200
+Sí, no hay que invitar esa probabilidad.
+
+1617
+01:44:53,200 --> 01:44:58,200
+Si algunos usáis R, conoceréis un Internet.
+
+1618
+01:44:58,200 --> 01:45:03,200
+Es una librería, más un framework, para generar documentos con código incrustado.
+
+1619
+01:45:03,200 --> 01:45:07,200
+Entonces un documento le metes en algunos espacios código y la evolución de ese código se genera.
+
+1620
+01:45:07,200 --> 01:45:10,200
+Es un poco como un ipadison, no, como si lo pensáis.
+
+1621
+01:45:10,200 --> 01:45:18,200
+Nosotros, cuando hacemos informes, lo que hemos propido es un Internet que también lo que hacéis básicamente.
+
+1622
+01:45:18,200 --> 01:45:27,200
+Un código con codigos de trozos de código, te lo compila, te lo mete como un breakdown y todo el breakdown lo exporta.
+
+1623
+01:45:27,200 --> 01:45:33,200
+Nosotros lo hacemos así porque el Internet te permite meter otros engines, te permite meter por ejemplo Python.
+
+1624
+01:45:33,200 --> 01:45:38,200
+Lo que hacemos es texto, texto, texto, código de Python, que genera un HTML evoking,
+
+1625
+01:45:38,200 --> 01:45:44,200
+como el HTML generado por el bokeh. Es un breakdown válido, eso pasa correctamente al HTML.
+
+1626
+01:45:44,200 --> 01:45:51,200
+Bueno, esto sería para hacer un IPadison, para hacer un IPadison, todo está aquí.
+
+1627
+01:45:51,200 --> 01:45:55,200
+No, en qué caso?
+
+1628
+01:45:55,200 --> 01:45:57,200
+Sí, lo puedes sacar a pedir.
+
+1629
+01:45:57,200 --> 01:46:02,200
+Pero claro, no vas a perder toda la magia de moveditas, evidentemente.
+
+1630
+01:46:02,200 --> 01:46:04,200
+Yo veo un tío ahí, no.
+
+1631
+01:46:04,200 --> 01:46:15,200
+Lo que pasa cuando lo imprimas probablemente es que como eso se ha exportado el HTML y el HTML, buena pregunta.
+
+1632
+01:46:15,200 --> 01:46:21,200
+Si la gente debo que hay un lado muy, muy, muy, muy, muy fino, puede que haya puesto un parámetro de CSS
+
+1633
+01:46:21,200 --> 01:46:25,200
+que cuando se imprima te oculte la mano.
+
+1634
+01:46:25,200 --> 01:46:30,200
+Si lo han hecho, sacó. Si no lo han hecho, pues nada, sería relativo en ese sentido.
+
+1635
+01:46:30,200 --> 01:46:34,200
+Era la misma gráfica en su momento en que imprimí.
+
+1636
+01:46:34,200 --> 01:46:38,200
+Pero no habría problema, de hecho, mucha gente se termina imprimiendo los HTML.
+
+1637
+01:46:38,200 --> 01:46:41,200
+Lo que nunca me he fijado es sin quitar las cosas que son.
+
+1638
+01:46:41,200 --> 01:46:44,200
+¿Qué cambia la decidad de punto?
+
+1639
+01:46:44,200 --> 01:46:49,200
+Pero, que eso se encarra el rendimiento de los HTML, es decir, tú usas el HTML y...
+
+1640
+01:46:49,200 --> 01:46:51,200
+¿Qué te sé?
+
+1641
+01:46:51,200 --> 01:46:55,200
+WK2.7ml, lo que se llama. O hay un par de ideas que te convencen.
+
+1642
+01:46:55,200 --> 01:46:58,200
+Comanto, movimento.
+
+1643
+01:46:58,200 --> 01:47:01,200
+Todo eso del cambio de...
+
+1644
+01:47:01,200 --> 01:47:16,200
+En su luz vamos a meter, para el paso de documento, HTML.
+
+1645
+01:47:16,200 --> 01:47:29,200
+KniR. Que... Bueno, unos dos temas.
+
+1646
+01:47:29,200 --> 01:47:34,200
+Bueno, pues creo que os haya gustado. Colgaré el Notebook.
+
+1647
+01:47:34,200 --> 01:47:40,200
+Y nada, cualquier duda o idea, lo que me ha comproqué, es un...
+
+1648
+01:47:40,200 --> 01:47:46,200
+Voy a dar dos cosas. Hola, Monton, en Cansa, y...
+
+1649
+01:47:46,200 --> 01:47:49,200
+Es el latino en din, Maduro. Es decir, tiene cosas en las appes que dices.
+
+1650
+01:47:49,200 --> 01:47:52,200
+Por ejemplo, una cosa que nos pida, que es muy breve.
+
+1651
+01:47:52,200 --> 01:47:56,200
+¿Por qué tenemos un Rapper de R a boke? No porque R es llame a Python.
+
+1652
+01:47:56,200 --> 01:47:59,200
+De hecho, es la ventaja. No, los Rcrs generan un gison.
+
+1653
+01:47:59,200 --> 01:48:04,200
+A mí me ha oído un R, siempre me he oído generar los gisones adecuados para boke.
+
+1654
+01:48:04,200 --> 01:48:07,200
+Se le incluye algo que evoque Javascript o Pinto.
+
+1655
+01:48:07,200 --> 01:48:13,200
+Por eso no hay que envolver Python NER... Perdón, sí, Python NER, para que pueden utilizar boke.
+
+1656
+01:48:13,200 --> 01:48:17,200
+El problema es que el Pinto no lo cita el servidor, porque el servidor sí está incrementado en Python.
+
+1657
+01:48:17,200 --> 01:48:19,200
+Pero puedes crear modelos en R.
+
+1658
+01:48:19,200 --> 01:48:24,200
+Por ejemplo, la librería de R, de boke, que es la más utilizada, además de esta, tiene algunos fallitos.
+
+1659
+01:48:24,200 --> 01:48:30,200
+O sea, tiene cosas como que... Si pasas un parámetro por orco, no sé qué propiedad es que falla.
+
+1660
+01:48:30,200 --> 01:48:33,200
+O sea, tiene esas cosillas de, bueno, tienen cuatro desarrolladores y lo crees.
+
+1661
+01:48:33,200 --> 01:48:38,200
+Creo que se anima que os metáis, porque es una librería que tiene una pila bastante amigable
+
+1662
+01:48:38,200 --> 01:48:41,200
+y no es difícil meter código en la búsqueda.
+
+1663
+01:48:41,200 --> 01:48:46,200
+Por lecheis un ojo, veréis que está muy bien montado, muy bien diseñado.
+
+1664
+01:48:46,200 --> 01:48:48,200
+Nada ahora, sí que sí.
+
+1665
+01:48:48,200 --> 01:49:04,200
+De nada, muchas gracias.
+

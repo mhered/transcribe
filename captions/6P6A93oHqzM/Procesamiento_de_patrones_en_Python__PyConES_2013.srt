@@ -1,0 +1,4956 @@
+1
+00:00:00,000 --> 00:00:02,240
+Ol therapeutic do xite, que se platica sexoisw
+
+2
+00:00:02,240 --> 00:00:04,580
+e dadasa que fà de enf ub門 de imposing al nda.
+
+3
+00:00:05,860 --> 00:00:08,520
+Amori o influences do responsivo e do alqu لو climático
+
+4
+00:00:08,720 --> 00:00:03,220
+e por x verstehen do APX de seとか
+
+5
+00:00:04,780 --> 00:00:10,460
+é balances Lanka do
+
+6
+00:00:12,840 --> 00:00:24,620
+Láx Shadow de
+
+7
+00:00:24,880 --> 00:00:16,280
+belongs o
+
+8
+00:00:17,680 --> 00:00:19,620
+Minister Madam
+
+9
+00:00:19,620 --> 00:00:21,620
+Realmente, quem...
+
+10
+00:00:21,620 --> 00:00:26,120
+a persona que promovió o foi catalizador de estar a oi aquí
+
+11
+00:00:26,120 --> 00:00:28,120
+foi Juan Luis Cano
+
+12
+00:00:28,120 --> 00:00:30,120
+que nos invitó
+
+13
+00:00:30,120 --> 00:00:33,120
+non se... nos recordo, gano junio que da foi
+
+14
+00:00:33,120 --> 00:00:35,620
+e en aquel momento eu le dije que no...
+
+15
+00:00:35,620 --> 00:00:38,620
+que no sabia si poderia tenia outras obligaciones
+
+16
+00:00:38,620 --> 00:00:40,620
+que no sabia si poderia contar nada
+
+17
+00:00:40,620 --> 00:00:45,120
+pero que si en septiembre tenia alguna cosa
+
+18
+00:00:45,120 --> 00:00:47,120
+pues se lo diría
+
+19
+00:00:47,120 --> 00:00:50,620
+e realmente a cuestión era que estava en un momento
+
+20
+00:00:50,620 --> 00:00:52,620
+dudando como enfocar
+
+21
+00:00:52,620 --> 00:00:55,620
+a parte computacional e algorítmica
+
+22
+00:00:55,620 --> 00:00:57,620
+de la docencia
+
+23
+00:00:57,620 --> 00:01:00,620
+que na Facultad Informática de la Universidad Política e da Cataluña
+
+24
+00:01:00,620 --> 00:01:04,620
+que... una asignatura que se llama
+
+25
+00:01:04,620 --> 00:01:07,620
+compresión de datos e imagenes
+
+26
+00:01:07,620 --> 00:01:11,620
+pero que realmente es una asignatura que
+
+27
+00:01:11,620 --> 00:01:14,620
+convive en un ambiente de teoría de la señal
+
+28
+00:01:14,620 --> 00:01:17,120
+e de proceso de la teoría da señal
+
+29
+00:01:17,120 --> 00:01:20,620
+entãoces como fui tomando decisiones
+
+30
+00:01:20,620 --> 00:01:24,120
+e ao final comergi en que me decidia por Python
+
+31
+00:01:24,120 --> 00:01:26,120
+e esa serão un pouco o resultado
+
+32
+00:01:26,120 --> 00:01:28,120
+como soy moi novicio
+
+33
+00:01:28,120 --> 00:01:30,620
+espero que seis indulgentes
+
+34
+00:01:30,620 --> 00:01:32,620
+con algo que é...
+
+35
+00:01:32,620 --> 00:01:34,620
+moi elemental, sobretudo comparado
+
+36
+00:01:34,620 --> 00:01:36,620
+con la charla anterior
+
+37
+00:01:36,620 --> 00:01:39,620
+que ha sido realmente magnífica
+
+38
+00:01:41,120 --> 00:01:43,120
+aqui está el resumen que mandé
+
+39
+00:01:43,120 --> 00:01:45,620
+e simplemente pues deciros que
+
+40
+00:01:47,620 --> 00:01:48,620
+lo importante é isto
+
+41
+00:01:48,620 --> 00:01:49,620
+alguns dos algorítmos
+
+42
+00:01:49,620 --> 00:01:51,620
+utilizas anterior da señal
+
+43
+00:01:51,620 --> 00:01:53,620
+implementaciones en Python
+
+44
+00:01:53,620 --> 00:01:55,620
+a mi como creo que
+
+45
+00:01:55,620 --> 00:01:57,620
+en esta filosofía
+
+46
+00:01:57,620 --> 00:01:59,620
+de lo que se llama
+
+47
+00:01:59,620 --> 00:02:01,620
+inreproducible research
+
+48
+00:02:01,620 --> 00:02:02,620
+investigación
+
+49
+00:02:02,620 --> 00:02:04,620
+aunque esto non es investigación práctingante
+
+50
+00:02:04,620 --> 00:02:06,620
+investigación
+
+51
+00:02:06,620 --> 00:02:08,620
+irreproducible
+
+52
+00:02:08,620 --> 00:02:11,620
+podeis encontrar tanto el pdf
+
+53
+00:02:11,620 --> 00:02:13,620
+que estou presentando
+
+54
+00:02:13,620 --> 00:02:14,620
+como una carpeta
+
+55
+00:02:14,620 --> 00:02:16,620
+con diversos ficheros.pi
+
+56
+00:02:16,620 --> 00:02:18,620
+en los cuales
+
+57
+00:02:18,620 --> 00:02:20,620
+está todo o que estou dicendo
+
+58
+00:02:22,620 --> 00:02:24,620
+o índice que seguiré
+
+59
+00:02:24,620 --> 00:02:26,620
+de temas é este
+
+60
+00:02:26,620 --> 00:02:28,620
+a cuento de o assassinato de Pitágoras
+
+61
+00:02:28,620 --> 00:02:30,120
+não sei se o conheceis
+
+62
+00:02:30,120 --> 00:02:32,120
+isto é un anovela
+
+63
+00:02:32,120 --> 00:02:33,620
+que apareció...
+
+64
+00:02:33,620 --> 00:02:35,620
+bueno, la tengo desde ayer
+
+65
+00:02:35,620 --> 00:02:38,620
+pero ahora lo gobereis porque la he traído
+
+66
+00:02:38,620 --> 00:02:41,620
+não é este
+
+67
+00:02:41,620 --> 00:02:43,620
+é este
+
+68
+00:02:43,620 --> 00:02:45,620
+o assassinato de Pitágoras
+
+69
+00:02:45,620 --> 00:02:48,620
+para hablar un pouco de matemática pura
+
+70
+00:02:49,620 --> 00:02:50,620
+xombreros
+
+71
+00:02:50,620 --> 00:02:53,620
+logo vendrá matemática aplicada
+
+72
+00:02:53,620 --> 00:02:54,620
+xombreros mexicanos
+
+73
+00:02:54,620 --> 00:02:55,620
+captando vibraciones
+
+74
+00:02:55,620 --> 00:02:57,620
+dondículos de dobesis
+
+75
+00:02:57,620 --> 00:02:59,620
+e un pouco de filosofía
+
+76
+00:02:59,620 --> 00:03:02,620
+de un mundo que eu creo que é
+
+77
+00:03:02,620 --> 00:03:04,620
+tiene un potencial enorme
+
+78
+00:03:04,620 --> 00:03:06,620
+tanto teórico como
+
+79
+00:03:06,620 --> 00:03:08,620
+como computacional
+
+80
+00:03:08,620 --> 00:03:10,620
+que é a teoria de patrones en general
+
+81
+00:03:10,620 --> 00:03:12,620
+e um pouco como ilustración
+
+82
+00:03:12,620 --> 00:03:14,620
+un divertimento de última hora
+
+83
+00:03:14,620 --> 00:03:16,620
+sobre hojas de acacia
+
+84
+00:03:16,620 --> 00:03:18,620
+que son os árboles que hay en mi calle
+
+85
+00:03:18,620 --> 00:03:20,620
+portanto cogí unha hoja
+
+86
+00:03:20,620 --> 00:03:22,620
+e hemos intentado hacer algo
+
+87
+00:03:22,620 --> 00:03:24,620
+e un pequeno epílogo de conclusiónes
+
+88
+00:03:24,620 --> 00:03:26,620
+bueno, o assassinato de Pitágoras
+
+89
+00:03:26,620 --> 00:03:28,620
+isto é unha página
+
+90
+00:03:28,620 --> 00:03:30,620
+de La Vanguardia
+
+91
+00:03:30,620 --> 00:03:32,620
+é un periódico popular en Barcelona
+
+92
+00:03:32,620 --> 00:03:35,620
+e tiene unha página de contra
+
+93
+00:03:35,620 --> 00:03:37,620
+a final que é o que leemos todos
+
+94
+00:03:37,620 --> 00:03:39,620
+porque é onde se entrevista
+
+95
+00:03:39,620 --> 00:03:41,620
+a unha personalidad que ha visitado
+
+96
+00:03:41,620 --> 00:03:43,620
+a ciudad o que ha escrito un libro
+
+97
+00:03:43,620 --> 00:03:44,620
+etc.
+
+98
+00:03:44,620 --> 00:03:46,620
+e en este caso foi
+
+99
+00:03:46,620 --> 00:03:48,620
+Marcos Chicot, escritor
+
+100
+00:03:48,620 --> 00:03:51,620
+e o formato
+
+101
+00:03:51,620 --> 00:03:53,620
+e valga a teoria de patrones
+
+102
+00:03:53,620 --> 00:03:56,620
+o formato de toda a contra
+
+103
+00:03:56,620 --> 00:03:57,620
+é o que tenéis aquí
+
+104
+00:03:57,620 --> 00:03:58,620
+primeiro se presenta o nome
+
+105
+00:03:58,620 --> 00:04:00,620
+se dice su profesión
+
+106
+00:04:00,620 --> 00:04:02,620
+se le pregunta unha cosas
+
+107
+00:04:02,620 --> 00:04:04,620
+todo o mundo mira e contestar
+
+108
+00:04:04,620 --> 00:04:06,620
+como pode
+
+109
+00:04:06,620 --> 00:04:08,620
+en fin, é a mi me emociona
+
+110
+00:04:08,620 --> 00:04:10,620
+isto, non sou economista, psicólogo
+
+111
+00:04:10,620 --> 00:04:12,620
+e me dedico a escribir novelas
+
+112
+00:04:12,620 --> 00:04:14,620
+é un, eu creo que
+
+113
+00:04:14,620 --> 00:04:16,620
+no mundo de Python
+
+114
+00:04:16,620 --> 00:04:18,620
+se entiende
+
+115
+00:04:18,620 --> 00:04:20,620
+que é unha multidisciplinar
+
+116
+00:04:20,620 --> 00:04:22,620
+e está interesado por mútios temas
+
+117
+00:04:22,620 --> 00:04:24,620
+pero ademas é que
+
+118
+00:04:24,620 --> 00:04:26,620
+a novela de la colabla
+
+119
+00:04:26,620 --> 00:04:28,620
+é unha espécie de requadro
+
+120
+00:04:28,620 --> 00:04:30,620
+que é unha síntesis
+
+121
+00:04:30,620 --> 00:04:32,620
+por parte do entrevistador
+
+122
+00:04:32,620 --> 00:04:34,620
+e o que está el resto de las preguntas
+
+123
+00:04:34,620 --> 00:04:36,620
+e, bueno, aquí
+
+124
+00:04:36,620 --> 00:04:38,620
+também me emocionó ver aquí
+
+125
+00:04:38,620 --> 00:04:40,620
+tanto o pentáculo
+
+126
+00:04:40,620 --> 00:04:42,620
+como é, está escrito aquí
+
+127
+00:04:42,620 --> 00:04:44,620
+non é o tetraquis
+
+128
+00:04:44,620 --> 00:04:46,620
+alguns dicen tetra, tetraquis
+
+129
+00:04:46,620 --> 00:04:48,620
+que son
+
+130
+00:04:48,620 --> 00:04:50,620
+patrones
+
+131
+00:04:50,620 --> 00:04:52,620
+digamos en matemáticas
+
+132
+00:04:52,620 --> 00:04:54,620
+números
+
+133
+00:04:54,620 --> 00:04:56,620
+e geometria
+
+134
+00:04:56,620 --> 00:04:58,620
+absolutamente ancestrales
+
+135
+00:04:58,620 --> 00:05:00,620
+e desde o logo inaugurados por pitágoras
+
+136
+00:05:00,620 --> 00:05:02,620
+é un sentido místico
+
+137
+00:05:02,620 --> 00:05:04,620
+que quizá hoy hemos perdido
+
+138
+00:05:04,620 --> 00:05:06,620
+de esta persona
+
+139
+00:05:08,620 --> 00:05:10,620
+aqui eu só te dicio
+
+140
+00:05:10,620 --> 00:05:12,620
+un pequeno esquema
+
+141
+00:05:12,620 --> 00:05:14,620
+que veais que
+
+142
+00:05:14,620 --> 00:05:16,620
+para que veais que aparecen
+
+143
+00:05:16,620 --> 00:05:18,620
+os números
+
+144
+00:05:18,620 --> 00:05:20,620
+naturalmente o 1, 2, 3, 4
+
+145
+00:05:20,620 --> 00:05:22,620
+são subfiguras curiosas
+
+146
+00:05:22,620 --> 00:05:24,620
+e
+
+147
+00:05:24,620 --> 00:05:26,620
+isto lo ilustra
+
+148
+00:05:26,620 --> 00:05:28,620
+bem na novela, isto o vi ayer noche
+
+149
+00:05:28,620 --> 00:05:30,620
+de que
+
+150
+00:05:30,620 --> 00:05:32,620
+se em un pentágono
+
+151
+00:05:32,620 --> 00:05:34,620
+hacéis o pentágono estrellado
+
+152
+00:05:34,620 --> 00:05:36,620
+então é o cociente
+
+153
+00:05:36,620 --> 00:05:38,620
+A P
+
+154
+00:05:38,620 --> 00:05:40,620
+A B dividido por P B
+
+155
+00:05:40,620 --> 00:05:42,620
+ou seja, o grande por o seguinte
+
+156
+00:05:42,620 --> 00:05:44,620
+é igual
+
+157
+00:05:44,620 --> 00:05:46,620
+A P B dividido por o seguinte que é Q B
+
+158
+00:05:46,620 --> 00:05:48,620
+e é igual a Q B dividido por o seguinte que é
+
+159
+00:05:48,620 --> 00:05:50,620
+P Q
+
+160
+00:05:50,620 --> 00:05:52,620
+e isso además é o razonárea
+
+161
+00:05:52,620 --> 00:05:54,620
+a divina proporción
+
+162
+00:05:54,620 --> 00:05:56,620
+que está aqui e que Python nos dá
+
+163
+00:05:56,620 --> 00:05:58,620
+imediatamente
+
+164
+00:05:58,620 --> 00:06:00,620
+se lo queremos aproximar esto onde queramos
+
+165
+00:06:00,620 --> 00:06:02,620
+bom, esta
+
+166
+00:06:02,620 --> 00:06:04,620
+na entrevista
+
+167
+00:06:08,620 --> 00:06:10,620
+isto é a parte
+
+168
+00:06:10,620 --> 00:06:12,620
+do periodista que
+
+169
+00:06:12,620 --> 00:06:14,620
+escreve o que ele pensa
+
+170
+00:06:14,620 --> 00:06:16,620
+e isto ya lo leeréis
+
+171
+00:06:16,620 --> 00:06:18,620
+pero
+
+172
+00:06:18,620 --> 00:06:20,620
+me dei cuenta
+
+173
+00:06:20,620 --> 00:06:22,620
+que este hombre chicot
+
+174
+00:06:22,620 --> 00:06:24,620
+o que havia intentado
+
+175
+00:06:24,620 --> 00:06:26,620
+que se encontrar una manera
+
+176
+00:06:26,620 --> 00:06:28,620
+plausible
+
+177
+00:06:28,620 --> 00:06:30,620
+según la cual pitágoras
+
+178
+00:06:30,620 --> 00:06:32,620
+podia haber calculado o número P
+
+179
+00:06:32,620 --> 00:06:34,620
+por cierto que P viene de perímetro
+
+180
+00:06:34,620 --> 00:06:36,620
+é
+
+181
+00:06:36,620 --> 00:06:38,620
+a periferia que querían calcular
+
+182
+00:06:38,620 --> 00:06:40,620
+na circunferencia
+
+183
+00:06:40,620 --> 00:06:42,620
+de diámetro 1
+
+184
+00:06:42,620 --> 00:06:44,620
+então me dije, bueno
+
+185
+00:06:44,620 --> 00:06:46,620
+isto me pode ilustrar un pouco
+
+186
+00:06:46,620 --> 00:06:48,620
+ver que Python
+
+187
+00:06:48,620 --> 00:06:50,620
+en términos de dibujos e de
+
+188
+00:06:50,620 --> 00:06:52,620
+cálculo pues pode funcionar bien
+
+189
+00:06:52,620 --> 00:06:54,620
+aqui tenéis por ejemplo os polígonos
+
+190
+00:06:56,620 --> 00:06:58,620
+se basa
+
+191
+00:06:58,620 --> 00:07:00,620
+en coger un cuadrado
+
+192
+00:07:00,620 --> 00:07:02,620
+que lo tenéis aqui
+
+193
+00:07:02,620 --> 00:07:04,620
+subdividir luego en dos e tendréis un octóxono
+
+194
+00:07:04,620 --> 00:07:06,620
+después lo traeré en dos
+
+195
+00:07:06,620 --> 00:07:08,620
+e tendréis un polígono de 16 lados
+
+196
+00:07:08,620 --> 00:07:10,620
+e así sucesivamente
+
+197
+00:07:10,620 --> 00:07:12,620
+quanto máis lados tengáis
+
+198
+00:07:12,620 --> 00:07:14,620
+máis parecido será el polígono
+
+199
+00:07:14,620 --> 00:07:16,620
+a la circunferencia
+
+200
+00:07:16,620 --> 00:07:18,620
+una circunferencia de diámetro 1 tiene
+
+201
+00:07:18,620 --> 00:07:20,620
+longitud P e portanto la longitud
+
+202
+00:07:20,620 --> 00:07:22,620
+que se pode calcular
+
+203
+00:07:22,620 --> 00:07:24,620
+nos dará no aproximación de P
+
+204
+00:07:24,620 --> 00:07:26,620
+por defecto
+
+205
+00:07:28,620 --> 00:07:30,620
+então os podéis encontrar
+
+206
+00:07:30,620 --> 00:07:32,620
+el código en polígonos.p
+
+207
+00:07:32,620 --> 00:07:34,620
+e
+
+208
+00:07:34,620 --> 00:07:36,620
+me reíce los cálculos
+
+209
+00:07:36,620 --> 00:07:38,620
+que le hacía a mi modo
+
+210
+00:07:38,620 --> 00:07:40,620
+e al final encontré esta fórmula
+
+211
+00:07:40,620 --> 00:07:42,620
+que la aproximación
+
+212
+00:07:42,620 --> 00:07:44,620
+n¹²
+
+213
+00:07:44,620 --> 00:07:46,620
+es la n² máis 2²2n
+
+214
+00:07:46,620 --> 00:07:48,620
+por esto con esta raíz cuadrada
+
+215
+00:07:48,620 --> 00:07:50,620
+e a outra vez con el pn²
+
+216
+00:07:50,620 --> 00:07:52,620
+e
+
+217
+00:07:52,620 --> 00:07:54,620
+pusi a calcular
+
+218
+00:07:54,620 --> 00:07:56,620
+e aqui tenéis que el método
+
+219
+00:07:56,620 --> 00:07:58,620
+no está mal. Este método esencialmente
+
+220
+00:07:58,620 --> 00:08:00,620
+es de arquímedes
+
+221
+00:08:00,620 --> 00:08:02,620
+inclusive os babilones lo conocían
+
+222
+00:08:02,620 --> 00:08:04,620
+pero este hombre lo redescubriu
+
+223
+00:08:04,620 --> 00:08:06,620
+por si solo e eu creo que está muy bien
+
+224
+00:08:06,620 --> 00:08:08,620
+e veis que
+
+225
+00:08:08,620 --> 00:08:10,620
+cada vez dá alguna cifra máis exacta
+
+226
+00:08:10,620 --> 00:08:12,620
+o valor
+
+227
+00:08:12,620 --> 00:08:14,620
+máis cifras decimales es este de aquí
+
+228
+00:08:14,620 --> 00:08:16,620
+e este valor
+
+229
+00:08:16,620 --> 00:08:18,620
+e a outra vez 33
+
+230
+00:08:18,620 --> 00:08:20,620
+quer dizer que eu usado un polígono de 2 elevados 33 lados
+
+231
+00:08:20,620 --> 00:08:22,620
+que é este número de lados
+
+232
+00:08:24,620 --> 00:08:26,620
+então
+
+233
+00:08:26,620 --> 00:08:28,620
+e bueno ya con me picó la curiosidad
+
+234
+00:08:28,620 --> 00:08:30,620
+e qual es
+
+235
+00:08:30,620 --> 00:08:32,620
+a melhor fórmula que hay
+
+236
+00:08:32,620 --> 00:08:34,620
+para calcular p
+
+237
+00:08:34,620 --> 00:08:36,620
+resulta que se descubriu hace pouco
+
+238
+00:08:36,620 --> 00:08:38,620
+no hace mochos años
+
+239
+00:08:38,620 --> 00:08:40,620
+e la descubriu este chunoski
+
+240
+00:08:40,620 --> 00:08:42,620
+que estava no ibm e creo
+
+241
+00:08:42,620 --> 00:08:44,620
+e bueno aqui le hago imprimir
+
+242
+00:08:44,620 --> 00:08:46,620
+dentro tenéis el código para calcularlo
+
+243
+00:08:46,620 --> 00:08:48,620
+e este
+
+244
+00:08:48,620 --> 00:08:50,620
+a cada passo avanza
+
+245
+00:08:50,620 --> 00:08:52,620
+un número muy grande de cifras
+
+246
+00:08:52,620 --> 00:08:54,620
+12, 14
+
+247
+00:08:54,620 --> 00:08:56,620
+fígros bien que en 4 pasos
+
+248
+00:08:56,620 --> 00:08:58,620
+fórmula e os 4 pasos
+
+249
+00:08:58,620 --> 00:09:00,620
+nos dan
+
+250
+00:09:00,620 --> 00:09:02,620
+unha hasta la última cifra
+
+251
+00:09:02,620 --> 00:09:04,620
+aquí exacta
+
+252
+00:09:04,620 --> 00:09:06,620
+e a fórmula é esta
+
+253
+00:09:06,620 --> 00:09:08,620
+uma fórmula un pouco
+
+254
+00:09:08,620 --> 00:09:10,620
+un pouco brutal porque tenéis
+
+255
+00:09:10,620 --> 00:09:12,620
+6 genes factorial
+
+256
+00:09:12,620 --> 00:09:14,620
+3 genes factorial
+
+257
+00:09:14,620 --> 00:09:16,620
+esta potencia etc
+
+258
+00:09:16,620 --> 00:09:18,620
+e bueno afortunadamente
+
+259
+00:09:18,620 --> 00:09:20,620
+como quizás e teno tiempo veremos
+
+260
+00:09:20,620 --> 00:09:22,620
+não há ningún problema
+
+261
+00:09:22,620 --> 00:09:24,620
+em paiza
+
+262
+00:09:24,620 --> 00:09:26,620
+e esta é unha historia da ben curiosa
+
+263
+00:09:26,620 --> 00:09:28,620
+um pouco para animar os ánimos
+
+264
+00:09:28,620 --> 00:09:30,620
+que bien nos conviene a toda a gente
+
+265
+00:09:30,620 --> 00:09:32,620
+que nos dedicamos a esos trabajos
+
+266
+00:09:32,620 --> 00:09:34,620
+má o menos intelectuales
+
+267
+00:09:34,620 --> 00:09:36,620
+e é que
+
+268
+00:09:36,620 --> 00:09:38,620
+hay unha fórmula de un español
+
+269
+00:09:38,620 --> 00:09:40,620
+que é susguilera, é un saragozano
+
+270
+00:09:40,620 --> 00:09:42,620
+autodidacta
+
+271
+00:09:42,620 --> 00:09:44,620
+e a de mayor
+
+272
+00:09:44,620 --> 00:09:46,620
+e resulta que antonio acordova
+
+273
+00:09:46,620 --> 00:09:48,620
+que é un cateirático na autónoma de madrid
+
+274
+00:09:48,620 --> 00:09:50,620
+que é unha de nossas autoridades
+
+275
+00:09:50,620 --> 00:09:52,620
+en teoria de números
+
+276
+00:09:52,620 --> 00:09:54,620
+ecuación de senderebas parciales etc
+
+277
+00:09:54,620 --> 00:09:56,620
+resulta que le dan
+
+278
+00:09:56,620 --> 00:09:58,620
+má nuestro ramanujan español
+
+279
+00:09:58,620 --> 00:10:00,620
+ramanujan era aquel celebre matemático
+
+280
+00:10:00,620 --> 00:10:02,620
+que descubriu fórmulas
+
+281
+00:10:02,620 --> 00:10:04,620
+sem demostración
+
+282
+00:10:04,620 --> 00:10:06,620
+simplemente porque tenia genio matemático
+
+283
+00:10:06,620 --> 00:10:08,620
+pois a fórmula que
+
+284
+00:10:08,620 --> 00:10:10,620
+é só unha de elas
+
+285
+00:10:10,620 --> 00:10:12,620
+e teme esta extraña fórmula
+
+286
+00:10:12,620 --> 00:10:14,620
+que não há cambios de signo como nos atras
+
+287
+00:10:14,620 --> 00:10:16,620
+e é 32 dividido por pícuadrado
+
+288
+00:10:16,620 --> 00:10:18,620
+e bueno, eu posto também como programar
+
+289
+00:10:20,620 --> 00:10:22,620
+passamos ao mundo má aplicado
+
+290
+00:10:22,620 --> 00:10:24,620
+a mi desde hace muchos anos
+
+291
+00:10:24,620 --> 00:10:26,620
+a filosofia que me
+
+292
+00:10:26,620 --> 00:10:28,620
+me ha ayudado e guiado
+
+293
+00:10:28,620 --> 00:10:30,620
+é algo que supongo que implicitamente
+
+294
+00:10:30,620 --> 00:10:32,620
+nos utilizamos todos
+
+295
+00:10:32,620 --> 00:10:34,620
+que é que
+
+296
+00:10:34,620 --> 00:10:36,620
+bueno, a mi como matemático
+
+297
+00:10:36,620 --> 00:10:38,620
+eu posto as matemáticas arriba
+
+298
+00:10:38,620 --> 00:10:40,620
+mas eu não tenho que colocar
+
+299
+00:10:40,620 --> 00:10:42,620
+qualquiera dos outros
+
+300
+00:10:42,620 --> 00:10:44,620
+eu posto matemáticas arriba porque normalmente
+
+301
+00:10:44,620 --> 00:10:46,620
+para entender algo das matemáticas
+
+302
+00:10:46,620 --> 00:10:48,620
+sobretudo se é un pouco complejo
+
+303
+00:10:48,620 --> 00:10:50,620
+ajuda muchísimo
+
+304
+00:10:50,620 --> 00:10:52,620
+a incomprender como se hace
+
+305
+00:10:52,620 --> 00:10:54,620
+que algoritmos hay para calcular aquello
+
+306
+00:10:54,620 --> 00:10:56,620
+como por exemplo pí
+
+307
+00:10:56,620 --> 00:10:58,620
+o concepto de pí está clarísimo
+
+308
+00:10:58,620 --> 00:11:00,620
+é a longitud
+
+309
+00:11:00,620 --> 00:11:02,620
+da interferencia da diámetro 1
+
+310
+00:11:02,620 --> 00:11:04,620
+e outra cosa é como se calcula
+
+311
+00:11:04,620 --> 00:11:06,620
+então, hay algoritmos e nós vimos nos quantos
+
+312
+00:11:06,620 --> 00:11:08,620
+é os algoritmos
+
+313
+00:11:08,620 --> 00:11:10,620
+se os programas, se os analizas
+
+314
+00:11:10,620 --> 00:11:12,620
+se analizar, quer dizer, programar e ver que dan
+
+315
+00:11:14,620 --> 00:11:16,620
+é un espiral
+
+316
+00:11:16,620 --> 00:11:18,620
+digamos virtuosa
+
+317
+00:11:18,620 --> 00:11:20,620
+em la qual vas aprendiendo un pouco
+
+318
+00:11:20,620 --> 00:11:22,620
+de todo e que te permiten explorar
+
+319
+00:11:22,620 --> 00:11:24,620
+novas vias
+
+320
+00:11:24,620 --> 00:11:26,620
+é isto a mi me ayuda e creo que
+
+321
+00:11:26,620 --> 00:11:28,620
+também ajuda en la docencia
+
+322
+00:11:28,620 --> 00:11:30,620
+porque intento planificar
+
+323
+00:11:30,620 --> 00:11:32,620
+la docencia de manera que sí
+
+324
+00:11:32,620 --> 00:11:34,620
+isto tiene una importancia
+
+325
+00:11:34,620 --> 00:11:36,620
+pero se son ingenieros informáticos
+
+326
+00:11:36,620 --> 00:11:38,620
+o que sea
+
+327
+00:11:38,620 --> 00:11:40,620
+eu o que tenho que ayudará que sean mejores ingenieros informáticos
+
+328
+00:11:40,620 --> 00:11:42,620
+que sean mejores matemáticos
+
+329
+00:11:42,620 --> 00:11:44,620
+e então
+
+330
+00:11:44,620 --> 00:11:46,620
+pongo mucho énfasis en esto e sobretudo en esto
+
+331
+00:11:46,620 --> 00:11:48,620
+efectivamente, o logo se produce un pequeno milagro
+
+332
+00:11:48,620 --> 00:11:50,620
+e é que gente
+
+333
+00:11:50,620 --> 00:11:52,620
+que en principio não tem poca
+
+334
+00:11:52,620 --> 00:11:54,620
+motivación por las matemáticas
+
+335
+00:11:54,620 --> 00:11:56,620
+acaba haciendo cosas que ni é do se creía
+
+336
+00:11:56,620 --> 00:11:58,620
+a principio
+
+337
+00:11:58,620 --> 00:12:00,620
+bem, aqui posto este espiral
+
+338
+00:12:00,620 --> 00:12:02,620
+que eu queria
+
+339
+00:12:02,620 --> 00:12:04,620
+outro patrón porque hace 2 anos
+
+340
+00:12:04,620 --> 00:12:06,620
+fui
+
+341
+00:12:06,620 --> 00:12:08,620
+comissario de una exposición que se chamava Imaginari
+
+342
+00:12:08,620 --> 00:12:10,620
+e estava na academia
+
+343
+00:12:10,620 --> 00:12:12,620
+na real academia de ciencias aqui en Madrid
+
+344
+00:12:12,620 --> 00:12:14,620
+e esta era para mim a figura mais bonita
+
+345
+00:12:14,620 --> 00:12:16,620
+que havia en toda a exposición
+
+346
+00:12:16,620 --> 00:12:18,620
+e además eu creo que ilustra
+
+347
+00:12:18,620 --> 00:12:20,620
+bem o tema de
+
+348
+00:12:20,620 --> 00:12:22,620
+un avance continuo
+
+349
+00:12:22,620 --> 00:12:24,620
+não explico o que é
+
+350
+00:12:24,620 --> 00:12:26,620
+porque é de varia tempo
+
+351
+00:12:26,620 --> 00:12:28,620
+bom, então vamos
+
+352
+00:12:28,620 --> 00:12:30,620
+já ao tema
+
+353
+00:12:30,620 --> 00:12:32,620
+mais de
+
+354
+00:12:32,620 --> 00:12:34,620
+os patrónes
+
+355
+00:12:34,620 --> 00:12:36,620
+os patrónes se poden aproximar
+
+356
+00:12:36,620 --> 00:12:38,620
+desde 2 puntos de vista
+
+357
+00:12:38,620 --> 00:12:40,620
+eu empiezo com o punto de vista de abajo a riva
+
+358
+00:12:40,620 --> 00:12:42,620
+que é buscar patrónes elementales
+
+359
+00:12:42,620 --> 00:12:44,620
+que te permitan explicar patrónes
+
+360
+00:12:44,620 --> 00:12:46,620
+máis complicadas
+
+361
+00:12:46,620 --> 00:12:48,620
+aqui habéis visto que
+
+362
+00:12:48,620 --> 00:12:50,620
+esto lo he preparado en colaboración
+
+363
+00:12:50,620 --> 00:12:52,620
+con Gerard Roma
+
+364
+00:12:52,620 --> 00:12:54,620
+que está na poef, ele está
+
+365
+00:12:54,620 --> 00:12:56,620
+em un grupo
+
+366
+00:12:56,620 --> 00:12:58,620
+music technology group
+
+367
+00:12:58,620 --> 00:13:00,620
+e hacen
+
+368
+00:13:00,620 --> 00:13:02,620
+tecnologia de la música
+
+369
+00:13:02,620 --> 00:13:04,620
+então a música ilustra bem este
+
+370
+00:13:04,620 --> 00:13:06,620
+proceso de ir de patrónes
+
+371
+00:13:06,620 --> 00:13:08,620
+elementales a patrónes máis complejos
+
+372
+00:13:08,620 --> 00:13:10,620
+porque unas coisas son
+
+373
+00:13:10,620 --> 00:13:12,620
+as notas musicales
+
+374
+00:13:12,620 --> 00:13:14,620
+e os distintos símbolos que
+
+375
+00:13:14,620 --> 00:13:16,620
+há nos pentagramas e outra cosa é
+
+376
+00:13:16,620 --> 00:13:18,620
+a quinta de Beethoven
+
+377
+00:13:18,620 --> 00:13:20,620
+pero se pode ir de patrónes elementales
+
+378
+00:13:20,620 --> 00:13:22,620
+a outra máis complejos
+
+379
+00:13:22,620 --> 00:13:24,620
+e logo hay outra versión
+
+380
+00:13:24,620 --> 00:13:26,620
+que é intentar ver
+
+381
+00:13:26,620 --> 00:13:28,620
+os patrónes, as formas
+
+382
+00:13:28,620 --> 00:13:30,620
+as pautas de todo tipo que hay
+
+383
+00:13:30,620 --> 00:13:32,620
+no mundo
+
+384
+00:13:32,620 --> 00:13:34,620
+e que en todo o que hacemos
+
+385
+00:13:34,620 --> 00:13:36,620
+sempre las podéis ver
+
+386
+00:13:36,620 --> 00:13:38,620
+e desgraciamente
+
+387
+00:13:38,620 --> 00:13:40,620
+e por autoridades que logo comentaré
+
+388
+00:13:40,620 --> 00:13:42,620
+não há um lenguaje
+
+389
+00:13:42,620 --> 00:13:44,620
+digamos aceptado
+
+390
+00:13:44,620 --> 00:13:46,620
+universal, ni sequera se sabe bem
+
+391
+00:13:46,620 --> 00:13:48,620
+como debiera ser sobre
+
+392
+00:13:48,620 --> 00:13:50,620
+esos patrónes
+
+393
+00:13:50,620 --> 00:13:52,620
+então empiezo por la parte máis viable
+
+394
+00:13:52,620 --> 00:13:54,620
+que son os patrónes elementales
+
+395
+00:13:54,620 --> 00:13:56,620
+e como non
+
+396
+00:13:56,620 --> 00:13:58,620
+empezar por la campana de Gauss
+
+397
+00:13:58,620 --> 00:14:00,620
+que é a fórmula
+
+398
+00:14:00,620 --> 00:14:02,620
+esta fórmula depende
+
+399
+00:14:02,620 --> 00:14:04,620
+da desviación
+
+400
+00:14:04,620 --> 00:14:06,620
+e depende
+
+401
+00:14:06,620 --> 00:14:08,620
+do valor medio
+
+402
+00:14:08,620 --> 00:14:10,620
+pero
+
+403
+00:14:10,620 --> 00:14:12,620
+normalmente
+
+404
+00:14:12,620 --> 00:14:14,620
+nós necesitamos
+
+405
+00:14:14,620 --> 00:14:16,620
+interesa
+
+406
+00:14:16,620 --> 00:14:18,620
+que se vea o patrón de la campana de Gauss
+
+407
+00:14:18,620 --> 00:14:20,620
+con o igual a 0 e ese igual a 1
+
+408
+00:14:20,620 --> 00:14:22,620
+e depois poder derivar
+
+409
+00:14:22,620 --> 00:14:24,620
+doa partir de aquí
+
+410
+00:14:24,620 --> 00:14:26,620
+qualquero outra campana
+
+411
+00:14:26,620 --> 00:14:28,620
+e no caso de pyson
+
+412
+00:14:28,620 --> 00:14:30,620
+o que a ver con noxiaxión lambda
+
+413
+00:14:30,620 --> 00:14:32,620
+então é muy fácil
+
+414
+00:14:32,620 --> 00:14:34,620
+de tener o patrón e propagarlo
+
+415
+00:14:34,620 --> 00:14:36,620
+e aqui tenés un dibujo hecho
+
+416
+00:14:36,620 --> 00:14:38,620
+é o de Laphys PSU
+
+417
+00:14:38,620 --> 00:14:40,620
+afortunamente
+
+418
+00:14:40,620 --> 00:14:42,620
+o matplotlib
+
+419
+00:14:42,620 --> 00:14:44,620
+permite rotular
+
+420
+00:14:44,620 --> 00:14:46,620
+bem con calidad matemática
+
+421
+00:14:46,620 --> 00:14:48,620
+e tenéis
+
+422
+00:14:48,620 --> 00:14:53,380
+o que estai dicendo, no? Que...
+
+423
+00:14:54,700 --> 00:15:00,100
+Bueno, eu representado unha U igual a menos 2 e S igual a 0,4
+
+424
+00:15:00,500 --> 00:15:03,580
+quanto máis pequenha é a S, máis puntiogudo é a campana
+
+425
+00:15:03,900 --> 00:15:07,780
+U igual a menos 1 e S igual a 0,7 e esta é a estándar
+
+426
+00:15:08,540 --> 00:15:11,340
+de acuerdo? U igual a 0 e S igual a 1, etc.
+
+427
+00:15:11,860 --> 00:15:15,580
+E isto, bueno, é agradable ver que en país on se pode hacer muy bien.
+
+428
+00:15:15,580 --> 00:15:20,340
+Se unha pilha a derivada de campana de Gaos que aqui é o azul,
+
+429
+00:15:20,900 --> 00:15:24,860
+é a fí, a derivada é a verde, a fíprima
+
+430
+00:15:25,340 --> 00:15:27,820
+e a segunda derivada, a cambiada de signo,
+
+431
+00:15:27,980 --> 00:15:30,820
+é esta funcione de aquí que é o sombrero mexicano
+
+432
+00:15:31,020 --> 00:15:33,820
+por razones óbvias, alguém le llamo de esta maneira, no?
+
+433
+00:15:34,140 --> 00:15:37,980
+Porque isto juega un papel importante na teoria de la senha.
+
+434
+00:15:38,580 --> 00:15:39,420
+Como veremos.
+
+435
+00:15:39,420 --> 00:15:46,380
+Perdón. O tema de examinar o código,
+
+436
+00:15:46,940 --> 00:15:50,540
+eu creo que para a gente de país on é, miráis os ficheros
+
+437
+00:15:50,740 --> 00:15:53,220
+e entenderéis enseguida perfectamente todo o que hacin.
+
+438
+00:15:53,700 --> 00:15:56,460
+Dos formas, aí é unha cosa curiosa que, se tenho un minuto
+
+439
+00:15:56,660 --> 00:16:00,620
+ao final, la comentaré. E, luego, pues, é os sombreros,
+
+440
+00:16:00,820 --> 00:16:02,540
+lo mismo, con unha extracción lambda,
+
+441
+00:16:02,860 --> 00:16:06,900
+uno pode pasar do sombrero estándar a outros sombreros
+
+442
+00:16:06,900 --> 00:16:10,660
+e aqui tenéis, por exemplo, o colorado está
+
+443
+00:16:11,180 --> 00:16:15,460
+no, perdón, o estándar é o azul,
+
+444
+00:16:15,740 --> 00:16:17,220
+o igual a cero é o igual a uno
+
+445
+00:16:17,420 --> 00:16:20,180
+e, luego, se aumentáis la s, se va aplanando,
+
+446
+00:16:21,780 --> 00:16:25,380
+aplanando, quer dizer, estirarlo por 2
+
+447
+00:16:25,660 --> 00:16:29,460
+e, en altura, dividirlo por a raiz cuadrada de 2.
+
+448
+00:16:30,980 --> 00:16:34,060
+Luego é que seria o verde, me acuerdo?
+
+449
+00:16:34,060 --> 00:16:38,060
+E, finalmente, o rojo é estirarlo 4 veces
+
+450
+00:16:38,260 --> 00:16:43,500
+e comprimir-lo raiz de 2 ao quadrado que é 2.
+
+451
+00:16:44,220 --> 00:16:45,660
+Que é o que estáis viendo aqui,
+
+452
+00:16:45,860 --> 00:16:48,660
+que o rojo é a mitad de alto que o azul.
+
+453
+00:16:48,860 --> 00:16:49,380
+Por?
+
+454
+00:16:49,580 --> 00:16:50,620
+Concer baelaia,
+
+455
+00:16:50,820 --> 00:16:52,020
+a baelaia é o mesmo,
+
+456
+00:16:52,220 --> 00:16:53,820
+o interés é o mesmo para estar todo.
+
+457
+00:16:54,020 --> 00:16:58,020
+Sim, esta é a razón de poner esse factor raiz de 2
+
+458
+00:16:58,220 --> 00:17:00,020
+porque, en el fondo, o que se quer é que,
+
+459
+00:17:00,220 --> 00:17:01,420
+al hacer transformaciones,
+
+460
+00:17:01,620 --> 00:17:03,660
+se conserva a energia da qual o valor é o logo.
+
+461
+00:17:03,660 --> 00:17:08,140
+E, bueno, outra de similar,
+
+462
+00:17:08,340 --> 00:17:10,420
+que é, agora, ao revés,
+
+463
+00:17:10,620 --> 00:17:15,140
+comprimir a estándar,
+
+464
+00:17:15,340 --> 00:17:18,300
+una compresión de a la mitad
+
+465
+00:17:18,500 --> 00:17:20,060
+e una compresión a una quarta parte.
+
+466
+00:17:20,260 --> 00:17:23,460
+E, bueno, e bien rotulas etc.
+
+467
+00:17:23,660 --> 00:17:26,540
+E, também, unha cosa,
+
+468
+00:17:26,740 --> 00:17:27,740
+isto é un pouco máis técnico,
+
+469
+00:17:27,940 --> 00:17:29,940
+pero, en fin, probablemente a gente,
+
+470
+00:17:30,140 --> 00:17:32,140
+os ingenieros de una cierta edad,
+
+471
+00:17:32,140 --> 00:17:33,620
+isto lo sabía moi bien,
+
+472
+00:17:33,820 --> 00:17:35,220
+os máis novos non lo sé,
+
+473
+00:17:35,420 --> 00:17:37,100
+que é o espectro de potencia
+
+474
+00:17:37,300 --> 00:17:39,780
+da función sombrero,
+
+475
+00:17:39,980 --> 00:17:42,020
+que é hacer a transforma de furiar
+
+476
+00:17:42,220 --> 00:17:44,220
+e ver o modo, representar o modo al cuadrado
+
+477
+00:17:44,420 --> 00:17:45,620
+da transforma de furiar.
+
+478
+00:17:45,820 --> 00:17:47,020
+Aqui, na transforma de furiar,
+
+479
+00:17:47,220 --> 00:17:49,700
+en frecuencia angular,
+
+480
+00:17:49,900 --> 00:17:51,580
+es 2 pi omega 4,
+
+481
+00:17:51,780 --> 00:17:53,700
+curiosamente pi aparecen todas partes
+
+482
+00:17:53,900 --> 00:17:56,580
+e é unha, creo que está bien,
+
+483
+00:17:56,780 --> 00:17:58,100
+haber hablado de pi antes.
+
+484
+00:17:58,300 --> 00:18:00,020
+E uno se pode pedir,
+
+485
+00:18:00,020 --> 00:18:02,020
+se pode preguntar como é posible,
+
+486
+00:18:02,220 --> 00:18:03,820
+que é este número tan extracto,
+
+487
+00:18:04,020 --> 00:18:06,220
+resulte que lo aparezca en todas partes.
+
+488
+00:18:06,420 --> 00:18:08,500
+E, bueno, é unha de las maravilhas
+
+489
+00:18:08,700 --> 00:18:09,500
+das matemáticas.
+
+490
+00:18:09,700 --> 00:18:13,500
+2 pi omega 4 por é lavado a menos omega quadrado.
+
+491
+00:18:13,700 --> 00:18:15,860
+Ésta é a representación
+
+492
+00:18:16,060 --> 00:18:17,580
+e permite poner exáctamente
+
+493
+00:18:17,780 --> 00:18:21,540
+onde están os 2 máximos etc.
+
+494
+00:18:23,540 --> 00:18:25,500
+Bueno, vayamos a como se captan
+
+495
+00:18:25,700 --> 00:18:26,860
+las vibraciones.
+
+496
+00:18:27,060 --> 00:18:29,020
+Aqui, 2 o 3 pi,
+
+497
+00:18:29,020 --> 00:18:31,260
+1 é o morlex.
+
+498
+00:18:31,460 --> 00:18:32,660
+Ésta, simplemente,
+
+499
+00:18:32,860 --> 00:18:35,100
+podia haber utilizado o sombrero mexicano,
+
+500
+00:18:35,300 --> 00:18:37,260
+pero he pensado que me iba bem
+
+501
+00:18:37,460 --> 00:18:40,100
+de poner outra de estas funciones,
+
+502
+00:18:40,300 --> 00:18:41,780
+porque se descubrió,
+
+503
+00:18:41,980 --> 00:18:43,660
+hace unos 20 anos,
+
+504
+00:18:43,860 --> 00:18:45,860
+en temas de sismología e acústica,
+
+505
+00:18:46,060 --> 00:18:47,860
+e se pode aplicar también a visión.
+
+506
+00:18:48,060 --> 00:18:49,940
+Bueno, la función é o de menos,
+
+507
+00:18:50,140 --> 00:18:51,740
+eles encontraron una función que é
+
+508
+00:18:51,940 --> 00:18:53,340
+unha parte oscilante
+
+509
+00:18:53,540 --> 00:18:56,020
+e unha parte de caimiento exponencial.
+
+510
+00:18:56,020 --> 00:18:59,460
+O decaimiento exponencial, o podéis ver
+
+511
+00:18:59,660 --> 00:19:03,460
+se vais yendo por las cimas,
+
+512
+00:19:03,660 --> 00:19:04,980
+é o decaimiento exponencial
+
+513
+00:19:05,180 --> 00:19:07,540
+e, logo, a vibración é este coseno.
+
+514
+00:19:07,740 --> 00:19:09,500
+Aproximamente 5, aqui é 5,
+
+515
+00:19:09,700 --> 00:19:11,780
+cae cerca a 1 etc.
+
+516
+00:19:11,980 --> 00:19:13,580
+Então, agora, estamos acostumbrados
+
+517
+00:19:13,780 --> 00:19:17,020
+a que pudo tomar o patrón ordinario,
+
+518
+00:19:17,220 --> 00:19:20,220
+lo pudo expandir o lo pudo comprimir.
+
+519
+00:19:20,420 --> 00:19:23,420
+Portanto, quando unha é ese patrón de hostilación
+
+520
+00:19:23,620 --> 00:19:24,780
+que está limitado
+
+521
+00:19:24,780 --> 00:19:26,020
+en el tiempo,
+
+522
+00:19:26,220 --> 00:19:28,020
+e está limitado en frecuencia,
+
+523
+00:19:28,220 --> 00:19:30,380
+porque aqui sólo é una frecuencia,
+
+524
+00:19:30,580 --> 00:19:32,580
+o no, o quanto se hace la transformación,
+
+525
+00:19:32,780 --> 00:19:33,900
+a exponencial también cuenda,
+
+526
+00:19:34,100 --> 00:19:35,940
+pero está limitado en frecuencia.
+
+527
+00:19:36,140 --> 00:19:38,740
+Então, é esto nos permite
+
+528
+00:19:38,940 --> 00:19:41,540
+unha infinidade de patróns que é estirar
+
+529
+00:19:41,740 --> 00:19:45,340
+o comprimir ao nosso antojo.
+
+530
+00:19:45,540 --> 00:19:48,620
+E, portanto, agora podemos utilizar ésto
+
+531
+00:19:48,820 --> 00:19:51,060
+para analizar funciones.
+
+532
+00:19:51,260 --> 00:19:53,460
+Aqui, se pode ver unha función en negros,
+
+533
+00:19:53,460 --> 00:19:55,180
+non se ve moi bien, probablemente,
+
+534
+00:19:55,380 --> 00:19:59,100
+pero en fin, é unha hostilación muy complicada
+
+535
+00:19:59,300 --> 00:20:01,060
+e é superpuesto
+
+536
+00:20:01,260 --> 00:20:02,580
+ésa función de Morlet,
+
+537
+00:20:02,780 --> 00:20:05,460
+unha estirada, que é esta de aqui,
+
+538
+00:20:05,660 --> 00:20:06,940
+e outra comprimida.
+
+539
+00:20:07,140 --> 00:20:09,620
+E curiosamente, eu non lo había buscado ésto,
+
+540
+00:20:09,820 --> 00:20:12,780
+pero é esto xiripa,
+
+541
+00:20:12,980 --> 00:20:14,620
+que a veces pasa en la vida,
+
+542
+00:20:14,820 --> 00:20:18,420
+que a función de Morlet comprimida
+
+543
+00:20:18,420 --> 00:20:23,060
+vá ao unísono com a función que eu queria analizar.
+
+544
+00:20:23,260 --> 00:20:25,740
+En cambio, é esta de aqui,
+
+545
+00:20:25,940 --> 00:20:29,740
+não vá ao unísono porque como é esta hostila lentamente,
+
+546
+00:20:29,940 --> 00:20:31,180
+a outra hostila é mucho máis
+
+547
+00:20:31,380 --> 00:20:33,580
+e se anula o de arriba com o de abajo,
+
+548
+00:20:33,780 --> 00:20:36,940
+e é de esperar que é isso contribuía muy pouco.
+
+549
+00:20:37,140 --> 00:20:40,380
+E, efectivamente, o que ocorre
+
+550
+00:20:40,580 --> 00:20:42,380
+é que é isto dá prácticamente
+
+551
+00:20:42,580 --> 00:20:44,180
+o valor máximo de coincidencia
+
+552
+00:20:44,380 --> 00:20:46,060
+en esa parte de la gráfica.
+
+553
+00:20:46,060 --> 00:20:49,500
+E, em cambio, o outro dá o valor prácticamente nulo.
+
+554
+00:20:49,700 --> 00:20:53,820
+E, é o princípio básico da transformada de ondículas,
+
+555
+00:20:54,020 --> 00:20:56,140
+que é coger unha ondícula,
+
+556
+00:20:56,340 --> 00:20:58,940
+éas funciones que hostilan un pouco
+
+557
+00:20:59,140 --> 00:21:00,660
+em un intervalo limitado,
+
+558
+00:21:00,860 --> 00:21:02,100
+se llaman ondículas,
+
+559
+00:21:02,300 --> 00:21:05,220
+coger unha ondícula, usarla como lupa
+
+560
+00:21:05,420 --> 00:21:08,340
+a todas as escalas e em todas as posiciones,
+
+561
+00:21:08,540 --> 00:21:10,380
+calcular que o valor é o que me dá,
+
+562
+00:21:10,580 --> 00:21:14,380
+e é o que me dá una cierta radiografía
+
+563
+00:21:14,380 --> 00:21:15,940
+para llamar da alguna manera
+
+564
+00:21:16,140 --> 00:21:20,820
+de la función utilizando este lupa o este microscopio.
+
+565
+00:21:22,300 --> 00:21:26,700
+E, quando unha hace esto a distintas escalas,
+
+566
+00:21:27,740 --> 00:21:29,260
+aquí tienes posiciones,
+
+567
+00:21:29,460 --> 00:21:33,300
+aquí tienes una función complicada e artificiosa,
+
+568
+00:21:33,500 --> 00:21:35,500
+precisamente para que haya muchas cosas,
+
+569
+00:21:35,700 --> 00:21:38,460
+e aquí tenéis o que se llama el escalograma,
+
+570
+00:21:38,660 --> 00:21:41,860
+que é posición e escala,
+
+571
+00:21:41,860 --> 00:21:45,300
+pero en escala logarítmica, portanto,
+
+572
+00:21:45,500 --> 00:21:49,460
+estas escalas resolución é muy gran resolución,
+
+573
+00:21:49,660 --> 00:21:51,180
+poca resolución.
+
+574
+00:21:51,380 --> 00:21:53,540
+E, nos damos cuenta que, em cada fila,
+
+575
+00:21:53,740 --> 00:21:56,820
+ao mirar a una determinada resolución,
+
+576
+00:21:57,020 --> 00:22:00,460
+vemos que se altera que hay niveles de gris variables.
+
+577
+00:22:00,660 --> 00:22:04,940
+E, isto está puesto de manera que creo que é que é o...
+
+578
+00:22:04,940 --> 00:22:12,420
+creo a recordar que é o blanco é, digamos,
+
+579
+00:22:12,620 --> 00:22:16,380
+coincidencia, pero negativo de la función,
+
+580
+00:22:16,580 --> 00:22:18,660
+e o negro é coincidencia.
+
+581
+00:22:18,860 --> 00:22:21,620
+Quanto máis negro, máis coincidencia hay
+
+582
+00:22:21,820 --> 00:22:24,420
+en esa escala e esa posición con o hondícula,
+
+583
+00:22:24,620 --> 00:22:28,820
+que, neste caso, resulta que é o sombrero.
+
+584
+00:22:29,020 --> 00:22:32,580
+Fijaros bien que a escala pequenas,
+
+585
+00:22:32,580 --> 00:22:36,780
+todas estas formaciones que veis aquí apuntan a las singularidades.
+
+586
+00:22:36,980 --> 00:22:39,700
+Acuardo? Que aquí é un sombrero invertido,
+
+587
+00:22:39,900 --> 00:22:44,180
+o dá esta posición de aquí, que aquí hay una pedreia de movimiento,
+
+588
+00:22:44,380 --> 00:22:45,900
+se ve en esto de aquí.
+
+589
+00:22:46,100 --> 00:22:49,540
+E, bueno, esto seria como estudiar radiología,
+
+590
+00:22:49,740 --> 00:22:53,620
+interpretar a radiología ou os...
+
+591
+00:22:53,820 --> 00:22:57,140
+digamos, como se llaman...
+
+592
+00:22:57,340 --> 00:22:59,140
+los cardiogramas, etcétera,
+
+593
+00:22:59,340 --> 00:23:01,660
+se necesite a una especialidad.
+
+594
+00:23:01,660 --> 00:23:03,980
+Aquí ocurre un pouco igual.
+
+595
+00:23:05,180 --> 00:23:08,620
+Dentro de las hondículas ha jugado un papel fundamental
+
+596
+00:23:08,820 --> 00:23:11,220
+en teoría de la señal e en...
+
+597
+00:23:11,420 --> 00:23:13,780
+trabajos en teoría de la imagen,
+
+598
+00:23:13,980 --> 00:23:15,700
+las hondículas de dobe xís.
+
+599
+00:23:15,900 --> 00:23:17,580
+Se me lo vais a permitir,
+
+600
+00:23:17,780 --> 00:23:19,500
+os cuento un poquito como van,
+
+601
+00:23:19,700 --> 00:23:23,620
+porque aquí é donde Python, para mí, é donde máis é alucido.
+
+602
+00:23:23,820 --> 00:23:26,540
+Podréis unos números mágicos,
+
+603
+00:23:26,740 --> 00:23:28,420
+pero que tenen unas explicación,
+
+604
+00:23:28,620 --> 00:23:30,220
+tomemos os decimales,
+
+605
+00:23:30,220 --> 00:23:35,780
+e tome se construís unas listas de matíces,
+
+606
+00:23:35,980 --> 00:23:39,460
+que a primeira matíce é a identidade de ordem n,
+
+607
+00:23:39,660 --> 00:23:41,620
+n pode ser muy grande,
+
+608
+00:23:41,820 --> 00:23:44,820
+normalmente trabajamos con n igual a 10,
+
+609
+00:23:45,020 --> 00:23:48,500
+n minúscula igual a 10, 11, 12,
+
+610
+00:23:48,700 --> 00:23:50,380
+por tanto, é una matíce,
+
+611
+00:23:50,580 --> 00:23:52,180
+a identidade de matíces, muy grande,
+
+612
+00:23:52,380 --> 00:23:55,180
+son os vectores base a esa dimensión.
+
+613
+00:23:55,380 --> 00:23:58,980
+E, entonces, construís recursivamente
+
+614
+00:23:58,980 --> 00:24:01,860
+se já tenéis las de nivel r-1,
+
+615
+00:24:02,060 --> 00:24:04,620
+construísas de nivel r con esta fórmula,
+
+616
+00:24:04,820 --> 00:24:05,940
+me acuerdo?
+
+617
+00:24:06,140 --> 00:24:07,300
+O sea, que se utilizan,
+
+618
+00:24:07,500 --> 00:24:08,620
+que hay 4 coeficientes,
+
+619
+00:24:08,820 --> 00:24:11,180
+por isso se llaman dobe xís 4,
+
+620
+00:24:11,380 --> 00:24:14,620
+se utiliza 4 de los anteriores
+
+621
+00:24:14,820 --> 00:24:17,020
+e se hace correr la jota hasta o final.
+
+622
+00:24:17,220 --> 00:24:19,220
+E, luego, en este orden,
+
+623
+00:24:19,420 --> 00:24:22,340
+alfa 4-alfa 3-alfa 2-alfa 1,
+
+624
+00:24:22,540 --> 00:24:24,740
+son las hondículas de dobe xís.
+
+625
+00:24:24,740 --> 00:24:29,060
+Bueno, pues, una primera cosa que interesa en una clase
+
+626
+00:24:29,260 --> 00:24:31,340
+que se da esto, es poderlo representar
+
+627
+00:24:31,540 --> 00:24:34,220
+de un modo civilizado e ver que forma
+
+628
+00:24:34,420 --> 00:24:36,300
+tienen, aquí están representadas,
+
+629
+00:24:36,500 --> 00:24:39,820
+de las ubes, que son las de escala,
+
+630
+00:24:40,020 --> 00:24:43,780
+de nivel 5, 3 de nivel 5 e 3 de nivel 6,
+
+631
+00:24:43,980 --> 00:24:49,540
+e aquí están las hondículas 3 de nivel 5 e 3 de nivel 6.
+
+632
+00:24:49,740 --> 00:24:51,900
+Esas hondículas son las que se usan
+
+633
+00:24:51,900 --> 00:24:54,660
+para analizar, no, los microscopios
+
+634
+00:24:54,860 --> 00:24:56,900
+que se utilizan para analizar la señal.
+
+635
+00:24:57,100 --> 00:25:00,900
+E digo que mantener unha lista de matrices
+
+636
+00:25:01,100 --> 00:25:02,220
+muy grandes,
+
+637
+00:25:02,420 --> 00:25:04,700
+esas matrices, la primera, tiene n-maiúscula,
+
+638
+00:25:04,900 --> 00:25:06,740
+por n-maiúscula de elementos,
+
+639
+00:25:06,940 --> 00:25:09,420
+la siguiente tiene n partido por 2 por n,
+
+640
+00:25:09,620 --> 00:25:12,180
+la siguiente tiene n partido por 4 por n, etc.
+
+641
+00:25:12,380 --> 00:25:14,300
+Por tanto, es unha
+
+642
+00:25:14,500 --> 00:25:17,340
+una cantidad de datos realmente importante.
+
+643
+00:25:17,540 --> 00:25:19,620
+E para que se, como se usa esto,
+
+644
+00:25:19,620 --> 00:25:22,380
+bueno, pues tenéis un vector que es la señal,
+
+645
+00:25:22,580 --> 00:25:25,780
+representado ya de manera, digamos,
+
+646
+00:25:25,980 --> 00:25:28,740
+un buestreo, no, del longitud tené.
+
+647
+00:25:28,940 --> 00:25:31,500
+E entonces, podéis construir este vector
+
+648
+00:25:31,700 --> 00:25:33,380
+que es el producto escalar de F
+
+649
+00:25:33,580 --> 00:25:36,700
+por el de nivel R, el de escala de nivel R,
+
+650
+00:25:36,900 --> 00:25:37,900
+por el mismo vector,
+
+651
+00:25:38,100 --> 00:25:39,900
+esto da un vector del longitud tené maiúscula,
+
+652
+00:25:40,100 --> 00:25:43,540
+e analogamente unha de R con las V dobles.
+
+653
+00:25:43,740 --> 00:25:45,380
+Bueno, esto
+
+654
+00:25:45,580 --> 00:25:48,380
+viene a ser unha cosa como un promedio cada vez
+
+655
+00:25:48,380 --> 00:25:50,660
+usando intervallos máis grandes.
+
+656
+00:25:50,860 --> 00:25:53,940
+Primero, el primero es ningún intervallo,
+
+657
+00:25:54,140 --> 00:25:55,140
+la señal inicial,
+
+658
+00:25:55,340 --> 00:25:58,300
+después intervallos de longitud, 4, 8, etc.
+
+659
+00:25:58,500 --> 00:26:01,700
+E esto son las diferencias que aparecen
+
+660
+00:26:01,900 --> 00:26:06,540
+para comparar la señal
+
+661
+00:26:06,740 --> 00:26:11,900
+el AR-1 con el AR y el de AR,
+
+662
+00:26:12,100 --> 00:26:13,100
+lo digo en un momento.
+
+663
+00:26:13,300 --> 00:26:14,820
+Las condiciones son estas, no,
+
+664
+00:26:15,020 --> 00:26:16,500
+que el A0 es la F,
+
+665
+00:26:16,500 --> 00:26:19,500
+el AR-1 es el AR-1 y portanto
+
+666
+00:26:19,700 --> 00:26:23,220
+que la F es como este promedio de nivel R
+
+667
+00:26:23,420 --> 00:26:26,700
+máis la diferenciadora de nivel R,
+
+668
+00:26:26,900 --> 00:26:28,300
+AR-1, hasta de 1.
+
+669
+00:26:28,500 --> 00:26:29,820
+E esto, de nuevo,
+
+670
+00:26:30,020 --> 00:26:33,500
+se pode representar fabulosamente en Python
+
+671
+00:26:33,700 --> 00:26:34,940
+e lo tenéis aquí,
+
+672
+00:26:35,140 --> 00:26:37,500
+he puesto, a la izquierda tenéis las AS
+
+673
+00:26:37,700 --> 00:26:41,300
+de una señal que me la construí,
+
+674
+00:26:41,500 --> 00:26:43,660
+que fuera unha hostilación,
+
+675
+00:26:43,660 --> 00:26:46,460
+pero de alturas diferentes, no?
+
+676
+00:26:46,660 --> 00:26:48,340
+E entonces, aí podéis ver,
+
+677
+00:26:48,540 --> 00:26:54,660
+esto sairía al A0, al A1, al A2, al A3, al A4, al A5, al A6, al A7, al A8, al A9, al A10.
+
+678
+00:26:54,860 --> 00:26:58,260
+La 10, como utilizáis, un único intervallo para hacer promedio,
+
+679
+00:26:58,460 --> 00:27:01,940
+os sale un cifalograma plano
+
+680
+00:27:02,140 --> 00:27:04,660
+que es unha constante muy pequeña, pero no 0.
+
+681
+00:27:04,860 --> 00:27:05,860
+E, luego,
+
+682
+00:27:06,060 --> 00:27:09,460
+la reconstrucción es que esto más esto es esto,
+
+683
+00:27:09,660 --> 00:27:13,060
+esto más esto es esto, esto más esto es esto, esto más esto es esto,
+
+684
+00:27:13,060 --> 00:27:15,060
+portanto, esto más todos estos,
+
+685
+00:27:15,260 --> 00:27:17,260
+es la señal inicial.
+
+686
+00:27:17,460 --> 00:27:20,660
+E esto que ocurre quando, en internet, cargáis unha imagen,
+
+687
+00:27:20,860 --> 00:27:24,060
+a veces se va produciendo por etapas,
+
+688
+00:27:24,260 --> 00:27:26,860
+pues é esto, es unha reconstrucción de este tipo.
+
+689
+00:27:27,060 --> 00:27:28,860
+El caso de imágenes, non lo trato ya aquí,
+
+690
+00:27:29,060 --> 00:27:31,860
+pero las imágenes es hacer estas transformaciones
+
+691
+00:27:32,060 --> 00:27:34,060
+en la matriz de la imagen,
+
+692
+00:27:34,260 --> 00:27:36,460
+primero todo por filas y luego todo por columnas,
+
+693
+00:27:36,660 --> 00:27:39,060
+e iterar las veces que o non quiera.
+
+694
+00:27:39,060 --> 00:27:43,060
+E os algoritmos funcionan perfectamente.
+
+695
+00:27:43,260 --> 00:27:46,660
+Finalmente, acerca de esto,
+
+696
+00:27:46,860 --> 00:27:49,660
+está que en lugar de utilizar esos vectores
+
+697
+00:27:49,860 --> 00:27:51,860
+promedio e diferenciales,
+
+698
+00:27:52,060 --> 00:27:53,860
+se suelo utilizar este vector
+
+699
+00:27:54,060 --> 00:27:57,860
+que es solo os coeficientes de los productos escalares.
+
+700
+00:27:58,060 --> 00:28:00,060
+E todo éste,
+
+701
+00:28:00,260 --> 00:28:03,060
+o vector relevante é este vector
+
+702
+00:28:03,260 --> 00:28:05,860
+que se le ama a tendencia de nivel R
+
+703
+00:28:05,860 --> 00:28:09,260
+e as diferencias que son é estos de aquí,
+
+704
+00:28:09,460 --> 00:28:12,060
+aquí, fiquem os bien que o vector baja de longitud,
+
+705
+00:28:12,260 --> 00:28:13,260
+es cada vez menos.
+
+706
+00:28:13,460 --> 00:28:16,860
+E a energia de un vector se define como la suma de cuadrados,
+
+707
+00:28:17,060 --> 00:28:20,260
+é esto proviene sea de la energia cinética,
+
+708
+00:28:20,460 --> 00:28:23,860
+o modelado, o sea de la potencial de unha, de un muelle,
+
+709
+00:28:24,060 --> 00:28:26,860
+e se o llama energia cinética en teoría de la imagen,
+
+710
+00:28:27,060 --> 00:28:28,660
+se cumple que é esto,
+
+711
+00:28:28,860 --> 00:28:32,860
+a energia de ese vector transformado é a energia.
+
+712
+00:28:32,860 --> 00:28:38,460
+E o uso de é esto em compresión
+
+713
+00:28:38,660 --> 00:28:40,260
+é que é este vector de aquí,
+
+714
+00:28:40,460 --> 00:28:43,060
+por exemplo, con as ondículas de dobe xís,
+
+715
+00:28:43,260 --> 00:28:46,860
+é esto concentra prácticamente toda a energia de fê,
+
+716
+00:28:47,060 --> 00:28:50,460
+con o qual é isto o vemos na seguinte.
+
+717
+00:28:50,660 --> 00:28:55,060
+É isto seria o 1 e o de 1,
+
+718
+00:28:55,260 --> 00:28:57,660
+é isto o 2, o de 2 e o de 1,
+
+719
+00:28:57,860 --> 00:28:59,860
+e 4 vezes.
+
+720
+00:29:00,060 --> 00:29:01,860
+Fiquem os bien que é aqui,
+
+721
+00:29:01,860 --> 00:29:04,460
+hasta é este nivel, é prácticamente zero,
+
+722
+00:29:04,660 --> 00:29:08,060
+portanto se é isto, os metís e ponéis zeros
+
+723
+00:29:08,260 --> 00:29:10,860
+e reconstruís a senhal con ésto,
+
+724
+00:29:11,060 --> 00:29:13,060
+obtendréis unha aproximación suficientemente buena.
+
+725
+00:29:13,260 --> 00:29:17,460
+E de hecho, aqui tenéis que a nivel zero, 1, 2,
+
+726
+00:29:17,660 --> 00:29:20,260
+é 100% de energia dos decimales,
+
+727
+00:29:20,460 --> 00:29:24,260
+en el 3 é 99,99
+
+728
+00:29:24,460 --> 00:29:26,860
+e logo va bajando un poquito e se deteriora.
+
+729
+00:29:27,060 --> 00:29:31,260
+Aqui veis que é una cola que já tiene unha cierta importancia.
+
+730
+00:29:31,260 --> 00:29:35,260
+De novo, todos os cálculos en paizón é unha maravina,
+
+731
+00:29:35,460 --> 00:29:37,260
+é entiér...
+
+732
+00:29:37,460 --> 00:29:41,060
+A diferencia entre, como já se há puesto moito de manifesto aqui,
+
+733
+00:29:41,260 --> 00:29:44,260
+entre os conceptos e o código,
+
+734
+00:29:44,460 --> 00:29:48,260
+é se le directamente unha cosa de lado a outra.
+
+735
+00:29:48,460 --> 00:29:51,260
+E vamos aos patrones generales,
+
+736
+00:29:51,460 --> 00:29:53,860
+e isto não vou a insistir mucho.
+
+737
+00:29:54,060 --> 00:29:57,660
+Quizá, me he fijado moito en este caso,
+
+738
+00:29:57,860 --> 00:30:00,260
+primeiro porque é un libro que estou estudiando,
+
+739
+00:30:00,260 --> 00:30:02,460
+segundo porque David Manfort
+
+740
+00:30:02,660 --> 00:30:09,260
+recebi o prémio BBVA de Fronteras do Conocimiento
+
+741
+00:30:09,460 --> 00:30:10,860
+este ano,
+
+742
+00:30:11,060 --> 00:30:12,260
+a versión dos meus discos.
+
+743
+00:30:12,460 --> 00:30:14,260
+Por primera vez é de un matemático.
+
+744
+00:30:14,460 --> 00:30:19,460
+E David Manfort, que é é mérito de Harvard e de Brown,
+
+745
+00:30:19,660 --> 00:30:22,660
+escreviu con Agnes Desolné,
+
+746
+00:30:22,860 --> 00:30:24,460
+escreviu este libro
+
+747
+00:30:24,660 --> 00:30:29,260
+e é realmente un passo
+
+748
+00:30:29,260 --> 00:30:32,660
+a conseguir este lenguaje de la teoria de patrones.
+
+749
+00:30:32,860 --> 00:30:35,460
+O Real Sociedad Matemática Española
+
+750
+00:30:35,660 --> 00:30:37,660
+me encargo que le hiciera unha entrevista
+
+751
+00:30:37,860 --> 00:30:41,260
+con ocasión de darle o prémio.
+
+752
+00:30:41,460 --> 00:30:45,060
+A entrevista o hemos mantenido entre julio e agosto,
+
+753
+00:30:45,260 --> 00:30:47,660
+ha contestado metódicamente todas as perguntas que le dices,
+
+754
+00:30:47,860 --> 00:30:49,060
+e há un artículo
+
+755
+00:30:49,260 --> 00:30:52,260
+na última gaceta
+
+756
+00:30:52,460 --> 00:30:54,860
+de la Real Sociedad Matemática Española, que podéis entrar,
+
+757
+00:30:55,060 --> 00:30:56,060
+se queréis,
+
+758
+00:30:56,260 --> 00:30:58,060
+e se não dentro de pouco, lo tendréis na web,
+
+759
+00:30:58,060 --> 00:31:01,060
+o lo pondréis aquí, en el repositorio Conf,
+
+760
+00:31:01,260 --> 00:31:02,260
+para que lo tengáis.
+
+761
+00:31:02,460 --> 00:31:05,060
+Por que? Le pregunto exactamente
+
+762
+00:31:05,260 --> 00:31:09,660
+se ele veía que era necesario
+
+763
+00:31:09,860 --> 00:31:11,860
+hacer una continuación de esto,
+
+764
+00:31:12,060 --> 00:31:14,660
+en la cual hubiera ya indicios de como é
+
+765
+00:31:14,860 --> 00:31:16,860
+esa teoria general de patrones.
+
+766
+00:31:17,060 --> 00:31:19,060
+E ele dice, no, se lo tengo que escribir, eu.
+
+767
+00:31:19,260 --> 00:31:23,660
+Bé, que é un tema muy complicado.
+
+768
+00:31:23,860 --> 00:31:25,660
+Está muy relacionado
+
+769
+00:31:25,660 --> 00:31:28,260
+na teoria de patrones general, con o que está ocurriendo
+
+770
+00:31:28,460 --> 00:31:30,460
+na mente humana, nos cerebros
+
+771
+00:31:30,660 --> 00:31:31,860
+e nos animales.
+
+772
+00:31:32,060 --> 00:31:34,260
+Porque resulta que,
+
+773
+00:31:34,460 --> 00:31:36,660
+quando nós nos movemos por o mundo,
+
+774
+00:31:36,860 --> 00:31:40,060
+nós somos conscientes de que estamos protestando
+
+775
+00:31:40,260 --> 00:31:43,260
+infinitos patrones, bueno, una infinidade de patrones,
+
+776
+00:31:43,460 --> 00:31:47,260
+pero que os circuitos neuronales
+
+777
+00:31:47,460 --> 00:31:49,860
+son tales que, se os patrones
+
+778
+00:31:50,060 --> 00:31:52,460
+van confirmando as expectativas que temos,
+
+779
+00:31:52,660 --> 00:31:54,060
+non nos damos cuenta.
+
+780
+00:31:54,060 --> 00:31:57,660
+Pero, en el momento que en el entorno,
+
+781
+00:31:57,860 --> 00:31:59,860
+en el ambiente aparece algo distinto
+
+782
+00:32:00,060 --> 00:32:03,660
+de lo que, la predicción del mundo que tenemos
+
+783
+00:32:03,860 --> 00:32:06,660
+é cambia, saltan las alarmas
+
+784
+00:32:06,860 --> 00:32:08,660
+e, entó, cê es quando nos damos cuenta
+
+785
+00:32:08,860 --> 00:32:10,660
+de que algo non lo habíamos entendido.
+
+786
+00:32:10,860 --> 00:32:12,860
+E viceversa, hay patrones que,
+
+787
+00:32:13,060 --> 00:32:14,860
+se non te los han dicho antes, non los ves nunca.
+
+788
+00:32:15,060 --> 00:32:17,860
+E, quando te los dicen, ah, sí, eu lo vego, no?
+
+789
+00:32:18,060 --> 00:32:20,860
+Esos dibujos en donde hay cosas ocultas, etc.
+
+790
+00:32:20,860 --> 00:32:24,260
+Bueno, aquí, eu não me voy a poner, ahora, a explicar esto,
+
+791
+00:32:24,460 --> 00:32:25,660
+lo tenéis escrito,
+
+792
+00:32:25,860 --> 00:32:27,860
+pero,
+
+793
+00:32:28,060 --> 00:32:30,860
+a parte importante de esos patrones generales
+
+794
+00:32:31,060 --> 00:32:33,260
+es que, normalmente,
+
+795
+00:32:33,460 --> 00:32:36,460
+la estructura del patrones oculta, o parcialmente oculta,
+
+796
+00:32:36,660 --> 00:32:39,660
+no? No son totalmente asequibles a observación.
+
+797
+00:32:39,860 --> 00:32:41,660
+Quando observáis unha hoja
+
+798
+00:32:41,860 --> 00:32:45,860
+e la siguiente, como veremos agora,
+
+799
+00:32:46,060 --> 00:32:47,860
+tienen unha estructura e tienen una estructura parecida
+
+800
+00:32:48,060 --> 00:32:49,660
+e eso tiene que tener unha razón.
+
+801
+00:32:49,660 --> 00:32:52,060
+La razón, oi un día las sabemos, es bioquímica,
+
+802
+00:32:52,260 --> 00:32:57,660
+es, es la estructura biológica o celular
+
+803
+00:32:57,860 --> 00:33:00,060
+de las plantas e todo el tema
+
+804
+00:33:00,260 --> 00:33:02,460
+de como se reproducen e van creciendo, etc.
+
+805
+00:33:02,660 --> 00:33:05,060
+E eso é invisible directamente
+
+806
+00:33:05,260 --> 00:33:07,660
+e o único que vivemos a nivel macroscópico
+
+807
+00:33:07,860 --> 00:33:10,660
+pues, é o formato de hoja.
+
+808
+00:33:10,860 --> 00:33:14,660
+E analogamente, pues, en, en, tanto se hablaramos de voz,
+
+809
+00:33:14,860 --> 00:33:17,660
+como de imagen, como de lo que queráis,
+
+810
+00:33:17,660 --> 00:33:20,660
+sempre lo que nos interesa, que é unha observación,
+
+811
+00:33:20,860 --> 00:33:23,660
+la explicación suele ser, estar un pouco oculta
+
+812
+00:33:23,860 --> 00:33:28,660
+e é necessario buscarla con os modelos.
+
+813
+00:33:28,860 --> 00:33:30,660
+Bien,
+
+814
+00:33:33,660 --> 00:33:36,660
+modelar nos trasformaciones en parte estocásticamente
+
+815
+00:33:36,860 --> 00:33:38,660
+e en parte de modo determinista.
+
+816
+00:33:38,860 --> 00:33:41,660
+Determinista é a estructura, digamos, patron
+
+817
+00:33:41,860 --> 00:33:44,660
+e, luego, as variaciones estocásticas que toquen o modelo
+
+818
+00:33:44,660 --> 00:33:47,660
+que se valida por medio de muestreos del modelo
+
+819
+00:33:47,860 --> 00:33:51,260
+e a comparación de estes, de estes,
+
+820
+00:33:51,460 --> 00:33:55,660
+destas muestras, con o que realmente se observa na realidade.
+
+821
+00:33:55,860 --> 00:33:57,660
+Otro libro fundamental,
+
+822
+00:33:57,860 --> 00:34:00,660
+pero desgraciadamente é difícil de encontrar,
+
+823
+00:34:00,860 --> 00:34:03,660
+elementos de Elements of Pattern Theory,
+
+824
+00:34:03,860 --> 00:34:07,660
+aqui é incluso código en mal lab,
+
+825
+00:34:07,860 --> 00:34:10,660
+pero é hecho en mal lab un pouco antiguo
+
+826
+00:34:10,860 --> 00:34:13,660
+e a traducción a Python é cosericantar,
+
+827
+00:34:13,660 --> 00:34:15,660
+como quén dice.
+
+828
+00:34:15,860 --> 00:34:17,660
+E lo estoy trabajando un pouco,
+
+829
+00:34:17,860 --> 00:34:19,660
+lo estamos trabajando.
+
+830
+00:34:19,860 --> 00:34:21,660
+É este tema de o que ocurre
+
+831
+00:34:21,860 --> 00:34:23,660
+en el cerebro con os patrones,
+
+832
+00:34:23,860 --> 00:34:27,660
+esencialmente este modelo viene de la lingüística,
+
+833
+00:34:27,860 --> 00:34:30,660
+pero realmente quem le ha dado
+
+834
+00:34:30,860 --> 00:34:33,660
+este carácter fundamental é Manfort,
+
+835
+00:34:33,860 --> 00:34:35,660
+se tiene nástra señal
+
+836
+00:34:35,860 --> 00:34:39,660
+e esta señal deriva de un lado.
+
+837
+00:34:39,860 --> 00:34:42,660
+Bueno, aqui está bien, no?
+
+838
+00:34:42,660 --> 00:34:47,660
+De algum lado tenemos que llegar ao modelo,
+
+839
+00:34:47,860 --> 00:34:50,660
+e tenemos que hacer ajustes do modelo
+
+840
+00:34:50,860 --> 00:34:52,660
+para ver se nos responde na realidade.
+
+841
+00:34:52,860 --> 00:34:56,660
+E é un circuito de novo, un circuito virtuoso,
+
+842
+00:34:56,860 --> 00:34:59,660
+onde comparamos a estimación que já temos,
+
+843
+00:34:59,860 --> 00:35:03,660
+que normalmente ao empezar é un prior,
+
+844
+00:35:03,860 --> 00:35:06,660
+comparamos-me diante determinadas características
+
+845
+00:35:06,860 --> 00:35:10,660
+que entre sacamos de F e Fm ou de F,
+
+846
+00:35:10,660 --> 00:35:13,660
+comparamos-me dos e isto nos leva ao modelo,
+
+847
+00:35:13,860 --> 00:35:15,660
+e se isto nos satisface,
+
+848
+00:35:15,860 --> 00:35:17,860
+terminamos con este asunto,
+
+849
+00:35:18,060 --> 00:35:21,660
+e se não via descendente alimentamos
+
+850
+00:35:21,860 --> 00:35:25,860
+de novo esta estimación aqui.
+
+851
+00:35:26,060 --> 00:35:29,660
+E, en el caso de cerebro,
+
+852
+00:35:29,860 --> 00:35:31,660
+hay un libro que non le he puesto aqui,
+
+853
+00:35:31,860 --> 00:35:32,860
+pero que os recomiendo,
+
+854
+00:35:33,060 --> 00:35:37,660
+se tenéis interés en como modelar
+
+855
+00:35:37,660 --> 00:35:40,660
+o processo mental, hay un libro que se llama
+
+856
+00:35:40,860 --> 00:35:42,660
+Un Intelligence,
+
+857
+00:35:42,860 --> 00:35:48,660
+o autor se llama Hocking,
+
+858
+00:35:48,860 --> 00:35:54,660
+e allí explica un pouco a nivel de neurología
+
+859
+00:35:54,860 --> 00:35:58,660
+como podrian ir esos circuitos.
+
+860
+00:35:58,860 --> 00:36:04,660
+Também pode ayudar mucho este.
+
+861
+00:36:04,660 --> 00:36:07,660
+Un Corenander tiene un libro reciente
+
+862
+00:36:07,860 --> 00:36:09,660
+a Calculus of Ideas,
+
+863
+00:36:09,860 --> 00:36:11,660
+lo tiene também en Malnap,
+
+864
+00:36:11,860 --> 00:36:12,660
+este me obviere a gostar o tenerlo
+
+865
+00:36:12,860 --> 00:36:14,660
+e a todo programado en Python para hoy,
+
+866
+00:36:14,860 --> 00:36:15,660
+pero non has tenido tiempo,
+
+867
+00:36:15,860 --> 00:36:17,660
+a ver se hay un aproximo ocasión
+
+868
+00:36:17,860 --> 00:36:20,660
+e os podo presentar todo esto en Python
+
+869
+00:36:20,860 --> 00:36:23,660
+e mucho más, porque eu creo que da mucho de si el tema.
+
+870
+00:36:23,860 --> 00:36:26,660
+Este libro é un clásico
+
+871
+00:36:26,860 --> 00:36:28,660
+a quien tenga interés en las teorías,
+
+872
+00:36:28,860 --> 00:36:31,660
+cosas que tengan que ver con la forma,
+
+873
+00:36:31,860 --> 00:36:33,660
+sobre crescimento e forma.
+
+874
+00:36:33,660 --> 00:36:35,660
+Eu cito este,
+
+875
+00:36:35,860 --> 00:36:36,660
+jay,
+
+876
+00:36:36,860 --> 00:36:39,660
+Modern Calculus Computing with Functions and Structures,
+
+877
+00:36:39,860 --> 00:36:41,660
+que no é o que parece.
+
+878
+00:36:41,860 --> 00:36:44,660
+Aqui os patrones son patrones sintácticos
+
+879
+00:36:44,860 --> 00:36:46,660
+e o que hace,
+
+880
+00:36:46,860 --> 00:36:47,660
+é un livro muy interesante,
+
+881
+00:36:47,860 --> 00:36:48,860
+por outra parte,
+
+882
+00:36:49,060 --> 00:36:50,660
+lo hemos utilizado con Jordi
+
+883
+00:36:50,860 --> 00:36:52,660
+en un artículo que estamos terminando,
+
+884
+00:36:52,860 --> 00:36:56,660
+que por fin se ha conseguido
+
+885
+00:36:56,860 --> 00:36:59,660
+un aproximación,
+
+886
+00:36:59,860 --> 00:37:02,660
+un aproximación mediante
+
+887
+00:37:02,660 --> 00:37:05,660
+unha derivación del cálculo lambda,
+
+888
+00:37:05,860 --> 00:37:07,660
+del cálculo funcional puro,
+
+889
+00:37:07,860 --> 00:37:10,660
+que permite dar cuenta de todos os paradigmas maiores
+
+890
+00:37:10,860 --> 00:37:12,660
+de la computación,
+
+891
+00:37:12,860 --> 00:37:14,660
+funcional, orientado a objetos,
+
+892
+00:37:14,860 --> 00:37:16,860
+bases de datos, etc.
+
+893
+00:37:17,060 --> 00:37:18,660
+E isto, a nivel teórico,
+
+894
+00:37:18,860 --> 00:37:20,660
+a mi, particularmente interesa mucho,
+
+895
+00:37:20,860 --> 00:37:22,660
+porque quiere decir que quizá,
+
+896
+00:37:22,860 --> 00:37:25,660
+incluso podria inspirar a Python en algún momento,
+
+897
+00:37:25,860 --> 00:37:27,660
+dado que Python é consistente con esto,
+
+898
+00:37:27,860 --> 00:37:29,660
+en cierta maneira.
+
+899
+00:37:29,660 --> 00:37:33,660
+Bueno, as hojas, aquí me entretenen
+
+900
+00:37:33,860 --> 00:37:37,660
+coger unha hoja de acacia de mi caña,
+
+901
+00:37:37,860 --> 00:37:40,660
+e hice os dibujos para ver máso-menos como iba,
+
+902
+00:37:40,860 --> 00:37:42,660
+fijaros bien que o perfil
+
+903
+00:37:42,860 --> 00:37:45,660
+o perfil reproduce como os foliólos,
+
+904
+00:37:45,860 --> 00:37:47,660
+e ao dibujar-lo,
+
+905
+00:37:47,860 --> 00:37:50,660
+podes comprobar directamente
+
+906
+00:37:50,860 --> 00:37:51,860
+con os sentidos,
+
+907
+00:37:52,060 --> 00:37:53,660
+que efectivamente,
+
+908
+00:37:53,860 --> 00:37:55,660
+para pasar de un foliólo a os demás,
+
+909
+00:37:55,860 --> 00:37:58,660
+haces transformaciones elementales.
+
+910
+00:37:58,660 --> 00:38:02,660
+Quizá un escalado en longitu y en anchura,
+
+911
+00:38:02,860 --> 00:38:04,860
+e efectiva un ajuste pequeño,
+
+912
+00:38:05,060 --> 00:38:07,060
+que é a variación estoocástica,
+
+913
+00:38:07,260 --> 00:38:10,860
+e então con esto, lo pudo dibujar rapidísimamente.
+
+914
+00:38:11,060 --> 00:38:12,460
+Me hice unha foto,
+
+915
+00:38:12,660 --> 00:38:14,660
+la puse en un dibujador,
+
+916
+00:38:14,860 --> 00:38:17,660
+fui haciendo puntos e salió esto.
+
+917
+00:38:17,860 --> 00:38:21,260
+Bueno, esto ha sido o base para este divertimento.
+
+918
+00:38:21,460 --> 00:38:26,660
+Hoja de acacia, esto é o foliólo,
+
+919
+00:38:26,660 --> 00:38:29,660
+un modelo, o foliólo muy rudimentario,
+
+920
+00:38:29,860 --> 00:38:32,260
+e deixar-los caer de manera que cubran
+
+921
+00:38:32,460 --> 00:38:33,860
+estoocásticamente o plano,
+
+922
+00:38:34,060 --> 00:38:35,660
+se escogen aleatoriamente,
+
+923
+00:38:35,860 --> 00:38:37,060
+puntos en el plano,
+
+924
+00:38:37,260 --> 00:38:39,260
+e salesto, cada vez que volves a correr
+
+925
+00:38:39,460 --> 00:38:44,060
+o programa te sale outro otoño.
+
+926
+00:38:44,260 --> 00:38:46,660
+E este, simplemente para ver
+
+927
+00:38:46,860 --> 00:38:48,460
+las variaciones que no puedo hacer,
+
+928
+00:38:48,660 --> 00:38:50,660
+caer o hoja e que se disperse
+
+929
+00:38:50,860 --> 00:38:52,660
+con una distribución normal.
+
+930
+00:38:52,860 --> 00:38:56,060
+Portanto, por isso quedan máas concentradas en el medio.
+
+931
+00:38:56,060 --> 00:38:58,460
+E isto é un pouco, esta hoja,
+
+932
+00:38:58,660 --> 00:39:01,060
+non é o real porque há menos foliólos,
+
+933
+00:39:01,260 --> 00:39:03,060
+ni é os paramétros son correctos,
+
+934
+00:39:03,260 --> 00:39:04,660
+pero para ver un pouco o que é,
+
+935
+00:39:04,860 --> 00:39:07,060
+eu creo que é está claro.
+
+936
+00:39:07,260 --> 00:39:11,660
+En particular ver que há y la hoja,
+
+937
+00:39:11,860 --> 00:39:14,660
+como se compara la hoja escalada
+
+938
+00:39:14,860 --> 00:39:17,060
+a nivel de toda a hoja,
+
+939
+00:39:17,260 --> 00:39:20,060
+el foliólo escalado a nivel de toda a hoja
+
+940
+00:39:20,260 --> 00:39:22,060
+con la hoja.
+
+941
+00:39:22,260 --> 00:39:25,060
+Bueno, e aquí, cuánto tiempo me queda?
+
+942
+00:39:25,060 --> 00:39:27,060
+5, 10 minutos.
+
+943
+00:39:27,260 --> 00:39:28,460
+Entonces, o que voy a hacer
+
+944
+00:39:28,660 --> 00:39:31,260
+é xelustrar un poquito
+
+945
+00:39:31,460 --> 00:39:34,060
+a algunos partes de los códigos
+
+946
+00:39:34,260 --> 00:39:36,860
+que a mí me han gustado máis,
+
+947
+00:39:37,060 --> 00:39:39,060
+que me han entusiasmado máis,
+
+948
+00:39:39,260 --> 00:39:40,460
+non hacerlos.
+
+949
+00:39:40,660 --> 00:39:46,460
+Tengo que decir que empecé utilizando esta,
+
+950
+00:39:46,660 --> 00:39:48,860
+isto lo hicieron nos estudiantes holandeses,
+
+951
+00:39:49,060 --> 00:39:50,860
+o holandese se llama paizo,
+
+952
+00:39:51,060 --> 00:39:52,260
+pizo,
+
+953
+00:39:52,260 --> 00:39:55,060
+e como al ser estudiantes del nivel
+
+954
+00:39:55,260 --> 00:39:56,260
+de los que eu tenho,
+
+955
+00:39:56,460 --> 00:39:57,460
+los que estou enseñando,
+
+956
+00:39:57,660 --> 00:39:59,460
+me pareció excelente
+
+957
+00:39:59,660 --> 00:40:01,460
+de tener un entorno de pizo
+
+958
+00:40:01,660 --> 00:40:02,660
+que le havían hecho nos estudiantes
+
+959
+00:40:02,860 --> 00:40:05,260
+que ellos podrian haber hecho lo mismo.
+
+960
+00:40:05,460 --> 00:40:10,260
+E aquí, bueno, tengo, a ver,
+
+961
+00:40:10,460 --> 00:40:11,860
+en este puesto sombreros,
+
+962
+00:40:12,060 --> 00:40:15,060
+sombreros A, sombreros B, etc.
+
+963
+00:40:15,260 --> 00:40:18,660
+Non se ve los nombres,
+
+964
+00:40:18,660 --> 00:40:22,060
+pero en fin, vamos a ver, por exemplo,
+
+965
+00:40:22,260 --> 00:40:26,860
+el dobexis base,
+
+966
+00:40:27,060 --> 00:40:30,860
+que é como se hace
+
+967
+00:40:31,060 --> 00:40:33,460
+la lista aquella de matrices.
+
+968
+00:40:33,660 --> 00:40:36,060
+É simplemente esta función,
+
+969
+00:40:36,260 --> 00:40:39,660
+estas dos funciones que tenéis aquí.
+
+970
+00:40:39,660 --> 00:40:47,060
+Ah, porque é sencíble também ao entorno.
+
+971
+00:40:54,260 --> 00:40:56,260
+Agora perdido esto.
+
+972
+00:40:56,260 --> 00:41:07,260
+Momentos.
+
+973
+00:41:12,660 --> 00:41:14,260
+Bueno, no se deja subir.
+
+974
+00:41:14,460 --> 00:41:16,260
+Ya se ve.
+
+975
+00:41:16,460 --> 00:41:20,060
+É esto é o dobexis 4,
+
+976
+00:41:20,260 --> 00:41:22,660
+que calcula as uves, las de escala.
+
+977
+00:41:22,860 --> 00:41:24,660
+Tomamos a longitud de V,
+
+978
+00:41:24,660 --> 00:41:28,660
+não, perdón, esto construye a partir de las R-1 las R.
+
+979
+00:41:28,860 --> 00:41:31,860
+Portanto, toma unha matriz V
+
+980
+00:41:32,060 --> 00:41:34,660
+que representa os vectores de nivel R
+
+981
+00:41:34,860 --> 00:41:36,860
+e construye-los del nivel siguiente.
+
+982
+00:41:37,060 --> 00:41:39,660
+Então, se vamos tener que tomar a longitud,
+
+983
+00:41:39,860 --> 00:41:42,060
+por razones de os 4 coeficientes que há
+
+984
+00:41:42,260 --> 00:41:44,260
+no alfa 1, alfa 2, a matriz alfa 4,
+
+985
+00:41:44,460 --> 00:41:45,660
+hay que añadir
+
+986
+00:41:45,860 --> 00:41:48,660
+las dos primeras filas de la matriz V al final,
+
+987
+00:41:48,860 --> 00:41:50,860
+porque se utilizan en el último passo.
+
+988
+00:41:50,860 --> 00:41:55,260
+Então, isto é o V-stack, o V com o V02.
+
+989
+00:41:57,460 --> 00:42:00,260
+Aqui está a fórmula que hemos utilizado,
+
+990
+00:42:00,460 --> 00:42:04,460
+que eu he dicho alfa 1 por o V0,
+
+991
+00:42:04,660 --> 00:42:10,260
+o V0 é o primeiro vector,
+
+992
+00:42:10,460 --> 00:42:14,860
+o lugar 0 de la matriz,
+
+993
+00:42:15,060 --> 00:42:16,860
+a primeira fila de la matriz,
+
+994
+00:42:17,060 --> 00:42:20,260
+segunda, tercera, quarta, empezando por 0.
+
+995
+00:42:20,260 --> 00:42:22,060
+E agora, para hacer os siguentes,
+
+996
+00:42:22,260 --> 00:42:26,260
+para J, en el recorrido que va de 1 a n partido por 2,
+
+997
+00:42:26,460 --> 00:42:28,260
+menos 1, hay que actualizar,
+
+998
+00:42:28,460 --> 00:42:31,660
+o sea, recalculo la fila que toca
+
+999
+00:42:31,860 --> 00:42:35,260
+e la acumulo verticalmente a la X,
+
+1000
+00:42:35,460 --> 00:42:36,860
+finalmente retorno a la X.
+
+1001
+00:42:37,060 --> 00:42:38,860
+E a V doble es exactamente lo mismo,
+
+1002
+00:42:39,060 --> 00:42:42,260
+pero utilizando el alfa 4, menos alfa 3,
+
+1003
+00:42:42,460 --> 00:42:44,460
+más alfa 2, menos alfa 1.
+
+1004
+00:42:44,660 --> 00:42:48,660
+Bueno, e se queremos hacerlo correr,
+
+1005
+00:42:48,660 --> 00:42:51,060
+pues lo hacemos correr run file,
+
+1006
+00:42:51,260 --> 00:42:53,660
+aqui tendréi que buscar, vale, aqui está,
+
+1007
+00:42:53,860 --> 00:42:59,260
+salen dos figuras que son las que habéis visto,
+
+1008
+00:42:59,460 --> 00:43:02,060
+pero bueno, las rescale horizontalmente
+
+1009
+00:43:02,260 --> 00:43:08,260
+para que fuera máis parecido a como era la función inicial.
+
+1010
+00:43:08,460 --> 00:43:14,260
+De acuerdo? Bueno, rápido e realmente está muy bien.
+
+1011
+00:43:14,260 --> 00:43:21,260
+E, luego que máis puedo, este por ejemplo,
+
+1012
+00:43:21,460 --> 00:43:25,260
+la compresión, en esta compresión,
+
+1013
+00:43:25,460 --> 00:43:30,260
+bueno, redefino de 4V, de 4V doble,
+
+1014
+00:43:30,460 --> 00:43:38,260
+entonces cojo el primer elemento de todo la lista,
+
+1015
+00:43:38,460 --> 00:43:41,260
+que es N, P, I, N,
+
+1016
+00:43:41,260 --> 00:43:44,660
+e entonces voy a calcular esto en A y en B.
+
+1017
+00:43:44,860 --> 00:43:48,060
+Una das coisas que me gustan de paizón es que podes hacer esto.
+
+1018
+00:43:48,260 --> 00:43:50,860
+Les pregunten los estudiantes que es para de que pasara con esto,
+
+1019
+00:43:51,060 --> 00:43:55,060
+que se romperá el asunto e no, no, funciona bien.
+
+1020
+00:43:55,260 --> 00:43:56,660
+Que es en matemátria,
+
+1021
+00:43:56,860 --> 00:43:57,660
+es lo que hacemos continuar,
+
+1022
+00:43:57,860 --> 00:43:58,860
+e igual a ve igual, no sé que.
+
+1023
+00:43:59,060 --> 00:44:01,260
+Entonces este for calcula todo
+
+1024
+00:44:01,460 --> 00:44:05,660
+con una extracción lambda para la función
+
+1025
+00:44:05,660 --> 00:44:20,860
+e se utiliza para definir esa combinación
+
+1026
+00:44:21,060 --> 00:44:23,460
+en donde estába el producto escalar de F por V,
+
+1027
+00:44:23,660 --> 00:44:27,660
+V e sumar, pues le llamo proyección de F sobre V
+
+1028
+00:44:27,860 --> 00:44:31,260
+e é isto, está claro que esto é,
+
+1029
+00:44:31,460 --> 00:44:33,460
+hay que empezar con un vector de ceros
+
+1030
+00:44:33,460 --> 00:44:36,860
+e irle sumando los distintos términos.
+
+1031
+00:44:37,060 --> 00:44:38,260
+E os coeficientes,
+
+1032
+00:44:38,460 --> 00:44:40,060
+e solo queremos os coeficientes,
+
+1033
+00:44:40,260 --> 00:44:43,060
+que é o que interviene en la outra tipo de transformación,
+
+1034
+00:44:43,260 --> 00:44:45,260
+está aquí la función.
+
+1035
+00:44:45,460 --> 00:44:49,460
+Vale, entonces ya han dicho todo esto,
+
+1036
+00:44:49,660 --> 00:44:53,860
+pasemos a las conclusiones.
+
+1037
+00:44:54,060 --> 00:44:56,460
+Bueno, esto é repetir tantas las cosas,
+
+1038
+00:44:56,660 --> 00:45:00,460
+los que son má, má chacar lo mismo, no lo digo,
+
+1039
+00:45:00,460 --> 00:45:03,860
+bueno, fácil de aprender al menos los rudimentos para poder funcionar,
+
+1040
+00:45:04,060 --> 00:45:06,860
+luego más adelante, eu non sé suficiente para poder opinar,
+
+1041
+00:45:07,060 --> 00:45:09,260
+pero me imagino que, bueno,
+
+1042
+00:45:09,460 --> 00:45:10,660
+hasta onde é llegado,
+
+1043
+00:45:10,860 --> 00:45:14,860
+non me ha encontrado ninguna frustración esencial,
+
+1044
+00:45:15,060 --> 00:45:16,460
+en ningún momento.
+
+1045
+00:45:16,660 --> 00:45:18,860
+E para mí é esto é importante,
+
+1046
+00:45:19,060 --> 00:45:20,460
+fácil ir ao trajo do laboratorio,
+
+1047
+00:45:20,660 --> 00:45:21,860
+la resolución de problemas
+
+1048
+00:45:22,060 --> 00:45:24,860
+e a apresentación de resultados de modo fácil de evaluar.
+
+1049
+00:45:25,060 --> 00:45:26,460
+Para mí, un estudiante,
+
+1050
+00:45:26,660 --> 00:45:27,460
+lo mismo de un laboratorio,
+
+1051
+00:45:27,460 --> 00:45:30,460
+o último me mando 13 ficheros, pai, no?
+
+1052
+00:45:30,660 --> 00:45:32,060
+A mí me cuesta pouco,
+
+1053
+00:45:32,260 --> 00:45:34,260
+os cargo, os míro, os ejecuto
+
+1054
+00:45:34,460 --> 00:45:37,460
+e le doi, le doi respuesta online,
+
+1055
+00:45:37,660 --> 00:45:41,460
+de decir, eso te podrias mejorar aquí e pedorías mejorar allí, no?
+
+1056
+00:45:41,660 --> 00:45:43,460
+Eso é bueno.
+
+1057
+00:45:43,660 --> 00:45:46,460
+Me preguntaron, e por que non os enseñan Python?
+
+1058
+00:45:46,660 --> 00:45:48,060
+Bueno, me preguntan.
+
+1059
+00:45:48,260 --> 00:45:50,660
+Eu, en mi universidad, ahora,
+
+1060
+00:45:50,860 --> 00:45:53,860
+ya é hace tiempo que hay un movimiento para el software libre,
+
+1061
+00:45:54,060 --> 00:45:56,060
+e se puedo, en cualquier foro,
+
+1062
+00:45:56,060 --> 00:45:58,660
+os digo que abogaré
+
+1063
+00:45:58,860 --> 00:46:02,060
+por un entorno en el cual Python juegué un papel fundamental.
+
+1064
+00:46:02,260 --> 00:46:03,460
+Também Octave,
+
+1065
+00:46:03,660 --> 00:46:07,660
+eu, en una encuesta que me hicieron hace poco de lice,
+
+1066
+00:46:07,860 --> 00:46:09,660
+les dije que eu usaba Python,
+
+1067
+00:46:09,860 --> 00:46:10,660
+e Octave,
+
+1068
+00:46:10,860 --> 00:46:12,860
+e que se querían darme cursos que me los diran
+
+1069
+00:46:13,060 --> 00:46:17,060
+de lo que eu na tenía que eran los manipuladores de demostración.
+
+1070
+00:46:17,260 --> 00:46:18,660
+Los cierren proovers,
+
+1071
+00:46:18,860 --> 00:46:20,260
+e non me contestaron,
+
+1072
+00:46:20,460 --> 00:46:22,260
+que é o que me interesaría hoy.
+
+1073
+00:46:22,460 --> 00:46:25,060
+Bueno, facilita a apresentación de ejemplos
+
+1074
+00:46:25,060 --> 00:46:27,060
+e as correspondentes ilustraciones
+
+1075
+00:46:27,260 --> 00:46:29,460
+para explicar os conceptos teóricos,
+
+1076
+00:46:29,660 --> 00:46:34,860
+portanto, a espiral de los tres vértices.
+
+1077
+00:46:35,060 --> 00:46:38,460
+Eu creo que promueve un espírito indagador e creativo,
+
+1078
+00:46:42,260 --> 00:46:43,460
+e...
+
+1079
+00:46:45,060 --> 00:46:46,260
+o máis importante,
+
+1080
+00:46:46,460 --> 00:46:47,460
+o máis importante,
+
+1081
+00:46:47,660 --> 00:46:49,660
+que quizá me ha ocurrido toda a vida,
+
+1082
+00:46:49,860 --> 00:46:51,460
+pero ahora me ocurre mucho máis,
+
+1083
+00:46:51,660 --> 00:46:53,460
+aprender de los alumnos,
+
+1084
+00:46:53,460 --> 00:46:57,060
+porque ao final te resolen os problemas cada uno a su modo,
+
+1085
+00:46:57,260 --> 00:47:00,060
+e dices caramba, que bien lo ha hecho éste,
+
+1086
+00:47:00,260 --> 00:47:03,060
+se ha criado súa própria librería,
+
+1087
+00:47:03,260 --> 00:47:06,060
+o documentado e esa librería te la carga,
+
+1088
+00:47:06,260 --> 00:47:07,660
+e onde estamos...
+
+1089
+00:47:07,860 --> 00:47:09,660
+Podria haber utilizado ejemplos déllos,
+
+1090
+00:47:09,860 --> 00:47:11,660
+e seguramente serán mejores que os míos,
+
+1091
+00:47:11,860 --> 00:47:14,860
+pero hoy non lo he hecho, algún día lo haré.
+
+1092
+00:47:15,060 --> 00:47:17,060
+E é una buena plataforma,
+
+1093
+00:47:17,260 --> 00:47:20,060
+isto era unha condición para mi previa a la elección,
+
+1094
+00:47:20,060 --> 00:47:24,660
+unha plataforma para a investigación en matemáticas e ingeniería matemática.
+
+1095
+00:47:24,860 --> 00:47:27,660
+Estou em un grupo que se dedica a...
+
+1096
+00:47:27,860 --> 00:47:30,460
+É un pouco quizá un pouco, non sé,
+
+1097
+00:47:32,660 --> 00:47:37,060
+inteligencia computacional para el análise de la imagen biomédica,
+
+1098
+00:47:37,260 --> 00:47:41,860
+pero é un lugar onde creo que hemos avanzado un poquito
+
+1099
+00:47:42,060 --> 00:47:45,660
+e descobrimos unha cosa en las radiografías de ictus,
+
+1100
+00:47:45,660 --> 00:47:51,860
+que apareciam unha singularidad respecto do primer modelo de cálculo que teníamos
+
+1101
+00:47:52,060 --> 00:47:55,460
+para descubrir que zonas estaban afectadas por el ictus.
+
+1102
+00:47:55,660 --> 00:47:57,260
+E o radiólogo nos dijo,
+
+1103
+00:47:57,460 --> 00:48:03,060
+non, é un pequeno infarto antigo que está inquistado aquí,
+
+1104
+00:48:03,260 --> 00:48:08,260
+e detectar é a forma que é unha cosa algo má oscura,
+
+1105
+00:48:08,460 --> 00:48:11,660
+que é o entorno do texido cerebral,
+
+1106
+00:48:11,860 --> 00:48:13,260
+que tiene una forma irregular,
+
+1107
+00:48:13,260 --> 00:48:19,260
+pero en fin, que se pode de alguna manera modelizar,
+
+1108
+00:48:19,460 --> 00:48:22,460
+pues eu creo que é o seguinte passo que vamos hacer,
+
+1109
+00:48:22,660 --> 00:48:28,660
+utilizar las ondículas apropiadas para detectar aquel infarto antigo,
+
+1110
+00:48:28,860 --> 00:48:31,260
+quitarlo de medio e calcular
+
+1111
+00:48:31,460 --> 00:48:35,260
+se há infarto no respecto da zona simétrica, utilizando o que queda.
+
+1112
+00:48:35,260 --> 00:48:43,460
+Bunsa Crown닝ré!
+
+1113
+00:48:43,860 --> 00:48:42,500
+Lfishá,
+
+1114
+00:48:42,700 --> 00:48:44,460
+micáta!
+
+1115
+00:48:44,660 --> 00:48:46,660
+Pensá en sal.
+
+1116
+00:48:46,860 --> 00:48:48,660
+IncendFO un각 ma��ión.
+
+1117
+00:48:49,060 --> 00:48:49,460
+Un random GREey Got.
+
+1118
+00:48:49,660 --> 00:48:54,060
+Entertainment Navearn pesar de o Montreal,
+
+1119
+00:48:54,260 --> 00:48:55,660
+o que segregi.
+
+1120
+00:48:56,060 --> 00:49:00,460
+Poche mul uniquely io ASogح Blues cuar잔m sus.
+
+1121
+00:49:00,660 --> 00:49:02,460
+É o behalco á relaxationu tension.
+
+1122
+00:49:02,900 --> 00:49:04,860
+E Mexico e o nei fortunor áского.
+
+1123
+00:49:04,860 --> 00:49:11,860
+Xe pil, por exemplo. Eu utilizaré pil esta semana que viene. Empiezo con a parte de...
+
+1124
+00:49:11,860 --> 00:49:16,860
+Esta ha sido todo hasta hora de Dimensión 1 para familiarizarse con os conceptos.
+
+1125
+00:49:16,860 --> 00:49:19,860
+E empiezo la semana que viene, con o tratamiento de imagenes.
+
+1126
+00:49:19,860 --> 00:49:22,860
+Ya tengo decidido que vai utilizar pil.
+
+1127
+00:49:22,860 --> 00:49:26,860
+O único problema que tiene é que pil funciona,
+
+1128
+00:49:26,860 --> 00:49:30,860
+e é que o pil funciona, e é que o pil funciona,
+
+1129
+00:49:30,860 --> 00:49:35,860
+o único problema que tiene é que pil funciona, non funciona en 3.3.
+
+1130
+00:49:35,860 --> 00:49:39,860
+Pero bueno, estou utilizando o canopy e me va bien.
+
+1131
+00:49:39,860 --> 00:49:41,860
+E portanto, não hay problema.
+
+1132
+00:49:41,860 --> 00:49:43,860
+Espera, no, no, es que no quiso no terminar.
+
+1133
+00:49:43,860 --> 00:49:44,860
+Un segundo, perdón.
+
+1134
+00:49:44,860 --> 00:49:45,860
+No, no.
+
+1135
+00:49:45,860 --> 00:49:46,860
+Póngalo que come...
+
+1136
+00:49:46,860 --> 00:49:50,860
+Entonces, ayer lo menciono que hai un punto signal, no?
+
+1137
+00:49:50,860 --> 00:49:54,860
+Pero este punto signal no hace lo que eu quero que haga.
+
+1138
+00:49:54,860 --> 00:49:58,860
+Que é ver como van las cosas desde o principio, no?
+
+1139
+00:49:58,860 --> 00:50:01,860
+Entonces que me dén a mi, é o de siempre, no?
+
+1140
+00:50:01,860 --> 00:50:04,860
+Se eu necesito un veículo para ir de un lado a outro,
+
+1141
+00:50:04,860 --> 00:50:07,860
+não me voy a fijar ni en la termodina megan, ni en el motor,
+
+1142
+00:50:07,860 --> 00:50:09,860
+pero se eu quero saber mecánica,
+
+1143
+00:50:09,860 --> 00:50:14,860
+pues quero cacharrear, cois, la palabra que me encantó aquí de...
+
+1144
+00:50:14,860 --> 00:50:15,860
+No?
+
+1145
+00:50:15,860 --> 00:50:17,860
+Sim, sim.
+
+1146
+00:50:17,860 --> 00:50:19,860
+Bueno.
+
+1147
+00:50:19,860 --> 00:50:22,860
+Pil o es un for de pil, e funciona en 3.3.
+
+1148
+00:50:22,860 --> 00:50:23,860
+Como?
+
+1149
+00:50:23,860 --> 00:50:25,860
+Pil o.
+
+1150
+00:50:25,860 --> 00:50:28,860
+Pil, ah, esto lo tengo que mirar, no?
+
+1151
+00:50:28,860 --> 00:50:31,860
+Porque eu vou improvisando sobre a marcha que é o que utilizo.
+
+1152
+00:50:31,860 --> 00:50:34,860
+E a verdade é que documentarse é também un problema, oi en dia, no?
+
+1153
+00:50:34,860 --> 00:50:37,860
+Entonces, como sou muy novo en el asunto,
+
+1154
+00:50:37,860 --> 00:50:40,860
+pues pil o lo miraré enseguida, se va en 3.3 me encantará.
+
+1155
+00:50:40,860 --> 00:50:43,860
+É una mina e un nivelía que é open, cv, o má sin...
+
+1156
+00:50:43,860 --> 00:50:45,860
+Espera, isto ya é má complexa.
+
+1157
+00:50:45,860 --> 00:50:46,860
+Sim, sim.
+
+1158
+00:50:46,860 --> 00:50:47,860
+Sim.
+
+1159
+00:50:47,860 --> 00:50:49,860
+No, tengo também en paiz, non tengo el libro e tengo...
+
+1160
+00:50:49,860 --> 00:50:50,860
+Sim, sim.
+
+1161
+00:50:50,860 --> 00:50:55,860
+E o baí é dois en un site kit image.
+
+1162
+00:50:55,860 --> 00:50:58,860
+E site kit, imagen, que também te ocuera algo ritmo...
+
+1163
+00:50:58,860 --> 00:51:00,860
+E se bueno, isto é o utilidade na trajante da imagen.
+
+1164
+00:51:00,860 --> 00:51:02,860
+Pero de novo, eu insisto, en que,
+
+1165
+00:51:02,860 --> 00:51:05,860
+se non me hace falta, me moveré a este nivel elemental,
+
+1166
+00:51:05,860 --> 00:51:09,860
+en el qual podan ver que la imagen é unha matriz,
+
+1167
+00:51:09,860 --> 00:51:13,860
+e verla, que le aplican por filas e sale esto,
+
+1168
+00:51:13,860 --> 00:51:16,860
+que luego le aplican por columnas e sale esto, no?
+
+1169
+00:51:16,860 --> 00:51:19,860
+Que esto se pode hacer con filtros, oi no filtro...
+
+1170
+00:51:19,860 --> 00:51:22,860
+V realmente os entres hijos do assunto, no?
+
+1171
+00:51:22,860 --> 00:51:24,860
+E não darles unha solución precocinada.
+
+1172
+00:51:24,860 --> 00:51:27,860
+É una das razones por las cuales
+
+1173
+00:51:27,860 --> 00:51:32,860
+me é diferenciado de mis colegas, que usan Sage e usan BandLab.
+
+1174
+00:51:32,860 --> 00:51:35,860
+Eu creo que há un alumno, que é un...
+
+1175
+00:51:35,860 --> 00:51:40,860
+unha persona, é un master internacional de ingeniería informática, no?
+
+1176
+00:51:40,860 --> 00:51:43,860
+Poner-les Sage de entrada,
+
+1177
+00:51:43,860 --> 00:51:47,860
+há un overhead de tiempo de instalarlo, de explicar-les como va,
+
+1178
+00:51:47,860 --> 00:51:50,860
+de que libraria que, a mi me parece, que non é produtivo.
+
+1179
+00:51:50,860 --> 00:51:52,860
+É o mesmo que eu decía a Irgeordi,
+
+1180
+00:51:52,860 --> 00:51:54,860
+con ele, non sei, que for...
+
+1181
+00:51:54,860 --> 00:51:57,860
+de hacer C++ en primero,
+
+1182
+00:51:57,860 --> 00:51:59,860
+quando podíais hacer Python, no?
+
+1183
+00:51:59,860 --> 00:52:01,860
+Pois, no, e a mi me parece que Sage
+
+1184
+00:52:01,860 --> 00:52:03,860
+é muy bueno para a investigación,
+
+1185
+00:52:03,860 --> 00:52:06,860
+é muy bueno para a inovación de poner novos paquetes,
+
+1186
+00:52:06,860 --> 00:52:08,860
+como também se demostra hier, no?
+
+1187
+00:52:08,860 --> 00:52:11,860
+Pero, a mi me parece que como herramienta,
+
+1188
+00:52:11,860 --> 00:52:13,860
+como caja de herramientas que llevas a classe
+
+1189
+00:52:13,860 --> 00:52:16,860
+para resolver o asunto docente,
+
+1190
+00:52:16,860 --> 00:52:19,860
+me parece máis a provea do que é chopa, e...
+
+1191
+00:52:19,860 --> 00:52:22,860
+e esas outras librerías, pues fantástico.
+
+1192
+00:52:22,860 --> 00:52:24,860
+De hecho, se, e, luego, me las dices,
+
+1193
+00:52:24,860 --> 00:52:28,860
+me pongo tomo la lista, deve o do la libreta, e?
+
+1194
+00:52:31,860 --> 00:52:33,860
+Ome, eu uso Sage e companheiro mío,
+
+1195
+00:52:33,860 --> 00:52:36,860
+que usan non-sage ayer para parálo,
+
+1196
+00:52:36,860 --> 00:52:38,860
+dos dos que as íamos usamos en master,
+
+1197
+00:52:38,860 --> 00:52:40,860
+e te digo que tenemos esa lección,
+
+1198
+00:52:40,860 --> 00:52:42,860
+osa, con Sage tú podías utilizar la...
+
+1199
+00:52:42,860 --> 00:52:45,860
+la artillería pesada, pero tienes, de hecho, también, gramación.
+
+1200
+00:52:45,860 --> 00:52:47,860
+Hay algunas funciones, por exemplo, o Monotris,
+
+1201
+00:52:47,860 --> 00:52:50,860
+para trabajar con filas, e se ve lo que haces sin tener que estar...
+
+1202
+00:52:50,860 --> 00:52:53,860
+Osa, que podes elegir, e visto que o companheiro
+
+1203
+00:52:53,860 --> 00:52:56,860
+se ha trabajado máis, máis, máis as tractos,
+
+1204
+00:52:56,860 --> 00:52:58,860
+máis cinco espacios vectoriades,
+
+1205
+00:52:58,860 --> 00:53:00,860
+e companheiros que no hacen nada apenado.
+
+1206
+00:53:00,860 --> 00:53:03,860
+Si, si, eu esto lo sé, e aquí dingo companheiros de Madrid,
+
+1207
+00:53:03,860 --> 00:53:06,860
+que hace tiempo que estén con Sage, por exemplo,
+
+1208
+00:53:06,860 --> 00:53:10,860
+e outra gente en vivo, botana, o este, como se llama,
+
+1209
+00:53:10,860 --> 00:53:13,860
+Recio, en Santander, e aquí está,
+
+1210
+00:53:13,860 --> 00:53:15,860
+o nom, no recordar o nombre,
+
+1211
+00:53:15,860 --> 00:53:17,860
+pero unha persona que hace tiempo, que se diga,
+
+1212
+00:53:17,860 --> 00:53:19,860
+está teno un artículo na Gazeta, también,
+
+1213
+00:53:19,860 --> 00:53:21,860
+da introducción a Sage.
+
+1214
+00:53:21,860 --> 00:53:23,860
+Então, é verdade, pero eu tome unha opción para este ano,
+
+1215
+00:53:23,860 --> 00:53:27,860
+que é, né, de intentar cacharrar desde abajo.
+
+1216
+00:53:27,860 --> 00:53:29,860
+Te digo que nos tal que cacharramos también.
+
+1217
+00:53:29,860 --> 00:53:31,860
+Si, si, que, que, no.
+
+1218
+00:53:31,860 --> 00:53:33,860
+No, pues no, no, es excluyente para nada,
+
+1219
+00:53:33,860 --> 00:53:35,860
+o que digo sobre Sage.
+
+1220
+00:53:35,860 --> 00:53:37,860
+E eu utilizo Sage, lo tengo, e lo utilizo,
+
+1221
+00:53:37,860 --> 00:53:39,860
+pero me parece que, en este caso,
+
+1222
+00:53:39,860 --> 00:53:41,860
+costumé esta opción,
+
+1223
+00:53:41,860 --> 00:53:45,320
+e eu aprendido máis e creo que minhas alumnos se o están pasando bien.
+
+1224
+00:53:46,320 --> 00:53:47,820
+Como...
+
+1225
+00:53:47,820 --> 00:53:52,120
+A veia, unha interacción tan grande de recepción de materiales
+
+1226
+00:53:52,120 --> 00:53:55,480
+e de intervención en clase,
+
+1227
+00:53:55,480 --> 00:53:57,480
+pues non l'habia tenido antes.
+
+1228
+00:53:58,280 --> 00:54:03,280
+E é o milagro de obligar-les a hacer laboratorios, obligar-les.
+
+1229
+00:54:03,280 --> 00:54:04,280
+Non, non.
+
+1230
+00:54:04,780 --> 00:54:08,480
+Se non vienes al laboratorio, pues te voy a descontar un...
+
+1231
+00:54:08,480 --> 00:54:11,160
+un pun... un... una fracción al final.
+
+1232
+00:54:11,160 --> 00:54:13,160
+Porque o laboratorio é fundamental.
+
+1233
+00:54:13,160 --> 00:54:15,160
+Então, efectivamente, se van enrollando
+
+1234
+00:54:15,160 --> 00:54:19,160
+e algo que, a principio, non les parecía quizá moi atractivo
+
+1235
+00:54:19,160 --> 00:54:21,160
+ao final, eu creo que les acabo gustando.
+
+1236
+00:54:22,160 --> 00:54:25,160
+De hecho, havia unha chica griega que estava flotando sin...
+
+1237
+00:54:25,160 --> 00:54:27,160
+e ao final se ha quedado.
+
+1238
+00:54:30,160 --> 00:54:32,160
+Bueno, pues, mocha gracias porque...
+
+1239
+00:54:32,160 --> 00:54:42,040
+wage беспur physically.
+

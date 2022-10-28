@@ -1,0 +1,2004 @@
+1
+00:00:00,000 --> 00:00:16,000
+Vamos a comenzar las charlas de programación para la distribuida. La he llamado así.
+
+2
+00:00:16,000 --> 00:00:24,000
+Yo soy Pedro Valorreiro, soy estudiante de ingeniería informática del grado.
+
+3
+00:00:24,000 --> 00:00:36,000
+Bueno, estoy acabando y entre otras cosas pues estoy investigando paralización de algoritmos,
+
+4
+00:00:36,000 --> 00:00:51,000
+evolución de redes complejas, paralización en GPGPU y colonia de hormigas y SPH con CUDA para dinámicas de fluida.
+
+5
+00:00:51,000 --> 00:00:59,000
+Ahí tenéis mi correo, mi nombre y bueno en Facebook y me quiero buscar.
+
+6
+00:00:59,000 --> 00:01:05,000
+Bueno, esto es lo que vamos a ver. No sé cómo andáis aquí de programación paralela.
+
+7
+00:01:05,000 --> 00:01:15,000
+Si sabéis algo de arquitectura, de lenguaje, manejar y hilo o concurrencia, alguno.
+
+8
+00:01:15,000 --> 00:01:26,000
+Algo de eso sí, concurrencia sí. Primero lo que es, por si alguien no la conoce,
+
+9
+00:01:26,000 --> 00:01:36,000
+porque paralelizar hoy en día algunos tipos de arquitectura y de paralelismo, los paradigmas básicos
+
+10
+00:01:36,000 --> 00:01:45,000
+y así por encima cuatro librerías de Python para poder hacer todo esto.
+
+11
+00:01:45,000 --> 00:01:53,000
+Uno que es, simplemente tenemos un problema, lo modelamos, lo pasamos a código
+
+12
+00:01:53,000 --> 00:02:00,000
+y lo lanzamos a varias máquinas procesadores para que trabajen entre ellas y a la vez
+
+13
+00:02:00,000 --> 00:02:08,000
+los tengamos el resultado de manera más rápida que de eso se trata.
+
+14
+00:02:08,000 --> 00:02:15,000
+¿Por qué paralelizar? Bueno, una puede ser porque nos están vendiendo procesadores
+
+15
+00:02:15,000 --> 00:02:20,000
+con más de un núcleo y nos lo están metiendo porque sí.
+
+16
+00:02:20,000 --> 00:02:28,000
+Y bueno, porque sí tampoco es, si no se ha llegado al tope de frecuencia de reloj,
+
+17
+00:02:28,000 --> 00:02:34,000
+no es que se puede seguir subiendo pero las mejoras no son significativas
+
+18
+00:02:34,000 --> 00:02:39,000
+y luego a más frecuencia pues tenemos más consumo y más temperatura,
+
+19
+00:02:39,000 --> 00:02:49,000
+por lo que se está optando por hace varios cores con menos frecuencia y utilizando todos a la vez.
+
+20
+00:02:49,000 --> 00:02:57,000
+Y bueno, para resolver problemas de alta complejidad, ahora mismo de simulación de sistemas físicos,
+
+21
+00:02:57,000 --> 00:03:09,000
+biológicos, dinámica de fluido, para aeronáutica, luego con el VizData,
+
+22
+00:03:09,000 --> 00:03:16,000
+pues para operar con ese volumen de datos tan grande, pues para operar más rápido
+
+23
+00:03:16,000 --> 00:03:21,000
+y bueno, aplicaciones de la ciencia de la ingeniería para matemáticas,
+
+24
+00:03:21,000 --> 00:03:28,000
+por ejemplo, de visión artificial, no sé si está por aquí el chaval que lo explicó antes,
+
+25
+00:03:28,000 --> 00:03:35,000
+son operaciones que se hacen písel a písel y bueno, se podría hacer varias de golpes
+
+26
+00:03:35,000 --> 00:03:39,000
+y se están haciendo cosas de esa, ahora mismo.
+
+27
+00:03:39,000 --> 00:03:43,000
+¿Tipos de paralismo y arquitectura?
+
+28
+00:03:43,000 --> 00:03:50,000
+Bueno, pues esto es la tanomía de Flynn, Flynn fue un engenero eléctrico
+
+29
+00:03:50,000 --> 00:03:58,000
+y pide ciencia de la computación que hizo esta distribución, simplemente,
+
+30
+00:03:58,000 --> 00:04:04,000
+estos son los datos con los que operamos y cuántas instrucciones utilizamos,
+
+31
+00:04:04,000 --> 00:04:11,000
+las arquitecturas paralelas, pues eso sería la de single instruction, single...
+
+32
+00:04:11,000 --> 00:04:17,000
+no, single instruction multiple data, que es lo que hace...
+
+33
+00:04:17,000 --> 00:04:24,000
+single instruction multiple data, perdón, es lo que hace un AGPGPU, por ejemplo,
+
+34
+00:04:24,000 --> 00:04:29,000
+tenemos una instrucción y la aplicamos a varios datos con todos los hilos que tenemos o cores
+
+35
+00:04:29,000 --> 00:04:38,000
+y multiple instruction multiple data, pues varias instrucciones a varios datos.
+
+36
+00:04:38,000 --> 00:04:47,000
+La SISD, la single instruction single data son los procesadores de siempre,
+
+37
+00:04:47,000 --> 00:04:56,000
+secuenciales y bueno, la MISD, bueno, antes creo que me equivocaba lo dicho a Rebeco,
+
+38
+00:04:56,000 --> 00:05:05,000
+bueno, MISD son distintas instrucciones a un mismo dato y eso no es paralelo.
+
+39
+00:05:05,000 --> 00:05:10,000
+Hay unos ejemplos de paralismo de single instruction multiple data, como vemos,
+
+40
+00:05:10,000 --> 00:05:16,000
+una instrucción, varios datos, por ejemplo, una RAI, imaginaos y una instrucción o dos RAI
+
+41
+00:05:16,000 --> 00:05:22,000
+y una instrucción y simplemente, pues, lo sumamos y lo aplicamos y sería un paralismo
+
+42
+00:05:22,000 --> 00:05:27,000
+y ese sería otro, pues, no sé, en un cluster, por ejemplo,
+
+43
+00:05:27,000 --> 00:05:33,000
+pues, imaginaos cada máquina haciendo una cosa distinta.
+
+44
+00:05:33,000 --> 00:05:44,000
+Un ejemplo, ahí veis una GPU única y voy a poner aquí el ponderos a ver si funciona.
+
+45
+00:05:44,000 --> 00:05:46,000
+Se ve, si, no? Vale.
+
+46
+00:05:46,000 --> 00:05:56,000
+Bueno, una GPU y esto es un RAC con GPU para computos, vale.
+
+47
+00:05:56,000 --> 00:06:03,000
+Múltiples instrucciones, múltiples datos, bueno, pues, los clusters, el mar en otro,
+
+48
+00:06:03,000 --> 00:06:09,000
+un de Barcelona, nuestro propio core de casa.
+
+49
+00:06:09,000 --> 00:06:13,000
+Otro tipo de paralismo de arquitectura, visto desde otro punto,
+
+50
+00:06:13,000 --> 00:06:19,000
+que es de cómo está distribuida la memoria en el sistema,
+
+51
+00:06:19,000 --> 00:06:28,000
+de memoria compartida, memoria distribuida, memoria compartida, pues, pueden ser perfectamente
+
+52
+00:06:28,000 --> 00:06:37,000
+nuestros procesadores y la GPU de memoria distribuida un cluster,
+
+53
+00:06:37,000 --> 00:06:42,000
+por ejemplo, un cluster, e incluso nuestro procesador,
+
+54
+00:06:42,000 --> 00:06:49,000
+según el paradigma de programación paralela que utilicemos.
+
+55
+00:06:49,000 --> 00:07:00,000
+Y el MPM, que esto es un cluster o un HPC que hará, como vemos,
+
+56
+00:07:00,000 --> 00:07:07,000
+estos de memoria compartida, no, un 2007, el 8, y esto es un Spark,
+
+57
+00:07:07,000 --> 00:07:14,000
+estos de memoria distribuida, que es un, bueno, el Cray este es como un bicho así,
+
+58
+00:07:14,000 --> 00:07:19,000
+con varios ordenadores dentro, comunicado.
+
+59
+00:07:19,000 --> 00:07:27,000
+Y bueno, de memoria de paso de mensaje, pues, cualquier HPC o cluster casero,
+
+60
+00:07:27,000 --> 00:07:34,000
+podríamos hacer uno conectando varios ordenadores, sería perfectamente un arredo de paso de mensaje.
+
+61
+00:07:34,000 --> 00:07:41,000
+Y, no sé, de esto ahora mismo son los chinos los que tienen el más, según ley,
+
+62
+00:07:41,000 --> 00:07:49,000
+en el, en Internet, son los chinos los que tienen el HPC más, más rápido.
+
+63
+00:07:49,000 --> 00:07:55,000
+Bueno, paradigmas de programación paralela.
+
+64
+00:07:55,000 --> 00:08:01,000
+Básicamente, son tres, en el cual en uno manejamos hilos,
+
+65
+00:08:01,000 --> 00:08:10,000
+en otro por paso de mensaje, donde enviamos datos por mensaje y punto,
+
+66
+00:08:10,000 --> 00:08:18,000
+y luego hay una combinación de las dos que, pues, pasamos un mensaje y utilizamos hilos,
+
+67
+00:08:18,000 --> 00:08:27,000
+que puede ser perfectamente una combinación de un cluster de GPU.
+
+68
+00:08:27,000 --> 00:08:34,000
+Por ejemplo, tenemos varias máquinas, cada una con su GPU, en la que las comunicamos entre ellas,
+
+69
+00:08:34,000 --> 00:08:42,000
+y dentro de cada ella, lo que estamos ejecutando es, son hilos en las GPU.
+
+70
+00:08:42,000 --> 00:08:47,000
+Por paso de mensaje, pues, son usados, o sea, por manejo de hilos,
+
+71
+00:08:47,000 --> 00:08:52,000
+son usados en arquitecturas de memoria compartida, pues, son los hilos que conocemos,
+
+72
+00:08:52,000 --> 00:08:59,000
+los sistemas operativos de la concurrencia y todo esto.
+
+73
+00:08:59,000 --> 00:09:09,000
+Sólo que esto es para que ejecutarlos todos a la vez y obtener un resultado.
+
+74
+00:09:09,000 --> 00:09:17,000
+No es para tener hilos esperando por detrás, a que le entre algo, o sea, alguna operación dentro de la salida.
+
+75
+00:09:17,000 --> 00:09:25,000
+Los estándares son OpenMP, CUDA y OpenCL, que ahora lo ofrecemos.
+
+76
+00:09:25,000 --> 00:09:29,000
+Bueno, CUDA en sí es un paradigma bastante complejo, no solo un lenguaje de programación,
+
+77
+00:09:29,000 --> 00:09:38,000
+es una forma de programar, es un compilador, es algo bastante grande.
+
+78
+00:09:38,000 --> 00:09:44,000
+Por paso de mensaje, pues, usado en arquitectura de memoria distribuida, como los cluster,
+
+79
+00:09:44,000 --> 00:09:49,000
+únicamente la comunicación entre dos máquinas o procesos o procesadores,
+
+80
+00:09:49,000 --> 00:09:56,000
+pero simplemente hace lo que hace es enviar y recibir mensajes.
+
+81
+00:09:56,000 --> 00:10:02,000
+Pues, se crean distintas tareas, cada una con su espacio de memoria,
+
+82
+00:10:02,000 --> 00:10:07,000
+y estas tareas se comunican entre ellas por mensajes, es un código muy escalable,
+
+83
+00:10:07,000 --> 00:10:17,000
+y los estándares son MPI, que se puede usar en C, C++ o Fortran.
+
+84
+00:10:17,000 --> 00:10:20,000
+Bueno, ahí se creen.
+
+85
+00:10:20,000 --> 00:10:24,000
+Y la híbrida, bueno, la híbrida es simplemente la mezcla de las dos,
+
+86
+00:10:24,000 --> 00:10:29,000
+tenemos nuestro sistema, nuestro cluster, comunicar por una red,
+
+87
+00:10:29,000 --> 00:10:40,000
+que cuando comunicamos los mensajes, esto ejecuta, pues, código en GPU, por ejemplo,
+
+88
+00:10:40,000 --> 00:10:47,000
+o el mismo procesador que ejecute varios hilos, simplemente.
+
+89
+00:10:47,000 --> 00:10:50,000
+Librerías estándares.
+
+90
+00:10:50,000 --> 00:10:58,000
+Pues, tenemos estas cuatro, y ahora vamos a verlas como podemos utilizarlas en Python,
+
+91
+00:10:58,000 --> 00:11:03,000
+porque no es tan trivial como en C.
+
+92
+00:11:03,000 --> 00:11:09,000
+Vale, estas son las equivalencias, bueno, las he puesto aquí.
+
+93
+00:11:09,000 --> 00:11:14,000
+De OpenMP, bueno, pues tenemos el módulo multiprocesing,
+
+94
+00:11:14,000 --> 00:11:23,000
+que yo no lo conseguí usar, y luego con Python podemos usar OpenMP y compilarlo,
+
+95
+00:11:23,000 --> 00:11:28,000
+que es lo que ando investigando porque no es tan fácil de hacer,
+
+96
+00:11:28,000 --> 00:11:31,000
+o por lo menos no encuentro la manera de que sea rápida,
+
+97
+00:11:31,000 --> 00:11:38,000
+y hay que complicarse un poquito, ya complica demasiado la facilidad de Python.
+
+98
+00:11:38,000 --> 00:11:43,000
+Luego de MPI, pues MPI, podemos hacernos nuestro propio paso de mensajes,
+
+99
+00:11:43,000 --> 00:11:48,000
+hay mucha librería, cogió MPI 4Py,
+
+100
+00:11:48,000 --> 00:11:53,000
+porque encontré un tío que hizo un trabajo de FIM de Master
+
+101
+00:11:53,000 --> 00:11:57,000
+y tiene una comparativa con muchas librerías,
+
+102
+00:11:57,000 --> 00:12:02,000
+y es la más completa de la que más control tenemos, y funciona bien.
+
+103
+00:12:02,000 --> 00:12:05,000
+Ahora enseño una gráfica.
+
+104
+00:12:05,000 --> 00:12:10,000
+Y luego de CUDA tenemos un graper, que se llama PyCuda,
+
+105
+00:12:10,000 --> 00:12:14,000
+un graper que nos extrae, bueno, nos extrae.
+
+106
+00:12:14,000 --> 00:12:18,000
+Nos extrae, y no, aún así es que seguí manejando algo de hilo
+
+107
+00:12:18,000 --> 00:12:22,000
+y tenés mente la arquitectura de la gráfica.
+
+108
+00:12:22,000 --> 00:12:28,000
+Y OpenCL, pues otro graper, que lo hizo el mismo tío que el de PyCuda,
+
+109
+00:12:28,000 --> 00:12:31,000
+que lo mismo, se supone que nos extrae,
+
+110
+00:12:31,000 --> 00:12:35,000
+pero lo que son los hilos y las arquitecturas hay que tener la mente,
+
+111
+00:12:35,000 --> 00:12:45,000
+no dice venga 3 hilos y punto.
+
+112
+00:12:45,000 --> 00:12:47,000
+Pues vamos con OpenMP.
+
+113
+00:12:47,000 --> 00:12:52,000
+¿Qué pasa en Python con los hilos?
+
+114
+00:12:52,000 --> 00:12:56,000
+Pasa que tal y como está creado Python,
+
+115
+00:12:56,000 --> 00:13:00,000
+el GIL es el que tiene el control sobre hilos.
+
+116
+00:13:00,000 --> 00:13:02,000
+¿Qué hace el GIL?
+
+117
+00:13:02,000 --> 00:13:06,000
+El GIL hace que no se permitan ejecutar más de un hilo a la vez.
+
+118
+00:13:06,000 --> 00:13:09,000
+Ya lo hagas tú como lo hagas.
+
+119
+00:13:09,000 --> 00:13:14,000
+Entonces, el GIL lo que va es comprobando cada un cierto número de instrucciones,
+
+120
+00:13:14,000 --> 00:13:19,000
+o sea, no comprobando, sino que salta para el hilo y ejecuta otro.
+
+121
+00:13:19,000 --> 00:13:23,000
+Entonces no hay forma de obtener paralismo de hilos,
+
+122
+00:13:23,000 --> 00:13:31,000
+con el módulo 3, o 3 no me acuerdo cómo se llama, que es propio de Python.
+
+123
+00:13:31,000 --> 00:13:35,000
+Y bueno, podemos con esa instrucción del sistema de Sys,
+
+124
+00:13:35,000 --> 00:13:41,000
+del set check interval, cambiar la frecuencia con la que el GIL mira,
+
+125
+00:13:41,000 --> 00:13:47,000
+salta, podemos cambiar el número de instrucciones con las que salta el GIL.
+
+126
+00:13:47,000 --> 00:13:53,000
+Podríamos ponerlo a 1, pero aun así no se consigue un paralismo real.
+
+127
+00:13:53,000 --> 00:14:02,000
+Para el mismo real sería que las 3 flechitas fueran a la vez, pero no podemos con esto.
+
+128
+00:14:02,000 --> 00:14:06,000
+Entonces, ¿qué hay?
+
+129
+00:14:06,000 --> 00:14:08,000
+El módulo multiprocessing.
+
+130
+00:14:08,000 --> 00:14:13,000
+Bueno, el módulo multiprocessing nos dice Python que lo utilicemos,
+
+131
+00:14:13,000 --> 00:14:19,000
+pero en vez de para ejecutar código en varios cores,
+
+132
+00:14:19,000 --> 00:14:23,000
+pero ¿qué pasa? Que son procesos y al ser proceso,
+
+133
+00:14:23,000 --> 00:14:28,000
+tienen memoria privada a cada uno, a efecto lógico.
+
+134
+00:14:28,000 --> 00:14:35,000
+Y la comunicación entre ellos, pues al final, no dejan de ser mensajes.
+
+135
+00:14:35,000 --> 00:14:41,000
+No podemos establecer variables compartidas ni variables privadas como los hilos.
+
+136
+00:14:41,000 --> 00:14:47,000
+Y pues para eso tenemos MPI, que funciona bastante bien.
+
+137
+00:14:47,000 --> 00:14:50,000
+¿Qué podemos hacer con Saito?
+
+138
+00:14:50,000 --> 00:15:03,000
+Pues modificar Python por debajo y compilarlo.
+
+139
+00:15:03,000 --> 00:15:06,000
+Esto...
+
+140
+00:15:06,000 --> 00:15:13,000
+Modificar Python por debajo y compilarlo, pudiendo manejar nosotros los hilos como queramos
+
+141
+00:15:13,000 --> 00:15:17,000
+y saltándonos L, G y L.
+
+142
+00:15:17,000 --> 00:15:20,000
+Está diapositiva.
+
+143
+00:15:20,000 --> 00:15:23,000
+Dos más delante. No sé por qué.
+
+144
+00:15:23,000 --> 00:15:26,000
+Pero bueno, se me ha movido.
+
+145
+00:15:26,000 --> 00:15:31,000
+Tenemos con Saito escribimos nuestro código en Saito con los añadidos que tengamos.
+
+146
+00:15:31,000 --> 00:15:35,000
+Importamos OpenMP, ahora vemos cómo lo importamos.
+
+147
+00:15:35,000 --> 00:15:40,000
+Compilamos y ejecutamos desde cualquier parte del país.
+
+148
+00:15:40,000 --> 00:15:44,000
+Lo que pasa es que no están tribidas.
+
+149
+00:15:44,000 --> 00:15:47,000
+Yo no lo encuentro factible.
+
+150
+00:15:47,000 --> 00:15:56,000
+Es algo complicado porque no se supone que lo importamos y podemos utilizar todas las cosas de OpenMP.
+
+151
+00:15:56,000 --> 00:16:09,000
+OpenMP, por si no lo conocéis, nos da todas estas funciones en las que tenemos estructuras para controlar
+
+152
+00:16:09,000 --> 00:16:18,000
+y para establecer las variables con partidas y privadas, la sincronización entre hilos.
+
+153
+00:16:18,000 --> 00:16:20,000
+¿Qué más?
+
+154
+00:16:20,000 --> 00:16:26,000
+Bueno, esto para la sincronía de...
+
+155
+00:16:26,000 --> 00:16:32,000
+Para el mismo de look, creo que es.
+
+156
+00:16:32,000 --> 00:16:35,000
+Entonces, ¿qué nos hace falta para...
+
+157
+00:16:35,000 --> 00:16:40,000
+para instalar Saito? Primero un compilador para poder compilarlo.
+
+158
+00:16:40,000 --> 00:16:46,000
+Pais son entre esas versiones seductor, pipe, pie y luego...
+
+159
+00:16:46,000 --> 00:16:51,000
+Bueno, lo de las variables de entorno es porque lo estoy haciendo, tengo Windows instalados por CUDA,
+
+160
+00:16:51,000 --> 00:16:55,000
+porque los frappes no permiten hacerlo en Linux.
+
+161
+00:16:55,000 --> 00:17:05,000
+Y simplemente lo instalamos y voy a salirme de la presentación un momentito.
+
+162
+00:17:05,000 --> 00:17:08,000
+Si me dejan.
+
+163
+00:17:08,000 --> 00:17:27,000
+Para irnos a la página de esto, se ve. No, no se ve, ¿no?
+
+164
+00:17:27,000 --> 00:17:32,000
+Vale, se ve ahí, algo, se ve, ¿no?
+
+165
+00:17:32,000 --> 00:17:42,000
+Bien, este es el 2 de Saito y en la parte de Paralys, pues, este dice usando funciones de OpenMP.
+
+166
+00:17:42,000 --> 00:17:48,000
+Explica muy poco y se supone que haciendo el 6 por de OpenMP,
+
+167
+00:17:48,000 --> 00:17:54,000
+podemos utilizar todas las funciones de OpenMP y ahí tratar los hilos como si lo usáramos en C.
+
+168
+00:17:54,000 --> 00:18:05,000
+Con los loops, establecer las variables privadas, las compartidas y compilarlo.
+
+169
+00:18:05,000 --> 00:18:15,000
+Tal y como está, lo de un pelín engorroso porque no hay claro nada por Internet,
+
+170
+00:18:15,000 --> 00:18:21,000
+se habla mucho, bueno, esta semana ha sido la HyperFirmware Computing en Denver,
+
+171
+00:18:21,000 --> 00:18:30,000
+no sé si la habéis visto alguno. De esto se ha hablado poco, pero nadie deja claro cómo hacerlo.
+
+172
+00:18:30,000 --> 00:18:37,000
+No sé si alguien lo conoce ahora mismo aquí o sabe que lo diga, la verdad, porque no...
+
+173
+00:18:37,000 --> 00:18:43,000
+Bueno, es una acción que la ando investigando porque me gustaría utilizarla,
+
+174
+00:18:43,000 --> 00:18:52,000
+por lo menos con Python, que nos da tanta facilidad.
+
+175
+00:18:52,000 --> 00:19:01,000
+Voy a dejar esto como estaba.
+
+176
+00:19:01,000 --> 00:19:04,000
+Bueno, vale.
+
+177
+00:19:04,000 --> 00:19:07,000
+Pasamos a MPI.
+
+178
+00:19:07,000 --> 00:19:14,000
+He cogido, he puesto cuatro opciones, podría haber puesto ocho, nueve, diez, hasta... Yo creo que he visto hasta quince,
+
+179
+00:19:14,000 --> 00:19:19,000
+pero bueno, PyPy de la Universidad de Australia, ahí tenéis su página web,
+
+180
+00:19:19,000 --> 00:19:25,000
+PyMPI por investigadores de la OpenLivermore de California
+
+181
+00:19:25,000 --> 00:19:32,000
+y MMPI for Py que es un proyecto de un argentino, creo,
+
+182
+00:19:32,000 --> 00:19:43,000
+que implementa la mayoría de funciones de MPI, y esa es su página.
+
+183
+00:19:43,000 --> 00:19:50,000
+Bueno, esto es del trabajo de Fin de Master, encontré de este hombre, de WagingLin,
+
+184
+00:19:50,000 --> 00:19:57,000
+comparación de módulos de MPI existentes, es la tabla más grande, pero bueno, he puesto las opciones que hay
+
+185
+00:19:57,000 --> 00:20:02,000
+y he metido a Sci-Py porque Sci-Py también lo incorpora la propia librería.
+
+186
+00:20:02,000 --> 00:20:07,000
+Estas son las funciones más importantes que tiene MPI,
+
+187
+00:20:07,000 --> 00:20:17,000
+y MPI for Py las incorpora toda, y luego ahí tenéis una pequeña comparación de ancho de banda
+
+188
+00:20:17,000 --> 00:20:21,000
+de las cuatro librerías y de la tensión.
+
+189
+00:20:21,000 --> 00:20:26,000
+Se gana porque hace complicado ganarle.
+
+190
+00:20:26,000 --> 00:20:31,000
+Está complicado, pero bueno, ahí está.
+
+191
+00:20:31,000 --> 00:20:37,000
+Y eso MPI for Py implementa la mayoría de rutinas,
+
+192
+00:20:37,000 --> 00:20:43,000
+y esas tres son las que dan mejor el resultado, PyMPI for Py y Sci-Py.
+
+193
+00:20:43,000 --> 00:20:51,000
+Vale, vamos a pasar a la gráfica, también de este hombre, del trabajo,
+
+194
+00:20:51,000 --> 00:20:56,000
+donde la negra es C, lo cual baja el rendimiento aquí.
+
+195
+00:20:56,000 --> 00:20:59,000
+Esto es un mensaje de Brozca que no se ve bien, ¿vale?
+
+196
+00:20:59,000 --> 00:21:02,000
+Un Brozca, se supongo que sabré lo que es.
+
+197
+00:21:02,000 --> 00:21:08,000
+Bueno, no, pues es un mensaje que se envía a todas las máquinas de una red, a todas.
+
+198
+00:21:08,000 --> 00:21:17,000
+Un mensaje de Brozca para hacerle saber lo mismo a todas, se envía y a todo lo que haya en la red le llega.
+
+199
+00:21:17,000 --> 00:21:27,000
+Vale, y este es el tamaño del mensaje y esto creo que son kiloback por segundo.
+
+200
+00:21:27,000 --> 00:21:28,000
+Sí.
+
+201
+00:21:28,000 --> 00:21:32,000
+Bueno, se empieza ahí ganando siempre,
+
+202
+00:21:32,000 --> 00:21:41,000
+luego a este Pico no lo entiendo porque se empieza ahí, bueno, baja y Sci-Py,
+
+203
+00:21:41,000 --> 00:21:49,000
+y no se ve, pero la verde va por aquí también, es MpI for Py.
+
+204
+00:21:49,000 --> 00:22:02,000
+Vale, este es de un Reduce, con Reduce lo que hace es recibir los mensajes de varias máquinas en un sistema.
+
+205
+00:22:02,000 --> 00:22:09,000
+Sí, simplemente recibe y pues empieza ahí también ganando.
+
+206
+00:22:09,000 --> 00:22:15,000
+Y aquí tenéis, al principio, con el tamaño de mensajes cortos, tiene unos picos un pelín grande,
+
+207
+00:22:15,000 --> 00:22:26,000
+unos saltos que debe ser debido a la memoria, al número de bytes.
+
+208
+00:22:26,000 --> 00:22:32,000
+Y bueno, pues...
+
+209
+00:22:32,000 --> 00:22:39,000
+La otra gráfica que es un AllReduce, que es lo mismo que el Reduce,
+
+210
+00:22:39,000 --> 00:22:43,000
+solo que aquí llegan los mensajes y los concatenas.
+
+211
+00:22:43,000 --> 00:22:53,000
+O sea, si estamos haciendo una suma, o sea, si al final nuestro resultado es la suma de los resultados de todas las máquinas,
+
+212
+00:22:53,000 --> 00:23:00,000
+con el AllReduce diríamos que nos hiciera la suma cuando llegara los datos.
+
+213
+00:23:00,000 --> 00:23:16,000
+Y bueno, pues son al final MpI for Py y SciencePy las que dan mejor resultados.
+
+214
+00:23:16,000 --> 00:23:22,000
+Estas son algunas funciones de MpI más comunes.
+
+215
+00:23:22,000 --> 00:23:36,000
+MpI init siempre hay que ponerla al principio de nuestro código para inicializar la interfaz de MpI y solo una vez.
+
+216
+00:23:36,000 --> 00:23:47,000
+Y MpI finalizar es la última también que se pone para cerrar y decir que se acaba la comunicación.
+
+217
+00:23:47,000 --> 00:23:55,000
+Este es un método que comSci nos da el número de procesos de un grupo, se le pasa por parámetro un grupo,
+
+218
+00:23:55,000 --> 00:24:03,000
+porque se establecen grupos de máquinas y se trabaja por grupo
+
+219
+00:24:03,000 --> 00:24:07,000
+y nos da el número de procesos de un grupo que se le pase por parámetro.
+
+220
+00:24:07,000 --> 00:24:18,000
+El common rank devuelve el rango que el rango MpI es el identificador de una tarea.
+
+221
+00:24:18,000 --> 00:24:23,000
+Se le pasa la tarea y nos devuelve el IDE.
+
+222
+00:24:23,000 --> 00:24:31,000
+El SEN se utiliza para enviar mensajes con varios parámetros y el RESID para recibir mensajes.
+
+223
+00:24:31,000 --> 00:24:39,000
+Estas son funciones correctivas donde ahí te veis el Master, el BrozKaB envía un mismo mensaje a todas las máquinas,
+
+224
+00:24:39,000 --> 00:24:50,000
+el SCATER envía distintos mensajes a distintas máquinas, el GADER recibe distintos mensajes de distintas máquinas
+
+225
+00:24:50,000 --> 00:24:56,000
+y el REDUTION recibe distintos mensajes y podemos aplicarles resultados.
+
+226
+00:24:56,000 --> 00:25:02,000
+Esto simplemente recibe, pero con el REDUTION lo podemos tratar.
+
+227
+00:25:02,000 --> 00:25:07,000
+Bueno, ¿qué nos hace falta?
+
+228
+00:25:07,000 --> 00:25:15,000
+Esto del compilador lo tengo puesto por Windows, porque no tenía Visual Studio y instalado.
+
+229
+00:25:15,000 --> 00:25:19,000
+Y me daba problemas y simplemente era eso.
+
+230
+00:25:19,000 --> 00:25:26,000
+Una versión de MpI, por ejemplo, puede ser Open MpI, ahí deja la página.
+
+231
+00:25:26,000 --> 00:25:30,000
+Si os instaláis Open MpI la podéis utilizar en C perfectamente.
+
+232
+00:25:30,000 --> 00:25:37,000
+Python 2.6 entre las dos versiones, entre la última y la 2.6.
+
+233
+00:25:37,000 --> 00:25:41,000
+Y bueno, SETUTULE PyPy es por hacer la instalación más fácil de MpI 4py,
+
+234
+00:25:41,000 --> 00:25:46,000
+simplemente ponéis eso por línea de comando y se instala.
+
+235
+00:25:46,000 --> 00:25:54,000
+Aquí hay un ejemplo de código que no sé por qué.
+
+236
+00:25:54,000 --> 00:25:58,000
+Eso es duplicar, sí y no.
+
+237
+00:25:58,000 --> 00:26:00,000
+Vale.
+
+238
+00:26:00,000 --> 00:26:02,000
+¿No es el cálculo de P?
+
+239
+00:26:02,000 --> 00:26:04,000
+Pues es sencillo.
+
+240
+00:26:04,000 --> 00:26:17,000
+Os quería enseñar a empezar un Hello World que tiene esto.
+
+241
+00:26:17,000 --> 00:26:23,000
+Un Hello World que tiene que tener este en su página web.
+
+242
+00:26:23,000 --> 00:26:26,000
+Si no la buscamos.
+
+243
+00:26:26,000 --> 00:26:34,000
+Simplemente imprime una línea a Hello World por proceso que pueda ejecutar la máquina.
+
+244
+00:26:34,000 --> 00:26:39,000
+El portátil este solo puede ejecutar uno porque es bastante malo,
+
+245
+00:26:39,000 --> 00:26:42,000
+pero bueno, a mí me hace el apaño para la universidad.
+
+246
+00:26:42,000 --> 00:26:47,000
+Vamos a buscar MpI 4py.
+
+247
+00:26:47,000 --> 00:26:51,000
+La página es un polín así.
+
+248
+00:26:51,000 --> 00:26:59,000
+No da confianza, pero no va a confianza en la página.
+
+249
+00:26:59,000 --> 00:27:03,000
+Tutorial, no sé si aquí habrá algo.
+
+250
+00:27:03,000 --> 00:27:05,000
+Yo creo que era aquí.
+
+251
+00:27:05,000 --> 00:27:12,000
+Sí.
+
+252
+00:27:12,000 --> 00:27:18,000
+Bueno, por ejemplo, esto es un mensaje de Brozca con visionario.
+
+253
+00:27:18,000 --> 00:27:25,000
+Pero yo quiero buscar el Hello World que se me ha metido a mí en la cabeza.
+
+254
+00:27:25,000 --> 00:27:29,000
+Bien, aquí.
+
+255
+00:27:29,000 --> 00:27:38,000
+Vale, pues esto simplemente imprime Hello World diciendo que soy el proceso X,
+
+256
+00:27:38,000 --> 00:27:42,000
+el que sea, de la máquina X,
+
+257
+00:27:42,000 --> 00:27:49,000
+y bueno, el número total de procesos, perdón.
+
+258
+00:27:49,000 --> 00:27:57,000
+Rank, lo sacamos pues con MpI, con Rank,
+
+259
+00:27:57,000 --> 00:28:00,000
+que se le pasaban los parámetros,
+
+260
+00:28:00,000 --> 00:28:05,000
+y es el ID del proceso.
+
+261
+00:28:05,000 --> 00:28:12,000
+Y con Size sacamos el número total de procesos que...
+
+262
+00:28:12,000 --> 00:28:15,000
+Yo creo que es el número total de procesos que tiene la máquina,
+
+263
+00:28:15,000 --> 00:28:18,000
+que puede ejecutar la máquina en paralelo,
+
+264
+00:28:18,000 --> 00:28:21,000
+porque el proceso podemos ejecutar los que queramos,
+
+265
+00:28:21,000 --> 00:28:24,000
+pero no a la vez.
+
+266
+00:28:24,000 --> 00:28:29,000
+Bueno, los que queramos dentro de los que queramos para la memoria.
+
+267
+00:28:29,000 --> 00:28:36,000
+Bien, pues no sé si habéis trabajado con MpI, MpI 4-Pie, es trivial, es lo mismo.
+
+268
+00:28:36,000 --> 00:28:39,000
+Básicamente, son para implementar las mismas funciones,
+
+269
+00:28:39,000 --> 00:28:43,000
+la misma estructura de código,
+
+270
+00:28:43,000 --> 00:28:46,000
+para importarlo, pues,
+
+271
+00:28:46,000 --> 00:28:50,000
+con MpI 4-Pie, imprime MpI, lo utilizamos.
+
+272
+00:28:50,000 --> 00:28:53,000
+Y bueno, pues, por ejemplo, aquí lo utiliza con NumPie,
+
+273
+00:28:53,000 --> 00:28:57,000
+que si ya de por si NumPie es rápido y paralelizamos NumPie,
+
+274
+00:28:57,000 --> 00:29:03,000
+en cada máquina ejecutamos parte de las operaciones con su JRAI,
+
+275
+00:29:03,000 --> 00:29:09,000
+pues podemos conseguir mejoras bastante notorias.
+
+276
+00:29:09,000 --> 00:29:13,000
+Vamos a seguir con CUDA, que queda CUDA,
+
+277
+00:29:13,000 --> 00:29:21,000
+y voy a explicar un pelín de la memoria y de la arquitectura de la GPU.
+
+278
+00:29:21,000 --> 00:29:28,000
+Vale, pues para GPU, GPU tenemos 2,
+
+279
+00:29:28,000 --> 00:29:31,000
+que son PyQDA y PyOpNCL.
+
+280
+00:29:31,000 --> 00:29:35,000
+Vamos a empezar con lo que es una arquitectura de una GPU,
+
+281
+00:29:35,000 --> 00:29:40,000
+básicamente las GPU son como un procesador,
+
+282
+00:29:40,000 --> 00:29:44,000
+bueno, un CPU con 4 núcleos es esto,
+
+283
+00:29:44,000 --> 00:29:47,000
+son cores bastante complejos, con muchas instrucciones,
+
+284
+00:29:47,000 --> 00:29:52,000
+y en las GPU lo que tenemos son muchos, pero muchos procesadores,
+
+285
+00:29:52,000 --> 00:29:57,000
+bastante simples, que trabajan, que pueden trabajar,
+
+286
+00:29:57,000 --> 00:30:03,000
+bueno, bastante simples, que la suma, la recta y multiplicación la hacen.
+
+287
+00:30:03,000 --> 00:30:13,000
+La división en la NVIDIA creo que es simulada, vale, no es real.
+
+288
+00:30:13,000 --> 00:30:19,000
+Y pues sí, eso, bastante simple, pero que nos permite establecer un paralelismo de datos,
+
+289
+00:30:19,000 --> 00:30:27,000
+pues imaginaos que podemos ejecutar 250 cores, por ejemplo, sin problemas, tienen una GPU.
+
+290
+00:30:27,000 --> 00:30:32,000
+Aquí tenemos la arquitectura de memoria de una GPU,
+
+291
+00:30:32,000 --> 00:30:38,000
+una GPU está dividida en grid, los grids tienen bloques dentro,
+
+292
+00:30:38,000 --> 00:30:47,000
+esto sería como un procesador, vale, más o menos.
+
+293
+00:30:47,000 --> 00:30:51,000
+Cada bloque tiene un bloque de memoria compartida,
+
+294
+00:30:51,000 --> 00:30:54,000
+que es como si fuera la caches de los procesadores,
+
+295
+00:30:54,000 --> 00:31:01,000
+y su registro y los hilos que puede ejecutar cada bloque.
+
+296
+00:31:01,000 --> 00:31:06,000
+Luego tenemos nuestra memoria global, y este sería nuestro CPU,
+
+297
+00:31:06,000 --> 00:31:08,000
+y este es el que controla lo que hace la CPU,
+
+298
+00:31:08,000 --> 00:31:13,000
+o sea, es el que manda a la GPU lo que se ejecuta,
+
+299
+00:31:13,000 --> 00:31:20,000
+ahora veremos los pasos, como lo hacemos, vale.
+
+300
+00:31:20,000 --> 00:31:24,000
+Bueno, pues PyCuda, bueno, Cuda he creado por NVIDIA,
+
+301
+00:31:24,000 --> 00:31:29,000
+supongo que lo conoceréis, o bien, cuando compré en una tarjetita, bien.
+
+302
+00:31:29,000 --> 00:31:33,000
+PyCuda es un graper, es un graper de Cuda,
+
+303
+00:31:33,000 --> 00:31:38,000
+hecho por Andreas Klockner, que el tío da bastante charlas por ahí,
+
+304
+00:31:38,000 --> 00:31:45,000
+pues por la Ficon de Estados Unidos da bastante charla,
+
+305
+00:31:45,000 --> 00:31:51,000
+y el graper se supone que nos tiene que atraer de lo que es Cuda, y se,
+
+306
+00:31:51,000 --> 00:31:56,000
+y bueno, nos atrae porque lo que es Pumtero no lo tenemos que utilizar,
+
+307
+00:31:56,000 --> 00:32:01,000
+lo que en una GPU tenemos que tener total control sobre la memoria,
+
+308
+00:32:01,000 --> 00:32:05,000
+y este es el flujo de trabajo que hace el graper,
+
+309
+00:32:05,000 --> 00:32:09,000
+nosotros tenemos nuestra idea, lo ponemos en Python,
+
+310
+00:32:09,000 --> 00:32:14,000
+y ya está, le damos al play,
+
+311
+00:32:14,000 --> 00:32:21,000
+y el graper traduce a código de GPU, lo compila, lo pasa a binario,
+
+312
+00:32:21,000 --> 00:32:26,000
+la GPU hace sus cálculos, y nos devuelve un resultado,
+
+313
+00:32:26,000 --> 00:32:31,000
+así que visto así, pues sí, ayuda bastante.
+
+314
+00:32:31,000 --> 00:32:36,000
+Que nos hace falta para...
+
+315
+00:32:36,000 --> 00:32:42,000
+que nos hace falta no, ahora PyOpensele es del mismo hombre,
+
+316
+00:32:42,000 --> 00:32:49,000
+PyOpensele fue creado por Apple, y desarrollado en conjunto con AMD Intel,
+
+317
+00:32:49,000 --> 00:32:57,000
+IBM Nvidia, se propuso a Acronos para que fuera un API, un standard,
+
+318
+00:32:57,000 --> 00:33:02,000
+y ahora mismo es un API de computación paralela en CPU y GPU, vale.
+
+319
+00:33:02,000 --> 00:33:07,000
+El paradigma de programación es parecido a Cuda,
+
+320
+00:33:07,000 --> 00:33:13,000
+cambian el nombre de las cosas, pero una vez entiendes cómo funciona la programación en GPU,
+
+321
+00:33:13,000 --> 00:33:22,000
+el trabajar no pensele trivial, y bueno, ahí está a ver si sale adelante cómo estándar o no.
+
+322
+00:33:22,000 --> 00:33:28,000
+Ahora mismo es más rápido Cuda, pero el flujo de trabajo es el mismo,
+
+323
+00:33:28,000 --> 00:33:32,000
+escribimos el código en Python, ejecutamos,
+
+324
+00:33:32,000 --> 00:33:41,000
+y ya el graper se encarga de traducirlo, y de compilarlo, y ejecutarlo.
+
+325
+00:33:41,000 --> 00:33:43,000
+¿Qué nos hace falta?
+
+326
+00:33:43,000 --> 00:33:48,000
+Pues una versión de Cuda o de OpenCL, depende de lo que vayamos a utilizar.
+
+327
+00:33:48,000 --> 00:33:54,000
+El creador dice que utilizamos un Paction 3.3 de 64 Git,
+
+328
+00:33:54,000 --> 00:33:59,000
+y luego PyCuda o PyOpensele de su página,
+
+329
+00:33:59,000 --> 00:34:04,000
+BoostPy Zone en un Py, porque usa estructuras de NumPy,
+
+330
+00:34:04,000 --> 00:34:15,000
+y PyTools, y hay que programarlo en Windows.
+
+331
+00:34:15,000 --> 00:34:20,000
+Esto no se puede hacer ahora mismo en Linux, hace falta Visual Studio.
+
+332
+00:34:20,000 --> 00:34:27,000
+Hace poco Cuda saca su versión para Linux, que se trabaja, se programa en Eclipse,
+
+333
+00:34:27,000 --> 00:34:30,000
+y bueno, el resultado son los mismos que en Windows,
+
+334
+00:34:30,000 --> 00:34:35,000
+pero el graper, este hombre dice que nada.
+
+335
+00:34:35,000 --> 00:34:42,000
+Bueno, aquí unos pasos a seguir para desarrollar con Cuda,
+
+336
+00:34:42,000 --> 00:34:47,000
+que tendríamos que inicializar memoria en la GPU,
+
+337
+00:34:47,000 --> 00:34:54,000
+porque las comunicaciones entre la memoria del CPU o la memoria del sistema,
+
+338
+00:34:54,000 --> 00:34:57,000
+y la de la GPU son costosas, muy costosas,
+
+339
+00:34:57,000 --> 00:35:01,000
+hay que llevarse todo lo que podamos a la GPU,
+
+340
+00:35:01,000 --> 00:35:05,000
+configurar el grid, porque tenemos que decir, pues,
+
+341
+00:35:05,000 --> 00:35:10,000
+cuántos bloques vamos a utilizar, cuántos hilos vamos a utilizar,
+
+342
+00:35:10,000 --> 00:35:15,000
+y poco más, pero hay que tenerlos en cuenta.
+
+343
+00:35:15,000 --> 00:35:22,000
+Lanzamos el kernel, los kernels en GPU son las funciones que se ejecutan en la gráfica,
+
+344
+00:35:22,000 --> 00:35:28,000
+y hay que llevar un control de los hilos, porque no están, venga,
+
+345
+00:35:28,000 --> 00:35:34,000
+ejecutamos y todo va solo, hay que llevar un control bastante estricto.
+
+346
+00:35:34,000 --> 00:35:39,000
+Tenemos que sacar alguna forma de calcular los ides de cada hilo,
+
+347
+00:35:39,000 --> 00:35:46,000
+porque si tenemos un grid con 255 hilos,
+
+348
+00:35:46,000 --> 00:35:52,000
+el segundo grid, el primer hilo no es cero, es 256,
+
+349
+00:35:52,000 --> 00:35:59,000
+y no es tan fácil sacarlo, o sea, dicho así, sí, pero en código no es tan,
+
+350
+00:35:59,000 --> 00:36:10,000
+porque se hacen truquillos para dejar hilos al final de cada bloque
+
+351
+00:36:10,000 --> 00:36:13,000
+sin utilizar, porque nos convenga,
+
+352
+00:36:13,000 --> 00:36:17,000
+y bueno, hacemos los cálculos y nos traemos el resultado,
+
+353
+00:36:17,000 --> 00:36:23,000
+esos son los pasos a seguir en CUDA, bueno, en CUDA y en OpenCL
+
+354
+00:36:23,000 --> 00:36:25,000
+para trabajar con GPU, ¿vale?
+
+355
+00:36:25,000 --> 00:36:31,000
+Consideraciones de rendimiento, pues,
+
+356
+00:36:31,000 --> 00:36:35,000
+lanzar cuántos más hilos mejor, ¿vale?
+
+357
+00:36:35,000 --> 00:36:39,000
+La GPU está hecha para eso, la GPU trabaja muy, muy rápida,
+
+358
+00:36:39,000 --> 00:36:44,000
+y podemos lanzar, bueno, hace poco, bueno,
+
+359
+00:36:44,000 --> 00:36:47,000
+pensando en estudiarlas, bueno, 512 hilos,
+
+360
+00:36:47,000 --> 00:36:52,000
+y pues sí, es bestiar lo que hace una GPU.
+
+361
+00:36:52,000 --> 00:36:58,000
+Mantener el single instruction multiple data dentro de cada bloque,
+
+362
+00:36:58,000 --> 00:37:00,000
+¿qué quiere decir eso?
+
+363
+00:37:00,000 --> 00:37:07,000
+Pues que si tenemos dos arras y los queremos sumar,
+
+364
+00:37:07,000 --> 00:37:11,000
+lo hagamos del team, o sea, es una operación de suma,
+
+365
+00:37:11,000 --> 00:37:17,000
+pero si por ejemplo, voy a coger una tisa,
+
+366
+00:37:17,000 --> 00:37:22,000
+vale, si esta parte la queremos sumar,
+
+367
+00:37:22,000 --> 00:37:25,000
+y esto por lo que sea multiplicarla, ¿vale?
+
+368
+00:37:25,000 --> 00:37:32,000
+Y esto multiplicarla, no se sigue el single instruction multiple data, ¿vale?
+
+369
+00:37:32,000 --> 00:37:35,000
+Porque imaginado que estos son 5 hilos, 5 sumas,
+
+370
+00:37:35,000 --> 00:37:40,000
+y estos 3 multiplicaciones, ya son dos instrucciones distintas,
+
+371
+00:37:40,000 --> 00:37:43,000
+las cuales no las podemos ejecutar en paralelo,
+
+372
+00:37:43,000 --> 00:37:47,000
+porque la GPU trabaja muy bien, pero cuando son las mismas instrucciones,
+
+373
+00:37:47,000 --> 00:37:53,000
+o sea, son, serían 8 sumas o 8 multiplicaciones.
+
+374
+00:37:53,000 --> 00:37:55,000
+Hay veces que no hay más remedio que, bueno,
+
+375
+00:37:55,000 --> 00:37:58,000
+pues que hacer distintas instrucciones,
+
+376
+00:37:58,000 --> 00:38:03,000
+pero ahí hay un costa adicional, porque primero hace la suma,
+
+377
+00:38:03,000 --> 00:38:07,000
+y luego valía la multiplicación, ¿vale?
+
+378
+00:38:07,000 --> 00:38:10,000
+Usar memoria compartida, siempre que se pueda,
+
+379
+00:38:10,000 --> 00:38:13,000
+pues sí, es como la escache de los procesadores,
+
+380
+00:38:13,000 --> 00:38:15,000
+el acceso a memoria es mucho más rápido,
+
+381
+00:38:15,000 --> 00:38:21,000
+y si no la llenamos, y luego si tenemos que seguir trayendo datos,
+
+382
+00:38:21,000 --> 00:38:26,000
+pues, ahí hay espacio que nos podemos haber llenado con los siguientes datos,
+
+383
+00:38:26,000 --> 00:38:31,000
+o sea, y más si es la misma instrucción que estamos haciendo, ¿vale?
+
+384
+00:38:31,000 --> 00:38:37,000
+Los costes de comunicación entre la memoria global y la memoria compartida,
+
+385
+00:38:37,000 --> 00:38:43,000
+pues, se ven, se notan, vamos.
+
+386
+00:38:43,000 --> 00:38:46,000
+Y luego acceder bien a la memoria global,
+
+387
+00:38:46,000 --> 00:38:48,000
+¿eso qué es que le decís?
+
+388
+00:38:48,000 --> 00:38:50,000
+Pues que pongamos los datos contiguos, ¿vale?
+
+389
+00:38:50,000 --> 00:38:54,000
+Que si tenemos una RAI de 200 elementos, o uno detrás de otro,
+
+390
+00:38:54,000 --> 00:38:57,000
+no se nos ocurra poner 100 primero,
+
+391
+00:38:57,000 --> 00:38:59,000
+la 100 primera direcciones de memoria,
+
+392
+00:38:59,000 --> 00:39:04,000
+nos saltemos 100 direcciones de memoria, por ejemplo,
+
+393
+00:39:04,000 --> 00:39:08,000
+y luego pongamos los otros datos que nos sobran,
+
+394
+00:39:08,000 --> 00:39:15,000
+sino, todo contiguo, porque también la gráfica por cómo está diseñada el hardware,
+
+395
+00:39:15,000 --> 00:39:18,000
+pues, es más eficiente.
+
+396
+00:39:18,000 --> 00:39:24,000
+Ah, bien, de sobra.
+
+397
+00:39:24,000 --> 00:39:34,000
+Vale, pues, 10 minutos y voy a poneros un ejemplo,
+
+398
+00:39:34,000 --> 00:39:38,000
+yo que tiene este hombre aquí.
+
+399
+00:39:41,000 --> 00:39:47,000
+La página tiene un peli más currero que los de MRP4Py, ¿vale?
+
+400
+00:39:47,000 --> 00:39:50,000
+Esto es de Pi OpenCell, de Pi Puga.
+
+401
+00:39:50,000 --> 00:39:56,000
+Por ejemplo, esta es la multiplicación de dos vector.
+
+402
+00:39:56,000 --> 00:40:00,000
+Esto es lo que sería el kernel.
+
+403
+00:40:00,000 --> 00:40:05,000
+Vale, esta es la función que ejecuta la GPU.
+
+404
+00:40:05,000 --> 00:40:13,000
+Este es el control de hilo, para poder ejecutar esto en cada hilo.
+
+405
+00:40:13,000 --> 00:40:21,000
+Y, pues, poco más, aquí es donde se configura esto en CUDA distinto,
+
+406
+00:40:21,000 --> 00:40:24,000
+esto ya es de Python, esto es del graper propio,
+
+407
+00:40:24,000 --> 00:40:26,000
+aquí es donde configuramos el grid hilo bloque,
+
+408
+00:40:26,000 --> 00:40:30,000
+se supone que estamos utilizando por bloque 400 hilo y un grid,
+
+409
+00:40:30,000 --> 00:40:34,000
+o dos grids, perdón, vale.
+
+410
+00:40:34,000 --> 00:40:39,000
+Y, pues, configura el grid, ejecuta,
+
+411
+00:40:39,000 --> 00:40:48,000
+esto es lo que ejecuta la gráfica, que de Python tiene poco, como veis.
+
+412
+00:40:48,000 --> 00:40:52,000
+Tiene poco, a ver.
+
+413
+00:40:52,000 --> 00:41:01,000
+Pero es muy simple el ejemplo, aún así, para vectores grandes de operaciones,
+
+414
+00:41:01,000 --> 00:41:08,000
+por ejemplo, de visión artificial, que las operaciones son pizzer a pizzer,
+
+415
+00:41:08,000 --> 00:41:12,000
+podríamos lanzar la CUDA a hacer la operación de una vez,
+
+416
+00:41:12,000 --> 00:41:22,000
+si tenemos que tratar 200 pizzeres, lo podríamos hacer de una vez los 200 y traernos el resultado.
+
+417
+00:41:22,000 --> 00:41:28,000
+Bien, pues, por último, enseñar una última librería,
+
+418
+00:41:28,000 --> 00:41:31,000
+que es con la que estoy desarrollando mi proyecto de fin de grado,
+
+419
+00:41:31,000 --> 00:41:34,000
+que pinta bastante bien.
+
+420
+00:41:34,000 --> 00:41:41,000
+La CIGA, la SIGA, grupo de investigación, a ver.
+
+421
+00:41:41,000 --> 00:41:44,000
+Ahora no me acuerdo del nombre.
+
+422
+00:41:44,000 --> 00:41:48,000
+Tiene un dibujito de un animal.
+
+423
+00:41:48,000 --> 00:41:50,000
+Bueno, si me viene lo digo, vale.
+
+424
+00:41:50,000 --> 00:41:58,000
+Es una librería para diseñar o lanzar algoritmos evolutivos tipo...
+
+425
+00:41:58,000 --> 00:42:00,000
+algo genético.
+
+426
+00:42:00,000 --> 00:42:05,000
+Trae algoritmos hechos ya, con el método algoritmos nos podemos lanzar,
+
+427
+00:42:05,000 --> 00:42:10,000
+con el método creador nos podemos crear, establecer nuestros propios parámetros.
+
+428
+00:42:10,000 --> 00:42:15,000
+Se implementa muy fácil y tiene MPI implementado dentro.
+
+429
+00:42:15,000 --> 00:42:21,000
+Antes utilizaba DTM, basaba MPI, la versión anterior a la que ahora mismo opone,
+
+430
+00:42:21,000 --> 00:42:23,000
+pero la podéis descargar.
+
+431
+00:42:23,000 --> 00:42:27,000
+Ahora usa SCOOP, que ando viendo cómo funciona,
+
+432
+00:42:27,000 --> 00:42:34,000
+y por lo visto trae un balanceador de cargas incorporado.
+
+433
+00:42:34,000 --> 00:42:40,000
+SCOOP es cada volcón, currón, operación y paizón,
+
+434
+00:42:40,000 --> 00:42:44,000
+y lo que usa es 0MQ en vez de MPI.
+
+435
+00:42:44,000 --> 00:42:53,000
+Son parecidas, tienen algunas funciones distintas y poco más.
+
+436
+00:42:53,000 --> 00:42:58,000
+Si tenéis alguna pregunta, pues aquí estoy.
+
+437
+00:42:58,000 --> 00:43:00,000
+Y muchas gracias a todos.
+
+438
+00:43:00,000 --> 00:43:24,000
+A continuación, muchas gracias.
+
+439
+00:43:24,000 --> 00:43:31,000
+¿Qué es el método que ha sido el título en la página de Nvidia?
+
+440
+00:43:31,000 --> 00:43:35,000
+Es básicamente el método que ha estado en la charla de antes,
+
+441
+00:43:35,000 --> 00:43:40,000
+pero que genera código para la gente U, para la gente Vizal, el UVM,
+
+442
+00:43:40,000 --> 00:43:44,000
+para la gente Artex, simplemente para que si estás aprendiendo investigación
+
+443
+00:43:44,000 --> 00:43:47,000
+al respecto, te ha hecho un vistazo.
+
+444
+00:43:47,000 --> 00:43:51,000
+Tiene licencia, pero tiene sacanémica, es gratuito.
+
+445
+00:43:51,000 --> 00:43:54,000
+¿Te haces eso a ella?
+
+446
+00:43:54,000 --> 00:43:58,000
+No, no he venido a Numba, porque estaba...
+
+447
+00:43:58,000 --> 00:44:00,000
+Bueno, básicamente...
+
+448
+00:44:00,000 --> 00:44:06,000
+En OpenC y en PyCuda, el código, el kernel, digamos, que va a la gente U,
+
+449
+00:44:06,000 --> 00:44:11,000
+pues acaba estando en su lenguaje, que es un pseudo-f.
+
+450
+00:44:11,000 --> 00:44:17,000
+Con Numba, lo que hace es escribir una función numérica,
+
+451
+00:44:17,000 --> 00:44:21,000
+porque tiene unas limitaciones bastante grandes en lo que soporta,
+
+452
+00:44:21,000 --> 00:44:24,000
+pero para escribir pórmulas básicas funciona bien,
+
+453
+00:44:24,000 --> 00:44:30,000
+y añadiendo un decorador, digamos, hace que eso se ejecute sobre GPU.
+
+454
+00:44:30,000 --> 00:44:34,000
+Y igual si estás haciendo distintas pruebas, pues...
+
+455
+00:44:34,000 --> 00:44:35,000
+Vale, vale.
+
+456
+00:44:35,000 --> 00:44:36,000
+Sí, sí.
+
+457
+00:44:36,000 --> 00:44:41,000
+Y respecto a lo del Mpd, que es dicho, aquí en bajón me he fijado
+
+458
+00:44:41,000 --> 00:44:46,000
+y está en torno de tamaño de paquete 1400, donde se produce.
+
+459
+00:44:46,000 --> 00:44:50,000
+¿Y ese es el tamaño del ramo de TTP?
+
+460
+00:44:50,000 --> 00:44:51,000
+Puede ser, puede ser.
+
+461
+00:44:51,000 --> 00:44:55,000
+Sí, es el MTU máximo, el 1500 bytes.
+
+462
+00:44:55,000 --> 00:44:57,000
+Sí, podría ser.
+
+463
+00:44:57,000 --> 00:44:59,000
+Sí, que empezará a fragmentar ahí.
+
+464
+00:44:59,000 --> 00:45:02,000
+Sí, es simplemente porque está en la función...
+
+465
+00:45:02,000 --> 00:45:03,000
+Sí, sí, sí.
+
+466
+00:45:03,000 --> 00:45:05,000
+Puede ser, puede ser.
+
+467
+00:45:10,000 --> 00:45:14,000
+La gestión de esta computadora en paralela,
+
+468
+00:45:14,000 --> 00:45:18,000
+si la queremos hacer en la nube, ¿cómo hacemos?
+
+469
+00:45:18,000 --> 00:45:21,000
+Sí, ese es un tema que no he tratado.
+
+470
+00:45:21,000 --> 00:45:27,000
+Vale, bueno, estar en la nube, estar en los gris,
+
+471
+00:45:27,000 --> 00:45:32,000
+que bueno, Bitcoin lo conoce, básicamente hace eso,
+
+472
+00:45:32,000 --> 00:45:36,000
+pero no lo he tratado porque está bastante liado
+
+473
+00:45:36,000 --> 00:45:40,000
+y no, como si no hubiese puesto.
+
+474
+00:45:40,000 --> 00:45:45,000
+Me parece que lo estaba focalizado a hardware que quieres in situ.
+
+475
+00:45:45,000 --> 00:45:46,000
+Sí.
+
+476
+00:45:46,000 --> 00:45:48,000
+Creo que Amazon tiene...
+
+477
+00:45:48,000 --> 00:45:49,000
+Sí, bueno.
+
+478
+00:45:49,000 --> 00:45:52,000
+...un ramastón con...
+
+479
+00:45:52,000 --> 00:45:53,000
+Sí.
+
+480
+00:45:53,000 --> 00:45:57,000
+...donde hay instancias que tienen que apertar.
+
+481
+00:45:57,000 --> 00:46:02,000
+¿Usted ha dicho un poco que sea un paralisco en la robótica
+
+482
+00:46:02,000 --> 00:46:06,000
+que ya circuló en la nube, pues parecería natural
+
+483
+00:46:06,000 --> 00:46:10,000
+que esto debería ser paralelismo en la nube y salir de aquí
+
+484
+00:46:10,000 --> 00:46:13,000
+con la idea y ya mañana programas para el...
+
+485
+00:46:13,000 --> 00:46:17,000
+El problema es que tú tendrías que paralizar,
+
+486
+00:46:17,000 --> 00:46:20,000
+o sea, escribir tu código en paralelo porque ahora mismo
+
+487
+00:46:20,000 --> 00:46:24,000
+no existe nada que te haga un paralismo automático.
+
+488
+00:46:24,000 --> 00:46:27,000
+Entonces, tú tendrías que escribir tu código paralelo,
+
+489
+00:46:27,000 --> 00:46:30,000
+o sea, eso es una de las cosas que el que lo inventes,
+
+490
+00:46:30,000 --> 00:46:32,000
+pues yo creo que lo puede triunfar bastante,
+
+491
+00:46:32,000 --> 00:46:37,000
+o sea, que tú lances un código y que te lo paralice solo,
+
+492
+00:46:37,000 --> 00:46:40,000
+eso es maravilloso, ¿no?
+
+493
+00:46:40,000 --> 00:46:43,000
+Pero, hombre, Amazon te vende horas de computación
+
+494
+00:46:43,000 --> 00:46:46,000
+y, bueno, varias empresas, no solo Amazon.
+
+495
+00:46:46,000 --> 00:46:51,000
+Pero lo que es un grip como Bitcoin y el CEN tiene,
+
+496
+00:46:51,000 --> 00:46:54,000
+que al ser creo que os podéis conectar también
+
+497
+00:46:54,000 --> 00:46:57,000
+para prestar computación de vuestro ordenador.
+
+498
+00:46:57,000 --> 00:47:02,000
+No, no, ni lo he tratado, ni sé cómo hacerlo,
+
+499
+00:47:02,000 --> 00:47:05,000
+porque no me metió allí todavía.
+
+500
+00:47:05,000 --> 00:47:24,000
+Bueno, pues ya está todo.
+
+501
+00:47:35,000 --> 00:47:40,000
+Bueno, pues ya está todo.
+

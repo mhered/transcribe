@@ -1,0 +1,2852 @@
+1
+00:00:00,000 --> 00:00:21,000
+Bueno, pues vamos a ver una presentación sobre best practices de Django, ¿vale? Vamos a dividir la charla en varios tips, varias pistas, consejos,
+
+2
+00:00:21,000 --> 00:00:32,000
+que en base a mi experiencia considero que son útiles a la hora de desarrollar, a la hora de desplegar y a la hora de expandir las capacidades de Django.
+
+3
+00:00:32,000 --> 00:00:38,000
+Entonces, dice que son 12 trucos pero en realidad son más y son tres secciones distintas.
+
+4
+00:00:38,000 --> 00:00:46,000
+Antes de nada, me gustaría hacer un poco de encuesta para ver aquí quién ha desarrollado en Django alguna vez, levantad la mano, ¿vale?
+
+5
+00:00:46,000 --> 00:00:54,000
+¿Sidios en producción? ¿Vale? ¿En PHP? ¡Suera!
+
+6
+00:00:54,000 --> 00:01:03,000
+Entonces lo primero soy yo, me llamo David Arcos, soy de Barcelona, trabajo en una empresa que se llama Kachum.
+
+7
+00:01:03,000 --> 00:01:11,000
+Soy desarrollador de Python y Django desde hace algo más de 5 años, en exclusiva porque me enamoró el lenguaje.
+
+8
+00:01:11,000 --> 00:01:19,000
+Entonces me gustan los sistemas destruidos, desarrollo web, bases de actos, seguridad.
+
+9
+00:01:19,000 --> 00:01:27,000
+Esta Kachum es la empresa en la que trabajo, es una startup de Barcelona que se dedica al reconocimiento de imagen y a la realidad aumentada.
+
+10
+00:01:27,000 --> 00:01:37,000
+Se habéis estado en la charla de Computer Vision de antes, bueno, muchas de esas cosas de reconocer patrones, objetos, de hacer tracking, también lo hacemos.
+
+11
+00:01:37,000 --> 00:01:44,000
+Ofrecemos un software to service con una plataforma en la que envías una imagen desde el móvil mismo, es un post de la imagen
+
+12
+00:01:44,000 --> 00:01:49,000
+y te devolvemos el objeto que se ha reconocido junto a los metadatos de tu lógica, lo que la hayas puesto.
+
+13
+00:01:49,000 --> 00:01:56,000
+¿Vale? Es muy fácil de usar, tenemos APIs en Python, SDKs en Mobile, en todo lo que hace falta.
+
+14
+00:01:56,000 --> 00:02:03,000
+Entonces, vamos a empezar hablando de Python. ¿Por qué? Python mola, bueno, a estas alturas creo que ya todos lo sabéis.
+
+15
+00:02:03,000 --> 00:02:11,000
+Os habrán hablado del C en varias charlas, yo quería resumir un poco los puntos que considero más importantes.
+
+16
+00:02:11,000 --> 00:02:18,000
+Que ve yo es mejor que feo, que es simple es mejor que complejo, pero aún así complejo es mejor que complicado.
+
+17
+00:02:18,000 --> 00:02:27,000
+Es muy importante que el código sea elegible y los casos especiales no son tan especiales como para romper las normas.
+
+18
+00:02:27,000 --> 00:02:34,000
+Aún así, no tenemos que ser fanáticos y si hay que romper las normas se rompen. ¿Vale?
+
+19
+00:02:34,000 --> 00:02:41,000
+Y que si una implementación es difícil de explicar, entonces es una mala implementación porque la implementación tiene que quedar
+
+20
+00:02:41,000 --> 00:02:47,000
+documentada, ser elegible y ser más o menos obvia, entendible, sino pues más vale romperlo en trozos más pequeños
+
+21
+00:02:47,000 --> 00:02:56,000
+y explicarlo punto a punto. ¿Y por qué Django? Bueno, pues la definición de Django, Django es un framework de desarrollo web
+
+22
+00:02:56,000 --> 00:03:03,000
+para perfeccionistas con fechas de entrega, que es de desarrollo web los ha visto todos. Perfeccionistas es para la gente
+
+23
+00:03:03,000 --> 00:03:09,000
+que es muy detallista, que estás hasta el último detalle, el último pixel que quieres tener control de todo lo que pasa en tu plataforma,
+
+24
+00:03:09,000 --> 00:03:16,000
+pero con deadlines. Django está orientado al desarrollo rápido, ágil. ¿Vale? Lo típico que hay que estar esto para tal día
+
+25
+00:03:16,000 --> 00:03:22,000
+y si lo queremos hacer muy bien, pero nos va bien usar un framework que todo lo ha aburrido y ya nos lo ha hecho.
+
+26
+00:03:22,000 --> 00:03:30,000
+La filosofía de Django es muy interesante, era de la de Python, obviamente, pero básicamente serás en tener componentes
+
+27
+00:03:30,000 --> 00:03:37,000
+desacoplados, en no repetir mucho código, tener menos código, lo típico boilerplate que tienes como una plantilla ahí,
+
+28
+00:03:37,000 --> 00:03:43,000
+pues eso en Django no hace falta, ya forma parte de las librerías propias de Django. Consistencia entre distintas capas,
+
+29
+00:03:43,000 --> 00:03:51,000
+las variaciones que haces en formularios, en modelos, pues que se definan una sola vez. Ahí tenéis el link a las filosofías.
+
+30
+00:03:51,000 --> 00:03:58,000
+Y que técnicamente tienes un montón de aplicaciones Django, casi todo lo que se hace en web, cualquier cosa nueva que salga
+
+31
+00:03:58,000 --> 00:04:04,000
+enseguida va a haber librería en Django y si no es en los modelos oficiales, serán los modelos de CERPARTIS.
+
+32
+00:04:04,000 --> 00:04:12,000
+Y hay una documentación muy buena, si un proyecto basado en Python pues tiene tradición de documentar muy bien.
+
+33
+00:04:12,000 --> 00:04:17,000
+Una cosa que se me ha olvidado, quiero hacer esta sesión un poco interactiva, entonces como los consejos
+
+34
+00:04:17,000 --> 00:04:23,000
+suelen ir cada uno en una transparencia o en dos, en cualquier momento podéis interrumpir, podéis levantar la mano,
+
+35
+00:04:23,000 --> 00:04:32,000
+entonces tratamos el tema antes de pasar a lo siguiente ¿vale? ¿Alguna duda hasta ahora? Espero que no.
+
+36
+00:04:32,000 --> 00:04:39,000
+Entonces el primer consejo, ahora empezamos a desarrollar en Django, lo primero es tener un entorno de desarrollo.
+
+37
+00:04:39,000 --> 00:04:44,000
+Cuando haces un proyecto tienes dependencias, así que hay que instalarlas dependencias.
+
+38
+00:04:44,000 --> 00:04:52,000
+¿Qué pasa? Que las versiones son distintas, en distintas máquinas, que una versión te la pueden actualizar
+
+39
+00:04:52,000 --> 00:04:56,000
+y esas dependencias necesitas que estén congeladas, que sean las mismas siempre.
+
+40
+00:04:56,000 --> 00:05:01,000
+Entonces en vez de instalarlas en tu máquina a saco con los paquetes de sistema que se mezclan,
+
+41
+00:05:01,000 --> 00:05:06,000
+que en una máquina será una distribución, en otra será otra, lo que haces es un virtual-enf, un entorno virtual.
+
+42
+00:05:06,000 --> 00:05:10,000
+La idea es que para cada proyecto tienes un virtual-enf.
+
+43
+00:05:10,000 --> 00:05:16,000
+Ese virtual-enf luego lo replicarás exactamente lo mismo en tu máquina, en la de tu compañero, en la de integración,
+
+44
+00:05:16,000 --> 00:05:23,000
+en la de preproducción, en la de producción, en todos los sitios usarás el mismo set de librerías, las mismas versiones.
+
+45
+00:05:23,000 --> 00:05:31,000
+Además puedes tener varios proyectos, tienes el proyecto A y el proyecto B y usan librerías distintas,
+
+46
+00:05:31,000 --> 00:05:35,000
+usan incluso versiones distintas, uno usa Python 2, otro Python 3,
+
+47
+00:05:35,000 --> 00:05:39,000
+dicen alguien que usa Python 3 con Django y yo todavía no lo he visto,
+
+48
+00:05:39,000 --> 00:05:44,000
+pero es importante poder tenerlos todos a la vez, es importante que si tienes el servidor de producción
+
+49
+00:05:44,000 --> 00:05:48,000
+no vas a desplegar una sola aplicación Django, o sea eso es desperdiciar recursos,
+
+50
+00:05:48,000 --> 00:05:55,000
+pues puedes tener distintas webs con distintas versiones de todo y no hay problema, virtual-enf permite hacer eso.
+
+51
+00:05:55,000 --> 00:05:59,000
+Mucho más fácil de desplegar por supuesto y hay un script que se llama virtual-enf wrapper,
+
+52
+00:05:59,000 --> 00:06:06,000
+que es una ayuda para crear virtual-enfs, eliminarlos, gestionarlos, muy cómodos, recomiendo usarlo.
+
+53
+00:06:06,000 --> 00:06:11,000
+Entonces hemos empezado con nuestro virtual-enf, lo hemos creado,
+
+54
+00:06:11,000 --> 00:06:14,000
+ahora vamos a ver las dependencias que hacemos.
+
+55
+00:06:14,000 --> 00:06:19,000
+Usando pip instalamos cualquier paquete Python,
+
+56
+00:06:19,000 --> 00:06:23,000
+entonces mira por ejemplo vamos a instalar el paquete de una empresa muy chula, pip install kachum
+
+57
+00:06:23,000 --> 00:06:28,000
+y con esto nuestra aplicación pues podrá hacer lo que haga este módulo.
+
+58
+00:06:28,000 --> 00:06:32,000
+Entonces ahora que hemos instalado un paquete nuevo,
+
+59
+00:06:32,000 --> 00:06:36,000
+vamos a guardarlo en un fichero de requisitos para que nuestros compañeros en producción
+
+60
+00:06:36,000 --> 00:06:40,000
+en el resto de entornos tengan lo mismo, es tan sencillo como hacer pip freeze,
+
+61
+00:06:40,000 --> 00:06:45,000
+eso nos pondrá los paquetes que tenemos instalados en este momento junto a las versiones,
+
+62
+00:06:45,000 --> 00:06:50,000
+lo guardamos en un ficherito y ese ficherito luego cuando haya que instalarlo en otro sitio simplemente
+
+63
+00:06:50,000 --> 00:06:53,000
+pip install y el nombre del fichero.
+
+64
+00:06:53,000 --> 00:06:56,000
+Este fichero obviamente obligatorio meterlo al sistema de control de versiones,
+
+65
+00:06:56,000 --> 00:07:01,000
+porque si no es imposible reproducir los entornos.
+
+66
+00:07:01,000 --> 00:07:09,000
+Seguimos desarrollando, empezamos un proyecto Django y tenemos dudas de cómo organizar nuestro código.
+
+67
+00:07:09,000 --> 00:07:17,000
+La filosofía de Django dice la nomenclatura oficial es que un proyecto vendría a ser la página Wepensy entera
+
+68
+00:07:17,000 --> 00:07:21,000
+y se divide en distintas apps que son librerías una para cada módulo,
+
+69
+00:07:21,000 --> 00:07:26,000
+ahora veremos un poco más a fondo, pero la idea es que tendrías tu repositorio de código,
+
+70
+00:07:26,000 --> 00:07:29,000
+la carpeta de documentación por supuesto quien nos documenta
+
+71
+00:07:29,000 --> 00:07:36,000
+y en el proyecto se acostumbra a hacer una carpeta de apps, le puedes poner otro nombre y dentro cada app de tu proyecto
+
+72
+00:07:36,000 --> 00:07:40,000
+y luego aparte settings y tienes otras librerías, otros temas.
+
+73
+00:07:40,000 --> 00:07:44,000
+De esta manera es mucho más cómodo luego cuando estás desde una vista, desde un modelo donde sea,
+
+74
+00:07:44,000 --> 00:07:47,000
+tener claro que estás importando.
+
+75
+00:07:47,000 --> 00:07:51,000
+Y ahora vamos a ver unos consejillos para las apps,
+
+76
+00:07:51,000 --> 00:07:58,000
+en primer lugar el nombre de una app debería ser muy conciso, muy preciso y tener muy claro que hace.
+
+77
+00:07:58,000 --> 00:08:06,000
+Nombres cortos, obvios, si puede ser una sola palabra y es mejor hacer muchas apps pequeñas que una grande.
+
+78
+00:08:06,000 --> 00:08:11,000
+Si tienes una app que está creciendo porque añades más vistas, más modelos, más funcionalidades
+
+79
+00:08:11,000 --> 00:08:15,000
+llega un momento que es demasiado grande, esto lo quieres evitar.
+
+80
+00:08:15,000 --> 00:08:22,000
+Se suele decir que si lo que hace una app lo explica son una frase, es que es un concepto sencillo, está bien.
+
+81
+00:08:22,000 --> 00:08:27,000
+Si tienes que usar más de una frase entonces mejor lo dividas en varias apps.
+
+82
+00:08:27,000 --> 00:08:32,000
+Vamos a poner un ejemplo, pongamos que nuestra página web vende botellas de agua,
+
+83
+00:08:32,000 --> 00:08:37,000
+pues tendríamos una app que sería la gestión de los objetos de las botellas,
+
+84
+00:08:37,000 --> 00:08:43,000
+tendríamos otra que sería el foro, otra el formulario de soporte, otra la parte de billing de hacer pagos,
+
+85
+00:08:43,000 --> 00:08:49,000
+otra no sé, la galería de fotos, yo que sé, lo que tenga vuestra página es mejor tenerlo en apps separadas.
+
+86
+00:08:49,000 --> 00:08:53,000
+Esto facilita muchísimo luego el mantenimiento y también reaprovecharlas,
+
+87
+00:08:53,000 --> 00:08:59,000
+porque el módulo del foro vamos, luego lo rehusas entre los proyectos y el contact form ya ni te digo.
+
+88
+00:09:02,000 --> 00:09:08,000
+No re inventar la rueda, esto es muy importante, en Django Contrip que vendrían a ser no los módulos que están en el core,
+
+89
+00:09:08,000 --> 00:09:15,000
+sino los que tienen la calidad suficiente para estar en el código de Django, pero no son obligatorios de usar,
+
+90
+00:09:15,000 --> 00:09:22,000
+tiene muchísimos módulos para hacer casi de todo, decía el contact form pero es que hay módulos para hacer comentarios,
+
+91
+00:09:22,000 --> 00:09:27,000
+vamos a ponernos a implementar una app de hacer comentarios cuando ya están hechas, lo aproba mucho más gente,
+
+92
+00:09:27,000 --> 00:09:34,000
+han dedicado más horas y al final los comentarios es lo aburrido, vamos a centrarnos en las apps para la lógica de nuestra empresa,
+
+93
+00:09:34,000 --> 00:09:41,000
+de nuestro proyecto para nuestro objetivo. Y si no está ni en core ni en Contrip, pues siempre tenemos las apps de hacer partíes donde más apps hay.
+
+94
+00:09:41,000 --> 00:09:46,000
+Todo el mundo hace apps cada proveedor de un servicio, de un SaaS, nos hemos dicho un tema de billing,
+
+95
+00:09:46,000 --> 00:09:54,000
+cada proveedor de billing, los Paypal, los Braint y todos estos te dan apps en Python o en Django, no hay que reinventar nada.
+
+96
+00:09:58,000 --> 00:10:03,000
+Entonces, ¿qué sería nuestro proyecto? Sin la configuración. En la configuración suele ser un solo fichero,
+
+97
+00:10:03,000 --> 00:10:08,000
+esa parte no me gusta nada, recomiendo tener muchos ficheros y recomiendo tenerlos guardados.
+
+98
+00:10:08,000 --> 00:10:15,000
+El primer consejo es que múltiples ficheros, uno para cada entorno, tenemos nuestro entorno de desarrollo local,
+
+99
+00:10:15,000 --> 00:10:21,000
+tenemos preproducción, tenemos integración, tenemos producción, cada uno de estos va a estar separado,
+
+100
+00:10:21,000 --> 00:10:26,000
+¿por qué? Porque el acceso a la base de datos de producción y el acceso a la base de datos de integración es distinto,
+
+101
+00:10:26,000 --> 00:10:32,000
+no quieres tenerlo mezclado, no quieres tener ifs dentro de un solo fichero de settings.
+
+102
+00:10:32,000 --> 00:10:41,000
+Luego, más que por developer por cada máquina, hay un truco muy chulo que hace sus ficheros de local settings,
+
+103
+00:10:41,000 --> 00:10:46,000
+haces una carpetita y tienes un fichero con el nombre del hostname de cada máquina.
+
+104
+00:10:46,000 --> 00:10:51,000
+Por ejemplo, si mi máquina es DavidLaptop, pues mi código en los settings dice,
+
+105
+00:10:51,000 --> 00:10:54,000
+a ver, el nombre de esta máquina, el hostname cuál es? DavidLaptop.
+
+106
+00:10:54,000 --> 00:11:00,000
+Entonces, va a buscar al directorio de settings y dice, vale, pues ahora cojo la configuración de esta máquina.
+
+107
+00:11:00,000 --> 00:11:05,000
+¿Qué podemos hacer con cosas así? Mi portátil es bastante viejo, bastante poco potente, es una mierda.
+
+108
+00:11:05,000 --> 00:11:11,000
+Entonces, la base de datos, en vez de usar MySQL o un Postgres que irías rastras, pues uso un SQLite.
+
+109
+00:11:11,000 --> 00:11:16,000
+En cambio, en la máquina, que son el trabajo que tiene muchos cores, mucha memoria,
+
+110
+00:11:16,000 --> 00:11:21,000
+pues le digo que lanzó una base de datos entera. Esto en general con cualquier setting.
+
+111
+00:11:21,000 --> 00:11:27,000
+Y es importante que todos los distintos ficheros hereden de uno común,
+
+112
+00:11:27,000 --> 00:11:34,000
+porque así puedes hacer trucos como este. El Installed Apps es la lista de aplicaciones que está usando tu proyecto.
+
+113
+00:11:34,000 --> 00:11:39,000
+Si han heredado de uno que ya tenía el Installed Apps definido,
+
+114
+00:11:39,000 --> 00:11:42,000
+entonces esto sería, por ejemplo, en mi entorno local.
+
+115
+00:11:42,000 --> 00:11:46,000
+Aquí estoy diciendo que a las apps que ya había, les sumo la del Devoc Toolbar.
+
+116
+00:11:46,000 --> 00:11:49,000
+Es una app muy chula para, de hecho, luego hablaré.
+
+117
+00:11:49,000 --> 00:11:52,000
+Esta solo la quiero en el torno de desarrollo, no la quiero en producción,
+
+118
+00:11:52,000 --> 00:11:58,000
+así que solo lo pondría en mi fichero de settings. Y si lo quiero en preproducción para encontrar un boco específico,
+
+119
+00:11:58,000 --> 00:12:06,000
+lo pondría solo allí. Y lo más importante, casi, tener todo guardado en el sistema de control de versiones.
+
+120
+00:12:06,000 --> 00:12:10,000
+Porque cuando se muere una máquina y se muere bien, se muere del todo,
+
+121
+00:12:10,000 --> 00:12:14,000
+no sabes a qué base de datos se está apuntando, no sabes a qué servidor de colas se está apuntando,
+
+122
+00:12:14,000 --> 00:12:19,000
+eso es un infierno. Necesitas tenerlo, porque así comparas enseguida a los distintos ficheros
+
+123
+00:12:19,000 --> 00:12:26,000
+y de es que puede fallar. Entonces, MTV.
+
+124
+00:12:26,000 --> 00:12:33,000
+Django lo llaman framework MTV, model template eview.
+
+125
+00:12:33,000 --> 00:12:39,000
+Es como el modelo vista controlador, pero un poco con su propia nomenclatura.
+
+126
+00:12:39,000 --> 00:12:44,000
+Modelos es donde se define la lógica, son las tablas de la base de datos,
+
+127
+00:12:44,000 --> 00:12:47,000
+son las acciones que puede hacer cada uno de nuestros objetos.
+
+128
+00:12:47,000 --> 00:12:51,000
+Las plantillas son, serán HTML, puedes poner cualquier cosa,
+
+129
+00:12:51,000 --> 00:12:54,000
+pero la plantilla es la capa de presentación.
+
+130
+00:12:54,000 --> 00:12:59,000
+Y luego la vista, en realidad sería el controlador, es quien va a la base de datos a coger lo que tenga que coger,
+
+131
+00:12:59,000 --> 00:13:04,000
+coge los datos que queramos y se lo pasa a la plantilla. Es un poco la que hace la lógica.
+
+132
+00:13:04,000 --> 00:13:09,000
+En nuestra aplicación de Django, tenemos un fichero con URL, varios ficheros, uno por cada app,
+
+133
+00:13:09,000 --> 00:13:13,000
+que dice la URL con una expresión regular, que vista va a llamar
+
+134
+00:13:13,000 --> 00:13:20,000
+y luego ya la vista se encarga de llamar al modelo que toque y poner la plantilla que queramos.
+
+135
+00:13:20,000 --> 00:13:26,000
+Entonces, ¿por qué digo esto? Porque es importante tener modelos gordos y vistas finas,
+
+136
+00:13:26,000 --> 00:13:33,000
+de cara a que el código sea más mantenible, más fácil de usar y que nos den menos dolores de cabeza.
+
+137
+00:13:33,000 --> 00:13:39,000
+Toda la lógica específica de nuestra aplicación, bueno, toda la lógica en general debería ir dentro de los modelos
+
+138
+00:13:39,000 --> 00:13:45,000
+y formularios, signos, que eso está más relacionado con el modelo. ¿Por qué? Porque si tú tienes una vista
+
+139
+00:13:45,000 --> 00:13:50,000
+y estás llamando, por ejemplo, a crear un objeto, a borrar un objeto con unas precondiciones, con unas variaciones,
+
+140
+00:13:50,000 --> 00:13:55,000
+si luego de esa otra vista tienes que hacer lo mismo, ¿qué vas a hacer? Copiar y pegar,
+
+141
+00:13:55,000 --> 00:13:58,000
+o vas a volver a hacer código, o te vas a olvidar y lo vas a hacer mal.
+
+142
+00:13:58,000 --> 00:14:02,000
+En cambio, si la lógica específica de todo lo que tienes que hacer cuando se crea un objeto,
+
+143
+00:14:02,000 --> 00:14:06,000
+lo has definido dentro del model, entonces da igual desde qué vista lo estés llamando,
+
+144
+00:14:06,000 --> 00:14:10,000
+da igual si no lo llamas desde una vista y lo estás llamando desde un management comandante a lo mismo,
+
+145
+00:14:10,000 --> 00:14:16,000
+lo llamas desde la consola, lo mismo. Entonces, a veces es importante os sobrescribir los métodos de save,
+
+146
+00:14:16,000 --> 00:14:22,000
+create, delete, o si no ir enganchando signals para la lógica, pero que siempre todo lo que es lo más complicado
+
+147
+00:14:22,000 --> 00:14:28,000
+de la lógica esté en los ficheros de models. Las vistas deberían ser lo más ligero posible,
+
+148
+00:14:28,000 --> 00:14:34,000
+simplemente coger unos datos, pasarlos y ya está, porque si metes mucha lógica en las vistas te acaba mordiendo,
+
+149
+00:14:34,000 --> 00:14:39,000
+a la que tienes una llamada de un API y te has olvidado de hacer lo que hiciste en la vista, ya las cagado.
+
+150
+00:14:39,000 --> 00:14:47,000
+Aquí esto es un buen ejemplo, era un buen ejemplo porque ahora con la versión 1.6 de Django lo han liado un poco,
+
+151
+00:14:47,000 --> 00:14:55,000
+pero tú miras el modelo de user del módulo out de Django y básicamente te definen un user
+
+152
+00:14:55,000 --> 00:15:00,000
+y luego te definen, aparte de los campos, todas las acciones que puedes hacer con ese user.
+
+153
+00:15:00,000 --> 00:15:08,000
+El ejemplo clarísimo es resetear un password, si la función de resetear un password la tienes definida
+
+154
+00:15:08,000 --> 00:15:14,000
+en una vista que se llama resetear password, eso no es reaprovechable, en cambio el modelo user tiene una función
+
+155
+00:15:14,000 --> 00:15:19,000
+que es resetear password y eso lo puedes llamar desde cualquier lado, no tienes por qué hacerlo desde una vista,
+
+156
+00:15:19,000 --> 00:15:26,000
+o sea desde una vista lo puedes hacer desde cualquier sitio. Entonces para que quede claro os recomiendo mirarlo.
+
+157
+00:15:26,000 --> 00:15:33,000
+Así que tenemos por una parte los modelos gordos, tenemos las vistas delgadas y tenemos, vale, esto es lo que acabo de explicar,
+
+158
+00:15:33,000 --> 00:15:39,000
+es mucho más mantenible, es más fácil de testear ya que si tienes la lógica en los modelos,
+
+159
+00:15:39,000 --> 00:15:46,000
+las propias llamadas que haces a ese modelo resetear password, es mucho más fácil testear, si lo tienes en una vista ya estás complicando.
+
+160
+00:15:46,000 --> 00:15:52,000
+Puedes rehusar la lógica y el código se vuelve mucho más claro y más autodocumentado,
+
+161
+00:15:52,000 --> 00:15:59,000
+y estás definiendo, tienes en nuestra aplicación, en nuestra página que hemos dicho que vamos a vender botellas de agua por internet,
+
+162
+00:15:59,000 --> 00:16:06,000
+si cada llamada al modelo de la botella, yo que sé, pedir más botellas a fábricas, hacer un XAMN el nuevo de la botella,
+
+163
+00:16:06,000 --> 00:16:12,000
+todo esto lo tienes en el fichero de models, es mucho más fácil testearlo y se entiende mejor que es la botella en sí
+
+164
+00:16:12,000 --> 00:16:21,000
+cuando ves todas las funciones lo que hacen. Así que modelos gordos, vistas delgadas y plantillas estúpidas.
+
+165
+00:16:21,000 --> 00:16:27,000
+La plantilla es la capa de presentación y si algo está prohibido en este mundo es meter lógica en la capa de presentación,
+
+166
+00:16:27,000 --> 00:16:33,000
+eso que hacen la gente de PHP, de meter sentencias SQL en, no prohibido.
+
+167
+00:16:33,000 --> 00:16:41,000
+Las plantillas deberías tener el mismo código de lógica posible, ¿vale? Django tiene mecanismos para hacer filtros,
+
+168
+00:16:41,000 --> 00:16:50,000
+para hacer template tags, pero definidos aparte, entonces eso los puedes llamar, pero la lógica siempre fuera de nada que se llame punto HTML.
+
+169
+00:16:50,000 --> 00:16:59,000
+Entonces hay gente que se queja de esto, porque dicen que, vale, sí, yo soy un hacker pro y yo quiero meter toda la lógica que me dé la gana
+
+170
+00:16:59,000 --> 00:17:07,000
+en la plantilla, Django no me deja, ¿qué hago? Las plantillas de Django ya diseñaron el sistema así para que no puedas meter código Python a saco
+
+171
+00:17:07,000 --> 00:17:14,000
+para que tengas que hacerlo más o menos bien, ¿vale? La lógica es que en la empresa pues tendrás perfiles especializados
+
+172
+00:17:14,000 --> 00:17:21,000
+y que quien diseñe las plantillas no tiene por qué ser un programador, puede ser un diseñador, aquí está diciendo que los diseñadores
+
+173
+00:17:21,000 --> 00:17:28,000
+no saben programar, pero bueno, la idea es que va separado, si aún así quieres hacerlo, bueno, puedes usar Jinja o puedes usar el sistema
+
+174
+00:17:28,000 --> 00:17:35,000
+plantillas que quieras para hacer las plantillas con toda la lógica que quieras, todas las worst practices que te dé la gana.
+
+175
+00:17:35,000 --> 00:17:43,000
+Eso sí, se recomienda que si en una, lo típico es que tienes una vista súper específica, con una plantilla súper específica
+
+176
+00:17:43,000 --> 00:17:49,000
+y ahí tienes que hacer la guarrada padre, se recomienda que solo use Jinja o lo que tengas que usar en esa, ¿vale?
+
+177
+00:17:49,000 --> 00:17:55,000
+El resto, déjalo porque así el resto van a ser más fáciles de mantener, si el 90% de las plantillas son mantenibles
+
+178
+00:17:55,000 --> 00:18:04,000
+y el 10% son más peligrosas, pues mejor. Y lo que también se suele criticar muy a menudo es que Django genera un HTML muy feo,
+
+179
+00:18:04,000 --> 00:18:11,000
+es verdad, te mete muchos intros, espacios en blanco, ¿por qué? Porque el sistema de plantillas está pensado para que lo lean personas.
+
+180
+00:18:11,000 --> 00:18:19,000
+Luego, el HTML que genera lo va a leer una máquina, ¿vale? Lo que quieres es que las plantillas en sí son mantenibles,
+
+181
+00:18:19,000 --> 00:18:26,000
+las máquinas no les importa ver HTML bonito y feo mientras valide, o hecho no hace falta ni que valide, ¿vale?
+
+182
+00:18:26,000 --> 00:18:32,000
+Pero las personas sí, y hay que pensar en que valer después nuestra plantilla que se entere de algo.
+
+183
+00:18:32,000 --> 00:18:42,000
+¿De cara al tiempo de carga? ¿Perdón? ¿De cara al tiempo de carga? No, no debería afectar. ¿Cuánto más va a tener HTML?
+
+184
+00:18:42,000 --> 00:18:48,000
+Vale, en ese caso le añadirías un middleware, que le dirías que la plantilla que sale pues que te la comprima,
+
+185
+00:18:48,000 --> 00:18:53,000
+que te la ponga con Gzip, que elimine los espacios en blanco, que los ofusque, lo que te dé la gana.
+
+186
+00:18:53,000 --> 00:18:58,000
+O sea, si es un requisito, lo haces. Pero la idea es que a la hora de programar tú veas algo bonito.
+
+187
+00:18:58,000 --> 00:19:02,000
+¿Has dado alguna librendia para ello? ¿Cómo? ¿Has dado alguna librendia para ello?
+
+188
+00:19:02,000 --> 00:19:08,000
+No he usado nunca, pero me parece que hay alguna en los módulos principales para esto, para Gzip seguro,
+
+189
+00:19:08,000 --> 00:19:12,000
+y para eliminar espacios en blanco y esto también, pero ahora no te sé decir cómo se llama.
+
+190
+00:19:12,000 --> 00:19:18,000
+Pero bueno, que no tiene mucho truco, es un fichero con muchos intros, pues eliminar todos los que puedas.
+
+191
+00:19:20,000 --> 00:19:26,000
+Entonces, hemos visto la parte de desarrollo, cómo empezamos a desarrollar, cómo vamos haciendo nuestro proyectillo.
+
+192
+00:19:26,000 --> 00:19:32,000
+Ahora vamos a ver cómo desplegar. Estos son recomendaciones y alguno tiene una configuración distinta, perfecto.
+
+193
+00:19:32,000 --> 00:19:38,000
+Yo digo lo que a mí me ha funcionado mejor, me ha dado menos problemas y sobre todo me ha tardado menos tiempo.
+
+194
+00:19:42,000 --> 00:19:48,000
+¿Cómo servidor web? ¿Alguien usó Apache? Lo siento por vosotros.
+
+195
+00:19:48,000 --> 00:19:56,000
+Apache es un coñazo con Python, supongo que lo habréis visto. Desplegar un enginx es muy sencillo,
+
+196
+00:19:56,000 --> 00:20:02,000
+enginx está mucho más especializado de Apache, no iba a hablar mal de Apache, pero ya que estamos Apache,
+
+197
+00:20:02,000 --> 00:20:07,000
+como intenta hacer de todo, claro, hace de todo, pero ya no lo hace bien.
+
+198
+00:20:07,000 --> 00:20:13,000
+Enginx hace menos cosas y las hace más, las hace mejor. Es más fácil de configurar, porque no hacer tantas cosas,
+
+199
+00:20:13,000 --> 00:20:16,000
+no tienes que configurar tanto y suele dar mucho mejor rendimiento.
+
+200
+00:20:16,000 --> 00:20:24,000
+Entonces lo que suelen desplegar los proyectos típicos de Django y hablo tipo Instagram, Pinterest, los de Mozilla,
+
+201
+00:20:24,000 --> 00:20:31,000
+todos estos proyectos suelen usar el estáque este, enginx con GUNICOR, a la que buscas en Google,
+
+202
+00:20:31,000 --> 00:20:34,000
+salen las configuraciones típicas, no te tienes que pelear mucho.
+
+203
+00:20:34,000 --> 00:20:42,000
+Supervisor está muy bien, Supervisor es el del pulpo. Es el del pulpo, qué bueno.
+
+204
+00:20:42,000 --> 00:20:48,000
+Es un sistema que te mira los pides de cada proceso y si un pides se ha muerto lo vuelve a lanzar.
+
+205
+00:20:48,000 --> 00:20:53,000
+Tú lo configuras y le dices, oye, quiero tener cuatro GUNICORN con Django corriendo.
+
+206
+00:20:53,000 --> 00:20:58,000
+Quiero tener este otro demonio. Quiero tener dos threads de Celery. Quiero tener...
+
+207
+00:20:58,000 --> 00:21:00,000
+¿La diferencia tiene con el Moni?
+
+208
+00:21:00,000 --> 00:21:05,000
+No sé, no lo sé. Yo he usado esto porque es lo más sencillo, vale.
+
+209
+00:21:05,000 --> 00:21:08,000
+El otro seguro que también lo... Me suena que también lo hace.
+
+210
+00:21:08,000 --> 00:21:12,000
+Simplemente yo es que soy muy vago, entonces intento hacer lo que hace todo el mundo,
+
+211
+00:21:12,000 --> 00:21:16,000
+porque así si hay algún problema, alguien ya se lo ha encontrado y ya lo ha solucionado.
+
+212
+00:21:16,000 --> 00:21:21,000
+Como digo, se puede hacer otras configuraciones. Yo sugiero aquí la que me ha funcionado,
+
+213
+00:21:21,000 --> 00:21:24,000
+que desde que lo expliqué no ha habido que tocar mucho.
+
+214
+00:21:24,000 --> 00:21:31,000
+Entonces es muy útil porque lo puedes configurar para que si se te ha muerto un proceso, yo qué sé.
+
+215
+00:21:31,000 --> 00:21:36,000
+Ha habido un error súper crítico que no te lo capturó nada, aparte renegearlo le dices,
+
+216
+00:21:36,000 --> 00:21:39,000
+oye enviame un email y sabes que te vas a recibir un email diciendo
+
+217
+00:21:39,000 --> 00:21:45,000
+este proceso ha muerto a tal hora y ya te apañas para encontrar qué ha pasado.
+
+218
+00:21:45,000 --> 00:21:49,000
+Y bueno básicamente te asegura que lo vas a mantener vivo.
+
+219
+00:21:49,000 --> 00:21:54,000
+Deservidor estático, aquí cada uno lo que quiera, en Geeks ya va bien
+
+220
+00:21:54,000 --> 00:21:58,000
+y si tienes mucho más tráfico está claro que hay un cdn o si te lo quieres montar con un barnish
+
+221
+00:21:58,000 --> 00:22:01,000
+o con algo más ligero, lo que a tu gusto.
+
+222
+00:22:01,000 --> 00:22:09,000
+Yo los ficheros que son tipo cdn pues lo suelo subir a un cdn y ya está, no me pierdo mucho tiempo.
+
+223
+00:22:09,000 --> 00:22:13,000
+Como en Geeks ya lo tenemos desplegado pues así aprovechamos una tecnología.
+
+224
+00:22:13,000 --> 00:22:18,000
+Este también es un buen truco intentar no desplegar todos los servicios
+
+225
+00:22:18,000 --> 00:22:21,000
+que son guais del momento especializados para cada cosa.
+
+226
+00:22:21,000 --> 00:22:23,000
+Cada servicio que te ahorra son menos problemas.
+
+227
+00:22:23,000 --> 00:22:27,000
+Si puedes usar en Geeks para estáticos también pues eso que ya tienes hecho.
+
+228
+00:22:27,000 --> 00:22:34,000
+Ahora vamos a ver unas cuantas herramientas de ser parties que también te facilitan mucho la vida.
+
+229
+00:22:34,000 --> 00:22:36,000
+La primera es Fabric.
+
+230
+00:22:36,000 --> 00:22:43,000
+Fabric es una herramienta que básicamente hace SSH a máquinas, ejecuta comandos, sube ficheros,
+
+231
+00:22:43,000 --> 00:22:48,000
+copia configuraciones, hace todo el tipo de cosas que harías a mano yendo máquina por máquina
+
+232
+00:22:48,000 --> 00:22:50,000
+ecolizando configuraciones y tal.
+
+233
+00:22:50,000 --> 00:22:54,000
+Se suele usar para automatizar despliegue, para hacer migraciones,
+
+234
+00:22:54,000 --> 00:22:58,000
+ejecutar los management commands de Django, para monitorizar según qué temas.
+
+235
+00:22:58,000 --> 00:23:02,000
+La idea es que tienes un script ejecutas Fab y el nombre del script y los parámetros que quieras
+
+236
+00:23:02,000 --> 00:23:04,000
+y te lo ejecuta.
+
+237
+00:23:04,000 --> 00:23:10,000
+Es muy útil porque te ahorras a la que tienes cinco máquinas y quiera cada máquina esto,
+
+238
+00:23:10,000 --> 00:23:13,000
+prohibido, necesitas automatizar.
+
+239
+00:23:13,000 --> 00:23:21,000
+Entonces por ejemplo no sé, sería mejor con herramientas tipo Chef por ejemplo
+
+240
+00:23:21,000 --> 00:23:24,000
+o algo que te configura las máquinas y todo eso.
+
+241
+00:23:24,000 --> 00:23:28,000
+Pero yo de momento lo que me he encontrado para el número de máquinas que uso
+
+242
+00:23:28,000 --> 00:23:30,000
+y el tipo de cosas que tengo que hacer, Fabric va muy bien.
+
+243
+00:23:30,000 --> 00:23:33,000
+La gran ventaja es que es código Python, entonces integra muy fácilmente
+
+244
+00:23:33,000 --> 00:23:37,000
+ya que estás usando Python y Django pues es un módulo más.
+
+245
+00:23:37,000 --> 00:23:42,000
+Y aquí hay una palabra que debería llamar atención, migraciones.
+
+246
+00:23:42,000 --> 00:23:47,000
+Vas a hacer una migración desde una llamada, desde un SSH, ¿qué problema?
+
+247
+00:23:47,000 --> 00:23:53,000
+Pues vamos a ver una herramienta que se llama SOUTH, que es una herramienta
+
+248
+00:23:53,000 --> 00:23:55,000
+para hacer migraciones de base de datos.
+
+249
+00:23:55,000 --> 00:23:59,000
+Tú en Django tienes tu modelo, has definido cada tributo,
+
+250
+00:23:59,000 --> 00:24:01,000
+luego eso es lo que se va a meter en la base de datos,
+
+251
+00:24:01,000 --> 00:24:05,000
+pero cuando tienes que actualizar a una versión nueva,
+
+252
+00:24:05,000 --> 00:24:08,000
+tal vez has añadido un campo, tal vez has cambiado un campo por otro,
+
+253
+00:24:08,000 --> 00:24:11,000
+antes era booleano, ahora es un entero, lo que se te ocurra.
+
+254
+00:24:11,000 --> 00:24:13,000
+Tienes valores por defecto distintos.
+
+255
+00:24:13,000 --> 00:24:18,000
+SOUTH es una herramienta que básicamente te coge la versión antigua del model
+
+256
+00:24:18,000 --> 00:24:23,000
+y la versión nueva las compara y genera el solo, le dices si es automático,
+
+257
+00:24:23,000 --> 00:24:28,000
+lo puedes hacer manual también, te genera un fichero que tiene como migrar hacia adelante,
+
+258
+00:24:28,000 --> 00:24:32,000
+como migrar hacia atrás para cuando lo hemos hecho mal y hay que revertir corriendo
+
+259
+00:24:32,000 --> 00:24:36,000
+y luego tiene como un snapshot de lo que sería el modelo en ese momento
+
+260
+00:24:36,000 --> 00:24:39,000
+en el formato que le entiende, es código Python normal.
+
+261
+00:24:39,000 --> 00:24:44,000
+Entonces te genera el fichero en una carpeta de migraciones, haces Manage Pay Migrate,
+
+262
+00:24:44,000 --> 00:24:47,000
+te lo migra al solo, te dejas de dolores de cabeza
+
+263
+00:24:47,000 --> 00:24:52,000
+y depende del tipo de migración que hayas hecho, hay migraciones del esquema de la base de datos,
+
+264
+00:24:52,000 --> 00:24:56,000
+hay migraciones de datos, puedes coger ese fichero y le metes mano
+
+265
+00:24:56,000 --> 00:24:59,000
+y haces la cosa específica que querías que hiciese.
+
+266
+00:24:59,000 --> 00:25:04,000
+Te vas a la función del forward o a la del backward y ahí aplicas.
+
+267
+00:25:04,000 --> 00:25:07,000
+Cuando es una migración que tienes que añadir datos por defecto
+
+268
+00:25:07,000 --> 00:25:10,000
+que has cogido de otra colección, es mucho más fácil hacerlo así.
+
+269
+00:25:10,000 --> 00:25:16,000
+Te pones en páezo y haces lo que tengas que hacer y eso te lo migra fantásticamente.
+
+270
+00:25:16,000 --> 00:25:19,000
+Y para hacer hacia atrás también, va muy bien,
+
+271
+00:25:19,000 --> 00:25:24,000
+que es para ver una versión antigua o has tenido un problema, tienes que volver también.
+
+272
+00:25:24,000 --> 00:25:29,000
+Y es obligatorio usarlo porque te ahorras desastres.
+
+273
+00:25:29,000 --> 00:25:33,000
+Lo típico que es que has hecho un cambio nuevo que era muy pequeñito, solo era un campo nuevo,
+
+274
+00:25:33,000 --> 00:25:37,000
+lo voy a generar a mano y lo haces en tu máquina y luego lo despliegas en pre
+
+275
+00:25:37,000 --> 00:25:42,000
+y te lo has olvidado, luego lo haces en pre, luego lo despliegas en pro, también te has olvidado.
+
+276
+00:25:42,000 --> 00:25:47,000
+No, que es lo haga el código que así cuando despliegas migra y un problema menos.
+
+277
+00:25:47,000 --> 00:25:53,000
+En la última versión de Python, o sea de Django en la 1.6,
+
+278
+00:25:53,000 --> 00:25:57,000
+lo que han hecho es un sistema de migraciones que imita un poco a South,
+
+279
+00:25:57,000 --> 00:26:00,000
+no es tan completo y no lo he probado, no puedo recomendarlo,
+
+280
+00:26:00,000 --> 00:26:04,000
+pero la idea es que si no a la siguiente versión o la otra ya seguro,
+
+281
+00:26:04,000 --> 00:26:08,000
+algo idéntico a South estaría dentro de Django, ¿vale?
+
+282
+00:26:08,000 --> 00:26:14,000
+Cuando lo dijeron al que implementó South, si estaba dispuesto a meterlo en el código,
+
+283
+00:26:14,000 --> 00:26:18,000
+en el contra de Django, dijo que él todavía no lo veía maduro,
+
+284
+00:26:18,000 --> 00:26:22,000
+lo está usando todo el mundo en los grandes despliegas, en los pequeños despliegas, en todas partes,
+
+285
+00:26:22,000 --> 00:26:24,000
+pero dijo que ciertas cosas de la API y de la interfaz,
+
+286
+00:26:24,000 --> 00:26:27,000
+estaba pensando como hacerlo un poquito más elegante.
+
+287
+00:26:27,000 --> 00:26:32,000
+Esperamos que es una herramienta probadísima y que es que si no la usas te vas a acordar de mí.
+
+288
+00:26:32,000 --> 00:26:34,000
+¿Sí?
+
+289
+00:26:34,000 --> 00:26:38,000
+¿Qué es el código de la migración a lo que es el de Ploy y el Fabri?
+
+290
+00:26:38,000 --> 00:26:40,000
+¿O hace la migración tu mano?
+
+291
+00:26:40,000 --> 00:26:43,000
+Sí, a mano.
+
+292
+00:26:43,000 --> 00:26:47,000
+La migración es un ficherito que se va a meter, tienes la carpeta Migration,
+
+293
+00:26:47,000 --> 00:26:52,000
+si te pondrás 001, añadí, no, migración inicial, 002,
+
+294
+00:26:52,000 --> 00:26:57,000
+añade el campo 003, el campo tal lo borra, 004.
+
+295
+00:26:57,000 --> 00:27:00,000
+Entonces, eso está en el directorio Migrations,
+
+296
+00:27:00,000 --> 00:27:05,000
+cuando es ese código que va al repositorio, cuando eso lo despliegas, ejecutas el comando.
+
+297
+00:27:05,000 --> 00:27:10,000
+Con el SyncDB me parece que ya lo ejecuta, no, mentira, tienes que ejecutar Managed Pay Migrate,
+
+298
+00:27:10,000 --> 00:27:15,000
+lo ejecutas con Fabri, que se ejecute solo lo que te la gana, ejecutas eso y ya se va a migrar.
+
+299
+00:27:15,000 --> 00:27:20,000
+Como lo hace en la base datos y lo hace muy bien, aunque tengas de cienstancias,
+
+300
+00:27:20,000 --> 00:27:24,000
+una vez haces el Migrate solo lo va a hacer la primera, las otras instancias ya saben,
+
+301
+00:27:24,000 --> 00:27:28,000
+él internamente en la base datos ya la ha puesto en qué versión está y las versiones son números,
+
+302
+00:27:28,000 --> 00:27:33,000
+estoy en la versión 1, 2, 3 o 4 o tantas como ficheros tengas y él ya sabe en qué versión está,
+
+303
+00:27:33,000 --> 00:27:39,000
+así que el primero te va a migrar y las otras máquinas ya no, vale, es muy potente y a la vez es fácil de usar
+
+304
+00:27:39,000 --> 00:27:43,000
+porque simplemente con las migraciones el esquema Migration auto,
+
+305
+00:27:43,000 --> 00:27:49,000
+luego le pones un nombre más bonito para que mañana te acuerdes de lo que hiciste y ya está.
+
+306
+00:27:49,000 --> 00:27:52,000
+¿Te necesitas otro esquema nuevo o te migras sobre el mismo?
+
+307
+00:27:52,000 --> 00:27:53,000
+¿Cómo?
+
+308
+00:27:53,000 --> 00:27:56,000
+¿Te necesitas otro esquema nuevo o migras sobre el mismo?
+
+309
+00:27:56,000 --> 00:28:00,000
+A ver, la idea es que tú tienes tu Models, vale, eso es lo que hay en la última versión,
+
+310
+00:28:00,000 --> 00:28:07,000
+ahora haces un cambio, borras una línea del objeto y entonces ejecutas el Script.
+
+311
+00:28:07,000 --> 00:28:11,000
+El Script como en la última migración tenía el estado de la base datos, el estado final,
+
+312
+00:28:11,000 --> 00:28:15,000
+compara lo que tienes en Models con lo que tenía en la última migración y dice,
+
+313
+00:28:15,000 --> 00:28:20,000
+este campo falta o este cambio ha cambiado, este campo ha cambiado de tipo,
+
+314
+00:28:20,000 --> 00:28:23,000
+ahora hay que hacerlo en Text, antes era un char, lo que tenga que hacer,
+
+315
+00:28:23,000 --> 00:28:28,000
+entonces en la nueva migración te pones solo esa y va a tener el snapshot de lo que tienes ahora en el Models,
+
+316
+00:28:28,000 --> 00:28:32,000
+¿vale? Puedes hacer varias y por lógica, antes más sencillo,
+
+317
+00:28:32,000 --> 00:28:36,000
+pues borra un campo, luego le añado, puedes organizarte lo como quieras.
+
+318
+00:28:36,000 --> 00:28:39,000
+He respondido a la pregunta.
+
+319
+00:28:39,000 --> 00:28:48,000
+Entonces esta herramienta es muy chula también, Celery es un sistema de tasks asíncronas,
+
+320
+00:28:48,000 --> 00:28:55,000
+él está escuchando una cola, por esa cola tú le envías trabajos y cuando lo recibe los va haciendo.
+
+321
+00:28:55,000 --> 00:29:00,000
+Entonces para qué sirve esto? Tenemos otra vez nuestra superempresa,
+
+322
+00:29:00,000 --> 00:29:05,000
+nuestra startup que vende las botellas de agua y nuestros clientes han comprado muchas botellas de agua,
+
+323
+00:29:05,000 --> 00:29:10,000
+que es original, y tenemos que emitir facturas en un PDF, meterlas por sí,
+
+324
+00:29:10,000 --> 00:29:16,000
+enviarlas por email y por fax, yo qué sé, y eso no lo queremos hacer sincronamente,
+
+325
+00:29:16,000 --> 00:29:20,000
+no queremos que cuando el usuario le da el botón del checkout, espera,
+
+326
+00:29:20,000 --> 00:29:25,000
+que ahora me pongo a generar un CSV, un PDF, no sé qué, no sé cuánto, eso tarda,
+
+327
+00:29:25,000 --> 00:29:31,000
+vale, normalmente los procesos que tardan son por dos tipos, o por entrada salida, o por CPU,
+
+328
+00:29:31,000 --> 00:29:37,000
+cosas como ir a buscar algo a internet y bajártelo, eso sería entrada salida,
+
+329
+00:29:37,000 --> 00:29:42,000
+cosas como hacer una query a la base de datos, qué tarde mucho porque haces muchos join,
+
+330
+00:29:42,000 --> 00:29:48,000
+eso sería entrada salida, cosas como generar thumbnails, cosas como comprimir, eso sería CPU.
+
+331
+00:29:48,000 --> 00:29:55,000
+Entonces la idea es que cuando lo han dado al botón, tú envías un mensaje a una cola,
+
+332
+00:29:55,000 --> 00:29:59,000
+a la cola de Celery, lo haces con la interfaz, no hace falta enviar mensajes a mano,
+
+333
+00:29:59,000 --> 00:30:06,000
+y le dices añádame un task que se llama generar factura para la botella de ID número 25.
+
+334
+00:30:06,000 --> 00:30:11,000
+Entonces ese task que has definido en el mismo código Django de generar factura,
+
+335
+00:30:11,000 --> 00:30:16,000
+pues dirá cojo el precio, cojo el descuento, cojo el usuario, lo que le hayas dicho
+
+336
+00:30:16,000 --> 00:30:20,000
+y te generará el PDF si es lo que te de la ganabamos.
+
+337
+00:30:20,000 --> 00:30:26,000
+Cuando esté acabado ya tienes que pensar en eso como lo notificas, igual lo metes en la base de datos,
+
+338
+00:30:26,000 --> 00:30:35,000
+guardas el objeto, creas el fichero, creas un objeto en la base de datos con los datos de esta factura
+
+339
+00:30:35,000 --> 00:30:40,000
+y se lo envías al usuario por email, estas cosas que pueden tardar, la idea es que hay que hacerlo así.
+
+340
+00:30:40,000 --> 00:30:44,000
+Esto te ayuda a escalar, si no haces esto no escalas, porque si cada vez que clican un botón
+
+341
+00:30:44,000 --> 00:30:51,000
+hay que hacer tareas pesadas, tu web no va a aguantar. Lo hace en workers, puedes tener tantos workers como quieras.
+
+342
+00:30:51,000 --> 00:30:56,000
+Aquí es que depende de tu aplicación, si vas a tener que hacer computaciones muy intensivas,
+
+343
+00:30:56,000 --> 00:31:01,000
+imaginemos que tienes imágenes, que tienes que empezar a hacer 10 thumbnails,
+
+344
+00:31:01,000 --> 00:31:04,000
+pues eso quieres que se haga en muchas máquinas aparte, pones las máquinas que quieras
+
+345
+00:31:04,000 --> 00:31:08,000
+y cuando acaben habrán acabado, no te tienes que preocupar.
+
+346
+00:31:08,000 --> 00:31:12,000
+Puedes tener tasks que dices, no pasa nada aunque se envíe mañana.
+
+347
+00:31:12,000 --> 00:31:17,000
+Bueno, le puedes poner prioridades. Lo que había dicho de CPU de entrada a salida,
+
+348
+00:31:17,000 --> 00:31:24,000
+los casos típicos, otros casos típicos, cada vez que compran tienes que hacer un post tan o se donde,
+
+349
+00:31:24,000 --> 00:31:28,000
+pues eso también lo haces así, porque así no le tarda, porque si no así por cada llamadita
+
+350
+00:31:28,000 --> 00:31:32,000
+le empiezas a sumar un segundo en segundo en segundo, el usuario se muere de asco esperando,
+
+351
+00:31:32,000 --> 00:31:35,000
+le va a volver a dar a reenviar y entonces empieza la diversión.
+
+352
+00:31:35,000 --> 00:31:41,000
+Y este truquito es bastante chulo, Redis, o sea, Selleri necesita una cola de mensajes,
+
+353
+00:31:41,000 --> 00:31:46,000
+hay muchas colas de mensajes, la que más se suele usar es RabbitMQ, es una cola muy completa,
+
+354
+00:31:46,000 --> 00:31:51,000
+muy buena, pero con Redis también te funciona, Redis simplemente no cola.
+
+355
+00:31:51,000 --> 00:31:55,000
+Y Redis, ahora lo vamos a ver, te hace más cosas aparte de esto.
+
+356
+00:31:55,000 --> 00:31:59,000
+Entonces, yo lo que recomendaría es que si tenéis unas necesidades pequeñitas,
+
+357
+00:31:59,000 --> 00:32:03,000
+que en el fondo la mayoría de casos de uso tienes unas necesidades pequeñas,
+
+358
+00:32:03,000 --> 00:32:09,000
+no estás generando 10.000 facturas por segundo, puedes probar tus Redis,
+
+359
+00:32:09,000 --> 00:32:13,000
+tiene la ventaja de que consume mucho menos, lo puedes tener en la misma máquina ahí,
+
+360
+00:32:13,000 --> 00:32:18,000
+con un ladito, no necesitas tanta configuración como Rabbit que tiene más cosas, ¿vale?
+
+361
+00:32:18,000 --> 00:32:22,000
+Sí.
+
+362
+00:32:22,000 --> 00:32:28,000
+¿Una área de encendio de usar flores o bailarín de gran flores?
+
+363
+00:32:28,000 --> 00:32:29,000
+¿Cómo?
+
+364
+00:32:29,000 --> 00:32:33,000
+Flores, flor en llesto o flores.
+
+365
+00:32:33,000 --> 00:32:39,000
+Pues no lo sé, tiene un worker que se está ejecutando
+
+366
+00:32:39,000 --> 00:32:43,000
+y tal como recibe mensajes los va ejecutando, te va logueando lo que hace.
+
+367
+00:32:43,000 --> 00:32:49,000
+Sí, creo que si, dame una materia, hay una página de administración que se está unyando.
+
+368
+00:32:49,000 --> 00:32:54,000
+Es que eso lo tienes que configurar tú, él por defecto no lo hace.
+
+369
+00:32:59,000 --> 00:33:04,000
+Pues vamos a ver Redis, Redis viene a ser una base de datos, de estructuras de datos,
+
+370
+00:33:04,000 --> 00:33:10,000
+a veces lo llaman NOSIQL, a veces lo llaman Memcache, Redis hace muchas cosas, me encanta Redis.
+
+371
+00:33:10,000 --> 00:33:14,000
+¿Quién ha usado Redis? Que levante la mano, por favor, ¿vale?
+
+372
+00:33:14,000 --> 00:33:16,000
+Pues que os voy a explicar.
+
+373
+00:33:16,000 --> 00:33:21,000
+Redis tiene muchas ventajas de cara cuando estás desarrollando la típica aplicación web,
+
+374
+00:33:21,000 --> 00:33:24,000
+porque tiene muchos casos de uso que sin Redis serían complicados,
+
+375
+00:33:24,000 --> 00:33:29,000
+que simplemente por tener un servidor ahí le puedes ir mandando que haga cosillas, ¿vale?
+
+376
+00:33:29,000 --> 00:33:36,000
+Lo que son datos efémeros, las sesiones, si estás guardando las sesiones en la base de datos,
+
+377
+00:33:36,000 --> 00:33:40,000
+que es lo normal lo que haces por defecto, cada vez que un usuario hace una request,
+
+378
+00:33:40,000 --> 00:33:44,000
+está haciendo la base de datos, estás empezando a comprobar cosas, dices, vale,
+
+379
+00:33:44,000 --> 00:33:48,000
+y ahora le vuelvo al usuario, y ya estás haciendo un hit a la base de datos.
+
+380
+00:33:48,000 --> 00:33:51,000
+Cuando queremos optimizar, cuando queremos que escale, cuántos menos hits mejor,
+
+381
+00:33:51,000 --> 00:33:53,000
+y va a ser más rápido para el usuario.
+
+382
+00:33:53,000 --> 00:33:58,000
+Entonces si estos datos los tienes en memoria, en Redis, ya está, te has solucionado,
+
+383
+00:33:58,000 --> 00:34:01,000
+te has solucionado el problema de hacer un hit a la base de datos.
+
+384
+00:34:01,000 --> 00:34:06,000
+Así que todo lo que sean datos efémeros los puedes tener en Redis en memoria, ¿vale?
+
+385
+00:34:06,000 --> 00:34:09,000
+Aparte, Redis te deja guardar a disco, ¿vale?
+
+386
+00:34:09,000 --> 00:34:13,000
+Pero es que si los tienes para que vayan caducando, si se caduca una sesión no pasa nada,
+
+387
+00:34:13,000 --> 00:34:17,000
+simplemente el usuario va a tener que volver a hacer login.
+
+388
+00:34:17,000 --> 00:34:20,000
+Lo importante es que si en una sesión típica de navegación hace yo que sé,
+
+389
+00:34:20,000 --> 00:34:25,000
+200 queries, pues que no hagas 200 hits a la base de datos, que no hacen falta.
+
+390
+00:34:25,000 --> 00:34:30,000
+Como caché general, Redis implementa un API compatible con la de memcaché.
+
+391
+00:34:30,000 --> 00:34:34,000
+Así que esto es muy fácil, tienes el memcaché, pones un Redis,
+
+392
+00:34:34,000 --> 00:34:38,000
+tiras el memcaché de la basura, cambias la configuración y ya está, ¿vale?
+
+393
+00:34:38,000 --> 00:34:41,000
+Cálculos a tiempo real, este es muy chulo.
+
+394
+00:34:41,000 --> 00:34:49,000
+Lo típico que tiene, yo que sé, la noticia de nuestra botella, cuánta gente ha entrado a verla, ¿no?
+
+395
+00:34:49,000 --> 00:34:52,000
+Que va sumando más uno, más uno, más uno, más uno, sistemas estadísticas.
+
+396
+00:34:52,000 --> 00:34:56,000
+Esto, si hay que estar rascando la base de datos cada vez, no escala,
+
+397
+00:34:56,000 --> 00:34:59,000
+porque además son escrituras, es peor todavía.
+
+398
+00:34:59,000 --> 00:35:03,000
+En cambio, lo coges y lo guardas, en una estructura que tienes ahí guarda y tan Redis,
+
+399
+00:35:03,000 --> 00:35:08,000
+dices la botella de ID 25, lo han visto 1.250 personas.
+
+400
+00:35:08,000 --> 00:35:12,000
+Otro, otro, eso es tan memoria, ahí no tienes el...
+
+401
+00:35:12,000 --> 00:35:16,000
+no tienes que estar escribiendo a disc con la base de datos cada vez, mucho más rápido.
+
+402
+00:35:16,000 --> 00:35:20,000
+Para monitorizar también se usa muchísimo, para monitorizar es fantástico.
+
+403
+00:35:20,000 --> 00:35:25,000
+Si el estado de tu plataforma, en vez de tener que ir a los componentes y preguntarle,
+
+404
+00:35:25,000 --> 00:35:30,000
+cada componente te la guarda en Redis y simplemente lo que haces desde tu vista,
+
+405
+00:35:30,000 --> 00:35:33,000
+es pedir al Redis, oye, ¿esta sección cuánta gente ha accedido?
+
+406
+00:35:33,000 --> 00:35:40,000
+O yo que sé, cuántos... un ejemplo con el agua, cuántos camiones tenemos repartiendo...
+
+407
+00:35:40,000 --> 00:35:44,000
+bueno, los camiones no son ordenadores, pero cuántos componentes de tal tipo tenemos sirviendo esto,
+
+408
+00:35:44,000 --> 00:35:46,000
+a esto va muy bien para monitorizar.
+
+409
+00:35:46,000 --> 00:35:50,000
+Todo lo que sea ahorrar de la base de datos, va de coña. Hacer throttling,
+
+410
+00:35:50,000 --> 00:35:54,000
+esto sería la típica API que mucha gente le está dando caña, está pillando datos,
+
+411
+00:35:54,000 --> 00:36:00,000
+te dicen, vale, hay que hacer un throttling que solo pueden hacer 10 peticiones por segundo,
+
+412
+00:36:00,000 --> 00:36:03,000
+o 100 por minuto, o 1.000 a la hora.
+
+413
+00:36:03,000 --> 00:36:08,000
+Ya tan fastidiado, porque cuando llega cada petición tienes que escribir en la base de datos,
+
+414
+00:36:08,000 --> 00:36:13,000
+actualizar el número. Estamos hablando de 10 por segundo, 10 escritores por segundo de la base de datos,
+
+415
+00:36:13,000 --> 00:36:17,000
+o sea, horroroso, lo quieres hacer en memoria. Y sí, todo esto se puede hacer de otras maneras,
+
+416
+00:36:17,000 --> 00:36:22,000
+pero es que con Redis te lo hace el solo, no tienes ese handicap de tener que ir a disco.
+
+417
+00:36:22,000 --> 00:36:27,000
+Le vas añadiendo, le vas diciendo que incremente, le puedes decir que expire para el throttling,
+
+418
+00:36:27,000 --> 00:36:31,000
+lo típico que es que se caduque el van a cabo de unas horas o de unos minutos o segundos,
+
+419
+00:36:31,000 --> 00:36:35,000
+pues automáticamente tú le dices que esa clave expira en un minuto,
+
+420
+00:36:35,000 --> 00:36:39,000
+entonces tienes a la usuario ese castigado durante un minuto y ya está.
+
+421
+00:36:39,000 --> 00:36:43,000
+No te tienes que preocupar de estar accediendo a la base de datos.
+
+422
+00:36:43,000 --> 00:36:47,000
+Los mensajes, los mensajes también son muy interesantes, porque hoy en día se usan cada vez más
+
+423
+00:36:47,000 --> 00:36:50,000
+para aplicaciones distribuidas, para comunicarte de un componente a otro,
+
+424
+00:36:50,000 --> 00:36:55,000
+o bien para el Celery, como hemos visto, mandas una task, en el fondo es un mensaje.
+
+425
+00:36:55,000 --> 00:36:59,000
+Mensajes ofrece dos modos de enviar mensajes.
+
+426
+00:36:59,000 --> 00:37:03,000
+El primero son los canales, que vendría a ser como el típico canal de IRC,
+
+427
+00:37:03,000 --> 00:37:07,000
+que tú te conectas y todo lo que se envía lo recibes,
+
+428
+00:37:07,000 --> 00:37:09,000
+y todo lo que envías lo reciben todos los demás.
+
+429
+00:37:09,000 --> 00:37:19,000
+Eso se llama PubLishSubscribe, y se usa muchísimo en muchos tipos de las APIs de Twitter,
+
+430
+00:37:19,000 --> 00:37:21,000
+por ejemplo, para que te lo vayan enviando todo a tiempo real,
+
+431
+00:37:21,000 --> 00:37:25,000
+pues esto con canales tienes una implementación super sencilla, super ligera.
+
+432
+00:37:25,000 --> 00:37:30,000
+Las listas son, bueno, son listas normales, que vas metiendo datos,
+
+433
+00:37:30,000 --> 00:37:33,000
+vas sacando datos, push y pop lo de toda la vida,
+
+434
+00:37:33,000 --> 00:37:38,000
+y tiene una cosa muy chula, que es el BL de blocking,
+
+435
+00:37:38,000 --> 00:37:42,000
+entonces tú le estás diciendo, accedo a esta lista, hazme un pop,
+
+436
+00:37:42,000 --> 00:37:47,000
+pero si no hay nada, me bloqueas la conexión, y en cuanto haya algo me avisa,
+
+437
+00:37:47,000 --> 00:37:53,000
+de manera que tienes otro componente, que es su resultado de su acción, el que hace un PDF,
+
+438
+00:37:53,000 --> 00:37:59,000
+por ejemplo, cuando acaba pasa ese mensaje a esa lista, tienes varios componentes
+
+439
+00:37:59,000 --> 00:38:03,000
+que van a leer ese mensaje, pero solo uno lo cogerá, el que hace el pop primero,
+
+440
+00:38:03,000 --> 00:38:07,000
+y te sirve de notificación, es como un callback al final,
+
+441
+00:38:07,000 --> 00:38:11,000
+entonces esto se usa para sistemas, tienes 10 máquinas arriba, 10 abajo,
+
+442
+00:38:11,000 --> 00:38:15,000
+y quieres que una de ellas envíe y que solo lo ejecute una, vale, pues lo usarías así.
+
+443
+00:38:15,000 --> 00:38:22,000
+Si quieres que ejecuten todas, entonces lo harías con un channel, vale,
+
+444
+00:38:22,000 --> 00:38:25,000
+y la última funcionalidad esta, hay más funcionalidades,
+
+445
+00:38:25,000 --> 00:38:32,000
+esto es porque no me caben más, índices, filtros, la típica página que tienes,
+
+446
+00:38:32,000 --> 00:38:36,000
+yo que soy un listado de noticias, de botellas de agua, y los quieres ordenar
+
+447
+00:38:36,000 --> 00:38:40,000
+en base a distintos parámetros, en base al usuario que lo está viendo,
+
+448
+00:38:40,000 --> 00:38:44,000
+en base a su historial, en base a todo este tipo de cosas, a la que tienes que empezar a hacer queries,
+
+449
+00:38:44,000 --> 00:38:49,000
+a las bases de datos con varios joins, que yo no sé que mania tiene la gente de hacer joins,
+
+450
+00:38:49,000 --> 00:38:53,000
+pero me explicó en otro día varias personas que hacen 8 joins en aplicaciones en producción,
+
+451
+00:38:53,000 --> 00:38:56,000
+la gente está fatal, con eso te ahorras tener que hacer eso.
+
+452
+00:38:56,000 --> 00:39:00,000
+Sí, porque te montas en, dices que cada vez que haces una escrita en base a datos,
+
+453
+00:39:00,000 --> 00:39:05,000
+pues actualizas el orden en Redis, tienes una lista con el orden,
+
+454
+00:39:05,000 --> 00:39:11,000
+y tienes un montón de funciones que le dices, dame, yo que si tienes 25.000 en esa lista,
+
+455
+00:39:11,000 --> 00:39:15,000
+dame los 50 primeros, ya tienes paginación montada, ya no tienes que hacer nada,
+
+456
+00:39:15,000 --> 00:39:20,000
+no tienes que hacer escrituras, lecturas a base de datos, y si lo tienes desnormalizado mejor,
+
+457
+00:39:20,000 --> 00:39:25,000
+porque así para cada la típica página de noticias que dependiese, esto lo hacen en Reddit,
+
+458
+00:39:25,000 --> 00:39:29,000
+por ejemplo, depende de lo que haya visto el usuario, depende de que está suscrito,
+
+459
+00:39:29,000 --> 00:39:33,000
+depende de las últimas noticias que han llegado, depende si está por categoría, por tag,
+
+460
+00:39:33,000 --> 00:39:38,000
+pues tienes una para cada cosa, ¿vale? y lo puedes ordenar muy rápidamente.
+
+461
+00:39:38,000 --> 00:39:42,000
+Para esto se suelen usar los sets. Bueno, parece que está hablando de Redis más que de Django,
+
+462
+00:39:42,000 --> 00:39:44,000
+así que vamos a pasar al siguiente.
+
+463
+00:39:44,000 --> 00:39:52,000
+Sentry, Sentry es muy útil, Sentry es una plataforma externa, no va dentro de Django,
+
+464
+00:39:52,000 --> 00:39:57,000
+vale, lo tienes que desplegar aparte, pero también lo he metido aquí,
+
+465
+00:39:57,000 --> 00:40:02,000
+esto funciona para, tú le dices a los loggers de Python o de Django,
+
+466
+00:40:02,000 --> 00:40:07,000
+o bueno, también tiene bindings para otros lenguajes, los que usan PHP pues también lo pueden usar.
+
+467
+00:40:07,000 --> 00:40:11,000
+Tú le dices que los logs de error se van a enviar a este servicio, ¿vale?
+
+468
+00:40:11,000 --> 00:40:14,000
+Viene a ser un servicio externo, entonces cuando hay un error se captura la excepción,
+
+469
+00:40:14,000 --> 00:40:21,000
+le pide los datos que hay en el traceback, coge datos que estén en las request de HTTP,
+
+470
+00:40:21,000 --> 00:40:24,000
+por ejemplo, el usuario colombiano, si es un get, si es un post, las cookies,
+
+471
+00:40:24,000 --> 00:40:28,000
+y se lo envía a el servidor Sentry.
+
+472
+00:40:28,000 --> 00:40:33,000
+Ese servidor lo guarda, agrega los datos y nos los va a mostrar de una forma visual,
+
+473
+00:40:33,000 --> 00:40:36,000
+así todo bonito con el traceback que hace click y se despliega,
+
+474
+00:40:36,000 --> 00:40:40,000
+puedes ver el contenido de cada variable, esto es súper útil a la hora de ver
+
+475
+00:40:40,000 --> 00:40:44,000
+dónde lo has hecho mal y dónde está el book, ¿vale?
+
+476
+00:40:44,000 --> 00:40:48,000
+Como te agrega, puedes ver, por ejemplo, a ver, tengo todos estos books,
+
+477
+00:40:48,000 --> 00:40:52,000
+¿cuál ha afectado a más usuarios? ¿Está afectado a 1? ¿Está afectado a 10?
+
+478
+00:40:52,000 --> 00:40:56,000
+Iré primero a ese book, o puedes decir, a ver, ¿qué navegador está uno usando?
+
+479
+00:40:56,000 --> 00:41:00,000
+Porque eso te viene en la petición, pues esto afecta solo a los que usan Chrome.
+
+480
+00:41:00,000 --> 00:41:02,000
+Hostia, pues ya es una pista.
+
+481
+00:41:02,000 --> 00:41:06,000
+Entonces, es muy, muy fácil de configurar porque como usar logger,
+
+482
+00:41:06,000 --> 00:41:10,000
+pones un setting y añades una cosa en logger y ya está.
+
+483
+00:41:10,000 --> 00:41:14,000
+Te facilita mucho cuando ha habido el problema encontrar qué ha pasado
+
+484
+00:41:14,000 --> 00:41:20,000
+y desplegarlo es muy sencillo, es un proyecto Django que te lo bajas y lo expligas,
+
+485
+00:41:20,000 --> 00:41:24,000
+o si no, lo ofrecen como software a service, los mismos que han hecho Sentry,
+
+486
+00:41:24,000 --> 00:41:29,000
+en la página getSentry.com te lo ofrecen, pues lo pagas y les puedes ir enviando datos.
+
+487
+00:41:29,000 --> 00:41:34,000
+He usado las dos opciones y la verdad las dos van bien, ¿vale?
+
+488
+00:41:34,000 --> 00:41:40,000
+Esto es muy útil, porque si estás bloqueando los errores en los ficheros de log
+
+489
+00:41:40,000 --> 00:41:44,000
+que luego tienes que ir a todas las máquinas, agregarlos y eso te vuelves loco,
+
+490
+00:41:44,000 --> 00:41:49,000
+el traceback que tienes en el fichero log, con suerte no es una sola línea, es horroroso.
+
+491
+00:41:49,000 --> 00:41:53,000
+Cuando lo tienes todo agregadito por fechas, a ver cuándo es lo que ha pasado,
+
+492
+00:41:53,000 --> 00:41:57,000
+lo marcas como resuelto, te lo integras con tu sistema de tíguete y le dices,
+
+493
+00:41:57,000 --> 00:42:01,000
+a partir de esto créame un tíguete en GitHub o en Gira o en lo que uses,
+
+494
+00:42:01,000 --> 00:42:04,000
+y te va muy bien.
+
+495
+00:42:04,000 --> 00:42:09,000
+Y hemos tenido errores, vamos a devuar, vamos a ver dónde estaba.
+
+496
+00:42:09,000 --> 00:42:14,000
+Aquí recomiendo tres pequeñas herramientas y Python.
+
+497
+00:42:14,000 --> 00:42:17,000
+¿Conocís lo que es Ipython?
+
+498
+00:42:17,000 --> 00:42:23,000
+Es como el intérprete Python normal, pero con una I delante y es ahí le da superpoderes,
+
+499
+00:42:23,000 --> 00:42:28,000
+te da el autocompletado, puedes ver el Doctrine muy fácilmente,
+
+500
+00:42:28,000 --> 00:42:33,000
+te da un montón de fitos, puedes ejecutar comandos de shell, cdpakí, ls, puedes ver lo que hay,
+
+501
+00:42:33,000 --> 00:42:37,000
+y básicamente es la shell de Python o nesteroids.
+
+502
+00:42:37,000 --> 00:42:43,000
+Pones un comando, le pones el interrogante detrás y te va a explicar los parámetros que le tienes que enviar,
+
+503
+00:42:43,000 --> 00:42:47,000
+te va a poner el Doctrine. Si pones esos interrogantes, creo que te pones tal código fuente.
+
+504
+00:42:47,000 --> 00:42:51,000
+En fin vale la pena gastar un poquito de tiempo porque aparte desarrollas más rápido,
+
+505
+00:42:51,000 --> 00:42:54,000
+cuando puedes ir probando a ver esta API que hace, no te miras ni la documentación vas al API,
+
+506
+00:42:54,000 --> 00:42:58,000
+tabulador completa, a ver las funciones, esta parece pinta que hace lo que yo quiero.
+
+507
+00:42:58,000 --> 00:43:02,000
+Miras la documentación, súper chulo.
+
+508
+00:43:02,000 --> 00:43:08,000
+Y el shell de Django ya lo lleva por defecto, detecta si tiene Ipython instalado en el sistema
+
+509
+00:43:08,000 --> 00:43:12,000
+y el shell normal ya te lo tiene.
+
+510
+00:43:12,000 --> 00:43:16,000
+La siguiente herramienta es Ipdb, que también es como el pdb normal,
+
+511
+00:43:16,000 --> 00:43:20,000
+pero con una I delante que también le da superpoderes, te lo hace más bonito,
+
+512
+00:43:20,000 --> 00:43:26,000
+con colorines, con autocompletado y aquí lo que hace el 90% la gente es tener esto
+
+513
+00:43:26,000 --> 00:43:29,000
+en una macro que le das a un botón y sale.
+
+514
+00:43:29,000 --> 00:43:32,000
+Con esto, tú has tenido un problema en tu código, lo estás ejecutando en local,
+
+515
+00:43:32,000 --> 00:43:37,000
+no acabas de entender qué pasa, importa si pdb obviamente y haces un set trace,
+
+516
+00:43:37,000 --> 00:43:41,000
+entonces tal como lo está ejecutando, cuando lo ejecutes va a parar justo ahí,
+
+517
+00:43:41,000 --> 00:43:47,000
+vas a tener un shell de Python, como si hubieses ejecutado todo en la shell a mano,
+
+518
+00:43:47,000 --> 00:43:51,000
+parada justo ahí, puedes consultar todo lo que se está ejecutando,
+
+519
+00:43:51,000 --> 00:43:55,000
+todas las variables, las funciones, puedes seguir ejecutando, en fin,
+
+520
+00:43:55,000 --> 00:43:59,000
+es para hacerte un snapshot pero de verdad y seguir ejecutando cosas a ver
+
+521
+00:43:59,000 --> 00:44:03,000
+cómo lo rompes y cómo encuentras el back.
+
+522
+00:44:03,000 --> 00:44:07,000
+Y finalmente, la tercera herramienta es el Django de BookToolbar,
+
+523
+00:44:07,000 --> 00:44:11,000
+que he comentado al principio, esta es una herramienta muy chula también,
+
+524
+00:44:11,000 --> 00:44:15,000
+es una aplicación de Django que la instalas
+
+525
+00:44:15,000 --> 00:44:19,000
+y te pone un pequeño toolbar escondido a la derecha, creo que lo tienen ahora,
+
+526
+00:44:19,000 --> 00:44:22,000
+le puedes añadir plugins para que te muestran más cosas,
+
+527
+00:44:22,000 --> 00:44:26,000
+pero básicamente lo más importante para mí son las queries de la base datos,
+
+528
+00:44:26,000 --> 00:44:31,000
+te muestra qué plantillas estás cargando, te muestra datos del navegador,
+
+529
+00:44:31,000 --> 00:44:35,000
+del user agent, te muestra un poco, como tiene un botón de plugins,
+
+530
+00:44:35,000 --> 00:44:38,000
+le puedes hacer que te muestre lo que quiere, puedes extenderlo, muy poderoso.
+
+531
+00:44:38,000 --> 00:44:42,000
+Para mí lo más importante es la performance de la base datos,
+
+532
+00:44:42,000 --> 00:44:46,000
+porque te dice, esta vista que acabas de ver, se han usado 87 queries
+
+533
+00:44:46,000 --> 00:44:50,000
+de lectura y 20 de escritura, y dices, vale, la tiro la basura
+
+534
+00:44:50,000 --> 00:44:53,000
+y empiezo la vista de nuevo, porque esto no hay quien lo mantenga.
+
+535
+00:44:53,000 --> 00:44:57,000
+Entonces te sirve para detectar cuáles son las plantillas, las vistas
+
+536
+00:44:57,000 --> 00:45:02,000
+que están rindiendo peor y que te están haciendo más llamadas a la base datos.
+
+537
+00:45:02,000 --> 00:45:04,000
+Lo normal sería que estás divulgando, ves esto,
+
+538
+00:45:04,000 --> 00:45:06,000
+empiezas a mirar que esto es lo que se está llamando
+
+539
+00:45:06,000 --> 00:45:09,000
+y ya piensas pues encachar, en simplificar el código,
+
+540
+00:45:09,000 --> 00:45:14,000
+o en cambiar la base datos por Redis y hacerlo en memoria.
+
+541
+00:45:18,000 --> 00:45:22,000
+Te sirve también para la típica vista que está heredando una plantilla,
+
+542
+00:45:22,000 --> 00:45:24,000
+que hereda de otra, que incluye otra y tal y cual,
+
+543
+00:45:24,000 --> 00:45:29,000
+y al final no sabes dónde está llamando, qué fichero está usando,
+
+544
+00:45:29,000 --> 00:45:34,000
+pues también te pone todo el histórico, muy práctico.
+
+545
+00:45:34,000 --> 00:45:40,000
+Entonces, vamos a resumir un poco lo que hemos visto,
+
+546
+00:45:40,000 --> 00:45:43,000
+no habéis preguntado mucho, entiendo que nadie entendió nada.
+
+547
+00:45:45,000 --> 00:45:48,000
+Y para mí son dos conclusiones principales, vale,
+
+548
+00:45:48,000 --> 00:45:51,000
+lo primero es seguir la filosofía de Django y de Python,
+
+549
+00:45:51,000 --> 00:45:55,000
+siempre que sea posible, porque gente que son más inteligentes que nosotros
+
+550
+00:45:55,000 --> 00:45:58,000
+ya lo han hecho así y porque si sigues el estilo los demás
+
+551
+00:45:58,000 --> 00:46:01,000
+que son menos listos que tú lo van a entender
+
+552
+00:46:01,000 --> 00:46:04,000
+y porque al ahora mantener cuando veas el código el otro,
+
+553
+00:46:04,000 --> 00:46:07,000
+vas a entender lo que hace, todo esto está pensado para trabajar en equipo,
+
+554
+00:46:07,000 --> 00:46:10,000
+vale, que el típico cowboy solitario, el HP otra vez,
+
+555
+00:46:10,000 --> 00:46:13,000
+que ha hecho todo lo que le ha dado la gana, como ha querido,
+
+556
+00:46:13,000 --> 00:46:16,000
+que ha metido el código en las plantillas,
+
+557
+00:46:16,000 --> 00:46:19,000
+bueno, pues la idea es que si seguimos la filosofía está de Django
+
+558
+00:46:19,000 --> 00:46:22,000
+y de Python pues vamos a tenerlo todo ordenadito,
+
+559
+00:46:22,000 --> 00:46:25,000
+vamos a tener separado por modelo, vista y plantilla
+
+560
+00:46:25,000 --> 00:46:29,000
+y cada cosa va a estar en su sitio, cuando sea posible,
+
+561
+00:46:29,000 --> 00:46:32,000
+porque no se trata de ser fanáticos, las reglas a veces hay que romperlas,
+
+562
+00:46:32,000 --> 00:46:36,000
+si ayuda a que se entienda mejor o es un caso específico rendimiento
+
+563
+00:46:36,000 --> 00:46:39,000
+o tienes un buen motivo pues te lo puedes saltar, pero tener claro
+
+564
+00:46:39,000 --> 00:46:44,000
+que el 90% del código, el 90% de los sitios debería ser lo más fácil posible,
+
+565
+00:46:44,000 --> 00:46:48,000
+para eso usamos frameworks, el trabajo aburrido, repetitivo,
+
+566
+00:46:48,000 --> 00:46:51,000
+quien nos lo haga el Django, el Python o una librería de otro,
+
+567
+00:46:51,000 --> 00:46:55,000
+nosotros vamos al juego, a la lógica de nuestra empresa, a lo que nos interesa.
+
+568
+00:46:55,000 --> 00:46:59,000
+Y el segundo punto es que estamos sobre hombres de gigantes,
+
+569
+00:46:59,000 --> 00:47:05,000
+es mucho, ayuda mucho al desarrollo, basarte en frameworks
+
+570
+00:47:05,000 --> 00:47:08,000
+tan grandes que tienen de todo, que continuamente mañana te sacan
+
+571
+00:47:08,000 --> 00:47:12,000
+una nueva versión de Lapi de Twitter y sabes que al cabo de un par de días
+
+572
+00:47:12,000 --> 00:47:16,000
+ya va a haber alguna implementación, si no es Twitter quien publica
+
+573
+00:47:16,000 --> 00:47:20,000
+una de Django para acceder, entonces no hace falta que estés manteniendo
+
+574
+00:47:20,000 --> 00:47:24,000
+todos los proyectos, cada cosa, cada pequeña feature que usas,
+
+575
+00:47:24,000 --> 00:47:28,000
+porque entonces se te acaba el tiempo. Tú céndrate en la lógica de tu negocio
+
+576
+00:47:28,000 --> 00:47:32,000
+o de tu página, de lo que te interese, en tu objetivo y apóyate
+
+577
+00:47:32,000 --> 00:47:36,000
+en los hombres de gigantes, el típico error del note invented here,
+
+578
+00:47:36,000 --> 00:47:40,000
+este código que me dan aquí en internet no lo escrito yo,
+
+579
+00:47:40,000 --> 00:47:43,000
+vamos a hacerlo nosotros en la empresa que aquí es mejor, o esto lo han hecho
+
+580
+00:47:43,000 --> 00:47:46,000
+en nuestro país, vamos a hacerlo en nosotros en nuestra idioma,
+
+581
+00:47:46,000 --> 00:47:50,000
+pues no, eso es un error muy típico y que perjudica mucho.
+
+582
+00:47:50,000 --> 00:47:54,000
+Así que seguimos la filosofía, nos apoyamos en lo que ya nos dan
+
+583
+00:47:54,000 --> 00:47:58,000
+y nos centramos en nuestro interés.
+
+584
+00:47:58,000 --> 00:48:03,000
+Muchas gracias por haber atendido, la presentación está colgada
+
+585
+00:48:03,000 --> 00:48:08,000
+en Slight Share, ahora la tuitaré, podéis consultarla allí,
+
+586
+00:48:08,000 --> 00:48:12,000
+los links se pueden clicar y te los abre, la idea es que a partir de esto
+
+587
+00:48:12,000 --> 00:48:16,000
+los temas que os hayan interesado pues podáis documentaros más
+
+588
+00:48:16,000 --> 00:48:21,000
+y si tenéis cualquier tipo de pregunta pues ahora lo que queráis,
+
+589
+00:48:21,000 --> 00:48:24,000
+si he dicho muchas tonterías me lanzáis un zapato,
+
+590
+00:48:24,000 --> 00:48:29,000
+si hay algún tema que no ha quedado claro pues lo comentamos, vale?
+
+591
+00:48:29,000 --> 00:48:32,000
+Preguntas?
+
+592
+00:48:32,000 --> 00:48:36,000
+¿Te quedas contraria en tu libro?
+
+593
+00:48:36,000 --> 00:48:42,000
+A ver, yo ahora mismo para cualquier proyecto pequeño-mediano
+
+594
+00:48:42,000 --> 00:48:47,000
+con Redis te va de sobra, pero si tienes un requisito de, por ejemplo,
+
+595
+00:48:47,000 --> 00:48:50,000
+tienes una aplicación médica que los datos son críticos,
+
+596
+00:48:50,000 --> 00:48:55,000
+que no se puede perder nada, hombre, a ver, Redis no es perfecto,
+
+597
+00:48:55,000 --> 00:48:58,000
+RevitMQ te garantiza que si el mensaje se ha enviado se va a recibir,
+
+598
+00:48:58,000 --> 00:49:01,000
+Redis no, si está en memoria y justo en ese momento cae un rayo,
+
+599
+00:49:01,000 --> 00:49:04,000
+la máquina se hecha rusca y pierdas los datos,
+
+600
+00:49:04,000 --> 00:49:07,000
+pero es que la mayoría de casos hacer un thumbnail que falla
+
+601
+00:49:07,000 --> 00:49:11,000
+pues ya se volverá a generar, que haya fallado un email
+
+602
+00:49:11,000 --> 00:49:13,000
+pues si es que con los módulos que tienes hoy en día para enviar emails
+
+603
+00:49:13,000 --> 00:49:17,000
+ya te dirá, este email no se ha enviado y a la siguiente vez que está el crón preparado
+
+604
+00:49:17,000 --> 00:49:20,000
+ya lo volverá a intentar, pues para eso de rendimiento, a ver,
+
+605
+00:49:20,000 --> 00:49:23,000
+es enviar un mensaje, no afecta mucho, pero te vas a ahorrar
+
+606
+00:49:23,000 --> 00:49:26,000
+tenés que configurar un rábito o el sistema de colas que quieras.
+
+607
+00:49:26,000 --> 00:49:29,000
+Cuando llega el momento de escalar esa parte
+
+608
+00:49:29,000 --> 00:49:32,000
+la idea es que tú tienes una arquitectura distribuida
+
+609
+00:49:32,000 --> 00:49:37,000
+que tiene que ser escalable, la idea es que te centres primero el cuello de botella.
+
+610
+00:49:37,000 --> 00:49:40,000
+Cuando el cuello de botella de tu aplicación sea el sistema de colas,
+
+611
+00:49:40,000 --> 00:49:43,000
+o sea que tengas yo que sé más de 50.000 mensajes por segundo
+
+612
+00:49:43,000 --> 00:49:48,000
+que aceptas redes así sin despeinarse, entonces sí, entonces te planteas usar otro.
+
+613
+00:49:48,000 --> 00:49:52,000
+No, yo me preocuparía más de tener másteres, slaves y de configurar redes bien,
+
+614
+00:49:52,000 --> 00:49:55,000
+que no de esto, pero claro depende de la aplicación, si es algo crítico,
+
+615
+00:49:55,000 --> 00:50:01,000
+si es algo de seguridad, si es algo confidencial, pues oye sí, usa un sistema de colas decente,
+
+616
+00:50:01,000 --> 00:50:05,000
+pero que en cualquier momento puedes tener uno y otro, cambiarlo y ya está,
+
+617
+00:50:05,000 --> 00:50:10,000
+es solo el canal por el que se envían los mensajes, ¿vale?
+
+618
+00:50:10,000 --> 00:50:12,000
+Más preguntas.
+
+619
+00:50:12,000 --> 00:50:16,000
+¿Qué opinas de la actualidad actualmente?
+
+620
+00:50:16,000 --> 00:50:18,000
+Es decir, ves que está suficientemente activo,
+
+621
+00:50:18,000 --> 00:50:23,000
+hay gente que dice que el rey va a ser la configuración de los cambios,
+
+622
+00:50:23,000 --> 00:50:26,000
+luego también el nivel de cambios de versiones,
+
+623
+00:50:26,000 --> 00:50:29,000
+como le digo muchas cosas y la gente cree que los críbes demasiado podían
+
+624
+00:50:29,000 --> 00:50:32,000
+configurar el último versión, ¿eran poco por ver tu opinión sobre eso?
+
+625
+00:50:32,000 --> 00:50:35,000
+Sí, tienes razón, tienes razón.
+
+626
+00:50:35,000 --> 00:50:38,000
+Yo empecé con Django allá en la prehistoria en la 096,
+
+627
+00:50:38,000 --> 00:50:40,000
+que estuvo como dos o tres años congelada,
+
+628
+00:50:40,000 --> 00:50:43,000
+hasta que nos averillaron los de Rubion Rails que hicieron algo bueno en su vida
+
+629
+00:50:43,000 --> 00:50:47,000
+y se pusieron a trolear a los de Django y dijeron, jaja, no tenéis versión 1.0,
+
+630
+00:50:47,000 --> 00:50:50,000
+entonces Django se puso las pilas y dijeron, pues ahora sí,
+
+631
+00:50:50,000 --> 00:50:54,000
+y a partir de ahí empezaron a trabajar un poco más seriamente,
+
+632
+00:50:54,000 --> 00:50:56,000
+a decir ya estamos con la versión estable y vamos a sacar releases.
+
+633
+00:50:56,000 --> 00:50:59,000
+No estoy de acuerdo en que ahora haya menos aportaciones,
+
+634
+00:50:59,000 --> 00:51:04,000
+hay más, tal vez no hay tanto review, pero tienes muchísimos cambios en cada versión,
+
+635
+00:51:04,000 --> 00:51:08,000
+a nivel de bases de datos están mejorando muchísimas cosas y muchísimas features.
+
+636
+00:51:08,000 --> 00:51:13,000
+También hay que decir cuando con la versión 1.0 o 1.1 o 1.2
+
+637
+00:51:13,000 --> 00:51:16,000
+las cosas que te permitía Django no eran tantas, ¿vale?
+
+638
+00:51:16,000 --> 00:51:19,000
+Era bastante sencillo, en las últimas versiones están metiendo tantas cosas
+
+639
+00:51:19,000 --> 00:51:23,000
+que hoy en día la curva de aprendizaje de Django es muy alta,
+
+640
+00:51:23,000 --> 00:51:26,000
+para alguien que acaba de llegar, ostia, yo ahora lo veo, me vení a la comentación
+
+641
+00:51:26,000 --> 00:51:30,000
+y digo si esto lo llego a ver cuando empecé, es que cuesta.
+
+642
+00:51:30,000 --> 00:51:34,000
+Entonces hoy en día igual te vale la pena si el proyecto es pequeñito
+
+643
+00:51:34,000 --> 00:51:38,000
+y no vas a usar todas las pilas que te lleva Django, pues oye,
+
+644
+00:51:38,000 --> 00:51:42,000
+no necesitas los hombres de los gigantes, te coges un, hay muchos frameworks
+
+645
+00:51:42,000 --> 00:51:46,000
+de desarrollo web en Python, hay casi tantos como desarrolladores Python,
+
+646
+00:51:46,000 --> 00:51:50,000
+entonces te coges cualquiera de los otros, ¿vale?
+
+647
+00:51:50,000 --> 00:51:53,000
+Hay, había una coña sobre los micro frameworks,
+
+648
+00:51:53,000 --> 00:51:57,000
+que se hicieron en un April Fool, el día de los inocentes de los americanos,
+
+649
+00:51:57,000 --> 00:52:02,000
+que se inventaron un framework nuevo, era una parodia, pero no así la gente dijo que sí lo acabaron haciendo.
+
+650
+00:52:02,000 --> 00:52:08,000
+Es una especie de coña interna, entonces yo no considero que cada vez haya
+
+651
+00:52:08,000 --> 00:52:11,000
+menos contribuciones al revés, cada vez hay más,
+
+652
+00:52:11,000 --> 00:52:14,000
+he considero que cada vez es más difícil, entonces se van a tener que plantear
+
+653
+00:52:14,000 --> 00:52:19,000
+que si, claro, lo hace todo, pero no sé, es toda una decisión,
+
+654
+00:52:19,000 --> 00:52:23,000
+si quieres hacer una página sencillita, que es una API, que coja un dato, que lo guarda, que no sé qué,
+
+655
+00:52:23,000 --> 00:52:27,000
+no se Django, pero la que tengas que ponerte cosas web típicas de verdad,
+
+656
+00:52:27,000 --> 00:52:31,000
+cosas yo que sé, comentarios, pues te vas a poner a implementarte un sistema
+
+657
+00:52:31,000 --> 00:52:35,000
+de comentarios para que los spamers se te coman vivo, no, cojas el de Django que te lo hace,
+
+658
+00:52:35,000 --> 00:52:39,000
+quieres implementar, yo qué sé, es que aunque no sea Django y sea un sistema
+
+659
+00:52:39,000 --> 00:52:42,000
+plantillaz, no te vas a implementar tú, el tuyo, pues vas cogiendo,
+
+660
+00:52:42,000 --> 00:52:46,000
+y en Django lo que no te gusta lo cambias, no te gusta lo RM, mucha gente no le gusta,
+
+661
+00:52:46,000 --> 00:52:50,000
+pues te lo montas con SQL al que me ya está, el componente que no te gusta lo tiras
+
+662
+00:52:50,000 --> 00:52:54,000
+y coges otro, yo pienso que depende de la funcionalidad que necesite
+
+663
+00:52:54,000 --> 00:52:58,000
+tu web, siempre es muy fácil hacer un prototipo en otro lenguaje, pero la hora de la verdad,
+
+664
+00:52:58,000 --> 00:53:02,000
+o sea, simplemente por los temas de seguridad, los ataques CSRF,
+
+665
+00:53:02,000 --> 00:53:06,000
+todo lo que han sacado últimamente, apoyarte en un framework que lo soluciona,
+
+666
+00:53:06,000 --> 00:53:10,000
+y ojo, que los micro frameworks también, algunos también lo solucionan, no estoy criticando,
+
+667
+00:53:10,000 --> 00:53:15,000
+pero vale la pena mirar lo que necesitas y qué tipo de framework quieres usar.
+
+668
+00:53:15,000 --> 00:53:20,000
+Espero haber respondido bien. Más preguntas.
+
+669
+00:53:35,000 --> 00:53:40,000
+La que menos me gusta, pues que ahora mismo es un poco monstruo, es muy grande,
+
+670
+00:53:40,000 --> 00:53:44,000
+o sea, está todo muy bien organizado, ¿vale? Tú tienes una necesidad, tú quieres, yo qué sé,
+
+671
+00:53:44,000 --> 00:53:48,000
+poner FITs RSS en tu página, sabes que hay un modelo oficial que lo hace,
+
+672
+00:53:48,000 --> 00:53:51,000
+quieres hacer paginación, coges el módulo oficial que está en Contrip,
+
+673
+00:53:51,000 --> 00:53:55,000
+quieres hacernos que todo lo hace, pero claro, es que son muchas cosas,
+
+674
+00:53:55,000 --> 00:54:02,000
+si aunque no sea tan repetitivo como otros lenguajes, que tienes mil maneras de hacer cada cosa y esto,
+
+675
+00:54:02,000 --> 00:54:08,000
+al final todo ocupa la memoria, todo ocupa en el proyecto,
+
+676
+00:54:08,000 --> 00:54:12,000
+si tienes algo más específico, más ligero para lo tuyo, pues mejor,
+
+677
+00:54:12,000 --> 00:54:16,000
+y el tema de la curva de aprendizaje que hoy en día se está complicando,
+
+678
+00:54:16,000 --> 00:54:20,000
+entonces los que no sepais Django aprendedlo en cuanto antes, que se va a complicar más,
+
+679
+00:54:20,000 --> 00:54:25,000
+no sé, no sé, cuando tienes una necesidad específica que Django no cumple,
+
+680
+00:54:25,000 --> 00:54:30,000
+dices, vale, voy a cambiar el sistema plantillas por Djingya, no tengo una web, tengo una API,
+
+681
+00:54:30,000 --> 00:54:37,000
+el sistema LRM, no lo quiero, quiero el SQL al que mí,
+
+682
+00:54:37,000 --> 00:54:40,000
+o no quiero base datos relacionados, quiero una nosicuel,
+
+683
+00:54:40,000 --> 00:54:42,000
+entonces dices, hostia, ¿qué vas a aprovechar de Django?
+
+684
+00:54:42,000 --> 00:54:46,000
+¿Las URL y las vistas? Pues no, URL y vistas es la parte más fácil, por dios,
+
+685
+00:54:46,000 --> 00:54:51,000
+entonces en ese caso cogete otro, pienso que depende mucho de la necesidad que tengas,
+
+686
+00:54:51,000 --> 00:54:55,000
+para la mayoría de casos con esto ya tiras, más preguntas.
+
+687
+00:54:55,000 --> 00:54:59,000
+¿A consejarías el URL de Django para sistemas medianos o incluso grandes?
+
+688
+00:54:59,000 --> 00:55:03,000
+Sí, el URL de Django mucha gente lo critica, pero no es tan malo como dicen.
+
+689
+00:55:03,000 --> 00:55:06,000
+¿Acaso las que hemos estado dando estos dos días, todo el mundo decía que era muy lento?
+
+690
+00:55:06,000 --> 00:55:13,000
+Lo sé, lo sé, no es que sea lento, al final lo que es lento es el acceso a la base de datos,
+
+691
+00:55:13,000 --> 00:55:17,000
+si tu cuello botella está en el URL perfecto, pero es que no es el caso.
+
+692
+00:55:17,000 --> 00:55:22,000
+Estoy comenzando a desarrollar un proyecto y empezo con el URL de Django y claro,
+
+693
+00:55:22,000 --> 00:55:25,000
+al venir aquí que todo el mundo diga que es tan lento y que no...
+
+694
+00:55:25,000 --> 00:55:31,000
+Vale, vamos a hablar las cosas como son, las bases de datos lo que es lento es la escritura,
+
+695
+00:55:31,000 --> 00:55:37,000
+si una lectura te es lenta, esta es la gente que decía que tenía joins de 8 tablas.
+
+696
+00:55:37,000 --> 00:55:43,000
+Claro que te va lento cabrón, no, no, no, no, si tienes aunque sea una join de 8 tablas,
+
+697
+00:55:43,000 --> 00:55:47,000
+para eso se han inventado las bases de datos relacionales, para coger datos relacionadeles
+
+698
+00:55:47,000 --> 00:55:50,000
+que están en tablas, relacionarlos, hacer joins, lo que tienes que hacer son índices,
+
+699
+00:55:50,000 --> 00:55:53,000
+que sí que es difícil, pero que está hecho así.
+
+700
+00:55:53,000 --> 00:55:57,000
+No te vas a solventar los problemas de complejidad que tiene tu base de datos,
+
+701
+00:55:57,000 --> 00:56:02,000
+pero está mal diseñada o porque no estás cachegando por esto, no lo vas a solucionar en la capa del ORM.
+
+702
+00:56:02,000 --> 00:56:08,000
+Es el cual es mucho más potente, te permite más interfaces y te permite hacer muchas más cosas,
+
+703
+00:56:08,000 --> 00:56:11,000
+pero a nivel de rendimiento el problema lo tienes en la base de datos, no aquí.
+
+704
+00:56:11,000 --> 00:56:16,000
+La base de datos la sueles tener en una máquina aparte, es que no vas a mejorar lo cambiando el ORM.
+
+705
+00:56:16,000 --> 00:56:21,000
+Pienso yo, si alguien está en contra pues nos peleamos o algo.
+
+706
+00:56:21,000 --> 00:56:27,000
+Tú estás en contra, ven aquí.
+
+707
+00:56:27,000 --> 00:56:39,000
+A nivel de performance lo que tienes que optimizar es el cuello botella, el cuello botella no va a estar aquí.
+
+708
+00:56:39,000 --> 00:56:40,220
+Pero estamos hablando de poca memoria, a no ser que quiera hacer una aplicación para correrla en el
+
+709
+00:56:40,220 --> 00:56:51,220
+RASBRIP y que son cuatro llamaditas, entonces no es esto por dios, quieres una piso super sencilla, no vas a...
+
+710
+00:56:51,220 --> 00:57:07,220
+Es otro caso de uso distinto, no tiene una mala performance, pero claro, es un poco como hace tantas cosas que tienes que tener lo otro previsto.
+
+711
+00:57:07,220 --> 00:57:11,220
+¿Cómo vamos de tiempo?
+
+712
+00:57:11,220 --> 00:57:38,220
+Muchas gracias para haber tenido.
+
+713
+00:57:41,220 --> 00:57:46,220
+Gracias.
+

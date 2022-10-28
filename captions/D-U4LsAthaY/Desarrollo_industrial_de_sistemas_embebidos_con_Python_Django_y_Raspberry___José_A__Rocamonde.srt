@@ -1,0 +1,4596 @@
+1
+00:00:00,000 --> 00:00:17,560
+Em 2012, máso menos, foi a primeira vez que escuchei a hablar de Lars Berripí.
+
+2
+00:00:18,760 --> 00:00:21,240
+Então, resulta que...
+
+3
+00:00:21,240 --> 00:00:29,320
+Eso fue unha foto moi bonita que me dice en el CESGA, en el centro de supercomputación de Galicia,
+
+4
+00:00:29,320 --> 00:00:39,160
+en el año 2002 máso menos, e resulta que, salvando las distancias del tipo de procesador que tiene unha Lars Berripí
+
+5
+00:00:39,160 --> 00:00:47,560
+e que tenia un superordenador Fuiitsu, UVP 2400, resulta que tenia máso menos la misma capacidad de memoria,
+
+6
+00:00:47,560 --> 00:00:49,560
+máso menos la misma capacidad de disco
+
+7
+00:00:49,560 --> 00:00:51,560
+e resulta que o procesador de la Raspberry
+
+8
+00:00:51,560 --> 00:00:53,560
+pues aún era 4 veces má rápido, no?
+
+9
+00:00:53,560 --> 00:00:56,560
+Entonces, pues bueno, a modo de comparativa
+
+10
+00:00:56,560 --> 00:00:59,560
+sempre estamos hablando de lo que evolucionan
+
+11
+00:00:59,560 --> 00:01:02,560
+las computadoras e las máquinas e demás.
+
+12
+00:01:02,560 --> 00:01:05,560
+Então, históricamente
+
+13
+00:01:05,560 --> 00:01:07,560
+para o desarrollo de dispositivos en bebidos
+
+14
+00:01:07,560 --> 00:01:11,560
+sempre se utilizaban placas de
+
+15
+00:01:11,560 --> 00:01:15,560
+propósito específico, pues se desarrollaban
+
+16
+00:01:15,560 --> 00:01:18,560
+a medida para que hiciesen 4 cosas
+
+17
+00:01:18,560 --> 00:01:21,560
+e se querías que hiciesen 5, pues habría que cambiarlas, no?
+
+18
+00:01:21,560 --> 00:01:23,560
+Con el cambio e que resulta que podemos utilizar
+
+19
+00:01:23,560 --> 00:01:27,560
+un ordenador completo, barato, pequeño
+
+20
+00:01:27,560 --> 00:01:31,560
+e que tiene Linux para hacer desarrollo
+
+21
+00:01:31,560 --> 00:01:34,560
+pues gente profana
+
+22
+00:01:34,560 --> 00:01:37,560
+del desarrollo de sistemas
+
+23
+00:01:37,560 --> 00:01:40,560
+e del desarrollo de sistemas en bebidos
+
+24
+00:01:40,560 --> 00:01:44,560
+pues empezamos a meternos en este mundo.
+
+25
+00:01:44,560 --> 00:01:49,560
+Un día, estava tan tranquilo en mi mesa
+
+26
+00:01:49,560 --> 00:01:53,560
+e me llegó el jefe, trabajaba para una empresa
+
+27
+00:01:53,560 --> 00:01:57,560
+del recreativo, de estas que explotan
+
+28
+00:01:57,560 --> 00:02:00,560
+a ellos le gusta llamarle máquinas recreativas
+
+29
+00:02:00,560 --> 00:02:03,560
+con premio, pero realmente para que todos nos entendamos
+
+30
+00:02:03,560 --> 00:02:06,560
+son máquinas traga perras, donde tú le metes unha moneda
+
+31
+00:02:06,560 --> 00:02:09,560
+e a veces te da algo de dinero
+
+32
+00:02:09,560 --> 00:02:11,560
+e otras veces no te da nada
+
+33
+00:02:11,560 --> 00:02:14,560
+e algunas veces te da algún premio
+
+34
+00:02:14,560 --> 00:02:17,560
+que te sirve para ir a cenar, no?
+
+35
+00:02:17,560 --> 00:02:20,560
+Entonces, como a cultura de la empresa
+
+36
+00:02:20,560 --> 00:02:22,560
+grande informática suele ser
+
+37
+00:02:22,560 --> 00:02:24,560
+cualquier cosa que tenga cable
+
+38
+00:02:24,560 --> 00:02:26,560
+e esté relacionado con a informática
+
+39
+00:02:26,560 --> 00:02:28,560
+se lo emplumamos al informático, no?
+
+40
+00:02:28,560 --> 00:02:30,560
+Un día me vino el jefe e me dijo
+
+41
+00:02:30,560 --> 00:02:32,560
+que ha llegado una empresa que nos ha presentado
+
+42
+00:02:32,560 --> 00:02:35,560
+unos sistemas que resulta que las máquinas
+
+43
+00:02:35,560 --> 00:02:38,560
+las podemos leer en remoto, saber el dinero que tienen
+
+44
+00:02:38,560 --> 00:02:40,560
+saber cuánto han jugado
+
+45
+00:02:40,560 --> 00:02:43,560
+e poder optimizar un poquito de dinero
+
+46
+00:02:43,560 --> 00:02:46,560
+e recursos a la hora de recaudarlas
+
+47
+00:02:46,560 --> 00:02:49,560
+e a la hora de hacer visitas e demás.
+
+48
+00:02:49,560 --> 00:02:52,560
+Entonces, como sabes, normalmente
+
+49
+00:02:52,560 --> 00:02:54,560
+solemos tener problemas económicos, no?
+
+50
+00:02:54,560 --> 00:02:58,560
+Bueno, es un chiste porque el juego
+
+51
+00:02:58,560 --> 00:03:02,560
+es una de las actividades que máis beneficio
+
+52
+00:03:02,560 --> 00:03:04,560
+suele generar.
+
+53
+00:03:04,560 --> 00:03:07,560
+Entonces, vamos intentar optimizar, no?
+
+54
+00:03:07,560 --> 00:03:10,560
+E yo, bueno, pues, que sabia hacer yo?
+
+55
+00:03:10,560 --> 00:03:13,560
+Pues, yo sabia programar sistemas Linux,
+
+56
+00:03:13,560 --> 00:03:16,560
+sabia algo de Python, sabía muy poco de Django,
+
+57
+00:03:16,560 --> 00:03:19,560
+versión 1.4.
+
+58
+00:03:19,560 --> 00:03:21,560
+E entonces, en vez de andar peleando,
+
+59
+00:03:21,560 --> 00:03:23,560
+aprendiendo en Samblador
+
+60
+00:03:23,560 --> 00:03:27,560
+o aprendiendo C o aprendiendo algo relacionado
+
+61
+00:03:27,560 --> 00:03:29,560
+con os sistemas enbebidos, pues, dije, bueno,
+
+62
+00:03:29,560 --> 00:03:32,560
+xe es un prototipo, pues, como es lo que sé hacer
+
+63
+00:03:32,560 --> 00:03:37,560
+es lo que voy a utilizar para desarrollar el sistema.
+
+64
+00:03:37,560 --> 00:03:39,560
+Podria decir que hice un estudio
+
+65
+00:03:39,560 --> 00:03:41,560
+mirando quales eran los mejores sistemas,
+
+66
+00:03:41,560 --> 00:03:43,560
+lenguajes e demás, e que llegué a la conclusión
+
+67
+00:03:43,560 --> 00:03:46,560
+de que Python, como es un lenguaje estupendo,
+
+68
+00:03:46,560 --> 00:03:49,560
+foi lo que utilicé, pero no, no foi así.
+
+69
+00:03:49,560 --> 00:03:52,560
+Entonces, cuando uno tiene un martillo, no?
+
+70
+00:03:52,560 --> 00:03:54,560
+Pues, todo lo que ven son clavos.
+
+71
+00:03:54,560 --> 00:03:57,560
+Pues, yo el martillo que tenía era el de Python,
+
+72
+00:03:57,560 --> 00:03:59,560
+así que dije, voy a hacer todo con Python,
+
+73
+00:03:59,560 --> 00:04:02,560
+que sé Python, sé Linux
+
+74
+00:04:02,560 --> 00:04:05,560
+e sé programación de sistemas.
+
+75
+00:04:05,560 --> 00:04:07,560
+E tenemos unha plaquita muy barata,
+
+76
+00:04:07,560 --> 00:04:09,560
+que cuesta menos de 30 dólares,
+
+77
+00:04:09,560 --> 00:04:11,560
+que nos va a permitir hacer todo eso,
+
+78
+00:04:11,560 --> 00:04:13,560
+que, además, le podemos poner un puerto serie,
+
+79
+00:04:13,560 --> 00:04:15,560
+podemos leer los datos de la máquina,
+
+80
+00:04:15,560 --> 00:04:18,560
+ya nos trae con las pilas incluídas
+
+81
+00:04:18,560 --> 00:04:21,560
+la conexión por SSH, unha base de datos, etc., etc.
+
+82
+00:04:21,560 --> 00:04:24,560
+Entonces, empezó como un prototipo
+
+83
+00:04:24,560 --> 00:04:26,560
+e resulta que, al final, está acabo siendo
+
+84
+00:04:26,560 --> 00:04:28,560
+un productor robusto que funciona bien
+
+85
+00:04:28,560 --> 00:04:30,560
+e que no nos da problemas.
+
+86
+00:04:32,560 --> 00:04:35,560
+Entonces, un pouco para que os hagáis
+
+87
+00:04:35,560 --> 00:04:37,560
+una idea de, al final,
+
+88
+00:04:37,560 --> 00:04:39,560
+el ecosistema que utilicé,
+
+89
+00:04:39,560 --> 00:04:42,560
+pues Python 2.7,
+
+90
+00:04:42,560 --> 00:04:44,560
+el Django me queda en la versión 1.11,
+
+91
+00:04:44,560 --> 00:04:47,560
+ahora tengo la desgracia de que tengo que migrar
+
+92
+00:04:47,560 --> 00:04:50,560
+a Python 3, antes de que nos quedemos sin soporte
+
+93
+00:04:50,560 --> 00:04:53,560
+e a Django también debería migrarlo,
+
+94
+00:04:53,560 --> 00:04:55,560
+POSgres 9 en el server
+
+95
+00:04:55,560 --> 00:04:58,560
+e ese QLIT 3 en las placas.
+
+96
+00:04:58,560 --> 00:05:00,560
+Como non soy diseñador
+
+97
+00:05:00,560 --> 00:05:03,560
+ni me gusta demasiado trabajar con diseño,
+
+98
+00:05:03,560 --> 00:05:04,560
+pues que hice?
+
+99
+00:05:04,560 --> 00:05:06,560
+Uso unha plantilla,
+
+100
+00:05:06,560 --> 00:05:08,560
+busstrap e admin.lt,
+
+101
+00:05:08,560 --> 00:05:10,560
+que está muy bien, le cambio 4 cosas,
+
+102
+00:05:10,560 --> 00:05:12,560
+aprendo 3 widgets
+
+103
+00:05:12,560 --> 00:05:14,560
+e já da un aspecto profesional
+
+104
+00:05:14,560 --> 00:05:16,560
+el sistema.
+
+105
+00:05:16,560 --> 00:05:18,560
+Además, después, para analizar los datos,
+
+106
+00:05:18,560 --> 00:05:22,560
+pues me decidí a utilizar pandas,
+
+107
+00:05:22,560 --> 00:05:25,560
+porque un amigo físico que tengo
+
+108
+00:05:25,560 --> 00:05:27,560
+lo estábamos utilizando
+
+109
+00:05:27,560 --> 00:05:30,560
+para predecir el tiempo en Meteogalicia
+
+110
+00:05:30,560 --> 00:05:31,560
+e me dijo,
+
+111
+00:05:31,560 --> 00:05:33,560
+hay una librería nueva que se llama pandas
+
+112
+00:05:33,560 --> 00:05:35,560
+que te permite utilizar séries de tiempo
+
+113
+00:05:35,560 --> 00:05:36,560
+e demás, pues venga,
+
+114
+00:05:36,560 --> 00:05:38,560
+otro clavo más para el mismo martillo,
+
+115
+00:05:38,560 --> 00:05:40,560
+entonces, pues bueno,
+
+116
+00:05:40,560 --> 00:05:44,560
+a partir de ahí construímos un producto
+
+117
+00:05:44,560 --> 00:05:48,560
+que nos vimos con la necesidad
+
+118
+00:05:48,560 --> 00:05:51,560
+de moverlo a nuestras mini placas
+
+119
+00:05:51,560 --> 00:05:53,560
+para conectarlo e enchufarlo
+
+120
+00:05:53,560 --> 00:05:55,560
+en las máquinas, no?
+
+121
+00:05:55,560 --> 00:05:56,560
+Para que sagueis unha idea
+
+122
+00:05:56,560 --> 00:05:57,560
+de la envergadura del proyecto,
+
+123
+00:05:57,560 --> 00:05:58,560
+pues bueno,
+
+124
+00:05:58,560 --> 00:05:59,560
+la parte del servidor
+
+125
+00:05:59,560 --> 00:06:01,560
+tiene unas 82 mil líneas de código
+
+126
+00:06:01,560 --> 00:06:02,560
+en Python,
+
+127
+00:06:02,560 --> 00:06:03,560
+incluyendo comentarios,
+
+128
+00:06:03,560 --> 00:06:04,560
+eso sí,
+
+129
+00:06:04,560 --> 00:06:06,560
+unas cabeceras de comentarios enormes
+
+130
+00:06:06,560 --> 00:06:07,560
+donde describimos
+
+131
+00:06:07,560 --> 00:06:08,560
+los protocolos de las máquinas
+
+132
+00:06:08,560 --> 00:06:10,560
+e otras historias,
+
+133
+00:06:10,560 --> 00:06:12,560
+y la parte de las placas
+
+134
+00:06:12,560 --> 00:06:16,560
+pues sobre unas 35 mil líneas.
+
+135
+00:06:18,560 --> 00:06:19,560
+Aquí digo,
+
+136
+00:06:19,560 --> 00:06:20,560
+ocupa 5 megas con pilado,
+
+137
+00:06:20,560 --> 00:06:22,560
+el server y 4 megas con pilado
+
+138
+00:06:22,560 --> 00:06:24,560
+el de las placas.
+
+139
+00:06:24,560 --> 00:06:26,560
+Por qué?
+
+140
+00:06:26,560 --> 00:06:28,560
+Esa necesidad de
+
+141
+00:06:28,560 --> 00:06:29,560
+conpilarlo
+
+142
+00:06:29,560 --> 00:06:31,560
+e como lo hemos conpilado.
+
+143
+00:06:31,560 --> 00:06:32,560
+Non es un ejecutable,
+
+144
+00:06:32,560 --> 00:06:34,560
+lo hemos conpilado a bytecode
+
+145
+00:06:34,560 --> 00:06:36,560
+por dos motivos básicos.
+
+146
+00:06:36,560 --> 00:06:38,560
+Uno,
+
+147
+00:06:38,560 --> 00:06:39,560
+muchos de los protocolos
+
+148
+00:06:39,560 --> 00:06:40,560
+que se utilizaban
+
+149
+00:06:40,560 --> 00:06:41,560
+eran protocolos industriales
+
+150
+00:06:41,560 --> 00:06:42,560
+que nos obligaron
+
+151
+00:06:42,560 --> 00:06:43,560
+a firmar un contrato
+
+152
+00:06:43,560 --> 00:06:44,560
+de confidencialidad,
+
+153
+00:06:44,560 --> 00:06:46,560
+entonces, tener el código fuente,
+
+154
+00:06:46,560 --> 00:06:48,560
+donde explicaba perfectamente
+
+155
+00:06:48,560 --> 00:06:51,560
+cada trama exadecimal
+
+156
+00:06:51,560 --> 00:06:52,560
+como funcionaba
+
+157
+00:06:52,560 --> 00:06:53,560
+e igual nos metían un lío
+
+158
+00:06:53,560 --> 00:06:54,560
+para cualquiera que desenchufara
+
+159
+00:06:54,560 --> 00:06:56,560
+a la placa,
+
+160
+00:06:56,560 --> 00:06:57,560
+la pinchara e viera
+
+161
+00:06:57,560 --> 00:06:58,560
+el código fuente.
+
+162
+00:06:58,560 --> 00:06:59,560
+Entonces, pues bueno,
+
+163
+00:06:59,560 --> 00:07:00,560
+por lo menos que este un poco
+
+164
+00:07:00,560 --> 00:07:02,560
+protegido a nivel legal
+
+165
+00:07:02,560 --> 00:07:03,560
+e el que haga ingeniería inversa
+
+166
+00:07:03,560 --> 00:07:04,560
+de ciertas cosas,
+
+167
+00:07:04,560 --> 00:07:06,560
+se pode saber igual como funciona,
+
+168
+00:07:06,560 --> 00:07:08,560
+pero legalmente estamos cubiertos,
+
+169
+00:07:08,560 --> 00:07:09,560
+no?
+
+170
+00:07:09,560 --> 00:07:11,560
+E por outro lado,
+
+171
+00:07:11,560 --> 00:07:12,560
+pues,
+
+172
+00:07:12,560 --> 00:07:14,560
+quando tienes que dar garantía
+
+173
+00:07:14,560 --> 00:07:16,560
+sobre un producto,
+
+174
+00:07:16,560 --> 00:07:18,560
+es muy conveniente que desgarantía
+
+175
+00:07:18,560 --> 00:07:19,560
+sobre lo que has hecho tú
+
+176
+00:07:19,560 --> 00:07:20,560
+e non sobre lo que los demás
+
+177
+00:07:20,560 --> 00:07:21,560
+lo puedan modificar.
+
+178
+00:07:21,560 --> 00:07:22,560
+Entonces,
+
+179
+00:07:24,560 --> 00:07:26,560
+nos vimos en la necesidad
+
+180
+00:07:26,560 --> 00:07:28,560
+de compilarlo
+
+181
+00:07:28,560 --> 00:07:29,560
+para entregar solamente
+
+182
+00:07:29,560 --> 00:07:31,560
+unos binarios
+
+183
+00:07:31,560 --> 00:07:32,560
+e que no pudiesen realizar
+
+184
+00:07:32,560 --> 00:07:34,560
+modificaciones sobre
+
+185
+00:07:34,560 --> 00:07:35,560
+esos binarios.
+
+186
+00:07:35,560 --> 00:07:36,560
+Bueno,
+
+187
+00:07:36,560 --> 00:07:38,560
+a modo de cierto interés
+
+188
+00:07:38,560 --> 00:07:40,560
+para os asistentes
+
+189
+00:07:40,560 --> 00:07:42,560
+quando compilas con Python
+
+190
+00:07:42,560 --> 00:07:44,560
+e lo optimizas,
+
+191
+00:07:44,560 --> 00:07:46,560
+hay dos formas básicas
+
+192
+00:07:46,560 --> 00:07:47,560
+de compilar,
+
+193
+00:07:47,560 --> 00:07:48,560
+que te quite
+
+194
+00:07:48,560 --> 00:07:49,560
+los PIO
+
+195
+00:07:49,560 --> 00:07:50,560
+o que te quite
+
+196
+00:07:50,560 --> 00:07:51,560
+los PIC.
+
+197
+00:07:52,560 --> 00:07:53,560
+A parte de las diferencias
+
+198
+00:07:53,560 --> 00:07:54,560
+internas que tengan
+
+199
+00:07:54,560 --> 00:07:55,560
+en las que non me metí,
+
+200
+00:07:55,560 --> 00:07:56,560
+yo lo que sí sé es que
+
+201
+00:07:56,560 --> 00:07:58,560
+cuando compilas un punto PIC,
+
+202
+00:07:58,560 --> 00:08:00,560
+los doc strings
+
+203
+00:08:00,560 --> 00:08:02,560
+aparecen de tal manera que tú compilas,
+
+204
+00:08:02,560 --> 00:08:04,560
+abres el fichero PIC
+
+205
+00:08:04,560 --> 00:08:05,560
+compilado
+
+206
+00:08:05,560 --> 00:08:06,560
+e te aparecen tus chorros
+
+207
+00:08:06,560 --> 00:08:07,560
+de comentarios,
+
+208
+00:08:07,560 --> 00:08:08,560
+donde dice,
+
+209
+00:08:08,560 --> 00:08:09,560
+si tenemos una trama que nos viene
+
+210
+00:08:09,560 --> 00:08:10,560
+de una máquina de círsa,
+
+211
+00:08:10,560 --> 00:08:11,560
+los primeros 4 bytes
+
+212
+00:08:11,560 --> 00:08:12,560
+significan que non sé qué.
+
+213
+00:08:12,560 --> 00:08:14,560
+Entonces, ese trozo
+
+214
+00:08:14,560 --> 00:08:15,560
+que teníamos así de comentario,
+
+215
+00:08:15,560 --> 00:08:16,560
+resulta que se editas
+
+216
+00:08:16,560 --> 00:08:17,560
+el binario,
+
+217
+00:08:17,560 --> 00:08:18,560
+lo estás viendo en abierto.
+
+218
+00:08:18,560 --> 00:08:19,560
+Entonces,
+
+219
+00:08:19,560 --> 00:08:20,560
+no nos servía mucho.
+
+220
+00:08:20,560 --> 00:08:22,560
+Que
+
+221
+00:08:22,560 --> 00:08:23,560
+hicimos?
+
+222
+00:08:23,560 --> 00:08:25,560
+Los compilábamos a los PIO.
+
+223
+00:08:25,560 --> 00:08:26,560
+Entonces,
+
+224
+00:08:26,560 --> 00:08:27,560
+los PIO
+
+225
+00:08:27,560 --> 00:08:28,560
+se cargan todos
+
+226
+00:08:28,560 --> 00:08:29,560
+los doc strings
+
+227
+00:08:29,560 --> 00:08:30,560
+de tal forma que,
+
+228
+00:08:30,560 --> 00:08:31,560
+aunque tú edites el código,
+
+229
+00:08:31,560 --> 00:08:32,560
+non ves nada
+
+230
+00:08:32,560 --> 00:08:33,560
+de los comentarios
+
+231
+00:08:33,560 --> 00:08:34,560
+que tienes
+
+232
+00:08:34,560 --> 00:08:35,560
+en los doc strings.
+
+233
+00:08:35,560 --> 00:08:36,560
+Pero depois teníamos
+
+234
+00:08:36,560 --> 00:08:37,560
+otro problema.
+
+235
+00:08:37,560 --> 00:08:38,560
+Quando haces un import,
+
+236
+00:08:38,560 --> 00:08:40,560
+el
+
+237
+00:08:40,560 --> 00:08:42,560
+intérprete de Python,
+
+238
+00:08:42,560 --> 00:08:43,560
+o que haces,
+
+239
+00:08:43,560 --> 00:08:44,560
+primeiro te lei
+
+240
+00:08:44,560 --> 00:08:45,560
+o PIC,
+
+241
+00:08:45,560 --> 00:08:46,560
+lo compara con la versión PIC
+
+242
+00:08:46,560 --> 00:08:47,560
+que tiene compilada,
+
+243
+00:08:47,560 --> 00:08:48,560
+seno es la misma
+
+244
+00:08:48,560 --> 00:08:49,560
+lo vuelve a recompilar
+
+245
+00:08:49,560 --> 00:08:50,560
+e demás.
+
+246
+00:08:50,560 --> 00:08:51,560
+Pero con los PIO
+
+247
+00:08:51,560 --> 00:08:52,560
+non lo puedes hacer
+
+248
+00:08:52,560 --> 00:08:53,560
+directamente.
+
+249
+00:08:53,560 --> 00:08:54,560
+Então,
+
+250
+00:08:54,560 --> 00:08:55,560
+se tú no tienes
+
+251
+00:08:55,560 --> 00:08:56,560
+os punto PIO
+
+252
+00:08:56,560 --> 00:08:57,560
+e só lo tienes
+
+253
+00:08:57,560 --> 00:08:58,560
+os punto PIO
+
+254
+00:08:58,560 --> 00:08:59,560
+non puedes importar nada
+
+255
+00:08:59,560 --> 00:09:00,560
+porque non funciona.
+
+256
+00:09:00,560 --> 00:09:01,560
+Pero,
+
+257
+00:09:01,560 --> 00:09:02,560
+bueno,
+
+258
+00:09:02,560 --> 00:09:03,560
+es tan sencillo como coger
+
+259
+00:09:03,560 --> 00:09:04,560
+renombrar todo
+
+260
+00:09:04,560 --> 00:09:05,560
+los PIO a PIC
+
+261
+00:09:05,560 --> 00:09:06,560
+e ya está.
+
+262
+00:09:06,560 --> 00:09:07,560
+Entonces,
+
+263
+00:09:07,560 --> 00:09:08,560
+en 4 pasos
+
+264
+00:09:08,560 --> 00:09:09,560
+hemos resuelto el problema.
+
+265
+00:09:09,560 --> 00:09:10,560
+Nos cargamos los PIO
+
+266
+00:09:10,560 --> 00:09:11,560
+e además creamos
+
+267
+00:09:11,560 --> 00:09:12,560
+un diccionario
+
+268
+00:09:12,560 --> 00:09:13,560
+Hashi enorme
+
+269
+00:09:13,560 --> 00:09:14,560
+con o SMD5
+
+270
+00:09:14,560 --> 00:09:15,560
+de cada fichero PIC
+
+271
+00:09:15,560 --> 00:09:16,560
+para comprobar
+
+272
+00:09:16,560 --> 00:09:17,560
+que,
+
+273
+00:09:17,560 --> 00:09:18,560
+quando vamos arrancar
+
+274
+00:09:18,560 --> 00:09:19,560
+la placa o el sistema,
+
+275
+00:09:19,560 --> 00:09:20,560
+están utilizando
+
+276
+00:09:20,560 --> 00:09:22,560
+el fichero original
+
+277
+00:09:22,560 --> 00:09:23,560
+que nós teníamos.
+
+278
+00:09:23,560 --> 00:09:24,560
+E non otro,
+
+279
+00:09:24,560 --> 00:09:25,560
+porque,
+
+280
+00:09:25,560 --> 00:09:26,560
+seno,
+
+281
+00:09:26,560 --> 00:09:27,560
+la misma historia.
+
+282
+00:09:27,560 --> 00:09:28,560
+Más que un tema
+
+283
+00:09:28,560 --> 00:09:29,560
+de proteger
+
+284
+00:09:29,560 --> 00:09:30,560
+la propiedad industrial
+
+285
+00:09:30,560 --> 00:09:31,560
+del producto era
+
+286
+00:09:31,560 --> 00:09:32,560
+si tengo que dar garantía
+
+287
+00:09:32,560 --> 00:09:33,560
+sobre algo,
+
+288
+00:09:33,560 --> 00:09:34,560
+mejor que sea lo que hice yo
+
+289
+00:09:34,560 --> 00:09:35,560
+e non lo que ha modificado
+
+290
+00:09:35,560 --> 00:09:36,560
+alguien.
+
+291
+00:09:36,560 --> 00:09:38,560
+Para la parte de interfaz
+
+292
+00:09:38,560 --> 00:09:39,560
+web,
+
+293
+00:09:39,560 --> 00:09:40,560
+que a ver después
+
+294
+00:09:40,560 --> 00:09:41,560
+un poquito
+
+295
+00:09:41,560 --> 00:09:42,560
+de ella,
+
+296
+00:09:42,560 --> 00:09:43,560
+tanto de la placa
+
+297
+00:09:43,560 --> 00:09:44,560
+como del server,
+
+298
+00:09:44,560 --> 00:09:45,560
+pues,
+
+299
+00:09:45,560 --> 00:09:46,560
+que sabia?
+
+300
+00:09:46,560 --> 00:09:47,560
+Django,
+
+301
+00:09:47,560 --> 00:09:48,560
+venga,
+
+302
+00:09:48,560 --> 00:09:49,560
+Django a leante
+
+303
+00:09:49,560 --> 00:09:50,560
+para utilizarlo.
+
+304
+00:09:50,560 --> 00:09:51,560
+Las plantillas
+
+305
+00:09:51,560 --> 00:09:52,560
+de Django
+
+306
+00:09:52,560 --> 00:09:53,560
+están genial,
+
+307
+00:09:53,560 --> 00:09:54,560
+pero con las plantillas
+
+308
+00:09:54,560 --> 00:09:55,560
+de Django
+
+309
+00:09:55,560 --> 00:09:56,560
+tenemos un montón
+
+310
+00:09:56,560 --> 00:09:57,560
+de información
+
+311
+00:09:57,560 --> 00:09:58,560
+que puede
+
+312
+00:09:58,560 --> 00:09:59,560
+máso o menos ver cualquiera.
+
+313
+00:09:59,560 --> 00:10:00,560
+Nos encontramos
+
+314
+00:10:00,560 --> 00:10:01,560
+con el mismo problema.
+
+315
+00:10:01,560 --> 00:10:02,560
+Entonces,
+
+316
+00:10:02,560 --> 00:10:03,560
+utilicei e la expresión
+
+317
+00:10:03,560 --> 00:10:04,560
+usuarios intrépidos
+
+318
+00:10:04,560 --> 00:10:06,560
+que utilizaba
+
+319
+00:10:06,560 --> 00:10:07,560
+mi jefe
+
+320
+00:10:07,560 --> 00:10:08,560
+del departamento
+
+321
+00:10:08,560 --> 00:10:09,560
+de informática,
+
+322
+00:10:09,560 --> 00:10:10,560
+un señor
+
+323
+00:10:10,560 --> 00:10:11,560
+de 65 de años
+
+324
+00:10:11,560 --> 00:10:12,560
+que llevaba toda
+
+325
+00:10:12,560 --> 00:10:13,560
+a vida en esto
+
+326
+00:10:13,560 --> 00:10:14,560
+e cualquier usuario
+
+327
+00:10:14,560 --> 00:10:15,560
+que hacía algo má
+
+328
+00:10:15,560 --> 00:10:16,560
+de lo que le mandaba
+
+329
+00:10:16,560 --> 00:10:17,560
+le llamaba un usuario
+
+330
+00:10:17,560 --> 00:10:18,560
+intrépido.
+
+331
+00:10:18,560 --> 00:10:19,560
+Siempre me decía.
+
+332
+00:10:19,560 --> 00:10:20,560
+Las instrucciones
+
+333
+00:10:20,560 --> 00:10:21,560
+a la gente
+
+334
+00:10:21,560 --> 00:10:22,560
+hay que dárselas
+
+335
+00:10:22,560 --> 00:10:23,560
+muy precisas como
+
+336
+00:10:23,560 --> 00:10:24,560
+se fuera un ordenador.
+
+337
+00:10:24,560 --> 00:10:25,560
+Se aquí haces doble click,
+
+338
+00:10:25,560 --> 00:10:26,560
+te abre esto
+
+339
+00:10:26,560 --> 00:10:27,560
+e le das a este botón.
+
+340
+00:10:27,560 --> 00:10:28,560
+Non necesitas saber nada más.
+
+341
+00:10:28,560 --> 00:10:29,560
+Se hacían algo má
+
+342
+00:10:29,560 --> 00:10:30,560
+decías
+
+343
+00:10:30,560 --> 00:10:31,560
+usuarios intrépidos.
+
+344
+00:10:31,560 --> 00:10:32,560
+Editar
+
+345
+00:10:32,560 --> 00:10:34,560
+el código HTML
+
+346
+00:10:34,560 --> 00:10:35,560
+de las plantillas Django
+
+347
+00:10:35,560 --> 00:10:36,560
+también nos podia
+
+348
+00:10:36,560 --> 00:10:37,560
+suponer ciertos problemas.
+
+349
+00:10:37,560 --> 00:10:38,560
+Entonces,
+
+350
+00:10:38,560 --> 00:10:39,560
+bueno,
+
+351
+00:10:39,560 --> 00:10:40,560
+quísimos un pequeño hack
+
+352
+00:10:40,560 --> 00:10:42,560
+en el método
+
+353
+00:10:42,560 --> 00:10:44,560
+que tiene para leer
+
+354
+00:10:44,560 --> 00:10:45,560
+las plantillas
+
+355
+00:10:45,560 --> 00:10:46,560
+e para mostrarlas.
+
+356
+00:10:46,560 --> 00:10:47,560
+Entonces,
+
+357
+00:10:47,560 --> 00:10:48,560
+las plantillas las encriptamos,
+
+358
+00:10:48,560 --> 00:10:50,560
+intentamos desencriptarla.
+
+359
+00:10:50,560 --> 00:10:51,560
+Se funciona bien
+
+360
+00:10:51,560 --> 00:10:52,560
+es que es una plantilla
+
+361
+00:10:52,560 --> 00:10:53,560
+noestre
+
+362
+00:10:53,560 --> 00:10:54,560
+e xurro
+
+363
+00:10:54,560 --> 00:10:55,560
+hexadecimal
+
+364
+00:10:55,560 --> 00:10:56,560
+e simplemente
+
+365
+00:10:56,560 --> 00:10:57,560
+pues,
+
+366
+00:10:57,560 --> 00:10:58,560
+quando le da
+
+367
+00:10:58,560 --> 00:10:59,560
+el usuario no ve nada
+
+368
+00:10:59,560 --> 00:11:00,560
+e ni da un error
+
+369
+00:11:00,560 --> 00:11:01,560
+ni nada,
+
+370
+00:11:01,560 --> 00:11:02,560
+e no funciona.
+
+371
+00:11:06,560 --> 00:11:07,560
+O equipo
+
+372
+00:11:07,560 --> 00:11:09,560
+é rápido.
+
+373
+00:11:11,560 --> 00:11:12,560
+É mío,
+
+374
+00:11:12,560 --> 00:11:13,560
+é de organización,
+
+375
+00:11:13,560 --> 00:11:14,560
+pero é muy rápido.
+
+376
+00:11:14,560 --> 00:11:15,560
+E se ve.
+
+377
+00:11:15,560 --> 00:11:16,560
+Bueno,
+
+378
+00:11:16,560 --> 00:11:17,560
+a partir daí,
+
+379
+00:11:17,560 --> 00:11:18,560
+una vez que já sabíamos
+
+380
+00:11:18,560 --> 00:11:19,560
+o que queríamos hacer
+
+381
+00:11:19,560 --> 00:11:20,560
+e todo,
+
+382
+00:11:20,560 --> 00:11:21,560
+vaya,
+
+383
+00:11:21,560 --> 00:11:22,560
+me estropeo
+
+384
+00:11:22,560 --> 00:11:23,560
+a sorpresa.
+
+385
+00:11:23,560 --> 00:11:25,560
+Empezamos con os prototipos.
+
+386
+00:11:25,560 --> 00:11:26,560
+Bueno,
+
+387
+00:11:26,560 --> 00:11:27,560
+o primer prototipo
+
+388
+00:11:27,560 --> 00:11:28,560
+é muy rudimentario,
+
+389
+00:11:28,560 --> 00:11:29,560
+muy bonito,
+
+390
+00:11:29,560 --> 00:11:30,560
+compramos unha caja
+
+391
+00:11:30,560 --> 00:11:32,560
+a unha tienda de electrónica,
+
+392
+00:11:32,560 --> 00:11:33,560
+o abrimos,
+
+393
+00:11:33,560 --> 00:11:34,560
+o cerramos
+
+394
+00:11:34,560 --> 00:11:36,560
+con unha sierra de marquetería
+
+395
+00:11:36,560 --> 00:11:37,560
+destas que utilizábamos
+
+396
+00:11:37,560 --> 00:11:38,560
+en tecnología
+
+397
+00:11:38,560 --> 00:11:39,560
+en el instituto,
+
+398
+00:11:39,560 --> 00:11:40,560
+intentamos encajar
+
+399
+00:11:40,560 --> 00:11:41,560
+las piezas
+
+400
+00:11:41,560 --> 00:11:42,560
+donde pudimos
+
+401
+00:11:42,560 --> 00:11:43,560
+e descubrí
+
+402
+00:11:43,560 --> 00:11:44,560
+la silicona térmica,
+
+403
+00:11:44,560 --> 00:11:46,560
+que é o nosso gran amigo.
+
+404
+00:11:46,560 --> 00:11:47,560
+Entonces,
+
+405
+00:11:47,560 --> 00:11:48,560
+a partir daí,
+
+406
+00:11:48,560 --> 00:11:49,560
+máso menos e hice
+
+407
+00:11:49,560 --> 00:11:51,560
+éso que veis aí arriba.
+
+408
+00:11:51,560 --> 00:11:52,560
+E alguém nos dijo,
+
+409
+00:11:52,560 --> 00:11:53,560
+claro,
+
+410
+00:11:53,560 --> 00:11:55,560
+o operario
+
+411
+00:11:55,560 --> 00:11:56,560
+tiene que interactuar
+
+412
+00:11:56,560 --> 00:11:58,560
+con la máquina.
+
+413
+00:11:58,560 --> 00:12:00,560
+E dicemos,
+
+414
+00:12:00,560 --> 00:12:01,560
+le ponemos un display
+
+415
+00:12:01,560 --> 00:12:02,560
+de dos líneas,
+
+416
+00:12:02,560 --> 00:12:03,560
+cinco botones
+
+417
+00:12:03,560 --> 00:12:04,560
+e que o senhor
+
+418
+00:12:04,560 --> 00:12:05,560
+interactúe.
+
+419
+00:12:05,560 --> 00:12:06,560
+Bueno,
+
+420
+00:12:06,560 --> 00:12:08,560
+no tuvo mucho éxito.
+
+421
+00:12:08,560 --> 00:12:10,560
+O segundo prototipo,
+
+422
+00:12:10,560 --> 00:12:12,560
+ya lo veis un pouco desastroso
+
+423
+00:12:12,560 --> 00:12:13,560
+con súa silicona térmica,
+
+424
+00:12:13,560 --> 00:12:14,560
+súas cables e demás,
+
+425
+00:12:14,560 --> 00:12:15,560
+pero ao cerrarlo,
+
+426
+00:12:15,560 --> 00:12:16,560
+a verdade é que
+
+427
+00:12:16,560 --> 00:12:17,560
+era moi aparente,
+
+428
+00:12:17,560 --> 00:12:18,560
+e era
+
+429
+00:12:18,560 --> 00:12:19,560
+moi bonito
+
+430
+00:12:19,560 --> 00:12:20,560
+e até se veía
+
+431
+00:12:20,560 --> 00:12:21,560
+profesional.
+
+432
+00:12:21,560 --> 00:12:22,560
+Le pusimos
+
+433
+00:12:22,560 --> 00:12:24,560
+hasta un USB frontal,
+
+434
+00:12:24,560 --> 00:12:25,560
+porque estiva tornillado
+
+435
+00:12:25,560 --> 00:12:26,560
+en la máquina
+
+436
+00:12:26,560 --> 00:12:27,560
+contra la parte de atrás
+
+437
+00:12:27,560 --> 00:12:28,560
+que é de madera,
+
+438
+00:12:28,560 --> 00:12:29,560
+e então para que pudiesen
+
+439
+00:12:29,560 --> 00:12:30,560
+enxufar aí um pendrive,
+
+440
+00:12:30,560 --> 00:12:32,560
+para actualizar,
+
+441
+00:12:32,560 --> 00:12:33,560
+ler datos e demás.
+
+442
+00:12:33,560 --> 00:12:34,560
+E bueno,
+
+443
+00:12:34,560 --> 00:12:36,560
+nos quedó bastante bonito.
+
+444
+00:12:36,560 --> 00:12:38,560
+A Raspberry Pi
+
+445
+00:12:38,560 --> 00:12:39,560
+teme un serie de problemas
+
+446
+00:12:39,560 --> 00:12:40,560
+quando o utilizamos
+
+447
+00:12:40,560 --> 00:12:41,560
+Stangalon,
+
+448
+00:12:41,560 --> 00:12:42,560
+é uma máquina que está pensada
+
+449
+00:12:42,560 --> 00:12:44,560
+para estar sempre conectada a internet.
+
+450
+00:12:44,560 --> 00:12:45,560
+Então,
+
+451
+00:12:46,560 --> 00:12:47,560
+se não está conectada a internet
+
+452
+00:12:47,560 --> 00:12:48,560
+para empezar,
+
+453
+00:12:48,560 --> 00:12:49,560
+já não temos fecha e hora.
+
+454
+00:12:49,560 --> 00:12:50,560
+Temos a fecha e hora
+
+455
+00:12:50,560 --> 00:12:52,560
+da última vez que estuvo encendida.
+
+456
+00:12:52,560 --> 00:12:53,560
+Então é o relógio,
+
+457
+00:12:53,560 --> 00:12:54,560
+sigue contando,
+
+458
+00:12:54,560 --> 00:12:55,560
+pero não tem um relógio de tiempo real
+
+459
+00:12:55,560 --> 00:12:57,560
+com unha pila
+
+460
+00:12:57,560 --> 00:12:58,560
+que te diga
+
+461
+00:12:58,560 --> 00:12:59,560
+en que momento
+
+462
+00:12:59,560 --> 00:13:00,560
+do tempo vamos agora
+
+463
+00:13:00,560 --> 00:13:01,560
+e demás.
+
+464
+00:13:01,560 --> 00:13:02,560
+Quando estamos haciendo
+
+465
+00:13:02,560 --> 00:13:03,560
+um lojo
+
+466
+00:13:03,560 --> 00:13:04,560
+do dinheiro que tiene
+
+467
+00:13:04,560 --> 00:13:05,560
+uma máquina,
+
+468
+00:13:05,560 --> 00:13:06,560
+de quanto ha jugado,
+
+469
+00:13:06,560 --> 00:13:07,560
+de lo que sea,
+
+470
+00:13:07,560 --> 00:13:08,560
+é muito importante
+
+471
+00:13:08,560 --> 00:13:09,560
+que os datos se correspondan
+
+472
+00:13:09,560 --> 00:13:10,560
+com as marcas
+
+473
+00:13:10,560 --> 00:13:12,560
+de tempo correctas.
+
+474
+00:13:12,560 --> 00:13:14,560
+Tampoco traía conexión
+
+475
+00:13:14,560 --> 00:13:15,560
+Wi-Fi
+
+476
+00:13:15,560 --> 00:13:16,560
+e GPRS
+
+477
+00:13:16,560 --> 00:13:17,560
+ou 3G o similar,
+
+478
+00:13:17,560 --> 00:13:18,560
+pero o ssolvento
+
+479
+00:13:18,560 --> 00:13:19,560
+comprando
+
+480
+00:13:19,560 --> 00:13:21,560
+um pincho
+
+481
+00:13:21,560 --> 00:13:22,560
+Wi-Fi
+
+482
+00:13:22,560 --> 00:13:24,560
+ou um pincho 3G,
+
+483
+00:13:24,560 --> 00:13:26,560
+não traía porto RS232,
+
+484
+00:13:26,560 --> 00:13:28,560
+porque trae um porto serie,
+
+485
+00:13:28,560 --> 00:13:30,560
+pero trae um porto serie TTL
+
+486
+00:13:30,560 --> 00:13:32,560
+e não trae um porto serie RS232,
+
+487
+00:13:32,560 --> 00:13:34,560
+hay que convertirlo.
+
+488
+00:13:34,560 --> 00:13:36,560
+Tampoco traía ninguun led
+
+489
+00:13:36,560 --> 00:13:37,560
+para decirle cosas interesantes,
+
+490
+00:13:37,560 --> 00:13:38,560
+como estou leyendo a máquina,
+
+491
+00:13:38,560 --> 00:13:40,560
+estou transmitiendo ao servidor
+
+492
+00:13:40,560 --> 00:13:42,560
+ou ese tipo de cosas
+
+493
+00:13:42,560 --> 00:13:43,560
+e depois
+
+494
+00:13:43,560 --> 00:13:45,560
+as máquinas resulta que van
+
+495
+00:13:45,560 --> 00:13:47,560
+a 220 voltios de alterna
+
+496
+00:13:47,560 --> 00:13:49,560
+ou a 12 voltios en continua.
+
+497
+00:13:49,560 --> 00:13:50,560
+Então,
+
+498
+00:13:50,560 --> 00:13:52,560
+ou metíamos também
+
+499
+00:13:52,560 --> 00:13:53,560
+un adaptador dentro e demás,
+
+500
+00:13:53,560 --> 00:13:55,560
+ou metíamos un regulador de voltaje
+
+501
+00:13:55,560 --> 00:13:56,560
+que nos permitiese
+
+502
+00:13:56,560 --> 00:13:58,560
+hacer esa conversión.
+
+503
+00:14:00,560 --> 00:14:01,560
+Vale,
+
+504
+00:14:01,560 --> 00:14:02,560
+hasta aquí todo muy bien,
+
+505
+00:14:02,560 --> 00:14:03,560
+pero ora que ocurre?
+
+506
+00:14:03,560 --> 00:14:04,560
+Isto non es un data center
+
+507
+00:14:04,560 --> 00:14:05,560
+con size
+
+508
+00:14:05,560 --> 00:14:06,560
+e ese tipo de cosas
+
+509
+00:14:06,560 --> 00:14:07,560
+e un señor que se encargue
+
+510
+00:14:07,560 --> 00:14:09,560
+de apagar ordenadamente
+
+511
+00:14:09,560 --> 00:14:10,560
+a máquina,
+
+512
+00:14:10,560 --> 00:14:11,560
+normalmente las máquinas
+
+513
+00:14:11,560 --> 00:14:12,560
+que están en los bares
+
+514
+00:14:12,560 --> 00:14:14,560
+donde hay un camarero
+
+515
+00:14:14,560 --> 00:14:16,560
+al que le están pagando estupendamente
+
+516
+00:14:16,560 --> 00:14:17,560
+non le importa quedarse
+
+517
+00:14:17,560 --> 00:14:18,560
+unha hora más
+
+518
+00:14:18,560 --> 00:14:19,560
+una vez que ya ha fregado
+
+519
+00:14:19,560 --> 00:14:20,560
+e limpiado todo
+
+520
+00:14:20,560 --> 00:14:21,560
+para ir a la máquina
+
+521
+00:14:21,560 --> 00:14:22,560
+darle un botón
+
+522
+00:14:22,560 --> 00:14:23,560
+e esperar como sale
+
+523
+00:14:23,560 --> 00:14:24,560
+en el display
+
+524
+00:14:24,560 --> 00:14:25,560
+ahora puede apagar su ordenador.
+
+525
+00:14:25,560 --> 00:14:27,560
+Generalmente coge
+
+526
+00:14:27,560 --> 00:14:29,560
+ui, ya es la unha,
+
+527
+00:14:29,560 --> 00:14:30,560
+me voy,
+
+528
+00:14:30,560 --> 00:14:31,560
+tira de lanchufe
+
+529
+00:14:31,560 --> 00:14:32,560
+e a máquina se apaga.
+
+530
+00:14:32,560 --> 00:14:33,560
+Estupendo.
+
+531
+00:14:33,560 --> 00:14:34,560
+Pero estamos trabajando
+
+532
+00:14:34,560 --> 00:14:37,560
+con un sistema Linux
+
+533
+00:14:37,560 --> 00:14:39,560
+que tiene un planificador,
+
+534
+00:14:39,560 --> 00:14:40,560
+guarda los datos
+
+535
+00:14:40,560 --> 00:14:41,560
+cuándo ele da la gana
+
+536
+00:14:41,560 --> 00:14:42,560
+no cuándo nósotros
+
+537
+00:14:42,560 --> 00:14:43,560
+se lo decimos.
+
+538
+00:14:43,560 --> 00:14:44,560
+Entonces, claro,
+
+539
+00:14:44,560 --> 00:14:46,560
+estas cosas le suelen sentar mal.
+
+540
+00:14:46,560 --> 00:14:47,560
+Depois,
+
+541
+00:14:47,560 --> 00:14:48,560
+el sistema de ficheros X,
+
+542
+00:14:48,560 --> 00:14:50,560
+TFS4,
+
+543
+00:14:50,560 --> 00:14:51,560
+no hay problema,
+
+544
+00:14:51,560 --> 00:14:52,560
+tú lo podes apagar a martillo
+
+545
+00:14:52,560 --> 00:14:54,560
+que es transaccional,
+
+546
+00:14:54,560 --> 00:14:56,560
+te recupera las transacciones,
+
+547
+00:14:56,560 --> 00:14:58,560
+no pasa nunca nada.
+
+548
+00:14:58,560 --> 00:14:59,560
+Pues sí pasa.
+
+549
+00:14:59,560 --> 00:15:00,560
+Quando a máquina
+
+550
+00:15:00,560 --> 00:15:01,560
+lleva un mes encendida
+
+551
+00:15:01,560 --> 00:15:02,560
+ya no se recupera más.
+
+552
+00:15:02,560 --> 00:15:04,560
+Quando arranca da un kernel panic
+
+553
+00:15:04,560 --> 00:15:05,560
+e esa máquina
+
+554
+00:15:05,560 --> 00:15:07,560
+no vuelve a arrancar.
+
+555
+00:15:07,560 --> 00:15:08,560
+Entonces,
+
+556
+00:15:08,560 --> 00:15:10,560
+como podemos solventar esto?
+
+557
+00:15:12,560 --> 00:15:14,560
+En la siguiente transparencia.
+
+558
+00:15:14,560 --> 00:15:15,560
+De momento
+
+559
+00:15:15,560 --> 00:15:17,560
+os voy a mostrar
+
+560
+00:15:17,560 --> 00:15:19,560
+todo lo que le hemos añadido
+
+561
+00:15:19,560 --> 00:15:21,560
+a nuestro sistema
+
+562
+00:15:21,560 --> 00:15:23,560
+o que cosas tiene que tener.
+
+563
+00:15:23,560 --> 00:15:24,560
+Al final acabamos desarrollando
+
+564
+00:15:24,560 --> 00:15:25,560
+una placa propia
+
+565
+00:15:25,560 --> 00:15:27,560
+para que incluye se
+
+566
+00:15:27,560 --> 00:15:28,560
+LRTC,
+
+567
+00:15:28,560 --> 00:15:30,560
+o regulador de voltaje
+
+568
+00:15:30,560 --> 00:15:32,560
+e incluye se
+
+569
+00:15:32,560 --> 00:15:33,560
+os LEDs
+
+570
+00:15:33,560 --> 00:15:35,560
+e todo o que necesitábamos.
+
+571
+00:15:35,560 --> 00:15:36,560
+Además,
+
+572
+00:15:36,560 --> 00:15:38,560
+que con un solo conector
+
+573
+00:15:38,560 --> 00:15:39,560
+hacíamos un cable
+
+574
+00:15:39,560 --> 00:15:41,560
+que nos iba directo a la máquina
+
+575
+00:15:41,560 --> 00:15:43,560
+e ya la hacía funcionar.
+
+576
+00:15:43,560 --> 00:15:45,560
+Hasta aquí,
+
+577
+00:15:45,560 --> 00:15:46,560
+todo perfeito.
+
+578
+00:15:46,560 --> 00:15:47,560
+Nos queda un tema
+
+579
+00:15:47,560 --> 00:15:49,560
+el de andar apagando a máquina
+
+580
+00:15:49,560 --> 00:15:51,560
+e que todo funcione.
+
+581
+00:15:55,560 --> 00:15:56,560
+Vale.
+
+582
+00:15:56,560 --> 00:15:57,560
+Entonces,
+
+583
+00:15:57,560 --> 00:15:58,560
+que hacemos?
+
+584
+00:15:58,560 --> 00:16:00,560
+Como podemos solventar
+
+585
+00:16:00,560 --> 00:16:02,560
+que al apagar a máquina funcione?
+
+586
+00:16:02,560 --> 00:16:04,560
+Pues miramos todo tipo de soluciones.
+
+587
+00:16:04,560 --> 00:16:05,560
+Bueno,
+
+588
+00:16:05,560 --> 00:16:06,560
+hay unas mini pilas
+
+589
+00:16:06,560 --> 00:16:07,560
+que sirven de batería.
+
+590
+00:16:07,560 --> 00:16:08,560
+Entonces,
+
+591
+00:16:08,560 --> 00:16:09,560
+se las ponemos
+
+592
+00:16:09,560 --> 00:16:10,560
+e le enviamos un señal
+
+593
+00:16:10,560 --> 00:16:11,560
+al sistema operativo
+
+594
+00:16:11,560 --> 00:16:12,560
+cuando se corte la corriente
+
+595
+00:16:12,560 --> 00:16:13,560
+e entonces así
+
+596
+00:16:13,560 --> 00:16:15,560
+hacemos unos apagados ordenados
+
+597
+00:16:15,560 --> 00:16:17,560
+e demás.
+
+598
+00:16:17,560 --> 00:16:18,560
+Vamos hacer esas pruebas.
+
+599
+00:16:18,560 --> 00:16:19,560
+Desarrollamos
+
+600
+00:16:19,560 --> 00:16:21,560
+como já teníamos
+
+601
+00:16:21,560 --> 00:16:23,560
+unas Raspberry Pi
+
+602
+00:16:23,560 --> 00:16:24,560
+que sabíamos trabajar con ellas,
+
+603
+00:16:24,560 --> 00:16:25,560
+sabíamos trabajar
+
+604
+00:16:25,560 --> 00:16:27,560
+con os GPOS e demás,
+
+605
+00:16:27,560 --> 00:16:28,560
+decimos,
+
+606
+00:16:28,560 --> 00:16:29,560
+o que hacemos?
+
+607
+00:16:29,560 --> 00:16:30,560
+Otro clavo.
+
+608
+00:16:30,560 --> 00:16:31,560
+Montamos outro sistema máx
+
+609
+00:16:31,560 --> 00:16:32,560
+con Python,
+
+610
+00:16:32,560 --> 00:16:33,560
+Raspberry
+
+611
+00:16:33,560 --> 00:16:36,560
+e Linux.
+
+612
+00:16:36,560 --> 00:16:38,560
+Vamos a montar un sistema
+
+613
+00:16:38,560 --> 00:16:40,560
+que nos permita testear las placas.
+
+614
+00:16:40,560 --> 00:16:41,560
+Entonces,
+
+615
+00:16:41,560 --> 00:16:42,560
+o que tenemos a la derecha
+
+616
+00:16:42,560 --> 00:16:43,560
+es nuestro mini sistema
+
+617
+00:16:43,560 --> 00:16:45,560
+que apaga e enciende
+
+618
+00:16:45,560 --> 00:16:47,560
+las Raspberry Pi
+
+619
+00:16:47,560 --> 00:16:48,560
+das veces que queramos.
+
+620
+00:16:48,560 --> 00:16:49,560
+Entonces,
+
+621
+00:16:49,560 --> 00:16:50,560
+a partir de ahí,
+
+622
+00:16:50,560 --> 00:16:52,560
+decidimos hacerle dos pruebas.
+
+623
+00:16:52,560 --> 00:16:53,560
+Una que le llamamos
+
+624
+00:16:53,560 --> 00:16:55,560
+el test de integridad de datos
+
+625
+00:16:55,560 --> 00:16:57,560
+donde apagábamos
+
+626
+00:16:57,560 --> 00:17:00,560
+la máquina
+
+627
+00:17:00,560 --> 00:17:02,560
+entre 10 e 70 veces
+
+628
+00:17:02,560 --> 00:17:03,560
+de forma aleatoria
+
+629
+00:17:03,560 --> 00:17:05,560
+durante seis horas.
+
+630
+00:17:05,560 --> 00:17:06,560
+Por cierto,
+
+631
+00:17:06,560 --> 00:17:08,560
+fui antes a una charla
+
+632
+00:17:08,560 --> 00:17:10,560
+muy interesante
+
+633
+00:17:10,560 --> 00:17:11,560
+que hablaba de
+
+634
+00:17:11,560 --> 00:17:13,560
+cómo obtener la temperatura
+
+635
+00:17:13,560 --> 00:17:14,560
+a través de una Raspberry Pi
+
+636
+00:17:14,560 --> 00:17:15,560
+todo,
+
+637
+00:17:15,560 --> 00:17:16,560
+e resulta que ya hay una librería
+
+638
+00:17:16,560 --> 00:17:17,560
+donde le llamo
+
+639
+00:17:17,560 --> 00:17:19,560
+e4 igual a enchufe e4,
+
+640
+00:17:19,560 --> 00:17:21,560
+normalmente abierto igual a false,
+
+641
+00:17:21,560 --> 00:17:22,560
+resulta que eso ya está fabricado,
+
+642
+00:17:22,560 --> 00:17:24,560
+no hacía falta que yo hiciera
+
+643
+00:17:24,560 --> 00:17:25,560
+mi librería para controlar
+
+644
+00:17:25,560 --> 00:17:26,560
+los relés.
+
+645
+00:17:26,560 --> 00:17:27,560
+Pero,
+
+646
+00:17:27,560 --> 00:17:28,560
+como no lo sabía,
+
+647
+00:17:28,560 --> 00:17:29,560
+pues,
+
+648
+00:17:29,560 --> 00:17:30,560
+la hice.
+
+649
+00:17:30,560 --> 00:17:31,560
+E,
+
+650
+00:17:31,560 --> 00:17:32,560
+entonces,
+
+651
+00:17:32,560 --> 00:17:33,560
+unha contribución
+
+652
+00:17:33,560 --> 00:17:35,560
+máx al sistema.
+
+653
+00:17:35,560 --> 00:17:37,560
+Entonces,
+
+654
+00:17:37,560 --> 00:17:38,560
+dejábamos las Raspberry
+
+655
+00:17:38,560 --> 00:17:39,560
+funcionando,
+
+656
+00:17:39,560 --> 00:17:40,560
+podíamos conectarle
+
+657
+00:17:40,560 --> 00:17:41,560
+hasta 4,
+
+658
+00:17:41,560 --> 00:17:43,560
+porque teníamos 4 relés
+
+659
+00:17:43,560 --> 00:17:44,560
+e le metíamos caña.
+
+660
+00:17:44,560 --> 00:17:45,560
+De pues, venga,
+
+661
+00:17:45,560 --> 00:17:46,560
+apágate
+
+662
+00:17:46,560 --> 00:17:48,560
+a los 10 minutos,
+
+663
+00:17:48,560 --> 00:17:49,560
+apágate a los 20,
+
+664
+00:17:49,560 --> 00:17:50,560
+pues iba generando datos
+
+665
+00:17:50,560 --> 00:17:51,560
+e ao final veíamos
+
+666
+00:17:51,560 --> 00:17:52,560
+que pasaba.
+
+667
+00:17:52,560 --> 00:17:53,560
+Lo de la pila,
+
+668
+00:17:53,560 --> 00:17:54,560
+mal,
+
+669
+00:17:54,560 --> 00:17:55,560
+no funcionaba.
+
+670
+00:17:55,560 --> 00:17:56,560
+E depois
+
+671
+00:17:56,560 --> 00:17:58,560
+le hicimos también un test de estrés,
+
+672
+00:17:58,560 --> 00:17:59,560
+que resulta
+
+673
+00:17:59,560 --> 00:18:00,560
+que, como o projectiva,
+
+674
+00:18:00,560 --> 00:18:02,560
+bien incorporaron con nosotros
+
+675
+00:18:02,560 --> 00:18:03,560
+alguien que sabía de eléctronica,
+
+676
+00:18:03,560 --> 00:18:05,560
+del que aprendí mucho,
+
+677
+00:18:05,560 --> 00:18:06,560
+e decía,
+
+678
+00:18:06,560 --> 00:18:07,560
+los componentes eléctronicos
+
+679
+00:18:07,560 --> 00:18:09,560
+necesitan un período de descarga.
+
+680
+00:18:09,560 --> 00:18:10,560
+Cómo?
+
+681
+00:18:10,560 --> 00:18:11,560
+Un período de sí.
+
+682
+00:18:11,560 --> 00:18:12,560
+Resulta que,
+
+683
+00:18:12,560 --> 00:18:13,560
+se tú andas encendiendo
+
+684
+00:18:13,560 --> 00:18:14,560
+e apagando continuamente
+
+685
+00:18:14,560 --> 00:18:15,560
+un sistema,
+
+686
+00:18:15,560 --> 00:18:16,560
+puede ser que lo lleve mal.
+
+687
+00:18:16,560 --> 00:18:17,560
+E, bueno,
+
+688
+00:18:17,560 --> 00:18:18,560
+e, entonces,
+
+689
+00:18:18,560 --> 00:18:19,560
+que hacemos?
+
+690
+00:18:19,560 --> 00:18:20,560
+Vamos hacer algo
+
+691
+00:18:20,560 --> 00:18:21,560
+que nos lo teste
+
+692
+00:18:21,560 --> 00:18:23,560
+apagándolo de manera aleatoria,
+
+693
+00:18:23,560 --> 00:18:25,560
+entre uní 10 segundos,
+
+694
+00:18:25,560 --> 00:18:26,560
+que esté continuamente encendendo
+
+695
+00:18:26,560 --> 00:18:27,560
+e apagándolo.
+
+696
+00:18:27,560 --> 00:18:28,560
+Porque que ocurre?
+
+697
+00:18:28,560 --> 00:18:29,560
+La máquina nonciende,
+
+698
+00:18:29,560 --> 00:18:30,560
+el tío la vuelve a enchufar,
+
+699
+00:18:30,560 --> 00:18:31,560
+la apaga,
+
+700
+00:18:31,560 --> 00:18:32,560
+la enciende,
+
+701
+00:18:32,560 --> 00:18:33,560
+el técnico que la está testeando,
+
+702
+00:18:33,560 --> 00:18:34,560
+pues, bueno,
+
+703
+00:18:34,560 --> 00:18:35,560
+es su trabajo,
+
+704
+00:18:35,560 --> 00:18:36,560
+o el señor del bar,
+
+705
+00:18:36,560 --> 00:18:37,560
+si ve que
+
+706
+00:18:37,560 --> 00:18:39,560
+la máquina no funciona,
+
+707
+00:18:39,560 --> 00:18:40,560
+le tira del enxufe,
+
+708
+00:18:40,560 --> 00:18:41,560
+la vuelve a enchufar,
+
+709
+00:18:41,560 --> 00:18:42,560
+que si salta al automático,
+
+710
+00:18:42,560 --> 00:18:43,560
+que si salta al lava,
+
+711
+00:18:43,560 --> 00:18:44,560
+bajillas e demás,
+
+712
+00:18:44,560 --> 00:18:45,560
+e se pasaba
+
+713
+00:18:45,560 --> 00:18:46,560
+muchas veces seguidas,
+
+714
+00:18:46,560 --> 00:18:47,560
+resulta que las placas
+
+715
+00:18:47,560 --> 00:18:49,560
+se podían bloquear.
+
+716
+00:18:49,560 --> 00:18:50,560
+Entonces, pues, bueno,
+
+717
+00:18:50,560 --> 00:18:51,560
+hicimos el test de estrés
+
+718
+00:18:51,560 --> 00:18:53,560
+para andar encendiendo e,
+
+719
+00:18:53,560 --> 00:18:54,560
+e, e apagando
+
+720
+00:18:54,560 --> 00:18:55,560
+nuestro shield
+
+721
+00:18:55,560 --> 00:18:56,560
+para ver se realmente
+
+722
+00:18:56,560 --> 00:18:58,560
+soportaba ese,
+
+723
+00:18:58,560 --> 00:19:00,560
+ese estrés.
+
+724
+00:19:01,560 --> 00:19:02,560
+Vale.
+
+725
+00:19:02,560 --> 00:19:03,560
+Cómo solucionamos lo de la corriente?
+
+726
+00:19:03,560 --> 00:19:04,560
+Pues, compaito,
+
+727
+00:19:04,560 --> 00:19:05,560
+no?
+
+728
+00:19:05,560 --> 00:19:06,560
+Se es lo que sabemos,
+
+729
+00:19:06,560 --> 00:19:07,560
+para que vamos aprender
+
+730
+00:19:07,560 --> 00:19:09,560
+outra cosa.
+
+731
+00:19:09,560 --> 00:19:10,560
+Entonces,
+
+732
+00:19:10,560 --> 00:19:11,560
+que hicimos?
+
+733
+00:19:11,560 --> 00:19:13,560
+Pues, vamos hacer un módulo,
+
+734
+00:19:13,560 --> 00:19:14,560
+que, además,
+
+735
+00:19:14,560 --> 00:19:15,560
+le vamos a poner el,
+
+736
+00:19:15,560 --> 00:19:16,560
+el nombre en inglés,
+
+737
+00:19:16,560 --> 00:19:17,560
+por si esto en el futuro,
+
+738
+00:19:17,560 --> 00:19:18,560
+hasta se vende fuera de España,
+
+739
+00:19:18,560 --> 00:19:19,560
+e le llamamos
+
+740
+00:19:19,560 --> 00:19:22,560
+data saver HD,
+
+741
+00:19:22,560 --> 00:19:24,560
+por, o alta calidad,
+
+742
+00:19:24,560 --> 00:19:26,560
+o, o, o, no sé,
+
+743
+00:19:26,560 --> 00:19:27,560
+disco duro.
+
+744
+00:19:27,560 --> 00:19:28,560
+Bueno, pues, venga, va,
+
+745
+00:19:28,560 --> 00:19:29,560
+le llamamos así.
+
+746
+00:19:29,560 --> 00:19:30,560
+Perfecto.
+
+747
+00:19:30,560 --> 00:19:31,560
+Entonces, esto que va a hacer?
+
+748
+00:19:31,560 --> 00:19:33,560
+Va a controlar todo el disco?
+
+749
+00:19:33,560 --> 00:19:34,560
+Entonces, utilizamos,
+
+750
+00:19:34,560 --> 00:19:35,560
+que sabemos?
+
+751
+00:19:35,560 --> 00:19:36,560
+Que sabemos?
+
+752
+00:19:36,560 --> 00:19:37,560
+Que sabemos?
+
+753
+00:19:37,560 --> 00:19:38,560
+Sabemos formatear,
+
+754
+00:19:38,560 --> 00:19:39,560
+sabemos montar particiones
+
+755
+00:19:39,560 --> 00:19:40,560
+de solo lectura,
+
+756
+00:19:40,560 --> 00:19:41,560
+sabemos montar particiones
+
+757
+00:19:41,560 --> 00:19:42,560
+de lectura e escritura,
+
+758
+00:19:42,560 --> 00:19:44,560
+sabemos copiar datos con RXINQ,
+
+759
+00:19:44,560 --> 00:19:46,560
+sabemos hacer un montón de cosas.
+
+760
+00:19:46,560 --> 00:19:47,560
+Genial.
+
+761
+00:19:47,560 --> 00:19:48,560
+Pues, entonces,
+
+762
+00:19:48,560 --> 00:19:49,560
+vamos hacerle como una especie
+
+763
+00:19:49,560 --> 00:19:50,560
+de, de brapper,
+
+764
+00:19:50,560 --> 00:19:52,560
+que nos permita hacer esto
+
+765
+00:19:52,560 --> 00:19:53,560
+e que lo haga el, el sistema.
+
+766
+00:19:53,560 --> 00:19:54,560
+Entonces,
+
+767
+00:19:54,560 --> 00:19:55,560
+básicamente,
+
+768
+00:19:55,560 --> 00:19:56,560
+convertimos el sistema
+
+769
+00:19:56,560 --> 00:19:58,560
+en un sistema de solo lectura.
+
+770
+00:19:59,560 --> 00:20:01,560
+E, al sistema de solo lectura,
+
+771
+00:20:02,560 --> 00:20:03,560
+le añadimos un par de particiones
+
+772
+00:20:03,560 --> 00:20:05,560
+de lectura e escritura.
+
+773
+00:20:05,560 --> 00:20:06,560
+De tal forma que
+
+774
+00:20:06,560 --> 00:20:07,560
+o sistema,
+
+775
+00:20:07,560 --> 00:20:08,560
+quando arranca,
+
+776
+00:20:08,560 --> 00:20:09,560
+os,
+
+777
+00:20:09,560 --> 00:20:10,560
+os datos principales
+
+778
+00:20:10,560 --> 00:20:11,560
+os tiene sempre
+
+779
+00:20:11,560 --> 00:20:12,560
+na partición de solo lectura,
+
+780
+00:20:12,560 --> 00:20:13,560
+que le va a dar igual,
+
+781
+00:20:13,560 --> 00:20:14,560
+que le cortemos la luz,
+
+782
+00:20:14,560 --> 00:20:15,560
+las veces que queramos,
+
+783
+00:20:15,560 --> 00:20:17,560
+que va a funcionar sempre.
+
+784
+00:20:17,560 --> 00:20:18,560
+De hecho,
+
+785
+00:20:18,560 --> 00:20:19,560
+hay placas que llevan
+
+786
+00:20:19,560 --> 00:20:20,560
+ahora mismo
+
+787
+00:20:20,560 --> 00:20:21,560
+unos tres años
+
+788
+00:20:21,560 --> 00:20:23,560
+en las máquinas
+
+789
+00:20:23,560 --> 00:20:25,560
+y dos años en autobuses,
+
+790
+00:20:25,560 --> 00:20:27,560
+que depois os contaré
+
+791
+00:20:27,560 --> 00:20:28,560
+que reciclamos el proyecto,
+
+792
+00:20:28,560 --> 00:20:29,560
+también, para unha,
+
+793
+00:20:29,560 --> 00:20:31,560
+para unha empresa de autobuses.
+
+794
+00:20:31,560 --> 00:20:32,560
+E,
+
+795
+00:20:32,560 --> 00:20:33,560
+e esas placas,
+
+796
+00:20:33,560 --> 00:20:34,560
+pues,
+
+797
+00:20:34,560 --> 00:20:35,560
+están funcionando
+
+798
+00:20:35,560 --> 00:20:36,560
+e non os dieron ningún problema.
+
+799
+00:20:36,560 --> 00:20:37,560
+La placa arranca
+
+800
+00:20:37,560 --> 00:20:38,560
+en la partición de solo lectura.
+
+801
+00:20:39,560 --> 00:20:40,560
+Los datos los tenemos
+
+802
+00:20:40,560 --> 00:20:41,560
+en una partición
+
+803
+00:20:41,560 --> 00:20:42,560
+que convertimos
+
+804
+00:20:42,560 --> 00:20:43,560
+de solo lectura
+
+805
+00:20:43,560 --> 00:20:44,560
+a lectura e escritura.
+
+806
+00:20:45,560 --> 00:20:46,560
+Leemos cada cierto tiempo,
+
+807
+00:20:46,560 --> 00:20:47,560
+cuando leemos,
+
+808
+00:20:47,560 --> 00:20:48,560
+cogemos la primera,
+
+809
+00:20:48,560 --> 00:20:49,560
+grabamos en la primera.
+
+810
+00:20:50,560 --> 00:20:51,560
+Una vez que conseguimos
+
+811
+00:20:51,560 --> 00:20:52,560
+grabar en la primera,
+
+812
+00:20:52,560 --> 00:20:53,560
+abrimos la segunda
+
+813
+00:20:53,560 --> 00:20:54,560
+e grabamos en la segunda.
+
+814
+00:20:55,560 --> 00:20:56,560
+De tal forma que caiga
+
+815
+00:20:56,560 --> 00:20:57,560
+cuando caiga el sistema,
+
+816
+00:20:57,560 --> 00:20:58,560
+los datos están sempre
+
+817
+00:20:58,560 --> 00:20:59,560
+de manera
+
+818
+00:20:59,560 --> 00:21:01,560
+correcta,
+
+819
+00:21:01,560 --> 00:21:02,560
+o en la partición data 0
+
+820
+00:21:02,560 --> 00:21:04,560
+o en la partición data 1.
+
+821
+00:21:04,560 --> 00:21:05,560
+O sistema cada cierto tiempo
+
+822
+00:21:05,560 --> 00:21:06,560
+hace comprobaciones,
+
+823
+00:21:06,560 --> 00:21:07,560
+hace un R-Sync
+
+824
+00:21:07,560 --> 00:21:08,560
+de las dos particiones,
+
+825
+00:21:08,560 --> 00:21:09,560
+que, ademas como son iguales,
+
+826
+00:21:09,560 --> 00:21:10,560
+má muy rápido
+
+827
+00:21:10,560 --> 00:21:11,560
+e ademas,
+
+828
+00:21:11,560 --> 00:21:12,560
+hace un FSCK
+
+829
+00:21:12,560 --> 00:21:13,560
+del sistema
+
+830
+00:21:13,560 --> 00:21:14,560
+cada cierto tiempo
+
+831
+00:21:14,560 --> 00:21:15,560
+para comprobar
+
+832
+00:21:15,560 --> 00:21:16,560
+la integridad de los datos.
+
+833
+00:21:17,560 --> 00:21:18,560
+Entonces, pues, bueno,
+
+834
+00:21:18,560 --> 00:21:19,560
+de una forma sencilla
+
+835
+00:21:19,560 --> 00:21:20,560
+con Python
+
+836
+00:21:20,560 --> 00:21:21,560
+e sin complicarnos,
+
+837
+00:21:23,560 --> 00:21:24,560
+resolvimos el problema
+
+838
+00:21:24,560 --> 00:21:25,560
+de que,
+
+839
+00:21:25,560 --> 00:21:26,560
+se tiramos
+
+840
+00:21:26,560 --> 00:21:27,560
+del enxufe de la máquina,
+
+841
+00:21:27,560 --> 00:21:29,560
+pues, no perdamos
+
+842
+00:21:29,560 --> 00:21:31,560
+nuestros datos.
+
+843
+00:21:35,560 --> 00:21:36,560
+Bueno,
+
+844
+00:21:36,560 --> 00:21:37,560
+a partir daqui,
+
+845
+00:21:37,560 --> 00:21:38,560
+había que interactuar
+
+846
+00:21:38,560 --> 00:21:39,560
+con a placa,
+
+847
+00:21:39,560 --> 00:21:40,560
+pues, había que decirle
+
+848
+00:21:40,560 --> 00:21:42,560
+que tipo de máquina era
+
+849
+00:21:42,560 --> 00:21:43,560
+e alguna serie de cosas.
+
+850
+00:21:43,560 --> 00:21:44,560
+Entonces,
+
+851
+00:21:44,560 --> 00:21:45,560
+a mí,
+
+852
+00:21:45,560 --> 00:21:46,560
+o primero que se mocurrió,
+
+853
+00:21:46,560 --> 00:21:47,560
+dije,
+
+854
+00:21:47,560 --> 00:21:48,560
+joder, le haré un interfaz
+
+855
+00:21:48,560 --> 00:21:49,560
+de tipo texto.
+
+856
+00:21:49,560 --> 00:21:50,560
+Se supone que es un técnico,
+
+857
+00:21:50,560 --> 00:21:52,560
+llega con su ordenador
+
+858
+00:21:52,560 --> 00:21:53,560
+e solamente le tiene que dar
+
+859
+00:21:53,560 --> 00:21:55,560
+a las opciones correspondientes.
+
+860
+00:21:55,560 --> 00:21:56,560
+Pues, opción 1,
+
+861
+00:21:56,560 --> 00:21:57,560
+visualizar datos de la placa.
+
+862
+00:21:57,560 --> 00:21:58,560
+Opción 2,
+
+863
+00:21:58,560 --> 00:21:59,560
+visualizar últimos logs,
+
+864
+00:21:59,560 --> 00:22:00,560
+comprobar conexión
+
+865
+00:22:00,560 --> 00:22:01,560
+del servidor,
+
+866
+00:22:01,560 --> 00:22:02,560
+muy fácil.
+
+867
+00:22:02,560 --> 00:22:03,560
+Solamente,
+
+868
+00:22:03,560 --> 00:22:04,560
+hay que escribir números
+
+869
+00:22:04,560 --> 00:22:05,560
+e darle a Enter.
+
+870
+00:22:05,560 --> 00:22:06,560
+Pues, no,
+
+871
+00:22:07,560 --> 00:22:08,560
+no triunfo.
+
+872
+00:22:08,560 --> 00:22:09,560
+Resulta que
+
+873
+00:22:11,560 --> 00:22:12,560
+había que hacer algo
+
+874
+00:22:12,560 --> 00:22:13,560
+que fuera máis bonito,
+
+875
+00:22:13,560 --> 00:22:14,560
+que fuera máis visual
+
+876
+00:22:15,560 --> 00:22:16,560
+e demás.
+
+877
+00:22:16,560 --> 00:22:17,560
+Entonces,
+
+878
+00:22:17,560 --> 00:22:18,560
+qué máis se hacer?
+
+879
+00:22:18,560 --> 00:22:19,560
+Joder,
+
+880
+00:22:19,560 --> 00:22:20,560
+se hacer algo en Django.
+
+881
+00:22:20,560 --> 00:22:21,560
+Pues, venga,
+
+882
+00:22:21,560 --> 00:22:22,560
+le voy a hacer un interfaz web.
+
+883
+00:22:22,560 --> 00:22:23,560
+Cojo la RASBRIP,
+
+884
+00:22:24,560 --> 00:22:25,560
+le instalo un servidor
+
+885
+00:22:25,560 --> 00:22:26,560
+Django
+
+886
+00:22:26,560 --> 00:22:28,560
+e es que sirva
+
+887
+00:22:28,560 --> 00:22:29,560
+de frontends
+
+888
+00:22:30,560 --> 00:22:31,560
+para hacer las cosas
+
+889
+00:22:31,560 --> 00:22:32,560
+que tenemos que hacer.
+
+890
+00:22:32,560 --> 00:22:33,560
+Vale,
+
+891
+00:22:33,560 --> 00:22:34,560
+perfecto.
+
+892
+00:22:35,560 --> 00:22:36,560
+Cómo hacemos que
+
+893
+00:22:36,560 --> 00:22:37,560
+o operario se conecte
+
+894
+00:22:37,560 --> 00:22:38,560
+a la máquina?
+
+895
+00:22:38,560 --> 00:22:39,560
+Muy fácil,
+
+896
+00:22:39,560 --> 00:22:40,560
+como os routers,
+
+897
+00:22:40,560 --> 00:22:41,560
+que son máis o menos,
+
+898
+00:22:41,560 --> 00:22:42,560
+todo mundo lo sabe hacer.
+
+899
+00:22:42,560 --> 00:22:43,560
+Sabe que,
+
+900
+00:22:43,560 --> 00:22:44,560
+quando o router trae
+
+901
+00:22:44,560 --> 00:22:45,560
+unha dirección IP unica,
+
+902
+00:22:45,560 --> 00:22:46,560
+al encenderlo,
+
+903
+00:22:46,560 --> 00:22:47,560
+coge su portátil,
+
+904
+00:22:47,560 --> 00:22:48,560
+la pincha
+
+905
+00:22:48,560 --> 00:22:49,560
+e la primera configuración
+
+906
+00:22:49,560 --> 00:22:50,560
+que le hace,
+
+907
+00:22:50,560 --> 00:22:51,560
+pues, como sempre,
+
+908
+00:22:51,560 --> 00:22:52,560
+va a tener la IP 10.0.0.2.2.50,
+
+909
+00:22:52,560 --> 00:22:53,560
+pues lo conecta
+
+910
+00:22:53,560 --> 00:22:55,560
+e automáticamente le sale
+
+911
+00:22:55,560 --> 00:22:56,560
+o menu
+
+912
+00:22:56,560 --> 00:22:58,560
+con las diferentes opciones
+
+913
+00:22:58,560 --> 00:22:59,560
+e demás.
+
+914
+00:23:11,560 --> 00:23:12,560
+Vale,
+
+915
+00:23:12,560 --> 00:23:13,560
+a partir de ahí
+
+916
+00:23:13,560 --> 00:23:15,560
+llegaba el señor técnico
+
+917
+00:23:15,560 --> 00:23:16,560
+al bar
+
+918
+00:23:16,560 --> 00:23:18,560
+e es que no va llevar un portátil.
+
+919
+00:23:18,560 --> 00:23:19,560
+Bueno,
+
+920
+00:23:19,560 --> 00:23:20,560
+pues,
+
+921
+00:23:20,560 --> 00:23:21,560
+que hacemos?
+
+922
+00:23:21,560 --> 00:23:22,560
+No,
+
+923
+00:23:22,560 --> 00:23:23,560
+nos bala EU
+
+924
+00:23:23,560 --> 00:23:24,560
+para recaudar,
+
+925
+00:23:25,560 --> 00:23:26,560
+basando en Windows
+
+926
+00:23:27,560 --> 00:23:28,560
+TO
+
+927
+00:23:28,560 --> 00:23:29,560
+que vendió un fabricante.
+
+928
+00:23:29,560 --> 00:23:30,560
+Non podías hacer que...
+
+929
+00:23:30,560 --> 00:23:31,560
+Non.
+
+930
+00:23:31,560 --> 00:23:32,560
+Pero
+
+931
+00:23:33,560 --> 00:23:35,560
+a que todos los operarios
+
+932
+00:23:35,560 --> 00:23:36,560
+tenen móvil.
+
+933
+00:23:36,560 --> 00:23:37,560
+Sim,
+
+934
+00:23:37,560 --> 00:23:38,560
+pues,
+
+935
+00:23:38,560 --> 00:23:39,560
+vengan.
+
+936
+00:23:39,560 --> 00:23:40,560
+Entonces,
+
+937
+00:23:40,560 --> 00:23:41,560
+hacemos unha cosa,
+
+938
+00:23:41,560 --> 00:23:42,560
+vamos a utilizar
+
+939
+00:23:42,560 --> 00:23:43,560
+hostpd
+
+940
+00:23:43,560 --> 00:23:44,560
+idnsmerc
+
+941
+00:23:44,560 --> 00:23:45,560
+dentro de
+
+942
+00:23:46,560 --> 00:23:47,560
+linus,
+
+943
+00:23:47,560 --> 00:23:48,560
+recordad que
+
+944
+00:23:48,560 --> 00:23:49,560
+era unha de las coisas
+
+945
+00:23:49,560 --> 00:23:50,560
+que sabía,
+
+946
+00:23:50,560 --> 00:23:51,560
+sabían dar con los linus,
+
+947
+00:23:51,560 --> 00:23:56,020
+Xemplo, despoxel operador que le llame como quiera, que aparece lo pude configurar con el cable
+
+948
+00:23:56,020 --> 00:24:01,520
+e o operario llega, le dá a buscar wifi, aparece esa wifi, donde en todas as máquinas va a tener
+
+949
+00:24:01,520 --> 00:24:07,780
+la misma clave, se conecta e ya automáticamente, pues le pode abrir de XIP e pode interactuar
+
+950
+00:24:07,780 --> 00:24:10,680
+con el sistema.
+
+951
+00:24:10,680 --> 00:24:16,520
+Pois ya sea, en estos ejemplos que tengo aquí, pues está leyendo una máquina metiéndole
+
+952
+00:24:16,520 --> 00:24:22,520
+el número de monedas para que le calcula el número de monedas, el dinero que tiene, etc.
+
+953
+00:24:22,520 --> 00:24:27,520
+Entonces, bueno, pues eso máso o menos triunfo porque como todos tenían móvil e lo sabían usar
+
+954
+00:24:27,520 --> 00:24:33,520
+e porque no hacemos un app, dije vale, podemos hacer un app, entonces al final os voy a decir
+
+955
+00:24:33,520 --> 00:24:37,520
+en que consistió mi app, mi app consistió en meterle un acceso directo en el escritorio
+
+956
+00:24:37,520 --> 00:24:42,520
+con un iconito que al pinchar automáticamente nos abria el navegador a la dirección IP que definía
+
+957
+00:24:42,520 --> 00:24:48,520
+la máquina e me dijo bien, tenemos o app, o que te pedido, entonces, muy contento.
+
+958
+00:24:48,520 --> 00:25:01,520
+Porque realmente o concepto para los que non trabajamos en esto de apps que aparezca
+
+959
+00:25:01,520 --> 00:25:07,520
+un icono en el escritorio de tu teléfono e tu le des e te arranque algo e bueno, pues
+
+960
+00:25:07,520 --> 00:25:12,520
+lo que hacía, entonces, bien, que a todo esto, esto era un prototipo, pero o prototipo,
+
+961
+00:25:12,520 --> 00:25:18,520
+al final, fue creciendo e le salieron patitas e tomó vida propia.
+
+962
+00:25:18,520 --> 00:25:26,520
+Vale, ahora no solamente teníamos clavo e martillo, sino que además teníamos máas
+
+963
+00:25:26,520 --> 00:25:30,520
+herramientas, teníamos unha trencha, un serrón, etc.
+
+964
+00:25:30,520 --> 00:25:38,520
+Onde ya teníamos máso o menos algo completo, onde no solamente utilizábamos Python,
+
+965
+00:25:38,520 --> 00:25:42,520
+resulta que tamíen teníamos unha parte de diseño, entonces, el diseñador podía encargarse
+
+966
+00:25:42,520 --> 00:25:49,520
+de hacerlo máas bonito, teníamos unha parte electrónica, donde un especialista en electrónica
+
+967
+00:25:49,520 --> 00:25:54,520
+se encargó de desarrollar el Chile e demás, que además, para que tenemos esto,
+
+968
+00:25:54,520 --> 00:26:00,520
+lo podemos utilizar para máas cosas, e a partir de ahí, un día, dijo o jefe,
+
+969
+00:26:00,520 --> 00:26:03,520
+llamó un señor que tiene unha empresa de autobuses que dijo,
+
+970
+00:26:03,520 --> 00:26:07,520
+se podían controlar, bueno, realmente, lo que dijo es,
+
+971
+00:26:07,520 --> 00:26:12,520
+los operarios pierdem mucho tiempo escribiendo en una libreta cuántos quilómetros
+
+972
+00:26:12,520 --> 00:26:15,520
+hacen cada vez que hace un viaje, no?
+
+973
+00:26:15,520 --> 00:26:20,520
+Entonces, o que queremos es algo, donde ele conduzca e,
+
+974
+00:26:20,520 --> 00:26:24,520
+e quando llegue de noche, ya le aparezcan los partes de trabajo insertados
+
+975
+00:26:24,520 --> 00:26:29,520
+en este sistema que tenemos, al que nós le vamos a llamar ERP,
+
+976
+00:26:29,520 --> 00:26:33,520
+donde lo tenemos montado con un servidor SQL Server
+
+977
+00:26:33,520 --> 00:26:39,520
+e unha aplicación hecha en Visual Basic e demás, e bueno, vamos a verlo,
+
+978
+00:26:39,520 --> 00:26:43,520
+fuimos a verlo e bien, resulta que todo o que teníamos se podia reciclar,
+
+979
+00:26:43,520 --> 00:26:48,520
+a nós que más nos dava leer los contadores de una máquina por puerto serie,
+
+980
+00:26:48,520 --> 00:26:52,520
+que meterle un aparatito GPS, donde fuese controlando
+
+981
+00:26:52,520 --> 00:26:56,520
+la posición por donde iba el autobús e calculase
+
+982
+00:26:56,520 --> 00:27:01,520
+los quilómetros que havia recorrido, entonces, se iba a su ERP e le decía,
+
+983
+00:27:01,520 --> 00:27:06,520
+dime que viajes tiene que hacer hoy este señor e le dava unha serie de viajes,
+
+984
+00:27:06,520 --> 00:27:09,520
+entonces, decía, bueno, pues sí, pero, es que tenemos que ir de la coruña a ferrol,
+
+985
+00:27:09,520 --> 00:27:14,520
+ya, pero es que, la máquina nuestra no va saber ni dónde está coruña,
+
+986
+00:27:14,520 --> 00:27:18,520
+ni dónde está ferrol, vamos a tener que darle unas coordenadas GPS
+
+987
+00:27:18,520 --> 00:27:22,520
+para indicar exactamente en qué punto de coruña empieza
+
+988
+00:27:22,520 --> 00:27:26,520
+el parte de trabajo e en qué punto de ferrol termina, le podemos dar
+
+989
+00:27:26,520 --> 00:27:30,520
+unha distancia de 10 metros, máso menos, porque no tiene que parar
+
+990
+00:27:30,520 --> 00:27:34,520
+en el sitio exacto, pero, conviene meter todos estos datos,
+
+991
+00:27:34,520 --> 00:27:37,520
+entonces, bueno, al final conseguimos convencer a la gente
+
+992
+00:27:37,520 --> 00:27:41,520
+de la empresa de autobuses para que codificara todas las paradas de autobús
+
+993
+00:27:41,520 --> 00:27:45,520
+para que se comproxen, GPS, entonces, a partir de ahí,
+
+994
+00:27:45,520 --> 00:27:49,520
+o sistema que haces, lei continuamente
+
+995
+00:27:49,520 --> 00:27:54,520
+dónde estamos e compara, se é en fecha e hora,
+
+996
+00:27:54,520 --> 00:27:57,520
+por eso era moi importante el reloj RTC,
+
+997
+00:27:57,520 --> 00:28:01,520
+se é en fecha e hora, ahora mismo nos toca hacer este viaje,
+
+998
+00:28:01,520 --> 00:28:05,520
+pues, e estamos en esta posición, iniciamos parte de trabajo
+
+999
+00:28:05,520 --> 00:28:08,520
+e, quando llega a su fin, finaliza parte de trabajo,
+
+1000
+00:28:08,520 --> 00:28:11,520
+todo eso lo vamos guardando, en la misma base datos
+
+1001
+00:28:11,520 --> 00:28:14,520
+ese culite que teníamos antes para guardar los datos
+
+1002
+00:28:14,520 --> 00:28:18,520
+de las máquinas e traga perras, e, a partir de ahí, generamos
+
+1003
+00:28:18,520 --> 00:28:21,520
+unos partes de trabajo que los insertamos directamente
+
+1004
+00:28:21,520 --> 00:28:25,520
+en el servidor, entonces, al final,
+
+1005
+00:28:25,520 --> 00:28:29,520
+el cacharrito quedó moi logrado, arriba a la izquierda
+
+1006
+00:28:29,520 --> 00:28:32,520
+que al final le iba a incorporar unha foto, pero,
+
+1007
+00:28:32,520 --> 00:28:35,520
+como terminei las transparencias justo el día anterior
+
+1008
+00:28:35,520 --> 00:28:39,520
+de venir para aquí, pues, no encontré la foto del GPS,
+
+1009
+00:28:39,520 --> 00:28:43,520
+pero aún nos queda, aqui arriba a la izquierda,
+
+1010
+00:28:43,520 --> 00:28:46,520
+un hueco, unha vez que pasamos el Ethernet
+
+1011
+00:28:46,520 --> 00:28:50,520
+e el Molex de conexiones, para poder enxufarle unha antenita,
+
+1012
+00:28:50,520 --> 00:28:53,520
+entonces, con un taladro, le sacamos el conector
+
+1013
+00:28:53,520 --> 00:28:58,520
+e aí le pusimos el lector de GPS,
+
+1014
+00:28:58,520 --> 00:29:02,520
+entonces, pues, ya teníamos al menos tres dispositivos
+
+1015
+00:29:02,520 --> 00:29:06,520
+que se podían comercializar e se podían vender.
+
+1016
+00:29:06,520 --> 00:29:08,520
+Después, preguntaré a ver se alguien sabe
+
+1017
+00:29:08,520 --> 00:29:13,520
+por que le llamamos TV 800, TV 70 e TV 900,
+
+1018
+00:29:13,520 --> 00:29:16,520
+a ver se os suena algo, os diré de pista
+
+1019
+00:29:16,520 --> 00:29:20,520
+que el que estamos haciendo ahora se llama TV 1000,
+
+1020
+00:29:20,520 --> 00:29:23,520
+entonces, a partir de ahí,
+
+1021
+00:29:23,520 --> 00:29:26,520
+máso o menos nos vamos haciendo una idea
+
+1022
+00:29:26,520 --> 00:29:29,520
+de por que se van llamando dessa forma.
+
+1023
+00:29:29,520 --> 00:29:32,520
+E o primeiro, que o shield máso o menos era o mesmo,
+
+1024
+00:29:32,520 --> 00:29:35,520
+diferenciado o dos autobuses,
+
+1025
+00:29:35,520 --> 00:29:38,520
+que llevaba un conector GPS,
+
+1026
+00:29:38,520 --> 00:29:41,520
+después era a mesma infraestructura,
+
+1027
+00:29:41,520 --> 00:29:43,520
+como, además, ya le podíamos meter
+
+1028
+00:29:43,520 --> 00:29:45,520
+cualquier voltaje entre 5 e 35 voltios
+
+1029
+00:29:45,520 --> 00:29:47,520
+e os autobuses iban a 24,
+
+1030
+00:29:47,520 --> 00:29:49,520
+pues, no había problema que ya no servía
+
+1031
+00:29:49,520 --> 00:29:51,520
+e todo, no había que hacer nada, genial.
+
+1032
+00:29:51,520 --> 00:29:54,520
+E, además, nos encargaron, también,
+
+1033
+00:29:54,520 --> 00:29:56,520
+unha prueba piloto para controlar
+
+1034
+00:29:56,520 --> 00:29:59,520
+las máquinas de bolos para que el técnico
+
+1035
+00:29:59,520 --> 00:30:02,520
+supiese si las máquinas tenían algún problema
+
+1036
+00:30:02,520 --> 00:30:06,520
+e para conectarnos a esas máquinas industriales
+
+1037
+00:30:06,520 --> 00:30:09,520
+hicimos un interfaz con el servidor
+
+1038
+00:30:09,520 --> 00:30:11,520
+que controla las máquinas
+
+1039
+00:30:11,520 --> 00:30:14,520
+e le salía al operario, en el móvil, un status,
+
+1040
+00:30:14,520 --> 00:30:16,520
+donde le decía, bueno, pues tal máquina
+
+1041
+00:30:16,520 --> 00:30:19,520
+tiene un pin estropeado o non se ha reiniciado bien
+
+1042
+00:30:19,520 --> 00:30:20,520
+o lo que sea.
+
+1043
+00:30:20,520 --> 00:30:22,520
+E, además, resulta que como todos los datos
+
+1044
+00:30:22,520 --> 00:30:25,520
+estaban guardados en un servidor a hacer una consulta
+
+1045
+00:30:25,520 --> 00:30:27,520
+para contar cuánto se había recaudado,
+
+1046
+00:30:27,520 --> 00:30:28,520
+era superfácil.
+
+1047
+00:30:28,520 --> 00:30:30,520
+Entonces, dijo el jefe,
+
+1048
+00:30:30,520 --> 00:30:32,520
+joder, e não le podíamos mostrar al gerente
+
+1049
+00:30:32,520 --> 00:30:34,520
+la pasta que va haciendo la bolera
+
+1050
+00:30:34,520 --> 00:30:36,520
+porque así é muy fácil de vender
+
+1051
+00:30:36,520 --> 00:30:38,520
+e o hombre, pues, lo ve en el móvil
+
+1052
+00:30:38,520 --> 00:30:40,520
+e todo eso, bueno, pues vamos a mirar
+
+1053
+00:30:40,520 --> 00:30:42,520
+a ver como se puede hacer.
+
+1054
+00:30:42,520 --> 00:30:44,520
+Resulta que Python
+
+1055
+00:30:44,520 --> 00:30:46,520
+hasta trae un módulo
+
+1056
+00:30:46,520 --> 00:30:48,520
+para conectarse al SQL Server,
+
+1057
+00:30:48,520 --> 00:30:50,520
+e dice, pues sí, podemos hacer de todo,
+
+1058
+00:30:50,520 --> 00:30:52,520
+no hay ningún problema.
+
+1059
+00:30:52,520 --> 00:30:54,520
+Nos conectamos, hacíamos un select,
+
+1060
+00:30:54,520 --> 00:30:56,520
+nos desvolvíamos a importar
+
+1061
+00:30:56,520 --> 00:30:58,520
+e nós nos mostrábamos.
+
+1062
+00:30:58,520 --> 00:31:00,520
+E tuvimos máxito que o gerente vi ese.
+
+1063
+00:31:00,520 --> 00:31:02,520
+La recaudación de la bolera
+
+1064
+00:31:02,520 --> 00:31:04,520
+que el técnico pudiese hacer
+
+1065
+00:31:04,520 --> 00:31:06,520
+o diagnóstico de la máquina.
+
+1066
+00:31:06,520 --> 00:31:08,520
+Pero, bueno, unha va tomando caminos
+
+1067
+00:31:08,520 --> 00:31:10,520
+e nunca sabe quales son
+
+1068
+00:31:10,520 --> 00:31:12,520
+os que máis vão a triunfar.
+
+1069
+00:31:15,520 --> 00:31:17,520
+E, bueno, no sé que tal fui de tiempo,
+
+1070
+00:31:17,520 --> 00:31:19,520
+se apertei un pouco a cosa,
+
+1071
+00:31:19,520 --> 00:31:21,520
+e, xinó, quanto falta?
+
+1072
+00:31:21,520 --> 00:31:23,520
+Cinco minutos.
+
+1073
+00:31:23,520 --> 00:31:25,520
+E, bueno, parece que fui bastante bien.
+
+1074
+00:31:25,520 --> 00:31:27,520
+Agradecer a las dos empresas
+
+1075
+00:31:27,520 --> 00:31:29,520
+que nos permitieron
+
+1076
+00:31:29,520 --> 00:31:31,520
+hacer pruebas con os autobuses
+
+1077
+00:31:31,520 --> 00:31:33,520
+e el outro con las máquinas,
+
+1078
+00:31:33,520 --> 00:31:35,520
+e, también, pues bueno,
+
+1079
+00:31:35,520 --> 00:31:37,520
+agradecer a la empresa
+
+1080
+00:31:37,520 --> 00:31:39,520
+telemetría aplicada
+
+1081
+00:31:39,520 --> 00:31:41,520
+que nos ha pagado el viaje,
+
+1082
+00:31:41,520 --> 00:31:43,520
+la estancia e todo
+
+1083
+00:31:43,520 --> 00:31:45,520
+para que pudiésemos venir aquí
+
+1084
+00:31:45,520 --> 00:31:47,520
+e disfrutar de estar en Alicante.
+
+1085
+00:31:47,520 --> 00:31:49,520
+Aunque,
+
+1086
+00:31:49,520 --> 00:31:51,520
+túbiésemos que mencionarlos
+
+1087
+00:31:51,520 --> 00:31:53,520
+de los créditos, no?
+
+1088
+00:32:03,520 --> 00:32:05,520
+E, bueno, hay tiempo para preguntas, entiendo yo.
+
+1089
+00:32:05,520 --> 00:32:07,520
+Entonces, o que queráis?
+
+1090
+00:32:07,520 --> 00:32:09,520
+Una pregunta, corta.
+
+1091
+00:32:13,520 --> 00:32:15,520
+José, enhorabuena.
+
+1092
+00:32:15,520 --> 00:32:17,520
+Empatizo contigo un montón porque
+
+1093
+00:32:17,520 --> 00:32:19,520
+yo sería, ahora mismo,
+
+1094
+00:32:19,520 --> 00:32:21,520
+unir a ese proceso que todo tú has contado.
+
+1095
+00:32:21,520 --> 00:32:23,520
+Una pregunta,
+
+1096
+00:32:23,520 --> 00:32:25,520
+quando habí hecho esos prototipos
+
+1097
+00:32:25,520 --> 00:32:27,520
+que habí enseñado e tal,
+
+1098
+00:32:27,520 --> 00:32:29,520
+tuvisteis que certificar-lo,
+
+1099
+00:32:29,520 --> 00:32:31,520
+foi un problema tener que certificar
+
+1100
+00:32:31,520 --> 00:32:33,520
+éso o venderlo, o simplemente haces
+
+1101
+00:32:33,520 --> 00:32:35,520
+tú prototipo basado en Rappi e Tiramilla?
+
+1102
+00:32:35,520 --> 00:32:37,520
+Non se han certificado,
+
+1103
+00:32:37,520 --> 00:32:39,520
+es decir, si mañana un autobús
+
+1104
+00:32:39,520 --> 00:32:41,520
+en Potra e la empresa dice
+
+1105
+00:32:41,520 --> 00:32:43,520
+es que llevávame un dispositivo
+
+1106
+00:32:43,520 --> 00:32:45,520
+de telemetría fabricado
+
+1107
+00:32:45,520 --> 00:32:47,520
+e, por culpa de ese dispositivo,
+
+1108
+00:32:47,520 --> 00:32:49,520
+yo soy informático, no abogado.
+
+1109
+00:32:57,520 --> 00:32:59,520
+Mientras o siguiente speaker
+
+1110
+00:32:59,520 --> 00:33:01,520
+se va preparando, había outra pregunta por aquí.
+
+1111
+00:33:01,520 --> 00:33:03,520
+Vamos a...
+
+1112
+00:33:05,520 --> 00:33:07,520
+Me parece moi interesante
+
+1113
+00:33:07,520 --> 00:33:09,520
+o que has hecho e tal,
+
+1114
+00:33:09,520 --> 00:33:11,520
+eu também me he trabajado con Raspberry Pi
+
+1115
+00:33:11,520 --> 00:33:13,520
+en temas que no tengo acceso
+
+1116
+00:33:13,520 --> 00:33:15,520
+directo a mantener aquello
+
+1117
+00:33:15,520 --> 00:33:17,520
+e has comentado o tema de a fiabilidad
+
+1118
+00:33:17,520 --> 00:33:19,520
+e as pruebas que hicisteis,
+
+1119
+00:33:19,520 --> 00:33:21,520
+pero no has dicho os resultados que obtenisteis
+
+1120
+00:33:21,520 --> 00:33:23,520
+e também obtuvisteis de fiabilidad
+
+1121
+00:33:23,520 --> 00:33:25,520
+se se estropeia, etc.
+
+1122
+00:33:25,520 --> 00:33:27,520
+E me interessa, também, se podes comentar algo
+
+1123
+00:33:27,520 --> 00:33:29,520
+da calidad
+
+1124
+00:33:29,520 --> 00:33:31,520
+ou dos problemas de fiabilidad
+
+1125
+00:33:31,520 --> 00:33:33,520
+das micro sedeis
+
+1126
+00:33:33,520 --> 00:33:35,520
+quando se va la luz, básicamente.
+
+1127
+00:33:35,520 --> 00:33:37,520
+Vale, respecto a as pruebas
+
+1128
+00:33:37,520 --> 00:33:39,520
+tanto la de estrés como la outra,
+
+1129
+00:33:39,520 --> 00:33:41,520
+todas as placas que se venden
+
+1130
+00:33:41,520 --> 00:33:43,520
+pasan a esas pruebas
+
+1131
+00:33:43,520 --> 00:33:45,520
+creo que das 200
+
+1132
+00:33:45,520 --> 00:33:47,520
+e pico placas sobre las que se han hecho
+
+1133
+00:33:47,520 --> 00:33:49,520
+a prueba, han fallado
+
+1134
+00:33:49,520 --> 00:33:51,520
+2 ou 3. E as que han fallado
+
+1135
+00:33:51,520 --> 00:33:53,520
+precisamente son por las tarjetas sedeis.
+
+1136
+00:33:53,520 --> 00:33:55,520
+É muy importante escoger
+
+1137
+00:33:55,520 --> 00:33:57,520
+o fabricante, porque
+
+1138
+00:33:57,520 --> 00:33:59,520
+há algunas que a calidad que
+
+1139
+00:33:59,520 --> 00:34:01,520
+tenen non é demasiado boa
+
+1140
+00:34:01,520 --> 00:34:03,520
+e quando llevan un tiempo funcionando,
+
+1141
+00:34:03,520 --> 00:34:05,520
+escreves muchas veces o lees muchas veces
+
+1142
+00:34:05,520 --> 00:34:07,520
+ao final empieza a dar datos corruptos
+
+1143
+00:34:07,520 --> 00:34:09,520
+e demás.
+
+1144
+00:34:09,520 --> 00:34:11,520
+Então, os problemas
+
+1145
+00:34:11,520 --> 00:34:13,520
+con os componentes eléctronicos
+
+1146
+00:34:13,520 --> 00:34:15,520
+tanto de las raspberry como de lo demás
+
+1147
+00:34:15,520 --> 00:34:17,520
+não encontramos ninguno, pero con as sedeis
+
+1148
+00:34:17,520 --> 00:34:19,520
+sí. Vale, bueno, pues
+
+1149
+00:34:19,520 --> 00:34:43,520
+todos.
+

@@ -1,0 +1,2036 @@
+1
+00:00:00,000 --> 00:00:20,440
+Bueno, así se enteró. Sí. Bueno, es lo que hay. Antes estaba más dragado.
+
+2
+00:00:20,440 --> 00:00:35,800
+Bueno, la charla es titula Dive Into Scrapy. Soy Juan Riazza. Se me escucha. Sí. Y trabajo en
+
+3
+00:00:35,800 --> 00:00:40,760
+ScrapingHalf, que luego más adelante pasaría a contar qué es lo que hacemos exactamente.
+
+4
+00:00:42,360 --> 00:00:47,560
+Y bueno, pues dividido, digamos, la charla en lo que llamamos unos capítulos. Y el primero de ellos
+
+5
+00:00:47,560 --> 00:00:56,800
+es nos aventuramos en el fantástico mundo de los datos. Y básicamente lo que quiero, pues un poco
+
+6
+00:00:56,800 --> 00:01:03,040
+contaros, es que realmente estamos en un mundo que está completamente basado en datos. Todas las
+
+7
+00:01:03,040 --> 00:01:07,760
+acciones hoy en día de negocio, lo que llaman al business intelligence y todas esas palabras que
+
+8
+00:01:07,760 --> 00:01:15,000
+están sacando nuevas, todo está basado en datos. Y básicamente si nos ponemos realmente a analizar
+
+9
+00:01:15,000 --> 00:01:21,200
+cuáles son las fuentes de datos que tenemos en nuestro mundo fantástico, pues tenemos cuatro. La
+
+10
+00:01:21,200 --> 00:01:28,640
+primera pues RSS, que ya se ha quedado un poco después de Google Reader, un poco mal. Tenemos
+
+11
+00:01:28,640 --> 00:01:35,640
+e-mail. Tenemos documentos. Los documentos pueden ser desde PDFs, que también se hace
+
+12
+00:01:35,640 --> 00:01:42,720
+minería de datos sobre PDFs. Pueden estar juntos en e-mails. Y luego por último tenemos internet
+
+13
+00:01:42,720 --> 00:01:49,200
+como fuente de datos principal. Hasta aquí estas son las cuatro principales fuentes de información
+
+14
+00:01:49,200 --> 00:01:57,840
+a las que un informático puede tener acceso. Y luego está la panacea, que es las APIs. Es decir,
+
+15
+00:01:57,840 --> 00:02:03,240
+pues ahora cualquier aplicación tiene un API que te da los datos masticados, te da los datos ya
+
+16
+00:02:03,240 --> 00:02:08,800
+procesados, te da exactamente lo que quieres. Y pues en el momento si eres un desarrollador y vas a
+
+17
+00:02:08,800 --> 00:02:16,360
+terminar de datos, lo primero que vas a comprobar es si tu objetivo o lo que quieres analizar pues tiene
+
+18
+00:02:16,360 --> 00:02:24,720
+un API accesible y entonces te quitas bastante trabajo de por medio a priori. ¿Cuál es el problema?
+
+19
+00:02:24,720 --> 00:02:32,560
+El problema, los tritoughs que tienen, ¿qué tienen unos APIs? Bueno pues que básicamente pues todavía
+
+20
+00:02:32,560 --> 00:02:37,120
+no todo el mundo es consciente de que tener un API es algo positivo. En la mayoría del mundo no
+
+21
+00:02:37,120 --> 00:02:45,360
+tiene APIs y lo más preocupante es que los otros más interesantes no se ofrecen via API. Es decir,
+
+22
+00:02:45,360 --> 00:02:50,240
+tú te vas a Facebook o te vas a cualquier otra plataforma, vas a su API y realmente vas a ver
+
+23
+00:02:50,240 --> 00:02:54,440
+que lo que realmente quieres acceder o lo realmente importante e interesante no está accesible
+
+24
+00:02:54,440 --> 00:03:01,720
+via su API. Obviamente lo tienen bastante capado, controlado. ¿Y cuáles son los cuatro puntos básicos
+
+25
+00:03:01,720 --> 00:03:13,280
+por los cuales las APIs pues no están tan bien como nos hacen creer? Lo primero es que es la
+
+26
+00:03:13,280 --> 00:03:19,880
+bailability. Básicamente a Facebook puede que diga bueno se me ha caído el API pero a Facebook le
+
+27
+00:03:19,880 --> 00:03:26,920
+importará mucho más que su web esté online que su API. Por ejemplo, donde básicamente el tema de
+
+28
+00:03:26,920 --> 00:03:34,040
+cualquier empresa le va a dar mucha más importancia a tener arriba una web directa para su cliente
+
+29
+00:03:34,040 --> 00:03:40,920
+final que un API. ¿Qué más? Pues datos limitados, lo que he comentado antes, muchas veces en nuestras
+
+30
+00:03:40,920 --> 00:03:46,720
+plataformas que queremos analizar pues no todos los datos que queremos están los ofrecenes a APIs.
+
+31
+00:03:47,840 --> 00:03:54,280
+Luego, Throtrim, básicamente queremos coger API de Twitter, ¿cuántos tritoughs podemos coger
+
+32
+00:03:54,280 --> 00:04:00,200
+via la API de Twitter público? 5 mil tweets o no sé cuál es la cuota exacta y a partir de ahí
+
+33
+00:04:00,200 --> 00:04:06,400
+pues ya estás limitado tienes que hacer juguetas, rotar IP, muchas historias hasta que al final te
+
+34
+00:04:06,400 --> 00:04:12,880
+cortan. Y luego lo más preocupante de todas es they know you, te conocen. Cuando tú estás en Facebook
+
+35
+00:04:12,880 --> 00:04:21,200
+y te dan un developer ID, un app ID, al final pueden saber a qué datos estás accediendo.
+
+36
+00:04:21,200 --> 00:04:27,520
+Saben, pues mira, ha pedido estos mensajes, está haciendo este uso de datos, imaginaros el API
+
+37
+00:04:27,520 --> 00:04:32,240
+del InqueCin, puede realmente saber pues este desarrollador o esta empresa está accediendo
+
+38
+00:04:32,240 --> 00:04:38,480
+a estos datos en concreto. Entonces, bueno, no siempre tiene por qué, pero muchas veces interesa
+
+39
+00:04:38,480 --> 00:04:44,600
+que no sepan qué es lo que estamos haciendo, qué es lo que queremos hacer, ¿de acuerdo?
+
+40
+00:04:44,600 --> 00:04:53,440
+¿Qué es lo que hacemos para básicamente para evitar las APIs? Pues bueno, recorrimos a lo que
+
+41
+00:04:53,440 --> 00:05:00,760
+conocemos como web scraping y uno de los grandes problemas con web scraping es que la web está
+
+42
+00:05:00,760 --> 00:05:11,640
+rota, literalmente. No se conocen estadísticas de temas de validaciones, HTML, pero 90% no
+
+43
+00:05:11,640 --> 00:05:18,360
+valida, es realmente un desastre enorme, la mayoría de ellas no tienen ni body, o sea,
+
+44
+00:05:18,360 --> 00:05:24,760
+como etiqueta. Si mis estadísticas hay una estudio de Mozilla bastante bueno, de Mozilla
+
+45
+00:05:24,760 --> 00:05:32,600
+Foundation y es realmente deprimente el nivel de las etiquetas, está completamente roto
+
+46
+00:05:32,600 --> 00:05:38,760
+todo el markup de lo que es público. Luego está pues obviamente la panacea, que son
+
+47
+00:05:38,760 --> 00:05:46,080
+los micro datos, la web semántica, pues todo eso que siempre se habla mucho, pero se hace poco,
+
+48
+00:05:46,080 --> 00:05:55,080
+¿de acuerdo? Sería lo ideal. ¿Qué es web scraping en este caso según la omnipresente Wikipedia?
+
+49
+00:05:55,080 --> 00:06:02,320
+Es un computer software, Technic of Extracting Information from Websites. Básicamente,
+
+50
+00:06:02,320 --> 00:06:10,720
+pues la técnica de extracción de datos desde sites web. Bueno, viendo un poco nuestro mundo
+
+51
+00:06:10,720 --> 00:06:16,520
+de datos, el capítulo 2 al que me gustaría presentaros es ¿Cómo podemos enfrentarnos
+
+52
+00:06:16,520 --> 00:06:21,400
+a este mundo de datos? Dicen, vale, yo he identificado ya mis fuentes de datos, creo estar en datos de
+
+53
+00:06:21,400 --> 00:06:28,640
+ellos, ¿cómo puedo acceder a esos datos? En Python. Lo primero, hay que ser muy conscientes de qué
+
+54
+00:06:28,640 --> 00:06:36,080
+protocolo o en qué está basado lo que queremos hacer. En este caso, pues parece algo obvio,
+
+55
+00:06:36,080 --> 00:06:45,800
+hay que saber HTTP. No parece tan obvio saber HTTP o saber todas las cosas que envuelve. ¿Qué es lo
+
+56
+00:06:45,800 --> 00:06:52,440
+que todo el mundo sabe? Bueno, pues tenemos métodos, get, post, put, head, tenemos status codes,
+
+57
+00:06:52,440 --> 00:06:59,400
+pues 200, sabemos que la página ha llegado bien, 300, 400, 404, que seguro que os sona todos,
+
+58
+00:06:59,400 --> 00:07:08,600
+418, 500, que suele ser una página de error o incluso que te banean y por ejemplo 999 es un status
+
+59
+00:07:08,600 --> 00:07:15,360
+code custom de Yahoo que te lo lanzan cuando te han baneado. 999, adiós. ¿Qué más cosas hay
+
+60
+00:07:15,360 --> 00:07:21,840
+que saber? ¿Cómo funcionan los headers? ¿Cómo funcionan los query strings? Muchas veces,
+
+61
+00:07:21,840 --> 00:07:27,360
+nosotros pensamos, bueno, vamos a lanzar una petición HTTP, pues por ejemplo la estándar
+
+62
+00:07:27,360 --> 00:07:32,200
+library de Python y nosotros pensamos, bueno, lo que vamos a obtener es completamente igual a lo
+
+63
+00:07:32,200 --> 00:07:37,920
+que ve un navegador, pero vosotros no sabéis el funcionamiento de un navegador. Cuando un navegador
+
+64
+00:07:37,920 --> 00:07:43,800
+hace una petición, lanza ya una serie de headers que nosotros no estamos por defecto poniendo.
+
+65
+00:07:43,800 --> 00:07:49,160
+Simplemente, hacer language o el user agent, pues son bastante importantes, hacer language,
+
+66
+00:07:49,160 --> 00:07:54,080
+no es lo mismo que quiere recibir la web en tu idioma ingles castellano y el user agent es bastante
+
+67
+00:07:54,080 --> 00:08:01,720
+importante, pues hará con todo el tema de móvil el hecho de decir, voy a analizar una web normal
+
+68
+00:08:01,720 --> 00:08:07,760
+o voy a analizar una web que está adaptada para móviles igual es más interesante. ¿Por qué? Porque
+
+69
+00:08:07,760 --> 00:08:13,680
+muchas veces el markup es mucho más sencillo en una web móvil que en una web desktop, digamos,
+
+70
+00:08:13,680 --> 00:08:18,920
+es algo a tener en cuenta. Si estáis analizando sitios yo siempre os recomiendo, bueno,
+
+71
+00:08:18,920 --> 00:08:23,680
+probéis a emular cómo se ve en móvil, si tiene sitio móvil y veréis cómo seguramente los datos
+
+72
+00:08:23,680 --> 00:08:30,600
+estén mucho más accesibles que en desktop. Y luego pues tenemos que saber funcionar las cookies,
+
+73
+00:08:30,600 --> 00:08:36,840
+persistence. Y HTTP no tiene mucho más, tenéis que saber cómo creas formularios también,
+
+74
+00:08:36,840 --> 00:08:41,760
+pero bueno, el tema está en que se oscríste dedicar a tema de minería de datos, saber HTTP
+
+75
+00:08:41,760 --> 00:08:51,000
+perfecto es mandatorio, es obligatorio. ¿Qué más es importante? Developer tools. En este caso
+
+76
+00:08:51,000 --> 00:08:55,960
+solo me centro en Google Chrome, lo siento por la gente de mozilla y tal, pero trabajo solo con
+
+77
+00:08:55,960 --> 00:09:03,080
+Google Chrome y estimo contento con cómo han ido evolucionando. ¿Qué es lo más práctico?
+
+78
+00:09:03,080 --> 00:09:09,400
+Pues tenemos los resources, pues en Elements por ejemplo tenemos todo el DOOM, donde podemos ver
+
+79
+00:09:09,400 --> 00:09:14,680
+todo el DOOM de la página, ver los nodos, es interesante porque no se se habéis probado,
+
+80
+00:09:14,680 --> 00:09:21,480
+se puede buscar dentro del DOOM, pero lo más importante y que yo descubrí hace, no creéis que
+
+81
+00:09:21,480 --> 00:09:29,760
+no mucho, es que podéis buscar Kispat directamente. Ponéis un Kispat en Elements, en el developer
+
+82
+00:09:29,760 --> 00:09:35,680
+tools de Google y os busca Kispat, es muy muy práctico. ¿Qué más tenemos? Podemos ver las
+
+83
+00:09:35,680 --> 00:09:40,400
+cookies, ver las cookies, limpiar las cookies, incluso podéis abrir una ventana en cojone
+
+84
+00:09:40,400 --> 00:09:48,200
+y todo por si queréis ver cómo sería sin tener cookies. E importante, Network Inspector. Normalmente
+
+85
+00:09:48,200 --> 00:09:53,880
+muchos, muchas web hoy en día están basadas en dinámicas todas, la mayoría, están basadas en
+
+86
+00:09:53,880 --> 00:09:58,280
+JavaScript y muchos de los datos a los que queremos acceder no nos lo va a dar la primera petición,
+
+87
+00:09:58,280 --> 00:10:03,520
+así como estaría muy bien. Hacemos una petición y aquí están todos los datos, masticados,
+
+88
+00:10:03,520 --> 00:10:10,800
+no en una tabla, muy bien. Pero lo normal es que por ejemplo, imaginaros un e-commerce,
+
+89
+00:10:10,800 --> 00:10:16,560
+una página de ropa y tienes por ejemplo para elegir la talla y dependiendo de la talla que
+
+90
+00:10:16,560 --> 00:10:22,440
+lijas, te pone un precio o te pone si tiene disponibilidad o si no tiene stock. Pues todas
+
+91
+00:10:22,440 --> 00:10:28,160
+esas, todo eso normalmente está basado en peticiones IAX y es bastante importante que sepamos
+
+92
+00:10:28,160 --> 00:10:35,280
+como emularlas, ¿de acuerdo? Simplemente si abrís el tab de Network Inspector, es decir,
+
+93
+00:10:35,280 --> 00:10:39,080
+el VSE y todas las peticiones que ha hecho el navegador para poder llegar a renderizar
+
+94
+00:10:39,080 --> 00:10:45,280
+esa web, ahí tenemos unos filtros y el filtro muy importante es XHR que filtra todas las
+
+95
+00:10:45,280 --> 00:10:52,240
+peticiones que se han hecho via IAX, es muy, muy útil. Esto ya se ha contado emular dispositivos
+
+96
+00:10:52,240 --> 00:10:58,720
+móviles, muchas veces es más interesante intentar ver la web móvil adaptada a móvil
+
+97
+00:10:58,720 --> 00:11:05,000
+que la web desktop. Sobre todo es impresionante en Google Chrome todo el trabajo que han hecho
+
+98
+00:11:05,000 --> 00:11:11,560
+para emular. Pues si seríen el display, el viewport de iPhone está bastante bien. Poder
+
+99
+00:11:11,560 --> 00:11:17,720
+buscar X-pad directamente y otra cosa que no he nombrado y es muy interesante en resources,
+
+100
+00:11:17,720 --> 00:11:24,520
+en muchas veces interesa por ejemplo buscar algo en todos los ficheros JavaScript, en todo
+
+101
+00:11:24,520 --> 00:11:29,840
+el HTML, en todos los elementos que se han hecho, pues podéis mirar directamente, si
+
+102
+00:11:29,840 --> 00:11:35,360
+vais a resources, podéis hacer una búsqueda global en todos los ficheros, suele ser bastante
+
+103
+00:11:35,360 --> 00:11:43,000
+muy útil. Y luego tenemos extensiones más allá del propio developer tools de Chrome
+
+104
+00:11:43,000 --> 00:11:48,960
+que son bastante interesantes. Yo os recomiendo, hola no sé si conocís, hola. Mucha gente
+
+105
+00:11:48,960 --> 00:11:55,640
+la conoce pues para ver series o pues en Netflix o estas cosillas o todo lo que está un poco
+
+106
+00:11:55,640 --> 00:12:02,520
+capado por IP. Hola básicamente es un servicio creo que es gratuito, por lo menos, la parte
+
+107
+00:12:02,520 --> 00:12:09,120
+pública. Y básicamente lo que hacen es simplemente tú cuando entras en una web puedes decidir
+
+108
+00:12:09,120 --> 00:12:15,000
+desde qué país entras, entre comillas. Quiero entrar desde Estados Unidos, o desde Europa,
+
+109
+00:12:15,000 --> 00:12:19,240
+desde España y es bastante interesante porque muchas web modifican su contenido dependiendo
+
+110
+00:12:19,240 --> 00:12:25,480
+desde dónde entres. Probaz a entrar a Walmart por ejemplo desde Estados Unidos o desde Europa,
+
+111
+00:12:25,480 --> 00:12:31,440
+veréis cómo cambia las cosas, es bastante interesante. Y luego otra extension que me
+
+112
+00:12:31,440 --> 00:12:38,120
+gusta es JavaScript Switch y es porque normalmente luego explicaré un poco técnicas de cómo
+
+113
+00:12:38,120 --> 00:12:46,680
+analizar datos, emular JavaScript, pero normalmente cuando hacemos una petición no emulamos JavaScript.
+
+114
+00:12:46,680 --> 00:12:52,920
+Es bastante importante si accedemos bien a Emigador tener un botoncito a mano que digas
+
+115
+00:12:52,920 --> 00:12:56,960
+ahora no quiero JavaScript y te vuelve a recargar la página pero con JavaScript desactivado
+
+116
+00:12:56,960 --> 00:13:04,680
+de forma que estás viendo lo mismo que estaría viendo puesto, script en este caso. ¿Qué es
+
+117
+00:13:04,680 --> 00:13:10,600
+lo que necesitamos en Python? Pues si verías la SSTP la más básica de todas es la de
+
+118
+00:13:10,600 --> 00:13:17,720
+Standard Library o Relive 2, supongo que muchos lo conoceréis. Está bastante rota el API,
+
+119
+00:13:17,720 --> 00:13:23,080
+no me gusta nada de cómo está hecho y tienes que hacer 20.000 workarounds para muchas cosas.
+
+120
+00:13:23,080 --> 00:13:29,240
+Y la que hoy en día se ha convertido en un de facto en el mundo Python y de hecho está
+
+121
+00:13:29,240 --> 00:13:36,720
+muy alabada porque tiene una pym muy limpia, funciona muy bien. Es Python Request, la hizo
+
+122
+00:13:36,720 --> 00:13:40,720
+Kenneth Rade y funciona bastante bien, es muy simple el API que tiene. Directamente
+
+123
+00:13:40,720 --> 00:13:49,320
+request.get, request.post, es muy sencillo de usar. ¿Qué más cosas son interesantes
+
+124
+00:13:49,320 --> 00:13:56,800
+aparte de Python Request? La comunidad ha hecho Request Outlive, es una librería para Request
+
+125
+00:13:56,800 --> 00:14:02,640
+que te permite interactuar con temas de Out. Quiero acceder a la pdf twitter, vio Out,
+
+126
+00:14:02,640 --> 00:14:10,200
+cómo me autentifico, cómo guardo los tokens, etc. Y otra herramienta que me gusta mucho
+
+127
+00:14:10,200 --> 00:14:18,840
+es requestbin, request.in, es una página web donde básicamente nos dan un endpoint,
+
+128
+00:14:18,840 --> 00:14:24,200
+nos dan una web donde podemos mandar peticiones de cualquier tipo y nosotros en esa web nos
+
+129
+00:14:24,200 --> 00:14:29,280
+se muestra qué es lo que recibió el servidor. He recibido una petición con estos headers,
+
+130
+00:14:29,280 --> 00:14:34,800
+este query string, estos datos, para hacer pruebas es bastante interesante y sobre todo
+
+131
+00:14:34,800 --> 00:14:40,200
+también tiene soporte para tema de web hooks, si estés trabajando con ellos para devolviarlos
+
+132
+00:14:40,200 --> 00:14:50,720
+funcionan muy bien. Y ahora la pregunta que yo os voy a hacer un poco es, hemos visto
+
+133
+00:14:50,720 --> 00:14:57,400
+ya cómo lanzar una petición HTTP y ahora lo que yo tengo es un churro, un string enorme
+
+134
+00:14:57,400 --> 00:15:03,080
+y digo bueno, cómo accedo al dato que me interesa, alguien tiene alguna ligera idea de cómo
+
+135
+00:15:03,080 --> 00:15:17,600
+podemos hacerlo. Muy buena idea. No. Básicamente el problema de HTML es que no es un lenguaje
+
+136
+00:15:17,600 --> 00:15:21,240
+regular y como no es un lenguaje regular, no tiene sentido analizarlo con expresiones
+
+137
+00:15:21,240 --> 00:15:28,320
+regulares. Y punto, se acabó la discusión, pero es que no. Bueno, esta imagen que he
+
+138
+00:15:28,320 --> 00:15:33,120
+puesto es una de las respuestas más famosas en esta coverflow que alguien preguntaba,
+
+139
+00:15:33,120 --> 00:15:37,840
+cómo puedo con expresiones regulares scraper el contenido de un tag dentro del otro tag
+
+140
+00:15:37,840 --> 00:15:43,320
+pero que no pille tal tag. Bueno, al final ya ves cuántos fotos tiene. Puso ahí un churro
+
+141
+00:15:43,320 --> 00:15:49,440
+que acababa diciendo va a ser al demonio como hagas expresiones regulares. Y me quedo
+
+142
+00:15:49,440 --> 00:15:57,160
+con la línea del final. ¿Has probado usar un password XML? Es la respuesta. Pues en
+
+143
+00:15:57,160 --> 00:16:02,920
+Python tenemos, básicamente yo recomiendo, hay muchos, igual que dicen hay más frameworks
+
+144
+00:16:02,920 --> 00:16:09,520
+web que palabras clave, pues hay muchos passwords también. Yo recomiendo LXML de primeras,
+
+145
+00:16:09,520 --> 00:16:17,000
+si conocías librerías de C, LeafXML2 y LeafXSLT, básicamente son vindings en Python para librerías
+
+146
+00:16:17,000 --> 00:16:23,240
+en C. LXML es muy, muy rápido. O sea, si lo comparáis con otros parsers, vais a ver que
+
+147
+00:16:23,240 --> 00:16:29,480
+no tiene nada que ver. O sea, en proporciones, en magnitudes de 20, por deciros algo, es
+
+148
+00:16:29,480 --> 00:16:35,240
+enorme la diferencia. Y por otra parte tenemos BeautifulSoup, que es una librería que ahora
+
+149
+00:16:35,240 --> 00:16:40,800
+cambia mucho con la última versión, con la 4. Y básicamente te permite especificar,
+
+150
+00:16:40,800 --> 00:16:47,240
+tiene una pigenérica y te permite especificar qué parser usa por debajo, se abstrae. ¿Qué
+
+151
+00:16:47,240 --> 00:16:53,240
+tipo de parser son los que soporta? Soporta pues HTML parser de Python, LXML también,
+
+152
+00:16:53,240 --> 00:16:59,240
+y HTML5 Leaf, que es un poco más estricto y si la web está muy rota, pues a veces
+
+153
+00:16:59,240 --> 00:17:04,000
+conviene usarlo. Si la web está muy, muy rota. Y he visto webs muy rotas, lo seguro. O sea,
+
+154
+00:17:04,000 --> 00:17:09,200
+hay más atributos que nunca se cierran, cosas que hasta el navegador, hasta Chrome,
+
+155
+00:17:09,200 --> 00:17:16,120
+no es capaz de sacarlo. Vale, pues vamos a ver un poquito de código muy sencillo. ¿Cómo
+
+156
+00:17:16,120 --> 00:17:22,880
+haríamos para obtener el nombre y contenido de todas las charlas de esta Python? Bueno,
+
+157
+00:17:22,880 --> 00:17:27,400
+pues ya ves lo sencillo que es. Simplemente importo request, la librería que hemos hablado,
+
+158
+00:17:27,400 --> 00:17:34,240
+y importo LXML. ¿Veis que es sencillo hacer una petición? request.get, la url, no tiene
+
+159
+00:17:34,240 --> 00:17:41,640
+más. Simplemente instancia, una instancia de LXML HTML con el contenido de la petición.
+
+160
+00:17:41,640 --> 00:17:47,360
+Y lo único que hago es, bueno, pues analizo vxpat, conocéis todos xpat, entiendo, igual
+
+161
+00:17:47,360 --> 00:17:56,640
+lo di mucho por supuesto. Use xpat en este caso, y tero, sobre todo las charlas, y obtengo
+
+162
+00:17:56,640 --> 00:18:02,320
+el nombre del ponente y el contenido del ponente. El xpat para coger contenido es un poco más
+
+163
+00:18:02,320 --> 00:18:07,920
+complejo. ¿De acuerdo? Se usan xpat taxes, pero bueno, es un poquito más complejo, pero
+
+164
+00:18:07,920 --> 00:18:14,160
+veis que es muy sencillo. ¿Cuántas lineas hemos usado para sacar los contenidos de nombre
+
+165
+00:18:14,160 --> 00:18:24,720
+y contenido de cada charla? Pues, 4 o 5. Y el problema básico es que todo es muy bonito
+
+166
+00:18:24,720 --> 00:18:31,400
+hasta que entras a gran escala. Fíjate que rápido he hecho esto. ¿Qué opciones tienes?
+
+167
+00:18:31,400 --> 00:18:38,560
+Bueno, pues aquí lanzan los hilos de ejecución. El problema está en que los hilos de ejecución,
+
+168
+00:18:38,560 --> 00:18:43,240
+un modelo de hilos no funciona. No funciona por el simple hecho de que tu lanzas una petición
+
+169
+00:18:43,240 --> 00:18:48,360
+y el hilo se queda esperando 3 segundos, 4 segundos, o lo que sea, o si da un time out,
+
+170
+00:18:48,360 --> 00:18:54,240
+hasta que el servidor responde a esa petición. ¿Cuántos hilos puedes ir tirando, pues infinitos?
+
+171
+00:18:54,240 --> 00:19:01,360
+¿Qué soluciones hay? Pues, por ejemplo, soluciones pasadas en eventos como leaf event, cg event,
+
+172
+00:19:01,360 --> 00:19:08,120
+funcionan y tampoco está mal. Puedes también ser celeri con otro backend como leaf event,
+
+173
+00:19:08,120 --> 00:19:12,280
+pero bueno, va a llegar a un punto en el que se hace insostenible. Llega a un punto en el
+
+174
+00:19:12,280 --> 00:19:16,080
+que dices, está muy bonito todo esto, pero estoy centrándome más en el problema de
+
+175
+00:19:16,080 --> 00:19:19,960
+cómo hacerlo escalar que realmente hacer el análisis de los datos. No tiene ningún sentido.
+
+176
+00:19:19,960 --> 00:19:25,720
+Y la solución a todo esto se llama Scrappy. Ahora vamos a ver qué es. Periódico recomiendo
+
+177
+00:19:25,720 --> 00:19:30,040
+es que si tenéis dudas de si ponéis Scrappy o no, lo pongáis de primeras. Scrappyfy es
+
+178
+00:19:30,040 --> 00:19:35,120
+león porque si no, vais a encontraros con un marrón muy grande. Básicamente, ¿cuáles
+
+179
+00:19:35,120 --> 00:19:39,240
+son los que tenemos que destener? Que tenéis que hacer muchísimas peticiones a CDDP. Nosotros,
+
+180
+00:19:39,240 --> 00:19:44,440
+por ejemplo, hicimos dos billones de peticiones el año pasado, una cosa así. Y puede también
+
+181
+00:19:44,440 --> 00:19:50,160
+que queréis código testeable. Es bastante interesante tener código testeable. Dices,
+
+182
+00:19:50,160 --> 00:19:53,960
+¿cómo te esteas esto? Bueno, pues hay formas de testearlo. Pero Scrappy ya te dan unas
+
+183
+00:19:53,960 --> 00:20:02,040
+herramientas de testing bastante buenas. Y pasamos al tercer capítulo, que es el Toolset.
+
+184
+00:20:02,040 --> 00:20:06,920
+Hemos pasado por el BASIC Toolset. Ahora vamos al Toolset para los aventureros de verdad.
+
+185
+00:20:06,920 --> 00:20:15,520
+Bueno, Scrappy es una librería Python Open Source, que crearon en su día Pablo Hoffman
+
+186
+00:20:15,520 --> 00:20:22,480
+y Shane Evans, mis jefes. Y básicamente es un framework colaborativo Open Source para
+
+187
+00:20:22,480 --> 00:20:28,000
+extraer datos de sitios. Y es muy rápido, simple y se puede extender de forma sencilla.
+
+188
+00:20:28,000 --> 00:20:34,120
+Para que os hagáis una idea un poco de la comunidad que hay alrededor de Scrappy. Bueno,
+
+189
+00:20:34,120 --> 00:20:42,560
+en GitHub tenemos 6300 Watchers, 1600 Forks, 500 Watchers, 1600 Followers en Twitter,
+
+190
+00:20:42,560 --> 00:20:47,680
+2700 preguntas etiquetadas con Scrappy en esta Coverflow. Y tenemos unos 2000 miembros en
+
+191
+00:20:47,680 --> 00:20:52,920
+la lista de Scrappy Users, en la lista de correo. Hay una comunidad muy, muy grande
+
+192
+00:20:52,920 --> 00:21:00,880
+detrás de Scrappy. ¿Qué es lo que he hecho básicamente? No sé cómo estará aquí internet.
+
+193
+00:21:00,880 --> 00:21:06,160
+Por eso he dejado también la dirección. Pero es en www.github.com.scrappyinhub.com.
+
+194
+00:21:06,160 --> 00:21:11,720
+Python Speakers es un repositorio que crearon para una demostración de Python As de hace
+
+195
+00:21:11,720 --> 00:21:19,520
+unos años, me parece. Y tiene dentro un montón de arañas. Pues, por ejemplo, analizan datos
+
+196
+00:21:19,520 --> 00:21:24,960
+de Python Brasil, Python As, Python Argentina. Y pues yo me he encargado de hacer un comité
+
+197
+00:21:24,960 --> 00:21:30,320
+esta semana a correr sobre Python España. Entonces, pues ahí podéis ver un ejemplo,
+
+198
+00:21:30,320 --> 00:21:38,360
+a ver si luego tiene internet. Os lo puedo mostrar. Sobre cómo obtener datos de los ponentes
+
+199
+00:21:38,360 --> 00:21:44,560
+tanto de la edición pasada de 2013 como de esta edición. En caso del año pasado, la
+
+200
+00:21:44,560 --> 00:21:49,560
+web tenía API en este año, ¿no? Pero bueno, podéis ver el ejemplo de que Scrappy puede
+
+201
+00:21:49,560 --> 00:22:00,960
+extraer a dos, tanto de APIs como de, en este caso, de HTML. Vale, pues vamos a pasar un
+
+202
+00:22:00,960 --> 00:22:05,960
+poquito a ver cómo funciona Scrappy. Básicamente tenemos Items. Items al final acabó, nosotros
+
+203
+00:22:05,960 --> 00:22:10,120
+haceros idea que es como un diccionario. Un diccionario encapsulado bonito, con una clase.
+
+204
+00:22:10,120 --> 00:22:17,880
+Y el principal objetivo es extraer datos estructurados de fuentes lo estructuradas, como es en este
+
+205
+00:22:17,880 --> 00:22:21,920
+caso pues un HTML. Y queremos darle un formato, normalmente queremos obtener. Pues estamos
+
+206
+00:22:21,920 --> 00:22:26,520
+en un e-commerce, por ejemplo, queremos obtener el nombre del producto, el precio del producto,
+
+207
+00:22:26,520 --> 00:22:30,520
+características del producto. Si tiene stock, no tiene stock, imágenes del producto, pues
+
+208
+00:22:30,520 --> 00:22:35,880
+depende de los requisitos del cliente. En este caso pues veis simplemente, si importas
+
+209
+00:22:35,880 --> 00:22:40,920
+Scrappy, creéis una clase, queréis dar de Scrappy.item y despidimos los atributos. ¿Qué
+
+210
+00:22:40,920 --> 00:22:45,360
+tiene en este caso un item llamado producto? Bueno, pues tiene un nombre, un precio, un
+
+211
+00:22:45,360 --> 00:22:50,480
+stock y la última vez que fue actualizado. Vamos a ver un poco para que sirven los Items.
+
+212
+00:22:50,480 --> 00:22:54,440
+Vosotros haceros la idea de que simplemente nosotros corremos una araña con Scrappy y
+
+213
+00:22:54,440 --> 00:23:04,160
+el resultado se guarda en unos Items. Que es el primer paso para empezar con Scrappy,
+
+214
+00:23:04,160 --> 00:23:09,680
+empezar un proyecto. Es bastante similar a cómo funciona Django. Y de hecho mucha gente
+
+215
+00:23:09,680 --> 00:23:15,640
+tiene una queja de, es que se parece mucho a Django, ¿ha viscopiado? Bueno, no. Realmente
+
+216
+00:23:15,640 --> 00:23:21,240
+nos gustó mucho cómo está hecho Django por dentro, la arquitectura que tiene nos parece
+
+217
+00:23:21,240 --> 00:23:26,760
+muy limpio y ¿por qué no vamos a seguir algo que funciona bien? Sencillamente. Entonces,
+
+218
+00:23:26,760 --> 00:23:31,920
+bueno, cuando hacéis un start project, en este caso el nombre SpyCon es, se os crea la
+
+219
+00:23:31,920 --> 00:23:39,160
+siguiente estructura. Scrappy.cfg es un archivo de configuración y luego tenemos Items.py,
+
+220
+00:23:39,160 --> 00:23:43,200
+que ya podéis imaginaros que lo que guarda son las clases con los Items. Pyplines, que
+
+221
+00:23:43,200 --> 00:23:51,240
+después vamos a pasar a ver qué son. Settings. Y un package de spiders en el cual pues dentro
+
+222
+00:23:51,240 --> 00:23:58,520
+va a haber todas las arañas que realicemos. ¿Qué es una araña? Pues es simplemente una
+
+223
+00:23:58,520 --> 00:24:05,000
+clase que define cómo se extraen datos de unos Itterwebs. Ejemplo, también hay que
+
+224
+00:24:05,000 --> 00:24:09,720
+ver la diferencia entre lo que es una araña, un spider normal y lo que es un crawler. En
+
+225
+00:24:09,720 --> 00:24:15,040
+un spider todo lo que haces es, bueno, lleves tres datos de estas Wefts o de estas requests
+
+226
+00:24:15,040 --> 00:24:20,200
+que genero. En un crawler tú lo que define son reglas. En plan, pues yo quiero que todas
+
+227
+00:24:20,200 --> 00:24:25,840
+las URLs que sean de este tipo las sigas. Imaginamos, por ejemplo, un periódico. Bueno,
+
+228
+00:24:25,840 --> 00:24:29,160
+yo quiero que todos los artículos se quede de las URLs que tienen en una estructura.
+
+229
+00:24:29,160 --> 00:24:33,960
+Quiero que sigas todas las que tengan este tipo de estructura. Y el único que haces
+
+230
+00:24:33,960 --> 00:24:42,680
+es, como una araña, seguir todos los enlaces que tienes en la estructura. ¿De acuerdo? ¿Cuál
+
+231
+00:24:42,680 --> 00:24:48,480
+es el ejemplo más sencillo de un spider en Scrappy? Pues en este caso, simplemente,
+
+232
+00:24:48,480 --> 00:24:54,160
+para crear un spider hacemos una clase. Heredamos de Scrappy.Spider. ¿Qué es lo que tiene que
+
+233
+00:24:54,160 --> 00:25:00,640
+tener un spider si o si? Tiene que tener un nombre. En este caso, el nombre es lo llame
+
+234
+00:25:00,640 --> 00:25:06,920
+igual que el nombre de la web que quiero analizar. Hay un atributo opcional que, en este caso,
+
+235
+00:25:06,920 --> 00:25:10,600
+estoy definiendo que es Alweaz Domains, que es simplemente los dominios a los que va a
+
+236
+00:25:10,600 --> 00:25:17,200
+acceder. ¿Por qué es importante esto? Porque si nosotros, por error, o no error, lanzamos
+
+237
+00:25:17,200 --> 00:25:23,680
+una petición a un sitio externo al que queremos analizar, igual no nos interesa. Imaginamos,
+
+238
+00:25:23,680 --> 00:25:28,960
+por ejemplo, que lanzamos todos los enlaces que hay en una página. Igual hay alguno que
+
+239
+00:25:28,960 --> 00:25:32,560
+tiene publicidad. Por otra cosa, que no nos interesa sus datos. Bueno, pues yo eso lo
+
+240
+00:25:32,560 --> 00:25:38,400
+quiero coger los datos que estén dentro de Example.com. Y luego tenemos una lista llamada
+
+241
+00:25:38,400 --> 00:25:44,400
+StarTvRLs. ¿Qué es lo que hace esta lista? Es la lista de inicio sobre la cual se generan
+
+242
+00:25:44,400 --> 00:25:49,320
+peticiones. Nada más que arranque el araña, lo que va a hacer va a ser lanzar una petición
+
+243
+00:25:49,320 --> 00:25:54,040
+a todas las superrls que tengamos definidas en esa lista. ¿Qué es lo que va a hacer
+
+244
+00:25:54,040 --> 00:25:59,160
+Scrappy cuando lanza las peticiones de esa lista? Básicamente lo que va a hacer va a
+
+245
+00:25:59,160 --> 00:26:04,760
+ser mandarlas a la función parse, por defecto. Luego veremos cómo se puede modificar. Parse
+
+246
+00:26:04,760 --> 00:26:09,440
+es simplemente recibe como parámetro response. Y en este caso es simplemente estilo geando
+
+247
+00:26:09,440 --> 00:26:20,520
+que hemos recibido una respuesta de cierta URL. Eso es muy sencillo. ¿Cómo se generan
+
+248
+00:26:20,520 --> 00:26:26,360
+las recuestas iniciales? Por una parte tenemos StarTvRLs como hemos visto y por otra parte
+
+249
+00:26:26,360 --> 00:26:33,480
+tenemos StartRequest. Simplemente, StartRequest es una función que lo que es un generador,
+
+250
+00:26:33,480 --> 00:26:41,000
+mejor dicho, que lo que devuelve son peticiones, o sea, objetos de tipo request. Y simplemente
+
+251
+00:26:41,000 --> 00:26:47,520
+en el callback function, que es en este caso parse, es el callback, lo que hacemos es parsear
+
+252
+00:26:47,520 --> 00:26:54,720
+la respuesta y devolver. O items, o objetos de tipo request, o un iterable de los dos.
+
+253
+00:26:54,720 --> 00:26:59,600
+Esto que a priori es un poco raro en plan, ¿puedo devolver lo que quiera? Es así,
+
+254
+00:26:59,600 --> 00:27:06,880
+literalmente. El siguiente ejemplo siguiendo la misma línea del ejemplo anterior. Bueno,
+
+255
+00:27:06,880 --> 00:27:12,640
+pues vamos a extraer datos. En este caso sigo con la estructura, lanza una petición a
+
+256
+00:27:12,640 --> 00:27:19,920
+example.com y se llama callback parse. En este caso lo que estoy haciendo es extraer
+
+257
+00:27:19,920 --> 00:27:26,160
+items y a la vez generar peticiones. Simplemente, pues le digo, mira, pues para todos los h3
+
+258
+00:27:26,160 --> 00:27:32,400
+que tengas en transponse.xpad, me creas un item y me lo lanzas, me lo lanzas al generador.
+
+259
+00:27:32,400 --> 00:27:36,520
+Y luego lo mismo, pues para todos los enlaces que encuentres en la página, simplemente
+
+260
+00:27:36,520 --> 00:27:44,680
+me generas una request. Como podéis ver en la firma de la función de request, tiene
+
+261
+00:27:44,680 --> 00:27:48,440
+un parámetro opcional que es callback, donde podemos definir qué función va a ser la que
+
+262
+00:27:48,440 --> 00:27:55,480
+se va a encargar de procesar la respuesta de esa petición. Por defecto, es parse. Pero
+
+263
+00:27:55,480 --> 00:27:59,040
+puede que lancemos diferentes peticiones. Por ejemplo, lanzo en la petición un producto
+
+264
+00:27:59,040 --> 00:28:03,360
+y lanzo la petición de una categoría. Y, pues, genere diferentes callbacks para procesar
+
+265
+00:28:03,360 --> 00:28:12,040
+diferentes respuestas. ¿Cuál es un poco la arquitectura de... Esta imagen no me gusta
+
+266
+00:28:12,040 --> 00:28:16,480
+nada, pero no he tenido tiempo de hacer una mejor y no se ve muy bien desde aquí, la verdad.
+
+267
+00:28:16,480 --> 00:28:21,480
+¿Cuál es la arquitectura de Scrappy? Bueno, Scrappy, para los que os hagáis, es un poco
+
+268
+00:28:21,480 --> 00:28:26,960
+la pregunta de... Bueno, antes me has vendido la moto de que funciona con hilos de... Si
+
+269
+00:28:26,960 --> 00:28:30,920
+quieres escalar, tienes que hacer montar hilos de ejecución o tienes que montar algo basado
+
+270
+00:28:30,920 --> 00:28:37,440
+en eventos como gevent o leafevent. Scrappy está basado en Twisted, semano que suena.
+
+271
+00:28:37,440 --> 00:28:42,200
+Y básicamente lo que tenemos es un Scrappy Engine, que para debajo lo que corre es un
+
+272
+00:28:42,200 --> 00:28:49,000
+reactor, Twisted. ¿Qué es lo que tenemos? Tenemos simplemente spiders, que lo que hacen
+
+273
+00:28:49,000 --> 00:28:57,520
+es piden al donlwader peticiones. Esas peticiones van a generar, van a generar ítems que pasan
+
+274
+00:28:57,520 --> 00:29:02,240
+por ítems pipeline. Ahora vamos a ver un poquito más cómo funciona todo el flujo,
+
+275
+00:29:02,240 --> 00:29:07,040
+pero es para que lo sea una idea global de cómo funciona la arquitectura. Es un poco
+
+276
+00:29:07,040 --> 00:29:11,640
+complejo de ver al principio la curva de aprendizaje, pero una vez que lo veis, vais a ver que es
+
+277
+00:29:11,640 --> 00:29:19,520
+el SotaCaballo Ray, literalmente. Cosas más interesantes de Scrappy. Tenemos una
+
+278
+00:29:19,520 --> 00:29:23,880
+cell interactiva, y esto es muy chulo, pues igual que tenemos en Python la consola interactiva
+
+279
+00:29:23,880 --> 00:29:28,240
+y tenemos en Django la consola interactiva, tenemos también en Scrappy una consola interactiva
+
+280
+00:29:28,240 --> 00:29:35,760
+que nos va a permitir simplemente jugar con Scrappy de una forma muy directa. Es una herramienta
+
+281
+00:29:35,760 --> 00:29:41,840
+brutal, muy buena para devogar, para testear, cualquier rituya que tengas, lanzas una Scrappy
+
+282
+00:29:41,840 --> 00:29:46,440
+Cell y te pones a investigar un poco qué es lo que está haciendo. Simplemente Scrappy
+
+283
+00:29:46,440 --> 00:29:53,440
+Cell, Scrappy Cell y el nombre de la URL, y directamente te lanzan a petición. Y básicamente
+
+284
+00:29:53,440 --> 00:30:00,600
+lo que hace es, te deja los siguientes objetos disponibles. Vas a tener el Spider que es
+
+285
+00:30:00,600 --> 00:30:07,320
+el Spider que se ha usado para hacer la petición, vas a tener la propia petición en sí, Selectors
+
+286
+00:30:07,320 --> 00:30:12,760
+y Selectors, simplemente con ellos podemos acceder elementos con X-Pad. Y luego tenemos
+
+287
+00:30:12,760 --> 00:30:20,000
+unos cuantos Shortcuts con ese help, podemos ver toda la funcionalidad que tiene la cell.
+
+288
+00:30:20,000 --> 00:30:24,400
+Con Fetch podemos pedir nuevas peticiones, quiero que me des una petición nueva y me
+
+289
+00:30:24,400 --> 00:30:31,360
+la guardes en otro request. Y View es una muy chula, lo que haces básicamente, te hace
+
+290
+00:30:31,360 --> 00:30:35,120
+una petición, te la baja y te lo abro en tu navegador, exactamente igual que lo veis
+
+291
+00:30:35,120 --> 00:30:40,800
+Scrappy, sin Javascript, etc. etc. te lo guardo en un archivo local y te lo lanza. Es bastante
+
+292
+00:30:40,800 --> 00:30:46,320
+útil. Para ver un poco, si tienes alguna duda de cómo Scrappy vería esta petición,
+
+293
+00:30:46,320 --> 00:30:52,320
+te la lanzas en Scrappy Cell, pones View de la request y listo. Está integrado con
+
+294
+00:30:52,320 --> 00:31:00,440
+HiPyton, está bastante chulo, te lo colorea, te pone bonito y te dan unas las funcionalidades
+
+295
+00:31:00,440 --> 00:31:04,440
+muy buenas. Y una cosa que está muy bien es que no se
+
+296
+00:31:04,440 --> 00:31:11,480
+queda aquí, tiene lo que llamamos Inspect Response, esto es tan sencillo como que nosotros
+
+297
+00:31:11,480 --> 00:31:15,680
+estamos haciendo una araña y puede que llegue un punto en el que queramos divulgar qué
+
+298
+00:31:15,680 --> 00:31:20,000
+es lo que está pasando. Imaginaros, lanza una petición y yo no sé exactamente qué
+
+299
+00:31:20,000 --> 00:31:24,240
+es lo que está pasando en esa petición, qué datos tengo accesibles, qué es lo que
+
+300
+00:31:24,240 --> 00:31:29,680
+ha cogido Scrappy, simplemente, impostamos Scrappy Cell.Inspect Response, le pasamos
+
+301
+00:31:29,680 --> 00:31:34,720
+el Response del callback y lo que haces cuando lo ejecutamos directamente se para, como
+
+302
+00:31:34,720 --> 00:31:39,680
+si fuera un IPDB, digamos, y te da acceso a la consola interactiva con los mismos parámetros
+
+303
+00:31:39,680 --> 00:31:45,320
+que tienes. Pues tienes en este caso el Response y puedes acceder, abrirlo en el navegador,
+
+304
+00:31:45,320 --> 00:31:56,840
+que es lo que ha pasado, es bastante útil para divulgar. Tenemos Item Loaders, básicamente
+
+305
+00:31:56,840 --> 00:32:04,120
+Item Loaders lo que definen es el mecanismo para construir Items. Simplemente en un item
+
+306
+00:32:04,120 --> 00:32:09,800
+guardamos datos, como se fue en un diccionario, Item Loaders lo que permite es definir métodos
+
+307
+00:32:09,800 --> 00:32:16,280
+de pre y post procesado. Nosotros tenemos un Item Loader en el cual añadimos datos tanto
+
+308
+00:32:16,280 --> 00:32:22,920
+con los métodos ACXPAD, ACSS o Azvalio. Está sencillo como que nosotros en un callback
+
+309
+00:32:22,920 --> 00:32:30,560
+lanzamos un Item Loader, le distanciamos con el Response y podemos decir Item Loader ACXPAD
+
+310
+00:32:30,560 --> 00:32:35,660
+y podemos decir el dato, por ejemplo, el precio está en este X-pad y automáticamente se
+
+311
+00:32:35,660 --> 00:32:42,680
+encarga de añadir el precio al Item con ese X-pad o con ese valor CSS o con ese valor.
+
+312
+00:32:42,680 --> 00:32:47,480
+¿Qué es lo que van a hacer los Item Loaders? Nosotros los Item Loaders podemos definir
+
+313
+00:32:47,480 --> 00:32:53,200
+lo que se llaman funciones de pre y post procesado, son muy interesantes. Entonces básicamente
+
+314
+00:32:53,200 --> 00:32:56,000
+haceros la idea de que yo quiero comprobar, por ejemplo, si el dato que es creapeado es
+
+315
+00:32:56,000 --> 00:33:02,040
+una fecha, es un precio, es un valor numérico, es algo que me vale o simplemente estoy escapeando
+
+316
+00:33:02,040 --> 00:33:06,880
+texto y quiero asegurarme de que el texto que es creapeado no tiene, por ejemplo, etiquetas
+
+317
+00:33:06,880 --> 00:33:16,280
+HTML. Es bastante útil. Un ejemplo sencillo de cómo funciona un Item Loader, pues entramos,
+
+318
+00:33:16,280 --> 00:33:35,080
+a ver un momentito si tengo Wifi, si no me voy a dejar la demo para después. No, no me voy
+
+319
+00:33:35,080 --> 00:33:41,960
+a tener. Tenemos Item Pipelines. Básicamente nosotros cuando en un callback generamos un
+
+320
+00:33:41,960 --> 00:33:47,680
+Item pasa a través de lo que llamamos un Pipeline de procesado. Es decir, nosotros en
+
+321
+00:33:47,680 --> 00:33:52,880
+Australia cuando hacemos un Jail Item va a pasar por estos Pipelines. ¿Qué se ponen
+
+322
+00:33:52,880 --> 00:34:00,240
+los Pipelines? ¿Para qué sirven? Básicamente para limpieza de datos HTML, para validación,
+
+323
+00:34:00,240 --> 00:34:03,960
+lo que os he contado antes. Puede ser interesante, pues que veamos si es una fecha, si tiene
+
+324
+00:34:03,960 --> 00:34:11,360
+un precio, para comprobar duplicados. Y esto es bastante interesante. Sobre pasar bastante
+
+325
+00:34:11,360 --> 00:34:15,480
+bien, el hecho de que lancemos peticiones desde diferentes sitios y que extraigamos
+
+326
+00:34:15,480 --> 00:34:20,880
+la misma información. Y lo que nos interesa es que la información esté duplicada. Imaginaros
+
+327
+00:34:20,880 --> 00:34:26,040
+que nosotros, que un producto es tantos categorías. Y yo, analizando esas categorías, lanzo ese
+
+328
+00:34:26,040 --> 00:34:30,440
+producto. ¿Qué ocurre? Que tengo el producto duplicado porque lo he analizado en dos categorías
+
+329
+00:34:30,440 --> 00:34:37,080
+diferentes. No nos interesa tener en ese caso el producto duplicado. ¿Para qué más sirve?
+
+330
+00:34:37,080 --> 00:34:44,120
+Para definir dónde se va a guardar el item. Por ejemplo, una masa de datos. Simplemente,
+
+331
+00:34:44,120 --> 00:34:48,160
+imaginaros que queremos guardarlo en DynamoDB, en Amazon, en un MongoDB, que espero que no.
+
+332
+00:34:48,160 --> 00:34:54,840
+En un CacheDB o en lo que vosotros veáis. Con un Item Pipeline podemos definir dónde
+
+333
+00:34:54,840 --> 00:35:03,760
+queremos guardarlo y cómo queremos guardarlo. Ejemplo de un Item Pipeline, muy sencillito.
+
+334
+00:35:03,760 --> 00:35:11,040
+Vamos. Yo quiero, dependiendo de un valor del Item, aplicarle IVA o no aplicarle IVA.
+
+335
+00:35:11,040 --> 00:35:16,360
+En este caso. Y lo que hago es simplemente definir una clase. Veis que sencillo es definir
+
+336
+00:35:16,360 --> 00:35:22,960
+un Item Pipeline. En el cual le digo, bueno, si tienes precio, pues simplemente, si tienes
+
+337
+00:35:22,960 --> 00:35:31,880
+precio y tienes el flag puesto de procesar el tema de IVA, pues modificas el valor del
+
+338
+00:35:31,880 --> 00:35:39,160
+precio por el IVA. ¿Qué es lo que ocurre si en ese caso el item no tiene precio? Pues
+
+339
+00:35:39,160 --> 00:35:43,960
+es algo que no nos interesa. En este caso lo que hacemos es lanzamos una excepción,
+
+340
+00:35:43,960 --> 00:35:49,800
+Drop Item. Eso luego daría un error al procesar Scrappy. Veis que los Item Pipelines son bastante
+
+341
+00:35:49,800 --> 00:35:58,120
+interesantes. Sobre todo para temas de validación. Es lo principal que se usan. Tenemos Middle
+
+342
+00:35:58,120 --> 00:36:04,440
+Wears. Tenemos dos tipos de Middle Wears. Tenemos los Downloaders Middle Wears y los Spiders
+
+343
+00:36:04,440 --> 00:36:08,960
+Middle Wears. Los Downloaders Middle Wears, básicamente, lo que hacen es insertar en
+
+344
+00:36:08,960 --> 00:36:14,240
+lo que es el flujo de peticiones y respuestas y son los más interesantes. Ahora vamos a
+
+345
+00:36:14,240 --> 00:36:18,800
+ver ejemplos de cada uno de ellos. Y luego tenemos Spider Middle Wears, que realmente se
+
+346
+00:36:18,800 --> 00:36:23,680
+insertan en el flujo de ejecución de los Spiders. Son un poco más difíciles de ver.
+
+347
+00:36:23,680 --> 00:36:30,680
+Pero básicamente, cuando nosotros aquí ponemos el Allowed Domains, ahí lo que hay es un
+
+348
+00:36:30,680 --> 00:36:35,080
+Middle Wear que se encarga de comprobar en cada petición que está dentro de ese dominio.
+
+349
+00:36:35,080 --> 00:36:41,880
+Por ejemplo, la idea es de que es un Spider Middle Wear. ¿Qué tipos de Downloader Middle
+
+350
+00:36:41,880 --> 00:36:46,400
+Wears como no existen? Pues Cookies Middle Wear. Estos son los que están por defectos
+
+351
+00:36:46,400 --> 00:36:52,520
+Wilting en Scrappy, pero puede que definamos los otros propios o incluso más interesante
+
+352
+00:36:52,520 --> 00:36:59,000
+modificarlos, los de Scrappy, para tener un comportamiento un poco más personalizado.
+
+353
+00:36:59,000 --> 00:37:06,640
+Tenemos simplemente Cookies Middle Wear, se encarga simplemente de todo el tema de manejar
+
+354
+00:37:06,640 --> 00:37:09,840
+Cookies entre peticiones, donde nosotros lanzamos una petición y de forma transparente, en
+
+355
+00:37:09,840 --> 00:37:15,400
+la siguiente petición que lancemos, va a tener el valor de la Cookie de la anterior petición.
+
+356
+00:37:15,400 --> 00:37:19,440
+Tenemos sistemas de caché. Imaginaos que lanzamos la misma petición dos veces. Pues
+
+357
+00:37:19,440 --> 00:37:25,440
+de esta forma, depende del backend que definamos, no vamos a hacer una petición nueva, sino
+
+358
+00:37:25,440 --> 00:37:31,560
+que la cogemos de la caché. Tenemos algo interesante que es para lanzar una petición
+
+359
+00:37:31,560 --> 00:37:37,240
+a través de Proxies. Imaginaos que yo quiero hacerme pasar por otro país. Por ejemplo,
+
+360
+00:37:37,240 --> 00:37:42,560
+yo tengo mi servidor en Estados Unidos y resulta que necesito que la web me comprueba que la
+
+361
+00:37:42,560 --> 00:37:45,440
+IP de origen echada de Australia, que suele pasar mucho, por ejemplo, que los australianos
+
+362
+00:37:45,440 --> 00:37:51,280
+lo permitan acceso. Bueno, pues de esa forma podemos hacer una jugadreta. Redirect Middle
+
+363
+00:37:51,280 --> 00:37:57,120
+Wear. Definimos qué comportamiento queremos tener en un Redirect. No queremos aceptar
+
+364
+00:37:57,120 --> 00:38:02,720
+Redirects. ¿Cuánto Redirect aceptamos? Imaginaos un Redirect Loop infinito. Pues podemos jugar
+
+365
+00:38:02,720 --> 00:38:09,400
+con todo eso. Y uno muy interesante que es RetriMidderWear. Básicamente, este MidderWear
+
+366
+00:38:09,400 --> 00:38:14,840
+lo que nos permite es decir, repite esta petición, ¿por qué ha pasado algo que no me gusta?
+
+367
+00:38:14,840 --> 00:38:20,880
+¿Qué suele pasar, por ejemplo? Imaginaos que yo estoy esclapeando alguna, alguna coma
+
+368
+00:38:20,880 --> 00:38:28,960
+es muy grande y me banea. Digo, bueno, me ha dado una petición con un 500. Digo, bueno,
+
+369
+00:38:28,960 --> 00:38:33,960
+503. Digo, bueno, vamos a ver. Puede que haya sido un error de ellos. Suele pasar. A
+
+370
+00:38:33,960 --> 00:38:36,800
+veces suele pasar que lanzas una petición, te da un 503, la vuelves a lanzar y te da un
+
+371
+00:38:36,800 --> 00:38:42,400
+200 sin ningún tipo de explicación que tú conozcas. O simplemente que te banen. Pues
+
+372
+00:38:42,400 --> 00:38:47,720
+con RetriMidderWear lo que dices es, esta petición no ha resultado lo que quería, repítela.
+
+373
+00:38:47,720 --> 00:38:52,000
+Y simplemente lo que va a hacer en la araña es mandase la schedule y volver a repetirla
+
+374
+00:38:52,000 --> 00:38:57,760
+y pasársela al callback. Ahí podemos definir también cuántas veces queramos que se repita.
+
+375
+00:38:57,760 --> 00:39:02,320
+Podemos incluso, pero estoy más avanzado, definir nuestro propio comportamiento de,
+
+376
+00:39:02,320 --> 00:39:08,920
+pues quiero que se repita, tal, X veces o que se repita o que no se repitan más de
+
+377
+00:39:08,920 --> 00:39:12,800
+20 a la vez. O sea, se pueden hacer muchos tipos de comportamientos interesantes. O incluso,
+
+378
+00:39:12,800 --> 00:39:19,520
+quiero que me la guardes en una base de datos y luego más tarde ya las volveré a poner
+
+379
+00:39:19,520 --> 00:39:26,480
+en enjain. Es muy interesante. En Scrappy lo que también tenemos hoy es, como pone el
+
+380
+00:39:26,480 --> 00:39:32,240
+título, tenemos settings para todo. Es igual a la espina capa igual que en Django. En este
+
+381
+00:39:32,240 --> 00:39:36,800
+caso, ¿qué settings podemos definir en Scrappy? Tenemos, podemos definir cuál es el user
+
+382
+00:39:36,800 --> 00:39:44,880
+agent por defecto que tiene. Por defecto me parece que es Scrappy o Scrappy. Pero podemos
+
+383
+00:39:44,880 --> 00:39:51,160
+definir, oye mira, yo quiero hacerme pasar por Google, pues Googlebot. Igual que oela.
+
+384
+00:39:51,160 --> 00:39:54,480
+Podemos definir el número máximo de retriss que hace, por ejemplo, el middle work que
+
+385
+00:39:54,480 --> 00:39:58,320
+acabamos de ver. También se puede modificar otra forma, pero podemos modificar de forma
+
+386
+00:39:58,320 --> 00:40:04,640
+global ahí. Podemos definir el número de peticiones simultáneas que hace una araña.
+
+387
+00:40:04,640 --> 00:40:08,720
+Muchas veces tenemos que lanzar 100 a la vez que lanzar 20. Muchas veces está eso de
+
+388
+00:40:08,720 --> 00:40:14,680
+ser polite, dependiendo de la velocidad con la que queramos los datos. Y también de los
+
+389
+00:40:14,680 --> 00:40:20,000
+recursos. No va a consumir lo mismo una araña en Scrappy. Lanzando 200 peticiones a la vez
+
+390
+00:40:20,000 --> 00:40:25,640
+que lanzando 10. Eso nos pasa mucho, por ejemplo, en algún proyecto que tenemos alguna instancia
+
+391
+00:40:25,640 --> 00:40:31,280
+muy pequeñita, que por ejemplo las Amazon Small de antes tenían medio giga o de RAM.
+
+392
+00:40:31,280 --> 00:40:34,680
+Muchas veces si lanzábamos muchas peticiones a la vez, lo que ocurría es que llegábamos
+
+393
+00:40:34,680 --> 00:40:39,440
+al límite físico de la memoria de la instancia. Entonces, bueno, vamos a bajar un poco el
+
+394
+00:40:39,440 --> 00:40:42,960
+número de peticiones y seguimos aprovechando esa instancia.
+
+395
+00:40:42,960 --> 00:40:48,040
+Depth Limit, lo que os he contado antes de los crawlers. Definimos unas reglas, estas
+
+396
+00:40:48,040 --> 00:40:52,960
+URL's y quiero que sigas todas las URL's que tengan ese tipo. Pues puede que lleguemos
+
+397
+00:40:52,960 --> 00:40:57,400
+a un punto en el que avancemos a la web hacia adentro y nunca salgamos de ella. Entonces
+
+398
+00:40:57,400 --> 00:41:00,400
+con Depth Limit podemos decir, pues no quiero que avances más de tres niveles hacia abajo,
+
+399
+00:41:00,400 --> 00:41:06,320
+por ejemplo, lo podemos configurar de forma global. Podemos definir cuáles son los downloaders
+
+400
+00:41:06,320 --> 00:41:13,680
+middlewares y es bastante importante porque igual que si conocéis en Django los middlewares
+
+401
+00:41:13,680 --> 00:41:20,940
+tienen un orden y el orden importa. No es lo mismo acceder, por ejemplo, a cookies
+
+402
+00:41:20,940 --> 00:41:26,440
+middleware y después acceder a otra cosa de cookies. Podemos poner datos en el spider,
+
+403
+00:41:26,440 --> 00:41:29,600
+es bastante interesante ver cuál es el orden que tienen los middlewares.
+
+404
+00:41:29,600 --> 00:41:34,080
+Y luego tenemos un download delay en el cual lo que podemos establecer de forma global
+
+405
+00:41:34,080 --> 00:41:39,800
+es cuánto tiempo esperamos entre una petición y otra. Se puede ser también bastante interesante.
+
+406
+00:41:39,800 --> 00:41:44,280
+Pues oye, igual hacemos sin querer un 2, Ana Web. Si lanzamos tienen peticiones simultáneas
+
+407
+00:41:44,280 --> 00:41:49,760
+sin esperar. Igual el servidor no puede con ello.
+
+408
+00:41:49,760 --> 00:41:54,960
+¿Qué más cosas tenemos en el scrappy? Y esto es una cosa que mucha gente no le gusta.
+
+409
+00:41:54,960 --> 00:42:00,000
+Yo lo veo bastante práctico y es tenemos una consola de telenet accesible. Nosotros
+
+410
+00:42:00,000 --> 00:42:05,120
+cuando lanzamos por defecto una instancia de scrappy podemos hacer un telenet, simplemente
+
+411
+00:42:05,120 --> 00:42:11,160
+lanzamos telenet localhost en el porto 63 y lo que vamos a ver es un estatus de cómo
+
+412
+00:42:11,160 --> 00:42:16,520
+está ejecutándose la araña. Es muy importante ver el número de peticiones que se ha lanzado,
+
+413
+00:42:16,520 --> 00:42:21,360
+el número de items que hemos conseguido. ¿Cuánto tiempo lleva la araña ejecutándose?
+
+414
+00:42:21,360 --> 00:42:27,840
+Hay arañas que pueden tardar muchos días, realmente días en ejecutarse. Para cuando
+
+415
+00:42:27,840 --> 00:42:31,640
+nos demos cuenta esta araña está funcionando o no está funcionando, cuántas peticiones
+
+416
+00:42:31,640 --> 00:42:39,840
+ha hecho, se ha parado. Y otra cosa que nos permite es parar, poner en pausa el scrappy
+
+417
+00:42:39,840 --> 00:42:45,760
+en Jain. Scrappy podemos directamente decir pausa la araña y luego más tarde sigo. No
+
+418
+00:42:45,760 --> 00:42:53,080
+hay problema. ¿Cuál sería el resultado cuando hacemos un telenet? En este caso estamos
+
+419
+00:42:53,080 --> 00:43:00,600
+viendo cuál es el estado actual de esta araña. ¿Cuál es su nombre? ¿Cuántas peticiones
+
+420
+00:43:00,600 --> 00:43:06,160
+están en scheduler? Es bastante interesante ver cuál es el estado actual de ejecución
+
+421
+00:43:06,160 --> 00:43:14,800
+de una araña. ¿Qué más tenemos? Y esto es lo que… la parte avanzada. ¿Cómo evitar
+
+422
+00:43:14,800 --> 00:43:23,640
+ser baneados? Y bueno pues dependiendo. Muchas veces tenéis que preguntar realmente, si
+
+423
+00:43:23,640 --> 00:43:28,840
+necesitáis los datos rápido. Porque bueno no es lo mismo tener un cliente que analiza
+
+424
+00:43:28,840 --> 00:43:34,200
+sitios de commerce cuyos productos cambian de precio todos los días o horas o minutos,
+
+425
+00:43:34,200 --> 00:43:38,920
+que analizaran información que bueno la cojo es una vez y te da igual. ¿De acuerdo? Dices
+
+426
+00:43:38,920 --> 00:43:42,520
+bueno pues mira lo voy haciendo poco a poco o lo voy haciendo pocas peticiones, al final
+
+427
+00:43:42,520 --> 00:43:47,200
+de la cámara no tengo prisa en cojar los datos. ¿Qué soluciones tenemos? Primero para
+
+428
+00:43:47,200 --> 00:43:54,360
+engañar es todo eso, es engañar a los subidores. Primero rotar los user agents. Eso les es
+
+429
+00:43:54,360 --> 00:43:59,000
+bastante típico pues oye mira ellos tienen igual. Si viene de Googlebot o si viene de
+
+430
+00:43:59,000 --> 00:44:04,280
+tal user agent no lo de acceso. Bueno pues hago que soy un Chrome y ya está. Soy un
+
+431
+00:44:04,280 --> 00:44:10,960
+usuario final. Desactivar cookies. Estos por defectos están activadas en scrap y las cookies
+
+432
+00:44:10,960 --> 00:44:15,680
+de forma transparente. Soler ser bastante interesante pues desactivarlas. Hay muchas
+
+433
+00:44:15,680 --> 00:44:21,120
+webs que no requieren cookies para navegar. Amazon, por ejemplo. No requiere que tengas
+
+434
+00:44:21,120 --> 00:44:25,840
+una cookie para lanzar una petición a un producto y ver sus datos. Pero estoy 100%
+
+435
+00:44:25,840 --> 00:44:30,640
+seguro de que Amazon te pone una cookie y hace un seguimiento sobre cuantas peticiones
+
+436
+00:44:30,640 --> 00:44:36,800
+ha mandado esa sesión que está guardada en la cookie, por ejemplo. ¿Qué más don
+
+437
+00:44:36,800 --> 00:44:41,000
+lo haces? Podemos decir bueno pues no quiero que lanzes 50 peticiones a la vez sino que
+
+438
+00:44:41,000 --> 00:44:45,920
+bueno pues lánzame una petición cada 10 segundos. Hay que tenéis que vosotros estimar cuánto
+
+439
+00:44:45,920 --> 00:44:53,520
+tiempo tardaría por ejemplo en hacer un en correr la araña en completo. Lo más interesante
+
+440
+00:44:53,520 --> 00:45:00,840
+tener IPS rotativas. Es decir tenéis un pool de IPS, 200 IPS. Pongamos. Bueno pues esta
+
+441
+00:45:00,840 --> 00:45:07,400
+IP ya me la han baneado. Ya me la han detectado. Bueno no pasa nada. Otro IP. Si recordéis
+
+442
+00:45:07,400 --> 00:45:12,080
+antes los middleware tenemos el proxy middleware que nos permite especificar desde que IP, o
+
+443
+00:45:12,080 --> 00:45:20,440
+sea que proxy usar para hacer la petición. Y por último tenemos Crolera. Más tarde debí
+
+444
+00:45:20,440 --> 00:45:25,280
+hablar de ello porque es un producto nuestro de la empresa y básicamente nosotros lo que
+
+445
+00:45:25,280 --> 00:45:31,960
+tenemos es esto hecho como un servicio. Nosotros lo que tenemos es un proxy y por detrás lo
+
+446
+00:45:31,960 --> 00:45:36,720
+que tenemos son miles de IPS. Nosotros nos encargamos de gestionar la rotación de IPS
+
+447
+00:45:36,720 --> 00:45:40,600
+de forma automática y todo. Entonces simplemente lanzas una petición hacia nuestro proxy y
+
+448
+00:45:40,600 --> 00:45:46,920
+te devolvimos la respuesta de forma transparente y tú no sabes cómo ha pasado pero te la devolvemos.
+
+449
+00:45:46,920 --> 00:45:57,040
+¿Qué más? Bueno que es todo lo demás en Scrappy. Tenemos los FithXpods. En este caso
+
+450
+00:45:57,040 --> 00:46:02,480
+podemos dar un argumento a una araña y decir quiero que me saques todos los ítems en un
+
+451
+00:46:02,480 --> 00:46:10,160
+JSON, en un CSV, en un XML. Bastante interesante para hacer dames. Luego tenemos DjangoItem.
+
+452
+00:46:10,160 --> 00:46:15,800
+Esto es una cosa que se le gustará bastante. Tenemos un pipeline que lo que básicamente
+
+453
+00:46:15,800 --> 00:46:23,320
+hace es tú en Django, defines un modelo y te permite decir este modelo es un ítem.
+
+454
+00:46:23,320 --> 00:46:28,400
+Y todo el resultado de la ejecución de Scrappy va a ser guardado en ese modelo. Entonces
+
+455
+00:46:28,400 --> 00:46:32,880
+sencillamente tú en Django tienes guardado, tienes configurado un MySQL, un POSREL, eso
+
+456
+00:46:32,880 --> 00:46:36,720
+lo que tengas configurado y de forma automática cuando la araña se vaya ejecutando, veres
+
+457
+00:46:36,720 --> 00:46:45,000
+el estado de datos en ese modelo. Es muy interesante. Tenemos testing, tenemos el contexto de contracts.
+
+458
+00:46:45,000 --> 00:46:48,000
+Esto es un poco más avanzado y los que tengáis curiosidad es que se veis que existe el concepto
+
+459
+00:46:48,000 --> 00:46:56,320
+de contracts y nos sirve para hacer código bastante testeable dentro del framework Scrappy.
+
+460
+00:46:56,320 --> 00:47:08,880
+Tenemos estadísticas. Stadísticas simplemente cuando nosotros ejecutamos una araña, vamos
+
+461
+00:47:08,880 --> 00:47:14,720
+a ver estadísticas de cuántas peticiones han tenido un 200, han tenido un 500, cuántos
+
+462
+00:47:14,720 --> 00:47:18,680
+ítems hemos sacado, cuántos ítems no han sido validados en nuestro pipeline, puede
+
+463
+00:47:18,680 --> 00:47:23,520
+que por ejemplo, pues oye mira, hemos tenido dos productos duplicados. Simplemente cuando
+
+464
+00:47:23,520 --> 00:47:29,080
+acaba la ejecución de la araña, simplemente se colecta una cantidad de estadísticas que
+
+465
+00:47:29,080 --> 00:47:37,000
+son bastante interesantes. Nosotros podemos definir nuestras propias estadísticas. Hemos
+
+466
+00:47:37,000 --> 00:47:43,040
+tenido 200 peticiones que han pasado por tal IP o por tal proxy. Puede ser interesante
+
+467
+00:47:43,040 --> 00:47:49,040
+ver incluso cuánto de lo que ha dado IP. Oye, pues mira, nos la apanean a las 300 peticiones.
+
+468
+00:47:49,040 --> 00:47:55,920
+Pues podemos guardar ese dato y luego analizarlo. Con un Kibana, un Logstas, hayos de ideas.
+
+469
+00:47:55,920 --> 00:48:04,360
+Se pueden hacer cosas muy chulas. ¿Qué más ocurre? Pues el tema de memory leaks suele
+
+470
+00:48:04,360 --> 00:48:12,200
+pasar que la gente no está acostumbrada a hacer un generador y tú en un request puedes
+
+471
+00:48:12,200 --> 00:48:18,200
+adeñadir datos y puede que esos datos tengan simplemente por ahí alguna referencia y tú
+
+472
+00:48:18,200 --> 00:48:22,960
+no te das cuenta de ello y puedes que al final lanzas en la araña en los 5 minutos y dices,
+
+473
+00:48:22,960 --> 00:48:28,200
+oye, ya me ha apretado el servidor. Pues es porque tienes un memory leak bien grande.
+
+474
+00:48:28,200 --> 00:48:33,720
+Básicamente ¿qué es lo que haces? ¿Lanzas una consola Telnet y tenemos una librería
+
+475
+00:48:33,720 --> 00:48:39,240
+llamada Trackref donde podemos ver cuál es el estado actual? Es decir, cuántas peticiones
+
+476
+00:48:39,240 --> 00:48:43,720
+se ha lanzado? ¿Cuántas peticiones están referenciadas? ¿Cuántos ítems están referenciados?
+
+477
+00:48:43,720 --> 00:48:48,600
+Vamos a ver todas las referencias de todos los objetos y pues ahí ver. La petición
+
+478
+00:48:48,600 --> 00:48:54,360
+más vieja se ha hecho hace 2 minutos, algo está mal. ¿De acuerdo?
+
+479
+00:48:54,360 --> 00:49:00,360
+Tema de JavaScript. Pues tenemos Splash, es una solución que es de ScrapingHouse también,
+
+480
+00:49:00,360 --> 00:49:06,040
+es Open Source completamente y es simplemente pues un Qt, un WebKit y tiene un API, simplemente
+
+481
+00:49:06,040 --> 00:49:12,640
+lo lanzáis y lo que va a hacer va a ser renderizaros esa web usando un WebKit. Y luego tenéis
+
+482
+00:49:12,640 --> 00:49:19,120
+Selenium, tiene Vindice para Python, funciona muy bien, consume mucho, funciona mejor y consume
+
+483
+00:49:19,120 --> 00:49:27,760
+demasiado. Y por lo demás, voy a contar rápido antes de que me corten el tema de deployment,
+
+484
+00:49:27,760 --> 00:49:34,760
+¿qué es lo que tenemos nuestra araña hecha en local y queremos lanzarlo en un servidor?
+
+485
+00:49:34,760 --> 00:49:43,640
+Uy, entonces corro, que me matan. Vale, tenemos Scrappy, es un demonio de Scrappy, es un
+
+486
+00:49:43,640 --> 00:49:50,520
+proceso. Básicamente lo que nos da acceso a un WebService en JSON, donde podemos simplemente
+
+487
+00:49:50,520 --> 00:49:55,200
+subir nuestras arañas y ejecutarlas. Tenemos acceso en API podemos decir, quiero que me
+
+488
+00:49:55,200 --> 00:50:00,720
+ejecutes esta araña de este proyecto y automáticamente lo hacemos, simplemente haciendo un post a
+
+489
+00:50:00,720 --> 00:50:07,560
+un JSON, es muy útil. Y luego lo que tenemos es Scrappy Cloud, que también es de nuestra
+
+490
+00:50:07,560 --> 00:50:14,400
+empresa, como no. Y básicamente nuestra empresa lo que hemos hecho ha sido una interfaz web
+
+491
+00:50:14,400 --> 00:50:20,560
+sobre Scrappy y daemon, donde podemos ver cómo hemos ejecutado una araña, gráficas
+
+492
+00:50:20,560 --> 00:50:25,320
+de, pues hemos hecho dos peticiones, han tardado tanto, es bastante interesante, podemos ver
+
+493
+00:50:25,320 --> 00:50:29,120
+los ítems de forma visual, se han extraído estas imágenes y lo que ofrecemos es luego
+
+494
+00:50:29,120 --> 00:50:33,880
+un API sobre esos datos. Simplemente tú ejecutas la araña de forma visual en una interfaz
+
+495
+00:50:33,880 --> 00:50:41,560
+web y te damos un API de los datos que hemos scrapeado, muy interesante. Y ya por último,
+
+496
+00:50:41,560 --> 00:50:50,800
+para acabar. Bueno, sobre nosotros, somos Scrappy Hubs, igual voy a comentarlo antes,
+
+497
+00:50:50,800 --> 00:50:57,360
+aquí. Somos Scrappy Hubs, somos una empresa que empezó hace unos años y fue fundada
+
+498
+00:50:57,360 --> 00:51:02,000
+por los mismos creadores de Scrappy. Acuerdo, básicamente nuestra empresa lo que hace es
+
+499
+00:51:02,000 --> 00:51:07,200
+servicios de consultoría y tenemos un par de productos y somos 70 personas alrededor
+
+500
+00:51:07,200 --> 00:51:12,040
+del mundo, trabajando de forma remota, no tenemos oficina física. Y bueno, estamos
+
+501
+00:51:12,040 --> 00:51:20,840
+reclutando para todos los que le interese apuntarse. Y pues la, la estrategia obligatoria de ventas,
+
+502
+00:51:20,840 --> 00:51:24,560
+como digo yo, básicamente lo que hacemos es consultoría, si tenéis pues algún proyecto
+
+503
+00:51:24,560 --> 00:51:30,080
+en el cual requiráis datos, nosotros nos encargamos de poner nuestro know-how, nuestros ingenieros,
+
+504
+00:51:30,080 --> 00:51:34,240
+para poder desarrollar esas, esas arañas, incluso ejecutar la semestrada infraestructura.
+
+505
+00:51:34,240 --> 00:51:38,760
+Y luego tenemos dos productos, Scrappy Cloud, que es simplemente una interfaz web de Scrappy
+
+506
+00:51:38,760 --> 00:51:44,320
+daemon, donde podéis ver de forma visual todo, y Crolera, que es simplemente un proxy
+
+507
+00:51:44,320 --> 00:51:50,200
+para evitar baneos. Y bueno, simplemente estamos reclutando y de hecho han entrado hace poco
+
+508
+00:51:50,200 --> 00:51:54,840
+unos cuantos, bastantes españoles, como 4 o 5. Así que os animo que si estáis buscando
+
+509
+00:51:54,840 --> 00:52:22,000
+trabajo os animéis a entrar. Bueno eso es todo por mi parte.
+
