@@ -1,0 +1,5540 @@
+1
+00:00:00,000 --> 00:00:16,000
+Yo voy a hablar sobre un proyecto de investigación que estamos llevando adelante en la universidad donde trabajo en la parte de investigación,
+
+2
+00:00:16,000 --> 00:00:20,000
+que es la Universidad Tecnológica Nacional, este es el loguito de la universidad.
+
+3
+00:00:20,000 --> 00:00:28,000
+El proyecto se llama YATEL, es un proyecto que está mutando tremendamente rápido, creo que recién se está estabilizando ahora.
+
+4
+00:00:28,000 --> 00:00:36,000
+La charla que ustedes ven dice minería de datos sobre redes, hoy por hoy es más correcto decir que es Holap sobre redes,
+
+5
+00:00:36,000 --> 00:00:42,000
+o sea que ya subió un nivel más en la parte de análisis de datos de lo que pretendíamos antes.
+
+6
+00:00:42,000 --> 00:00:48,000
+¿Quiénes saben lo que es Holap de los presentes?
+
+7
+00:00:48,000 --> 00:00:56,000
+Uno, dos, bueno, está perfecto. Esa es la única pregunta importante, minería de datos, todo eso más o menos maneja los conceptos, bueno, por arriba, así bueno.
+
+8
+00:00:56,000 --> 00:01:02,000
+Voy a hacer digamos la charla, he estado que voy a explicar una técnica y una herramienta que desarrollamos nosotros,
+
+9
+00:01:02,000 --> 00:01:07,000
+o sea va a haber contenido teórico y práctico, los dos. Voy a ir tremendamente rápido, voy a ir como alma que lleva el diablo,
+
+10
+00:01:07,000 --> 00:01:14,000
+esta es una charla pensada para darse en tres horas y olvidar en una, así que vamos volando.
+
+11
+00:01:14,000 --> 00:01:16,000
+Ese grupo de investigación, no importa.
+
+12
+00:01:16,000 --> 00:01:26,000
+Toda la aplicación del paper, la parte teórica está aplicada a la biología, estar en un paper biológico que es este,
+
+13
+00:01:26,000 --> 00:01:30,000
+lo buscan después, después si quieren las firminas va a estar el QR para acceder al paper
+
+14
+00:01:30,000 --> 00:01:37,000
+y ahora estamos actualmente, estamos desarrollando el paper más ingenieril, más computer science del proyecto.
+
+15
+00:01:37,000 --> 00:01:46,000
+Bueno, la agenda, voy a verla así, un poco poco de historia y motivación, o sea explicarle cómo llegamos a desarrollar esta técnica.
+
+16
+00:01:46,000 --> 00:01:54,000
+Voy a explicarle un poco de qué es KDD por arriba, o sea qué es el knowledge, discovering database,
+
+17
+00:01:54,000 --> 00:02:00,000
+las bases de datos de descubrimiento y conocimiento, un poquito se tiene, doer science por arriba,
+
+18
+00:02:00,000 --> 00:02:06,000
+que es el tema de los grafos y demás, muy por arriba, le voy a mostrar el proceso de análisis aplicado a los datos que tenemos nosotros
+
+19
+00:02:06,000 --> 00:02:12,000
+para que voy a inventar datos si tenemos unos que son reales, después un poco de introducción a lo que es data warehousing,
+
+20
+00:02:12,000 --> 00:02:20,000
+muy por arriba, recontra por arriba, all up, business intelligence y hasta acá no debería tardar más de 20 minutos.
+
+21
+00:02:20,000 --> 00:02:23,000
+O sea que le dije a él que me avisa los 20 minutos porque si no, muy lento.
+
+22
+00:02:23,000 --> 00:02:28,000
+Después le voy a mostrar un poco el proyecto en sí y voy a hacer un pequeño demo muy por encima de las cosas.
+
+23
+00:02:28,000 --> 00:02:34,000
+Pero tengo la idea que esto es mucho contenido, le estoy aplicando una metodología nueva.
+
+24
+00:02:34,000 --> 00:02:38,000
+Bueno, la historia del proyecto, existe un mal que se llama el mal del río cuarto,
+
+25
+00:02:38,000 --> 00:02:44,000
+esto es la provincia de Córdoba, se fijan esto es toda Argentina que tiene misiones, patagonia,
+
+26
+00:02:44,000 --> 00:02:47,000
+la provincia de Córdoba es esto verde y un lugar que se llama río cuarto,
+
+27
+00:02:47,000 --> 00:02:52,000
+la segunda ciudad más habilitada de la provincia y un mal que se llama mal del río cuarto,
+
+28
+00:02:52,000 --> 00:02:57,000
+que si estuvieras en río cuarto decidas, uy estamos en problema, pero no es un mal del maíz.
+
+29
+00:02:57,000 --> 00:03:01,000
+A ese mal se le viene haciendo hace muchos años lo que se llama el análisis electroforetico,
+
+30
+00:03:01,000 --> 00:03:04,000
+tiene conocimiento de biología, bueno no importa.
+
+31
+00:03:04,000 --> 00:03:12,000
+Los perfiles electroforeticos están formados por la caracterización del virus a nivel ARN,
+
+32
+00:03:12,000 --> 00:03:16,000
+sin mal no recuerdo, puedo estar mal pero no me importa hacer demasiado estricto teórico en esto.
+
+33
+00:03:16,000 --> 00:03:22,000
+¿Qué hacen esencialmente? Meten un poco de virus, poco de gel conductor, cacho de virus,
+
+34
+00:03:22,000 --> 00:03:26,000
+corriendo alta tensión. Los electrones empiezan a pasar y mueven las moléculas más pesadas
+
+35
+00:03:26,000 --> 00:03:30,000
+menos que las moléculas más livianas, las más livianas se mueven hasta el final
+
+36
+00:03:30,000 --> 00:03:36,000
+y eso forman estas bandas, digamos estas son las moléculas, no sé qué lado va supongo que es así,
+
+37
+00:03:36,000 --> 00:03:39,000
+eso es lo que me imagino, estas son moléculas más livianas que estas,
+
+38
+00:03:39,000 --> 00:03:45,000
+depende la raza del virus, que ahora en adelante se llama plotipo, depende la plotipo del virus,
+
+39
+00:03:45,000 --> 00:03:51,000
+eso es único, o sea en dos, digamos dos virus de la misma especie van a tener aproximadamente
+
+40
+00:03:51,000 --> 00:03:57,000
+la misma forma, las bandas que generan, es como la huella digital, es así.
+
+41
+00:03:57,000 --> 00:04:03,000
+Teníamos una base de datos formado por los perfiles eléctroforeticos de todos los virus
+
+42
+00:04:03,000 --> 00:04:07,000
+que habían encontrado, encontraron 29 variedades distintas de virus de ese mal
+
+43
+00:04:07,000 --> 00:04:11,000
+y atributos que definen el ambiente de la planta, o sea tenemos esta planta que la encontramos
+
+44
+00:04:11,000 --> 00:04:17,000
+en un lugar lluvioso cerca de esta ciudad, o sea que no es la región endémica,
+
+45
+00:04:17,000 --> 00:04:24,000
+era un día de invierno, esos son los atributos que encontraron y encontramos el plotipo 29.
+
+46
+00:04:24,000 --> 00:04:29,000
+Bueno, ¿qué pasaba? Estas personas guardaban la base de datos, no lo guardaban en archivos,
+
+47
+00:04:29,000 --> 00:04:34,000
+estas porquerías generan un archivo binario 01, 01, 01 de textos, planos,
+
+48
+00:04:34,000 --> 00:04:40,000
+esos son unos aparatos que hacen esos perfiles, borraban los archivos y lo guardaban en un cuaderno
+
+49
+00:04:40,000 --> 00:04:45,000
+escrito a mano, es en serio, quería matarlos.
+
+50
+00:04:45,000 --> 00:04:51,000
+Bueno, es digamos, toda esa información es poca,
+
+51
+00:04:51,000 --> 00:04:55,000
+todos los que le acabo de decir, imagínense que hicieron creo que 900 relevamientos,
+
+52
+00:04:55,000 --> 00:05:00,000
+digamos, así como tenemos el Big Data, esto no llega ni es Moldata, o sea, esto no es nada,
+
+53
+00:05:00,000 --> 00:05:08,000
+900 plantas relevadas no es nada, el tema que el análisis de datos de biología son mucho más costosos
+
+54
+00:05:08,000 --> 00:05:16,000
+que lo que hacemos la parte informática, tenés que tomarte un bus, irte al lugar,
+
+55
+00:05:16,000 --> 00:05:22,000
+mirar la planta, sacarlo un pedacito, irte al laboratorio, es carísimo hacer todas esas cosas,
+
+56
+00:05:22,000 --> 00:05:27,000
+tienen plantaciones para ver si se infectan y poder analizarlos, o sea, es muy costoso,
+
+57
+00:05:27,000 --> 00:05:32,000
+entonces era pocos datos, nosotros que teníamos problemas, teníamos pocos datos,
+
+58
+00:05:32,000 --> 00:05:38,000
+teníamos datos viejos en su mayoría, o sea, que toda la mayoría de las técnicas que se siguen
+
+59
+00:05:38,000 --> 00:05:42,000
+para analizar datos no nos servían, en definitivo.
+
+60
+00:05:42,000 --> 00:05:48,000
+Entonces la propuesta fue transformarla de base de datos en una red, y en una red,
+
+61
+00:05:48,000 --> 00:05:55,000
+voy a hacer muy teóricamente el axo con esto, lo que importan no son los nuevos,
+
+62
+00:05:55,000 --> 00:06:01,000
+sino las relaciones entre ellos, entonces vos analizás variabilidad entre una red,
+
+63
+00:06:01,000 --> 00:06:08,000
+es realmente importante, entonces una base de datos, pensada como una red tiene una particularidad muy loca,
+
+64
+00:06:08,000 --> 00:06:12,000
+multiplica la cantidad de datos que tenés.
+
+65
+00:06:12,000 --> 00:06:17,000
+Bueno, olvidemos un poco y vamos a empezar de nuevo por minería de datos.
+
+66
+00:06:17,000 --> 00:06:22,000
+Bueno, la minería de datos es un proceso no trivial, de identificación de información,
+
+67
+00:06:22,000 --> 00:06:26,000
+guiada por el usuario, centrado en la persona, ¿qué significa todo esto?
+
+68
+00:06:26,000 --> 00:06:30,000
+Que en realidad la minería de datos no es la que tiene el conocimiento,
+
+69
+00:06:30,000 --> 00:06:34,000
+es la persona en la que tiene el conocimiento, vos aplicás una técnica automática,
+
+70
+00:06:34,000 --> 00:06:36,000
+una técnica manual, la que fuera para descubrir el rato,
+
+71
+00:06:36,000 --> 00:06:41,000
+pero la interpretación final la das vos, vos persona, o sea mirad y decís,
+
+72
+00:06:41,000 --> 00:06:45,000
+si esto se pintó de verde entonces quiere decir más o menos esto, porque yo soy experto en esto,
+
+73
+00:06:45,000 --> 00:06:49,000
+y si seleccione este dato y estos datos se agruparon de este lado querrá decir algo,
+
+74
+00:06:49,000 --> 00:06:53,000
+o sea es muy pensada en la persona lo que es el datamining,
+
+75
+00:06:53,000 --> 00:06:57,000
+en realidad la knowledge discovery database que es un nivel superior,
+
+76
+00:06:57,000 --> 00:07:00,000
+el datamining es una técnica que normalmente es automática, o sea,
+
+77
+00:07:00,000 --> 00:07:04,000
+hay muchas cosas que se mezclan para explicar rápido,
+
+78
+00:07:04,000 --> 00:07:08,000
+pero es la persona en la que tiene la semántica final de la investigación
+
+79
+00:07:08,000 --> 00:07:14,000
+cuando va analizando datos, o sea porque en definitiva si alguien conoce la técnica de Kamin's,
+
+80
+00:07:14,000 --> 00:07:18,000
+de bueno Kamin's lo que hace es agruparte, ¿qué significa en esos grupos está en vos?
+
+81
+00:07:18,000 --> 00:07:23,000
+En vos persona vos analista vos científico.
+
+82
+00:07:23,000 --> 00:07:26,000
+Bueno en el network science es un estudio de redes
+
+83
+00:07:26,000 --> 00:07:29,000
+que representan fenómenos físico, biológico, social,
+
+84
+00:07:29,000 --> 00:07:32,000
+básicamente en una red tenés dos cosas importantes,
+
+85
+00:07:32,000 --> 00:07:36,000
+que son las topologías y las diferentes topologías tienen características comunes,
+
+86
+00:07:36,000 --> 00:07:41,000
+esa por ejemplo es la red de vuelos de Argentina,
+
+87
+00:07:41,000 --> 00:07:44,000
+los hubs que son nodos que agrupan mucho,
+
+88
+00:07:44,000 --> 00:07:47,000
+o sea que muchos arcos pasan por ahí,
+
+89
+00:07:47,000 --> 00:07:50,000
+son muy buenos para los hubs y muy malo para la red
+
+90
+00:07:50,000 --> 00:07:52,000
+porque involucran un desbalance muy importante,
+
+91
+00:07:52,000 --> 00:07:55,000
+como notará nosotros tenemos un gran problema de vuelo con Buenos Aires,
+
+92
+00:07:55,000 --> 00:07:57,000
+tenemos que pasar por Buenos Aires para todo,
+
+93
+00:07:57,000 --> 00:08:02,000
+o sea si yo quisiera irme acá que está 3.000 kilómetros,
+
+94
+00:08:02,000 --> 00:08:06,000
+o acá que está 1.500 kilómetros tengo que bajar un poco y volver a subir,
+
+95
+00:08:06,000 --> 00:08:09,000
+o sea la mayoría de los casos es un ejemplo.
+
+96
+00:08:09,000 --> 00:08:12,000
+Otro tipo de red es una interacción proteína-proteína, no importa,
+
+97
+00:08:12,000 --> 00:08:15,000
+son redes lo que será más parecida a los que son los Small World,
+
+98
+00:08:15,000 --> 00:08:17,000
+que es un tipo particular de red,
+
+99
+00:08:17,000 --> 00:08:20,000
+que será muy comúnmente cuando hay dos grupos de personas
+
+100
+00:08:20,000 --> 00:08:22,000
+y de cada grupo se ponen de novios dos,
+
+101
+00:08:22,000 --> 00:08:26,000
+entonces hay dos redes y un enlace que une las dos redes,
+
+102
+00:08:26,000 --> 00:08:30,000
+esas dos redes chiquititas se llaman redes de mundo pequeño,
+
+103
+00:08:30,000 --> 00:08:33,000
+tiene sus propias particularidades, bla bla bla bla,
+
+104
+00:08:33,000 --> 00:08:35,000
+eso se da para como 50 charlas más.
+
+105
+00:08:35,000 --> 00:08:38,000
+Esta es la red del dinero que acá te muestra,
+
+106
+00:08:38,000 --> 00:08:42,000
+esta red era gigante, o sea si esto creciera para abajo sería como 2 piso para abajo,
+
+107
+00:08:42,000 --> 00:08:44,000
+pero bueno, me muestra la relación del dinero,
+
+108
+00:08:44,000 --> 00:08:47,000
+esta es la red de distribución de energía de Estados Unidos,
+
+109
+00:08:47,000 --> 00:08:51,000
+una red que es totalmente conectada, es tolerante a fallos,
+
+110
+00:08:51,000 --> 00:08:53,000
+está muy buena esta red porque no importa como la corte
+
+111
+00:08:53,000 --> 00:08:56,000
+si va a seguir transmitiendo energía,
+
+112
+00:08:56,000 --> 00:09:02,000
+esta es la red de todos los grupos de las familias automotores del mundo,
+
+113
+00:09:02,000 --> 00:09:06,000
+básicamente tenés Volkswagen, Fiat, General Motors y Toyota,
+
+114
+00:09:06,000 --> 00:09:11,000
+son las cuatro que hay, ya no hay el resto tan consumido por una de esas cuatro,
+
+115
+00:09:11,000 --> 00:09:14,000
+la red de relaciones de vivo anterior, creo que de temporada dos o tres,
+
+116
+00:09:14,000 --> 00:09:18,000
+visto o sea que si yo acabo uno dice tu o sexo con todo,
+
+117
+00:09:18,000 --> 00:09:21,000
+pa' va, pero son redes, o sea, puedes armarlas,
+
+118
+00:09:21,000 --> 00:09:24,000
+y los pesos de estos arcos, vos le das como quieras,
+
+119
+00:09:24,000 --> 00:09:28,000
+nosotros particularmente por una cuestión de análisis te conviene darla en números,
+
+120
+00:09:28,000 --> 00:09:31,000
+pero en este caso son palabras, los pesos de las relaciones,
+
+121
+00:09:31,000 --> 00:09:33,000
+cuando vos quieras analizarlo puedes decir que bueno,
+
+122
+00:09:33,000 --> 00:09:37,000
+tener sexo vale 5, mientras que ser amigo vale 3, que se yo,
+
+123
+00:09:37,000 --> 00:09:40,000
+y después hace algún análisis, algún tipo,
+
+124
+00:09:40,000 --> 00:09:43,000
+bueno, el proceso de análisis que determinamos,
+
+125
+00:09:43,000 --> 00:09:45,000
+o sea, esto es el resumen del paper,
+
+126
+00:09:45,000 --> 00:09:47,000
+o sea, si agarran el paper van a ver esto,
+
+127
+00:09:47,000 --> 00:09:52,000
+primero es identificarlos a plotipos,
+
+128
+00:09:52,000 --> 00:09:55,000
+meté el maíz y empezó a sacar las cosas,
+
+129
+00:09:55,000 --> 00:09:58,000
+esta máquina no se usa más,
+
+130
+00:09:58,000 --> 00:10:01,000
+fue un chiste, por eso,
+
+131
+00:10:01,000 --> 00:10:05,000
+este momento había 21 plotipos, son 29 en total ahora,
+
+132
+00:10:05,000 --> 00:10:07,000
+y con las bandas, las bandas tienen lógica,
+
+133
+00:10:07,000 --> 00:10:10,000
+o sea, no es que hay por ejemplo, por qué se llama B9,
+
+134
+00:10:10,000 --> 00:10:12,000
+porque no puede aparecer, la B9 solo aparece,
+
+135
+00:10:12,000 --> 00:10:16,000
+se aparece la B8, cosas por el estilo, no importa, pero pasa eso,
+
+136
+00:10:16,000 --> 00:10:20,000
+es una cadena binaria, después definió una medida de distancia,
+
+137
+00:10:20,000 --> 00:10:22,000
+la medida de distancia que determinamos acá,
+
+138
+00:10:22,000 --> 00:10:24,000
+hay mucho conocimiento biológico metido en esta fórmula,
+
+139
+00:10:24,000 --> 00:10:26,000
+en definitiva lo que determina diciendo,
+
+140
+00:10:26,000 --> 00:10:28,000
+es que con el cálculo propio de las distancias,
+
+141
+00:10:28,000 --> 00:10:31,000
+te genera esta matriz triangular,
+
+142
+00:10:31,000 --> 00:10:34,000
+en la cual te dice que el plotipo 6,
+
+143
+00:10:34,000 --> 00:10:36,000
+¿por qué empieza 6? No sé, por algún motivo será,
+
+144
+00:10:36,000 --> 00:10:39,000
+6 y el 1 hay una distancia de 1,
+
+145
+00:10:39,000 --> 00:10:43,000
+este cálculo da 1, mientras que la distancia 9
+
+146
+00:10:43,000 --> 00:10:46,000
+y la 10 hay una distancia de 2, porque se calcula 2,
+
+147
+00:10:46,000 --> 00:10:50,000
+el tema es que créanme que esa fórmula es muy compleja,
+
+148
+00:10:50,000 --> 00:10:53,000
+está llena de conocimiento biológico y adentro,
+
+149
+00:10:53,000 --> 00:10:56,000
+pues creas la red propiamente dicha, esta es la red,
+
+150
+00:10:56,000 --> 00:10:58,000
+nada más que en este primer boceto,
+
+151
+00:10:58,000 --> 00:11:01,000
+las distancias eran estos anillos alrededor,
+
+152
+00:11:04,000 --> 00:11:07,000
+el siguiente es una visualización de la análisis topológico,
+
+153
+00:11:07,000 --> 00:11:10,000
+bueno, tendría que haber borrado eso,
+
+154
+00:11:10,000 --> 00:11:13,000
+es un poco más de la de clustering,
+
+155
+00:11:13,000 --> 00:11:15,000
+que son cosas propias de las redes,
+
+156
+00:11:15,000 --> 00:11:18,000
+es que tan conectado está la red,
+
+157
+00:11:18,000 --> 00:11:21,000
+el diámetro que es la distancia máxima para llegar
+
+158
+00:11:21,000 --> 00:11:24,000
+a los dos nuevos más disjuntos que hayan
+
+159
+00:11:24,000 --> 00:11:28,000
+y calcularlo más largo que tardes en llegar de uno al otro,
+
+160
+00:11:28,000 --> 00:11:31,000
+el distancia promedio y esta distribución
+
+161
+00:11:31,000 --> 00:11:34,000
+de grado de conectividad, que ni una verdad que no me lo acuerdo,
+
+162
+00:11:34,000 --> 00:11:36,000
+porque cada vez hay un montón de cálculos de esto,
+
+163
+00:11:36,000 --> 00:11:38,000
+a veces me voy metiendo en un lado de la investigación,
+
+164
+00:11:38,000 --> 00:11:40,000
+no soy el que está encargado la parte teórica,
+
+165
+00:11:40,000 --> 00:11:42,000
+sino más bien la parte de implementación,
+
+166
+00:11:42,000 --> 00:11:44,000
+me suelo olvidar de algunas cosas,
+
+167
+00:11:44,000 --> 00:11:46,000
+si quieren sacarse duda,
+
+168
+00:11:51,000 --> 00:11:54,000
+ahí está, ahí está todos los cálculos,
+
+169
+00:11:54,000 --> 00:11:56,000
+estos están todos explicados ahí abajo,
+
+170
+00:11:58,000 --> 00:12:01,000
+creo que ya estaba yendo demasiado rápido por sufrir un poco,
+
+171
+00:12:01,000 --> 00:12:03,000
+bueno, el siguiente punto
+
+172
+00:12:03,000 --> 00:12:09,000
+es la visualización de multi-dimensional de la red,
+
+173
+00:12:09,000 --> 00:12:11,000
+y acá tengo que frenar un poco,
+
+174
+00:12:11,000 --> 00:12:14,000
+voy a volver a una firmina atrás que si importa,
+
+175
+00:12:16,000 --> 00:12:18,000
+que es esta,
+
+176
+00:12:19,000 --> 00:12:22,000
+que dice que vos tenés los perfiles electroforeticos,
+
+177
+00:12:22,000 --> 00:12:25,000
+los perfiles electroforeticos son cada uno de los nodos,
+
+178
+00:12:27,000 --> 00:12:29,000
+las distancias entre ellos, la calculamos,
+
+179
+00:12:29,000 --> 00:12:31,000
+vimos el proceso de cálculo,
+
+180
+00:12:31,000 --> 00:12:34,000
+bueno, y a dónde van a parar los atributos
+
+181
+00:12:34,000 --> 00:12:36,000
+que definen el ambiente de la planta,
+
+182
+00:12:36,000 --> 00:12:38,000
+o sea, que a este digamos,
+
+183
+00:12:38,000 --> 00:12:40,000
+o sea, porque fíjense que un,
+
+184
+00:12:40,000 --> 00:12:43,000
+que un aplotipo lo puedas ver encontrar
+
+185
+00:12:43,000 --> 00:12:45,000
+en muchos lugares distintos,
+
+186
+00:12:45,000 --> 00:12:48,000
+o sea, el aplotipo 25 lo encontramos en esta planta
+
+187
+00:12:48,000 --> 00:12:50,000
+que está en Río Cuarto,
+
+188
+00:12:50,000 --> 00:12:52,000
+que es de la región endémica,
+
+189
+00:12:52,000 --> 00:12:54,000
+un día lluvioso,
+
+190
+00:12:54,000 --> 00:12:56,000
+mientras que también encontramos este mismo aplotipo
+
+191
+00:12:56,000 --> 00:12:58,000
+en un lugar cerca, digo, ciudades de Córdoba,
+
+192
+00:12:58,000 --> 00:13:00,000
+que realmente están en la base de datos,
+
+193
+00:13:00,000 --> 00:13:02,000
+en una región no endémica,
+
+194
+00:13:02,000 --> 00:13:04,000
+un día de sol,
+
+195
+00:13:04,000 --> 00:13:07,000
+¿no? ¿dónde van a parar todo esa información?
+
+196
+00:13:07,000 --> 00:13:09,000
+Para eso generamos una estructura,
+
+197
+00:13:09,000 --> 00:13:11,000
+que es la estructura, digamos, una tabla de hechos,
+
+198
+00:13:11,000 --> 00:13:13,000
+y eso se lo robamos un poco a lo que es
+
+199
+00:13:13,000 --> 00:13:15,000
+la base de datos HOLAP,
+
+200
+00:13:15,000 --> 00:13:17,000
+concepto de la tabla de hechos.
+
+201
+00:13:17,000 --> 00:13:19,000
+Una tabla de hechos está cargada
+
+202
+00:13:19,000 --> 00:13:21,000
+con todos esas ocurrencias
+
+203
+00:13:21,000 --> 00:13:23,000
+de esos
+
+204
+00:13:23,000 --> 00:13:25,000
+aplotipos de donde se encontraron.
+
+205
+00:13:27,000 --> 00:13:29,000
+Ahora sí vamos al comienzo,
+
+206
+00:13:29,000 --> 00:13:31,000
+al final de nuevo, perdón.
+
+207
+00:13:35,000 --> 00:13:37,000
+Y una plot, digamos,
+
+208
+00:13:37,000 --> 00:13:39,000
+esos tablas de hechos pueden tener mucha información.
+
+209
+00:13:39,000 --> 00:13:41,000
+Por ejemplo, pueden tener una columna,
+
+210
+00:13:41,000 --> 00:13:43,000
+imagínense una tabla relacional,
+
+211
+00:13:43,000 --> 00:13:45,000
+una tabla de Excel en definitiva,
+
+212
+00:13:48,000 --> 00:13:50,000
+que sea región.
+
+213
+00:13:51,000 --> 00:13:52,000
+Bueno, entonces ¿qué haces?
+
+214
+00:13:52,000 --> 00:13:54,000
+Bueno, en esta fila, decir,
+
+215
+00:13:54,000 --> 00:13:56,000
+seleccioname la región 1
+
+216
+00:13:56,000 --> 00:13:58,000
+y te pinta, bueno, todos estos aplotipos
+
+217
+00:13:58,000 --> 00:14:00,000
+lo encontramos en la región 1.
+
+218
+00:14:00,000 --> 00:14:02,000
+Ah, mira, bokelo, ahora seleccionamos la región 2,
+
+219
+00:14:02,000 --> 00:14:04,000
+todos estos aplotipos lo encontramos en la región 2.
+
+220
+00:14:04,000 --> 00:14:06,000
+Y listo a plot tipo la región 3.
+
+221
+00:14:06,000 --> 00:14:08,000
+Ah, bueno, en la campaña,
+
+222
+00:14:08,000 --> 00:14:10,000
+en la campaña en cuándo se fue hacer la búsqueda,
+
+223
+00:14:10,000 --> 00:14:12,000
+se caña, en definitiva.
+
+224
+00:14:12,000 --> 00:14:14,000
+Dice, bueno, esto fue en el año 99,
+
+225
+00:14:14,000 --> 00:14:16,000
+hay datos más o menos para que tengan una idea del año 96,
+
+226
+00:14:16,000 --> 00:14:18,000
+hasta el 2007, 2008 por eso.
+
+227
+00:14:18,000 --> 00:14:20,000
+Bueno, esto es el 2006,
+
+228
+00:14:20,000 --> 00:14:22,000
+bueno, el 2007.
+
+229
+00:14:22,000 --> 00:14:24,000
+2007, región 3.
+
+230
+00:14:24,000 --> 00:14:26,000
+Y así, bueno, te puedes ir moviendo,
+
+231
+00:14:26,000 --> 00:14:28,000
+explorando los diferentes lugares
+
+232
+00:14:28,000 --> 00:14:30,000
+donde fue sucediendo
+
+233
+00:14:30,000 --> 00:14:32,000
+cómo va cambiando
+
+234
+00:14:32,000 --> 00:14:34,000
+la topología de tu red
+
+235
+00:14:34,000 --> 00:14:36,000
+depende
+
+236
+00:14:36,000 --> 00:14:38,000
+diferentes filtros ultidimensionales.
+
+237
+00:14:38,000 --> 00:14:40,000
+Acá, por una cuestión de que
+
+238
+00:14:40,000 --> 00:14:42,000
+el cerebro no da más que para tres dimensiones,
+
+239
+00:14:42,000 --> 00:14:44,000
+pusimos 2, digamos,
+
+240
+00:14:44,000 --> 00:14:46,000
+pero podía ser 27 dimensiones diferentes
+
+241
+00:14:46,000 --> 00:14:48,000
+que va filtrando las cosas.
+
+242
+00:14:50,000 --> 00:14:52,000
+A mí me torcida la firminada, me parece.
+
+243
+00:14:52,000 --> 00:14:54,000
+Bueno, por último,
+
+244
+00:14:54,000 --> 00:14:56,000
+hay una generación de hipótesis y conclusiones.
+
+245
+00:14:58,000 --> 00:15:00,000
+Se calculó un par de medidas de distancia,
+
+246
+00:15:00,000 --> 00:15:02,000
+no viene mucho al caso tampoco.
+
+247
+00:15:04,000 --> 00:15:06,000
+Por último, se saca la esperanza matemática
+
+248
+00:15:06,000 --> 00:15:08,000
+de las, o sea, de pende,
+
+249
+00:15:08,000 --> 00:15:10,000
+o sea, como usted quiere hacer el análisis
+
+250
+00:15:10,000 --> 00:15:12,000
+de las distancias, caen los diferentes ambientes,
+
+251
+00:15:12,000 --> 00:15:14,000
+demás.
+
+252
+00:15:14,000 --> 00:15:16,000
+Y esto fue más o menos lo que descubrimos
+
+253
+00:15:16,000 --> 00:15:18,000
+que esencialmente el virus
+
+254
+00:15:18,000 --> 00:15:20,000
+cada vez, creo que era,
+
+255
+00:15:20,000 --> 00:15:22,000
+está mutando menos,
+
+256
+00:15:22,000 --> 00:15:24,000
+o sea, se está stabilizando.
+
+257
+00:15:24,000 --> 00:15:26,000
+O sea, yo digo, bueno, y esto qué importa,
+
+258
+00:15:26,000 --> 00:15:28,000
+quiere decir que después con un solo retrovirus
+
+259
+00:15:28,000 --> 00:15:30,000
+van a poder destruir todo el virus
+
+260
+00:15:30,000 --> 00:15:32,000
+en teoría, digamos.
+
+261
+00:15:34,000 --> 00:15:36,000
+Esto, ¿por qué está presente?
+
+262
+00:15:36,000 --> 00:15:38,000
+Porque simplemente va a mostrar
+
+263
+00:15:38,000 --> 00:15:40,000
+que el método funciona, definitivo.
+
+264
+00:15:42,000 --> 00:15:44,000
+Ahora vamos un poco más
+
+265
+00:15:44,000 --> 00:15:50,000
+a lo que es Data Warehouse, Holap, IVI.
+
+266
+00:15:50,000 --> 00:15:52,000
+Bueno, lo que dice ahí,
+
+267
+00:15:52,000 --> 00:15:54,000
+el contexto de informática,
+
+268
+00:15:54,000 --> 00:15:56,000
+el almacén de datos, el Data Warehouse,
+
+269
+00:15:56,000 --> 00:15:58,000
+es una colección de datos
+
+270
+00:15:58,000 --> 00:16:00,000
+orientado, terminado ámbito.
+
+271
+00:16:00,000 --> 00:16:02,000
+Fundamentalmente importa
+
+272
+00:16:02,000 --> 00:16:04,000
+que sea integrado, no volátil
+
+273
+00:16:04,000 --> 00:16:06,000
+y variable en el tiempo, ¿qué significa eso?
+
+274
+00:16:06,000 --> 00:16:08,000
+O sea, que todo, si vos estás haciendo
+
+275
+00:16:08,000 --> 00:16:10,000
+un Data Warehouse de una empresa, por ejemplo,
+
+276
+00:16:10,000 --> 00:16:12,000
+todos los datos de la empresa tienen que traer todos.
+
+277
+00:16:12,000 --> 00:16:14,000
+No volátil quiere decir
+
+278
+00:16:14,000 --> 00:16:16,000
+que no puede borrarse jamás.
+
+279
+00:16:16,000 --> 00:16:18,000
+Y variable,
+
+280
+00:16:18,000 --> 00:16:20,000
+este variable que toma lo compienza.
+
+281
+00:16:20,000 --> 00:16:22,000
+Nada dice lo contrario,
+
+282
+00:16:22,000 --> 00:16:24,000
+pero normalmente no se borran cosas.
+
+283
+00:16:24,000 --> 00:16:26,000
+Siempre se hace,
+
+284
+00:16:26,000 --> 00:16:28,000
+en el contexto de SQL, siempre se hace en Inserts.
+
+285
+00:16:28,000 --> 00:16:30,000
+Nunca se hace un Update, jamás.
+
+286
+00:16:32,000 --> 00:16:34,000
+De hecho, en la base de datos, Holap,
+
+287
+00:16:34,000 --> 00:16:36,000
+que ya voy en la siguiente explicación,
+
+288
+00:16:36,000 --> 00:16:38,000
+además de las claves primas,
+
+289
+00:16:38,000 --> 00:16:40,000
+¿quién, alguien que no conoce SQL?
+
+290
+00:16:40,000 --> 00:16:42,000
+¿Todo conoce en SQL?
+
+291
+00:16:42,000 --> 00:16:44,000
+En la base de datos, Holap,
+
+292
+00:16:44,000 --> 00:16:46,000
+además de las claves primarias,
+
+293
+00:16:46,000 --> 00:16:48,000
+es decir, una cosa que se llama claves subrogadas.
+
+294
+00:16:48,000 --> 00:16:50,000
+Las claves subrogadas
+
+295
+00:16:50,000 --> 00:16:52,000
+son unas claves
+
+296
+00:16:52,000 --> 00:16:54,000
+que te garantiza que nunca pueden ser modificadas.
+
+297
+00:16:54,000 --> 00:16:56,000
+O sea, si cambias una relación,
+
+298
+00:16:56,000 --> 00:16:58,000
+esa clave subrogada
+
+299
+00:16:58,000 --> 00:17:00,000
+puede volver a reconstruirla con sus datos anteriores,
+
+300
+00:17:00,000 --> 00:17:02,000
+siempre.
+
+301
+00:17:02,000 --> 00:17:04,000
+No viene al caso porque, digamos,
+
+302
+00:17:04,000 --> 00:17:06,000
+explicar Holap da para otras cinco se charla,
+
+303
+00:17:06,000 --> 00:17:08,000
+digamos.
+
+304
+00:17:08,000 --> 00:17:10,000
+Pero en definitiva, Holap
+
+305
+00:17:10,000 --> 00:17:12,000
+es un principio en el cual habla
+
+306
+00:17:14,000 --> 00:17:16,000
+el análisis de datos
+
+307
+00:17:18,000 --> 00:17:20,000
+online, en realidad,
+
+308
+00:17:20,000 --> 00:17:22,000
+o sea, dinámico sería la palabra exacta.
+
+309
+00:17:22,000 --> 00:17:24,000
+Estos son conceptos bastante
+
+310
+00:17:24,000 --> 00:17:26,000
+raros
+
+311
+00:17:26,000 --> 00:17:28,000
+en la parte
+
+312
+00:17:28,000 --> 00:17:30,000
+de ciencia de la computación, ingeniería y demás.
+
+313
+00:17:30,000 --> 00:17:32,000
+Son conceptos que hicieron el camino opuesto
+
+314
+00:17:32,000 --> 00:17:34,000
+a la mayoría de las ciencias.
+
+315
+00:17:34,000 --> 00:17:36,000
+¿Cómo surge algo?
+
+316
+00:17:36,000 --> 00:17:38,000
+Cuando surge en la ciencia, se le encuentran un uso
+
+317
+00:17:38,000 --> 00:17:40,000
+y generan plata.
+
+318
+00:17:40,000 --> 00:17:42,000
+Creo que es lo que a todos nos gustaría que pase.
+
+319
+00:17:42,000 --> 00:17:44,000
+Holap fue totalmente opuesto.
+
+320
+00:17:44,000 --> 00:17:46,000
+Se empezó a generar plata y dijeron,
+
+321
+00:17:46,000 --> 00:17:48,000
+¿hay algo científico dando vuelta?
+
+322
+00:17:48,000 --> 00:17:50,000
+Bueno, y pasa eso.
+
+323
+00:17:50,000 --> 00:17:52,000
+Holap todavía sigue sin tener suficiente investigación.
+
+324
+00:17:52,000 --> 00:17:54,000
+Pero
+
+325
+00:17:54,000 --> 00:17:56,000
+lo que trata
+
+326
+00:17:56,000 --> 00:17:58,000
+de hacer Holap
+
+327
+00:17:58,000 --> 00:18:00,000
+es poder hacer consultas grandes,
+
+328
+00:18:00,000 --> 00:18:02,000
+cantidad de datos
+
+329
+00:18:02,000 --> 00:18:04,000
+y normalmente utiliza estructuras
+
+330
+00:18:04,000 --> 00:18:06,000
+multidimensionales o QoHolap.
+
+331
+00:18:06,000 --> 00:18:08,000
+Bueno, primero que nada no son QoHos.
+
+332
+00:18:08,000 --> 00:18:10,000
+Son hyper-QoHos.
+
+333
+00:18:10,000 --> 00:18:12,000
+Son multidimensionales.
+
+334
+00:18:12,000 --> 00:18:14,000
+Tiene más de tres dimensiones.
+
+335
+00:18:14,000 --> 00:18:16,000
+Y si quieren imaginarse un QoHolap,
+
+336
+00:18:16,000 --> 00:18:18,000
+es exactamente lo mismo que el QoRuic,
+
+337
+00:18:18,000 --> 00:18:20,000
+que el QoMágico depende, como lo conozcan.
+
+338
+00:18:20,000 --> 00:18:22,000
+Exactamente eso.
+
+339
+00:18:22,000 --> 00:18:24,000
+Que es
+
+340
+00:18:24,000 --> 00:18:26,000
+un QoRuic, dije que iba a tener que comprarme un QoRuic
+
+341
+00:18:26,000 --> 00:18:28,000
+para esta charla.
+
+342
+00:18:28,000 --> 00:18:30,000
+Y me olvidé.
+
+343
+00:18:30,000 --> 00:18:32,000
+Lo miraste una cara y decí,
+
+344
+00:18:32,000 --> 00:18:34,000
+así saco este pedazo.
+
+345
+00:18:34,000 --> 00:18:36,000
+¿Qué tengo acá?
+
+346
+00:18:36,000 --> 00:18:38,000
+Y con eso genero un informe.
+
+347
+00:18:38,000 --> 00:18:40,000
+Normalmente
+
+348
+00:18:40,000 --> 00:18:42,000
+para eso,
+
+349
+00:18:42,000 --> 00:18:44,000
+con toda esta estructura atrás,
+
+350
+00:18:44,000 --> 00:18:46,000
+cuando uno tiene un Data Warehouse,
+
+351
+00:18:46,000 --> 00:18:48,000
+arriba le pone un Holap.
+
+352
+00:18:48,000 --> 00:18:50,000
+Sobre este Holap, además de manipulación
+
+353
+00:18:50,000 --> 00:18:52,000
+propia de datos,
+
+354
+00:18:52,000 --> 00:18:54,000
+ejecuta Data Mining, y Machine Learning tiene
+
+355
+00:18:54,000 --> 00:18:56,000
+una solución de BI.
+
+356
+00:18:56,000 --> 00:18:58,000
+Las soluciones de BI son
+
+357
+00:18:58,000 --> 00:19:00,000
+la
+
+358
+00:19:00,000 --> 00:19:02,000
+cúspide de lo que es el análisis de datos.
+
+359
+00:19:04,000 --> 00:19:06,000
+La inteligencia de negocio,
+
+360
+00:19:06,000 --> 00:19:08,000
+que no tienen que tomarlo a negocio como empresa,
+
+361
+00:19:08,000 --> 00:19:10,000
+o sea, en realidad esta traducción,
+
+362
+00:19:10,000 --> 00:19:12,000
+estos son tres copipasteados de Wikipedia.
+
+363
+00:19:16,000 --> 00:19:18,000
+La inteligencia empresarial
+
+364
+00:19:18,000 --> 00:19:20,000
+está mal traducido,
+
+365
+00:19:20,000 --> 00:19:22,000
+debería ser inteligencia de negocios, business intelligence.
+
+366
+00:19:22,000 --> 00:19:24,000
+Porque es en el concepto de negocio
+
+367
+00:19:24,000 --> 00:19:26,000
+a lo que vos te estés refiriendo.
+
+368
+00:19:26,000 --> 00:19:28,000
+Tu negocio puede ser biología,
+
+369
+00:19:28,000 --> 00:19:30,000
+tu negocio puede ser así como también
+
+370
+00:19:30,000 --> 00:19:32,000
+los modelos de negocio, le llamamos
+
+371
+00:19:32,000 --> 00:19:34,000
+DOM, Domain Object Model.
+
+372
+00:19:38,000 --> 00:19:40,000
+Perdón, hay algunas que le llaman
+
+373
+00:19:40,000 --> 00:19:42,000
+Business Object Model, perdón, en algunas frameworks.
+
+374
+00:19:42,000 --> 00:19:44,000
+No se refiere a que eso sí o sí tiene que correr
+
+375
+00:19:44,000 --> 00:19:46,000
+sobre un, no es para algo empresarial,
+
+376
+00:19:46,000 --> 00:19:48,000
+sino que cualquier cosa que vos estés
+
+377
+00:19:48,000 --> 00:19:50,000
+definiendo que es tu contexto de trabajo.
+
+378
+00:19:50,000 --> 00:19:52,000
+O en la inteligencia del business
+
+379
+00:19:52,000 --> 00:19:58,000
+intelligence va por ese lado también.
+
+380
+00:19:58,000 --> 00:20:00,000
+En fin, bueno,
+
+381
+00:20:00,000 --> 00:20:02,000
+esto para que tenga una idea,
+
+382
+00:20:02,000 --> 00:20:04,000
+se suco al app que encontré justamente
+
+383
+00:20:04,000 --> 00:20:06,000
+con datos de España,
+
+384
+00:20:06,000 --> 00:20:08,000
+fue el que encontré, la primera,
+
+385
+00:20:08,000 --> 00:20:10,000
+no es que lo hice a propósito.
+
+386
+00:20:12,000 --> 00:20:14,000
+Se puede imaginar como una
+
+387
+00:20:14,000 --> 00:20:16,000
+extensión de una planilla de Excel,
+
+388
+00:20:16,000 --> 00:20:18,000
+una base de datos cualquiera.
+
+389
+00:20:18,000 --> 00:20:20,000
+¿Tú te vi bien de tiempo?
+
+390
+00:20:20,000 --> 00:20:22,000
+Buenísimo, o qué malo.
+
+391
+00:20:24,000 --> 00:20:26,000
+Entonces, por ejemplo, en esta
+
+392
+00:20:26,000 --> 00:20:28,000
+tiene diferentes dimensiones
+
+393
+00:20:28,000 --> 00:20:30,000
+y estos que están acá en las celdas,
+
+394
+00:20:30,000 --> 00:20:32,000
+estas son los que se llaman hechos, en el caso de un cubo.
+
+395
+00:20:36,000 --> 00:20:38,000
+Uno lo puede rotar,
+
+396
+00:20:38,000 --> 00:20:40,000
+girar, recortar y demás. Esto también está reducido
+
+397
+00:20:40,000 --> 00:20:42,000
+a tres dimensiones por una cuestión de que
+
+398
+00:20:42,000 --> 00:20:44,000
+nuestro cerebro está optimizado para trabajar
+
+399
+00:20:44,000 --> 00:20:46,000
+con tres dimensiones, pero no necesariamente es así.
+
+400
+00:20:46,000 --> 00:20:48,000
+Normalmente, para que tenga una idea, una base de
+
+401
+00:20:48,000 --> 00:20:50,000
+multidimensional no disminuye, las que yo trabajé
+
+402
+00:20:50,000 --> 00:20:52,000
+por lo menos nunca tenían menos de cinco dimensiones.
+
+403
+00:20:54,000 --> 00:20:56,000
+Las OLAP puede ser implementadas.
+
+404
+00:20:56,000 --> 00:20:58,000
+ROLAP, MOLAP y HOLAP.
+
+405
+00:20:58,000 --> 00:21:00,000
+ROLAP es sobre base de datos relacionales,
+
+406
+00:21:00,000 --> 00:21:02,000
+MOLAP sobre base de datos multidimensionales
+
+407
+00:21:02,000 --> 00:21:04,000
+propiamente dicho, o sea, a bajo nivel están
+
+408
+00:21:04,000 --> 00:21:06,000
+desarrolladas así. Y OLAP son híbridas,
+
+409
+00:21:06,000 --> 00:21:08,000
+hay una parte que está relacional y otra
+
+410
+00:21:08,000 --> 00:21:10,000
+parte que está
+
+411
+00:21:10,000 --> 00:21:12,000
+multimensional realmente como bajo nivel.
+
+412
+00:21:12,000 --> 00:21:14,000
+Las consultas
+
+413
+00:21:14,000 --> 00:21:16,000
+a OLAP
+
+414
+00:21:16,000 --> 00:21:18,000
+son a través de un lenguaje que se llama MDX.
+
+415
+00:21:18,000 --> 00:21:20,000
+Es bastante parecido a SQL,
+
+416
+00:21:20,000 --> 00:21:22,000
+nada más que en vez de, viste que en SQL
+
+417
+00:21:22,000 --> 00:21:24,000
+cuando...
+
+418
+00:21:24,000 --> 00:21:26,000
+Puedes preguntar si todos conocen SQL, no?
+
+419
+00:21:26,000 --> 00:21:28,000
+Bueno, en SQL decís, dame estos datos
+
+420
+00:21:28,000 --> 00:21:30,000
+en estas columnas.
+
+421
+00:21:30,000 --> 00:21:32,000
+Nada más que en el MDX, o decís,
+
+422
+00:21:32,000 --> 00:21:34,000
+en esta fila, digamos,
+
+423
+00:21:34,000 --> 00:21:36,000
+esta fila y esta columna y combina el resultado.
+
+424
+00:21:36,000 --> 00:21:38,000
+Esta fila y esta columna y combina el resultado.
+
+425
+00:21:38,000 --> 00:21:40,000
+Para que tenga una idea,
+
+426
+00:21:40,000 --> 00:21:42,000
+no es tan así, pero más o menos aproxima eso.
+
+427
+00:21:42,000 --> 00:21:44,000
+Para consultas remotas,
+
+428
+00:21:44,000 --> 00:21:46,000
+porque normalmente esto es una aplicación
+
+429
+00:21:46,000 --> 00:21:48,000
+que está corriendo sobre una base de datos,
+
+430
+00:21:48,000 --> 00:21:50,000
+simplemente tiene la abstracción multidimensional.
+
+431
+00:21:50,000 --> 00:21:52,000
+Por eso el OLAP, el relational,
+
+432
+00:21:52,000 --> 00:21:54,000
+el 99% de la solución son OLAP.
+
+433
+00:21:56,000 --> 00:21:58,000
+Se usa XMLA,
+
+434
+00:21:58,000 --> 00:22:00,000
+que es
+
+435
+00:22:00,000 --> 00:22:02,000
+XML para análisis.
+
+436
+00:22:02,000 --> 00:22:04,000
+Que es, esencialmente, un XML
+
+437
+00:22:04,000 --> 00:22:06,000
+gigantesco swap y en el medio le pones
+
+438
+00:22:06,000 --> 00:22:08,000
+el MDX así.
+
+439
+00:22:08,000 --> 00:22:10,000
+Es lo mismo. Nada más que te da
+
+440
+00:22:10,000 --> 00:22:12,000
+una aplicación y esas cosas.
+
+441
+00:22:12,000 --> 00:22:14,000
+Y si quieren ver soluciones de este tipo,
+
+442
+00:22:14,000 --> 00:22:16,000
+se lo dejo como
+
+443
+00:22:16,000 --> 00:22:18,000
+ayuda.
+
+444
+00:22:18,000 --> 00:22:20,000
+Mondrian está todo en Java, soporta XML y MDX.
+
+445
+00:22:20,000 --> 00:22:22,000
+O sea, Mondrian es una base de datos que usted la montan
+
+446
+00:22:22,000 --> 00:22:24,000
+sobre...
+
+447
+00:22:24,000 --> 00:22:26,000
+No es sencillo, no es trivial, es un trabajo
+
+448
+00:22:26,000 --> 00:22:28,000
+bastante tedioso.
+
+449
+00:22:28,000 --> 00:22:30,000
+Sobre Java, dejan corriendo y remotamente
+
+450
+00:22:30,000 --> 00:22:32,000
+se conectan con
+
+451
+00:22:32,000 --> 00:22:34,000
+cualquier...
+
+452
+00:22:34,000 --> 00:22:36,000
+con cualquier lenguaje, particularmente Python tiene
+
+453
+00:22:36,000 --> 00:22:38,000
+este proyecto que se llama XMLA
+
+454
+00:22:38,000 --> 00:22:40,000
+que yo lo estoy usando en este momento trabajando
+
+455
+00:22:40,000 --> 00:22:42,000
+con una base de datos Mondrian,
+
+456
+00:22:42,000 --> 00:22:44,000
+para ser preciso.
+
+457
+00:22:44,000 --> 00:22:46,000
+También otra implementación completa, OLAP, que se llama QWIPS,
+
+458
+00:22:46,000 --> 00:22:48,000
+que está en Python puro, está muy verde.
+
+459
+00:22:48,000 --> 00:22:50,000
+O sea, no tiene
+
+460
+00:22:50,000 --> 00:22:52,000
+ni MDX ni XMLA. O sea, tenés que escribir Python.
+
+461
+00:22:52,000 --> 00:22:54,000
+O sea, ella te da un nivel de abstracción más cercano
+
+462
+00:22:54,000 --> 00:22:56,000
+a Python realmente, que al lenguaje
+
+463
+00:22:56,000 --> 00:22:58,000
+que deberías usar para hacer análisis de datos.
+
+464
+00:23:00,000 --> 00:23:02,000
+Y para la solución de business intelligence,
+
+465
+00:23:02,000 --> 00:23:04,000
+que es para business intelligence,
+
+466
+00:23:04,000 --> 00:23:06,000
+si usted entra, si alguno está conectado a la computadora,
+
+467
+00:23:06,000 --> 00:23:08,000
+si usted entra, por ejemplo, a Saiku,
+
+468
+00:23:08,000 --> 00:23:10,000
+Saiku corre sobre una base de
+
+469
+00:23:10,000 --> 00:23:12,000
+datos Mondrian.
+
+470
+00:23:12,000 --> 00:23:14,000
+Mondrian es la base de at OLAP y te permite
+
+471
+00:23:14,000 --> 00:23:16,000
+hacer reportes, PDFs,
+
+472
+00:23:16,000 --> 00:23:18,000
+todos online,
+
+473
+00:23:18,000 --> 00:23:20,000
+que viene en la parte de OLAP. Es fantástico.
+
+474
+00:23:20,000 --> 00:23:22,000
+¿Por qué? Porque te permita hacer
+
+475
+00:23:22,000 --> 00:23:24,000
+análisis de datos, siempre ocuparte en un lenguaje
+
+476
+00:23:24,000 --> 00:23:26,000
+de programación. O sea, vos le das
+
+477
+00:23:26,000 --> 00:23:28,000
+a tu cliente,
+
+478
+00:23:28,000 --> 00:23:30,000
+ahí, haz el análisis que quieras,
+
+479
+00:23:30,000 --> 00:23:32,000
+o a tu usuario que seas, a tu maquista, o usas.
+
+480
+00:23:32,000 --> 00:23:34,000
+Clique, clique, clique, barbando, filas, columnas,
+
+481
+00:23:34,000 --> 00:23:36,000
+etc.
+
+482
+00:23:36,000 --> 00:23:38,000
+Y si usted entra, a tu cliente,
+
+483
+00:23:38,000 --> 00:23:40,000
+que tiene unos gráficos espectaculares,
+
+484
+00:23:40,000 --> 00:23:42,000
+vende humo muchísimo, está genial.
+
+485
+00:23:42,000 --> 00:23:44,000
+Buenísimo.
+
+486
+00:23:44,000 --> 00:23:46,000
+Pentajo es la solución
+
+487
+00:23:46,000 --> 00:23:48,000
+que viene con Mondrian. Mondrian es el
+
+488
+00:23:48,000 --> 00:23:50,000
+núcleo de este proyecto de Pentajo.
+
+489
+00:23:50,000 --> 00:23:52,000
+Y particularmente les recomiendo mucho
+
+490
+00:23:52,000 --> 00:23:54,000
+Saiku si quieren hacer análisis de datos.
+
+491
+00:23:54,000 --> 00:23:56,000
+Y si tienen plata,
+
+492
+00:23:56,000 --> 00:23:58,000
+tengo que decirlo, pero creo que no hay
+
+493
+00:23:58,000 --> 00:24:00,000
+mejor solución.
+
+494
+00:24:00,000 --> 00:24:02,000
+Molap, que la de Microsoft,
+
+495
+00:24:02,000 --> 00:24:04,000
+es muy bien. Y particularmente mantiene
+
+496
+00:24:04,000 --> 00:24:06,000
+algo muy bien que los que hayan
+
+497
+00:24:06,000 --> 00:24:08,000
+trabajado, hayan trabajado con Node SQLer.
+
+498
+00:24:08,000 --> 00:24:10,000
+Bueno, sabrán que Node SQLer
+
+499
+00:24:10,000 --> 00:24:12,000
+el problema que tiene fundamental
+
+500
+00:24:12,000 --> 00:24:14,000
+es la explosión de datos. Que de golpe
+
+501
+00:24:14,000 --> 00:24:16,000
+va bien, va bien, va bien, y 50
+
+502
+00:24:16,000 --> 00:24:18,000
+giga de disco. ¿Por qué? Porque sí.
+
+503
+00:24:18,000 --> 00:24:20,000
+Bueno, las bases de datos multidimensionales
+
+504
+00:24:20,000 --> 00:24:22,000
+al ser Node SQLer también tienen exactamente
+
+505
+00:24:22,000 --> 00:24:24,000
+el mismo problema, pero el de
+
+506
+00:24:24,000 --> 00:24:26,000
+Microsoft, el que mejor anda. Y después hay otro de Oracle,
+
+507
+00:24:26,000 --> 00:24:28,000
+pero ya es excesivamente caro.
+
+508
+00:24:28,000 --> 00:24:30,000
+Y también se pueden conectar con Python
+
+509
+00:24:30,000 --> 00:24:32,000
+y con XMLA. Si no tiene Mondrian, anda
+
+510
+00:24:32,000 --> 00:24:34,000
+bastante bien, lo tengo corriendo sobre un
+
+511
+00:24:34,000 --> 00:24:36,000
+Pogre y anda perfecto.
+
+512
+00:24:36,000 --> 00:24:38,000
+Bueno, ¿qué es Yatel?
+
+513
+00:24:38,000 --> 00:24:40,000
+Bueno,
+
+514
+00:24:40,000 --> 00:24:42,000
+ahí está el proyecto.
+
+515
+00:24:42,000 --> 00:24:44,000
+Esta semana se supone que le iba a mostrar
+
+516
+00:24:44,000 --> 00:24:46,000
+dando un montón de cosas, pero estoy sin internet en el hotel,
+
+517
+00:24:46,000 --> 00:24:48,000
+me quieren cobrar mucha plata por tenerla, así que
+
+518
+00:24:48,000 --> 00:24:50,000
+no lo piense hacer.
+
+519
+00:24:50,000 --> 00:24:52,000
+Ahí está el proyecto.
+
+520
+00:24:52,000 --> 00:24:54,000
+La rama de Velo, si quieren ver.
+
+521
+00:24:54,000 --> 00:24:56,000
+El proyecto es Whiskey War License.
+
+522
+00:24:56,000 --> 00:24:58,000
+Así que es un VCD.
+
+523
+00:24:58,000 --> 00:25:00,000
+No es nada más que un poco humor.
+
+524
+00:25:00,000 --> 00:25:02,000
+Es la implementación
+
+525
+00:25:02,000 --> 00:25:04,000
+de gran parte todo lo que mencioné antes.
+
+526
+00:25:04,000 --> 00:25:06,000
+En vez de Qubes usa redes.
+
+527
+00:25:06,000 --> 00:25:08,000
+Hola.
+
+528
+00:25:08,000 --> 00:25:10,000
+También te permite la análisis multimensional en línea,
+
+529
+00:25:10,000 --> 00:25:12,000
+bla, bla, bla.
+
+530
+00:25:12,000 --> 00:25:14,000
+Lo que no tiene todavía hecho es la
+
+531
+00:25:14,000 --> 00:25:16,000
+parte de BI de Business Intelligence, la parte interactiva
+
+532
+00:25:16,000 --> 00:25:18,000
+sin programar.
+
+533
+00:25:18,000 --> 00:25:20,000
+Falta trabajo, acepto colaboraciones.
+
+534
+00:25:20,000 --> 00:25:22,000
+Pose
+
+535
+00:25:22,000 --> 00:25:24,000
+actualmente un lenguaje intermedio que se llama
+
+536
+00:25:24,000 --> 00:25:26,000
+QBJ, que es Query by Jason.
+
+537
+00:25:26,000 --> 00:25:28,000
+Se lo puedo mostrar.
+
+538
+00:25:28,000 --> 00:25:30,000
+Se lo puedo mostrar el lenguaje para que tengan una idea.
+
+539
+00:25:30,000 --> 00:25:32,000
+Primero, después se lo muestro en la línea,
+
+540
+00:25:32,000 --> 00:25:34,000
+después lo muestro en el lenguaje para que tenga un poco más de sentido.
+
+541
+00:25:34,000 --> 00:25:36,000
+Puedo
+
+542
+00:25:36,000 --> 00:25:38,000
+usarse con una librería remota,
+
+543
+00:25:38,000 --> 00:25:40,000
+o sea, pueden tirar Query by Jason
+
+544
+00:25:40,000 --> 00:25:42,000
+remotamente, o sea, lo ven como una baseato
+
+545
+00:25:42,000 --> 00:25:44,000
+corriendo en otro lugar.
+
+546
+00:25:44,000 --> 00:25:46,000
+Esto es lo que estaba
+
+547
+00:25:46,000 --> 00:25:48,000
+en un 99% implementado, pero como no tengo internet
+
+548
+00:25:48,000 --> 00:25:50,000
+hay algunas cosas que me olvido porque está hecho,
+
+549
+00:25:50,000 --> 00:25:52,000
+estoy usando Flask para
+
+550
+00:25:52,000 --> 00:25:54,000
+hacer la parte de servir.
+
+551
+00:25:54,000 --> 00:25:56,000
+Tiene soportes para ETL
+
+552
+00:25:56,000 --> 00:25:58,000
+estadísticas y datamining rudimentarias.
+
+553
+00:25:58,000 --> 00:26:00,000
+Estas dos hand-down de diez,
+
+554
+00:26:00,000 --> 00:26:02,000
+esta todavía le falta más trabajo.
+
+555
+00:26:02,000 --> 00:26:04,000
+ETL son
+
+556
+00:26:04,000 --> 00:26:06,000
+extraer, transformar
+
+557
+00:26:06,000 --> 00:26:08,000
+y cargar datos. Significa
+
+558
+00:26:08,000 --> 00:26:10,000
+Struct Transform and Load.
+
+559
+00:26:10,000 --> 00:26:12,000
+Es un proceso,
+
+560
+00:26:12,000 --> 00:26:14,000
+es digamos, una excelente sigla para armar excelentes
+
+561
+00:26:14,000 --> 00:26:16,000
+papers de una apavada.
+
+562
+00:26:16,000 --> 00:26:18,000
+Que es, agarrar un montón de fuentes
+
+563
+00:26:18,000 --> 00:26:20,000
+de datos y le pones un proceso en el medio
+
+564
+00:26:20,000 --> 00:26:22,000
+que agarra los datos, los transforma y lo meten en una baseato.
+
+565
+00:26:22,000 --> 00:26:24,000
+Eso es un ETL.
+
+566
+00:26:24,000 --> 00:26:26,000
+Nada más que está estandarizado, de una forma
+
+567
+00:26:26,000 --> 00:26:28,000
+para que sea fácil trabajar con esas baseato.
+
+568
+00:26:28,000 --> 00:26:30,000
+Ya la tengo hechas todo.
+
+569
+00:26:30,000 --> 00:26:32,000
+De hecho, el mismo comando a Yatel, le puedes decir
+
+570
+00:26:32,000 --> 00:26:34,000
+Yatel, Create ETL y te genera una clase Python
+
+571
+00:26:34,000 --> 00:26:36,000
+en la cual lo programas un par de métodos
+
+572
+00:26:36,000 --> 00:26:38,000
+y puedes decir, bueno, corre este ETL
+
+573
+00:26:38,000 --> 00:26:40,000
+sobre esta base de datos y va cargando ahí los diferentes
+
+574
+00:26:40,000 --> 00:26:42,000
+datos.
+
+575
+00:26:42,000 --> 00:26:44,000
+La versión 02 es Pipin installable, no la usen.
+
+576
+00:26:44,000 --> 00:26:46,000
+Porque todavía era un proyecto
+
+577
+00:26:46,000 --> 00:26:48,000
+que era más de datamining y menos de business intelligence
+
+578
+00:26:48,000 --> 00:26:50,000
+y que es más interesante lo otro.
+
+579
+00:26:50,000 --> 00:26:52,000
+En definitiva,
+
+580
+00:26:52,000 --> 00:26:54,000
+una Redolab nuestra se comporta de esta manera.
+
+581
+00:26:54,000 --> 00:26:56,000
+Tenías una tabla de hechos
+
+582
+00:26:56,000 --> 00:26:58,000
+configurable
+
+583
+00:26:58,000 --> 00:27:00,000
+que va encendiendo
+
+584
+00:27:00,000 --> 00:27:02,000
+apagando los aplotipos
+
+585
+00:27:02,000 --> 00:27:04,000
+y sus relaciones.
+
+586
+00:27:04,000 --> 00:27:06,000
+O sea, porque esta relación
+
+587
+00:27:06,000 --> 00:27:08,000
+¿por qué no existe? Porque este aplotipo existe y este no.
+
+588
+00:27:08,000 --> 00:27:10,000
+Entonces, ¿cómo existe la relación entre ellos?
+
+589
+00:27:10,000 --> 00:27:12,000
+Sin embargo, está así.
+
+590
+00:27:12,000 --> 00:27:14,000
+Entonces, por ejemplo, le puedes decir
+
+591
+00:27:14,000 --> 00:27:16,000
+si vos apagaras todos,
+
+592
+00:27:16,000 --> 00:27:18,000
+el que no esté nada encendido es como que esté todo encendido,
+
+593
+00:27:18,000 --> 00:27:20,000
+es lo mismo. Dame la estadística
+
+594
+00:27:20,000 --> 00:27:22,000
+de toda la red y te saco un promedio
+
+595
+00:27:22,000 --> 00:27:24,000
+de todas las distancias, por ejemplo.
+
+596
+00:27:24,000 --> 00:27:26,000
+Dame el average de toda la red o dame
+
+597
+00:27:26,000 --> 00:27:28,000
+la debiación estándar de toda la red
+
+598
+00:27:28,000 --> 00:27:30,000
+o dame lo que fuera de toda la red.
+
+599
+00:27:30,000 --> 00:27:32,000
+Hay un montón de estadísticas implementadas.
+
+600
+00:27:32,000 --> 00:27:34,000
+De hecho, algunas bastantes experimentales
+
+601
+00:27:34,000 --> 00:27:36,000
+he diseñado por un profesor mío
+
+602
+00:27:36,000 --> 00:27:38,000
+que es doctora en estadística.
+
+603
+00:27:38,000 --> 00:27:40,000
+Que también merece un paper y también me da fía
+
+604
+00:27:40,000 --> 00:27:42,000
+que hacerlo.
+
+605
+00:27:42,000 --> 00:27:44,000
+Sin embargo, le decís después, le puedes decir
+
+606
+00:27:44,000 --> 00:27:46,000
+dame sólo este ambiente.
+
+607
+00:27:46,000 --> 00:27:48,000
+Entonces, se encienden estas tres
+
+608
+00:27:48,000 --> 00:27:50,000
+esos tres nodos y cuando te saca
+
+609
+00:27:50,000 --> 00:27:52,000
+el average, el promedio, te saca
+
+610
+00:27:52,000 --> 00:27:54,000
+solamente de estos dos arcos en vez de todo
+
+611
+00:27:54,000 --> 00:27:56,000
+del total. Puedes ir midiendo
+
+612
+00:27:56,000 --> 00:27:58,000
+diferentes cosas.
+
+613
+00:27:58,000 --> 00:28:00,000
+Así, se veía la versión
+
+614
+00:28:00,000 --> 00:28:02,000
+0-2. De hecho, si ponen pip install
+
+615
+00:28:02,000 --> 00:28:04,000
+se ve así. Acá abajo
+
+616
+00:28:04,000 --> 00:28:06,000
+ustedes pueden ir poniendo los ambientes y se van encendiendo
+
+617
+00:28:06,000 --> 00:28:08,000
+estas cosas, cambiando de colores
+
+618
+00:28:08,000 --> 00:28:10,000
+y...
+
+619
+00:28:10,000 --> 00:28:12,000
+muchas cosas lindas.
+
+620
+00:28:12,000 --> 00:28:14,000
+Pueden navegar, hacen click sobre uno, le muestro
+
+621
+00:28:14,000 --> 00:28:16,000
+la selección del aplotipo 12, acá le muestro
+
+622
+00:28:16,000 --> 00:28:18,000
+el aplotipo 12. Pueden ver todos.
+
+623
+00:28:18,000 --> 00:28:20,000
+No le falta un botón
+
+624
+00:28:20,000 --> 00:28:22,000
+esto, la versión previa todavía.
+
+625
+00:28:22,000 --> 00:28:24,000
+Podían exceder directamente
+
+626
+00:28:24,000 --> 00:28:26,000
+VDSQL, bueno,
+
+627
+00:28:26,000 --> 00:28:28,000
+mentalmente fue evolucionando
+
+628
+00:28:28,000 --> 00:28:30,000
+y hay más o menos estos, lo que yo apunto
+
+629
+00:28:30,000 --> 00:28:32,000
+para que venga instalado
+
+630
+00:28:32,000 --> 00:28:34,000
+en el...
+
+631
+00:28:34,000 --> 00:28:36,000
+para que así sea la herramienta
+
+632
+00:28:36,000 --> 00:28:38,000
+de Business Intelligent de Yatel
+
+633
+00:28:38,000 --> 00:28:40,000
+cuando esté más avanzada.
+
+634
+00:28:40,000 --> 00:28:42,000
+La arquitectura que tiene esto
+
+635
+00:28:42,000 --> 00:28:44,000
+actualmente
+
+636
+00:28:44,000 --> 00:28:46,000
+es esta.
+
+637
+00:28:46,000 --> 00:28:48,000
+Los cubos o lapsi en la misma teoría son muy
+
+638
+00:28:48,000 --> 00:28:50,000
+normalizaros.
+
+639
+00:28:50,000 --> 00:28:52,000
+Todo está más acostumbrado
+
+640
+00:28:52,000 --> 00:28:54,000
+como se hace una base dato normalizarla en tercera forma
+
+641
+00:28:54,000 --> 00:28:56,000
+normal.
+
+642
+00:28:56,000 --> 00:28:58,000
+Estoy en lo correcto, ¿no?
+
+643
+00:28:58,000 --> 00:29:00,000
+Bueno, un cubo se normaliza
+
+644
+00:29:00,000 --> 00:29:02,000
+a segunda forma normal.
+
+645
+00:29:02,000 --> 00:29:04,000
+Porque las cueris son más chicas
+
+646
+00:29:04,000 --> 00:29:06,000
+y más eficientes cuando se hacen sobre
+
+647
+00:29:06,000 --> 00:29:08,000
+segunda forma normal sobre tercera.
+
+648
+00:29:08,000 --> 00:29:10,000
+Porque el objetivo es mejorar el análisis
+
+649
+00:29:10,000 --> 00:29:12,000
+y no mejorar el almacenamiento.
+
+650
+00:29:12,000 --> 00:29:14,000
+Sobre eso
+
+651
+00:29:14,000 --> 00:29:16,000
+está implementado un motor SQL Alchemy.
+
+652
+00:29:16,000 --> 00:29:18,000
+Probé absolutamente
+
+653
+00:29:18,000 --> 00:29:20,000
+todos los RMS existentes en Python.
+
+654
+00:29:20,000 --> 00:29:22,000
+SQL Alchemy es un poco más engorroso
+
+655
+00:29:22,000 --> 00:29:24,000
+que la mayoría,
+
+656
+00:29:24,000 --> 00:29:26,000
+pero es mejor que el 99%
+
+657
+00:29:26,000 --> 00:29:28,000
+de ellos. De hecho, particularmente
+
+658
+00:29:28,000 --> 00:29:30,000
+el que peor anduvo por lejos fue el de
+
+659
+00:29:30,000 --> 00:29:32,000
+Diango. Diango es feo el RMS
+
+660
+00:29:32,000 --> 00:29:34,000
+cuando cuestione el rendimiento. Malo, malo, malo.
+
+661
+00:29:34,000 --> 00:29:36,000
+Los consejos no lo usen
+
+662
+00:29:36,000 --> 00:29:38,000
+si quieren usar algo de alto rendimiento.
+
+663
+00:29:38,000 --> 00:29:40,000
+Si pueden evitarlo.
+
+664
+00:29:40,000 --> 00:29:42,000
+Si están usando todo Diango, yo también uso el RMS.
+
+665
+00:29:42,000 --> 00:29:44,000
+Sobre eso
+
+666
+00:29:44,000 --> 00:29:46,000
+hay una capa de tracción
+
+667
+00:29:46,000 --> 00:29:48,000
+que se llama Yattel Network.
+
+668
+00:29:48,000 --> 00:29:50,000
+Que esto es muy parecido
+
+669
+00:29:50,000 --> 00:29:52,000
+a alguien programa JavaScript.
+
+670
+00:29:54,000 --> 00:29:56,000
+Bueno, a navegar el DOM,
+
+671
+00:29:56,000 --> 00:29:58,000
+o sea navegar la base data, otra vez el Yattel Network
+
+672
+00:29:58,000 --> 00:30:00,000
+directamente es como navegar el DOM de un HTML.
+
+673
+00:30:00,000 --> 00:30:02,000
+O sea, dame todos los aplotipos.
+
+674
+00:30:02,000 --> 00:30:04,000
+Ahora dame el aplotipo que tiene la IDital.
+
+675
+00:30:04,000 --> 00:30:06,000
+Ahora dame todos los hechos que tiene este aplotipo.
+
+676
+00:30:06,000 --> 00:30:08,000
+Es muy bajo nivel la navegación.
+
+677
+00:30:08,000 --> 00:30:10,000
+Sobre eso te implementó
+
+678
+00:30:10,000 --> 00:30:12,000
+un pequeño motor de data mining
+
+679
+00:30:12,000 --> 00:30:14,000
+que simplemente le decís. A esta red
+
+680
+00:30:14,000 --> 00:30:16,000
+dame, a esta red
+
+681
+00:30:16,000 --> 00:30:18,000
+con este ambiente
+
+682
+00:30:18,000 --> 00:30:20,000
+con este
+
+683
+00:30:20,000 --> 00:30:22,000
+calculador de dimensiones
+
+684
+00:30:22,000 --> 00:30:24,000
+sería, génirame
+
+685
+00:30:24,000 --> 00:30:26,000
+a SEMON Cluster.
+
+686
+00:30:26,000 --> 00:30:28,000
+SEMON Clusterizaciones.
+
+687
+00:30:28,000 --> 00:30:30,000
+También tiene un montor de estadística.
+
+688
+00:30:30,000 --> 00:30:32,000
+O sea, a esta red dame las estadísticas.
+
+689
+00:30:32,000 --> 00:30:34,000
+Ya se lo voy a mostrar funcionando
+
+690
+00:30:34,000 --> 00:30:36,000
+pues ya estoy llegando casi al final de esto.
+
+691
+00:30:36,000 --> 00:30:38,000
+Sobre eso
+
+692
+00:30:38,000 --> 00:30:40,000
+está implementado el motor de queries
+
+693
+00:30:40,000 --> 00:30:42,000
+por JSON.
+
+694
+00:30:42,000 --> 00:30:44,000
+O sea, en vez de hacer las peticiones
+
+695
+00:30:44,000 --> 00:30:46,000
+vía
+
+696
+00:30:46,000 --> 00:30:48,000
+Python, o sea, JSON.
+
+697
+00:30:48,000 --> 00:30:50,000
+La ventaja que tiene esto
+
+698
+00:30:50,000 --> 00:30:52,000
+es que nos ahorramos, alguien fue a
+
+699
+00:30:52,000 --> 00:30:54,000
+echarle la data de ese tema a temprano.
+
+700
+00:30:54,000 --> 00:30:56,000
+¿Nadie fue?
+
+701
+00:30:56,000 --> 00:30:58,000
+Bueno, el navegar lo que se llama
+
+702
+00:30:58,000 --> 00:31:00,000
+abstract syntax tree
+
+703
+00:31:00,000 --> 00:31:02,000
+de Python es feo.
+
+704
+00:31:02,000 --> 00:31:04,000
+Entonces, con eso, después cuando
+
+705
+00:31:04,000 --> 00:31:06,000
+ahora esto está sin implementar, que es
+
+706
+00:31:06,000 --> 00:31:08,000
+el Yattel query language, que va a hacer
+
+707
+00:31:08,000 --> 00:31:10,000
+el lenguaje realmente declarativo.
+
+708
+00:31:10,000 --> 00:31:12,000
+Se está encargando otro chico, que es especialista
+
+709
+00:31:12,000 --> 00:31:14,000
+de lenguajes. En vez de compilarlo a Python
+
+710
+00:31:14,000 --> 00:31:16,000
+lo compila a esto.
+
+711
+00:31:16,000 --> 00:31:18,000
+Y es mucho más fácil
+
+712
+00:31:18,000 --> 00:31:20,000
+tratar esto que tratar
+
+713
+00:31:20,000 --> 00:31:22,000
+esto.
+
+714
+00:31:22,000 --> 00:31:24,000
+Sobre eso está el Yattel server.
+
+715
+00:31:24,000 --> 00:31:26,000
+O a ni acaba
+
+716
+00:31:26,000 --> 00:31:28,000
+hipotéticamente se va a conectar el BI
+
+717
+00:31:28,000 --> 00:31:30,000
+que todavía no está. ¿Qué no está implementado?
+
+718
+00:31:30,000 --> 00:31:32,000
+Esto le falta al aguro.
+
+719
+00:31:32,000 --> 00:31:34,000
+Y estas dos cosas
+
+720
+00:31:34,000 --> 00:31:36,000
+no están. Y este está en un 99%
+
+721
+00:31:36,000 --> 00:31:38,000
+por ahí, pero no está
+
+722
+00:31:38,000 --> 00:31:40,000
+mostrable todavía.
+
+723
+00:31:40,000 --> 00:31:42,000
+¿Qué se puede aportar?
+
+724
+00:31:42,000 --> 00:31:44,000
+Bueno, ¿y cuál está sin implementar?
+
+725
+00:31:44,000 --> 00:31:46,000
+La minería
+
+726
+00:31:46,000 --> 00:31:48,000
+de datos propiamente dicha, sólo tiene Kminz.
+
+727
+00:31:48,000 --> 00:31:50,000
+Se podría implementar algunos algoritmos más complejos
+
+728
+00:31:50,000 --> 00:31:52,000
+y más de última onda
+
+729
+00:31:52,000 --> 00:31:54,000
+tipo ISOdata,
+
+730
+00:31:54,000 --> 00:31:56,000
+que son algoritmos muy buenos.
+
+731
+00:31:56,000 --> 00:31:58,000
+Abrear autentificación
+
+732
+00:31:58,000 --> 00:32:00,000
+unirrimentaria en el server
+
+733
+00:32:00,000 --> 00:32:02,000
+con soporte tipo
+
+734
+00:32:02,000 --> 00:32:04,000
+de led up, no sé o algo parecido.
+
+735
+00:32:04,000 --> 00:32:06,000
+Es un proyecto molodado por una universidad
+
+736
+00:32:06,000 --> 00:32:08,000
+si después tendrássemos para este proyecto de fin de carrera.
+
+737
+00:32:08,000 --> 00:32:10,000
+O sea, si alguien está interesado en hacer esto,
+
+738
+00:32:10,000 --> 00:32:12,000
+se puede. Y la parte científica
+
+739
+00:32:12,000 --> 00:32:14,000
+en sí no está desarrollada para nada.
+
+740
+00:32:14,000 --> 00:32:16,000
+Así que si algún doctor Ando quiere,
+
+741
+00:32:16,000 --> 00:32:18,000
+también se puede.
+
+742
+00:32:18,000 --> 00:32:20,000
+Y documentación, falta...
+
+743
+00:32:20,000 --> 00:32:22,000
+Pase dulce, falta de documentación.
+
+744
+00:32:22,000 --> 00:32:24,000
+Bueno.
+
+745
+00:32:24,000 --> 00:32:28,000
+Para cerrar el proyecto un poco Andando.
+
+746
+00:32:34,000 --> 00:32:36,000
+Me queda chica la silla.
+
+747
+00:32:42,000 --> 00:32:44,000
+¿Se ve bien?
+
+748
+00:32:44,000 --> 00:32:54,000
+No, no, se ve bien.
+
+749
+00:32:58,000 --> 00:33:02,000
+¿Se ve bien el texto?
+
+750
+00:33:08,000 --> 00:33:10,000
+¿Se ve bien?
+
+751
+00:33:10,000 --> 00:33:12,000
+Perdón.
+
+752
+00:33:12,000 --> 00:33:14,000
+Vamos a maximizar esto un cacho.
+
+753
+00:33:16,000 --> 00:33:18,000
+Oye, tele es una línea de comando entre otras cosas.
+
+754
+00:33:18,000 --> 00:33:20,000
+Tiene un montón de cosas
+
+755
+00:33:20,000 --> 00:33:22,000
+para ejecutar.
+
+756
+00:33:22,000 --> 00:33:24,000
+Una de ellas, por ejemplo,
+
+757
+00:33:24,000 --> 00:33:26,000
+es para empezar a trabajar rápido.
+
+758
+00:33:26,000 --> 00:33:28,000
+O en el que pasarle dónde va a ser la data...
+
+759
+00:33:28,000 --> 00:33:30,000
+lo base de datos suyacente.
+
+760
+00:33:30,000 --> 00:33:32,000
+Por ejemplo, vamos a usar algo tan robusto
+
+761
+00:33:32,000 --> 00:33:34,000
+como un SQLite.
+
+762
+00:33:34,000 --> 00:33:38,000
+Vamos a ponerlo en moda escritura.
+
+763
+00:33:42,000 --> 00:33:44,000
+Vamos a hacer una red falsa.
+
+764
+00:33:46,000 --> 00:33:48,000
+Network.
+
+765
+00:33:48,000 --> 00:33:52,000
+Que tenga unos 29 aplotipos
+
+766
+00:33:52,000 --> 00:33:56,000
+con más o menos 40 hechos cada uno.
+
+767
+00:33:56,000 --> 00:33:58,000
+Y que la distancia entre ellos
+
+768
+00:33:58,000 --> 00:34:00,000
+esté calculada por la distancia de hamming.
+
+769
+00:34:00,000 --> 00:34:02,000
+Listo.
+
+770
+00:34:02,000 --> 00:34:04,000
+Menos, menos.
+
+771
+00:34:04,000 --> 00:34:06,000
+Data base.
+
+772
+00:34:06,000 --> 00:34:08,000
+Ahí está.
+
+773
+00:34:12,000 --> 00:34:15,000
+Ahí se me tiene que ver que ha dado la base de datos.
+
+774
+00:34:15,000 --> 00:34:17,000
+Ahí está la NW.
+
+775
+00:34:17,000 --> 00:34:19,000
+Si yo la quiero explorar...
+
+776
+00:34:24,000 --> 00:34:26,000
+Está muy optimizada para la búsqueda.
+
+777
+00:34:26,000 --> 00:34:28,000
+Crea índices en absolutamente cuánta porquería encuentra.
+
+778
+00:34:28,000 --> 00:34:30,000
+Creo todas esas tablas.
+
+779
+00:34:34,000 --> 00:34:36,000
+Esa fake network crea una tabla
+
+780
+00:34:36,000 --> 00:34:38,000
+que tenga un poco de contenido semántico
+
+781
+00:34:38,000 --> 00:34:40,000
+para que sea falsa y no hace demostración.
+
+782
+00:34:40,000 --> 00:34:42,000
+No es que no le pidan demasiado.
+
+783
+00:34:42,000 --> 00:34:46,000
+Por ejemplo, la descripción la saca un lore tipsum.
+
+784
+00:34:46,000 --> 00:34:48,000
+¿Qué significa esa descripción? ¿Y qué sé yo? Cualquier cosa.
+
+785
+00:34:50,000 --> 00:34:52,000
+Si quieren entrar, por ejemplo, la parte de hechos
+
+786
+00:34:52,000 --> 00:34:58,000
+en estos arcos.
+
+787
+00:35:00,000 --> 00:35:04,000
+Los lugares plays, por ejemplo, tienen Mordor, Valhalla, Vulcan.
+
+788
+00:35:04,000 --> 00:35:07,000
+¿Qué sé yo? ¿Y qué significa lo aplotipo? ¿Y qué sé yo?
+
+789
+00:35:07,000 --> 00:35:09,000
+¿Qué sé yo? Nada.
+
+790
+00:35:12,000 --> 00:35:14,000
+Perdón, la tos me mata con esto, el cambio de clima
+
+791
+00:35:14,000 --> 00:35:17,000
+que tuve que soportar de 37 o 2 grados en un día.
+
+792
+00:35:17,000 --> 00:35:19,000
+¿Qué sé yo?
+
+793
+00:35:21,000 --> 00:35:23,000
+¿Ustedes pueden qué sé yo?
+
+794
+00:35:23,000 --> 00:35:25,000
+Por ejemplo, tienen un...
+
+795
+00:35:27,000 --> 00:35:29,000
+formas de transportar esos datos agnósticos
+
+796
+00:35:29,000 --> 00:35:31,000
+a la base de datos suyasente.
+
+797
+00:35:31,000 --> 00:35:33,000
+Por ejemplo, Dump, NW.json.
+
+798
+00:35:33,000 --> 00:35:35,000
+Jason es el lenguaje estándar
+
+799
+00:35:35,000 --> 00:35:37,000
+que estoy usando para todo.
+
+800
+00:35:39,000 --> 00:35:41,000
+Acá está toda la red en formato Jason.
+
+801
+00:35:41,000 --> 00:35:43,000
+Y se puede levantar en otra base de datos.
+
+802
+00:35:43,000 --> 00:35:45,000
+¿Por qué? Le dice así,
+
+803
+00:35:45,000 --> 00:35:47,000
+no uso SQL directamente porque el SQL
+
+804
+00:35:47,000 --> 00:35:49,000
+de SQLite le es distinto al de MySQL,
+
+805
+00:35:49,000 --> 00:35:51,000
+es distinto al de Pogre.
+
+806
+00:35:51,000 --> 00:35:53,000
+Y si yo acá, una de las cosas
+
+807
+00:35:53,000 --> 00:35:55,000
+se me ocurrió hacer,
+
+808
+00:35:55,000 --> 00:35:57,000
+suyasente una base de datos onda
+
+809
+00:35:57,000 --> 00:35:59,000
+Mongo, por ejemplo, algo parecido a Mongo,
+
+810
+00:35:59,000 --> 00:36:01,000
+y va a ser distinto,
+
+811
+00:36:01,000 --> 00:36:03,000
+bueno, esto es genérico agnóstico
+
+812
+00:36:03,000 --> 00:36:05,000
+a cualquiera de los casos.
+
+813
+00:36:07,000 --> 00:36:09,000
+Sí, bueno, ahora sí, vamos a Ipyton
+
+814
+00:36:09,000 --> 00:36:11,000
+y vamos a navegar un poco por...
+
+815
+00:36:11,000 --> 00:36:15,000
+From.jotel import
+
+816
+00:36:15,000 --> 00:36:17,000
+dv stats
+
+817
+00:36:19,000 --> 00:36:21,000
+y nada más, creo que eso basta.
+
+818
+00:36:21,000 --> 00:36:23,000
+Vamos a hacer una conexión
+
+819
+00:36:23,000 --> 00:36:25,000
+dv.jotel.network
+
+820
+00:36:27,000 --> 00:36:29,000
+SQLite, se llamaba
+
+821
+00:36:29,000 --> 00:36:31,000
+database
+
+822
+00:36:33,000 --> 00:36:35,000
+nw.dev, sin mal no recuerdo.
+
+823
+00:36:35,000 --> 00:36:37,000
+Nw, sí, porque si no hubiera explotado.
+
+824
+00:36:37,000 --> 00:36:39,000
+Por ejemplo, puedes decir
+
+825
+00:36:39,000 --> 00:36:41,000
+dame todos los aplotipos.
+
+826
+00:36:45,000 --> 00:36:47,000
+Siempre todo esto por una cuestión
+
+827
+00:36:47,000 --> 00:36:49,000
+de rendimiento genera...
+
+828
+00:36:49,000 --> 00:36:51,000
+generadores, nunca se resuelve,
+
+829
+00:36:51,000 --> 00:36:53,000
+son todos lazy,
+
+830
+00:36:53,000 --> 00:36:55,000
+son todos los aplotipos que tiene adentro.
+
+831
+00:36:55,000 --> 00:36:57,000
+Bueno, del aplotipo 0
+
+832
+00:36:57,000 --> 00:36:59,000
+dame, que se yo, el aplotipo
+
+833
+00:36:59,000 --> 00:37:01,000
+ese, dame el...
+
+834
+00:37:01,000 --> 00:37:03,000
+que se yo la...
+
+835
+00:37:03,000 --> 00:37:05,000
+que atributos tiene.
+
+836
+00:37:05,000 --> 00:37:07,000
+Color, bueno, puede hacer
+
+837
+00:37:07,000 --> 00:37:09,000
+arch.color, tiene ese color.
+
+838
+00:37:09,000 --> 00:37:11,000
+Si quieres, también puedes
+
+839
+00:37:11,000 --> 00:37:13,000
+acceder al tipo diccionario
+
+840
+00:37:13,000 --> 00:37:15,000
+color, también funciona.
+
+841
+00:37:17,000 --> 00:37:19,000
+También tenés así como tenés
+
+842
+00:37:19,000 --> 00:37:21,000
+aplotipos, también puedes iterar
+
+843
+00:37:21,000 --> 00:37:23,000
+sobre los hechos
+
+844
+00:37:23,000 --> 00:37:25,000
+que van a ser muchos más.
+
+845
+00:37:25,000 --> 00:37:27,000
+Y también puedes iterar
+
+846
+00:37:27,000 --> 00:37:29,000
+sobre los arcos, que estos sí van a ser
+
+847
+00:37:29,000 --> 00:37:31,000
+mucho porque es una red totalmente conectada
+
+848
+00:37:31,000 --> 00:37:33,000
+siempre.
+
+849
+00:37:33,000 --> 00:37:35,000
+No necesariamente, pero la
+
+850
+00:37:35,000 --> 00:37:37,000
+por defecto genera una totalmente conectada.
+
+851
+00:37:39,000 --> 00:37:41,000
+Sin dirección, bueno, son todos los arcos
+
+852
+00:37:41,000 --> 00:37:43,000
+que tiene adentro de la red. Son muchos.
+
+853
+00:37:43,000 --> 00:37:45,000
+Ya verás.
+
+854
+00:37:45,000 --> 00:37:47,000
+Perdón en la falta de Python 8
+
+855
+00:37:47,000 --> 00:37:49,000
+pero...
+
+856
+00:37:51,000 --> 00:37:53,000
+406 arcos.
+
+857
+00:37:53,000 --> 00:37:55,000
+Que es toda la total conexión de la red.
+
+858
+00:37:55,000 --> 00:37:57,000
+Bueno, sobre esa red
+
+859
+00:37:57,000 --> 00:37:59,000
+también hay otros tipos de métodos
+
+860
+00:37:59,000 --> 00:38:01,000
+por ejemplo, nw.app
+
+861
+00:38:01,000 --> 00:38:03,000
+fact
+
+862
+00:38:03,000 --> 00:38:05,000
+fact
+
+863
+00:38:05,000 --> 00:38:07,000
+fact by
+
+864
+00:38:07,000 --> 00:38:09,000
+apelotype.
+
+865
+00:38:09,000 --> 00:38:11,000
+Yo tenía guardado en este variable
+
+866
+00:38:11,000 --> 00:38:13,000
+h un apelotipo. Me da todos
+
+867
+00:38:15,000 --> 00:38:17,000
+hasta yo me olvido que estos siempre son
+
+868
+00:38:17,000 --> 00:38:19,000
+generadores. Te da todos esos apelotipos.
+
+869
+00:38:19,000 --> 00:38:21,000
+Todos esos hechos
+
+870
+00:38:21,000 --> 00:38:23,000
+para ese apelotipo. Para el apelotipo 0 están todos esos.
+
+871
+00:38:23,000 --> 00:38:25,000
+También pueden hacer cosas como
+
+872
+00:38:25,000 --> 00:38:27,000
+apelotype
+
+873
+00:38:27,000 --> 00:38:29,000
+by ID.
+
+874
+00:38:29,000 --> 00:38:31,000
+Dame el ID del apelotipo con el ID
+
+875
+00:38:31,000 --> 00:38:33,000
+y con el ID 2.
+
+876
+00:38:33,000 --> 00:38:35,000
+Si tiene te devuelve.
+
+877
+00:38:35,000 --> 00:38:37,000
+O sea, si sean cuentas, esto es muy parecido
+
+878
+00:38:37,000 --> 00:38:39,000
+a navegar el DOM de HTML y lo que programen
+
+879
+00:38:39,000 --> 00:38:41,000
+en JavaScript.
+
+880
+00:38:41,000 --> 00:38:43,000
+Y está hecho así a propósito obviamente.
+
+881
+00:38:43,000 --> 00:38:45,000
+Porque si jQuery puede extender tanto
+
+882
+00:38:45,000 --> 00:38:47,000
+con tan pocos, me supuse que yo también.
+
+883
+00:38:49,000 --> 00:38:51,000
+También pueden filtrar, por ejemplo
+
+884
+00:38:51,000 --> 00:38:53,000
+pueden hacer
+
+885
+00:38:53,000 --> 00:38:55,000
+describir la red completa.
+
+886
+00:38:57,000 --> 00:38:59,000
+Vamos a compartir un diccionario.
+
+887
+00:38:59,000 --> 00:39:01,000
+Esta es la descripción completa
+
+888
+00:39:01,000 --> 00:39:03,000
+la red.
+
+889
+00:39:03,000 --> 00:39:05,000
+Esto es muy útil para construir entornos gráficos
+
+890
+00:39:05,000 --> 00:39:07,000
+de navegación o ver qué tiene la red adentro.
+
+891
+00:39:07,000 --> 00:39:09,000
+Por ejemplo, te dice
+
+892
+00:39:09,000 --> 00:39:11,000
+que los apelotipos
+
+893
+00:39:11,000 --> 00:39:13,000
+tienen atributos
+
+894
+00:39:13,000 --> 00:39:15,000
+que son el color, la descripción, el apelotipo
+
+895
+00:39:15,000 --> 00:39:17,000
+y el alto, el nombre
+
+896
+00:39:17,000 --> 00:39:19,000
+y unos string, el otro float
+
+897
+00:39:19,000 --> 00:39:21,000
+y demás.
+
+898
+00:39:25,000 --> 00:39:27,000
+Es bastante feo hacer estos demos en vivo.
+
+899
+00:39:27,000 --> 00:39:29,000
+Pero bueno
+
+900
+00:39:29,000 --> 00:39:31,000
+también, por ejemplo, si se fijan
+
+901
+00:39:31,000 --> 00:39:33,000
+acá están los apelotipos
+
+902
+00:39:33,000 --> 00:39:35,000
+de los hechos
+
+903
+00:39:35,000 --> 00:39:37,000
+que dice que tiene una cosa, por ejemplo,
+
+904
+00:39:37,000 --> 00:39:39,000
+que se llama plays. Bueno, a mí me gustaría saber
+
+905
+00:39:39,000 --> 00:39:41,000
+que apelotipos
+
+906
+00:39:41,000 --> 00:39:43,000
+por decir alguno
+
+907
+00:39:43,000 --> 00:39:45,000
+fueron encontrados
+
+908
+00:39:45,000 --> 00:39:47,000
+en mordor.
+
+909
+00:39:47,000 --> 00:39:49,000
+Vamos a ver qué apelotipo hay, fueron encontrados en mordor.
+
+910
+00:39:49,000 --> 00:39:51,000
+Entonces, decimos
+
+911
+00:39:51,000 --> 00:39:53,000
+apelotipes
+
+912
+00:39:53,000 --> 00:39:57,000
+en environment
+
+913
+00:39:57,000 --> 00:39:59,000
+cuyo plays
+
+914
+00:39:59,000 --> 00:40:01,000
+sea mordor.
+
+915
+00:40:03,000 --> 00:40:05,000
+Otra vez.
+
+916
+00:40:07,000 --> 00:40:09,000
+El 0, el 2, el 3, el 5.
+
+917
+00:40:09,000 --> 00:40:11,000
+Bueno, y que además
+
+918
+00:40:11,000 --> 00:40:13,000
+creo que hay una variable
+
+919
+00:40:13,000 --> 00:40:15,000
+porque la sé que hay, hay una variable que se llama native
+
+920
+00:40:15,000 --> 00:40:17,000
+que es un boleano, podría fijarme más arriba.
+
+921
+00:40:17,000 --> 00:40:21,000
+Acá hay una variable que se llama native que es boleano.
+
+922
+00:40:21,000 --> 00:40:23,000
+Native
+
+923
+00:40:23,000 --> 00:40:25,000
+quiero que todo...
+
+924
+00:40:25,000 --> 00:40:27,000
+¿Qué significará eso?
+
+925
+00:40:27,000 --> 00:40:29,000
+¿Qué sé yo qué significa? Es una base a tu prueba.
+
+926
+00:40:29,000 --> 00:40:31,000
+Bueno, solamente eso.
+
+927
+00:40:31,000 --> 00:40:33,000
+Y puedes ir filtrando multi-mencionalmente
+
+928
+00:40:33,000 --> 00:40:35,000
+los diferentes apelotipos.
+
+929
+00:40:35,000 --> 00:40:37,000
+Así como tenés filtros
+
+930
+00:40:37,000 --> 00:40:39,000
+de apelotipos, también puedes ver
+
+931
+00:40:39,000 --> 00:40:41,000
+sólo los arcos.
+
+932
+00:40:41,000 --> 00:40:43,000
+Esos arcos son los que existen.
+
+933
+00:40:43,000 --> 00:40:45,000
+Que son los arcos
+
+934
+00:40:45,000 --> 00:40:47,000
+que son los arcos
+
+935
+00:40:47,000 --> 00:40:49,000
+si nos ponemos a analizar con paciencia
+
+936
+00:40:49,000 --> 00:40:51,000
+que están definidos para estos apelotipos.
+
+937
+00:40:51,000 --> 00:40:53,000
+Se fijan, va a dar la total
+
+938
+00:40:53,000 --> 00:40:55,000
+conexión de este con este, este con este, este con este, este con este
+
+939
+00:40:55,000 --> 00:40:57,000
+y todos los al revés, digamos.
+
+940
+00:40:59,000 --> 00:41:01,000
+Están acá.
+
+941
+00:41:03,000 --> 00:41:05,000
+Además de eso,
+
+942
+00:41:05,000 --> 00:41:07,000
+tenemos un módulo estadística.
+
+943
+00:41:07,000 --> 00:41:09,000
+Stats
+
+944
+00:41:09,000 --> 00:41:11,000
+que por ejemplo le podemos decir
+
+945
+00:41:11,000 --> 00:41:13,000
+que nos calcula el average
+
+946
+00:41:13,000 --> 00:41:15,000
+de distancias
+
+947
+00:41:15,000 --> 00:41:17,000
+de todos los arcos de la red.
+
+948
+00:41:17,000 --> 00:41:19,000
+Es el promedio.
+
+949
+00:41:19,000 --> 00:41:21,000
+O
+
+950
+00:41:21,000 --> 00:41:23,000
+sólo para los de módulo.
+
+951
+00:41:25,000 --> 00:41:27,000
+No hay mucha diferencia porque como está generado
+
+952
+00:41:27,000 --> 00:41:29,000
+esto, hacer la distribución uniforme
+
+953
+00:41:29,000 --> 00:41:31,000
+y atender a número grande, esto tiende normal.
+
+954
+00:41:31,000 --> 00:41:33,000
+Es por eso que genera
+
+955
+00:41:33,000 --> 00:41:35,000
+esos números muy parecidos.
+
+956
+00:41:35,000 --> 00:41:37,000
+O también
+
+957
+00:41:37,000 --> 00:41:39,000
+podemos agregar más filtros como native.
+
+958
+00:41:39,000 --> 00:41:41,000
+Eso no va a existir.
+
+959
+00:41:41,000 --> 00:41:43,000
+True.
+
+960
+00:41:43,000 --> 00:41:45,000
+Entonces bueno,
+
+961
+00:41:45,000 --> 00:41:47,000
+esos son las estadísticas para la red,
+
+962
+00:41:47,000 --> 00:41:49,000
+bla, bla, bla.
+
+963
+00:41:49,000 --> 00:41:51,000
+También ve a average
+
+964
+00:41:51,000 --> 00:41:53,000
+tenemos cosas como
+
+965
+00:41:53,000 --> 00:41:55,000
+la distribución standard.
+
+966
+00:41:57,000 --> 00:41:59,000
+Esto está hecho todo por debajo con un pa
+
+967
+00:41:59,000 --> 00:42:01,000
+y así que es rápido.
+
+968
+00:42:01,000 --> 00:42:03,000
+Es bastante rápido.
+
+969
+00:42:03,000 --> 00:42:05,000
+De hecho, si quieren acelerarlo todavía
+
+970
+00:42:05,000 --> 00:42:07,000
+tiene una cosa que se llama
+
+971
+00:42:07,000 --> 00:42:09,000
+M to Waiter Ray.
+
+972
+00:42:09,000 --> 00:42:11,000
+Que esto genera una Ray en un pa
+
+973
+00:42:11,000 --> 00:42:13,000
+y después la Ray este ya es operable
+
+974
+00:42:13,000 --> 00:42:15,000
+como una Ray en un pa y más rápido todavía.
+
+975
+00:42:15,000 --> 00:42:17,000
+O sea, podríamos generar una sola vez
+
+976
+00:42:17,000 --> 00:42:19,000
+y pueden pasarlo por todas las estadísticas.
+
+977
+00:42:19,000 --> 00:42:21,000
+Pues si no, cada vez están generando esta Ray
+
+978
+00:42:21,000 --> 00:42:23,000
+para volver a sacar la estadística.
+
+979
+00:42:23,000 --> 00:42:25,000
+Por último,
+
+980
+00:42:25,000 --> 00:42:27,000
+digamos para mostrarle esto,
+
+981
+00:42:29,000 --> 00:42:31,000
+hay un módulo que se llama
+
+982
+00:42:31,000 --> 00:42:33,000
+FromJotel.
+
+983
+00:42:35,000 --> 00:42:37,000
+Punto.
+
+984
+00:42:37,000 --> 00:42:39,000
+No se llama, pero a From.
+
+985
+00:42:39,000 --> 00:42:41,000
+FromJotel.
+
+986
+00:42:43,000 --> 00:42:45,000
+Punto.
+
+987
+00:42:45,000 --> 00:42:47,000
+Cluster.
+
+988
+00:42:49,000 --> 00:42:51,000
+Los nombres que sigo los copio un poco
+
+989
+00:42:51,000 --> 00:42:53,000
+a SciPy y a NumPy para que estén parecidos
+
+990
+00:42:53,000 --> 00:42:55,000
+import camins.
+
+991
+00:42:55,000 --> 00:42:57,000
+Camins es un poco más difícil porque sigue la misma firma
+
+992
+00:42:57,000 --> 00:42:59,000
+de
+
+993
+00:42:59,000 --> 00:43:01,000
+camins.
+
+994
+00:43:01,000 --> 00:43:03,000
+Si la misma firma de NumPy, que nunca me la acuerdo.
+
+995
+00:43:03,000 --> 00:43:05,000
+Es decir, bueno,
+
+996
+00:43:05,000 --> 00:43:07,000
+¿cuál es la idea
+
+997
+00:43:07,000 --> 00:43:09,000
+del camins? No es clasificar
+
+998
+00:43:09,000 --> 00:43:11,000
+a protipos, ni clasificar
+
+999
+00:43:11,000 --> 00:43:13,000
+arcos.
+
+1000
+00:43:13,000 --> 00:43:15,000
+La idea es ver
+
+1001
+00:43:15,000 --> 00:43:17,000
+que clasifiquen
+
+1002
+00:43:17,000 --> 00:43:19,000
+ambientes. O sea,
+
+1003
+00:43:19,000 --> 00:43:21,000
+¿qué aportipos
+
+1004
+00:43:21,000 --> 00:43:23,000
+aparecen en este ambiente y qué aportipos
+
+1005
+00:43:23,000 --> 00:43:25,000
+aparecen en este otro ambiente?
+
+1006
+00:43:25,000 --> 00:43:27,000
+¿Y cuáles son los más parecidos entre ellos?
+
+1007
+00:43:27,000 --> 00:43:29,000
+Entonces, después uno puede ser análisis
+
+1008
+00:43:29,000 --> 00:43:31,000
+de ¿por qué este ambiente se parece tanto a este otro?
+
+1009
+00:43:31,000 --> 00:43:33,000
+¿Por qué tiene lo mismo aportipo?
+
+1010
+00:43:33,000 --> 00:43:35,000
+¿O por qué tiene las mismas estadísticas?
+
+1011
+00:43:35,000 --> 00:43:37,000
+¿O por qué tiene lo mismo lo que sea?
+
+1012
+00:43:37,000 --> 00:43:39,000
+Entonces, pues,
+
+1013
+00:43:39,000 --> 00:43:41,000
+ah, mira, si yo pongo que los días lluviosos
+
+1014
+00:43:41,000 --> 00:43:43,000
+me generan los mismos aportipos que los días
+
+1015
+00:43:43,000 --> 00:43:45,000
+soleados.
+
+1016
+00:43:45,000 --> 00:43:47,000
+Pero son distintos los días con nieve. Ah,
+
+1017
+00:43:47,000 --> 00:43:49,000
+mira, que sea agua o sol no me
+
+1018
+00:43:49,000 --> 00:43:51,000
+afecta lo más mínimo, que sea con nieve cambia
+
+1019
+00:43:51,000 --> 00:43:53,000
+las cosas. O ese tipo de análisis
+
+1020
+00:43:53,000 --> 00:43:55,000
+se pueden hacer.
+
+1021
+00:43:55,000 --> 00:43:57,000
+Por ejemplo, vamos a hacer sobre esta red
+
+1022
+00:43:57,000 --> 00:43:59,000
+vamos a poner
+
+1023
+00:43:59,000 --> 00:44:01,000
+dame todos
+
+1024
+00:44:01,000 --> 00:44:03,000
+los que no me acuerdo nunca
+
+1025
+00:44:03,000 --> 00:44:05,000
+esto es bastante más complicado
+
+1026
+00:44:05,000 --> 00:44:07,000
+lo que a mí me gustaría
+
+1027
+00:44:07,000 --> 00:44:09,000
+los factaters
+
+1028
+00:44:09,000 --> 00:44:11,000
+sobre esta red
+
+1029
+00:44:11,000 --> 00:44:13,000
+filtrame solamente los de
+
+1030
+00:44:13,000 --> 00:44:15,000
+hacerme todos los ambientes posibles
+
+1031
+00:44:15,000 --> 00:44:17,000
+que pueda generar con la variable plays
+
+1032
+00:44:17,000 --> 00:44:19,000
+y con la variable native
+
+1033
+00:44:19,000 --> 00:44:21,000
+¿Cuáles son todos los posibles?
+
+1034
+00:44:21,000 --> 00:44:23,000
+Bueno, hay un método que también te permite ver
+
+1035
+00:44:23,000 --> 00:44:25,000
+desde la red
+
+1036
+00:44:25,000 --> 00:44:27,000
+bueno, generame tres aplotipos
+
+1037
+00:44:27,000 --> 00:44:29,000
+creo que con eso basta. Bueno, ahí está
+
+1038
+00:44:29,000 --> 00:44:31,000
+tres grupos
+
+1039
+00:44:31,000 --> 00:44:33,000
+bueno, eso es
+
+1040
+00:44:33,000 --> 00:44:35,000
+una clasificación de los diferentes ambientes
+
+1041
+00:44:35,000 --> 00:44:37,000
+que hay en esa red
+
+1042
+00:44:37,000 --> 00:44:39,000
+es bastante complejo de entender alguna
+
+1043
+00:44:39,000 --> 00:44:41,000
+cosa de esta parte de análisis de datos
+
+1044
+00:44:41,000 --> 00:44:43,000
+pero acá por algún motivo
+
+1045
+00:44:43,000 --> 00:44:45,000
+dice que si
+
+1046
+00:44:45,000 --> 00:44:47,000
+no pones ningún
+
+1047
+00:44:47,000 --> 00:44:49,000
+ambiente
+
+1048
+00:44:49,000 --> 00:44:51,000
+ningún lugar, perdón, ningún place
+
+1049
+00:44:51,000 --> 00:44:53,000
+pero pones que native sea true
+
+1050
+00:44:53,000 --> 00:44:55,000
+es más o menos parecido
+
+1051
+00:44:55,000 --> 00:44:57,000
+a poner que
+
+1052
+00:44:57,000 --> 00:44:59,000
+a no poner ninguno de los dos filtros
+
+1053
+00:44:59,000 --> 00:45:01,000
+o a poner que sea gotam city
+
+1054
+00:45:01,000 --> 00:45:03,000
+y nada de nativo
+
+1055
+00:45:03,000 --> 00:45:05,000
+estos filtros se parecen
+
+1056
+00:45:05,000 --> 00:45:07,000
+van a generar más o menos los mismos resultados
+
+1057
+00:45:07,000 --> 00:45:09,000
+¿Por qué? Porque sí, por algún motivo
+
+1058
+00:45:09,000 --> 00:45:11,000
+esto teníamos que poner a analizar por qué
+
+1059
+00:45:11,000 --> 00:45:13,000
+la muestra te va guiando en tu investigación
+
+1060
+00:45:13,000 --> 00:45:15,000
+el
+
+1061
+00:45:15,000 --> 00:45:17,000
+de hecho, en el NW
+
+1062
+00:45:17,000 --> 00:45:19,000
+hay uno que se llama en environments
+
+1063
+00:45:19,000 --> 00:45:21,000
+que uno por ejemplo
+
+1064
+00:45:21,000 --> 00:45:23,000
+de decir plays
+
+1065
+00:45:23,000 --> 00:45:25,000
+creo que era así
+
+1066
+00:45:25,000 --> 00:45:27,000
+se llama en un acuerdo
+
+1067
+00:45:27,000 --> 00:45:29,000
+voy a hiciste este programa Juan Acordate
+
+1068
+00:45:31,000 --> 00:45:33,000
+son todos los
+
+1069
+00:45:33,000 --> 00:45:35,000
+ambientes posibles que se pueden determinar
+
+1070
+00:45:35,000 --> 00:45:37,000
+con la variable plays
+
+1071
+00:45:37,000 --> 00:45:39,000
+perdón, con la
+
+1072
+00:45:39,000 --> 00:45:41,000
+la dimensión plays, si se podemos también con native
+
+1073
+00:45:41,000 --> 00:45:43,000
+estas son todas las combinaciones posibles que van a ver
+
+1074
+00:45:43,000 --> 00:45:45,000
+con eso va construyendo
+
+1075
+00:45:45,000 --> 00:45:47,000
+los diferentes clasificaciones
+
+1076
+00:45:47,000 --> 00:45:49,000
+por último
+
+1077
+00:45:49,000 --> 00:45:55,000
+no esto no
+
+1078
+00:45:55,000 --> 00:45:57,000
+por último
+
+1079
+00:45:59,000 --> 00:46:01,000
+el query by json se parece a eso
+
+1080
+00:46:05,000 --> 00:46:07,000
+donde
+
+1081
+00:46:09,000 --> 00:46:11,000
+esto es un digamos está pensado para hacerlo remotamente
+
+1082
+00:46:11,000 --> 00:46:13,000
+el ID uno le puede poner cualquier cosa
+
+1083
+00:46:13,000 --> 00:46:15,000
+es para hacer cosas como por ejemplo
+
+1084
+00:46:15,000 --> 00:46:17,000
+hacer callbacks
+
+1085
+00:46:17,000 --> 00:46:19,000
+y no vuelve y no sabe de qué
+
+1086
+00:46:19,000 --> 00:46:21,000
+de qué llamada fue hecho, ¿se lee bien eso?
+
+1087
+00:46:21,000 --> 00:46:23,000
+más o menos
+
+1088
+00:46:23,000 --> 00:46:25,000
+va a tener esto
+
+1089
+00:46:25,000 --> 00:46:27,000
+a ver si tengo alguna otra cosa como
+
+1090
+00:46:33,000 --> 00:46:35,000
+donde podría poner, llegar a ver
+
+1091
+00:46:35,000 --> 00:46:37,000
+el f1
+
+1092
+00:46:37,000 --> 00:46:39,000
+gelite
+
+1093
+00:46:41,000 --> 00:46:43,000
+ya veo que lo tengo en negro también
+
+1094
+00:46:43,000 --> 00:46:45,000
+y lo tengo en negro
+
+1095
+00:46:45,000 --> 00:46:47,000
+las vamos Juan, herramientas
+
+1096
+00:46:47,000 --> 00:46:49,000
+editar preferencias
+
+1097
+00:46:49,000 --> 00:46:51,000
+tipografías y colores
+
+1098
+00:46:53,000 --> 00:46:55,000
+clásico, ahí está
+
+1099
+00:46:57,000 --> 00:46:59,000
+ah bueno
+
+1100
+00:46:59,000 --> 00:47:01,000
+archivo guardar como
+
+1101
+00:47:03,000 --> 00:47:05,000
+coso.json
+
+1102
+00:47:05,000 --> 00:47:07,000
+editar preferencias
+
+1103
+00:47:07,000 --> 00:47:09,000
+a ver si no tiene otro color
+
+1104
+00:47:09,000 --> 00:47:11,000
+tipografías y colores
+
+1105
+00:47:11,000 --> 00:47:13,000
+acá
+
+1106
+00:47:13,000 --> 00:47:15,000
+ahí se ve ¿no?
+
+1107
+00:47:15,000 --> 00:47:17,000
+se ve
+
+1108
+00:47:17,000 --> 00:47:19,000
+bueno esto es un query que está hecho
+
+1109
+00:47:19,000 --> 00:47:21,000
+la idea es que uno no tenga que escribir
+
+1110
+00:47:21,000 --> 00:47:23,000
+semejante cosa fea
+
+1111
+00:47:23,000 --> 00:47:25,000
+pero bueno le pone cualquier ID
+
+1112
+00:47:25,000 --> 00:47:27,000
+simplemente que uno tira varias
+
+1113
+00:47:27,000 --> 00:47:29,000
+en el piso
+
+1114
+00:47:29,000 --> 00:47:31,000
+y lo que pasa es que
+
+1115
+00:47:31,000 --> 00:47:33,000
+es que el query no tiene que escribir
+
+1116
+00:47:33,000 --> 00:47:35,000
+cualquier ID simplemente que uno tira varias
+
+1117
+00:47:35,000 --> 00:47:37,000
+en paralelo, después vos sabés cuál es
+
+1118
+00:47:37,000 --> 00:47:39,000
+la que te vino
+
+1119
+00:47:39,000 --> 00:47:41,000
+típico si querés hacer un cliente por ejemplo
+
+1120
+00:47:41,000 --> 00:47:43,000
+en javascript
+
+1121
+00:47:45,000 --> 00:47:47,000
+decís que vas a ejecutar una función
+
+1122
+00:47:47,000 --> 00:47:49,000
+en el nombre de esas funciones es esto, los argumentos
+
+1123
+00:47:49,000 --> 00:47:51,000
+son esto
+
+1124
+00:47:51,000 --> 00:47:53,000
+cuyo primer argumento va a ser un literal
+
+1125
+00:47:53,000 --> 00:47:55,000
+o sea que lo que devuelva a esta función
+
+1126
+00:47:55,000 --> 00:47:57,000
+no lo voy a tratar, si yo le dijera que fuera un entero
+
+1127
+00:47:57,000 --> 00:47:59,000
+va a tratar de construir un entero con lo que devuelva
+
+1128
+00:47:59,000 --> 00:48:01,000
+esa función
+
+1129
+00:48:01,000 --> 00:48:03,000
+y en este nombre es slice
+
+1130
+00:48:05,000 --> 00:48:07,000
+tiene estos argumentos
+
+1131
+00:48:07,000 --> 00:48:09,000
+nombrados
+
+1132
+00:48:09,000 --> 00:48:11,000
+se pueden tener los dos, pues ten arcs y quarts
+
+1133
+00:48:11,000 --> 00:48:13,000
+cuyo primer parámetro
+
+1134
+00:48:13,000 --> 00:48:15,000
+yo sé que será meterable cuando conoces
+
+1135
+00:48:15,000 --> 00:48:17,000
+la forma que tiene la función
+
+1136
+00:48:17,000 --> 00:48:19,000
+cuyo tipo va a ser un unicode
+
+1137
+00:48:19,000 --> 00:48:21,000
+y el valor va a ser este
+
+1138
+00:48:21,000 --> 00:48:23,000
+el slice lo que hace es cortar
+
+1139
+00:48:23,000 --> 00:48:25,000
+las cosas
+
+1140
+00:48:25,000 --> 00:48:27,000
+desde hasta
+
+1141
+00:48:27,000 --> 00:48:29,000
+los dos son enteros y va desde menos 3
+
+1142
+00:48:29,000 --> 00:48:31,000
+eso se resuelve en un 0 1
+
+1143
+00:48:31,000 --> 00:48:33,000
+llega hasta acá
+
+1144
+00:48:33,000 --> 00:48:35,000
+esto se va
+
+1145
+00:48:35,000 --> 00:48:37,000
+llega hasta acá
+
+1146
+00:48:37,000 --> 00:48:39,000
+esto debería haber convertido en id o
+
+1147
+00:48:39,000 --> 00:48:41,000
+el id de esto tiene que ser un string si o si
+
+1148
+00:48:41,000 --> 00:48:43,000
+porque si no va a dejar un string
+
+1149
+00:48:43,000 --> 00:48:45,000
+y eso se lo pasa con un parámetro
+
+1150
+00:48:45,000 --> 00:48:47,000
+como primer argumento a esto otro
+
+1151
+00:48:47,000 --> 00:48:49,000
+va llamando resolviendo adentro para fuera
+
+1152
+00:48:49,000 --> 00:48:51,000
+o sea
+
+1153
+00:48:51,000 --> 00:48:53,000
+es una forma bastante simple
+
+1154
+00:48:53,000 --> 00:48:55,000
+una forma bastante más
+
+1155
+00:48:55,000 --> 00:48:57,000
+abstracta de escribir la misma función
+
+1156
+00:48:57,000 --> 00:48:59,000
+bueno
+
+1157
+00:48:59,000 --> 00:49:01,000
+hay muchas funciones por ejemplo
+
+1158
+00:49:01,000 --> 00:49:03,000
+una que se pone globalmente que es limit
+
+1159
+00:49:03,000 --> 00:49:05,000
+que sirve para cuando el resultado es muy grande solamente
+
+1160
+00:49:05,000 --> 00:49:07,000
+quedarse con un pedazo o sea por el estilo
+
+1161
+00:49:07,000 --> 00:49:09,000
+que está muy pensado para hacer algo más parecido
+
+1162
+00:49:09,000 --> 00:49:11,000
+un lenguaje para consultas
+
+1163
+00:49:11,000 --> 00:49:13,000
+de base de datos
+
+1164
+00:49:13,000 --> 00:49:15,000
+wow, ese fue el trabajo
+
+1165
+00:49:15,000 --> 00:49:17,000
+más o menos los últimos dos años míos
+
+1166
+00:49:17,000 --> 00:49:19,000
+en la parte de investigación
+
+1167
+00:49:19,000 --> 00:49:21,000
+porque más trabajo porque esto no me da plata
+
+1168
+00:49:21,000 --> 00:49:23,000
+bueno el proyecto
+
+1169
+00:49:23,000 --> 00:49:25,000
+charla está acá
+
+1170
+00:49:25,000 --> 00:49:27,000
+el proyecto de
+
+1171
+00:49:27,000 --> 00:49:29,000
+el proyecto de
+
+1172
+00:49:29,000 --> 00:49:31,000
+si quieres un llatel es un nombre
+
+1173
+00:49:31,000 --> 00:49:33,000
+de welch
+
+1174
+00:49:33,000 --> 00:49:35,000
+de indios del sur de argentina
+
+1175
+00:49:35,000 --> 00:49:37,000
+de tribu guerrera de matipico
+
+1176
+00:49:37,000 --> 00:49:39,000
+cuando hace mucho frío son todos guerreros
+
+1177
+00:49:39,000 --> 00:49:41,000
+hay una canción
+
+1178
+00:49:41,000 --> 00:49:43,000
+que me gustaba a mí una novia mía
+
+1179
+00:49:43,000 --> 00:49:45,000
+que se llamaba casi que llatel
+
+1180
+00:49:45,000 --> 00:49:47,000
+que si la buscan en internet está
+
+1181
+00:49:47,000 --> 00:49:49,000
+con muchas palabras propias
+
+1182
+00:49:49,000 --> 00:49:51,000
+y la canción es un lenguaje de las zones
+
+1183
+00:49:51,000 --> 00:49:53,000
+bastante interesante la canción
+
+1184
+00:49:53,000 --> 00:49:55,000
+mail y demás
+
+1185
+00:49:55,000 --> 00:49:57,000
+para hacer consultas
+
+1186
+00:49:57,000 --> 00:49:59,000
+eso es todo
+
+1187
+00:50:01,000 --> 00:50:03,000
+una pregunta
+
+1188
+00:50:11,000 --> 00:50:13,000
+hay mucha reescritura
+
+1189
+00:50:13,000 --> 00:50:15,000
+porque hay muchas veces que llegamos a cierto punto
+
+1190
+00:50:15,000 --> 00:50:17,000
+creíamos que eso no era una solución
+
+1191
+00:50:17,000 --> 00:50:19,000
+pero es un camino mejor
+
+1192
+00:50:19,000 --> 00:50:47,000
+hay un poco de métodos que han trabajado
+
+1193
+00:50:47,000 --> 00:50:49,000
+es así
+
+1194
+00:50:49,000 --> 00:50:51,000
+es así
+
+1195
+00:50:51,000 --> 00:50:53,000
+es así
+
+1196
+00:50:53,000 --> 00:50:55,000
+la base de dato
+
+1197
+00:50:55,000 --> 00:50:57,000
+una base de dato relacionado con tres tablas
+
+1198
+00:50:57,000 --> 00:50:59,000
+normalizada
+
+1199
+00:50:59,000 --> 00:51:01,000
+segunda forma normal para mejorar las cueris
+
+1200
+00:51:01,000 --> 00:51:03,000
+por qué elegimos base de dato
+
+1201
+00:51:03,000 --> 00:51:05,000
+relacionado porque en un principio
+
+1202
+00:51:05,000 --> 00:51:07,000
+no teníamos hasta dónde digamos
+
+1203
+00:51:07,000 --> 00:51:09,000
+a crecer como un proyecto de investigación
+
+1204
+00:51:09,000 --> 00:51:11,000
+una técnica no nos habíamos hasta dónde
+
+1205
+00:51:11,000 --> 00:51:13,000
+a crecer
+
+1206
+00:51:13,000 --> 00:51:15,000
+entonces ese QL era nuestro lenguaje consulta
+
+1207
+00:51:15,000 --> 00:51:17,000
+que es mucho más expresivo
+
+1208
+00:51:17,000 --> 00:51:19,000
+que uso mongo
+
+1209
+00:51:19,000 --> 00:51:21,000
+me gusta mongo
+
+1210
+00:51:21,000 --> 00:51:23,000
+pero el lenguaje consulta de mongo es una porquería
+
+1211
+00:51:23,000 --> 00:51:25,000
+es horrible o sea es muy poco expresivo
+
+1212
+00:51:25,000 --> 00:51:27,000
+nos usamos ese QL para hacer los análisis de dato
+
+1213
+00:51:27,000 --> 00:51:29,000
+este proyecto
+
+1214
+00:51:29,000 --> 00:51:31,000
+patee una idea ya se usa en un laboratorio
+
+1215
+00:51:31,000 --> 00:51:33,000
+de investigación importante
+
+1216
+00:51:33,000 --> 00:51:35,000
+que se llama el IFIBE
+
+1217
+00:51:35,000 --> 00:51:37,000
+el instituto fitopatología vegetal
+
+1218
+00:51:37,000 --> 00:51:39,000
+o sea tratan de enfermedades de la planta
+
+1219
+00:51:39,000 --> 00:51:41,000
+eso hacen
+
+1220
+00:51:41,000 --> 00:51:43,000
+que depende de un organismo que se llama el CONICET
+
+1221
+00:51:43,000 --> 00:51:45,000
+gigantesco científico en argentina
+
+1222
+00:51:45,000 --> 00:51:47,000
+o sea todos los científicos argentinos
+
+1223
+00:51:47,000 --> 00:51:49,000
+están organizados sobre un solo organismo que se llama CONICET
+
+1224
+00:51:49,000 --> 00:51:51,000
+o sea es gigante el lugar
+
+1225
+00:51:51,000 --> 00:51:53,000
+por eso a más bajo nivel
+
+1226
+00:51:53,000 --> 00:51:55,000
+eso está todo implementado con una base
+
+1227
+00:51:55,000 --> 00:51:57,000
+de dato relacional
+
+1228
+00:51:57,000 --> 00:51:59,000
+pero está lo suficientemente
+
+1229
+00:51:59,000 --> 00:52:01,000
+flexible para que en cualquier
+
+1230
+00:52:01,000 --> 00:52:03,000
+momento
+
+1231
+00:52:03,000 --> 00:52:05,000
+puedas cambiar ese
+
+1232
+00:52:05,000 --> 00:52:07,000
+esa parte de atrás y poner lo que vos quieras
+
+1233
+00:52:07,000 --> 00:52:09,000
+tranquilamente podrías levantar
+
+1234
+00:52:09,000 --> 00:52:11,000
+una base de dato no relacional algo tipo
+
+1235
+00:52:11,000 --> 00:52:13,000
+había una base de dato que se que era orientada
+
+1236
+00:52:13,000 --> 00:52:15,000
+redes propiamente dicha
+
+1237
+00:52:15,000 --> 00:52:17,000
+que era
+
+1238
+00:52:17,000 --> 00:52:19,000
+Neo4j
+
+1239
+00:52:19,000 --> 00:52:21,000
+pero sirve eso
+
+1240
+00:52:21,000 --> 00:52:23,000
+pero por ejemplo yo no sé
+
+1241
+00:52:23,000 --> 00:52:25,000
+si Neo4j me permitiría tener una estructura
+
+1242
+00:52:25,000 --> 00:52:27,000
+como tener la tabla
+
+1243
+00:52:27,000 --> 00:52:29,000
+de hechos conectadas a los otras cosas
+
+1244
+00:52:29,000 --> 00:52:31,000
+tendría que ponerla a analizarlo
+
+1245
+00:52:31,000 --> 00:52:33,000
+pero abajo
+
+1246
+00:52:33,000 --> 00:52:35,000
+nivel es una base de dato relacional
+
+1247
+00:52:35,000 --> 00:52:37,000
+OLAP no es un tipo
+
+1248
+00:52:37,000 --> 00:52:39,000
+de base de dato sino que es un concepto
+
+1249
+00:52:39,000 --> 00:52:41,000
+análisis un concepto muy
+
+1250
+00:52:41,000 --> 00:52:43,000
+empresarial de análisis por decirlo
+
+1251
+00:52:43,000 --> 00:52:45,000
+es hacer
+
+1252
+00:52:45,000 --> 00:52:47,000
+análisis de datos de manera
+
+1253
+00:52:47,000 --> 00:52:49,000
+le dicen online
+
+1254
+00:52:49,000 --> 00:52:51,000
+pasa que en inglés tiene más sentido
+
+1255
+00:52:51,000 --> 00:52:53,000
+sería algo así como
+
+1256
+00:52:53,000 --> 00:52:55,000
+que lo hacemos
+
+1257
+00:52:55,000 --> 00:52:57,000
+rápido ahí nomás sería algo
+
+1258
+00:52:57,000 --> 00:52:59,000
+que vos te conectáis y ahí lo tenés para hacer
+
+1259
+00:52:59,000 --> 00:53:01,000
+digamos vienen por ese lado del online
+
+1260
+00:53:01,000 --> 00:53:03,000
+de ello no se me ocurre
+
+1261
+00:53:03,000 --> 00:53:05,000
+en caliente sería una traducción
+
+1262
+00:53:05,000 --> 00:53:07,000
+aceptable para nosotros
+
+1263
+00:53:07,000 --> 00:53:09,000
+pero
+
+1264
+00:53:09,000 --> 00:53:11,000
+todo a muy bajo nivel es
+
+1265
+00:53:11,000 --> 00:53:13,000
+una base de dato relacional hoy
+
+1266
+00:53:13,000 --> 00:53:15,000
+no sería muy difícil cambiarlo
+
+1267
+00:53:15,000 --> 00:53:17,000
+creo que con dos días de trabajo
+
+1268
+00:53:17,000 --> 00:53:19,000
+podés tranquilamente cambiar el bajo nivel
+
+1269
+00:53:19,000 --> 00:53:21,000
+te responde tu pregunta
+
+1270
+00:53:21,000 --> 00:53:23,000
+bueno
+
+1271
+00:53:23,000 --> 00:53:25,000
+alguna otra pregunta
+
+1272
+00:53:25,000 --> 00:53:27,000
+si le podría meter cualquier base de
+
+1273
+00:53:27,000 --> 00:53:29,000
+dato para afletarla
+
+1274
+00:53:29,000 --> 00:53:31,000
+si cualquier, no perdón
+
+1275
+00:53:31,000 --> 00:53:33,000
+gracias
+
+1276
+00:53:33,000 --> 00:53:35,000
+eso me olvide gracias
+
+1277
+00:53:35,000 --> 00:53:37,000
+por ver el video
+
+1278
+00:53:37,000 --> 00:53:39,000
+es muy común que la base de dato es
+
+1279
+00:53:39,000 --> 00:53:41,000
+volap
+
+1280
+00:53:41,000 --> 00:53:43,000
+la base de dato física tiene un esquema
+
+1281
+00:53:43,000 --> 00:53:45,000
+pero uno le da
+
+1282
+00:53:45,000 --> 00:53:47,000
+a esta base de dato física interpretala así
+
+1283
+00:53:47,000 --> 00:53:49,000
+por ejemplo agregarle estas columnas
+
+1284
+00:53:49,000 --> 00:53:51,000
+que en realidad no existen en la física
+
+1285
+00:53:51,000 --> 00:53:53,000
+simplemente tucle
+
+1286
+00:53:53,000 --> 00:53:55,000
+inserta una mas sin que voten teres
+
+1287
+00:53:55,000 --> 00:53:57,000
+eso se logra a través de un esquema
+
+1288
+00:53:57,000 --> 00:53:59,000
+y esta base de dato interpretala con este esquema
+
+1289
+00:53:59,000 --> 00:54:01,000
+eso no está implementado
+
+1290
+00:54:01,000 --> 00:54:03,000
+pero sería una buena idea
+
+1291
+00:54:03,000 --> 00:54:05,000
+porque si la base de dato es la base de dato
+
+1292
+00:54:05,000 --> 00:54:07,000
+que vos quieras
+
+1293
+00:54:07,000 --> 00:54:09,000
+por ejemplo tener una base de dato que está estructurada
+
+1294
+00:54:09,000 --> 00:54:11,000
+para que funcione con un cubolap
+
+1295
+00:54:11,000 --> 00:54:13,000
+y además decir bueno también quiero una redolap
+
+1296
+00:54:13,000 --> 00:54:15,000
+entonces sin tocar la base de dato
+
+1297
+00:54:15,000 --> 00:54:17,000
+genera otro esquema propio para
+
+1298
+00:54:17,000 --> 00:54:19,000
+yatel
+
+1299
+00:54:19,000 --> 00:54:21,000
+para que lo arregle yatel y lo entienda
+
+1300
+00:54:21,000 --> 00:54:23,000
+sin tocar nada la parte física
+
+1301
+00:54:23,000 --> 00:54:25,000
+o sea por ejemplo esta columna tratala como
+
+1302
+00:54:25,000 --> 00:54:27,000
+como un atributo
+
+1303
+00:54:27,000 --> 00:54:29,000
+que se llama tal de la tabla de los aplotipos
+
+1304
+00:54:29,000 --> 00:54:31,000
+así
+
+1305
+00:54:31,000 --> 00:54:33,000
+porque no lo hago
+
+1306
+00:54:33,000 --> 00:54:35,000
+porque es menos trabajo hacer las otras cosas
+
+1307
+00:54:35,000 --> 00:54:37,000
+para verlas que se por otro lado
+
+1308
+00:54:37,000 --> 00:54:39,000
+y eso dejarlo para el final
+
+1309
+00:54:39,000 --> 00:54:41,000
+total si sigo implementando que
+
+1310
+00:54:41,000 --> 00:54:43,000
+ese yatel netador se comporte parecido
+
+1311
+00:54:43,000 --> 00:54:45,000
+el resto va a seguir andando
+
+1312
+00:54:45,000 --> 00:54:47,000
+es por eso que no lo hago
+
+1313
+00:54:47,000 --> 00:54:49,000
+¿cuna es la más previóso?
+
+1314
+00:54:49,000 --> 00:54:51,000
+no es más
+
+1315
+00:54:51,000 --> 00:54:53,000
+podes hacerlo con un más previóso
+
+1316
+00:54:53,000 --> 00:54:55,000
+digamos pero
+
+1317
+00:54:55,000 --> 00:54:57,000
+es darle
+
+1318
+00:54:57,000 --> 00:54:59,000
+que en vez de ver la base de dato
+
+1319
+00:54:59,000 --> 00:55:01,000
+realmente es la vida de otra manera
+
+1320
+00:55:01,000 --> 00:55:03,000
+ponerle una capa en el medio
+
+1321
+00:55:03,000 --> 00:55:05,000
+para que le interprete distinto tu programa
+
+1322
+00:55:05,000 --> 00:55:07,000
+eso es darle un esquema
+
+1323
+00:55:07,000 --> 00:55:09,000
+digamos que en realidad
+
+1324
+00:55:09,000 --> 00:55:11,000
+las bases de datos relacionales
+
+1325
+00:55:11,000 --> 00:55:13,000
+las tienen nada más que nunca
+
+1326
+00:55:13,000 --> 00:55:15,000
+las ves están directamente
+
+1327
+00:55:15,000 --> 00:55:17,000
+implementadas en la base de dato
+
+1328
+00:55:17,000 --> 00:55:19,000
+o sea esta tabla se llama así
+
+1329
+00:55:19,000 --> 00:55:21,000
+esto está guardado en más o menos
+
+1330
+00:55:21,000 --> 00:55:23,000
+tal bytes de tal lugar
+
+1331
+00:55:23,000 --> 00:55:25,000
+y te va mapeando no es realmente lo que vos guardas
+
+1332
+00:55:25,000 --> 00:55:27,000
+con eso logran mucha optimización
+
+1333
+00:55:27,000 --> 00:55:29,000
+porque ellos guardan los que les conviene
+
+1334
+00:55:29,000 --> 00:55:31,000
+y vos ves lo que querés
+
+1335
+00:55:31,000 --> 00:55:33,000
+más o menos por ese lado bien
+
+1336
+00:55:33,000 --> 00:55:35,000
+es hilar muy fino digamos por esa parte
+
+1337
+00:55:37,000 --> 00:55:39,000
+una otra pregunta
+
+1338
+00:55:39,000 --> 00:55:41,000
+a comienzo había dicho ya por la parte
+
+1339
+00:55:41,000 --> 00:55:43,000
+científica que
+
+1340
+00:55:43,000 --> 00:55:45,000
+uno de los descubrimientos
+
+1341
+00:55:45,000 --> 00:55:47,000
+las instituciones era que el virus
+
+1342
+00:55:47,000 --> 00:55:49,000
+juntaba más lentamente
+
+1343
+00:55:49,000 --> 00:55:51,000
+y me ha interesado
+
+1344
+00:55:51,000 --> 00:55:53,000
+el análisis de los ambientes
+
+1345
+00:55:53,000 --> 00:55:55,000
+donde preguntaba sobre los filtros sobre hechos
+
+1346
+00:55:55,000 --> 00:55:57,000
+que había habido algunos que había determinado
+
+1347
+00:55:57,000 --> 00:55:59,000
+que había antiavionos ambientes
+
+1348
+00:55:59,000 --> 00:56:01,000
+muy similares
+
+1349
+00:56:01,000 --> 00:56:03,000
+porque había unos filtros
+
+1350
+00:56:03,000 --> 00:56:05,000
+que no estaban
+
+1351
+00:56:05,000 --> 00:56:07,000
+hablan soleado y lluvioso
+
+1352
+00:56:07,000 --> 00:56:09,000
+si
+
+1353
+00:56:09,000 --> 00:56:11,000
+¿Había habido un descubrimiento por esa parte que te decías
+
+1354
+00:56:11,000 --> 00:56:13,000
+que ya no te llamaba?
+
+1355
+00:56:13,000 --> 00:56:15,000
+exactamente el filtro que usamos que nos dio resultado
+
+1356
+00:56:15,000 --> 00:56:17,000
+fue el place
+
+1357
+00:56:17,000 --> 00:56:19,000
+la estructura de la base de dato ejemplo
+
+1358
+00:56:19,000 --> 00:56:21,000
+está robada de la base de dato que tenemos nosotros
+
+1359
+00:56:21,000 --> 00:56:23,000
+con los datos en serio
+
+1360
+00:56:23,000 --> 00:56:25,000
+era lugar
+
+1361
+00:56:25,000 --> 00:56:27,000
+inativo
+
+1362
+00:56:27,000 --> 00:56:29,000
+que siempre estaba en falso, verdadero que no me acuerdo
+
+1363
+00:56:29,000 --> 00:56:31,000
+bien que significaba falso, pero ese era el filtro
+
+1364
+00:56:31,000 --> 00:56:33,000
+que nos dio el resultado
+
+1365
+00:56:33,000 --> 00:56:35,000
+el tema de cómo nos dimos cuenta
+
+1366
+00:56:35,000 --> 00:56:37,000
+que eso era, bueno en el momento que se descubrió
+
+1367
+00:56:37,000 --> 00:56:39,000
+todas las técnicas
+
+1368
+00:56:39,000 --> 00:56:41,000
+no suscupó ninguna
+
+1369
+00:56:41,000 --> 00:56:43,000
+fue a prueba y error porque era muy tempranamente
+
+1370
+00:56:43,000 --> 00:56:45,000
+en el proyecto
+
+1371
+00:56:45,000 --> 00:56:47,000
+después más adelante
+
+1372
+00:56:47,000 --> 00:56:49,000
+o sea la parte teórica está desarrollada por
+
+1373
+00:56:49,000 --> 00:56:51,000
+otro ingeniero
+
+1374
+00:56:51,000 --> 00:56:53,000
+en la práctica de implementación
+
+1375
+00:56:53,000 --> 00:56:55,000
+el
+
+1376
+00:56:55,000 --> 00:56:57,000
+que probamos
+
+1377
+00:56:57,000 --> 00:56:59,000
+si los clusters
+
+1378
+00:56:59,000 --> 00:57:01,000
+daban algo que nos hubieran guiado al mismo resultado
+
+1379
+00:57:01,000 --> 00:57:03,000
+y si los dan
+
+1380
+00:57:03,000 --> 00:57:05,000
+o sea si funciona o sea el tipo
+
+1381
+00:57:05,000 --> 00:57:07,000
+que inventó camins tenía razón
+
+1382
+00:57:07,000 --> 00:57:09,000
+no era ningún pavo
+
+1383
+00:57:11,000 --> 00:57:13,000
+una otra pregunta
+
+1384
+00:57:15,000 --> 00:57:17,000
+no, se finí
+
+1385
+00:57:17,000 --> 00:57:21,000
+gracias
+

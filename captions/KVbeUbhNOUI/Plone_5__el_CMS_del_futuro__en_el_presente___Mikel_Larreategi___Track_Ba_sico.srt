@@ -1,0 +1,928 @@
+1
+00:00:00,000 --> 00:00:17,000
+Bueno, buenos días a todos. Gracias por acercarnos a la charla de Plone 5, el CMS del
+
+2
+00:00:17,000 --> 00:00:22,000
+futuro en el presente. Tampoco vamos a empezar aquí a enseñar cosas muy, muy esto, ¿no?
+
+3
+00:00:22,000 --> 00:00:26,000
+Pero bueno, el objetivo es enseñar un poco de qué va esto de Plone, qué es esto de Plone
+
+4
+00:00:26,000 --> 00:00:31,000
+y todo esto, ¿vale? Soy Miquel Arrategui de una empresa de 15 trabajadores que está en
+
+5
+00:00:31,000 --> 00:00:36,000
+Eibar en Gifuzco, igual nos conocéis por el equipo fútbol, ¿vale? Desde el año 2000
+
+6
+00:00:36,000 --> 00:00:43,000
+trabajamos con tecnologías Python, primero con Zope y ahora después de pasar por casi todos
+
+7
+00:00:43,000 --> 00:00:50,000
+los frameworks que ha tenido Python, estamos con Plone para temas de web como cuando tenemos
+
+8
+00:00:50,000 --> 00:00:55,000
+que gestionar contenidos o hacer web públicas de forma sencilla que el usuario tenga que editar
+
+9
+00:00:55,000 --> 00:01:02,000
+en otro tipo de proyectos, pues usamos Django como ha mostrado antes mi compañero Urci en la charla
+
+10
+00:01:02,000 --> 00:01:11,000
+de Telegram, aunque bueno, también lo hacemos otras cosillas cuando no hay otro remedio.
+
+11
+00:01:11,000 --> 00:01:22,000
+Bueno, ¿conocéis alguno de aquí Plone o suena de algo? Va, bien. ¿Qué opináis de ello o qué?
+
+12
+00:01:22,000 --> 00:01:31,000
+Me cae en Plone 3. Tienes que volar, tienes que volar. Bueno, Plone es un CMS, ¿vale?
+
+13
+00:01:31,000 --> 00:01:38,000
+Y podíamos acabarla de hacerla aquí y irnos a tomar un café, pero bueno, vamos a explicar un poco más, ¿no?
+
+14
+00:01:38,000 --> 00:01:45,000
+Es un gestor de contenidos que nos permite modificar y gestionar todos los contenidos que puede tener
+
+15
+00:01:45,000 --> 00:01:53,000
+web con una interfaz amigable y sea el objetivo de esos contenidos, el destino de esos objetivos,
+
+16
+00:01:53,000 --> 00:01:59,000
+una web pública o una intranet o un repositor de documentación o cualquier otra cosa, ¿no?
+
+17
+00:01:59,000 --> 00:02:06,000
+Pero bueno, igual lo más importante de Plone y es la razón por la que estamos aquí es que está escrito
+
+18
+00:02:06,000 --> 00:02:14,000
+en Python, ¿no? Entonces, toda esa flexibilidad que tenemos en Python para hacer casi todo, pues la tenemos
+
+19
+00:02:14,000 --> 00:02:18,000
+dentro de un gestor de contenidos que nos sirve para hacer casi todo, ¿no?
+
+20
+00:02:18,000 --> 00:02:23,000
+Entonces, muchas veces nosotros en algunos proyectos que no son excursivamente de gestión de contenidos,
+
+21
+00:02:23,000 --> 00:02:29,000
+que también necesitamos integración con terceros o otro tipo de cosas, pues nos aprovechamos de esas
+
+22
+00:02:29,000 --> 00:02:35,000
+facilidades que nos da Python para matar dos pájaros de un tiro, ¿no?
+
+23
+00:02:35,000 --> 00:02:39,000
+De gestión de contenidos y todo lo demás, ¿no?
+
+24
+00:02:39,000 --> 00:02:47,000
+Bueno, pues además nos da, Python nos da la flexibilidad para poder extender todas las características
+
+25
+00:02:47,000 --> 00:02:52,000
+que pueda tener Plone hasta el infinito, ¿no?
+
+26
+00:02:52,000 --> 00:02:59,000
+Pero bueno, más concretamente estamos hablando de la versión 5 de Plone que se publicó a finales
+
+27
+00:02:59,000 --> 00:03:06,000
+de septiembre, después de un par de años o tres de desarrollo y cambio de gente de la comunidad,
+
+28
+00:03:06,000 --> 00:03:12,000
+y en fin y al cabo la gente que trabaja entre comillas en la comunidad lo está haciendo en sus horas
+
+29
+00:03:12,000 --> 00:03:17,000
+de trabajo, en su tiempo libre, y si el desarrollo dura mucho tiempo, pues bueno, hay muchos cambios
+
+30
+00:03:17,000 --> 00:03:26,000
+en la comunidad que hay que responder, ¿no? Entonces, bueno, ha sido igual un poco largo el proceso,
+
+31
+00:03:26,000 --> 00:03:32,000
+pero bueno, estamos ya en Plone 5 y estamos para quedarnos aquí, ¿no?
+
+32
+00:03:32,000 --> 00:03:41,000
+Muchas veces se vea a Plone no solo como un típico gestor de contenidos para añadir páginas,
+
+33
+00:03:41,000 --> 00:03:48,000
+noticias, documentos, archivos, sino que como un conjunto de herramientas sobre el que construir tu aplicación, ¿no?
+
+34
+00:03:48,000 --> 00:03:56,000
+Desde las características que tiene para crear nuevos tipos de páginas con los campos que tú quieras,
+
+35
+00:03:56,000 --> 00:04:02,000
+puedes hacer en vez de una página simple alimentar desde nuevas edad los contenidos y traer información
+
+36
+00:04:02,000 --> 00:04:07,000
+de productos que vendes y asociarlo con los precios que vienen de nuevas edad, no sé,
+
+37
+00:04:07,000 --> 00:04:15,000
+eso quizá es la característica más simple y la que más usamos nosotros, pero bueno,
+
+38
+00:04:15,000 --> 00:04:22,000
+nos permite hacer casi todo lo que queramos, ¿no? y en un entorno web, ¿no? que es lo que nosotros buscábamos, ¿no?
+
+39
+00:04:22,000 --> 00:04:28,000
+El modelo de seguridad que le da de ZOP, que luego explicaré un poquito por encima,
+
+40
+00:04:28,000 --> 00:04:35,000
+también nos permite ajustar la visibilidad de todos los documentos, de todos los,
+
+41
+00:04:35,000 --> 00:04:40,000
+incluso de métodos o de atributos en concreto que puedan tener unas páginas o los documentos,
+
+42
+00:04:40,000 --> 00:04:45,000
+hasta el nivel de detalle que nosotros queramos, ¿no?
+
+43
+00:04:45,000 --> 00:04:50,000
+Y las acciones que se pueden realizar sobre esos elementos también los podemos limitar según permiso,
+
+44
+00:04:50,000 --> 00:04:57,000
+según el estado en el que está el elemento, pues de forma muy sencilla y muy potente, ¿no?
+
+45
+00:04:57,000 --> 00:05:07,000
+Durante el desarrollo de PLONE, los cinco puntos que han guiado el desarrollo han sido sobre todo
+
+46
+00:05:07,000 --> 00:05:14,000
+estos cinco que cito aquí, ¿no? pues la calidad del software ha sido súper importante,
+
+47
+00:05:14,000 --> 00:05:21,000
+la calidad y la automatización de la comprobación de esa calidad ejecutando test automáticos,
+
+48
+00:05:21,000 --> 00:05:28,000
+hay que dar en cuenta que la base de PLONE consta de más de 200 paquetes de Python
+
+49
+00:05:28,000 --> 00:05:36,000
+y una pequeña modificación para añadir una funcionalidad puede tener repercusión en muchos paquetes diferentes,
+
+50
+00:05:36,000 --> 00:05:43,000
+que hay que testearlos todos adecuadamente para asegurarnos de que no hay regresiones de cosas que hemos introducido, ¿no?
+
+51
+00:05:43,000 --> 00:05:54,000
+Si queréis conocer un poco más sobre este modelo de integración continua de ejecución de test en este entorno de Python,
+
+52
+00:05:54,000 --> 00:06:00,000
+hay una charla de Tim Stolenberg en EuroPython 2015 que se hizo en Bilbao en julio,
+
+53
+00:06:00,000 --> 00:06:04,000
+que os recomiendo ver, también la dio en la Jenkins Conference en el año pasado en Berlín,
+
+54
+00:06:04,000 --> 00:06:16,000
+que es muy... explica muy bien qué supone asegurar la calidad del software para un proyecto tan grande como el de PLONE, ¿no?
+
+55
+00:06:16,000 --> 00:06:25,000
+Y la usabilidad, la usabilidad ha sido otro caballo de batalla de esta versión de PLONE, ha tenido diversos saltos,
+
+56
+00:06:25,000 --> 00:06:37,000
+diversas modificaciones en el camino y bueno, al final se ha tenido muy claro que el que va a editar la web no va a ser el desarrollador
+
+57
+00:06:37,000 --> 00:06:42,000
+y hay que pensar siempre en el usuario a la hora de ofrecerle las herramientas de gestión de contenido.
+
+58
+00:06:42,000 --> 00:06:50,000
+Entonces, por ello, el equipo de UI y de experiencia de usuario ha trabajado bastante fuerte para poder afrontar eso
+
+59
+00:06:50,000 --> 00:06:58,000
+con las garantías que supone un nuevo desarrollo, un nuevo producto y un cambio de versión mayor de 4 a 5,
+
+60
+00:06:58,000 --> 00:07:06,000
+pues que se tiene que notar de cara a la gestión de contenido que es el objetivo final de esta herramienta, ¿no?
+
+61
+00:07:06,000 --> 00:07:14,000
+Y sobre la escala deidad, PLONE sirve igual para webs que tienen dos páginas,
+
+62
+00:07:14,000 --> 00:07:24,000
+como para webs que se utilizan para llevar la gestión de las emisiones de gases que hace la Comisión Europea
+
+63
+00:07:24,000 --> 00:07:27,000
+que están utilizando en este momento PLONE, ¿no?
+
+64
+00:07:27,000 --> 00:07:38,000
+Son webs desde dos personas que editan una web, no sé si hay cien expertos en toda Europa utilizando un PLONE
+
+65
+00:07:38,000 --> 00:07:43,000
+para gestionar todo este tema de las emisiones, ¿no? Es un ejemplo, ¿no?
+
+66
+00:07:43,000 --> 00:07:52,000
+Pero bueno, tiene la muestra un poco que el objetivo del end-user de PLONE es bastante amplio.
+
+67
+00:07:52,000 --> 00:08:01,000
+Entonces, el contenido es el que manda en PLONE, ¿no? Es lo que se dedica a hacer, que es a gestionar contenido.
+
+68
+00:08:01,000 --> 00:08:07,000
+Entonces, bueno, esté todo perfectamente ordenado con una librería de cómics japoneses o mangas o lo que sea,
+
+69
+00:08:07,000 --> 00:08:12,000
+o sea como un reposición en el que vamos tirando cosas y que se ordenen,
+
+70
+00:08:12,000 --> 00:08:17,000
+es el objetivo que tiene PLONE, intentar facilitar toda esa tarea, ¿no?
+
+71
+00:08:17,000 --> 00:08:24,000
+Y para ello se ha reescrito completamente desde las versiones anteriores el sistema de creación de nuevos objetos,
+
+72
+00:08:24,000 --> 00:08:31,000
+de nuevos tipos de contenido. PLONE trae los típicos objetos de contenido que podemos subir archivos,
+
+73
+00:08:31,000 --> 00:08:34,000
+podemos crear noticias, páginas, eventos, carpetas.
+
+74
+00:08:34,000 --> 00:08:44,000
+Pues bueno, se ha reescrito todo el código base de esos objetos de contenido utilizando un framework llamado de Exterity,
+
+75
+00:08:44,000 --> 00:08:54,000
+que permite, además de la creación desde el código fuente de todos esos tipos de contenido, creación de tipos via web.
+
+76
+00:08:54,000 --> 00:09:01,000
+Yo voy al panel de control de Exterity, añado un nuevo tipo conferencia, le digo nombre, lugar y fechas,
+
+77
+00:09:01,000 --> 00:09:09,000
+incluso charla, autor, título, subtítulo, horario y puedo crear de forma sencilla, sin tener conocimientos de Python,
+
+78
+00:09:09,000 --> 00:09:21,000
+un nuevo tipo de contenido. Además por primera vez, todos estos tipos de contenido pueden ser multilingües sin tener que instalar nada.
+
+79
+00:09:21,000 --> 00:09:27,000
+Uno de los precursores de esto del multilingüe Manzópez que está aquí, Juan David,
+
+80
+00:09:27,000 --> 00:09:35,000
+nos enseñó hace un montón de tiempo cómo hacer cosas con localizer, enzope y todo esto, y bueno, todo eso ha ido evolucionando
+
+81
+00:09:35,000 --> 00:09:42,000
+hasta que en este momento la instalación base de PLONE trae un sistema de plugin multilingüe que activando dos idiomas
+
+82
+00:09:42,000 --> 00:09:49,000
+ya tu web puede ser multilingüe. La web no traduce, eso es lo que nos preguntan simple los clientes, la web no traduce,
+
+83
+00:09:49,000 --> 00:10:02,000
+permite, tiene un sistema de gestión sencilla de traducción. Y después, todos los tipos de contenido, gracias a la forma de creación
+
+84
+00:10:02,000 --> 00:10:10,000
+y generación de URL y todo esto, es bastante SEO friendly para todos los que se preocupan de esto del SEO,
+
+85
+00:10:10,000 --> 00:10:21,000
+es un tema bastante importante unir el multilingüismo con la generación de URL, y nosotros por ejemplo el 90% de los webs que hacemos
+
+86
+00:10:21,000 --> 00:10:33,000
+las hacemos en EOSCRE en castellano y si no, se dan en castellano y en inglés, así que es un tema clave para nosotros al usar y al manejar un CMS.
+
+87
+00:10:33,000 --> 00:10:43,000
+Otras las características a las que se le ha dado bastante importancia en el desarrollo de PLONE 5 ha sido la seguridad.
+
+88
+00:10:43,000 --> 00:10:54,000
+PLONE 5 trae protección CSRF para todos los formularios de forma automática sin que tú tengas que hacer nada,
+
+89
+00:10:54,000 --> 00:11:01,000
+no hay que añadir un CSRF token, como todos añadimos en Django, te lo trae por defecto, hagas tú el formulario no,
+
+90
+00:11:01,000 --> 00:11:11,000
+y aparte de eso toda la seguridad, todo el modelo de seguridad granular que nos ofrece Zope con su base de datos ZBB,
+
+91
+00:11:11,000 --> 00:11:19,000
+pues está a largo del día a la hora de gestionar workflows de trabajo estados en los que tenemos los documentos.
+
+92
+00:11:19,000 --> 00:11:30,000
+Y después el sistema de permisos, roles y grupos está basado en un sistema que es plagable, que podemos quitar trozos y ponerlos,
+
+93
+00:11:30,000 --> 00:11:38,000
+podemos tener usuarios que vienen de Active Directory, usuarios que tenemos en el mismo PLONE o usuarios que vienen de MySQL,
+
+94
+00:11:38,000 --> 00:11:47,000
+y juntarlos todos en grupos de usuarios para poder dar permisos y quitar permisos y conceder privilegios en diferentes apartados de la web.
+
+95
+00:11:47,000 --> 00:11:57,000
+Es un sistema muy potente, a veces complejo hasta que lo entiendes bien, pero bueno, es una de las características muy importantes,
+
+96
+00:11:57,000 --> 00:12:01,000
+muy importantes y muy útiles que tiene PLONE.
+
+97
+00:12:01,000 --> 00:12:10,000
+Otra de las características muy importantes es la ZBB, la base de datos orientado a objetos que es el no SQL de principios del año 2000,
+
+98
+00:12:10,000 --> 00:12:18,000
+ahora está de moda, pero en el año 2000 alguno pensó que igual para esto nos servía, pero bueno, la cosa no es que,
+
+99
+00:12:18,000 --> 00:12:27,000
+bueno, sí que estamos atados a ZBB, pero se puede almacenar a ZBBB en un posgres y después escalar ese posgres como te dé la gana,
+
+100
+00:12:27,000 --> 00:12:34,000
+si es que eres un sysadmin paranoico que solo quieres tener las cosas en posgres porque es lo que controlas, pues también se puede.
+
+101
+00:12:34,000 --> 00:12:51,000
+Y después el cambio mayor de PLONE ha sido como darle la capa de chapa y pintura para que funcione bien con tu identidad corporativa,
+
+102
+00:12:51,000 --> 00:12:56,000
+con tus colores, con tus logos, con tus historias.
+
+103
+00:12:56,000 --> 00:13:04,000
+PLONE siempre ha sido el de min, el de pintar, un PLONE siempre ha sido un tema un poco controvertido,
+
+104
+00:13:04,000 --> 00:13:12,000
+hemos usado desde el principio un lenguaje de plantillas llamado ZPT, SOAP Page Stemplates,
+
+105
+00:13:12,000 --> 00:13:18,000
+que como su propio nombre indica se creó en ZOPPE y ahí se ha quedado porque no creo que nadie más lo use.
+
+106
+00:13:18,000 --> 00:13:25,000
+Entonces bueno, la personalización de plantillas siempre ha requerido un trabajo extra porque los diseñadores no conocían esa herramienta.
+
+107
+00:13:25,000 --> 00:13:34,000
+Entonces se creó una cosa llamada DIAZO, bueno que ya ha cambiado el nombre cuatro veces, pero básicamente lo que hace es,
+
+108
+00:13:34,000 --> 00:13:41,000
+bueno tú escribe el HTML del CSS el que te dé la gana, tú contratas al diseñador para que haga su HTML en estático del CSS
+
+109
+00:13:41,000 --> 00:13:48,000
+con Javascript, con los entornos que él quiera, sea bustra, sea fundation, sea lo que sea,
+
+110
+00:13:48,000 --> 00:13:55,000
+y manipulamos ese contenido ese HTML para integrarlo en el HTML que provee PLONE.
+
+111
+00:13:55,000 --> 00:14:08,000
+Vamos a decir de alguna forma es hacer XSLT sin hacer XSLT, sino que usar selectores de CSS para decir
+
+112
+00:14:08,000 --> 00:14:16,000
+la cabecera que está en el demestático, métemelo en la cabecera del demestático, méteme el contenido que viene del PLONE.
+
+113
+00:14:16,000 --> 00:14:23,000
+Y es una forma, bueno, que el diseñador no se tiene que preocupar de las plases de las cosas de PLONE, sino que el que va a hacer la integración
+
+114
+00:14:23,000 --> 00:14:31,000
+de ese dem, pues coge de un sitio y pone el otro sin tener que preocuparse de cómo está hecho o si funciona o no.
+
+115
+00:14:31,000 --> 00:14:37,000
+Y el lema de DIAZO es, we write XSLT so you don't have to.
+
+116
+00:14:37,000 --> 00:14:51,000
+Pero bueno, no solo es eso lo que ha cambiado en el deming, el dem va a ser adaptado al futuro, el tema del Javascript está un poco así en PLONE,
+
+117
+00:14:51,000 --> 00:14:59,000
+así que bueno, con el Javascript y el CSS han integrado un paquete, un nuevo dem llamado Barceloneta,
+
+118
+00:14:59,000 --> 00:15:06,000
+un grupo de trabajo de Barcelona está trabajando en esto, y trae al mundo de PLONE pues todas estas modernidades
+
+119
+00:15:06,000 --> 00:15:16,000
+que hemos tenido estos últimos años, todas estas modificaciones en el tema de CSS y Javascript, pues usando RECOILJS para gestión de dependencias
+
+120
+00:15:16,000 --> 00:15:20,000
+y gestión de paquetes y LES para preprocesado de estilos.
+
+121
+00:15:20,000 --> 00:15:31,000
+Y ya se han basado en Bustrap para crear un dem que no depende de Bustrap, simplemente está basado y similar para poder personalizar.
+
+122
+00:15:31,000 --> 00:15:40,000
+Y la personalización incluso se puede hacer through the web sin tener que tocar nada, pues hay diferentes variables para poder modificar y tocar.
+
+123
+00:15:40,000 --> 00:15:51,000
+Y la edición de contenido, pues bueno, esto ha cambiado también un poquito en el sentido de se ha sacado todo el marcado que suponía la edición de contenido,
+
+124
+00:15:51,000 --> 00:15:57,000
+los formularios de edición de contenido, o una barra lateral, si editáis WordPress, se puede decir WordPress aquí,
+
+125
+00:15:57,000 --> 00:16:05,000
+hay una barra lateral para gestión de contenido, pues bueno, es una cosa similar lo que se ha generado con PLONE, y bueno,
+
+126
+00:16:05,000 --> 00:16:11,000
+nuevas características que ya había en CSS que han aterrizado en PLONE.
+
+127
+00:16:11,000 --> 00:16:22,000
+Técnicamente la base de PLONE es ZOP, por lo que es la ZBB, la base de datos aumentado de objetos, que se basa en los conceptos de jerarquía y traversal,
+
+128
+00:16:22,000 --> 00:16:30,000
+al final acabo los contenidos se almacenan como si fueran carpetas en nuestro ordenador, tú creas una carpeta y dentro almacenas un documento.
+
+129
+00:16:30,000 --> 00:16:38,000
+Funciona como si fuera un diccionario gigante, un diccionario normal que podamos usar en cualquier script, y que persiste automáticamente la base de datos
+
+130
+00:16:38,000 --> 00:16:43,000
+sin que nosotros tengamos que hacer ningún commit ni nada.
+
+131
+00:16:43,000 --> 00:16:55,000
+Y el traversal, que es acceder a esos objetos mediante WordPress, mapeo URL del objeto directo sin tener que hacer queries a la base de datos.
+
+132
+00:16:55,000 --> 00:17:04,000
+Se ha basado en la arquitectura de componentes de ZOP, en interfaces, en adaptadores, en suscriptores, que son como las señales de Django
+
+133
+00:17:04,000 --> 00:17:13,000
+para responder a eventos en caso de que sucedan esos eventos, pues cuando ha añadido una noticia enviar mensajes, cosas de estas,
+
+134
+00:17:13,000 --> 00:17:22,000
+adaptadores que son como enchufes que cambian una interfaz a otra y que se pueden registrar de forma global o local en una determinada carpeta,
+
+135
+00:17:22,000 --> 00:17:31,000
+en un determinado sitio, por si queremos sobrescribir cosas que ya se han definido con anterioridad.
+
+136
+00:17:31,000 --> 00:17:37,000
+El JavaScript también se ha cambiado la cara completamente en Plone.
+
+137
+00:17:37,000 --> 00:17:46,000
+Todos los días no hay un día que no pase sin ningún framework de JavaScript, entonces nosotros hemos contribuido a ello con nuestro propio framework de JavaScript.
+
+138
+00:17:46,000 --> 00:17:59,000
+Se han basado en un proyecto creado por un diseñador holandés, que lo que quería era no escribir que el diseñador no tenga que escribir JavaScript
+
+139
+00:17:59,000 --> 00:18:09,000
+cuando hacen los mockups o los diseños estáticos, entonces simplemente le añade clases y con las clases suceden cosas en JavaScript.
+
+140
+00:18:09,000 --> 00:18:19,000
+Si habéis utilizado Bustrap, por ejemplo, Bustrap sí que tiene un listado de cosas que se pueden hacer con JavaScript,
+
+141
+00:18:19,000 --> 00:18:26,000
+poniendo clases, tenemos ventanas modales y tal, pues es una cosa de esas con un montón de características más,
+
+142
+00:18:26,000 --> 00:18:40,000
+con fallback para navegadores en JavaScript también, que ha estado en constante desarrollo y que se ha integrado en Plone para todo el sistema de la edición.
+
+143
+00:18:40,000 --> 00:18:56,000
+Y el futuro de Plone 5 cuál es, en el que ya se está trabajando, cuando se empezó el desarrollo de Plone 5,
+
+144
+00:18:56,000 --> 00:19:10,000
+sí que se pensaba en los API REST, pero últimamente en estos últimos años con los nuevos frameworks como puede ser AngularJS o cualquier otro,
+
+145
+00:19:10,000 --> 00:19:26,000
+ha estado pensando en que ese tiene que ser el futuro de Plone y están trabajando en un API REST, bueno, Hypermedia REST, con todos los verbos
+
+146
+00:19:26,000 --> 00:19:39,000
+para poder desacoplar aún más la parte de Frontend de Plone con toda la gestión de contenido que viene de base.
+
+147
+00:19:39,000 --> 00:19:48,000
+Entonces quizás vamos a ir hacia un futuro sin HTML en Plone y que se convierta simplemente en un entorno de backend,
+
+148
+00:19:48,000 --> 00:20:00,000
+sin preocuparnos tanto de toda la parte, de toda la complejidad que añade el tema de permitir al usuario final personalizar hasta el último extremo
+
+149
+00:20:00,000 --> 00:20:13,000
+las plantillas y todas las características que puede tener el Plone por defecto. Entonces se está trabajando ahora en ello y es un desarrollo
+
+150
+00:20:13,000 --> 00:20:25,000
+bastante interesante el que están haciendo. Pero bueno, ¿cómo podemos probar Plone? Igual yo doy la charla y bueno, algunos se quedan con las ganas
+
+151
+00:20:25,000 --> 00:20:35,000
+de probar algo, bueno, una instalación muy sencilla, podéis utilizar un instalador del Plone Barra Tri-Five y si no queréis instalar,
+
+152
+00:20:35,000 --> 00:20:43,000
+bueno, leer la documentación o como se instala, no sé qué, bueno, hay una web de demo en demoplone.de, están aleman, pero es la única que
+
+153
+00:20:43,000 --> 00:20:55,000
+encontró que está online, las anteriores usan una versión anterior de Plone y si tenéis docker en vuestras máquinas, pues bueno, con ese comando docker run, pues tenemos un Plone en breves minutos
+
+154
+00:20:55,000 --> 00:21:13,000
+en marcha y os voy a enseñar, a ver si paro esto, si consigo pararlo.
+
+155
+00:21:25,000 --> 00:21:46,000
+Bueno, no consigo pararlo. A ver si. Bueno, ese es el comando docker que he ejecutado en el terminal y bueno, nos ha instalado el Plone,
+
+156
+00:21:46,000 --> 00:22:09,000
+creamos un nuevo sitio, usamos una contraseña, súper secreto y con la combinación por defecto creamos un Plone.
+
+157
+00:22:09,000 --> 00:22:20,000
+Bueno, esta sería la instalación, una instalación básica a un Plone sin que tengamos nada, tenemos la barra izquierda de la edición ahí para gestionar contenido,
+
+158
+00:22:20,000 --> 00:22:29,000
+para ver los contenidos, los estados, para gestionar los portles de izquierda de derecha, los portles son bloques de contenido que podemos incorporar tanto en la parte izquierda
+
+159
+00:22:29,000 --> 00:22:43,000
+derecha como la inferior, tenemos gestión de diferentes vistas en las que podemos mostrar contenido de esta carpeta, en este caso podemos registrar nuevas vistas,
+
+160
+00:22:43,000 --> 00:22:54,000
+sin ningún problema, podemos modificar el estado del workflow del elemento, echarlo para atrás, ponerlo como privado, pedir login, cambiar todos los workflows
+
+161
+00:22:54,000 --> 00:23:09,000
+y que la web sea totalmente privada y requiera login, podemos cambiar las preferencias de la configuración y poner que la web esté en español, en la uscera,
+
+162
+00:23:09,000 --> 00:23:25,000
+en el título, muchas de las cosas que podemos hacer con el Plone, los podemos hacer directamente desde la web sin tener que tocar ninguna línea de código Python o modificar las plantillas de base que viene.
+
+163
+00:23:25,000 --> 00:23:43,000
+Es por eso que se cree que para el usuario final sin que tenga conocimientos de nada es una herramienta bastante potente, os animo a aprobarlo,
+
+164
+00:23:43,000 --> 00:23:59,000
+que está adaptado además para todo tipo de dispositivos móviles como tablets o pantallas de cualquier ancho.
+
+165
+00:23:59,000 --> 00:24:18,000
+La documentación ha sido y es muy importante en Plone, tenéis toda la documentación que se usa para training tanto de gestión de contenido como desarrolladores o diseñadores
+
+166
+00:24:18,000 --> 00:24:33,000
+para poder modificar los estilos y tal de forma sencilla en esas dos URL que están constantemente actualizándose y que en la que podéis obtener mucha información tanto sobre Plone como sobre la nueva versión está de Plone.
+
+167
+00:24:33,000 --> 00:24:56,000
+Pero, ¿qué sería de la comunidad de Plone sin la comunidad? Este proyecto no saldría adelante. De hecho, podemos decir que ha sido todo este mundo de Zope y ha sido bastante precursor de la comunidad de Python.
+
+168
+00:24:56,000 --> 00:25:10,000
+En las primeras EuroPython había un track completo hablando de este tipo de tecnologías. Pero bueno, las cosas han ido evolucionando. Estos días hay nuevos frameworks, se trabajan mucho en Django, en otras historias.
+
+169
+00:25:10,000 --> 00:25:33,000
+La comunidad se sigue reuniendo desde el año 2005, creo recordar, que se hizo la primera conferencia en Vien a creo recordar. Nos hemos reunido en Seattle, en Nápoles, en San Francisco, en Bristol dos veces en Holanda y en Bucareste hace menos de un mes.
+
+170
+00:25:33,000 --> 00:25:48,000
+Es una comunidad muy importante. Ahí veis, habrá 200 o 300 personas que se reunen en una semana como en una EuroPython, a hablar de Plone. Es una comunidad muy importante.
+
+171
+00:25:48,000 --> 00:26:09,000
+Y como tenemos un poquito de tiempo todavía, os voy a enseñar un vídeo a ver si se oye correctamente. De qué opina la gente sobre... bueno, es una opinión un poco sesgada, porque somos desabladadores Plone, todos los que salen ahí.
+
+172
+00:26:09,000 --> 00:26:22,000
+Ah, si se oye un poco... miren.
+
+173
+00:26:22,000 --> 00:26:40,000
+Simon, Roma, una comunidad fantástica. Me parece un pari, una grande oportunidad.
+
+174
+00:26:40,000 --> 00:27:07,000
+01, el Es以youpor, bailando, BrELL.
+
+175
+00:27:07,000 --> 00:27:10,200
+unaом
+
+176
+00:27:10,200 --> 00:27:12,140
+crushed
+
+177
+00:27:12,480 --> 00:27:15,480
+worried
+
+178
+00:27:27,160 --> 00:27:28,020
+de plats
+
+179
+00:27:29,020 --> 00:27:32,180
+vuelven
+
+180
+00:28:02,180 --> 00:28:04,180
+Soy Alexander, soy de Romania.
+
+181
+00:28:04,180 --> 00:28:09,180
+Me llamo de los chichiches.
+
+182
+00:28:09,180 --> 00:28:11,180
+Chichiches me gustan los chichiches.
+
+183
+00:28:11,180 --> 00:28:14,180
+Chichichu, como me gusta el chichu.
+
+184
+00:28:15,180 --> 00:28:17,180
+Soy Alexander, soy de Romania.
+
+185
+00:28:17,180 --> 00:28:21,180
+No, es para mi, es para mi familia.
+
+186
+00:28:21,180 --> 00:28:23,180
+Max Ro, soy francés.
+
+187
+00:28:23,180 --> 00:28:24,180
+No sé, no sé, pero soy un plano.
+
+188
+00:28:24,180 --> 00:28:25,180
+Me still...
+
+189
+00:28:25,180 --> 00:28:27,180
+Me still decides the clayboys.
+
+190
+00:28:27,180 --> 00:28:29,180
+You can take the man after the clay,
+
+191
+00:28:29,180 --> 00:28:31,180
+but you can't take the clay after the man.
+
+192
+00:28:31,180 --> 00:28:33,180
+¡Code ya!
+
+193
+00:28:33,180 --> 00:28:35,180
+¡Code ya!
+
+194
+00:28:35,180 --> 00:28:37,180
+Jamie Lenton, Inglaterra.
+
+195
+00:28:37,180 --> 00:28:40,180
+Mi plan es hacer un truco magico.
+
+196
+00:28:40,180 --> 00:28:43,180
+Que puede hacer tantos cosas en el camino.
+
+197
+00:28:43,180 --> 00:28:46,180
+Me gusta Catarón.
+
+198
+00:28:46,180 --> 00:28:49,180
+Y me gusta que sea la nueva vida.
+
+199
+00:28:49,180 --> 00:28:51,180
+¡Code ya!
+
+200
+00:28:59,180 --> 00:29:01,180
+Hago el tampezaro.
+
+201
+00:29:04,180 --> 00:29:06,180
+Es un vídeo que se grabó en un evento de la comunidad
+
+202
+00:29:06,180 --> 00:29:11,180
+que se hace todos los años en Sorrento, en Italia.
+
+203
+00:29:13,180 --> 00:29:16,180
+Mostró un poco la diversidad de la que ha hablado ayer
+
+204
+00:29:16,180 --> 00:29:22,180
+y a Amelia también, de que cuántos desarrolladores
+
+205
+00:29:22,180 --> 00:29:26,180
+de todo el mundo están trabajando en esta comunidad.
+
+206
+00:29:26,180 --> 00:29:30,180
+Pero bueno, espero que esto haya sido una pequeña píldora
+
+207
+00:29:30,180 --> 00:29:33,180
+para poder enseñaros qué esplone,
+
+208
+00:29:33,180 --> 00:29:37,180
+que quizás haya estado, como he dicho antes,
+
+209
+00:29:37,180 --> 00:29:41,180
+un poco abandonado o nos hemos auto-excluido
+
+210
+00:29:41,180 --> 00:29:45,180
+un poco de la comunidad quizás del Paiz on Mainstream
+
+211
+00:29:45,180 --> 00:29:48,180
+que podemos decir en estos últimos años.
+
+212
+00:29:48,180 --> 00:29:52,180
+Pero bueno, ha sido sin ninguna duda un paso adelante.
+
+213
+00:29:52,180 --> 00:29:55,180
+Hace tres semanas una cosa así.
+
+214
+00:29:55,180 --> 00:30:01,180
+El jefe del programa de Picon
+
+215
+00:30:01,180 --> 00:30:05,180
+mandó un tweet diciendo que por si hay alguna duda
+
+216
+00:30:05,180 --> 00:30:08,180
+considero que plone y pyramid pueden ser
+
+217
+00:30:08,180 --> 00:30:11,180
+son significantes, tienen la importancia suficiente
+
+218
+00:30:11,180 --> 00:30:13,180
+para estar en Picon.
+
+219
+00:30:13,180 --> 00:30:15,180
+Es un paso muy importante.
+
+220
+00:30:15,180 --> 00:30:17,180
+Teniendo en cuenta que Picon el año pasado
+
+221
+00:30:17,180 --> 00:30:25,180
+no tuvo ningún track de framework web en su programa.
+
+222
+00:30:25,180 --> 00:30:31,180
+Pero aunque se considere a plone algo viejo,
+
+223
+00:30:31,180 --> 00:30:34,180
+decía el releaser de Ploner,
+
+224
+00:30:34,180 --> 00:30:37,180
+que como dicen los americanos,
+
+225
+00:30:37,180 --> 00:30:41,180
+pues que el hacha del abuelo está tan afilada como siempre.
+
+226
+00:30:41,180 --> 00:30:44,180
+Y que esta, la de Plone 5,
+
+227
+00:30:44,180 --> 00:30:47,180
+es nuestra opción de volver a la comunidad
+
+228
+00:30:47,180 --> 00:30:50,180
+y enseñar a todo el mundo de Picon lo que hemos aprendido,
+
+229
+00:30:50,180 --> 00:30:53,180
+que hemos estado aquí, que no nos hemos ido,
+
+230
+00:30:53,180 --> 00:30:55,180
+sólo estábamos aprendiendo a mejorar
+
+231
+00:30:55,180 --> 00:30:59,180
+y es lo que hemos intentado hacer desarrollando Plone 5.
+
+232
+00:30:59,180 --> 00:31:12,180
+Muchas gracias.
+

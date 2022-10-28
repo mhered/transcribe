@@ -1,0 +1,4292 @@
+1
+00:00:00,000 --> 00:00:07,380
+Pau...
+
+2
+00:00:07,420 --> 00:00:08,780
+Hum, bueno.
+
+3
+00:00:11,580 --> 00:00:12,960
+O confirmationesta.
+
+4
+00:00:13,000 --> 00:00:13,680
+Bonos ag죠.
+
+5
+00:00:13,700 --> 00:00:16,400
+Mois ag HDR running tan frá antigo었습니다.
+
+6
+00:00:16,960 --> 00:00:19,740
+Moltes compartmentalistas dos pacones
+
+7
+00:00:19,760 --> 00:00:23,080
+onde escreativoies suas suitcase
+
+8
+00:00:23,100 --> 00:00:26,060
+Guste Pione Bexarini debê C tattoos sin solo.
+
+9
+00:00:26,080 --> 00:00:18,040
+O teste no voce de
+
+10
+00:00:18,060 --> 00:00:05,240
+Ur
+
+11
+00:00:25,060 --> 00:00:28,100
+Pau
+
+12
+00:00:28,100 --> 00:00:29,520
+Ambé
+
+13
+00:00:29,520 --> 00:00:31,520
+e Plutarco o poder de unha historia.
+
+14
+00:00:32,520 --> 00:00:37,520
+Voi a intentar, fretendo a hablaros de historia, de literatura,
+
+15
+00:00:37,520 --> 00:00:40,520
+de la comunidad paitonista, de diversidade, de privilegios,
+
+16
+00:00:40,520 --> 00:00:43,520
+e vou a intentar daros alguna sorpresita.
+
+17
+00:00:43,520 --> 00:00:45,520
+Então, é o primeiro...
+
+18
+00:00:48,520 --> 00:00:50,520
+me presento.
+
+19
+00:00:51,520 --> 00:00:55,520
+Soy Yamila, aí tenéis mi jitcap, mi twitter,
+
+20
+00:00:55,520 --> 00:01:01,520
+te te paro.es, é unha aplicación que mantengo por gusto,
+
+21
+00:01:01,520 --> 00:01:03,520
+pero que hicimos en unha p-week en Caledos,
+
+22
+00:01:03,520 --> 00:01:06,520
+que é unha iniciativa que me encanta hablar de ella,
+
+23
+00:01:06,520 --> 00:01:08,520
+e se queréis, logo ya os comentaré.
+
+24
+00:01:09,520 --> 00:01:12,520
+Fundé en 2011 con outras companheras,
+
+25
+00:01:12,520 --> 00:01:15,520
+aprovechando a asociación e a primera paicones,
+
+26
+00:01:15,520 --> 00:01:17,520
+fundamos Pai Ladies España,
+
+27
+00:01:17,520 --> 00:01:20,520
+estou tamí en metida en Django Girls,
+
+28
+00:01:20,520 --> 00:01:23,520
+que estuímos ayer un workshop fantástico,
+
+29
+00:01:23,520 --> 00:01:26,520
+e actualmente, trabajo en Caledos,
+
+30
+00:01:26,520 --> 00:01:28,520
+que é unha empresa que cofundé hace 4 anos,
+
+31
+00:01:28,520 --> 00:01:31,520
+nos dedicamos a Subur Libre e a ser un pouco felices.
+
+32
+00:01:32,520 --> 00:01:34,520
+Então, como decía,
+
+33
+00:01:34,520 --> 00:01:36,520
+Python e Plutarco, o poder de una historia.
+
+34
+00:01:36,520 --> 00:01:39,520
+Para que não lo sepa, yo soy filóloga,
+
+35
+00:01:39,520 --> 00:01:42,520
+me licencien una cosa que se llama teoria de literatura e literatura comparada.
+
+36
+00:01:42,520 --> 00:01:44,520
+E quando me propusieron a hacer esta charla,
+
+37
+00:01:44,520 --> 00:01:47,520
+eu tenia super claro que queria hacer un soneto
+
+38
+00:01:47,520 --> 00:01:49,520
+con Misen de Casilabos,
+
+39
+00:01:49,520 --> 00:01:53,520
+hablando sobre a comunidade de Python, e que pasará o Pepocho,
+
+40
+00:01:53,520 --> 00:01:55,520
+porque é imprescindible.
+
+41
+00:01:55,520 --> 00:01:58,520
+A cuestión é que não há nada,
+
+42
+00:01:58,520 --> 00:02:00,520
+nada en el mundo que rime con Asinkio.
+
+43
+00:02:00,520 --> 00:02:03,520
+Então, me quedé absolutamente bloqueada
+
+44
+00:02:03,520 --> 00:02:05,520
+e necesité buscar inspiración.
+
+45
+00:02:05,520 --> 00:02:07,520
+Así que me fui a ver as charlas TED,
+
+46
+00:02:07,520 --> 00:02:09,520
+que son unas charlas fantásticas e magníficas
+
+47
+00:02:09,520 --> 00:02:11,520
+de gente que hace charlas muy buenas
+
+48
+00:02:11,520 --> 00:02:13,520
+para buscar inspiración e ideas.
+
+49
+00:02:13,520 --> 00:02:16,520
+E aí, descubri un patrón al verlas,
+
+50
+00:02:16,520 --> 00:02:19,520
+e é que, em buena medida, hacen story telling,
+
+51
+00:02:19,520 --> 00:02:21,520
+que consiste en contar una historia.
+
+52
+00:02:21,520 --> 00:02:23,520
+Basicamente, é...
+
+53
+00:02:23,520 --> 00:02:25,520
+há un mensaje que se cuenta
+
+54
+00:02:25,520 --> 00:02:27,520
+con uns personagens e unha acción en una historia.
+
+55
+00:02:27,520 --> 00:02:29,520
+Muchas veces, e os habéis fijados,
+
+56
+00:02:29,520 --> 00:02:31,520
+son historias de superación,
+
+57
+00:02:31,520 --> 00:02:33,520
+hay unos obstáculos e hay que superarlos.
+
+58
+00:02:33,520 --> 00:02:35,520
+A mí estas historias me parecían super interesantes,
+
+59
+00:02:35,520 --> 00:02:37,520
+pero también me parecían incompletas.
+
+60
+00:02:37,520 --> 00:02:41,520
+Então, ao pensar en por que me parecían incompletas,
+
+61
+00:02:41,520 --> 00:02:43,520
+llegué, me vino a la cabeza,
+
+62
+00:02:43,520 --> 00:02:46,520
+os recordo que soy filóloga, me vino a la cabeza Plutarcho,
+
+63
+00:02:46,520 --> 00:02:48,520
+con el que non me voy a extender mucho,
+
+64
+00:02:48,520 --> 00:02:50,520
+porque eu sei que todos le conocéis,
+
+65
+00:02:50,520 --> 00:02:53,520
+pero os irei contar un par de cosas.
+
+66
+00:02:53,520 --> 00:02:55,520
+Plutarcho é un filósofo griego
+
+67
+00:02:55,520 --> 00:02:57,520
+en época ya del imperio romano.
+
+68
+00:02:57,520 --> 00:02:59,520
+Basicamente, estábamos un pouco en los perdedores,
+
+69
+00:02:59,520 --> 00:03:01,520
+já habían superado la civilización griega.
+
+70
+00:03:01,520 --> 00:03:03,520
+Él escribía,
+
+71
+00:03:03,520 --> 00:03:05,520
+su gran obra literaria, son las vidas paralelas.
+
+72
+00:03:05,520 --> 00:03:07,520
+Escribía biografías,
+
+73
+00:03:07,520 --> 00:03:09,520
+sempre ponía la de un griego
+
+74
+00:03:09,520 --> 00:03:11,520
+e la de un romano comparándolas,
+
+75
+00:03:11,520 --> 00:03:13,520
+porque o que dizía o filósofo
+
+76
+00:03:13,520 --> 00:03:15,520
+era que isto aclara máis as coisas
+
+77
+00:03:15,520 --> 00:03:17,520
+sobre as disposiciones naturales de homens
+
+78
+00:03:17,520 --> 00:03:19,520
+que as grandes batallas ganadas
+
+79
+00:03:19,520 --> 00:03:21,520
+onde se pude haber caído 10.000 soldados.
+
+80
+00:03:21,520 --> 00:03:23,520
+Se fijaba muchísimo en la educación
+
+81
+00:03:23,520 --> 00:03:25,520
+en el dinero que tenían,
+
+82
+00:03:25,520 --> 00:03:27,520
+en el estatus social que tenían,
+
+83
+00:03:27,520 --> 00:03:29,520
+os autoboyografiados
+
+84
+00:03:29,520 --> 00:03:31,520
+para poder hacer un juicio
+
+85
+00:03:31,520 --> 00:03:33,520
+máis apropiado de sus vidas.
+
+86
+00:03:33,520 --> 00:03:35,520
+Resulta que non podemos cudgar a alguien
+
+87
+00:03:35,520 --> 00:03:37,520
+por lo alto que llega,
+
+88
+00:03:37,520 --> 00:03:39,520
+porque non sabemos dónde ha empezado.
+
+89
+00:03:39,520 --> 00:03:41,520
+E este pensamiento,
+
+90
+00:03:41,520 --> 00:03:43,520
+que es muy revelador,
+
+91
+00:03:43,520 --> 00:03:45,520
+siglo I d.C., entre 1 e 2,
+
+92
+00:03:45,520 --> 00:03:47,520
+isto, por cierto, lo guante na examen,
+
+93
+00:03:47,520 --> 00:03:49,520
+así que apuntad.
+
+94
+00:03:49,520 --> 00:03:51,520
+Ésto me inspiró
+
+95
+00:03:51,520 --> 00:03:53,520
+a buscar unas vidas paralelas,
+
+96
+00:03:53,520 --> 00:03:55,520
+así que empece a buscar
+
+97
+00:03:55,520 --> 00:03:57,520
+e me acorde de mi amiga Rosana.
+
+98
+00:03:57,520 --> 00:03:59,520
+Quando eu empece primaria,
+
+99
+00:03:59,520 --> 00:04:01,520
+o primeiro dia,
+
+100
+00:04:01,520 --> 00:04:03,520
+como todo infante que empieza
+
+101
+00:04:03,520 --> 00:04:05,520
+en el mundo nuevo,
+
+102
+00:04:05,520 --> 00:04:07,520
+lloraba desconsoladamente porque es la forma
+
+103
+00:04:07,520 --> 00:04:09,520
+de adulto con mis problemas de infante.
+
+104
+00:04:09,520 --> 00:04:11,520
+E mientras lloraba, mi nón, mi amiga Rosana,
+
+105
+00:04:11,520 --> 00:04:13,520
+que en ese momento ni nos conocíamos,
+
+106
+00:04:13,520 --> 00:04:15,520
+me tiró muy fuerte de la coleta
+
+107
+00:04:15,520 --> 00:04:17,520
+e nos hicimos amigas para sempre,
+
+108
+00:04:17,520 --> 00:04:19,520
+porque creo que es así como funcionan
+
+109
+00:04:19,520 --> 00:04:21,520
+os amigos así de pequeños.
+
+110
+00:04:21,520 --> 00:04:23,520
+Desde entonces hemos estado muy unidas,
+
+111
+00:04:23,520 --> 00:04:25,520
+seguimos siendo amigas a día de hoy,
+
+112
+00:04:25,520 --> 00:04:27,520
+e, entonces,
+
+113
+00:04:27,520 --> 00:04:29,520
+acorrarme de Rosana,
+
+114
+00:04:29,520 --> 00:04:31,520
+pensem nas vidas paralelas.
+
+115
+00:04:31,520 --> 00:04:33,520
+Ella proviene de una familia de inmigrantes,
+
+116
+00:04:33,520 --> 00:04:35,520
+viníaron cuando ella era muy pequeña,
+
+117
+00:04:35,520 --> 00:04:37,520
+su familia sempre ha tenido
+
+118
+00:04:37,520 --> 00:04:39,520
+dificultades económicas,
+
+119
+00:04:39,520 --> 00:04:41,520
+sobretudo en los primeros tiempos,
+
+120
+00:04:41,520 --> 00:04:43,520
+adaptación, la inmigración.
+
+121
+00:04:43,520 --> 00:04:45,520
+Ella estudiaba muchísimo,
+
+122
+00:04:45,520 --> 00:04:47,520
+salía muy pouco porque tenía que
+
+123
+00:04:47,520 --> 00:04:49,520
+asegurarse de sacar muy buenas notas.
+
+124
+00:04:51,520 --> 00:04:53,520
+Llegó a COW, somos de COW,
+
+125
+00:04:53,520 --> 00:04:55,520
+llegamos a COW,
+
+126
+00:04:55,520 --> 00:04:57,520
+sacó unas buenas notas en selectividad
+
+127
+00:04:57,520 --> 00:04:59,520
+e con un esfuerzo ingente pudo ir a la universidad.
+
+128
+00:04:59,520 --> 00:05:01,520
+Más o menos por el mismo tiempo
+
+129
+00:05:01,520 --> 00:05:03,520
+e aí nos mudamos a Madrid,
+
+130
+00:05:03,520 --> 00:05:05,520
+donde ya en modo estudiante universitario
+
+131
+00:05:05,520 --> 00:05:07,520
+a cosa se puso todavía máis precaria,
+
+132
+00:05:07,520 --> 00:05:09,520
+pero aún así, ella que es bastante
+
+133
+00:05:09,520 --> 00:05:11,520
+perseverante, que yo le digo cabezota,
+
+134
+00:05:11,520 --> 00:05:13,520
+consiguió terminar sus estudios,
+
+135
+00:05:13,520 --> 00:05:15,520
+consiguió un trabajo
+
+136
+00:05:15,520 --> 00:05:17,520
+e, bueno, ha prosperado,
+
+137
+00:05:17,520 --> 00:05:19,520
+con todos esas dificultades
+
+138
+00:05:19,520 --> 00:05:21,520
+ella ha prosperado.
+
+139
+00:05:21,520 --> 00:05:23,520
+E claro, a mí sempre me llamaba
+
+140
+00:05:23,520 --> 00:05:25,520
+a atención su capacidad de sobreponerse,
+
+141
+00:05:25,520 --> 00:05:27,520
+en mi caso, mis padres
+
+142
+00:05:27,520 --> 00:05:29,520
+no pudieron estudiar en su época,
+
+143
+00:05:29,520 --> 00:05:31,520
+que es lo normal, entonces tuvieron
+
+144
+00:05:31,520 --> 00:05:33,520
+un empeño enorme de que eu estudiar,
+
+145
+00:05:33,520 --> 00:05:35,520
+así que a mí me apoyaron todas mis vocaciones,
+
+146
+00:05:35,520 --> 00:05:37,520
+todos mis estudios,
+
+147
+00:05:37,520 --> 00:05:39,520
+sempre se priorizaba que eu pudiera estudiar,
+
+148
+00:05:39,520 --> 00:05:41,520
+por exemplo, eu estudié
+
+149
+00:05:41,520 --> 00:05:43,520
+mi carrera de letras
+
+150
+00:05:43,520 --> 00:05:45,520
+e después pude replanificar
+
+151
+00:05:45,520 --> 00:05:47,520
+e estudié un módulo
+
+152
+00:05:47,520 --> 00:05:49,520
+de informática,
+
+153
+00:05:49,520 --> 00:05:51,520
+conocí el mundo de Python,
+
+154
+00:05:51,520 --> 00:05:53,520
+conocí a grandes amigos
+
+155
+00:05:53,520 --> 00:05:55,520
+e incluso cofundé
+
+156
+00:05:55,520 --> 00:05:57,520
+a empresa Caledos,
+
+157
+00:05:57,520 --> 00:05:59,520
+es decir,
+
+158
+00:05:59,520 --> 00:06:01,520
+un monte de ventajas.
+
+159
+00:06:01,520 --> 00:06:03,520
+Así que estas son...
+
+160
+00:06:03,520 --> 00:06:05,520
+A ver, perdón.
+
+161
+00:06:05,520 --> 00:06:07,520
+Não sei se suena
+
+162
+00:06:07,520 --> 00:06:09,520
+este cómic
+
+163
+00:06:09,520 --> 00:06:11,520
+no, en el que a mí nadie me ha dado nada,
+
+164
+00:06:11,520 --> 00:06:13,520
+va un poco de ahí, no.
+
+165
+00:06:13,520 --> 00:06:15,520
+Estas son las historias para veras
+
+166
+00:06:15,520 --> 00:06:17,520
+que eu os traigo, la de... desde o pequeno,
+
+167
+00:06:17,520 --> 00:06:19,520
+a de Rosana, que ha tenido
+
+168
+00:06:19,520 --> 00:06:21,520
+que luchar contra tantas cosas
+
+169
+00:06:21,520 --> 00:06:23,520
+e a mí a que en realidad, aunque
+
+170
+00:06:23,520 --> 00:06:25,520
+estoy muy feliz que non que conseguido,
+
+171
+00:06:25,520 --> 00:06:27,520
+he tenido tantísimas oportunidades.
+
+172
+00:06:27,520 --> 00:06:29,520
+E então os podéis preguntar
+
+173
+00:06:29,520 --> 00:06:31,520
+e por que está dando tú la charla
+
+174
+00:06:31,520 --> 00:06:33,520
+para empezar porque me lo pidieron
+
+175
+00:06:33,520 --> 00:06:35,520
+e o que se da no se quita
+
+176
+00:06:35,520 --> 00:06:37,520
+e para seguir porque hay trampa.
+
+177
+00:06:37,520 --> 00:06:39,520
+E antes de revelaros a trampa
+
+178
+00:06:39,520 --> 00:06:41,520
+me gustaría haceros
+
+179
+00:06:41,520 --> 00:06:43,520
+unha encuesta, a mano alzada.
+
+180
+00:06:43,520 --> 00:06:45,520
+En esta sala
+
+181
+00:06:45,520 --> 00:06:47,520
+quántos conocéis, aviso e de hablar
+
+182
+00:06:47,520 --> 00:06:49,520
+das leyes da termodinámica.
+
+183
+00:06:51,520 --> 00:06:53,520
+Todo o mundo.
+
+184
+00:06:53,520 --> 00:06:55,520
+Muitos listos. Aquí, en física,
+
+185
+00:06:55,520 --> 00:06:57,520
+nós todos.
+
+186
+00:06:57,520 --> 00:06:59,520
+E se os pregunto por la quinta leide da termodinámica,
+
+187
+00:06:59,520 --> 00:07:01,520
+quén se las ave al dedillo?
+
+188
+00:07:01,520 --> 00:07:03,520
+Efectivamente.
+
+189
+00:07:03,520 --> 00:07:05,520
+Non os preocupéis, es muy habitual
+
+190
+00:07:05,520 --> 00:07:07,520
+olvidarse de la quinta leide da termodinámica.
+
+191
+00:07:07,520 --> 00:07:09,520
+E es muy importante, pero se suele olvidar
+
+192
+00:07:09,520 --> 00:07:11,520
+e o que dices antes o después
+
+193
+00:07:11,520 --> 00:07:13,520
+tú estarás en el lado del privilegio.
+
+194
+00:07:13,520 --> 00:07:15,520
+Lo dices da termodinámica, non lo digo yo,
+
+195
+00:07:15,520 --> 00:07:17,520
+de ninguna manera debe ser cierto,
+
+196
+00:07:17,520 --> 00:07:19,520
+sobretudo os que hay mucha física, nada va contra la termodinámica.
+
+197
+00:07:21,520 --> 00:07:23,520
+Entonces, que significa esto?
+
+198
+00:07:23,520 --> 00:07:25,520
+Para quien todavía non lo sepa,
+
+199
+00:07:25,520 --> 00:07:27,520
+a trampa es que
+
+200
+00:07:27,520 --> 00:07:29,520
+Rosana y Amila, ambas, soy yo.
+
+201
+00:07:29,520 --> 00:07:31,520
+Ambos nombres, son míos.
+
+202
+00:07:31,520 --> 00:07:33,520
+Rosana y Amila encantada.
+
+203
+00:07:33,520 --> 00:07:35,520
+Manteniendo el estereotipo, Argentina,
+
+204
+00:07:35,520 --> 00:07:37,520
+dos nombres.
+
+205
+00:07:37,520 --> 00:07:39,520
+Ambas historias son ciertas,
+
+206
+00:07:39,520 --> 00:07:41,520
+e ambas son la mía.
+
+207
+00:07:41,520 --> 00:07:43,520
+É verdade que soy de familia inmigrante, tuvimos nosas dificultades,
+
+208
+00:07:43,520 --> 00:07:45,520
+pero es verdade que mi familia se esforzó mucho
+
+209
+00:07:45,520 --> 00:07:47,520
+por que yo consiguiera un montón de cosas.
+
+210
+00:07:47,520 --> 00:07:49,520
+E, entonces, al pensar en esta amiga mía
+
+211
+00:07:49,520 --> 00:07:51,520
+que soy yo,
+
+212
+00:07:51,520 --> 00:07:53,520
+me di cuenta de que
+
+213
+00:07:53,520 --> 00:07:55,520
+las historias TED se me quedaban cortas,
+
+214
+00:07:55,520 --> 00:07:57,520
+se me quedaban incompletas,
+
+215
+00:07:57,520 --> 00:07:59,520
+porque só lo cuentan na superación,
+
+216
+00:07:59,520 --> 00:08:01,520
+quando me parece que la visión del privilegio
+
+217
+00:08:01,520 --> 00:08:03,520
+es también muy importante, nos ayuda muchísimo
+
+218
+00:08:03,520 --> 00:08:05,520
+a ponernos en nuestro lugar
+
+219
+00:08:05,520 --> 00:08:07,520
+e a reconocer o mundo de una manera mucho má sana
+
+220
+00:08:07,520 --> 00:08:09,520
+e como un mejor juicio.
+
+221
+00:08:13,520 --> 00:08:15,520
+E, entonces, que pasa?
+
+222
+00:08:15,520 --> 00:08:17,520
+Non conseguido nada?
+
+223
+00:08:17,520 --> 00:08:19,520
+Como tengo privilegio, sencillamente
+
+224
+00:08:19,520 --> 00:08:21,520
+que mis logros no valen?
+
+225
+00:08:21,520 --> 00:08:23,520
+Realmente,
+
+226
+00:08:23,520 --> 00:08:25,520
+eu he tenido que coberto para pagarme os estudios,
+
+227
+00:08:25,520 --> 00:08:27,520
+todos mis logros son reales,
+
+228
+00:08:27,520 --> 00:08:29,520
+o único que,
+
+229
+00:08:29,520 --> 00:08:31,520
+en el cómic es anterior,
+
+230
+00:08:31,520 --> 00:08:33,520
+ese final de, a mí nadie me ha dado nada,
+
+231
+00:08:33,520 --> 00:08:35,520
+no puedo decir eso,
+
+232
+00:08:35,520 --> 00:08:37,520
+e, por supuesto, no tiene ningún sentido,
+
+233
+00:08:37,520 --> 00:08:39,520
+a mí mucha gente me ha dado muchas cosas.
+
+234
+00:08:39,520 --> 00:08:41,520
+Entonces, yo he llegado hasta aquí,
+
+235
+00:08:41,520 --> 00:08:43,520
+y otras personas puede que no lleguen tan lejos
+
+236
+00:08:43,520 --> 00:08:45,520
+porque no han tenido todas esas ayudas de principio.
+
+237
+00:08:45,520 --> 00:08:47,520
+Así que,
+
+238
+00:08:47,520 --> 00:08:49,520
+por que?
+
+239
+00:08:49,520 --> 00:08:51,520
+Porque creo que es importante
+
+240
+00:08:51,520 --> 00:08:53,520
+darnos cuenta de los privilegios
+
+241
+00:08:53,520 --> 00:08:55,520
+por dos motivos.
+
+242
+00:08:55,520 --> 00:08:57,520
+O primeiro es porque,
+
+243
+00:08:57,520 --> 00:08:59,520
+por un tema de sesgo cognitivo,
+
+244
+00:08:59,520 --> 00:09:01,520
+non nos damos cuenta de ellos,
+
+245
+00:09:01,520 --> 00:09:03,520
+então, intelectualmente, é un fallo que tenemos,
+
+246
+00:09:03,520 --> 00:09:05,520
+tenemos que ser conscientes de los privilegios que tenemos.
+
+247
+00:09:05,520 --> 00:09:07,520
+E especialmente, por el segundo motivo,
+
+248
+00:09:07,520 --> 00:09:09,520
+e é que,
+
+249
+00:09:09,520 --> 00:09:11,520
+os privilegios son imobilistas, buscan siempre
+
+250
+00:09:11,520 --> 00:09:13,520
+mantener el estatu quo,
+
+251
+00:09:13,520 --> 00:09:15,520
+sempre buscan autoconservarse.
+
+252
+00:09:15,520 --> 00:09:17,520
+Então, quando hay mucho privilegio,
+
+253
+00:09:17,520 --> 00:09:19,520
+hay poca diversidad.
+
+254
+00:09:19,520 --> 00:09:21,520
+E, en principio,
+
+255
+00:09:21,520 --> 00:09:23,520
+la diversidad é algo que,
+
+256
+00:09:23,520 --> 00:09:25,520
+de forma, por menos un pouco teórica,
+
+257
+00:09:25,520 --> 00:09:27,520
+queremos que sí que la queremos,
+
+258
+00:09:27,520 --> 00:09:29,520
+la buscamos, pero no sabemos muchas veces como,
+
+259
+00:09:29,520 --> 00:09:31,520
+e no sabemos por que non la conseguimos muchas veces.
+
+260
+00:09:31,520 --> 00:09:33,520
+E,
+
+261
+00:09:33,520 --> 00:09:35,520
+o que os vengo a contar aquí, básicamente,
+
+262
+00:09:35,520 --> 00:09:37,520
+é que, en buena medida,
+
+263
+00:09:37,520 --> 00:09:39,520
+é por os privilegios que no sabemos detectar.
+
+264
+00:09:39,520 --> 00:09:41,520
+Por exemplo, hace unos meses,
+
+265
+00:09:41,520 --> 00:09:43,520
+en el Google Campus,
+
+266
+00:09:43,520 --> 00:09:45,520
+de Python Madrid, me dijeron,
+
+267
+00:09:45,520 --> 00:09:47,520
+tines un alaín dito de cinco minutos sobre las Django Girls,
+
+268
+00:09:47,520 --> 00:09:49,520
+e dije, má, claro,
+
+269
+00:09:49,520 --> 00:09:51,520
+15.
+
+270
+00:09:51,520 --> 00:09:53,520
+Então, les pregunte na sala,
+
+271
+00:09:53,520 --> 00:09:54,520
+quántos en la sala,
+
+272
+00:09:54,520 --> 00:09:56,520
+é, así, 200 personas como vosotros,
+
+273
+00:09:56,520 --> 00:09:58,520
+no eran, cuántos en la sala no eran
+
+274
+00:09:58,520 --> 00:10:00,520
+hombres blanco cisgénero.
+
+275
+00:10:00,520 --> 00:10:02,520
+Lo de hombre blanco
+
+276
+00:10:02,520 --> 00:10:04,520
+se entendió bastante bien, pero,
+
+277
+00:10:04,520 --> 00:10:06,520
+quando pregunte lo de cisgénero, se quedaron un pouco así.
+
+278
+00:10:06,520 --> 00:10:08,520
+En plan, cisgénero, yo?
+
+279
+00:10:08,520 --> 00:10:10,520
+No, no, yo no, yo cisgénero, no, sabes?
+
+280
+00:10:10,520 --> 00:10:13,520
+Então, o que é o que pasa?
+
+281
+00:10:13,520 --> 00:10:15,520
+Que só lo sabes,
+
+282
+00:10:15,520 --> 00:10:17,520
+que significa cisgénero,
+
+283
+00:10:17,520 --> 00:10:19,520
+quando non lo eres, e te enfrentas, por exemplo,
+
+284
+00:10:19,520 --> 00:10:21,520
+ao rechazo por ser transgender,
+
+285
+00:10:21,520 --> 00:10:23,520
+ao homilhación por ser genderqueer,
+
+286
+00:10:23,520 --> 00:10:25,520
+ou ao completo incomprendición,
+
+287
+00:10:25,520 --> 00:10:27,520
+porque eres,
+
+288
+00:10:27,520 --> 00:10:29,520
+porque tienes un,
+
+289
+00:10:29,520 --> 00:10:31,520
+o que se llama un genderfluid,
+
+290
+00:10:31,520 --> 00:10:33,520
+que igual, ni siquiera lo podés definir tú mismo
+
+291
+00:10:33,520 --> 00:10:35,520
+con certas palabras.
+
+292
+00:10:35,520 --> 00:10:37,520
+Então,
+
+293
+00:10:37,520 --> 00:10:40,520
+senes que, sin, sin, estamos en la norma,
+
+294
+00:10:40,520 --> 00:10:43,520
+si somos cisgénero, para que saís un idea cisgénero es,
+
+295
+00:10:43,520 --> 00:10:45,520
+quando cumpres con el estereotipo, más o menos,
+
+296
+00:10:45,520 --> 00:10:47,520
+es decir, si eres un hombre,
+
+297
+00:10:47,520 --> 00:10:49,520
+y tienes pinta de hombre,
+
+298
+00:10:49,520 --> 00:10:51,520
+y eres básicamente heterosexual,
+
+299
+00:10:51,520 --> 00:10:53,520
+no? No es necesario ser heterosexual,
+
+300
+00:10:53,520 --> 00:10:55,520
+pero bueno, quiero decir que todo eso,
+
+301
+00:10:55,520 --> 00:10:57,520
+é cisgénero, e se eres mujer,
+
+302
+00:10:57,520 --> 00:10:58,520
+e tienes pinta de mujer,
+
+303
+00:10:58,520 --> 00:10:59,520
+e te comportas como mujer,
+
+304
+00:10:59,520 --> 00:11:01,520
+e te vistes como mujer,
+
+305
+00:11:01,520 --> 00:11:03,520
+eres mujer cisgénero.
+
+306
+00:11:03,520 --> 00:11:05,520
+Pero hay mucha gente que non lo es,
+
+307
+00:11:05,520 --> 00:11:07,520
+e no te enteras,
+
+308
+00:11:07,520 --> 00:11:09,520
+hasta que no miras a los privilegios
+
+309
+00:11:09,520 --> 00:11:11,520
+que están a túa alrededor,
+
+310
+00:11:11,520 --> 00:11:13,520
+e es muy difícil verlos, precisamente porque
+
+311
+00:11:13,520 --> 00:11:15,520
+non nos damos cuenta, pero se puede.
+
+312
+00:11:17,520 --> 00:11:20,520
+Unas dos mecanismos que a mi me ayudo muchísimo,
+
+313
+00:11:20,520 --> 00:11:21,520
+a saber,
+
+314
+00:11:21,520 --> 00:11:23,520
+se a reconocer os privilegios,
+
+315
+00:11:23,520 --> 00:11:25,520
+o a ver un pouco como
+
+316
+00:11:25,520 --> 00:11:27,520
+outras puntas de vista de la sociedad,
+
+317
+00:11:27,520 --> 00:11:29,520
+fón nas gafas violeta.
+
+318
+00:11:29,520 --> 00:11:31,520
+Las gafas representan
+
+319
+00:11:31,520 --> 00:11:33,520
+la metáfora de ver el mundo con ojos feministas,
+
+320
+00:11:33,520 --> 00:11:35,520
+con una visión de género,
+
+321
+00:11:35,520 --> 00:11:37,520
+e entender un pouco como operan
+
+322
+00:11:37,520 --> 00:11:39,520
+en este caso los privilegios de género.
+
+323
+00:11:39,520 --> 00:11:41,520
+E gracias a estas gafas
+
+324
+00:11:41,520 --> 00:11:43,520
+he aprendido básicamente dos lecciones
+
+325
+00:11:43,520 --> 00:11:44,520
+moi importantes.
+
+326
+00:11:44,520 --> 00:11:46,520
+La primera es que la meritocracia está rota.
+
+327
+00:11:46,520 --> 00:11:48,520
+La meritocracia,
+
+328
+00:11:48,520 --> 00:11:50,520
+que se supone que es la forma en la que conseguimos
+
+329
+00:11:50,520 --> 00:11:51,520
+ao mejor,
+
+330
+00:11:51,520 --> 00:11:53,520
+en los puestos X,
+
+331
+00:11:53,520 --> 00:11:55,520
+o ao mejor en la carrera, o ao mejor en donde sea,
+
+332
+00:11:55,520 --> 00:11:57,520
+está absolutamente rota, porque
+
+333
+00:11:57,520 --> 00:11:59,520
+en esta, en la ecuación que te da al final,
+
+334
+00:11:59,520 --> 00:12:01,520
+quien tiene el mayor mérito,
+
+335
+00:12:01,520 --> 00:12:03,520
+no están todos os privilegios contados.
+
+336
+00:12:03,520 --> 00:12:04,520
+Simplemente,
+
+337
+00:12:04,520 --> 00:12:05,520
+é o que chega máis lejos,
+
+338
+00:12:05,520 --> 00:12:07,520
+pero non o que realmente ha trabajado máis
+
+339
+00:12:07,520 --> 00:12:09,520
+o que realmente ha conseguido máis.
+
+340
+00:12:09,520 --> 00:12:11,520
+Ao não tener en cuenta
+
+341
+00:12:11,520 --> 00:12:13,520
+esos privilegios de base,
+
+342
+00:12:13,520 --> 00:12:15,520
+a meritocracia só dificulta da diversidade,
+
+343
+00:12:15,520 --> 00:12:17,520
+porque lo habitual
+
+344
+00:12:17,520 --> 00:12:19,520
+é que os privilegios se...
+
+345
+00:12:19,520 --> 00:12:21,520
+a gente privilegiada é o que sigue
+
+346
+00:12:21,520 --> 00:12:23,520
+estando privilegiada ao largo do tempo,
+
+347
+00:12:23,520 --> 00:12:24,520
+algo que hagamos algo.
+
+348
+00:12:24,520 --> 00:12:26,520
+E este algo é a segunda lección,
+
+349
+00:12:26,520 --> 00:12:27,520
+e é que,
+
+350
+00:12:27,520 --> 00:12:29,520
+se queremos diversidade,
+
+351
+00:12:29,520 --> 00:12:31,520
+e parecerla, tenemos que hacer cosas,
+
+352
+00:12:31,520 --> 00:12:33,520
+tenemos que actuar
+
+353
+00:12:33,520 --> 00:12:35,520
+para invertirla desigualdad.
+
+354
+00:12:35,520 --> 00:12:37,520
+Non sucede de forma espontánea,
+
+355
+00:12:37,520 --> 00:12:39,520
+non va suceder solo.
+
+356
+00:12:39,520 --> 00:12:41,520
+Hay que hacer cosas.
+
+357
+00:12:41,520 --> 00:12:43,520
+Então,
+
+358
+00:12:43,520 --> 00:12:45,520
+é o outro de
+
+359
+00:12:45,520 --> 00:12:47,520
+as grandes lecciones
+
+360
+00:12:47,520 --> 00:12:49,520
+que me dio las gafas estas,
+
+361
+00:12:49,520 --> 00:12:51,520
+é ver outros privilegios que operan
+
+362
+00:12:51,520 --> 00:12:52,520
+em mí que eu poseo,
+
+363
+00:12:52,520 --> 00:12:54,520
+e de los que non era consciente,
+
+364
+00:12:54,520 --> 00:12:55,520
+e de los que poco a poco me hago consciente
+
+365
+00:12:55,520 --> 00:12:57,520
+graças a esta apertura mental.
+
+366
+00:12:57,520 --> 00:12:59,520
+Então, me ha parecido muy interesante traeros
+
+367
+00:12:59,520 --> 00:13:01,520
+unos poucos que
+
+368
+00:13:01,520 --> 00:13:03,520
+poden aplicar en una comunidade paetonista como esta.
+
+369
+00:13:03,520 --> 00:13:05,520
+O privilegio de classe
+
+370
+00:13:05,520 --> 00:13:07,520
+os vou hablar de cinco,
+
+371
+00:13:07,520 --> 00:13:09,520
+muy rápidamente.
+
+372
+00:13:09,520 --> 00:13:11,520
+O concepto de classe
+
+373
+00:13:11,520 --> 00:13:13,520
+que exista, o concepto de classe
+
+374
+00:13:13,520 --> 00:13:15,520
+significa que algo está bastante mal.
+
+375
+00:13:15,520 --> 00:13:16,520
+Concretamente, o privilegio de classe
+
+376
+00:13:16,520 --> 00:13:17,520
+é uno dos mais,
+
+377
+00:13:17,520 --> 00:13:19,520
+dos que mais perseveran,
+
+378
+00:13:19,520 --> 00:13:21,520
+perpetuan o status quo.
+
+379
+00:13:21,520 --> 00:13:23,520
+Normalmente,
+
+380
+00:13:23,520 --> 00:13:25,520
+reconocemos o nepotismo e o lechufismo
+
+381
+00:13:25,520 --> 00:13:27,520
+como as formas tóxicas.
+
+382
+00:13:27,520 --> 00:13:29,520
+Sin embargo, hay formas que son
+
+383
+00:13:29,520 --> 00:13:31,520
+recomendaciones de buena fe.
+
+384
+00:13:31,520 --> 00:13:33,520
+Eu conozco a alguien que é muy bueno.
+
+385
+00:13:33,520 --> 00:13:35,520
+Necesitamos a alguien, conoces a alguien.
+
+386
+00:13:35,520 --> 00:13:37,520
+Esas son recomendaciones de buena fe
+
+387
+00:13:37,520 --> 00:13:39,520
+e o único que hacen é dificultar
+
+388
+00:13:39,520 --> 00:13:41,520
+a diversidade porque al final conocemos
+
+389
+00:13:41,520 --> 00:13:43,520
+a los que han ido na universidade con nós,
+
+390
+00:13:43,520 --> 00:13:45,520
+a los que han ido a classe, a mis vecinos,
+
+391
+00:13:45,520 --> 00:13:47,520
+e normalmente somos similares.
+
+392
+00:13:47,520 --> 00:13:49,520
+Nos dos grupos realmente son similares.
+
+393
+00:13:49,520 --> 00:13:51,520
+Então, o privilegio de classe
+
+394
+00:13:51,520 --> 00:13:53,520
+é uno dos que dificulta a diversidade
+
+395
+00:13:53,520 --> 00:13:55,520
+e é o único que fecha a diversidade.
+
+396
+00:13:55,520 --> 00:13:57,520
+Em este caso,
+
+397
+00:13:57,520 --> 00:13:59,520
+a unha comunidade paitonista,
+
+398
+00:13:59,520 --> 00:14:01,520
+unha comunidade é diversa
+
+399
+00:14:01,520 --> 00:14:03,520
+na clase, se há integrantes
+
+400
+00:14:03,520 --> 00:14:05,520
+de diversos rangos económicos
+
+401
+00:14:05,520 --> 00:14:07,520
+ao lugar de ser unha rede de nonos amigos.
+
+402
+00:14:07,520 --> 00:14:09,520
+O que é que nos conhecemos
+
+403
+00:14:09,520 --> 00:14:11,520
+todos ao final na Madrid,
+
+404
+00:14:11,520 --> 00:14:13,520
+é que revela que pode que haya poca diversidade.
+
+405
+00:14:13,520 --> 00:14:15,520
+O segundo é o de origen.
+
+406
+00:14:15,520 --> 00:14:17,520
+Tengo vecinos
+
+407
+00:14:17,520 --> 00:14:19,520
+ecuatorianos,
+
+408
+00:14:19,520 --> 00:14:21,520
+un monte da comunidade de inmigrantes
+
+409
+00:14:21,520 --> 00:14:23,520
+marroquíes,
+
+410
+00:14:23,520 --> 00:14:25,520
+eu sou argentina,
+
+411
+00:14:25,520 --> 00:14:27,520
+tenho por suposto de Europa
+
+412
+00:14:27,520 --> 00:14:29,520
+aunque en menor medida
+
+413
+00:14:29,520 --> 00:14:31,520
+de todas partes en realidad, por suposto espanoles,
+
+414
+00:14:31,520 --> 00:14:33,520
+pero luego en
+
+415
+00:14:33,520 --> 00:14:35,520
+trabajos qualificados,
+
+416
+00:14:35,520 --> 00:14:37,520
+en empresas molonas,
+
+417
+00:14:37,520 --> 00:14:39,520
+en a universidade o en grandes
+
+418
+00:14:39,520 --> 00:14:41,520
+de puestos
+
+419
+00:14:41,520 --> 00:14:43,520
+me nos encuentro en mucha menor medida
+
+420
+00:14:43,520 --> 00:14:45,520
+e non é un tema de qualificación,
+
+421
+00:14:45,520 --> 00:14:47,520
+muchos emigran con 25 anos
+
+422
+00:14:47,520 --> 00:14:49,520
+con unas qualificaciones muy similares.
+
+423
+00:14:49,520 --> 00:14:51,520
+Que é o que passa aquí?
+
+424
+00:14:51,520 --> 00:14:53,520
+Aqui pasan dos cosas.
+
+425
+00:14:53,520 --> 00:14:55,520
+Por um lado,
+
+426
+00:14:55,520 --> 00:14:57,520
+o racismo abierto
+
+427
+00:14:57,520 --> 00:14:59,520
+que succede
+
+428
+00:14:59,520 --> 00:15:01,520
+em muchísimos ámbitos,
+
+429
+00:15:01,520 --> 00:15:03,520
+a veces somos conscientes, a veces no,
+
+430
+00:15:03,520 --> 00:15:05,520
+normalmente nos producem muchísimo rechazo
+
+431
+00:15:05,520 --> 00:15:07,520
+e
+
+432
+00:15:07,520 --> 00:15:09,520
+que é o cual está muy bien,
+
+433
+00:15:09,520 --> 00:15:11,520
+pero aún assim succede
+
+434
+00:15:11,520 --> 00:15:13,520
+e também
+
+435
+00:15:13,520 --> 00:15:15,520
+de forma mochosa, a veces sencillamente
+
+436
+00:15:15,520 --> 00:15:17,520
+não conocemos a esa gente,
+
+437
+00:15:17,520 --> 00:15:19,520
+porque ao final mis companheiros de classe
+
+438
+00:15:19,520 --> 00:15:21,520
+eran todos de mi barrio de Pamplona
+
+439
+00:15:21,520 --> 00:15:23,520
+e
+
+440
+00:15:23,520 --> 00:15:25,520
+entonces havia menos emigración,
+
+441
+00:15:25,520 --> 00:15:27,520
+pero ya va habiendo máis
+
+442
+00:15:27,520 --> 00:15:29,520
+e digamos que no terminan de acceder
+
+443
+00:15:29,520 --> 00:15:31,520
+á las minhas oportunidades que pudo tener yo,
+
+444
+00:15:31,520 --> 00:15:33,520
+que en este caso
+
+445
+00:15:33,520 --> 00:15:35,520
+eu cuento como española totalmente porque
+
+446
+00:15:35,520 --> 00:15:37,520
+ni tengo acento,
+
+447
+00:15:37,520 --> 00:15:39,520
+eu cuento como española que sea argentina.
+
+448
+00:15:39,520 --> 00:15:41,520
+Então, en este sentido
+
+449
+00:15:41,520 --> 00:15:43,520
+unha comunidade é diversa en términos de origen
+
+450
+00:15:43,520 --> 00:15:45,520
+se ha integrantes de todas partes, evidentemente
+
+451
+00:15:45,520 --> 00:15:47,520
+não podeis esperar una distribución
+
+452
+00:15:47,520 --> 00:15:49,520
+da população exacta e perfeita e precisa,
+
+453
+00:15:49,520 --> 00:15:51,520
+pero te podeis imaginar que
+
+454
+00:15:51,520 --> 00:15:53,520
+quando ves muy poquita gente
+
+455
+00:15:53,520 --> 00:15:55,520
+de outras partes
+
+456
+00:15:55,520 --> 00:15:57,520
+algo está fallando,
+
+457
+00:15:57,520 --> 00:15:59,520
+é bueno saberlo, darse cuenta
+
+458
+00:15:59,520 --> 00:16:01,520
+e pensar en si podemos hacer algo para invertir
+
+459
+00:16:01,520 --> 00:16:03,520
+e salirse igualdad.
+
+460
+00:16:03,520 --> 00:16:05,520
+O orientación sexual, este claro,
+
+461
+00:16:05,520 --> 00:16:07,520
+é difícil de saber se unha comunidade é diversa o non,
+
+462
+00:16:07,520 --> 00:16:09,520
+porque ao final, o hacemos un cuestionario
+
+463
+00:16:09,520 --> 00:16:11,520
+má intrusivo sobre un tema que é bastante personal
+
+464
+00:16:11,520 --> 00:16:13,520
+como o orientación sexual o non lo sabemos.
+
+465
+00:16:13,520 --> 00:16:15,520
+E, ao embargo, podemos tener unha pista.
+
+466
+00:16:15,520 --> 00:16:17,520
+Ao final, se unha comunidade é un grupo de amigotes
+
+467
+00:16:17,520 --> 00:16:19,520
+parece que não vai dar
+
+468
+00:16:19,520 --> 00:16:21,520
+bem-venida
+
+469
+00:16:21,520 --> 00:16:23,520
+a outro tipo de
+
+470
+00:16:23,520 --> 00:16:25,520
+igual de personas,
+
+471
+00:16:25,520 --> 00:16:27,520
+ou de, en este caso, de orientaciones.
+
+472
+00:16:27,520 --> 00:16:29,520
+O que sí podemos hacer
+
+473
+00:16:29,520 --> 00:16:31,520
+como comunidade
+
+474
+00:16:31,520 --> 00:16:33,520
+é abiertamente rechazar
+
+475
+00:16:33,520 --> 00:16:35,520
+qualquer fobia
+
+476
+00:16:35,520 --> 00:16:37,520
+a los colectivos LGTB
+
+477
+00:16:37,520 --> 00:16:39,520
+e assegurar nos de que sean un entorno seguro
+
+478
+00:16:39,520 --> 00:16:41,520
+e não solamente
+
+479
+00:16:41,520 --> 00:16:43,520
+não importa quem te gusta o que não te gusta
+
+480
+00:16:43,520 --> 00:16:45,520
+é a ideia de
+
+481
+00:16:45,520 --> 00:16:47,520
+que podeis dizer o que queras
+
+482
+00:16:47,520 --> 00:16:49,520
+não é só hablar
+
+483
+00:16:49,520 --> 00:16:51,520
+de heterosexuales
+
+484
+00:16:51,520 --> 00:16:53,520
+se pode hablar mientras te calles o outro
+
+485
+00:16:53,520 --> 00:16:55,520
+aqui celebramos todo
+
+486
+00:16:55,520 --> 00:16:57,520
+e temos que ser conscientes de que
+
+487
+00:16:57,520 --> 00:16:59,520
+se não escuchamos os mesmos comentários
+
+488
+00:16:59,520 --> 00:17:01,520
+ou similares, probablemente é que este actua
+
+489
+00:17:01,520 --> 00:17:03,520
+o privilegio contra a diversidade
+
+490
+00:17:03,520 --> 00:17:05,520
+e podemos hacer tamén cosas.
+
+491
+00:17:05,520 --> 00:17:07,520
+O privilegio do normativismo funcional
+
+492
+00:17:07,520 --> 00:17:09,520
+é de traca, basicamente.
+
+493
+00:17:09,520 --> 00:17:11,520
+O normativismo funcional
+
+494
+00:17:11,520 --> 00:17:13,520
+para quem não o sepa
+
+495
+00:17:13,520 --> 00:17:15,520
+basicamente é
+
+496
+00:17:15,520 --> 00:17:17,520
+a capacidade
+
+497
+00:17:17,520 --> 00:17:19,520
+ou é o tener todas
+
+498
+00:17:19,520 --> 00:17:21,520
+suas capacidades motoras
+
+499
+00:17:21,520 --> 00:17:23,520
+e como trices
+
+500
+00:17:23,520 --> 00:17:25,520
+é decir, dos piernas, unas zancadas
+
+501
+00:17:25,520 --> 00:17:27,520
+normas como os esperáis, os manos prensibles
+
+502
+00:17:27,520 --> 00:17:29,520
+o dedo pulgaro ponible
+
+503
+00:17:29,520 --> 00:17:31,520
+o móvil está hecho para mi
+
+504
+00:17:31,520 --> 00:17:33,520
+não tenho ninguna fase
+
+505
+00:17:33,520 --> 00:17:35,520
+ni tampoco ninguna fase mecánica, na garganta
+
+506
+00:17:35,520 --> 00:17:37,520
+basicamente o mundo está diseñado para mi
+
+507
+00:17:37,520 --> 00:17:39,520
+isto tiene muchísimo que ver
+
+508
+00:17:39,520 --> 00:17:41,520
+com a accesibilidade
+
+509
+00:17:41,520 --> 00:17:43,520
+nós hacemos aplicaciones
+
+510
+00:17:43,520 --> 00:17:45,520
+en general, o que desarrollamos
+
+511
+00:17:45,520 --> 00:17:47,520
+hacemos aplicaciones
+
+512
+00:17:47,520 --> 00:17:49,520
+concretamente en CaliDOS hacemos aplicaciones web
+
+513
+00:17:49,520 --> 00:17:51,520
+que está aí na punta da tecnologia
+
+514
+00:17:51,520 --> 00:17:53,520
+e después de tantos
+
+515
+00:17:53,520 --> 00:17:55,520
+anos o mundo tecnológico
+
+516
+00:17:55,520 --> 00:17:57,520
+sigue sin hacer aplicaciones accesibles
+
+517
+00:17:57,520 --> 00:17:59,520
+las diseñamos no accesibles
+
+518
+00:17:59,520 --> 00:18:01,520
+e por supuesto las implementamos
+
+519
+00:18:01,520 --> 00:18:03,520
+no accesibles, agora bien
+
+520
+00:18:03,520 --> 00:18:05,520
+não nos cuesta meter un hack
+
+521
+00:18:05,520 --> 00:18:07,520
+de 800 líneas para que a nossa página web
+
+522
+00:18:07,520 --> 00:18:09,520
+sea compatible con internet explorer 6
+
+523
+00:18:09,520 --> 00:18:11,520
+em 2015
+
+524
+00:18:11,520 --> 00:18:13,520
+vamos
+
+525
+00:18:13,520 --> 00:18:15,520
+não é un problema de tecnologia porque podríamos
+
+526
+00:18:15,520 --> 00:18:17,520
+podriamos hacer as aplicaciones accesibles
+
+527
+00:18:17,520 --> 00:18:19,520
+mas allá de eso
+
+528
+00:18:19,520 --> 00:18:21,520
+aqui o privilegio actúa doblemente
+
+529
+00:18:21,520 --> 00:18:23,520
+porque não nos damos cuenta
+
+530
+00:18:23,520 --> 00:18:25,520
+los que somos normativos funcionales
+
+531
+00:18:25,520 --> 00:18:27,520
+de la cantidad de tecnologia que usamos
+
+532
+00:18:27,520 --> 00:18:29,520
+as gafas son tecnología
+
+533
+00:18:29,520 --> 00:18:31,520
+os escalones están diseñados para
+
+534
+00:18:31,520 --> 00:18:33,520
+nuestra zancada
+
+535
+00:18:33,520 --> 00:18:35,520
+os móviles están diseñados para
+
+536
+00:18:35,520 --> 00:18:37,520
+nossas
+
+537
+00:18:37,520 --> 00:18:39,520
+os 6 pulgadas ya menos
+
+538
+00:18:39,520 --> 00:18:41,520
+para que nós podamos interactuar
+
+539
+00:18:41,520 --> 00:18:43,520
+com ellos
+
+540
+00:18:43,520 --> 00:18:45,520
+temos un montón de tecnologia de apoio
+
+541
+00:18:45,520 --> 00:18:47,520
+pero quando de repente alguém necesita
+
+542
+00:18:47,520 --> 00:18:49,520
+unha tecnologia distinta nos aliena
+
+543
+00:18:49,520 --> 00:18:51,520
+nos parece unha outra edad absoluta
+
+544
+00:18:51,520 --> 00:18:53,520
+e está solamente tecnologia
+
+545
+00:18:53,520 --> 00:18:55,520
+e ademá se pode hacer perfectamente
+
+546
+00:18:55,520 --> 00:18:57,520
+en este caso por ejemplo
+
+547
+00:18:57,520 --> 00:18:59,520
+não solamente como comunidade
+
+548
+00:18:59,520 --> 00:19:01,520
+podemos hacer
+
+549
+00:19:01,520 --> 00:19:03,520
+o que é o que é o que é a diversidade
+
+550
+00:19:03,520 --> 00:19:05,520
+perdón, a accesibilidad
+
+551
+00:19:05,520 --> 00:19:07,520
+às vezes não podemos hacer nada por
+
+552
+00:19:07,520 --> 00:19:09,520
+convertir un escalón inaccesible
+
+553
+00:19:09,520 --> 00:19:11,520
+mas se podemos ser creativos
+
+554
+00:19:11,520 --> 00:19:13,520
+ao hora de preparar-nos
+
+555
+00:19:13,520 --> 00:19:15,520
+para que venga a gente con diversidade funcional
+
+556
+00:19:15,520 --> 00:19:17,520
+então, en términos de comunidade
+
+557
+00:19:17,520 --> 00:19:19,520
+unha comunidade é diversa
+
+558
+00:19:19,520 --> 00:19:21,520
+se está atenta a as necesidades
+
+559
+00:19:21,520 --> 00:19:23,520
+e é creativa buscando soluciónes
+
+560
+00:19:23,520 --> 00:19:25,520
+porque às vezes nós não teremos
+
+561
+00:19:25,520 --> 00:19:27,520
+ao nosso alcance modificar todo o mundo
+
+562
+00:19:27,520 --> 00:19:29,520
+o último que eu quero hablar
+
+563
+00:19:29,520 --> 00:19:31,520
+é o distrito de género
+
+564
+00:19:31,520 --> 00:19:33,520
+não me voy a estender demasiado
+
+565
+00:19:33,520 --> 00:19:35,520
+quero hablaros
+
+566
+00:19:35,520 --> 00:19:37,520
+máso o menos de 2 puntos de vista
+
+567
+00:19:37,520 --> 00:19:39,520
+o primeiro é a distribución da população
+
+568
+00:19:39,520 --> 00:19:41,520
+sabemos que estão os chicos
+
+569
+00:19:41,520 --> 00:19:43,520
+e sabemos que estão as chicas
+
+570
+00:19:43,520 --> 00:19:45,520
+e ya
+
+571
+00:19:45,520 --> 00:19:47,520
+spoiler, a realidade non é binaria
+
+572
+00:19:47,520 --> 00:19:49,520
+a realidade é
+
+573
+00:19:49,520 --> 00:19:51,520
+é muito rica, a realidade tem tantos matices
+
+574
+00:19:51,520 --> 00:19:53,520
+é un continuo
+
+575
+00:19:53,520 --> 00:19:55,520
+de géneros en este caso
+
+576
+00:19:55,520 --> 00:19:57,520
+e
+
+577
+00:19:57,520 --> 00:19:59,520
+o que temos que fazer
+
+578
+00:19:59,520 --> 00:20:01,520
+é dar nos cuenta de que
+
+579
+00:20:01,520 --> 00:20:03,520
+a realidade non é binaria
+
+580
+00:20:03,520 --> 00:20:05,520
+re-adaptar-nos e viver con ela
+
+581
+00:20:05,520 --> 00:20:07,520
+félices
+
+582
+00:20:07,520 --> 00:20:09,520
+o que não podemos fazer
+
+583
+00:20:09,520 --> 00:20:11,520
+é estrujar a realidade para que se adapte a nossos descritores
+
+584
+00:20:11,520 --> 00:20:13,520
+nossos descritores são gratis
+
+585
+00:20:13,520 --> 00:20:15,520
+chicos, chicas, chiquis
+
+586
+00:20:15,520 --> 00:20:17,520
+o que sea, são gratis
+
+587
+00:20:17,520 --> 00:20:19,520
+e sencillamente
+
+588
+00:20:19,520 --> 00:20:21,520
+temos que adaptar nos dos descritores
+
+589
+00:20:21,520 --> 00:20:23,520
+e dará bienvenida a realidade tal e como o temos
+
+590
+00:20:23,520 --> 00:20:25,520
+sobretudo porque muchas veces
+
+591
+00:20:25,520 --> 00:20:27,520
+é como, hai, chiques
+
+592
+00:20:27,520 --> 00:20:29,520
+é un
+
+593
+00:20:29,520 --> 00:20:31,520
+ortográficamente e gramaticalmente
+
+594
+00:20:31,520 --> 00:20:33,520
+é un problema, ola que hace
+
+595
+00:20:33,520 --> 00:20:35,520
+é de novel de literatura
+
+596
+00:20:35,520 --> 00:20:37,520
+hombre, no
+
+597
+00:20:37,520 --> 00:20:39,520
+fútbol, jogging
+
+598
+00:20:39,520 --> 00:20:41,520
+running
+
+599
+00:20:41,520 --> 00:20:43,520
+então
+
+600
+00:20:43,520 --> 00:20:45,520
+ai, perdón
+
+601
+00:20:45,520 --> 00:20:47,520
+o segundo ponto de vista
+
+602
+00:20:47,520 --> 00:20:49,520
+o que eu queria comentar
+
+603
+00:20:49,520 --> 00:20:51,520
+o primeiro é a distribución e o segundo é que
+
+604
+00:20:51,520 --> 00:20:53,520
+incluso pensando na distribución tradicional binaria
+
+605
+00:20:53,520 --> 00:20:55,520
+é de presentatividade
+
+606
+00:20:55,520 --> 00:20:57,520
+as mulheres somos
+
+607
+00:20:57,520 --> 00:20:59,520
+a mitad da população
+
+608
+00:20:59,520 --> 00:21:01,520
+un pouco máis e não estamos representadas
+
+609
+00:21:01,520 --> 00:21:03,520
+ní muchísimo menos
+
+610
+00:21:03,520 --> 00:21:05,520
+na mesma medida
+
+611
+00:21:05,520 --> 00:21:07,520
+então quando tú estás en una comunidad
+
+612
+00:21:07,520 --> 00:21:09,520
+onde não dáis a bienvenida
+
+613
+00:21:09,520 --> 00:21:11,520
+a cualquier género
+
+614
+00:21:11,520 --> 00:21:13,520
+e a que cada uno se ha llamado como le apetezca
+
+615
+00:21:13,520 --> 00:21:15,520
+ou de repente ves que hay
+
+616
+00:21:15,520 --> 00:21:17,520
+poucas mujeres
+
+617
+00:21:17,520 --> 00:21:19,520
+probablemente esté operando algún privilegio
+
+618
+00:21:19,520 --> 00:21:21,520
+e probablemente podamos hacer algo para mejorar
+
+619
+00:21:21,520 --> 00:21:23,520
+o que se passa é que o género
+
+620
+00:21:23,520 --> 00:21:25,520
+é de uma comunidade diversa se se fa eco
+
+621
+00:21:25,520 --> 00:21:27,520
+da diversidade género e además
+
+622
+00:21:27,520 --> 00:21:29,520
+se celebra, o mesmo que
+
+623
+00:21:29,520 --> 00:21:31,520
+com a orientación sexual, não é
+
+624
+00:21:31,520 --> 00:21:33,520
+não, não, não, se a mim me da igual tú género, não
+
+625
+00:21:33,520 --> 00:21:35,520
+celebramos que cada uno sea o que quiera ser
+
+626
+00:21:35,520 --> 00:21:37,520
+e se pode hablar de ello
+
+627
+00:21:37,520 --> 00:21:39,520
+se habis llegado hasta aqui, seguísse aquí conmigo
+
+628
+00:21:39,520 --> 00:21:41,520
+sí, máso a menos, bien, muchas gracias
+
+629
+00:21:41,520 --> 00:21:43,520
+hasta aqui é o que se chama
+
+630
+00:21:43,520 --> 00:21:45,520
+a introducción a diversidade, é un pouco máis que
+
+631
+00:21:45,520 --> 00:21:47,520
+uma introducción tradicional
+
+632
+00:21:47,520 --> 00:21:49,520
+mas basicamente é o one-on-one
+
+633
+00:21:49,520 --> 00:21:51,520
+que se estábis aqui na 9 de la mañana estábais
+
+634
+00:21:51,520 --> 00:21:53,520
+máis motivados e que queríais algo máis
+
+635
+00:21:53,520 --> 00:21:55,520
+então se me ocurri que poderia ser útil
+
+636
+00:21:55,520 --> 00:21:57,520
+uma guia
+
+637
+00:21:57,520 --> 00:21:59,520
+uma guia para
+
+638
+00:21:59,520 --> 00:22:01,520
+uma guia sobre diversidade
+
+639
+00:22:01,520 --> 00:22:03,520
+nas comunidades
+
+640
+00:22:03,520 --> 00:22:05,520
+então me acordé de os pep
+
+641
+00:22:05,520 --> 00:22:07,520
+os paizón en hasmen proposals
+
+642
+00:22:07,520 --> 00:22:09,520
+me acordé concretamente do pep 8
+
+643
+00:22:09,520 --> 00:22:11,520
+do soneto anterior que não pudo ser
+
+644
+00:22:11,520 --> 00:22:13,520
+e
+
+645
+00:22:13,520 --> 00:22:15,520
+e entonces pensei en hacer
+
+646
+00:22:15,520 --> 00:22:17,520
+um pep sobre a comunidade
+
+647
+00:22:17,520 --> 00:22:19,520
+e me vino tamina la mente
+
+648
+00:22:19,520 --> 00:22:21,520
+apuntad que esta tamina má clase
+
+649
+00:22:21,520 --> 00:22:23,520
+alexamen perdón
+
+650
+00:22:23,520 --> 00:22:25,520
+a constitución de 1812
+
+651
+00:22:25,520 --> 00:22:27,520
+a primeira vez que en España
+
+652
+00:22:27,520 --> 00:22:29,520
+se ponen por escrito
+
+653
+00:22:29,520 --> 00:22:31,520
+os privilegios
+
+654
+00:22:31,520 --> 00:22:33,520
+os derechos barra privilegios
+
+655
+00:22:33,520 --> 00:22:35,520
+en este caso de un montón de burgueses
+
+656
+00:22:35,520 --> 00:22:37,520
+intentando dar carpetazo ao antigo régimen
+
+657
+00:22:37,520 --> 00:22:39,520
+vamos a obviar ese pequeno tema
+
+658
+00:22:39,520 --> 00:22:41,520
+porque realmente a la mujer se la menciona
+
+659
+00:22:41,520 --> 00:22:43,520
+una vez e por supuesto no es para concederle
+
+660
+00:22:43,520 --> 00:22:45,520
+ningún derecho
+
+661
+00:22:45,520 --> 00:22:47,520
+o caso é que
+
+662
+00:22:47,520 --> 00:22:49,520
+com esta constitución de 1812
+
+663
+00:22:49,520 --> 00:22:51,520
+como inspiración por un lado
+
+664
+00:22:51,520 --> 00:22:53,520
+e com o pep 8 por outro lado
+
+665
+00:22:53,520 --> 00:22:55,520
+se me ocurri o traer
+
+666
+00:22:55,520 --> 00:22:57,520
+uma guia sobre a comunidade de python
+
+667
+00:22:57,520 --> 00:22:59,520
+em términos de diversidade
+
+668
+00:22:59,520 --> 00:23:01,520
+o código bonito de python
+
+669
+00:23:01,520 --> 00:23:03,520
+sino a comunidade bonita en términos paitónicos
+
+670
+00:23:03,520 --> 00:23:05,520
+así que la redacte
+
+671
+00:23:05,520 --> 00:23:07,520
+e os presento
+
+672
+00:23:07,520 --> 00:23:09,520
+a pepa
+
+673
+00:23:09,520 --> 00:23:11,520
+ése é o
+
+674
+00:23:11,520 --> 00:23:13,520
+o código único
+
+675
+00:23:13,520 --> 00:23:15,520
+e o código único deste pep é obviamente
+
+676
+00:23:15,520 --> 00:23:17,520
+pepa como cariñosamente se le conoció
+
+677
+00:23:17,520 --> 00:23:19,520
+a la constitución de 1812
+
+678
+00:23:19,520 --> 00:23:21,520
+a pepa
+
+679
+00:23:21,520 --> 00:23:23,520
+entãox
+
+680
+00:23:23,520 --> 00:23:25,520
+para os que estéis entrando en titha
+
+681
+00:23:25,520 --> 00:23:27,520
+tranquilos, todavía não o le subido
+
+682
+00:23:27,520 --> 00:23:29,520
+o subiré justo despues
+
+683
+00:23:29,520 --> 00:23:31,520
+neste documento redacto
+
+684
+00:23:31,520 --> 00:23:33,520
+quando lo leiais veréis que se parece
+
+685
+00:23:33,520 --> 00:23:35,520
+muito ao pep 8
+
+686
+00:23:35,520 --> 00:23:37,520
+é só por a casualidade e ao copipaste
+
+687
+00:23:37,520 --> 00:23:39,520
+e aqui redactado
+
+688
+00:23:39,520 --> 00:23:41,520
+digamos
+
+689
+00:23:41,520 --> 00:23:43,520
+as notas, as directrices que podemos seguir
+
+690
+00:23:43,520 --> 00:23:45,520
+para inspirarnos en hacer
+
+691
+00:23:45,520 --> 00:23:47,520
+una comunidade diversa
+
+692
+00:23:47,520 --> 00:23:49,520
+é por supuesto opensource e está abierto
+
+693
+00:23:49,520 --> 00:23:51,520
+a que qualquer persona pueda contribuir
+
+694
+00:23:51,520 --> 00:23:53,520
+e estar encantada de recibir contribuciones
+
+695
+00:23:53,520 --> 00:23:55,520
+pero que pasa
+
+696
+00:23:55,520 --> 00:23:57,520
+agora o que tendríamos que hacer
+
+697
+00:23:57,520 --> 00:23:59,520
+é leer este documento
+
+698
+00:23:59,520 --> 00:24:01,520
+que no os creais que é corto, me lo ocurra un montón
+
+699
+00:24:01,520 --> 00:24:03,520
+e analizarnos, dicir venga
+
+700
+00:24:03,520 --> 00:24:05,520
+vamos empezar, punto 1, nono sé qué
+
+701
+00:24:05,520 --> 00:24:07,520
+punto 2 tal e qual
+
+702
+00:24:07,520 --> 00:24:09,520
+pero eu supuse, eu dije
+
+703
+00:24:09,520 --> 00:24:11,520
+que eu sou xa, eu sou xa
+
+704
+00:24:11,520 --> 00:24:13,520
+e eu me guía
+
+705
+00:24:13,520 --> 00:24:15,520
+as escrituras de la pereza e a automatización
+
+706
+00:24:15,520 --> 00:24:17,520
+e entãox
+
+707
+00:24:17,520 --> 00:24:19,520
+o que eu farei quando me pedais que deixes esta keynote
+
+708
+00:24:19,520 --> 00:24:21,520
+cinquenta vezes
+
+709
+00:24:21,520 --> 00:24:23,520
+que é o que máso menos me imagino
+
+710
+00:24:23,520 --> 00:24:25,520
+xa, eu disse que pasa
+
+711
+00:24:25,520 --> 00:24:27,520
+é o momento que igual que pep 8
+
+712
+00:24:27,520 --> 00:24:29,520
+teme scripts que implementan
+
+713
+00:24:29,520 --> 00:24:31,520
+a especificación de pep
+
+714
+00:24:31,520 --> 00:24:33,520
+a pep a
+
+715
+00:24:33,520 --> 00:24:35,520
+teme um script que implementa
+
+716
+00:24:35,520 --> 00:24:37,520
+a especificación
+
+717
+00:24:37,520 --> 00:24:39,520
+e eu se presento em primicia para as cinquenta
+
+718
+00:24:39,520 --> 00:24:41,520
+primeira keynote
+
+719
+00:24:41,520 --> 00:24:43,520
+a pep a punto p
+
+720
+00:24:43,520 --> 00:24:45,520
+que eu subirei
+
+721
+00:24:45,520 --> 00:24:47,520
+e que implementa
+
+722
+00:24:47,520 --> 00:24:49,520
+o pep 8
+
+723
+00:24:49,520 --> 00:24:51,520
+entãox o que podemos hacer
+
+724
+00:24:51,520 --> 00:24:53,520
+e de hecho vamos hacer
+
+725
+00:24:53,520 --> 00:24:55,520
+é pasar a pep a
+
+726
+00:24:55,520 --> 00:24:57,520
+a ideia é un script
+
+727
+00:24:57,520 --> 00:24:59,520
+que eu faço algumas perguntas
+
+728
+00:24:59,520 --> 00:25:01,520
+isto é tan menos desarrollado
+
+729
+00:25:01,520 --> 00:25:03,520
+pero vamos hacer a prueba, eu faço algumas perguntas
+
+730
+00:25:03,520 --> 00:25:05,520
+para responder sobre o entorno de
+
+731
+00:25:05,520 --> 00:25:07,520
+e ver se somos paitónicos o non
+
+732
+00:25:07,520 --> 00:25:09,520
+e en que podriamos melhorar
+
+733
+00:25:09,520 --> 00:25:11,520
+entãox vamos ver
+
+734
+00:25:11,520 --> 00:25:13,520
+life coding
+
+735
+00:25:21,520 --> 00:25:23,520
+graças
+
+736
+00:25:23,520 --> 00:25:25,520
+para que os hagais na idea
+
+737
+00:25:25,520 --> 00:25:27,520
+aqui está a pep a
+
+738
+00:25:27,520 --> 00:25:29,520
+o reatme é a especificación
+
+739
+00:25:29,520 --> 00:25:31,520
+e o script que implementa a pep a e que logo subire
+
+740
+00:25:31,520 --> 00:25:33,520
+así que bueno
+
+741
+00:25:33,520 --> 00:25:35,520
+para que veais
+
+742
+00:25:35,520 --> 00:25:37,520
+coitigo python
+
+743
+00:25:39,520 --> 00:25:41,520
+vai estar todo libre
+
+744
+00:25:41,520 --> 00:25:43,520
+veamos
+
+745
+00:25:43,520 --> 00:25:45,520
+se le mais o menos
+
+746
+00:25:45,520 --> 00:25:47,520
+a ver
+
+747
+00:25:47,520 --> 00:25:49,520
+se le
+
+748
+00:25:49,520 --> 00:25:51,520
+bueno os lo voy leyendo eu
+
+749
+00:25:51,520 --> 00:25:53,520
+quantas mujeres
+
+750
+00:25:53,520 --> 00:25:55,520
+a ideia é vamos a responder
+
+751
+00:25:55,520 --> 00:25:57,520
+ou vou a responder mais o menos sobre mi
+
+752
+00:25:57,520 --> 00:25:59,520
+e sobre mis entornos paitónicos
+
+753
+00:25:59,520 --> 00:26:01,520
+trabajo, amigos que tenho tantos amigos
+
+754
+00:26:01,520 --> 00:26:03,520
+paitónico, comunidades
+
+755
+00:26:03,520 --> 00:26:05,520
+quantas mujeres é en esta reunión
+
+756
+00:26:05,520 --> 00:26:07,520
+manos por favor
+
+757
+00:26:07,520 --> 00:26:09,520
+está entorno ao 10
+
+758
+00:26:09,520 --> 00:26:11,520
+entorno ao 30 como lo veis
+
+759
+00:26:11,520 --> 00:26:13,520
+10, verdad
+
+760
+00:26:13,520 --> 00:26:15,520
+por 10%
+
+761
+00:26:15,520 --> 00:26:17,520
+por exemplo, tus jefes son hombres
+
+762
+00:26:17,520 --> 00:26:19,520
+mis 3 jefes son hombres
+
+763
+00:26:19,520 --> 00:26:21,520
+sí, está en inglés
+
+764
+00:26:21,520 --> 00:26:23,520
+porque eu espero que isto lo vaya apetar
+
+765
+00:26:23,520 --> 00:26:25,520
+en muchos aspectos, entxo já le puse en inglés
+
+766
+00:26:25,520 --> 00:26:27,520
+son blancos
+
+767
+00:26:27,520 --> 00:26:29,520
+os 3 son blancos
+
+768
+00:26:29,520 --> 00:26:31,520
+son cisgénero
+
+769
+00:26:31,520 --> 00:26:33,520
+os 3 son cisgénero
+
+770
+00:26:33,520 --> 00:26:35,520
+alguna vez has oído
+
+771
+00:26:35,520 --> 00:26:37,520
+a un chiste digamos
+
+772
+00:26:37,520 --> 00:26:39,520
+esto é un mariconada
+
+773
+00:26:39,520 --> 00:26:41,520
+que somos maricones o que?
+
+774
+00:26:41,520 --> 00:26:43,520
+hemos oído disso, alguna vez
+
+775
+00:26:43,520 --> 00:26:45,520
+tal vez
+
+776
+00:26:45,520 --> 00:26:47,520
+puede que eso non seja a forma de dar la bienvenida
+
+777
+00:26:47,520 --> 00:26:49,520
+a cualquier persona
+
+778
+00:26:49,520 --> 00:26:51,520
+tu grupo está hecho
+
+779
+00:26:51,520 --> 00:26:53,520
+sobre gente máso menos entre 20 e 40
+
+780
+00:26:53,520 --> 00:26:55,520
+anos
+
+781
+00:26:55,520 --> 00:26:57,520
+os meus fundamentalmente sí
+
+782
+00:26:57,520 --> 00:26:59,520
+como lo veis vosotros
+
+783
+00:26:59,520 --> 00:27:01,520
+sí, verdad, máso menos
+
+784
+00:27:01,520 --> 00:27:03,520
+isto tiene que ver con o que se en inglés
+
+785
+00:27:03,520 --> 00:27:05,520
+se llama el ageism
+
+786
+00:27:05,520 --> 00:27:07,520
+que básicamente é que se non tienes cierta edad
+
+787
+00:27:07,520 --> 00:27:09,520
+estás fuera, vale
+
+788
+00:27:09,520 --> 00:27:11,520
+así que tamén
+
+789
+00:27:11,520 --> 00:27:13,520
+hay gente que este cuidando
+
+790
+00:27:13,520 --> 00:27:15,520
+o que pueda mantener su vida
+
+791
+00:27:15,520 --> 00:27:17,520
+na comunidade e cuidar a los niños
+
+792
+00:27:17,520 --> 00:27:19,520
+por exemplo porque pueda traerlos
+
+793
+00:27:19,520 --> 00:27:21,520
+o por ejemplo porque haya alternativas
+
+794
+00:27:21,520 --> 00:27:23,520
+o por ejemplo porque sean mujeres e son sus maridoros
+
+795
+00:27:23,520 --> 00:27:25,520
+que se están quedando con os niños
+
+796
+00:27:25,520 --> 00:27:27,520
+o suena
+
+797
+00:27:27,520 --> 00:27:29,520
+a mí eu tengo alguns ejemplos en los que sí
+
+798
+00:27:29,520 --> 00:27:31,520
+así que eu aquí pondría que sí porque tenho unos cuantos buenos ejemplos
+
+799
+00:27:33,520 --> 00:27:35,520
+gente con diversidad funcional
+
+800
+00:27:35,520 --> 00:27:37,520
+eu en la sala personalmente conozco
+
+801
+00:27:37,520 --> 00:27:39,520
+solamente una persona
+
+802
+00:27:39,520 --> 00:27:41,520
+e normalmente pero sobre haber pocas, verdad
+
+803
+00:27:41,520 --> 00:27:43,520
+eu tenho unos cuantos ejemplos
+
+804
+00:27:43,520 --> 00:27:45,520
+eu creo que quira algún sí porque estamos atentos
+
+805
+00:27:45,520 --> 00:27:47,520
+como lo veis
+
+806
+00:27:47,520 --> 00:27:49,520
+sí, vamos a ver
+
+807
+00:27:51,520 --> 00:27:53,520
+concretamente en paicones
+
+808
+00:27:53,520 --> 00:27:55,520
+se a organización se ha ocupado de temas de accesibilidad
+
+809
+00:27:57,520 --> 00:27:59,520
+habéis enviado correos, habéis preguntado
+
+810
+00:27:59,520 --> 00:28:01,520
+se havia necesidad de accesibilidad
+
+811
+00:28:01,520 --> 00:28:03,520
+pregunto directamente aos organizadores
+
+812
+00:28:03,520 --> 00:28:05,520
+no? vale, vale
+
+813
+00:28:05,520 --> 00:28:07,520
+es un no
+
+814
+00:28:07,520 --> 00:28:09,520
+para pensar
+
+815
+00:28:09,520 --> 00:28:11,520
+isto non é un látigo en serio
+
+816
+00:28:11,520 --> 00:28:13,520
+de ningué manera porque eu mismo vou a fallar en un montón
+
+817
+00:28:13,520 --> 00:28:15,520
+no é un látigo, a ideia é
+
+818
+00:28:15,520 --> 00:28:17,520
+podemos hacer algo al respecto
+
+819
+00:28:17,520 --> 00:28:19,520
+onde podemos, a idea é
+
+820
+00:28:19,520 --> 00:28:21,520
+vamos a medir las cosas porque xin no tamén é muy difícil darse cuenta
+
+821
+00:28:21,520 --> 00:28:23,520
+veis gente de todas partes
+
+822
+00:28:23,520 --> 00:28:25,520
+eu ayer en yangogels me encantou
+
+823
+00:28:25,520 --> 00:28:27,520
+porque había unas cuantas chicas de sitios distintos
+
+824
+00:28:27,520 --> 00:28:29,520
+así que estive muy feliz
+
+825
+00:28:29,520 --> 00:28:31,520
+normalmente a distribución como lo veis
+
+826
+00:28:31,520 --> 00:28:33,520
+em paito madrid por exemplo
+
+827
+00:28:33,520 --> 00:28:35,520
+sí que suelen venir algunos companeros que por el acento
+
+828
+00:28:35,520 --> 00:28:37,520
+parece que son de outro sitio
+
+829
+00:28:37,520 --> 00:28:39,520
+así que podríamos mejorar normalmente
+
+830
+00:28:39,520 --> 00:28:41,520
+pero eu creo que algunas
+
+831
+00:28:41,520 --> 00:28:43,520
+sí que hay
+
+832
+00:28:45,520 --> 00:28:47,520
+não sabia muy bem como expresarlo
+
+833
+00:28:47,520 --> 00:28:49,520
+não sabia se poner en Sudáfrica
+
+834
+00:28:49,520 --> 00:28:51,520
+e se asam nos negros americanos
+
+835
+00:28:51,520 --> 00:28:53,520
+en espanha não é muito
+
+836
+00:28:53,520 --> 00:28:55,520
+mas sim que os é
+
+837
+00:28:55,520 --> 00:28:57,520
+e não te encontras
+
+838
+00:28:57,520 --> 00:28:59,520
+eu na comunidade de Madrid, há um monte
+
+839
+00:28:59,520 --> 00:29:01,520
+vamos, nós nos encontro ni em paito madrid
+
+840
+00:29:01,520 --> 00:29:03,520
+ni por supós está trabajando de informáticos
+
+841
+00:29:03,520 --> 00:29:05,520
+ni prácticamente nas universidades
+
+842
+00:29:05,520 --> 00:29:07,520
+muito pouco
+
+843
+00:29:07,520 --> 00:29:09,520
+da América Latina
+
+844
+00:29:09,520 --> 00:29:11,520
+temo mais tradición de migración a España
+
+845
+00:29:11,520 --> 00:29:13,520
+así que probablemente sim
+
+846
+00:29:13,520 --> 00:29:15,520
+eu mismo xin xin xin
+
+847
+00:29:15,520 --> 00:29:17,520
+igual que a minha madre
+
+848
+00:29:17,520 --> 00:29:19,520
+temos cobanos cubanos
+
+849
+00:29:19,520 --> 00:29:21,520
+em verdade
+
+850
+00:29:21,520 --> 00:29:23,520
+é assim
+
+851
+00:29:23,520 --> 00:29:25,520
+havia ayudas organización
+
+852
+00:29:25,520 --> 00:29:27,520
+había ayudas para gente con menos recursos
+
+853
+00:29:27,520 --> 00:29:29,520
+sí que las sabia
+
+854
+00:29:29,520 --> 00:29:31,520
+muito bem
+
+855
+00:29:31,520 --> 00:29:33,520
+em tu oficina
+
+856
+00:29:33,520 --> 00:29:35,520
+por exemplo na minha
+
+857
+00:29:35,520 --> 00:29:37,520
+a gente entro por recomendación
+
+858
+00:29:37,520 --> 00:29:39,520
+de esta hablávantes de no se necesariamente nepotismo
+
+859
+00:29:39,520 --> 00:29:41,520
+sino tamo na recomendaciones
+
+860
+00:29:41,520 --> 00:29:43,520
+na minha mo cojon
+
+861
+00:29:43,520 --> 00:29:45,520
+é xa si
+
+862
+00:29:45,520 --> 00:29:47,520
+a gente sin título universitario
+
+863
+00:29:47,520 --> 00:29:49,520
+tiene que demostrar máis
+
+864
+00:29:49,520 --> 00:29:51,520
+perdón, sí, a gente sin título tiene que demostrar máis
+
+865
+00:29:51,520 --> 00:29:53,520
+que a gente con título
+
+866
+00:29:53,520 --> 00:29:55,520
+em mis entornos no, hai alguno senos que sí
+
+867
+00:29:55,520 --> 00:29:57,520
+pero por exemplo en mis entornos no, vosotros como no veis
+
+868
+00:29:57,520 --> 00:29:59,520
+eu concretamente no tengo título
+
+869
+00:29:59,520 --> 00:30:01,520
+de ingeniería informática
+
+870
+00:30:01,520 --> 00:30:03,520
+e aqui estoy, oi, oi
+
+871
+00:30:03,520 --> 00:30:05,520
+vamos a dizer que
+
+872
+00:30:05,520 --> 00:30:07,520
+não, não, não, sorrisor
+
+873
+00:30:07,520 --> 00:30:09,520
+vale
+
+874
+00:30:09,520 --> 00:30:11,520
+os developers
+
+875
+00:30:11,520 --> 00:30:13,520
+os desarrolladores están máis
+
+876
+00:30:13,520 --> 00:30:15,520
+os desespetados que os facilitadores
+
+877
+00:30:15,520 --> 00:30:17,520
+eu diria que dando eu
+
+878
+00:30:17,520 --> 00:30:19,520
+e aqui não, que eu soy
+
+879
+00:30:19,520 --> 00:30:21,520
+eu sou desarrolladora, pero sou mucho máis facilitadora
+
+880
+00:30:21,520 --> 00:30:23,520
+e estou em mucho máis na comunidade
+
+881
+00:30:23,520 --> 00:30:25,520
+vamos a decir que no
+
+882
+00:30:25,520 --> 00:30:27,520
+que não está máis respetados que eu
+
+883
+00:30:27,520 --> 00:30:29,520
+me sinto máis querida e máis arropada
+
+884
+00:30:29,520 --> 00:30:31,520
+e máis querida
+
+885
+00:30:31,520 --> 00:30:33,520
+alguna vez os paráis a hablar de la salud de tu comunidade
+
+886
+00:30:33,520 --> 00:30:35,520
+eu he echa do cuentas
+
+887
+00:30:35,520 --> 00:30:37,520
+esta é prácticamente a primeira vez en la que
+
+888
+00:30:37,520 --> 00:30:39,520
+hai unha cosa tan masiva e tan interesante
+
+889
+00:30:39,520 --> 00:30:41,520
+sobre
+
+890
+00:30:41,520 --> 00:30:43,520
+a comunidade, así que eu diria que por agora, non mucho
+
+891
+00:30:45,520 --> 00:30:47,520
+te sientes inspirada
+
+892
+00:30:47,520 --> 00:30:49,520
+por os hobbies de outros colegas
+
+893
+00:30:49,520 --> 00:30:51,520
+isso significa, hablas con la gente
+
+894
+00:30:51,520 --> 00:30:53,520
+máis aya de
+
+895
+00:30:53,520 --> 00:30:55,520
+como haces para levantar cinco
+
+896
+00:30:55,520 --> 00:30:57,520
+hilos
+
+897
+00:30:57,520 --> 00:30:59,520
+eu muchas veces
+
+898
+00:30:59,520 --> 00:31:01,520
+e descubro un monte de hobbies
+
+899
+00:31:01,520 --> 00:31:03,520
+ou un monte de
+
+900
+00:31:03,520 --> 00:31:05,520
+actividades que hacen fuera de python
+
+901
+00:31:05,520 --> 00:31:07,520
+e que eu que luego vou a las p-week
+
+902
+00:31:07,520 --> 00:31:09,520
+de calados que é unas actividades que hacemos
+
+903
+00:31:09,520 --> 00:31:11,520
+e digo, ah, pues tengo esta ideia, tengo esta outra ideia
+
+904
+00:31:11,520 --> 00:31:13,520
+así que hablamos de máis cozas
+
+905
+00:31:13,520 --> 00:31:15,520
+sempre habláis
+
+906
+00:31:15,520 --> 00:31:17,520
+dos mesmos temas
+
+907
+00:31:17,520 --> 00:31:19,520
+no, bueno, em python marí evidentemente
+
+908
+00:31:19,520 --> 00:31:21,520
+se habla de python
+
+909
+00:31:21,520 --> 00:31:23,520
+em python, se habla de python
+
+910
+00:31:23,520 --> 00:31:25,520
+faltaria máis
+
+911
+00:31:25,520 --> 00:31:27,520
+eu creo que tamén solemos
+
+912
+00:31:27,520 --> 00:31:29,520
+a hablar de outros temas, nas cervezas
+
+913
+00:31:29,520 --> 00:31:31,520
+buscamos momentos a nos que hacemos outro tipo
+
+914
+00:31:31,520 --> 00:31:33,520
+de relación personal
+
+915
+00:31:33,520 --> 00:31:35,520
+está aberta a diferentes tecnologías
+
+916
+00:31:35,520 --> 00:31:37,520
+PHP
+
+917
+00:31:37,520 --> 00:31:39,520
+ou na verdade
+
+918
+00:31:39,520 --> 00:31:41,520
+alguna vez
+
+919
+00:31:41,520 --> 00:31:43,520
+alguém dice, eu
+
+920
+00:31:43,520 --> 00:31:45,520
+ivo con os meus conocimientos
+
+921
+00:31:45,520 --> 00:31:47,520
+de WordPress e manda o Cera
+
+922
+00:31:47,520 --> 00:31:49,520
+isso os tiene que sonar
+
+923
+00:31:49,520 --> 00:31:51,520
+así que en principio
+
+924
+00:31:51,520 --> 00:31:53,520
+nos cuesta un poquito
+
+925
+00:31:53,520 --> 00:31:55,520
+e eu creo que podriamos melhorar
+
+926
+00:31:55,520 --> 00:31:57,520
+por menos eu poderia melhorar porque
+
+927
+00:31:57,520 --> 00:31:59,520
+isto eu lo he vivido
+
+928
+00:31:59,520 --> 00:32:01,520
+un 2.5, por cierto, isto é ciencia
+
+929
+00:32:01,520 --> 00:32:03,520
+isto non es unha cuenta
+
+930
+00:32:03,520 --> 00:32:05,520
+da vieja
+
+931
+00:32:05,520 --> 00:32:07,520
+isto da unha apuntación de 0 a 10
+
+932
+00:32:07,520 --> 00:32:09,520
+e as preguntas
+
+933
+00:32:09,520 --> 00:32:11,520
+an salindos con 5, nos preocupéis
+
+934
+00:32:11,520 --> 00:32:13,520
+realmente non está científico, e hice as preguntas
+
+935
+00:32:13,520 --> 00:32:15,520
+que máis o menos se me fíban ocurriendo
+
+936
+00:32:15,520 --> 00:32:17,520
+e las puntué máis o menos como podais
+
+937
+00:32:17,520 --> 00:32:19,520
+o código va estar disponible e por supuesto
+
+938
+00:32:19,520 --> 00:32:21,520
+podéis enmenderlo e contribuirlo
+
+939
+00:32:21,520 --> 00:32:23,520
+a cuestión es
+
+940
+00:32:23,520 --> 00:32:25,520
+podemos mejorarla
+
+941
+00:32:25,520 --> 00:32:27,520
+pistas, sí, podemos mejorarla
+
+942
+00:32:27,520 --> 00:32:29,520
+da igual a nota que saliera, aunque saliera un 8
+
+943
+00:32:29,520 --> 00:32:31,520
+podemos mejorarla, pues sí, podemos mejorarla
+
+944
+00:32:31,520 --> 00:32:33,520
+tenemos unas cuantas pistas, graças a este PEP
+
+945
+00:32:33,520 --> 00:32:35,520
+increíble que os presento
+
+946
+00:32:35,520 --> 00:32:37,520
+tenemos unas cuantas pistas sobre como mejorarla
+
+947
+00:32:37,520 --> 00:32:39,520
+entãoces
+
+948
+00:32:39,520 --> 00:32:41,520
+agora, tu tu tu, volvemos
+
+949
+00:32:41,520 --> 00:32:43,520
+ostres
+
+950
+00:32:43,520 --> 00:32:45,520
+pera, pera
+
+951
+00:32:47,520 --> 00:32:49,520
+entãoces volvemos
+
+952
+00:32:49,520 --> 00:32:51,520
+a
+
+953
+00:32:51,520 --> 00:32:53,520
+volvemos a acharla
+
+954
+00:32:53,520 --> 00:32:55,520
+e hemos visto
+
+955
+00:32:55,520 --> 00:32:57,520
+o que podemos pensar en términos de, osa como
+
+956
+00:32:57,520 --> 00:32:59,520
+una forma de vernos en términos de comunidade
+
+957
+00:32:59,520 --> 00:33:01,520
+ya os digo que estaría encantada
+
+958
+00:33:01,520 --> 00:33:03,520
+de revisar as preguntas
+
+959
+00:33:03,520 --> 00:33:05,520
+e de mejorarlas e de todo
+
+960
+00:33:05,520 --> 00:33:07,520
+e
+
+961
+00:33:07,520 --> 00:33:09,520
+entãoces porque me parece
+
+962
+00:33:09,520 --> 00:33:11,520
+interesante
+
+963
+00:33:11,520 --> 00:33:13,520
+interesantísimo traer esta charla
+
+964
+00:33:13,520 --> 00:33:15,520
+aquí a paicones porque decidí hablar
+
+965
+00:33:15,520 --> 00:33:17,520
+de esto en paicones
+
+966
+00:33:17,520 --> 00:33:19,520
+e es por o seguinte, print hello world
+
+967
+00:33:19,520 --> 00:33:21,520
+esto ya es programar
+
+968
+00:33:21,520 --> 00:33:23,520
+cualquier persona que no tenga
+
+969
+00:33:23,520 --> 00:33:25,520
+idea de programación
+
+970
+00:33:25,520 --> 00:33:27,520
+puede escribir esto, lo puede entender bastante bien
+
+971
+00:33:27,520 --> 00:33:29,520
+e está ejecutando un programa informático
+
+972
+00:33:29,520 --> 00:33:31,520
+esta es la barrera de entrada
+
+973
+00:33:31,520 --> 00:33:33,520
+que ofrece python
+
+974
+00:33:33,520 --> 00:33:35,520
+para empezar a programar
+
+975
+00:33:35,520 --> 00:33:37,520
+a partir desta línea puedes
+
+976
+00:33:37,520 --> 00:33:39,520
+aprender e mejorar sin límite
+
+977
+00:33:39,520 --> 00:33:41,520
+eu empece sin tener ni idea
+
+978
+00:33:41,520 --> 00:33:43,520
+años despues
+
+979
+00:33:43,520 --> 00:33:45,520
+soy desarrolladora de Django e felicísima
+
+980
+00:33:45,520 --> 00:33:47,520
+e empece sin saber prácticamente nada
+
+981
+00:33:47,520 --> 00:33:49,520
+entãoces realmente
+
+982
+00:33:49,520 --> 00:33:51,520
+cuide en este caso
+
+983
+00:33:51,520 --> 00:33:53,520
+es que python mola un montón
+
+984
+00:33:53,520 --> 00:33:55,520
+python es fantástico
+
+985
+00:33:55,520 --> 00:33:57,520
+mañana
+
+986
+00:33:57,520 --> 00:33:59,520
+victor
+
+987
+00:33:59,520 --> 00:34:01,520
+cerrará explicándonos
+
+988
+00:34:01,520 --> 00:34:03,520
+porque python mola mucho
+
+989
+00:34:03,520 --> 00:34:05,520
+así que no os o perdáis
+
+990
+00:34:05,520 --> 00:34:07,520
+pero é verdade
+
+991
+00:34:07,520 --> 00:34:09,520
+a cuestión e que python mola un montón
+
+992
+00:34:09,520 --> 00:34:11,520
+e para o que por exemplo
+
+993
+00:34:11,520 --> 00:34:13,520
+python te permite
+
+994
+00:34:13,520 --> 00:34:15,520
+empezar sin tener ni idea
+
+995
+00:34:15,520 --> 00:34:17,520
+empezar de cero e en un día
+
+996
+00:34:17,520 --> 00:34:19,520
+poner un blog en producción
+
+997
+00:34:19,520 --> 00:34:21,520
+e a Django Girls, estais? Verdad
+
+998
+00:34:21,520 --> 00:34:23,520
+ayer pusimos un blog en producción
+
+999
+00:34:23,520 --> 00:34:25,520
+e a Django Girls no havíam tocado unha consola
+
+1000
+00:34:25,520 --> 00:34:27,520
+un terminal en súbida
+
+1001
+00:34:27,520 --> 00:34:29,520
+é un motor de cambio
+
+1002
+00:34:29,520 --> 00:34:31,520
+máy máy poderoso
+
+1003
+00:34:31,520 --> 00:34:33,520
+e é fantástico que lo sepamos
+
+1004
+00:34:33,520 --> 00:34:35,520
+entãoces
+
+1005
+00:34:35,520 --> 00:34:37,520
+llegados a este punto tenemos una comunidade
+
+1006
+00:34:37,520 --> 00:34:39,520
+un pouco imperfecta
+
+1007
+00:34:39,520 --> 00:34:41,520
+maravilleza menta imperfecta se queréis
+
+1008
+00:34:41,520 --> 00:34:43,520
+porque realmente yo en esta comunidad
+
+1009
+00:34:43,520 --> 00:34:45,520
+e conseguido un montón de cosas e xeo e félix
+
+1010
+00:34:45,520 --> 00:34:47,520
+tenemos un ecosistema que é
+
+1011
+00:34:47,520 --> 00:34:49,520
+la leche
+
+1012
+00:34:49,520 --> 00:34:51,520
+e entónces
+
+1013
+00:34:51,520 --> 00:34:53,520
+e é de conseguir que
+
+1014
+00:34:53,520 --> 00:34:55,520
+nossa comunidade pythonista
+
+1015
+00:34:55,520 --> 00:34:57,520
+moletanto como python
+
+1016
+00:34:57,520 --> 00:34:59,520
+passemos nos próprios
+
+1017
+00:34:59,520 --> 00:35:01,520
+pep de diversidade
+
+1018
+00:35:03,520 --> 00:35:05,520
+e entónces como última reflexión
+
+1019
+00:35:05,520 --> 00:35:07,520
+me gustaría
+
+1020
+00:35:07,520 --> 00:35:09,520
+aceros conscientes
+
+1021
+00:35:09,520 --> 00:35:11,520
+vamos sobre alguns privilegios
+
+1022
+00:35:11,520 --> 00:35:13,520
+por exemplo esta paicones
+
+1023
+00:35:13,520 --> 00:35:15,520
+esta evento en el que estamos aquí
+
+1024
+00:35:15,520 --> 00:35:17,520
+é un auténtico privilegio
+
+1025
+00:35:17,520 --> 00:35:19,520
+a organización, organizadores
+
+1026
+00:35:19,520 --> 00:35:21,520
+e tantas gracias, han currado muchísimo
+
+1027
+00:35:21,520 --> 00:35:23,520
+para que tengamos
+
+1028
+00:35:23,520 --> 00:35:25,520
+unas charras interesantes, uns horarios chachis
+
+1029
+00:35:25,520 --> 00:35:27,520
+unas salas fantásticas
+
+1030
+00:35:27,520 --> 00:35:29,520
+para que tengamos internet
+
+1031
+00:35:29,520 --> 00:35:31,520
+para que tengamos unos wall compact
+
+1032
+00:35:31,520 --> 00:35:33,520
+e tenemos uns patrocinadores aí
+
+1033
+00:35:33,520 --> 00:35:35,520
+que nos han echado un cable
+
+1034
+00:35:35,520 --> 00:35:37,520
+é un privilegio, entónces
+
+1035
+00:35:37,520 --> 00:35:39,520
+que podemos hacer con é? aprovechemos
+
+1036
+00:35:39,520 --> 00:35:41,520
+paremos a la gente nos pasillos
+
+1037
+00:35:41,520 --> 00:35:43,520
+preguntemos, hablemos, aprendamos
+
+1038
+00:35:43,520 --> 00:35:45,520
+conozcamos gente
+
+1039
+00:35:45,520 --> 00:35:47,520
+vallamos a los patrocinadores, demos desas gracias
+
+1040
+00:35:47,520 --> 00:35:49,520
+e
+
+1041
+00:35:49,520 --> 00:35:51,520
+para poder conseguir
+
+1042
+00:35:51,520 --> 00:35:53,520
+que esta
+
+1043
+00:35:53,520 --> 00:35:55,520
+comunidade moletanto
+
+1044
+00:35:55,520 --> 00:35:57,520
+há un montón de formas además nas que podemos a hacer
+
+1045
+00:35:57,520 --> 00:35:59,520
+se sou es comunidade
+
+1046
+00:35:59,520 --> 00:36:01,520
+podeis dar charlas
+
+1047
+00:36:01,520 --> 00:36:03,520
+podeis
+
+1048
+00:36:03,520 --> 00:36:05,520
+liberar código que ayude a outros
+
+1049
+00:36:05,520 --> 00:36:07,520
+podeis dar workshops, podeis escribir posts
+
+1050
+00:36:07,520 --> 00:36:09,520
+e podeis estar atentos
+
+1051
+00:36:09,520 --> 00:36:11,520
+a las necesidades de diversidade
+
+1052
+00:36:11,520 --> 00:36:13,520
+se sou es empresa
+
+1053
+00:36:13,520 --> 00:36:15,520
+podeis preguntaros
+
+1054
+00:36:15,520 --> 00:36:17,520
+por que se trocinio aonde va
+
+1055
+00:36:17,520 --> 00:36:19,520
+a quín va favorecer
+
+1056
+00:36:19,520 --> 00:36:21,520
+como va a ayudar a diversidade
+
+1057
+00:36:21,520 --> 00:36:23,520
+por supuesto, se sou is empresa
+
+1058
+00:36:23,520 --> 00:36:25,520
+podeis ser conscientes de todos estos sesgos
+
+1059
+00:36:25,520 --> 00:36:27,520
+e decir como hago para evitarlos
+
+1060
+00:36:27,520 --> 00:36:29,520
+hay mucha literatura sobre por exemplo
+
+1061
+00:36:29,520 --> 00:36:31,520
+como hacer una oferta de trabajo
+
+1062
+00:36:31,520 --> 00:36:33,520
+para conseguir
+
+1063
+00:36:33,520 --> 00:36:35,520
+que haya máis candidatas en este caso
+
+1064
+00:36:35,520 --> 00:36:37,520
+que sobre ser o grupo que se queda afuera
+
+1065
+00:36:37,520 --> 00:36:39,520
+há un montón de maneras
+
+1066
+00:36:39,520 --> 00:36:41,520
+para conseguir
+
+1067
+00:36:41,520 --> 00:36:43,520
+que Python
+
+1068
+00:36:43,520 --> 00:36:45,520
+se os invito a que vallais a e fuera
+
+1069
+00:36:45,520 --> 00:36:47,520
+disfrutes del privilegio
+
+1070
+00:36:47,520 --> 00:36:49,520
+e despues volvamos al mundo un pouco máis fuertes
+
+1071
+00:36:49,520 --> 00:36:51,520
+e lo hagamos un pouco
+
+1072
+00:36:51,520 --> 00:36:53,520
+mejor e un poco máis paitónico
+
+1073
+00:36:53,520 --> 00:37:13,520
+muchas gracias
+

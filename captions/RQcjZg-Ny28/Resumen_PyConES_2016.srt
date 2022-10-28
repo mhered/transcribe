@@ -1,0 +1,296 @@
+1
+00:00:00,000 --> 00:00:22,680
+Desde hace mucho tiempo tenemos ya la idea de tratar de que la comunidad Python sea un
+
+2
+00:00:22,680 --> 00:00:26,840
+poco lo que el propio lenguaje trata de ser en sí mismo, que es una herramienta muy
+
+3
+00:00:26,840 --> 00:00:30,680
+excesible, muy fácil de usar, que intenta integrar a mucha gente de muchas procedencias
+
+4
+00:00:30,680 --> 00:00:35,640
+diferentes y yo creo que lo bonito de Python es que al final eso se refleja en la comunidad y
+
+5
+00:00:35,640 --> 00:00:38,720
+nosotros estamos tratando de hacer eso en España ¿no?
+
+6
+00:00:38,720 --> 00:00:43,080
+Hoy en general un punto también para intercambiar experiencia y aprender más
+
+7
+00:00:43,080 --> 00:00:48,120
+y más rápidamente de muchas disciplinas que como hemos intentado no sé la cantidad de
+
+8
+00:00:48,120 --> 00:00:52,400
+actividades pero creo que son más de 60 casi cerca de 70 conferencias y conferencias antes.
+
+9
+00:00:52,400 --> 00:00:57,360
+Uno de los eventos que he visto más grandes a nivel de comunidad, si me lo digo hay mucho
+
+10
+00:00:57,360 --> 00:01:01,040
+a otro y la verdad el que haya sido en almería para mí ha sido un orgullo,
+
+11
+00:01:01,040 --> 00:01:05,960
+el interés me da noticia de que se celebrará aquí donde yo me crie incluso es la universidad
+
+12
+00:01:05,960 --> 00:01:06,600
+donde yo estudié.
+
+13
+00:01:06,600 --> 00:01:12,240
+Compartir el conocimiento alrededor de este lenguaje de programación es un espacio abierto
+
+14
+00:01:12,240 --> 00:01:13,920
+a participación de todas las áreas.
+
+15
+00:01:13,920 --> 00:01:20,280
+Es un evento que va mucho más allá de Python que es el lenguaje como excusa para reunirnos a todos
+
+16
+00:01:20,280 --> 00:01:22,560
+sin una manera de conocernos.
+
+17
+00:01:29,720 --> 00:01:33,840
+Yo creo que es una gran oportunidad para la gente que está empezando incluso para las empresas
+
+18
+00:01:33,840 --> 00:01:38,200
+de adquirir nuevos conocimientos y nuevos desarrolladores para los equipos.
+
+19
+00:01:38,200 --> 00:01:41,880
+Donde nos reunimos en la comunidad es una excusa para reunirnos en la comunidad todos los años
+
+20
+00:01:41,880 --> 00:01:47,720
+y contarnos un poco las cosas que hemos estado haciendo, lo que hemos ido aprendiendo y vernos un poco las caras.
+
+21
+00:01:47,720 --> 00:01:54,280
+Creo que es uno de los eventos a nivel mundial incluso más importantes que podemos tener.
+
+22
+00:01:54,280 --> 00:01:58,560
+He venido para enterarme un poco cuáles son las últimas novedades que hace la gente con el lenguaje de programación,
+
+23
+00:01:58,560 --> 00:02:03,640
+qué herramientas existen, diferentes plugins o cosas de código como mejorar,
+
+24
+00:02:03,640 --> 00:02:05,560
+como aprender algunas cosas que no sabía.
+
+25
+00:02:05,560 --> 00:02:12,560
+Es un evento anual en el que se reúnen gente del sector y contar un poco los proyectos en los que están trabajando.
+
+26
+00:02:12,560 --> 00:02:17,280
+Desde que empezamos hasta que estamos ahora en este momento la comunidad ha crecido bastante,
+
+27
+00:02:17,280 --> 00:02:19,920
+la PaiCon es cada vez más grande, cada vez es más complicada,
+
+28
+00:02:19,920 --> 00:02:23,720
+integramos eventos al peri, cada vez más interesantes, más variados
+
+29
+00:02:23,720 --> 00:02:28,960
+y aún así yo creo que todavía hay muchísimo trabajo por hacer y es un proyecto muy muy interesante
+
+30
+00:02:28,960 --> 00:02:36,040
+que no se replica tan fácilmente para otras tecnologías o para otras áreas del conocimiento
+
+31
+00:02:36,040 --> 00:02:40,680
+y que de alguna forma atrapa a la gente a la que viene de forma que cada vez somos más
+
+32
+00:02:40,680 --> 00:02:42,720
+los que estamos enganchados en este mundo.
+
+33
+00:02:42,720 --> 00:02:51,400
+Porque a fin de cuentas esto es un trabajo comunitario y tanto el desarrollo como lo que son los intereses,
+
+34
+00:02:51,400 --> 00:02:59,800
+las ponencias, lo que cada grupo o cada pequeña comunidad está llevando adelante
+
+35
+00:02:59,800 --> 00:03:06,960
+pues es un buen escapar de todo lo que está ocurriendo en el mundo Python en España.
+
+36
+00:03:06,960 --> 00:03:11,960
+Si te fijas dónde usan este lenguaje te das cuenta que lo usan en la NASA, en el FEM
+
+37
+00:03:11,960 --> 00:03:16,040
+para enseñar, para hacer computación científica, para hacer prototipado
+
+38
+00:03:16,040 --> 00:03:20,480
+y poder tener la oportunidad también de yo como ponente
+
+39
+00:03:20,480 --> 00:03:25,400
+a enseñar a otras personas y que esas personas tengan esa iniciativa del día de mañana
+
+40
+00:03:25,400 --> 00:03:27,120
+también enseñar a otros.
+
+41
+00:03:27,120 --> 00:03:32,720
+No esperaba que viniera tanta gente y ya venía, o sea que habla muy bien del Congreso
+
+42
+00:03:32,720 --> 00:03:36,720
+y el trabajo que acepta gente Madrid, Valencia, el otro sitio.
+
+43
+00:03:36,720 --> 00:03:42,880
+A mí me encanta la mezcla de la programación y el arte, como me gusta también la mezcla de la programación
+
+44
+00:03:42,880 --> 00:03:47,880
+y de la ingeniería onáutica que es lo mío, la programación y el periodismo, la programación
+
+45
+00:03:47,880 --> 00:03:53,640
+y no sé, cualquier otra cosa, la edición literaria por decir algo
+
+46
+00:03:53,640 --> 00:04:00,640
+porque es un campo en expansión que todavía estamos por descubrir todas las cosas que pueden resultar de todo esto
+
+47
+00:04:00,640 --> 00:04:08,800
+y porque la programación no deja de ser un lenguaje, una especie de versión muy simplificada del inglés
+
+48
+00:04:08,800 --> 00:04:11,240
+pero que pone en contacto a muchísima gente.
+
+49
+00:04:11,240 --> 00:04:16,200
+Nuestro trabajo personal es muy solitario y estos cementos nos permiten conectarnos con otra gente
+
+50
+00:04:16,200 --> 00:04:20,560
+compartir conocimientos y también aprender de los demás.
+
+51
+00:04:20,560 --> 00:04:24,400
+Es como la fiesta de la comunidad española, no de la gente que le gusta este lenguaje
+
+52
+00:04:24,400 --> 00:04:26,000
+y que hace cositas con esto y tal.
+
+53
+00:04:26,000 --> 00:04:32,440
+Además de que es un ámbito muy social y amigable, que como mujer te sentís súper cómoda
+
+54
+00:04:32,440 --> 00:04:37,480
+y todos quieren compartir un poco de lo que saben hacer en su día a día.
+
+55
+00:04:37,480 --> 00:04:41,480
+Y espero aprender, ponerme al día de cosas que se están haciendo.
+
+56
+00:04:41,480 --> 00:04:46,280
+Sí que espero que salga bien, que la gente se anime seguidiendo de eventos que conocíamos en elmería
+
+57
+00:04:46,280 --> 00:04:53,280
+que se nos dé a los que hemos organizado estos hacles y se nos dé un poco a conocer también que se empatizamos aquí.
+
+58
+00:04:53,280 --> 00:04:58,640
+Este año espero conocer a más gente de la comunidad,
+
+59
+00:04:58,640 --> 00:05:05,280
+poder formar parte de diversos proyectos y aportar valor contando el proyecto que estoy desarrollando.
+
+60
+00:05:05,280 --> 00:05:10,840
+En España hay mucho potencial y no solo en España sino que estamos abiertos al idioma español
+
+61
+00:05:10,840 --> 00:05:16,800
+que lo hablan centenares de millones de personas y que de hecho nosotros somos una esquinita
+
+62
+00:05:16,800 --> 00:05:22,200
+en el mundo que habla español, con lo cual al final todo depende también del punto de vista.
+
+63
+00:05:22,200 --> 00:05:26,080
+Es un lujo poder estar aquí porque eventos como estos nos hacen en España
+
+64
+00:05:26,080 --> 00:05:32,080
+y saber que parte del dinero que nosotros damos va a ir después a una causa social
+
+65
+00:05:32,080 --> 00:05:38,680
+o va a ayudar a otra gente a aprender, a venir incluso porque se financia, pues es muy gratificante.
+
+66
+00:05:38,680 --> 00:05:44,840
+La verdad que la satisfacción es brutal, espero que la gente entienda que es almería,
+
+67
+00:05:44,840 --> 00:05:49,640
+que vea que aquí, pese a lo que ha comunicado que estamos, hay cosas de muchísimo valor.
+
+68
+00:05:49,640 --> 00:05:54,880
+Que los componentes se vayan con la satisfacción de haber visitado almería y de haber venido a este congreso
+
+69
+00:05:54,880 --> 00:05:59,200
+y que sientan que realmente les ha compensado a menudo la pena, se han divertido.
+
+70
+00:05:59,200 --> 00:06:04,720
+Yo creo que mezclar la programación con otras cosas, mezclar gente de diferentes orígenes,
+
+71
+00:06:04,720 --> 00:06:11,320
+de diferentes disciplinas es una experiencia maravillosa que nos puede servir para poner en perspectiva
+
+72
+00:06:11,320 --> 00:06:14,760
+muchas cosas que pensamos que están mal y que a lo mejor no están tan mal
+
+73
+00:06:14,760 --> 00:06:19,560
+y a mí me gustaría animar a todo el mundo a que se vuelque con esta comunidad
+
+74
+00:06:19,560 --> 00:06:45,040
+o con lo que considere que es importante que pueda producir un cambio.
+

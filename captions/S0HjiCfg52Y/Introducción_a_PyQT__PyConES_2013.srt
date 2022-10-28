@@ -1,0 +1,1724 @@
+1
+00:00:00,000 --> 00:00:15,040
+Vamos a empezar con la introducción de PQT. No sé si alguno lo conoce, pero básicamente
+
+2
+00:00:15,040 --> 00:00:20,200
+empecemos primero hablando de que es QT. QT es un framework multiplataforma, lo pueden
+
+3
+00:00:20,200 --> 00:00:27,760
+usar en todos esos sistemas operativos, Linux, Macs, Windows, unos Unix, cosas así. Actualmente
+
+4
+00:00:27,760 --> 00:00:32,520
+también se puede usar hasta en Android y en BlackBerry y se está haciendo mucho trabajo
+
+5
+00:00:32,520 --> 00:00:36,760
+para llevarlo a todo tipo de plataforma, ya sea de escritorio o móviles, ¿no es cierto?
+
+6
+00:00:39,200 --> 00:00:45,520
+Es muy muy usado, actualmente yo diría que cuando alguna empresa o algún proyecto trata
+
+7
+00:00:45,520 --> 00:00:53,500
+de encarar algo por el lado de la gráfica, usualmente creo que yo diría que recurre
+
+8
+00:00:53,500 --> 00:00:58,480
+muchísimo más a QT que cualquier otro en ese momento y tiene licencias libres y comerciales,
+
+9
+00:00:58,480 --> 00:01:02,280
+así que ustedes los pueden usar para hacer sus aplicaciones libres o si lo quisieron usar
+
+10
+00:01:02,280 --> 00:01:07,880
+en una empresa también pueden comprar la licencia comercial, ¿no es cierto? Esta es gratis,
+
+11
+00:01:07,880 --> 00:01:15,760
+esta se compra que actualmente la que tiene el dominio de eso es Digia, pasó por varias
+
+12
+00:01:15,760 --> 00:01:20,840
+empresas, entre lo tenía Nokia ahora se encargó de Digia de la parte comercial, pero bueno,
+
+13
+00:01:20,840 --> 00:01:26,360
+están las dos opciones y es un framework que como le decía es muy, tiene desde, está
+
+14
+00:01:26,360 --> 00:01:32,840
+del año 91 creo que se creó y es muy usado por muchísimas empresas, muchísimos proyectos,
+
+15
+00:01:32,840 --> 00:01:36,440
+así que bueno, saben que tiene un uso difundido, que cuando necesiten ayuda van a encontrar
+
+16
+00:01:36,440 --> 00:01:39,880
+un montón de forres, un montón de cosas en internet y que está bien testiado con
+
+17
+00:01:39,880 --> 00:01:44,120
+toda esta gran cantidad de usuarios y años que lleva afuera.
+
+18
+00:01:44,120 --> 00:01:49,880
+¿Qué es PQT entonces? ¿Qué es de lo que vamos a estar hablando? QT con los que le
+
+19
+00:01:49,880 --> 00:01:53,320
+estaba mencionando recién, está hecho en realidad para que ustedes lo usen desde C++,
+
+20
+00:01:53,320 --> 00:01:58,840
+¿no es cierto? PQT lo que hace es crear un binding de esa librería para que ustedes
+
+21
+00:01:58,840 --> 00:02:04,760
+puedan usarlo desde Python sin tener que hacer ninguna cosa rara. Tiene una completa cobertura
+
+22
+00:02:04,760 --> 00:02:11,680
+de la API, dentro de la siguiente firmila vamos a ver qué cosas tiene QT, PQT, pero
+
+23
+00:02:11,680 --> 00:02:15,920
+ustedes pueden llegar a usar QT también desde otros lenguajes como Ruby, como Java,
+
+24
+00:02:15,920 --> 00:02:19,920
+yo me he encontrado que en esos lenguajes por ahí no tenés una cobertura bastante
+
+25
+00:02:19,920 --> 00:02:23,600
+corta de las cosas que realmente soporta QT. En cambio en Python tenés una cobertura
+
+26
+00:02:23,600 --> 00:02:28,440
+completa, todo lo que sepas hacer en QT lo vas a poder hacer en PQT también. Y también
+
+27
+00:02:28,440 --> 00:02:35,760
+tiene una doble licencia, PQT no es de las mismas gente que está mantiendo QT, sino
+
+28
+00:02:35,760 --> 00:02:41,320
+que PQT es de Riverbank y tiene la licencia GPL que es libre, después tiene una licencia
+
+29
+00:02:41,320 --> 00:02:46,600
+LGPL que es comercial por la que hay que pagar y había otra alternativa que esta sí
+
+30
+00:02:46,600 --> 00:02:50,000
+la había empezado Nokia en su momento, pero no sé qué tal mantenía esta hora, que es
+
+31
+00:02:50,000 --> 00:02:55,680
+Psy, que básicamente es lo mismo que PQT, lo único que cambia es el import pero las
+
+32
+00:02:55,680 --> 00:03:00,760
+clases se llaman igual, se usa de la misma forma, con la alternativa de que la licencia
+
+33
+00:03:00,760 --> 00:03:08,680
+comercial de este es gratis digamos, pero no es tan bueno como PQT en realidad. Y después
+
+34
+00:03:08,680 --> 00:03:13,520
+bueno al igual que QT tiene una comunidad muy muy grande de usuarios y desarrolladores,
+
+35
+00:03:13,520 --> 00:03:19,720
+QT no sé si lo mencioné pero es libre, no es cierto, hace un tiempo el desarrollo principal
+
+36
+00:03:19,720 --> 00:03:24,000
+estaba en la empresa como estaba en Nokia, después se liberó completamente el código
+
+37
+00:03:24,000 --> 00:03:29,200
+CISO GPL y ahora está en Hitorium, repositorio y tiene una comunidad gigante atrás que están
+
+38
+00:03:29,200 --> 00:03:35,160
+haciendo proyectos de investigación para agregar nuevas cosas y cosas de todo tipo. Y con PQT
+
+39
+00:03:35,160 --> 00:03:41,720
+es una base sólida para otros proyectos de tipo gráficos o de ciencia también como dice
+
+40
+00:03:41,720 --> 00:03:46,680
+abajo, PQWT, PQD son cosas que en realidad están basados en los mismos proyectos que
+
+41
+00:03:46,680 --> 00:03:50,680
+estaban con QT y seman más pero hecho en Python digamos. Entonces para que vean también
+
+42
+00:03:50,680 --> 00:03:54,880
+ahí que tiene una cobertura completa y que se pueden hacer exactamente las mismas cosas,
+
+43
+00:03:54,880 --> 00:03:59,400
+por ahí pueden ganar más performance y lo hacen con C++ pero también recuerden que
+
+44
+00:03:59,400 --> 00:04:04,920
+lo que ustedes están usando de Python en realidad es un binding a los archivos de
+
+45
+00:04:04,920 --> 00:04:08,200
+más y que están corriendo bastante rápido por debajo.
+
+46
+00:04:08,200 --> 00:04:14,040
+Entonces ¿qué son los componentes de este framework? Como yo les decía, usualmente
+
+47
+00:04:14,040 --> 00:04:19,120
+cuando alguien en cara de uso de QT lo hace por el lado de desarrollo de aplicaciones
+
+48
+00:04:19,120 --> 00:04:24,440
+gráficas, no es cierto hacer ventanas de usuario, hacer botones, todo tipo de interfaces.
+
+49
+00:04:24,440 --> 00:04:28,360
+Pero y es lo que vamos a ver principalmente en la charla pero sepan que QT también tiene
+
+50
+00:04:28,360 --> 00:04:33,680
+un montón de cosas más, los principales siempre son el módulo de core que maneja
+
+51
+00:04:33,680 --> 00:04:39,120
+toda la señal, los objetos, el objeto base de QT, etcétera y la parte gráfica. Pero
+
+52
+00:04:39,120 --> 00:04:44,280
+ustedes también podrían usar cosas de OpenGL que QT le hace una abstracción un poco más
+
+53
+00:04:44,280 --> 00:04:49,320
+arriba entonces por ahí les facilita algunas cosas, pueden usar QT para simplificar conexiones
+
+54
+00:04:49,320 --> 00:04:55,000
+a base de datos, manejo de QML. Por ahí en Python no es tan significativo esto porque
+
+55
+00:04:55,000 --> 00:05:00,080
+todas esas cosas ya las tiene Python pero si sepan que por ejemplo si tiene su programa
+
+56
+00:05:00,080 --> 00:05:06,600
+en Python usando QT y necesitan hacer algo más, esas herramientas que de repente no
+
+57
+00:05:06,600 --> 00:05:10,800
+las van a tener porque no están usando Python, las tendrían acá entonces se pueden complementar
+
+58
+00:05:10,800 --> 00:05:19,800
+bastante bien. Entonces hablemos de los componentes principales a los primeros que se nos viene
+
+59
+00:05:19,800 --> 00:05:25,480
+a la mente cuando vamos a hablar de aplicaciones gráficas. Aquí que sería gráfica el user
+
+60
+00:05:25,480 --> 00:05:30,240
+interface es básicamente todo lo que ustedes ven cuando se sienten frente a la computadora,
+
+61
+00:05:30,240 --> 00:05:35,600
+el escritorio, cada ventana, cada botón, todo eso es parte de la interfaz de usuario.
+
+62
+00:05:35,600 --> 00:05:41,080
+Ya cuando pasamos al widget, el widget es cada componente gráfico específico, el botón,
+
+63
+00:05:41,080 --> 00:05:45,720
+la ventana también es un widget del componente de texto, todas esas cosas cuando se habla
+
+64
+00:05:45,720 --> 00:05:51,240
+de UI se habla de widgets. Después del tema de la herencia es algo que a mí me parece
+
+65
+00:05:51,240 --> 00:05:56,320
+muy importante mencionar cuando se habla de QT y PQT porque me parece que está muy bueno
+
+66
+00:05:56,320 --> 00:06:00,160
+la documentación en sí de QT es muy muy buena y muy completa llena de ejemplos de
+
+67
+00:06:00,160 --> 00:06:08,200
+todo. Así que de hecho cuando me tocó estudiar QT o PQT para aprenderlo me fui derecho a
+
+68
+00:06:08,200 --> 00:06:11,480
+la documentación y encontré que eso era lo que necesitaba, digamos no es así es
+
+69
+00:06:11,480 --> 00:06:15,360
+falta que me ponga a buscar algún libro o cosas así. Por ahí pueden buscar alguno
+
+70
+00:06:15,360 --> 00:06:19,200
+como para ver que se yo cómo empezar a hacer la primera aplicación pero lo vamos a ver
+
+71
+00:06:19,200 --> 00:06:23,160
+acá de todas formas pero después van a ver que la documentación les da toda la información
+
+72
+00:06:23,160 --> 00:06:27,280
+que necesitan con un montón de ejemplos y un montón de cosas. Y lo que está bueno
+
+73
+00:06:27,280 --> 00:06:33,720
+en cuanto a la herencia en QT es que está muy bien definido y ustedes pueden ver qué
+
+74
+00:06:33,720 --> 00:06:38,640
+clases heredan de otras y que se yo y ven como todos los componentes gráficos terminan
+
+75
+00:06:38,640 --> 00:06:44,480
+algún punto heredando de QWidget que es el componente gráfico de mayor orden digamos
+
+76
+00:06:44,480 --> 00:06:49,360
+y de esa forma entonces ustedes van viendo que a la medida que van usando un widget ya
+
+77
+00:06:49,360 --> 00:06:52,920
+se van aprendiendo algunos métodos, algunos atributos, algunas formas de configurarlo
+
+78
+00:06:52,920 --> 00:06:58,800
+que saben que son aplicables a cualquier otro componente gráfico porque pueden estar heredando
+
+79
+00:06:58,800 --> 00:07:02,400
+las mismas propiedades. Entonces a la medida que van usando que ustedes se dan cuenta que
+
+80
+00:07:02,400 --> 00:07:05,760
+van aprendiendo muchas más propiedades de los otros y es mucho más rápido aprender
+
+81
+00:07:05,760 --> 00:07:10,840
+entonces y a la vez cuando necesitan reimplementar algo o lo que fuera ya saben que tienen el
+
+82
+00:07:10,840 --> 00:07:18,200
+conocimiento digamos para hacerlo distintamente para cualquier objeto. Después QT usa mucho
+
+83
+00:07:18,200 --> 00:07:23,640
+lo que son señales y slots que en slots vamos a ver que en Python son simplemente funciones
+
+84
+00:07:23,640 --> 00:07:31,520
+cualquiera y quería hacer acá la distinción entre eventos y señales ¿no cierto? La señal
+
+85
+00:07:31,520 --> 00:07:35,560
+ahora lo vamos a ver más en profundidad pero básicamente la señal es avisarlo cuando
+
+86
+00:07:35,560 --> 00:07:41,000
+pase tal cosa pero entonces algo que le está avisando ya después de que la opción se
+
+87
+00:07:41,000 --> 00:07:46,200
+produjo. Supongamos que ustedes quisieran interceptar cuando el usuario presione el
+
+88
+00:07:46,200 --> 00:07:51,560
+teclado pero están en un componente de texto y quieren interceptar cuando el usuario presione
+
+89
+00:07:51,560 --> 00:07:55,960
+el teclado no es cierto para escribir una tecla pero ustedes no quieren que la tecla
+
+90
+00:07:55,960 --> 00:08:02,160
+se llegue a imprimir en el componente sino que ustedes quieren hacer algo antes ¿sí?
+
+91
+00:08:02,160 --> 00:08:06,400
+No señales eso no se puede hacer porque señales la avisaría después de que la tecla ya se
+
+92
+00:08:06,400 --> 00:08:13,800
+mostró en el componente y ahí les dice paso esto. Si ustedes quisieran poder interceptar
+
+93
+00:08:13,800 --> 00:08:17,920
+cosas se hace a través de los eventos ¿no cierto? La diferencia ahora vamos a ver cómo
+
+94
+00:08:17,920 --> 00:08:21,960
+se declaran las señales pero la diferencia con los eventos es que para ustedes reimplementar
+
+95
+00:08:21,960 --> 00:08:26,400
+un evento hay algunas otras técnicas pero la más común y la más básica es que ustedes
+
+96
+00:08:26,400 --> 00:08:32,560
+van a tener que extender de la clase y reimplementar esa función ¿no cierto? Lo menciono como para
+
+97
+00:08:32,560 --> 00:08:37,000
+que sepan que está la opción de poder interceptar las cosas antes de que pasen pero usualmente
+
+98
+00:08:37,000 --> 00:08:42,520
+lo que más van a estar usando son las señales ¿no cierto? Las señales como les decía es
+
+99
+00:08:42,520 --> 00:08:47,600
+algo que ustedes le dicen avisame cuando pase esto y cuando pase esto llamame a esta
+
+100
+00:08:47,600 --> 00:08:53,800
+función ¿no cierto? Pero es algo que les va a avisar siempre en cuanto a algo que ya
+
+101
+00:08:53,800 --> 00:08:59,000
+sucedió entonces ustedes responden a una acción o un evento que ya pasó en la interfaz
+
+102
+00:08:59,000 --> 00:09:06,440
+en su programa o en lo que fuera. En Python hay dos formas de conectar señales y este
+
+103
+00:09:06,440 --> 00:09:13,320
+es un truco que ya les explico para qué sirve. La de arriba es la más parecida a la vieja
+
+104
+00:09:13,320 --> 00:09:18,120
+sintaxis en realidad se más más porque ahora definió una nueva forma. Básicamente ustedes
+
+105
+00:09:18,120 --> 00:09:24,480
+le dicen connect, self, acá puse self suponiendo que estamos adentro de alguna clase que le
+
+106
+00:09:24,480 --> 00:09:29,000
+da de cute o alguna cosa así pero acá podría poner button también o cualquier cosa siempre
+
+107
+00:09:29,000 --> 00:09:34,640
+tiene que ser un objeto de cute. Punto connect y le digo ¿quién va a emitir la señal? ¿no
+
+108
+00:09:34,640 --> 00:09:38,760
+cierto? ¿qué tipo de señal voy a estar escuchando? Porque cada objeto puede tener
+
+109
+00:09:38,760 --> 00:09:47,160
+muchas señales y a qué función quiero que se llame cuando ese señal se produce. Fíjense
+
+110
+00:09:47,160 --> 00:09:56,440
+que PicoT cuando ustedes están conectando señales y funciones pueden tener una señal
+
+111
+00:09:56,440 --> 00:10:02,360
+que esté conectada a muchísimas funciones o muchísimas señales que estén conectadas
+
+112
+00:10:02,360 --> 00:10:05,760
+a una sola función. No hay ningún tipo de restricción a como ustedes hagan las conexiones.
+
+113
+00:10:05,760 --> 00:10:13,000
+Entonces les decía esta es una forma de conectar donde ustedes dicen el objeto que va a emitir
+
+114
+00:10:13,000 --> 00:10:18,360
+la señal, ¿qué señal quiero escuchar y a qué función quiero que se llame? Fíjense
+
+115
+00:10:18,360 --> 00:10:22,440
+que la función no le estoy poniendo los paréntesis ¿no cierto? Porque lo que le estoy pasando
+
+116
+00:10:22,440 --> 00:10:31,200
+es el objeto función al que me va a llamar. Y después esta otra forma de conectar, que
+
+117
+00:10:31,200 --> 00:10:36,760
+esta forma de conectar por ahí es más al estilo Python ¿no cierto? Donde ustedes directamente
+
+118
+00:10:36,760 --> 00:10:44,320
+ya mencionan el objeto, el objeto señal digamos a la que me quiero conectar le digo
+
+119
+00:10:44,320 --> 00:10:50,280
+que conecte y llamo la función. Estas dos son equivalentes, hacen exactamente lo mismo.
+
+120
+00:10:50,280 --> 00:10:54,840
+De hecho esta a veces puede ser más simple porque las señales pueden tener argumentos
+
+121
+00:10:54,840 --> 00:11:01,600
+entonces ustedes tendrían que si se quieren conectar una, puede estar clicker o clicker
+
+122
+00:11:01,600 --> 00:11:06,680
+por ejemplo que a la vez emite un bull y el mismo objeto puede estar emitiendo cualquiera
+
+123
+00:11:06,680 --> 00:11:11,840
+de las dos señales. Si yo me quisiera conectar a la que emite un bull acá tendría que especificar
+
+124
+00:11:11,840 --> 00:11:16,120
+el bull, ¿no cierto? el tipo de dato que está emitiendo y acá es más simple esto
+
+125
+00:11:16,120 --> 00:11:24,120
+sería directo y me va a llamar la función. Después está la opción de que este es un
+
+126
+00:11:24,120 --> 00:11:29,760
+truquito digamos que a mí pasó encontrarme en algún momento donde yo quería que al
+
+127
+00:11:29,760 --> 00:11:34,240
+llamarse un slot mío se lo llamara con algunos argumentos específicos ¿no cierto? Porque
+
+128
+00:11:34,240 --> 00:11:38,720
+como les decía recién las señales pueden emitir argumentos pero ¿qué pasa si tengo
+
+129
+00:11:38,720 --> 00:11:43,640
+una señal que no emita argumento? Pero yo necesito que se pasen valores de este objeto
+
+130
+00:11:43,640 --> 00:11:47,960
+específico por ejemplo estuve creando una lista y a la lista le estuve creando ítems
+
+131
+00:11:47,960 --> 00:11:53,640
+de forma dinámica ¿no cierto? Así que no los tengo referenciado como parte de mi clase
+
+132
+00:11:53,640 --> 00:11:59,360
+cual es cual y poder decir bueno este me llamó entonces le leo los datos de este. Sino que
+
+133
+00:11:59,360 --> 00:12:06,280
+entonces lo que puedo hacer es conectarlo y en lugar de llamar a un método pongo creo
+
+134
+00:12:06,280 --> 00:12:11,000
+una función anónima con lambda y entonces adentro del lambda hago la llamada a la función
+
+135
+00:12:11,000 --> 00:12:14,480
+que yo quiera pasando en los argumentos que yo quiera. Esa es una forma en la que ustedes
+
+136
+00:12:14,480 --> 00:12:20,080
+pueden hacer que cuando se emite una señal se llame a una función de ustedes con argumentos
+
+137
+00:12:20,080 --> 00:12:29,040
+específicos no solo los que emite la señal ¿sí? Entonces antes de pasar los ejemplos
+
+138
+00:12:29,040 --> 00:12:32,680
+para que vean realmente las distintas formas en las que se puede construir la UI tanto
+
+139
+00:12:32,680 --> 00:12:37,080
+sea por código con un diseñador y todo eso hay una cosa que quiero mencionar porque
+
+140
+00:12:37,080 --> 00:12:41,840
+es bastante interesante como lo maneja QT que son las acciones o el objeto QAction que
+
+141
+00:12:41,840 --> 00:12:46,520
+ustedes lo pueden encontrar que básicamente imagínense cuando ustedes están también
+
+142
+00:12:46,520 --> 00:12:52,000
+en un editor de texto que a veces tienen la función de cortar copiar ¿no cierto? ¿que
+
+143
+00:12:52,000 --> 00:12:56,360
+suele ser eso? suele ser un shortcut de teclado suele ser una opción en un menú contactar
+
+144
+00:12:56,360 --> 00:13:01,600
+cuando aprecian en el botón derecho o también suele ser un icono en la toolbar ¿no cierto?
+
+145
+00:13:01,600 --> 00:13:07,200
+Fíjense que están teniendo tres componentes que son tres cosas completamente distintas
+
+146
+00:13:07,200 --> 00:13:13,840
+uno es un shortcut otro es un item de menú y otro es un icono en un toolbar ¿sí? Muchas
+
+147
+00:13:13,840 --> 00:13:19,560
+veces en otro framework para manejar ese tipo de cosas estás creando tres objetos distintos
+
+148
+00:13:19,560 --> 00:13:23,840
+porque estás creando un menú y ten para poner en un menú estás creando un botón para
+
+149
+00:13:23,840 --> 00:13:28,320
+poner una toolbar y estás creando un shortcut para que esté conectada a las cosas de teclado
+
+150
+00:13:28,320 --> 00:13:33,640
+que se producen en la UI ¿sí? Por lo que cuando vos tenés que cambiar algo tenés
+
+151
+00:13:33,640 --> 00:13:37,320
+que asegurarte que los tres objetos estén apuntando al mismo tipo de código que va a
+
+152
+00:13:37,320 --> 00:13:42,680
+ser la opción de cortar copiar etcétera entonces puede ser esto es un ejemplo bastante
+
+153
+00:13:42,680 --> 00:13:47,120
+simple pero se puede a la media que van creciendo que pueden tener más opciones o lo que fuera
+
+154
+00:13:47,120 --> 00:13:53,040
+se puede volver más complicado de manejar QT introduce algo que se llaman los QAction
+
+155
+00:13:53,040 --> 00:13:56,640
+¿sí? Que básicamente es un objeto que le permite se le permite a usted se tiene un
+
+156
+00:13:56,640 --> 00:14:05,960
+icono un texto un shortcut y les permite ponerlo en todos estos tipo en todos estos dentro
+
+157
+00:14:05,960 --> 00:14:08,880
+de todos estos tipos de objetos por ejemplo pueden poner dentro un objeto menú le pueden
+
+158
+00:14:08,880 --> 00:14:13,720
+decir al objeto menú add action y le pasan el QAction a la toolbar le pueden decir lo
+
+159
+00:14:13,720 --> 00:14:20,520
+mismo al crear el QAction con el shortcut ya ese shortcut se asocia a toda la UI ¿sí?
+
+160
+00:14:20,520 --> 00:14:24,000
+entonces fíjense que pasan a tener en lugar de tener muchos objetos pasan a tener un solo
+
+161
+00:14:24,000 --> 00:14:28,960
+objeto que depende donde ustedes lo pongan sabe cómo pintarse con respecto al contexto
+
+162
+00:14:28,960 --> 00:14:32,920
+¿no cierto? Entonces es más fácil de manejar cuando empiezan a tener este tipo de cosas
+
+163
+00:14:32,920 --> 00:14:36,520
+que suele ser bastante común en la UI donde ustedes tienen formas de acceso rápido como
+
+164
+00:14:36,520 --> 00:14:42,520
+la toolbar después tienen menú ya sean la barra de menú del programa o los menús contextuales
+
+165
+00:14:42,520 --> 00:14:47,920
+entonces el hecho de tener QAction donde ustedes se tean las propiedades y eso sabe pintarse
+
+166
+00:14:47,920 --> 00:14:52,560
+depende de donde ustedes lo pongan facilita bastante el hecho de manejar esas cosas
+
+167
+00:14:52,560 --> 00:15:05,760
+bueno este es un ejemplo que les quería mostrar es un ejemplo en realidad bastante viejo
+
+168
+00:15:05,760 --> 00:15:22,080
+es del año creo que 2007 pero es para que vean las cosas que se pueden llegar a hacer
+
+169
+00:15:22,080 --> 00:15:23,520
+con QTE ¿sí?
+
+170
+00:15:23,520 --> 00:15:26,080
+acá no se va a escuchar me parece no pero bueno este es una persona que agregó y se
+
+171
+00:15:26,080 --> 00:15:31,120
+creó su escritorio como si fuera una pantalla de wall festeino ¿cierto?
+
+172
+00:15:31,120 --> 00:15:34,760
+entonces en una de las paredes tiene por ejemplo el repertor de música que acá no se escucha
+
+173
+00:15:34,760 --> 00:15:38,280
+pero a medida que se va alejando y acercando al repertor la música se va poniendo más
+
+174
+00:15:38,280 --> 00:15:45,840
+fuerte o más bajo tiene el navegador en una pared y fíjense que todo esto básicamente
+
+175
+00:15:45,840 --> 00:15:51,320
+lo hizo la gente de QTE Labs que es esta división digamos de QTE que se encarga de investigar
+
+176
+00:15:51,320 --> 00:15:57,080
+cosas y ver que cosas nuevas se pueden crear y básicamente está combinando un montón
+
+177
+00:15:57,080 --> 00:16:02,840
+de las partes de QTE como OpenGL, como WebKit, como multimedia para reproducir música y cosas
+
+178
+00:16:02,840 --> 00:16:08,000
+así para que vean la potencia de las cosas que pueden hacer con QTE usando todos los distintos
+
+179
+00:16:08,000 --> 00:16:13,640
+módulos que tiene bueno acá viene y le cambia el comportamiento al tipito que está ahí
+
+180
+00:16:13,640 --> 00:16:21,040
+entonces empieza a seguirlo por ejemplo y después por ejemplo fíjense acá está usando
+
+181
+00:16:21,040 --> 00:16:26,600
+está mostrando las distintas propiedades que se puede hacer con OpenGL con QTE y si
+
+182
+00:16:26,600 --> 00:16:38,840
+se fijan acaba a ver y va a abrir el mismo programa este dentro del programa ¿no cierto?
+
+183
+00:16:38,840 --> 00:16:42,160
+entonces empieza a navegar laberinto, laberinto, todo porque no deja de hacer una aplicación
+
+184
+00:16:42,160 --> 00:16:47,040
+también pero básicamente es para que vean las cosas que se pueden llegar a hacernos
+
+185
+00:16:47,040 --> 00:16:53,080
+cierto con QTE y siendo que esto es un proyecto que tiene como ya 6 años creo más o menos
+
+186
+00:16:53,080 --> 00:16:57,640
+una cosa así y que fue que se hizo nada más que para probar para demostrar las cosas que
+
+187
+00:16:57,640 --> 00:17:08,560
+se pueden hacer entonces bueno vamos a crear algunas interfaces ¿sí?
+
+188
+00:17:08,560 --> 00:17:13,040
+para la hora de crear interfaces tienen si lo quieren hacer de forma visual tienen dos
+
+189
+00:17:13,040 --> 00:17:18,640
+grandes opciones que es el QTE designer y el QTE creator, la diferencia son que QTE
+
+190
+00:17:18,640 --> 00:17:24,280
+está completamente orientado a solamente crear su ventana, arrastrar componentes, etc.
+
+191
+00:17:24,280 --> 00:17:30,240
+y QTE creator es más ya un IDE, no es cierto el IDE que provee QTE que les permite también
+
+192
+00:17:30,240 --> 00:17:34,920
+hacer la creación de UI pero también les permite escribir código en distintos lenguajes
+
+193
+00:17:34,920 --> 00:17:43,000
+entonces por ejemplo vamos a crear una ventana bastante común vamos a crear un par de componentes
+
+194
+00:17:43,000 --> 00:17:50,000
+entonces vamos a arrastrar la ventana el pushbutton vamos a arrastrar un componente
+
+195
+00:17:50,000 --> 00:18:00,720
+de lista y vamos a agregar un par de items y lo dejemos ahí entonces fíjense yo esto
+
+196
+00:18:00,720 --> 00:18:05,560
+lo tengo la opción de renderizarlo para ver cómo va quedando y ver cuál es la interacción
+
+197
+00:18:05,560 --> 00:18:12,880
+con los items, no es cierto con los componentes y desde acá mismo del designer me deja con
+
+198
+00:18:12,880 --> 00:18:19,880
+conectar alguna de las señales básicas yo por ejemplo podría decirle al pushbutton
+
+199
+00:18:19,880 --> 00:18:29,080
+lo marco ahí y fíjense que abajo a la derecha tienen este panel de señales y slot donde
+
+200
+00:18:29,080 --> 00:18:34,080
+yo puedo agarrar y definir quién es que me va a mandar la señal que es el pushbutton
+
+201
+00:18:34,080 --> 00:18:38,640
+qué señal quiero escuchar y le digo que es la de clicked quién la va a estar recibiendo
+
+202
+00:18:38,640 --> 00:18:43,560
+y acá le voy a decir que es la ventana y cada objeto de cutella tiene algunos slots
+
+203
+00:18:43,560 --> 00:18:47,200
+básicos definidos además de los que yo puedo crear después con python entonces le voy
+
+204
+00:18:47,200 --> 00:18:52,280
+a decir que cuando se emite entonces el clicked del botón me llame al método close de la
+
+205
+00:18:52,280 --> 00:19:00,000
+ventana entonces acá mismo si yo renderizo esto si puedo venir a interactuar con esto
+
+206
+00:19:00,000 --> 00:19:04,120
+y si presiono el pushbutton me va a cerrar la ventana eso es una forma rápida de que
+
+207
+00:19:04,120 --> 00:19:10,400
+ustedes tienen de jugar con alguna conexión de señales y cosas así si yo grabo ahora
+
+208
+00:19:10,400 --> 00:19:17,880
+este esta ventana que estaba diseñando en el escritorio los archivos de cutella toman
+
+209
+00:19:17,880 --> 00:19:26,800
+como punto UI y fíjense que si yo lo abro esto en realidad no deja de ser un xml si
+
+210
+00:19:26,800 --> 00:19:31,200
+la forma en que el designer reconoce los punto UI o los crea es simplemente un xml que después
+
+211
+00:19:31,200 --> 00:19:36,800
+sabe como parciarlo para hacer distintas cosas una cosa bastante interesante de tener
+
+212
+00:19:36,800 --> 00:19:45,960
+el xml este es que supongamos que ustedes están leyendo leyendo la como es la documentación
+
+213
+00:19:45,960 --> 00:19:52,480
+de cutella y por ahí hay algo que no termina de entender realmente como se hace pero en
+
+214
+00:19:52,480 --> 00:19:57,680
+el designer está bien simple simple es cuestión de apretar un click en un checkbox y ya eso
+
+215
+00:19:57,680 --> 00:20:03,080
+está configurado está conectado no cierto y a ustedes le gustaría saber como eso que
+
+216
+00:20:03,080 --> 00:20:07,520
+en el designer es tan simple se puede llegar a hacer en el código entonces tienen la opción
+
+217
+00:20:07,520 --> 00:20:18,080
+de usar esta herramienta que se llama puic4 donde ustedes le pasan el archivo y automáticamente
+
+218
+00:20:18,080 --> 00:20:26,360
+se los transforma a código python entonces esa ventana que diseñamos ahí estamos viendo
+
+219
+00:20:26,360 --> 00:20:30,480
+el código python que generaría no es cierto donde vemos que declara list widget le agrega
+
+220
+00:20:30,480 --> 00:20:36,960
+cada uno los items etcétera entonces está bastante interesante esto para en los casos
+
+221
+00:20:36,960 --> 00:20:40,200
+donde por ahí no sabemos cómo hacer algo que en la documentación lo terminamos de
+
+222
+00:20:40,200 --> 00:20:44,200
+entender por ahí podemos ir al UI tocar un par de botones generar el código python y
+
+223
+00:20:44,200 --> 00:20:50,840
+poder leer qué es lo que está generando sin mucha magia y entonces entender cómo es
+
+224
+00:20:50,840 --> 00:20:59,800
+que se hace eso ahora vamos a escribir directamente código nosotros código python usando esas
+
+225
+00:20:59,800 --> 00:21:09,320
+cosas que estábamos creando entonces vamos a importar si vamos a ver para qué y de pqt
+
+226
+00:21:09,320 --> 00:21:18,160
+vamos a importar vamos a importar directamente el módulo qt aquí que es el que contiene
+
+227
+00:21:18,160 --> 00:21:27,680
+todas las cosas de la parte gráfica vamos a hacer ahí vamos a importar el módulo week
+
+228
+00:21:27,680 --> 00:21:37,320
+entonces ahora vamos a crear nuestra ventana que lo que vamos a hacer es que decirle que
+
+229
+00:21:37,320 --> 00:21:41,800
+el archivo punto yuai que era nuestro xml lo cargue de forma dinámica y ya directamente
+
+230
+00:21:41,800 --> 00:21:48,880
+me lo de como un objeto python y a esto le vamos a hacer a decir que lo muestre y ahora
+
+231
+00:21:48,880 --> 00:21:53,560
+una cosa que es importante en todo el desarrollo de cualquier aplicación gráfica ya sea
+
+232
+00:21:53,560 --> 00:21:57,720
+con cualquier framework es que cuando usted desarrolla una aplicación de tipo siempre
+
+233
+00:21:57,720 --> 00:22:02,040
+tiene que haber un event loop o algún tipo de loop corriendo que mantenga su aplicación
+
+234
+00:22:02,040 --> 00:22:06,000
+viva no es cierto porque si no ustedes declaran los objetos le dicen que se muestre termina
+
+235
+00:22:06,000 --> 00:22:10,960
+el script y todo se destruye entonces siempre tiene que haber algún loop que mantenga la
+
+236
+00:22:10,960 --> 00:22:16,680
+aplicación corriendo hasta que el usuario realmente diga cierro la aplicación y termina
+
+237
+00:22:16,680 --> 00:22:24,400
+y termina todo en el caso de qt el loop este para mantener la aplicación viva es tan fácil
+
+238
+00:22:24,400 --> 00:22:36,440
+como crear un objeto q application y le digo y lo que hago es atar el exit de la aplicación
+
+239
+00:22:36,440 --> 00:22:43,360
+a la ejecución de este q application eso es todo lo que necesito para mantener mi aplicación
+
+240
+00:22:43,360 --> 00:22:53,520
+viva hasta que el usuario realmente quiera cerrar la última ventana entonces ejecuto
+
+241
+00:22:53,520 --> 00:23:07,200
+esto ahora a pico t4 claro esto tiene que estar definido arriba eso lo que lo que me
+
+242
+00:23:07,200 --> 00:23:12,640
+acabo de equivocar es que siempre antes de ustedes poder a definir la UI tienen que
+
+243
+00:23:12,640 --> 00:23:25,800
+estar definiendo el q application así ahí está entonces fíjense que estoy levantando
+
+244
+00:23:25,800 --> 00:23:32,600
+desde python la misma ventana que yo está había generado en el designer no es cierto
+
+245
+00:23:32,600 --> 00:23:37,680
+y si se fijan si yo por ejemplo acá vengo a la lista puedo interactuar de la misma forma
+
+246
+00:23:37,680 --> 00:23:42,680
+y tiene hasta el mismo comportamiento si yo presiono el botón si la ventana se cierra
+
+247
+00:23:42,680 --> 00:23:47,120
+entonces fíjense que de hacer un objeto un diseñar mi interfaz de forma gráfica en
+
+248
+00:23:47,120 --> 00:23:52,800
+el designer después de portarlo ese formato que es un xml que es un punto y y ahí ahí
+
+249
+00:23:52,800 --> 00:23:57,680
+lo puedo levantar desde python y hasta le podría empezar a setear cosas de acá yo
+
+250
+00:23:57,680 --> 00:24:07,640
+podría venir y hacer w.setwindowtitle y poner pico ns y si lo ejecuto fíjense que el pico
+
+251
+00:24:07,640 --> 00:24:11,160
+n es el título de la ventana ahora es pico ns no es cierto no deja hacer un objeto python
+
+252
+00:24:11,160 --> 00:24:17,480
+con el que yo ya puedo empezar a interactuar hay distintas formas en las que ustedes pueden
+
+253
+00:24:17,480 --> 00:24:24,800
+manejar esto vamos a ver dos casos este es uno donde ustedes levantan directamente el
+
+254
+00:24:24,800 --> 00:24:31,160
+punto y y después vamos a ver otro donde generamos todo el código de cero sin ningún diseñador
+
+255
+00:24:31,160 --> 00:24:35,920
+y después está la otra forma que se suele usar bastante que es la de genero mi punto
+
+256
+00:24:35,920 --> 00:24:40,560
+y y pero antes de empaquetar mi aplicación para distribuirla en realidad compilo esos
+
+257
+00:24:40,560 --> 00:24:46,960
+y y a código como les mostré con el p week no es cierto cuál es el tema con eso que
+
+258
+00:24:46,960 --> 00:24:52,680
+obviamente es más performante cuando su aplicación está corriendo levantar el el código python
+
+259
+00:24:52,680 --> 00:25:00,880
+que andar parciando el xml y que te lo levante como un objeto y toda esa historia entonces
+
+260
+00:25:00,880 --> 00:25:06,680
+vamos a hacer un ejemplo completo completo ahora donde vamos a estar creando un navegador
+
+261
+00:25:06,680 --> 00:25:19,720
+web simplemente todo desde código si entonces vamos a crear nuestra clase
+
+262
+00:25:19,720 --> 00:25:31,880
+para hacerlo más rápido vamos a exportar e importar todos los módulos de acá y vamos
+
+263
+00:25:31,880 --> 00:25:45,240
+a usar web aquí también entonces bueno vamos a crear nuestra clase de navegador donde si
+
+264
+00:25:45,240 --> 00:25:50,680
+ustedes se fijan hasta ahora en el diseño nosotros arrastrábamos y soltábamos componentes
+
+265
+00:25:50,680 --> 00:25:55,320
+de esa forma en realidad si nosotros redimensionamos nuestra ventana los componentes están teniendo
+
+266
+00:25:55,320 --> 00:25:58,720
+coordenadas específicas y tamaños específicos entonces al redimensionar la ventana nos van
+
+267
+00:25:58,720 --> 00:26:02,920
+a quedar todos centrados de este lado y no se van a saber distribuir otra forma de hacer
+
+268
+00:26:02,920 --> 00:26:07,440
+que nuestros componentes reaccionen a cuando la ventana se expande lo que fuera es usar
+
+269
+00:26:07,440 --> 00:26:12,840
+la yautos los layout más comunes son los layout horizontales y verticales que básicamente
+
+270
+00:26:12,840 --> 00:26:16,920
+los layout ustedes los pueden ver como cajitas donde empiezan a poner componentes adentro
+
+271
+00:26:16,920 --> 00:26:22,880
+y que usted sabe para cada componente que tanto espacio debería darle si entonces para
+
+272
+00:26:22,880 --> 00:26:30,360
+la barra de arriba vamos a crear lo que es un layout horizontal para meter nuestros componentes
+
+273
+00:26:30,360 --> 00:26:35,560
+entonces creamos un layout primero vamos a crear un layout vertical para toda la ventana
+
+274
+00:26:35,560 --> 00:26:44,040
+y ahora vamos a crear un layout horizontal para meter las cosas arriba acá vamos a crear
+
+275
+00:26:44,040 --> 00:26:54,080
+cada uno de los botones
+
+276
+00:26:54,080 --> 00:27:00,120
+y los botones pueden recibir iconos y texto o solo texto no cierto en nuestro caso vamos
+
+277
+00:27:00,120 --> 00:27:07,600
+a querer que reciba un icono para que nos muestre el botón de back entonces vamos a usar
+
+278
+00:27:07,600 --> 00:27:10,920
+esto que se ve un toque complicado pero simplemente porque estoy diciendo que quiero usar los
+
+279
+00:27:10,920 --> 00:27:32,240
+iconos del sistema y acá le voy a decir que por ejemplo quiero el botón de back que no
+
+280
+00:27:32,240 --> 00:27:43,160
+hace falta que lo sepan si para eso está la documentación arroback y de texto no quiero
+
+281
+00:27:43,160 --> 00:27:49,960
+que muestre nada así que le pongo un stream vacío
+
+282
+00:27:49,960 --> 00:28:06,080
+a a roe left acá vamos a usar el a roe right para el forward
+
+283
+00:28:06,080 --> 00:28:21,120
+y vamos a crear el botón de reload y acá vamos a usar el icono de browser reload
+
+284
+00:28:21,120 --> 00:28:40,440
+vamos a crear el botón de stop vamos a crear el botón de ok
+
+285
+00:28:40,440 --> 00:28:47,960
+y vamos a crear el componente de texto donde el usuario va a introducir las url si
+
+286
+00:28:47,960 --> 00:28:55,960
+todos estos componentes si yo por ejemplo ejecutar a mi ventana ahora no se vería nada
+
+287
+00:28:55,960 --> 00:29:18,760
+me falta la coma
+
+288
+00:29:18,760 --> 00:29:35,520
+ah sí fíjense que yo ejecuté mi ventana y se ve ese cuadradito ya arriba que no tiene
+
+289
+00:29:35,520 --> 00:29:39,880
+nada si porque yo creo en mis componentes pero en ningún momento los asocia la ventana
+
+290
+00:29:39,880 --> 00:29:49,320
+si ahora yo a mi layout horizontal que dije le empiezo a agregar los componentes van a
+
+291
+00:29:49,320 --> 00:30:09,120
+ver que vete forward reload stop url y botón ok y ahora al layout vertical que es el contenía
+
+292
+00:30:09,120 --> 00:30:16,800
+la ventana le agregó el layout horizontal entonces ejecutar esto tengo una ventana que
+
+293
+00:30:16,800 --> 00:30:22,960
+tiene mi barra no cierto eso es lo que construyó hasta hasta ahora ahora vamos a crear el componente
+
+294
+00:30:22,960 --> 00:30:36,400
+web y lo vamos a agregar al layout horizontal al layout vertical y vamos a decirlo al componente
+
+295
+00:30:36,400 --> 00:30:49,660
+web que por defecto me cargue la url de google por ejemplo entonces al ejecutar esto me
+
+296
+00:31:36,860 --> 00:32:04,300
+calpa entonces ahora sí no cierto ahí me cargue la url entonces ahora vamos a crear
+
+297
+00:32:04,300 --> 00:32:11,300
+una barra de estado
+
+298
+00:32:12,100 --> 00:32:19,100
+vamos a crear una barra de progreso
+
+299
+00:32:18,500 --> 00:32:24,780
+vamos a añadir a la barra de estado un texto
+
+300
+00:32:24,780 --> 00:32:29,260
+que diga que se está cargando la página
+
+301
+00:32:29,260 --> 00:32:33,420
+y vamos a agregar a la barra de estado
+
+302
+00:32:33,420 --> 00:32:36,140
+la barra de progreso
+
+303
+00:32:36,140 --> 00:32:43,140
+y esto vamos a agregarlo finalmente a la ventana
+
+304
+00:32:48,260 --> 00:32:53,020
+entonces bueno, ahí tengo pero mi barra de progreso no está haciendo nada, no cierto?
+
+305
+00:32:53,020 --> 00:32:55,260
+entonces lo que voy a hacer ahora es
+
+306
+00:32:55,260 --> 00:32:59,500
+conectar las señales
+
+307
+00:32:59,500 --> 00:33:06,500
+el botón de back le voy a decir que cuando se produzca la señal de clicker
+
+308
+00:33:07,660 --> 00:33:11,820
+llame al método back del componente web
+
+309
+00:33:11,820 --> 00:33:17,820
+lo mismo para forward
+
+310
+00:33:17,820 --> 00:33:24,020
+lo mismo para reload
+
+311
+00:33:24,020 --> 00:33:29,780
+y lo mismo para stop
+
+312
+00:33:29,780 --> 00:33:33,300
+ahora le voy a decir que al componente web
+
+313
+00:33:33,300 --> 00:33:35,980
+cuando tenga un load progreso
+
+314
+00:33:35,980 --> 00:33:39,260
+que esto me va a dar un entero, lo cierto? con el progreso
+
+315
+00:33:39,260 --> 00:33:40,380
+se llame
+
+316
+00:33:40,380 --> 00:33:43,260
+a la barra de progreso al método set value
+
+317
+00:33:43,260 --> 00:33:46,620
+entonces voy a poder estar viendo en la barra de progreso
+
+318
+00:33:46,620 --> 00:33:50,140
+cómo se carga la página, no cierto?
+
+319
+00:33:50,140 --> 00:33:52,780
+ahora voy a hacer que cuando
+
+320
+00:33:52,780 --> 00:33:56,540
+comience la carga a la página
+
+321
+00:33:56,540 --> 00:34:00,940
+se me muestre mi barra de estado
+
+322
+00:34:00,940 --> 00:34:03,860
+y cuando
+
+323
+00:34:03,860 --> 00:34:09,020
+termine la carga a la página
+
+324
+00:34:09,020 --> 00:34:11,940
+se llame a una función mía que voy a hacer
+
+325
+00:34:11,940 --> 00:34:17,580
+acá abajo, entonces hasta ahora estuve conectando todo con el slot que ya conocía
+
+326
+00:34:17,580 --> 00:34:20,420
+pero ahora puedo empezar a conectar con los míos propios
+
+327
+00:34:20,420 --> 00:34:26,380
+y lo que quiero es que cuando se termine cargar la página, primero la barra de estado se oculte
+
+328
+00:34:26,380 --> 00:34:30,060
+y después quiero que se actualice en el componente texto la url actual, no cierto?
+
+329
+00:34:30,060 --> 00:34:31,820
+entonces le hago un url
+
+330
+00:34:31,820 --> 00:34:32,980
+setText
+
+331
+00:34:32,980 --> 00:34:34,780
+self.web
+
+332
+00:34:34,780 --> 00:34:44,180
+url
+
+333
+00:34:44,180 --> 00:34:44,900
+no cierto?
+
+334
+00:34:44,900 --> 00:34:46,820
+entonces ahí veo cómo se me actualice
+
+335
+00:34:46,820 --> 00:34:48,380
+y por último
+
+336
+00:34:48,380 --> 00:34:52,020
+lo que vamos a hacer es un método do search
+
+337
+00:34:52,020 --> 00:34:55,660
+que básicamente lo que va a hacer esto es
+
+338
+00:34:55,660 --> 00:35:01,500
+que le vamos a agregar comportamiento a la búsqueda para que yo por ejemplo puedo definir un patrón
+
+339
+00:35:01,500 --> 00:35:25,180
+que evalúe algo que sea más o menos parecido a una expresión regular
+
+340
+00:35:25,180 --> 00:35:27,380
+entonces puedo preguntar si
+
+341
+00:35:27,380 --> 00:35:30,460
+y pido no cierto mi
+
+342
+00:35:30,460 --> 00:35:34,820
+url que ingresó el usuario
+
+343
+00:35:34,820 --> 00:35:36,180
+entonces pregunto
+
+344
+00:35:36,180 --> 00:35:40,100
+si lo que me demando el usuario
+
+345
+00:35:40,100 --> 00:35:48,380
+parece una url digamos
+
+346
+00:35:48,380 --> 00:36:03,100
+pero no empieza con http que lo necesito para el componente web
+
+347
+00:36:03,100 --> 00:36:07,020
+acá lo convierto a unicode para directamente usar los métodos de python
+
+348
+00:36:07,020 --> 00:36:11,180
+si no empieza con http
+
+349
+00:36:11,180 --> 00:36:18,620
+entonces que me haga link igual a http
+
+350
+00:36:18,620 --> 00:36:21,060
+más link no cierto?
+
+351
+00:36:21,060 --> 00:36:27,580
+y si lo que tengo ni siquiera se parece a una url
+
+352
+00:36:27,580 --> 00:36:31,420
+directamente lo que voy a hacer es la búsqueda en google de eso
+
+353
+00:36:31,420 --> 00:36:33,540
+como le hacen los navegadores no cierto?
+
+354
+00:36:33,540 --> 00:36:46,140
+entonces hago http google.com
+
+355
+00:36:46,140 --> 00:36:54,340
+donde acá le hago link.replays
+
+356
+00:36:54,340 --> 00:36:58,380
+por el más, no cierto? reemplazo los espacios por el más
+
+357
+00:36:58,380 --> 00:37:06,180
+y después directamente le digo que me cargué esa url
+
+358
+00:37:06,180 --> 00:37:10,540
+entonces ahora lo único que falta es conectar que cuando el usuario presione enter
+
+359
+00:37:10,540 --> 00:37:18,940
+en el componente de texto
+
+360
+00:37:18,940 --> 00:37:21,140
+se llama el método de búsqueda
+
+361
+00:37:21,140 --> 00:37:28,980
+y que también se llame cuando se haga click en el botón dokey
+
+362
+00:37:28,980 --> 00:37:34,020
+entonces yo ahora ejecuto esto
+
+363
+00:37:34,020 --> 00:37:40,340
+si ahora ejecuto esto e ingreso a una url
+
+364
+00:37:40,340 --> 00:37:45,820
+no cierto? veo como me carga la página
+
+365
+00:37:45,820 --> 00:37:49,700
+pero si por ejemplo vengo y busco picon
+
+366
+00:37:49,700 --> 00:37:53,180
+no tengo deña acá
+
+367
+00:37:53,180 --> 00:37:56,020
+bueno, le escribí mal esta parte acá abajo
+
+368
+00:37:56,020 --> 00:38:01,020
+creo que es así
+
+369
+00:38:09,780 --> 00:38:13,540
+bueno ahí le estoy arrando alguna forma como se escribió el labo rlb
+
+370
+00:38:13,540 --> 00:38:16,740
+pero fíjense que
+
+371
+00:38:16,740 --> 00:38:22,220
+están teniendo los comportamientos clásicos de un navegador
+
+372
+00:38:22,220 --> 00:38:27,020
+ustedes pueden venir acá y escribir sus url
+
+373
+00:38:27,020 --> 00:38:30,980
+pueden usar las funciones de volver atrás
+
+374
+00:38:30,980 --> 00:38:35,580
+están viendo que cuando se está cargando la página les muestra la barra de progreso todo
+
+375
+00:38:35,580 --> 00:38:41,340
+y fíjense que están teniendo las funciones básicas de un navegador web
+
+376
+00:38:41,340 --> 00:38:45,820
+en tan solo algo como 70 líneas de código python
+
+377
+00:38:45,820 --> 00:38:48,700
+después ustedes pueden ponerse implementar bug, mas lo que sea
+
+378
+00:38:48,700 --> 00:38:52,180
+pero fíjense lo fácil que fue construir la interfaz darle todas esas funcionalidades
+
+379
+00:38:52,180 --> 00:38:54,220
+conectar las señales con los slots
+
+380
+00:38:54,220 --> 00:38:55,340
+y tener las
+
+381
+00:38:55,340 --> 00:38:57,780
+funcionalidades más básicas
+
+382
+00:38:57,780 --> 00:38:59,300
+con tan pocas líneas de código
+
+383
+00:38:59,300 --> 00:39:02,940
+eso más que nada es para que les quería mostrar que no tengan miedo si se tienen que
+
+384
+00:39:02,940 --> 00:39:04,340
+sentar y escribir código
+
+385
+00:39:04,340 --> 00:39:06,500
+la UI completamente así
+
+386
+00:39:06,500 --> 00:39:11,460
+porque ven que si empiezan a imaginar la interfaz como cajitas con layout y eso
+
+387
+00:39:11,460 --> 00:39:14,380
+se hace bastante simple y salen las cosas bastante rápido
+
+388
+00:39:14,380 --> 00:39:20,060
+y eso también es gracias a la simpleza que tiene Qt digamos a nivel API
+
+389
+00:39:20,060 --> 00:39:25,580
+y bueno ya esto lo salteo pero para mostrarlo a alguno de los proyectos que usan Qt y PQt
+
+390
+00:39:25,580 --> 00:39:32,580
+y bueno no sé si hay tiempo para preguntas
+
+391
+00:39:34,100 --> 00:39:35,940
+Qt o Qmr?
+
+392
+00:39:35,940 --> 00:39:39,260
+Qmr es parte de Qt
+
+393
+00:39:39,260 --> 00:39:45,260
+ahora la tinta es para que es más interesante a Fla. Por ejemplo, como decía Qt del Taneche
+
+394
+00:39:45,260 --> 00:39:47,260
+o Qt del Taneche
+
+395
+00:39:47,260 --> 00:39:49,260
+si hay que más de ir porque hace lo que es Qmr
+
+396
+00:39:49,260 --> 00:39:51,260
+y tanto, que es el Taneche que está adaptado a mismo
+
+397
+00:39:51,260 --> 00:39:53,260
+que está Qmr con Python
+
+398
+00:39:53,260 --> 00:39:57,260
+yo de hecho estoy trabajando con las dos cosas, en cierto, en Qmr y Qt
+
+399
+00:39:57,260 --> 00:40:01,260
+la diferencia es que en realidad están hechas para objetivos distintos
+
+400
+00:40:01,260 --> 00:40:03,260
+en Qmr
+
+401
+00:40:03,260 --> 00:40:05,260
+vos te ponés a diseñar
+
+402
+00:40:05,260 --> 00:40:09,260
+las interfaces partiendo básicamente de que todo es un rectángulo al que vos les da no forma
+
+403
+00:40:09,260 --> 00:40:13,260
+obviamente hay algunos toolkits como está el Dubuntu
+
+404
+00:40:13,260 --> 00:40:15,260
+hay uno de Nokia también
+
+405
+00:40:15,260 --> 00:40:17,260
+que te agregan ya componentes botones y cosas así
+
+406
+00:40:17,260 --> 00:40:19,260
+para que no tenga que cada vez que va a hacer una aplicación dibujar tu propio botón
+
+407
+00:40:19,260 --> 00:40:23,260
+y agregar toda la funcionalidad de que se presione y todo eso
+
+408
+00:40:23,260 --> 00:40:27,260
+Qmr se inició más pensado para lo que son cosas móviles, no es cierto?
+
+409
+00:40:27,260 --> 00:40:33,260
+entonces son aplicaciones que responden mejor a mover, hacer animaciones
+
+410
+00:40:33,260 --> 00:40:37,260
+hacer que las cosas estén vinculadas entre ellas
+
+411
+00:40:37,260 --> 00:40:41,260
+entonces al mover un componente, se sepa reubicar de otra forma
+
+412
+00:40:41,260 --> 00:40:43,260
+está hecho mucho más para lo que es táctil
+
+413
+00:40:43,260 --> 00:40:45,260
+se puede usar mucho en escritorio también
+
+414
+00:40:45,260 --> 00:40:47,260
+no hay ningún tipo de problema con eso
+
+415
+00:40:47,260 --> 00:40:51,260
+funcionan muy bien, son muy performantes
+
+416
+00:40:51,260 --> 00:40:55,260
+la diferencia en este momento es que Qmr le falta en un...
+
+417
+00:40:55,260 --> 00:40:59,260
+básicamente como fue pensado por otra cosa le falta en un montón de widget
+
+418
+00:40:59,260 --> 00:41:01,260
+que por ejemplo si vos querés hacer una tabla
+
+419
+00:41:01,260 --> 00:41:03,260
+va a estar 3 años escribiendo Qmr
+
+420
+00:41:03,260 --> 00:41:05,260
+y en Qt vas a crear la tabla, digamos
+
+421
+00:41:05,260 --> 00:41:09,260
+pero bueno, parte de que fueron pensadas para cosas distintas
+
+422
+00:41:09,260 --> 00:41:11,260
+es una parte de Qt también
+
+423
+00:41:11,260 --> 00:41:13,260
+pero orientado más a aplicaciones móviles
+
+424
+00:41:13,260 --> 00:41:17,260
+donde vos tenés cosas que tenés que manejar con el dedo y cosas así
+
+425
+00:41:17,260 --> 00:41:23,260
+igual la siguiente versión de Qt
+
+426
+00:41:23,260 --> 00:41:27,260
+va a agregar muchísimos de los componentes bases de Qt
+
+427
+00:41:27,260 --> 00:41:30,260
+como las tablas, las listas y todo eso en Qmr directamente
+
+428
+00:41:30,260 --> 00:41:33,260
+para que sea también más potente y más fácil de usar
+
+429
+00:41:33,260 --> 00:41:35,260
+así que...
+
+430
+00:41:35,260 --> 00:41:40,260
+pero bueno, me dicen que no hay más tiempo para preguntar
+
+431
+00:41:40,260 --> 00:42:02,260
+bueno, gracias
+

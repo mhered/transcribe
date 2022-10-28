@@ -1,0 +1,292 @@
+1
+00:00:00,000 --> 00:00:02,000
+You
+
+2
+00:00:30,000 --> 00:00:49,280
+thisyo
+
+3
+00:00:49,280 --> 00:00:54,280
+The PICON are conferences around the PyZone programming language
+
+4
+00:00:54,280 --> 00:00:57,280
+and the PICON is in particular that national level conference
+
+5
+00:00:57,280 --> 00:01:00,280
+that takes place in Spain every year, being this the fifth edition we make.
+
+6
+00:01:00,280 --> 00:01:03,280
+Every year we try to take the PICON to some different cities in Spain.
+
+7
+00:01:03,280 --> 00:01:07,280
+We start in Madrid, Zaragoza, Valencia, Almería and this year Cáceres.
+
+8
+00:01:07,280 --> 00:01:10,280
+We go all over Spain, the idea is to get to the best people
+
+9
+00:01:10,280 --> 00:01:15,280
+and it is organized both by the Association of PICON in Spain and by a local group.
+
+10
+00:01:15,280 --> 00:01:19,280
+The idea is that we all get together and talk about the PICON.
+
+11
+00:01:19,280 --> 00:01:22,280
+We all come to share our experience, our knowledge
+
+12
+00:01:22,280 --> 00:01:24,280
+and we will spend a while and get to know each other.
+
+13
+00:01:24,280 --> 00:01:27,280
+It is like Christmas, but for computer scientists.
+
+14
+00:01:39,280 --> 00:01:42,280
+Hello, we are OpenSystems, a Spanish company
+
+15
+00:01:42,280 --> 00:01:47,280
+specialized in open source technology and very focused on big data,
+
+16
+00:01:47,280 --> 00:01:49,280
+machine learning, data analysis.
+
+17
+00:01:49,280 --> 00:01:56,280
+We are in PyCon because we love to contribute with open source communities,
+
+18
+00:01:56,280 --> 00:02:00,280
+mainly with Python, which is one of the technologies we use the most.
+
+19
+00:02:00,280 --> 00:02:05,280
+We have contact with the developers and users of this technology.
+
+20
+00:02:05,280 --> 00:02:08,280
+It is the third year that we contribute as sponsors
+
+21
+00:02:08,280 --> 00:02:12,280
+and we will continue to do so in the future.
+
+22
+00:02:12,280 --> 00:02:14,280
+Python is a programming language.
+
+23
+00:02:14,280 --> 00:02:17,280
+Normally, Python scientists say that it comes with the batteries
+
+24
+00:02:17,280 --> 00:02:19,280
+because it is used for a lot of things.
+
+25
+00:02:19,280 --> 00:02:22,280
+It is very easy to use, the barrier to entry is very small,
+
+26
+00:02:22,280 --> 00:02:25,280
+so you can find it in a lot of places.
+
+27
+00:02:25,280 --> 00:02:28,280
+It is used to learn, it is used in many companies,
+
+28
+00:02:28,280 --> 00:02:29,280
+it is my company that we use.
+
+29
+00:02:29,280 --> 00:02:31,280
+It is very easy to start programming in Python
+
+30
+00:02:31,280 --> 00:02:33,280
+and there are many tools already developed.
+
+31
+00:02:33,280 --> 00:02:36,280
+For me, the great thing about Python is the community.
+
+32
+00:02:36,280 --> 00:02:38,280
+We are celebrating here.
+
+33
+00:02:38,280 --> 00:02:41,280
+If you have a problem, I am sure there is someone who will call you
+
+34
+00:02:41,280 --> 00:02:45,280
+and say, I want to program this, I will help you and I will teach you.
+
+35
+00:02:59,280 --> 00:03:03,280
+I came to this event because I am very interested in the Python community
+
+36
+00:03:03,280 --> 00:03:06,280
+and everything that is being done here.
+
+37
+00:03:06,280 --> 00:03:10,280
+I have come here because it is an annual meeting that we have.
+
+38
+00:03:10,280 --> 00:03:13,280
+I have already given a workshop yesterday of TensorFlow
+
+39
+00:03:13,280 --> 00:03:16,280
+with how to predict death in the game of thrones
+
+40
+00:03:16,280 --> 00:03:45,280
+and this afternoon I will talk about how to make command lines with click.
+
+41
+00:03:45,280 --> 00:03:48,280
+For us as Ticotea, this event is our home.
+
+42
+00:03:48,280 --> 00:03:52,280
+We have been participating in the last years and not only coming here
+
+43
+00:03:52,280 --> 00:03:56,280
+to meet engineers like those we have within the company
+
+44
+00:03:56,280 --> 00:04:00,280
+but also to share what we do, our projects, our ambition,
+
+45
+00:04:00,280 --> 00:04:03,280
+our ideas, the new developments that we are thinking
+
+46
+00:04:03,280 --> 00:04:18,280
+and have the feeling of community and being able to share with everyone.
+
+47
+00:04:18,280 --> 00:04:19,280
+Why Gacere?
+
+48
+00:04:19,280 --> 00:04:22,280
+Why Gacere? It is a good question.
+
+49
+00:04:22,280 --> 00:04:24,280
+The truth is that it is something curious because all the previous organizations
+
+50
+00:04:24,280 --> 00:04:28,280
+have been a local team that was what is a site in the site.
+
+51
+00:04:28,280 --> 00:04:31,280
+Here the truth is that we were all out and that has made it a little more difficult
+
+52
+00:04:31,280 --> 00:04:33,280
+but we were counting on the help of the university
+
+53
+00:04:33,280 --> 00:04:36,280
+and that has made us all this easier.
+
+54
+00:04:36,280 --> 00:04:39,280
+The local team of Gacere was tied to the head and said
+
+55
+00:04:39,280 --> 00:04:44,280
+well, in Gacere and they encouraged, they set up a spectacular proposal,
+
+56
+00:04:44,280 --> 00:04:47,280
+the site is spectacular, so nothing,
+
+57
+00:04:47,280 --> 00:05:02,280
+here we are to meet Gacere and have fun at the weekend.
+
+58
+00:05:02,280 --> 00:05:04,280
+I liked the event because we do a lot of networking,
+
+59
+00:05:04,280 --> 00:05:06,280
+you know other companies that do other projects,
+
+60
+00:05:06,280 --> 00:05:10,280
+you find out about things that exist, new developments
+
+61
+00:05:10,280 --> 00:05:13,280
+and the truth is that we consider it as an important event
+
+62
+00:05:13,280 --> 00:05:16,280
+within the year, within the company of the two brands
+
+63
+00:05:16,280 --> 00:05:19,280
+and we try to collaborate as sponsors every year.
+
+64
+00:05:19,280 --> 00:05:24,280
+We are André Ebruy, we are a team of English with a Malaga headquarters,
+
+65
+00:05:24,280 --> 00:05:26,280
+we are already on the team of the Malaga team,
+
+66
+00:05:26,280 --> 00:05:29,280
+we are in charge of doing the transition from Divisa to the 3D Final.
+
+67
+00:05:29,280 --> 00:05:32,280
+Last year we started sponsoring the Pycones in Almería,
+
+68
+00:05:32,280 --> 00:05:36,280
+this year we have repeated and we try to repeat later too.
+
+69
+00:05:36,280 --> 00:05:40,280
+We also sponsor the group Malaga Paizcon,
+
+70
+00:05:40,280 --> 00:05:42,280
+since a couple of years ago.
+
+71
+00:05:42,280 --> 00:05:46,280
+What we are currently looking for are profiles,
+
+72
+00:05:46,280 --> 00:05:48,280
+Paizcon and DevOps,
+
+73
+00:05:48,280 --> 00:06:14,280
+if you are interested, you can come with us.
+

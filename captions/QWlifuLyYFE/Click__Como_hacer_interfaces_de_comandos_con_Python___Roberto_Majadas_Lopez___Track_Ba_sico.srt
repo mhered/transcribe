@@ -1,0 +1,4120 @@
+1
+00:00:30,000 --> 00:00:33,000
+O que está a diga, o que permite é suscriar esse tipo de comando.
+
+2
+00:00:33,000 --> 00:00:36,000
+É normalmente, quando tu tens un desabregado de software,
+
+3
+00:00:36,000 --> 00:00:41,000
+normalmente isso le pasa, que empecesa a ser cosas un pouco automatizadas,
+
+4
+00:00:41,000 --> 00:00:45,000
+coge a ver que enxerga muchas veces, e entonces empecesa de comandos,
+
+5
+00:00:45,000 --> 00:00:48,000
+empecesa de cosas que en paz, o McFly, e lo que sea,
+
+6
+00:00:48,000 --> 00:00:51,000
+pero logo sempre llega un momento en el que la cosa se queda
+
+7
+00:00:51,000 --> 00:00:54,000
+moi cortita e empiezas a hacer cosas moi virgen drosas,
+
+8
+00:00:54,000 --> 00:00:57,000
+e acaba convertiendo-se en un alien e acaba covendo el proyecto,
+
+9
+00:00:57,000 --> 00:00:59,000
+e se cofica todo, vale?
+
+10
+00:00:59,000 --> 00:01:03,000
+É una libería, como hay varias que ahora veremos,
+
+11
+00:01:03,000 --> 00:01:06,000
+pero é una edad que máis me gusta, porque é moi paitónica,
+
+12
+00:01:06,000 --> 00:01:11,000
+e é moi moi extensible, como veremos agora, vale?
+
+13
+00:01:11,000 --> 00:01:14,000
+Primeiro, por que click?
+
+14
+00:01:14,000 --> 00:01:18,000
+Principalmente porque é totalmente anidable e componible,
+
+15
+00:01:18,000 --> 00:01:21,000
+te permite hacer comandos, de tal manera que
+
+16
+00:01:21,000 --> 00:01:25,000
+éso comandos puedan tener a subcomandos,
+
+17
+00:01:25,000 --> 00:01:28,000
+non sé a unos, quantos han es manejado aquí JIT,
+
+18
+00:01:28,000 --> 00:01:30,000
+pero quando utilicéis o comando del JIT,
+
+19
+00:01:30,000 --> 00:01:35,000
+tens o JIT clone, o JIT comit, e todos son subcomandos,
+
+20
+00:01:35,000 --> 00:01:37,000
+e esta libería está moi enfocada,
+
+21
+00:01:37,000 --> 00:01:41,000
+para que podas estender mucho a línea de comandos,
+
+22
+00:01:41,000 --> 00:01:43,000
+para que podas poner muchos subcomandos,
+
+23
+00:01:43,000 --> 00:01:45,000
+con muchas opciones e tal, e cada más,
+
+24
+00:01:45,000 --> 00:01:49,000
+digamos, de alguna manera podas componer uns comandos con outros,
+
+25
+00:01:49,000 --> 00:01:52,000
+de tal manera que podas, al mojo, tener dos comandos
+
+26
+00:01:52,000 --> 00:01:55,000
+que tiren de las mismas librerías,
+
+27
+00:01:55,000 --> 00:02:00,000
+para poder extenderlo e que hagan cosas diferentes, vale?
+
+28
+00:02:00,000 --> 00:02:04,000
+Também é moi chulo porque todo o sistema está moi orientado
+
+29
+00:02:04,000 --> 00:02:06,000
+a que toda a maneira de hacer os comandos
+
+30
+00:02:06,000 --> 00:02:09,000
+genere mucha documentación, e então os comandos,
+
+31
+00:02:09,000 --> 00:02:11,000
+quando os haces en el código, directamente,
+
+32
+00:02:11,000 --> 00:02:13,000
+genera ya a ayuda asociada,
+
+33
+00:02:13,000 --> 00:02:16,000
+coso é o típico de quando haces el gel, vale?
+
+34
+00:02:16,000 --> 00:02:19,000
+Pues está moi orientado a que éso tipo de tareas
+
+35
+00:02:19,000 --> 00:02:22,000
+e não tengas que hacerlas, sino que já venga
+
+36
+00:02:22,000 --> 00:02:25,000
+como parte de la própria programación.
+
+37
+00:02:25,000 --> 00:02:28,000
+Tiene leisiluadind de comandos en tipo de acusión,
+
+38
+00:02:28,000 --> 00:02:30,000
+non saio traducir muy bien leisiluadind,
+
+39
+00:02:30,000 --> 00:02:34,000
+pero máso-menos é como una carga aperezosa,
+
+40
+00:02:34,000 --> 00:02:37,000
+una carga indiferida que te permite que,
+
+41
+00:02:37,000 --> 00:02:38,000
+mientras estás en tiempo de ejecución
+
+42
+00:02:38,000 --> 00:02:40,000
+quando vas executar el comando,
+
+43
+00:02:40,000 --> 00:02:42,000
+se podas comportar de una manera o de outra, vale?
+
+44
+00:02:42,000 --> 00:02:44,000
+Pero según que parámetros haya,
+
+45
+00:02:44,000 --> 00:02:47,000
+o según que funcionalidade le quieras dar,
+
+46
+00:02:47,000 --> 00:02:49,000
+é o que está a coça muy fixe,
+
+47
+00:02:49,000 --> 00:02:52,000
+é o que está a coça muy ferradita, vale?
+
+48
+00:02:52,000 --> 00:02:55,000
+Ésta tiene un forte soporte
+
+49
+00:02:55,000 --> 00:02:57,000
+de lo que são as convenciones de Unix
+
+50
+00:02:57,000 --> 00:02:59,000
+para hacer os comandos,
+
+51
+00:02:59,000 --> 00:03:01,000
+es a lo típicos de, pues,
+
+52
+00:03:01,000 --> 00:03:04,000
+os parámetros simples es menos una letra,
+
+53
+00:03:04,000 --> 00:03:06,000
+os parámetros complejos menos unha letra,
+
+54
+00:03:06,000 --> 00:03:08,000
+es a ver, unha palavra, coso é o tipo, vale?
+
+55
+00:03:08,000 --> 00:03:11,000
+Que são as típicas convenciones de los comandos Unix
+
+56
+00:03:11,000 --> 00:03:13,000
+e está moi chulo por éso,
+
+57
+00:03:13,000 --> 00:03:14,000
+a parte que, por exemplo,
+
+58
+00:03:14,000 --> 00:03:17,000
+os parámetros complejos,
+
+59
+00:03:17,000 --> 00:03:19,000
+os coisos de ese tipo, vale?
+
+60
+00:03:19,000 --> 00:03:21,000
+Está moi muy enfocado a éso.
+
+61
+00:03:21,000 --> 00:03:22,000
+Também tiene coso é moi chulo
+
+62
+00:03:22,000 --> 00:03:23,000
+a coça por éso, por exemplo,
+
+63
+00:03:23,000 --> 00:03:25,000
+a carga de variables de entorno de serie,
+
+64
+00:03:25,000 --> 00:03:27,000
+o que tú, por exemplo,
+
+65
+00:03:27,000 --> 00:03:29,000
+podas exportar en el environment
+
+66
+00:03:29,000 --> 00:03:31,000
+unha serie de variables de entorno,
+
+67
+00:03:31,000 --> 00:03:33,000
+que, lo golas, podas coger dentro de tú comando
+
+68
+00:03:33,000 --> 00:03:36,000
+de manera moi fácil, vale?
+
+69
+00:03:36,000 --> 00:03:39,000
+Tiene soporte para Python 2 e para Python 3,
+
+70
+00:03:39,000 --> 00:03:41,000
+aí incluso os recomendaría que os leyerais
+
+71
+00:03:41,000 --> 00:03:44,000
+la documentación de click, que vina a final de la charla,
+
+72
+00:03:44,000 --> 00:03:46,000
+en el que explica que
+
+73
+00:03:46,000 --> 00:03:48,000
+há unas pequeñas, pequeñísimas limitaciones
+
+74
+00:03:48,000 --> 00:03:50,000
+en cuanto ao UTF-8 e tal,
+
+75
+00:03:50,000 --> 00:03:52,000
+pero que, en principio,
+
+76
+00:03:52,000 --> 00:03:54,000
+estás soportada para os dos tipos de Python,
+
+77
+00:03:54,000 --> 00:03:57,000
+está moi ha extraído e no hace falta
+
+78
+00:03:57,000 --> 00:03:59,000
+que adir código de máis
+
+79
+00:03:59,000 --> 00:04:01,000
+para que poda funcionar tanto en Python 2
+
+80
+00:04:01,000 --> 00:04:03,000
+como en Python 3.
+
+81
+00:04:03,000 --> 00:04:06,000
+E, logo, tiene cosos como descriptores de...
+
+82
+00:04:06,000 --> 00:04:08,000
+o ala gestión de descriptores de ficheros de serie
+
+83
+00:04:08,000 --> 00:04:10,000
+que te permite tanto en Python 2
+
+84
+00:04:10,000 --> 00:04:12,000
+como en Python 3,
+
+85
+00:04:12,000 --> 00:04:14,000
+e, de unha manera bastante comprexible,
+
+86
+00:04:14,000 --> 00:04:16,000
+acceder a los descriptores de ficheros,
+
+87
+00:04:16,000 --> 00:04:18,000
+que é unha cosa bastante útil, por exemplo,
+
+88
+00:04:18,000 --> 00:04:20,000
+para, quando quires hacer un comando
+
+89
+00:04:20,000 --> 00:04:22,000
+que se lo quieres enchufar a un Python,
+
+90
+00:04:22,000 --> 00:04:24,000
+vale?
+
+91
+00:04:24,000 --> 00:04:27,000
+Que podas... lo podas hacer de unha manera súper fácil.
+
+92
+00:04:27,000 --> 00:04:30,000
+E, logo, tienes muchos, muchos helpers,
+
+93
+00:04:30,000 --> 00:04:33,000
+que só lo vamos a ver a hora largo de la charla,
+
+94
+00:04:33,000 --> 00:04:35,000
+que son cosos que te ajudan a hacer
+
+95
+00:04:35,000 --> 00:04:37,000
+las tareas de uso comun, o xa, por exemplo,
+
+96
+00:04:37,000 --> 00:04:40,000
+el típico, que quires añadir, el típico parámetro,
+
+97
+00:04:40,000 --> 00:04:42,000
+que te pregunte a la password,
+
+98
+00:04:42,000 --> 00:04:44,000
+e que te la pregunte dos veces,
+
+99
+00:04:44,000 --> 00:04:46,000
+e que te devora ese tipo de información, vale?
+
+100
+00:04:46,000 --> 00:04:48,000
+O, por exemplo,
+
+101
+00:04:48,000 --> 00:04:50,000
+que te facilite la manera
+
+102
+00:04:50,000 --> 00:04:52,000
+de hacer plugings para tu comando,
+
+103
+00:04:52,000 --> 00:04:55,000
+porque tú necesitas que tens un comando
+
+104
+00:04:55,000 --> 00:04:57,000
+normal que has hecho tú,
+
+105
+00:04:57,000 --> 00:04:59,000
+pero quieres que,
+
+106
+00:04:59,000 --> 00:05:01,000
+se metes un P en una determinada carpeta,
+
+107
+00:05:01,000 --> 00:05:03,000
+pues eso se convierta a su vez en un pluging
+
+108
+00:05:03,000 --> 00:05:05,000
+e que se integre dentro de trocos que o sistema de comandos,
+
+109
+00:05:05,000 --> 00:05:07,000
+e de esa manera,
+
+110
+00:05:07,000 --> 00:05:09,000
+podas estenderlo un poquito.
+
+111
+00:05:09,000 --> 00:05:12,000
+E, ahora venen las típicas preguntas
+
+112
+00:05:12,000 --> 00:05:14,000
+que venen un poquito rápido,
+
+113
+00:05:14,000 --> 00:05:16,000
+es, y por que non las otras cosas?
+
+114
+00:05:16,000 --> 00:05:18,000
+Vale, porque hai má sistemas,
+
+115
+00:05:18,000 --> 00:05:21,000
+está el appars, el opars, el dockpars,
+
+116
+00:05:21,000 --> 00:05:23,000
+o sea, hai mollo de sistemas
+
+117
+00:05:23,000 --> 00:05:25,000
+que hacen ese tipo de cosas.
+
+118
+00:05:25,000 --> 00:05:27,000
+Appars es la que hai en el stack de Python general,
+
+119
+00:05:27,000 --> 00:05:29,000
+e bueno, en principio,
+
+120
+00:05:29,000 --> 00:05:31,000
+click está basado en opars,
+
+121
+00:05:31,000 --> 00:05:33,000
+que es la última versión,
+
+122
+00:05:33,000 --> 00:05:35,000
+pero principalmente,
+
+123
+00:05:35,000 --> 00:05:38,000
+es porque el appars hace demasiado mágia,
+
+124
+00:05:38,000 --> 00:05:41,000
+en cuanto a la manera de saber
+
+125
+00:05:41,000 --> 00:05:44,000
+se algo es un argumento o algo es un parámetro,
+
+126
+00:05:44,000 --> 00:05:47,000
+e digamos que click como están,
+
+127
+00:05:47,000 --> 00:05:49,000
+quiere mantener esa filosofía
+
+128
+00:05:49,000 --> 00:05:51,000
+de con posibilidad e anidabilidad,
+
+129
+00:05:51,000 --> 00:05:54,000
+esas fitos que tenas appars,
+
+130
+00:05:54,000 --> 00:05:56,000
+que están muy bien,
+
+131
+00:05:56,000 --> 00:06:00,000
+le hace un poco complicado los objetivos que tiene click.
+
+132
+00:06:00,000 --> 00:06:03,000
+Dificulta, por exemplo, o anidamiento de comandos,
+
+133
+00:06:03,000 --> 00:06:05,000
+o sea, nos habéis utilizado alguna vez appars,
+
+134
+00:06:05,000 --> 00:06:06,000
+pero sempre,
+
+135
+00:06:06,000 --> 00:06:08,000
+quando quieres hacer el típico comando de git
+
+136
+00:06:08,000 --> 00:06:10,000
+que tiene subcomandos,
+
+137
+00:06:10,000 --> 00:06:12,000
+e se os subcomandos,
+
+138
+00:06:12,000 --> 00:06:14,000
+digamos que es posible hacerlo con el appars,
+
+139
+00:06:14,000 --> 00:06:16,000
+pero es má complicado,
+
+140
+00:06:16,000 --> 00:06:18,000
+então rompo un poquito la filosofía de click.
+
+141
+00:06:18,000 --> 00:06:20,000
+Vale, e por que no dockop?
+
+142
+00:06:20,000 --> 00:06:22,000
+Dockop es outra librería,
+
+143
+00:06:22,000 --> 00:06:26,000
+que también serve para hacer comandos,
+
+144
+00:06:26,000 --> 00:06:28,000
+como ellos dicen,
+
+145
+00:06:28,000 --> 00:06:30,000
+e a má bonita línea de comando
+
+146
+00:06:30,000 --> 00:06:32,000
+se echa a mano.
+
+147
+00:06:32,000 --> 00:06:34,000
+Entonces,
+
+148
+00:06:34,000 --> 00:06:36,000
+la historia de dockop
+
+149
+00:06:36,000 --> 00:06:38,000
+es que nos siguen
+
+150
+00:06:38,000 --> 00:06:40,000
+los mismos principios filosóficos
+
+151
+00:06:40,000 --> 00:06:41,000
+por así decirlo,
+
+152
+00:06:41,000 --> 00:06:42,000
+da hora de construir comandos,
+
+153
+00:06:42,000 --> 00:06:44,000
+no es que unas sea mejor que otras,
+
+154
+00:06:44,000 --> 00:06:46,000
+sino que directamente siguen objetivos diferentes.
+
+155
+00:06:46,000 --> 00:06:48,000
+Por exemplo,
+
+156
+00:06:48,000 --> 00:06:50,000
+o dockpark es muy dependente
+
+157
+00:06:50,000 --> 00:06:52,000
+da ajuda que hagas,
+
+158
+00:06:52,000 --> 00:06:54,000
+porque quando haces cosas con dockop,
+
+159
+00:06:54,000 --> 00:06:56,000
+tú primeiro haces un ayuda
+
+160
+00:06:56,000 --> 00:06:58,000
+en texto,
+
+161
+00:06:58,000 --> 00:07:00,000
+e luego eso se lo pasas,
+
+162
+00:07:00,000 --> 00:07:02,000
+e de ahí te genera todas as líneas de comandos.
+
+163
+00:07:02,000 --> 00:07:04,000
+E eso, digamos que va
+
+164
+00:07:04,000 --> 00:07:06,000
+como opuesto a lo que quere click.
+
+165
+00:07:06,000 --> 00:07:08,000
+Vale, no es que sea malo,
+
+166
+00:07:08,000 --> 00:07:10,000
+es que directamente no es la misma filosofía.
+
+167
+00:07:10,000 --> 00:07:12,000
+É difícil hacer la composición de comandos,
+
+168
+00:07:12,000 --> 00:07:14,000
+o que os comentaba,
+
+169
+00:07:14,000 --> 00:07:16,000
+de poder coger distintos ficheros,
+
+170
+00:07:16,000 --> 00:07:18,000
+e luego juntarlos,
+
+171
+00:07:18,000 --> 00:07:20,000
+e hacer estipo de cosas porque tú ya te haces tú ayuda,
+
+172
+00:07:20,000 --> 00:07:22,000
+e de ahí tienes que tirar algo lo que sea.
+
+173
+00:07:22,000 --> 00:07:24,000
+E luego,
+
+174
+00:07:24,000 --> 00:07:26,000
+e sí tienes soporte para meter subcomandos,
+
+175
+00:07:26,000 --> 00:07:28,000
+pero
+
+176
+00:07:28,000 --> 00:07:30,000
+claro, volvemos un pouco a lo mismo.
+
+177
+00:07:30,000 --> 00:07:32,000
+Click está pensado
+
+178
+00:07:32,000 --> 00:07:34,000
+para poder meter
+
+179
+00:07:34,000 --> 00:07:36,000
+no solo subcomandos,
+
+180
+00:07:36,000 --> 00:07:38,000
+sino que esos subcomandos puedan
+
+181
+00:07:38,000 --> 00:07:40,000
+comportarse de una manera o outra,
+
+182
+00:07:40,000 --> 00:07:42,000
+e digamos que como está hecho dockop,
+
+183
+00:07:42,000 --> 00:07:44,000
+limita esa posibilidad.
+
+184
+00:07:44,000 --> 00:07:46,000
+Se me ocurre unha cosa muy estúpida,
+
+185
+00:07:46,000 --> 00:07:48,000
+que ao mojo, por exemplo,
+
+186
+00:07:48,000 --> 00:07:50,000
+tú quieres hacer un comando que dependiendo de en qué sistema estes,
+
+187
+00:07:50,000 --> 00:07:52,000
+porque hayas puesto un if
+
+188
+00:07:52,000 --> 00:07:54,000
+e xis platforms
+
+189
+00:07:54,000 --> 00:07:56,000
+debían,
+
+190
+00:07:56,000 --> 00:07:58,000
+pues entonces manhares estos comandos,
+
+191
+00:07:58,000 --> 00:08:00,000
+pero xis unha reja, manhares estos outros.
+
+192
+00:08:00,000 --> 00:08:02,000
+Digamos que esa manera de hacerlo con dockop
+
+193
+00:08:02,000 --> 00:08:04,000
+pues
+
+194
+00:08:04,000 --> 00:08:06,000
+non está así.
+
+195
+00:08:06,000 --> 00:08:08,000
+E click,
+
+196
+00:08:08,000 --> 00:08:10,000
+a historia es que no solo parsea,
+
+197
+00:08:10,000 --> 00:08:12,000
+porque, Cao, el rollo de hacer consolas de comandos
+
+198
+00:08:12,000 --> 00:08:14,000
+al final es que tú te dan
+
+199
+00:08:14,000 --> 00:08:16,000
+tú ejecutas un comando
+
+200
+00:08:16,000 --> 00:08:18,000
+e ese comando tiene unos argumentos,
+
+201
+00:08:18,000 --> 00:08:20,000
+e tú los parseas
+
+202
+00:08:20,000 --> 00:08:22,000
+e tú lo que hayas parseado
+
+203
+00:08:22,000 --> 00:08:24,000
+ejecutas unha pieza de código o outra pieza de código.
+
+204
+00:08:24,000 --> 00:08:26,000
+La historia es que no solo parseas,
+
+205
+00:08:26,000 --> 00:08:28,000
+sino que además asigna el código
+
+206
+00:08:28,000 --> 00:08:30,000
+que tú quieres ejecutar de manera
+
+207
+00:08:30,000 --> 00:08:32,000
+un poquito dinámica
+
+208
+00:08:32,000 --> 00:08:34,000
+o pode llegar a ser muy dinámica.
+
+209
+00:08:34,000 --> 00:08:36,000
+Tambien hay un fuerte
+
+210
+00:08:36,000 --> 00:08:38,000
+contexto de invocación,
+
+211
+00:08:38,000 --> 00:08:40,000
+de tal manera que, a lo mojo,
+
+212
+00:08:40,000 --> 00:08:42,000
+tú desde un subcomando
+
+213
+00:08:42,000 --> 00:08:44,000
+trates con cosas que vienen un comando
+
+214
+00:08:44,000 --> 00:08:46,000
+que a lo veremos
+
+215
+00:08:46,000 --> 00:08:48,000
+e cuando tú ejecutas
+
+216
+00:08:48,000 --> 00:08:50,000
+dentro de un contexto de ejecución
+
+217
+00:08:50,000 --> 00:08:52,000
+que viene con una serie de variables
+
+218
+00:08:52,000 --> 00:08:54,000
+o que pueden pasar a los subcomandos
+
+219
+00:08:54,000 --> 00:08:56,000
+e os subcomandos poden ejecutar cosas
+
+220
+00:08:56,000 --> 00:08:58,000
+e luego volven hacía atrás.
+
+221
+00:08:58,000 --> 00:09:00,000
+E lo que sobre todo es que
+
+222
+00:09:00,000 --> 00:09:02,000
+tiene mucha información de todo.
+
+223
+00:09:02,000 --> 00:09:04,000
+Tan como está hecho agora lo veréis
+
+224
+00:09:04,000 --> 00:09:06,000
+e quando tú describes un comando
+
+225
+00:09:06,000 --> 00:09:08,000
+es ya implícitamente
+
+226
+00:09:08,000 --> 00:09:10,000
+que quando estás describiendo o comando
+
+227
+00:09:10,000 --> 00:09:12,000
+ya le estás provebiendo de un montón de información
+
+228
+00:09:12,000 --> 00:09:14,000
+que luego el ya utilizará para autogenerar la ayuda
+
+229
+00:09:14,000 --> 00:09:16,000
+e para lo que sea.
+
+230
+00:09:16,000 --> 00:09:18,000
+E tú esa un poco a lo mismo.
+
+231
+00:09:18,000 --> 00:09:20,000
+Quando tú haces cosas coxas en DoCo
+
+232
+00:09:20,000 --> 00:09:22,000
+pues haces la ayuda e la haces ya es así.
+
+233
+00:09:22,000 --> 00:09:24,000
+E aquí tú ya podes jugar un poquito
+
+234
+00:09:24,000 --> 00:09:26,000
+porque se colocavamos de la anidabilidad
+
+235
+00:09:26,000 --> 00:09:28,000
+e la composidad.
+
+236
+00:09:28,000 --> 00:09:30,000
+E al final, porque no DoCo?
+
+237
+00:09:30,000 --> 00:09:32,000
+Porque clique e estar en todo a hacer un sistema componible
+
+238
+00:09:32,000 --> 00:09:34,000
+e o DoCo está pensado
+
+239
+00:09:34,000 --> 00:09:36,000
+para tener un Cli muy bonito e xamando.
+
+240
+00:09:36,000 --> 00:09:38,000
+Que está, no es como os comento,
+
+241
+00:09:38,000 --> 00:09:40,000
+no ententes verlo como una contraposición
+
+242
+00:09:40,000 --> 00:09:42,000
+de esto es mejor que esto
+
+243
+00:09:42,000 --> 00:09:44,000
+porque es que es un poco de lo que
+
+244
+00:09:44,000 --> 00:09:46,000
+tú como quieras hacer.
+
+245
+00:09:46,000 --> 00:09:48,000
+Hay gente que se siente muy cómoda con DoCo
+
+246
+00:09:48,000 --> 00:09:50,000
+e hay gente que no porque no le vale
+
+247
+00:09:50,000 --> 00:09:52,000
+para sus necesidades e viceversa.
+
+248
+00:09:52,000 --> 00:09:54,000
+Vale?
+
+249
+00:09:54,000 --> 00:09:56,000
+Vamos a empezar un poco con
+
+250
+00:09:56,000 --> 00:09:58,000
+las pantallas negras.
+
+251
+00:09:58,000 --> 00:10:00,000
+Cómo se instala clique?
+
+252
+00:10:00,000 --> 00:10:02,000
+Eu posto, no sé cuántos dos coxas conocísse virtualen
+
+253
+00:10:02,000 --> 00:10:04,000
+todos, no? Me imagino, máso menos.
+
+254
+00:10:04,000 --> 00:10:06,000
+Básicamente, lo que hacemos
+
+255
+00:10:06,000 --> 00:10:08,000
+é instalar clique.
+
+256
+00:10:08,000 --> 00:10:10,000
+Pipistal clique dentro de un virtualen
+
+257
+00:10:10,000 --> 00:10:12,000
+e con eso ya tenemos todo instalado.
+
+258
+00:10:12,000 --> 00:10:14,000
+Ésto seria un HelloWare típico
+
+259
+00:10:14,000 --> 00:10:16,000
+de como vamos a hacer un comando
+
+260
+00:10:16,000 --> 00:10:18,000
+e ahora vamos a ir haciéndolo
+
+261
+00:10:18,000 --> 00:10:20,000
+muy rápido de todas as coxas que se pode
+
+262
+00:10:20,000 --> 00:10:22,000
+hacer. Básicamente, hacemos
+
+263
+00:10:22,000 --> 00:10:24,000
+o import, utilizamos un decorador
+
+264
+00:10:24,000 --> 00:10:26,000
+dentro de una función que veis
+
+265
+00:10:26,000 --> 00:10:28,000
+clique.coman, éso é un decorador
+
+266
+00:10:28,000 --> 00:10:30,000
+que lo que le dices que é esa función
+
+267
+00:10:30,000 --> 00:10:32,000
+Hello va ser el comando
+
+268
+00:10:32,000 --> 00:10:34,000
+e que va a hacer un clique
+
+269
+00:10:34,000 --> 00:10:36,000
+ECO que va a hacer que se escriba
+
+270
+00:10:36,000 --> 00:10:38,000
+HelloWare. Entonces, quando ejecuta
+
+271
+00:10:38,000 --> 00:10:40,000
+o main, directamente, pues va
+
+272
+00:10:40,000 --> 00:10:42,000
+a llamar al genu.
+
+273
+00:10:42,000 --> 00:10:44,000
+Automaticamente, cuando tú
+
+274
+00:10:44,000 --> 00:10:46,000
+já tienes ese comando, se tú, por ejemplo, le haces
+
+275
+00:10:46,000 --> 00:10:48,000
+un minus, minus gen, pues directamente
+
+276
+00:10:48,000 --> 00:10:50,000
+te va a proveer,
+
+277
+00:10:50,000 --> 00:10:52,000
+no te va a proveer ningún ayuda porque
+
+278
+00:10:52,000 --> 00:10:54,000
+no está puesto ninguna ayuda, pero ya digamos que
+
+279
+00:10:54,000 --> 00:10:56,000
+está integrado dentro del sistema.
+
+280
+00:10:56,000 --> 00:10:58,000
+Ahora lo iremos complicando un poquito
+
+281
+00:10:58,000 --> 00:11:00,000
+máx para que le lleis dindo.
+
+282
+00:11:00,000 --> 00:11:02,000
+Aqui, por ejemplo, se pode ver
+
+283
+00:11:02,000 --> 00:11:04,000
+o que estoy haciendo é enseñar un poquito
+
+284
+00:11:04,000 --> 00:11:06,000
+en perspectiva las coxas a sido un pouco
+
+285
+00:11:06,000 --> 00:11:08,000
+congenerar e, luego, vamos a ir particularizando.
+
+286
+00:11:08,000 --> 00:11:10,000
+Esto seria, por ejemplo, un anidamiento
+
+287
+00:11:10,000 --> 00:11:12,000
+de comandos.
+
+288
+00:11:12,000 --> 00:11:14,000
+Tú, por ejemplo, tienes el CLI
+
+289
+00:11:14,000 --> 00:11:16,000
+que digamos que é o punto de entrada
+
+290
+00:11:16,000 --> 00:11:18,000
+por onde van a entrar todos os comandos
+
+291
+00:11:18,000 --> 00:11:20,000
+que se os dáis cuenta ten un decorador que es click.group
+
+292
+00:11:20,000 --> 00:11:22,000
+O que le está diciendo
+
+293
+00:11:22,000 --> 00:11:24,000
+é que, quando ejecuta
+
+294
+00:11:24,000 --> 00:11:26,000
+o main, se le va a ejecutarse
+
+295
+00:11:26,000 --> 00:11:28,000
+esa función con ese decorador
+
+296
+00:11:28,000 --> 00:11:30,000
+que lo que le va a decir
+
+297
+00:11:30,000 --> 00:11:32,000
+a línea de comandos o programa general
+
+298
+00:11:32,000 --> 00:11:34,000
+é que, é, eso, no é
+
+299
+00:11:34,000 --> 00:11:36,000
+un comando de sí mismo, sino es un grupo de comandos
+
+300
+00:11:36,000 --> 00:11:38,000
+e, a quien pertenece
+
+301
+00:11:38,000 --> 00:11:40,000
+o grupo de comandos?
+
+302
+00:11:40,000 --> 00:11:42,000
+O que está dentro desse grupo de comandos?
+
+303
+00:11:42,000 --> 00:11:44,000
+Veis que eu hago un cly.comand
+
+304
+00:11:44,000 --> 00:11:46,000
+que é una referencia a la función anterior
+
+305
+00:11:46,000 --> 00:11:48,000
+e, ento, estengo 6xhello
+
+306
+00:11:48,000 --> 00:11:50,000
+e 6xbye.
+
+307
+00:11:50,000 --> 00:11:52,000
+É xe automáticamente se va a transformar
+
+308
+00:11:52,000 --> 00:11:54,000
+que,
+
+309
+00:11:54,000 --> 00:11:56,000
+que, quando eu ejecuta o comando
+
+310
+00:11:56,000 --> 00:11:58,000
+anidado,
+
+311
+00:11:58,000 --> 00:12:00,000
+me enseñe que
+
+312
+00:12:00,000 --> 00:12:02,000
+tiene una opción de help automática
+
+313
+00:12:02,000 --> 00:12:04,000
+e tiene dos subcomandos que é 6xhello
+
+314
+00:12:04,000 --> 00:12:06,000
+e 6xgulbye
+
+315
+00:12:06,000 --> 00:12:08,000
+e 6xhello
+
+316
+00:12:08,000 --> 00:12:10,000
+e, quando eu ejecuta anidado
+
+317
+00:12:10,000 --> 00:12:12,000
+6xhello
+
+318
+00:12:12,000 --> 00:12:14,000
+me vai a escribir
+
+319
+00:12:14,000 --> 00:12:16,000
+xhellohacker
+
+320
+00:12:16,000 --> 00:12:18,000
+e, quando diga 6xbye
+
+321
+00:12:18,000 --> 00:12:20,000
+me vai a escribir xhacker
+
+322
+00:12:20,000 --> 00:12:22,000
+vale?
+
+323
+00:12:22,000 --> 00:12:24,000
+e, por exemplo, é como se va
+
+324
+00:12:24,000 --> 00:12:26,000
+añadiendo parámetros
+
+325
+00:12:26,000 --> 00:12:28,000
+e opciones
+
+326
+00:12:28,000 --> 00:12:30,000
+a nosos comandos
+
+327
+00:12:30,000 --> 00:12:32,000
+é que, no comando
+
+328
+00:12:32,000 --> 00:12:34,000
+e, tu, quando ejecuta o comando
+
+329
+00:12:34,000 --> 00:12:36,000
+surprise
+
+330
+00:12:36,000 --> 00:12:38,000
+que é xe mesmo, que será um surprise.p
+
+331
+00:12:38,000 --> 00:12:40,000
+vale?
+
+332
+00:12:40,000 --> 00:12:42,000
+e, quando ejecuta o comando, vai a ter
+
+333
+00:12:42,000 --> 00:12:44,000
+uma opción que é menos-condown
+
+334
+00:12:44,000 --> 00:12:46,000
+que é por defecto
+
+335
+00:12:46,000 --> 00:12:48,000
+10 e que vai a ter
+
+336
+00:12:48,000 --> 00:12:50,000
+uma ajuda que é suprise-condown
+
+337
+00:12:50,000 --> 00:12:52,000
+e que vai a ter um argumento que é
+
+338
+00:12:52,000 --> 00:12:54,000
+name. Se os dáis cuenta
+
+339
+00:12:54,000 --> 00:12:56,000
+automáticamente
+
+340
+00:12:56,000 --> 00:12:58,000
+vai a pasar
+
+341
+00:12:58,000 --> 00:13:00,000
+o valor de o que tu le pases en condown
+
+342
+00:13:00,000 --> 00:13:02,000
+se lo va a pasar a a primeira variable de condown
+
+343
+00:13:02,000 --> 00:13:04,000
+de la función
+
+344
+00:13:04,000 --> 00:13:06,000
+e o name se lo pasará a la de
+
+345
+00:13:06,000 --> 00:13:08,000
+name e, a partir daí, tu já haces o que quieras
+
+346
+00:13:08,000 --> 00:13:10,000
+basicamente, o que haces é
+
+347
+00:13:10,000 --> 00:13:12,000
+e, terar o condown
+
+348
+00:13:12,000 --> 00:13:14,000
+desde o número que le has puesto hasta 0
+
+349
+00:13:14,000 --> 00:13:16,000
+e, quando chega ao 0, dice surprise
+
+350
+00:13:16,000 --> 00:13:18,000
+com o nome de la persona que tu le has puesto
+
+351
+00:13:18,000 --> 00:13:20,000
+vale?
+
+352
+00:13:20,000 --> 00:13:22,000
+então, como quedaria?
+
+353
+00:13:22,000 --> 00:13:24,000
+se tu haces um surprise-hell
+
+354
+00:13:24,000 --> 00:13:26,000
+automáticamente te va a decir
+
+355
+00:13:26,000 --> 00:13:28,000
+eu tenho uma opción-hell
+
+356
+00:13:28,000 --> 00:13:30,000
+condown que recebe como parámetro
+
+357
+00:13:30,000 --> 00:13:32,000
+un entero
+
+358
+00:13:32,000 --> 00:13:34,000
+e que, además, le tira a ajuda que le
+
+359
+00:13:34,000 --> 00:13:36,000
+posto antes, o de surprise-condown
+
+360
+00:13:36,000 --> 00:13:38,000
+e, então,
+
+361
+00:13:38,000 --> 00:13:40,000
+quando eu ejecuto o mesmo comando
+
+362
+00:13:40,000 --> 00:13:42,000
+com o menos-condown
+
+363
+00:13:42,000 --> 00:13:44,000
+3 Roberto
+
+364
+00:13:44,000 --> 00:13:46,000
+o que vai a hacer é o que a nós
+
+365
+00:13:46,000 --> 00:13:48,000
+vistimos na función e, terar en 3, 2, 1
+
+366
+00:13:48,000 --> 00:13:50,000
+e, depois, surprise Roberto
+
+367
+00:13:50,000 --> 00:13:52,000
+vale?
+
+368
+00:13:54,000 --> 00:13:56,000
+uma coisa que é muito interessante
+
+369
+00:13:56,000 --> 00:13:58,000
+é que o nome de click
+
+370
+00:13:58,000 --> 00:14:00,000
+é a integración que é muito fácil
+
+371
+00:14:00,000 --> 00:14:02,000
+com o set up tool
+
+372
+00:14:02,000 --> 00:14:04,000
+com o set up tool
+
+373
+00:14:04,000 --> 00:14:06,000
+o que é que permite é que tu te podas fazer um comando
+
+374
+00:14:06,000 --> 00:14:08,000
+e, com essas línias pequenas
+
+375
+00:14:08,000 --> 00:14:10,000
+de código, dirextamente te podes fazer
+
+376
+00:14:10,000 --> 00:14:12,000
+o seu próprio paquete de Python
+
+377
+00:14:12,000 --> 00:14:14,000
+que podes distribuir ou que podes instalar dentro
+
+378
+00:14:14,000 --> 00:14:16,000
+do teu sistema e o único que ele está dizendo
+
+379
+00:14:16,000 --> 00:14:18,000
+é que o teu nome de script
+
+380
+00:14:18,000 --> 00:14:20,000
+é o de script que tu le has puesto
+
+381
+00:14:20,000 --> 00:14:22,000
+que o Python module é
+
+382
+00:14:22,000 --> 00:14:24,000
+o nome de Python que tens
+
+383
+00:14:24,000 --> 00:14:26,000
+no teu comando
+
+384
+00:14:26,000 --> 00:14:28,000
+que necessita como dependencia click
+
+385
+00:14:28,000 --> 00:14:30,000
+e que tens
+
+386
+00:14:30,000 --> 00:14:32,000
+como entry point
+
+387
+00:14:32,000 --> 00:14:34,000
+como comando que tens que generar de pip
+
+388
+00:14:34,000 --> 00:14:36,000
+vale?
+
+389
+00:14:36,000 --> 00:14:38,000
+se vai a llamar jurescript e o que va a hacer
+
+390
+00:14:38,000 --> 00:14:40,000
+é a llamar al jurescript.cli
+
+391
+00:14:40,000 --> 00:14:42,000
+vale?
+
+392
+00:14:42,000 --> 00:14:44,000
+isto, se o llevamos ao exemplo anterior
+
+393
+00:14:44,000 --> 00:14:46,000
+seria surprise
+
+394
+00:14:46,000 --> 00:14:48,000
+e entraría en
+
+395
+00:14:48,000 --> 00:14:50,000
+aqui no tenemos o cli
+
+396
+00:14:50,000 --> 00:14:52,000
+igual a o anterior se lo puesto
+
+397
+00:14:52,000 --> 00:14:54,000
+por exemplo, se entrará ao cli
+
+398
+00:14:54,000 --> 00:14:56,000
+dirextamente empezarei a ejecutarse todo
+
+399
+00:14:56,000 --> 00:14:58,000
+o que haces, añadir un name
+
+400
+00:14:58,000 --> 00:15:00,000
+un name igual mine
+
+401
+00:15:00,000 --> 00:15:02,000
+e añadir todo eso
+
+402
+00:15:02,000 --> 00:15:04,000
+vale?
+
+403
+00:15:04,000 --> 00:15:06,000
+bien
+
+404
+00:15:06,000 --> 00:15:08,000
+parámetros, é esto é muito importante
+
+405
+00:15:08,000 --> 00:15:10,000
+parámetros é todo un general
+
+406
+00:15:10,000 --> 00:15:12,000
+vale?
+
+407
+00:15:12,000 --> 00:15:14,000
+e dentro dos parámetros hay dos clases
+
+408
+00:15:14,000 --> 00:15:16,000
+unas serían as opciones
+
+409
+00:15:16,000 --> 00:15:18,000
+e outros serían os argumentos
+
+410
+00:15:18,000 --> 00:15:20,000
+os argumentos son o típico
+
+411
+00:15:20,000 --> 00:15:22,000
+e o comando
+
+412
+00:15:22,000 --> 00:15:24,000
+e o nome
+
+413
+00:15:24,000 --> 00:15:26,000
+o fichero
+
+414
+00:15:26,000 --> 00:15:28,000
+o cp
+
+415
+00:15:28,000 --> 00:15:30,000
+o comando do cp
+
+416
+00:15:30,000 --> 00:15:32,000
+e o argumento
+
+417
+00:15:32,000 --> 00:15:34,000
+e o origen e o destino
+
+418
+00:15:34,000 --> 00:15:36,000
+dos ficheros que tu queres copiar
+
+419
+00:15:36,000 --> 00:15:38,000
+é un argumento
+
+420
+00:15:38,000 --> 00:15:40,000
+é útil pensar que os argumentos
+
+421
+00:15:40,000 --> 00:15:42,000
+só vamos utilizar para
+
+422
+00:15:42,000 --> 00:15:44,000
+añadir nomes, ficheros
+
+423
+00:15:44,000 --> 00:15:46,000
+para añadir cosas un pouco
+
+424
+00:15:46,000 --> 00:15:48,000
+desse orden
+
+425
+00:15:48,000 --> 00:15:50,000
+as opciones como verémos máis adelante
+
+426
+00:15:50,000 --> 00:15:52,000
+son máis para poner flags
+
+427
+00:15:52,000 --> 00:15:54,000
+o poner información adicional
+
+428
+00:15:54,000 --> 00:15:56,000
+que queremos hacer con ella
+
+429
+00:15:56,000 --> 00:15:58,000
+por exemplo, o verbose é típico
+
+430
+00:15:58,000 --> 00:16:00,000
+de que o comando devolve máis información
+
+431
+00:16:00,000 --> 00:16:02,000
+o coso é desse tipo
+
+432
+00:16:02,000 --> 00:16:04,000
+as opciones
+
+433
+00:16:04,000 --> 00:16:06,000
+é o típico que vemos con os guiones
+
+434
+00:16:06,000 --> 00:16:08,000
+que pode ser menos-menos-heil
+
+435
+00:16:08,000 --> 00:16:10,000
+o pode ser menos-h
+
+436
+00:16:10,000 --> 00:16:12,000
+o menos-v para verbose
+
+437
+00:16:12,000 --> 00:16:14,000
+o menos-menos-version
+
+438
+00:16:14,000 --> 00:16:16,000
+o coso é desse tipo
+
+439
+00:16:16,000 --> 00:16:18,000
+está totalmente documentado
+
+440
+00:16:18,000 --> 00:16:20,000
+porque a la hora de que tu pongas
+
+441
+00:16:20,000 --> 00:16:22,000
+o decorador con o click.option
+
+442
+00:16:22,000 --> 00:16:24,000
+dentro da función
+
+443
+00:16:24,000 --> 00:16:26,000
+é o que está dando
+
+444
+00:16:26,000 --> 00:16:28,000
+um monte de información que é o que
+
+445
+00:16:28,000 --> 00:16:30,000
+vai utilizar para generar o ajuda
+
+446
+00:16:30,000 --> 00:16:32,000
+tú é o exemplo que veíamos anterior
+
+447
+00:16:32,000 --> 00:16:34,000
+o del countdown
+
+448
+00:16:34,000 --> 00:16:36,000
+tú le estava dizendo que o countdown
+
+449
+00:16:36,000 --> 00:16:38,000
+é o countdown que por defecto
+
+450
+00:16:38,000 --> 00:16:40,000
+é un 10, já por eso
+
+451
+00:16:40,000 --> 00:16:42,000
+sabe que é un entero
+
+452
+00:16:42,000 --> 00:16:44,000
+se não o ha dicho outra cosa
+
+453
+00:16:44,000 --> 00:16:46,000
+entende que é un entero
+
+454
+00:16:46,000 --> 00:16:48,000
+tienes un ajuda pequena
+
+455
+00:16:48,000 --> 00:16:50,000
+un aseio de funcionalidades
+
+456
+00:16:50,000 --> 00:16:52,000
+e todo é só o recoge click
+
+457
+00:16:52,000 --> 00:16:54,000
+e te genera o ajuda con éso
+
+458
+00:16:54,000 --> 00:16:56,000
+se falta un dato te lo pode pedir
+
+459
+00:16:56,000 --> 00:16:58,000
+é xa xa o que é muy interesante
+
+460
+00:16:58,000 --> 00:17:00,000
+tú podes coger e decir a opción
+
+461
+00:17:00,000 --> 00:17:02,000
+menos-menos-name
+
+462
+00:17:02,000 --> 00:17:04,000
+por exemplo, eu le pongo a dizer
+
+463
+00:17:04,000 --> 00:17:06,000
+se o usuario non me probe
+
+464
+00:17:06,000 --> 00:17:08,000
+é este parámetro
+
+465
+00:17:08,000 --> 00:17:10,000
+eu quero que se lo pregunte
+
+466
+00:17:10,000 --> 00:17:12,000
+então já lo veréis que é muy fácil
+
+467
+00:17:12,000 --> 00:17:14,000
+eu preciso que se pide o pront igual 10
+
+468
+00:17:14,000 --> 00:17:16,000
+e quando tú não se o pongas
+
+469
+00:17:16,000 --> 00:17:18,000
+dices, pides o usuario
+
+470
+00:17:18,000 --> 00:17:20,000
+que é o que eu preciso
+
+471
+00:17:20,000 --> 00:17:22,000
+e por exemplo, o que hablamos
+
+472
+00:17:22,000 --> 00:17:24,000
+a precarga de variables de entorno
+
+473
+00:17:24,000 --> 00:17:26,000
+que é o que é asociado a funciones
+
+474
+00:17:26,000 --> 00:17:28,000
+o típico que tu pongas
+
+475
+00:17:28,000 --> 00:17:30,000
+o meu application path
+
+476
+00:17:30,000 --> 00:17:32,000
+na variable
+
+477
+00:17:32,000 --> 00:17:34,000
+o variable de entorno
+
+478
+00:17:34,000 --> 00:17:36,000
+e que tú esperes dentro do comando
+
+479
+00:17:36,000 --> 00:17:38,000
+que haya algo que se está
+
+480
+00:17:38,000 --> 00:17:40,000
+se não está utilizo
+
+481
+00:17:40,000 --> 00:17:42,000
+e se o pone por defecto
+
+482
+00:17:42,000 --> 00:17:44,000
+e se o pones tu
+
+483
+00:17:44,000 --> 00:17:46,000
+obligatoriamente, pues que utiliza é
+
+484
+00:17:46,000 --> 00:17:48,000
+mas o que faz é todo muito transparento
+
+485
+00:17:48,000 --> 00:17:50,000
+os tipos de parámetros
+
+486
+00:17:50,000 --> 00:17:52,000
+que é isto
+
+487
+00:17:52,000 --> 00:17:54,000
+se refieran os tipos de
+
+488
+00:17:54,000 --> 00:17:56,000
+dados que recojan os parámetros
+
+489
+00:17:56,000 --> 00:17:58,000
+já habéis visto que no countdown
+
+490
+00:17:58,000 --> 00:18:00,000
+eu colo un 10 e eu entendo como se fora un enteno
+
+491
+00:18:00,000 --> 00:18:02,000
+mas claro
+
+492
+00:18:02,000 --> 00:18:04,000
+ao mojo un parámetro
+
+493
+00:18:04,000 --> 00:18:06,000
+tú queres que seja unha cadena
+
+494
+00:18:06,000 --> 00:18:08,000
+ao mojo un parámetro queres que seja um flow
+
+495
+00:18:08,000 --> 00:18:10,000
+e se tu te digas que o parámetro
+
+496
+00:18:10,000 --> 00:18:12,000
+necessita um flow
+
+497
+00:18:12,000 --> 00:18:14,000
+e se eu pongo uma letra
+
+498
+00:18:14,000 --> 00:18:16,000
+que diga que isto não é um flow
+
+499
+00:18:16,000 --> 00:18:18,000
+mas o que é o pone
+
+500
+00:18:18,000 --> 00:18:20,000
+por exemplo, aí já de serie
+
+501
+00:18:20,000 --> 00:18:22,000
+os tipos de dados
+
+502
+00:18:22,000 --> 00:18:24,000
+para os parámetros como o qvd
+
+503
+00:18:24,000 --> 00:18:26,000
+o file, o path
+
+504
+00:18:26,000 --> 00:18:28,000
+o que está reclamando é que no parámetro
+
+505
+00:18:28,000 --> 00:18:30,000
+te has que meter
+
+506
+00:18:30,000 --> 00:18:32,000
+um pad de fichero
+
+507
+00:18:32,000 --> 00:18:34,000
+um fichero concreto que exista
+
+508
+00:18:34,000 --> 00:18:36,000
+ou por exemplo, unha opción
+
+509
+00:18:36,000 --> 00:18:38,000
+o click choice é
+
+510
+00:18:38,000 --> 00:18:40,000
+se tenho cinco opciones
+
+511
+00:18:40,000 --> 00:18:42,000
+que sean abcd
+
+512
+00:18:42,000 --> 00:18:44,000
+eu quero que sean abcd
+
+513
+00:18:44,000 --> 00:18:46,000
+e que fuera disso se pones um, dos, tres, quatro
+
+514
+00:18:46,000 --> 00:18:48,000
+me dei guai, o que te estes pidiendo
+
+515
+00:18:48,000 --> 00:18:50,000
+é abcd como opciones
+
+516
+00:18:50,000 --> 00:18:52,000
+um rango de enteros, por exemplo, o que tu le digas
+
+517
+00:18:52,000 --> 00:18:54,000
+o valor é de 0 a 10
+
+518
+00:18:54,000 --> 00:18:56,000
+não me poucas un 100, por exemplo
+
+519
+00:18:56,000 --> 00:18:58,000
+e o chulo que tem click
+
+520
+00:18:58,000 --> 00:19:00,000
+é que hacer tipos custo
+
+521
+00:19:00,000 --> 00:19:02,000
+é moi fácil
+
+522
+00:19:02,000 --> 00:19:04,000
+porque ao mojo, con éstos não te vale
+
+523
+00:19:04,000 --> 00:19:06,000
+tu validación por asiecio inicial
+
+524
+00:19:06,000 --> 00:19:08,000
+e despo me voy a hacer un tipo custo
+
+525
+00:19:08,000 --> 00:19:10,000
+base 64
+
+526
+00:19:10,000 --> 00:19:12,000
+e que só acepte cosas en base 64
+
+527
+00:19:12,000 --> 00:19:14,000
+porque o tígito lo tranperece
+
+528
+00:19:14,000 --> 00:19:16,000
+e son, má oso menos como 10 líneas
+
+529
+00:19:16,000 --> 00:19:18,000
+de código a hacer un tipo custo
+
+530
+00:19:18,000 --> 00:19:20,000
+e ahora vine
+
+531
+00:19:20,000 --> 00:19:22,000
+unha vez do doctor jub, levanta a mano
+
+532
+00:19:22,000 --> 00:19:24,000
+entendeis
+
+533
+00:19:24,000 --> 00:19:26,000
+o entendeis, no?
+
+534
+00:19:26,000 --> 00:19:28,000
+basicamente, no parpadeis que morís, direzamente
+
+535
+00:19:28,000 --> 00:19:30,000
+porque en este momento
+
+536
+00:19:30,000 --> 00:19:32,000
+é o que eu decía, tengo má transparencias que minuto
+
+537
+00:19:32,000 --> 00:19:34,000
+e eu vou a despo, vou a dispo
+
+538
+00:19:34,000 --> 00:19:36,000
+vai a ser un pouco rápido
+
+539
+00:19:36,000 --> 00:19:38,000
+vamos a empezar con as opciones
+
+540
+00:19:38,000 --> 00:19:40,000
+eu trouxeo todas as pisas
+
+541
+00:19:40,000 --> 00:19:42,000
+de código para que sea lo máis pequenito posible
+
+542
+00:19:42,000 --> 00:19:44,000
+e o vamos a ir viendo un pouco
+
+543
+00:19:44,000 --> 00:19:46,000
+um opción básica
+
+544
+00:19:46,000 --> 00:19:48,000
+neste caso, o que hacemos é click command
+
+545
+00:19:48,000 --> 00:19:50,000
+e ponemos un opción e le hicimos
+
+546
+00:19:50,000 --> 00:19:52,000
+que é menos n, menos
+
+547
+00:19:52,000 --> 00:19:54,000
+e que va a ser por defecto 1
+
+548
+00:19:54,000 --> 00:19:56,000
+e o que va a hacer é imprimir puntos
+
+549
+00:19:56,000 --> 00:19:58,000
+em pantalla
+
+550
+00:19:58,000 --> 00:20:00,000
+então, aqui o importante
+
+551
+00:20:00,000 --> 00:20:02,000
+se não há um valor por defecto click
+
+552
+00:20:02,000 --> 00:20:04,000
+entendeis que é sempre o seu entero
+
+553
+00:20:04,000 --> 00:20:06,000
+a não ser que tu le digas
+
+554
+00:20:06,000 --> 00:20:08,000
+é tipo tal
+
+555
+00:20:08,000 --> 00:20:10,000
+mas entendeis que por defecto todo o que vas a passar
+
+556
+00:20:10,000 --> 00:20:12,000
+são cadenas, a não ser que clica no contrário
+
+557
+00:20:12,000 --> 00:20:14,000
+e se o dais cuenta
+
+558
+00:20:14,000 --> 00:20:16,000
+coge o nome de la variable
+
+559
+00:20:16,000 --> 00:20:18,000
+de menos menos, la n
+
+560
+00:20:18,000 --> 00:20:20,000
+e o passa como parámetro
+
+561
+00:20:20,000 --> 00:20:22,000
+para que tu lo que lo podes tratar dentro da funcione
+
+562
+00:20:22,000 --> 00:20:24,000
+é assim, o ireis viendo
+
+563
+00:20:24,000 --> 00:20:26,000
+pouco a pouco, o que é todo igual
+
+564
+00:20:26,000 --> 00:20:28,000
+e basicamente o que va haciendo
+
+565
+00:20:28,000 --> 00:20:30,000
+é imprimir n veces
+
+566
+00:20:30,000 --> 00:20:32,000
+os puntos que tu lo has pasado por comando
+
+567
+00:20:32,000 --> 00:20:34,000
+bien
+
+568
+00:20:34,000 --> 00:20:36,000
+opción es multiválor
+
+569
+00:20:36,000 --> 00:20:38,000
+que tu por exemplo tienes
+
+570
+00:20:38,000 --> 00:20:40,000
+un comando que tiene como parámetro
+
+571
+00:20:40,000 --> 00:20:42,000
+menos menos pos
+
+572
+00:20:42,000 --> 00:20:44,000
+pero tu não é que le quieras
+
+573
+00:20:44,000 --> 00:20:46,000
+pasar un número float
+
+574
+00:20:46,000 --> 00:20:48,000
+como vin aí que eu le indico o tipo
+
+575
+00:20:48,000 --> 00:20:50,000
+oi, eu quero que tu me entres com float
+
+576
+00:20:50,000 --> 00:20:52,000
+xin no que además le digo, no, eu não quero 1
+
+577
+00:20:52,000 --> 00:20:54,000
+eu quero que me pongas 2
+
+578
+00:20:54,000 --> 00:20:56,000
+o que quando le pongas menos menos pos
+
+579
+00:20:56,000 --> 00:20:58,000
+eu preciso 2 float detrás
+
+580
+00:20:58,000 --> 00:21:00,000
+ois de que eu tenho que ver menos menos pos 1.0
+
+581
+00:21:00,000 --> 00:21:02,000
+espacio 2.0
+
+582
+00:21:02,000 --> 00:21:04,000
+se não me pones eso
+
+583
+00:21:04,000 --> 00:21:06,000
+já le estás dicendo ao usuario que non é así
+
+584
+00:21:06,000 --> 00:21:08,000
+que necesito 2 parámetros
+
+585
+00:21:08,000 --> 00:21:10,000
+por su consecuente generación da ayuda
+
+586
+00:21:10,000 --> 00:21:12,000
+para a ajuda te apondrá que necesitas
+
+587
+00:21:12,000 --> 00:21:14,000
+2 floats, aí metiditos
+
+588
+00:21:14,000 --> 00:21:16,000
+e te lo vas generando todo
+
+589
+00:21:16,000 --> 00:21:18,000
+e aí basicamente o que haces é hacer na división
+
+590
+00:21:18,000 --> 00:21:20,000
+de o pos
+
+591
+00:21:20,000 --> 00:21:22,000
+o que va con teneres una tupla
+
+592
+00:21:22,000 --> 00:21:24,000
+con os dos valores
+
+593
+00:21:24,000 --> 00:21:26,000
+e xin no que te plantar como sae lá aí
+
+594
+00:21:26,000 --> 00:21:28,000
+por el click
+
+595
+00:21:30,000 --> 00:21:32,000
+tuplo as conoción multivalor
+
+596
+00:21:32,000 --> 00:21:34,000
+ao mojor tu quieres
+
+597
+00:21:34,000 --> 00:21:36,000
+que unha opción te vengan
+
+598
+00:21:36,000 --> 00:21:38,000
+2 valores pero que unha sea do tipo
+
+599
+00:21:38,000 --> 00:21:40,000
+e outro do outro, en este caso unico
+
+600
+00:21:40,000 --> 00:21:42,000
+de yentero, eu quero que
+
+601
+00:21:42,000 --> 00:21:44,000
+quando pongas menos menos item
+
+602
+00:21:44,000 --> 00:21:46,000
+o primeiro sea o nome
+
+603
+00:21:46,000 --> 00:21:48,000
+e o segundo sea
+
+604
+00:21:48,000 --> 00:21:50,000
+o identificador de liter
+
+605
+00:21:50,000 --> 00:21:52,000
+desta maneira indicándolo así
+
+606
+00:21:52,000 --> 00:21:54,000
+o que eu estou conseguindo
+
+607
+00:21:54,000 --> 00:21:56,000
+é que directamente o próprio comando
+
+608
+00:21:56,000 --> 00:21:58,000
+e te salte
+
+609
+00:21:58,000 --> 00:22:00,000
+se tu en o primeiro parámetro
+
+610
+00:22:00,000 --> 00:22:02,000
+le pones un número
+
+611
+00:22:02,000 --> 00:22:04,000
+o que é o tipo
+
+612
+00:22:04,000 --> 00:22:06,000
+se dais cuenta, também infiere
+
+613
+00:22:06,000 --> 00:22:08,000
+que o número de argumentos que se pide
+
+614
+00:22:08,000 --> 00:22:10,000
+son 2
+
+615
+00:22:10,000 --> 00:22:12,000
+porque aí não puesto nars como
+
+616
+00:22:12,000 --> 00:22:14,000
+na anterior 2 porque ele já lo sabe
+
+617
+00:22:14,000 --> 00:22:16,000
+por el time
+
+618
+00:22:18,000 --> 00:22:20,000
+entradas multiples de la misma opción
+
+619
+00:22:20,000 --> 00:22:22,000
+isto é o típico
+
+620
+00:22:22,000 --> 00:22:24,000
+que queres adi o muchas veces
+
+621
+00:22:24,000 --> 00:22:26,000
+o mesmo comando
+
+622
+00:22:26,000 --> 00:22:28,000
+como o exemplo de abajo
+
+623
+00:22:28,000 --> 00:22:30,000
+o que le vas a pasar es "-m fú-m bar
+
+624
+00:22:30,000 --> 00:22:32,000
+e o que vas a hacer é x imprimir
+
+625
+00:22:32,000 --> 00:22:34,000
+las 2 separadas con un salto
+
+626
+00:22:34,000 --> 00:22:36,000
+de carro
+
+627
+00:22:36,000 --> 00:22:38,000
+então aí
+
+628
+00:22:38,000 --> 00:22:40,000
+o que se introduz x
+
+629
+00:22:40,000 --> 00:22:42,000
+que está o "-meseje
+
+630
+00:22:42,000 --> 00:22:44,000
+coma "-m
+
+631
+00:22:44,000 --> 00:22:46,000
+ou ja le esti diciendo que pode entrar
+
+632
+00:22:46,000 --> 00:22:48,000
+de las 2 maneras que podes ponerlo con "-m
+
+633
+00:22:48,000 --> 00:22:50,000
+ou x-m meseje
+
+634
+00:22:50,000 --> 00:22:52,000
+ou combinaciones
+
+635
+00:22:52,000 --> 00:22:54,000
+se lo va a comer os 2
+
+636
+00:22:54,000 --> 00:22:56,000
+que o parámetro
+
+637
+00:22:56,000 --> 00:22:58,000
+da funcione o primeiro va a ser
+
+638
+00:22:58,000 --> 00:23:00,000
+meseje porque o coge da arriba
+
+639
+00:23:00,000 --> 00:23:02,000
+e que va a aceptar múltiples valores
+
+640
+00:23:02,000 --> 00:23:04,000
+que o podes repetir múltiples veces
+
+641
+00:23:04,000 --> 00:23:06,000
+então quando chega a la funcione
+
+642
+00:23:06,000 --> 00:23:08,000
+o que va a recibir é que hai unha lista
+
+643
+00:23:08,000 --> 00:23:10,000
+com todos os valores que ha recebido
+
+644
+00:23:10,000 --> 00:23:12,000
+e logo tu ya os podes tratar
+
+645
+00:23:12,000 --> 00:23:14,000
+contador asocia o no opción
+
+646
+00:23:14,000 --> 00:23:16,000
+isto é un pouco friki
+
+647
+00:23:16,000 --> 00:23:18,000
+x pono é o verbo
+
+648
+00:23:18,000 --> 00:23:20,000
+x se usa muito
+
+649
+00:23:20,000 --> 00:23:22,000
+quando tu queres dar mucha verbosidade
+
+650
+00:23:22,000 --> 00:23:24,000
+a un comando que queres que salga muchas cosas
+
+651
+00:23:24,000 --> 00:23:26,000
+o que le podes poner é "-v
+
+652
+00:23:26,000 --> 00:23:28,000
+unha vez
+
+653
+00:23:28,000 --> 00:23:30,000
+x se le pones "-v
+
+654
+00:23:30,000 --> 00:23:32,000
+x v v v v v
+
+655
+00:23:32,000 --> 00:23:34,000
+x que seja
+
+656
+00:23:34,000 --> 00:23:36,000
+x senha me lo to
+
+657
+00:23:36,000 --> 00:23:38,000
+x hasta o modimento
+
+658
+00:23:38,000 --> 00:23:40,000
+de los paquetes de tct
+
+659
+00:23:40,000 --> 00:23:42,000
+que vex con gas por aí me lo imprimes por pantalla
+
+660
+00:23:42,000 --> 00:23:44,000
+x aí o que le estoy diciendo
+
+661
+00:23:44,000 --> 00:23:46,000
+de xa opción
+
+662
+00:23:46,000 --> 00:23:48,000
+e xa é o que va a pasar
+
+663
+00:23:48,000 --> 00:23:50,000
+ao verboxe
+
+664
+00:23:50,000 --> 00:23:52,000
+o número de veces que ha pasado
+
+665
+00:23:52,000 --> 00:23:54,000
+os flaps
+
+666
+00:23:54,000 --> 00:23:56,000
+isto é unha cosa muito típica
+
+667
+00:23:56,000 --> 00:23:58,000
+quando queres añadir
+
+668
+00:23:58,000 --> 00:24:00,000
+um flap boleano
+
+669
+00:24:00,000 --> 00:24:02,000
+que o comando grite
+
+670
+00:24:02,000 --> 00:24:04,000
+ou que o comando no grite
+
+671
+00:24:04,000 --> 00:24:06,000
+então tu le dices
+
+672
+00:24:06,000 --> 00:24:08,000
+"-shout é o valor
+
+673
+00:24:08,000 --> 00:24:10,000
+que será o bom e que utilice por defecto
+
+674
+00:24:10,000 --> 00:24:12,000
+e o contrário
+
+675
+00:24:12,000 --> 00:24:14,000
+o xout e que por defecto seja falso
+
+676
+00:24:14,000 --> 00:24:16,000
+e o comando
+
+677
+00:24:16,000 --> 00:24:18,000
+e o comando
+
+678
+00:24:18,000 --> 00:24:20,000
+e o valor
+
+679
+00:24:20,000 --> 00:24:22,000
+e o comando
+
+680
+00:24:22,000 --> 00:24:24,000
+e o valor
+
+681
+00:24:24,000 --> 00:24:26,000
+e o comando
+
+682
+00:24:26,000 --> 00:24:28,000
+e o comando
+
+683
+00:24:28,000 --> 00:24:30,000
+switches por exemplo
+
+684
+00:24:30,000 --> 00:24:32,000
+casos em que
+
+685
+00:24:32,000 --> 00:24:34,000
+2 opciones
+
+686
+00:24:34,000 --> 00:24:36,000
+intervienen en la misma variable
+
+687
+00:24:36,000 --> 00:24:38,000
+por exemplo
+
+688
+00:24:38,000 --> 00:24:40,000
+tú hai o que quieres es que
+
+689
+00:24:40,000 --> 00:24:42,000
+xa é o que haces
+
+690
+00:24:42,000 --> 00:24:44,000
+básicamente es coger
+
+691
+00:24:44,000 --> 00:24:46,000
+o nome de tu plataforma
+
+692
+00:24:46,000 --> 00:24:48,000
+o linus darwin
+
+693
+00:24:48,000 --> 00:24:50,000
+e ejecuta
+
+694
+00:24:50,000 --> 00:24:52,000
+o método
+
+695
+00:24:52,000 --> 00:24:54,000
+sobre o stream de a pero lower
+
+696
+00:24:54,000 --> 00:24:56,000
+dependendo do que le has dicho por paramétro
+
+697
+00:24:56,000 --> 00:24:58,000
+basicamente
+
+698
+00:24:58,000 --> 00:25:00,000
+o que le dices
+
+699
+00:25:00,000 --> 00:25:02,000
+se me pones a per
+
+700
+00:25:02,000 --> 00:25:04,000
+na variable transfer
+
+701
+00:25:04,000 --> 00:25:06,000
+na transformación
+
+702
+00:25:06,000 --> 00:25:08,000
+me vas a meter o valor del flap a per
+
+703
+00:25:08,000 --> 00:25:10,000
+e te vas a poner o valor lower
+
+704
+00:25:10,000 --> 00:25:12,000
+e que por defecto
+
+705
+00:25:12,000 --> 00:25:14,000
+se non se pone nada
+
+706
+00:25:14,000 --> 00:25:16,000
+coge o a per
+
+707
+00:25:16,000 --> 00:25:18,000
+de tal manera que vas ejecutando o comando
+
+708
+00:25:18,000 --> 00:25:20,000
+e vas a poner menos menos a per
+
+709
+00:25:20,000 --> 00:25:22,000
+e te va a poner el nombre de tu ordenador
+
+710
+00:25:22,000 --> 00:25:24,000
+en mayúsculas
+
+711
+00:25:24,000 --> 00:25:26,000
+e se no pones nada
+
+712
+00:25:26,000 --> 00:25:28,000
+te podras a mayúsculas porque has dicho que es por defecto
+
+713
+00:25:28,000 --> 00:25:30,000
+que es lo que pone allá abajo
+
+714
+00:25:30,000 --> 00:25:32,000
+múltiples opciones
+
+715
+00:25:32,000 --> 00:25:34,000
+esto é o típico
+
+716
+00:25:34,000 --> 00:25:36,000
+o que tipo de hash quieres meter
+
+717
+00:25:36,000 --> 00:25:38,000
+o que va a aceptar como valores
+
+718
+00:25:38,000 --> 00:25:40,000
+va a ser md5
+
+719
+00:25:40,000 --> 00:25:42,000
+e xa1
+
+720
+00:25:42,000 --> 00:25:44,000
+é una lista de valores
+
+721
+00:25:44,000 --> 00:25:46,000
+sobre o que podras meter eso
+
+722
+00:25:46,000 --> 00:25:48,000
+e tu lo haces un menos menos gel
+
+723
+00:25:48,000 --> 00:25:50,000
+e te pondras
+
+724
+00:25:50,000 --> 00:25:52,000
+este comando en el parámetro
+
+725
+00:25:52,000 --> 00:25:54,000
+aceptas estos dos tipos de valores
+
+726
+00:25:54,000 --> 00:25:56,000
+evidentemente
+
+727
+00:25:56,000 --> 00:25:58,000
+quando metas md
+
+728
+00:25:58,000 --> 00:26:00,000
+te va a decir que é un opción
+
+729
+00:26:00,000 --> 00:26:02,000
+te lo hace ya automáticamente
+
+730
+00:26:02,000 --> 00:26:04,000
+o prompting
+
+731
+00:26:04,000 --> 00:26:06,000
+que é o que os comentaba
+
+732
+00:26:06,000 --> 00:26:08,000
+un pouco antes
+
+733
+00:26:08,000 --> 00:26:10,000
+e te está diciendo
+
+734
+00:26:10,000 --> 00:26:12,000
+que é un parámetro que sea name
+
+735
+00:26:12,000 --> 00:26:14,000
+e que va a aceptar
+
+736
+00:26:14,000 --> 00:26:16,000
+o nome do usuario
+
+737
+00:26:16,000 --> 00:26:18,000
+e eu quero que se não o metes
+
+738
+00:26:18,000 --> 00:26:20,000
+o usuario por defecto se lo pregunte
+
+739
+00:26:20,000 --> 00:26:22,000
+porque eu não necesito
+
+740
+00:26:22,000 --> 00:26:24,000
+e xa1
+
+741
+00:26:24,000 --> 00:26:26,000
+e se pongo gelo
+
+742
+00:26:26,000 --> 00:26:28,000
+e o name igual a o jon
+
+743
+00:26:28,000 --> 00:26:30,000
+e vai a fazer o gelo
+
+744
+00:26:30,000 --> 00:26:32,000
+e se não o metes
+
+745
+00:26:32,000 --> 00:26:34,000
+vai a dizer nome 2
+
+746
+00:26:34,000 --> 00:26:36,000
+mete aqui tu nome
+
+747
+00:26:36,000 --> 00:26:38,000
+e te pongo gelo
+
+748
+00:26:38,000 --> 00:26:40,000
+e te dá salente
+
+749
+00:26:40,000 --> 00:26:42,000
+e te agarras
+
+750
+00:26:42,000 --> 00:26:44,000
+preguntas
+
+751
+00:26:44,000 --> 00:26:46,000
+o password
+
+752
+00:26:46,000 --> 00:26:48,000
+é o tipo
+
+753
+00:26:48,000 --> 00:26:50,000
+e te mandas o password
+
+754
+00:26:50,000 --> 00:26:52,000
+e te pedas o nome
+
+755
+00:26:52,000 --> 00:26:54,000
+e te pedas o nome
+
+756
+00:26:54,000 --> 00:26:56,000
+e te pedas o password
+
+757
+00:26:56,000 --> 00:26:58,000
+porque o name queres que te vea
+
+758
+00:26:58,000 --> 00:27:00,000
+e te pedas o password
+
+759
+00:27:00,000 --> 00:27:02,000
+e para é xa
+
+760
+00:27:02,000 --> 00:27:04,000
+que o operador te ponga
+
+761
+00:27:04,000 --> 00:27:06,000
+optión
+
+762
+00:27:06,000 --> 00:27:08,000
+automáticamente te pedis o parámetro
+
+763
+00:27:08,000 --> 00:27:10,000
+e te vai fazer
+
+764
+00:27:10,000 --> 00:27:12,000
+é o gelo
+
+765
+00:27:12,000 --> 00:27:14,000
+que seria o que realmente
+
+766
+00:27:14,000 --> 00:27:16,000
+e o que te digas
+
+767
+00:27:16,000 --> 00:27:18,000
+oi, xa1
+
+768
+00:27:18,000 --> 00:27:20,000
+xa2
+
+769
+00:27:20,000 --> 00:27:22,000
+xa3
+
+770
+00:27:22,000 --> 00:27:24,000
+xa4
+
+771
+00:27:24,000 --> 00:27:26,000
+xa5
+
+772
+00:27:26,000 --> 00:27:28,000
+e te pedis o confirmador
+
+773
+00:27:28,000 --> 00:27:30,000
+para que veas
+
+774
+00:27:30,000 --> 00:27:32,000
+que é super fácil
+
+775
+00:27:32,000 --> 00:27:34,000
+e se podeis usar para o Cosmog
+
+776
+00:27:34,000 --> 00:27:36,000
+porque os apetece
+
+777
+00:27:36,000 --> 00:27:38,000
+por exemplo
+
+778
+00:27:38,000 --> 00:27:40,000
+se te quitais o high true
+
+779
+00:27:40,000 --> 00:27:42,000
+e te pongas o confirmador
+
+780
+00:27:42,000 --> 00:27:44,000
+e te pedis o nome
+
+781
+00:27:44,000 --> 00:27:46,000
+e te pongas o nome
+
+782
+00:27:46,000 --> 00:27:48,000
+e te pongas o nome
+
+783
+00:27:48,000 --> 00:27:50,000
+e te pongas o ordenador
+
+784
+00:27:50,000 --> 00:27:52,000
+e te pongas o ordenador
+
+785
+00:27:52,000 --> 00:27:54,000
+e te pongas o ordenador
+
+786
+00:27:54,000 --> 00:27:56,000
+qualas modas les do o Environment
+
+787
+00:27:56,000 --> 00:27:58,000
+שא� cũng advancing por exemplo
+
+788
+00:27:58,000 --> 00:28:00,000
+por example
+
+789
+00:28:00,000 --> 00:28:02,000
+se o Reformandex tonal
+
+790
+00:28:02,000 --> 00:28:04,000
+o Comando Grid
+
+791
+00:28:04,000 --> 00:28:06,000
+veis o Pro way
+
+792
+00:28:06,000 --> 00:28:08,000
+eétat� que automatiquamente
+
+793
+00:28:08,000 --> 00:28:10,000
+feu para os Variables
+
+794
+00:28:10,000 --> 00:28:12,480
+comando你想
+
+795
+00:28:12,480 --> 00:28:14,000
+unfamiliar
+
+796
+00:28:14,000 --> 00:28:16,000
+e, para ver que xa1
+
+797
+00:28:16,000 --> 00:28:17,580
+seurers un eq
+
+798
+00:28:17,580 --> 00:28:20,000
+nun co est xox oONE
+
+799
+00:28:20,000 --> 00:28:22,000
+smog
+
+800
+00:28:22,000 --> 00:28:26,200
+e me lo va meter dentro del username que eu le definido a arreglar a funcione.
+
+801
+00:28:26,200 --> 00:28:33,000
+Vale? Esto é moi chulo porque, por exemplo, se le queres a hacer unha aplicación un pouco grande que tiene un nombre,
+
+802
+00:28:33,000 --> 00:28:38,200
+pues, eu que sei, de yangoma ya, guión bajo e le peteis aí variables de entorno,
+
+803
+00:28:38,200 --> 00:28:44,000
+automáticamente ya podes a hacer que tenga un comportamento diferente con el environment de una manera super fácil,
+
+804
+00:28:44,000 --> 00:28:46,200
+como podéis ver, que nono, nono, nono tiene mucha amiga.
+
+805
+00:28:46,200 --> 00:28:52,400
+E, lo guia, se queréis ir un poquito menos al auto e a hacerlo un poquito máis manual,
+
+806
+00:28:52,400 --> 00:28:56,600
+pues le podéis decir, oye, que quando eu ponga el menos user name,
+
+807
+00:28:56,600 --> 00:29:02,600
+aí, puede haber unha variable en el entorno que se llame username e, se está, me la usas.
+
+808
+00:29:02,600 --> 00:29:05,600
+E me la metes dentro del username da aí.
+
+809
+00:29:05,600 --> 00:29:12,600
+Vale? Esto, por exemplo, é moi chulo para imaginaros utilizar a variable do home,
+
+810
+00:29:12,600 --> 00:29:17,600
+ou utilizar unha variable que te has inventado tú para definir que tu tens unha da lembriria,
+
+811
+00:29:17,600 --> 00:29:19,600
+x o cosas de setir.
+
+812
+00:29:19,600 --> 00:29:22,600
+X, no está en el entorno que as...
+
+813
+00:29:22,600 --> 00:29:26,600
+X, no está en el entorno que, según esto, se no tens que meter.
+
+814
+00:29:26,600 --> 00:29:31,600
+Claro, porque tú, x no está en el entorno e nono has puesto ademas que...
+
+815
+00:29:31,600 --> 00:29:36,600
+No, guiento. X no está en el entorno, nono has puesto que te ha agonpront e nono has puesto como requerido e nado,
+
+816
+00:29:36,600 --> 00:29:44,600
+pues probablemente ejecute, probablemente pete porque no, no tiene suficiente datos para, para username.
+
+817
+00:29:48,600 --> 00:29:53,600
+Usando polva. Esto também é unha feature moi chula que é que tú, por exemplo,
+
+818
+00:29:53,600 --> 00:29:59,600
+podés querer que quando alguien meta unha variable, osa meta unha opción con un valor,
+
+819
+00:29:59,600 --> 00:30:04,600
+tú podés querer mirar se ese valor está adecuado lo que tú le pedes o no, osa, validarlo.
+
+820
+00:30:04,600 --> 00:30:06,600
+Vale, como lo haces?
+
+821
+00:30:06,600 --> 00:30:12,600
+Póis le pones unha función asociada a callback, que é validade roles,
+
+822
+00:30:12,600 --> 00:30:17,600
+que va a recibir como valores el contexto de la ejecución de click,
+
+823
+00:30:17,600 --> 00:30:22,600
+el parámetro e o valor, e lo guia tú sobre o valor, pues podés tratarlo.
+
+824
+00:30:22,600 --> 00:30:27,600
+Osa, por exemplo, eu é que quero que metas unha letra, vale,
+
+825
+00:30:27,600 --> 00:30:32,600
+pero eu quero validar que esa letra sea asti e non me metas unha enye, por exemplo.
+
+826
+00:30:32,600 --> 00:30:36,600
+Eu pudo comprobar se é osa sí ou non e em caso de non serlo,
+
+827
+00:30:36,600 --> 00:30:42,600
+pudo lançar unha excepción que sea clickbackparameter explicando-la ao usuario
+
+828
+00:30:42,600 --> 00:30:46,600
+oye máis metido unha enye máis metido unha acento porque esto é o meu aplicación
+
+829
+00:30:46,600 --> 00:30:49,600
+o que soporta ou o que sea. Vale?
+
+830
+00:30:51,600 --> 00:30:54,600
+Vale, ahora vamos a pasar con argumentos.
+
+831
+00:30:54,600 --> 00:30:56,600
+Os argumentos só os hablamos antes,
+
+832
+00:30:56,600 --> 00:31:01,600
+é utilizarlo para coisas un pouco nombres, ficheros, coso tipo, vale?
+
+833
+00:31:01,600 --> 00:31:03,600
+Básicamente, é xería no máis facilitó.
+
+834
+00:31:03,600 --> 00:31:08,600
+Meter, hacer un comando touch, falso, evidentemente, por un acento touch
+
+835
+00:31:08,600 --> 00:31:12,600
+e le pasamos co-opirir parámetro un nombre de ficher, vale?
+
+836
+00:31:12,600 --> 00:31:17,600
+E, então, é o meten el file name, o file name é o meten o parámetro.
+
+837
+00:31:17,600 --> 00:31:20,600
+Uma coisa que nos é comentado, porque imagino que o imaginareis
+
+838
+00:31:20,600 --> 00:31:27,600
+é que, quando tú vas escalando todos os options e os argumentos
+
+839
+00:31:27,600 --> 00:31:32,600
+se van ordenando en el mismo orden dentro de la funció.
+
+840
+00:31:32,600 --> 00:31:36,600
+O que se poneis é un opción, un argumento no argumento
+
+841
+00:31:36,600 --> 00:31:40,600
+que os tens que ir ordenando de la misma maneira en la funció.
+
+842
+00:31:42,600 --> 00:31:44,600
+Argumentos, por exemplo, con número variado.
+
+843
+00:31:44,600 --> 00:31:47,600
+Se pode dar o caso como pode ser copiando un fichero,
+
+844
+00:31:47,600 --> 00:31:51,600
+o comando de acumerar o fichero, que como primeros parámetros
+
+845
+00:31:51,600 --> 00:31:55,600
+sean nombres de ficheros e como último parámetro
+
+846
+00:31:55,600 --> 00:31:58,600
+é o destino donde lo quieras llevar, vale?
+
+847
+00:31:58,600 --> 00:32:00,600
+Como se aceso con click?
+
+848
+00:32:00,600 --> 00:32:04,600
+Pois tú le indicas, oye, yo como destino, como o dst,
+
+849
+00:32:04,600 --> 00:32:07,600
+só lo quiero un parámetro.
+
+850
+00:32:07,600 --> 00:32:12,600
+O sous, o sous al origen, os ficheros, é menos uno.
+
+851
+00:32:12,600 --> 00:32:15,600
+Que implica ser menos uno? Que le pudo meter todos os que quiera.
+
+852
+00:32:15,600 --> 00:32:17,600
+Se foran tres, que le pudo meter tres
+
+853
+00:32:17,600 --> 00:32:19,600
+e se es menos uno, que le pudo meter todos os que quiera.
+
+854
+00:32:19,600 --> 00:32:22,600
+De tal maneira que, quando haces el copy fubar.txt
+
+855
+00:32:22,600 --> 00:32:25,600
+o que realmente estás haciendo é
+
+856
+00:32:25,600 --> 00:32:29,600
+en el src se hará una lista con todos os parámetros,
+
+857
+00:32:29,600 --> 00:32:33,600
+perdón, con todos os argumentos que recoja el src
+
+858
+00:32:33,600 --> 00:32:35,600
+e en el dst meterá a outro.
+
+859
+00:32:40,600 --> 00:32:43,600
+Argumentos, vale,
+
+860
+00:32:43,600 --> 00:32:45,600
+olvidaros porque non es de número de variables,
+
+861
+00:32:45,600 --> 00:32:47,600
+o que es un copy paste fallido,
+
+862
+00:32:47,600 --> 00:32:49,600
+luego lo arreglaré en el g.
+
+863
+00:32:49,600 --> 00:32:51,600
+Básicamente, aquí, é xousa moi chula
+
+864
+00:32:51,600 --> 00:32:53,600
+que sempre é xousa moi complicada.
+
+865
+00:32:53,600 --> 00:32:57,600
+Tú tienes un parámetro de entrada e un parámetro de salida.
+
+866
+00:32:57,600 --> 00:32:59,600
+Espera, un argumento de entrada e un argumento de salida.
+
+867
+00:32:59,600 --> 00:33:01,600
+E tú quieres que el argumento de entrada e salida
+
+868
+00:33:01,600 --> 00:33:02,600
+e salida, cinco, por dios,
+
+869
+00:33:02,600 --> 00:33:03,600
+bueno, propísimo.
+
+870
+00:33:03,600 --> 00:33:05,600
+Argumento de entrada e argumento de salida,
+
+871
+00:33:05,600 --> 00:33:07,600
+que entre un fich, le pones el guión,
+
+872
+00:33:07,600 --> 00:33:09,600
+entre o por la salida estándar,
+
+873
+00:33:09,600 --> 00:33:12,600
+se lo pones al final, entre o por la salida estándar
+
+874
+00:33:12,600 --> 00:33:14,600
+e si no os ficheros.
+
+875
+00:33:15,600 --> 00:33:17,600
+Argumentos compads,
+
+876
+00:33:17,600 --> 00:33:21,600
+bueno, que más podés hacer?
+
+877
+00:33:21,600 --> 00:33:23,600
+Documentación, entrada do usuario, utilidades.
+
+878
+00:33:23,600 --> 00:33:25,600
+É xousa moi xousa moi
+
+879
+00:33:25,600 --> 00:33:27,600
+Básicamente, ao principio de la función
+
+880
+00:33:27,600 --> 00:33:29,600
+se le pones tres comillas
+
+881
+00:33:29,600 --> 00:33:31,600
+e le pones el nombre del texto.
+
+882
+00:33:31,600 --> 00:33:33,600
+Se le pones párrafos, te lo va a enseñar todo.
+
+883
+00:33:33,600 --> 00:33:35,600
+Va a utilizar sempre a primera línea
+
+884
+00:33:35,600 --> 00:33:38,600
+para utilizar como mini-ayuda
+
+885
+00:33:38,600 --> 00:33:40,600
+en el comando,
+
+886
+00:33:40,600 --> 00:33:42,600
+e quando tú hagas un menos-menos-help
+
+887
+00:33:42,600 --> 00:33:44,600
+en ese único comando,
+
+888
+00:33:44,600 --> 00:33:46,600
+te enseñará el resto de la ayuda.
+
+889
+00:33:46,600 --> 00:33:48,600
+E só le hay que meterlo aí.
+
+890
+00:33:48,600 --> 00:33:51,600
+Se son comandos múltiples,
+
+891
+00:33:51,600 --> 00:33:52,600
+también se pode utilizar
+
+892
+00:33:52,600 --> 00:33:54,600
+a opción del short-help
+
+893
+00:33:54,600 --> 00:33:56,600
+dentro del próprio comando
+
+894
+00:33:56,600 --> 00:33:58,600
+para añadir la pequeña ayuda,
+
+895
+00:33:58,600 --> 00:34:00,600
+se quieres que la ayuda sea diferente
+
+896
+00:34:00,600 --> 00:34:02,600
+a la que mostras grande.
+
+897
+00:34:02,600 --> 00:34:04,600
+Coisas como por ejemplo entrar
+
+898
+00:34:04,600 --> 00:34:06,600
+a todos os usuarios de que tú le quieres preguntar
+
+899
+00:34:06,600 --> 00:34:08,600
+en un momento de la ejecución del comando
+
+900
+00:34:08,600 --> 00:34:10,600
+en el prompt,
+
+901
+00:34:10,600 --> 00:34:12,600
+por ejemplo, entra un entero válido
+
+902
+00:34:12,600 --> 00:34:16,600
+o entra un número.
+
+903
+00:34:16,600 --> 00:34:18,600
+Petición de confirmación.
+
+904
+00:34:18,600 --> 00:34:20,600
+Confírmame esto,
+
+905
+00:34:20,600 --> 00:34:22,600
+e tal ola a pregunta,
+
+906
+00:34:22,600 --> 00:34:24,600
+se tú te dolas sí o no,
+
+907
+00:34:24,600 --> 00:34:26,600
+pues ara una cosa u otra.
+
+908
+00:34:26,600 --> 00:34:28,600
+Alci colorínex,
+
+909
+00:34:28,600 --> 00:34:30,600
+que é básicamente que tú le vas coger
+
+910
+00:34:30,600 --> 00:34:32,600
+e mandar por la salida estándar
+
+911
+00:34:32,600 --> 00:34:34,600
+mensajes con colores rojos
+
+912
+00:34:34,600 --> 00:34:36,600
+porque xe es muy peligroso,
+
+913
+00:34:36,600 --> 00:34:38,600
+que haga blinko,
+
+914
+00:34:38,600 --> 00:34:40,600
+e esto se segura de que quiera destruir os ordenadores.
+
+915
+00:34:40,600 --> 00:34:42,600
+Paginación, que é una cosa,
+
+916
+00:34:42,600 --> 00:34:44,600
+afíkanos que fácil, con el ecovia pager
+
+917
+00:34:44,600 --> 00:34:46,600
+tú le metes aí un contenido de texto brutal
+
+918
+00:34:46,600 --> 00:34:48,600
+e le dices, e pagínamelo
+
+919
+00:34:48,600 --> 00:34:50,600
+e automáticamente te lo pagina como se fora al les
+
+920
+00:34:50,600 --> 00:34:52,600
+para que tú lo puedas ver avanzando o trasando.
+
+921
+00:34:54,600 --> 00:34:56,600
+Aqui por ejemplo lanzando editores,
+
+922
+00:34:56,600 --> 00:34:58,600
+esto brolla saltar
+
+923
+00:34:58,600 --> 00:35:00,600
+e luego pues tienes otras utilidades
+
+924
+00:35:00,600 --> 00:35:02,600
+como lanzar aplicaciones,
+
+925
+00:35:02,600 --> 00:35:04,600
+parar desprogreso, el típico click
+
+926
+00:35:04,600 --> 00:35:06,600
+para continuar, o que está haciendo una operación, dale click
+
+927
+00:35:06,600 --> 00:35:08,600
+e apertura de ficheros inteligente
+
+928
+00:35:08,600 --> 00:35:10,600
+que é unha evolución
+
+929
+00:35:10,600 --> 00:35:12,600
+de lo que has intentado aseñar antes
+
+930
+00:35:12,600 --> 00:35:14,600
+para o delante da salida,
+
+931
+00:35:14,600 --> 00:35:16,600
+e aí lo invertido, que son 4 cositas.
+
+932
+00:35:18,600 --> 00:35:20,600
+Principalmente, pasando contextos
+
+933
+00:35:20,600 --> 00:35:22,600
+a comandos sanidados.
+
+934
+00:35:22,600 --> 00:35:24,600
+Este é o exemplo que hemos visto antes,
+
+935
+00:35:24,600 --> 00:35:26,600
+tú tienes un CLI,
+
+936
+00:35:26,600 --> 00:35:28,600
+aí podes ver que o click pass context
+
+937
+00:35:28,600 --> 00:35:30,600
+quando tú creas un comando con click
+
+938
+00:35:30,600 --> 00:35:32,600
+automáticamente se genera un contexto
+
+939
+00:35:32,600 --> 00:35:34,600
+que lo veis ahí abajo,
+
+940
+00:35:34,600 --> 00:35:36,600
+CLI, object igual a un dictionary
+
+941
+00:35:36,600 --> 00:35:38,600
+e eso lo podemos utilizar
+
+942
+00:35:38,600 --> 00:35:40,600
+para que según se vea ejecutando comandos sanidadamente
+
+943
+00:35:40,600 --> 00:35:42,600
+yo pueda ir metiendo variables
+
+944
+00:35:42,600 --> 00:35:44,600
+como é o caso del debug
+
+945
+00:35:44,600 --> 00:35:46,600
+que le estoy diciendo,
+
+946
+00:35:46,600 --> 00:35:48,600
+xime pones menos menos debug
+
+947
+00:35:48,600 --> 00:35:50,600
+meteme dentro del objeto
+
+948
+00:35:50,600 --> 00:35:52,600
+que le pasa o contexto
+
+949
+00:35:52,600 --> 00:35:54,600
+en la clave de bug que sí o que no
+
+950
+00:35:54,600 --> 00:35:56,600
+para que el resto dos comandos lo sepa.
+
+951
+00:35:56,600 --> 00:35:58,600
+E se unha importante con el tema de la animación.
+
+952
+00:35:58,600 --> 00:36:00,600
+É xula
+
+953
+00:36:00,600 --> 00:36:02,600
+e esto lo recomenda que lo veis logo
+
+954
+00:36:02,600 --> 00:36:04,600
+que lo vos vea pasar las traspas automáticamente
+
+955
+00:36:04,600 --> 00:36:06,600
+é xula
+
+956
+00:36:06,600 --> 00:36:08,600
+porque para que é o fácil que é
+
+957
+00:36:08,600 --> 00:36:10,600
+hackear incluso un comando.
+
+958
+00:36:10,600 --> 00:36:12,600
+Tú te podes hacer que un propio comando
+
+959
+00:36:12,600 --> 00:36:14,600
+se cree
+
+960
+00:36:14,600 --> 00:36:16,600
+em base a esta clase que é mycli
+
+961
+00:36:16,600 --> 00:36:18,600
+e reciba dos parámetros
+
+962
+00:36:18,600 --> 00:36:20,600
+o que teca dos métodos.
+
+963
+00:36:20,600 --> 00:36:22,600
+Uno é list command e outro é get command.
+
+964
+00:36:22,600 --> 00:36:24,600
+O list command lo que vas a hacer
+
+965
+00:36:24,600 --> 00:36:26,600
+é dinámicamente
+
+966
+00:36:26,600 --> 00:36:28,600
+devolver una lista de comandos disponibles
+
+967
+00:36:28,600 --> 00:36:30,600
+que eso pode ser por exemplo
+
+968
+00:36:30,600 --> 00:36:32,600
+o que haza aquí el ejemplo es
+
+969
+00:36:32,600 --> 00:36:34,600
+xus.pi que hai
+
+970
+00:36:34,600 --> 00:36:36,600
+e te devolvo o nome de xus.pi
+
+971
+00:36:36,600 --> 00:36:38,600
+e tu ya sabes que é só os comandos
+
+972
+00:36:38,600 --> 00:36:40,600
+e que o get command
+
+973
+00:36:40,600 --> 00:36:42,600
+é unha vez me estás pidiendo a mi
+
+974
+00:36:42,600 --> 00:36:44,600
+o determinado comando, é a lina de comandos
+
+975
+00:36:44,600 --> 00:36:46,600
+pois eu vou evaluar ese punto
+
+976
+00:36:46,600 --> 00:36:48,600
+py
+
+977
+00:36:48,600 --> 00:36:50,600
+para poder coger el comando cli
+
+978
+00:36:50,600 --> 00:36:52,600
+e poderlo ejecutar.
+
+979
+00:36:52,600 --> 00:36:54,600
+É isto que permite que
+
+980
+00:36:54,600 --> 00:36:56,600
+é un proto sistema de plugins
+
+981
+00:36:56,600 --> 00:36:58,600
+que tu ya leites.
+
+982
+00:36:58,600 --> 00:37:00,600
+En este directorio é muchos pis
+
+983
+00:37:00,600 --> 00:37:02,600
+que todos son plugins
+
+984
+00:37:02,600 --> 00:37:04,600
+e que todos van a ter un punto de entrada
+
+985
+00:37:04,600 --> 00:37:06,600
+unha función comando que seame cli
+
+986
+00:37:06,600 --> 00:37:08,600
+a partir de aí coga tu solo
+
+987
+00:37:08,600 --> 00:37:10,600
+e entod e ya pues lo metes a harí la carpetita
+
+988
+00:37:10,600 --> 00:37:12,600
+e te vos haces un moviment de cosas
+
+989
+00:37:12,600 --> 00:37:14,600
+Mezclando grupos de comandos
+
+990
+00:37:14,600 --> 00:37:16,600
+se pode dar o caso de que
+
+991
+00:37:16,600 --> 00:37:18,600
+tengas dos grupos de comandos de dos cli
+
+992
+00:37:18,600 --> 00:37:20,600
+diferentes
+
+993
+00:37:20,600 --> 00:37:22,600
+e que logo tu digas
+
+994
+00:37:22,600 --> 00:37:24,600
+oye, é que mycli
+
+995
+00:37:24,600 --> 00:37:26,600
+en realidad é una colección de comandos
+
+996
+00:37:26,600 --> 00:37:28,600
+que teme como origen estos dos cli
+
+997
+00:37:28,600 --> 00:37:30,600
+e nó des va coger
+
+998
+00:37:30,600 --> 00:37:32,600
+os dos cli
+
+999
+00:37:32,600 --> 00:37:34,600
+e lo va mezclar
+
+1000
+00:37:34,600 --> 00:37:36,600
+e no caso por exemplo que se pudiera dar
+
+1001
+00:37:36,600 --> 00:37:38,600
+que hai comandos que ténem nombras repetidos
+
+1002
+00:37:38,600 --> 00:37:40,600
+pois se quedará que primeiro ir
+
+1003
+00:37:40,600 --> 00:37:42,600
+pero ya directamente te posibilita
+
+1004
+00:37:42,600 --> 00:37:44,600
+o poder tener
+
+1005
+00:37:44,600 --> 00:37:46,600
+expliteado todo o código
+
+1006
+00:37:46,600 --> 00:37:28,600
+e decir,
+
+1007
+00:37:28,600 --> 00:37:31,020
+i que no es va a coger els dos cli,
+
+1008
+00:37:31,020 --> 00:37:32,520
+els va a mezclar,
+
+1009
+00:37:32,520 --> 00:37:34,520
+i en el caso que se pudiera dar,
+
+1010
+00:37:34,520 --> 00:37:36,520
+que hi ha comandos que tenen nombras repetidos,
+
+1011
+00:37:36,520 --> 00:37:38,520
+se quedará que primero ir.
+
+1012
+00:37:38,520 --> 00:37:40,520
+Però ja directament te posibilita
+
+1013
+00:37:40,520 --> 00:37:42,520
+el poder tener expliteado todo el código
+
+1014
+00:37:42,520 --> 00:37:44,520
+i dir que aquí va a hacer no sé què
+
+1015
+00:37:44,520 --> 00:37:46,520
+i aquí va a no sé què.
+
+1016
+00:37:46,520 --> 00:37:48,520
+Múltiples comandos en cadena.
+
+1017
+00:37:48,520 --> 00:37:50,520
+Estic allà d'una mà, ja ho termino.
+
+1018
+00:37:50,520 --> 00:38:14,440
+Moltes comandos en cadena.
+
+1019
+00:38:14,440 --> 00:38:16,440
+Imaginaros el típico comando del setup.i
+
+1020
+00:38:16,440 --> 00:38:18,440
+que tu li pots dir,
+
+1021
+00:38:18,440 --> 00:38:40,360
+xupirà,
+
+1022
+00:38:40,360 --> 00:38:48,360
+li re chose te darem.
+
+1023
+00:38:48,360 --> 00:38:58,360
+O variable port va a tener ese valor por defecto. A pesar de que hai por defecto en el default ponga a 8 mil, pero se o comerá porque tiene prioridad.
+
+1024
+00:38:58,360 --> 00:39:12,360
+É xulo, por exemplo, para tener un fichero de configuración en algún sitio e que la puedas leer, se lo metes así al contexto e a partir daí, ya vuestro comando se comportará de unha manera o de outra.
+
+1025
+00:39:12,360 --> 00:39:20,360
+É xulo, só he perdido una transparencia.
+
+1026
+00:39:20,360 --> 00:39:41,360
+Aí lo que estamos haciendo, que é unha cosa moi xula, es que puedas coger e decidir, eu tengo un comando e o comando dist, o que podeis llamar es al comando test o que llamará el comando test con variables.
+
+1027
+00:39:41,360 --> 00:39:57,360
+Hay una diferencia entre forwar e invoke, os dos realmente llaman al comando test, o que pasa é que o comando, o método forwar, o que haces é cogeme as variables del comando padre, en este caso, o count, e os aplicas directamente al subcomando hijo.
+
+1028
+00:39:57,360 --> 00:40:11,360
+Por éso, quando pones o dist e o forwar, o count coge o default uno, mientras que se haces un invoke, en el invoke tú le tienes que poner ya directamente que variables de entorno son.
+
+1029
+00:40:11,360 --> 00:40:26,360
+É xulo, por exemplo, para quando tienes un comando que llame a subcomandos e por exemplo tienes o menos username, pues le haces un forwar porque o resto de variables, o resto de comandos, utilizan em um campo também username, e então já no tienes que rellenar.
+
+1030
+00:40:26,360 --> 00:40:28,360
+Já.
+

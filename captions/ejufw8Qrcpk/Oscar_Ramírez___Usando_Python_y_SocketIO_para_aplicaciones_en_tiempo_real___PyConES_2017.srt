@@ -1,0 +1,720 @@
+1
+00:00:00,000 --> 00:00:23,240
+Bueno, bueno día a todos y la charla principalmente va a tratar el tema de aplicaciones en tiempo
+
+2
+00:00:23,240 --> 00:00:30,240
+real. La vamos a dividir un poquito en qué es una aplicación en tiempo real, cómo la uso,
+
+3
+00:00:30,240 --> 00:00:35,080
+cómo es mi experiencia con ella y después vamos a ver una demo que he preparado solamente para esta
+
+4
+00:00:35,080 --> 00:00:44,560
+charla. Un poquito hablar sobre mí, mi nombre es Oscar, me podí encontrar como Tuxcar en Twitter,
+
+5
+00:00:44,560 --> 00:00:56,320
+en GitHub, prácticamente, sí, ya está, verdad. Soy Python Web Developer, como han dicho mi compañero,
+
+6
+00:00:56,320 --> 00:01:04,320
+en Ramen Pack, ¿vale? Y realmente me gana la vida con este tipo de aplicaciones, entonces tengo
+
+7
+00:01:04,320 --> 00:01:11,320
+bastante experiencia en lo que vamos a hablar. Un poquito para coordinar un poquito la charla
+
+8
+00:01:11,320 --> 00:01:17,560
+y calibrarla sobre todo. Me gustaría saber cuánto de vosotros habéis usado aplicaciones en tiempo
+
+9
+00:01:17,560 --> 00:01:27,200
+real con anterioridad, cuánto más la mano. ¿Cuánto habéis hecho chats en general?
+
+10
+00:01:29,840 --> 00:01:37,840
+¿Cuánto habéis hecho juegos en tiempo real? ¿Estamos hablando? ¿Y aplicaciones reactivas?
+
+11
+00:01:37,840 --> 00:01:47,440
+Perfecto. Un poquito más allá. ¿Cuánto conocéis Flask? Perfecto. Esa es la gran respuesta que
+
+12
+00:01:47,440 --> 00:01:57,920
+yo quería. ¿Y cuántos soquetayo? Muy bien. Bueno, pues realmente me gusta dividir en estos
+
+13
+00:01:57,920 --> 00:02:03,680
+tres grupos, la aplicación en tiempo real, en estos grupos que hemos estado hablando y como
+
+14
+00:02:03,680 --> 00:02:08,480
+realmente siempre se habla de aplicaciones de chat, en este caso la aplicación demo que
+
+15
+00:02:08,480 --> 00:02:13,920
+he preparado es un pequeño juego. ¿Cuánto de vosotros pensáis que hacer aplicaciones en tiempo
+
+16
+00:02:13,920 --> 00:02:23,280
+real es complicado? Perfecto. Sobre todo para vosotros, para esta charla. Vamos a empezar un
+
+17
+00:02:23,280 --> 00:02:29,040
+poquito por el final. Esta es la URL que había comentado antes. Todo el que tenga móvil,
+
+18
+00:02:29,040 --> 00:02:36,920
+tablet, lo que queráis, meterlo ahí, que la vamos a ver en un segundito. Todo el que haya
+
+19
+00:02:36,920 --> 00:02:50,040
+entrado va a haber algo parecido a esto. Perdona, pero la resolución también está matando un poco.
+
+20
+00:02:50,040 --> 00:03:03,080
+Realmente el juego es súper simple. Tenemos un grid donde podemos movernos por el grid y como
+
+21
+00:03:03,080 --> 00:03:07,720
+vemos, estoy tocando nada, no hay más y negra aquí refrescando absolutamente nada. Son dos
+
+22
+00:03:07,720 --> 00:03:13,120
+navegadores abiertos y como vemos, cada uno que se va moviendo con el token que se le ha
+
+23
+00:03:13,120 --> 00:03:19,880
+seleccionado y donde está aparecen a su y todos los demás aparecen en rojo. Como
+
+24
+00:03:19,880 --> 00:03:26,280
+podemos ver, tenemos el número de usuarios que están conectados. Superbien, estamos ya 24.
+
+25
+00:03:26,280 --> 00:03:36,080
+Y comentad que no hay mucha trampa aquí. Si sacamos más, aparecen más, si cerramos,
+
+26
+00:03:36,080 --> 00:03:40,640
+se nos va descontando. En tiempo real estamos viendo cómo se está actualizando no solamente el grid,
+
+27
+00:03:40,640 --> 00:03:47,720
+sino que aparte se está actualizando cada uno de los usuarios. Visto esto, vamos a ver qué es lo que
+
+28
+00:03:47,720 --> 00:03:52,520
+hay por detrás. Es súper simple. Entiendo que hay alguien que se haya perdido, que no entiende
+
+29
+00:03:52,520 --> 00:04:02,840
+un poco bien cómo va. Vamos a intentar verlo, cómo se ha hecho por detrás un poco. La característica
+
+30
+00:04:02,840 --> 00:04:07,840
+principal son estos que se describen. Es una aplicación en tiempo real, se está actualizando
+
+31
+00:04:07,840 --> 00:04:13,360
+en tiempo real, no hace ningún refresco, no hace absolutamente nada. Simplemente se van enviando
+
+32
+00:04:13,360 --> 00:04:19,680
+y recibiendo mensajes y se van actualizando en la pantalla de los usuarios. Interacción con
+
+33
+00:04:19,680 --> 00:04:24,800
+los usuarios, se reacciona ante eventos, o sea, cualquier evento como que os esté moviendo,
+
+34
+00:04:24,800 --> 00:04:31,040
+se ve reflejado y se obtiene el número de usuarios conectados. Esta aplicación es súper simple,
+
+35
+00:04:31,040 --> 00:04:39,120
+no lo podríamos agrandar tanto como se quiera, pero quería que ver ahí un poco los conceptos básicos.
+
+36
+00:04:39,120 --> 00:04:46,840
+Vamos un poco al grano. Lo que quizás está usando es Soquetayo. Soquetayo aparece como una librería
+
+37
+00:04:46,840 --> 00:04:55,640
+en Javascript y sale como por la necesidad de hacer aplicaciones en tiempo real de forma fácil.
+
+38
+00:04:55,640 --> 00:05:02,000
+Lo mejor que tiene es que tiene una API común entre el cliente y el servidor. Cualquier persona
+
+39
+00:05:02,000 --> 00:05:08,200
+que hable de Soquetayo entiende esta API. Entonces, todos conocemos cuáles son los integrantes de
+
+40
+00:05:08,200 --> 00:05:14,920
+estas comunicaciones. Cosas muy buenas. Por detrás estamos usando WebSocket, estamos usando el protocolo
+
+41
+00:05:14,920 --> 00:05:22,320
+primario de WebSocket y si no lo tuvieramos disponible o si fallara pasaremos al on-pulling. Teniendo
+
+42
+00:05:22,320 --> 00:05:30,280
+esto que parece simple, tenemos una conexión bidireccional abierta continuamente entre cliente
+
+43
+00:05:30,280 --> 00:05:35,760
+y servidor que podemos estar enviando mensajes sin ningún problema. Entonces nos permite que no haga
+
+44
+00:05:35,760 --> 00:05:41,880
+falta mirar sesiones, mirar permiso. Una vez que se conecta, a partir de ahí tenemos un canal bidireccional
+
+45
+00:05:41,880 --> 00:05:47,080
+que no paramos de enviar. No atraemos de la parte de WebSocket y de on-pulling. A nosotros no nos
+
+46
+00:05:47,080 --> 00:05:51,840
+importa, simplemente sabemos que usando esta librería somos capaces de tener un canal. Entonces,
+
+47
+00:05:51,840 --> 00:05:58,320
+como podéis imaginar, es muy buena una de las librerías óptimas para hacer aplicaciones reactivas.
+
+48
+00:05:58,320 --> 00:06:06,120
+Esto está muy bonito, pero claro, si nadie entendiera qué es Socketayo o no hubiera implementación
+
+49
+00:06:06,120 --> 00:06:10,120
+en diferentes lenguajes, no se podrían hacer clientes, no se podrían hacer servidores,
+
+50
+00:06:10,120 --> 00:06:16,080
+estaríamos limitados solamente a la parte de Javascript o Node. ¿Qué pasa? Realmente hay
+
+51
+00:06:16,080 --> 00:06:27,040
+herramientas. Está portado a Java, a Swift, a C, a Zmabmab y muy importante a Python. Gracias
+
+52
+00:06:27,040 --> 00:06:35,240
+a Miguel Gurnblum. Tenemos una implementación de Socketayo para Python. Con esta librería podríamos
+
+53
+00:06:35,240 --> 00:06:40,000
+hacer cualquier tipo de cliente, solamente en Python. Estamos hablando de directamente,
+
+54
+00:06:40,000 --> 00:06:45,680
+aplicaciones en tiempo real, puramente en Python. Como a mí me gusta hacer las cosas visuales y
+
+55
+00:06:45,680 --> 00:06:53,040
+de hecho lo necesitamos porque normalmente trabajamos con cliente. Nosotros necesitamos un framework que
+
+56
+00:06:53,040 --> 00:06:57,960
+nos ayude a todo lo que no solamente el manejo de señales sino temas de administración de
+
+57
+00:06:57,960 --> 00:07:02,880
+usuarios, temas de lógica de conectarnos a diferentes pasos de datos, a procesamiento y demás.
+
+58
+00:07:02,880 --> 00:07:12,760
+Entonces existe un paquete también por Miguel que se llama Flash Socketayo. Entonces usa Flash y lo
+
+59
+00:07:12,760 --> 00:07:18,720
+podemos conectar directamente con Socketayo. Hablemos un poquito de la API. Para todo eso que
+
+60
+00:07:18,720 --> 00:07:24,000
+había pensado que es supercomplicado hacer aplicaciones de este tipo. Se puede diferenciar
+
+61
+00:07:24,000 --> 00:07:31,200
+tres bloques principales. Tenemos por un lado los namespace, lo que sería una separación física
+
+62
+00:07:31,200 --> 00:07:42,600
+porque va por conexión TCP. Namespace sería... Voy a agrupar el número de usuarios físicamente,
+
+63
+00:07:42,600 --> 00:07:49,160
+no se pueden ver seguro. Intentamente y solamente por Socketayo tenemos Rooms, que es un poco la
+
+64
+00:07:49,160 --> 00:07:55,480
+lógica de realmente... Os pongo un ejemplo muy claro. Queremos una aplicación que hable sobre
+
+65
+00:07:55,480 --> 00:08:00,040
+animales. Entonces tendríamos un namespace que solamente se habla sobre animales. Pero no todo el
+
+66
+00:08:00,040 --> 00:08:04,960
+mundo le gusta en todos los animales. Entonces se harían room específicas para cada uno de ellos.
+
+67
+00:08:04,960 --> 00:08:09,520
+Por ejemplo tendríamos una room para perros, una room para gatos, una room pero eso es parte lógica.
+
+68
+00:08:09,520 --> 00:08:18,960
+Y no profe de ello la API de Socketayo. Luego el envío y reacción de mensajes que tenemos
+
+69
+00:08:18,960 --> 00:08:25,240
+dos formas que realmente es la misma. Los mensajes cuando se envían en Socketayo llevan una palabra
+
+70
+00:08:25,240 --> 00:08:32,360
+clave, un tag. Cuando se usa SENT, solamente hay dos tipos. SENT o EMIIT. Cuando se usa SENT es
+
+71
+00:08:32,360 --> 00:08:39,040
+algo simplificado de EMIIT. El EMIIT no es más que yo te digo lo que quiero, sea la palabra que
+
+72
+00:08:39,040 --> 00:08:45,200
+quiero. Por ejemplo actualización de número de usuarios. Por ejemplo, esa base es mi mensaje y
+
+73
+00:08:45,200 --> 00:08:51,800
+todo el mundo que esté escuchando en ese socket y en esa room le va a llegar ese mensaje. Cuando le
+
+74
+00:08:51,800 --> 00:08:59,200
+llega actúan consecuencia. Que es lo que se le envía el payload. Por aquí. El SENT simplemente
+
+75
+00:08:59,200 --> 00:09:05,120
+a un mismo usuario y se le envía un mensaje por defecto que se llama MESICH. Simple, una de las
+
+76
+00:09:05,120 --> 00:09:14,000
+cosas de la propia API. Es un poco de código de cómo se usaría. Tenemos los eventos grandes,
+
+77
+00:09:14,000 --> 00:09:19,600
+físicos, que es cuando yo me conecto y cuando me desconecto. Que eso no es nada lógico. Teníamos
+
+78
+00:09:19,600 --> 00:09:24,800
+la parte lógica que sí la tendríamos nosotros que implementar para saber qué usuario va a cada
+
+79
+00:09:24,800 --> 00:09:30,400
+room. Y aparte, si por ejemplo queríamos conectarlo a varios rooms, a la vez se podría hacer, pero es
+
+80
+00:09:30,400 --> 00:09:40,200
+parte lógica. Y el IVA. Entonces, este sería un poco el workflow normal. Donde un usuario se conecta
+
+81
+00:09:40,200 --> 00:09:46,800
+con su cliente, realiza una llamada CONNECT. Y a partir de ahí puede o no hacer un JOIN que
+
+82
+00:09:46,800 --> 00:09:52,240
+normalmente el tipo de mensaje que se envía para, oye me quiero conectar a alguna room. Y a partir
+
+83
+00:09:52,240 --> 00:10:00,240
+de aquí, o sea, de hecho, a partir de aquí ya tenemos un canal abierto. O sea, ya no olvidamos
+
+84
+00:10:00,240 --> 00:10:05,360
+de posibles problemas que pueda haber. Eso ya está solventado por la librería. Y a partir de ahí ya
+
+85
+00:10:05,360 --> 00:10:09,880
+simplemente envía y recibía un mensaje. Con cada uno de las datos en las que se pueden hacer, se
+
+86
+00:10:09,880 --> 00:10:15,240
+envía y se recibe. Víderes generalmente y sin ningún problema. Entonces, lógicamente se podría
+
+87
+00:10:15,240 --> 00:10:20,320
+enviar un LIF y si cerramos la pestaña, como yo he hecho antes en el ejemplo, se envía automáticamente
+
+88
+00:10:20,320 --> 00:10:27,840
+un disconnect porque cerramos físicamente la conexión. Entonces, hasta aquí podemos ver que es bastante
+
+89
+00:10:27,840 --> 00:10:40,000
+simple. Ahora bien, ¿cómo se está en el flasso que tallo? Es súper complicado. Simplemente comentar
+
+90
+00:10:40,000 --> 00:10:47,800
+que usa threads, green threads. Entonces, tenemos que usar eventlets o J event normalmente. De hecho,
+
+91
+00:10:47,800 --> 00:10:52,640
+son los que están bien soportados porque aquí estamos solamente haciendo operaciones de AIO.
+
+92
+00:10:52,640 --> 00:10:58,880
+Entonces, si no tenemos una librería que nos provea de no bloquear cuando estamos haciendo
+
+93
+00:10:58,880 --> 00:11:05,000
+operaciones en AIO, no podríamos trabajar. Esto es algo importante y hablaremos un poco más
+
+94
+00:11:05,000 --> 00:11:11,840
+adelante de ello. Entonces, la más simple, eventlet, soporta los dos protocolos, WebSocket y Lone
+
+95
+00:11:11,840 --> 00:11:17,720
+Pulling y con J event habría que instalar WebSocket aparte. Si queremos WebSocket aparte de Lone Pulling.
+
+96
+00:11:17,720 --> 00:11:27,040
+Con esto, a partir de aquí ya asindo sin parar aplicaciones. Vamos a ver el ejemplo tan complicado
+
+97
+00:11:27,040 --> 00:11:38,000
+del que estamos viendo. Esto sería una aplicación. Ya. Acaba en un slide. Tenemos la iniciación
+
+98
+00:11:38,000 --> 00:11:44,840
+de flask, una aplicación flask y tenemos el run de flask. Tiene aquí algún detallito por donde
+
+99
+00:11:44,840 --> 00:11:53,000
+se le está inyectando un tipo de aplicación en sí. A partir de ahí podemos conectar los eventos
+
+100
+00:11:53,000 --> 00:12:00,640
+de Conect y de Disconnect. Estos son como ya he explicado, por defecto. El Disconnect y el Conect
+
+101
+00:12:00,640 --> 00:12:05,440
+siempre lo vayan a tener. Los demás son lógicos. Esto lo vayan a tener seguro. Y por la parte de
+
+102
+00:12:05,440 --> 00:12:14,080
+Javecree. Este ejemplo está hecho en Javecree por la parte del navegador. Simplemente añadimos que
+
+103
+00:12:14,080 --> 00:12:22,560
+se traiga la dependencia de Javecree y nos conectamos, como se ve aquí, conecta al URL, que no es más
+
+104
+00:12:22,560 --> 00:12:32,600
+que el URL, el dominio, el puerto y el name space. El name space es tan simple como esto. Con esto,
+
+105
+00:12:32,600 --> 00:12:38,640
+ya tenemos un cliente y un servidor conectado. Ahora mismo no hace nada, pero ya sabemos cuando
+
+106
+00:12:38,640 --> 00:12:45,120
+alguien se conecta y cuando alguien se desconecta. Hasta ahí. Perfecto. Entonces, explica un poco
+
+107
+00:12:45,120 --> 00:12:50,160
+cómo definir los namespace. Los namespace siempre hay que hacerlo de forma explícita. El namespace,
+
+108
+00:12:50,160 --> 00:12:57,440
+por defecto, es barra y todo el mundo va allí si no se especifica otra cosa. Entonces, se pueden
+
+109
+00:12:57,440 --> 00:13:03,640
+tener como en este caso que cuando recibamos un mensaje de tipo join que lo tenemos aquí,
+
+110
+00:13:04,640 --> 00:13:09,480
+quiere decir que el usuario se quiere conectar a esta room y no está pasando la room. Simple,
+
+111
+00:13:09,480 --> 00:13:22,120
+perfecto. Conectamos y decimos, oye, envía a este mismo usuario su identificador, porque ya se
+
+112
+00:13:22,120 --> 00:13:28,200
+quienes, le envía un identificador, por ejemplo. Y por otro lado decimos, oye, me quiero ir de la
+
+113
+00:13:28,200 --> 00:13:33,880
+room porque ya no me interesa esto nunca más, pues tenemos la parte de lift. Aquí abajo podéis
+
+114
+00:13:33,880 --> 00:13:42,000
+ver que cuando se envía un send, este sería el handler para él. Hasta aquí ya tenemos prácticamente
+
+115
+00:13:42,000 --> 00:13:49,680
+todo. Parte de back, parte de front, todo conectado. Name space es como envía el mensaje, como envía
+
+116
+00:13:49,680 --> 00:13:58,360
+todo. Entonces, vamos a interactuar un poco más y preparar en la misma demo que os quiero presentar
+
+117
+00:14:00,280 --> 00:14:06,440
+algo un poco más bonito. Esto es lo mismo que tenemos, que he visto que ya está todo super
+
+118
+00:14:06,440 --> 00:14:24,760
+atento a mí, me gusta, pues no hay mucho movimiento por aquí. Cuando aquí... No,
+
+119
+00:14:24,760 --> 00:14:31,400
+movemos como hemos visto antes. Vemos ahí a una personilla que se está moviendo un poco más
+
+120
+00:14:31,400 --> 00:14:37,040
+rápido. Yo estoy bastante seguro que va a ser esa n, que vamos por ahí. Esto simplemente es
+
+121
+00:14:37,040 --> 00:14:48,360
+automatizar de que se puedan ir creando más y más usuarios. Entonces, podemos ver que realmente
+
+122
+00:14:48,360 --> 00:14:55,600
+lo soporta. En esta demo, estuvimos probando y hasta 50 usuarios moviéndose a la vez a unos 200
+
+123
+00:14:55,600 --> 00:15:01,600
+milisugundos, no tienen ningún problema hasta que tu navegador no soporta más. Realmente,
+
+124
+00:15:01,600 --> 00:15:07,000
+pensemos que esto está preparado para soportar grandes cantidades de usuarios, pero al ser
+
+125
+00:15:07,000 --> 00:15:11,840
+un navegador, aquí tenemos el cuello de botella en el navegador que no es capaz de ir repintando.
+
+126
+00:15:13,280 --> 00:15:16,640
+Entonces, como todo esto está muy bonito, pero lo podría haber hecho con cualquier otra librería
+
+127
+00:15:16,640 --> 00:15:22,240
+o cualquier otra cosa, voy a cerrar esta de aquí para que no nos volvamos del todo locos.
+
+128
+00:15:22,240 --> 00:15:31,320
+Y os quiero enseñar lo que sería el día a día de un programador en esto. Por ejemplo,
+
+129
+00:15:31,320 --> 00:15:37,520
+Chrome ya soporta directamente, y la mayoría de navegadores, una expansión directamente de
+
+130
+00:15:37,520 --> 00:15:46,920
+WebSocket. Entonces, estamos viendo que aquí, aunque vaya un poco rápido, está sin parar de ir
+
+131
+00:15:46,920 --> 00:15:50,960
+recibiendo todos los mensajes. A la vez que nos vamos moviendo a la izquierda, se va viendo que
+
+132
+00:15:50,960 --> 00:15:56,680
+aquí no para de ir procesando, de ir los procesando automáticamente. Lo que están en blanco,
+
+133
+00:15:56,680 --> 00:16:03,280
+solo que le van llegando, lo que están en amarillo son cuando tú te mueves. Un poco rápido,
+
+134
+00:16:03,280 --> 00:16:09,440
+estamos bastante gente y no para de moverse. Entonces, hasta aquí podemos ver lo fácil realmente
+
+135
+00:16:09,440 --> 00:16:15,560
+que hace aplicación en tiempo real y hacerla además en Python. O sea, de forma bonita,
+
+136
+00:16:15,560 --> 00:16:21,800
+a mí me encanta Python, para mí es superbonita, y muy simple. Esto es simplemente un juego,
+
+137
+00:16:21,800 --> 00:16:28,920
+pero imaginemos que podríamos destacar de aquí que cuando un usuario entra o se va,
+
+138
+00:16:28,920 --> 00:16:33,400
+simplemente se envía un número de usuarios, es este. Y todo el mundo que lo escucha dice,
+
+139
+00:16:33,400 --> 00:16:38,760
+«Ah, vale, pues lo actualizo arriba, sin ningún problema». Oye, este usuario se ha movido a
+
+140
+00:16:38,760 --> 00:16:45,520
+esta otra posición. Se actualiza y listo. Realmente la lógica que hay de este juego es supersimple,
+
+141
+00:16:45,520 --> 00:16:50,640
+pero es que la lógica que pueda haber detrás de un chat es supersimple. O sea, si quitamos toda la parte
+
+142
+00:16:50,640 --> 00:16:57,680
+de lógica interna, de decir, «Oye, esta persona tiene que logear si tiene estos permisos,
+
+143
+00:16:57,680 --> 00:17:04,000
+tiene todo esa parte, no olvidamos, eso se la dejamos a Flask». Y aquí solamente nos centramos en
+
+144
+00:17:04,000 --> 00:17:10,240
+lo que es la lógica dentro. Entonces, hasta ahora esto está muy bonito, pero realmente para ganarlo
+
+145
+00:17:10,240 --> 00:17:16,040
+no lo ha habido un poco con él y no hace falta tener test. No sé si alguno había hecho test de
+
+146
+00:17:16,040 --> 00:17:20,920
+aplicaciones en tiempo real, pero cuando tenemos un navegador y tenemos que testearlo, es bastante
+
+147
+00:17:20,920 --> 00:17:26,400
+complicado, porque necesitamos tener el navegador, tener toda la parte del backend y enviando o
+
+148
+00:17:26,400 --> 00:17:31,840
+emulando lo que está haciendo algún usuario. Para eso Flask ya tiene el client test, que lo
+
+149
+00:17:31,840 --> 00:17:37,240
+tenemos en Flask, sin ningún problema. Y Flask Socketario también implementa una extensión de
+
+150
+00:17:37,240 --> 00:17:43,240
+este mismo que te permite emitir y recibir mensajes. Por lo que dentro del backend tendríamos
+
+151
+00:17:43,240 --> 00:17:50,120
+envío y resesión testeados. Esto es ejemplo de la misma aplicación que estamos viendo. No entro
+
+152
+00:17:50,120 --> 00:17:55,200
+mucho en detalle porque lo tenéis en GitHub, pero imagínalo lo que es la lógica que cada uno le
+
+153
+00:17:55,200 --> 00:18:04,920
+quiera añadir a su test. ¿Cómo se despliega? Realmente nadie en su sano juicio va a estar usando
+
+154
+00:18:04,920 --> 00:18:14,040
+la comprobución tal que así. Está bien, pero os podéis levantar una mañana agradable.
+
+155
+00:18:14,040 --> 00:18:19,760
+Para tener que arreglar alguna cosilla. Entonces, como siempre, usa un proxy invertido,
+
+156
+00:18:19,760 --> 00:18:26,080
+como EngineX y Gunicorn. Y eventualmente Redis, que ahora veremos el porqué. Ahora bien, este tipo
+
+157
+00:18:26,080 --> 00:18:31,480
+de aplicaciones solamente corre en un solo Worker, por eso que hemos estado hablando antes de cómo
+
+158
+00:18:31,480 --> 00:18:37,240
+se envían los mensajes. Se envía cada una de las aplicaciones en sí. Pero ¿qué pasa? Si realmente
+
+159
+00:18:37,240 --> 00:18:43,680
+yo necesito más Worker o quiero expandirme horizontalmente. Para eso, lo que necesitamos es
+
+160
+00:18:43,680 --> 00:18:49,720
+un broker que se meta en medio y sea el que vaya distribuyendo cada uno de los mensajes. Cada uno
+
+161
+00:18:49,720 --> 00:18:53,880
+de los servidores va enviando a cada uno de los usuarios y los mensajes se envían por una cola
+
+162
+00:18:53,880 --> 00:18:59,200
+de mensajes. La que también soporta son Redis y Rabbit and Q, que de hecho están en la propia
+
+163
+00:18:59,200 --> 00:19:07,400
+documentación y es tan complicado como esto. O sea, cuando vamos a iniciar eso que tallo,
+
+164
+00:19:07,400 --> 00:19:12,840
+añadimos el acorde de mensaje y él automáticamente sabe cómo manejarla. Y a partir de ahí podemos ir
+
+165
+00:19:12,840 --> 00:19:29,840
+separando muchísimos servidores. Y hasta ahí la presentación.
+
+166
+00:19:29,840 --> 00:19:34,840
+Si tenéis alguna pregunta, por favor.
+
+167
+00:19:38,840 --> 00:19:45,340
+Sí, me preguntan la opción de usar Django Channels en vez de Flash soquetario. Realmente yo no soy
+
+168
+00:19:45,340 --> 00:19:51,560
+usuario de Django Channels, pero sí que te puedo decir que esta tecnología lleva muchísimo más
+
+169
+00:19:51,560 --> 00:19:58,720
+tiempo en uso, en producción. Como todos sabemos, Django Channels tiene un año y algo con la
+
+170
+00:19:58,720 --> 00:20:04,600
+release, de verdad. Y seguramente, o sea, mi recomendación sería sabiendo el potencial que tiene
+
+171
+00:20:04,600 --> 00:20:10,420
+Flash soquetario. Yo tiraría por Flash soquetario a no ser que tenga algún impedimento o alguna
+
+172
+00:20:10,420 --> 00:20:15,520
+restricción que te permita usar Django. Sobre todo cara que pueda cambiar Django. O sea,
+
+173
+00:20:15,520 --> 00:20:19,680
+porque como todos sabemos, cuando se hace una release, todo esperamos que nunca va a cambiar y
+
+174
+00:20:19,680 --> 00:20:23,280
+que siempre va a estar perfecta, pero no se puede garantizar hasta que no tengamos tiempo con ella.
+
+175
+00:20:23,280 --> 00:20:30,280
+¿Alguna otra pregunta?
+
+176
+00:20:30,280 --> 00:20:38,280
+Recuerdo que cuando el creador de esta nipería está intentando ufizar o ufizar UHS-H, en vez de
+
+177
+00:20:38,280 --> 00:20:43,280
+esjimico, que llegó a por síguico, ¿sabas algún paciente que no podía juntar?
+
+178
+00:20:43,280 --> 00:20:50,280
+Realmente no te podría responder a esa pregunta. Según la documentación, yo no he visto ningún impedimento.
+
+179
+00:20:50,280 --> 00:20:57,280
+Yo te digo, usando con Gunicorn, no tiene ningún problema y lo soporta fielmente.
+
+180
+00:20:57,280 --> 00:21:21,280
+¿Alguna otra pregunta?
+

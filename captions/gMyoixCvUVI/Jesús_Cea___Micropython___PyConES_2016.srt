@@ -1,0 +1,1744 @@
+1
+00:00:00,000 --> 00:00:14,680
+Bueno, mi nombre es Jesús Cea, soy… Bueno, lo que pone ahí está en inglés porque
+
+2
+00:00:14,680 --> 00:00:19,160
+se ha copiado otra charla. Lo más relevante tal vez es que sea ingeniero de telecomunicación,
+
+3
+00:00:19,160 --> 00:00:25,520
+con lo cual el tema de electrónica, migo controlador, etcétera, es algo que siempre,
+
+4
+00:00:25,520 --> 00:00:28,520
+siempre, siempre me ha gustado mucho. Yo empecé en la informática con un comodore
+
+5
+00:00:28,520 --> 00:00:36,720
+de ebibent en el año 82, eso dice mucho sobre la que tengo ya. Y desde entonces no he parado.
+
+6
+00:00:36,720 --> 00:00:42,680
+De hecho, mi parel lo compró, es radioficionado, lo compró para la radio y tal y no le deja
+
+7
+00:00:42,680 --> 00:00:47,080
+abusarlo. O sea, estaba siempre sentado delante, él llegaba a trabajar y estaba yo con el ordenador
+
+8
+00:00:47,080 --> 00:00:52,680
+allí todo el día. Y mis primeras cosas fueron con temas de electrónica, realmente. Fue
+
+9
+00:00:52,680 --> 00:01:02,320
+como empecé. En esta charla lo que voy a hablar es una introducción a micropayton.
+
+10
+00:01:02,320 --> 00:01:07,880
+No voy a enseñar código porque el código de micropayton es Python, tal cual. Hay librerías
+
+11
+00:01:07,880 --> 00:01:12,680
+adicionales obviamente para interactuar con el hardware, para poner un pin de entrada
+
+12
+00:01:12,680 --> 00:01:17,640
+a salida, para lo hacer o ponerlo a uno, interrupciones, cosas de ese estilo, pero el lenguaje en sí
+
+13
+00:01:17,640 --> 00:01:22,640
+es Python. Y tampoco tiene mucho sentido de tratar las librerías porque en cada plataforma
+
+14
+00:01:22,640 --> 00:01:27,200
+las librerías son diferentes. Es decir, una cosa que no vas a tener es portabilidad de
+
+15
+00:01:27,200 --> 00:01:34,000
+código. Tienes la portabilidad del algoritmo, pero lo que es la parte fina de cómo interactúas
+
+16
+00:01:34,000 --> 00:01:39,320
+con el hardware que estás usando depende de cada plaga en concreto. Con lo cual, la mesa
+
+17
+00:01:39,320 --> 00:01:42,720
+mayor del código sí que te sirve, pero la entrada salida al final te vas a tener que
+
+18
+00:01:42,720 --> 00:01:46,880
+currar para cada caso en concreto. Con lo cual, no voy a enseñar esa parte porque está
+
+19
+00:01:46,880 --> 00:01:52,600
+documentada en el manual. Lo voy a enseñar un poco. Os voy a presentar el proyecto micropayton
+
+20
+00:01:52,600 --> 00:01:59,960
+–como funciona, sobre qué hardware funciona– y un poco de la historia del proyecto. Ya
+
+21
+00:01:59,960 --> 00:02:05,080
+lo curiosas, los detalles vosotros. ¿Qué es micropayton? Micropayton fue un invento
+
+22
+00:02:05,080 --> 00:02:15,760
+de un doctorado, un fisiocostroaliano que ahora vive en Inglaterra. Es muy curioso porque
+
+23
+00:02:15,760 --> 00:02:21,560
+los vídeos que he visto yo, mi inglés es regular o de oído para conocer los acentos
+
+24
+00:02:21,560 --> 00:02:25,480
+de los que me suena británico a morir, pero el hombre es australiano. De hecho, la primera
+
+25
+00:02:25,480 --> 00:02:31,720
+versión de la charla ponía que era británico, hasta que en algún sitio vi que no era australiano.
+
+26
+00:02:31,720 --> 00:02:37,200
+Entonces, básicamente es una implementación alternativa de Python como otras, por ejemplo,
+
+27
+00:02:37,200 --> 00:02:42,720
+la de la máquina virtual Java, el Yaiton o PyPy, por ejemplo. Pues eso es una implementación
+
+28
+00:02:42,720 --> 00:02:50,120
+diferente del mismo lenguaje. Implementa Python 3, cosa que no veo que desperté ningún
+
+29
+00:02:50,120 --> 00:02:56,360
+tipo de reacción. Pero es Python 3, en principio empezó con Python 3.4, el proyecto empezó
+
+30
+00:02:56,360 --> 00:03:06,160
+en 2013, pero está funcionando. La idea es meter Python, no una versión reducida de
+
+31
+00:03:06,160 --> 00:03:11,000
+Python, el Python de toda la vida, meterlo en un microprocesador que tiene, por ejemplo,
+
+32
+00:03:11,000 --> 00:03:20,360
+16 kilobytes de RAM y un mega de Flash, para poner un caso. Son chips que son más potentes
+
+33
+00:03:20,360 --> 00:03:24,480
+que un Arduino, por lo menos un Arduino clásico, pero desde luego no tiene nada que ver con
+
+34
+00:03:24,480 --> 00:03:29,400
+una Raspberry Pi que es un ordenador, que le metes tu linus y tiene un gilade de memoria,
+
+35
+00:03:29,400 --> 00:03:35,000
+etcétera. Y estos son aparatos, enseñaré luego alguno, tamaño o moneda, que funcionan
+
+36
+00:03:35,000 --> 00:03:42,080
+con pilas o con paneles solares. La licencia es interesante. El hombre le dice una licencia
+
+37
+00:03:42,080 --> 00:03:47,000
+tipo Meet. La licencia tipo Meet es una licencia open source que básicamente te da libertad
+
+38
+00:03:47,000 --> 00:03:51,560
+total. Es una licencia que mide medio folio, que básicamente dice que puede usar este
+
+39
+00:03:51,560 --> 00:03:56,560
+código para lo que quieras, incluyendo uso comercial, incluyendo sacar tus propias versiones
+
+40
+00:03:56,560 --> 00:04:01,240
+sin publicar las diferencias, o sea, lo evolucionas por tu cuenta y no me comunicas las mejoras
+
+41
+00:04:01,240 --> 00:04:06,120
+que tienes, porque es tu ventaja competitiva, etcétera. Puedes hacer conmigo lo que quieras.
+
+42
+00:04:06,120 --> 00:04:10,520
+Mientras mantengas que la autoría original, que me pongas ahí el crédito, de que la
+
+43
+00:04:10,520 --> 00:04:17,720
+primera versión era la mía. Y la gran ventaja de usar MicroPython en un microcontralador
+
+44
+00:04:17,720 --> 00:04:22,240
+de ese estilo es básicamente el tiempo de desarrollo. Es decir, nosotros usamos Python,
+
+45
+00:04:22,240 --> 00:04:27,520
+aparte de que el lenguaje es un lenguaje elegante y bonito de usar, es un placer usarlo.
+
+46
+00:04:27,520 --> 00:04:32,280
+Es porque algo que en C te tardas un mes, en Python lo haces en una tarde y además te
+
+47
+00:04:32,280 --> 00:04:37,400
+da tiempo a probar cinco variantes de algoritmicas distintas porque te ha sobrao tiempo. Y cuando
+
+48
+00:04:37,400 --> 00:04:42,000
+casca, te quedas con un 3-back en vez de ir con un CoreDamp. Entonces, en los proyectos
+
+49
+00:04:42,000 --> 00:04:47,720
+en los que el rendimiento no es exigente, nosotros programamos en Python, en vez de
+
+50
+00:04:47,720 --> 00:04:52,560
+programar en ensamblador. En el caso de los microcontraladores, es igual. Tradicionalmente
+
+51
+00:04:52,560 --> 00:04:58,520
+se programaban en un ensamblador o en C++, era el lenguaje tradicional. Alguna vieja
+
+52
+00:04:58,520 --> 00:05:04,440
+guardia en FORTH, que es un lenguaje… Aquí le tengo un movimiento de cariño, ¿vale?
+
+53
+00:05:04,440 --> 00:05:08,760
+Pero no se programaban en un lenguaje del tenibel, pero las ventajas sí que las tienes.
+
+54
+00:05:08,760 --> 00:05:15,040
+Es decir, la ventaja de mayor veracidad de desarrollo, por ejemplo, poder probar el algoritmo,
+
+55
+00:05:15,040 --> 00:05:21,480
+poderlo probar en tu ordenador de escritorio y luego pasarlo a ese chip 150 veces más
+
+56
+00:05:21,480 --> 00:05:27,160
+lento que tu ordenador, pero sabes que el algoritmo funciona. Si lo programas para
+
+57
+00:05:27,160 --> 00:05:31,720
+un ensamblador, pues ten su problema serio. Entonces, básicamente, programar en micropyton,
+
+58
+00:05:31,720 --> 00:05:34,520
+la ventaja que tiene es que te ahorras programar en otro lenguaje.
+
+59
+00:05:34,520 --> 00:05:41,640
+Bueno, es una emplemitación alternativa de Python. Bien, eso significa que no es el
+
+60
+00:05:41,640 --> 00:05:47,480
+Python oficial, es otro Python distinto, pero la compatibilidad es muy alta. La mayor
+
+61
+00:05:47,480 --> 00:05:53,440
+parte de las librerías de la librería estándar, tal cual, copiadas tal cual, no están adaptadas,
+
+62
+00:05:53,440 --> 00:05:57,600
+están disponibles en micropyton, las que tienen sentido. Hay librerías, yo qué sé,
+
+63
+00:05:57,600 --> 00:06:05,400
+pues librerías de… ¿Pongo algún ejemplo? No, por ejemplo, sí. La argparse, que es para
+
+64
+00:06:05,400 --> 00:06:10,400
+parsear línea de comando, que no la tienes, ¿vale? O la de acceso a base de datos, no
+
+65
+00:06:10,400 --> 00:06:15,560
+las tienes, ¿no? Toda la parte de DM, GDVM, todas esas historias. No las tienes porque
+
+66
+00:06:15,560 --> 00:06:22,040
+no tiene sentido en esa placa. Pero yo qué sé, la librería de…, la SMTP-LIP para
+
+67
+00:06:22,040 --> 00:06:28,520
+mandar correo electrónico, la tienes, por ejemplo. La librería OS, la tienes. La tienes
+
+68
+00:06:28,520 --> 00:06:32,680
+lo que es relevante. Como el acceso a ficheros, no lo tienes, ¿no? Pero el acceso a la fecha
+
+69
+00:06:32,680 --> 00:06:36,640
+y la hora y ese tipo de cosas así que lo tienes. Entonces, en general, cualquier programa
+
+70
+00:06:36,640 --> 00:06:41,400
+que escribas en Python, salvo por un tema de memoria, te va a funcionar en esta placa.
+
+71
+00:06:41,400 --> 00:06:47,020
+Es decir, es una implementación alternativa de Python, pero es básicamente compatible
+
+72
+00:06:47,020 --> 00:06:54,160
+100 %. Probablemente sea más compatible que PyPy. Usa Python 3, no es compatible con
+
+73
+00:06:54,160 --> 00:06:58,120
+los módulos en C. Por ejemplo, en un Py no lo puedes meter, porque en un Py es realmente
+
+74
+00:06:58,120 --> 00:07:03,720
+es un módulo 11 que llama desde Python. Aquí las interioridades de micropyton no
+
+75
+00:07:03,720 --> 00:07:07,640
+tienen nada que ver con…, no es coger la versión original de Python y reducirla, sino
+
+76
+00:07:07,640 --> 00:07:12,000
+es una reimplementación. Entonces, en los APIs internos no tiene nada que ver con la
+
+77
+00:07:12,000 --> 00:07:17,280
+librería, con el Cesta, con la versión de Python estándar, con lo cual los módulos
+
+78
+00:07:17,280 --> 00:07:20,600
+en C no los puede meter. En general, tampoco tiene mucho sentido, pero no puedes.
+
+79
+00:07:20,600 --> 00:07:26,640
+Y una cosa que es muy graciosa que está aquí explicado, lo de implementación de
+
+80
+00:07:26,640 --> 00:07:32,440
+CEP y PyP en Python es que ha habido alguien, algún matado que no es la gente de micropyton,
+
+81
+00:07:32,440 --> 00:07:37,760
+que es otra gente que se ha hecho una pila de CEP y PyP en Python. Directamente tú llamas
+
+82
+00:07:37,760 --> 00:07:42,120
+a esa pila de CEP y PyP te genera los paquetes, tal cual los datagramas que se transmiten
+
+83
+00:07:42,120 --> 00:07:48,160
+por la Ethernet y tú ese paquete puedes hacer cosas, pues mandarlo por una wifi, puedes
+
+84
+00:07:48,160 --> 00:07:55,280
+mandarlo por un portoserie o lo que sea, pero es una implementación de CEP y PyP en Python.
+
+85
+00:07:55,280 --> 00:07:58,800
+Entonces esta gente la ha cogido, la gente de micropyton la ha cogido para implementar
+
+86
+00:07:58,800 --> 00:08:04,560
+CEP y PyP para poder conectar un servidor web para mandar tus medidas de los sensores
+
+87
+00:08:04,560 --> 00:08:08,000
+sin tener un sistema operativo por debajo, porque una cosa que no tienen estas placas
+
+88
+00:08:08,000 --> 00:08:12,320
+es un sistema operativo, es decir, aquí arrancas directamente del metal. Aquí cuando arranca
+
+89
+00:08:12,320 --> 00:08:17,000
+tu primera instrucción de código de usuarios, la primera instrucción que ejecuta el CPU,
+
+90
+00:08:17,000 --> 00:08:20,960
+no hay un sistema operativo al que tú le puedas hacer llamadas para que te acusas
+
+91
+00:08:20,960 --> 00:08:26,400
+cómo mandar, establecer una conexión con alguien, ¿vale? Esas cosas no existen.
+
+92
+00:08:26,400 --> 00:08:32,800
+Entonces esta gente se ha currado, bueno, ha integrado en micropyton una implementación
+
+93
+00:08:32,800 --> 00:08:43,160
+de CEP y PyP en Python. Hay chips como por ejemplo el SP8266 que hablaré dentro de momento,
+
+94
+00:08:43,160 --> 00:08:47,760
+es un chip que cuesta menos de 2 euros puesto en casa, gastos de bien incluido, chicos,
+
+95
+00:08:47,760 --> 00:08:54,160
+gastos de bien incluido 1,80, ¿vale? No he traído ninguno, pero tengo fotos, luego
+
+96
+00:08:54,160 --> 00:08:58,160
+me enseñó fotos, para que veas lo grande de que son. Yo tengo como 14 en casa, lo tengo
+
+97
+00:08:58,160 --> 00:09:03,600
+chufado a todos, o sea, en el baño no sé si hay alguno, no estoy seguro.
+
+98
+00:09:03,600 --> 00:09:10,320
+Pero una cosa que tiene, que por 1,80 euros tienes conexión Wi-Fi, el que se lo tiene,
+
+99
+00:09:10,320 --> 00:09:15,680
+una conexión Wi-Fi tanto como estación base, o sea, puede hacer una estación base como
+
+100
+00:09:15,680 --> 00:09:21,160
+nudo de acceso, o sea, un cliente de una red Wi-Fi normal. Con lo cual, te viene muy
+
+101
+00:09:21,160 --> 00:09:25,400
+bien tener una pila de cpp, porque ya tengo una conexión Wi-Fi y ahora puedo… Es que
+
+102
+00:09:25,400 --> 00:09:29,160
+no sé, me voy ahí y no me decías nada. ¡Hola! Aquí mejor.
+
+103
+00:09:29,160 --> 00:09:33,360
+Ahora tengo una conexión Wi-Fi, es el que sí me da una conexión Wi-Fi y tengo ya una
+
+104
+00:09:33,360 --> 00:09:41,480
+pila de cpp de puta madre para conectarme a un servidor web y no sé, hacer cosas.
+
+105
+00:09:41,480 --> 00:09:47,760
+Dequisitos hardware, ¿dónde funciona esto? La primera implementación, la original era
+
+106
+00:09:47,760 --> 00:09:53,640
+ARM, no un chip ARM determinado, un micro controlador ARM determinado, era ensamblador
+
+107
+00:09:53,640 --> 00:10:01,720
+ARM. Tienes que adaptarlo a cada placa, ¿vale?, cada placa, pues tú cogías el core de MicroPython
+
+108
+00:10:01,720 --> 00:10:07,320
+y en un fin de semana te currabas la datación a cada una de las placas, o sea, tú atacas
+
+109
+00:10:07,320 --> 00:10:15,000
+una arquitectura determinada. En 2016, este año, en enero o por ahí, se popularizó,
+
+110
+00:10:15,000 --> 00:10:22,520
+bueno, en los chinos sacaron un chip llamado SP8266, que es el que pone ahí arriba, es
+
+111
+00:10:22,520 --> 00:10:27,960
+un chip que cuesta menos de dos euros y lo peta. Ahora mismo está que lo peta en todas
+
+112
+00:10:27,960 --> 00:10:35,760
+partes. Hacadei, uno de cada tres posts es del chip este, ¿vale?, eso es para todo.
+
+113
+00:10:35,760 --> 00:10:39,960
+Y entonces, el hombre este, que su target era ARM y se portaba a bastantes placas, pero
+
+114
+00:10:39,960 --> 00:10:46,440
+sobre ARM hizo un crowdfunding para financiar el port este chip, ¿vale?, luego lo veré,
+
+115
+00:10:46,440 --> 00:10:51,760
+hay una parte del tema de los crowdfunding, pero ahora básicamente lo pues adjudicaron
+
+116
+00:10:51,760 --> 00:10:59,320
+en un chip de un euro. Lo puedes portar a cualquier cosa que tenga más de cinco ks de RAM, después
+
+117
+00:10:59,320 --> 00:11:04,520
+de hacer programas útiles, cinco ks de RAM. Se graba todo, todo lo posible. Normalmente
+
+118
+00:11:04,520 --> 00:11:09,080
+en estos micro controladores, la parte limitante suele ser la memoria RAM, es decir, suele tener
+
+119
+00:11:09,080 --> 00:11:12,920
+memoria flash, por ejemplo, entonces la memoria flash no suele ser un problema, que solo algunos
+
+120
+00:11:12,920 --> 00:11:18,520
+les podrías hasta meter una tarjeta microSD, te lo tendrías que currar tu los drivers,
+
+121
+00:11:18,520 --> 00:11:22,520
+pero podrías. Pero la parte de RAM suele ser muy limitada. Por ejemplo, un Arduino pues
+
+122
+00:11:22,520 --> 00:11:33,120
+puedes tener a lo mejor, yo qué sé, un antiguo, pues 16, no sé, un mega de flash para tu
+
+123
+00:11:33,120 --> 00:11:40,240
+programa, pero 256 bytes de memoria, ¿vale? La primera, la consola de esta data, la primera
+
+124
+00:11:40,240 --> 00:11:49,040
+consola doméstica, la 2600, a tal y 2600 tenía 256 bytes de RAM, ¿por qué? Porque todo
+
+125
+00:11:49,040 --> 00:11:56,560
+el juego iba en un cartucho y la RAM era pues para los contadores, para cuatro cosas, ¿vale?
+
+126
+00:11:56,560 --> 00:12:00,240
+Entonces realmente los micro controladores suelen tener un espacio de memoria de programa
+
+127
+00:12:00,240 --> 00:12:04,520
+muy amplio, sobrado para lo que quieres hacer, pero la parte de RAM es fastidiada, es la
+
+128
+00:12:04,520 --> 00:12:14,000
+parte escasa. El chip este que digo, el SP8266 tiene 96 cas de RAM, que es un lujo asiático,
+
+129
+00:12:14,000 --> 00:12:19,880
+más de 64 cas, eso ya, más de 16 bytes. Pero en general eres capaz de arrancar micro
+
+130
+00:12:19,880 --> 00:12:25,200
+Python, lo puedes arrancar con un caderno, lo arrancas, te sale la línea de comando,
+
+131
+00:12:25,200 --> 00:12:29,880
+los tres mayores en el terminal, en el puerto serie, te salen los tres mayores y tú pones
+
+132
+00:12:29,880 --> 00:12:36,240
+Spring o LaMundo y no PETA, funciona. Si ya quieres hacer un programa de cinco líneas,
+
+133
+00:12:36,240 --> 00:12:39,760
+pues ya te hace falta un poco más de memoria, pero estamos usando de cinco o diez cas,
+
+134
+00:12:39,760 --> 00:12:47,440
+¿vale? A partir de diez cas, yo los programas que tengo hechos deben ocupar cinco o seis,
+
+135
+00:12:47,440 --> 00:12:53,400
+cinco o diez cas de memoria RAM. ¿Memoria RAM? ¿Vale? El intérprete en sí, lo que tú
+
+136
+00:12:53,400 --> 00:12:58,520
+programas en el cacharro, más o menos la implementación actual es aproximadamente
+
+137
+00:12:58,520 --> 00:13:06,440
+un mega de Flash, ¿vale? Que cualquier cacharro, el ESP, por ejemplo, suele venir con cuatro
+
+138
+00:13:06,440 --> 00:13:11,480
+megas y tú usas un mega, o sea, tienes tres megas para el programa Python que tú quieres
+
+139
+00:13:11,480 --> 00:13:16,760
+hacer. Bueno, ya he avanzado un poco sobre este chip,
+
+140
+00:13:16,760 --> 00:13:21,200
+típicamente te vine hoy en día con cuatro megas, hay dos modelos fáciles de encontrar,
+
+141
+00:13:21,200 --> 00:13:27,520
+uno que programarlos un puto Cristo, porque es el chip tal cual y tienes que conectarlo
+
+142
+00:13:27,520 --> 00:13:32,560
+algo con portos serie de tres voltios que no es trivial y portos serie tampoco es trivial,
+
+143
+00:13:32,560 --> 00:13:37,320
+hoy en día ya no hay portos series por ahí. Y tienes que meterle resistencias y tal para
+
+144
+00:13:37,320 --> 00:13:41,280
+que arranque, hay que poner una resistencia, sino no arranca, ¿no? Y luego hay una placa
+
+145
+00:13:41,280 --> 00:13:46,520
+que directamente en Chufaburo se ve, esa placa no cuesta dos euros, cuesta dos con cincuenta
+
+146
+00:13:46,520 --> 00:13:55,080
+y cinco. Puesto en casa, ¿vale? Yo lo comentaba antes en la pausa que me uno el martes y
+
+147
+00:13:55,080 --> 00:14:00,240
+he pedido dos, me llegará dentro de un mes, pero bueno, por eso no he traído ninguno,
+
+148
+00:14:00,240 --> 00:14:04,640
+¿no? Incluye Wifi que esta es la innovación brutal de este chip, es mucha gente que está
+
+149
+00:14:04,640 --> 00:14:09,560
+usando este chip para conectarlo a cosas, para darle Wifi. Lo conecta a un Arduino, hace
+
+150
+00:14:09,560 --> 00:14:14,240
+su programación en Arduino, porque es lo que conoce, y el portos serie de Arduino lo
+
+151
+00:14:14,240 --> 00:14:20,080
+canaliza por Wifi y tú haces el Arduino desde tu portátil por Wifi y tú tienes un portos
+
+152
+00:14:20,080 --> 00:14:26,520
+serie en Wifi. Y el que hace eso es este chip, es decir, este chip cuando te lo compras,
+
+153
+00:14:26,520 --> 00:14:30,520
+cuando lo sacan, los chinos te lo dejan en tu casa de alguna manera mágica por dos euros,
+
+154
+00:14:30,520 --> 00:14:38,080
+no se sabe muy bien cómo lo hace. Mi cartero lo flipa, o sea, dice, tío, hay días que
+
+155
+00:14:38,080 --> 00:14:44,360
+te entrego siete paquetes en un día y eso todas las semanas, yo es que Aliexpress es
+
+156
+00:14:44,360 --> 00:14:52,440
+un vicio, tío. En fin, bueno, el cacharro este básicamente,
+
+157
+00:14:52,440 --> 00:14:57,160
+incluye una Wifi que es la innovación, ha salido un modelo nuevo, el SP32 todavía no
+
+158
+00:14:57,160 --> 00:15:03,000
+se puede comprar, salió en setiembre, ¿vale? Ya hay Benz, Smart Key comparativas y tal
+
+159
+00:15:03,000 --> 00:15:07,960
+de gente que ha tenido Acesoel, pero todavía no puedes comprarlo. Supongo que lo podrás
+
+160
+00:15:07,960 --> 00:15:11,840
+encargar o esperar a que salga por ahí algún sitio en Amazon o lo que sea, aprecioso,
+
+161
+00:15:11,840 --> 00:15:15,960
+pero este cacharro es el doble de potentes, soluciona un montón de pegullas, putadillas
+
+162
+00:15:15,960 --> 00:15:21,920
+que tenía, putadillas, podido conducta, no, no.
+
+163
+00:15:21,920 --> 00:15:30,080
+Jamacucos que le daba, como que lo ponía ese modo reposo y para levantarlo del modo reposo
+
+164
+00:15:30,080 --> 00:15:33,560
+había que meter una resistencia, también otra resistencia más, o sea, hay que saber
+
+165
+00:15:33,560 --> 00:15:38,960
+el electrónica, ¿eh? Y este cacharro tiene dos cores, porque una cosa también muy importante
+
+166
+00:15:38,960 --> 00:15:46,080
+de este bicho, como tiene Wifi y la Wifi lo hace todo por software, el sistema te da
+
+167
+00:15:46,080 --> 00:15:52,640
+un amago de sistema operativo, un amago de sistema operativo y tu aplicación va sobre
+
+168
+00:15:52,640 --> 00:15:57,480
+calvas, tu aplicaciones son solo calvas, tú dices, cuando llegue una conexión llama esta
+
+169
+00:15:57,480 --> 00:16:05,440
+rutina, cuando yo mande tráfico a la Wifi y el otro lado lo reciba, llama esta rutina,
+
+170
+00:16:05,440 --> 00:16:12,600
+un calvas que le guste Twisted estará encantado con este chip, ¿vale? Pero es muy antipitónico,
+
+171
+00:16:12,600 --> 00:16:16,040
+¿vale? Porque tú te pinchas a cosas que van pasando dentro del sistema operativo, te
+
+172
+00:16:16,040 --> 00:16:20,440
+pinchas a cosas y además si tú te pinchas a algo y tardas más de diez mil segundos en
+
+173
+00:16:20,440 --> 00:16:26,880
+terminar lo que haces pierdes la Wifi, porque la Wifi la gestiona por software, ¿vale?
+
+174
+00:16:26,880 --> 00:16:32,000
+Entonces tienes que devolverle el control del sistema todo el rato, ¿ok? De hecho está
+
+175
+00:16:32,000 --> 00:16:35,640
+específica o si tardas más de diez mil segundos no se garantiza lo que va a dar, si tienen
+
+176
+00:16:35,640 --> 00:16:40,640
+huas dos y tardan más de 50 mil segundos te los resetea, porque se ha quedado colgado,
+
+177
+00:16:40,640 --> 00:16:45,160
+da por hecho que tu código se ha quedado colgado, ¿no? Lo igual tampoco es mucho problema porque
+
+178
+00:16:45,160 --> 00:16:50,560
+normalmente lo que haces en un micro motor al lado tan pequeño son cosas útiles pero
+
+179
+00:16:50,560 --> 00:16:57,880
+algoritmicamente triviales, o sea, leer un sensor y mandarlo a algún sitio, ves si se
+
+180
+00:16:57,880 --> 00:17:04,480
+pulsan una década y mandar algún tipo de acción pero algoritmicamente no son complicados,
+
+181
+00:17:04,480 --> 00:17:09,280
+con lo cual incluso en Python los diez mil segundos es mucho tiempo, alguna vez no me
+
+182
+00:17:09,280 --> 00:17:13,680
+ha dado tiempo a terminar, los diez mil segundos, ¿no? Pero una de las ventajas que tiene el
+
+183
+00:17:13,680 --> 00:17:18,520
+chip nuevo, el SP32, es que tiene dos cores, ¿vale? Son dos cores iguales, uno lo dedica
+
+184
+00:17:18,520 --> 00:17:23,400
+al Wifi y a tus cosas y el otro solo a tus cosas. Entonces tú cuando…, pues esto es
+
+185
+00:17:23,400 --> 00:17:28,720
+en teoría porque yo he ido a revistas pero todavía no lo puedes comprar. Entonces a
+
+186
+00:17:28,720 --> 00:17:33,360
+las malas si te quieres olvidar del tema de calva, critar, pues tu programas un core y
+
+187
+00:17:33,360 --> 00:17:37,200
+el otro lo abandonas y queda para la Wifi y ya está y te olvidas del Wifi, no tienes
+
+188
+00:17:37,200 --> 00:17:41,520
+que mover el control o tienes diez mil segundos, todo funciona de puta madre, ¿vale? El Wifi
+
+189
+00:17:41,520 --> 00:17:46,080
+a cazas a cien metros, ahí pongo mucho más que cien metros porque yo he hecho pruebas
+
+190
+00:17:46,080 --> 00:17:53,600
+en un pueblo, no en una ciudad que las Wifi's habiten más yadas, ¿no? Pero en un pueblo,
+
+191
+00:17:53,600 --> 00:17:58,760
+a 350 metros sin antena el chip, uno aquí y otro en el campo, a 350 metros, sigue funcionando,
+
+192
+00:17:58,760 --> 00:18:04,920
+¿ok? Todo está alimentado con una pila, una pila y la pila dice, bueno, es que la pila
+
+193
+00:18:04,920 --> 00:18:16,160
+sigue cambiada, bueno, una pila, un panesolar, un panesolar de 5 x 5 centímetros. Este es
+
+194
+00:18:16,160 --> 00:18:22,360
+el cacharro, fijaros en la moneda de un euro, ¿ok? La moneda de un euro es la referencia.
+
+195
+00:18:22,360 --> 00:18:25,520
+El cacharro de verdad es el de abajo que tiene los dos cables rojos, los dos cables rojos
+
+196
+00:18:25,520 --> 00:18:30,040
+es porque hace falta varias alimentaciones y varias cosas, lo que digo que es hace falta
+
+197
+00:18:30,040 --> 00:18:33,080
+un poquito de electrónica para ponerlo a andar. El que está arriba, que es como el
+
+198
+00:18:33,080 --> 00:18:39,480
+doble de grande, realmente la parte de aquí, esta parte de aquí es este chip tal cual,
+
+199
+00:18:39,480 --> 00:18:45,440
+¿vale? Y todo lo demás es, aquí le conectas un USB, aquí es el chip de puerto serie a
+
+200
+00:18:45,440 --> 00:18:50,520
+USB, tiene un regulador de voltaje, por debajo tiene un montón de pines para soldar, ¿vale?
+
+201
+00:18:50,520 --> 00:18:57,240
+Y aquí hay que soldar a los gruto, pues aquí tiene pines de 2,54 de una décima de pulgada.
+
+202
+00:18:57,240 --> 00:19:05,480
+Este cuesta 1,80 y este cuesta 2,50. Dice, bueno, 2,50 me compro un montón de estos,
+
+203
+00:19:05,480 --> 00:19:10,680
+ya, pero es que a mí el bajo consumo me mola y estoy que alimentarlo de alguna manera,
+
+204
+00:19:10,680 --> 00:19:15,760
+ya, bueno, va con 5 volt, después tiene un regulador de voltaje lineal, yo quiero que
+
+205
+00:19:15,760 --> 00:19:20,640
+me dure la batería, tres meses la batería, entonces me compro de estos de aquí abajo.
+
+206
+00:19:20,640 --> 00:19:25,400
+Pero el programa de estos tiene bastante, te hace falta hardware. Yo he hecho los programas
+
+207
+00:19:25,400 --> 00:19:29,440
+desde una Raspberry Pi, porque la Raspberry Pi tiene un montón de pines de 3 voltios,
+
+208
+00:19:29,440 --> 00:19:35,720
+como le metas 3,4, ya lo quemas, ¿vale? Pines de 3,3 y lo programo por puerto serie desde
+
+209
+00:19:35,720 --> 00:19:40,640
+una Raspberry. Esto es un montaje que he hecho, este es el que se me quemó, ves el cable
+
+210
+00:19:40,640 --> 00:19:44,920
+que está resolto aquí, este cable hace un cortocircuito aquí y se fue a tomar posacos,
+
+211
+00:19:44,920 --> 00:19:48,880
+básicamente. Esto es un sensor de temperatura y humedad, es un sensor de temperatura y humedad
+
+212
+00:19:48,880 --> 00:19:55,840
+y presión atmosférica y esta es en mi mano y esta es el tamaño, quizá todo soldado a…
+
+213
+00:19:55,840 --> 00:20:01,440
+Bueno, así. 2,55, no pasa nada, se jodió, me he gastado
+
+214
+00:20:01,440 --> 00:20:10,040
+más en suela, al venir caminando y no pasa nada. Y esto es un caso real de qué es lo
+
+215
+00:20:10,040 --> 00:20:15,800
+que hace esto de aquí, es esto, temperatura y humedad, también mi depresión, pero si
+
+216
+00:20:15,800 --> 00:20:22,480
+alguien sabe cómo dibujar tres ejes, no dos, tres ejes en combat plus leap que me busque
+
+217
+00:20:22,480 --> 00:20:26,840
+dentro de un rato y me quita de la miseria que tengo, que no sé qué puede dibujar el
+
+218
+00:20:26,840 --> 00:20:31,800
+gráfico de presión, ¿vale? Aquí tenemos humedad, hay dos gráficos, esto es la temperatura,
+
+219
+00:20:31,800 --> 00:20:35,200
+esto es aquí, muy cerca, aquí parece que hay una separación, pero esta separación
+
+220
+00:20:35,200 --> 00:20:39,040
+es como una décima de grado, o sea, bueno, más o menos mide bien, una décima de grado,
+
+221
+00:20:39,040 --> 00:20:46,440
+parece que es la zonable, los sensores cuestan dos euros y cosas así, hablamos del mismo
+
+222
+00:20:46,440 --> 00:20:51,920
+nivel de precio, ¿vale? Y esto me lo está mandando a un servidor por Wifi, con mi Wifi
+
+223
+00:20:51,920 --> 00:20:57,360
+de casa, y que a Charlo se conecta a mi Wifi doméstica y cada minuto me manda las medidas
+
+224
+00:20:57,360 --> 00:21:02,000
+de los dos sensores, también me manda el depresión, no lo dibujo, pero me lo guardo, ¿vale?
+
+225
+00:21:02,000 --> 00:21:06,160
+Y guardo todo el histórico, cada minuto tengo un histórico, hace un año tengo un histórico,
+
+226
+00:21:06,160 --> 00:21:10,880
+un minuto a minuto de... Aquí cuando... Esto es mi habitación, donde trabajo, cuando me
+
+227
+00:21:10,880 --> 00:21:17,080
+levanto el pila de baño, se nota, cuando voy a dormir se nota, cuando entra alguien en
+
+228
+00:21:17,080 --> 00:21:23,320
+la habitación se nota, cuando bebo agua se nota, y se nota no la temperatura, se nota
+
+229
+00:21:23,320 --> 00:21:33,000
+en la humedad, es brutal, se ve... O sea, hablo la puerta y instantáneamente baja la humedad
+
+230
+00:21:33,000 --> 00:21:36,680
+en el ambiente, la temperatura no varía, la venanza en el ambiente sí, es brutal,
+
+231
+00:21:36,680 --> 00:21:41,960
+o sea, yo digo esto de antirrobó, bien, en fin. Pues esto le hace un cachorro de dos
+
+232
+00:21:41,960 --> 00:21:47,520
+euros, ¿ok? Aquí las características del bichillo, no es de lo que quiero hablar, esto
+
+233
+00:21:47,520 --> 00:21:57,360
+es sobre qué funciona ahora mismo la micropaito hoy. El SP8266 cuesta dos euros, tiene 96
+
+234
+00:21:57,360 --> 00:22:03,000
+cas de memoria, RAM, que es la parte de trabajo, eso es un montón de memoria para este tipo
+
+235
+00:22:03,000 --> 00:22:10,080
+de entornos, y tienes versiones entre 512K y 4M de flash, ¿vale? Y luego oficialmente
+
+236
+00:22:10,080 --> 00:22:15,600
+el primer sistema en el que funcionó era la Pivoart, cuánto tipo me queda, no lo he
+
+237
+00:22:15,600 --> 00:22:24,840
+puesto, me caches la más, cuánto me queda. No, es que se me ha olvidado poner el reloj,
+
+238
+00:22:24,840 --> 00:22:30,440
+¿no? 15 minutos, bueno, 15 minutos, bien, sobradísimo. La Pivoart, por ejemplo, es
+
+239
+00:22:30,440 --> 00:22:33,480
+cuando salió el crofunde original, luego lo comentaré un poco más, porque cuando
+
+240
+00:22:33,480 --> 00:22:37,200
+salió el crofunde original era micropaito y una placa en la que correrlo, porque si
+
+241
+00:22:37,200 --> 00:22:41,160
+no, dónde lo metes, ¿vale? Entonces saco una placa, a mí me parece un poco cara,
+
+242
+00:22:41,160 --> 00:22:48,800
+20 libras, no 20 euros, 20 libras, ¿vale? Y bueno, lo único bueno que tiene es que
+
+243
+00:22:48,800 --> 00:22:52,520
+la licencia… Bueno, lo único bueno, una cosa interesante que tiene es que la licencia
+
+244
+00:22:52,520 --> 00:22:56,280
+de transmit, es decir, podría haber clónicos, por ejemplo, la licencia permite clónicos,
+
+245
+00:22:56,280 --> 00:23:00,760
+perfectamente, ¿vale? Un montón de Adafruit, salió antes el tema Adafruit, Adafruit tiene
+
+246
+00:23:00,760 --> 00:23:05,600
+un mogollón de microcontraladores, todos con micropaito, ¿vale? El microbit es una
+
+247
+00:23:05,600 --> 00:23:12,520
+cosa muy graciosa, porque hace muchos años la gente de la BBC británica sacó el BBC
+
+248
+00:23:12,520 --> 00:23:16,840
+Micro, ¿alguien le suele el BBC Micro? Años ochenta, ¿vale? Mediados de los ochenta o
+
+249
+00:23:16,840 --> 00:23:24,120
+tal, era un ordenador… La informática va a molar, en el futuro es el futuro, la informática,
+
+250
+00:23:24,120 --> 00:23:32,240
+años ochenta, ¿no? Y BBC, que tiene un mandato de servicio público, por eso es gratuito,
+
+251
+00:23:32,240 --> 00:23:37,080
+etc., no tiene publicidad, lo que es la BBC, no la televisión británica en general, que
+
+252
+00:23:37,080 --> 00:23:41,840
+hay muchos canales, la BBC, ¿no? Es como televisión español aquí, si fuera algo de
+
+253
+00:23:41,840 --> 00:23:48,080
+servicio público, que no lo es. Entonces, entre sus mandatos, pues, ayudar, que llegue
+
+254
+00:23:48,080 --> 00:23:51,960
+la cultura, la gente, bla, bla, bla, entonces los tíos miraron en ambiados de los ochenta
+
+255
+00:23:51,960 --> 00:23:55,960
+que la informática era el futuro, ya había un espectro y cosas así, por el estilo,
+
+256
+00:23:55,960 --> 00:24:00,800
+que es británico, y sacaron un ordenador doméstico, que fue el BBC Micro, y fue un
+
+257
+00:24:00,800 --> 00:24:05,320
+ordenador que fuera de Inglaterra no sabemos ni qué es este, porque era una cosa inglesa,
+
+258
+00:24:05,320 --> 00:24:09,480
+pero allí lo petó y se repartía gratis en los colegios, tenías las cípicas hablas
+
+259
+00:24:09,480 --> 00:24:14,960
+de informática, pues era con su BBC Micro todo, o BBC Micro pequeñito, y la TV de Tubo
+
+260
+00:24:14,960 --> 00:24:19,640
+de las Ways, ¿no? No como ahora. Ya hay gente que, dentro de nada, cuando diga televisión
+
+261
+00:24:19,640 --> 00:24:24,920
+en blanco y negro, no sabe lo que es. ¿Alguien la ha visto alguna vez? ¿Alguien no ha visto
+
+262
+00:24:24,920 --> 00:24:28,600
+una televisión en blanco y negro? ¿Alguien no? ¿Tú no has visto una televisión en blanco
+
+263
+00:24:28,600 --> 00:24:33,960
+y negro? En fin, por dentro de poco las televisiones de
+
+264
+00:24:33,960 --> 00:24:39,360
+Tubo en plan televisión de Tubo, o sea, tengo un hueco en el mueble del salón así de grande
+
+265
+00:24:39,360 --> 00:24:45,040
+para qué, para qué es ese hueco. Pero todos lo traen y dicen, ¿pa qué es? No se sabe,
+
+266
+00:24:45,040 --> 00:24:52,000
+si ya lo cogeas en la parella, en la tele, no. Bueno, pues el BBC Micro fue un invento
+
+267
+00:24:52,000 --> 00:24:59,680
+de los años 80, ahora lo que lo petas, la electrónica y las cosas pequeñitas, ¿no?
+
+268
+00:24:59,680 --> 00:25:04,040
+El tema de la Raspberry, por ejemplo, que es británico, aunque no es de la BBC. Entonces,
+
+269
+00:25:04,040 --> 00:25:08,560
+la BBC han vuelto a conseguir dinero, han vuelto a conseguir dinero por una iniciativa
+
+270
+00:25:08,560 --> 00:25:13,800
+de ese tipo y decimos, queremos llevar la electrónica y la informática, no la informática
+
+271
+00:25:13,800 --> 00:25:20,360
+de los PCs en plan, curso de informática, Word, Windows y tal, eso será ofimática,
+
+272
+00:25:20,360 --> 00:25:24,600
+pero no es, tú lo sabes informática, porque sabes usar el Word. Pues esta gente también
+
+273
+00:25:24,600 --> 00:25:30,280
+lo tiene muy claro y quiere llevar a los chavalines, a los chavales de hasta diez años,
+
+274
+00:25:30,280 --> 00:25:39,240
+o sea, de diez, doce años, llevarle la informática, pero llevarle la informática de verdad, de
+
+275
+00:25:39,240 --> 00:25:45,320
+coger el chip y de quemarlo, no pasa nada porque te lo regala, ¿vale? Y hacer cosas
+
+276
+00:25:45,320 --> 00:25:48,400
+de verdad, no usar un ordenador o un PC que tiene un sistema práctico brutal, que no
+
+277
+00:25:48,400 --> 00:25:51,840
+sabes cómo funciona, es una caja negra, yo cuando el PC yo sabía, yo le daba la tecla
+
+278
+00:25:51,840 --> 00:25:58,400
+y salía la tecla en la pantalla y sabías todo lo que pasaba, cómo se escaneaba el
+
+279
+00:25:58,400 --> 00:26:03,480
+PC, cómo se dibujaba en la pantalla los PCs, lo sabías, hoy en día no. Y la gente que
+
+280
+00:26:03,480 --> 00:26:09,840
+empieza esa capacidad de entender en qué mundo está, la parte que cuando se enciende
+
+281
+00:26:09,840 --> 00:26:14,760
+la luz, o sea, cuando el integrutor se enciende la luz, todo lo que se pone en juego para
+
+282
+00:26:14,760 --> 00:26:19,720
+que se funcione, no somos conscientes y con la informática también pasa, ¿vale? O con
+
+283
+00:26:19,720 --> 00:26:22,800
+los móviles todo el mundo, tengo un móvil en el bolsillo, yo me muevo en el ave y el
+
+284
+00:26:22,800 --> 00:26:27,480
+móvil sigue funcionando, eso, la tecnología que hay por detrás es brutal, a mí me, yo
+
+285
+00:26:27,480 --> 00:26:34,040
+llego Geocaching y bromeo con lo de, bueno, llego Geocaching con un móvil de 700 euros
+
+286
+00:26:34,040 --> 00:26:39,760
+para buscar cajas llenas de chucherías debajo de una piedra en el monte y usando satelitas
+
+287
+00:26:39,760 --> 00:26:44,720
+que cuestan miles de millones de dólares. O la gente que va a cazar pokemos, no dice,
+
+288
+00:26:44,720 --> 00:26:49,840
+pues yo estoy cazando pokemos y la infraestructura que está en juego para que yo vaya a cazar
+
+289
+00:26:49,840 --> 00:26:57,640
+pokemos es brutal. Pero, claro, yo quiero que los chavales que la nueva generación entienda
+
+290
+00:26:57,640 --> 00:27:01,920
+esa tecnología. Entonces, la BBC, cumpliendo su mandato, dice, vamos a sacar una placa
+
+291
+00:27:01,920 --> 00:27:07,640
+que ha entrado a sacar la años, que es la microbit, que está ahí. Es gratis, si la
+
+292
+00:27:07,640 --> 00:27:13,120
+consigues hacerte con ella, es gratis. Pero ahora mismo se regala o hay el proyecto, se
+
+293
+00:27:13,120 --> 00:27:21,120
+salió ahora justo antes del verano, se regalan las escuelas de primaria británicas, no se
+
+294
+00:27:21,120 --> 00:27:26,960
+vende, o sea, tú quieres comprarla y no se vende. Y bueno, pues algún día… He visto
+
+295
+00:27:26,960 --> 00:27:33,440
+alguna ya funcionando, pero en ponencias que el tío de microbit, que el ingeniero de microbit,
+
+296
+00:27:33,440 --> 00:27:37,800
+las ha enseñado, pero no las he visto. Y va con MicroPython. Y, por supuesto, el sistema
+
+297
+00:27:37,800 --> 00:27:44,680
+nativo es ARM, el hardware nativo es ARM, cualquier placa ARM que haya por ahí, si
+
+298
+00:27:44,680 --> 00:27:48,400
+no está portada, lo hacéis vosotros en un fin de semana, porque es portar solo la parte
+
+299
+00:27:48,400 --> 00:27:52,480
+de entrada-salida, de los pines y los relojes y cosas por el vestir.
+
+300
+00:27:52,480 --> 00:27:58,760
+¿Cómo lo ha hecho? La magia de MicroPython es cómo hacer una implementación de Python
+
+301
+00:27:58,760 --> 00:28:07,920
+que quepa en 16 cas de memoria RAM. Entonces, hay un montón de técnicas que ha hecho
+
+302
+00:28:07,920 --> 00:28:14,320
+el hombre para conseguir sacrificando CPU, básicamente, sacrificando CPU a otras RAM,
+
+303
+00:28:14,320 --> 00:28:18,640
+y moviendo lo máximo posible a la flash. Una cosa que tiene la flash es que la mayor
+
+304
+00:28:18,640 --> 00:28:23,280
+parte de los microcontraladores la ven como memoria. Es decir, la maneja es exactamente
+
+305
+00:28:23,280 --> 00:28:28,080
+igual que la memoria. No pueden escribir en ella, pero la direccionan como memoria.
+
+306
+00:28:28,080 --> 00:28:35,160
+No es una petición de un bloque como si fuera un disco duro. La ven cuando leen de un sitio
+
+307
+00:28:35,160 --> 00:28:40,240
+el enderri, y cuando leen de otro sitio de la flash, como si fuera un ARM. Con lo cual,
+
+308
+00:28:40,240 --> 00:28:44,360
+hay cosas tan curiosas como que, por ejemplo, las librerías, las librerías que puedes
+
+309
+00:28:44,360 --> 00:28:50,560
+importar, cuando las importas no se cargan RAM, se parsean, se generan bit decode y lo
+
+310
+00:28:50,560 --> 00:28:56,600
+tienes en RAM ahí de puta madre. No. Tú cuando… de puta madre, el código de conducta.
+
+311
+00:28:56,600 --> 00:29:05,720
+Lo tienes estupendamente. Sino que cuando tú haces un import de la librería X, ese
+
+312
+00:29:05,720 --> 00:29:13,240
+ya está precompilado, es el PYC de toda la vida. Es un bit decode diferente, pero el
+
+313
+00:29:13,240 --> 00:29:18,120
+equivalente al PYC de toda la vida ya está precompilado en la flash. Y lo que haces es
+
+314
+00:29:18,120 --> 00:29:24,000
+el import crea una referencia, un puntero hacia dónde está en la flash. Y tú la empiezas
+
+315
+00:29:24,000 --> 00:29:28,160
+a llamar a funciones y se ejecutan y esas funciones están en la flash. No se han cargado la memoria
+
+316
+00:29:28,160 --> 00:29:34,680
+RAM. La memoria RAM es para tus datos, nada más, básicamente. Y esa es la magia de micropitone,
+
+317
+00:29:34,680 --> 00:29:40,600
+ese tipo de optimizaciones. Luego tiene cosas, por ejemplo, que tú en Python normal los
+
+318
+00:29:40,600 --> 00:29:45,280
+enteros son objetos y todos los objetos en Python se comportan de forma similar. Entonces,
+
+319
+00:29:45,280 --> 00:29:51,800
+tú tienes, cuando hay una referencia entre objetos, tienes un puntero a un objeto. Ese
+
+320
+00:29:51,800 --> 00:29:57,720
+objeto a que tú apuntas en el tipo de datos pone que es un entero. En micropitone lo que
+
+321
+00:29:57,720 --> 00:30:06,760
+hacen es cuando un objeto es un entero, el puntero que apuntaría ese objeto es el entero.
+
+322
+00:30:06,760 --> 00:30:11,400
+Lo tengo marcado, hay un bit, hay un bit que si está uno, esto no es un puntero, es un
+
+323
+00:30:11,400 --> 00:30:16,600
+objeto, es un, perdón, al revés, da igual, ¿no? Si está cero es un objeto, es un puntero
+
+324
+00:30:16,600 --> 00:30:22,360
+a un objeto y si está uno es un número. Eso ocurre en cada operación que haces tienes
+
+325
+00:30:22,360 --> 00:30:29,240
+que comprobar casos especiales. ¿Este puntero es un puntero de verdad o no? Eso que más
+
+326
+00:30:29,240 --> 00:30:35,120
+CPU, a costa de ahorrar memoria RAM, que es la parte limitante habitualmente. A pesar
+
+327
+00:30:35,120 --> 00:30:43,280
+de ello, por ejemplo, cuando sumas dos enteros es más rápido que Python. Porque están
+
+328
+00:30:43,280 --> 00:30:47,080
+ya nativos. Es decir, he determinado que los dos enteros son entero. Es decir, que estos
+
+329
+00:30:47,080 --> 00:30:51,960
+dos objetos que pongo a más b son los dos enteros, ahora puedo hacer una suma de ensamblador
+
+330
+00:30:51,960 --> 00:30:58,840
+que es add a más b. No tengo que desempaquetar, hacer la suma y crear un objeto nuevo que
+
+331
+00:30:58,840 --> 00:31:03,400
+es el entero que repete la suma. Entonces, en algunas operaciones es sorprendentemente
+
+332
+00:31:03,400 --> 00:31:09,200
+eficiente comparado con el Python estándar. Quieres que me queda por ahí. Otra vez lo
+
+333
+00:31:09,200 --> 00:31:13,400
+de TCP y P, que lo he comentado antes, por supuesto, no hay ningún sistema operativo
+
+334
+00:31:13,400 --> 00:31:17,120
+por debajo, con lo cual todo lo que quieres hacer te lo tienes que curar tú. De ahí
+
+335
+00:31:17,120 --> 00:31:20,440
+viene, por ejemplo, el tema de TCP y P, que he insisto en antes, que es muy interesante,
+
+336
+00:31:20,440 --> 00:31:26,080
+que tengas una API de TCP y P nativa. ¿Ok? La recogida de basuras no tiene contador de
+
+337
+00:31:26,080 --> 00:31:31,000
+referencias, porque el contador de referencias te cupa cuatro bytes por cada objeto y no puedes
+
+338
+00:31:31,000 --> 00:31:36,560
+hacer. Entonces, lo que dicen es, cuando se llena la memoria, tú usas la memoria. Básicamente
+
+339
+00:31:36,560 --> 00:31:41,320
+el objeto se va llenando, se va llenando y cuando la llenas, me la repaso y lo que es
+
+340
+00:31:41,320 --> 00:31:47,480
+basura, lo que ya no tiene referencias, sé qué sitio que puedo usar. Es que estás quemando
+
+341
+00:31:47,480 --> 00:31:53,160
+CPU, nuevamente, quemando CPU para la memoria, pero también es cierto que te tienes que
+
+342
+00:31:53,160 --> 00:31:59,240
+repasar 64 gb de RAM, no le tienes que repasar un giga. Con lo cual, al final, las interrupciones
+
+343
+00:31:59,240 --> 00:32:03,120
+son de microsegundos. ¿Vale? No es un problema.
+
+344
+00:32:03,120 --> 00:32:07,560
+Campeñas Gigastarter, empezó el proyecto en el 19 de diciembre de 2013. El tío pedía
+
+345
+00:32:07,560 --> 00:32:15,000
+15.000 libras, consiguió 100.000. ¿Vale? 2.000 personas. Esto era para la placa hasta
+
+346
+00:32:15,000 --> 00:32:22,560
+la API board. El tío ha dejado el doctor en físicas, ahora se dedica tiempo completo
+
+347
+00:32:22,560 --> 00:32:31,200
+a MicroPython, es lo que le paga los vicios y supongo que comer también. En enero de
+
+348
+00:32:31,200 --> 00:32:37,160
+2016 pedía para aportar a la SAP 8266, que estaba que lo petaban a aquel momento, y
+
+349
+00:32:37,160 --> 00:32:44,600
+sigue. Pedía 6.000 libras, consiguió 28.000, mil y pico personas. Yo fui uno de los que
+
+350
+00:32:44,600 --> 00:32:51,000
+puso ahí mis 20 euros. Y su puerta de cosas tiene muchas mejoras, porque, claro, una cosa
+
+351
+00:32:51,000 --> 00:32:54,200
+que tenía el hombre es que había pedido 6.000 y consiguió 28.000. Entonces, como que le
+
+352
+00:32:54,200 --> 00:33:00,840
+daba a Paulo, cobrar 28.000 por lo que él creía que valía 6.000. Entonces, como que
+
+353
+00:33:00,840 --> 00:33:05,040
+tenía cargo de conciencia, entonces, de repente, cuando vio que aquellos se estaban rompiendo
+
+354
+00:33:05,040 --> 00:33:14,400
+los récords, le dijo, bueno, he pedido 6.000, llegamos a los 9.000, añado TCP y P. Se
+
+355
+00:33:14,400 --> 00:33:20,080
+llegamos a los 12.000, añado la librería, no sé qué. Un montón de ellas. Y, de hecho,
+
+356
+00:33:20,080 --> 00:33:24,640
+llegó un momento que era, creo que eran los 25.000 libras, que digo, ya no sé qué añadir.
+
+357
+00:33:24,640 --> 00:33:31,920
+Si nos pasamos, se pasaron bastante, por cada 500 libras hago un vídeo de cómo hacer algo,
+
+358
+00:33:31,920 --> 00:33:37,240
+de cómo hacer algo, con la placa esta, porque ya no sé qué dar, hostia. Y, de hecho, hay
+
+359
+00:33:37,240 --> 00:33:43,320
+cosas tan raras como que tienes pip en la placa. Podría hacer un pipistal. Ya no sabía
+
+360
+00:33:43,320 --> 00:33:50,800
+qué hacer. ¿Para qué os puedo dar para... Te puedes conectar a la línea de comando de
+
+361
+00:33:50,800 --> 00:33:55,120
+Python desde Wifi, que eso ha sido algo que le ha dado problemas, pero ya funciona. Te
+
+362
+00:33:55,120 --> 00:34:01,600
+puedes conectar desde Wifi, tú te cleas en tu portátil y estás escribiendo en el cansa
+
+363
+00:34:01,600 --> 00:34:09,440
+de la ley. Dices, ¿parparía un led? ¿Reseteate? A veces sin querer. Funciona muy bien. Funciona
+
+364
+00:34:09,440 --> 00:34:18,720
+de coña, funciona de coña. Por cierto, las campañas de confunding. Lo que hace el hombre
+
+365
+00:34:18,720 --> 00:34:23,960
+es, consigue la pasta y entonces la gente, bueno, esa es como funciona. Tú según la
+
+366
+00:34:23,960 --> 00:34:29,400
+pasta que pones, optas a cosas, a beneficios. Entonces, básicamente lo que hacía era,
+
+367
+00:34:29,400 --> 00:34:34,520
+tienes acceso a la beta, tienes acceso a la primera versión, cuando sale la versión esta
+
+368
+00:34:34,520 --> 00:34:41,200
+no la voy a publicar oficialmente hasta que pase en tres meses. Bueno, no me importa
+
+369
+00:34:41,200 --> 00:34:45,720
+que otra gente lo use. Yo lo he pagado porque yo lo quiero tener lo yo, pero no quita que
+
+370
+00:34:45,720 --> 00:34:48,960
+otra gente también lo tenga. Y una cosa que estaba dando últimamente ya, porque ya no
+
+371
+00:34:48,960 --> 00:34:51,840
+se lo voy a hacer, es bueno, todo el código es público, pero a ti te doy una versión
+
+372
+00:34:51,840 --> 00:34:57,280
+ya compilada y el punto bin para que lo grabes y los demás que se lo compilen. Como es que
+
+373
+00:34:57,280 --> 00:35:03,640
+ya no sé quedarte, que sea un factor diferencial. Entonces, bueno, ya para casi terminar creo,
+
+374
+00:35:03,640 --> 00:35:08,680
+sí, sí, bueno, hay muchos enlaces aquí y las preguntas. Bueno, enlaces. Hay varios
+
+375
+00:35:08,680 --> 00:35:16,520
+vídeos en YouTube. El tío se le ve muy tímido y muy apocado y tal, pero son vídeos interesantes
+
+376
+00:35:16,520 --> 00:35:22,320
+y sabe de lo que habla y ha hecho es una virguería el tema. Hay un montón de vídeos. También
+
+377
+00:35:22,320 --> 00:35:25,320
+os pongo el enlace a los dos campañas de Kickstarter por si os apetece. Son estas dos
+
+378
+00:35:25,320 --> 00:35:34,160
+de aquí del final. Y preguntas. El código es Python. No voy a enseñar nada. Vale. Y
+
+379
+00:35:34,160 --> 00:35:37,960
+no vienes a enseñar un led para adelante porque el martes estuve naciente con un cable
+
+380
+00:35:37,960 --> 00:35:57,200
+de suelto. Si no sabéis qué preguntar, tenéis preguntas. Lo gracioso es que siempre lo
+
+381
+00:35:57,200 --> 00:36:10,160
+pongo y nunca nadie me pregunta nada de ahí. Decidme la hora que yo no lo puse en el móvil.
+
+382
+00:36:10,160 --> 00:36:18,360
+Un minuto. Desde la Raspberry. Pues la Raspberry y la programa es uno de los pines de la Raspberry.
+
+383
+00:36:18,360 --> 00:36:28,120
+La Raspberry tiene 40 pines muy delicados. Tienes 40 pines. Lo que haces es definir un
+
+384
+00:36:28,120 --> 00:36:33,000
+par de pines como un porto serie. Tienes que reconfigurar el sistema para que… Porque
+
+385
+00:36:33,000 --> 00:36:38,240
+la Raspberry tú no lo ves. Tú lo tienes conectado a una tele, pero tú usas el porto serie para
+
+386
+00:36:38,240 --> 00:36:44,480
+darte debug. Tienes que quitarlo porque si no, programas cosas muy raras en la flash.
+
+387
+00:36:44,480 --> 00:36:50,440
+Y lo quitas con lo cual ya dejas ese portóloga dejas libre y entonces desde la Raspberry conectas
+
+388
+00:36:50,440 --> 00:36:58,640
+el porto serie que son cables. No hace falta nada especial. Y lo puedes mandar como un…
+
+389
+00:36:58,640 --> 00:37:04,280
+Hay un programa que se llama SP266, 8266, que es un programa Python. Por fin sale Python.
+
+390
+00:37:04,280 --> 00:37:11,480
+Un programa Python que lo que te hace es que te resetea el chip en un modo especial. O
+
+391
+00:37:11,480 --> 00:37:15,920
+cuando tú reseteas el chip, según cómo tengas las patillas, son diferentes modos de arranque
+
+392
+00:37:15,920 --> 00:37:21,200
+y hay un modo de arranque que es flash. Y lo que recibe por el porto serie lo graba la
+
+393
+00:37:21,200 --> 00:37:22,880
+tarjeta. Ya está.
+
+394
+00:37:22,880 --> 00:37:30,600
+Sí, mira, se me olvidó comentarlo. Es un proyecto que tengo yo. Lo comento porque
+
+395
+00:37:30,600 --> 00:37:35,440
+me hace falta ayuda, sobre todo por motivación, que hay alguien al lado diciendo que hay de
+
+396
+00:37:35,440 --> 00:37:40,880
+lo mío, que hay de lo mío. Eso motiva. Es un medidor eléctrico doméstico, pero no
+
+397
+00:37:40,880 --> 00:37:44,760
+es el típico enchufe que tú lo enchufas a la regleta y tiene una pantalla y te enchufas
+
+398
+00:37:44,760 --> 00:37:50,160
+algo allí y te dice lo que enchufe eso. No, yo lo meto en el cuarto de contadores y
+
+399
+00:37:50,160 --> 00:37:54,440
+me mide el consumo eléctrico de mi casa y puedes determinar… Bueno, la idea. La idea
+
+400
+00:37:54,440 --> 00:37:57,560
+es que puedes determinar consumo eléctrico de diferentes dispositivos. Es aquel sepa
+
+401
+00:37:57,560 --> 00:38:02,560
+cuando pones lavadora, cuando sepa cuando pones tal, lo que sea, lavabajillas, el calontador
+
+402
+00:38:02,560 --> 00:38:07,200
+de agua y con estos cacharritos de 2 euros, que lo empiezas a enchufar en tu casa, a
+
+403
+00:38:07,200 --> 00:38:12,200
+los radiadores, a la caldera, a los equipadrín patata y que decida en qué momento… Yo
+
+404
+00:38:12,200 --> 00:38:15,480
+que sé, yo me voy a duchar por la mañana, quiero hago caliente, pero durante el resto
+
+405
+00:38:15,480 --> 00:38:21,200
+del día no necesito hago caliente. Pues a lo mejor no vale la pena que en cuanto se
+
+406
+00:38:21,200 --> 00:38:27,660
+vacíen cien litros del… Bueno, no sé lo que tiene. Cien litros el termo que entre
+
+407
+00:38:27,660 --> 00:38:33,600
+agua fría y la caliente ya. No lo hagas todavía, lo más tarde. Y eso lo controlo con… La
+
+408
+00:38:33,600 --> 00:38:37,440
+idea es contrarlo con estas cosas y midiendo el consumo eléctrico de resto de la casa,
+
+409
+00:38:37,440 --> 00:38:41,080
+etcétera. Porque yo lo tengo todo eléctrico, tengo contratado una potencia brutal y la
+
+410
+00:38:41,080 --> 00:38:44,160
+quiero bajar, pero la quiero bajarse sin que me salte lo automático. Yo quiero que cuando
+
+411
+00:38:44,160 --> 00:38:48,880
+pongo el horno me diga, no te dejo poner el horno, a menos que me des permiso para quitar
+
+412
+00:38:48,880 --> 00:38:54,680
+la calesfacción. Y tú le dices, bueno, el horno una pieza 15 minutos y quita la calesfacción.
+
+413
+00:38:54,680 --> 00:39:00,440
+Y gracias a eso, pasar de tener contratado 10 kilovatios a tener contratado 6, por ejemplo.
+
+414
+00:39:00,440 --> 00:39:07,840
+Esa es mi idea. Entonces, si hay alguien interesado en mirar algo así, luego lo hablamos un momento.
+
+415
+00:39:07,840 --> 00:39:16,320
+Más el tiempo, no sé cómo vamos. Quiero que comáis.
+
+416
+00:39:16,320 --> 00:39:23,680
+Dime. Lo mismo que cuando escribes Python en línea
+
+417
+00:39:23,680 --> 00:39:27,240
+de comando, Python Enter y te da el prompt, tienes lo mismo.
+
+418
+00:39:27,240 --> 00:39:31,120
+¿Cómo? ¿Perdón?
+
+419
+00:39:31,120 --> 00:39:36,360
+No. Ya sé lo que dices.
+
+420
+00:39:36,360 --> 00:39:43,120
+Hay una implementación. Uno de los infinitos módulos que dio el tipo, porque ya no sabía
+
+421
+00:39:43,120 --> 00:39:48,800
+qué darte. Es que no me acuerdo cómo se llama. Un bus de estos domésticos. Hay varios
+
+422
+00:39:48,800 --> 00:39:55,560
+estándares de sensores domésticos. Hay varios estándares. Hay uno que es un bus de datos,
+
+423
+00:39:55,560 --> 00:40:01,720
+que no recuerdo cómo se llama. Y te lo da…, era algo que no tenía contemplado en la versión
+
+424
+00:40:01,720 --> 00:40:08,320
+inicial, pero que a base de darle vergüenza a cobrar el sueldo que iba a cobrar, lo metió.
+
+425
+00:40:08,320 --> 00:40:12,600
+Pero no recuerdo cómo se llama. Es muy conocido. No sé.
+
+426
+00:40:12,600 --> 00:40:20,240
+Pero a nivel de plataforma, yo es que me lo currao yo. O sea, la parte de lo que enseñaba
+
+427
+00:40:20,240 --> 00:40:27,440
+antes del gráfico, eso es un servidor VWSGI que recibe un post y se lo graba en un fichero.
+
+428
+00:40:27,440 --> 00:40:32,080
+Y luego llamas a otra función que es DRAW y te lo dibuja. Me lo currao yo, me ha llevado
+
+429
+00:40:32,080 --> 00:40:36,800
+dos horas y ya está. Y no dependo de terceros que mañana me lo quieren cobrar o quieren
+
+430
+00:40:36,800 --> 00:40:40,960
+saber cuando voy al baño. No, paso. Eso lo tengo yo. Esa plástica está protegida
+
+431
+00:40:40,960 --> 00:40:50,480
+por clave, porque lo de saber cuando voy al baño es delicado. Ya.
+
+432
+00:40:50,480 --> 00:41:07,120
+Repite de principio, por favor. Sí, todos estos chips normalmente tienen tu
+
+433
+00:41:07,120 --> 00:41:15,920
+programa en la CPU, pero tienen dispositivos periféricos integrados. Es un SOC y 2C, SPI,
+
+434
+00:41:15,920 --> 00:41:25,120
+I2S, que es la leche, etcétera. Este chip en concreto, el de la SP8266, lo da y desde
+
+435
+00:41:25,120 --> 00:41:30,000
+Python tiene ese acesual. Precisamente gracias a que les sobrebaba tanta pasta que dijo,
+
+436
+00:41:30,000 --> 00:41:38,080
+pues voy a seguir programando cosas. Todos estos están guijab y más, ya comemos.
+

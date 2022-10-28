@@ -1,0 +1,2740 @@
+1
+00:00:00,000 --> 00:00:13,000
+La verdad es que no es una prueba, no es una prueba.
+
+2
+00:00:13,000 --> 00:00:20,000
+Ahora, a partir de 5 minutos, voy a hablar un poco de la seguridad, qué librerías disponemos en Python
+
+3
+00:00:20,000 --> 00:00:29,000
+y algunos introducían la criptografía y algunas librerías de herramientas de pen-testing para testar las seguridad de las aplicaciones.
+
+4
+00:00:29,000 --> 00:00:38,000
+En la speaker de Colgar esta presentación, en esta presentación no hay otras charlas que realizado,
+
+5
+00:00:38,000 --> 00:00:44,000
+la mayoría que ha realizado hasta ahora han tenido que ver con Mobile, especialmente en Android,
+
+6
+00:00:44,000 --> 00:00:53,000
+aunque también tengo algunas con Seguridad Web, alguna con Python y en Seguridad en Dispositivo Moviosuede.
+
+7
+00:00:53,000 --> 00:01:00,000
+Ya que la charla va a ser seguridad, comentar por encima las principales conferencias de su vía que tenemos a nivel nacional.
+
+8
+00:01:00,000 --> 00:01:06,000
+Algunos conocen a Eys, como la baja negra, RoutedCon o KonName, que es el mes que viene en Barcelona
+
+9
+00:01:06,000 --> 00:01:13,000
+y otros que han ido surgiendo los últimos años como Kitchen Minds y la ShellCon en Santander, que es el año que viene en enero.
+
+10
+00:01:13,000 --> 00:01:20,000
+Esta es un poco la agenda, voy a dar una reintroducción a la criptografía,
+
+11
+00:01:20,000 --> 00:01:27,000
+para que se entienda un poco la charla de lleva, lo comentaré en librerías que disponemos en Python como PyCrypto,
+
+12
+00:01:27,000 --> 00:01:32,000
+lo comentaré un poco la seguridad de Android, estábamos en la Seguridad, cómo nos beneficia el framework
+
+13
+00:01:32,000 --> 00:01:41,000
+y luego comentaré, bueno, best practices y algunas herramientas para testar sobre toda la seguridad.
+
+14
+00:01:41,000 --> 00:01:50,000
+Bueno, las definiciones básicas, lo que es una clave, lo que permite al final incritar los datos,
+
+15
+00:01:50,000 --> 00:01:59,000
+el testo plano, el testo cifrado y algoritmo, que es al final que convierte el testo plano al testo cifrado y viceversa.
+
+16
+00:01:59,000 --> 00:02:03,000
+Y luego, conceptos más avanzados que veremos también la charla, como el concepto de sal,
+
+17
+00:02:03,000 --> 00:02:08,000
+es decir, más secuencia de la toria que permite aleatorizar la generación de las páscaras.
+
+18
+00:02:08,000 --> 00:02:15,000
+Y luego tenemos otros conceptos como el vector de inicialización, para prevenir sobre todo ataques por diccionario o fuerza bruta,
+
+19
+00:02:15,000 --> 00:02:22,000
+y luego conceptos también como la derivative K, si utilizan algunos de los algoritmos, por ejemplo en diango,
+
+20
+00:02:22,000 --> 00:02:28,000
+veremos un algoritmo que utilice esta técnica para generar las claves, para prevenir, como he dicho,
+
+21
+00:02:28,000 --> 00:02:31,000
+ataques de por diccionario o por fuerza bruta.
+
+22
+00:02:31,000 --> 00:02:39,000
+Bueno, esto es el primer vídeo de introducción, voy a explicar un poco cómo sería el cifrado de César en Python,
+
+23
+00:02:39,000 --> 00:02:44,000
+que consistiría, y luego voy a hablar también un poco de las funciones casques que tenemos,
+
+24
+00:02:44,000 --> 00:02:48,000
+y luego el cifrado asimétrico y la asimétrico.
+
+25
+00:02:48,000 --> 00:02:56,000
+Y luego comentaré la función esta, que se usa mucho en diango, por ejemplo, se usa mucho para el tema de la generación de las claves,
+
+26
+00:02:56,000 --> 00:03:02,000
+a partir de la password que introduce el usuario.
+
+27
+00:03:02,000 --> 00:03:06,000
+Bueno, el cifrado de César es uno de los métodos más antiguos que existen,
+
+28
+00:03:06,000 --> 00:03:14,000
+desde la época de los romanos, que se inventaron este método, para que a partir de un texto plano,
+
+29
+00:03:14,000 --> 00:03:18,000
+y un método de transposición que consiste en coger cada carácter,
+
+30
+00:03:18,000 --> 00:03:26,000
+y cada carácter, digamos, su correspondiente de cifrado sería coger, coger al alfabeto,
+
+31
+00:03:26,000 --> 00:03:31,000
+y desplazarse tantas posiciones como indique la clave.
+
+32
+00:03:31,000 --> 00:03:37,000
+Como vemos, en 15 líneas, se implementaría este algoritmo de forma sencilla.
+
+33
+00:03:38,000 --> 00:03:43,000
+En cuanto a funciones casques, las funciones casques son las funciones que se utilizan,
+
+34
+00:03:43,000 --> 00:03:48,000
+están presentes en la mayoría de los algoritmos y aplicaciones criptográficas,
+
+35
+00:03:48,000 --> 00:03:52,000
+que podés encontrar hoy en día, no solo en Python, sino en cualquier sistema.
+
+36
+00:03:52,000 --> 00:03:59,000
+Y básicamente, los usos se utilizan para comprobar la integridad de chicheros, el típico Chetsoon,
+
+37
+00:03:59,000 --> 00:04:02,000
+generar la generación de passwords, firma digital.
+
+38
+00:04:02,000 --> 00:04:09,000
+Entre algunas de estas funciones podemos destacar el NME5, y las variantes SHA123,
+
+39
+00:04:09,000 --> 00:04:14,000
+dependiendo de la longitud de la clave. Bueno, algunos de estos algoritmos, por ejemplo,
+
+40
+00:04:14,000 --> 00:04:20,000
+la NME5 SHA1 hace muchos años que fueron criptográficamente rotos,
+
+41
+00:04:20,000 --> 00:04:27,000
+pero aún se sigue utilizando eso como paso previo para la generación de las partes.
+
+42
+00:04:28,000 --> 00:04:33,000
+Básicamente, una función hash es aquella que, a partir de un string,
+
+43
+00:04:33,000 --> 00:04:38,000
+una cadena genera un hash único. Es decir, una buena función
+
+44
+00:04:38,000 --> 00:04:46,000
+no debería permitir que, a partir de dos mismas entradas, puedan generar mismo hash,
+
+45
+00:04:46,000 --> 00:04:50,000
+como pasa en NME5 SHA1. Estas son problemas de colisiones.
+
+46
+00:04:50,000 --> 00:04:58,000
+Entonces, siempre se ha de comiendo y ha de emplear, por lo menos, SHA en variantes 2 y 3.
+
+47
+00:05:01,000 --> 00:05:05,000
+Algunas de las funciones de estas las podemos encontrar en la librería Hasleaf,
+
+48
+00:05:05,000 --> 00:05:09,000
+que viene por efecto en la distribución de Python.
+
+49
+00:05:09,000 --> 00:05:15,000
+De función de estos sean algunos ejemplos donde vemos como en función del algoritmo
+
+50
+00:05:15,000 --> 00:05:19,000
+el tamaño de la clave varía.
+
+51
+00:05:22,000 --> 00:05:27,000
+Esta librería también te permite ver cuáles son los algoritmos
+
+52
+00:05:27,000 --> 00:05:31,000
+que están disponibles a nivel global y cuáles son los algoritmos
+
+53
+00:05:31,000 --> 00:05:36,000
+que están soportados por el sistema operativo. No tienen que coincidir.
+
+54
+00:05:38,000 --> 00:05:43,000
+Luego, como he comentado, la librería Hasleaf, las funciones hash,
+
+55
+00:05:43,000 --> 00:05:45,000
+también permiten comprobar integridad de ficheros.
+
+56
+00:05:45,000 --> 00:05:50,000
+Esto es que es un ejemplo de función sencilla donde, a partir de un fichero
+
+57
+00:05:50,000 --> 00:05:54,000
+por parámetro, te vuelve el hash correspondiente.
+
+58
+00:05:54,000 --> 00:06:00,000
+De forma que si tú en ese fichero te lo movitican por lo que sea,
+
+59
+00:06:00,000 --> 00:06:04,000
+el fichero del hash será distinto. Para que cada vez que se movica el fichero,
+
+60
+00:06:04,000 --> 00:06:09,000
+como el hash lo obtiene a partir del contenido,
+
+61
+00:06:09,000 --> 00:06:13,000
+cada vez que parices una modificación, el hash será distinto.
+
+62
+00:06:16,000 --> 00:06:21,000
+Otra de las opciones de lo que se utiliza bastante a nivel de hash
+
+63
+00:06:21,000 --> 00:06:25,000
+es almacenar el hash de las palcos en base de datos.
+
+64
+00:06:25,000 --> 00:06:30,000
+Entonces, en ese punto de vista, siempre es recomendable utilizar al menos
+
+65
+00:06:30,000 --> 00:06:35,000
+un método que tenga un cifrado más o menos fuerte,
+
+66
+00:06:35,000 --> 00:06:41,000
+es decir, no utilizar un METINCO ni un SHA1, utilizar al menos un SHA256 o 512 bits.
+
+67
+00:06:41,000 --> 00:06:48,000
+Y la otra opción es utilizar, combinar el hash de la password
+
+68
+00:06:48,000 --> 00:06:54,000
+que introducir un usuario junto con un hash que se originaría
+
+69
+00:06:54,000 --> 00:06:57,000
+a partir de un valor aleatorio, un SHA256.
+
+70
+00:06:57,000 --> 00:07:01,000
+Entonces, la unión del hash de la password que introducir un usuario
+
+71
+00:07:01,000 --> 00:07:04,000
+junto con el SHA256 que se ha generado de forma aleatoria
+
+72
+00:07:04,000 --> 00:07:08,000
+daría lugar al hash de la password que finalmente se almacenaría en base de datos.
+
+73
+00:07:08,000 --> 00:07:12,000
+De esta forma, se guardarían dos valores, necesitaremos dos valores para almacenar.
+
+74
+00:07:12,000 --> 00:07:16,000
+Por almacenar el hash final y por otra parte el hash esté aleatorio
+
+75
+00:07:16,000 --> 00:07:19,000
+para que luego cuando el usuario se vuelva a logrear,
+
+76
+00:07:19,000 --> 00:07:24,000
+se pueda valer de nuevo el login.
+
+77
+00:07:24,000 --> 00:07:29,000
+Algunas herramientas que disponemos, estas son herramientas que, por ejemplo,
+
+78
+00:07:29,000 --> 00:07:35,000
+podemos encontrar dentro de Python 2.0, has identified,
+
+79
+00:07:35,000 --> 00:07:40,000
+que te permite, a partir de un hash, te dice
+
+80
+00:07:40,000 --> 00:07:44,000
+cuáles son los posibles algoritmos que ha generado el hash.
+
+81
+00:07:44,000 --> 00:07:50,000
+En función del tamaño de la clave, el tamaño de ese hash se puede deducir
+
+82
+00:07:50,000 --> 00:07:53,000
+cuáles son los posibles algoritmos que se ha identificado.
+
+83
+00:07:53,000 --> 00:07:56,000
+Y otras herramientas que también podemos encontrar,
+
+84
+00:07:56,000 --> 00:08:03,000
+el Spaniard hash, es una herramienta que te puede craquear el hash
+
+85
+00:08:03,000 --> 00:08:11,000
+mediante un servicio, en este caso consultaría servicios.
+
+86
+00:08:11,000 --> 00:08:14,000
+Hasta aquí los hash, a partir de ahora,
+
+87
+00:08:14,000 --> 00:08:18,000
+entramos un poco más en otros sistemas de cifrado que tenemos.
+
+88
+00:08:18,000 --> 00:08:22,000
+Hoy en día es el cifrado simétrico, que básicamente es el I,
+
+89
+00:08:22,000 --> 00:08:24,000
+concierto también como es.
+
+90
+00:08:24,000 --> 00:08:29,000
+Y este método cifrado lo que hace es mediante clave compartida,
+
+91
+00:08:29,000 --> 00:08:32,000
+cifrar los datos mediante la clave.
+
+92
+00:08:32,000 --> 00:08:35,000
+Entonces, la clave se tiene que ser compartida tanto en el insoco
+
+93
+00:08:35,000 --> 00:08:38,000
+como en el función del tamaño de la clave,
+
+94
+00:08:38,000 --> 00:08:41,000
+sino que en una serie de variantes.
+
+95
+00:08:41,000 --> 00:08:44,000
+Y el otro sistema es el cifrado simétrico,
+
+96
+00:08:44,000 --> 00:08:47,000
+también como conocido como el RSA,
+
+97
+00:08:47,000 --> 00:08:51,000
+que es el típico, el mecanismo de clave pública, privada,
+
+98
+00:08:51,000 --> 00:08:53,000
+donde la clave pública se utiliza para encryptar
+
+99
+00:08:53,000 --> 00:08:59,000
+y la clave privada se utiliza para desencryptar.
+
+100
+00:08:59,000 --> 00:09:01,000
+Básicamente, cuando el cifrado simétrico,
+
+101
+00:09:01,000 --> 00:09:05,000
+cuando tú quieres enviar el mensaje al destinatario,
+
+102
+00:09:05,000 --> 00:09:09,000
+tú utilizas la clave pública del destinatario
+
+103
+00:09:09,000 --> 00:09:13,000
+y el destinatario utiliza su clave privada.
+
+104
+00:09:13,000 --> 00:09:16,000
+En este punto podríamos diferenciar
+
+105
+00:09:16,000 --> 00:09:19,000
+que hay dos grandes puntos a testear.
+
+106
+00:09:19,000 --> 00:09:22,000
+Por una parte, está la imprimitación,
+
+107
+00:09:22,000 --> 00:09:24,000
+que es el método comentado,
+
+108
+00:09:24,000 --> 00:09:27,000
+ahora donde tú utilizas su clave pública
+
+109
+00:09:27,000 --> 00:09:29,000
+y el destinatario utiliza su clave privada
+
+110
+00:09:29,000 --> 00:09:32,000
+mientras que el, por otra parte, está el proceso de firma.
+
+111
+00:09:32,000 --> 00:09:34,000
+El proceso de firma es un poco al revés.
+
+112
+00:09:34,000 --> 00:09:37,000
+Tú utilizas su clave privada
+
+113
+00:09:37,000 --> 00:09:40,000
+y el destinatario utiliza su clave pública
+
+114
+00:09:40,000 --> 00:09:43,000
+para verificar el mensaje o el documento
+
+115
+00:09:43,000 --> 00:09:45,000
+lo que lo ha firmado quien dice ser.
+
+116
+00:09:45,000 --> 00:09:49,000
+En Python encontramos PyCrypto
+
+117
+00:09:49,000 --> 00:09:52,000
+como una de las principales librerías para criotografía,
+
+118
+00:09:52,000 --> 00:09:54,000
+soporte a pressiones haas, cifrados haes,
+
+119
+00:09:54,000 --> 00:09:57,000
+RSA y firma digital.
+
+120
+00:09:57,000 --> 00:10:01,000
+Este es un ejemplo con cifrados simétricos
+
+121
+00:10:01,000 --> 00:10:04,000
+donde vemos cómo a partir de la key
+
+122
+00:10:04,000 --> 00:10:08,000
+se puede tanto cifrar como descifrar.
+
+123
+00:10:08,000 --> 00:10:11,000
+Y vemos que aquí, por ejemplo,
+
+124
+00:10:11,000 --> 00:10:14,000
+para la adopción de la key,
+
+125
+00:10:14,000 --> 00:10:16,000
+está utilizando la función esta
+
+126
+00:10:16,000 --> 00:10:20,000
+que comentaré ahora, es la de pd2,
+
+127
+00:10:20,000 --> 00:10:24,000
+esa es la de public base definida
+
+128
+00:10:24,000 --> 00:10:27,000
+de variable key,
+
+129
+00:10:27,000 --> 00:10:32,000
+es decir, obtener la key a partir de la password.
+
+130
+00:10:32,000 --> 00:10:35,000
+Entonces, esta función lo que te permite,
+
+131
+00:10:35,000 --> 00:10:38,000
+lo que hace interamente es, sobre la password,
+
+132
+00:10:38,000 --> 00:10:40,000
+ejecutar una serie de interacciones
+
+133
+00:10:40,000 --> 00:10:42,000
+para lo sobre todo para evitar
+
+134
+00:10:42,000 --> 00:10:45,000
+ataques por fuerza bruta, por diccionario,
+
+135
+00:10:45,000 --> 00:10:48,000
+o tal vez, vengo, que suelen haber.
+
+136
+00:10:48,000 --> 00:10:50,000
+Esta es la función que comentaba
+
+137
+00:10:50,000 --> 00:10:53,000
+donde vemos cómo a partir de la password
+
+138
+00:10:53,000 --> 00:10:55,000
+el sal que sería un valor atorio
+
+139
+00:10:55,000 --> 00:10:58,000
+la longitud de la clave y el número de interacciones,
+
+140
+00:10:58,000 --> 00:11:00,000
+cuando hay más interacciones,
+
+141
+00:11:00,000 --> 00:11:03,000
+va a tardar más, pero el has al final
+
+142
+00:11:03,000 --> 00:11:06,000
+será más difícil de romper.
+
+143
+00:11:09,000 --> 00:11:12,000
+Y en cuanto a RSA, por ejemplo,
+
+144
+00:11:12,000 --> 00:11:15,000
+si queremos generar nuestros propios certificados,
+
+145
+00:11:15,000 --> 00:11:17,000
+con RSA lo podemos hacer.
+
+146
+00:11:17,000 --> 00:11:21,000
+En este caso, generaremos la clave pública
+
+147
+00:11:21,000 --> 00:11:24,000
+y la clave privada.
+
+148
+00:11:24,000 --> 00:11:26,000
+Este sería un ejemplo de salida
+
+149
+00:11:26,000 --> 00:11:28,000
+donde vemos cómo en base 64
+
+150
+00:11:28,000 --> 00:11:32,000
+se generaría la public y la privada.
+
+151
+00:11:34,000 --> 00:11:37,000
+Entonces, para encriptar,
+
+152
+00:11:37,000 --> 00:11:40,000
+utilizaríamos la clave pública
+
+153
+00:11:42,000 --> 00:11:46,000
+y para desencriptar, utilizaríamos la clave privada.
+
+154
+00:11:46,000 --> 00:11:49,000
+Esto lo proporciona la propia librería de parcrito,
+
+155
+00:11:49,000 --> 00:11:52,000
+todas estas funciones.
+
+156
+00:11:52,000 --> 00:11:56,000
+Primero importaríamos la key necesaria
+
+157
+00:11:56,000 --> 00:12:00,000
+para poder ejecutar esa acción en ambos casos
+
+158
+00:12:00,000 --> 00:12:04,000
+y luego llamaríamos al método in-crypt o de-crypt
+
+159
+00:12:04,000 --> 00:12:07,000
+en función de lo que queramos.
+
+160
+00:12:08,000 --> 00:12:10,000
+Este sería un ejemplo
+
+161
+00:12:10,000 --> 00:12:12,000
+donde vemos cómo a partir
+
+162
+00:12:12,000 --> 00:12:15,000
+un ejemplo de verificación
+
+163
+00:12:15,000 --> 00:12:18,000
+de que los datos sean enviados,
+
+164
+00:12:18,000 --> 00:12:22,000
+son lo examinado correctamente,
+
+165
+00:12:22,000 --> 00:12:28,000
+donde hay un proceso de in-cryptación,
+
+166
+00:12:28,000 --> 00:12:31,000
+luego hay un proceso de firma
+
+167
+00:12:31,000 --> 00:12:34,000
+y por último,
+
+168
+00:12:34,000 --> 00:12:36,000
+hay un proceso de verificación
+
+169
+00:12:36,000 --> 00:12:40,000
+a partir de los datos desencriptados.
+
+170
+00:12:40,000 --> 00:12:43,000
+Entonces, sería fácil
+
+171
+00:12:43,000 --> 00:12:47,000
+que la ejecución se puede ver en el otro cuadrado,
+
+172
+00:12:47,000 --> 00:12:50,000
+no se puede ver que efectivamente
+
+173
+00:12:50,000 --> 00:12:53,000
+a la verificación de la firma devuelve tú,
+
+174
+00:12:53,000 --> 00:12:55,000
+indicando que se ha firmado
+
+175
+00:12:55,000 --> 00:12:59,000
+con la misma clave con la cual se había tratado.
+
+176
+00:13:01,000 --> 00:13:04,000
+Mejor es práctica en este punto,
+
+177
+00:13:04,000 --> 00:13:06,000
+como he comentado,
+
+178
+00:13:06,000 --> 00:13:09,000
+evitar el uso de los algoritmos M5 y 6H a 1
+
+179
+00:13:09,000 --> 00:13:12,000
+por el tema de que están ya hace tiempo
+
+180
+00:13:12,000 --> 00:13:14,000
+criptográficamente rotos
+
+181
+00:13:14,000 --> 00:13:17,000
+con menos SH2 en variantes
+
+182
+00:13:17,000 --> 00:13:20,000
+tanto M5 y 6 como que el otro.
+
+183
+00:13:20,000 --> 00:13:23,000
+Y luego otras técnicas más avanzadas,
+
+184
+00:13:23,000 --> 00:13:25,000
+como la de keystriching.
+
+185
+00:13:25,000 --> 00:13:27,000
+La keystriching es una técnica
+
+186
+00:13:27,000 --> 00:13:29,000
+que se utiliza en la función
+
+187
+00:13:29,000 --> 00:13:32,000
+que he comentado de pvkdf2.
+
+188
+00:13:32,000 --> 00:13:34,000
+Esta técnica se utiliza
+
+189
+00:13:34,000 --> 00:13:37,000
+para que a partir de una hash,
+
+190
+00:13:37,000 --> 00:13:39,000
+sobre esa hash,
+
+191
+00:13:39,000 --> 00:13:41,000
+realiza varias situaciones
+
+192
+00:13:41,000 --> 00:13:44,000
+que en función de las situaciones que le pases al algoritmo,
+
+193
+00:13:44,000 --> 00:13:47,000
+digamos, te la vas actualizando.
+
+194
+00:13:47,000 --> 00:13:49,000
+Cuantas más iteraciones,
+
+195
+00:13:49,000 --> 00:13:52,000
+más difícil será de romper esa hash.
+
+196
+00:13:52,000 --> 00:13:55,000
+Entonces, el objetivo básicamente de esta técnica
+
+197
+00:13:55,000 --> 00:13:58,000
+es, sobre todo, prevenir el ataque diccionario
+
+198
+00:13:58,000 --> 00:14:00,000
+o fuerza.
+
+199
+00:14:01,000 --> 00:14:04,000
+Otra alivriz que encontramos en Python
+
+200
+00:14:04,000 --> 00:14:06,000
+es criptográfica.
+
+201
+00:14:06,000 --> 00:14:09,000
+Esta, por ejemplo, también tiene soporte para Python 3,
+
+202
+00:14:09,000 --> 00:14:12,000
+que es más nueva que Python 3.
+
+203
+00:14:12,000 --> 00:14:14,000
+Entonces, el código, digamos,
+
+204
+00:14:14,000 --> 00:14:17,000
+está más mejor al nastado, por decir alguna forma.
+
+205
+00:14:17,000 --> 00:14:19,000
+Entonces, mejora el...
+
+206
+00:14:19,000 --> 00:14:21,000
+puede mejorar a nivel de Google,
+
+207
+00:14:21,000 --> 00:14:23,000
+a nivel de testing.
+
+208
+00:14:23,000 --> 00:14:25,000
+Y lo usa...
+
+209
+00:14:25,000 --> 00:14:28,000
+De hecho, es nueva y la usa Python 3.
+
+210
+00:14:28,000 --> 00:14:31,000
+Y otras librerías como Python OpenSSL
+
+211
+00:14:31,000 --> 00:14:33,000
+o Paranico,
+
+212
+00:14:33,000 --> 00:14:35,000
+que son librerías que se utilizan
+
+213
+00:14:35,000 --> 00:14:38,000
+para conexiones con sebrido SSH.
+
+214
+00:14:38,000 --> 00:14:41,000
+Esta librería está muy bien, es más nueva.
+
+215
+00:14:41,000 --> 00:14:43,000
+Y entonces, al ver el código,
+
+216
+00:14:43,000 --> 00:14:46,000
+si lo comparas con la de Python 3,
+
+217
+00:14:46,000 --> 00:14:49,000
+se nota que está mejor a nivel de Google,
+
+218
+00:14:49,000 --> 00:14:52,000
+se puede testear mejor y demás.
+
+219
+00:14:52,000 --> 00:14:54,000
+¿A nivel de features?
+
+220
+00:14:54,000 --> 00:14:57,000
+A nivel de features también tiene más características.
+
+221
+00:14:57,000 --> 00:14:59,000
+¿Aguna de las características?
+
+222
+00:14:59,000 --> 00:15:01,000
+Bueno, esto sería un ejemplo
+
+223
+00:15:01,000 --> 00:15:04,000
+donde la propia documentación de la idea
+
+224
+00:15:04,000 --> 00:15:07,000
+también está mucho mejor, evidentemente.
+
+225
+00:15:07,000 --> 00:15:09,000
+Y aquí, en la propia documentación te dice
+
+226
+00:15:09,000 --> 00:15:11,000
+que, por ejemplo, el SSH a 1
+
+227
+00:15:11,000 --> 00:15:14,000
+te dice que está ya precate, que no lo uses.
+
+228
+00:15:14,000 --> 00:15:17,000
+Entonces, ya tienes que ir a mínimo al SSH a 2,
+
+229
+00:15:17,000 --> 00:15:19,000
+variantes SSH a 2.
+
+230
+00:15:20,000 --> 00:15:22,000
+Y también tiene, también mecanismos,
+
+231
+00:15:22,000 --> 00:15:25,000
+tanto cifrado simétrico
+
+232
+00:15:25,000 --> 00:15:28,000
+como cifrado asimétrico con RSA.
+
+233
+00:15:29,000 --> 00:15:31,000
+Y el uso también es mucho más sencillo,
+
+234
+00:15:31,000 --> 00:15:34,000
+se simplifica bastante mucho más las cosas.
+
+235
+00:15:34,000 --> 00:15:37,000
+Por ejemplo, este sería un ejemplo con cifrado simétrico
+
+236
+00:15:37,000 --> 00:15:39,000
+donde a partir de una key,
+
+237
+00:15:39,000 --> 00:15:41,000
+simplemente llamando al método
+
+238
+00:15:41,000 --> 00:15:43,000
+gineer key de la librería,
+
+239
+00:15:43,000 --> 00:15:45,000
+de eso te da una key y con esa key
+
+240
+00:15:45,000 --> 00:15:49,000
+ya puedes cifrar y descifrar
+
+241
+00:15:49,000 --> 00:15:52,000
+con dos llamadas, ya lo tienes.
+
+242
+00:15:52,000 --> 00:15:55,000
+No tienes que crearte ningún rando, ni nada.
+
+243
+00:15:55,000 --> 00:15:58,000
+Y es la librería mucho más usable,
+
+244
+00:15:58,000 --> 00:16:00,280
+mucho más sencilla de Google
+
+245
+00:16:00,280 --> 00:16:02,000
+y de testear.
+
+246
+00:16:02,000 --> 00:16:06,000
+Bien, ahora pasamos a la seguridad en Viango.
+
+247
+00:16:06,000 --> 00:16:09,000
+Hasta ahora me ha centrado en librerías
+
+248
+00:16:09,000 --> 00:16:11,000
+que podemos encontrar a nivel genérico
+
+249
+00:16:11,000 --> 00:16:14,000
+y ahora voy a centrarme más en la seguridad
+
+250
+00:16:14,000 --> 00:16:16,000
+a nivel web.
+
+251
+00:16:16,000 --> 00:16:19,000
+Bueno, cuando estamos desarrollando
+
+252
+00:16:19,000 --> 00:16:21,000
+una aplicación web, con este caso en Viango,
+
+253
+00:16:21,000 --> 00:16:23,000
+pero puede ser cualquier fengboard,
+
+254
+00:16:23,000 --> 00:16:27,000
+estos son las cosas que había que tener en cuenta
+
+255
+00:16:27,000 --> 00:16:31,000
+para testear la seguridad en las aplicaciones.
+
+256
+00:16:31,000 --> 00:16:34,000
+En este caso, lo primero que habría que ver,
+
+257
+00:16:34,000 --> 00:16:36,000
+evidentemente si estamos
+
+258
+00:16:40,000 --> 00:16:42,000
+testando la aplicación bajo SSL,
+
+259
+00:16:42,000 --> 00:16:44,000
+regresar la configuración a nivel de servidor,
+
+260
+00:16:44,000 --> 00:16:48,000
+sobre todo, pues, la seguridad que han salido,
+
+261
+00:16:48,000 --> 00:16:51,000
+que luego comentaré, por ejemplo, la de Herbbler,
+
+262
+00:16:51,000 --> 00:16:54,000
+que es muy conocida, porque se aprovecha
+
+263
+00:16:54,000 --> 00:16:57,000
+una vulnerabilidad en el protocolo OpenSSL
+
+264
+00:16:57,000 --> 00:17:00,000
+en la versión 1.0.1.
+
+265
+00:17:00,000 --> 00:17:02,000
+También revisar, en la medida posible,
+
+266
+00:17:02,000 --> 00:17:04,000
+también los algoritmos de cifrado,
+
+267
+00:17:04,000 --> 00:17:06,000
+siempre he hecho comendad de utilizar,
+
+268
+00:17:06,000 --> 00:17:09,000
+revisar que se esté utilizando un algoritmo
+
+269
+00:17:09,000 --> 00:17:12,000
+por lo menos que no esté,
+
+270
+00:17:12,000 --> 00:17:14,000
+que no esté recrítobrificamente roto.
+
+271
+00:17:14,000 --> 00:17:16,000
+Puede haber problemas de luego,
+
+272
+00:17:16,000 --> 00:17:19,000
+porque, evidentemente, la seguridad nunca es a 100%,
+
+273
+00:17:19,000 --> 00:17:21,000
+nadie te garantiza la seguridad en un sistema,
+
+274
+00:17:21,000 --> 00:17:24,000
+100%, pero sí minimizar
+
+275
+00:17:24,000 --> 00:17:28,000
+los problemas que pueden surgir posteriormente.
+
+276
+00:17:28,000 --> 00:17:30,000
+La gestión de las claves,
+
+277
+00:17:30,000 --> 00:17:32,000
+de los usuarios, sobre todo,
+
+278
+00:17:32,000 --> 00:17:35,000
+autorización de usuarios,
+
+279
+00:17:35,000 --> 00:17:37,000
+y el manejo de cookies,
+
+280
+00:17:37,000 --> 00:17:40,000
+en caso de que tengamos usuarios en el sistema,
+
+281
+00:17:40,000 --> 00:17:42,000
+el manejo de cookies,
+
+282
+00:17:42,000 --> 00:17:44,000
+si las cookies están enviando, por ejemplo,
+
+283
+00:17:44,000 --> 00:17:46,000
+de forma cifrada o no.
+
+284
+00:17:46,000 --> 00:17:48,000
+En cuanto a seguridad en Diango,
+
+285
+00:17:48,000 --> 00:17:50,000
+bueno, Diango ya por defecto,
+
+286
+00:17:50,000 --> 00:17:53,000
+trae por defecto una serie de librerías,
+
+287
+00:17:53,000 --> 00:17:55,000
+paquetes, módulos,
+
+288
+00:17:55,000 --> 00:17:58,000
+que ya ofrecen una buena seguridad en ese aspecto.
+
+289
+00:17:58,000 --> 00:18:01,000
+Por ejemplo, el paquete de Diango se acude,
+
+290
+00:18:01,000 --> 00:18:03,000
+para condiciones SSL,
+
+291
+00:18:03,000 --> 00:18:05,000
+ya nos proporciona una base
+
+292
+00:18:05,000 --> 00:18:08,000
+bastante buena de seguridad.
+
+293
+00:18:08,000 --> 00:18:10,000
+Y luego, si, por ejemplo,
+
+294
+00:18:10,000 --> 00:18:12,000
+si vamos a trabajar sobre un API REST,
+
+295
+00:18:12,000 --> 00:18:14,000
+podemos utilizar framework,
+
+296
+00:18:14,000 --> 00:18:16,000
+como el de Diango REST framework,
+
+297
+00:18:16,000 --> 00:18:18,000
+o de Cotastify,
+
+298
+00:18:18,000 --> 00:18:20,000
+que también digamos que ya
+
+299
+00:18:20,000 --> 00:18:23,000
+esa primera barrera que tú te encuentras,
+
+300
+00:18:23,000 --> 00:18:27,000
+porque la seguridad de esto, como puede ser,
+
+301
+00:18:27,000 --> 00:18:30,000
+pues muchas de la parte esa,
+
+302
+00:18:30,000 --> 00:18:32,000
+pues ya está resuelta por el framework,
+
+303
+00:18:32,000 --> 00:18:33,000
+te puedes encontrar problemas,
+
+304
+00:18:33,000 --> 00:18:36,000
+si entiendes, pero la base la tienes.
+
+305
+00:18:38,000 --> 00:18:40,000
+¿Qué provenen general en estos framework?
+
+306
+00:18:40,000 --> 00:18:42,000
+Pues en general provenen
+
+307
+00:18:42,000 --> 00:18:45,000
+protección para encontrar Cotastify,
+
+308
+00:18:45,000 --> 00:18:47,000
+en otras scripting,
+
+309
+00:18:47,000 --> 00:18:49,000
+SQL Injection,
+
+310
+00:18:49,000 --> 00:18:50,000
+Classical Yacking,
+
+311
+00:18:50,000 --> 00:18:54,000
+y sobre todo soporte para HTTPS,
+
+312
+00:18:54,000 --> 00:18:57,000
+y en cuanto al almacenamiento de passports,
+
+313
+00:18:57,000 --> 00:18:58,000
+como he comentado,
+
+314
+00:18:58,000 --> 00:19:00,000
+proporciona ya la implementación
+
+315
+00:19:00,000 --> 00:19:02,000
+de los algoritmos estos que he comentado,
+
+316
+00:19:02,000 --> 00:19:06,000
+del Publibase Creation Function,
+
+317
+00:19:06,000 --> 00:19:13,000
+y el uso del SHI 250.
+
+318
+00:19:13,000 --> 00:19:15,000
+Esto ya te viene de serio.
+
+319
+00:19:16,000 --> 00:19:19,000
+La configuración por defecto sería esta,
+
+320
+00:19:19,000 --> 00:19:22,000
+donde vemos como está usando
+
+321
+00:19:22,000 --> 00:19:25,000
+esta configuración,
+
+322
+00:19:25,000 --> 00:19:28,000
+y si vamos al código fuente de Django en Git,
+
+323
+00:19:28,000 --> 00:19:31,000
+vemos como en la función Hasers,
+
+324
+00:19:31,000 --> 00:19:33,000
+en la clase Hasers,
+
+325
+00:19:33,000 --> 00:19:36,000
+hay un método ya,
+
+326
+00:19:36,000 --> 00:19:39,000
+que digamos el método que obtiene
+
+327
+00:19:39,000 --> 00:19:41,000
+la contraseña del usuario,
+
+328
+00:19:41,000 --> 00:19:42,000
+y te la codifica,
+
+329
+00:19:42,000 --> 00:19:45,000
+digamos que está utilizando ese método,
+
+330
+00:19:45,000 --> 00:19:50,000
+donde como vemos está pasando la password,
+
+331
+00:19:50,000 --> 00:19:51,000
+el número de iteraciones,
+
+332
+00:19:51,000 --> 00:19:53,000
+la sal, el sitio, un valor oratorio,
+
+333
+00:19:53,000 --> 00:19:55,000
+y sobre todo ese valor en concreto,
+
+334
+00:19:55,000 --> 00:19:57,000
+y ya en la base de datos,
+
+335
+00:19:57,000 --> 00:20:00,000
+de forma de forma Hasers,
+
+336
+00:20:00,000 --> 00:20:02,000
+para que luego en el proceso de login,
+
+337
+00:20:02,000 --> 00:20:09,000
+se pueda autenticar el usuario.
+
+338
+00:20:09,000 --> 00:20:11,000
+En cuanto a la seguridad en Django,
+
+339
+00:20:11,000 --> 00:20:12,000
+hay herramientas,
+
+340
+00:20:12,000 --> 00:20:14,000
+como la de Pwnite Checkup,
+
+341
+00:20:14,000 --> 00:20:16,000
+donde podemos
+
+342
+00:20:16,000 --> 00:20:18,000
+testear nuestro dominio,
+
+343
+00:20:18,000 --> 00:20:20,000
+nuestra página web,
+
+344
+00:20:20,000 --> 00:20:22,000
+y nos informa sobre
+
+345
+00:20:22,000 --> 00:20:24,000
+todos los posibles problemas
+
+346
+00:20:24,000 --> 00:20:26,000
+que puede tener nuestra aplicación,
+
+347
+00:20:26,000 --> 00:20:28,000
+a nivel de HTTPS,
+
+348
+00:20:28,000 --> 00:20:32,000
+a nivel de si tiene algún VOO, por ejemplo,
+
+349
+00:20:35,000 --> 00:20:38,000
+por ejemplo, problemas de CliveHideJacking,
+
+350
+00:20:38,000 --> 00:20:40,000
+en este caso nos está diciendo
+
+351
+00:20:40,000 --> 00:20:42,000
+que la versión que estamos utilizando de Django
+
+352
+00:20:42,000 --> 00:20:44,000
+tiene una posibilidad
+
+353
+00:20:44,000 --> 00:20:47,000
+contra ese posible ataque,
+
+354
+00:20:47,000 --> 00:20:49,000
+CliveHideJacking,
+
+355
+00:20:49,000 --> 00:20:51,000
+entonces que te recomienda
+
+356
+00:20:51,000 --> 00:20:53,000
+que reducís la configuración
+
+357
+00:20:53,000 --> 00:20:57,000
+de la aplicación.
+
+358
+00:20:57,000 --> 00:20:59,000
+Digamos que te da soporte
+
+359
+00:20:59,000 --> 00:21:01,000
+y cómo solucionarlo, ¿vale?
+
+360
+00:21:01,000 --> 00:21:02,000
+No solo te dice con este problema,
+
+361
+00:21:02,000 --> 00:21:03,000
+sino te da recomendaciones
+
+362
+00:21:03,000 --> 00:21:06,000
+de cómo solucionar.
+
+363
+00:21:06,000 --> 00:21:08,000
+En cuanto a las mejores partidas que tenemos,
+
+364
+00:21:08,000 --> 00:21:10,000
+bueno, un poco repetir,
+
+365
+00:21:10,000 --> 00:21:13,000
+usar HTTPS para las conexiones seguras,
+
+366
+00:21:13,000 --> 00:21:15,000
+luego habilitar HTTPS,
+
+367
+00:21:15,000 --> 00:21:18,000
+junto con nuestro certificado,
+
+368
+00:21:18,000 --> 00:21:19,000
+siempre es bueno crearnos,
+
+369
+00:21:19,000 --> 00:21:21,000
+existen utilidades de certificación,
+
+370
+00:21:21,000 --> 00:21:23,000
+pero siempre es mejor, creo yo,
+
+371
+00:21:23,000 --> 00:21:25,000
+crear nuestro propio certificado
+
+372
+00:21:25,000 --> 00:21:27,000
+para tener un mejor control
+
+373
+00:21:27,000 --> 00:21:30,000
+de todo el tráfico
+
+374
+00:21:30,000 --> 00:21:33,000
+que está generando nuestra aplicación.
+
+375
+00:21:33,000 --> 00:21:36,000
+Forzar siempre en la medida posible
+
+376
+00:21:36,000 --> 00:21:38,000
+HTTPS en todos los dominios,
+
+377
+00:21:38,000 --> 00:21:40,000
+un login, pues a partir de ahí,
+
+378
+00:21:40,000 --> 00:21:42,000
+va a ir todo el dominio,
+
+379
+00:21:42,000 --> 00:21:44,000
+va a ir en HTTPS,
+
+380
+00:21:44,000 --> 00:21:47,000
+y luego otra de las mejores prácticas
+
+381
+00:21:47,000 --> 00:21:50,000
+es el tema de las cookies del usuario,
+
+382
+00:21:50,000 --> 00:21:52,000
+en Django también hay unas opciones
+
+383
+00:21:52,000 --> 00:21:53,000
+de configuración,
+
+384
+00:21:53,000 --> 00:21:55,000
+hay una serie de flags
+
+385
+00:21:55,000 --> 00:21:57,000
+que te permiten decirle
+
+386
+00:21:57,000 --> 00:21:59,000
+que solo se envíen las cookies de sesión
+
+387
+00:21:59,000 --> 00:22:01,000
+si va sobre HTTPS,
+
+388
+00:22:01,000 --> 00:22:04,000
+si no, no se enviarían las cookies,
+
+389
+00:22:04,000 --> 00:22:06,000
+son flags de seguridad
+
+390
+00:22:06,000 --> 00:22:08,000
+que proporcionan el framework.
+
+391
+00:22:10,000 --> 00:22:12,000
+Luego, evidentemente,
+
+392
+00:22:12,000 --> 00:22:14,000
+guardar de forma segura
+
+393
+00:22:14,000 --> 00:22:16,000
+todas las claves, creenciadas,
+
+394
+00:22:16,000 --> 00:22:18,000
+tanto a nivel de usuarios
+
+395
+00:22:18,000 --> 00:22:20,000
+como a nivel de admisión.
+
+396
+00:22:20,000 --> 00:22:22,000
+Luego para aplicaciones en producción,
+
+397
+00:22:22,000 --> 00:22:24,000
+está el flag de Google,
+
+398
+00:22:24,000 --> 00:22:26,000
+que cuando vas a subir
+
+399
+00:22:26,000 --> 00:22:28,000
+una aplicación en producción,
+
+400
+00:22:28,000 --> 00:22:30,000
+no te gustaría que te deudaran
+
+401
+00:22:30,000 --> 00:22:32,000
+la aplicación, evidentemente,
+
+402
+00:22:32,000 --> 00:22:34,000
+pues ese flag tenemos que ver
+
+403
+00:22:34,000 --> 00:22:36,000
+que te puedan hacer igual cosas.
+
+404
+00:22:37,000 --> 00:22:39,000
+Y luego,
+
+405
+00:22:39,000 --> 00:22:42,000
+usa el alo web host,
+
+406
+00:22:42,000 --> 00:22:44,000
+que es otro flag
+
+407
+00:22:44,000 --> 00:22:46,000
+que está en settings,
+
+408
+00:22:46,000 --> 00:22:48,000
+para asignarle aquellos dominios
+
+409
+00:22:48,000 --> 00:22:50,000
+de los cuales
+
+410
+00:22:50,000 --> 00:22:52,000
+se te da control.
+
+411
+00:22:52,000 --> 00:22:54,000
+Entonces, cuando vas a subir a producción,
+
+412
+00:22:54,000 --> 00:22:56,000
+ahí le puedes indicar que dominios,
+
+413
+00:22:56,000 --> 00:22:58,000
+subdominios, son los que está haciendo
+
+414
+00:22:58,000 --> 00:23:00,000
+uso de la aplicación.
+
+415
+00:23:00,000 --> 00:23:02,000
+Entonces,
+
+416
+00:23:02,000 --> 00:23:04,000
+se que a ponerle
+
+417
+00:23:04,000 --> 00:23:06,000
+en lugar del asterisco,
+
+418
+00:23:06,000 --> 00:23:08,000
+ponerle tu propio dominio.
+
+419
+00:23:08,000 --> 00:23:10,000
+Y luego otra de las mejores prácticas,
+
+420
+00:23:10,000 --> 00:23:12,000
+es limitar el acceso
+
+421
+00:23:12,000 --> 00:23:14,000
+Sanmin mediante filtrado IP
+
+422
+00:23:14,000 --> 00:23:16,000
+o filtrado Mac,
+
+423
+00:23:16,000 --> 00:23:18,000
+para que nadie externo
+
+424
+00:23:18,000 --> 00:23:20,000
+a la organización o a la empresa
+
+425
+00:23:20,000 --> 00:23:22,000
+pueda hacer.
+
+426
+00:23:24,000 --> 00:23:26,000
+Vale, el último punto que voy a tratar,
+
+427
+00:23:26,000 --> 00:23:28,000
+es el tema de las mejores prácticas
+
+428
+00:23:28,000 --> 00:23:30,000
+que tenemos hoy en día,
+
+429
+00:23:30,000 --> 00:23:32,000
+que es la de la web apps,
+
+430
+00:23:32,000 --> 00:23:34,000
+que establece una serie de conjunto de reylas,
+
+431
+00:23:34,000 --> 00:23:36,000
+mejores prácticas,
+
+432
+00:23:36,000 --> 00:23:38,000
+que es recomendable seguir
+
+433
+00:23:38,000 --> 00:23:40,000
+para testear la seguridad
+
+434
+00:23:40,000 --> 00:23:42,000
+de las aplicaciones web.
+
+435
+00:23:42,000 --> 00:23:44,000
+Este allá, realmente,
+
+436
+00:23:44,000 --> 00:23:46,000
+se creó, tiene como origen las aplicaciones web,
+
+437
+00:23:46,000 --> 00:23:48,000
+pero realmente se puede utilizar
+
+438
+00:23:48,000 --> 00:23:50,000
+para cualquier tipo de aplicación,
+
+439
+00:23:50,000 --> 00:23:52,000
+para testear la seguridad
+
+440
+00:23:52,000 --> 00:23:54,000
+de cualquier tipo de aplicación,
+
+441
+00:23:54,000 --> 00:23:56,000
+web, móvil, escritorio,
+
+442
+00:23:56,000 --> 00:23:58,000
+de lo que sea.
+
+443
+00:23:58,000 --> 00:24:00,000
+La SQL Induction
+
+444
+00:24:00,000 --> 00:24:02,000
+y la de Cross-ed script.
+
+445
+00:24:02,000 --> 00:24:04,000
+Y qué herramientas tenemos
+
+446
+00:24:04,000 --> 00:24:06,000
+para
+
+447
+00:24:06,000 --> 00:24:08,000
+mejorar la seguridad
+
+448
+00:24:08,000 --> 00:24:10,000
+para detectar vulneridades de este tipo.
+
+449
+00:24:10,000 --> 00:24:12,000
+En cuanto al SQL Induction,
+
+450
+00:24:12,000 --> 00:24:14,000
+bueno, son unas vulneridades
+
+451
+00:24:14,000 --> 00:24:16,000
+más conocidas, ya muchos años
+
+452
+00:24:16,000 --> 00:24:18,000
+se ha escrito
+
+453
+00:24:18,000 --> 00:24:20,000
+mucho sobre esta
+
+454
+00:24:20,000 --> 00:24:22,000
+vulnerabilidad, y es muy sencilla,
+
+455
+00:24:22,000 --> 00:24:24,000
+básicamente es
+
+456
+00:24:24,000 --> 00:24:26,000
+el
+
+457
+00:24:26,000 --> 00:24:28,000
+origen de esta vulnerabilidad,
+
+458
+00:24:28,000 --> 00:24:30,000
+es que realmente los datos nos están
+
+459
+00:24:30,000 --> 00:24:32,000
+filtrando correctamente.
+
+460
+00:24:32,000 --> 00:24:34,000
+Entonces, muchas veces,
+
+461
+00:24:34,000 --> 00:24:36,000
+por ejemplo, si estamos
+
+462
+00:24:36,000 --> 00:24:38,000
+creando una sentencia de SQL,
+
+463
+00:24:38,000 --> 00:24:40,000
+nos están, no tenemos en cuenta
+
+464
+00:24:40,000 --> 00:24:42,000
+de que, por ejemplo, los parámetros
+
+465
+00:24:42,000 --> 00:24:44,000
+se estén escapando correctamente.
+
+466
+00:24:44,000 --> 00:24:46,000
+Entonces, ahí puede haber un problema
+
+467
+00:24:46,000 --> 00:24:48,000
+de inyección de código.
+
+468
+00:24:48,000 --> 00:24:50,000
+Entonces,
+
+469
+00:24:50,000 --> 00:24:52,000
+por ejemplo,
+
+470
+00:24:52,000 --> 00:24:54,000
+una de las opciones que tenemos
+
+471
+00:24:54,000 --> 00:24:56,000
+es usar
+
+472
+00:24:56,000 --> 00:24:58,000
+los QRMs, los sistemas
+
+473
+00:24:58,000 --> 00:25:00,000
+Object Relatable Mapping
+
+474
+00:25:00,000 --> 00:25:02,000
+que básicamente lo que haces es
+
+475
+00:25:02,000 --> 00:25:04,000
+extraer
+
+476
+00:25:04,000 --> 00:25:06,000
+al desarrollador, digamos,
+
+477
+00:25:06,000 --> 00:25:08,000
+de toda la seguridad
+
+478
+00:25:08,000 --> 00:25:10,000
+a este nivel.
+
+479
+00:25:10,000 --> 00:25:12,000
+Entonces, la seguridad
+
+480
+00:25:12,000 --> 00:25:14,000
+a nivel de SQL es transparente
+
+481
+00:25:14,000 --> 00:25:16,000
+para el desarrollador. No te tienes que preocupar
+
+482
+00:25:16,000 --> 00:25:18,000
+de ver
+
+483
+00:25:18,000 --> 00:25:20,000
+si se está validando correctamente este campo de entrada,
+
+484
+00:25:20,000 --> 00:25:22,000
+y además, ya que todo
+
+485
+00:25:22,000 --> 00:25:24,000
+no trabajas con SQL
+
+486
+00:25:24,000 --> 00:25:26,000
+si no trabajas con objeto.
+
+487
+00:25:30,000 --> 00:25:32,000
+Una de las herramientas que tenemos
+
+488
+00:25:32,000 --> 00:25:34,000
+clásicas en Python
+
+489
+00:25:34,000 --> 00:25:36,000
+es SQLMap, o esta herramienta también
+
+490
+00:25:36,000 --> 00:25:38,000
+de muchos años,
+
+491
+00:25:38,000 --> 00:25:40,000
+y el objetivo es
+
+492
+00:25:40,000 --> 00:25:42,000
+detectar, primero, detectar
+
+493
+00:25:42,000 --> 00:25:44,000
+si hay una posibilidad
+
+494
+00:25:44,000 --> 00:25:46,000
+en la URL o en el dominio
+
+495
+00:25:46,000 --> 00:25:48,000
+que quieras testear.
+
+496
+00:25:48,000 --> 00:25:50,000
+Y luego también, si hay alguna
+
+497
+00:25:50,000 --> 00:25:52,000
+una habilidad, es
+
+498
+00:25:52,000 --> 00:25:54,000
+el proceso de ataque,
+
+499
+00:25:54,000 --> 00:25:56,000
+¿vale?
+
+500
+00:25:56,000 --> 00:25:58,000
+Se habla mucho de herramientas
+
+501
+00:25:58,000 --> 00:26:00,000
+si esta herramienta puede llegar
+
+502
+00:26:00,000 --> 00:26:02,000
+ética o no, por el tema
+
+503
+00:26:02,000 --> 00:26:04,000
+de que a la vez que descubre
+
+504
+00:26:04,000 --> 00:26:06,000
+una habilidad, también te permite
+
+505
+00:26:06,000 --> 00:26:08,000
+atacar la una habilidad, explotar la una habilidad.
+
+506
+00:26:08,000 --> 00:26:10,000
+Entonces, bueno,
+
+507
+00:26:10,000 --> 00:26:12,000
+es una herramienta
+
+508
+00:26:12,000 --> 00:26:14,000
+que ya muchos años
+
+509
+00:26:14,000 --> 00:26:16,000
+desarrollo, se sigue desarrollando.
+
+510
+00:26:16,000 --> 00:26:18,000
+Hace, por ejemplo,
+
+511
+00:26:18,000 --> 00:26:20,000
+en las conferencias
+
+512
+00:26:20,000 --> 00:26:22,000
+en Navaja Negra, hace un mes
+
+513
+00:26:22,000 --> 00:26:24,000
+vino el creador
+
+514
+00:26:24,000 --> 00:26:26,000
+de esta herramienta, y estuvo
+
+515
+00:26:26,000 --> 00:26:28,000
+y hablándonos de
+
+516
+00:26:28,000 --> 00:26:30,000
+todo lo que
+
+517
+00:26:30,000 --> 00:26:32,000
+el proceso que había llevado,
+
+518
+00:26:32,000 --> 00:26:34,000
+todo, quién había estado trabajando en el proyecto,
+
+519
+00:26:34,000 --> 00:26:36,000
+que aún estaba
+
+520
+00:26:36,000 --> 00:26:38,000
+intentando mejorar la herramienta,
+
+521
+00:26:38,000 --> 00:26:40,000
+y estuvo bastante
+
+522
+00:26:40,000 --> 00:26:42,000
+interesante.
+
+523
+00:26:44,000 --> 00:26:46,000
+Otra es la vulnerabilidad que tenemos,
+
+524
+00:26:46,000 --> 00:26:48,000
+la de Cross-Strait Scripting.
+
+525
+00:26:48,000 --> 00:26:50,000
+Esta vulnerabilidad también te permite
+
+526
+00:26:50,000 --> 00:26:52,000
+sobre todo, obtener información
+
+527
+00:26:52,000 --> 00:26:54,000
+de sesión del usuario,
+
+528
+00:26:54,000 --> 00:26:56,000
+básicamente se aprovecha una vulnerabilidad
+
+529
+00:26:56,000 --> 00:26:58,000
+de nivel de JavaScript.
+
+530
+00:26:58,000 --> 00:27:00,000
+Entonces, en Django, lo que ofrece
+
+531
+00:27:00,000 --> 00:27:02,000
+es el sistema de plantillas,
+
+532
+00:27:02,000 --> 00:27:04,000
+de templates, de renderizado,
+
+533
+00:27:04,000 --> 00:27:06,000
+que lo que hace es escapar
+
+534
+00:27:06,000 --> 00:27:08,000
+los valores que se renderiten
+
+535
+00:27:08,000 --> 00:27:10,000
+en la página HTML.
+
+536
+00:27:10,000 --> 00:27:12,000
+Entonces, esto ya te lo ha deseado.
+
+537
+00:27:12,000 --> 00:27:14,000
+Mejor es practicarse en Django,
+
+538
+00:27:14,000 --> 00:27:16,000
+pues validar los formularios
+
+539
+00:27:16,000 --> 00:27:18,000
+con el paquete Django Force
+
+540
+00:27:18,000 --> 00:27:20,000
+para realizar todas las peticiones
+
+541
+00:27:20,000 --> 00:27:22,000
+en la medida de todo posible, mediante POS
+
+542
+00:27:22,000 --> 00:27:24,000
+para que se envíe en las cabeceras
+
+543
+00:27:24,000 --> 00:27:26,000
+de la petición, y luego si estamos
+
+544
+00:27:26,000 --> 00:27:28,000
+utilizando formularios, los metafils,
+
+545
+00:27:28,000 --> 00:27:30,000
+por ejemplo, podemos usarlos
+
+546
+00:27:30,000 --> 00:27:32,000
+ya que ya realizan validaciones
+
+547
+00:27:32,000 --> 00:27:34,000
+internamente y escapan
+
+548
+00:27:34,000 --> 00:27:36,000
+los valores.
+
+549
+00:27:38,000 --> 00:27:40,000
+Por ejemplo, si queremos testear,
+
+550
+00:27:40,000 --> 00:27:42,000
+probar,
+
+551
+00:27:42,000 --> 00:27:44,000
+alguna vez que la vulnerabilidad se ha comentado,
+
+552
+00:27:44,000 --> 00:27:46,000
+tenemos el Django Mod,
+
+553
+00:27:46,000 --> 00:27:48,000
+que es una
+
+554
+00:27:48,000 --> 00:27:50,000
+aplicación
+
+555
+00:27:50,000 --> 00:27:52,000
+que ya viene preparada para testear
+
+556
+00:27:52,000 --> 00:27:54,000
+todos estos tipos de vulnerabilidades.
+
+557
+00:27:54,000 --> 00:27:56,000
+Es el pool injection,
+
+558
+00:27:56,000 --> 00:27:58,000
+persistente, no persistente,
+
+559
+00:27:58,000 --> 00:28:00,000
+cross-excritting, todos los tipos de vulnerabilidades
+
+560
+00:28:00,000 --> 00:28:02,000
+se pueden encontrar en esta aplicación.
+
+561
+00:28:02,000 --> 00:28:04,000
+Esquisitamente desarrollada para
+
+562
+00:28:04,000 --> 00:28:06,000
+aprender
+
+563
+00:28:06,000 --> 00:28:08,000
+y ver como
+
+564
+00:28:08,000 --> 00:28:10,000
+se pueden explotar
+
+565
+00:28:10,000 --> 00:28:12,000
+este tipo de vulnerabilidades.
+
+566
+00:28:12,000 --> 00:28:14,000
+En cuanto a herramientas,
+
+567
+00:28:14,000 --> 00:28:16,000
+tenemos la Web Paint Security,
+
+568
+00:28:16,000 --> 00:28:18,000
+en esta web podemos encontrar
+
+569
+00:28:18,000 --> 00:28:20,000
+todas las herramientas que disponemos
+
+570
+00:28:20,000 --> 00:28:22,000
+hoy en día en paito, a nivel de seguridad,
+
+571
+00:28:22,000 --> 00:28:24,000
+a nivel de pen testing, que ahora comentaré alguna.
+
+572
+00:28:28,000 --> 00:28:30,000
+Por ejemplo, una de las herramientas
+
+573
+00:28:30,000 --> 00:28:32,000
+que más y más también,
+
+574
+00:28:32,000 --> 00:28:34,000
+me imagino que lo conocéis también,
+
+575
+00:28:34,000 --> 00:28:36,000
+es WebDirect3aF, que también
+
+576
+00:28:36,000 --> 00:28:38,000
+se ha ido desarrollando poco a poco.
+
+577
+00:28:38,000 --> 00:28:40,000
+Con esta herramienta
+
+578
+00:28:40,000 --> 00:28:42,000
+también puedes desplotar
+
+579
+00:28:42,000 --> 00:28:44,000
+vulnerabilidades
+
+580
+00:28:44,000 --> 00:28:46,000
+y también explotarlas,
+
+581
+00:28:46,000 --> 00:28:48,000
+atacar las vulnerabilidades.
+
+582
+00:28:48,000 --> 00:28:50,000
+Una serie de plugins
+
+583
+00:28:50,000 --> 00:28:52,000
+configurables
+
+584
+00:28:52,000 --> 00:28:54,000
+y por efecto tiene
+
+585
+00:28:54,000 --> 00:28:56,000
+por ejemplo un profile
+
+586
+00:28:56,000 --> 00:28:58,000
+de la Augusto 10
+
+587
+00:28:58,000 --> 00:29:00,000
+para analizar automáticamente
+
+588
+00:29:00,000 --> 00:29:02,000
+la URL que queramos.
+
+589
+00:29:02,000 --> 00:29:04,000
+Básicamente se utiliza
+
+590
+00:29:04,000 --> 00:29:06,000
+para auditorías web.
+
+591
+00:29:08,000 --> 00:29:10,000
+Luego, estas son las herramientas que tenemos,
+
+592
+00:29:10,000 --> 00:29:12,000
+criptopng por ejemplo, esta herramienta
+
+593
+00:29:12,000 --> 00:29:14,000
+es de escenografía, es decir,
+
+594
+00:29:14,000 --> 00:29:16,000
+cogemos una imagen,
+
+595
+00:29:16,000 --> 00:29:18,000
+un png por ejemplo
+
+596
+00:29:18,000 --> 00:29:20,000
+y podemos almacenar dentro de la imagen
+
+597
+00:29:20,000 --> 00:29:22,000
+lo que queramos,
+
+598
+00:29:22,000 --> 00:29:24,000
+texto o lo que queramos.
+
+599
+00:29:24,000 --> 00:29:26,000
+Con este caso es para escribir
+
+600
+00:29:26,000 --> 00:29:28,000
+texto.
+
+601
+00:29:28,000 --> 00:29:30,000
+Un mensaje dentro de una imagen.
+
+602
+00:29:30,000 --> 00:29:32,000
+Entonces esta herramienta
+
+603
+00:29:32,000 --> 00:29:34,000
+está muy bien para eso, para
+
+604
+00:29:34,000 --> 00:29:36,000
+si queremos enviarle a alguien
+
+605
+00:29:36,000 --> 00:29:38,000
+una imagen que tiene algo dentro
+
+606
+00:29:38,000 --> 00:29:40,000
+un texto
+
+607
+00:29:40,000 --> 00:29:42,000
+o incluso otra imagen por ejemplo
+
+608
+00:29:42,000 --> 00:29:44,000
+se podría llegar a hacer.
+
+609
+00:29:48,000 --> 00:29:50,000
+Y luego por último comentar una herramienta
+
+610
+00:29:50,000 --> 00:29:52,000
+de pen testing
+
+611
+00:29:52,000 --> 00:29:54,000
+que estoy desarrollando un poco.
+
+612
+00:29:54,000 --> 00:29:56,000
+Esta herramienta básicamente
+
+613
+00:29:56,000 --> 00:29:58,000
+aparte
+
+614
+00:29:58,000 --> 00:30:00,000
+de la IP del dominio
+
+615
+00:30:02,000 --> 00:30:04,000
+la IP o el dominio que quieres
+
+616
+00:30:04,000 --> 00:30:06,000
+testear
+
+617
+00:30:06,000 --> 00:30:08,000
+y algunas opciones que he implementado
+
+618
+00:30:08,000 --> 00:30:10,000
+hasta ahora son por ejemplo
+
+619
+00:30:10,000 --> 00:30:12,000
+chequear los puertos que tiene abiertos
+
+620
+00:30:12,000 --> 00:30:14,000
+ver los servidores DNS
+
+621
+00:30:14,000 --> 00:30:16,000
+información, realizar un scanner de puertos
+
+622
+00:30:18,000 --> 00:30:20,000
+para ver qué puertos están abiertos
+
+623
+00:30:20,000 --> 00:30:22,000
+y a qué servicio
+
+624
+00:30:22,000 --> 00:30:24,000
+se podría atacar.
+
+625
+00:30:24,000 --> 00:30:26,000
+Luego otras opciones
+
+626
+00:30:26,000 --> 00:30:28,000
+interesantes como
+
+627
+00:30:28,000 --> 00:30:30,000
+geolocalización
+
+628
+00:30:30,000 --> 00:30:32,000
+a partir de la IP o el nombre
+
+629
+00:30:32,000 --> 00:30:34,000
+del dominio
+
+630
+00:30:34,000 --> 00:30:36,000
+realizar un proceso de scrapping
+
+631
+00:30:36,000 --> 00:30:38,000
+para obtener por ejemplo imágenes
+
+632
+00:30:38,000 --> 00:30:40,000
+o información útil de ese
+
+633
+00:30:40,000 --> 00:30:42,000
+huevo o ese dominio.
+
+634
+00:30:42,000 --> 00:30:44,000
+Y luego
+
+635
+00:30:44,000 --> 00:30:46,000
+opciones más avanzadas
+
+636
+00:30:46,000 --> 00:30:48,000
+como hacer un
+
+637
+00:30:48,000 --> 00:30:50,000
+por ejemplo si tenemos un metasploid
+
+638
+00:30:50,000 --> 00:30:52,000
+o un Nespouse
+
+639
+00:30:52,000 --> 00:30:54,000
+un servidor con este tipo de
+
+640
+00:30:54,000 --> 00:30:56,000
+servidores podríamos conectarnos
+
+641
+00:30:56,000 --> 00:30:58,000
+a ese servidor a la máquina esa
+
+642
+00:30:58,000 --> 00:31:00,000
+y capturar
+
+643
+00:31:00,000 --> 00:31:02,000
+todo el
+
+644
+00:31:02,000 --> 00:31:04,000
+tráfico que haya generado, todos los
+
+645
+00:31:04,000 --> 00:31:06,000
+vulnerabilidades que haya generado
+
+646
+00:31:06,000 --> 00:31:08,000
+esas herramientas. Y luego
+
+647
+00:31:08,000 --> 00:31:10,000
+una de las opciones es
+
+648
+00:31:10,000 --> 00:31:12,000
+comprobar si el servidor
+
+649
+00:31:12,000 --> 00:31:14,000
+es vulnerable al
+
+650
+00:31:14,000 --> 00:31:16,000
+Gertbude
+
+651
+00:31:16,000 --> 00:31:18,000
+al buque este del Gertbude
+
+652
+00:31:18,000 --> 00:31:20,000
+entonces mediante esta opción
+
+653
+00:31:20,000 --> 00:31:22,000
+podemos
+
+654
+00:31:22,000 --> 00:31:24,000
+lo que sería
+
+655
+00:31:24,000 --> 00:31:26,000
+llamar al servidor con
+
+656
+00:31:26,000 --> 00:31:28,000
+una cadena concreta, es un
+
+657
+00:31:28,000 --> 00:31:30,000
+lo que se llama un Payload
+
+658
+00:31:30,000 --> 00:31:32,000
+para comprobar si una determinada
+
+659
+00:31:32,000 --> 00:31:34,000
+cadena está
+
+660
+00:31:34,000 --> 00:31:36,000
+almacenada en lo que devuelve
+
+661
+00:31:36,000 --> 00:31:38,000
+ese servidor.
+
+662
+00:31:38,000 --> 00:31:40,000
+Entonces es muy fácil
+
+663
+00:31:40,000 --> 00:31:42,000
+detectar si
+
+664
+00:31:42,000 --> 00:31:44,000
+es vulnerable o no
+
+665
+00:31:44,000 --> 00:31:46,000
+el servidor. En este caso
+
+666
+00:31:46,000 --> 00:31:48,000
+en este IP hemos visto como
+
+667
+00:31:48,000 --> 00:31:50,000
+haciendo algunas pruebas
+
+668
+00:31:50,000 --> 00:31:52,000
+detecté que esta máquina era vulnerable
+
+669
+00:31:52,000 --> 00:31:54,000
+a este
+
+670
+00:31:54,000 --> 00:31:56,000
+a este fallo de seguridad
+
+671
+00:31:56,000 --> 00:31:58,000
+en la librería OPSSL
+
+672
+00:32:00,000 --> 00:32:02,000
+y ya está
+
+673
+00:32:02,000 --> 00:32:04,000
+esta es la
+
+674
+00:32:04,000 --> 00:32:06,000
+referencia
+
+675
+00:32:06,000 --> 00:32:08,000
+que he encontrado para
+
+676
+00:32:08,000 --> 00:32:10,000
+hacer la presentación, es un libro
+
+677
+00:32:10,000 --> 00:32:12,000
+totalmente free, con ejemplos
+
+678
+00:32:12,000 --> 00:32:14,000
+y funciones
+
+679
+00:32:14,000 --> 00:32:16,000
+casi todo en Byton
+
+680
+00:32:16,000 --> 00:32:18,000
+y por último los ejemplos, algunos
+
+681
+00:32:18,000 --> 00:32:20,000
+que podéis encontrar en este
+
+682
+00:32:20,000 --> 00:32:22,000
+repositor de Yubizap
+
+683
+00:32:22,000 --> 00:32:24,000
+donde podemos ver ejemplos
+
+684
+00:32:24,000 --> 00:32:26,000
+con todos los métodos
+
+685
+00:32:26,000 --> 00:32:28,920
+difijo por el Glen
+

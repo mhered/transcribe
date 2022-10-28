@@ -1,0 +1,724 @@
+1
+00:00:00,000 --> 00:00:11,880
+Bienvenidos a la charla de desarrollo de videojuegos 2D con Python Arcade.
+
+2
+00:00:11,880 --> 00:00:19,000
+Mi nombre es Michael Angel Rico, soy desarrollador del siglo pasado,
+
+3
+00:00:19,000 --> 00:00:27,320
+principalmente enfocado en el backend y especializado en Python y Django desde el 2012.
+
+4
+00:00:27,320 --> 00:00:32,520
+Yo tengo que ver con el enduro del videojuego para atreverme a una charla de videojuegos.
+
+5
+00:00:32,520 --> 00:00:36,920
+Aparte de jugar el videojuego de los 80,
+
+6
+00:00:36,920 --> 00:00:41,560
+estaba en un año profesionalmente dedicado al tema del videojuego,
+
+7
+00:00:41,560 --> 00:00:46,240
+que no tiene la cabeza lo que voy a echar con lo que voy a ver en la charla.
+
+8
+00:00:46,240 --> 00:00:49,960
+Pero sí tiene culpa un poquito.
+
+9
+00:00:49,960 --> 00:00:56,200
+Colabore en el proyecto de Corea Racing Formulae, que es el videojuego oficial de la Formulae.
+
+10
+00:00:56,200 --> 00:01:03,200
+Todo lo que estáis viendo ahí sonido no está hecho en Python, ni nada que se le parezca.
+
+11
+00:01:03,200 --> 00:01:06,200
+Yo no he hecho nada de eso, ni nada que se ve ni que se escuche.
+
+12
+00:01:06,200 --> 00:01:12,680
+Yo he estado en la parte de backend, de los que la comunicación con el cliente,
+
+13
+00:01:12,680 --> 00:01:18,360
+con los diferentes dispositivos, procesa la cola por aquí, no meten rédicos,
+
+14
+00:01:18,360 --> 00:01:21,440
+no meten base de datos, cosas de backend.
+
+15
+00:01:21,440 --> 00:01:27,880
+Vale, esto me permitió que trabajamos en el estudio de videojuegos,
+
+16
+00:01:27,880 --> 00:01:32,160
+obviamente con artistas gráficos, músicos,
+
+17
+00:01:32,160 --> 00:01:36,760
+los desarrollos de la parte de clientes, game designers.
+
+18
+00:01:36,760 --> 00:01:40,160
+Una cosa que está bastante guay.
+
+19
+00:01:40,160 --> 00:01:45,280
+Y varios compañeros decidimos al principio de año presentando a la mala galler,
+
+20
+00:01:45,280 --> 00:01:48,160
+que es un ya gallán de videojuegos con las piezas de jacatón,
+
+21
+00:01:48,160 --> 00:01:52,080
+donde en un fin de semana haces un videojuego.
+
+22
+00:01:52,080 --> 00:01:57,760
+Tener los equipos son muy pequeños, 3, 4, 5 personas,
+
+23
+00:01:57,760 --> 00:02:00,720
+limitado en el tiempo, lo que te de tiempo hace en el fin de semana,
+
+24
+00:02:00,720 --> 00:02:07,680
+y limitado en recursos no va a disponer de, no sé, espera que tenga 8, 8, 100 servidores en la nuve,
+
+25
+00:02:07,680 --> 00:02:11,360
+y esto va tú con tu portátil, y poco más.
+
+26
+00:02:11,360 --> 00:02:17,840
+Obviamente no se iba a hacer nada online, nada de videojuego de multi-jugadores,
+
+27
+00:02:17,840 --> 00:02:22,800
+línea tal, ahí empezó a chirriarme el asunto, digo bueno, entonces qué pinto aquí,
+
+28
+00:02:22,800 --> 00:02:27,600
+y mi curvo de aprendizaje aquí sería iba bastante cuesta arriba,
+
+29
+00:02:27,600 --> 00:02:35,840
+porque el tema de conceptos 3D de mayo no era algo que yo manejara en milia días, y yo sí, claro.
+
+30
+00:02:35,840 --> 00:02:39,040
+Y yo ya me enroqué, dije me la voy a lo que lo hace en Python,
+
+31
+00:02:39,040 --> 00:02:41,760
+¿Qué pasó? Porque me quedé yo solo, ¿vale?
+
+32
+00:02:41,760 --> 00:02:48,320
+De los, del equipo formado por mí mismo fue el que dije,
+
+33
+00:02:48,320 --> 00:02:51,920
+porque no se puede hacer un videojuego en Python, pues yo voy a hacerlo.
+
+34
+00:02:51,920 --> 00:02:55,120
+Y cómo se empiezo, cómo empecé con esto,
+
+35
+00:02:55,120 --> 00:02:57,680
+obviamente como empezamos todos buscando en Google,
+
+36
+00:02:57,680 --> 00:03:03,840
+llegué, me recomendaron, me han dicho un compañero Godot,
+
+37
+00:03:03,840 --> 00:03:08,320
+así que era un IDE nuevo, está actualmente integrado,
+
+38
+00:03:08,320 --> 00:03:12,640
+con Franco está genial, hace poco estuve en una charla de Libre,
+
+39
+00:03:12,640 --> 00:03:16,640
+que la dio Alvaro del Castillo, donde hubo una introducción bastante buena Godot,
+
+40
+00:03:16,640 --> 00:03:26,720
+quiero profundizar en él, en Godot, pero en ese momento cuando estaba preparando el tema de la Jam,
+
+41
+00:03:26,720 --> 00:03:34,480
+me era demasiado nuevo todo, IDE, un paradigma nuevo de escenas, mensaje y demás,
+
+42
+00:03:34,480 --> 00:03:40,640
+no me lo no tenía claro, llegué a Python Arcade,
+
+43
+00:03:40,640 --> 00:03:44,320
+que puede utilizar el IDE que yo quisiera,
+
+44
+00:03:44,320 --> 00:03:51,200
+utilizaba simplemente clases y métodos que estaba acostumbrado
+
+45
+00:03:51,200 --> 00:03:53,280
+y tiene muy buena documentación.
+
+46
+00:03:53,280 --> 00:03:56,720
+También hay otros que SpyGame, que no es que tenga nada en contra de él,
+
+47
+00:03:56,720 --> 00:04:01,280
+pero llegué primero a Python Arcade y me encantó,
+
+48
+00:04:01,280 --> 00:04:05,520
+por sus tutoriales, los ejemplos que trae,
+
+49
+00:04:05,520 --> 00:04:10,800
+era bastante rápido y directo el hecho de empezar a desarrollar con él.
+
+50
+00:04:10,800 --> 00:04:18,480
+La instalación es muy sencilla, tiene unas pocas dependencias de Python 3
+
+51
+00:04:18,480 --> 00:04:22,320
+y un par de librerías de parágrafico y compresión,
+
+52
+00:04:22,320 --> 00:04:28,320
+y simplemente eso, con un PIP install Arcade,
+
+53
+00:04:28,320 --> 00:04:33,680
+y con eso ya lo tenemos integrado con nuestro proyecto, en Python.
+
+54
+00:04:33,680 --> 00:04:39,920
+Tiene que ser Python 3.6 posterior y no soporta para nada Python 2.
+
+55
+00:04:41,680 --> 00:04:48,800
+Muy rápidamente, un ejemplo sencillito y básico, importamos Arcade,
+
+56
+00:04:48,800 --> 00:04:52,160
+inicializamos, obviamente hay las constantes no están definidas,
+
+57
+00:04:52,160 --> 00:05:00,720
+para que para todo en una pantalla, pero el alto, el ancho y el título de la ventana,
+
+58
+00:05:00,720 --> 00:05:06,880
+y en el evento onDraw no tras llamar a Star render que es obligatorio,
+
+59
+00:05:06,880 --> 00:05:11,760
+empezamos a pintar las cosas, el onDraw se llamará cada vez que se pinta en la pantalla,
+
+60
+00:05:11,760 --> 00:05:14,000
+que se actualice y ya está.
+
+61
+00:05:14,000 --> 00:05:24,480
+Entonces nuestra aplicación sería simplemente inicializamos la, instanciamos el objeto de esa clase,
+
+62
+00:05:24,480 --> 00:05:33,520
+para que Arcade sepa que existe y run, y con eso tenemos el sencillito ejemplo inicial.
+
+63
+00:05:33,520 --> 00:05:38,320
+Esto a la hora de hacer un videojuego pues más bien se nos complicaría el asunto mucho,
+
+64
+00:05:38,320 --> 00:05:42,480
+porque a nivel de estado y demás se nos quedaría corto,
+
+65
+00:05:42,480 --> 00:05:48,640
+pues lo tenemos que controlar todo, bueno y ahora si ocurre esto, que es lo que hago ¿no?
+
+66
+00:05:48,640 --> 00:05:56,080
+como el estado del mundo de Matocet se divide un poco esto para que sea más sencillo.
+
+67
+00:05:56,080 --> 00:05:59,520
+Hay un nivel de astración superior que es los view modes,
+
+68
+00:05:59,520 --> 00:06:04,080
+que en lugar de directamente pintar a la pantalla pues tenemos un view mode,
+
+69
+00:06:04,080 --> 00:06:11,120
+podemos registrar varios al inicio, un view mode lo que viene a modelar,
+
+70
+00:06:11,120 --> 00:06:19,680
+son diferentes modos, por ejemplo la pantalla de título, la inicial, el menú inicial,
+
+71
+00:06:19,680 --> 00:06:26,560
+cada uno de los niveles del juego, la típica pantalla de Agana o a Perdiot,
+
+72
+00:06:26,560 --> 00:06:31,920
+y simplemente en lugar de decir directamente a la ventana,
+
+73
+00:06:31,920 --> 00:06:34,000
+me pinto lo que hay aquí y a la ventana la decimos,
+
+74
+00:06:34,000 --> 00:06:39,760
+oye que la vista que vas a usar es esta, de manera que ya podemos tener todo en caso de la otra manera más sencilla.
+
+75
+00:06:39,760 --> 00:06:49,280
+La estructura básica del view es esta, el inis setup, separado lo que es la definición de la inicialización,
+
+76
+00:06:49,280 --> 00:06:54,240
+para poder llamar al setup varias veces, en cualquier momento en la vida del objeto,
+
+77
+00:06:54,240 --> 00:06:57,920
+así no tenemos que llamar al inis, se puede llamar al setup.
+
+78
+00:06:57,920 --> 00:07:03,440
+El onShow que se llama una sola vez, cuando se muestra ese view mode la primera vez,
+
+79
+00:07:03,440 --> 00:07:07,600
+pues se llama ahí, ya se ha borrado la pantalla, con lo que lo ha coordenado donde quiera y demás,
+
+80
+00:07:07,600 --> 00:07:16,880
+y el onDraw, donde empieza la traya, ahí son 60 fps y ahí tienes que pintarlo todo en el momento.
+
+81
+00:07:16,880 --> 00:07:22,320
+OnUpdate también se llama muy a menudo, tanto como el onDraw o casi,
+
+82
+00:07:22,320 --> 00:07:25,360
+ahí es donde se va actualizando el estado del mundo.
+
+83
+00:07:25,360 --> 00:07:30,960
+Eso nos pasa al DeltaTank, que es cuánto ha pasado desde la última vez que te llamó,
+
+84
+00:07:30,960 --> 00:07:35,680
+para que puedas a la hora del tiempo súper importante la hora de calcular,
+
+85
+00:07:35,680 --> 00:07:39,040
+la trayectoria, de movimiento, velocidades y cosas así.
+
+86
+00:07:39,040 --> 00:07:45,440
+Y obviamente para reaccionar a los eventos de usuario, pues tenemos el onKeyPress,
+
+87
+00:07:45,440 --> 00:07:51,440
+y el onKey release, y todos los eventos relacionados con el ratón,
+
+88
+00:07:51,440 --> 00:07:56,640
+para poder reaccionar a lo que hace el usuario.
+
+89
+00:07:56,640 --> 00:08:01,280
+Otro concepto básico del tema de, no solo de arcade,
+
+90
+00:08:01,280 --> 00:08:07,680
+sino de, creo que igual que el juego en 2D, son los sprite, llevo escuchando yo las desplades desde el siglo pasado,
+
+91
+00:08:07,680 --> 00:08:12,320
+porque todo en arcade se puede moderar todo, o casi todo, como un sprite,
+
+92
+00:08:12,320 --> 00:08:17,040
+porque son fáciles de pintar, fáciles de animar y muy fáciles de estar colisiones.
+
+93
+00:08:17,040 --> 00:08:23,920
+Desde el personaje, el jugador, hasta los enemigos, el suelo y las paredes,
+
+94
+00:08:23,920 --> 00:08:25,920
+son todos sprite en el juego.
+
+95
+00:08:25,920 --> 00:08:33,680
+Todo esto hay que darle un comportamiento físico,
+
+96
+00:08:33,680 --> 00:08:37,680
+por ejemplo hasta el motor de física, que típicamente lo llamaremos en el método Uldate,
+
+97
+00:08:37,680 --> 00:08:44,400
+cuando nos dicen, venga actualiza el estado de tu mundo,
+
+98
+00:08:44,400 --> 00:08:46,400
+ahí utiliza el motor de física.
+
+99
+00:08:46,400 --> 00:08:50,800
+Va a depender muy mucho del juego que estemos haciendo,
+
+100
+00:08:50,800 --> 00:08:56,560
+si de plataforma tendremos una gravedad, si es isométrico tendremos chocar contra las paredes,
+
+101
+00:08:56,560 --> 00:09:00,560
+si es un juego de naves, tendremos unas inercias,
+
+102
+00:09:00,560 --> 00:09:05,120
+y no tendremos la referencia arriba y abajo de la gravedad cayendo,
+
+103
+00:09:05,120 --> 00:09:08,240
+si no es algo más de arriba, depende del juego.
+
+104
+00:09:08,240 --> 00:09:11,760
+Y no es una clase especial que tendramos que dar de ella,
+
+105
+00:09:11,760 --> 00:09:15,120
+ni nada, es una manera lógica de agrupar el código,
+
+106
+00:09:15,120 --> 00:09:19,680
+es que el motor de física lo tengamos ahí, este es el que se encarga de hacer esos cálculos,
+
+107
+00:09:19,680 --> 00:09:21,680
+y lo llamamos específicamente en el Uldate,
+
+108
+00:09:21,680 --> 00:09:27,280
+o sea, ahora cálculame las posiciones de todos los objetos que se muevan,
+
+109
+00:09:27,280 --> 00:09:31,600
+el del jugador va a depender de la entrada del usuario,
+
+110
+00:09:31,600 --> 00:09:34,960
+pero los enemigos van a tener un movimiento autónomo,
+
+111
+00:09:34,960 --> 00:09:38,560
+y si hay una roca que va cayendo,
+
+112
+00:09:38,560 --> 00:09:43,360
+tenemos que ir calculándolo, o freina a freina, o cada vez que nos llamen al Uldate,
+
+113
+00:09:43,360 --> 00:09:45,360
+eso se van a cargar el motor de física.
+
+114
+00:09:45,360 --> 00:09:54,640
+Y no es lo mismo, claro, ese motor de física va a tener todo el listado de los Sprite que tenemos en universo,
+
+115
+00:09:54,640 --> 00:10:00,640
+y va a moderar el comportamiento que se tiene,
+
+116
+00:10:00,640 --> 00:10:05,040
+no es lo mismo si estamos cayendo, no es lo mismo que debemos contra el suelo,
+
+117
+00:10:05,040 --> 00:10:09,360
+que debemos contra una caja, porque la caja a lo mejor se va a desplazar,
+
+118
+00:10:09,360 --> 00:10:14,320
+o si quedamos contra un enemigo, el enemigo nos va a matar o nos va a quitar vida,
+
+119
+00:10:14,320 --> 00:10:21,040
+eso lo hace muy eficientemente con las listas de Sprite que las cargamos,
+
+120
+00:10:21,040 --> 00:10:23,600
+incluso hay muchos, por ejemplo, en el euro un mapa grande,
+
+121
+00:10:23,600 --> 00:10:31,840
+donde vamos a preguntar mucho en cada vez que llamamos el Uldate,
+
+122
+00:10:31,840 --> 00:10:36,720
+por si hay colisiones o no.
+
+123
+00:10:36,720 --> 00:10:42,720
+Tenemos el UseSpotialHash, que lo que hace es optimiza cómo cargan esos Sprite,
+
+124
+00:10:42,720 --> 00:10:46,720
+y hay una exposición entre uno y otro para que la pregunta de hecho que contra esto,
+
+125
+00:10:46,720 --> 00:10:48,720
+había una colisión, sea bastante rápida.
+
+126
+00:10:48,720 --> 00:10:52,720
+Por eso lo hace con una primitiva, CheckForCollisionWithList, que le pasamos,
+
+127
+00:10:52,720 --> 00:10:57,440
+típicamente el Sprite del jugador, y de las paredes, por ejemplo,
+
+128
+00:10:57,440 --> 00:10:59,440
+y nos dice si ha pegado contra un apare o no,
+
+129
+00:10:59,440 --> 00:11:04,320
+también le podemos pasar a los enemigos, y nos dice si ha pegado contra uno,
+
+130
+00:11:04,320 --> 00:11:10,240
+o las cajas, o ha recogido una moneda, y entonces la moneda tiene que desaparecer,
+
+131
+00:11:10,240 --> 00:11:12,800
+y de lógica le implementamos sobre esto.
+
+132
+00:11:12,800 --> 00:11:18,800
+Preguntamos, hecho que contra este elemento, sí, pues tengo que, este comportamiento especial.
+
+133
+00:11:18,800 --> 00:11:24,800
+Sonido, obviamente el sonido, sin sonido, no queda un poco desnudo al asunto,
+
+134
+00:11:24,800 --> 00:11:28,800
+podemos reproducir WAF, MP3 y OJG, estos dos últimos con librerías especiales,
+
+135
+00:11:28,800 --> 00:11:34,800
+el sonido se ejecuta en el momento, decimos Play, y se oye.
+
+136
+00:11:34,800 --> 00:11:40,800
+Entonces, si tenemos que reproducir tres sonidos consecutivamente,
+
+137
+00:11:40,800 --> 00:11:47,840
+tenemos que programarlo en el futuro, porque si los decimos PlaySound, PlaySound o PlaySound,
+
+138
+00:11:47,840 --> 00:11:49,840
+prácticamente se van a escucharlo a la vez.
+
+139
+00:11:49,840 --> 00:11:52,800
+Entonces, tendremos que programarlos para el futuro dentro de 2 milisegundos,
+
+140
+00:11:52,800 --> 00:12:00,800
+dentro de 50 o dentro de lo que sea, para que se escuchen para que no se escuchen uno encima del otro.
+
+141
+00:12:00,800 --> 00:12:05,840
+Eso, obviamente, Arcade tiene el tema del scheduler que te lo hace, tanto de sonido,
+
+142
+00:12:05,840 --> 00:12:11,840
+o de cualquier método que digamos, ejecutate dentro de 50 segundos, o cada 50 segundos,
+
+143
+00:12:11,840 --> 00:12:15,360
+porque tenemos un scheduler avanzado que ejecuté solo una vez,
+
+144
+00:12:15,360 --> 00:12:20,800
+escúchate en un intervalo, pero si estamos ocupados, no me importa que lo haga dentro de 2 milisegundos,
+
+145
+00:12:20,800 --> 00:12:23,360
+eso es el soft.
+
+146
+00:12:23,360 --> 00:12:28,960
+Obviamente, estamos hablando de Sprite, de mapas, de sonido y demás,
+
+147
+00:12:28,960 --> 00:12:36,000
+para todo eso vamos a necesitar enlaces Asset Externo, tanto gráficos de sonido,
+
+148
+00:12:36,000 --> 00:12:42,000
+y además, en mi caso, utilicé los de Kini, que es una página que tiene tanto de pago como gratuito,
+
+149
+00:12:42,000 --> 00:12:52,000
+y con muy buena calidad, y el editor de mapa MapEditor, que utilizando esos Asset Gráficos,
+
+150
+00:12:52,000 --> 00:12:58,000
+los podemos organizar y montar un mapa, si necesidades están eso codificados en el programa,
+
+151
+00:12:58,000 --> 00:13:02,000
+si necesidades lo cargamos como algo externo, y trabajamos sobre él.
+
+152
+00:13:02,000 --> 00:13:08,000
+Y la música para este juego, que hice, me ayudó el compañero Juan Carlos Moya,
+
+153
+00:13:08,000 --> 00:13:12,000
+que es un pedazo de artista tremendo, y se improvisó allí un tema,
+
+154
+00:13:12,000 --> 00:13:16,000
+a mí y a todos los que estábamos en la ya.
+
+155
+00:13:20,000 --> 00:13:26,000
+Muy rápidamente, el tema del editor, el map editor, podemos definir,
+
+156
+00:13:26,000 --> 00:13:34,000
+en este caso lo definió isométrico, pero podemos hacerlo en plano, sin esta vista isométrica,
+
+157
+00:13:34,000 --> 00:13:40,000
+y lo bueno que tiene que poder definirlos por diferentes capas.
+
+158
+00:13:40,000 --> 00:13:46,000
+Así podemos separar, a la hora de leerlo, podemos tener separados lo que es el suelo,
+
+159
+00:13:46,000 --> 00:13:50,000
+que realmente no nos va a afectar, no sé qué habrá zona donde podamos pasar o no,
+
+160
+00:13:50,000 --> 00:13:54,000
+podemos decidirlo desde estarlo de alguna manera distinta, porque está en capas distintas,
+
+161
+00:13:54,000 --> 00:14:02,000
+o los muebles, que realmente no nos va a afectar mucho, lo que están de manera decorativa,
+
+162
+00:14:02,000 --> 00:14:08,000
+y las paredes, aquí, perdón, las paredes, eso sí, tenemos que detectar,
+
+163
+00:14:08,000 --> 00:14:12,000
+si es descolicionado con un apareo, o no, entonces a nivel de programación,
+
+164
+00:14:12,000 --> 00:14:18,000
+el sprite, que sea la pared con un agujero o sin agujero, como ha desrugido o no,
+
+165
+00:14:18,000 --> 00:14:20,000
+no nos va a afectar.
+
+166
+00:14:20,000 --> 00:14:26,000
+Los gráficos se definen aquí, y simplemente no interesa saber si está en la capa de walls,
+
+167
+00:14:26,000 --> 00:14:34,000
+o no, estos nombres son los que yo he puesto, que después en el código hago referencias a él,
+
+168
+00:14:34,000 --> 00:14:40,000
+entonces puedo definir diferentes mapas, sin necesidad de tenerlo de todo eso codificado.
+
+169
+00:14:40,000 --> 00:14:50,000
+Y aquí tenemos el juego funcionando, en un primer momento cargamos el view mode del menú,
+
+170
+00:14:50,000 --> 00:14:57,000
+y cuando pulsamos estar, se comienza a cargar el juego.
+
+171
+00:14:57,000 --> 00:15:08,000
+Tenemos la música sonando de fondo, los enemigos moviéndose por su cuenta,
+
+172
+00:15:08,000 --> 00:15:15,000
+y en el modo de juego este que se definió en el momento por la yam, que era reparar,
+
+173
+00:15:15,000 --> 00:15:22,000
+no se no puede movernos sobre el suelo que está roto, tenemos que repararlo.
+
+174
+00:15:22,000 --> 00:15:30,000
+Y básicamente tienes que oír de los enemigos, que te ven cuando cambian de dirección aleatoriamente,
+
+175
+00:15:30,000 --> 00:15:41,000
+o casi aleatoriamente, y tienes que ir, encontrar el camino por la manmorra, y llegar al final.
+
+176
+00:15:41,000 --> 00:15:47,000
+A ver si por aquí tengo algún encuentro, algún enemigo,
+
+177
+00:15:47,000 --> 00:15:54,000
+creo que había unos rápidos al final, que eran unos robots, que son más rapidillos,
+
+178
+00:15:54,000 --> 00:15:59,000
+que son ahí más histéricos, y básicamente ese es el juego,
+
+179
+00:15:59,000 --> 00:16:05,000
+si llegas al final pues gana, y si te pillas los malos, pues has perdido.
+
+180
+00:16:09,000 --> 00:16:15,000
+Y básicamente con el tiempo que tenemos nada más, muchas gracias,
+
+181
+00:16:15,000 --> 00:16:17,000
+y espero vuestra pregunta.
+

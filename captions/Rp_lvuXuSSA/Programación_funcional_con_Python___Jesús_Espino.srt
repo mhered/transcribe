@@ -1,0 +1,2552 @@
+1
+00:00:00,000 --> 00:00:05,640
+en las chicas que están haciendo cosas muy interesantes de temas de chicas en Python.
+
+2
+00:00:05,640 --> 00:00:14,520
+¿Quién de aquí ha programado algún lenguaje funcional?
+
+3
+00:00:14,520 --> 00:00:16,000
+Haskell, Erlang, Clojure.
+
+4
+00:00:16,000 --> 00:00:19,320
+Vale, bien, me gusta.
+
+5
+00:00:19,320 --> 00:00:21,320
+Pero que no son pocos.
+
+6
+00:00:21,320 --> 00:00:24,800
+No está mal.
+
+7
+00:00:24,800 --> 00:00:30,480
+¿Qué significa para mí la programación funcional?
+
+8
+00:00:30,480 --> 00:00:32,680
+Básicamente es programar con funciones.
+
+9
+00:00:32,680 --> 00:00:34,680
+Ojo, funciones matemáticas.
+
+10
+00:00:34,680 --> 00:00:37,760
+Estamos hablando de funciones que si yo le paso los mismos parámetros me van a devolver
+
+11
+00:00:37,760 --> 00:00:39,080
+el mismo resultado.
+
+12
+00:00:39,080 --> 00:00:44,000
+Suena evidente, pero en la mayor parte de la programación procedura al orientado de
+
+13
+00:00:44,000 --> 00:00:45,520
+objetos actualmente no es así.
+
+14
+00:00:45,520 --> 00:00:50,960
+Yo le paso unos datos y ya, bueno, si hay una variable global ahí que me viene cómoda,
+
+15
+00:00:50,960 --> 00:00:53,800
+pues yo la uso y no pasa nada.
+
+16
+00:00:53,800 --> 00:00:58,600
+Un método, pues tengo mis objetos, un objeto un poquito de estado.
+
+17
+00:00:58,600 --> 00:01:01,000
+Ya ahí yo voy haciendo mis cositas.
+
+18
+00:01:01,000 --> 00:01:06,600
+Entonces yo llamo una función, le paso unos parámetros y espero a ver qué sale de ahí.
+
+19
+00:01:06,600 --> 00:01:09,040
+Vale, eso no es programación funcional.
+
+20
+00:01:09,040 --> 00:01:11,240
+Eso es lo contrario a la programación funcional.
+
+21
+00:01:11,240 --> 00:01:14,360
+Vale, la idea de la programación funcional es funciones puras, ¿vale?
+
+22
+00:01:14,360 --> 00:01:19,000
+Mismas entradas, para las mismas entradas, siempre las mismas salidas.
+
+23
+00:01:19,000 --> 00:01:24,280
+Se basa mucho en el concepto de inmutabilidad, de estructuras de datos inmutables o variables
+
+24
+00:01:24,280 --> 00:01:25,280
+inmutables...
+
+25
+00:01:25,280 --> 00:01:30,720
+Variables, variables inmutables, ¿vale?
+
+26
+00:01:30,720 --> 00:01:34,040
+Datos inmutables, ¿vale?
+
+27
+00:01:34,040 --> 00:01:36,240
+Y en la ausencia de estado, ¿vale?
+
+28
+00:01:36,240 --> 00:01:37,680
+Estamos hablando a nivel de funciones.
+
+29
+00:01:37,680 --> 00:01:41,560
+Yo tengo un estado interno de la función, pero no trabajo con un estado externo de la
+
+30
+00:01:41,560 --> 00:01:42,560
+función, ¿vale?
+
+31
+00:01:42,560 --> 00:01:43,560
+Y no tengo efectos laterales.
+
+32
+00:01:43,560 --> 00:01:45,440
+¿Qué son efectos laterales?
+
+33
+00:01:45,440 --> 00:01:49,480
+Por ejemplo, se tear una variable dentro de una función en una variable global, eso es
+
+34
+00:01:49,480 --> 00:01:51,360
+que mi función está teniendo un efecto lateral.
+
+35
+00:01:51,360 --> 00:01:56,080
+Yo hago algo con mi función y pasan cosas que no tienen nada que ver con lo que debería
+
+36
+00:01:56,080 --> 00:01:57,080
+ser mi función.
+
+37
+00:01:57,080 --> 00:02:02,720
+O por ejemplo, otra cosa que podrían dudar si es un efecto lateral, imprimir por pantalla.
+
+38
+00:02:02,720 --> 00:02:04,720
+Imprimir por pantalla es claramente un efecto lateral.
+
+39
+00:02:04,720 --> 00:02:05,720
+¿Vale?
+
+40
+00:02:05,720 --> 00:02:09,960
+Es un caso en lo que yo...
+
+41
+00:02:09,960 --> 00:02:14,720
+Está haciendo mi función cosas que no tiene por qué hacer en principio.
+
+42
+00:02:14,720 --> 00:02:18,480
+Si yo quiero imprimir por pantalla, tendré que hacerlo en otro sitio controlado donde
+
+43
+00:02:18,480 --> 00:02:22,840
+yo tenga claro que estoy imprimiendo por pantalla o que estoy teniendo efectos laterales.
+
+44
+00:02:22,840 --> 00:02:23,840
+¿Vale?
+
+45
+00:02:23,840 --> 00:02:29,120
+No significa que no pueda tener efectos laterales en la programación funcional.
+
+46
+00:02:29,120 --> 00:02:34,040
+Evidentemente, los efectos laterales existen en la programación funcional, pero están
+
+47
+00:02:34,040 --> 00:02:35,600
+controlados y acotados, ¿vale?
+
+48
+00:02:35,600 --> 00:02:41,600
+Se hacen en zonas donde sabemos que tienen esos efectos y lo podemos controlar y lo podemos
+
+49
+00:02:41,600 --> 00:02:42,600
+dominar.
+
+50
+00:02:42,600 --> 00:02:45,600
+Y el efecto lateral del nuestro código es puramente funcional.
+
+51
+00:02:45,600 --> 00:02:47,600
+Esa es la idea.
+
+52
+00:02:47,600 --> 00:02:48,600
+¿Vale?
+
+53
+00:02:48,600 --> 00:02:50,600
+¿Por qué programación funcional?
+
+54
+00:02:50,600 --> 00:02:54,600
+O sea, bueno, si yo con la deorientación a objetos o con la procedural estoy más que
+
+55
+00:02:54,600 --> 00:02:59,840
+cómodo, yo aquí hago mis prins, hago mis cosas, hago mis llamadas al ORM, empiezo a sacar
+
+56
+00:02:59,840 --> 00:03:04,560
+datos, imprimo, acuerdo, aquí mismo me resulta cómodo.
+
+57
+00:03:04,560 --> 00:03:05,560
+Perfecto.
+
+58
+00:03:05,560 --> 00:03:06,560
+Eso tiene una serie de problemas.
+
+59
+00:03:06,560 --> 00:03:13,040
+Uno, es muchísimo más difícil de debuguear un software que está hecho de manera procedural
+
+60
+00:03:13,040 --> 00:03:15,400
+o de manera orientada a objetos porque tiene efectos laterales.
+
+61
+00:03:15,400 --> 00:03:20,320
+Si yo sumo uno más uno y a la vez de sumar uno más uno y devolverme dos, me está metiendo
+
+62
+00:03:20,320 --> 00:03:22,400
+un registro en la base de datos, eso es inmanejable.
+
+63
+00:03:22,400 --> 00:03:23,600
+¿Vale?
+
+64
+00:03:23,600 --> 00:03:29,000
+Ehh… facilita muchísimo el testing.
+
+65
+00:03:29,000 --> 00:03:33,280
+Por eso mismo, es decir, para las mismas entradas, tengo siempre las mismas salidas, puedo hacer
+
+66
+00:03:33,280 --> 00:03:34,400
+testing mucho más fácil.
+
+67
+00:03:34,400 --> 00:03:36,360
+Incluso puedo hacer testing automático.
+
+68
+00:03:36,360 --> 00:03:41,320
+En lenguajes como Haskell o Clojure, tienen una cosa que se llama QuickCheck, en Python
+
+69
+00:03:41,320 --> 00:03:44,960
+hay una implementación también, una biblioteca QuickCheck, lo que hace es decirle, oye, como
+
+70
+00:03:44,960 --> 00:03:50,720
+esto tiene unos variables de entrada, unos valores de entrada, pues prueba con tropecientos
+
+71
+00:03:50,720 --> 00:03:53,360
+valores generados y vamos a ver si falla.
+
+72
+00:03:53,360 --> 00:03:58,360
+Pues eso con programación funcional es más fácil de hacer.
+
+73
+00:03:58,360 --> 00:03:59,360
+La reusabilidad.
+
+74
+00:03:59,360 --> 00:04:00,360
+¿Vale?
+
+75
+00:04:00,360 --> 00:04:03,600
+Todo esto que nos promete la programación orientada a objetos, claro, porque un objeto
+
+76
+00:04:03,600 --> 00:04:10,280
+es una clase que tiene un comportamiento que es como muy claro todo, muy desacoplado y
+
+77
+00:04:10,280 --> 00:04:14,520
+demás, al final resulta que te hace unas megaclases que te cagas que no vas a reutilizar
+
+78
+00:04:14,520 --> 00:04:15,520
+en la vida.
+
+79
+00:04:15,520 --> 00:04:16,520
+¿Vale?
+
+80
+00:04:16,520 --> 00:04:20,160
+En cambio, en la programación funcional se tiende a funciones muy pequeñas y a la combinación
+
+81
+00:04:20,160 --> 00:04:21,160
+de esas funciones.
+
+82
+00:04:21,160 --> 00:04:28,840
+Entonces, es mucho más fácil reutilizar esas funciones, es muy muy habitual que funciones
+
+83
+00:04:28,840 --> 00:04:33,480
+muy pequeñitas tengan, hagan cosas muy concretas y entonces sea muy fácil coger.
+
+84
+00:04:33,480 --> 00:04:39,480
+Bueno, pues la función que use aquí para esto me vale en otro lado para lo mismo.
+
+85
+00:04:39,480 --> 00:04:45,360
+El estado va a estar muy controlado y eso también ayuda mucho, bueno, para el test
+
+86
+00:04:45,360 --> 00:04:46,360
+y para todo.
+
+87
+00:04:46,360 --> 00:04:50,280
+Bueno, las típicas estrategias de programación funcional.
+
+88
+00:04:50,280 --> 00:04:53,720
+Cómo suelen resolverse las programaciones funcionales en programación funcional, los
+
+89
+00:04:53,720 --> 00:04:54,720
+problemas.
+
+90
+00:04:54,720 --> 00:04:55,720
+¿Vale?
+
+91
+00:04:55,720 --> 00:04:57,520
+Combinación y composición de pequeñas funciones, ¿vale?
+
+92
+00:04:57,520 --> 00:05:01,720
+Hago unas funciones pequeñitas que van haciendo cada uno de los trocitos de mi problema
+
+93
+00:05:01,720 --> 00:05:07,120
+y luego las combino y voy haciendo combinación de funciones que no es tan simple como yo
+
+94
+00:05:07,120 --> 00:05:08,120
+bueno, pues uso las dos.
+
+95
+00:05:08,120 --> 00:05:15,080
+No es solo usar las dos, es más algo del lenguaje que te permite, pues eso, componer
+
+96
+00:05:15,080 --> 00:05:19,400
+funciones que una se ejecuta después de otra, una se ejecuta con el resultado de otra y
+
+97
+00:05:19,400 --> 00:05:23,000
+te genera una función que hace eso.
+
+98
+00:05:23,000 --> 00:05:25,960
+Luego veremos ejemplos más claros.
+
+99
+00:05:25,960 --> 00:05:30,560
+Luego, otra de las cosas muy típicas de la programación funcional es que yo tengo una
+
+100
+00:05:30,560 --> 00:05:35,280
+serie de datos y una serie de funciones y las funciones transforman estos datos y al
+
+101
+00:05:35,280 --> 00:05:38,840
+final lo que tengo de resultado son los datos transformados.
+
+102
+00:05:38,840 --> 00:05:41,080
+Eso es lo que realmente hacen los ordenadores.
+
+103
+00:05:41,080 --> 00:05:45,240
+Al final cogen unos datos, los pasan por una serie de transformaciones y te devuelven otros
+
+104
+00:05:45,240 --> 00:05:46,240
+datos.
+
+105
+00:05:46,240 --> 00:05:49,760
+Y es una de las estrategias típicas de la programación funcional.
+
+106
+00:05:49,760 --> 00:05:53,000
+En la programación orientada de objetos, lo que cogemos es unos datos y unas operaciones
+
+107
+00:05:53,000 --> 00:05:56,720
+todos juntitos y empezamos a enmarañarlo todo.
+
+108
+00:05:56,720 --> 00:06:01,360
+La programación funcional está superdividido los datos de las transformaciones.
+
+109
+00:06:01,360 --> 00:06:02,360
+Estamos de las funciones.
+
+110
+00:06:02,360 --> 00:06:10,040
+Bueno, aplicación de funciones de transformaciones mediante funciones de orden superior.
+
+111
+00:06:10,040 --> 00:06:11,760
+Es decir, funciones que reciben funciones.
+
+112
+00:06:11,760 --> 00:06:15,960
+Es supertípico en programación funcional, es muy natural usarlo.
+
+113
+00:06:15,960 --> 00:06:22,800
+El uso de funciones inline o funciones lambda, el acotado de efectos laterales en zonas concretas
+
+114
+00:06:22,800 --> 00:06:28,080
+y la tendencia al uso de funciones puras, es decir, se atienda a usar casi todo el código,
+
+115
+00:06:28,080 --> 00:06:31,840
+está hecho con funciones puras y los efectos laterales, pues eso, están muy acotados en
+
+116
+00:06:31,840 --> 00:06:37,440
+zonas muy concretas donde yo realmente hago interacción con otro sistema o con la base
+
+117
+00:06:37,440 --> 00:06:40,360
+de datos o escritura a disco o impresión por pantalla.
+
+118
+00:06:40,360 --> 00:06:41,720
+Todo eso está como mucho más acotado.
+
+119
+00:06:41,720 --> 00:06:46,600
+¿Qué necesito para poder programar funcional?
+
+120
+00:06:46,600 --> 00:06:51,840
+Si yo tengo mi lenguaje de programación y quiero programar con programación funcional,
+
+121
+00:06:51,840 --> 00:06:57,400
+yo necesito una cosa, que mis funciones sean ciudadanos de primera.
+
+122
+00:06:57,400 --> 00:06:59,080
+¿Qué significa ser ciudadanos de primera?
+
+123
+00:06:59,080 --> 00:07:03,240
+Significa que tiene que ser un objeto más y que yo puedo pasar las funciones como parámetros
+
+124
+00:07:03,240 --> 00:07:06,200
+y que puedo asignar una función o una variable.
+
+125
+00:07:06,200 --> 00:07:09,560
+Eso en Python se puede hacer, como sabemos, y hay muchísimos lenguajes que los permiten,
+
+126
+00:07:09,560 --> 00:07:15,920
+casi todos los lenguajes dinámicos permiten esas funciones como ciudadanos de primera.
+
+127
+00:07:15,920 --> 00:07:21,600
+¿Python es un lenguaje funcional?
+
+128
+00:07:21,600 --> 00:07:22,600
+No, no lo es.
+
+129
+00:07:22,600 --> 00:07:24,480
+No les voy a engañar.
+
+130
+00:07:24,480 --> 00:07:25,720
+Python es un lenguaje funcional.
+
+131
+00:07:25,720 --> 00:07:29,920
+Python es un lenguaje multiparadigma que tiene ciertas características de programación
+
+132
+00:07:29,920 --> 00:07:34,400
+funcional, que podemos aprovechar para hacer un código mejor y un código más paralelizable
+
+133
+00:07:34,400 --> 00:07:38,920
+y un código más testiable y un código más robusto.
+
+134
+00:07:38,920 --> 00:07:44,520
+Pero no es un lenguaje de programación funcional porque probablemente le faltan muchísimas
+
+135
+00:07:44,520 --> 00:07:50,320
+de las características que puede tener Clojure o Haskell, por ejemplo.
+
+136
+00:07:50,320 --> 00:07:54,200
+No digo, permita hacer programación funcional pero carece de las características avanzadas
+
+137
+00:07:54,200 --> 00:07:55,200
+de los lenguajes funcionales.
+
+138
+00:07:55,200 --> 00:07:57,560
+¿Qué nos dan los lenguajes funcionales?
+
+139
+00:07:57,560 --> 00:08:03,560
+En principio, estructuras inmutables eficiente, estructuras donde yo si cambio una estructura
+
+140
+00:08:03,560 --> 00:08:08,440
+y no estoy cambiando los datos, estoy generando una estructura nueva, por así decirlo, una
+
+141
+00:08:08,440 --> 00:08:10,880
+copia de la estructura antigua con el dato cambiado.
+
+142
+00:08:10,880 --> 00:08:20,240
+En realidad no se hace una copia, se hace estructuras compartidas de datos.
+
+143
+00:08:20,240 --> 00:08:22,960
+Estructuras sharing, si no me equivoco, algo así.
+
+144
+00:08:22,960 --> 00:08:23,960
+Vale.
+
+145
+00:08:23,960 --> 00:08:27,120
+Luego, funciones de orden superior, funciones que reciben otras funciones.
+
+146
+00:08:27,120 --> 00:08:30,800
+El map, el reduce, filter, lo sonarán.
+
+147
+00:08:30,800 --> 00:08:33,960
+Pattern matching es algo muy típico de los lenguajes de programación funcional.
+
+148
+00:08:33,960 --> 00:08:38,520
+Es muy cómodo, no lo voy a explicar, pero es muy cómodo para programar en Haskell,
+
+149
+00:08:38,520 --> 00:08:42,200
+es una pasada, en Erlang es brutal también.
+
+150
+00:08:42,200 --> 00:08:47,880
+TCO, Tail Call Optimization, esto es cuando en programación funcional la recursión es
+
+151
+00:08:47,880 --> 00:08:50,440
+algo súper habitual.
+
+152
+00:08:50,440 --> 00:09:00,000
+Entonces, el TCO lo que significa es que cuando yo llamo una función recursiva, la
+
+153
+00:09:00,000 --> 00:09:06,080
+llamada en la cola, la llamada del, si lo último que llamo en la función es la misma
+
+154
+00:09:06,080 --> 00:09:10,280
+función, es la llamada recursiva, es capaz de desenvolver el bucle y hacerlo como si
+
+155
+00:09:10,280 --> 00:09:15,440
+fuera un bucle, desenvolverla en la recursión y hacerlo como si fuera un bucle.
+
+156
+00:09:15,440 --> 00:09:22,000
+Entonces, lo que hace, nos ahorra espacio de pila, nos ahorra muchísimo tiempo, permite
+
+157
+00:09:22,000 --> 00:09:24,040
+hacer recursión de manera realista.
+
+158
+00:09:24,040 --> 00:09:29,560
+Podría hacer el factorial de un millón y no habría ningún problema.
+
+159
+00:09:29,560 --> 00:09:32,560
+En cambio, con Python hacer el factorial de un millón, igual si que le cuesta un poco
+
+160
+00:09:32,560 --> 00:09:33,560
+más.
+
+161
+00:09:33,560 --> 00:09:40,680
+Control de efectos laterales en Haskell, en Clojure, están muy acotados los efectos
+
+162
+00:09:40,680 --> 00:09:41,680
+laterales.
+
+163
+00:09:41,680 --> 00:09:45,360
+En Python no tenemos esta ventaja, por ejemplo.
+
+164
+00:09:45,360 --> 00:09:50,520
+Es lambda, evaluación perezosas y composición de funciones.
+
+165
+00:09:50,520 --> 00:09:57,560
+Evaluación perezosas, la de Python, por ejemplo, está bien, no está mal, pero si la comparamos
+
+166
+00:09:57,560 --> 00:10:00,880
+con la de Haskell es de juguete, ¿vale?
+
+167
+00:10:00,880 --> 00:10:05,760
+Composición de funciones, muy típico para combinar funciones, currificación, también
+
+168
+00:10:05,760 --> 00:10:08,960
+hay una serie de conceptos muy típicos de leconos de funcionales.
+
+169
+00:10:08,960 --> 00:10:09,960
+¿Qué nos da Python?
+
+170
+00:10:09,960 --> 00:10:13,960
+Pues, pues, entonces, uno que nos da básicamente, a grandes rasgos, es esto.
+
+171
+00:10:13,960 --> 00:10:17,400
+Función perezosas limitada, realmente lo que tenemos son estructuras perezosas, como
+
+172
+00:10:17,400 --> 00:10:22,280
+pueden ser iteradores y secuencias, iteradores y generadores, perdón.
+
+173
+00:10:22,280 --> 00:10:27,680
+Y aplicación parcial de funciones, que tenemos en Functools la función partial que nos permite
+
+174
+00:10:27,680 --> 00:10:29,560
+hacer una aplicación parcial.
+
+175
+00:10:29,560 --> 00:10:34,320
+Una aplicación parcial es pasarle ciertos parámetros a la función, que no sean todos
+
+176
+00:10:34,320 --> 00:10:37,960
+los parámetros de la función, le paso los dos primeros parámetros y me devuelve una
+
+177
+00:10:37,960 --> 00:10:39,960
+función que recibe el resto de los parámetros.
+
+178
+00:10:39,960 --> 00:10:44,360
+Entonces, me permite generar funciones, por ejemplo, si yo tengo una función suma que
+
+179
+00:10:44,360 --> 00:10:49,520
+coge dos parámetros, yo le puedo fijar el primer parámetro a 2 y eso guardarlo en la
+
+180
+00:10:49,520 --> 00:10:51,880
+función suma 2, ¿vale?
+
+181
+00:10:51,880 --> 00:10:53,840
+Cosas así, o multiplicar por 2, duplicar.
+
+182
+00:10:53,840 --> 00:10:58,640
+Y nos da funciones de orden superior.
+
+183
+00:10:58,640 --> 00:11:00,280
+Bueno, hay funciones lambda.
+
+184
+00:11:00,280 --> 00:11:04,800
+Las funciones lambda de Python son muy limitadas, ¿vale?
+
+185
+00:11:04,800 --> 00:11:09,880
+Son, no, son, las funciones en Python son ciudadanos de primera, las funciones lambda son ciudadanos
+
+186
+00:11:09,880 --> 00:11:11,360
+de segunda, claramente, ¿vale?
+
+187
+00:11:11,360 --> 00:11:16,280
+Es decir, aunque son objetos que puedes usar y todo eso, no son nada potentes.
+
+188
+00:11:16,280 --> 00:11:17,280
+¿Vale?
+
+189
+00:11:17,280 --> 00:11:19,120
+Pero bueno, tampoco es dramático.
+
+190
+00:11:19,120 --> 00:11:22,120
+¿Qué me da fnpy?
+
+191
+00:11:22,120 --> 00:11:27,040
+Voy a hablar también de fnpy, que es una biblioteca para hacer ciertas cosas, nos da
+
+192
+00:11:27,040 --> 00:11:33,760
+ciertas cosas que donde Python no llega, fnpy nos da un poquito más, ¿vale?
+
+193
+00:11:33,760 --> 00:11:40,600
+Fnpy tiene estructuras de datos inmutable, están en desarrollo todavía, aunque la verdad
+
+194
+00:11:40,600 --> 00:11:43,640
+que está relativamente parado el desarrollo de fnpy.
+
+195
+00:11:43,640 --> 00:11:46,680
+El tail call optimization, ¿vale?
+
+196
+00:11:46,680 --> 00:11:50,080
+Usando trampoline, luego lo veremos como se hace.
+
+197
+00:11:50,080 --> 00:11:55,640
+Y aplicación parcial y currificación de funciones, que luego veremos que también
+
+198
+00:11:55,640 --> 00:12:02,280
+la aplicación parcial de funciones con fnpy y la currificación es muy cómoda.
+
+199
+00:12:02,280 --> 00:12:06,680
+Composición de funciones, que también veremos que es mucho más expresiva que la composición,
+
+200
+00:12:06,680 --> 00:12:11,240
+bueno, sí, composición de funciones, que es mucho, bueno, que se puede componer funciones
+
+201
+00:12:11,240 --> 00:12:13,680
+en Python directamente, pero es mucho más lío.
+
+202
+00:12:13,680 --> 00:12:17,400
+Y esto, aparte de ser más fácil, es mucho más expresivo.
+
+203
+00:12:17,400 --> 00:12:19,600
+Y funciones lambda al estilo escala, ¿vale?
+
+204
+00:12:19,600 --> 00:12:21,560
+Luego veremos qué es al estilo escala.
+
+205
+00:12:21,560 --> 00:12:25,920
+Vale, funcional versus imperativo.
+
+206
+00:12:25,920 --> 00:12:26,920
+Vamos a ver.
+
+207
+00:12:26,920 --> 00:12:33,160
+Imperativo, por ejemplo, voy guardando variables, hago una suma, guardo el valor, hago otra
+
+208
+00:12:33,160 --> 00:12:38,120
+suma, guardo el valor, hago el producto del primer valor, bueno, el segundo valor, por
+
+209
+00:12:38,120 --> 00:12:40,640
+tal, y lo imprimo por pantalla, ¿vale?
+
+210
+00:12:40,640 --> 00:12:42,440
+En funcional sería algo así, ¿vale?
+
+211
+00:12:42,440 --> 00:12:48,080
+Yo cojo la primer sumo y lo voy devolviendo el resultado a otras funciones y no más
+
+212
+00:12:48,080 --> 00:12:56,800
+hace falta tener ningún estado en principio, ¿vale?
+
+213
+00:12:56,800 --> 00:12:58,560
+Esto es un poco horroroso, ¿vale?
+
+214
+00:12:58,560 --> 00:13:01,040
+Hay otras formas de hacerlo, ¿vale?
+
+215
+00:13:01,040 --> 00:13:04,680
+Con FNPy puedo usar composición y aplicación parcial, ¿vale?
+
+216
+00:13:04,680 --> 00:13:07,360
+Este es ejemplo, ahora mismo no tienen que entenderlo, porque luego vamos a verlo un
+
+217
+00:13:07,360 --> 00:13:13,000
+poco más en profundidad, pero bueno, voy haciendo aplicaciones parciales y voy diciendo,
+
+218
+00:13:13,000 --> 00:13:18,280
+primero suma uno más dos, luego al resultado le sumas tres y al resultado lo multiplicas
+
+219
+00:13:18,280 --> 00:13:22,880
+por cuatro y luego el resultado de eso lo mandas imprimir y eso me devuelve una función
+
+220
+00:13:22,880 --> 00:13:24,880
+que ejecuto, ¿vale?
+
+221
+00:13:24,880 --> 00:13:27,600
+Es mucho más expresivo.
+
+222
+00:13:27,600 --> 00:13:31,520
+Luego con currificación se podría hacer así, pero queda también un poco raro, ¿vale?
+
+223
+00:13:31,520 --> 00:13:35,680
+Tampoco la currificación es muy útil para otros casos, probablemente.
+
+224
+00:13:35,680 --> 00:13:40,440
+Luego veremos más en profundidad qué es la currificación y cómo se usa en Python.
+
+225
+00:13:40,440 --> 00:13:43,400
+¿Vale? Python funcional.
+
+226
+00:13:43,400 --> 00:13:45,640
+Evaluación perezosas.
+
+227
+00:13:45,640 --> 00:13:49,480
+La evaluación perezosas que nos da Python en principio son estructuras perezosas como
+
+228
+00:13:49,480 --> 00:13:51,880
+pueden ser iteradores y generadores.
+
+229
+00:13:51,880 --> 00:13:56,200
+Una estructura perezosas simplemente es una estructura que hasta que yo no le pido un valor,
+
+230
+00:13:56,200 --> 00:14:00,440
+él no hace el cálculo o no extrae ese valor.
+
+231
+00:14:00,440 --> 00:14:01,440
+¿Vale?
+
+232
+00:14:01,440 --> 00:14:06,800
+Por ejemplo, si yo hago un map, todos mis ejemplos van con Python 3, ¿vale?
+
+233
+00:14:06,800 --> 00:14:13,120
+Si yo hago un map de print de 1, 2, 3, ¿vale?
+
+234
+00:14:13,120 --> 00:14:16,600
+Lo que me va a devolver, en realidad print me va a devolver un noun, pero va a tener un
+
+235
+00:14:16,600 --> 00:14:19,520
+efecto lateral de imprimir por pantalla.
+
+236
+00:14:19,520 --> 00:14:25,680
+Yo si hago un next del resultado de eso, de ese iterador que me ha devuelto, me imprime
+
+237
+00:14:25,680 --> 00:14:28,440
+por pantalla un 1.
+
+238
+00:14:28,440 --> 00:14:34,360
+Si hago una lista de todo, lo que hago es coger, decir, bueno, evalúamelo entero y conviértemelo
+
+239
+00:14:34,360 --> 00:14:37,600
+en una lista de los resultados, me da noun noun noun, ¿vale?
+
+240
+00:14:37,600 --> 00:14:42,080
+Porque lo que ha hecho es el print me devuelve 3 noun y me ha hecho el 1, 2, 3, ¿vale?
+
+241
+00:14:42,080 --> 00:14:44,880
+Sólo se ha evaluado si yo lo recorro.
+
+242
+00:14:44,880 --> 00:14:46,800
+Si no lo recorro, no se evalúa.
+
+243
+00:14:46,800 --> 00:14:47,800
+¿Para qué sirve esto?
+
+244
+00:14:47,800 --> 00:14:50,080
+Entre otras cosas para poder tener listas infinitas.
+
+245
+00:14:50,080 --> 00:14:51,080
+¿Vale?
+
+246
+00:14:51,080 --> 00:14:53,080
+Luego tengo un ejemplo aquí.
+
+247
+00:14:53,080 --> 00:15:06,920
+Un generador es otra forma de generar una especie de iteradores perezosos.
+
+248
+00:15:06,920 --> 00:15:12,480
+Entonces, en este, por ejemplo, lo que tengo es un generador que me devuelve todos los
+
+249
+00:15:12,480 --> 00:15:13,720
+números del 0 al infinito.
+
+250
+00:15:13,720 --> 00:15:17,840
+Claro, del 0 al infinito, yo eso no lo puedo evaluar.
+
+251
+00:15:17,840 --> 00:15:20,200
+Yo no le podría pasar un list a esto porque petaría.
+
+252
+00:15:20,200 --> 00:15:21,200
+¿Vale?
+
+253
+00:15:21,200 --> 00:15:26,080
+Petaría, bueno, no entraría un bucle infinito, ¿vale?
+
+254
+00:15:26,080 --> 00:15:31,800
+Bueno, Intertools, además, me da ciertas operaciones para trabajar con iteradores.
+
+255
+00:15:31,800 --> 00:15:34,320
+Por ejemplo, lo puedo decir que me haga un take while, ¿vale?
+
+256
+00:15:34,320 --> 00:15:38,360
+Un take while y con prueba que sea menor que 10.
+
+257
+00:15:38,360 --> 00:15:41,600
+Cojo los números y me dice, bueno, pues cojo los 10 primero.
+
+258
+00:15:41,600 --> 00:15:44,080
+Bueno, me cojo todos aquellos que sea menor que 10.
+
+259
+00:15:44,080 --> 00:15:45,880
+Me da del 0 al 9.
+
+260
+00:15:45,880 --> 00:15:48,880
+Si le vuelvo a pedir y ahora le pido menores que 12, me da el 11.
+
+261
+00:15:48,880 --> 00:15:49,880
+Se ha saltado el 10.
+
+262
+00:15:49,880 --> 00:15:51,080
+En realidad no se lo ha saltado.
+
+263
+00:15:51,080 --> 00:15:55,960
+Se lo ha pedido al generador, ha hecho el matching de menor que 10 y lo ha descartado.
+
+264
+00:15:55,960 --> 00:16:02,320
+Entonces, cuando llegó en la siguiente línea, parto de donde estaba.
+
+265
+00:16:02,320 --> 00:16:03,320
+¿Vale?
+
+266
+00:16:03,320 --> 00:16:07,480
+Entonces, el 10 ya no está por ahí.
+
+267
+00:16:07,480 --> 00:16:09,520
+¿Vale?
+
+268
+00:16:09,520 --> 00:16:10,520
+La aplicación parcial.
+
+269
+00:16:10,520 --> 00:16:11,520
+Voy muy rápido.
+
+270
+00:16:11,520 --> 00:16:12,520
+¿Cuánto llevo?
+
+271
+00:16:12,520 --> 00:16:13,520
+Joder.
+
+272
+00:16:13,520 --> 00:16:18,680
+Bueno, no voy tan rápido, ¿no?
+
+273
+00:16:18,680 --> 00:16:22,680
+O sí, no lo sé, pero bueno.
+
+274
+00:16:22,680 --> 00:16:25,240
+Aplicación parcial, ¿vale?
+
+275
+00:16:25,240 --> 00:16:31,840
+La aplicación parcial de funciones consiste en, como dije antes, a un método, una función,
+
+276
+00:16:31,840 --> 00:16:37,160
+le pasan unos parámetros y esos parámetros quedan fijados y me devuelvo una función
+
+277
+00:16:37,160 --> 00:16:38,880
+donde yo le paso el resto.
+
+278
+00:16:38,880 --> 00:16:45,960
+Por ejemplo, el operador más que recibe dos parámetros, se pueden importar los operadores
+
+279
+00:16:45,960 --> 00:16:51,680
+de Python, el más, el producto, la división, todo esto, se pueden importar del módulo
+
+280
+00:16:51,680 --> 00:16:52,680
+operator, ¿vale?
+
+281
+00:16:52,680 --> 00:16:53,680
+En modo función.
+
+282
+00:16:53,680 --> 00:16:58,640
+Entonces, hago una aplicación parcial de la suma y le fijo el primer parámetro a
+
+283
+00:16:58,640 --> 00:17:03,000
+4 y ahora tengo una función a 4 que directamente la puedo usar.
+
+284
+00:17:03,000 --> 00:17:07,280
+Si era esto para esto, es una chorrada, evidentemente, pero hay veces que tenemos funciones que reciben
+
+285
+00:17:07,280 --> 00:17:11,600
+muchos parámetros porque son muy genéricas y yo lo que necesito son funciones más específicas,
+
+286
+00:17:11,600 --> 00:17:16,040
+que reciban dos parámetros y que me devuelvan lo que yo quiero.
+
+287
+00:17:16,040 --> 00:17:20,280
+Otra cosa y este es un ejemplo que puede ser más práctico, un print no line, quiero que
+
+288
+00:17:20,280 --> 00:17:24,240
+no me imprima el salto de línea al final, pues le digo que es una aplicación parcial
+
+289
+00:17:24,240 --> 00:17:27,440
+de print y le fijo el end a nada, ¿vale?
+
+290
+00:17:27,440 --> 00:17:35,680
+Esto sería un caso y pues si hago print no line, se me queda ahí el pront desplazado.
+
+291
+00:17:35,680 --> 00:17:41,440
+Funciones lambda, aquí poco os puedo descubrir, las funciones lambda de Python no tienen mucho
+
+292
+00:17:41,440 --> 00:17:42,440
+misterio.
+
+293
+00:17:42,440 --> 00:17:45,800
+Funciones de orden superior, ¿vale?
+
+294
+00:17:45,800 --> 00:17:51,480
+Las principales funciones de orden superior serían map filter sorted y reduce, son las
+
+295
+00:17:51,480 --> 00:17:55,840
+que están poco en el building, reduce en Python 3.
+
+296
+00:17:55,840 --> 00:18:02,560
+Guido quería quitar todas estas de Python 3 del building, pero al final se desdijo y
+
+297
+00:18:02,560 --> 00:18:06,800
+al final lo único que hizo fue mover el reduce a funtools, ¿vale?
+
+298
+00:18:06,800 --> 00:18:11,640
+Y luego tenemos los decoradores, ¿vale?
+
+299
+00:18:11,640 --> 00:18:16,960
+Básicamente todas estas funciones reciben una, luego lo vemos más claramente, pero
+
+300
+00:18:16,960 --> 00:18:24,280
+reciben una función y un normalmente un iterador y hacen alguna operación sobre eso, ¿vale?
+
+301
+00:18:24,280 --> 00:18:29,400
+Los decoradores son un caso especial de funciones de orden superior que reciben una función
+
+302
+00:18:29,400 --> 00:18:34,000
+y te devuelven otra función con alguna transformación de la función, ¿vale?
+
+303
+00:18:34,000 --> 00:18:35,000
+Normalmente.
+
+304
+00:18:35,000 --> 00:18:40,200
+Se pueden usar decoradores simplemente para anotar, pero el uso normal de los decoradores
+
+305
+00:18:40,200 --> 00:18:41,200
+es transformar la función.
+
+306
+00:18:41,200 --> 00:18:46,760
+Vale, una función de orden superior sería, por ejemplo, un map, le paso una función
+
+307
+00:18:46,760 --> 00:18:52,960
+lambda que multiplica por, que eleva al cuadrado, perdón, y le paso una lista, que al final
+
+308
+00:18:52,960 --> 00:18:59,480
+es un iterable y me devuelve la lista con todos sus valores al cuadrado.
+
+309
+00:18:59,480 --> 00:19:07,560
+Filter, lo que hace es filtrar una lista, esto es un poco lo habitual, ¿vale?
+
+310
+00:19:07,560 --> 00:19:14,640
+El sorted me permita hacer ordenación y el reduce hace un reduce que es básicamente
+
+311
+00:19:14,640 --> 00:19:20,160
+una operación de convertir una lista en un objeto a partir de ciertas operaciones,
+
+312
+00:19:20,160 --> 00:19:21,160
+¿vale?
+
+313
+00:19:21,160 --> 00:19:26,000
+Pero bueno, eso es un poco un decorador muy interesante, sobre todo si usas programación
+
+314
+00:19:26,000 --> 00:19:30,600
+funcional, si haces una función pura, es el LRU caché, ¿vale?
+
+315
+00:19:30,600 --> 00:19:34,000
+Un decorador al final, como os digo, es una función que te va a devolver otra función.
+
+316
+00:19:34,000 --> 00:19:40,520
+De hecho, el LRU caché es una función que devuelve un decorador y ese decorador es
+
+317
+00:19:40,520 --> 00:19:43,120
+el que modifica la función, ¿vale?
+
+318
+00:19:43,120 --> 00:19:47,760
+Es un poco lío, pero LRU caché al final lo que yo ejecuto es LRU caché, me devuelvo
+
+319
+00:19:47,760 --> 00:19:51,040
+un decorador y luego estoy decorando la función lambda con él.
+
+320
+00:19:51,040 --> 00:19:52,040
+¿Vale?
+
+321
+00:19:52,040 --> 00:19:55,640
+LRU caché lo que hace es dame las projecimas, por ejemplo, las próximas 100 llamadas.
+
+322
+00:19:55,640 --> 00:19:57,360
+Las vas a memorizar.
+
+323
+00:19:57,360 --> 00:19:59,520
+Las últimas 100 llamadas las vas a memorizar.
+
+324
+00:19:59,520 --> 00:20:03,400
+Y de esa manera, si yo te pido esa función con los mismos parámetros, me lo vas a devolver
+
+325
+00:20:03,400 --> 00:20:04,920
+instantáneamente de tu caché.
+
+326
+00:20:04,920 --> 00:20:08,520
+Vale, eso con programación funcional y función es pura, es perfecto.
+
+327
+00:20:08,520 --> 00:20:13,880
+Si yo ejecuto una vez y ya sé que sigo un proceso pesado, sé que el siguiente resultado
+
+328
+00:20:13,880 --> 00:20:15,360
+con los mismos parámetros me va a dar lo mismo.
+
+329
+00:20:15,360 --> 00:20:26,040
+¿Vale?
+
+330
+00:20:26,040 --> 00:20:28,280
+Hasta aquí lo que me da Python, que probablemente muchas de las cosas las conocí ahí y es más
+
+331
+00:20:28,280 --> 00:20:29,280
+de lo mismo.
+
+332
+00:20:29,280 --> 00:20:31,400
+FNiPy tiene algunas cosillas más interesantes.
+
+333
+00:20:31,400 --> 00:20:32,400
+¿Vale?
+
+334
+00:20:32,400 --> 00:20:33,400
+Estructuras inmutables.
+
+335
+00:20:33,400 --> 00:20:36,280
+Estas son las estructuras inmutables que trae FNiPy.
+
+336
+00:20:36,280 --> 00:20:40,560
+Yo voy a hablar de las primeras dos por poner algún ejemplo y que se vean cómo funcionan
+
+337
+00:20:40,560 --> 00:20:42,560
+un poco las estructuras inmutables.
+
+338
+00:20:42,560 --> 00:20:48,920
+Y el resto, bueno, pues es de deberes.
+
+339
+00:20:48,920 --> 00:20:53,440
+La link list es un ejemplo, bueno, una lista en la sada, algo muy genérico.
+
+340
+00:20:53,440 --> 00:20:58,560
+Entonces yo genero una link list y me dice, bueno, la head y el head y el tail, es nada.
+
+341
+00:20:58,560 --> 00:20:59,560
+¿Vale?
+
+342
+00:20:59,560 --> 00:21:05,120
+Cons me permite añadir un elemento, pero yo no le añado el elemento a mi link list.
+
+343
+00:21:05,120 --> 00:21:09,720
+Yo le añado el elemento, yo cuando añado un elemento me devuelvo una link list que,
+
+344
+00:21:09,720 --> 00:21:12,520
+además de los elementos que tenía anterior, tiene uno nuevo.
+
+345
+00:21:12,520 --> 00:21:14,000
+Y eso trae link list.
+
+346
+00:21:14,000 --> 00:21:18,960
+Entonces si le paso un head y un tail, me va a devolver eso.
+
+347
+00:21:18,960 --> 00:21:25,200
+De hecho, el tail es la link list anterior.
+
+348
+00:21:25,200 --> 00:21:28,440
+¿Vale?
+
+349
+00:21:28,440 --> 00:21:33,120
+Y la link list anterior, evidentemente, sigue siendo inmutable, sigue sin haber mutado,
+
+350
+00:21:33,120 --> 00:21:35,760
+sigue teniendo el head y el tail igual.
+
+351
+00:21:35,760 --> 00:21:36,960
+¿Vale?
+
+352
+00:21:36,960 --> 00:21:47,560
+Un stack, pues es una pila donde añadimos con push, vemos el head, el tail y podemos
+
+353
+00:21:47,560 --> 00:21:49,640
+hacer el pop en este caso.
+
+354
+00:21:49,640 --> 00:21:55,440
+Como me tiene que devolver un valor, me devuelvo una tubla, un valor y la nueva link list sin
+
+355
+00:21:55,440 --> 00:21:56,440
+ese elemento.
+
+356
+00:21:56,440 --> 00:21:57,440
+¿Vale?
+
+357
+00:21:57,440 --> 00:22:00,960
+Por supuesto, la estructura anterior está sin mutar.
+
+358
+00:22:00,960 --> 00:22:02,680
+¿Qué ventaja tiene esto?
+
+359
+00:22:02,680 --> 00:22:08,840
+Si yo, en vez de pasarte una lista, yo te paso una lista de este tipo, una link list o
+
+360
+00:22:08,840 --> 00:22:15,840
+un stack de fnpi, sé que es imposible que tú modifiques el valor que yo te he pasado.
+
+361
+00:22:15,840 --> 00:22:18,760
+No puedes modificar el objeto que te he hecho yo te he pasado.
+
+362
+00:22:18,760 --> 00:22:24,360
+Con lo cual, me aseguro que si yo a esa función le paso eso, no va a tener ningún efecto lateral,
+
+363
+00:22:24,360 --> 00:22:26,760
+por lo menos, en ese punto.
+
+364
+00:22:26,760 --> 00:22:31,160
+Para eso sirven las funciones, las estructuras de datos inmutables.
+
+365
+00:22:31,160 --> 00:22:36,880
+De hecho, se puede conseguir no mutar las estructuras de datos que te pasan haciendo
+
+366
+00:22:36,880 --> 00:22:41,240
+un copy, un clone o cualquier cosa de esta y generando objetos nuevos.
+
+367
+00:22:41,240 --> 00:22:44,160
+Pero claro, una copia de memoria cada vez que te pasas un objeto y además si es una
+
+368
+00:22:44,160 --> 00:22:48,920
+estructura grande, eso no hay procesador que lo soporte ni memoria que lo soporte.
+
+369
+00:22:48,920 --> 00:22:53,360
+Entonces, este tipo de cosas hace que sea, aparte de que muy rápido te aseguras la no
+
+370
+00:22:53,360 --> 00:22:54,360
+mutabilidad.
+
+371
+00:22:54,360 --> 00:22:55,360
+¿Vale?
+
+372
+00:22:55,360 --> 00:23:03,880
+Teseo, en fnpi, el telrecursión es lo que decía, es una otimización que lo que haces
+
+373
+00:23:03,880 --> 00:23:11,760
+es envolver un bucle, convertir una recursión en un bucle, que es mucho más eficiente porque
+
+374
+00:23:11,760 --> 00:23:14,040
+no tiene stack, porque no tiene una serie de cosas.
+
+375
+00:23:14,040 --> 00:23:24,160
+Entonces, básicamente, como lo resuelve fnpi, es usando una técnica que se llama trampoline,
+
+376
+00:23:24,160 --> 00:23:30,320
+que lo que hace básicamente es decir que, bueno, allí arriba tengo un factorial normal
+
+377
+00:23:30,320 --> 00:23:40,640
+con recursividad, se me ha colado un tabulador de más, vale, el retun va a la izquierda.
+
+378
+00:23:40,640 --> 00:23:43,880
+Y en el segundo caso, lo que cambia un poco la función.
+
+379
+00:23:43,880 --> 00:23:48,840
+Aparte de decorarla con el teseo, tengo que dar valores de retorno de si es una llamada
+
+380
+00:23:48,840 --> 00:23:52,560
+recursiva o no y si es recursiva, qué parámetros va a recibir.
+
+381
+00:23:52,560 --> 00:23:53,560
+¿Vale?
+
+382
+00:23:53,560 --> 00:23:59,920
+El recurteceo va a transformar esa función en un bucle, de manera que ya no hay llamadas
+
+383
+00:23:59,920 --> 00:24:05,800
+a pila, no hay llamadas a una serie de cosas y se convierte en una llamada completamente,
+
+384
+00:24:05,800 --> 00:24:09,480
+en un bucle que es mucho más barato.
+
+385
+00:24:09,480 --> 00:24:13,480
+¿Vale?
+
+386
+00:24:13,480 --> 00:24:16,520
+Aplicación parcial de funciones con fnpi.
+
+387
+00:24:16,520 --> 00:24:20,320
+La aplicación parcial de funciones que vimos antes, hacía con parcial, está bien, pues
+
+388
+00:24:20,320 --> 00:24:23,720
+aquí me ahorro caracteres básicamente.
+
+389
+00:24:23,720 --> 00:24:30,920
+Uso la función f o la clase f y envuelvo la función con los parámetros que quiera.
+
+390
+00:24:30,920 --> 00:24:36,320
+No hay mucha ventaja en esto, pero luego vemos que, bueno, ahora veremos que f además tiene
+
+391
+00:24:36,320 --> 00:24:39,840
+otra ventaja.
+
+392
+00:24:39,840 --> 00:24:40,840
+La currificación.
+
+393
+00:24:40,840 --> 00:24:45,600
+La currificación es un concepto que se suele confundir con la aplicación parcial pero no
+
+394
+00:24:45,600 --> 00:24:46,600
+es lo mismo.
+
+395
+00:24:46,600 --> 00:24:53,680
+La currificación consiste en convertir una función de n parámetros en una función
+
+396
+00:24:53,680 --> 00:24:59,040
+que recibe un único parámetro y que te devuelve, en caso de que no sea el último parámetro,
+
+397
+00:24:59,040 --> 00:25:02,720
+te devuelve una función que va a recibir un único parámetro, a la vez una función
+
+398
+00:25:02,720 --> 00:25:06,160
+que recibe un único parámetro hasta que sea la última y en vez de devolverte una función
+
+399
+00:25:06,160 --> 00:25:09,040
+que recibe un único parámetro, te devuelve el resultado.
+
+400
+00:25:09,040 --> 00:25:10,040
+Vamos a ver un ejemplo.
+
+401
+00:25:10,040 --> 00:25:19,440
+Bueno, tenemos el curriad, que lo que hago es la suma de dos números y le digo curriad.
+
+402
+00:25:19,440 --> 00:25:28,360
+Bueno, lo primero lo he hecho con usando el decorador a mano y lo otro lo he hecho con
+
+403
+00:25:28,360 --> 00:25:31,560
+la sintaxis de decorador.
+
+404
+00:25:31,560 --> 00:25:33,040
+Pero bien hacer lo mismo.
+
+405
+00:25:33,040 --> 00:25:39,080
+El curriad le pasa un único parámetro que es dos y el resultado de curriad dos es una
+
+406
+00:25:39,080 --> 00:25:45,960
+función que recibe un único parámetro al que le va a sumar dos.
+
+407
+00:25:45,960 --> 00:25:49,280
+Le pasa un tres y entonces me devuelve ya el resultado.
+
+408
+00:25:49,280 --> 00:25:54,320
+Esto es currificación, parece una chorrada, pero luego cuando empiezas a necesitarla,
+
+409
+00:25:54,320 --> 00:25:58,600
+cuando haces programación funcional es muy útil, porque al final se trata de transformar
+
+410
+00:25:58,600 --> 00:26:01,200
+funciones de manera muy fácil y muy cómoda.
+
+411
+00:26:01,200 --> 00:26:06,600
+Y aquí tal vez pueda resultar menos natural en Haskell, es supernatural y se usan muchísimo.
+
+412
+00:26:06,600 --> 00:26:13,600
+Cuando te acostumbras a usarlo, en realidad aquí se puede usar y es muy útil.
+
+413
+00:26:13,600 --> 00:26:16,520
+Vale, composición de funciones.
+
+414
+00:26:16,520 --> 00:26:21,840
+Así compondría una función normal en Python sin ayuda.
+
+415
+00:26:21,840 --> 00:26:29,520
+Tengo una función que recibe el parámetro, bueno, tengo una función ad, ad2 que recibo
+
+416
+00:26:29,520 --> 00:26:33,480
+un x y el resultado de eso lo voy a duplicar.
+
+417
+00:26:33,480 --> 00:26:37,800
+Y tengo una función al que de paso de x y más eso.
+
+418
+00:26:37,800 --> 00:26:44,080
+Estoy haciendo la lambda esa sería la función compuesta de duplicate y ad2.
+
+419
+00:26:44,080 --> 00:26:48,520
+Entonces, ¿cómo hago la composición de funciones al estilo fnpy?
+
+420
+00:26:48,520 --> 00:26:58,120
+Pues le paso f a la función, eso me la convierte ya en una función de fnpy y le digo duplicate
+
+421
+00:26:58,120 --> 00:27:02,800
+y ad2 y lo que va a hacer me devuelve una función que va a recibir un parámetro, el
+
+422
+00:27:02,800 --> 00:27:08,000
+parámetro de ad2, se lo paso, el resultado de ad2 va a ir a duplicate y el resultado
+
+423
+00:27:08,000 --> 00:27:10,800
+de duplicate me lo devuelve.
+
+424
+00:27:10,800 --> 00:27:13,960
+Eso parece como un sentido inverso que es un poco raro, lo puedo hacer en el otro sentido
+
+425
+00:27:13,960 --> 00:27:16,640
+y me parece como un pipeline, ¿vale?
+
+426
+00:27:16,640 --> 00:27:21,640
+Es una función a la que al parámetro que me pase le voy a hacer un ad2 y al resultado
+
+427
+00:27:21,640 --> 00:27:22,680
+le voy a hacer un duplicate.
+
+428
+00:27:22,680 --> 00:27:27,280
+Vale, la segunda sintaxis puede parecer un poco más evidente para alguien que viene
+
+429
+00:27:27,280 --> 00:27:30,800
+de la programación procedural o orientado a objetos.
+
+430
+00:27:30,800 --> 00:27:34,120
+La primera es muy típica también en Haskell, bueno, en Haskell se puede hacer en los dos
+
+431
+00:27:34,120 --> 00:27:36,680
+sentidos pero probablemente sea más habitual la primera.
+
+432
+00:27:36,680 --> 00:27:43,480
+Y funciones landa al estilo escala, ¿vale?
+
+433
+00:27:43,480 --> 00:27:47,760
+La función es landa de Python, está muy guay, las del estilo escala tampoco son, no
+
+434
+00:27:47,760 --> 00:27:50,240
+te dan mucha más potencia, ¿vale?
+
+435
+00:27:50,240 --> 00:27:54,200
+No son mucho más potentes, pero son muy cómodas y muy expresivas.
+
+436
+00:27:54,200 --> 00:28:01,320
+Por ejemplo, simplemente un frontfn import guion bajo y simplemente voy usando el guion
+
+437
+00:28:01,320 --> 00:28:04,480
+bajo para marcar los parámetros que voy a recibir.
+
+438
+00:28:04,480 --> 00:28:09,680
+Por ejemplo, si quiero hacer una suma, simplemente le digo guion bajo más guion bajo 2, 3.
+
+439
+00:28:09,680 --> 00:28:13,960
+Pues eso, guion bajo más guion bajo me va a dar una función que recibe dos parámetros
+
+440
+00:28:13,960 --> 00:28:18,440
+y simplemente los reemplaza.
+
+441
+00:28:18,440 --> 00:28:22,800
+No hay manera de decirle no, recibes un parámetro repetido, no, recibes dos parámetros.
+
+442
+00:28:22,800 --> 00:28:27,440
+Entonces, pues tiene sus limitaciones también y es un poco, bueno, para ciertas cosas está
+
+443
+00:28:27,440 --> 00:28:28,440
+muy bien.
+
+444
+00:28:28,440 --> 00:28:32,240
+Por ejemplo, para un map o para un reduce o para ciertas cosas, bueno, normalmente para
+
+445
+00:28:32,240 --> 00:28:35,080
+donde nos usa una función landa, muchas veces es útil.
+
+446
+00:28:35,080 --> 00:28:42,600
+Vale, aquí tenemos otro ejemplo donde en el map lo primero que le va a hacer es una
+
+447
+00:28:42,600 --> 00:28:44,320
+función que suma dos nada más.
+
+448
+00:28:44,320 --> 00:28:52,840
+Entonces, pues recorre toda la lista y le va sumando dos a cada elemento.
+
+449
+00:28:52,840 --> 00:28:59,480
+Y bueno, para terminar mis conclusiones, bueno, voy a poner un ejemplo antes de un caso de
+
+450
+00:28:59,480 --> 00:29:26,920
+un caso práctico de… Vale, un caso práctico sería este, vale, este programa 100% es funcional,
+
+451
+00:29:26,920 --> 00:29:32,720
+son funciones puras, no usado cosas raras de FNPAI, de hecho no importa FNPAI para
+
+452
+00:29:32,720 --> 00:29:36,800
+nada, pero ya es un programa funcional, vale.
+
+453
+00:29:36,800 --> 00:29:42,640
+Si todas las funciones le pase el parámetro que le pase, no van a tener ni efectos laterales
+
+454
+00:29:42,640 --> 00:29:46,880
+ni… Bueno, tampoco lo puedo asegurar, no lo he mirado al dedillo, pero igual se me ha
+
+455
+00:29:46,880 --> 00:29:52,760
+colado alguna cosa, pero en principio no tienen ni efectos laterales y siempre van a devolver
+
+456
+00:29:52,760 --> 00:29:56,880
+el mismo resultado para los mismos parámetros, vale.
+
+457
+00:29:56,880 --> 00:30:03,680
+Esta es una estrategia muy típica de programación funcional, esto lo que hace es coger una serie
+
+458
+00:30:03,680 --> 00:30:09,480
+de… Yo te digo un número de páginas y en la página en la que estoy y entonces te
+
+459
+00:30:09,480 --> 00:30:13,320
+digo bueno, pues te pongo los tres primeros elementos, los tres últimos y los tres de
+
+460
+00:30:13,320 --> 00:30:17,760
+todo alrededor y luego punto suspensivo, vale, parece fácil, pero claro, ahí son lapamientos
+
+461
+00:30:17,760 --> 00:30:18,760
+y una serie de cosas.
+
+462
+00:30:18,760 --> 00:30:20,280
+Entonces, ¿qué hago?
+
+463
+00:30:20,280 --> 00:30:25,640
+Pues me genero todos los números de las páginas y voy filtrando y digo bueno, pues tengo todos
+
+464
+00:30:25,640 --> 00:30:30,040
+los números de las páginas, voy a coger los tres primeros, los tres últimos y los tres
+
+465
+00:30:30,040 --> 00:30:32,800
+de mi alrededor del curren, ¿vale?
+
+466
+00:30:32,800 --> 00:30:36,360
+Luego le digo quítame los repetidos, luego le digo quítame los que estén por encima,
+
+467
+00:30:36,360 --> 00:30:44,520
+los que sean mayores los menores de… Los menores de cero, quítame los mayores del
+
+468
+00:30:44,520 --> 00:30:52,120
+total y luego le hago un reduce con una función que lo que va a hacer es convertirme esa lista
+
+469
+00:30:52,120 --> 00:30:56,520
+en otra lista donde si hay una diferencia de uno meto tres puntos suspensivos, ¿sabes?
+
+470
+00:30:56,520 --> 00:31:01,040
+Y todo eso al final son funciones pequeñitas que vas combinando, vas haciendo funciones
+
+471
+00:31:01,040 --> 00:31:05,080
+de orden superior, las vas pasando aquí, las vas pasando allá, el paginato recibe una
+
+472
+00:31:05,080 --> 00:31:14,040
+función linkify formater y ese formater lo aplica por defectos del linkify formater,
+
+473
+00:31:14,040 --> 00:31:19,200
+pero podría pasarlo un shell formater, de hecho al final lo que hago es pasar aquí
+
+474
+00:31:19,200 --> 00:31:27,800
+con los dos formateadores diferentes y si lo ejecuto… Tampoco quiero ver el ejemplo
+
+475
+00:31:27,800 --> 00:31:34,080
+en profundidad, pero si lo ejecuto tengo una serie de enlaces tipo HTML o una serie de
+
+476
+00:31:34,080 --> 00:31:35,640
+páginas aquí, ¿vale?
+
+477
+00:31:35,640 --> 00:31:38,000
+Espera un momento.
+
+478
+00:31:38,000 --> 00:31:46,400
+Así, una serie de páginas aquí donde las he colocado así, ¿vale?
+
+479
+00:31:46,400 --> 00:31:51,280
+Y eso, simplemente es una estrategia muy típica, empiezo con una estructura de datos y lo
+
+480
+00:31:51,280 --> 00:31:55,120
+voy aplicando funciones hasta que consigo la estructura de datos final que yo quiero
+
+481
+00:31:55,120 --> 00:31:59,040
+y además como muchas de esas funciones son pequeñitas y hacen cosas muy concretas, probablemente
+
+482
+00:31:59,040 --> 00:32:06,360
+se puedan reutilizar para otras cosas o incluso reutilizarse entre ellas, el formater igual,
+
+483
+00:32:06,360 --> 00:32:10,080
+el formater de consola se parece mucho o el formater de HTML, se parecería mucho a uno
+
+484
+00:32:10,080 --> 00:32:17,080
+de los formates de HTML o algo similar y se podrían reaprovechar trozos.
+
+485
+00:32:17,080 --> 00:32:22,360
+Y para terminar, mis conclusiones, bueno mis conclusiones es Python, permite programar de
+
+486
+00:32:22,360 --> 00:32:28,040
+manera funcional, es decir, yo puedo programar de manera funcional o por lo menos aprovechar
+
+487
+00:32:28,040 --> 00:32:33,200
+las funciones puras, aprovecharme de ciertas características de la programación funcional.
+
+488
+00:32:33,200 --> 00:32:38,280
+FNPy nos da las herramientas para llegar un poco más allá, es decir, yo puedo usar FNPy
+
+489
+00:32:38,280 --> 00:32:44,480
+para no tener que, para que ciertas formas de trabajar en programación funcional no
+
+490
+00:32:44,480 --> 00:32:50,200
+chirrien tanto, Python más FNPy queda lejos de prácticamente cualquier lenguaje funcional
+
+491
+00:32:50,200 --> 00:32:56,480
+como Erlang, Cloy, Ur, Haskell, están más allá porque tampoco, Python no es un lenguaje
+
+492
+00:32:56,480 --> 00:32:57,480
+funcional, ¿vale?
+
+493
+00:32:57,480 --> 00:33:02,600
+Y Erlang, Cloy, Ur y Haskell sí lo son, entonces no pueden competir porque no están en la
+
+494
+00:33:02,600 --> 00:33:04,600
+misma liga de hecho.
+
+495
+00:33:04,600 --> 00:33:13,840
+Y lo que sí se puede es aplicar programación funcional a Python y es una mejora significativa
+
+496
+00:33:13,840 --> 00:33:19,160
+sobre la calidad del código, sobre la robustez, sobre la paralilización, sobre una serie
+
+497
+00:33:19,160 --> 00:33:23,840
+de cosas que merecen mucho la pena, ¿vale?
+
+498
+00:33:23,840 --> 00:33:30,800
+Referencias, el GitHub de FNPy está razonablemente bien documentado, hay algunas cosillas que
+
+499
+00:33:30,800 --> 00:33:35,360
+no están finas en la documentación, pero bueno, generalmente estamos, o menos, bien
+
+500
+00:33:35,360 --> 00:33:36,360
+documentado.
+
+501
+00:33:36,360 --> 00:33:41,480
+Hay un hauto de programación funcional de Python que básicamente habla de iteradores,
+
+502
+00:33:41,480 --> 00:33:42,480
+¿vale?
+
+503
+00:33:42,480 --> 00:33:46,560
+Y poco más de iteradores y de aplicación parcial, no cuenta mucho más.
+
+504
+00:33:46,560 --> 00:33:53,040
+Y hay una charla muy interesante de Alexei Kachayev que habla también de programación
+
+505
+00:33:53,040 --> 00:33:58,760
+funcional y lo enfoca de otra manera, pero es muy interesante la verdad.
+
+506
+00:33:58,760 --> 00:34:06,960
+Y bueno, no habla de FNPy, habla de solo de Python, pero pero está muy interesante.
+
+507
+00:34:06,960 --> 00:34:07,960
+Dudas?
+
+508
+00:34:07,960 --> 00:34:11,880
+Al final sí me he pasado de rápido, ¿no?
+
+509
+00:34:11,880 --> 00:34:12,880
+O no?
+
+510
+00:34:12,880 --> 00:34:13,880
+No lo sé.
+
+511
+00:34:13,880 --> 00:34:14,880
+Sí, por ahí.
+
+512
+00:34:14,880 --> 00:34:15,880
+Ah, bueno.
+
+513
+00:34:15,880 --> 00:34:16,880
+Muy moquera.
+
+514
+00:34:16,880 --> 00:34:28,600
+Hola, Mochura de la charla y tengo dos preguntas relacionadas.
+
+515
+00:34:28,600 --> 00:34:37,200
+Una es, ¿qué ocurre con el TCO, con el Type Call Optimization, cuando tienes excepciones,
+
+516
+00:34:37,200 --> 00:34:38,840
+cuando ocurre una excepción?
+
+517
+00:34:38,840 --> 00:34:46,040
+Y cómo FN, si es posible, te permite hacer Type Call Optimization con llamando a diferentes
+
+518
+00:34:46,040 --> 00:34:49,360
+funciones, no simplemente una llamada recursiva a la misma función.
+
+519
+00:34:49,360 --> 00:34:52,000
+No lo, si no me equivoco, no lo permite.
+
+520
+00:34:52,000 --> 00:34:56,280
+Es decir, no puedes hacer TCO cruzado.
+
+521
+00:34:56,280 --> 00:34:58,200
+Creo que no lo, no lo permite.
+
+522
+00:34:58,200 --> 00:35:02,280
+No, no lo tengo del todo controlado.
+
+523
+00:35:02,280 --> 00:35:07,120
+Y el tema de las excepciones tampoco te lo puedo confirmar, pero creo que levanta la excepción
+
+524
+00:35:07,120 --> 00:35:08,120
+directamente.
+
+525
+00:35:08,120 --> 00:35:15,640
+Es que uno de los motivos para que el Python normal, y tú, normal, no tenga TCO es precisamente
+
+526
+00:35:15,640 --> 00:35:17,640
+la gestión de excepciones.
+
+527
+00:35:17,640 --> 00:35:18,640
+Sí, sí.
+
+528
+00:35:18,640 --> 00:35:23,920
+Pero que, en aquel, simplemente te levanta la excepción y ya está.
+
+529
+00:35:23,920 --> 00:35:31,080
+De hecho, claro, la gestión, FNPI también soporta mínimo de gestión de errores monádicas,
+
+530
+00:35:31,080 --> 00:35:32,080
+¿vale?
+
+531
+00:35:32,080 --> 00:35:38,680
+No lo he contado porque también es un poco más lío y podría llegar a gestionar hasta
+
+532
+00:35:38,680 --> 00:35:42,680
+cierto punto, pero claro, ya te permiten de todas maneras en las excepciones, tienes
+
+533
+00:35:42,680 --> 00:35:48,640
+que capturarlas, tienes que hacer las excepciones, son un problema en Python para la programación
+
+534
+00:35:48,640 --> 00:35:49,640
+funcional claramente.
+
+535
+00:35:49,640 --> 00:35:56,160
+Sí, yo quería preguntar acerca de los side effects, si tienes algún truco o alguna manera
+
+536
+00:35:56,160 --> 00:36:00,480
+para controlarlo y verles si afecta.
+
+537
+00:36:00,480 --> 00:36:03,600
+En principio, Python no te ayuda para eso.
+
+538
+00:36:03,600 --> 00:36:10,600
+No tiene ninguna ayuda, en principio, para, por lo menos, Willteam, no tiene ninguna ayuda
+
+539
+00:36:10,600 --> 00:36:13,280
+para controlarlos side effects, ¿vale?
+
+540
+00:36:13,280 --> 00:36:16,320
+Porque el lenguaje no está pensado de esa manera.
+
+541
+00:36:16,320 --> 00:36:23,560
+Tampoco, en la cabeza de Guido, probablemente no tenía sentido cuando lo escribió.
+
+542
+00:36:23,560 --> 00:36:27,560
+Puede lo que tienes que hacer es intentar controlarlo a nivel personal, intentar que
+
+543
+00:36:27,560 --> 00:36:32,840
+las funciones no tengan efectos laterales y si van a tenerlo, yo personalmente lo que
+
+544
+00:36:32,840 --> 00:36:35,760
+haría es meter algún decorador, algún tipo de etiqueta, ¿vale?
+
+545
+00:36:35,760 --> 00:36:37,560
+Decoras, oye, esto tiene side effects.
+
+546
+00:36:37,560 --> 00:36:42,920
+Y además queda muy claro, está en el código y ya lo marcas de esa manera y sabes que esa
+
+547
+00:36:42,920 --> 00:36:45,480
+función tiene que tener cuidado, ¿vale?
+
+548
+00:36:45,480 --> 00:36:49,440
+Lo importante realmente es tener muy, muy acotado dónde tienes los efectos.
+
+549
+00:36:49,440 --> 00:36:55,000
+Si, por ejemplo, usas un acceso a base de datos o cosas así, pues a través de un módulo
+
+550
+00:36:55,000 --> 00:36:59,360
+repositorio o a través de un módulo concreto, que es el que hace las llamadas bases de datos,
+
+551
+00:36:59,360 --> 00:37:01,720
+y es el que tienes que controlar los efectos laterales.
+
+552
+00:37:01,720 --> 00:37:07,400
+Pero tus módulos que no tienen por qué tener acceso a base de datos deberían estar completamente
+
+553
+00:37:07,400 --> 00:37:14,280
+aislados y ser, pues eso, funciones pequeñas, controladas y que eres capaz de testear de
+
+554
+00:37:14,280 --> 00:37:20,320
+manera controlada.
+
+555
+00:37:20,320 --> 00:37:27,800
+Cualquiera que haya usado algún framework verá que eso es súper complicado de aplicar,
+
+556
+00:37:27,800 --> 00:37:33,920
+porque están entremesclados las llamadas a acceso a base de datos y cosas similares con
+
+557
+00:37:33,920 --> 00:37:37,080
+un montón de cosas, un montón de lógica, es muy complicado.
+
+558
+00:37:37,080 --> 00:37:40,480
+Pero se puede hacer, ¿vale?
+
+559
+00:37:40,480 --> 00:37:46,400
+Bueno, te quería preguntar sobre el tema que has hablado al final también de la paralelización,
+
+560
+00:37:46,400 --> 00:37:51,760
+porque una vez vi, bueno, hace poco vi un vídeo del creador de escala, Martín Odeski,
+
+561
+00:37:51,760 --> 00:37:56,640
+que decía que una de las partes buenas de hacer programación funcional es la inmutabilidad,
+
+562
+00:37:56,640 --> 00:37:59,960
+porque la mutabilidad de un cuello de botella a la hora de hacer paralelización.
+
+563
+00:37:59,960 --> 00:38:06,280
+Y decía que, claro, que en escala tú poniendo una... era muy fácil convertir una función
+
+564
+00:38:06,280 --> 00:38:12,200
+que era secuencial en paralelizada simplemente añadiendo un parámetro.
+
+565
+00:38:12,200 --> 00:38:18,760
+Y quería saber si sabes algo de cómo está este tema, o sea, si nosotros utilizamos FUNPIE
+
+566
+00:38:18,760 --> 00:38:24,600
+o FNPIE, perdón, se puede hacer la paralización de una forma sencilla, nos ayuda alguna manera
+
+567
+00:38:24,600 --> 00:38:27,560
+Python o FNPIE a paralelizar, que nos interesaría.
+
+568
+00:38:27,560 --> 00:38:33,680
+FNPIE y Nipiton te ayudan a paralelizar, pero existen funciones y módulos que hacen ciertas
+
+569
+00:38:33,680 --> 00:38:38,280
+cosas. Por ejemplo, existe un módulo P-Map que lo que hace es un MAP paralelizado, que
+
+570
+00:38:38,280 --> 00:38:41,960
+es una de las cosas más típicas que se hacen también en programación funcional.
+
+571
+00:38:41,960 --> 00:38:47,160
+Tú le dices, vale, esta función me ejecutas en ocho hilos.
+
+572
+00:38:47,160 --> 00:38:49,640
+Entonces, él sabe cómo tiene que ejecutar.
+
+573
+00:38:49,640 --> 00:38:54,760
+Para cada elemento, tiene que ejecutarlo y devolverte el valor y colocarlo ahí, pues
+
+574
+00:38:54,760 --> 00:38:59,600
+él dice, bueno, pues en vez de hacerlo de uno en uno, lo hago de hecho en ocho.
+
+575
+00:38:59,600 --> 00:39:02,760
+Eso sólo funciona si las funciones son puras.
+
+576
+00:39:02,760 --> 00:39:07,240
+Pero realmente lo que comenta el creador de escala es cierto.
+
+577
+00:39:07,240 --> 00:39:16,760
+Es decir, si tú tienes funciones puras, paralelizar no es que sea fácil, es que es trivial, en
+
+578
+00:39:16,760 --> 00:39:21,920
+el sentido de que no tienes que sincronizar nada, no hace falta decir, bueno, y este dato,
+
+579
+00:39:21,920 --> 00:39:24,240
+y si lo toco este dato lo va a estar tocando otro, no.
+
+580
+00:39:24,240 --> 00:39:28,320
+Mis datos son mis datos, son los datos de mi contexto y no va a haber nadie que entre en
+
+581
+00:39:28,320 --> 00:39:30,560
+mi contexto y yo no voy a tocar el contexto de otro.
+
+582
+00:39:30,560 --> 00:39:35,560
+Por lo cual, paralelizar es gratis directamente, vale, si la función es pura.
+
+583
+00:39:35,560 --> 00:39:40,080
+Hay partes que no vas a poder hacer puras porque necesitas acceso a base de datos, una
+
+584
+00:39:40,080 --> 00:39:45,840
+aplicación que no interactúa con nada, poco útiles, vale.
+
+585
+00:39:45,840 --> 00:39:49,800
+No puedes ni pasarle parámetros de entrada porque eso es un efecto lateral, vale.
+
+586
+00:39:49,800 --> 00:39:53,560
+Así es, no sirve para absolutamente nada.
+
+587
+00:39:53,560 --> 00:39:58,840
+Entonces, pero vas a tener efectos laterales, pero las partes que no tienen efectos laterales,
+
+588
+00:39:58,840 --> 00:40:02,120
+desde cálculo intensivo, cosas de ese tipo, sí que lo puedes paralelizar.
+
+589
+00:40:02,120 --> 00:40:05,800
+Dice, bueno, pues esto en vez de mandármelo uno, pues en 300 hilo.
+
+590
+00:40:05,800 --> 00:40:10,080
+Y además puedes, además de paralelizar, caché GLRU, que también es brutal.
+
+591
+00:40:10,080 --> 00:40:14,280
+Es decir, pasas de tener un proceso que te pueda costar 200 milisegundos, vale, pero
+
+592
+00:40:14,280 --> 00:40:16,760
+son 200 milisegundos lo tienes que ejecutar 80 veces.
+
+593
+00:40:16,760 --> 00:40:19,200
+Y la mitad de las veces lo ejecutas con el mismo valor.
+
+594
+00:40:19,200 --> 00:40:23,280
+O sea, este, estás ahorrando una cantidad de llamadas y además en paralelo.
+
+595
+00:40:23,280 --> 00:40:30,840
+Es decir, aumenta la paralelización y las caché GLRU para mí son un wing seguro.
+
+596
+00:40:30,840 --> 00:40:35,280
+Solo, y que te viene gratis, solo por usar funciones puras.
+
+597
+00:40:35,280 --> 00:40:43,960
+Vamos a ver, podría generar tus propios threads y tus propios forks y tus propias cosas.
+
+598
+00:40:43,960 --> 00:40:49,240
+Bueno, forks tampoco te merece tanto la pena, pero lo tendrías que hacer a mano.
+
+599
+00:40:49,240 --> 00:40:55,440
+Tampoco, sabes, conozco P-Map porque sí que me molesta en echarle un ojo, pero realmente,
+
+600
+00:40:55,440 --> 00:41:02,200
+pues sí, puedes, lo normal sería que te hicieras tus propios threads o corrutinas o cosas,
+
+601
+00:41:02,200 --> 00:41:05,800
+bueno, te puedas hacer tus propios threads, te puedas hacer tus propias cosas y ejecutas
+
+602
+00:41:05,800 --> 00:41:08,240
+en paralelo, ejecutas en varios hilos y ya está.
+
+603
+00:41:08,240 --> 00:41:13,600
+Y lo bueno es que ejecutas en varios hilos, pero te puedes olvidar de semáforos, de locks,
+
+604
+00:41:13,600 --> 00:41:17,200
+de todo eso, te olvidas, porque no te hace falta.
+
+605
+00:41:17,200 --> 00:41:19,400
+Y esa es la ventaja de la programación funcional.
+
+606
+00:41:19,400 --> 00:41:27,400
+También hablando de eso, no sé si voy un poco a ser encaminado, pero he escuchado que
+
+607
+00:41:27,400 --> 00:41:32,920
+Python tiene un problema a la hora de multiprocesado, que es el global object doc, como se decía.
+
+608
+00:41:32,920 --> 00:41:33,920
+El git.
+
+609
+00:41:33,920 --> 00:41:36,920
+El git, el git, el global interrupción.
+
+610
+00:41:36,920 --> 00:41:38,920
+No me acuerdo cómo decirlo.
+
+611
+00:41:38,920 --> 00:41:39,920
+Eso.
+
+612
+00:41:39,920 --> 00:41:45,520
+Pero, claro, en este caso nos aplicaría porque cada elemento sería un elemento distinto,
+
+613
+00:41:45,520 --> 00:41:49,240
+ya no pasaría, o sea, en el momento se hay mutables separados y no tienen problema.
+
+614
+00:41:49,240 --> 00:41:53,320
+En principio no tienes que sincronizar ciertas cosas, entonces ahí en principio no debería.
+
+615
+00:41:53,320 --> 00:41:54,320
+No, no.
+
+616
+00:41:54,320 --> 00:42:11,720
+No aplican Python a la ventaja de funciones puras para paralelizar.
+
+617
+00:42:11,720 --> 00:42:15,920
+En principio hay un PMAP, pero no sé si el git lo bloquea.
+
+618
+00:42:15,920 --> 00:42:19,640
+Pues puede ser, no lo sé.
+
+619
+00:42:19,640 --> 00:42:20,640
+Perdón.
+
+620
+00:42:20,640 --> 00:42:22,360
+Puede ser, no lo sé.
+
+621
+00:42:22,360 --> 00:42:24,680
+Ya te digo que no sabría decirte en principio.
+
+622
+00:42:24,680 --> 00:42:30,640
+La paralelización debería ser gratis, pero si el propio lenguaje, si el propio git está
+
+623
+00:42:30,640 --> 00:42:36,680
+dándote, está limitándote, pero vamos, me parece un poco.
+
+624
+00:42:36,680 --> 00:42:37,680
+Solo permite threads.
+
+625
+00:42:37,680 --> 00:42:43,160
+No, no, hay el rendimiento mucho peor.
+
+626
+00:42:43,160 --> 00:42:50,040
+Si hay una charla bastante chula, si no es interesado de David algo de understanding
+
+627
+00:42:50,040 --> 00:42:51,800
+guild, cuenta eso.
+
+628
+00:42:51,800 --> 00:42:53,280
+Eso no lo tengo controlado.
+
+629
+00:42:53,280 --> 00:42:54,280
+Lo siento.
+
+630
+00:42:54,280 --> 00:43:01,520
+Pero bueno, en principio da igual porque independientemente de que lo hagáis en Python o no, aunque
+
+631
+00:43:01,520 --> 00:43:07,120
+evidentemente el contexto es Python y demás, el concepto de usar funciones puras tiene
+
+632
+00:43:07,120 --> 00:43:11,800
+otras muchísimas ventajas, aparte de la paralelización, todo el tema de test y todo ese tipo de cosas,
+
+633
+00:43:11,800 --> 00:43:17,680
+de separar las operaciones que transforman datos en las operaciones que obtienen o escriben
+
+634
+00:43:17,680 --> 00:43:20,200
+datos, es muy interesante.
+
+635
+00:43:20,200 --> 00:43:25,280
+Y el hambre, lo del guild, pues ha dejado seco.
+
+636
+00:43:25,280 --> 00:43:29,800
+Pero bueno, y vamos, si solo se hace para ahí, ya está trabajando con efectos laterales.
+
+637
+00:43:29,800 --> 00:43:34,440
+O sea que no, pues alguna otra duda.
+
+638
+00:43:34,440 --> 00:43:39,600
+Bueno, bueno.
+

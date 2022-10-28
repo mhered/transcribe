@@ -1,0 +1,2176 @@
+1
+00:00:00,000 --> 00:00:25,320
+Bueno tardes a todos, muchas gracias por elegir esta charla para la hora de la siesta,
+
+2
+00:00:25,320 --> 00:00:30,760
+vamos a hablar de desarrollo dirigido por pruebas en Python y bueno el desarrollo dirigido por pruebas
+
+3
+00:00:32,040 --> 00:00:38,440
+lo tenemos aquí, estas son unas reglas que definió Bob Martin que probablemente lo con
+
+4
+00:00:38,440 --> 00:00:43,840
+oscay, se ha mencionado también en otras charlas y Bob Martin nos dice que para hacer
+
+5
+00:00:43,840 --> 00:00:50,160
+desarrollo dirigido por pruebas, lo primero es que no podemos escribir ningún código de producción
+
+6
+00:00:50,160 --> 00:00:57,640
+a menos que haga que una prueba que está fallando, deje de fallar y pase, lo segundo que nos dice es
+
+7
+00:00:57,640 --> 00:01:02,800
+que no podemos escribir más de una prueba que falle, una prueba que falle el código para esa
+
+8
+00:01:02,800 --> 00:01:09,560
+prueba que pase y volvemos a comenzar, a comenzar, perdón y lo tercero y último que nos dice es que
+
+9
+00:01:09,560 --> 00:01:15,480
+no podemos escribir más código de producción que lo que es suficiente para que la prueba que
+
+10
+00:01:15,480 --> 00:01:22,160
+estaba fallando pasara y esto son las reglas para aplicar TDD, muchas gracias por vuestra atención,
+
+11
+00:01:22,160 --> 00:01:29,920
+creo que me ha enseñado al tiempo, no sé alguna duda, algo más que contar?
+
+12
+00:01:33,600 --> 00:01:40,520
+Bueno un detalle, creo que esto va de Python, bueno pues esto que he dicho hacerlo en Python,
+
+13
+00:01:40,520 --> 00:01:51,320
+vale, contamos algo más, es muy sencillo, hay un libro que también ha salido antes en
+
+14
+00:01:51,320 --> 00:01:57,840
+algunas charlas muy de pasada que es este de aquí, que comienza el libro, abres el libro y lo primero
+
+15
+00:01:57,840 --> 00:02:03,400
+que ves en la introducción es eso que está ahí y eso que está ahí significa que el desarrollo
+
+16
+00:02:03,400 --> 00:02:09,600
+dirigido por pruebas o TDD es una idea engañosamente simple, lo que hemos visto que parece muy simple
+
+17
+00:02:09,600 --> 00:02:14,800
+pero bueno me imagino que habréis tenido ocasión de ponerlo en práctica y si no lo vamos a poner
+
+18
+00:02:14,800 --> 00:02:20,920
+aquí en práctica veis a ver que bueno que es una cosa que necesita un poco más de trabajo, mirad,
+
+19
+00:02:23,080 --> 00:02:29,600
+¿por qué queríamos, no, sí, sí, ¿por qué queríamos nosotros hacer TDD? hemos visto que en
+
+20
+00:02:29,600 --> 00:02:34,440
+principio parece muy sencillo pero nos vamos a un de los mejores libros de TDD y nos dice ojo que esto
+
+21
+00:02:34,440 --> 00:02:40,560
+no es tan fácil como parece, bueno y ¿por qué quiero yo meterme en el follón de hacer TDD?
+
+22
+00:02:42,760 --> 00:02:47,440
+y para mí esto es muy importante porque antes de meterme en un follón quiero saber que me va a
+
+23
+00:02:47,440 --> 00:02:53,520
+beneficiar, mirad, podemos hablar de que a lo mejor con TDD tenemos la sensación de irnos a casa
+
+24
+00:02:53,520 --> 00:02:57,880
+tranquilo porque el código funciona, lo escuchado antes en alguna charla y en otra sobre prueba y
+
+25
+00:02:57,880 --> 00:03:03,640
+estoy bastante de acuerdo con ello, a lo mejor TDD nos permite escuchar más y mejora nuestro código
+
+26
+00:03:03,640 --> 00:03:07,640
+cuando nuestro código nos grite oye que esto no está funcionando bien, que esto se está
+
+27
+00:03:07,640 --> 00:03:12,880
+complicando demasiado, que esto no va bien, vale también es un buen motivo, sin embargo yo me quedo
+
+28
+00:03:12,880 --> 00:03:18,440
+con este motivo y es básicamente buscar la felicidad y la tranquilidad ahí en el sitio del
+
+29
+00:03:18,440 --> 00:03:22,600
+trabajo, ¿de acuerdo? que el trabajo funcione, que el trabajo vaya para adelante y que como me
+
+30
+00:03:22,600 --> 00:03:28,160
+comentaba otra persona en una charla que nos pasemos dos días escribiendo código y ocho días
+
+31
+00:03:28,160 --> 00:03:35,160
+intentando que ese código funcione, ¿de acuerdo? yo lo baso esto en la felicidad, el dinero también
+
+32
+00:03:35,160 --> 00:03:40,960
+es importante, ojalá aplicando TDD nos den más dinero y bueno ojalá todos todos todos ganemos
+
+33
+00:03:40,960 --> 00:03:45,520
+el suficiente dinero para descubrir empíricamente la práctica que el dinero no da la felicidad.
+
+34
+00:03:46,880 --> 00:03:56,440
+Bien, hemos dicho que aplicar TDD es engañosamente sencillo y ¿dónde está la complicación?
+
+35
+00:03:56,440 --> 00:04:04,280
+Mirad yo creo que escribir código no es complicado, no es complejo, yo llevo escribiendo código desde
+
+36
+00:04:04,280 --> 00:04:11,160
+que era pequeñito, vosotros también, en esta picones he tenido la enorme suerte de encontrarme
+
+37
+00:04:11,160 --> 00:04:16,280
+con ingenieros aeronáuticos, ingenieros químicos, arquitectos, todos ellos escribían código y
+
+38
+00:04:16,280 --> 00:04:22,320
+todos ellos hacen unas cosas estupendas, mi gato pasa por encima del teclado y escribe código,
+
+39
+00:04:22,320 --> 00:04:27,920
+escribí un código a bascrim mejor que el mío, yo no creo que sea difícil. ¿Dónde está entonces la
+
+40
+00:04:27,920 --> 00:04:32,920
+complicación? Bueno, la complicación está a la hora de hacer sistemas de información, a la hora de
+
+41
+00:04:32,920 --> 00:04:38,040
+hacer aplicaciones, a la hora y nos lo han contado antes en nuestras charlas y está muy bien contado,
+
+42
+00:04:38,040 --> 00:04:43,360
+a la hora de coger el código que escribiste hace una semana, hace un mes y mejorarlo,
+
+43
+00:04:43,360 --> 00:04:48,320
+evolucionarlo, corregirlo, vosotros imaginados el código que podéis escribir en un día, vosotros
+
+44
+00:04:48,320 --> 00:04:53,200
+multiplicados eso por otro día, por otro día, por otro día, por otro compañero que está al lado,
+
+45
+00:04:53,200 --> 00:04:57,280
+por otro compañero que está al lado, la cantidad de código que se va generando es enorme.
+
+46
+00:04:59,520 --> 00:05:05,560
+Y eso nos introduce complicaciones, mirad, un problema es tan complejo como tenga que ser,
+
+47
+00:05:05,560 --> 00:05:12,240
+vale, no hemos dicho nada, lo que tenemos que intentar es quedarnos ahí, no introducir nosotros
+
+48
+00:05:12,240 --> 00:05:17,680
+una complejidad o una complicación adicional a ese código o a esa idea que ya de por sí es
+
+49
+00:05:17,680 --> 00:05:23,840
+complicado y TDD nos ayuda a esto, mirad, esto es otra manera de aplicarte TD, yo creo que es una
+
+50
+00:05:23,840 --> 00:05:29,400
+de las mejores maneras descritas que hay, no lo vamos a ver entero, pero nos vamos a quedar en
+
+51
+00:05:29,400 --> 00:05:36,040
+cómo se empieza aplicándote TD, mirad, lo primero que dice es, no toques nada, quieta las manos,
+
+52
+00:05:36,040 --> 00:05:44,880
+piensa sobre lo que quieres hacer, así empieza, una vez que yo lo has pensado, el siguiente paso es
+
+53
+00:05:44,880 --> 00:05:52,800
+piensa sobre cómo vas a probarlo y una vez que has vuelto a pensar, entonces es cuando te dicen,
+
+54
+00:05:52,800 --> 00:06:00,800
+vale, haz algo, pero tranquilo, escribe una pequeña prueba o un pequeño test, vale, lo
+
+55
+00:06:00,800 --> 00:06:08,440
+he escrito, pero es que después te dice, piensa sobre el API que deseas, la manera en la que quieres
+
+56
+00:06:08,440 --> 00:06:16,080
+obtener lo que tu código hace, fijaos, en tres pasos, en tres pasos ha mencionado tres veces la
+
+57
+00:06:16,080 --> 00:06:22,360
+palabra piensa, ¿por qué? porque desarrollar aplicaciones es una cosa complicada, es una cosa
+
+58
+00:06:22,360 --> 00:06:27,840
+compleja, es una cosa en la que tenemos que pensar y tenemos que ser buenos, ¿de acuerdo? entonces
+
+59
+00:06:27,840 --> 00:06:34,120
+tenemos que pensar para quedarnos con la complejidad que tiene el problema y no añadir más problemas
+
+60
+00:06:34,120 --> 00:06:40,040
+por nuestra cuenta que hemos visto antes en alguna charla de referencias incrustadas, el código que
+
+61
+00:06:40,040 --> 00:06:45,480
+está demasiado metido que no podemos desacoplar, arrastrar la persistencia por todos lados, etcétera.
+
+62
+00:06:46,680 --> 00:06:53,080
+Bien, esto es la teoría, vamos a ponerlo en la práctica, vamos a suponer que estamos en nuestro
+
+63
+00:06:53,080 --> 00:06:56,160
+trabajo, que estamos en nuestra empresa, viene nuestro jefe y nos dice, me tienes que hacer un
+
+64
+00:06:56,160 --> 00:07:01,680
+programa que busque ficheros del mismo tamaño y los borre, a la venga, nosotros hemos escuchado que
+
+65
+00:07:01,680 --> 00:07:06,000
+TDD estupendo, nosotros no hemos estado en esta charla y pensamos que TDD es fácil de hacer, oye,
+
+66
+00:07:06,000 --> 00:07:10,080
+al final de la charla a lo mejor llegamos a la conclusión de que es fácil, pero vamos a probarlo,
+
+67
+00:07:10,080 --> 00:07:15,080
+vamos a verlo si de verdad es sencillo, ¿qué es lo que hacemos? ¿qué es lo primero que hacemos? bueno,
+
+68
+00:07:15,080 --> 00:07:22,240
+pues pensar, tenemos que hacer un programa que borre fichero, vamos a pensar, lo que hacemos es
+
+69
+00:07:22,240 --> 00:07:29,800
+ejemplos, escenarios, ideas que se nos vengan a la cabeza sobre el software que tenemos que hacer,
+
+70
+00:07:29,800 --> 00:07:35,280
+mirad, yo esto lo he hecho y estas han sido algunas o casi todas las ideas que se me han venido a la
+
+71
+00:07:35,280 --> 00:07:39,320
+cabeza, bueno, pues si tengo un directorio con dos ficheros iguales, borro uno, cuál es el que sea,
+
+72
+00:07:39,320 --> 00:07:43,760
+no importa tanto, si tengo un directorio con dos ficheros distintos, no borro nada, un fichero
+
+73
+00:07:43,760 --> 00:07:48,920
+vacío, no hago nada, un fichero con tres, perdón, un directorio con tres ficheros distintos, borro
+
+74
+00:07:48,920 --> 00:07:54,480
+dos de ellos y así sucesivamente, todo lo que se me venga a la cabeza lo pongo, no estoy intentando
+
+75
+00:07:54,480 --> 00:07:59,240
+escribir un conjunto completo de pruebas, de hecho es que ni sexto ni siquiera tienen por qué ser
+
+76
+00:07:59,240 --> 00:08:04,840
+pruebas, ya veré, ya veré lo que hago con esto, a lo mejor algunas me interesa llevarlas como pruebas,
+
+77
+00:08:04,840 --> 00:08:10,360
+a lo mejor otras no le veo valor en un momento determinado y no las implemento, a lo mejor se
+
+78
+00:08:10,360 --> 00:08:14,920
+me ocurren más cosas que probaron, más cosas que hacer que no están en esta primera lista,
+
+79
+00:08:14,920 --> 00:08:27,040
+pero me he obligado a pensar a ver qué es lo que quiero obtener. Bien, quiero preguntaros una cosa,
+
+80
+00:08:27,040 --> 00:08:32,240
+mirad, tenemos que hacer un programa que busque ficheros del mismo tamaño y los borre,
+
+81
+00:08:32,240 --> 00:08:36,520
+pensad que eso es lo que tenéis que hacer cada uno de los que estáis aquí,
+
+82
+00:08:38,760 --> 00:08:46,360
+¿cuántos de vosotros diríais? TDD, a la mierda, ¿cuántos diríais? Yo me cojo mi código,
+
+83
+00:08:46,360 --> 00:08:51,200
+yo me cojo mi IDE, yo me pongo a programar llamadas al sistema, yo tengo en la cabeza el
+
+84
+00:08:51,200 --> 00:08:55,200
+algoritmo, pero no es que no ibas a usarte TDD, no, no, no, pero es que en este caso TDD,
+
+85
+00:08:55,200 --> 00:08:59,280
+no, porque yo lo tengo muy claro, no, porque tengo que hacer muchas llamadas al sistema,
+
+86
+00:08:59,280 --> 00:09:04,080
+o sí voy a usarte TDD, pero yo voy a mirar a ver cómo se guarda un fichero, porque es eso lo que
+
+87
+00:09:04,080 --> 00:09:09,600
+tengo que hacer. No voy a pedir que levantéis la mano, porque quiero que seáis sinceros con
+
+88
+00:09:09,600 --> 00:09:15,040
+vosotros mismos, vosotros a lo mejor alguno diría, usted de esta muy bien, está estupendo,
+
+89
+00:09:15,040 --> 00:09:19,320
+yo voy a hacer un programa que me ponga un fiso, un bus, como comentaron en otras charlas,
+
+90
+00:09:19,320 --> 00:09:23,080
+yo voy a hacer un programa que me mire los números de la mano, no, no, no, pero esto es el mundo real,
+
+91
+00:09:23,080 --> 00:09:29,080
+aquí ya esto no hay que irse a por lo que irse, hacer la reflexión y ahora vamos a ir,
+
+92
+00:09:29,080 --> 00:09:34,960
+vamos a ver cómo va evolucionando esto, vale, puede ser difícil, puede costar,
+
+93
+00:09:34,960 --> 00:09:40,000
+puede ser un poco desagradable, pero vamos a intentar definir nuestra prueba, mirad,
+
+94
+00:09:40,000 --> 00:09:44,960
+una prueba cualquiera, por ejemplo, la primera por la que empezaríamos, tengo un directorio,
+
+95
+00:09:44,960 --> 00:09:50,600
+tengo dos ficheros iguales dentro de ese directorio, ¿qué va a ser mi código? Vamos a llamar al
+
+96
+00:09:50,600 --> 00:09:55,600
+algoritmo de borrado y cuál es el resultado que esperamos, que uno de los ficheros ya no esté y el
+
+97
+00:09:55,600 --> 00:10:02,720
+otro sí, vale, esta es la idea de lo que yo quiero y esto es la idea de lo que voy a intentar
+
+98
+00:10:02,720 --> 00:10:07,560
+implementar, lo hemos visto en la primera transparencia pero casi no lo he remarcado,
+
+99
+00:10:07,560 --> 00:10:13,520
+TDN no es tanto probar el código sino escribir el código, yo pienso qué tiene que hacer mi código
+
+100
+00:10:13,520 --> 00:10:21,760
+y después eso lo represento con una prueba, ¿cómo haríamos esta prueba? Mirad, necesito un
+
+101
+00:10:21,760 --> 00:10:25,920
+directorio y dos ficheros iguales dentro de este directorio, ¿creó el fichero y los dos
+
+102
+00:10:25,920 --> 00:10:30,920
+directorios a mano? Bueno, tendré que volver a crearlo cada vez que ejecute la prueba, digo no,
+
+103
+00:10:30,920 --> 00:10:35,800
+no, no, yo soy un crack, yo automatizo las pruebas, esto tiene que salir andando solo,
+
+104
+00:10:35,800 --> 00:10:40,520
+a mí se me tiene que mandar un mensaje o encenderse una luz roja cuando esta prueba falle,
+
+105
+00:10:40,520 --> 00:10:46,840
+yo no tengo que intervenir para nada, venga, meto el código para crear un directorio y un fichero,
+
+106
+00:10:46,840 --> 00:10:52,200
+vale, estupendo, pero eso tienes que aprender a hacerlo, a lo mejor lo tienes en tu cabeza y lo
+
+107
+00:10:52,200 --> 00:10:56,440
+puedes escribir directamente, genial, entonces este cambio de problema y te pregunto por algo que
+
+108
+00:10:56,440 --> 00:11:03,280
+no tengas en tu cabeza, pero si no tienes que ir a buscar y ver cómo hacerlo, para comprobar si
+
+109
+00:11:03,280 --> 00:11:09,080
+los ficheros están o no están lo mismo, vamos a suponer por un momento que lo hacemos de esta
+
+110
+00:11:09,080 --> 00:11:13,240
+manera, decimos venga, vamos a la documentación a ver para crear ficheros, para borrar ficheros,
+
+111
+00:11:13,240 --> 00:11:17,920
+esto, bueno, me voy a la consola interactiva, voy a probar esto si funciona, patatín, patatán,
+
+112
+00:11:17,920 --> 00:11:24,000
+dos horas, tres horas probando, viene nuestro jefe, ¿qué habéis hecho del algoritmo? ¿esto borra
+
+113
+00:11:24,000 --> 00:11:31,360
+ya los ficheros o no? No, pero ya tengo localizada las llamadas que necesito para escribir una prueba,
+
+114
+00:11:31,360 --> 00:11:35,360
+patatín, patatán, eso es como si a vuestro jefe la hablaréis en chino, vuestro jefe os ha pedido
+
+115
+00:11:35,360 --> 00:11:38,760
+que borréis ficheros y si vosotros no estéis trabajando en el programa que borra ficheros,
+
+116
+00:11:38,760 --> 00:11:43,640
+no estéis haciendo nada, estáis perdiendo el tiempo, ya sabemos que eso no es así, pero es un gap
+
+117
+00:11:43,640 --> 00:11:49,160
+de comunicación que ahí tenemos que cuidarlo, oye a lo mejor todavía no necesitamos las llamadas
+
+118
+00:11:49,160 --> 00:11:55,760
+al sistema o a lo mejor yo prefiero concentrarme ahora mismo en cómo detectar que tengo que borrar
+
+119
+00:11:55,760 --> 00:12:02,840
+ficheros y luego ya veré cómo hacerlo y esa es la, ¿veis? Por lo tanto no necesitamos esto,
+
+120
+00:12:02,840 --> 00:12:10,560
+aún podemos empezar sin ello y para reforzar esta idea no creo que nadie como un pastel con todo el
+
+121
+00:12:10,560 --> 00:12:14,120
+pastel a la misma vez, ¿verdad? Se lo mete todo en la boca de golpe, no, pues de la general le
+
+122
+00:12:14,120 --> 00:12:18,240
+vamos dando un mordisquito y nos lo comemos, ¿de acuerdo? Dura más el pastel, la experiencia es más
+
+123
+00:12:18,240 --> 00:12:23,680
+agradable, no nos encontramos pastel a los tres días en los sitios más insospechados, podemos hacer
+
+124
+00:12:23,680 --> 00:12:28,320
+lo mismo con el código, no tenemos que escribir todo el código de golpe, no tenemos que intentar
+
+125
+00:12:28,320 --> 00:12:35,000
+abarcarlo todo, podemos ir paso a paso y vamos a verlo en la prueba, mirad, tengo que hacer un
+
+126
+00:12:35,000 --> 00:12:39,440
+programa que borre ficheros, ya tengo cual va a ser mi prueba, un directorio de ficheros iguales,
+
+127
+00:12:39,440 --> 00:12:45,320
+uno tiene que desaparecer, pues ahora voy y lo programo, o lo intento, así que me vengo a mi
+
+128
+00:12:45,320 --> 00:12:52,400
+entorno de programación y digo venga, vamos a crear por ejemplo una carpeta para las pruebas,
+
+129
+00:12:52,400 --> 00:12:59,720
+esto no es muy Python, pero bueno, vamos a crear un nuevo módulo que tenga mis pruebas
+
+130
+00:13:10,280 --> 00:13:17,000
+y ahora como yo soy programador, taca, taca, taca, taca, taca, taca, escribo y tachán aparece
+
+131
+00:13:17,000 --> 00:13:22,720
+mi primera prueba y esta primera prueba lo que hace es, me veis que disculpa pero soy muy tímido,
+
+132
+00:13:22,720 --> 00:13:30,800
+puedo escribir código en público, vale, no nos preocupen porque va a fallar seguro,
+
+133
+00:13:30,800 --> 00:13:39,040
+no pasaré el mal rato, tranquila, bien, bueno pues como hemos dicho escribimos nuestra primera
+
+134
+00:13:39,040 --> 00:13:45,600
+prueba y si os fijáis, o al menos es lo que lo que estamos intentando, esta primera prueba es la
+
+135
+00:13:45,600 --> 00:13:52,160
+prueba que hemos dicho que queríamos, pero realmente nos estamos centrando en el problema
+
+136
+00:13:52,160 --> 00:13:58,640
+de borrar ficheros y no en el problema de cuál es la llamada del sistema que me devuelve, vale,
+
+137
+00:13:58,640 --> 00:14:04,760
+mirad, creo un fichero, un fichero que va a estar repetido, qué necesito de ese fichero,
+
+138
+00:14:04,760 --> 00:14:08,760
+qué quiero ponerle, bueno pues el nombre o el tamaño y si no lo tengo claro pues no lo pongo
+
+139
+00:14:08,760 --> 00:14:14,280
+nada o le pongo más cosas y a ver si se usa, no, no pasa nada, añadir y borrar líneas es muy sencillo,
+
+140
+00:14:14,280 --> 00:14:19,480
+no está escrito en piedra, luego necesito un directorio, le puedo poner una ruta y lo importante,
+
+141
+00:14:19,480 --> 00:14:23,800
+lo importante es que este directorio tenga dos ficheros, de momento se lo voy a poner así,
+
+142
+00:14:23,800 --> 00:14:29,120
+mi propio código me va a decir si es una buena idea o no, cuando yo siga escribiendo más código y
+
+143
+00:14:29,120 --> 00:14:34,400
+tenga que usarlo, porque esto lo escribo para usarlo yo mismo, me voy a dar cuenta de si esta idea
+
+144
+00:14:34,400 --> 00:14:40,440
+funciona o me viene mejor de otra manera, este es el arrangement que vimos al principio,
+
+145
+00:14:40,440 --> 00:14:45,240
+esto es lo que yo necesito para las pruebas y ahora vamos a ver qué es lo que queremos,
+
+146
+00:14:45,240 --> 00:14:51,600
+quiero un algoritmo que me borre fichero, borra los de aquí y ahora viene el resultado y aquí a lo
+
+147
+00:14:51,600 --> 00:14:56,240
+mejor es un paso un poco brusco pero bueno con un poquito de práctica, con un poquito de aprendizaje,
+
+148
+00:14:56,240 --> 00:15:01,280
+esta idea es muy intuitiva, mirad, nosotros hemos visto o tenemos la idea en la cabeza de que cuando
+
+149
+00:15:01,280 --> 00:15:07,480
+llamamos a borrar un fichero, un fichero tiene que desaparecer, eso cómo lo podemos plantear en una
+
+150
+00:15:07,480 --> 00:15:11,880
+prueba, hemos dicho que no queremos todavía empezar a crear ficheros y directorios de ales porque
+
+151
+00:15:11,880 --> 00:15:16,800
+vamos a irnos a lo más sencillo, se supone que tendríamos que mirar en el directorio y ver
+
+152
+00:15:16,800 --> 00:15:21,800
+que ha desaparecido uno pero entonces yo tendría que implementar de alguna manera esa lógica,
+
+153
+00:15:21,800 --> 00:15:26,120
+esa lógica de que cuando al directorio yo le borre un fichero de aquí se me quite uno para
+
+154
+00:15:26,120 --> 00:15:34,640
+comprobarlo, eso se puede hacer, es una técnica de pruebas que se llama fake o faking que es una clase
+
+155
+00:15:34,640 --> 00:15:40,720
+o un elemento de código muy sencillo que simula un comportamiento y que vimos en alguna otra charla
+
+156
+00:15:40,720 --> 00:15:45,320
+por ejemplo cuando nos decían la persistencia no te preocupes de ella vuelca a la disco y más
+
+157
+00:15:45,320 --> 00:15:49,640
+adelante si necesitas una base data se la pone, vale, yo esa estrategia la probé y a mí no me
+
+158
+00:15:49,640 --> 00:15:54,880
+funcionó demasiado bien así que decidí dar un giro y hacerlo todavía más sencillo,
+
+159
+00:15:54,880 --> 00:16:00,400
+¿qué tiene que pasar cuando se borra un fichero? Bueno pues cuando se borra un fichero lo que vamos
+
+160
+00:16:00,400 --> 00:16:05,800
+a hacer es pedirle al directorio que por favor lo borre, por lo tanto mi prueba va a verificar que
+
+161
+00:16:05,800 --> 00:16:12,560
+se le ha pedido al directorio que por favor borre el fichero además indicando que el fichero que
+
+162
+00:16:12,560 --> 00:16:19,960
+tiene que borrar es este, ¿de acuerdo? y con esto ya le hemos dado forma a lo que queremos obtener de
+
+163
+00:16:19,960 --> 00:16:25,240
+nuestro código, si nosotros ejecutamos esta prueba, esta prueba falla porque realmente no hemos
+
+164
+00:16:25,240 --> 00:16:30,440
+escrito todavía código de producción, lo que tenemos es la idea el siguiente paso que vamos a dar
+
+165
+00:16:31,520 --> 00:16:37,240
+así que vamos a ponernos de nuevo en camino, vale, aquí tenéis una representación más
+
+166
+00:16:37,240 --> 00:16:42,200
+esquemática de lo que hemos hecho y hemos dicho bueno el borrador de ficheros lo que le tiene
+
+167
+00:16:42,200 --> 00:16:46,320
+que decir al directorio es dame los ficheros y luego tiene que ver cuál tiene que borrar,
+
+168
+00:16:48,960 --> 00:16:54,640
+vale, para ello no me he detenido mucho a mirarlo porque no quiero entrar en los detalles o si
+
+169
+00:16:54,640 --> 00:17:00,200
+queréis al final entramos en los detalles como todavía realmente no sé esa clase directorio que
+
+170
+00:17:00,200 --> 00:17:07,040
+va a hacer ni quiero preocuparme por ello lo que hago es utilizar un doble que lo reemplace, ¿de
+
+171
+00:17:07,040 --> 00:17:14,320
+acuerdo? este doble me permite no preocuparme de métodos concretos, qué método voy a usar,
+
+172
+00:17:14,320 --> 00:17:19,680
+con qué parámetro y yo qué sé, a mí lo que me interesa ahora mismo no es ir a mirar los métodos,
+
+173
+00:17:19,680 --> 00:17:24,560
+yo le paso el primero que se me pase por la cabeza y más adelante iré viendo si eso funciona
+
+174
+00:17:24,560 --> 00:17:29,200
+o no, no nos preocupamos tampoco por la implementación es que eso tiene que borrar un fichero lo hará,
+
+175
+00:17:29,200 --> 00:17:33,360
+vaya que sí lo hará no me voy a librar de hacerlo pero ahora no es el momento,
+
+176
+00:17:33,360 --> 00:17:38,640
+podemos verificar qué métodos están invocando y con qué parámetros lo están haciendo,
+
+177
+00:17:38,640 --> 00:17:41,880
+esto si queréis al final podemos discutir si es buena idea, si es mala idea,
+
+178
+00:17:41,880 --> 00:17:47,080
+si introduce un acoplamiento muy fuerte pero ahora mismo a mí me está salvando la papeleta para
+
+179
+00:17:47,080 --> 00:17:53,000
+no tener que ir y ponerme a crear ficheros a mano y también aunque en este caso no lo estamos
+
+180
+00:17:53,000 --> 00:17:57,440
+usando pero me permitiría indicar cuáles son los valores adecuados que yo necesito para
+
+181
+00:17:57,440 --> 00:18:05,320
+comprobar alguna característica concreta, bien, esta transparencia es igual que es el mismo dibujo que
+
+182
+00:18:05,320 --> 00:18:09,920
+esta transparencia de otra charla, no sé cómo se dieron cuenta que tenía esta y me la robaron,
+
+183
+00:18:09,920 --> 00:18:17,000
+son unos cratos y básicamente lo que quiero contar es que lo que estamos haciendo también es una
+
+184
+00:18:17,000 --> 00:18:22,000
+buena práctica de programación que la hemos visto antes en una charla, no sé si le he dicho al
+
+185
+00:18:22,000 --> 00:18:27,160
+principio pero estoy contentísimo de dar esta charla aquí porque antes han habido otras charlas
+
+186
+00:18:27,160 --> 00:18:34,720
+que se complementan muy bien con esta y que nos dan un cuerpo de conocimiento muy muy sólido,
+
+187
+00:18:34,720 --> 00:18:41,600
+vale, dicha esta nota, una cosa que estamos haciendo es aplicar el principio de una única
+
+188
+00:18:41,600 --> 00:18:47,400
+responsabilidad, una única responsabilidad es un único motivo para cambiar, dedícate a una cosa,
+
+189
+00:18:47,400 --> 00:18:54,360
+mirad en esta separación que hemos hecho de el que piensa o el que decide que ficheros borrar y el
+
+190
+00:18:54,360 --> 00:18:59,040
+que borra los ficheros, si nosotros mañana nos lo llevamos a otro sistema de ficheros o cambian
+
+191
+00:18:59,040 --> 00:19:03,480
+las llamadas al sistema el algoritmo no va a cambiar, quien decide los ficheros que hay que
+
+192
+00:19:03,480 --> 00:19:07,960
+borrar va a trabajar de la misma manera aunque esos ficheros se vayan a borrar de otra, veis la
+
+193
+00:19:07,960 --> 00:19:17,960
+separación entre responsabilidades lo estamos consiguiendo, bien, tenemos la prueba, vamos a
+
+194
+00:19:17,960 --> 00:19:22,680
+hacer que esa prueba pase, vamos a escribir el mínimo código necesario, vamos a dar el primer
+
+195
+00:19:22,680 --> 00:19:31,920
+paso en nuestro código de producción, para ello nos venimos a nuestro proyecto, separamos el código
+
+196
+00:19:31,920 --> 00:19:38,360
+de producción del código de pruebas, esto lo hago yo por gusto, no tiene porque ser una buena
+
+197
+00:19:38,360 --> 00:19:46,600
+práctica seguir, vamos a llamarles por ejemplo a los ficheros aunque se vaya a llamar igual que la clase,
+
+198
+00:19:55,400 --> 00:20:00,760
+nos venimos aquí, como somos programadores pues ya sabéis no sé si habéis visto el famoso vídeo
+
+199
+00:20:00,760 --> 00:20:06,920
+no, si no lo habéis visto no me estáis entendiendo esta broma y escribimos escribimos escribimos
+
+200
+00:20:06,920 --> 00:20:15,040
+y si lo pensamos un poco realmente el mínimo código que nosotros necesitamos para que la prueba
+
+201
+00:20:15,040 --> 00:20:20,080
+esa tan larga que hemos escrito funcione es este que tenemos aquí, que hay que hacer,
+
+202
+00:20:20,080 --> 00:20:26,440
+puedo borrar el primer fichero que venga pues ahí está para que nos vamos a preocupar más y esto
+
+203
+00:20:26,440 --> 00:20:36,280
+funciona, no, me da un error por ahí, vale no funciona porque me falta el import, vamos a importarlo
+
+204
+00:20:36,280 --> 00:20:50,680
+vale perdón no le he cambiado el nombre a la clase
+
+205
+00:20:50,680 --> 00:21:12,000
+ahora sí puedo ejecutarlo y lo vamos a ejecutar aquí, ejecutar como prueba
+
+206
+00:21:12,000 --> 00:21:23,160
+progunitaria, no sé si alguien se ha dado cuenta yo probamos bastante en Java y la prueba falla,
+
+207
+00:21:23,160 --> 00:21:32,240
+esto no estaba en la demostración que la prueba fallara, vamos a ver por qué, tengo duplicada
+
+208
+00:21:32,240 --> 00:21:46,240
+bueno no pasa nada lo quitamos y queda mejor, no pero aquí el INI no afecta para nada
+
+209
+00:21:46,240 --> 00:22:08,200
+vale vale sí, gracias, vale es que se me ha colado no sé por qué pero ha aparecido un
+
+210
+00:22:08,200 --> 00:22:16,000
+parámetro en el INI, ahora la prueba funciona para asegurarnos que es la que tiene que ser,
+
+211
+00:22:16,000 --> 00:22:20,800
+pues todo lo bueno de las pruebas, ejecutarlo una y otra y otra vez, se me había colado un
+
+212
+00:22:20,800 --> 00:22:29,280
+parámetro en el INI que no tendría que estar ahí y bueno, vale, por el momento va funcionando,
+
+213
+00:22:29,280 --> 00:22:39,160
+¿cómo seguimos? bueno pues repetimos lo mismo que hemos hecho, nos volvemos a nuestro conjunto
+
+214
+00:22:39,160 --> 00:22:45,360
+de ideas, nuestro conjunto de posibles pruebas, elegimos otra la que en ese momento nos parezca
+
+215
+00:22:45,360 --> 00:22:51,640
+más interesante, la que en ese momento nos pueda aportar más la que nos lleve a modificar o
+
+216
+00:22:51,640 --> 00:22:56,720
+implementar el código como nosotros queremos o como nosotros queremos probar acordado de las
+
+217
+00:22:56,720 --> 00:23:02,960
+reglas del principio, escriba una única prueba que falla, escribe solo código de producción para
+
+218
+00:23:02,960 --> 00:23:11,560
+una prueba que falle y volvemos a hacer lo mismo, si queréis podemos ver cómo sería una segunda
+
+219
+00:23:11,560 --> 00:23:22,000
+prueba, vamos a escribir primero, nos vendríamos aquí después de esta primera prueba, haríamos
+
+220
+00:23:22,000 --> 00:23:35,720
+lo mismo, apretaríamos así teclas y aparecería algo como esto, vale, básicamente esta prueba es la
+
+221
+00:23:35,720 --> 00:23:41,600
+misma que la anterior con la única diferencia de que añado el fichero repetido dos veces, no sé si
+
+222
+00:23:41,600 --> 00:23:46,200
+se aprecia aquí en esta línea, fichero repetido, fichero repetido y fichero repetido, en este caso
+
+223
+00:23:46,200 --> 00:23:54,200
+como el fichero repetido lo está tres veces, hay que llamar al método de bordar dos veces,
+
+224
+00:23:54,200 --> 00:23:57,880
+si ahora ejecutamos nuestro conjunto de pruebas,
+
+225
+00:24:02,800 --> 00:24:09,000
+lógicamente no pasa, espero que nadie pensará que esto iba a pasar, porque no pasa, porque mi código
+
+226
+00:24:09,000 --> 00:24:14,440
+de producción solo llama a borrar una vez y en este caso tiene que borrarnos, bueno pues esto es
+
+227
+00:24:14,440 --> 00:24:22,840
+estupendo, una prueba que falla es una oportunidad de escribir más código de producción, es genial,
+
+228
+00:24:22,840 --> 00:24:27,960
+podemos seguir avanzando y podemos mejorar nuestro programa,
+
+229
+00:24:32,920 --> 00:24:41,520
+bien, ya lo habéis visto, seguimos avanzando, seguimos avanzando, escribimos las pruebas y
+
+230
+00:24:41,520 --> 00:24:46,680
+tenemos completo nuestro algoritmo, no tengo previsto enseñarlo pero si queréis como está hecho
+
+231
+00:24:46,680 --> 00:24:51,560
+y funcional, al final podemos verlo, de acuerdo, creo que realmente no tiene mucho interés ahora
+
+232
+00:24:51,560 --> 00:25:00,320
+mismo porque la mecánica ya la hemos visto, vale estupendo, vamos a pensar que vuelve nuestro
+
+233
+00:25:00,320 --> 00:25:05,760
+jefe, hemos hecho esto y ahora viene nuestro jefe y nos dice ¿qué has estado haciendo? ¿estaría el
+
+234
+00:25:05,760 --> 00:25:17,520
+programa de borrar? ¿qué le contestamos? sí, pero lo tengo hecho, ya tengo diseñada,
+
+235
+00:25:17,520 --> 00:25:23,760
+programada y además funciona todo lo que yo necesito para recorrer los directorios, ver los
+
+236
+00:25:23,760 --> 00:25:30,400
+ficheros e identificar qué ficheros hay que borrar, lo único que me queda son un par de
+
+237
+00:25:30,400 --> 00:25:35,560
+pequeños detalles de llamar al sistema para borrarlo, pero realmente lo importante ya está
+
+238
+00:25:35,560 --> 00:25:39,920
+hecho, bueno a lo mejor estamos exagerando un poco, pero lo que yo quiero que veáis es que
+
+239
+00:25:39,920 --> 00:25:45,840
+realmente estas pruebas las hechas rápido, las hechas sencillo y me han permitido implementar una
+
+240
+00:25:45,840 --> 00:25:51,480
+parte, ya tengo resuelto una parte del problema, pero ahora tengo que seguir porque lógicamente
+
+241
+00:25:51,480 --> 00:25:56,680
+esto no funciona por sí solo, nosotros nos hemos estado apoyando en dobles, dobles que me han
+
+242
+00:25:56,680 --> 00:26:03,280
+permitido independizarme de la estructura real de un directorio de los ficheros reales, no los
+
+243
+00:26:03,280 --> 00:26:10,520
+he necesitado y he podido diseñar toda la lógica, pero antes o después esos dobles hay que quitarlos
+
+244
+00:26:10,520 --> 00:26:16,160
+y hay que poner el código de verdad que lee un directorio de verdad y que lee ficheros de verdad,
+
+245
+00:26:16,160 --> 00:26:26,040
+bueno este es el momento, ¿cómo hacemos esto? de la misma manera primero pensamos qué queremos
+
+246
+00:26:26,040 --> 00:26:31,360
+obtener, en este caso es muy sencillo, bueno es más sencillo que antes porque nosotros ya hemos
+
+247
+00:26:31,360 --> 00:26:35,960
+estado utilizando los directorios, los ficheros, sabemos qué información tienen que tener,
+
+248
+00:26:35,960 --> 00:26:41,200
+sabemos qué métodos necesitamos llamar, qué parámetros queremos pasarle, os dais cuenta,
+
+249
+00:26:41,200 --> 00:26:47,000
+hemos diseñado el API, ya sé que mi clase directorio tiene que tener un método borrafichero al
+
+250
+00:26:47,000 --> 00:26:52,640
+que le paso este fichero, es un primer paso, un primer paso importante, no hemos diseñado el API
+
+251
+00:26:52,640 --> 00:26:57,040
+que nosotros creemos que tiene que tener, no hemos diseñado un API supergenérica para hacer
+
+252
+00:26:57,040 --> 00:27:02,160
+cualquier cosa, hemos puesto aquellos métodos que nosotros necesitábamos, que nosotros queríamos
+
+253
+00:27:02,160 --> 00:27:09,640
+usar para resolver el problema, bueno pues vamos a seguir a partir de ahí, en el caso anterior yo
+
+254
+00:27:09,640 --> 00:27:15,400
+puse las ideas de lo que hacía el algoritmo con bolitas, con colorines y en este caso no,
+
+255
+00:27:15,400 --> 00:27:20,520
+en este caso es una lista de características, pero la idea es exactamente la misma, lo veis cuando
+
+256
+00:27:20,520 --> 00:27:24,480
+el directorio estaba así o entonces no tengo ficheros, cuando borra un fichero el directorio
+
+257
+00:27:24,480 --> 00:27:28,720
+tiene un fichero menos, cuando recupera un fichero un directorio puedo acceder a su nombre, estoy
+
+258
+00:27:28,720 --> 00:27:34,320
+pensando qué es lo que tiene que hacer y esto es la base a partir de la cual yo haré prueba y ahora
+
+259
+00:27:34,320 --> 00:27:41,080
+ahora es cuando nos centramos en ver esas llamadas al sistema, ahora que ya tenemos hecho el algoritmo,
+
+260
+00:27:41,080 --> 00:27:44,680
+ahora que el algoritmo recorre directorios y ficheros, ahora que sabe cuáles tienen que
+
+261
+00:27:44,680 --> 00:27:50,480
+borrar, ahora con esa tranquilidad yo ya digo vale, vamos a ver las llamadas, vamos a añadir
+
+262
+00:27:50,480 --> 00:27:55,840
+estos detalles y vamos a hacer que esto funcione de verdad y ahora es por ejemplo cuando vosotros
+
+263
+00:27:55,840 --> 00:28:00,600
+buceáis en Python y descubris que tenéis un módulo que os permite crear directorios temporales,
+
+264
+00:28:00,600 --> 00:28:05,160
+ficheros temporales y decisos, ostras, pues esto me viene genial, esto me facilita mucho
+
+265
+00:28:05,160 --> 00:28:14,640
+la escribir las pruebas, vale, hacéis esto y conseguís la implementación final de directorio
+
+266
+00:28:14,640 --> 00:28:20,080
+y la implementación final de fichero, aunque bueno en este caso este ejemplo concreto yo lo
+
+267
+00:28:20,080 --> 00:28:27,760
+resuelto y realmente ficheros no necesitaba ningún método, pero bueno, ¿qué tenemos ahora?
+
+268
+00:28:27,760 --> 00:28:33,280
+podéis decirlo, tenemos todo, pues sí, tenemos el algoritmo, tenemos el directorio que funciona
+
+269
+00:28:33,280 --> 00:28:41,120
+de verdad, tenemos las pruebas hechas con directorios temporales, pero, pero realmente eso no lo hemos
+
+270
+00:28:41,120 --> 00:28:45,720
+combinado nunca, no lo hemos juntado nunca, eso funciona de verdad, nosotros hemos probado alguna
+
+271
+00:28:45,720 --> 00:28:51,120
+vez el algoritmo con los directorios de verdad, con los ficheros de verdad, no lo hemos hecho,
+
+272
+00:28:51,120 --> 00:28:55,240
+entonces realmente no podemos poner con la mano en el fuego de que eso funciona, vale,
+
+273
+00:28:55,240 --> 00:29:03,880
+en este caso podemos pensar, podemos salirnos un poquito de TDD y plantearnos otras maneras y lo
+
+274
+00:29:03,880 --> 00:29:08,320
+que nos vamos a plantear ahora es lo que nos planteamos al principio, nosotros acordáis al
+
+275
+00:29:08,320 --> 00:29:13,920
+principio del todo cuando yo os decía, ¿qué haríais? ¿Os iríais a crear ficheros, a crear
+
+276
+00:29:13,920 --> 00:29:20,240
+directorios para escribir el código ejecutar, lo y ver si eso fichero se borra? Hombre, eso hay que
+
+277
+00:29:20,240 --> 00:29:26,920
+hacerlo, porque un programa que borra fichero, tú no vas a decir, esto está terminado, esto funciona,
+
+278
+00:29:26,920 --> 00:29:31,640
+sino haberlo visto por lo menos una vez en un directorio con ficheros asegurándote de que
+
+279
+00:29:31,640 --> 00:29:35,600
+borra lo que tiene que borrar, vale, pues ahora lo hacemos, pero lo hacemos ahora cuando todo el
+
+280
+00:29:35,600 --> 00:29:39,640
+código esté escrito, cuando todo el código está probado y cuando nosotros tenemos interés de ver
+
+281
+00:29:39,640 --> 00:29:46,320
+si esas piezas combinan bien y funcionan, entonces sí nos vamos al mundo real y decimos venga, vamos
+
+282
+00:29:46,320 --> 00:29:53,400
+a hacer una prueba de aceptación, vamos a tener un directorio con algunos ficheros, lo voy a ejecutar
+
+283
+00:29:53,400 --> 00:29:59,880
+y me va a borrar, idealmente esto tendría que hacerlo una vez o dos, en este ejemplo a lo mejor
+
+284
+00:29:59,880 --> 00:30:05,880
+ni siquiera nos merece la pena automatizar esto, porque es una cosa que vamos a ejecutar muy pocas
+
+285
+00:30:05,880 --> 00:30:10,880
+veces, si consideramos que sí lo vamos a ejecutar muchas veces, entonces nos puede merecer la pena
+
+286
+00:30:10,880 --> 00:30:16,960
+automatizarlo, pero simplemente voy a probar a ver si funciona, pues lo hace rápido, esto es una cosa
+
+287
+00:30:16,960 --> 00:30:21,640
+que no tiene que ver con TDD, que es importante que no podemos olvidarnos de ella, que son las pruebas
+
+288
+00:30:21,640 --> 00:30:25,880
+manuales, las pruebas manuales siempre van a estar ahí, siempre van a estar ahí, lo que tenemos que
+
+289
+00:30:25,880 --> 00:30:30,200
+hacer es utilizarlas cuando de verdad las tenemos que utilizar, cuando les tenemos que dar valor y
+
+290
+00:30:30,200 --> 00:30:35,920
+todo, todo lo que podamos hacer de otra manera, vamos a hacerlo porque va a ser más eficiente,
+
+291
+00:30:37,240 --> 00:30:43,520
+la técnica más habitual de pruebas manuales se llama exploratorie testing, pruebas exploratorias
+
+292
+00:30:43,520 --> 00:30:48,400
+y es una cosa que está documentada, tiene su mecanismo y funciona, lo que pasa es que no es materia
+
+293
+00:30:48,400 --> 00:30:56,640
+de estas charlas, bien, esta transparencia también se parece mucha a otra de otras charlas, aunque
+
+294
+00:30:56,640 --> 00:31:01,360
+bueno, está un poquito cambiada y a lo mejor no se nota tanto, esto es una primera reflexión de
+
+295
+00:31:01,360 --> 00:31:05,800
+qué es lo que hemos hecho, ya lo hemos dicho, nosotros hemos dividido responsabilidades,
+
+296
+00:31:05,800 --> 00:31:13,040
+hemos cortado el problema en trozos, hemos abordado los trozos por separado y hemos utilizado pruebas,
+
+297
+00:31:13,040 --> 00:31:18,560
+mirad, en este caso nosotros nos hemos centrado en el núcleo del sistema que era decidir,
+
+298
+00:31:18,560 --> 00:31:26,200
+decidir qué ficheros había que borrar y ese núcleo se comunica con el exterior, que es donde nosotros
+
+299
+00:31:26,200 --> 00:31:33,240
+ponemos todas las llamadas que borran ficheros o leen el contenido de un directorio, lo veis,
+
+300
+00:31:33,240 --> 00:31:37,680
+no hemos intentado hacerlo todo de golpe, no hemos intentado mezclarlo si no hemos dicho,
+
+301
+00:31:37,680 --> 00:31:44,000
+esta es la parte del sistema, la lógica de negocio, la que toma las decisiones y esta es la que se
+
+302
+00:31:44,000 --> 00:31:50,360
+pelea con el sistema de ficheros, esto aunque yo he utilizado círculos porque me queda un poquito
+
+303
+00:31:50,360 --> 00:31:56,080
+más zen y me gusta más, pero se llama o se conoce como arquitectura hexagonal y va a ser
+
+304
+00:31:56,080 --> 00:32:00,960
+la idea es eso, considerar el sistema como la información, como las reglas de esa información
+
+305
+00:32:00,960 --> 00:32:06,480
+y todo lo demás como comunicaciones con el mundo exterior, tanto con el sistema de ficheros como
+
+306
+00:32:06,480 --> 00:32:11,200
+con sistemas de persistencia que podríamos poner aquí, sistemas móviles o incluso una interfaz
+
+307
+00:32:11,200 --> 00:32:15,080
+de usuario, una interfaz de usuario a fin de cuentas de escoger la información que tenemos ahí,
+
+308
+00:32:15,080 --> 00:32:21,120
+moverla y reorganizarla de la manera que sea más cómoda para que una persona la vea. Hay unos
+
+309
+00:32:21,120 --> 00:32:29,360
+ejemplos muy buenos en el Google Web Toolkit y Google Application Engine, hay unos ejemplos en el
+
+310
+00:32:29,360 --> 00:32:34,680
+que esto se ve muy claro, en el que se ve muy claro como aquí lo que tenemos son productos,
+
+311
+00:32:34,680 --> 00:32:40,440
+clientes, pedidos y cuando lo movemos aquí esa información se convierte en tablas y en filas
+
+312
+00:32:40,440 --> 00:32:51,880
+de tablas que es lo que la UI necesita. Otra cosa interesante que podemos hacer, además os lo
+
+313
+00:32:51,880 --> 00:32:55,920
+planteo pero que la damos al final de esta charla que creo que vamos a tener tiempo, es una rápida
+
+314
+00:32:55,920 --> 00:33:02,080
+retrospectiva de qué nos ha parecido este ejemplo que hemos visto, mirad hay una técnica muy
+
+315
+00:33:02,080 --> 00:33:06,880
+sencilla para hacer retrospectiva, se parece mucho un dapho lo que pasa es más simplificado
+
+316
+00:33:06,880 --> 00:33:11,560
+todavía además es más colorista, mirad nosotros tenemos un barco, en la parte de abajo tenemos
+
+317
+00:33:11,560 --> 00:33:16,560
+el ancla, el ancla que hace detiene el barco, impide que el barco avance, por lo tanto aquí
+
+318
+00:33:16,560 --> 00:33:20,920
+ponemos todo lo que nos está lastrando, en la parte de arriba nosotros tenemos las velas,
+
+319
+00:33:20,920 --> 00:33:26,080
+las velas solas que impulsan al barco hacen que el barco avance, aquí ponemos todo lo nuevo que
+
+320
+00:33:26,080 --> 00:33:30,960
+nos permite avanzar, ¿de acuerdo? Fijaos que he puesto algunos cuadros vacíos para que vosotros
+
+321
+00:33:30,960 --> 00:33:36,400
+mismos me digáis cosas que veis buenas y cosas que veis malas, vale si me las decir las añadimos
+
+322
+00:33:36,400 --> 00:33:42,320
+y cuando suba esta presentación estará ahí, yo os doy algunas ideas que bueno algunas las
+
+323
+00:33:42,320 --> 00:33:46,480
+hemos repetido y otras a lo mejor surgen nuevas, mirad una cosa buena que nos ha permitido avanzar
+
+324
+00:33:46,480 --> 00:33:53,080
+es permitiendo centrar en el algoritmo y dejar otras tareas para más adelante, hemos insistido en
+
+325
+00:33:53,080 --> 00:33:57,880
+ello, pero una cosa que a lo mejor no hemos mencionado y que yo pondría como una cosa que
+
+326
+00:33:57,880 --> 00:34:05,360
+me lastra es que tardamos más en terminar y esta idea suele contredesir cosas que cuenta la gente
+
+327
+00:34:05,360 --> 00:34:11,480
+sobre TDD que dice que un TDD es más rápido, porque es más rápido dice porque no corrige
+
+328
+00:34:11,480 --> 00:34:17,280
+los errores porque al final te pasaría como contad al principio dos días programando y
+
+329
+00:34:17,280 --> 00:34:22,680
+ocho días corrigen de errores, con TDD no te pasas ocho días corrigen de errores, vale eso es si
+
+330
+00:34:22,680 --> 00:34:27,600
+cometen los errores, pero si no los cometes no, ¿de acuerdo? Probablemente los cometamos,
+
+331
+00:34:27,600 --> 00:34:31,960
+probablemente tardemos mucho tiempo, pero no siempre aparte de que aplicarlo sistemáticamente
+
+332
+00:34:31,960 --> 00:34:39,040
+nos lleva a tener muchas pruebas, en otras charlas la gente me dice o surge la idea de que TDD es un
+
+333
+00:34:39,040 --> 00:34:45,680
+lastre, ¿por qué? Porque con TDD tengo que hacer muchas pruebas y eso no es bueno, no, ¿por qué?
+
+334
+00:34:45,680 --> 00:34:50,000
+Porque si cambio algo hay muchas pruebas que me fallen, te voy a reglar muchas pruebas,
+
+335
+00:34:50,000 --> 00:34:54,440
+tú dices pues es verdad, tiene esta razón del mundo, lo que pasa es que en este caso a lo mejor
+
+336
+00:34:54,440 --> 00:35:01,240
+no estás aplicando la filosofía de TDD de la manera más eficiente que hemos visto,
+
+337
+00:35:01,240 --> 00:35:07,160
+pruebas sencillas, pruebas rápidas, pruebas que borres si el código cambia, si el código cambia
+
+338
+00:35:07,160 --> 00:35:11,080
+una prueba que te verifica lo que hace el código ya no te sirve de nada, a lo mejor la modificas,
+
+339
+00:35:11,080 --> 00:35:15,080
+a lo mejor las actualizas o directamente las borras y gajas es nueva, si estás tardando demasiado
+
+340
+00:35:15,080 --> 00:35:19,240
+tiempo en hacer las pruebas no le estás sacando todo el jugo y TDD se convierte en un lastre.
+
+341
+00:35:21,320 --> 00:35:29,600
+Bien, unas ideas de cómo poner esto en Python, indudablemente lo más adecuado para pruebas
+
+342
+00:35:29,600 --> 00:35:34,360
+y para cualquier otra cosa es tener la herramienta necesaria y en Python tenemos muchas herramientas
+
+343
+00:35:34,360 --> 00:35:38,560
+para probar y están estupendas, mirad tenemos un ITTES que es una cosa que ya nos viene dentro
+
+344
+00:35:38,560 --> 00:35:42,720
+de la librería de Python que es lo que yo he utilizado en los ejemplos y que da el suficiente
+
+345
+00:35:42,720 --> 00:35:50,040
+juego para empezar, tenemos DOCTES que es una manera de hacer que nuestras sesiones interactivas de
+
+346
+00:35:50,040 --> 00:35:56,600
+consola las podamos ejecutar una y otra y otra y otra vez como prueba, tenemos también NOS que es
+
+347
+00:35:56,600 --> 00:36:02,200
+una herramienta que nos ayuda a ejecutar las pruebas, en Python no es habitual hasta donde
+
+348
+00:36:02,200 --> 00:36:06,560
+yo conozco trabajar de la manera que yo he trabajado poniendo las pruebas aisladas por separado,
+
+349
+00:36:06,560 --> 00:36:11,360
+sino que se van poniendo en el mismo sitio donde están los módulos, bueno pues NOS las va buscando,
+
+350
+00:36:11,360 --> 00:36:17,480
+las va ejecutando, además nos da un poco más de funcionalidad extra, mirad también hemos visto
+
+351
+00:36:17,480 --> 00:36:22,360
+como en un instante determinado yo no quería preocuparme por los detalles y yo me creaba una
+
+352
+00:36:22,360 --> 00:36:28,840
+clase fantasía ficticia que se lo tragaba todo simplemente para yo poder centrarme en la parte
+
+353
+00:36:28,840 --> 00:36:34,000
+que a mí me interesaba, herramientas para hacer eso tenéis, yo he utilizado MAGIC MOCK que ya
+
+354
+00:36:34,000 --> 00:36:40,160
+viene también de serie con Python, que las versiones últimas, Python 2 no lo tiene, pero hay otras,
+
+355
+00:36:40,160 --> 00:36:45,080
+tenemos por ejemplo Mosquito por Python, Mocker o por ejemplo P-Doubles que es una herramienta que
+
+356
+00:36:45,080 --> 00:36:50,840
+está hecha por españoles y está muy interesante, siempre es un valor añadido poder escribirle en
+
+357
+00:36:50,840 --> 00:36:57,360
+español, herramientas para contextos más específicos, bueno pues tenéis Selenium que os permite
+
+358
+00:36:57,360 --> 00:37:03,560
+ejercitar aplicaciones a través de su interfaz web, su interfaz HTML, cuidado con estas herramientas
+
+359
+00:37:03,560 --> 00:37:09,840
+están bien pero no podemos abusar de ellas, no soy un experto en Django pero si no me equivoco
+
+360
+00:37:09,840 --> 00:37:15,600
+cada vez que se pone en pie tiende a volver a rehacer el conjunto de la tabla de la base de
+
+361
+00:37:15,600 --> 00:37:20,480
+datos, etcétera, bueno pues para intentar un poquito optimizar las pruebas que vienen con Django
+
+362
+00:37:20,480 --> 00:37:26,280
+también tenemos una herramienta específica, si queréis ir un poquito más arriba en el nivel de
+
+363
+00:37:26,280 --> 00:37:34,600
+extracción y queréis empezar a trabajar ya directamente con pruebas o con especificaciones que
+
+364
+00:37:34,600 --> 00:37:40,120
+vuestros clientes y usuarios puedan entender pero que a la vez vosotros podéis implementar como
+
+365
+00:37:40,120 --> 00:37:46,680
+casos de prueba, lo que habitualmente se llama BDD, ATDD, especificación por ejemplo, por ejemplo
+
+366
+00:37:46,680 --> 00:37:51,800
+especificación by example, ojo hay pequeñas diferencias pero en esta charla en nivel que nos
+
+367
+00:37:51,800 --> 00:37:55,840
+movemos lo vamos a meter todo en el mismo saco, si alguien no está de acuerdo me espera la salida
+
+368
+00:37:55,840 --> 00:38:02,680
+porque además con toda la razón del mundo pero bueno esto es el track básico, vale tenéis por
+
+369
+00:38:02,680 --> 00:38:09,840
+ejemplo Behave, tenéis Letuce que os permite escribir pruebas utilizando dado cuando entonces el
+
+370
+00:38:09,840 --> 00:38:16,200
+given when then tenemos Pfit que os permite escribir pruebas como fit o como fitness con
+
+371
+00:38:16,200 --> 00:38:23,440
+tablas html en wiki y esta de aquí que os fijáis está así un poco distinta porque es especial
+
+372
+00:38:23,440 --> 00:38:27,840
+bueno todas son especiales pero esta es más especial todavía porque esta la descubierto en
+
+373
+00:38:27,840 --> 00:38:32,280
+aquí en la pico n es porque precisamente tenemos aquí a uso autor y nos lo ha contado que es
+
+374
+00:38:32,280 --> 00:38:38,880
+Mamba está bien escrito, yo creo que sí, no Mamba es la sección de cimita, vale, que esta
+
+375
+00:38:38,880 --> 00:38:43,440
+herramienta yo me ha alegrado mucho de conocerla no sólo porque es española no sólo porque tenemos
+
+376
+00:38:43,440 --> 00:38:48,880
+aquí al autor sino porque es una herramienta que trabaja de la misma manera que jasmine que es una
+
+377
+00:38:48,880 --> 00:38:54,960
+herramienta de pruebas de javascript y a mí me gusta mucho cómo funciona jasmine lo que pasa es que
+
+378
+00:38:54,960 --> 00:38:59,640
+por su manera de trabajar lógicamente está muy incrustada a la manera de funcionar de javascript
+
+379
+00:38:59,640 --> 00:39:05,160
+y en otro lenguaje pues es un poco más difícil de reproducir pero bueno aquí la tenemos y es
+
+380
+00:39:05,160 --> 00:39:10,160
+genial luego te voy a pedir que salgas aquí por favor y nos pongas la url de la herramienta, vale
+
+381
+00:39:10,160 --> 00:39:19,360
+y si queréis aquí tenéis una referencia la la mejor que hay encontrado donde podéis ver
+
+382
+00:39:19,360 --> 00:39:32,960
+herramientas que hay y su organización vale lo comentamos al principio tdd es engañosamente
+
+383
+00:39:32,960 --> 00:39:41,400
+sencillo porque tdd no es de probar tdd es de escribir buen código escribir código es sencillo
+
+384
+00:39:41,400 --> 00:39:45,640
+escribir buen código es un poco más difícil escribir buenas aplicaciones que se puedan mantener
+
+385
+00:39:45,640 --> 00:39:50,920
+que evolucione ni demás es difícil esto de un laberinto pero también es un reto y es muy
+
+386
+00:39:50,920 --> 00:39:56,640
+apasionante el ir aprendiendo y el ir descubriendo maneras para atravesar este laberinto que realmente
+
+387
+00:39:56,640 --> 00:40:02,160
+no no se termina nunca de aprender nunca llegas a tu objetivo porque alguien de verdad piensa que va
+
+388
+00:40:02,160 --> 00:40:08,200
+a llegar y va a decir vale ya soy dios ya hago las aplicaciones de la manera mejor que se puede
+
+389
+00:40:08,200 --> 00:40:13,000
+hacer y ya está no se puede ir más allá no siempre se va a poder ir más allá y es una tarea
+
+390
+00:40:13,000 --> 00:40:19,760
+realmente apasionante y muy motivadora cuando poco a poco va haciendo que las cosas salen cuando te
+
+391
+00:40:19,760 --> 00:40:24,840
+vas encontrando mejor cuando lees que ha habido gente que para resolver un problema se ha vuelto
+
+392
+00:40:24,840 --> 00:40:28,360
+lo que tú lo coges y dice ostras pues y yo una prueba una prueba una prueba ya está hecho
+
+393
+00:40:28,360 --> 00:40:35,560
+y es muy muy muy entretenido y además os lo os animo a ello bueno como conclusiones
+
+394
+00:40:37,240 --> 00:40:42,760
+os comento esta persona es que en vez no es el que inventó la td pero habitualmente se le
+
+395
+00:40:42,760 --> 00:40:49,320
+se le asigna el mérito de ser la persona que más la ha difundido también es el padre principal
+
+396
+00:40:49,320 --> 00:40:55,440
+de la extrema programación extrema y lo que yo quiero contaros con esta que es prácticamente
+
+397
+00:40:55,440 --> 00:41:04,800
+la última transparencia es que td está aquí ayer yo escuché td en cuáles charlas en cuáles
+
+398
+00:41:04,800 --> 00:41:10,320
+charlas se mencionó td y ninguna iba sobre td pero se mencionó lo escuché en una charla de
+
+399
+00:41:10,320 --> 00:41:16,760
+apis lo escuché en una charla de de de de de buenas prácticas en objetos python en una
+
+400
+00:41:16,760 --> 00:41:23,400
+lighting también salió el tema no está aquí pero la persona que nos presentó la charla de cómo
+
+401
+00:41:23,400 --> 00:41:28,560
+trabajar con los árboles de sintásica extracta también mencionó td td está ahí y yo creo que
+
+402
+00:41:28,560 --> 00:41:34,280
+a todos los que estés aquí os merece la pena utilizarla y evaluar si a vosotros os aporta o
+
+403
+00:41:34,280 --> 00:41:39,240
+nos aporta conocerla pero conocerla de verdad no hagáis eso que hemos visto al principio de a la
+
+404
+00:41:39,240 --> 00:41:42,920
+mierda en cuanto las cosas empiezan a ponerse difíciles no en cuanto las cosas empiezan a poner
+
+405
+00:41:42,920 --> 00:41:47,200
+se difíciles ahí es donde le sacamos partido a td habéis visto lo que hemos hecho habéis visto
+
+406
+00:41:47,200 --> 00:41:52,400
+cómo hemos pegado el hachazo y hemos dicho esto para un lado esto para otro me centro en esto y
+
+407
+00:41:52,400 --> 00:41:57,760
+después ya me centro el otro ese es el beneficio de acuerdo y no olvidéis que a fin de cuenta lo que
+
+408
+00:41:57,760 --> 00:42:04,840
+vamos buscando es ser más felices y ser más felices es escribir código y que escribir código
+
+409
+00:42:04,840 --> 00:42:11,600
+nos haga felices y nos haga disfrutar de acuerdo bien bueno pues ya prácticamente hemos terminado
+
+410
+00:42:11,600 --> 00:42:18,000
+aquí tenéis algunas referencias que pueden ser de utilidad quién soy yo no me he presentado vengo
+
+411
+00:42:18,000 --> 00:42:22,880
+de la universidad de sevilla soy profesor investigador allí llevo algunas iniciativas como
+
+412
+00:42:22,880 --> 00:42:27,840
+game más donde intentamos darle un cariñoso empujón a los alumnos para que se dejen de
+
+413
+00:42:28,840 --> 00:42:33,600
+hablar y empiecen de verdad a hacer videojuegos a todo el que quiera dedicarse a ese mundo es la
+
+414
+00:42:33,600 --> 00:42:38,400
+mejor manera de entrar en el mundo haciendo videojuegos tengo también un dirijo también un
+
+415
+00:42:38,400 --> 00:42:43,920
+dollo de código donde hacemos ejercicio de este tipo donde me viene muy bien para obtener fitba
+
+416
+00:42:43,920 --> 00:42:48,180
+de los problemas que tiene la gente de las dificultades que se encuentra estoy escribiendo un
+
+417
+00:42:48,180 --> 00:42:53,200
+libro desarrollo dirigido por pruebas prácticos lo estoy escribiendo de manera ágil es decir cuando
+
+418
+00:42:53,200 --> 00:42:57,920
+escribo algo y creo que puede ser interesante para alguien inmediatamente lo pongo de internet porque
+
+419
+00:42:58,840 --> 00:43:04,960
+porque busco dos cosas primero que si vosotros queréis aprender a td y queréis ver ejemplos
+
+420
+00:43:04,960 --> 00:43:09,160
+prácticos de td no tengáis que esperar a que yo termine el libro como tengéis que esperar a que
+
+421
+00:43:09,160 --> 00:43:15,840
+yo termine el libro bueno y a los ordenadores se programan con la mente y lo segundo es que a mí no
+
+422
+00:43:15,840 --> 00:43:21,800
+me sirve de nada en cerrarme en mi cuarto y escribir el libro que yo crea que tengo que
+
+423
+00:43:21,800 --> 00:43:26,480
+escribir sobre desarrollo dirigido por pruebas no a mí lo que me sirve es escribir el libro que
+
+424
+00:43:26,480 --> 00:43:30,320
+vosotros necesitáis para aprender por lo tanto cualquier cosa que vosotros crees que tiene que
+
+425
+00:43:30,320 --> 00:43:34,880
+estar en el libro cualquier cosa que esté en el libro que vosotros nos convenza que no entendáis o
+
+426
+00:43:34,880 --> 00:43:41,720
+que no sirva está de más me lo decís y vemos cómo cambiarlo y luego por último en mis ratos libres
+
+427
+00:43:41,720 --> 00:43:47,240
+que no son ninguno participo en algunos blocs de código y la verdad que me lo paso genial he
+
+428
+00:43:47,240 --> 00:43:52,440
+descubierto con los años que es mucho más divertido ayudar a los demás en sus proyectos que tener tus
+
+429
+00:43:52,440 --> 00:43:57,560
+propios proyectos y la verdad que me lo paso bomba y luego para terminar tenéis aquí algunos
+
+430
+00:43:57,560 --> 00:44:04,000
+chistes o viñetas cómicas sobre td y las pruebas ayer en la charla de ast me acordé mucho de esta
+
+431
+00:44:04,000 --> 00:44:11,760
+viñeta porque el ponente comentó exactamente lo mismo que viene de esta viñeta digo bueno
+
+432
+00:44:13,080 --> 00:44:20,280
+vale tenéis aquí otra también así en sentido del humor y bueno aquí algunos enlaces del libro
+
+433
+00:44:20,280 --> 00:44:25,880
+que os he comentado de algunas de las iniciativas que llevo por si no encontréis de utilidad y ahora
+
+434
+00:44:25,880 --> 00:44:44,160
+sí he terminado bueno qué tiempo tenemos 10 minutos de acuerdo pues yo estoy encantado de que me
+
+435
+00:44:44,160 --> 00:44:49,960
+preguntéis de que me rebatáis de que me critiquéis lo que queráis y acordó que tenemos esto de
+
+436
+00:44:49,960 --> 00:44:56,280
+acuerdo si alguien quiere ponerle pegas o alabarla hay un detalle que no he dicho mira esto este
+
+437
+00:44:56,280 --> 00:45:06,160
+ejercicio que este ejemplo que hemos hecho lo tengo propuesta en solvid como cata entonces bueno
+
+438
+00:45:06,160 --> 00:45:10,200
+si alguien se anima a intentar hacerlo de verdad intentar repetirlo que os animo a que lo haga
+
+439
+00:45:10,200 --> 00:45:14,520
+pues si queréis lo podéis subir en esta página o yo lo voy a ver además este que habéis visto
+
+440
+00:45:14,520 --> 00:45:20,120
+ya tengo una primera versión puesta precisamente con python con el código un poquito más más
+
+441
+00:45:20,120 --> 00:45:24,760
+corregido otra persona se anima a hacerlo en haskell entonces bueno pues si queréis aquí podéis
+
+442
+00:45:24,760 --> 00:45:29,600
+ver un poquito más y si no me escribí un código un código perdón me escribí un código electrónico
+
+443
+00:45:29,600 --> 00:45:33,640
+y estoy encantado de mandaros el código lo que haga falta vale venga
+
+444
+00:45:33,640 --> 00:45:46,760
+vale no espérate mira como lo tenemos no te preocupes si tengo aquí el tengo aquí el este en letra para
+
+445
+00:45:53,360 --> 00:45:55,320
+como como directamente navegado
+
+446
+00:45:55,320 --> 00:46:03,960
+de tal manera es el último que se ha puesto aunque vayáis a solvid ahí lo vais a encontrar todavía
+
+447
+00:46:03,960 --> 00:46:25,560
+nadie ha propuesto otro ejercicio
+
+448
+00:46:34,680 --> 00:46:36,120
+vale
+
+449
+00:46:38,200 --> 00:46:43,240
+primero el concepto de colecto no resulta muy interesante que me amas esa pregunta pero la
+
+450
+00:46:43,240 --> 00:46:46,440
+verdad es que me descoloca un poco pues yo no voy buscando las pruebas correctas de hecho
+
+451
+00:46:46,440 --> 00:46:50,920
+ni siquiera busco probar yo lo que busco es definir qué es lo que mi software mi programa mi código
+
+452
+00:46:50,920 --> 00:47:02,000
+tiene que hacer y cómo quiero que me lo haga pues esto básicamente es una cuestión de definir
+
+453
+00:47:02,000 --> 00:47:05,920
+y de cómo te sientas si tú ves que las pruebas van saliendo fáciles y tú ves que el código va
+
+454
+00:47:05,920 --> 00:47:12,360
+saliendo fácil la cosa va bien y si no va bien no pasa nada porque si no va bien has descubierto
+
+455
+00:47:12,360 --> 00:47:18,880
+una manera de no hacerlo y eso es estupendo ya no tienes que perder más tiempo vuelves para atrás
+
+456
+00:47:18,880 --> 00:47:24,480
+y vas por otro camino ya sabiendo que por ahí no es y eso nosotros no podemos predecir el futuro
+
+457
+00:47:24,480 --> 00:47:28,520
+no sabemos lo que va a pasar por eso además lo hemos comentado en otras charlas no tiene sentido
+
+458
+00:47:28,520 --> 00:47:34,880
+tomar decisiones en adelante no ve probando ve descubriendo que hay más allá y ve tomando
+
+459
+00:47:34,880 --> 00:47:40,520
+tus propias ve tomando decisiones en base a ese conocimiento si es correcto no es correcto yo
+
+460
+00:47:40,520 --> 00:47:45,920
+no le veo mucho sentido a mí me funciona estoy cómodo esta pieza bien cuando yo tengo que
+
+461
+00:47:45,920 --> 00:47:52,040
+utilizarlo tiene gasto poco tiempo llamando con los parámetros etcétera etcétera si pues entonces
+
+462
+00:47:52,040 --> 00:47:59,480
+para adelante no pues vamos a volver para atrás y vamos a hacerlo de otra manera
+
+463
+00:48:03,560 --> 00:48:09,200
+aunque no sea una pregunta sobre la propia charla si alguien tiene alguna crítica o alguna bondad
+
+464
+00:48:09,200 --> 00:48:16,720
+de tdb bienvenida es y la podemos añadir en la en la transparencia vosotros habéis utilizado ya tdb
+
+465
+00:48:16,720 --> 00:48:24,440
+o si queréis compartir vuestra experiencia bueno vamos a ver al primero que he visto es a ti del
+
+466
+00:48:24,440 --> 00:48:24,800
+fondo
+
+467
+00:48:28,840 --> 00:48:35,200
+te obliga a hacer código testable cosa que parece una tontería pero cuando intentas meter un
+
+468
+00:48:35,200 --> 00:48:40,600
+test a una aplicación después de haber la de haber escrito el código muchas veces te das cuenta de
+
+469
+00:48:40,600 --> 00:48:46,600
+que de que no puedes hacerte es unitario porque al final te convierta en una integración pues muy
+
+470
+00:48:46,600 --> 00:48:52,480
+difícil tienes que moquear demasiado las cosas decir el hecho de construir aplicaciones con tdb
+
+471
+00:48:52,480 --> 00:48:57,600
+hace que como mismo tu código sea testable cosa que no puedes hacer en otros casos eso
+
+472
+00:48:57,600 --> 00:49:03,040
+creo que es una de las fondas de tdb que a veces la gente olvida está ayuda a diseñar aplicaciones
+
+473
+00:49:03,040 --> 00:49:10,160
+mejor diseñadas en algunos aspectos por ahí va a preguntar alguien
+
+474
+00:49:12,840 --> 00:49:19,200
+muchos casos he oído a gente decir que bueno parte de los unites sirve como documentación
+
+475
+00:49:19,200 --> 00:49:23,080
+del código porque estás leyendo como hay que utilizarlo si cuando estás diseñando
+
+476
+00:49:23,080 --> 00:49:39,000
+sin yo opino que sí de hecho opino que la mejor documentación es el código porque lo que la
+
+477
+00:49:39,000 --> 00:49:45,680
+aplicación va a hacer es lo que viene en el código entonces hay hay libros y yo también
+
+478
+00:49:45,680 --> 00:49:51,760
+defiendo eso mira yo se lo se lo cuento así bueno claro que perdón el paíton no a lo mejor no es
+
+479
+00:49:51,760 --> 00:49:58,680
+el lenguaje más adecuado para para probarlo pero por ejemplo en en java yo le alguna vez ha
+
+480
+00:49:58,680 --> 00:50:06,720
+salido este tema con otras personas o en clase entonces yo le digo vamos a ver el código se
+
+481
+00:50:06,720 --> 00:50:14,400
+va a ejecutar más rápido si lo escribo así se va a ejecutar mejor va a ser más eficiente
+
+482
+00:50:14,400 --> 00:50:19,320
+la respuesta lógicamente es
+
+483
+00:50:24,840 --> 00:50:31,280
+así se ejecuta el código mejor más rápido más eficiente más no da igual de hecho la máquina
+
+484
+00:50:31,280 --> 00:50:35,840
+ejecutar código exactamente igual de como está vantejada como está ahora verdad vale entonces
+
+485
+00:50:35,840 --> 00:50:41,400
+si no hay ninguna diferencia sin ninguna diferencia porque no nos planteamos el hacer
+
+486
+00:50:41,400 --> 00:50:46,200
+código para seres humanos y a la máquina le da igual como este el código código para seres
+
+487
+00:50:46,200 --> 00:50:51,600
+humanos códigos que nosotros podamos leer y podamos entender métodos pequeños e identificando
+
+488
+00:50:51,600 --> 00:50:55,520
+lo que son los parámetros identificando lo que son las abstracciones no contando todos los
+
+489
+00:50:55,520 --> 00:50:59,520
+detalles dando la posibilidad de que tú te quedes con la idea y de que profundices en aquellos
+
+490
+00:50:59,520 --> 00:51:14,560
+temas que te interese si nosotros escribimos código así yo creo que es la mejor documentación que hay
+
+491
+00:51:29,520 --> 00:51:32,560
+marsas
+
+492
+00:51:32,560 --> 00:52:01,560
+Bueno, yo darte un abrazo, a mí me pasó lo mismo. De hecho, en estas charlas no, pero tengo otras charlas en las que pongo una transparencia diciendo,
+
+493
+00:52:01,560 --> 00:52:06,560
+a lo mejor parece que yo soy un ángel, pero yo meto la pata como todo el mundo y me acelero como todo el mundo y digo,
+
+494
+00:52:06,560 --> 00:52:11,560
+no, paso de prueba que tengo ganas de ir más rápido y me la pego, no.
+
+495
+00:52:11,560 --> 00:52:20,560
+Yo creo que en este caso la mejor solución es equivócate, ya prende de tus errores, vale, hazlo sin prueba, hazlo sin TDD,
+
+496
+00:52:20,560 --> 00:52:26,560
+date cuenta que es más difícil y dices, ostras, es que es verdad, voy a parar la próxima no la hago, nadie que al miente en cabeza ajena,
+
+497
+00:52:26,560 --> 00:52:34,560
+considera esa por decirlo de alguna manera fallo como un aprendizaje, como si fueras a un curso, a aprender algo,
+
+498
+00:52:34,560 --> 00:52:45,560
+y dice, pues es tiempo bien invertido. Práctica, experiencia y sobre todo, mirarte tú a ti mismo y decir, no soy mi peor enemigo,
+
+499
+00:52:45,560 --> 00:52:56,560
+sino soy sobre quién tengo que aprender, qué he hecho, qué he hecho bien, qué he hecho mal, cómo puedo mejorar, conviértete tú mismo en tu proceso,
+
+500
+00:52:56,560 --> 00:53:06,560
+en tu mejora continua, no sé si... siento haberte decepcionado, a mí me hubiera gustado hacer chaz y sacar aquí la magia,
+
+501
+00:53:06,560 --> 00:53:09,560
+pero no la he encontrado todavía.
+
+502
+00:53:09,560 --> 00:53:17,560
+Estoy de acuerdo con el funde, pero no con las formas, quiero decir que a mí me encantan los PES,
+
+503
+00:53:17,560 --> 00:53:21,560
+un serie de cumplidos que decente tiene que tener, sino un cobrarse el tiempo, si tienen muy alto,
+
+504
+00:53:21,560 --> 00:53:28,560
+considero que códigos, ningún PES, es código legas y hay que tirarlo de la basura, pero hacer, te escriben,
+
+505
+00:53:28,560 --> 00:53:34,560
+en el development implica que tienes que escribir y reescribir y volver a escribir muchísimo PES, y eso para mí es muy lento,
+
+506
+00:53:34,560 --> 00:53:40,560
+ya hace mucho tiempo que no lo hago, prefiero una vez que ya está el su proyecto, hacer los desunitarios, los integración, los de rendimiento,
+
+507
+00:53:40,560 --> 00:53:47,560
+todo lo que haga falta, dependen del proyecto y según el sentido común, que no, sobre todo al principio, que van cambiando los requisitos,
+
+508
+00:53:47,560 --> 00:53:52,560
+no tienes claro, hay que estar haciendo más PES que codigos, sobre todo.
+
+509
+00:53:52,560 --> 00:53:54,560
+Es un punto de vista.
+
+510
+00:53:54,560 --> 00:54:00,560
+Sí, es un punto de vista muy válido, lo he escuchado otras veces y creo que incluso he comentado algo a lo largo de la charla.
+
+511
+00:54:00,560 --> 00:54:06,560
+Lo que pasa es que yo, por mi experiencia y también por lo que he leído, lo veo de una manera distinta,
+
+512
+00:54:06,560 --> 00:54:14,560
+si tú me dices, es que se tarda más tiempo, sí, se tarda más tiempo, pero si tú me dices, es que hay que escribir mucho código,
+
+513
+00:54:14,560 --> 00:54:20,560
+yo no lo tengo tan claro, las pruebas tienen que ser pequeñitas, las pruebas tienen que ser rápidas, tienes que ir en pasitos muy pequeños,
+
+514
+00:54:20,560 --> 00:54:26,560
+los requisitos cambiantes, bueno, los requisitos cambiantes, eso va a pasar siempre, siempre.
+
+515
+00:54:26,560 --> 00:54:34,560
+De hecho, yo creo que TDD nos anima al cambio porque TDD nos dice o nos da la tranquilidad de que a medida que vamos avanzando,
+
+516
+00:54:34,560 --> 00:54:38,560
+vamos avanzando con paso firme y que el nuevo código se pueda apoyar en el antiguo porque el antiguo está funcionando.
+
+517
+00:54:38,560 --> 00:54:41,560
+Y si en algún momento va a dejar de funcionar, lo vamos a ver enseguida.
+
+518
+00:54:41,560 --> 00:54:46,560
+Entonces, los requisitos cambian, bueno, los requisitos tendrán que cambiar, eso es inevitable.
+
+519
+00:54:46,560 --> 00:54:50,560
+¿Qué más me has dicho sobre lo de escribir muchos códigos?
+
+520
+00:54:50,560 --> 00:54:58,560
+Yo en mi experiencia, sobre todo haciendo catas, luego podemos discutir que tiene que ver una cara con el mundo real,
+
+521
+00:54:58,560 --> 00:55:02,560
+eso sería un tema aparte, pero sobre todo haciendo muchas catas,
+
+522
+00:55:02,560 --> 00:55:06,560
+yo lo que me di cuenta es que realmente no necesito muchas pruebas para implementarlo, no necesito.
+
+523
+00:55:06,560 --> 00:55:10,560
+¿Puedo escribir más pruebas? Y de hecho hace poco tenía esta conversación,
+
+524
+00:55:10,560 --> 00:55:12,560
+y a ver si hacemos algo sobre eso, ¿puedo escribir más pruebas?
+
+525
+00:55:12,560 --> 00:55:17,560
+Las pruebas no son para escribir códigos, las pruebas a lo mejor son para darme seguridad, para mi tranquilidad,
+
+526
+00:55:17,560 --> 00:55:20,560
+o como ha dicho antes el compañero, para documentar aspectos.
+
+527
+00:55:20,560 --> 00:55:25,560
+Pero realmente las pruebas del código que tú escribes no son tantas,
+
+528
+00:55:25,560 --> 00:55:28,560
+al menos en mi experiencia no son tantas para hacer que el código avance.
+
+529
+00:55:28,560 --> 00:55:33,560
+Además, piensa una cosa, te dede no a probar, te dede es desarrollar código,
+
+530
+00:55:33,560 --> 00:55:37,560
+te dede lo que te dice es qué quieres que haga tu código y cómo quieres que haga,
+
+531
+00:55:37,560 --> 00:55:41,560
+y esas preguntas te vas a tener que enfrentarte, entonces haces una prueba como si no la haces.
+
+532
+00:55:41,560 --> 00:55:46,560
+Si tú te estás enfrentando a esas preguntas, si tú lo piensas antes de hacerlo y lo diseñas,
+
+533
+00:55:46,560 --> 00:55:51,560
+vas por el buen camino, aunque a lo mejor no hagas las pruebas o aunque lo mejor no hagas todas las pruebas.
+
+534
+00:55:51,560 --> 00:55:56,560
+De hecho hay una parte muy interesante al principio del libro de Ken B,
+
+535
+00:55:56,560 --> 00:56:02,560
+que a mí me gustaría escribir en luz en el neón y ponerlo en medio de alguna ciudad,
+
+536
+00:56:02,560 --> 00:56:06,560
+que es que te dice que si tú estás haciendo un UML, eso no tiene porque estar haciendo mal,
+
+537
+00:56:06,560 --> 00:56:09,560
+si tú te estás planteando qué quieres usarlo y cómo quieres usarlo,
+
+538
+00:56:09,560 --> 00:56:12,560
+lo que no tienes que hacer es tirarte un mes haciendo un UML de una aplicación
+
+539
+00:56:12,560 --> 00:56:15,560
+y luego venga vamos a implementar, pero si tú lo vas haciendo poquito a poquito,
+
+540
+00:56:15,560 --> 00:56:19,560
+puede ser perfectamente la misma idea que te dede.
+
+541
+00:56:19,560 --> 00:56:24,560
+De todas maneras yo te animo a que le de un segundo repaso, planteándote
+
+542
+00:56:24,560 --> 00:56:26,560
+¿cuáles son las mínimas pruebas que tengo que escribir?
+
+543
+00:56:26,560 --> 00:56:30,560
+Voy a intentar no escribir demasiadas pruebas y hacer que mi código avanza.
+
+544
+00:56:30,560 --> 00:56:46,560
+Tenemos tiempo para una pregunta, me lo preguntas luego.
+

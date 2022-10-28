@@ -1,0 +1,1168 @@
+1
+00:00:00,000 --> 00:00:08,520
+Es Javier Abadía y viene a hablar de Full Staxing and Pace Applications con Django, Res Framework, Webpack y VJS.
+
+2
+00:00:08,520 --> 00:00:10,520
+Una plaza por favor.
+
+3
+00:00:14,520 --> 00:00:20,520
+Una aclaración lo primero en la agenda, ponía que iba a hablar de cuatro cosas y hay una que ya no me daba tiempo a meterla,
+
+4
+00:00:20,520 --> 00:00:26,020
+de Django Res Framework, voy a hablar muy poquito, porque además desde que propuse la charla mientras la preparaba,
+
+5
+00:00:26,020 --> 00:00:30,020
+pues ha ido también cambiando mi opinión sobre el Django Res Framework.
+
+6
+00:00:30,020 --> 00:00:41,020
+De lo que sí voy a hablar, de lo que sí voy a hablar es de Django y de View y de Webpack y de cómo montar todo el entorno de desarrollo.
+
+7
+00:00:41,020 --> 00:00:46,020
+Yo soy Javier Abadía, soy el lead developer de la parte Front de Style Sage.
+
+8
+00:00:46,020 --> 00:00:53,020
+Esta sala le tenían que haber llamado a la sala Style Sage, porque la charla anterior ha sido de mi compañero Héctor y la anterior de mi compañera Alicia,
+
+9
+00:00:53,020 --> 00:00:57,020
+bueno, ya está, no la han cambiado el nombre.
+
+10
+00:00:57,020 --> 00:01:09,020
+De qué va esta charla? Esta charla va a modernizar las aplicaciones de Django, de meterles un front moderno al back tan genial que es Django.
+
+11
+00:01:09,020 --> 00:01:17,020
+El flujo normal de una aplicación Django es este, el cliente pide cosas y Django le va devolviendo HTML.
+
+12
+00:01:17,020 --> 00:01:27,020
+La interacción del usuario al final se convierte en una recarga de pantalla y va avanzando un poco en la experiencia de usuario de la aplicación.
+
+13
+00:01:27,020 --> 00:01:31,020
+Pero bueno, eso ya sabemos todos que es viejo uno.
+
+14
+00:01:31,020 --> 00:01:38,020
+Lo que mola ahora es hacer SPS, que se llama, que son Single Page Applications.
+
+15
+00:01:38,020 --> 00:01:45,020
+Eso quiere decir que la primera petición sí me devuelve un HTML, que es la carcasa de la aplicación y a partir de ese momento la aplicación
+
+16
+00:01:45,020 --> 00:01:54,020
+se va comunicando con el backend a través de Ajax, pidiendo los datos que necesita y mandando los datos que necesita intercambiando JSON.
+
+17
+00:01:54,020 --> 00:01:57,020
+Ese es el ciclo de vida de las SPS.
+
+18
+00:01:57,020 --> 00:02:05,020
+Cuando cambiamos ese modelo nos estamos metiendo en un problema del front, nos estamos metiendo en el problema que todos los datos que tradicionalmente
+
+19
+00:02:05,020 --> 00:02:12,020
+siempre había gestionado Django y el modelo vista controlador y los modelos, etc., nos lo estamos trayendo también al front.
+
+20
+00:02:12,020 --> 00:02:17,020
+Tenemos un problema que tenemos que sincronizar el estado.
+
+21
+00:02:17,020 --> 00:02:24,020
+Tenemos ahora una copia del estado o una copia parcial del estado en el cliente, en la parte del navegador, y lo tenemos que sincronizar
+
+22
+00:02:24,020 --> 00:02:29,020
+con lo que está viendo el usuario, que al final es el DOM, son las etiquetas HTML que se están viendo.
+
+23
+00:02:29,020 --> 00:02:33,020
+Y escuchar los eventos del usuario para cambiar ese estado.
+
+24
+00:02:33,020 --> 00:02:41,020
+Ese es el problema fundamental que pretende resolver todos los frameworks de JavaScript.
+
+25
+00:02:41,020 --> 00:02:46,020
+A medida que se han ido complicando las aplicaciones se han ido complicando también los frameworks.
+
+26
+00:02:46,020 --> 00:02:51,020
+Empezamos con los frameworks de primera generación, jQuery, Dojo, Motools.
+
+27
+00:02:51,020 --> 00:02:57,020
+A partir de ahí empezó ya ver una cierta estructura, sobre todo backbone, fue el primero que empezó a meter una estructura
+
+28
+00:02:57,020 --> 00:03:04,020
+de modelo vista controlador para gestionar modelos, para mantener ese problema fundamental de sincronizar la vista
+
+29
+00:03:04,020 --> 00:03:08,020
+con la copia del estado que tenemos en el cliente.
+
+30
+00:03:08,020 --> 00:03:11,020
+Y hace unos años hubo una revolución que fue Angular.
+
+31
+00:03:11,020 --> 00:03:18,020
+Angular metió muchísimos conceptos nuevos y cambió un poco la forma de desarrollar aplicaciones en el front.
+
+32
+00:03:18,020 --> 00:03:23,020
+Pero como eran los pioneros y los primeros acertaron en algunas cosas y en otras no acertaron.
+
+33
+00:03:23,020 --> 00:03:28,020
+Y por eso han salido los frameworks de tercera generación, que son en los que estamos ahora,
+
+34
+00:03:28,020 --> 00:03:31,020
+que es la segunda versión de Angular, React View.
+
+35
+00:03:31,020 --> 00:03:36,020
+Y también Ember, me gusta ponerlo en la tercera generación porque se han actualizado muy bien,
+
+36
+00:03:36,020 --> 00:03:39,020
+se han incorporado esos nuevos conceptos y también se puede entender,
+
+37
+00:03:39,020 --> 00:03:43,020
+o sea, es un framework equivalente a los otros.
+
+38
+00:03:43,020 --> 00:03:48,020
+Como esta charla va de View, pues voy a hacer una pequeña introducción a View.
+
+39
+00:03:48,020 --> 00:03:53,020
+La voy a hacer muy rápido porque no es una charla de View, es una charla de View y Django,
+
+40
+00:03:53,020 --> 00:03:55,020
+pero necesito contar un poco de View.
+
+41
+00:03:55,020 --> 00:03:57,020
+Lo primero es que se dice View.
+
+42
+00:03:57,020 --> 00:04:02,020
+Decimos muchas veces, lo decimos de muchas formas,
+
+43
+00:04:02,020 --> 00:04:08,020
+la primera línea de la documentación de View se dice View, es lo primero que dice.
+
+44
+00:04:08,020 --> 00:04:14,020
+Entonces, no cuesta nada decirlo bien y de todas formas, cada uno que lo diga como quiera.
+
+45
+00:04:14,020 --> 00:04:16,020
+Pero yo digo View.
+
+46
+00:04:16,020 --> 00:04:20,020
+Características de View, que lo simple es fácil.
+
+47
+00:04:20,020 --> 00:04:26,020
+Si habéis trabajado con AngularJS, la parte de las templates, la parte del HTML es parecidísima,
+
+48
+00:04:26,020 --> 00:04:27,020
+es muy parecida.
+
+49
+00:04:27,020 --> 00:04:33,020
+Tenemos las dobles llaves que me sincronizan las variables de JavaScript,
+
+50
+00:04:33,020 --> 00:04:35,020
+con lo que se ve en la vista.
+
+51
+00:04:35,020 --> 00:04:40,020
+Y luego tenemos las construcciones básicas de cualquier lenguaje, condicionales y bucles.
+
+52
+00:04:40,020 --> 00:04:46,020
+Y además podemos llamar a métodos desde las plantillas.
+
+53
+00:04:46,020 --> 00:04:52,020
+En tiempo de compilación e ejecución, View lo que hace es este HTML,
+
+54
+00:04:52,020 --> 00:04:58,020
+compilarlo en una función render, que es la que se ejecuta cada vez que cambian los datos para sincronizar la vista,
+
+55
+00:04:58,020 --> 00:05:01,020
+de forma automática y transparente.
+
+56
+00:05:01,020 --> 00:05:05,020
+Para nosotros como desarrolladores, lo simple es fácil.
+
+57
+00:05:05,020 --> 00:05:12,020
+También permite asociar funcionalidad a los eventos, y también es súper sencilla la sintaxis.
+
+58
+00:05:12,020 --> 00:05:17,020
+En cualquier sitio del HTML le puedes hacerte un binding con el evento que quieras
+
+59
+00:05:17,020 --> 00:05:19,020
+y llamar a tu JavaScript.
+
+60
+00:05:19,020 --> 00:05:25,020
+También puedes enlazar atributos, no solo el contenido, sino las clases, estilos,
+
+61
+00:05:25,020 --> 00:05:31,020
+la URL de fuente de una imagen, todo lo que son atributos de los HTML,
+
+62
+00:05:31,020 --> 00:05:34,020
+se pueden enlazar dinámicamente.
+
+63
+00:05:34,020 --> 00:05:42,020
+¿Viu? Es exactamente lo que hace, sincronizar el DOM con el estado,
+
+64
+00:05:42,020 --> 00:05:43,020
+de ida y vuelta.
+
+65
+00:05:43,020 --> 00:05:48,020
+Cuando cambian las variables les cambia el DOM, y cuando hay eventos se los comunica a JavaScript.
+
+66
+00:05:48,020 --> 00:05:55,020
+Una aplicación es más complicada que una sola parte.
+
+67
+00:05:55,020 --> 00:06:00,020
+Las aplicaciones son cada vez más complejas, y al final cualquier aplicación se puede descomponer en componentes.
+
+68
+00:06:00,020 --> 00:06:05,020
+Y esa es una de las grandes aportaciones de los frameworks de tercera generación.
+
+69
+00:06:05,020 --> 00:06:10,020
+Tanto Riyadh, como Angular, como Viu, lo que han aportado es la orientación a componentes.
+
+70
+00:06:10,020 --> 00:06:15,020
+En Viu mola, porque cada componente es como si fuera una instancia entera de Viu,
+
+71
+00:06:15,020 --> 00:06:19,020
+y puedes tener instancias de Viu dentro de otras instancias.
+
+72
+00:06:19,020 --> 00:06:24,020
+Eso lleva a que todo es la misma estructura, pero repetida recursivamente hacia adentro.
+
+73
+00:06:24,020 --> 00:06:29,020
+Cada cuadradito de estos, todos tienen la misma estructura,
+
+74
+00:06:29,020 --> 00:06:32,020
+y pueden tener a su vez componentes uno dentro de otros.
+
+75
+00:06:32,020 --> 00:06:36,020
+Cada componente tiene su estado, cada componente tiene sus métodos,
+
+76
+00:06:36,020 --> 00:06:39,020
+y cada componente tiene sus subcomponentes.
+
+77
+00:06:39,020 --> 00:06:50,020
+Para que esa orientación a componentes sea verdad durante el desarrollo,
+
+78
+00:06:50,020 --> 00:06:57,020
+es importante que cuando estemos desarrollando un componente tengamos junto todos los ingredientes de ese componente.
+
+79
+00:06:57,020 --> 00:07:01,020
+Los ingredientes de un componente son la plantilla, la lógica y el estilo.
+
+80
+00:07:01,020 --> 00:07:07,020
+Es los tres ingredientes de la web, HTML, CSS y JavaScript.
+
+81
+00:07:07,020 --> 00:07:12,020
+Esa es una de las grandes aportaciones de los nuevos frameworks,
+
+82
+00:07:12,020 --> 00:07:17,020
+el poder tener junto esas tres cosas, en un solo fichero.
+
+83
+00:07:17,020 --> 00:07:22,020
+Cuando yo estoy desarrollando, estoy desarrollando la templar, la lógica y el estilo.
+
+84
+00:07:22,020 --> 00:07:29,020
+Pero los navegadores no entienden este formato de ficheros que tienen todo.
+
+85
+00:07:29,020 --> 00:07:35,020
+Para convertir esto en algo que entienda el navegador, que son los JavaScript y los CSS de toda la vida,
+
+86
+00:07:35,020 --> 00:07:40,020
+necesitamos unas herramientas intermedias, que son webpack o browserify.
+
+87
+00:07:40,020 --> 00:07:47,020
+Normalmente webpack, que es la herramienta que en tiempo de desarrollo coge los componentes, los despieza,
+
+88
+00:07:47,020 --> 00:07:52,020
+y empaqueta todo el JavaScript, en ficheros de JavaScript, todo el estilo, en ficheros de CSS,
+
+89
+00:07:52,020 --> 00:07:56,020
+y lo pone en ficheros que el navegador puede cargar y puede leer.
+
+90
+00:07:56,020 --> 00:08:08,020
+Esto es lo que para nosotros cambia el cuento, y es lo que realmente es novedoso de estos frameworks de tercera generación.
+
+91
+00:08:08,020 --> 00:08:18,020
+Cuando ya empezamos a tener webpack, ya empezamos a necesitar un poco de infraestructura
+
+92
+00:08:18,020 --> 00:08:21,020
+para construir la aplicación.
+
+93
+00:08:21,020 --> 00:08:27,020
+Como todos los frameworks de tercera generación, View tiene un comando que me crea el proyecto,
+
+94
+00:08:27,020 --> 00:08:33,020
+y me crea una estructura con unos componentes iniciales.
+
+95
+00:08:33,020 --> 00:08:40,020
+Los ficheros de single file components se llaman punto view, y esa estructura tiene la template,
+
+96
+00:08:40,020 --> 00:08:43,020
+la lógica y los estilos.
+
+97
+00:08:43,020 --> 00:08:50,020
+Tiene una configuración de webpack que ya viene por defecto.
+
+98
+00:08:50,020 --> 00:08:54,020
+Para desarrollar tenemos que levantar webpack.
+
+99
+00:08:54,020 --> 00:08:59,020
+Webpack es un servidor que se queda mirando a ver cuando cambien nuestros ficheros,
+
+100
+00:08:59,020 --> 00:09:05,020
+cada vez que cambiamos un fichero, recompila o empaqueta ese JavaScript y es CSS,
+
+101
+00:09:05,020 --> 00:09:07,020
+y recarga el navegador.
+
+102
+00:09:07,020 --> 00:09:11,020
+El desarrollo cuando estás desarrollando con webpack es muy ágil, porque tú vas cambiando,
+
+103
+00:09:11,020 --> 00:09:16,020
+y la aplicación se va actualizando directamente en el navegador.
+
+104
+00:09:16,020 --> 00:09:23,020
+Y eso es lo que molaría, y es a donde vamos a llegar, poder tener con un yango detrás.
+
+105
+00:09:23,020 --> 00:09:32,020
+Porque este ejemplo es solo cuando estoy desarrollando la parte front,
+
+106
+00:09:32,020 --> 00:09:35,020
+pero aquí estamos desarrollando una aplicación que tiene su yango detrás.
+
+107
+00:09:35,020 --> 00:09:40,020
+Entonces esta charla va de cómo unir esta forma de trabajar con webpack y con view,
+
+108
+00:09:40,020 --> 00:09:43,020
+con tener un yango detrás.
+
+109
+00:09:43,020 --> 00:09:50,020
+Voy a enseñar la aplicación inicial que te crea, te crea un componente,
+
+110
+00:09:50,020 --> 00:09:55,020
+¿qué tal se ve? regular ¿no?
+
+111
+00:09:55,020 --> 00:10:06,020
+Esta es la aplicación inicial, voy a ejecutar webpack, lo estoy ejecutando dentro de PyCharm,
+
+112
+00:10:06,020 --> 00:10:12,020
+y esto me carga la aplicación, esta es la aplicación que me crea la plantilla.
+
+113
+00:10:12,020 --> 00:10:21,020
+Voy a cambiar un poquito, lo más sencillo es borrar cosas, borro,
+
+114
+00:10:21,020 --> 00:10:31,020
+y aquí pongo el mensaje hola cáceres, guardo, inmediatamente ya esto se ha actualizado.
+
+115
+00:10:31,020 --> 00:10:36,020
+Yo no he hecho nada, no he recargado nada, sino que webpack ha visto que hay cambios en el fichero,
+
+116
+00:10:36,020 --> 00:10:39,020
+lo ha repaquetado todo y me lo ha mandado.
+
+117
+00:10:39,020 --> 00:10:45,020
+Aquí abro las herramientas del navegador, tampoco se ve mucho pero puedo examinar los componentes,
+
+118
+00:10:45,020 --> 00:10:49,020
+y por ejemplo puedo ver el estado, aquí estoy viendo el estado de este componente,
+
+119
+00:10:49,020 --> 00:11:00,020
+y aquí dinámicamente puedo cambiar el estado, puedo coger que el mensaje de este componente,
+
+120
+00:11:00,020 --> 00:11:06,020
+ese dato se llame adiós, nos vamos luego.
+
+121
+00:11:06,020 --> 00:11:09,020
+Y lo cambio y he cambiado el estado en local.
+
+122
+00:11:09,020 --> 00:11:16,020
+Ahora lo que os voy a enseñar es cómo funciona el hodmodul reloading, la recarga de componentes en caliente,
+
+123
+00:11:16,020 --> 00:11:22,020
+y eso me mola mucho de webpack, yo estoy desarrollando, tengo la aplicación cargada con un estado,
+
+124
+00:11:22,020 --> 00:11:28,020
+y si ahora cambio el código de la aplicación, webpack es capaz de sustituirme los componentes
+
+125
+00:11:28,020 --> 00:11:32,020
+que yo he cambiado sin recargar toda la aplicación y sin destruir el estado que tengo.
+
+126
+00:11:32,020 --> 00:11:43,020
+Entonces yo me voy a este componente, me voy a la parte de estilo, y aquí le voy a poner font size 80 pixels,
+
+127
+00:11:43,020 --> 00:11:50,020
+y le voy a poner color rojo. Me vengo aquí y fijaros, ha cambiado el estilo,
+
+128
+00:11:50,020 --> 00:11:56,020
+yo he cambiado el CSS pero el estado local que yo he cambiado en la aplicación JavaScript sigue estando igual.
+
+129
+00:11:56,020 --> 00:12:01,020
+Entonces la agilidad y la velocidad de desarrollo que tienes con esto es una pasada,
+
+130
+00:12:01,020 --> 00:12:06,020
+porque no tienes que estar recargando, no tienes que estar siguiendo la secuencia del usuario
+
+131
+00:12:06,020 --> 00:12:09,020
+para llegar a un cierto punto de la aplicación, etcétera.
+
+132
+00:12:12,020 --> 00:12:19,020
+Pero ¿qué ocurre? que esto es webpack, es un servidor que está en el... bueno, la demo, ya lo he hecho,
+
+133
+00:12:19,020 --> 00:12:28,020
+está en el puerto 80, o sea, 80-80. Cuando yo estoy trabajando con Django, todos aquí ya sabéis trabajar con Django,
+
+134
+00:12:28,020 --> 00:12:35,020
+vamos, la estructura pues es, llega una URL, selecciona una vista, la vista renderiza una template y lo devuelvo.
+
+135
+00:12:35,020 --> 00:12:43,020
+No necesito ni siquiera JavaScript para hacer una aplicación, ¿vale? esta demo me voy a saltar porque si no voy un poco mal de tiempo.
+
+136
+00:12:43,020 --> 00:12:50,020
+Entonces, en qué situación estamos ahora? Ahora mismo, si empezamos con el lado de Django,
+
+137
+00:12:50,020 --> 00:12:54,020
+tenemos un servidor de Django que sirve HTML. Si empezamos con el lado de View,
+
+138
+00:12:54,020 --> 00:13:01,020
+tenemos un webpack que está sirviéndonos la aplicación de fron empaquetada
+
+139
+00:13:01,020 --> 00:13:09,020
+y nos está dando el whole module reloading. Entonces, lo que necesitamos es combinar esos dos mundos
+
+140
+00:13:09,020 --> 00:13:17,020
+para servir el cliente View desde Django, ¿vale? eso es lo que yo quiero, trabajar de forma unificada
+
+141
+00:13:17,020 --> 00:13:24,020
+con una experiencia de desarrollo pues que yo pueda estar cambiando la API y pueda estar consumiéndola desde View.
+
+142
+00:13:24,020 --> 00:13:31,020
+Necesito dos ingredientes, un módulo de webpack, ¿vale? un plugin de webpack que lo que hace es
+
+143
+00:13:31,020 --> 00:13:39,020
+escuchar lo que está haciendo webpack y escribir en un fichero JSON el nombre del paquete resultado que ha generado, ¿vale?
+
+144
+00:13:39,020 --> 00:13:47,020
+Y luego hay otra pieza en Django que lee ese fichero para saber dónde está el resultado de la compilación de webpack, ¿vale?
+
+145
+00:13:47,020 --> 00:13:55,020
+Inyectar ese nombre en la plantilla que estoy devolviendo desde Django, ¿vale? el proceso es tan sencillo como ese.
+
+146
+00:13:55,020 --> 00:14:02,020
+Lo siento que se vea poco, pero aquí está la configuración de webpack donde le estoy diciendo simplemente
+
+147
+00:14:02,020 --> 00:14:06,020
+un nombre de fichero donde se escribe ese resultado de la compilación.
+
+148
+00:14:06,020 --> 00:14:13,020
+Ese resultado tiene esta pinta, ¿vale? tengo bundles que son los paquetillos que genera webpack con la aplicación ejecutable
+
+149
+00:14:13,020 --> 00:14:24,020
+con la parte front y en la template lo importante de la template es que se inyecta el nombre de ese fichero que me ha generado webpack, ¿vale?
+
+150
+00:14:24,020 --> 00:14:30,020
+Si se recompila, pues ese nombre a lo mejor puede ser distinto porque lleva un hash y cada vez que recargue la aplicación
+
+151
+00:14:30,020 --> 00:14:38,020
+siempre voy a estar sirviendo un index desde Django que me hace referencia a ese bundle de webpack, ¿vale?
+
+152
+00:14:38,020 --> 00:14:44,020
+Y en los settings de Django simplemente le tengo que decir dónde está ese webpackloader.
+
+153
+00:14:44,020 --> 00:14:52,020
+Entonces, cuando esto funciona todo junto, yo estoy en el navegador, yo le hago una petición a Django, ¿vale?,
+
+154
+00:14:52,020 --> 00:15:00,020
+a su puerto normal, en desarrollo suele ser el 8.000, Django renderiza un index, ¿vale?
+
+155
+00:15:00,020 --> 00:15:09,020
+Y ese index dentro lleva una referencia al bundle que está generando webpack, ¿vale? con este render bundle.
+
+156
+00:15:09,020 --> 00:15:18,020
+¿Cómo sabe el bundle que genera webpack? porque webpack se lo ha dejado escrito en el fichero, en el ficherillo ese que genera el plugin, ¿vale?
+
+157
+00:15:18,020 --> 00:15:25,020
+Entonces, cuando eso llega al navegador, el navegador ve que hay una referencia a un Javascript en otro puerto, en el 8080
+
+158
+00:15:25,020 --> 00:15:30,020
+y entonces le hace una petición a webpack para obtener ese bundle, ¿vale?
+
+159
+00:15:30,020 --> 00:15:35,020
+Y dentro de ese bundle está el código también para soportar el hotmodule reloading, ¿vale?
+
+160
+00:15:35,020 --> 00:15:42,020
+Entonces, con esto hemos juntado los dos mundos, hemos hecho una petición a Django, la aplicación se está sirviendo en el puerto 8.000
+
+161
+00:15:42,020 --> 00:15:50,020
+pero por detrás nuestra aplicación se está conectando a webpack para recibir todas las actualizaciones a medida que vayamos desarrollando, ¿vale?
+
+162
+00:15:50,020 --> 00:15:57,020
+Y esto era lo que queríamos, realmente, esta es la experiencia de desarrollo, ¿vale?
+
+163
+00:15:57,020 --> 00:16:01,020
+Aquí sí que voy a hacer la demo para que veáis cómo es todo el...
+
+164
+00:16:01,020 --> 00:16:14,020
+Vale, claro, como he cambiado... Un segundo... Vale, me voy al paso 3.
+
+165
+00:16:14,020 --> 00:16:30,020
+Y aquí... Vale, aquí no sé de nada, pero aquí estoy cargando de localhost 8.000, es decir, le estoy pidiendo a Django la aplicación.
+
+166
+00:16:30,020 --> 00:16:41,020
+Esto me está devolviendo, ¿vale? Una plantilla totalmente vacía pero que tiene una referencia al bundle que me ha generado webpack, ¿vale?
+
+167
+00:16:41,020 --> 00:16:51,020
+Y webpack, o sea, este build se está cargando y ya me está generando toda la aplicación, que en este caso es muy sencilla, no tiene nada, ¿vale?
+
+168
+00:16:51,020 --> 00:17:04,020
+El GIF catalog, ¿vale? Que es el componente... Que tengo aquí... GIF catalog, ¿vale?
+
+169
+00:17:04,020 --> 00:17:14,020
+Vale, ya tengo... De momento la aplicación no hace nada, pero ya tengo unidos los dos mundos.
+
+170
+00:17:14,020 --> 00:17:23,020
+Yo sí ahora cambio cosas aquí, ¿vale? Pues se ven directamente, estoy cambiando el componente view, ¿vale?
+
+171
+00:17:23,020 --> 00:17:31,020
+Y todavía... Vale, no he configurado bien el HTML, ahora sí.
+
+172
+00:17:31,020 --> 00:17:41,020
+No, no lo he configurado bien. Vale.
+
+173
+00:17:41,020 --> 00:17:48,020
+¿Qué me falta? Me falta un par de detalles de configuración para que, en los que no voy a entrar, pero en las transparencias están, ¿vale?
+
+174
+00:17:48,020 --> 00:17:55,020
+Para que webpack y Django convivan en paz y armonía, ¿vale? Básicamente es para que webpack se deje hacer peticiones
+
+175
+00:17:55,020 --> 00:18:02,020
+desde una aplicación que ha sido servida en el puerto 8.000 cuando él está en el 8.080. Vale, tampoco tiene más.
+
+176
+00:18:02,020 --> 00:18:08,020
+Entonces, el proceso lo vuelvo a recordar, desde el cliente se hace una petición al servidor, que me devuelve un HTML,
+
+177
+00:18:08,020 --> 00:18:17,020
+por debajo tengo webpack con el HTML actualizando los componentes de la aplicación, pero claro, mía, yo pongo un Django para algo,
+
+178
+00:18:17,020 --> 00:18:22,020
+pongo un Django porque me va a hacer de vaquen de mi cliente, ¿vale? De mi parte de Frontend.
+
+179
+00:18:22,020 --> 00:18:27,020
+Entonces, ese Django me tiene que servir los datos, como hemos dicho, en JSON a través de una API.
+
+180
+00:18:27,020 --> 00:18:38,020
+Pues aquí era donde entraba Django Resfringer, pero al final he hecho simplemente un punto de respuesta de la API que me devuelve un JSON
+
+181
+00:18:38,020 --> 00:18:50,020
+y ya está. Desde la parte del cliente es muy fácil consumir APIs, ¿vale? Esto es hacer peticiones, getPos o las que sean,
+
+182
+00:18:50,020 --> 00:18:58,020
+a través de una librería que es Axios, por ejemplo, en la parte de Envio, es la librería que se recomienda.
+
+183
+00:18:58,020 --> 00:19:05,020
+Y simplemente en nuestro Django tengo los endpoints de la API que me devuelven lo que sea, utilizando lo RM, los modelos,
+
+184
+00:19:05,020 --> 00:19:11,020
+utilizando lo que sea y se realizando a JSON. Esto tiene poco misterio.
+
+185
+00:19:11,020 --> 00:19:20,020
+Para la autenticación, a mí me gusta utilizar las sesiones que tiene Django, ¿vale? Porque ya viene todo hecho.
+
+186
+00:19:20,020 --> 00:19:27,020
+Entonces, ya no es una SPA, ya no es una página de una sola página, o sea, perdón, una aplicación de una sola página,
+
+187
+00:19:27,020 --> 00:19:34,020
+sino que tenemos dos páginas. Django me sirve por una parte el login y una vez que el usuario sea autenticado bien,
+
+188
+00:19:34,020 --> 00:19:42,020
+Django manda el identificador de sesión en una cookie y a partir de ese momento el cliente ya tiene esa cookie para validarse.
+
+189
+00:19:42,020 --> 00:19:49,020
+Y con esa cookie podemos validar todas las peticiones tanto de HTML como de la API.
+
+190
+00:19:49,020 --> 00:19:55,020
+Y eso en Django es que es súper sencillo porque añadir este decorador a las vistas que queramos proteger con login.
+
+191
+00:19:55,020 --> 00:20:04,020
+El login requiere. Con eso, ya si tenemos bien configurada la autenticación de Django, con eso ya funciona.
+
+192
+00:20:04,020 --> 00:20:13,020
+Y además esto me sirve para explicar que en las vistas podemos inyectar datos, podemos escribir datos renderizados desde Django
+
+193
+00:20:13,020 --> 00:20:24,020
+para que vayan ya inicialmente en la vista. La parte de rutas, todo sistema SPA, tanto RIA, como VIEW, como Angular,
+
+194
+00:20:24,020 --> 00:20:31,020
+tienen una parte de rutas que es que una aplicación suele tener una estructura que no implica recarga de más páginas,
+
+195
+00:20:31,020 --> 00:20:37,020
+sino que vas cambiando de sección sin recargar la página. Pero el usuario ve cómo cambia la URL, es decir,
+
+196
+00:20:37,020 --> 00:20:42,020
+se cambia la URL, pero no implica una recarga de página. Por dentro, ¿cómo funciona?
+
+197
+00:20:42,020 --> 00:20:49,020
+Hay un componente que es la RUT-VIEW y hay un módulo de JavaScript que en función de la URL decide qué componente tiene
+
+198
+00:20:49,020 --> 00:20:57,020
+que renderizar en esa parte del módulo. ¿Qué estructura tiene eso dentro de Django?
+
+199
+00:20:57,020 --> 00:21:06,020
+Pues nosotros, todas las rutas de la aplicación se las renderizamos el index, ahí se despliega el JavaScript
+
+200
+00:21:06,020 --> 00:21:12,020
+y el JavaScript luego elige qué componente va a renderizar en la página. Con lo cual funciona la aplicación
+
+201
+00:21:12,020 --> 00:21:21,020
+tanto para rutas, si entramos directamente al index, como para las rutas profundas, con rutas de detalle,
+
+202
+00:21:21,020 --> 00:21:29,020
+de las páginas de detalle. Como conclusión, aquí he utilizado Django como backend,
+
+203
+00:21:29,020 --> 00:21:36,020
+es el mejor backend para una aplicación de VIEW y Django. En nuestro caso sí, porque tenemos un montón de funcionalidad
+
+204
+00:21:36,020 --> 00:21:44,020
+que necesitamos con Django y que nos aporta. Podemos hacer cálculos con pandas, accedemos a las bases de datos,
+
+205
+00:21:44,020 --> 00:21:51,020
+tenemos autenticación, tenemos un montón de cosas. Pero si fuera a hacer una SPA donde casi toda la carga de la lógica
+
+206
+00:21:51,020 --> 00:21:58,020
+está en la parte de la SPA, a lo mejor una elección buena sería utilizar Node. Con Node tenemos varias ventajas.
+
+207
+00:21:58,020 --> 00:22:03,020
+La primera es que todo el código que escribimos es JavaScript, con lo cual a veces nos podemos llevar cosas
+
+208
+00:22:03,020 --> 00:22:09,020
+del cliente al servidor o del servidor al cliente si nos hace falta. Sobre todo una ventaja muy importante
+
+209
+00:22:09,020 --> 00:22:16,020
+es el server-side rendering. Si os habéis fijado la aplicación cuando se sirve va vacía, no lleva nada,
+
+210
+00:22:16,020 --> 00:22:21,020
+es el JavaScript el que empieza a montar toda la aplicación en el cliente. Eso tiene dos pegas,
+
+211
+00:22:21,020 --> 00:22:27,020
+una que hay un tiempo donde la aplicación no muestra nada al usuario hasta que tiene todo para poderse desplegar
+
+212
+00:22:27,020 --> 00:22:36,020
+y luego que si Google craulea esa URL va a haber un HTML vacío y no va a saber indexarlo bien. Con server-side rendering
+
+213
+00:22:36,020 --> 00:22:43,020
+podemos ejecutar la lógica del primer pintado de la aplicación en el servidor y que el HTML que viaja al cliente
+
+214
+00:22:43,020 --> 00:22:53,020
+ya lleva renderizado esa primera vista. El usuario ve la primera vista muy rápido y Google ve una página
+
+215
+00:22:53,020 --> 00:23:02,020
+que ya tiene contenido y sabe indexarla bien. Comentarios finales, aquí iba a arrajar un poco de Django Resfling
+
+216
+00:23:02,020 --> 00:23:15,020
+pero no me da ni tiempo. Esto ha sido como un intensivo de View Django como si nos hubieran inyectado el conocimiento
+
+217
+00:23:15,020 --> 00:23:24,020
+así por Matrix. Esto hay que reposarlo más y verlo más despacio. View yo os lo recomiendo, la verdad es que nosotros
+
+218
+00:23:24,020 --> 00:23:33,020
+hemos hecho la migración, hemos decidido cambiar a View de AngularJS y la verdad es que no podemos estar más contenta.
+
+219
+00:23:33,020 --> 00:23:42,020
+Aquí os dejo referencias para leer y para aprender y no sé si me da tiempo alguna pregunta o no.
+
+220
+00:23:42,020 --> 00:24:01,020
+Bueno, primero un aplauso para Javier Abadía. Tiempo para preguntas. La comida. A esta hora ya terminaría la charla
+
+221
+00:24:01,020 --> 00:24:06,020
+no habría tiempo para preguntas pero como tenemos la comida si queréis quedaros podéis hacer alguna pregunta
+
+222
+00:24:06,020 --> 00:24:13,020
+y si queréis ir a comer. Si queréis ir a comer. Se puede…
+
+223
+00:24:13,020 --> 00:24:23,020
+La mía es muy rápida. Primero felicitarte porque me pareció muy interesante y además porque es complicado.
+
+224
+00:24:23,020 --> 00:24:28,020
+El tema de integrar una cosa con la otra es complicado y yo venía a otro lado y me acostó con todo.
+
+225
+00:24:28,020 --> 00:24:36,020
+Y ahora lo consigo entender mucho mejor. Y por otro lado comentarte el tema escalar esto. Es complicado, son dos servidores.
+
+226
+00:24:36,020 --> 00:24:41,020
+¿No sé si tienes uno que está haciendo el tema de webpack por debajo y para escalar a lo mejor poner tanto…
+
+227
+00:24:41,020 --> 00:24:48,020
+Vale, esta es la configuración de desarrollo. Son dos servidores pero son dos servidores software.
+
+228
+00:24:48,020 --> 00:24:53,020
+Están corriendo en la misma máquina que es mi máquina de desarrollo en puertos distintos.
+
+229
+00:24:53,020 --> 00:24:59,020
+Cuando esto pasa a producción en producción no hay un webpack corriendo sino webpack genera los bundles
+
+230
+00:24:59,020 --> 00:25:05,020
+y eso es lo que yo despliego en la aplicación. Entonces en producción no funciona webpack.
+
+231
+00:25:05,020 --> 00:25:10,020
+Se compila, se generan los bundles y además se generan sin información de depuración.
+
+232
+00:25:10,020 --> 00:25:17,020
+O sea tienen como una configuración distinta. Pero no funciona en webpack en producción.
+
+233
+00:25:17,020 --> 00:25:23,020
+La otra cosa es el otro lado. Yo he cambiado el estado del front end, el bundle como alimento yo a Django.
+
+234
+00:25:23,020 --> 00:25:26,020
+Imagino que era el resapi.
+
+235
+00:25:26,020 --> 00:25:35,020
+Claro, a través de los appy endpoints, haces los posts o los put que tengas que hacer para sincronizar el estado de la parte.
+
+236
+00:25:35,020 --> 00:25:38,020
+Por eso pusiste la doble fecha en el bundle porque puedes actualizar.
+
+237
+00:25:38,020 --> 00:25:41,020
+¿Y por qué odias el resapi? A ver si lo odias por lo mismo que yo.
+
+238
+00:25:41,020 --> 00:25:47,020
+A ver, no lo odio pero es tan muy lejos de la intención que yo tengo.
+
+239
+00:25:47,020 --> 00:25:54,020
+Normalmente el resfringer tiene su forma de hacer las cosas y a mí no me gusta que me digan cómo hacer las cosas.
+
+240
+00:25:54,020 --> 00:25:56,020
+Eres más allá. Sí, yo también.
+
+241
+00:25:56,020 --> 00:25:58,020
+Muchas gracias.
+
+242
+00:25:58,020 --> 00:26:00,020
+Pregunta por allí.
+
+243
+00:26:00,020 --> 00:26:02,020
+Hola.
+
+244
+00:26:02,020 --> 00:26:12,020
+¿Te has enfrentado la internacionalización del front? ¿Perdón?
+
+245
+00:26:12,020 --> 00:26:16,020
+No, nuestra aplicación es en inglés y solo en inglés.
+
+246
+00:26:16,020 --> 00:26:22,020
+Pero eso quiero decir es un problema yo creo en una dimensión distinta a esto.
+
+247
+00:26:22,020 --> 00:26:28,020
+Por si tú reutilizabas la misma internacionalización de Django, las utilizabas en el front.
+
+248
+00:26:28,020 --> 00:26:35,020
+O tenías dos pies diferentes utilizadas otra librería. Es que el YASGIP está un poco complicado en la internacionalización del front.
+
+249
+00:26:35,020 --> 00:26:38,020
+Que salga por encima de los demás.
+
+250
+00:26:38,020 --> 00:26:41,020
+Que tus usuarios aprendan inglés, no sé.
+
+251
+00:26:46,020 --> 00:26:49,020
+Vale, una pregunta más por aquí.
+
+252
+00:26:49,020 --> 00:26:56,020
+Bueno, una pregunta muy rápida.
+
+253
+00:26:56,020 --> 00:27:05,020
+¿Cómo has solucionado la parte para minimizar la redefinición de los modelos tanto en la parte de la API como en la parte del cliente?
+
+254
+00:27:05,020 --> 00:27:08,020
+La redefinición de los modelos.
+
+255
+00:27:08,020 --> 00:27:13,020
+Si tú acabas intercambiando datos y normalmente acaban fluyendo los datos de una manera con un ciclo de vida muy establecido.
+
+256
+00:27:13,020 --> 00:27:20,020
+Normalmente el problema que tienes con este tipo de aplicaciones es que tienes que aplicar modelos que son prácticamente lo mismo que tienes en la API a nivel de JavaScript.
+
+257
+00:27:20,020 --> 00:27:27,020
+Has encontrado alguna manera para poder intercambiar esta información de una forma más pragmática que no se ha vuelto a aplicar.
+
+258
+00:27:27,020 --> 00:27:31,020
+No, no. A ver, nosotros para gestionar el estado en el cliente utilizamos Vuex.
+
+259
+00:27:31,020 --> 00:27:38,020
+Que es como si habéis oído hablar de Redax. Es el almacén de datos del front de Vuex.
+
+260
+00:27:38,020 --> 00:27:43,020
+Entonces, hay una serie de…, ahí puedes guardar lo que quieras. Hay guardas ojetos planos de JavaScript.
+
+261
+00:27:43,020 --> 00:27:50,020
+Pero hay una recomendación de cómo deberían estar estructurados esos datos. Que son unos diccionarios por identificador, etc.
+
+262
+00:27:50,020 --> 00:27:59,020
+Entonces, lo que hacemos es ya desde el back generar los datos, serializarlos en ese formato que necesita Vuex.
+
+263
+00:27:59,020 --> 00:28:05,020
+Con lo cual, si añadimos, por ejemplo, un campo nuevo al modelo, que sería el problema que me preguntas, tendría que añadirlo en el modelo,
+
+264
+00:28:05,020 --> 00:28:08,020
+correr la migración, se ejecutaría en la base de datos.
+
+265
+00:28:08,020 --> 00:28:10,020
+Es muy va tanto por aquí. Lo que se va a ser realización no me preocupa tanto.
+
+266
+00:28:10,020 --> 00:28:15,020
+Acabas siendo diccionarios que acabas cargando. Si lo guardas en un store de rétus o cosas por el estilo, es lo mismo.
+
+267
+00:28:15,020 --> 00:28:22,020
+Pero donde voy es al hecho de establecer una sinergia entre los datos que tienes en API y las que tienes en tu frontal.
+
+268
+00:28:22,020 --> 00:28:29,020
+Si no acabas tirando de mutable y cosas por el estilo, que acabas añadiendo muchas más librerías.
+
+269
+00:28:29,020 --> 00:28:36,020
+Lo que hacen es hacer todo esto mucho más pesado y que cualquier cambio que tenés que hacer arriba, tienes que propagarlo hacia el cliente.
+
+270
+00:28:36,020 --> 00:28:42,020
+No sé si me explico bien. Si lo estés enviando como se fará un pique, lo hago por el nivel de Python, lo pasas con un JSON,
+
+271
+00:28:42,020 --> 00:28:45,020
+luego a nivel de frontal, tienes que volver a hacer los cambios.
+
+272
+00:28:45,020 --> 00:28:49,020
+Es eso que quizás la solución que muchos estamos intentando encontrar,
+
+273
+00:28:49,020 --> 00:28:52,020
+es que estar volviendo a picar constantemente tanto al front como en API.
+
+274
+00:28:52,020 --> 00:28:59,020
+Es lo que intentaba explicar. Desde el dato que yo se realizo, si me aparece un campo nuevo en el modelo,
+
+275
+00:28:59,020 --> 00:29:03,020
+ese campo aparece en el objeto sin que yo tenga que cambiar nada de código,
+
+276
+00:29:03,020 --> 00:29:07,020
+en la aplicación ya se recibe y se guarda en el almacén sin que tenga que cambiar nada de código
+
+277
+00:29:07,020 --> 00:29:12,020
+y solo tengo que cambiar código en el sitio donde realmente voy a utilizar el dato nuevo si lo estoy utilizando.
+
+278
+00:29:12,020 --> 00:29:14,020
+¿Puedo añadir?
+
+279
+00:29:14,020 --> 00:29:17,020
+No entiendo, es un payload que lo utiliza. No le discuto.
+
+280
+00:29:17,020 --> 00:29:20,020
+Si quieres algo, lo miramos con calma.
+
+281
+00:29:20,020 --> 00:29:22,020
+Vale, pues, muchas gracias.
+
+282
+00:29:22,020 --> 00:29:25,020
+Si tenéis cualquier otra pregunta, podéis dársela en…
+
+283
+00:29:25,020 --> 00:29:27,020
+Veniros aquí y yo me quedo aquí.
+
+284
+00:29:27,020 --> 00:29:28,020
+Claro.
+
+285
+00:29:28,020 --> 00:29:29,020
+Paso, hombre, y ya está.
+
+286
+00:29:29,020 --> 00:29:30,020
+… o en la Quadroom.
+
+287
+00:29:30,020 --> 00:29:34,020
+Y una cosa más, ayer en el Catering hubo algún…
+
+288
+00:29:34,020 --> 00:29:38,020
+Para los vegetarianos no estuvo muy claro las acciones que tenían.
+
+289
+00:29:38,020 --> 00:29:44,020
+Y hoy hemos preparado aquí unas mesas, aquí en esta parte de aquí unas mesas indicadas para vegetarianos.
+
+290
+00:29:44,020 --> 00:29:49,020
+Si seis vegetarianos están aquí, si no, por favor respetarlas un poquito para que tengan un poco más.
+
+291
+00:29:49,020 --> 00:29:54,020
+Para celíacos y personas con otras intolerancias, por favor, pasaros por Secretaría, que también tenemos alguna solución.
+
+292
+00:29:54,020 --> 00:30:20,020
+Muchas gracias.
+

@@ -1,0 +1,2576 @@
+1
+00:00:00,000 --> 00:00:01,000
+¡Vale!
+
+2
+00:00:01,000 --> 00:00:02,000
+¡Ay, esto!
+
+3
+00:00:02,000 --> 00:00:03,000
+¡Vamos a cancelarlo!
+
+4
+00:00:03,000 --> 00:00:04,000
+No me quede.
+
+5
+00:00:04,000 --> 00:00:05,000
+¡Uy!
+
+6
+00:00:05,000 --> 00:00:06,000
+¡Vale!
+
+7
+00:00:06,000 --> 00:00:08,000
+Bueno, mi nombre es Kike Porta, ¿vale?
+
+8
+00:00:08,000 --> 00:00:12,000
+Y vengo a hablaros de PILAS ENGINE, ¿vale?
+
+9
+00:00:12,000 --> 00:00:18,000
+PILAS ENGINE es una librería para desarrollar videojuegos, ¿vale?
+
+10
+00:00:18,000 --> 00:00:33,000
+El origen de PILAS, la idea original es de un chico argentino llamado Hugo Rouschetti.
+
+11
+00:00:33,000 --> 00:00:40,000
+Y a día de hoy, pues, es un proyecto comunitario en el que participa gente, pues, Uruguay, Argentina, México, en España.
+
+12
+00:00:40,000 --> 00:00:58,000
+Y la idea principal de PILAS era acercar, intentar que los chavales que quieren introducirse en el mundo de la programación lo hagan desde una perspectiva lúdica.
+
+13
+00:00:58,000 --> 00:01:06,000
+Yo creo que mediante el juego, muchos de nosotros, o parte de nosotros, nos hemos introducido en el mundo de la programación.
+
+14
+00:01:06,000 --> 00:01:14,000
+Yo me acuerdo cuando era pequeño, pues cogí a la revista Microjoby, me copiaba ahí las cuatro páginas o cinco, y al final, pues, o funcionaba o no, pero bueno,
+
+15
+00:01:14,000 --> 00:01:19,000
+ese fue uno de las introducciones al mundo de la programación.
+
+16
+00:01:19,000 --> 00:01:22,000
+Y PILAS lo que busca es ese solo objetivo, ¿no?
+
+17
+00:01:22,000 --> 00:01:27,000
+A través del juego, intentar que los chavales aprendan a programar, ¿vale?
+
+18
+00:01:27,000 --> 00:01:40,000
+Y otro de los objetivos también que está buscando PILAS, bueno, que busca PILAS y que me gustó, es la intentar introducir la programación de videojuegos en una dinámica de ahora, ¿vale?
+
+19
+00:01:40,000 --> 00:01:50,000
+¿Por qué? Porque, digamos que a través de los videojuegos, los chavales pueden entender el porqué de algunos conceptos, por ejemplo, matemáticos.
+
+20
+00:01:50,000 --> 00:02:02,000
+Pues, ¿para qué me sirve a mí colocar un punto en un plano cartesiano? Pues, oye, pues, para colocar un personaje en pantalla, o para qué me puede servir la función seno y coseno,
+
+21
+00:02:02,000 --> 00:02:07,000
+pues, para mover, por ejemplo, la nave espacial esa para la pantalla hacia cualquier dirección.
+
+22
+00:02:07,000 --> 00:02:13,000
+No sé, me lo hubiera explicado a mí el seno y coseno, que hubiera servido para eso, pues, me lo hubiera prestado más atención, ¿no?
+
+23
+00:02:13,000 --> 00:02:22,000
+O la fórmula para calcular la distancia de entradas a dos puntos. ¿Eh? Pues, ¿te sirve, pues, para calcular la colisión cuando están cerca?
+
+24
+00:02:22,000 --> 00:02:27,000
+Pues, oye, han colisionado esos dos objetos. ¿Vale? Y ese es uno de los objetivos que busca PILAS, ¿vale?
+
+25
+00:02:27,000 --> 00:02:43,000
+Y también queremos que la programación de juegos dentro de la dinámica de una aula es buena, porque también tiene un carácter social.
+
+26
+00:02:43,000 --> 00:02:48,000
+Quiero decir, tú puedes formar grupos de chavales en un mismo proyecto, compartir entre ellos experiencias, y a lo mejor no sólo ya la programación,
+
+27
+00:02:48,000 --> 00:02:57,000
+sino que si hay un chaval que le gusta dibujar, ya no lo gusta programar, puede participar en ese proyecto y sentirse partícipe, ¿no?
+
+28
+00:02:57,000 --> 00:03:06,000
+Y el que le gusta programar, pues, ya le dotará de vida al personaje o alguien que le gusta hacer música, pues, oye, puede desabriar música para lo que es el videojuego.
+
+29
+00:03:06,000 --> 00:03:18,000
+Entonces, en ese conjunto es el que intenta PILAS moverse, ¿vale? Bien. Programar con PILAS es fácil, divertido e interactivo.
+
+30
+00:03:18,000 --> 00:03:26,000
+Divertido, pues, por lo que he comentado antes, ¿no? Programar y, si encima el resultado es un juego,
+
+31
+00:03:26,000 --> 00:03:37,000
+que luego puedes pasar horas ahí, compartirlo con tus amigos, que te digan, oye, este nivel es muy difícil, por le menos no sé qué, pues, es algo gratificante.
+
+32
+00:03:37,000 --> 00:03:47,000
+Interactivo, pues lo mismo, porque puedes empezar a escribir comandos y enseguida ver los resultados en PILAS que hablan lo veréis.
+
+33
+00:03:47,000 --> 00:03:58,000
+Vale, y es fácil. Más que nada, a Paíton me parece un lenguaje muy bueno para introducir a las todas las programaciones, porque conforme vas escribiendo comandos en pantalla,
+
+34
+00:03:58,000 --> 00:04:05,000
+ves enseguida el resultado. No tienes que esperar a compilar, enseguida ves lo que ocurre en la pantalla.
+
+35
+00:04:05,000 --> 00:04:12,000
+Y creo que también es una forma muy buena de no hacerle los sabores esperar a que va a escribir todo el código para luego ver lo que pasa.
+
+36
+00:04:12,000 --> 00:04:18,000
+Si no mediante el intérprete de PILAS, pues ver los resultados al momento y eso también es una forma de motivarles.
+
+37
+00:04:18,000 --> 00:04:43,000
+Voy a mostrar lo que es el asistente. Una vez que hayas instalado PILAS, que ya os diré desde la web, entonces podéis descargarlo.
+
+38
+00:04:43,000 --> 00:04:59,000
+Si arranca, ahora poco a poco, con calma. Vale, aquí tenéis para abrir el intérprete de PILAS.
+
+39
+00:04:59,000 --> 00:05:08,000
+Para programar con PILAS lo puedes hacer en distintas formas, para crear un archivo.py y luego ejecutarlos de la consola.
+
+40
+00:05:08,000 --> 00:05:15,000
+O si quieres probarlo directamente y atrastear con él, una forma muy cómoda es a través del intérprete.
+
+41
+00:05:15,000 --> 00:05:21,000
+En la parte de abajo, impor PILAS lo que nos dice.
+
+42
+00:05:21,000 --> 00:05:27,000
+Impor PILAS lo que nos está diciendo es eso, que queremos trabajar con la librería, pilas iniciar,
+
+43
+00:05:27,000 --> 00:05:31,000
+lo que hace es cargar la ventana que tenéis arriba.
+
+44
+00:05:31,000 --> 00:05:39,000
+Y en la siguiente línea, ahora os explicaré un poco, principalmente para dibujar el personaje desde pantalla.
+
+45
+00:05:39,000 --> 00:05:52,000
+Ahora os voy a explicar un poco las partes fundamentales en las que se basa PILAS para funcionar.
+
+46
+00:05:52,000 --> 00:06:05,000
+Las escenas. PILAS trabaja con escenas de la siguiente forma. Imaginaos una escena como un folio donde dibujas la navecita o un texto.
+
+47
+00:06:05,000 --> 00:06:14,000
+Entonces cada una de las escenas del juego es como un folio. Cada escena tiene sus personajes.
+
+48
+00:06:14,000 --> 00:06:24,000
+Cada escena controla sus propios eventos de ratón, de teclado, sonido, todo. Cada escena digamos que es independiente.
+
+49
+00:06:24,000 --> 00:06:32,000
+En ejemplo, aquí tendríamos la escena del menú, otra escena distinta que sería del juego y aquella de la ayuda.
+
+50
+00:06:32,000 --> 00:06:40,000
+Son escenas independientes pero siempre tienes que tener de todas las escenas definidas, una siempre será la activa.
+
+51
+00:06:40,000 --> 00:06:48,000
+Tú vas cambiando entre las escenas, pues oye, ahora carga aquella que es para el juego y ten en cuenta solo los eventos del ratón y del teclado para esa escena.
+
+52
+00:06:48,000 --> 00:06:54,000
+No se entremezclan. Y los personajes son propios de cada escena, no se entremezclan.
+
+53
+00:06:54,000 --> 00:07:02,000
+Luego, la parte casi principal de PILAS son los actores.
+
+54
+00:07:02,000 --> 00:07:14,000
+El acto es cualquier objeto que quieras poner en una escena, ya sea un muñequito, obrero, una bomba, un monito, un texto que quieras imprimir en pantalla.
+
+55
+00:07:14,000 --> 00:07:20,000
+Cualquier elemento que quieras escapar de la pantalla es un actor.
+
+56
+00:07:20,000 --> 00:07:26,000
+Entonces voy a mostrar los actores en PILAS como aquí está.
+
+57
+00:07:26,000 --> 00:07:33,000
+Por ejemplo, el mono este que veis aquí, para crearlo hemos hecho lo siguiente, mono, que es el nombre que le quieres dar al personaje.
+
+58
+00:07:33,000 --> 00:07:39,000
+Es igual a PILAS, punto actores, punto, y el actor que quieres que represente.
+
+59
+00:07:39,000 --> 00:07:46,000
+Ya PILAS viene con una serie de actores predefinidos para que los chavales ya desde un momento puedan probar el juego,
+
+60
+00:07:46,000 --> 00:07:52,000
+ver si les gusta, sino hacer como un boceto del juego que quieren desarrollar.
+
+61
+00:07:52,000 --> 00:07:59,000
+No hace falta que hagan los gráficos, sino que ya hayan predefinidos una serie de actores.
+
+62
+00:07:59,000 --> 00:08:11,000
+Todos los actores comparten unas propiedades que son comunes, que son por ejemplo la posición que tú le dices al mono,
+
+63
+00:08:11,000 --> 00:08:26,000
+por X que se vaya a la posición 100, y lo desplazaremos hacia la derecha, mono, punto, y, lo posicionamos un poquito más para arriba.
+
+64
+00:08:26,000 --> 00:08:34,000
+Dentro de PILAS, si pulsáis la tecla de F12, casi todas las teclas de función activan un modo de depuración.
+
+65
+00:08:34,000 --> 00:08:43,000
+Pulsando la tecla de F12 nos aparece un eje de coordenadas cuyo centro, el 00, sería el centro de la pantalla.
+
+66
+00:08:43,000 --> 00:08:52,000
+Y lo que comentaba antes, esto a lo mejor una una mica de aula, puede ser interesante para explicarles el posicionamiento de puntos dentro de un plano cartesiano,
+
+67
+00:08:52,000 --> 00:08:55,000
+esto es el eje X positivo, negativo.
+
+68
+00:08:55,000 --> 00:09:08,000
+Si os fijáis en el actor mono, abajo a la derecha, que pone 100, esa es la posición que está en este momento del actor colocado.
+
+69
+00:09:08,000 --> 00:09:22,000
+Otra de las propiedades comunes que comparten todos los actores, por ejemplo, es la rotación.
+
+70
+00:09:22,000 --> 00:09:32,000
+Al actor le puedes indicar el ángulo de rotación que queréis que tenga el actor en pantalla.
+
+71
+00:09:32,000 --> 00:09:45,000
+45, como se sigue así, 90 grados, sería un ángulo completo, no se le pones, mono, punto, ro, punto, ro,
+
+72
+00:09:45,000 --> 00:09:52,000
+rotación, se va a 360 o 0, volvería a la posición inicial.
+
+73
+00:09:52,000 --> 00:09:56,000
+0 es como parte de todos los actores, un ángulo 0.
+
+74
+00:09:56,000 --> 00:10:04,000
+¿Qué más? Otra de las propiedades comunes sería la escala.
+
+75
+00:10:04,000 --> 00:10:10,000
+Si le pones un 2, por ejemplo, lo haces, el actor aumenta el doble del tamaño original.
+
+76
+00:10:10,000 --> 00:10:15,000
+Si le ponemos un 0,5 sería la mitad de su tamaño original.
+
+77
+00:10:15,000 --> 00:10:22,000
+Si le ponemos volver a 1, volvería a su estado inicial, en el actor.
+
+78
+00:10:22,000 --> 00:10:34,000
+A todas estas propiedades, por ejemplo, vamos a poner el mono al centro.
+
+79
+00:10:34,000 --> 00:10:42,000
+Para crear una animación, en un juego tienes que ir poniendo el mono, vas desplazando el personaje.
+
+80
+00:10:42,000 --> 00:10:54,000
+Para crear una animación de juego, tienes que ir desplazando el personaje,
+
+81
+00:10:54,000 --> 00:11:02,000
+poco a poco a la derecha, ahora 30, ahora 40, y vas creando una animación como si fueran frámenes.
+
+82
+00:11:02,000 --> 00:11:07,000
+Una de las opciones que tiene pilas es que si el valor se lo pasa es como una lista,
+
+83
+00:11:07,000 --> 00:11:11,000
+crea como una interpolación, todos los valores hasta llegar a esa posición.
+
+84
+00:11:11,000 --> 00:11:18,000
+Vamos a decir que va a la posición 200, y en el intervalo de un segundo,
+
+85
+00:11:18,000 --> 00:11:24,000
+por defecto es un segundo, mueve, desplaza el personaje a la posición que tú lo has indicado.
+
+86
+00:11:24,000 --> 00:11:31,000
+Si le dijéramos ahora la menos 200, perdí a metártelos de 3 segundos, iría mucho más lento.
+
+87
+00:11:31,000 --> 00:11:35,000
+Esa lista de valores, en vez de un valor, puede ser varios,
+
+88
+00:11:35,000 --> 00:11:44,000
+la 200, luego metártela a la menos 200, y luego vuelve a la cero, y haría ese movimiento.
+
+89
+00:11:44,000 --> 00:11:48,000
+De una forma sencilla puedes efectuar una animación.
+
+90
+00:11:48,000 --> 00:11:55,000
+Lo mismo pasa con las otras propiedades comunes, la rotación.
+
+91
+00:11:55,000 --> 00:12:02,000
+Le puedes decir... ¿Dime?
+
+92
+00:12:02,000 --> 00:12:05,000
+Si, claro.
+
+93
+00:12:05,000 --> 00:12:15,000
+Si le dijéramos por ejemplo que la rotación 360 pasa por todos los ángulos hasta alcanzar los 360º.
+
+94
+00:12:15,000 --> 00:12:21,000
+Y con la escala, pues, tres cuartos de lo mismo, que se pueden hacer efectos.
+
+95
+00:12:21,000 --> 00:12:26,000
+Cuando aparece el personaje en pantalla, que haga un efecto así como de rebote,
+
+96
+00:12:26,000 --> 00:12:33,000
+que vaya a la escala 4, vuelva a la 0,5, y luego a la 1, hace bueno.
+
+97
+00:12:33,000 --> 00:12:39,000
+Se pueden conseguir efectos chulos jugando con esos valores.
+
+98
+00:12:39,000 --> 00:12:42,000
+¿Qué más?
+
+99
+00:12:42,000 --> 00:12:47,000
+Otra de las cosas que puedes hacer un actor, de los que vienen ya predefinidos,
+
+100
+00:12:47,000 --> 00:12:54,000
+es cambiar la imagen. Voy a crear otro actor, de los que ya predefinidos en pilas.
+
+101
+00:12:54,000 --> 00:13:02,000
+Vamos a llamarle Pepe, y vamos a decir que sea pilas.actores,
+
+102
+00:13:02,000 --> 00:13:06,000
+y en este caso vamos a crear la aceituna.
+
+103
+00:13:06,000 --> 00:13:13,000
+Ahora en pantalla nos aparece una aceitunita, y le podemos decir que la imagen,
+
+104
+00:13:13,000 --> 00:13:18,000
+en vez de ser esa, pues, ahora sea una que tiene ese disco, vamos a poner...
+
+105
+00:13:18,000 --> 00:13:24,000
+Vamos a poner Home, que...
+
+106
+00:13:24,000 --> 00:13:29,000
+Escriptorio...
+
+107
+00:13:29,000 --> 00:13:34,000
+Y creo que da el cerdo.
+
+108
+00:13:34,000 --> 00:13:39,000
+Me lo he muestrado formando el cerdo de Angrives,
+
+109
+00:13:39,000 --> 00:13:43,000
+y ahora le daremos un poquito más de vida a esto.
+
+110
+00:13:43,000 --> 00:13:46,000
+Otros actores, por ejemplo, hay uno que es la...
+
+111
+00:13:46,000 --> 00:13:52,000
+Estos actores, como veis, no tienen vida, ni están parados ahí, no dicen nada.
+
+112
+00:13:52,000 --> 00:14:00,000
+Hay otros actores, por ejemplo, la bomba, pilas.actores.bombo.
+
+113
+00:14:00,000 --> 00:14:10,000
+Estos actores ya vienen...
+
+114
+00:14:10,000 --> 00:14:13,000
+Estos actores, como veis, ya tienen algo de animación,
+
+115
+00:14:13,000 --> 00:14:18,000
+va cambiando el frame, como si estuviera encendida la mecha, punto de explotar.
+
+116
+00:14:18,000 --> 00:14:23,000
+Y aparte de esa animación, muchos de estos actores tienen, ya digamos,
+
+117
+00:14:23,000 --> 00:14:29,000
+unas habilidades, unas características añadidas a lo que son las que he comentado de rotación,
+
+118
+00:14:29,000 --> 00:14:34,000
+por ejemplo, la bomba.
+
+119
+00:14:34,000 --> 00:14:39,000
+Tú lo puedes decir cuando la elimines, eliminar.
+
+120
+00:14:39,000 --> 00:14:44,000
+No me ha dejado, pero bomba.
+
+121
+00:14:44,000 --> 00:14:50,000
+Por ejemplo, explota la bomba, y tiene este sonido, que no sé si lo puedes...
+
+122
+00:14:50,000 --> 00:15:00,000
+A ver si suena ahora...
+
+123
+00:15:00,000 --> 00:15:07,000
+Si le decimos a la explote...
+
+124
+00:15:07,000 --> 00:15:09,000
+Esas cosas ya las vienen predefinidas.
+
+125
+00:15:09,000 --> 00:15:14,000
+Muchos de los actores ya tienen esas características predefinidas también para darle un poquito más de vida al juego,
+
+126
+00:15:14,000 --> 00:15:18,000
+que no sea un simple mono ahí que aparece, aunque el mono también puede hacer cosas.
+
+127
+00:15:18,000 --> 00:15:25,000
+Y lo que dice es que el mono, punto de decir hola a todos,
+
+128
+00:15:25,000 --> 00:15:31,000
+lo dice de una forma más... un poco más divertida, el típico holamundo,
+
+129
+00:15:31,000 --> 00:15:36,000
+pues el monito lo dice así más de una forma más graciosa.
+
+130
+00:15:36,000 --> 00:15:40,000
+Otro de los actores, mira, os voy a enseñar otro, este también, pingu.
+
+131
+00:15:40,000 --> 00:15:52,000
+Este característica tiene, aparte, es un pingu ahí muy gracioso,
+
+132
+00:15:52,000 --> 00:15:58,000
+que si pulsas las teclas, ya se mueve,
+
+133
+00:15:58,000 --> 00:16:02,000
+y no has hecho nada más que llamarle pingu, crearlo,
+
+134
+00:16:02,000 --> 00:16:07,000
+y ya puedes interactuar con él, moverlo y hacerle que se mueva por la pantalla.
+
+135
+00:16:07,000 --> 00:16:11,000
+Y como os he comentado antes, aparte de estos son actores,
+
+136
+00:16:11,000 --> 00:16:16,000
+cualquier elemento que pongas en la pantalla es un actor, incluso el texto.
+
+137
+00:16:16,000 --> 00:16:20,000
+Si nosotros queremos meter... que te digo yo,
+
+138
+00:16:20,000 --> 00:16:25,000
+en un juego de marcianitos, pues para llevar la puntuación de la gente de los marcianitos que has matado,
+
+139
+00:16:25,000 --> 00:16:31,000
+vamos a ver puntos, espilas, punto actores,
+
+140
+00:16:31,000 --> 00:16:36,000
+y hay uno que se llama es puntaje.
+
+141
+00:16:36,000 --> 00:16:41,000
+Ya la puntos, vamos a moverlo.
+
+142
+00:16:41,000 --> 00:16:46,000
+Bueno, perdona, X, X200, vale.
+
+143
+00:16:46,000 --> 00:16:54,000
+Ya lo que puedes hacerle a puntos, por ejemplo, puntos, es aumentar, vale,
+
+144
+00:16:54,000 --> 00:16:58,000
+aumentar de 5 en 5, lo que quieras, pero comparte las mismas propiedades.
+
+145
+00:16:58,000 --> 00:17:08,000
+Si yo cojo puntos, y le digo que la escala es tres veces más grande,
+
+146
+00:17:08,000 --> 00:17:13,000
+si no lo ven al fondo, pues, ¡pa! automáticamente aumenta el tamaño de la rotación
+
+147
+00:17:13,000 --> 00:17:16,000
+y todo eso funciona de la misma manera, vale.
+
+148
+00:17:16,000 --> 00:17:22,000
+O incluso lo que son botones de la interfaz, o cuadros de diálogo, todo eso,
+
+149
+00:17:22,000 --> 00:17:30,000
+serían actores, vale. Voy a poner uno que sea el de sonido.
+
+150
+00:17:30,000 --> 00:17:38,000
+Botón, pilas, punto actores, punto sonido.
+
+151
+00:17:38,000 --> 00:17:44,000
+Lo veis, ha aparecido abajo a la derecha, un altavocito, que si le doy, vale,
+
+152
+00:17:44,000 --> 00:17:48,000
+deshabilito el sonido en pilas, o lo habilito, vale.
+
+153
+00:17:48,000 --> 00:17:52,000
+Si lo deshabilitar ahora la bomba, pues no haría nada más que explotar,
+
+154
+00:17:52,000 --> 00:18:00,000
+no se vería nada. Bien, vale, pues bueno, en pilas, lo que os he comentado,
+
+155
+00:18:00,000 --> 00:18:03,000
+hay un montón de actores y cada uno pues tiene unas series de características
+
+156
+00:18:03,000 --> 00:18:12,000
+y poco más. Vale, los grupos, los grupos en pilas nos pueden servir,
+
+157
+00:18:12,000 --> 00:18:20,000
+por ejemplo, para, ¿qué te diría yo? Para asignar, poder asignar propiedades
+
+158
+00:18:20,000 --> 00:18:24,000
+a varios actores de una forma rápida, que es decir, que no tengas que ir
+
+159
+00:18:24,000 --> 00:18:27,000
+actor por actor, pues cambiando su posición o la rotación.
+
+160
+00:18:27,000 --> 00:18:31,000
+Y luego también es muy útil ahora, por ejemplo, en un juego de marcionitos,
+
+161
+00:18:31,000 --> 00:18:35,000
+definir los enemigos que van a ser los enemigos de la nave.
+
+162
+00:18:35,000 --> 00:18:39,000
+Montase un montón de piedras de estas que van a atacar a la nave,
+
+163
+00:18:39,000 --> 00:18:42,000
+pues se las definen a la nave, que son sus enemigos y luego ya interactuará
+
+164
+00:18:42,000 --> 00:18:48,000
+con ellos. Ahora lo veremos un ejemplo de cómo se hace.
+
+165
+00:18:48,000 --> 00:19:01,000
+Voy a borrar algunos de aquí, puntos, eliminar, y el mono, el mono lo dejo.
+
+166
+00:19:01,000 --> 00:19:07,000
+Para hacer los grupos, sabéis que en pilas, por ejemplo, tú tienes una lista,
+
+167
+00:19:07,000 --> 00:19:15,000
+si la multiplicas por 3, te repites la lista, tres veces, pues en pilas
+
+168
+00:19:15,000 --> 00:19:21,000
+hace lo mismo, si tú tienes aquí pelotas y haces un actor,
+
+169
+00:19:21,000 --> 00:19:28,000
+actores, puntos, pelotas, y la multiplicamos por 10,
+
+170
+00:19:28,000 --> 00:19:33,000
+automáticamente aparecerán ahí en 10 pelotitas, que como veis,
+
+171
+00:19:33,000 --> 00:19:40,000
+estas pelotas ya tienen en sí mismo una física, responden a un cuerpo físico,
+
+172
+00:19:40,000 --> 00:19:46,000
+eso ya viene predeterminado, por ejemplo, para los actores de tipo pelota.
+
+173
+00:19:46,000 --> 00:19:52,000
+Hay otros actores también, por ejemplo, las cajas.
+
+174
+00:19:52,000 --> 00:20:00,000
+Si ponemos 5 cajas, lo mismo, ya interactúan entre ellas.
+
+175
+00:20:00,000 --> 00:20:06,000
+Si pulsáis, lo mismo que hemos hecho antes con F12 para ver el eje cartesiano,
+
+176
+00:20:06,000 --> 00:20:13,000
+si pulsáis la tecla en F11, veréis el área de esos cuerpos físicos,
+
+177
+00:20:13,000 --> 00:20:18,000
+es como están interactuando entre ellos, tienen definido un área de física,
+
+178
+00:20:18,000 --> 00:20:22,000
+esto está bien para depurar, para ver si colisionas, si no colisionas,
+
+179
+00:20:22,000 --> 00:20:26,000
+porque qué pasa ahí, pues es un buen modo de ver lo que hay detrás de un juego,
+
+180
+00:20:26,000 --> 00:20:31,000
+que no sólo muñequitos, sino que hay detrás ahí unas figuras geométricas.
+
+181
+00:20:31,000 --> 00:20:38,000
+Bien, luego veremos un ejemplo con los grupos para matarlos.
+
+182
+00:20:38,000 --> 00:20:45,000
+Otra de las cosas importantes de pilas son las habilidades,
+
+183
+00:20:45,000 --> 00:20:52,000
+que lo que hacen las habilidades es mejorar lo que es un actor.
+
+184
+00:20:52,000 --> 00:20:56,000
+Tú a un actor le dices que aprendo una habilidad y a partir de ese momento
+
+185
+00:20:56,000 --> 00:21:00,000
+esa habilidad la va a tener para siempre, es decir,
+
+186
+00:21:00,000 --> 00:21:06,000
+la habilidad de el mono.
+
+187
+00:21:06,000 --> 00:21:10,000
+El mono ahora mismo, aunque haga aquí en pantalla mueva el cursor,
+
+188
+00:21:10,000 --> 00:21:14,000
+se me va a morir el penguino, pero el mono no va a hacer nada.
+
+189
+00:21:14,000 --> 00:21:17,000
+Entonces, al mono le decimos que...
+
+190
+00:21:17,000 --> 00:21:26,000
+¡Perdona! Mono, punto. Que aprenda, aprende pilas, punto, habilidades, punto.
+
+191
+00:21:26,000 --> 00:21:29,000
+Ya también pilas por defecto vienen con un montón de habilidades.
+
+192
+00:21:29,000 --> 00:21:33,000
+La gente va añadiendo, va participando y van añadiendo muchas más,
+
+193
+00:21:33,000 --> 00:21:36,000
+pero bueno, estas son las que tenemos ahora.
+
+194
+00:21:36,000 --> 00:21:39,000
+Por ejemplo, si le digo que es arrastrable, a partir de ahora yo sí,
+
+195
+00:21:39,000 --> 00:21:45,000
+con el rato en cojo el mono lo podremos ver, a cualquier parte de la pantalla.
+
+196
+00:21:45,000 --> 00:22:01,000
+Bueno, lo que sea, hay una que es la de aumentar con rueda.
+
+197
+00:22:01,000 --> 00:22:05,000
+Aumentar con rueda, pero como no tengo una rueda de ratón, si no tengo un trackball,
+
+198
+00:22:05,000 --> 00:22:09,000
+eso lo que haría, me la deja la mochila.
+
+199
+00:22:09,000 --> 00:22:11,000
+Sería pues dándole la rueda del ratón,
+
+200
+00:22:11,000 --> 00:22:16,000
+aumentaría la escala o te la disminuiría, del propio actor.
+
+201
+00:22:16,000 --> 00:22:19,000
+Pues esto es un ejemplo un poco... Vamos a ver si ya tenemos ahora.
+
+202
+00:22:19,000 --> 00:22:21,000
+Otro ejemplo...
+
+203
+00:22:23,000 --> 00:22:28,000
+Pero esta vez vamos a dárselo al ping wino.
+
+204
+00:22:28,000 --> 00:22:32,000
+Al ping.aprender.
+
+205
+00:22:32,000 --> 00:22:44,000
+Vamos a decir que aprenda la habilidad de rotar con el mouse.
+
+206
+00:22:44,000 --> 00:22:50,000
+Y lo que hará ahora, ejemplo, es seguirnos hacia donde esté el cursor,
+
+207
+00:22:50,000 --> 00:22:53,000
+cogerá ese ángulo.
+
+208
+00:22:53,000 --> 00:22:56,000
+Esto, por ejemplo, para un juego, no sé,
+
+209
+00:22:56,000 --> 00:22:59,000
+una torreta que tienen ahí un grupo de zombies atacar,
+
+210
+00:22:59,000 --> 00:23:02,000
+pero podría estar curioso.
+
+211
+00:23:02,000 --> 00:23:05,000
+Vamos a decir al ping wino que pueda, por ejemplo,
+
+212
+00:23:08,000 --> 00:23:11,000
+pilias.habilidades.
+
+213
+00:23:11,000 --> 00:23:14,000
+Que pueda disparar.
+
+214
+00:23:14,000 --> 00:23:17,000
+Un poco raro, pero bueno,
+
+215
+00:23:17,000 --> 00:23:21,000
+si pulsáramos el espacio podíamos empezar a matar ahí a todo el que viniera,
+
+216
+00:23:21,000 --> 00:23:25,000
+porque no tiene mucho sentido que sea un ping wino, pero...
+
+217
+00:23:25,000 --> 00:23:29,000
+Pero bueno, estaría bien.
+
+218
+00:23:29,000 --> 00:23:32,000
+Otra de las habilidades, una que también está bien,
+
+219
+00:23:32,000 --> 00:23:39,000
+es creo que era pp, lo hemos llamado, al cerdo de un Angry Birds,
+
+220
+00:23:39,000 --> 00:23:50,000
+pp.aprender.pilias.habilidades.moverse como coche.
+
+221
+00:23:50,000 --> 00:23:56,000
+Ahora ya, si os fijáis, podría mover.
+
+222
+00:23:56,000 --> 00:23:59,000
+Aparte que el ping wino también responde al teclado.
+
+223
+00:24:05,000 --> 00:24:07,000
+Pero lo ves, el cerdo ya tiene...
+
+224
+00:24:07,000 --> 00:24:09,000
+Aceleración poco a poco y para.
+
+225
+00:24:09,000 --> 00:24:11,000
+El ping wino vuelve para aquí.
+
+226
+00:24:11,000 --> 00:24:13,000
+Bien.
+
+227
+00:24:13,000 --> 00:24:17,000
+Eso que respondan los dos personajes al mismo control,
+
+228
+00:24:17,000 --> 00:24:20,000
+se puede evitar, quiero decir.
+
+229
+00:24:20,000 --> 00:24:24,000
+Por defecto, los controles que se asignan para estas habilidades
+
+230
+00:24:24,000 --> 00:24:26,000
+son los cursores, ¿vale?
+
+231
+00:24:26,000 --> 00:24:28,000
+Pero tú en pilas puedes definir, por ejemplo,
+
+232
+00:24:28,000 --> 00:24:33,000
+definirte un control que sea WSD o PQA,
+
+233
+00:24:33,000 --> 00:24:35,000
+más que nada para juegos en los que...
+
+234
+00:24:35,000 --> 00:24:37,000
+Bueno, hay dos personas al mismo terminal
+
+235
+00:24:37,000 --> 00:24:40,000
+y cada uno que ir a controlar a otro personaje,
+
+236
+00:24:40,000 --> 00:24:42,000
+tiene esa posibilidad.
+
+237
+00:24:42,000 --> 00:24:44,000
+Pero por defecto, son los cursores, ¿vale?
+
+238
+00:24:44,000 --> 00:24:48,000
+Y el espacio para disparar. Aquí tenemos al ping wino.
+
+239
+00:24:48,000 --> 00:24:50,000
+Muy bien.
+
+240
+00:24:50,000 --> 00:24:52,000
+Así vamos.
+
+241
+00:24:52,000 --> 00:24:54,000
+Habilidades.
+
+242
+00:24:54,000 --> 00:24:58,000
+Vale, ya hemos visto que pueden aprender de habilidades los personajes, ¿vale?
+
+243
+00:24:58,000 --> 00:25:00,000
+Y los siguientes son las colisiones.
+
+244
+00:25:00,000 --> 00:25:04,000
+Las colisiones son los que le da al juego, pues, vida, ¿no?
+
+245
+00:25:04,000 --> 00:25:08,000
+Cuando mi personaje colisione con, en este caso, el misil.
+
+246
+00:25:08,000 --> 00:25:11,000
+Cuando colisione con la piedra, ¿qué quiero que pase?
+
+247
+00:25:11,000 --> 00:25:14,000
+¿Va a explotar? ¿Va a convertir? No sé.
+
+248
+00:25:14,000 --> 00:25:16,000
+Entonces, os explico.
+
+249
+00:25:16,000 --> 00:25:18,000
+Para hacer eso,
+
+250
+00:25:18,000 --> 00:25:20,000
+hay dos pasos.
+
+251
+00:25:20,000 --> 00:25:23,000
+Uno es primero saber qué es lo que quieres que pase
+
+252
+00:25:23,000 --> 00:25:26,000
+cuando colisione el misil con el...
+
+253
+00:25:26,000 --> 00:25:29,000
+de las teorías, pues, quiero que explote.
+
+254
+00:25:29,000 --> 00:25:32,000
+Y luego decirle a la escena,
+
+255
+00:25:32,000 --> 00:25:35,000
+como os he comentado ante la escena, controlan los eventos, las colisiones,
+
+256
+00:25:35,000 --> 00:25:36,000
+la posibilidad...
+
+257
+00:25:36,000 --> 00:25:39,000
+Pues decirle a la escena que cuando hay esa colisión,
+
+258
+00:25:39,000 --> 00:25:41,000
+pues, que llame ese método que hemos dicho,
+
+259
+00:25:41,000 --> 00:25:44,000
+donde vamos a definir lo que va a pasar.
+
+260
+00:25:44,000 --> 00:25:50,000
+Por ejemplo, vamos a crear un actor que se llame la banana.
+
+261
+00:25:50,000 --> 00:25:52,000
+¿Vale?
+
+262
+00:25:52,000 --> 00:25:57,000
+Pilar.actores.banana.
+
+263
+00:25:57,000 --> 00:25:59,000
+Ahí lo tenemos.
+
+264
+00:25:59,000 --> 00:26:01,000
+Muy bien.
+
+265
+00:26:01,000 --> 00:26:04,000
+Y lo que vamos a decirle es que cuando el mono se acerque hacia la banana
+
+266
+00:26:04,000 --> 00:26:07,000
+y colisione con ella, se la agome y desaparezca.
+
+267
+00:26:07,000 --> 00:26:12,000
+Entonces, empito a definir una función,
+
+268
+00:26:12,000 --> 00:26:16,000
+pues, por el nombre de la función, sería en este caso, pues, comer, por ejemplo.
+
+269
+00:26:16,000 --> 00:26:23,000
+Y aquí nos llegará el actor mono, el actor banana.
+
+270
+00:26:23,000 --> 00:26:27,000
+¿Y qué queremos que pase?
+
+271
+00:26:27,000 --> 00:26:31,000
+Pues, por ejemplo, que la banana, sí, desaparezca,
+
+272
+00:26:31,000 --> 00:26:34,000
+porque ya se la ha comido el mono.
+
+273
+00:26:34,000 --> 00:26:39,000
+Y una de las habilidades que tiene el mono, por ejemplo,
+
+274
+00:26:39,000 --> 00:26:46,000
+es sonreír, que se ponga contento porque se la ha comido, ¿vale?
+
+275
+00:26:46,000 --> 00:26:48,000
+La banana.
+
+276
+00:26:48,000 --> 00:26:50,000
+Vale, ya tenemos definido qué es lo que queremos que pase
+
+277
+00:26:50,000 --> 00:26:53,000
+cuando se produzca esa colisión.
+
+278
+00:26:53,000 --> 00:26:57,000
+¿Y cómo le decimos a pilas que cuando se colisionen haga eso?
+
+279
+00:26:57,000 --> 00:27:00,000
+Pues, mediante pilas.
+
+280
+00:27:00,000 --> 00:27:04,000
+Estén actual, ¿vale?
+
+281
+00:27:04,000 --> 00:27:06,000
+Por el escén actual, lo que os he comentado antes,
+
+282
+00:27:06,000 --> 00:27:09,000
+de que podéis tener varias, definidas varias escenas
+
+283
+00:27:09,000 --> 00:27:11,000
+para el menú, para el juego, para las opciones,
+
+284
+00:27:11,000 --> 00:27:14,000
+con pilas escén actual, lo que te dices es la escena
+
+285
+00:27:14,000 --> 00:27:16,000
+que está en este momento activa, ¿vale?
+
+286
+00:27:16,000 --> 00:27:19,000
+Es la forma de acceder a esa escena.
+
+287
+00:27:19,000 --> 00:27:25,000
+Entonces, le decimos colisiones, punto agregar.
+
+288
+00:27:25,000 --> 00:27:29,000
+Y le decimos pues, cuando el mono y la banana colisionen,
+
+289
+00:27:29,000 --> 00:27:34,000
+llama al método comer.
+
+290
+00:27:34,000 --> 00:27:38,000
+Entonces, ahora sí, cogemos el mono, lo acercamos hacia la banana.
+
+291
+00:27:38,000 --> 00:27:42,000
+Bueno, antes de nada, apretando, otra de las teclas de función,
+
+292
+00:27:42,000 --> 00:27:44,000
+apretando F9, ¿vale?
+
+293
+00:27:44,000 --> 00:27:47,000
+Veréis los radios de colisión que tienen cada uno
+
+294
+00:27:47,000 --> 00:27:50,000
+de los personajes en pilas, ¿vale?
+
+295
+00:27:50,000 --> 00:27:52,000
+Con el círculo.
+
+296
+00:27:52,000 --> 00:27:55,000
+Entonces, cuando esos círculos se juntan,
+
+297
+00:27:55,000 --> 00:27:57,000
+se produce la colisión.
+
+298
+00:27:57,000 --> 00:27:59,000
+Y cuando se unen hacia la banana,
+
+299
+00:27:59,000 --> 00:28:01,000
+¡pac!
+
+300
+00:28:01,000 --> 00:28:03,000
+Vale, se ha puesto contento, se ha comido,
+
+301
+00:28:03,000 --> 00:28:06,000
+y la banana desapareció, ¿vale?
+
+302
+00:28:06,000 --> 00:28:09,000
+O, mira, vamos a poner un personaje,
+
+303
+00:28:09,000 --> 00:28:11,000
+vamos a quitarle pingüino que me está ahí,
+
+304
+00:28:11,000 --> 00:28:17,000
+pingo, pilas, oye, pingo, eliminar, perdón.
+
+305
+00:28:17,000 --> 00:28:20,000
+Y vamos a poner algo más divertido,
+
+306
+00:28:20,000 --> 00:28:25,000
+que sería el dielpepe también, fuera.
+
+307
+00:28:25,000 --> 00:28:29,000
+Ahora vamos a hacer una nave, queda más bonito, nave.
+
+308
+00:28:29,000 --> 00:28:35,000
+pilas.actores.nav.
+
+309
+00:28:35,000 --> 00:28:37,000
+Vale, es la nave ya tenemos por aquí,
+
+310
+00:28:37,000 --> 00:28:39,000
+y este ya responde al teclado,
+
+311
+00:28:39,000 --> 00:28:41,000
+nos hemos dicho que aprende la habilidad,
+
+312
+00:28:41,000 --> 00:28:43,000
+porque el actor ya en su...
+
+313
+00:28:43,000 --> 00:28:46,000
+esa propiedad ya la tiene asignada por defecto, ¿vale?
+
+314
+00:28:46,000 --> 00:28:49,000
+Tiene esa la de poderse mover con el teclado,
+
+315
+00:28:49,000 --> 00:28:51,000
+como un coche, es parecido a un coche,
+
+316
+00:28:51,000 --> 00:28:53,000
+para que no tiene marcha atrás, ¿vale?
+
+317
+00:28:53,000 --> 00:28:57,000
+Y tiene la habilidad de disparar misiles a mano salva.
+
+318
+00:28:57,000 --> 00:28:59,000
+Bien, lo que os he comentado entre los grupos,
+
+319
+00:28:59,000 --> 00:29:01,000
+que hemos hecho las pelotas,
+
+320
+00:29:01,000 --> 00:29:04,000
+si ahora le disparo las pelotas de las cajas,
+
+321
+00:29:04,000 --> 00:29:06,000
+vamos, se queda igual.
+
+322
+00:29:06,000 --> 00:29:09,000
+Entonces, la creación de grupos es interesante
+
+323
+00:29:09,000 --> 00:29:11,000
+para juegos de este tipo,
+
+324
+00:29:11,000 --> 00:29:14,000
+porque si ahora la nave,
+
+325
+00:29:14,000 --> 00:29:20,000
+punto, le decimos que definir enemigos, ¿vale?
+
+326
+00:29:20,000 --> 00:29:25,000
+Y quienes van a ser los enemigos, las pelotas, ¿vale?
+
+327
+00:29:25,000 --> 00:29:27,000
+Correcto, ¿vale?
+
+328
+00:29:27,000 --> 00:29:29,000
+Este método de definir enemigos,
+
+329
+00:29:29,000 --> 00:29:32,000
+que ya lo tiene la nave en su código,
+
+330
+00:29:32,000 --> 00:29:34,000
+lo que hace es lo mismo que hemos hecho antes,
+
+331
+00:29:34,000 --> 00:29:37,000
+definir una función, y qué es lo que debe pasar
+
+332
+00:29:37,000 --> 00:29:41,000
+cuando colisionen, en este caso los proyectiles con las pelotas.
+
+333
+00:29:41,000 --> 00:29:43,000
+Si ahora la disparamos a las pelotas,
+
+334
+00:29:43,000 --> 00:29:46,000
+pues no pasa nada porque no se llama las pelotas.
+
+335
+00:29:46,000 --> 00:29:50,000
+¿Cómo se llamaba?
+
+336
+00:29:50,000 --> 00:29:53,000
+Ah, no, pelotas y cajas, ¿sí?
+
+337
+00:29:53,000 --> 00:29:59,000
+A ver, nave, punto, definir enemigos,
+
+338
+00:29:59,000 --> 00:30:02,000
+vamos a poner cajas.
+
+339
+00:30:02,000 --> 00:30:04,000
+No, tengo creado.
+
+340
+00:30:04,000 --> 00:30:06,000
+¿Qué pelotas lo ha creado siempre?
+
+341
+00:30:06,000 --> 00:30:08,000
+Ah, pelotas, y luego otra vez pelotas y con cajas.
+
+342
+00:30:08,000 --> 00:30:10,000
+Ah, con cajas, pues vamos a disparar las cajas, entonces.
+
+343
+00:30:10,000 --> 00:30:12,000
+Ya, ¿vale?
+
+344
+00:30:12,000 --> 00:30:14,000
+Desaparecen, pero, va, que desaparezcan,
+
+345
+00:30:14,000 --> 00:30:17,000
+por ejemplo, es algo un poco, queda mal.
+
+346
+00:30:17,000 --> 00:30:21,000
+Podemos hacer uso de lo que hemos aprendido de las habilidades,
+
+347
+00:30:21,000 --> 00:30:24,000
+y a las cajas, pelotas, me habéis dicho, ¿no?
+
+348
+00:30:24,000 --> 00:30:28,000
+Pelotas, punto, aprender,
+
+349
+00:30:28,000 --> 00:30:34,000
+podemos asignar una habilidad a un grupo de actores a la vez, ¿vale?
+
+350
+00:30:34,000 --> 00:30:38,000
+Pilaras aprender, que hagan pilas, punto, habilidades,
+
+351
+00:30:38,000 --> 00:30:41,000
+punto, y que puedan explotar, ¿no?
+
+352
+00:30:41,000 --> 00:30:46,000
+Que dará mejor que desaparezcan de repente.
+
+353
+00:30:46,000 --> 00:30:50,000
+Y como veis, en pocos pasos,
+
+354
+00:30:50,000 --> 00:30:53,000
+podríamos haber hecho un marcianito definiendo, pues nada,
+
+355
+00:30:53,000 --> 00:30:57,000
+un grupo de enemigos, en este caso, las cajas,
+
+356
+00:30:57,000 --> 00:31:00,000
+y la nave que podéis parar y definíndole los enemigos
+
+357
+00:31:00,000 --> 00:31:02,000
+a los que se enfrenta.
+
+358
+00:31:02,000 --> 00:31:06,000
+¿Qué más, qué más, lo de las conexiones?
+
+359
+00:31:06,000 --> 00:31:11,000
+Bueno, los objetos físicos estos que tenéis aquí,
+
+360
+00:31:11,000 --> 00:31:15,000
+pues lo mismo, las pelotas, me habéis dicho que las sé,
+
+361
+00:31:15,000 --> 00:31:24,000
+pues pelotas dos, pilas, punto, actores, punto, pelota,
+
+362
+00:31:24,000 --> 00:31:31,000
+vamos a crear otras, diez más, pelotas dos, ¿vale?
+
+363
+00:31:31,000 --> 00:31:39,000
+Si ahora las pelotas dos, punto, le decimos que puedan aprender,
+
+364
+00:31:39,000 --> 00:31:46,000
+aprender pilas, punto, de las habilidades,
+
+365
+00:31:46,000 --> 00:31:48,000
+arrastrable, ¿vale?
+
+366
+00:31:48,000 --> 00:31:52,000
+Ahora estas pelotas ya, bueno, podemos hacer que interactúen, ¿vale?
+
+367
+00:31:52,000 --> 00:31:54,000
+Otros los objetos físicos, por ejemplo, el mono,
+
+368
+00:31:54,000 --> 00:31:58,000
+aunque le pase por ahí, se va a quedar igual con la misma cara que tiene, ¿vale?
+
+369
+00:31:58,000 --> 00:32:03,000
+Bueno, no interactúa, podríamos hacer que interactuar con estas objetos físicos,
+
+370
+00:32:03,000 --> 00:32:11,000
+si le damos, por ejemplo, la habilidad pilas, punto,
+
+371
+00:32:11,000 --> 00:32:15,000
+Uy, aprender, ¿qué es donde vas a aprender?
+
+372
+00:32:15,000 --> 00:32:22,000
+Que aprenda pilas, punto, habilidades, punto, rebotar,
+
+373
+00:32:22,000 --> 00:32:26,000
+como pelota mejor, ¿vale?
+
+374
+00:32:26,000 --> 00:32:31,000
+Que rebote con una pelota, entonces, automáticamente este actor se comportará
+
+375
+00:32:31,000 --> 00:32:33,000
+como un objeto físico, ¿vale?
+
+376
+00:32:33,000 --> 00:32:35,000
+Debe caer hacia abajo, ¿vale?
+
+377
+00:32:35,000 --> 00:32:38,000
+Si activamos el modo de física, que era el F11,
+
+378
+00:32:38,000 --> 00:32:41,000
+para que ponga aquí F11, ¿lo véis?
+
+379
+00:32:41,000 --> 00:32:46,000
+Ahora tiene un área, es el objeto físico en el que se ha convertido, ¿vale?
+
+380
+00:32:46,000 --> 00:32:51,000
+Y puede interactuar con otros objetos físicos, ¿vale?
+
+381
+00:32:51,000 --> 00:32:54,000
+¿Qué más? Bueno, cositas.
+
+382
+00:32:54,000 --> 00:32:57,000
+Lo que se está comentando en las teclas F11, F12, tal,
+
+383
+00:32:57,000 --> 00:33:00,000
+también tenéis acceso a través de estos pequeños botoncitos
+
+384
+00:33:00,000 --> 00:33:03,000
+que aparecen aquí en el asistente, ¿vale?
+
+385
+00:33:03,000 --> 00:33:06,000
+Y aquí a la izquierda tenéis el concito que os accede directamente
+
+386
+00:33:06,000 --> 00:33:09,000
+en la documentación de pilas, ¿vale?
+
+387
+00:33:09,000 --> 00:33:11,000
+Aquí en la documentación de pilas os explica, pues eso,
+
+388
+00:33:11,000 --> 00:33:14,000
+como os he visto en el grupo, colisiones, física, bueno,
+
+389
+00:33:14,000 --> 00:33:16,000
+muchas cosas más, ¿vale?
+
+390
+00:33:16,000 --> 00:33:20,000
+Que ahora mismo no voy a entrar, pero bueno, te podéis consultarlo
+
+391
+00:33:20,000 --> 00:33:24,000
+y ir probando los ejemplos que vienen ahí.
+
+392
+00:33:24,000 --> 00:33:29,000
+Bien, esto, ciego aquí, ¿vale?
+
+393
+00:33:29,000 --> 00:33:32,000
+Corresiones, antes de nada.
+
+394
+00:33:32,000 --> 00:33:36,000
+Vale, ¿cómo empezar?
+
+395
+00:33:36,000 --> 00:33:38,000
+¡Muchas gracias todavía!
+
+396
+00:33:38,000 --> 00:33:40,000
+¿Cómo empezar?
+
+397
+00:33:40,000 --> 00:33:43,000
+Bueno, pues la mejor forma para empezar a trastear con pilas
+
+398
+00:33:43,000 --> 00:33:45,000
+es acceder a la página web, ¿vale?
+
+399
+00:33:45,000 --> 00:33:48,000
+Descargarse el...
+
+400
+00:33:48,000 --> 00:33:50,000
+Bueno, es multiplataforma, ¿vale?
+
+401
+00:33:50,000 --> 00:33:53,000
+Está tanto para Linux, para Mac, como para Windows.
+
+402
+00:33:53,000 --> 00:33:56,000
+Entonces, desde la parte de descargas os podéis descargar
+
+403
+00:33:56,000 --> 00:33:59,000
+pues cualquiera de los tres paquetes y probarlo directamente
+
+404
+00:33:59,000 --> 00:34:02,000
+como he hecho yo desde el asistente.
+
+405
+00:34:02,000 --> 00:34:04,000
+O si queréis trastear con el código fuente,
+
+406
+00:34:04,000 --> 00:34:07,000
+hay un repositorio en GitHub, ¿vale?
+
+407
+00:34:07,000 --> 00:34:09,000
+En el que os podéis descargar el repositorio
+
+408
+00:34:09,000 --> 00:34:12,000
+y si queréis participar, pues hace un pull request
+
+409
+00:34:12,000 --> 00:34:14,000
+y vamos, encantados, ¿no?
+
+410
+00:34:14,000 --> 00:34:17,000
+que participéis en el proyecto.
+
+411
+00:34:17,000 --> 00:34:20,000
+Otra forma también de ver todo lo que se puede hacer con pilas,
+
+412
+00:34:20,000 --> 00:34:23,000
+pues aquí en el asistente hay una forma,
+
+413
+00:34:23,000 --> 00:34:26,000
+que es los ejemplos, que os da una idea
+
+414
+00:34:26,000 --> 00:34:29,000
+de todas las cosas que se pueden hacer con pilas,
+
+415
+00:34:29,000 --> 00:34:31,000
+que os diría...
+
+416
+00:34:31,000 --> 00:34:33,000
+Vamos a ver un juego de los que están hechos,
+
+417
+00:34:33,000 --> 00:34:35,000
+ese que hemos hecho de matar marcianitos,
+
+418
+00:34:35,000 --> 00:34:38,000
+pues aquí tenéis el juego, ¿vale?
+
+419
+00:34:38,000 --> 00:34:40,000
+Que consiste en eso.
+
+420
+00:34:40,000 --> 00:34:43,000
+Tener una nave,
+
+421
+00:34:43,000 --> 00:34:46,000
+lo que tiene que hacer es
+
+422
+00:34:46,000 --> 00:34:49,000
+destruir todos los asteroides,
+
+423
+00:34:49,000 --> 00:34:54,000
+esta lo que se ve más mayores sonará un remake, ¿vale?
+
+424
+00:34:54,000 --> 00:34:57,000
+Y entonces, y si una de las piedras
+
+425
+00:34:57,000 --> 00:35:00,000
+colisiona la pico, vamos, ¿vale?
+
+426
+00:35:00,000 --> 00:35:02,000
+Quedas eliminado.
+
+427
+00:35:02,000 --> 00:35:04,000
+Luego tienes juegos más sencillos,
+
+428
+00:35:04,000 --> 00:35:06,000
+como este que hizo Hugo para la pico,
+
+429
+00:35:06,000 --> 00:35:08,000
+que es la vaca voladora, que nada,
+
+430
+00:35:08,000 --> 00:35:10,000
+únicamente lo que hace es capturar estrellas.
+
+431
+00:35:10,000 --> 00:35:12,000
+Pero si os fijáis,
+
+432
+00:35:12,000 --> 00:35:14,000
+es de...
+
+433
+00:35:14,000 --> 00:35:16,000
+Aquí, ¿lo ves?
+
+434
+00:35:16,000 --> 00:35:18,000
+Las áreas de colisión que comentábamos antes,
+
+435
+00:35:18,000 --> 00:35:20,000
+si colisionas con...
+
+436
+00:35:20,000 --> 00:35:22,000
+y no llegó ahí ya, aquí ahora.
+
+437
+00:35:22,000 --> 00:35:24,000
+¿Vas? Va sumando,
+
+438
+00:35:24,000 --> 00:35:26,000
+para que quiten el modo...
+
+439
+00:35:26,000 --> 00:35:28,000
+Que no, que...
+
+440
+00:35:28,000 --> 00:35:30,000
+La vaca fuera. F12 y F11.
+
+441
+00:35:30,000 --> 00:35:34,000
+Es perdido, Jolín.
+
+442
+00:35:34,000 --> 00:35:36,000
+Qué malos os oí.
+
+443
+00:35:36,000 --> 00:35:38,000
+Mira, fíjale, lo que hemos comentado
+
+444
+00:35:38,000 --> 00:35:40,000
+antes de dar efectos de movimiento,
+
+445
+00:35:40,000 --> 00:35:42,000
+cuando cojo una estrella,
+
+446
+00:35:42,000 --> 00:35:44,000
+texto en la puntuación,
+
+447
+00:35:44,000 --> 00:35:46,000
+es como un efecto de rotación,
+
+448
+00:35:46,000 --> 00:35:48,000
+y amplía.
+
+449
+00:35:48,000 --> 00:35:50,000
+Jogando con esas cositas,
+
+450
+00:35:50,000 --> 00:35:52,000
+puedes conseguir efectos muy chulos,
+
+451
+00:35:52,000 --> 00:35:54,000
+dentro de un juego.
+
+452
+00:35:54,000 --> 00:35:56,000
+O, no que sé, otro más,
+
+453
+00:35:56,000 --> 00:35:58,000
+el de...
+
+454
+00:35:58,000 --> 00:36:00,000
+pizarra, mapa de interacción,
+
+455
+00:36:00,000 --> 00:36:02,000
+completos, control de desfondos,
+
+456
+00:36:02,000 --> 00:36:04,000
+no sé, había por aquí uno que estaba ahí,
+
+457
+00:36:04,000 --> 00:36:06,000
+en diálogos interfaz,
+
+458
+00:36:06,000 --> 00:36:08,000
+pizarra la habilidad de...
+
+459
+00:36:08,000 --> 00:36:10,000
+Ahora no me acuerdo
+
+460
+00:36:10,000 --> 00:36:12,000
+de dónde... Bueno, pero tenéis un montón...
+
+461
+00:36:12,000 --> 00:36:14,000
+Mira, este es de las interpolaciones.
+
+462
+00:36:14,000 --> 00:36:16,000
+Lo que hemos visto antes, de que podías asignar
+
+463
+00:36:16,000 --> 00:36:18,000
+a una...
+
+464
+00:36:18,000 --> 00:36:20,000
+a una propiedad,
+
+465
+00:36:20,000 --> 00:36:22,000
+una lista, ¿vale?, y creában una interpolación.
+
+466
+00:36:22,000 --> 00:36:24,000
+Pues Pilas tiene,
+
+467
+00:36:24,000 --> 00:36:26,000
+también, aparte de
+
+468
+00:36:26,000 --> 00:36:28,000
+interpolaciones lineales, así,
+
+469
+00:36:28,000 --> 00:36:30,000
+tipo de interpolaciones, por ejemplo,
+
+470
+00:36:30,000 --> 00:36:32,000
+que rebote al final.
+
+471
+00:36:32,000 --> 00:36:34,000
+Entonces, vaya donde vaya, lo ves, hará el efecto de...
+
+472
+00:36:34,000 --> 00:36:36,000
+como que rebota el personaje en pantalla.
+
+473
+00:36:36,000 --> 00:36:38,000
+No se tiene un montón
+
+474
+00:36:38,000 --> 00:36:40,000
+de posibilidades, ¿vale?,
+
+475
+00:36:40,000 --> 00:36:42,000
+y poco más.
+
+476
+00:36:42,000 --> 00:36:44,000
+Os invito a que participéis
+
+477
+00:36:44,000 --> 00:36:46,000
+si lo veis interesante
+
+478
+00:36:46,000 --> 00:36:48,000
+en el proyecto,
+
+479
+00:36:48,000 --> 00:36:50,000
+que os lo enseñéis a vuestros hijos,
+
+480
+00:36:50,000 --> 00:36:52,000
+amigos, sobrinos, o...
+
+481
+00:36:52,000 --> 00:36:54,000
+Y ya está,
+
+482
+00:36:54,000 --> 00:36:56,000
+así que, muchas gracias a todos.
+
+483
+00:36:56,000 --> 00:36:58,000
+Aplausos
+
+484
+00:36:58,000 --> 00:37:00,000
+Aplausos
+
+485
+00:37:00,000 --> 00:37:02,000
+Aplausos
+
+486
+00:37:02,000 --> 00:37:04,000
+Aplausos
+
+487
+00:37:04,000 --> 00:37:06,000
+Si tenéis alguna duda,
+
+488
+00:37:06,000 --> 00:37:08,000
+veis.
+
+489
+00:37:08,000 --> 00:37:10,000
+¿Dónde defineis el...
+
+490
+00:37:10,000 --> 00:37:12,000
+las habilidades?
+
+491
+00:37:12,000 --> 00:37:14,000
+Si no vamos al código.
+
+492
+00:37:14,000 --> 00:37:16,000
+A ver, mira.
+
+493
+00:37:16,000 --> 00:37:18,000
+Os lo voy a enseñar.
+
+494
+00:37:18,000 --> 00:37:20,000
+Vamos a atar a esto.
+
+495
+00:37:20,000 --> 00:37:22,000
+Aquí, pilas.
+
+496
+00:37:22,000 --> 00:37:24,000
+Mira.
+
+497
+00:37:28,000 --> 00:37:30,000
+Aquí, dentro de pilas,
+
+498
+00:37:30,000 --> 00:37:32,000
+¿vale?
+
+499
+00:37:32,000 --> 00:37:34,000
+Aquí, en habilidades, ¿vale?
+
+500
+00:37:34,000 --> 00:37:36,000
+Veis ahí a la derecha,
+
+501
+00:37:36,000 --> 00:37:38,000
+pues aquí en el archivo este
+
+502
+00:37:38,000 --> 00:37:40,000
+tienes la clase base, digamos,
+
+503
+00:37:40,000 --> 00:37:42,000
+que es la de habilidades, ¿vale?
+
+504
+00:37:42,000 --> 00:37:44,000
+Y tú vas ir adentrando de esa
+
+505
+00:37:44,000 --> 00:37:46,000
+y definiendo tus propias habilidades.
+
+506
+00:37:46,000 --> 00:37:48,000
+Mira, vamos a ver, por ejemplo,
+
+507
+00:37:48,000 --> 00:37:50,000
+que te diré yo.
+
+508
+00:37:50,000 --> 00:37:52,000
+Control down.
+
+509
+00:37:52,000 --> 00:37:54,000
+Una que sea sencilla.
+
+510
+00:37:56,000 --> 00:37:58,000
+Seguir al mouse, ¿vale?
+
+511
+00:37:58,000 --> 00:38:00,000
+Lo que haces
+
+512
+00:38:00,000 --> 00:38:02,000
+a la escena actual,
+
+513
+00:38:02,000 --> 00:38:04,000
+es que como hemos dicho que
+
+514
+00:38:04,000 --> 00:38:06,000
+las escenas eran las responsables
+
+515
+00:38:06,000 --> 00:38:08,000
+de responder a los eventos,
+
+516
+00:38:08,000 --> 00:38:10,000
+pues al evento de...
+
+517
+00:38:10,000 --> 00:38:12,000
+mueve el mouse en la escena
+
+518
+00:38:12,000 --> 00:38:14,000
+que tienes que hacer
+
+519
+00:38:14,000 --> 00:38:16,000
+pues llamar a la función mover
+
+520
+00:38:16,000 --> 00:38:18,000
+y mover qué hace, pues, el receptor,
+
+521
+00:38:18,000 --> 00:38:20,000
+que en este caso es el actor,
+
+522
+00:38:20,000 --> 00:38:22,000
+la posición x se lo haces
+
+523
+00:38:22,000 --> 00:38:24,000
+que sea la misma que la que tiene el ratón
+
+524
+00:38:24,000 --> 00:38:26,000
+este mismo momento en pantalla.
+
+525
+00:38:26,000 --> 00:38:28,000
+Y lo mismo, el receptor, la y,
+
+526
+00:38:28,000 --> 00:38:30,000
+entonces, vaya donde vaya el ratón
+
+527
+00:38:30,000 --> 00:38:32,000
+y ahí puedes ir definiendo
+
+528
+00:38:32,000 --> 00:38:34,000
+todas las habilidades que se te ocurra.
+
+529
+00:38:34,000 --> 00:38:36,000
+Si se te ocurra alguna,
+
+530
+00:38:36,000 --> 00:38:38,000
+adelante, ¿vale?
+
+531
+00:38:40,000 --> 00:38:42,000
+Alguna, sí.
+
+532
+00:38:42,000 --> 00:38:44,000
+¿Y cuando pones eso ahí, es lo que aparece, ¿no?
+
+533
+00:38:44,000 --> 00:38:46,000
+Es mono punto...
+
+534
+00:38:46,000 --> 00:38:48,000
+Efectivamente, cuando pones e interprete mono punto
+
+535
+00:38:48,000 --> 00:38:50,000
+te aparecen todas las habilidades
+
+536
+00:38:50,000 --> 00:38:52,000
+que hay en este fichero, ¿vale?
+
+537
+00:38:54,000 --> 00:38:56,000
+Para que sea más...
+
+538
+00:38:56,000 --> 00:38:58,000
+Incluso, si paras, te dices,
+
+539
+00:38:58,000 --> 00:39:00,000
+te dices los argumentos que necesitas
+
+540
+00:39:00,000 --> 00:39:02,000
+para que funcione esa habilidad
+
+541
+00:39:02,000 --> 00:39:04,000
+o darle otras características a la habilidad.
+
+542
+00:39:10,000 --> 00:39:12,000
+Una curiosidad.
+
+543
+00:39:12,000 --> 00:39:14,000
+¿Qué nivelía de pico?
+
+544
+00:39:14,000 --> 00:39:16,000
+La pico de...
+
+545
+00:39:16,000 --> 00:39:18,000
+Sí, sí, sí.
+
+546
+00:39:18,000 --> 00:39:20,000
+¿Donde vemos?
+
+547
+00:39:20,000 --> 00:39:22,000
+¿Y el tema de física y cacidad?
+
+548
+00:39:22,000 --> 00:39:28,000
+¿Y el box 2D? Está con un box 2D.
+
+549
+00:39:32,000 --> 00:39:34,000
+¿La cita tenéis pensado traducir al inglés?
+
+550
+00:39:34,000 --> 00:39:36,000
+Me lo han preguntado mucha gente también.
+
+551
+00:39:36,000 --> 00:39:38,000
+¿En principio o no?
+
+552
+00:39:38,000 --> 00:39:40,000
+En principio no, ¿vale?
+
+553
+00:39:40,000 --> 00:39:42,000
+Es un proyecto que inició así castellano
+
+554
+00:39:42,000 --> 00:39:44,000
+y en principio no estaba pensado.
+
+555
+00:39:44,000 --> 00:39:46,000
+Ya me lo han comentado mal de uno
+
+556
+00:39:46,000 --> 00:39:48,000
+y a lo mejor...
+
+557
+00:39:48,000 --> 00:39:50,000
+Pero bueno, también habíamos pensado
+
+558
+00:39:50,000 --> 00:39:52,000
+que no había que introducir los chavales
+
+559
+00:39:52,000 --> 00:39:54,000
+y pequeños en la programación.
+
+560
+00:39:54,000 --> 00:39:56,000
+Surtó en España, América y aquí, ¿no?
+
+561
+00:39:56,000 --> 00:39:58,000
+El lenguaje a lo mejor
+
+562
+00:39:58,000 --> 00:40:00,000
+les es un pelín más inconveniente
+
+563
+00:40:00,000 --> 00:40:02,000
+a la hora de introducirse en lo que es la programación.
+
+564
+00:40:02,000 --> 00:40:04,000
+Lo voy a tener al tiempo.
+
+565
+00:40:04,000 --> 00:40:06,000
+Sí, bueno...
+
+566
+00:40:06,000 --> 00:40:08,000
+Lo tenemos en cuenta, tenemos en cuenta.
+
+567
+00:40:08,000 --> 00:40:10,000
+Me la comentas más de uno, así que
+
+568
+00:40:10,000 --> 00:40:12,000
+se podrá hacer.
+
+569
+00:40:12,000 --> 00:40:14,000
+Habría problema.
+
+570
+00:40:14,000 --> 00:40:16,000
+Tanímo también hay que participar.
+
+571
+00:40:16,000 --> 00:40:20,000
+Lo que es esto es que te cae igual, tío.
+
+572
+00:40:20,000 --> 00:40:22,000
+También si quieres...
+
+573
+00:40:22,000 --> 00:40:24,000
+Mira, ahora es que te han sido...
+
+574
+00:40:24,000 --> 00:40:26,000
+Mira...
+
+575
+00:40:26,000 --> 00:40:28,000
+Aquí en motores, ¿vale?
+
+576
+00:40:28,000 --> 00:40:30,000
+Por defecto está el motor QT
+
+577
+00:40:30,000 --> 00:40:32,000
+está todo implementado con motor QT
+
+578
+00:40:32,000 --> 00:40:34,000
+pero si tú quieres implementarlo con...
+
+579
+00:40:34,000 --> 00:40:36,000
+no sé...
+
+580
+00:40:36,000 --> 00:40:38,000
+cualquier otro motor, pues te animo a que lo hagas.
+
+581
+00:40:38,000 --> 00:40:40,000
+Vale...
+
+582
+00:40:42,000 --> 00:40:44,000
+¿Alguna pregunta más?
+
+583
+00:40:44,000 --> 00:40:46,000
+No.
+
+584
+00:40:46,000 --> 00:40:48,000
+Sí.
+
+585
+00:40:48,000 --> 00:40:50,000
+Sí.
+
+586
+00:40:50,000 --> 00:40:52,000
+¿Por qué habiste las colisiones?
+
+587
+00:40:52,000 --> 00:40:54,000
+Porque era la forma más sencilla en principio
+
+588
+00:40:54,000 --> 00:40:56,000
+de establecer una colisión.
+
+589
+00:40:56,000 --> 00:40:58,000
+Aunque también puedes hacerla...
+
+590
+00:40:58,000 --> 00:41:00,000
+por el área...
+
+591
+00:41:00,000 --> 00:41:02,000
+Mira...
+
+592
+00:41:02,000 --> 00:41:04,000
+Espera.
+
+593
+00:41:04,000 --> 00:41:06,000
+Sí.
+
+594
+00:41:06,000 --> 00:41:08,000
+Sí.
+
+595
+00:41:08,000 --> 00:41:10,000
+Sí.
+
+596
+00:41:10,000 --> 00:41:12,000
+Sí.
+
+597
+00:41:12,000 --> 00:41:14,000
+No voy a si quieres ir al final
+
+598
+00:41:14,000 --> 00:41:16,000
+para los píxeles
+
+599
+00:41:16,000 --> 00:41:18,000
+para hacer una colisión pixel.
+
+600
+00:41:18,000 --> 00:41:20,000
+En principio ahora está el tema
+
+601
+00:41:20,000 --> 00:41:22,000
+de los círculos y también por el área
+
+602
+00:41:22,000 --> 00:41:24,000
+que nos lo ha enseñado.
+
+603
+00:41:24,000 --> 00:41:26,000
+Apretando las teclas de función puedes ver
+
+604
+00:41:26,000 --> 00:41:28,000
+un área que es el área cuadrada
+
+605
+00:41:28,000 --> 00:41:30,000
+que conforma y también puedes establecer
+
+606
+00:41:30,000 --> 00:41:32,000
+la colisión con respecto a eso.
+
+607
+00:41:32,000 --> 00:41:34,000
+Lo del píxel ya no te habíamos llegado.
+
+608
+00:41:34,000 --> 00:41:36,000
+Pero llegará.
+
+609
+00:41:36,000 --> 00:41:38,000
+Pero la colisión es por todo el acamiento
+
+610
+00:41:38,000 --> 00:41:40,000
+del círculo por el cálculo de distancia.
+
+611
+00:41:40,000 --> 00:41:42,000
+¿Calcula la distancia?
+
+612
+00:41:42,000 --> 00:41:44,000
+Calcula la distancia entre los dos puntos.
+
+613
+00:41:44,000 --> 00:41:46,000
+Como hemos visto al principio
+
+614
+00:41:46,000 --> 00:41:48,000
+que hemos colocado un actor
+
+615
+00:41:48,000 --> 00:41:50,000
+en una posición en concreto
+
+616
+00:41:50,000 --> 00:41:52,000
+y luego él tiene un área
+
+617
+00:41:52,000 --> 00:41:54,000
+que es el círculo que tiene un radio.
+
+618
+00:41:54,000 --> 00:41:56,000
+Si la distancia entre los dos puntos
+
+619
+00:41:56,000 --> 00:41:58,000
+más el radio de los dos
+
+620
+00:41:58,000 --> 00:42:00,000
+se calcula de esa forma.
+
+621
+00:42:00,000 --> 00:42:02,000
+Es menor pues es calcolisionado.
+
+622
+00:42:06,000 --> 00:42:08,000
+¿Qué es la rotación con la que voy a entender?
+
+623
+00:42:08,000 --> 00:42:10,000
+La rotación.
+
+624
+00:42:10,000 --> 00:42:12,000
+Cuando el muñeco gira.
+
+625
+00:42:12,000 --> 00:42:14,000
+Si.
+
+626
+00:42:14,000 --> 00:42:16,000
+Si.
+
+627
+00:42:16,000 --> 00:42:18,000
+En este caso está dicho que 0 sea
+
+628
+00:42:18,000 --> 00:42:20,000
+la posición inicial.
+
+629
+00:42:20,000 --> 00:42:22,000
+45, 90.
+
+630
+00:42:24,000 --> 00:42:26,000
+Para fines académicos
+
+631
+00:42:26,000 --> 00:42:28,000
+lo vamos a decir.
+
+632
+00:42:28,000 --> 00:42:30,000
+Ya claro.
+
+633
+00:42:30,000 --> 00:42:32,000
+0, 90.
+
+634
+00:42:32,000 --> 00:42:34,000
+Cuando el directivo esto lo venden
+
+635
+00:42:34,000 --> 00:42:36,000
+45.
+
+636
+00:42:36,000 --> 00:42:38,000
+Si, si, si.
+
+637
+00:42:40,000 --> 00:42:42,000
+Sería una guaración.
+
+638
+00:42:44,000 --> 00:42:46,000
+Pull request y ya está.
+
+639
+00:42:48,000 --> 00:42:50,000
+Y lo cambiamos rápido.
+
+640
+00:42:50,000 --> 00:42:52,000
+No hay problema.
+
+641
+00:42:52,000 --> 00:42:54,000
+¿Alguna cosa más por ahí?
+
+642
+00:42:54,000 --> 00:42:56,000
+No.
+
+643
+00:42:56,000 --> 00:43:08,000
+Gracias por asistir.
+
+644
+00:43:26,000 --> 00:43:28,000
+Gracias.
+

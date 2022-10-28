@@ -1,0 +1,660 @@
+1
+00:00:00,000 --> 00:00:13,000
+Bueno, antes de nada, buenas tardes a todos y muchas gracias por venir.
+
+2
+00:00:13,000 --> 00:00:17,000
+Estamos aquí para hablar de cómo usar Flash en el mundo real.
+
+3
+00:00:17,000 --> 00:00:20,000
+No sé cuántos de aquí usáis Django, voy a levantar la mano.
+
+4
+00:00:20,000 --> 00:00:23,000
+¿Y Flash? Vale.
+
+5
+00:00:23,000 --> 00:00:26,000
+Bueno, me presento muy rápido.
+
+6
+00:00:26,000 --> 00:00:33,000
+Me llamo Juanjo, soy ingeniero informático, sobre todo hago desarrollo web desde hace más de 10 años.
+
+7
+00:00:33,000 --> 00:00:39,000
+Y programa en Python desde hace sobre 5 y trabajo en Answers.
+
+8
+00:00:39,000 --> 00:00:42,000
+¿Cuál es el objetivo de mi charla de hoy?
+
+9
+00:00:42,000 --> 00:00:45,000
+Básicamente dar una serie de consejos, de claves.
+
+10
+00:00:45,000 --> 00:00:51,000
+Tampoco soy yo quien para hacerlo, pero bueno, es lo que me ha servido a mí en mi experiencia.
+
+11
+00:00:51,000 --> 00:01:00,000
+Sobre cómo crear aplicaciones en Flash que son complejas.
+
+12
+00:01:00,000 --> 00:01:05,000
+Más de lo que vemos en la mayoría de webs y en la mayoría de blogs.
+
+13
+00:01:05,000 --> 00:01:10,000
+Bien, cuando empezamos en el desarrollo web en el mundo de Python
+
+14
+00:01:10,000 --> 00:01:16,000
+y buscamos en Google o en Internet, lo primero que solemos ver en todas las páginas
+
+15
+00:01:16,000 --> 00:01:22,000
+es Flash, es un micro framework que podemos desarrollar aplicaciones web muy sencillas, de forma muy rápida
+
+16
+00:01:22,000 --> 00:01:25,000
+y en pocas líneas de código.
+
+17
+00:01:25,000 --> 00:01:30,000
+Y si comparamos Flash, por ejemplo, con Django, pues ya nos dicen que Django es para los profesionales,
+
+18
+00:01:30,000 --> 00:01:35,000
+que Flash es mejor para los principiantes, para hacer cosas muy pequeñas.
+
+19
+00:01:35,000 --> 00:01:40,000
+Y ese tipo de afirmación a mí me pone un poco triste.
+
+20
+00:01:40,000 --> 00:01:45,000
+Porque yo creo que Flash, y esta es la definición que a mí me gusta mucho más,
+
+21
+00:01:45,000 --> 00:01:50,000
+y sí, es un micro framework, sí que podemos hacer cosas de manera muy rápida, cosas simples,
+
+22
+00:01:50,000 --> 00:01:55,000
+pero también tienen la capacidad de escalar cosas mucho más complejas.
+
+23
+00:01:55,000 --> 00:01:59,000
+Y dos de las características que más me gustan a mí de Flash,
+
+24
+00:01:59,000 --> 00:02:07,000
+es que no te impone ninguna dependencia externa y que el diseño del proyecto tampoco te define cómo hacerlo.
+
+25
+00:02:07,000 --> 00:02:10,000
+Y esto tiene a su vez sus pros y sus contras, como ahora veremos,
+
+26
+00:02:10,000 --> 00:02:14,000
+pero que se pueden solucionar de forma muy sencilla.
+
+27
+00:02:14,000 --> 00:02:19,000
+Bien, cuando estamos desarrollando una aplicación del mundo real, a qué me refiero?
+
+28
+00:02:19,000 --> 00:02:23,000
+Bueno, en cualquier framework o web, a lo que les pedimos básicamente,
+
+29
+00:02:23,000 --> 00:02:27,000
+es que nos dé soluciones para hacer tests, para hacer debuts,
+
+30
+00:02:27,000 --> 00:02:32,000
+para acceder a los parámetros de la petición, para hacer enrutamiento, que sea extensible.
+
+31
+00:02:32,000 --> 00:02:38,000
+Y me da cuenta también, a lo largo de todo este tiempo, desarrollando web y aplicaciones, backend,
+
+32
+00:02:38,000 --> 00:02:44,000
+que la mayoría de ellas tienen elementos comunes, como es gestión de usuarios, autorización,
+
+33
+00:02:44,000 --> 00:02:51,000
+gestión de clave JWT, acceso a base de datos SQL, acceso a base de datos no SQL, etcétera,
+
+34
+00:02:51,000 --> 00:02:52,000
+un montón de cosas.
+
+35
+00:02:52,000 --> 00:02:58,000
+Pues bien, todo esto en principio, no lo veamos de inicio en los tutoriales de Flash,
+
+36
+00:02:58,000 --> 00:03:02,000
+pues todo esto y mucho más, es posible hacerlo con Flash.
+
+37
+00:03:02,000 --> 00:03:08,000
+Y como decía antes, ¿cuál es el peligro de los tutoriales iniciales?
+
+38
+00:03:08,000 --> 00:03:11,000
+Pues que Internet está lleno de hola mundos, ¿no?
+
+39
+00:03:11,000 --> 00:03:17,000
+Y este es el ejemplo típico que vemos en todas las páginas cuando empezamos con Flash.
+
+40
+00:03:17,000 --> 00:03:23,000
+Básicamente, te instalas Flash con tu gestor de paquetes más común, en este caso, Pi,
+
+41
+00:03:23,000 --> 00:03:30,000
+defines tu objeto Flash para crear tu aplicación, y luego simplemente te indica que para la ruta,
+
+42
+00:03:30,000 --> 00:03:38,000
+para la URL RAID, porque me ejecutas esta función, que lo único que me hace es imprimirme un texto.
+
+43
+00:03:38,000 --> 00:03:44,000
+Vale, con esto, lo hice en todos los sitios que ya somos capaces de hacer aplicaciones en Flash.
+
+44
+00:03:44,000 --> 00:03:48,000
+Yo tengo mis dudas.
+
+45
+00:03:48,000 --> 00:03:56,000
+Entonces, yo trabajo en una empresa muy pequeña y adoptamos Flash por una característica que
+
+46
+00:03:56,000 --> 00:03:59,000
+es lo que más me gusta a mí de este framework, ¿no?
+
+47
+00:03:59,000 --> 00:04:04,000
+Y básicamente es subversatilidad. Es decir, con Flash podamos desarrollar todo tipo de aplicaciones,
+
+48
+00:04:04,000 --> 00:04:11,000
+ya sean backends, APIs, microservicios, cualquier cosa que se nos ocurra.
+
+49
+00:04:11,000 --> 00:04:18,000
+Y de hecho, en nuestra empresa, esto es una cosa muy importante porque tenemos desarrollo de todo tipo
+
+50
+00:04:18,000 --> 00:04:27,000
+y todas las miembros de la empresa podamos desarrollar cualquier tipo de aplicaciones con este micro framework.
+
+51
+00:04:27,000 --> 00:04:33,000
+Y bien, si entendemos esta depositiva, podremos desarrollar aplicaciones Flash,
+
+52
+00:04:33,000 --> 00:04:36,000
+de las que estoy diciendo, ¿no? Más complejas.
+
+53
+00:04:36,000 --> 00:04:39,000
+Y es que Flash define dos mecanismos de extensión y una aplicación.
+
+54
+00:04:39,000 --> 00:04:44,000
+Por un lado, tenemos las extensiones propiamente dichas, que al final es código de terceros,
+
+55
+00:04:44,000 --> 00:04:47,000
+que podemos registrar dentro de nuestra aplicación.
+
+56
+00:04:47,000 --> 00:04:53,000
+Y hay una gran comunidad de Flash con un montón de extensiones que podemos encontrar para cualquier cosa que se nos ocurra.
+
+57
+00:04:53,000 --> 00:04:56,000
+Y por otro lado, podemos desarrollar nuestros propios módulos a través de los blueprints.
+
+58
+00:04:56,000 --> 00:05:05,000
+No sé si conocéis Flash, pero un blueprint al final es una especie de aplicación dentro del proyecto,
+
+59
+00:05:05,000 --> 00:05:11,000
+en el cual nosotros podamos registrar operaciones dentro de una URL e incluso podamos registrar un mismo blueprint
+
+60
+00:05:11,000 --> 00:05:17,000
+en diferentes URLs e incluso que tengan un prefijo de URL.
+
+61
+00:05:17,000 --> 00:05:24,000
+Y ya no solo operaciones, sino que un blueprint también nos permite registrar templates, recursos estáticos, etc.
+
+62
+00:05:24,000 --> 00:05:30,000
+Y si entendemos este diagrama de aquí, tendremos gran parte del trabajo hecho.
+
+63
+00:05:30,000 --> 00:05:37,000
+Al final, cualquier proyecto Flash lo que tiene es una aplicación, que la definimos con la clase Flash.
+
+64
+00:05:37,000 --> 00:05:42,000
+Cada aplicación tiene una configuración, unos parámetros de configuración
+
+65
+00:05:42,000 --> 00:05:48,000
+y que esto los comparte con todas las extensiones que se registran en la aplicación y con todos los blueprints.
+
+66
+00:05:48,000 --> 00:05:56,000
+Y adicionalmente, aunque tampoco es muy común, puedes crear dentro de un proveo proyecto otro tipo de aplicaciones.
+
+67
+00:05:56,000 --> 00:06:05,000
+Bueno, aquí os dejo una lista de las principales extensiones que utilizamos en casi todos nuestros proyectos.
+
+68
+00:06:05,000 --> 00:06:11,000
+No utilizamos todas en todos los proyectos, como he dicho, depende del proyecto, utilizaremos unas u otras,
+
+69
+00:06:11,000 --> 00:06:17,000
+pero por ejemplo, en Flash Migrate lo usamos mucho para generar los adcrit de la base de datos y las migraciones,
+
+70
+00:06:17,000 --> 00:06:21,000
+o Flash Socket Dyeo para comunicación en tiempo real,
+
+71
+00:06:21,000 --> 00:06:26,000
+Flash Resfool para las APIs, Flash Mail para enviar e-mail.
+
+72
+00:06:26,000 --> 00:06:33,000
+Como decía antes, la comunidad de Flash es bastante activa y hay muchas extensiones que podéis usar.
+
+73
+00:06:33,000 --> 00:06:43,000
+Y aquí os dejo un repositorio de Github, en el que podéis encontrar un montón de extensiones para utilizar en vuestro proyecto.
+
+74
+00:06:43,000 --> 00:06:52,000
+Y bien, uno de los puntos débiles de Flash, cuando comenzamos y que la verdad que fue de lo que más me dificultó al principio,
+
+75
+00:06:52,000 --> 00:06:56,000
+fue que la diferencia, por ejemplo, de Django no nos ofrece una estructura de aplicación.
+
+76
+00:06:56,000 --> 00:07:03,000
+En casi todos los ejemplos que vemos al principio, o que cuando estamos documentándonos sobre Flash,
+
+77
+00:07:03,000 --> 00:07:06,000
+veamos que todo el código se mete dentro de un módulo que se llama app.py,
+
+78
+00:07:06,000 --> 00:07:12,000
+ahí están la inicialización de la aplicación, las vistas, los modelos, los formularios,
+
+79
+00:07:12,000 --> 00:07:17,000
+casi todo se mete ahí. Cuando tu aplicación es sencilla, que no ha visto ninguna aplicación,
+
+80
+00:07:17,000 --> 00:07:22,000
+que consiste simplemente de una URL, pues está bien, para los ejemplos está bien.
+
+81
+00:07:22,000 --> 00:07:30,000
+Cuando tu aplicación va creciendo un poco, quizás sacan los modelos a un módulo diferente, los formularios.
+
+82
+00:07:30,000 --> 00:07:38,000
+Pero la experiencia al final me ha llevado a esta estructura de proyecto que creo que no se ve muy bien,
+
+83
+00:07:38,000 --> 00:07:47,000
+pero intentaré explicarlo para los que no veáis. Al final, cualquier proyecto Flash, lo que defino,
+
+84
+00:07:47,000 --> 00:07:52,000
+es un directorio app en el que está contenido todo el código del proyecto,
+
+85
+00:07:52,000 --> 00:07:58,000
+un directorio config con todos los parámetros de configuración, uno por entorno,
+
+86
+00:07:58,000 --> 00:08:04,000
+Instance, que sería para los parámetros de configuración del entorno local,
+
+87
+00:08:04,000 --> 00:08:10,000
+pero que no forman parte del repositorio, y el entry point, que al final es donde creamos la aplicación
+
+88
+00:08:10,000 --> 00:08:15,000
+y donde el punto de entrada del servidor a la aplicación.
+
+89
+00:08:15,000 --> 00:08:20,000
+Y ya dentro del paquete de app, lo que tenemos sería el módulo init,
+
+90
+00:08:20,000 --> 00:08:26,000
+en el cual creamos los métodos de factoria para crear las diferentes apps de la aplicación.
+
+91
+00:08:26,000 --> 00:08:33,000
+Normalmente tengo uno en el cual se instancia Flash y se registran los parámetros,
+
+92
+00:08:33,000 --> 00:08:42,000
+los blueprints y los módulos, donde suelo definir una referencia, por ejemplo,
+
+93
+00:08:42,000 --> 00:08:49,000
+SQL Alchemy para hacer la base de datos y los modelos base que reutilizaré en el resto de módulos.
+
+94
+00:08:49,000 --> 00:08:55,000
+X, donde se instancia en las extensiones que vamos a utilizar en el proyecto,
+
+95
+00:08:55,000 --> 00:09:05,000
+Camon, con los helpers, los udils, Estatic, con los fecharos de Estatic y los templates, con las páginas HTML.
+
+96
+00:09:05,000 --> 00:09:09,000
+Y luego cada uno de los módulos, que esto es similar a como lo hace, por ejemplo,
+
+97
+00:09:09,000 --> 00:09:15,000
+aquí definimos un paquete por cada funcionalidad dentro de la aplicación.
+
+98
+00:09:15,000 --> 00:09:21,000
+Esto seguiría en una división funcional del proyecto, y ya dentro del módulo,
+
+99
+00:09:21,000 --> 00:09:29,000
+podemos tener, por ejemplo, el módulo para los endpoints de la API o para las vistas,
+
+100
+00:09:29,000 --> 00:09:36,000
+con los templates propios del módulo, etcétera.
+
+101
+00:09:36,000 --> 00:09:43,000
+Y bien, ahora lo que quiero que os voy a mostrar básicamente es cómo juntar todo esto que os he explicado
+
+102
+00:09:43,000 --> 00:09:48,000
+en una aplicación del mundo real, que realmente también es muy sencilla,
+
+103
+00:09:48,000 --> 00:09:52,000
+pero lo único que quiero es que el código está en Github, para que le podáis echar un vistazo
+
+104
+00:09:52,000 --> 00:09:58,000
+y todos los conceptos que hemos visto aquí, los podáis ver tranquilamente.
+
+105
+00:09:58,000 --> 00:10:04,000
+Básicamente la aplicación es una aplicación que va cogiendo hora a hora datos de un sensor
+
+106
+00:10:04,000 --> 00:10:10,000
+y al final se lo muestra los datos de temperatura a los usuarios, a la que además hemos hecho un API
+
+107
+00:10:10,000 --> 00:10:19,000
+que se puedan acceder a estos datos desde una aplicación móvil, por ejemplo.
+
+108
+00:10:19,000 --> 00:10:24,000
+Voy a ir descripiendo los ficheros que hemos visto en la estructura anterior, algo muy rápido,
+
+109
+00:10:24,000 --> 00:10:26,000
+tampoco hace falta el código que lo entendáis todo.
+
+110
+00:10:26,000 --> 00:10:32,000
+Este es el fichero dv.py, donde hemos dicho que definíamos la entrada a la base de datos.
+
+111
+00:10:32,000 --> 00:10:38,000
+Aquí defino el objeto de SQL Alchemy y como decía, tenemos aquí mi módulo base
+
+112
+00:10:38,000 --> 00:10:43,000
+que reutilizaré en el resto de modelos del proyecto.
+
+113
+00:10:43,000 --> 00:10:50,000
+En el módulo X, lo que tenemos es un conjunto de, o sea, las extensiones que utilizamos en el proyecto,
+
+114
+00:10:50,000 --> 00:10:55,000
+por ejemplo, Marshmallow, para serializar objetos del modelo a JSON, Migrate,
+
+115
+00:10:55,000 --> 00:11:03,000
+para generar los ficheros de migración de la base de datos y Celery, para ejecutar las tareas en background.
+
+116
+00:11:03,000 --> 00:11:08,000
+Luego, en el módulo Models, básicamente esto es una clase de SQL Alchemy.
+
+117
+00:11:08,000 --> 00:11:15,000
+Lo más importante aquí es que importamos el objeto dv y base model mixing del módulo anterior
+
+118
+00:11:15,000 --> 00:11:23,000
+y tenemos un módulo esquema donde definimos una clase que sirve para serializar
+
+119
+00:11:23,000 --> 00:11:34,000
+el objeto de la clase de la temperatura a JSON cuando se utilicemos en el API.
+
+120
+00:11:34,000 --> 00:11:39,000
+Luego, el módulo Tasks, básicamente es un fake que he hecho,
+
+121
+00:11:39,000 --> 00:11:43,000
+sería que capturaría los datos del sensor, aquí simplemente de forma aleatoria,
+
+122
+00:11:43,000 --> 00:11:50,000
+ver generando temperaturas y la veo guardando en la base de datos.
+
+123
+00:11:50,000 --> 00:11:55,000
+Y este es otro concepto que quiero que quede muy claro hoy, al final tenemos un helper.
+
+124
+00:11:55,000 --> 00:12:01,000
+Este helper lo que estoy encasulando sería la lógica de negocio de mi aplicación,
+
+125
+00:12:01,000 --> 00:12:06,000
+de manera que me sirva para utilizarlo luego en el API y si queramos hacer, por ejemplo, una web.
+
+126
+00:12:06,000 --> 00:12:09,000
+Ahora veré donde lo utilizo.
+
+127
+00:12:12,000 --> 00:12:17,000
+Aquí, si veis, tenemos un fichero Roots y un fichero Resources.
+
+128
+00:12:17,000 --> 00:12:23,000
+Aquí estamos definiendo los endpoints del API y aquí estamos definiendo las pistas para la web.
+
+129
+00:12:23,000 --> 00:12:29,000
+Como decía anteriormente, en la diapositiva que veíamos de la estructura del proyecto,
+
+130
+00:12:29,000 --> 00:12:34,000
+estamos definiendo un blueprint del módulo weather en el que indicamos
+
+131
+00:12:34,000 --> 00:12:39,000
+que vamos a utilizar un directorio específico para las plantillas
+
+132
+00:12:39,000 --> 00:12:44,000
+y en el que registramos para otra URL en concreto,
+
+133
+00:12:44,000 --> 00:12:47,000
+que función queremos que se ejecute.
+
+134
+00:12:47,000 --> 00:12:53,000
+Y como decía anteriormente, al final aquí estamos reutilizando
+
+135
+00:12:53,000 --> 00:12:59,000
+nuestra lógica de negocio tanto para la parte del API como para la parte de la web.
+
+136
+00:12:59,000 --> 00:13:03,000
+Y con muy pocas líndas de código, tenemos dos funcionalidades diferentes
+
+137
+00:13:03,000 --> 00:13:06,000
+utilizando la misma lógica de negocio.
+
+138
+00:13:06,000 --> 00:13:11,000
+Y luego la gestión de errores es una cosa que en Flask se puede hacer de forma muy elegante.
+
+139
+00:13:11,000 --> 00:13:16,000
+Yo esto lo he cogido de la mayoría de extensiones y del propio Flask.
+
+140
+00:13:16,000 --> 00:13:20,000
+Es que muchas veces cuando gestionamos con excepciones dentro del framework,
+
+141
+00:13:20,000 --> 00:13:25,000
+no sabemos cómo hacerlo, lo más fácil sería definir en un fichero
+
+142
+00:13:25,000 --> 00:13:30,000
+las excepciones propias del módulo, de tu paquete,
+
+143
+00:13:30,000 --> 00:13:35,000
+y luego una serie de callbacks que se ejecutarían cuando tu excepción se lanza
+
+144
+00:13:35,000 --> 00:13:39,000
+pero no es capturada por ninguna función.
+
+145
+00:13:39,000 --> 00:13:45,000
+Y el modo de indicarle qué callback se ejecuta cuando se lance una excepción
+
+146
+00:13:45,000 --> 00:13:50,000
+lo definimos en el módulo init del propio paquete.
+
+147
+00:13:50,000 --> 00:13:57,000
+Esto sí que es un modo de ejecución similar a como lo hacen el resto de extensiones
+
+148
+00:13:57,000 --> 00:14:02,000
+aunque realmente este método init app no es lo que hacen las extensiones en sí.
+
+149
+00:14:02,000 --> 00:14:05,000
+Pero bueno, he cogido la idea de ahí.
+
+150
+00:14:05,000 --> 00:14:09,000
+Y básicamente lo que definimos es para la excepción, por ejemplo,
+
+151
+00:14:09,000 --> 00:14:16,000
+weather exception, pues ejecuta el callback, weather error.
+
+152
+00:14:16,000 --> 00:14:20,000
+Y aquí veamos un ejemplo de lo que os comentaba.
+
+153
+00:14:20,000 --> 00:14:23,000
+Es un ejemplo muy chorra.
+
+154
+00:14:23,000 --> 00:14:26,000
+Básicamente cuando metemos en la URL está el número 10,
+
+155
+00:14:26,000 --> 00:14:32,000
+se lanza una excepción y en función de sí.
+
+156
+00:14:32,000 --> 00:14:37,000
+Estamos ejecutando el API o no, nos mostrará un error con JSON
+
+157
+00:14:37,000 --> 00:14:43,000
+o nos mostrará una página de error.
+
+158
+00:14:43,000 --> 00:14:50,000
+Y luego el módulo init es el módulo que sirve para juntar todo.
+
+159
+00:14:50,000 --> 00:14:56,000
+Y si veis, este es el método factoría que me inicializa la aplicación.
+
+160
+00:14:56,000 --> 00:15:04,000
+Me registra las extensiones y me registra los blueprints, mi módulo personal.
+
+161
+00:15:04,000 --> 00:15:09,000
+Por último, en el entry point utilizo ese método factoría
+
+162
+00:15:09,000 --> 00:15:15,000
+para instanciar la aplicación a partir de una variable de entorno
+
+163
+00:15:15,000 --> 00:15:22,000
+en la que indico cuáles son los... el fichero de configuración que se utilice.
+
+164
+00:15:22,000 --> 00:15:27,000
+Bueno, ya he terminado. Y nada, pues muchas gracias por asistir.
+
+165
+00:15:27,000 --> 00:15:53,000
+Y nada.
+
